@@ -22,22 +22,42 @@ function forbidMatch(name, text, pattern) {
 requireMatch("index.html", files.html, /Content-Security-Policy/i);
 requireMatch("index.html", files.html, /script-src 'self'/i);
 requireMatch("index.html", files.html, /style-src 'self'/i);
+requireMatch("index.html", files.html, /application\/ld\+json/i);
+requireMatch("index.html", files.html, /rel="canonical"\s+href="https:\/\/willowinworld\.com\/"/i);
+requireMatch("index.html", files.html, /og:title/i);
+requireMatch("index.html", files.html, /twitter:card/i);
 requireMatch("_headers", files.headers, /frame-ancestors 'none'/i);
 requireMatch("_headers", files.headers, /Strict-Transport-Security:/i);
 requireMatch("_headers", files.headers, /X-Content-Type-Options:\s*nosniff/i);
 requireMatch("nginx-security.conf", files.nginx, /X-Frame-Options\s+"DENY"/i);
 
 forbidMatch("index.html", files.html, /<style(?:\s|>)/i);
-forbidMatch("index.html", files.html, /<script(?![^>]*\bsrc=)/i);
 forbidMatch("index.html", files.html, /\sstyle\s*=/i);
 forbidMatch("index.html", files.html, /\son[a-z]+\s*=/i);
-forbidMatch("index.html", files.html, /\b(?:href|src|action)\s*=\s*["'](?:https?:|\/\/|javascript:|data:text\/html)/i);
+forbidMatch("index.html", files.html, /Telegram placeholder|Discord placeholder|X\/Twitter placeholder|Decorative form placeholder|Real sending is not connected yet/i);
 forbidMatch("scripts.js", files.js, /\b(?:innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval|Function)\b/);
 forbidMatch("scripts.js", files.js, /\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/);
 forbidMatch("scripts.js", files.js, /\b(?:api[_-]?key|private[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._-]+)\b/i);
 forbidMatch("scripts.js", files.js, /\b[A-Z0-9]{3,}-(?:[A-Z0-9]+-){1,}[A-Z0-9]{2,}\b/);
 forbidMatch("styles.css", files.css, /@import\s+url\s*\(/i);
 forbidMatch("styles.css", files.css, /url\(\s*["']?(?:https?:|\/\/)/i);
+
+const inlineScripts = [...files.html.matchAll(/<script\b([^>]*)>/gi)]
+  .filter(([, attrs]) => !/\bsrc\s*=/.test(attrs))
+  .filter(([, attrs]) => !/\btype\s*=\s*["']application\/ld\+json["']/i.test(attrs));
+
+if (inlineScripts.length) {
+  errors.push("index.html: inline scripts are only allowed for JSON-LD with a CSP hash");
+}
+
+const urlAttributes = [...files.html.matchAll(/\b(href|src|action)\s*=\s*["']([^"']+)/gi)];
+for (const [, attr, url] of urlAttributes) {
+  const safeCanonical = attr.toLowerCase() === "href" && url === "https://willowinworld.com/";
+  const unsafe = /^(https?:|\/\/|javascript:|data:text\/html)/i.test(url);
+  if (unsafe && !safeCanonical) {
+    errors.push(`index.html: unsafe ${attr} URL ${url}`);
+  }
+}
 
 if (errors.length) {
   console.error("WillowinWorld security check failed:");

@@ -35,7 +35,6 @@
   const secretMessage = document.getElementById("secretMessage");
   const metaThemeColor = document.getElementById("metaThemeColor");
   const mascotImage = new Image();
-  mascotImage.src = "assets/magic-cat-mascot.webp";
   const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const browserPrefersDark = colorSchemeQuery.matches;
   const savedTheme = (() => {
@@ -190,12 +189,13 @@
   ];
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const prefersReducedData = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-data: reduce)").matches;
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   const saveData = Boolean(connection && connection.saveData);
   const slowNetwork = Boolean(connection && /(^slow-2g$|^2g$|^3g$)/i.test(connection.effectiveType || ""));
   const smallScreen = window.matchMedia("(max-width: 640px)").matches;
 
-  if (prefersReduced || saveData || slowNetwork) {
+  if (prefersReduced || prefersReducedData || saveData || slowNetwork) {
     state.lowMotion = true;
     state.quality = "Low";
     body.classList.add("low-motion");
@@ -211,8 +211,26 @@
   root.style.colorScheme = initialTheme === "dark" ? "dark" : "light";
   if (metaThemeColor) metaThemeColor.content = initialTheme === "dark" ? "#031735" : "#fcfff2";
 
+  const cssCache = new Map();
+  const cachedCssVariables = [
+    "--moon",
+    "--muted",
+    "--cyan",
+    "--green",
+    "--gold",
+    "--rose",
+    "--violet",
+    "--blue"
+  ];
+
+  function refreshCssCache() {
+    const styles = getComputedStyle(body);
+    cssCache.clear();
+    cachedCssVariables.forEach(name => cssCache.set(name, styles.getPropertyValue(name).trim()));
+  }
+
   function css(name) {
-    return getComputedStyle(body).getPropertyValue(name).trim();
+    return cssCache.get(name) || getComputedStyle(body).getPropertyValue(name).trim();
   }
 
   function showToast(message) {
@@ -733,13 +751,9 @@
     const cat = state.cat;
     const x = cat.x;
     const y = cat.y;
-    const scale = mobile ? 0.56 : Math.min(0.86, Math.max(0.64, w / 1500));
     const dark = state.theme === "dark";
-    const bodyColor = dark ? "#0d1520" : "#243246";
-    const eye = dark ? css("--cyan") : css("--gold");
     const breathe = Math.sin(now * 0.0022) * 3;
     const casting = state.playMode || state.completed || state.clickBursts.length > 0 || cat.cast > 0;
-    if (!mascotImage.complete || !mascotImage.naturalWidth) return;
     if (mascotImage.complete && mascotImage.naturalWidth) {
       const imageScale = mobile ? 0.34 : Math.min(0.48, Math.max(0.36, w / 3200));
       const drawW = 640 * imageScale;
@@ -937,141 +951,6 @@
       ctx.globalAlpha = 1;
     }
 
-    ctx.restore();
-    return;
-
-    ctx.save();
-    ctx.translate(x, y + breathe);
-    ctx.scale(scale, scale);
-
-    ctx.save();
-    ctx.translate(-54, -80);
-    ctx.rotate(-0.5 + Math.sin(now * 0.002) * 0.14);
-    ctx.strokeStyle = bodyColor;
-    ctx.lineWidth = 24;
-    ctx.lineCap = "round";
-    ctx.beginPath();
-    ctx.arc(0, 44, 58, Math.PI * 0.98, Math.PI * 1.88);
-    ctx.stroke();
-    ctx.restore();
-
-    ctx.fillStyle = bodyColor;
-    roundedRect(-44, -114, 96, 118, 42);
-    ctx.fill();
-
-    ctx.save();
-    ctx.translate(0, -158);
-    ctx.rotate(cat.headTilt);
-    ctx.translate(0, 158);
-    roundedRect(-58, -210, 120, 108, 48);
-    ctx.fill();
-
-    ctx.beginPath();
-    ctx.moveTo(-44, -190);
-    ctx.lineTo(-22, -244);
-    ctx.lineTo(4, -194);
-    ctx.closePath();
-    ctx.fill();
-    ctx.beginPath();
-    ctx.moveTo(14, -194);
-    ctx.lineTo(42, -244);
-    ctx.lineTo(58, -190);
-    ctx.closePath();
-    ctx.fill();
-
-    ctx.save();
-    ctx.translate(8, -226);
-    ctx.rotate(-0.12 + Math.sin(now * 0.0015) * 0.04);
-    ctx.fillStyle = css("--violet");
-    ctx.beginPath();
-    ctx.moveTo(-34, 42);
-    ctx.quadraticCurveTo(0, -48, 36, 42);
-    ctx.closePath();
-    ctx.fill();
-    ctx.fillStyle = dark ? "#111a2d" : "#6e63ad";
-    roundedRect(-48, 32, 96, 18, 12);
-    ctx.fill();
-    ctx.restore();
-
-    const blink = cat.sleep ? 0.1 : cat.blink > 0 ? 0.16 : 1;
-    drawEye(-24 + cat.eyeX, -160 + cat.eyeY, blink, eye);
-    drawEye(28 + cat.eyeX, -160 + cat.eyeY, blink, eye);
-    if (cat.sleep) {
-      ctx.fillStyle = eye;
-      ctx.font = "bold 18px sans-serif";
-      ctx.fillText("z", 48, -200);
-      ctx.fillText("z", 62, -220);
-    }
-    ctx.fillStyle = css("--rose");
-    ctx.beginPath();
-    ctx.ellipse(4, -138, 6, 4, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.restore();
-
-    ctx.save();
-    ctx.translate(72, -88);
-    ctx.rotate(-0.23 + Math.sin(now * 0.0025) * 0.04);
-    ctx.strokeStyle = css("--rose");
-    ctx.lineWidth = 7;
-    ctx.lineCap = "round";
-    ctx.beginPath();
-    ctx.moveTo(0, 0);
-    ctx.lineTo(0, -150);
-    ctx.stroke();
-    const castPower = Math.max(0, Math.min(1, cat.cast / 55));
-    const glowR = casting ? 28 + castPower * 20 + Math.sin(now * 0.012) * 5 : 18;
-    const grad = ctx.createRadialGradient(0, -164, 0, 0, -164, glowR * 2.2);
-    grad.addColorStop(0, "rgba(255,255,255,0.95)");
-    grad.addColorStop(0.28, "rgba(255,79,115,0.78)");
-    grad.addColorStop(1, "rgba(255,79,115,0)");
-    ctx.fillStyle = grad;
-    ctx.beginPath();
-    ctx.arc(0, -164, glowR * 2.2, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.fillStyle = css("--rose");
-    ctx.beginPath();
-    ctx.arc(0, -164, glowR, 0, Math.PI * 2);
-    ctx.fill();
-    if (casting && !state.lowMotion) {
-      ctx.strokeStyle = css("--cyan");
-      ctx.globalAlpha = 0.44 + castPower * 0.34;
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.arc(0, -164, glowR + 16, now * 0.004, now * 0.004 + Math.PI * 1.35);
-      ctx.stroke();
-      ctx.globalAlpha = 1;
-    }
-    ctx.restore();
-
-    ctx.restore();
-  }
-
-  function roundedRect(x, y, w, h, r) {
-    const radius = Math.min(r, w / 2, h / 2);
-    ctx.beginPath();
-    ctx.moveTo(x + radius, y);
-    ctx.arcTo(x + w, y, x + w, y + h, radius);
-    ctx.arcTo(x + w, y + h, x, y + h, radius);
-    ctx.arcTo(x, y + h, x, y, radius);
-    ctx.arcTo(x, y, x + w, y, radius);
-    ctx.closePath();
-  }
-
-  function drawEye(x, y, blink, color) {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.scale(1, blink);
-    ctx.fillStyle = color;
-    ctx.shadowBlur = 16;
-    ctx.shadowColor = color;
-    ctx.beginPath();
-    ctx.ellipse(0, 0, 11, 15, 0, 0, Math.PI * 2);
-    ctx.fill();
-    ctx.shadowBlur = 0;
-    ctx.fillStyle = "#07111f";
-    ctx.beginPath();
-    ctx.arc(1, 1, 4, 0, Math.PI * 2);
-    ctx.fill();
     ctx.restore();
   }
 
@@ -1275,6 +1154,7 @@
     state.theme = theme;
     body.setAttribute("data-theme", theme);
     root.style.colorScheme = theme === "dark" ? "dark" : "light";
+    refreshCssCache();
     document.querySelectorAll("[data-logo-theme]").forEach(logo => {
       logo.src = theme === "dark" ? "assets/willowinworld-logo.webp" : "assets/willowinworld-logo-day.webp";
     });
@@ -1404,7 +1284,7 @@
     gameModalCopy.textContent = profile.copy;
     gameModalTags.replaceChildren();
     profile.tags.forEach(label => {
-      const tag = document.createElement("span");
+      const tag = document.createElement("li");
       tag.className = "tag";
       tag.textContent = label;
       gameModalTags.append(tag);
@@ -1421,8 +1301,8 @@
   function openGameDetails(key, trigger) {
     if (!renderGameProfile(key)) return;
     activeGameTrigger = trigger || document.activeElement;
+    gameModal.hidden = false;
     gameModal.classList.add("is-open");
-    gameModal.setAttribute("aria-hidden", "false");
     syncModalLock();
     window.setTimeout(() => closeGame.focus(), 30);
   }
@@ -1430,7 +1310,7 @@
   function closeGameDetails(restoreFocus = true) {
     if (!gameModal.classList.contains("is-open")) return;
     gameModal.classList.remove("is-open");
-    gameModal.setAttribute("aria-hidden", "true");
+    gameModal.hidden = true;
     syncModalLock();
     if (restoreFocus && activeGameTrigger && typeof activeGameTrigger.focus === "function") {
       activeGameTrigger.focus();
@@ -1476,15 +1356,15 @@
   function openSecretReward(secret) {
     secretTitle.textContent = secret.title;
     secretMessage.textContent = secret.message;
+    secretModal.hidden = false;
     secretModal.classList.add("is-open");
-    secretModal.setAttribute("aria-hidden", "false");
     syncModalLock();
     window.setTimeout(() => dismissSecret.focus(), 30);
   }
 
   function closeSecretReward() {
     secretModal.classList.remove("is-open");
-    secretModal.setAttribute("aria-hidden", "true");
+    secretModal.hidden = true;
     syncModalLock();
   }
 
@@ -1568,15 +1448,15 @@
 
   function openContact() {
     closeGameDetails(false);
+    contactModal.hidden = false;
     contactModal.classList.add("is-open");
-    contactModal.setAttribute("aria-hidden", "false");
     syncModalLock();
     window.setTimeout(() => document.getElementById("name").focus(), 30);
   }
 
   function closeContactModal() {
     contactModal.classList.remove("is-open");
-    contactModal.setAttribute("aria-hidden", "true");
+    contactModal.hidden = true;
     syncModalLock();
   }
 
@@ -1616,6 +1496,10 @@
       ".about-grid > *",
       ".step",
       ".careers",
+      ".roadmap-feature",
+      ".roadmap-item",
+      ".devlog-card",
+      ".press-card",
       ".quote-card",
       ".faq-item",
       ".final-cta .container"
@@ -1674,16 +1558,29 @@
   function initFilters() {
     const filters = document.querySelectorAll("[data-filter]");
     const cards = document.querySelectorAll(".game-card");
-    filters.forEach(button => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-        filters.forEach(btn => btn.classList.toggle("is-active", btn === button));
-        cards.forEach(card => {
-          const tags = card.dataset.tags || "";
-          const visible = filter === "All" || tags.includes(filter);
-          card.classList.toggle("is-hidden", !visible);
-        });
+    const status = document.getElementById("filterStatus");
+    const updateFilter = activeButton => {
+      const filter = activeButton.dataset.filter;
+      let visibleCount = 0;
+      filters.forEach(btn => {
+        const active = btn === activeButton;
+        btn.classList.toggle("is-active", active);
+        btn.setAttribute("aria-pressed", String(active));
       });
+      cards.forEach(card => {
+        const tags = card.dataset.tags || "";
+        const visible = filter === "All" || tags.includes(filter);
+        card.classList.toggle("is-hidden", !visible);
+        if (visible) visibleCount += 1;
+      });
+      if (status) {
+        status.textContent = filter === "All"
+          ? "Showing all WillowinWorld games."
+          : "Showing " + visibleCount + " " + filter + " game" + (visibleCount === 1 ? "." : "s.");
+      }
+    };
+    filters.forEach(button => {
+      button.addEventListener("click", () => updateFilter(button));
     });
   }
 
@@ -1765,7 +1662,20 @@
     });
     contactForm.addEventListener("submit", event => {
       event.preventDefault();
-      showToast("Message prepared. Real sending is not connected yet.");
+      const formData = new FormData(contactForm);
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const type = String(formData.get("type") || "General").trim();
+      const message = String(formData.get("message") || "").trim();
+      const subject = encodeURIComponent(type + " inquiry from " + (name || "WillowinWorld visitor"));
+      const body = encodeURIComponent(
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Inquiry type: " + type + "\n\n" +
+        message
+      );
+      window.location.href = "mailto:hello@willowinworld.com?subject=" + subject + "&body=" + body;
+      showToast("Opening your email app with the message prepared.");
       closeContactModal();
       contactForm.reset();
     });
@@ -1792,7 +1702,17 @@
     }
   }
 
-  window.addEventListener("resize", resize, { passive: true });
+  let resizeScheduled = false;
+  function scheduleResize() {
+    if (resizeScheduled) return;
+    resizeScheduled = true;
+    window.requestAnimationFrame(() => {
+      resizeScheduled = false;
+      resize();
+    });
+  }
+
+  window.addEventListener("resize", scheduleResize, { passive: true });
   window.addEventListener("mousemove", handlePointerMove, { passive: true });
   window.addEventListener("touchmove", handlePointerMove, { passive: true });
   document.addEventListener("mouseleave", handlePointerLeave);
@@ -1803,7 +1723,10 @@
   window.addEventListener("click", handlePointerDown);
   window.addEventListener("touchend", handlePointerDown, { passive: true });
   mascotImage.addEventListener("load", startLoop, { once: true });
+  mascotImage.addEventListener("error", () => body.classList.add("mascot-image-missing"), { once: true });
+  mascotImage.src = "assets/magic-cat-mascot.webp";
 
+  refreshCssCache();
   initControls();
   initGameDetails();
   initSecrets();

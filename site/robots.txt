@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://willowinworld.com/sitemap.xml

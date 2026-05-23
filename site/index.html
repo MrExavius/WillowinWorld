@@ -3,14 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WillowinWorld is a premium indie game studio creating magical, tactile and emotionally memorable game worlds.">
+  <meta name="description" content="WillowinWorld is an indie mobile game studio creating tactile magical games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?! Cozy physics puzzles, merge games and arcade worlds.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="WillowinWorld">
   <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'none'; trusted-types 'none'; require-trusted-types-for 'script'">
-  <title>WillowinWorld - Magical Game Studio</title>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:title" content="WillowinWorld - Indie Mobile Game Studio">
+  <meta property="og:description" content="Tactile magical mobile games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?! Cozy physics, merge and arcade worlds by WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/willowinworld-logo-day.webp">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="1024">
+  <meta property="og:image:alt" content="WillowinWorld magical indie mobile game studio logo">
+  <meta property="og:url" content="https://willowinworld.com/">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WillowinWorld - Magical Mobile Games">
+  <meta name="twitter:description" content="Cozy physics puzzles, candy merge games, color arcade action and vertical descent worlds with tactile mobile-first polish.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/willowinworld-logo-day.webp">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-tqn0yIq96Ww8tk4S3gKJO+SGurojqI4qs1NUtx2JIYg='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>WillowinWorld - Indie Mobile Game Studio</title>
+  <link rel="canonical" href="https://willowinworld.com/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="preload" href="assets/willowinworld-logo-day.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="assets/Nature%20Seeds/Galvnie_3_1-site.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json" id="structuredData">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://willowinworld.com/#studio",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/",
+      "logo": "https://willowinworld.com/assets/willowinworld-logo-day.webp",
+      "email": "hello@willowinworld.com",
+      "description": "WillowinWorld is an indie mobile game studio creating tactile magical games, cozy physics puzzles and premium 2D worlds.",
+      "knowsAbout": ["Mobile game development", "Physics puzzle games", "Cozy games", "Arcade games", "2D art direction"]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://willowinworld.com/#website",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/",
+      "publisher": { "@id": "https://willowinworld.com/#studio" }
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/#nature-seed",
+      "name": "Nature Seed",
+      "genre": ["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle"],
+      "gamePlatform": ["iOS", "Android", "Mobile"],
+      "description": "A relaxing draw-to-solve physics puzzle where players draw magical lines, guide water to seeds and restore a dying forest.",
+      "author": { "@id": "https://willowinworld.com/#studio" }
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/#candy-shop",
+      "name": "Candy Shop",
+      "genre": ["Merge puzzle", "Candy puzzle", "Casual puzzle"],
+      "gamePlatform": ["iOS", "Android", "Mobile"],
+      "description": "A cozy candy merge puzzle with satisfying physics, combos, special sweets and long-term progression.",
+      "author": { "@id": "https://willowinworld.com/#studio" }
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/#paint-blasters",
+      "name": "Paint Blasters",
+      "genre": ["Color puzzle", "Physics arcade", "Destruction puzzle"],
+      "gamePlatform": ["iOS", "Android", "Mobile"],
+      "description": "A vibrant physics puzzle arcade about mixing color-powered shots, smashing towers and triggering chain reactions.",
+      "author": { "@id": "https://willowinworld.com/#studio" }
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/#ball-is-god",
+      "name": "Ball is God?!",
+      "genre": ["Vertical descent arcade", "Hardcore arcade", "Skill-based arcade"],
+      "gamePlatform": ["iOS", "Android", "Mobile"],
+      "description": "A hardcore vertical descent arcade game about guiding Espa down a divine tower through one-touch timing and moral choices.",
+      "author": { "@id": "https://willowinworld.com/#studio" }
+    }
+  ]
+}
+  </script>
 </head>
 <body data-theme="light">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
   <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magic unlocked - Welcome to WillowinWorld</div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -29,33 +111,33 @@
           <a href="#home">Home</a>
           <a href="#games">Games</a>
           <a href="#studio">Studio</a>
-          <a href="#careers">Careers</a>
+          <a href="#devlog">Devlog</a>
           <a href="#contact">Contact</a>
         </nav>
 
         <div class="header-actions">
-          <button class="btn btn-small btn-ghost contact-header" data-open-contact>Contact Us</button>
-          <button class="icon-btn" id="themeToggle" aria-label="Switch theme" title="Night Magic / Daylight">
+          <button class="btn btn-small btn-ghost contact-header" data-open-contact type="button">Contact Us</button>
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch theme" title="Night Magic / Daylight">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
-          <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span></button>
         </div>
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="section hero" id="home">
         <div class="container hero-grid">
           <div>
-            <h1>We create magical worlds that feel alive.</h1>
-            <p class="hero-copy">WillowinWorld builds tactile mobile-first games where readable systems, charming fantasy characters and polished interactions become worlds players remember.</p>
+            <h1>WillowinWorld creates magical mobile games that feel alive.</h1>
+            <p class="hero-copy">An indie game studio building cozy physics puzzles, colorful arcade worlds and tactile mobile-first games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?!</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#games">Explore Games</a>
-              <button class="btn btn-ghost" data-open-contact>Contact Studio</button>
+              <a class="btn btn-ghost" href="mailto:hello@willowinworld.com?subject=Publisher%20or%20partnership%20inquiry">For Publishers</a>
             </div>
-            <div class="quick-tags" aria-label="Studio strengths">
+            <div class="quick-tags">
               <span class="tag">mobile-first games</span>
               <span class="tag">cozy fantasy worlds</span>
               <span class="tag">interactive systems</span>
@@ -63,9 +145,15 @@
               <span class="tag">premium 2D art</span>
               <span class="tag">playful web experience</span>
             </div>
+            <nav class="hero-worlds" aria-label="Featured WillowinWorld games">
+              <a href="#nature-card"><strong>Nature Seed</strong><span>draw-to-solve physics</span></a>
+              <a href="#candy-card"><strong>Candy Shop</strong><span>cozy merge puzzle</span></a>
+              <a href="#paint-card"><strong>Paint Blasters</strong><span>color chain reactions</span></a>
+              <a href="#ball-card"><strong>Ball is God?!</strong><span>vertical arcade descent</span></a>
+            </nav>
           </div>
 
-          <div class="hero-panel" aria-label="Nature Seed restoration preview">
+          <div class="hero-panel" role="img" aria-label="Nature Seed restoration preview">
             <div class="nature-preview ambient-only" aria-hidden="true">
               <div class="nature-stage nature-stage-hero">
                 <img class="nature-level nature-level-sketch" src="assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
@@ -93,7 +181,7 @@
             <span class="floating-rune ambient-only"></span>
             <span class="floating-rune ambient-only"></span>
             <div class="magic-hud">
-              <span>Beta Access Soon</span>
+              <span>Nature Seed Beta Soon</span>
               <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
             </div>
           </div>
@@ -110,19 +198,20 @@
             <p class="section-copy">Four mobile-first game worlds, one philosophy: playful systems, strong visual identity, and interactions that feel magical.</p>
           </div>
 
-          <div class="game-filters" aria-label="Game filters">
-            <button class="filter-btn is-active" data-filter="All">All</button>
-            <button class="filter-btn" data-filter="Arcade">Arcade</button>
-            <button class="filter-btn" data-filter="Puzzle">Puzzle</button>
-            <button class="filter-btn" data-filter="Physics">Physics</button>
-            <button class="filter-btn" data-filter="Cozy">Cozy</button>
-            <button class="filter-btn" data-filter="Mobile">Mobile</button>
-            <button class="filter-btn" data-filter="Magic">Magic</button>
-            <button class="filter-btn" data-filter="In Development">In Development</button>
+          <div class="game-filters" role="group" aria-label="Game filters">
+            <button class="filter-btn is-active" data-filter="All" type="button" aria-pressed="true" aria-controls="gamesGrid">All</button>
+            <button class="filter-btn" data-filter="Arcade" type="button" aria-pressed="false" aria-controls="gamesGrid">Arcade</button>
+            <button class="filter-btn" data-filter="Puzzle" type="button" aria-pressed="false" aria-controls="gamesGrid">Puzzle</button>
+            <button class="filter-btn" data-filter="Physics" type="button" aria-pressed="false" aria-controls="gamesGrid">Physics</button>
+            <button class="filter-btn" data-filter="Cozy" type="button" aria-pressed="false" aria-controls="gamesGrid">Cozy</button>
+            <button class="filter-btn" data-filter="Mobile" type="button" aria-pressed="false" aria-controls="gamesGrid">Mobile</button>
+            <button class="filter-btn" data-filter="Magic" type="button" aria-pressed="false" aria-controls="gamesGrid">Magic</button>
+            <button class="filter-btn" data-filter="In Development" type="button" aria-pressed="false" aria-controls="gamesGrid">In Development</button>
           </div>
+          <p class="filter-status" id="filterStatus" role="status" aria-live="polite">Showing all WillowinWorld games.</p>
 
-          <div class="games-grid">
-            <article class="game-card nature-card" data-tags="Puzzle Physics Cozy Ecology Nature Draw-to-solve Magic Mobile Meditative Relaxing Zen Atmospheric Restoration Beta">
+          <div class="games-grid" id="gamesGrid">
+            <article class="game-card nature-card" id="nature-card" aria-label="Nature Seed draw-to-solve physics puzzle" data-tags="Puzzle Physics Cozy Ecology Nature Draw-to-solve Magic Mobile Meditative Relaxing Zen Atmospheric Restoration Beta">
               <div class="game-cover nature-game-cover">
                 <div class="nature-stage nature-stage-card" aria-hidden="true">
                   <img class="nature-level nature-level-sketch" src="assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" loading="lazy" decoding="async">
@@ -150,23 +239,24 @@
                   <span class="status-pill">Beta Access Soon</span>
                   <span class="game-genre">Main genre: Draw-to-Solve Physics Puzzle</span>
                 </div>
-                <div class="game-progress progress-99" aria-label="Nature Seed progress 99 percent">
-                  <div><strong>99%</strong><span>July 1</span></div>
+                <div class="game-progress progress-99" role="group" aria-label="Nature Seed beta build progress 99 percent">
+                  <div><strong>99%</strong><span>Beta polish</span></div>
                   <span class="game-progress-track" aria-hidden="true"></span>
                 </div>
                 <p>Nature Seed is a meditative physics puzzle about restoring nature. Players draw magical lines, guide water toward seeds and help revive a dying forest. It is a calm atmospheric game without a rush, where every solution turns a gray world into a living watercolor ecosystem.</p>
                 <div class="feature-callout">Mobile edge: line drawing, water routing and nature restoration become one calming physics loop.</div>
-                <div class="game-tags" aria-label="Nature Seed genre edge">
+                <div class="game-tags">
                   <span class="tag">Mobile</span><span class="tag">Meditative Puzzle</span><span class="tag">Eco Puzzle</span><span class="tag">Relaxing Game</span><span class="tag">Line Drawing Puzzle</span><span class="tag">Zen Puzzle</span><span class="tag">Atmospheric Puzzle</span><span class="tag">Nature Restoration</span>
                 </div>
                 <div class="game-actions">
                   <button class="btn btn-primary" data-game="nature" type="button">View Game</button>
+                  <a class="btn btn-ghost" href="games/nature-seed.html">Game Page</a>
                   <button class="btn btn-ghost" data-open-contact type="button">Follow Development</button>
                 </div>
               </div>
             </article>
 
-            <article class="game-card candy-card" data-tags="Merge Physics Casual Candy Cozy Mobile Puzzle Combo Relaxing Suika-like Concept Prototype">
+            <article class="game-card candy-card" id="candy-card" aria-label="Candy Shop cozy candy merge puzzle" data-tags="Merge Physics Casual Candy Cozy Mobile Puzzle Combo Relaxing Suika-like Concept Prototype">
               <div class="game-cover candy-game-cover">
                 <div class="candy-stage" aria-hidden="true">
                   <div class="candy-bg-stack">
@@ -198,26 +288,27 @@
                   <span class="status-pill">Coming Next</span>
                   <span class="game-genre">Main genre: Casual Merge Puzzle</span>
                 </div>
-                <div class="game-progress progress-85" aria-label="Candy Shop progress 85 percent">
+                <div class="game-progress progress-85" role="group" aria-label="Candy Shop progress 85 percent">
                   <div><strong>85%</strong><span>Roadmap focus</span></div>
                   <span class="game-progress-track" aria-hidden="true"></span>
                 </div>
                 <p>Candy Shop is a cozy casual merge puzzle set in a sweet cartoon world. Players drop and combine candies into larger treats, growing from tiny sweets to a grand cake. The game focuses on satisfying physics, combos, special candies, varied containers and long-term progression without pay-to-win.</p>
                 <div class="feature-callout">Mobile edge: Suika-like drops grow into candy combos, special sweets, containers and long progression.</div>
-                <div class="game-tags" aria-label="Candy Shop genre edge">
+                <div class="game-tags">
                   <span class="tag">Mobile</span><span class="tag">Physics-based Merge</span><span class="tag">Suika-like</span><span class="tag">Cozy Puzzle</span><span class="tag">Candy Puzzle</span><span class="tag">Casual Arcade Puzzle</span><span class="tag">Combo Puzzle</span><span class="tag">Relaxing Mobile Puzzle</span>
                 </div>
                 <div class="game-actions">
                   <button class="btn btn-primary" data-game="candy" type="button">View Game</button>
+                  <a class="btn btn-ghost" href="games/candy-shop.html">Game Page</a>
                   <button class="btn btn-ghost" type="button" aria-disabled="true">Coming Soon</button>
                 </div>
               </div>
             </article>
 
-            <article id="paint-card" class="game-card paint-card" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
+            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters color destruction physics puzzle arcade" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
               <div class="game-cover paint-game-cover">
                 <div class="paint-stage" aria-hidden="true">
-                  <img class="paint-bg" src="assets/Paint%20Blasters/site/back.webp" alt="" loading="lazy" decoding="async">
+                  <img class="paint-bg" src="assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" loading="lazy" decoding="async">
                   <div class="paint-arena">
                     <div class="paint-cube-stack">
                       <span class="paint-cube paint-cube-a"></span>
@@ -241,13 +332,13 @@
                     <span class="paint-shard paint-shard-two"></span>
                     <span class="paint-shard paint-shard-three"></span>
                     <span class="paint-shard paint-shard-four"></span>
-                    <img class="paint-blaster" src="assets/Paint%20Blasters/site/blasters.webp" alt="" loading="lazy" decoding="async">
+                    <img class="paint-blaster" src="assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" loading="lazy" decoding="async">
                   </div>
-                  <img class="paint-module" src="assets/Paint%20Blasters/site/modul.webp" alt="" loading="lazy" decoding="async">
-                  <img class="paint-hero" src="assets/Paint%20Blasters/site/hero_blasters.webp" alt="" loading="lazy" decoding="async">
+                  <img class="paint-module" src="assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" loading="lazy" decoding="async">
+                  <img class="paint-hero" src="assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" loading="lazy" decoding="async">
                 </div>
-                <img class="paint-cover-icon" src="assets/Paint%20Blasters/site/picon1.webp" alt="" loading="eager" decoding="async">
-                <img class="paint-hover-icon" src="assets/Paint%20Blasters/site/picon2.webp" alt="" loading="eager" decoding="async">
+                <img class="paint-cover-icon" src="assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
+                <img class="paint-hover-icon" src="assets/Paint%20Blasters/site/picon2.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
                 <div class="cover-title">
                   <span>Physics Puzzle / Arcade Hybrid</span>
                   <h3>Paint Blasters</h3>
@@ -258,43 +349,44 @@
                   <span class="status-pill">In Production</span>
                   <span class="game-genre">Main genre: Physics Puzzle / Arcade Hybrid</span>
                 </div>
-                <div class="game-progress progress-80" aria-label="Paint Blasters progress 80 percent">
+                <div class="game-progress progress-80" role="group" aria-label="Paint Blasters progress 80 percent">
                   <div><strong>80%</strong><span>Production</span></div>
                   <span class="game-progress-track" aria-hidden="true"></span>
                 </div>
                 <p>Paint Blasters is a vibrant physics puzzle arcade about mixing colors and smashing blocks. Before every shot, players build a projectile from colors and charge types to unlock unique effects, combos and chain reactions. It blends precise aiming, tactical thinking, Match-3 logic and juicy arcade physics.</p>
                 <div class="feature-callout">Mobile edge: build a color shot before aiming, then turn destruction into tactical chain reactions.</div>
-                <div class="game-tags" aria-label="Paint Blasters genre edge">
+                <div class="game-tags">
                   <span class="tag">Mobile</span><span class="tag">Destruction Puzzle</span><span class="tag">Color Puzzle</span><span class="tag">Aim &amp; Shoot</span><span class="tag">Match-3 Inspired</span><span class="tag">Chain Reaction Puzzle</span><span class="tag">Tactical Puzzle Arcade</span>
                 </div>
                 <div class="game-actions">
                   <button class="btn btn-primary" data-game="paint" type="button">View Game</button>
+                  <a class="btn btn-ghost" href="games/paint-blasters.html">Game Page</a>
                   <button class="btn btn-ghost" data-open-contact type="button">Follow Development</button>
                 </div>
               </div>
             </article>
 
-            <article id="ball-card" class="game-card ball-card" data-tags="Arcade Hardcore Narrative Story Vertical Action Boss Dark Fantasy Mobile Skill-based One-Hit-Kill In Development Prototype">
+            <article id="ball-card" class="game-card ball-card" aria-label="Ball is God hardcore vertical descent arcade game" data-tags="Arcade Hardcore Narrative Story Vertical Action Boss Dark Fantasy Mobile Skill-based One-Hit-Kill In Development Prototype">
               <div class="game-cover ball-game-cover">
                 <div class="ball-stage" aria-hidden="true">
-                  <img class="ball-bg" src="assets/Ball%20is%20God/site/back.webp" alt="" loading="lazy" decoding="async">
+                  <img class="ball-bg" src="assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" loading="lazy" decoding="async">
                   <div class="ball-cloud-field">
-                    <img class="ball-cloud ball-cloud-1" src="assets/Ball%20is%20God/site/cloud-1.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-2" src="assets/Ball%20is%20God/site/cloud-2.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-3" src="assets/Ball%20is%20God/site/cloud-3.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-4" src="assets/Ball%20is%20God/site/cloud-4.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-5" src="assets/Ball%20is%20God/site/cloud-5.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-6" src="assets/Ball%20is%20God/site/cloud-6.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-7" src="assets/Ball%20is%20God/site/cloud-7.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-8" src="assets/Ball%20is%20God/site/cloud-8.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-9 is-reverse" src="assets/Ball%20is%20God/site/cloud-9.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-10 is-reverse" src="assets/Ball%20is%20God/site/cloud-10.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-11 is-reverse" src="assets/Ball%20is%20God/site/cloud-11.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-12 is-reverse" src="assets/Ball%20is%20God/site/cloud-12.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-13 is-reverse" src="assets/Ball%20is%20God/site/cloud-13.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-14 is-reverse" src="assets/Ball%20is%20God/site/cloud-14.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-15 is-reverse" src="assets/Ball%20is%20God/site/cloud-15.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-cloud ball-cloud-16 is-reverse" src="assets/Ball%20is%20God/site/cloud-16.webp" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-1" src="assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-2" src="assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-3" src="assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="162" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-4" src="assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-5" src="assets/Ball%20is%20God/site/cloud-5.webp" width="460" height="184" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-6" src="assets/Ball%20is%20God/site/cloud-6.webp" width="460" height="167" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-7" src="assets/Ball%20is%20God/site/cloud-7.webp" width="460" height="168" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-8" src="assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-9 is-reverse" src="assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-10 is-reverse" src="assets/Ball%20is%20God/site/cloud-10.webp" width="460" height="179" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-11 is-reverse" src="assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-12 is-reverse" src="assets/Ball%20is%20God/site/cloud-12.webp" width="460" height="159" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-13 is-reverse" src="assets/Ball%20is%20God/site/cloud-13.webp" width="460" height="155" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-14 is-reverse" src="assets/Ball%20is%20God/site/cloud-14.webp" width="460" height="153" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-15 is-reverse" src="assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-16 is-reverse" src="assets/Ball%20is%20God/site/cloud-16.webp" width="460" height="156" alt="" loading="lazy" decoding="async">
                   </div>
                   <div class="ball-tower">
                     <span class="ball-vine ball-vine-one"></span>
@@ -313,12 +405,12 @@
                     <span class="ball-platform ball-platform-f"><i></i></span>
                   </div>
                   <div class="ball-espa-wrap">
-                    <img class="ball-espa ball-espa-base" src="assets/Ball%20is%20God/site/espa.webp" alt="" loading="lazy" decoding="async">
-                    <img class="ball-espa ball-espa-alt" src="assets/Ball%20is%20God/site/espa1.webp" alt="" loading="lazy" decoding="async">
+                    <img class="ball-espa ball-espa-base" src="assets/Ball%20is%20God/site/espa.webp" width="520" height="285" alt="" loading="lazy" decoding="async">
+                    <img class="ball-espa ball-espa-alt" src="assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" loading="lazy" decoding="async">
                   </div>
                 </div>
-                <img class="ball-cover-icon" src="assets/Ball%20is%20God/site/icon1.webp" alt="" loading="eager" decoding="async">
-                <img class="ball-hover-icon" src="assets/Ball%20is%20God/site/icon2.webp" alt="" loading="eager" decoding="async">
+                <img class="ball-cover-icon" src="assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
+                <img class="ball-hover-icon" src="assets/Ball%20is%20God/site/icon2.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
                 <div class="cover-title">
                   <span>Vertical Descent Arcade</span>
                   <h3>Ball is God?!</h3>
@@ -329,17 +421,18 @@
                   <span class="status-pill">In Development</span>
                   <span class="game-genre">Main genre: Hardcore Arcade</span>
                 </div>
-                <div class="game-progress progress-70" aria-label="Ball is God progress 70 percent">
+                <div class="game-progress progress-70" role="group" aria-label="Ball is God progress 70 percent">
                   <div><strong>70%</strong><span>Development</span></div>
                   <span class="game-progress-track" aria-hidden="true"></span>
                 </div>
                 <p>Ball is God?! is a vertical arcade descent about guiding Espa down a divine tower, slipping through gaps between broken olympic stones and surviving every landing. It keeps the one-hit-kill tension, but frames it with flying clouds, boss-like moments, moral choices and worlds that can change around the player.</p>
                 <div class="feature-callout">Mobile edge: fast downward jumps through stone gaps become a tense one-touch vertical descent.</div>
-                <div class="game-tags" aria-label="Ball is God genre edge">
+                <div class="game-tags">
                   <span class="tag">Mobile</span><span class="tag">Narrative Arcade</span><span class="tag">Vertical Action</span><span class="tag">One-Hit-Kill</span><span class="tag">Boss Rush</span><span class="tag">Dark Fantasy</span><span class="tag">Story-driven</span><span class="tag">Moral Choice Game</span>
                 </div>
                 <div class="game-actions">
                   <button class="btn btn-primary" data-game="ball" type="button">View Game</button>
+                  <a class="btn btn-ghost" href="games/ball-is-god.html">Game Page</a>
                   <button class="btn btn-ghost" data-open-contact type="button">Follow Development</button>
                 </div>
               </div>
@@ -471,51 +564,40 @@
         </div>
       </section>
 
-      <section class="section" id="careers">
-        <div class="container">
-          <div class="careers">
-            <div class="eyebrow">Careers / Collaboration</div>
-            <h2 class="section-title">Want to build magical games with us?</h2>
-            <p class="section-copy">We are open to thoughtful collaborators who care about feel, identity and player-first production.</p>
-            <div class="roles">
-              <span class="tag">2D artists</span>
-              <span class="tag">Unity developers</span>
-              <span class="tag">Game designers</span>
-              <span class="tag">Animators</span>
-              <span class="tag">Sound designers</span>
-              <span class="tag">Publishers</span>
-              <span class="tag">Partners</span>
-            </div>
-            <div class="cta-row">
-              <button class="btn btn-primary" data-open-contact>Work with us</button>
-              <button class="btn btn-ghost" data-open-contact>Send portfolio</button>
-              <button class="btn btn-ghost" data-open-contact>Become a partner</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="notes">
+      <section class="section" id="devlog">
         <div class="container">
           <div class="section-head">
             <div>
-              <div class="eyebrow">Studio Notes</div>
-              <h2 class="section-title">Tiny principles we keep returning to.</h2>
+              <div class="eyebrow">Game Devlogs</div>
+              <h2 class="section-title">Updates live inside each game world.</h2>
             </div>
+            <p class="section-copy">The homepage shows the latest note from each project. Full "what changed and when" logs now live on the individual game pages.</p>
           </div>
 
-          <div class="quotes-grid">
-            <article class="quote-card">
-              <blockquote>"Every interaction should feel like a tiny spell."</blockquote>
-              <p>Interaction note</p>
+          <div class="devlog-grid">
+            <article class="devlog-card">
+              <span>Nature Seed · May 2026</span>
+              <h3>Beta polish log</h3>
+              <p>Water readability, level flow and restoration feedback are getting the final tactile pass before beta conversations.</p>
+              <a class="btn btn-ghost" href="games/nature-seed.html#devlog">Open Devlog</a>
             </article>
-            <article class="quote-card">
-              <blockquote>"Cute does not mean shallow."</blockquote>
-              <p>Design note</p>
+            <article class="devlog-card">
+              <span>Candy Shop · May 2026</span>
+              <h3>Merge experiments</h3>
+              <p>We are testing candy sizes, container pressure and combo feedback so each merge feels soft, readable and satisfying.</p>
+              <a class="btn btn-ghost" href="games/candy-shop.html#devlog">Open Devlog</a>
             </article>
-            <article class="quote-card">
-              <blockquote>"A good mechanic should be readable before it becomes deep."</blockquote>
-              <p>Gameplay note</p>
+            <article class="devlog-card">
+              <span>Paint Blasters · April 2026</span>
+              <h3>Color logic pass</h3>
+              <p>Projectile colors and charge types are being tuned around chain reactions that players can predict at a glance.</p>
+              <a class="btn btn-ghost" href="games/paint-blasters.html#devlog">Open Devlog</a>
+            </article>
+            <article class="devlog-card">
+              <span>Ball is God?! · April 2026</span>
+              <h3>Descent readability</h3>
+              <p>Stone gaps, cloud layers and character silhouette checks are being tuned so the one-touch descent stays readable.</p>
+              <a class="btn btn-ghost" href="games/ball-is-god.html#devlog">Open Devlog</a>
             </article>
           </div>
         </div>
@@ -532,31 +614,31 @@
 
           <div class="faq-list">
             <article class="faq-item">
-              <button class="faq-question" aria-expanded="false">What kind of games does WillowinWorld make?<span class="faq-icon" aria-hidden="true"></span></button>
+              <button class="faq-question" type="button" aria-expanded="false">What kind of games does WillowinWorld make?<span class="faq-icon" aria-hidden="true"></span></button>
               <div class="faq-answer"><div><p>We make mobile-first games with tactile systems, cozy fantasy identity, physics-driven moments, polished UI and characters that feel alive.</p></div></div>
             </article>
             <article class="faq-item">
-              <button class="faq-question" aria-expanded="false">Can I disable animations?<span class="faq-icon" aria-hidden="true"></span></button>
+              <button class="faq-question" type="button" aria-expanded="false">Can I disable animations?<span class="faq-icon" aria-hidden="true"></span></button>
               <div class="faq-answer"><div><p>Yes. The site respects reduced motion and Save-Data settings, lowers effects for slower connections and pauses its scene when the tab is hidden.</p></div></div>
             </article>
             <article class="faq-item">
-              <button class="faq-question" aria-expanded="false">Does the site follow my day or night theme?<span class="faq-icon" aria-hidden="true"></span></button>
+              <button class="faq-question" type="button" aria-expanded="false">Does the site follow my day or night theme?<span class="faq-icon" aria-hidden="true"></span></button>
               <div class="faq-answer"><div><p>Yes. It starts from the browser color preference and keeps the theme switch available in the header.</p></div></div>
             </article>
             <article class="faq-item">
-              <button class="faq-question" aria-expanded="false">Do you work with publishers?<span class="faq-icon" aria-hidden="true"></span></button>
+              <button class="faq-question" type="button" aria-expanded="false">Do you work with publishers?<span class="faq-icon" aria-hidden="true"></span></button>
               <div class="faq-answer"><div><p>Yes. We are open to publisher conversations around production, platform strategy, UA, live operations and long-term game growth.</p></div></div>
             </article>
             <article class="faq-item">
-              <button class="faq-question" aria-expanded="false">Are your games mobile-first?<span class="faq-icon" aria-hidden="true"></span></button>
+              <button class="faq-question" type="button" aria-expanded="false">Are your games mobile-first?<span class="faq-icon" aria-hidden="true"></span></button>
               <div class="faq-answer"><div><p>Yes. We design around mobile input, session length, screen clarity and performance from the first prototype.</p></div></div>
             </article>
             <article class="faq-item">
-              <button class="faq-question" aria-expanded="false">Can I send a portfolio?<span class="faq-icon" aria-hidden="true"></span></button>
-              <div class="faq-answer"><div><p>Yes. Artists, Unity developers, designers, animators and audio collaborators can use the contact form placeholder on this page.</p></div></div>
+              <button class="faq-question" type="button" aria-expanded="false">Can I send a portfolio?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Yes. Artists, Unity developers, designers, animators and audio collaborators can contact us at hello@willowinworld.com with a focused portfolio link and role context.</p></div></div>
             </article>
             <article class="faq-item">
-              <button class="faq-question" aria-expanded="false">Can I collaborate with the studio?<span class="faq-icon" aria-hidden="true"></span></button>
+              <button class="faq-question" type="button" aria-expanded="false">Can I collaborate with the studio?<span class="faq-icon" aria-hidden="true"></span></button>
               <div class="faq-answer"><div><p>We are open to focused collaborations that match the studio tone: premium, tactile, magical and production-minded.</p></div></div>
             </article>
           </div>
@@ -570,7 +652,7 @@
           <p class="section-copy">Explore the current worlds or contact WillowinWorld for collaboration.</p>
           <div class="cta-row">
             <a class="btn btn-primary" href="#games">Explore Games</a>
-            <button class="btn btn-ghost" data-open-contact>Contact WillowinWorld</button>
+            <button class="btn btn-ghost" data-open-contact type="button">Contact WillowinWorld</button>
           </div>
         </div>
       </section>
@@ -589,35 +671,37 @@
         <nav class="footer-links" aria-label="Footer navigation">
           <a href="#games">Games</a>
           <a href="#studio">Studio</a>
-          <a href="#careers">Careers</a>
+          <a href="#devlog">Devlog</a>
           <a href="#contact">Contact</a>
         </nav>
         <div class="footer-contact">
-          <span>hello@willowinworld.com</span>
-          <span>Telegram placeholder</span>
-          <span>Discord placeholder</span>
-          <span>X/Twitter placeholder</span>
+          <a href="mailto:hello@willowinworld.com">hello@willowinworld.com</a>
+          <a href="mailto:hello@willowinworld.com?subject=Nature%20Seed%20Beta%20Access">Nature Seed beta</a>
+          <a href="mailto:hello@willowinworld.com?subject=Press%20kit%20request">Press kit</a>
+          <a href="mailto:hello@willowinworld.com?subject=Publisher%20inquiry">Publisher contact</a>
+          <button class="footer-action" type="button" data-open-info="careers">Careers / Collaboration</button>
+          <button class="footer-action" type="button" data-open-info="press">Press / Publishers</button>
         </div>
         <div class="copyright">© 2026 WillowinWorld. All rights reserved.</div>
       </div>
     </footer>
   </div>
 
-  <div class="modal" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+  <div class="modal" id="contactModal" hidden role="dialog" aria-modal="true" aria-labelledby="contactTitle">
     <div class="modal-dialog">
       <div class="modal-head">
         <div>
           <h2 id="contactTitle">Contact WillowinWorld</h2>
-          <p>Decorative form placeholder for studio inquiries.</p>
+          <p>This prepares an email to hello@willowinworld.com, so inquiries do not disappear into a decorative form.</p>
         </div>
-        <button class="icon-btn" id="closeContact" aria-label="Close contact form">
+        <button class="icon-btn" id="closeContact" type="button" aria-label="Close contact form">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
       </div>
       <form class="contact-form" id="contactForm">
         <div class="field">
           <label for="name">Name</label>
-          <input id="name" name="name" autocomplete="name" maxlength="80" required placeholder="Your name">
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Your name">
         </div>
         <div class="field">
           <label for="email">Email</label>
@@ -626,11 +710,11 @@
         <div class="field">
           <label for="type">Inquiry type</label>
           <select id="type" name="type">
-            <option>Portfolio</option>
-            <option>Publishing</option>
-            <option>Partnership</option>
-            <option>Press</option>
-            <option>General</option>
+            <option value="Portfolio">Portfolio</option>
+            <option value="Publishing">Publishing</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Press">Press</option>
+            <option value="General">General</option>
           </select>
         </div>
         <div class="field">
@@ -642,7 +726,74 @@
     </div>
   </div>
 
-  <div class="modal" id="gameModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
+  <div class="modal" id="careersModal" hidden role="dialog" aria-modal="true" aria-labelledby="careersTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Careers / Collaboration</div>
+          <h2 id="careersTitle">Want to build magical games with us?</h2>
+          <p>We are open to thoughtful collaborators who care about feel, identity and player-first production.</p>
+        </div>
+        <button class="icon-btn" id="closeCareers" type="button" aria-label="Close careers and collaboration details">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-card">
+        <h3>Open roles and collaboration tracks</h3>
+        <div class="roles">
+          <span class="tag">2D artists</span>
+          <span class="tag">Unity developers</span>
+          <span class="tag">Game designers</span>
+          <span class="tag">Animators</span>
+          <span class="tag">Sound designers</span>
+          <span class="tag">Publishers</span>
+          <span class="tag">Partners</span>
+        </div>
+        <p>Send a focused portfolio link, role, availability and the WillowinWorld game or style area you feel closest to.</p>
+      </div>
+      <div class="info-actions">
+        <button class="btn btn-primary" data-open-contact type="button">Open Contact Form</button>
+        <a class="btn btn-ghost" href="mailto:hello@willowinworld.com?subject=Portfolio%20or%20collaboration%20for%20WillowinWorld">Send Portfolio</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="pressModal" hidden role="dialog" aria-modal="true" aria-labelledby="pressTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Press / Publishers</div>
+          <h2 id="pressTitle">Compact studio facts for partners.</h2>
+          <p>WillowinWorld is building tactile mobile-first games with cozy fantasy art direction, readable systems and strong feel.</p>
+        </div>
+        <button class="icon-btn" id="closePress" type="button" aria-label="Close press and publisher details">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Studio pitch</h3>
+          <p>The current portfolio covers draw-to-solve physics, candy merge puzzles, color destruction and vertical arcade descent.</p>
+          <p>The studio focus is mobile-first feel, strong silhouettes, premium 2D identity and mechanics that players understand through motion.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Factsheet</h3>
+          <dl>
+            <div><dt>Studio</dt><dd>WillowinWorld</dd></div>
+            <div><dt>Focus</dt><dd>Mobile-first puzzle and arcade games</dd></div>
+            <div><dt>Flagship</dt><dd>Nature Seed</dd></div>
+            <div><dt>Contact</dt><dd><a href="mailto:hello@willowinworld.com">hello@willowinworld.com</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="mailto:hello@willowinworld.com?subject=Press%20kit%20request">Request Press Kit</a>
+        <a class="btn btn-ghost" href="mailto:hello@willowinworld.com?subject=Publisher%20inquiry">Publisher Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="gameModal" hidden role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
     <div class="modal-dialog game-dialog" id="gameDialog">
       <div class="game-dialog-cover" id="gameDialogCover" aria-hidden="true">
         <span class="game-dialog-status status-pill" id="gameModalStatus"></span>
@@ -653,14 +804,14 @@
           <div class="eyebrow" id="gameModalGenre">Game world</div>
           <h2 id="gameModalTitle">WillowinWorld game</h2>
         </div>
-        <button class="icon-btn" id="closeGame" aria-label="Close game details">
+        <button class="icon-btn" id="closeGame" type="button" aria-label="Close game details">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
       </div>
       <div class="game-dialog-grid">
         <div>
           <p class="game-dialog-copy" id="gameModalCopy"></p>
-          <div class="game-detail-tags" id="gameModalTags" aria-label="Game focus tags"></div>
+          <ul class="game-detail-tags" id="gameModalTags"></ul>
         </div>
         <div class="game-pillar-panel">
           <h3>Gameplay pillars</h3>
@@ -674,20 +825,20 @@
     </div>
   </div>
 
-  <div class="modal" id="secretModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+  <div class="modal" id="secretModal" hidden role="dialog" aria-modal="true" aria-labelledby="secretTitle">
     <div class="modal-dialog secret-dialog">
       <div class="modal-head">
         <div>
           <div class="eyebrow">A hidden portal opened</div>
           <h2 id="secretTitle">Secret found</h2>
         </div>
-        <button class="icon-btn" id="closeSecret" aria-label="Close secret reward">
+        <button class="icon-btn" id="closeSecret" type="button" aria-label="Close secret reward">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         </button>
       </div>
       <p id="secretMessage"></p>
       <div class="secret-actions">
-        <button class="btn btn-ghost" id="dismissSecret">Close Portal</button>
+        <button class="btn btn-ghost" id="dismissSecret" type="button">Close Portal</button>
       </div>
     </div>
   </div>
