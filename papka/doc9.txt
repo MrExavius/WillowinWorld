@@ -1,0 +1,1200 @@
+1. Краткий вердикт по сайту
+Направление  Оценка 
+ 
+Дизайн       8.4/10 
+UX           7.8/10 
+Frontend     8.2/10 
+Performance  6.9/10 
+Mobile       7.5/10 
+Branding     8.8/10 
+Security     8.6/10 
+Woweffect   9.1/10 
+Сайт уже сильно выше среднего уровня indie/gameстудий.
+Есть собственная атмосфера, визуальный язык, системность и характер.
+Главная проблема:
+сайт сейчас ближе к “очень талантливому артпортфолио”, чем к productionready сайту игровой студии уровня premiumbrand.
+2. Главные проблемы
+1. Перегруз визуального слоя
+Hero + animated cards + particles + floating effects + gradients + motion одновременно создают перегруз.
+Сейчас:
+сайт впечатляет первые 15 секунд;
+потом начинает утомлять.
+Нужен stronger contrast between:
+“тихими” зонами;
+“магическими” зонами.
+2. Нет визуальной доминанты бренда
+Есть:
+магия;
+cozy;
+premium;
+fantasy.
+Но нет:
+одного сильного фирменного символа,
+который мгновенно ассоциируется с WillowinWorld.
+Сейчас бренд распадается на:
+кота,
+WW,
+порталы,
+Nature Seed,
+candy,
+particles.
+Нужен единый “brand anchor”.
+3. Карточки игр слишком тяжелые
+Каждая карточка:
+minigame,
+motionscene,
+layered rendering system.
+Это дорого по:
+GPU;
+memory;
+battery;
+mobile FPS.
+Особенно:
+Ball is God
+Candy Shop
+Nature Seed
+4. Слишком много текста
+Для игровой студии:
+текста на сайте очень много;
+cognitive load высокий.
+Игроки и издатели:
+сканируют;
+не читают длинные блоки.
+5. Слабая productionструктура
+Не хватает:
+press kit;
+media section;
+Steam/App Store links;
+trailer/video block;
+newsletter;
+devlog;
+studio metrics;
+team credibility;
+awards/social proof.
+6. Performancerisk на мобильных
+Опасные зоны:
+massive DOM;
+layered transforms;
+blur;
+opacity animations;
+many absolutepositioned assets;
+multiple animated clouds;
+canvas + DOM animations simultaneously.
+На слабых Android:
+FPS будет проседать.
+3. Что уже хорошо
+Очень сильные стороны
+1. Есть атмосфера
+Это не generic startupsite.
+У сайта:
+душа;
+авторский tone;
+узнаваемый мир.
+Это огромный плюс.
+2. Отличный artdirection
+Особенно:
+Nature Seed;
+Ball is God;
+soft premium fantasy palette.
+Сайт ощущается как:
+“indie Nintendo + premium mobile studio”.
+3. Очень сильный branding potential
+Название:
+WillowinWorld
+Запоминается.
+Особенно:
+повтор W;
+ритм;
+сказочное звучание.
+4. Хорошая securityбаза
+У тебя уже есть:
+CSP;
+HSTS;
+COOP;
+CORP;
+XFrame;
+Permissions Policy.
+Для indieсайта это сильно выше среднего. 
+5. Хороший frontend mindset
+Видно:
+архитектурное мышление;
+mobilefirst awareness;
+reduced motion;
+adaptive particles;
+lazy loading;
+accessibility attempts.
+Это очень хороший фундамент.
+4. Подробный аудит
+DESIGN / ART DIRECTION
+Что работает
+Hero
+Herosection сильный:
+сразу понятен tone;
+premium fantasy;
+tactile magic.
+Особенно хорошо:
+живой preview Nature Seed;
+layered composition;
+watercolor/ecology mood.
+Что портит premiumfeel
+1. Слишком много “игровых” деталей одновременно
+Premium = restraint.
+Сейчас:
+почти каждая секция пытается удивить.
+Изза этого:
+пропадает hierarchy.
+2. Цвета местами слишком “детские”
+Особенно:
+candy section;
+bright cyan;
+saturated purple.
+Нужно:
+больше cinematic gradients;
+больше atmospheric fog;
+меньше чистых цветов.
+3. Не хватает “тишины”
+Лучшие premium gaming сайты:
+Riot Forge;
+Supercell;
+Playdead;
+Thatgamecompany;
+Annapurna;
+ustwo games.
+Используют:
+пустоту;
+воздух;
+pacing.
+У тебя почти нет спокойных зон.
+Что улучшить
+Визуальная стратегия
+Раздели сайт на:
+Calm zones;
+Magic zones;
+Showcase zones;
+Interaction zones.
+Сделай одну “signature magic”
+Например:
+“portal arc”.
+Пусть:
+курсор,
+hover,
+transitions,
+modal,
+logo,
+particles
+используют одну форму.
+Тогда бренд станет цельным.
+UX AUDIT
+Проблемы
+1. Слишком длинный landing
+Много:
+cards;
+philosophy;
+systems;
+process;
+notes;
+FAQ.
+Пользователь устает.
+2. CTA размазаны
+Сейчас:
+слишком много одинаковых кнопок.
+Нужна primary conversion:
+Wishlist;
+Contact;
+Join Discord;
+Publisher deck.
+3. Игры не имеют hierarchy
+Все игры подаются одинаково.
+Но:
+Nature Seed = flagship.
+Это должно чувствоваться.
+Улучшенная структура
+Идеальная структура
+1. Hero
+2. Featured flagship game
+3. Other worlds
+4. Interactive magic block
+5. Studio philosophy
+6. Trailer/video
+7. Devlog/news
+8. Careers/partnership
+9. Contact/footer
+FRONTEND / CODE QUALITY
+Хорошо
+Есть:
+semantic sections;
+aria;
+lazy loading;
+structured layout;
+reusable patterns.
+Проблемы
+1. Огромный DOM
+Особенно:
+clouds;
+candy layers;
+particles;
+decorative spans.
+DOM станет bottleneck.
+2. Слишком много абсолютных элементов
+Это:
+paint shards;
+clouds;
+particles;
+floating objects.
+Плохо для:
+compositing;
+paint performance.
+3. Один gigantic scripts.js
+Сейчас:
+logic;
+rendering;
+UI;
+modal;
+particles;
+interaction;
+secrets
+в одном файле.
+Это не масштабируется.
+Что сделать
+Разделить:
+animationengine.js
+ui.js
+modalsystem.js
+particles.js
+gamedata.js
+performancemanager.js
+accessibility.js
+Перейти на:
+Vite;
+TypeScript;
+component architecture;
+CSS layers;
+design tokens.
+Ввести:
+CSS custom properties system;
+spacing scale;
+animation timing system;
+zindex architecture.
+PERFORMANCE AUDIT
+Самые опасные места
+1. Canvas + DOM animation одновременно
+Очень дорого.
+Особенно:
+mobile GPU;
+Safari iOS.
+2. Огромное количество WebP
+Даже WebP:
+если layered simultaneously
+memory pressure высокий.
+3. Blur и opacity
+Если используются:
+backdropfilter;
+heavy shadow blur;
+glowing effects
+будет GPU thrashing.
+Что делать
+Обязательно
+intersectionbased animation pause;
+pause offscreen scenes;
+adaptive particle budgets;
+sprite atlas;
+reduce layered alpha;
+compress textures aggressively.
+Production targets
+Mobile:
+55–60 FPS
+< 180 MB memory
+< 2.5 sec LCP
+< 0.1 CLS
+MOTION DESIGN
+Сильные стороны
+Уже есть:
+ощущение живого мира;
+ambient motion;
+cozy animation language.
+Это редкость.
+Лучшие идеи
+1. Portal transition
+При открытии modal:
+мир “раскрывается”.
+Не обычный fade.
+2. Cursor magic trail
+Но:
+canvas only.
+НЕ DOM particles.
+3. Hidden constellation system
+Игрок соединяет звезды
+открывает lore/art.
+Очень подходит бренду.
+4. Living footer
+В footer:
+sleeping cat;
+breathing particles;
+moon cycle.
+Что НЕ делать
+full WebGL everywhere;
+excessive parallax;
+too many floating particles;
+constant motion.
+Иначе сайт станет:
+“laggy indie experiment”.
+BRANDING
+Очень сильный потенциал
+Название:
+WillowinWorld
+Очень хорошее.
+Но нужен stronger identity system
+Сейчас бренд:
+“magical indie studio”.
+Должен стать:
+“the studio where interactions feel alive”.
+Слоган
+Текущий хороший, но не iconic.
+Лучше:
+“Worlds that respond.”
+“Every touch becomes magic.”
+“Playable worlds with soul.”
+“Living interactions.”
+“Worlds you can feel.”
+Символ
+Лучший вариант:
+twinW portal sigil.
+Не кот.
+Кот = secondary mascot.
+SECURITY AUDIT
+Очень хорошо
+У тебя уже есть strong headers. 
+Это сильно.
+Проблемы
+1. CSP слишком restrictive
+Сейчас:
+connectsrc 'none'
+formaction 'none'
+fontsrc 'none'
+Это сломает:
+analytics;
+forms;
+external APIs;
+Discord widgets;
+CDN fonts.
+2. Нет rate limiting
+Если появится backend:
+формы будут спамить.
+3. Нет antibot layer
+Нужны:
+Turnstile;
+hCaptcha;
+honeypot.
+4. localStorage theme
+Низкий риск.
+Но:
+в будущем не хранить sensitive data.
+5. Thirdparty risk
+Если подключишь:
+analytics;
+Discord embeds;
+YouTube;
+shaders;
+npm animation libs
+attack surface резко вырастет.
+Production security checklist
+Обязательно
+CSP nonce strategy;
+SRI hashes;
+dependency audit;
+npm lockfile review;
+Cloudflare WAF;
+rate limiting;
+bot protection;
+secret scanning;
+CI security pipeline.
+ЗАЩИТА ОТ КОПИРОВАНИЯ
+Реально полезно
+Полезно
+preview assets only;
+compressed promo art;
+watermark hidden layers;
+obfuscation;
+no raw PSD/FBX;
+signed CDN URLs;
+hotlink protection;
+DMCA/contact.
+Частично полезно
+disable right click;
+disable selection;
+antidevtools tricks.
+Обходятся за секунды.
+Бесполезно
+“невозможно скачать сайт”;
+encrypted frontend assets;
+JS anticopy gimmicks.
+Frontend всегда доступен клиенту.
+MOBILEFIRST AUDIT
+Главная проблема
+Desktopfirst visual density.
+На мобильном:
+слишком много элементов;
+слишком много layers;
+слишком много motion.
+Что улучшить
+Hero
+Сделать:
+70–80vh;
+меньше текста;
+1 CTA;
+1 flagship visual.
+Cards
+На телефоне:
+static preview first;
+motion only on tap.
+Motion
+Mobile:
+50% motion reduction by default.
+Navigation
+Сейчас нормально.
+Но:
+menu transition должен быть быстрее.
+5. Таблица проблем
+Проблема                    Почему плохо          Критичность  Исправление                 Приоритет 
+  
+Слишком тяжелые карточки    FPS drops             Высокая      Canvas/sprite optimization  P0        
+Нет flagship hierarchy      Бренд размывается     Высокая      Nature Seed как core focus  P0        
+Huge scripts.js             Плохо масштабируется  Высокая      Modular architecture        P0        
+Слишком много motion        User fatigue          Высокая      Motion pacing system        P1        
+Большой DOM                 Mobile lag            Высокая      DOM reduction               P1        
+Нет social proof            Меньше доверия        Средняя      press/devlog/store links    P1        
+Слишком много текста        Cognitive overload    Средняя      Reduce copy by 35–45%       P1        
+Нет adaptive visual levels  Weak devices suffer   Высокая      Quality manager             P0        
+Нет backend protection      Spam risk             Высокая      Rate limiting + captcha     P0        
+Нет visual silence          Premium feel падает   Средняя      More negative space         P2        
+6. Productionready рекомендации
+Перед релизом обязательно
+Tech
+Lighthouse 90+
+mobile FPS profiling
+Safari testing
+Android lowend testing
+memory profiling
+Security
+Cloudflare
+WAF
+rate limiting
+dependency audit
+CSP refinement
+UX
+сократить сайт на 25–35%;
+усилить flagship game;
+добавить trailer/video;
+добавить social proof.
+Branding
+unified magic language;
+signature symbol;
+stronger portal identity.
+7. Идеи для улучшения WillowinWorld
+1. Portalbased transitions
+2. Living moon/day cycle
+3. Hidden constellation easter eggs
+4. Interactive lore particles
+5. Responsive magical cursor
+6. Tiny playable miniscene
+7. Ambient soundtrack toggle
+8. Dynamic weather system
+9. Adaptive music by scroll section
+10. Living mascot in footer
+11. Scrollreactive magic trails
+12. Story fragments unlock
+13. Collectible hidden sigils
+14. Interactive “seed growth” homepage state
+15. Procedural stars background
+16. Seasonal visual themes
+17. Personalized welcome effects
+18. Animated studio timeline
+19. Live development map
+20. Interactive worldmap navigation
+8. Финальная концепция идеального WillowinWorld
+Атмосфера
+Сайт ощущается как:
+живой magical artifact;
+premium indie world;
+playable fantasy interface.
+Не “website”.
+А “portal”.
+Визуальный стиль
+Смешение:
+watercolor fantasy;
+premium Nintendo polish;
+atmospheric minimalism;
+tactile mobile UI.
+Структура
+1. Cinematic hero
+2. Flagship world
+3. Other worlds
+4. Interactive portal section
+5. Studio philosophy
+6. Trailer/devlog
+7. Partnership/careers
+8. Footer world
+Motion
+Анимации:
+медленные;
+физические;
+мягкие;
+responsive.
+Не “tech startup motion”.
+А “living world motion”.
+Техническая база
+Vite
+TypeScript
+Motion system
+WebGL only where needed
+adaptive quality manager
+asset streaming
+component architecture
+strict performance budgets
+Безопасность
+strict CSP
+Cloudflare WAF
+SRI
+rate limiting
+bot protection
+dependency scanning
+secure CI/CD
+secrets outside frontend
+hardened headers
+Финальное ощущение
+Идеальный WillowinWorld должен вызывать чувство:
+“Я не просто открыл сайт студии.
+Я вошёл в её мир.”
+Глубокие скрытые проблемы
+1. Сайт конкурирует сам с собой
+Это самая опасная проблема.
+Сейчас:
+Nature Seed хочет быть атмосферной;
+Candy Shop хочет быть juicy;
+Paint Blasters хочет быть arcadechaos;
+Ball is God хочет быть dark myth.
+В результате:
+бренд WillowinWorld иногда исчезает между стилями игр.
+Что нужно
+Нужен:
+“master visual layer”.
+То есть:
+независимо от игры
+сайт должен ощущаться одним миром.
+Как это сделать
+Единые элементы:
+один тип glow;
+один тип particle;
+одна форма UI;
+единая геометрия углов;
+одинаковый motion language;
+один “portal arc” motif;
+один тип света.
+2. Сейчас сайт больше “conceptart site”, чем “real studio”
+Это чувствуется.
+Очень красиво.
+Но:
+не хватает production reality.
+Не хватает:
+1. Реальных сигналов разработки
+Добавить:
+changelog;
+dev snapshots;
+technical breakdowns;
+animation tests;
+gameplay GIFs;
+“currently building”.
+2. Studio credibility
+Сейчас:
+много атмосферы,
+мало доверия.
+Нужно:
+pipeline;
+tools;
+production values;
+optimization philosophy;
+platform goals.
+3. Настоящих игровых кадров
+Некоторые сцены ощущаются как:
+“website illustration”.
+Нужны:
+реальные gameplay loops;
+UI overlays;
+touch interactions;
+progression screens.
+3. Нет ощущения “живого времени”
+Очень важная проблема.
+Сайт красивый,
+но статичный по времени.
+У premium gamesites есть:
+события;
+сезонность;
+livefeel;
+ощущение движения студии.
+Добавить
+Dynamic studio state
+Например:
+“Currently growing Nature Seed forest system”
+или:
+“Today’s magical build:
+water routing improvements”
+Мини liveсистема
+Может быть:
+rotating dev thoughts;
+tiny update ticker;
+procedural ambient messages.
+4. Hero слишком рано раскрывает всё
+Сейчас:
+hero сразу показывает:
+атмосферу;
+анимацию;
+систему;
+игру;
+эффекты.
+Это уменьшает ощущение discovery.
+Лучше
+Hero должен:
+интриговать;
+а не полностью раскрывать.
+Правильная структура
+Первый экран:
+тишина;
+огромный символ;
+медленная магия;
+одна сильная фраза.
+Только потом:
+игры и showcase.
+5. Нет “момента легенды”
+У лучших игровых брендов есть:
+один легендарный момент.
+Например:
+Riot login;
+Blizzard gates;
+Nintendo polish;
+Playdead silence.
+WillowinWorld нужен свой ritual moment
+Например:
+Portal bloom
+Когда пользователь впервые заходит:
+WW раскрывается;
+появляется arc;
+particles собираются;
+мир “просыпается”.
+И это происходит один раз.
+Это резко усилит memorability.
+6. Проблема layer chaos
+У тебя очень много:
+absolute layers;
+decorative spans;
+transforms;
+zindex stacks.
+Это уже neardanger zone.
+Почему это опасно
+Через 6–12 месяцев:
+сайт станет неуправляемым;
+сломается stacking;
+появятся ghost bugs;
+hover conflicts;
+mobile repaint hell.
+Нужна система слоёв
+Прям production architecture:
+css
+zbase
+zscene
+zeffects
+zui
+zoverlay
+zmodal
+zcritical
+7. Сайт почти просит WebGL но это ловушка
+Очень важно.
+У тебя визуальный стиль уже близко к:
+Three.js;
+shaders;
+WebGL portals.
+НО.
+Главная ошибка gamesites
+Они начинают:
+делать full WebGL;
+перегружают GPU;
+убивают mobile.
+Для WillowinWorld
+Правильный путь:
+90% CSS + Canvas;
+10% selective WebGL.
+Где WebGL допустим
+Только:
+portal scene;
+hidden ritual;
+one premium transition.
+НЕ ВЕСЬ САЙТ.
+8. Не хватает аудиоидентики
+Очень сильная недооценённая зона.
+Можно добавить:
+ultrasoft ambient audio
+Но:
+optin only;
+muted by default.
+Например
+При hover:
+tiny magical chime;
+soft watercolor splash;
+distant wind.
+Это резко усилит:
+memory imprint.
+9. Нужен “studio operating system”
+Сейчас сайт:
+страница.
+Должен стать:
+системой.
+Добавить
+Studio console
+Например:
+active projects;
+world states;
+current builds;
+roadmap stars;
+live progress seeds.
+Тогда бренд станет:
+“living game ecosystem”.
+10. Сейчас сайт не использует глубину scrollspace
+Очень важная проблема.
+Все секции:
+примерно одинаковой глубины.
+Нужно:
+Rhythm design
+Чередование:
+dense;
+calm;
+interactive;
+cinematic;
+minimal;
+magical.
+Иначе мозг устает
+Даже от красивого сайта.
+11. Accessibility скрыто проседает
+Несмотря на aria.
+Потенциальные проблемы
+1. Motion sensitivity
+Даже reduced motion:
+может быть слишком активным.
+2. Contrast
+Некоторые glowсцены:
+могут провалиться.
+3. Keyboard navigation
+Большой риск:
+focustrap chaos в modal system.
+4. Cognitive accessibility
+Сайт очень “визуально умный”.
+Но:
+не всегда instantly readable.
+12. Security deeper audit
+Хорошие решения
+Headers реально сильные. 
+Но есть production risks.
+Опасность №1 supply chain
+Самая реальная угроза для такого сайта:
+не XSS.
+А:
+npm ecosystem.
+Особенно опасны:
+animation libraries;
+shader packages;
+particle libs;
+obscure UI libs.
+Что делать
+Production pipeline
+npm audit;
+lockfile freeze;
+dependency review;
+renovate bot;
+Snyk;
+Dependabot;
+CI scanning.
+Опасность №2 future CMS
+Сейчас сайт:
+static.
+Но позже:
+devlog;
+admin panel;
+uploads;
+comments;
+forms.
+Именно тогда появляются:
+XSS;
+SSRF;
+upload abuse;
+spam;
+credential attacks.
+Поэтому заранее:
+isolate admin subdomain;
+strict auth;
+RBAC;
+image sanitization;
+upload validation;
+signed uploads.
+13. Очень важная brandingпроблема
+Сейчас:
+WillowinWorld = studio.
+Но:
+не совсем universe.
+Нужно:
+Чтобы игрок говорил:
+“это выглядит как WillowinWorld”.
+Даже без логотипа.
+Для этого нужен:
+Brand DNA
+Например:
+moonlight gradients;
+watercolor glow;
+arc portals;
+living particles;
+twinW geometry;
+soft magical motion.
+И это должно быть ВЕЗДЕ.
+14. Сайт слишком “always magical”
+Это неожиданно проблема.
+Если всё magical
+ничего не magical.
+Нужно:
+Контраст
+Например:
+quiet monochrome sections;
+atmospheric pauses;
+darkness before glow;
+silence before interaction.
+Тогда магия чувствуется сильнее.
+15. Настоящий premium feel рождается НЕ из количества эффектов
+А из:
+restraint;
+timing;
+confidence;
+spacing;
+hierarchy.
+Сейчас сайт:
+“очень талантливый”.
+Должен стать:
+“опасно уверенный”.
+Это огромная разни	ца.
+Главная правда
+Сайт игровой студии почти никогда не выходит в топы только изза “красивого дизайна”.
+В топы выводят:
+SEOархитектура;
+topical authority;
+игровые страницы;
+devlog;
+индексируемый контент;
+скорость;
+retention;
+брендовые запросы;
+внешние ссылки;
+Steam/App Store signals;
+YouTube/TikTok/social traffic.
+Сейчас у WillowinWorld:
+очень сильный visual identity;
+но SEOmachine пока слабая.
+Главная SEOпроблема игровых сайтов
+Многие делают:
+cinematic site;
+canvas/WebGL;
+мало текста;
+мало структуры.
+Google видит:
+“красивую оболочку”.
+Но плохо понимает:
+про что сайт;
+какие игры;
+под какие запросы ранжировать.
+Что реально поднимет WillowinWorld
+1. Сделать НЕ сайт студии
+А:
+ecosystem.
+Сейчас
+Один сайт.
+Должно быть
+WillowinWorld
+→ hub
+И внутри:
+отдельные SEOстраницы игр;
+devlogs;
+lore;
+mechanics articles;
+update pages;
+platform pages.
+2. Каждая игра = отдельная SEOмашина
+Очень важно.
+Ошибка indieстудий
+Одна страница:
+“Наши игры”.
+Это почти не ранжируется.
+Нужно
+Отдельные страницы:
+/natureseed
+/ballisgod
+/candyshop
+/paintblasters
+И каждая страница должна иметь:
+1. Strong H1
+Не:
+“Nature Seed”
+А:
+“Nature Seed Cozy Nature Sandbox Mobile Game”
+2. Gameplay description
+Google должен понимать:
+жанр;
+механики;
+платформы;
+настроение;
+core gameplay.
+3. SEOблоки
+Например:
+Features
+Gameplay systems
+Platforms
+Controls
+Updates
+FAQ
+3. Devlog гигантское оружие
+Самое недооценённое.
+Почему это работает
+Google любит:
+свежесть;
+регулярность;
+topical authority.
+Что делать
+Devlog articles
+Например:
+“How we built dynamic plant growth in Unity”
+“Designing cozy mobile ecosystems”
+“Optimizing particles for mobile games”
+“Creating tactile interactions in Unity”
+Это даст трафик по:
+Unity
+mobile game dev
+cozy games
+procedural growth
+mobile optimization
+game UI
+indie development
+4. Тебе нужен “search identity”
+Сейчас сайт:
+brandheavy.
+Нужно
+Чтоб Google понимал:
+WillowinWorld =
+indie game studio;
+mobile game developer;
+cozy fantasy games;
+atmospheric interactive games;
+Unity game studio.
+5. Самая большая ошибка homepage overload
+Главная НЕ должна ранжироваться под всё.
+Сейчас likely:
+homepage пытается:
+продавать бренд;
+продавать игры;
+показывать атмосферу;
+рассказывать философию;
+быть SEO.
+Это ошибка.
+Правильная архитектура
+Homepage
+→ бренд и atmosphere.
+Game pages
+→ SEO + conversion.
+Articles/devlog
+→ search traffic.
+Press pages
+→ publishers/media.
+6. Longtail SEO твой лучший шанс
+Ты НЕ победишь:
+Minecraft;
+Roblox;
+Candy Crush.
+Но можешь победить:
+cozy mobile ecosystem game
+relaxing plant growing mobile game
+atmospheric mobile sandbox
+magical indie mobile games
+procedural nature game mobile
+cozy simulation indie game
+relaxing touch interaction game
+7. Сейчас сайт likely слишком “visualfirst”
+Google это не любит.
+Опасные вещи
+text in canvas;
+text hidden in animations;
+delayed rendering;
+content appearing after JS;
+huge hero before content.
+Нужно
+HTMLfirst structure.
+8. Internal linking почти наверняка слабый
+Очень важная hidden SEOпроблема.
+Нужно
+Связи между:
+game pages;
+devlogs;
+systems;
+updates;
+tags;
+mechanics.
+Например
+Статья:
+“Plant Growth Optimization”
+ссылается на:
+Nature Seed.
+9. Technical SEO
+Обязательно
+sitemap.xml
+robots.txt
+canonical
+Open Graph
+Twitter Cards
+structured data
+game schema
+organization schema
+10. Structured Data huge advantage
+Большинство indieсайтов НЕ используют нормально.
+Нужно
+Organization schema
+VideoGame schema
+Article schema
+Breadcrumb schema
+Тогда Google лучше понимает:
+студию;
+игры;
+статьи;
+платформы.
+11. Игровые запросы сильно зависят от внешнего трафика
+Очень важно.
+Google смотрит:
+брендовые запросы;
+mentions;
+engagement.
+Нужно создавать:
+YouTube
+TikTok
+Reddit
+Steam
+itch.io
+Discord
+IndieDB
+И вести трафик на сайт.
+12. Steam massively helps SEO
+Даже если игра mobilefirst.
+Почему
+Steam pages:
+authority;
+backlinks;
+indexing;
+branded traffic.
+13. Images SEO
+Очень недооценено.
+Нужно
+Не:
+html id="bhjlwm"
+image1.webp
+А:
+html id="3lo7to"
+natureseedmobilegardengame.webp
+И alt:
+“Nature Seed cozy mobile sandbox gameplay”
+14. Page speed реально влияет
+Особенно mobile.
+Если сайт:
+тяжелый;
+лагучий;
+delayed
+Google режет mobile ranking.
+Цель
+Mobile:
+LCP < 2.5s
+INP < 200ms
+CLS < 0.1
+15. Biggest hidden SEO problem
+Сайт может выглядеть:
+“too artistic to classify”.
+Google любит ясность.
+Нужно прямыми словами:
+indie game studio
+mobile games
+cozy games
+atmospheric games
+Unity developer
+simulation game
+sandbox game
+Production SEO Architecture
+Главная
+бренд;
+flagship game;
+CTA;
+latest updates;
+studio positioning.
+Страницы игр
+Каждая:
+trailer;
+screenshots;
+mechanics;
+FAQ;
+updates;
+store links;
+structured data.
+Devlog
+2–4 статьи в месяц.
+Knowledge pages
+Например:
+“How our ecosystem simulation works”
+“How we optimize mobile shaders”
+“Designing cozy interactions”
+Press kit
+Очень важно для:
+backlinks;
+journalists;
+publishers.
+Biggest SEO multipliers
+Что               Влияние            
+ 
+Devlog            Очень высокое      
+Game pages        Очень высокое      
+Fast mobile site  Очень высокое      
+Structured data   Высокое            
+Steam links       Высокое            
+YouTube traffic   Очень высокое      
+Reddit mentions   Высокое            
+Backlinks         Очень высокое      
+Internal linking  Высокое            
+Technical SEO     Базово обязательно 
+Что НЕ поможет
+Почти бесполезно
+keyword stuffing;
+hidden text;
+AIspam articles;
+useless backlinks;
+fake traffic;
+overoptimized anchors.
+Что реально работает в 2026
+authority;
+useful content;
+game ecosystem;
+topical depth;
+speed;
+branded traffic;
+retention;
+external mentions;
+technical quality.
+Самый сильный путь для WillowinWorld
+Не пытаться:
+“ранжироваться как сайт”.
+А стать:
+recognizable game universe
+searchable knowledge ecosystem
+premium indie brand
+technically fast mobilefirst platform.
+Тогда:
+брендовые запросы растут;
+Google начинает доверять сайту;
+страницы игр начинают выходить выше;
+devlog приводит organic traffic;
+Steam/YouTube/Reddit усиливают authority;
+сайт превращается в реальный growthengine студии.

@@ -1,0 +1,681 @@
+Ниже профессиональный аудит на уровне senior digital/game studio, но важная оговорка: у меня есть только контекст названия WillowinWorld и твои предыдущие требования, а не реальный URL/исходники текущего сайта. Поэтому я даю максимально практичный разбор как для целевого продукта WillowinWorld, опираясь на уже зафиксированные требования к премиальному магическому игровому стилю и на ранее предложенный концептподход. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+1. Краткий вердикт по сайту
+Если брать целевой уровень WillowinWorld как премиальной игровой студии, то концепция выглядит сильной по направлению, но ей не хватает жёсткой продуктовой структуры, строгой визуальной иерархии и productionready технической дисциплины. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Моя оценка текущего направления: дизайн 8/10, UX 7/10, frontend 7/10, performance 6.5/10, mobile 6.5/10, branding 8/10, security 6/10, woweffect 8/10. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+2. Главные проблемы
+Слишком легко уйти в “красивую магию” и потерять ясность: посетитель должен за 3–5 секунд понять, кто вы, какие игры делаете и зачем вам доверять. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Интерактив и motion могут стать перегрузкой, если нет жёсткого ограничения по частоте, интенсивности и fallbackсценариям для слабых устройств. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Если структура сайта строится как обычный лендинг, а не как полноценное портфолио студии, он не будет выглядеть убедительно для издателей и партнёров. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Без сильной типографики, правильных отступов и premiumgrid сайт будет ощущаться “дорого только на поверхности”, а не системно. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Без performanceгигиены магические эффекты легко убивают mobile FPS и портят CLS/LCP/INP. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+3. Что уже хорошо
+Само позиционирование WillowinWorld как магической, авторской и premiumигровой студии правильное и запоминающееся направление. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Идея смешать бренд, игру и интерактив в один цельный digitalмир очень сильная для игровой компании. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Формат “не визитка, а живой worldbrand site” хорошо подходит для индистудии, которая хочет выглядеть дороже своего размера. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Если уже есть фокус на hero, карточках игр, magicблоке и motion, это правильный фундамент для вауэффекта. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+4. Подробный аудит по разделам
+Design / Art Direction
+Для WillowinWorld лучше всего работает не “фэнтезибаннер”, а editorial fantasy premium: тёмная база, глубокие градиенты, мягкое свечение, матовые стеклянные панели, тонкие золотистоизумрудные акценты и очень точная типографика. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Слабое место большинства таких сайтов избыток декоративности при недостатке композиционной дисциплины: фон красивый, но текст и CTA теряются.  
+Hero должен быть как обложка AAA/indieпремиума: один главный месседж, один главный CTA, одна доминирующая арткомпозиция, максимум 2 вторичных действия.  
+Карточки игр лучше делать не как “плитки каталога”, а как artcardsс ощущением обложек, коротким pitch, жанром, платформами и одним выразительным hoverstate.
+UX / User Experience
+Пользователь должен сразу понимать три вещи: кто вы, что вы делаете, почему вам можно доверять. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Сейчас для премиального игрового сайта критично, чтобы структура была простой: hero, games, studio, interactive/magic, devlog/news, contact, footer.  
+Проблема возникает, если магические эффекты становятся навигацией: визуально это круто, но UX ломается, если элементы неочевидны или слишком “игровые” для обычного пользователя.  
+На мобильном обязательно нужен упрощённый сценарий: минимум тяжёлого motion, компактный hero, липкая CTAкнопка, свайпкарточки игр и короткие секции вместо длинных визуальных полотен.
+Frontend / Code Quality
+Как senior frontendаудит: код должен быть построен семантически и модульно, иначе сайт сложно развивать и дорого поддерживать.  
+Нужны чистые блоки: header, main, section, article, footer, а не набор divслоёв без логики.  
+Классы должны быть системными, например BEM или utility + design tokens, чтобы карточки, кнопки, бейджи и фоновые эффекты не дублировались.  
+Критичный риск если интерактив собран на больших inlineскриптах, hardcodedзначениях и хаотичных анимациях, это быстро приведёт к багам, CLS и сложности при добавлении новых игр.
+Performance / Лаги / Оптимизация
+Главный источник лагов у такого сайта обычно не HTML, а motion, изображения, blur, particles, shadows и тяжёлые шрифты.  
+Если hero использует большой heroart, видеофон или canvasанимацию, то это может ударить по LCP и mobile FPS.  
+Опасны: бесконечные JSанимации без prefersreducedmotion, неограниченные частицы, размытые слои поверх слоёв, тяжёлые PNG без nextgen форматов и шрифты без subsetting.  
+Перед релизом обязательно: WebP/AVIF для графики, preload только на ключевые ресурсы, lazyload для нижесвернутого контента, ограничение motion на mobile, fontdisplay: swap, оптимизация layers и проверка CLS/LCP/INP в реальном устройстве.
+Motion Design / Interactive Experience
+Сильный motion для WillowinWorld это не просто “летящие искры”, а ощущение живого мира, где UI реагирует как магический артефакт. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Лучше всего работают короткие, дорогие микродвижения: hoverglow, мягкое притяжение курсора, раскрытие карточки игры, параллакс очень малой амплитуды, реакция на скролл и один фирменный portaleffect.  
+Нужно избегать избыточных частиц, постоянного фонового анимационного шума и эффектов, которые мешают читать текст или нажимать кнопки.  
+Идеально: один большой интерактивный “magic moment” на главной и несколько маленьких microinteractions по всему сайту.
+Branding / Game Company Image
+WillowinWorld уже звучит как мир, а не как обычная студия, и это сильная база для айдентики. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Чтобы название лучше запоминалось, нужен символ или монограмма: например, знак из инициалов, стилизованная ива, портал, семя света или круг миров.  
+Тон бренда должен быть уверенный, тёплый и авторский, без корпоративной сухости: “We craft playable worlds” звучит сильнее, чем общий бизнесслоган.  
+Сайт должен работать и как портфолио для игроков, и как презентация для издателей/инвесторов, поэтому нужен баланс между эмоцией и деловой ясностью.
+Security / Web Security Audit
+Для такого сайта основные реальные риски формы, thirdpartyскрипты, утечки в frontend, слабые заголовки и неверная работа с пользовательским вводом.  
+Если есть контактная форма, нужна серверная валидация, защита от спама, rate limiting и антиботслой; clientside validation одной недостаточно.  
+Обязательно нужны CSP, HSTS, XFrameOptions или frameancestors, корректный CORS, защита cookie через HttpOnly, Secure, SameSite, а также отсутствие секретов в JSкоде.  
+Если есть админка или devlog CMS, то важны MFA, ограничения по IP/рольдоступу, аудит логов и минимизация плагинов.  
+Любые iframe/embed должны быть строго разрешены по белому списку, иначе растёт риск clickjacking и нежелательного контента.
+Защита ассетов
+Полностью защитить frontendассеты невозможно, потому что браузер должен их получить, но можно сильно усложнить копирование. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Реально полезно: хранить исходники вне public, отдавать только previewверсии, ставить watermark на промоарт, включить hotlink protection, minify/obfuscate JS, запретить directory listing и настроить CDNheaders.  
+Частично полезно: robots.txt, copyrightблоки, DMCA/contact policy, лимиты на выдачу медиа и отдельные защищённые каналы для приватных материалов.  
+Бесполезная иллюзия защиты: пытаться “скрыть” публичный HTML/CSS/JS от пользователя или полагаться только на минификацию как на защиту.
+Mobilefirst Audit
+На мобильном главный риск hero перегружен, CTA слишком мелкий, карточки игр слишком плотные, а motion слишком тяжёлый. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Нужно проектировать mobilefirst: крупный заголовок, короткий подзаголовок, одна главная кнопка, короткий список игр, горизонтальный свайп вместо плотной сетки и минимум фонового шума.  
+Тапзоны должны быть не меньше комфортного размера, а навигация не прятаться в слишком декоративное меню.  
+Если есть анимации, на телефоне они должны быть короче, проще и реже, иначе сайт ощущается медленным даже при хорошем интернете.
+5. Таблица проблем
+Проблема  Почему это плохо  Критичность  Как исправить  Приоритет 
+::
+Слабая структурная ясность  Пользователь не понимает, что делает студия  Высокая  Упростить hero, добавить чёткий pitch и CTA  P0 
+Перегруз motion  Ломает чтение и mobile FPS  Высокая  Ограничить анимации, добавить reducedmotion  P0 
+Тяжёлые изображения  Убивают LCP и мобильную загрузку  Высокая  AVIF/WebP, responsive images, lazyload  P0 
+Нечистая семантика  Сложнее поддерживать, хуже accessibility  Средняя  Перейти на семантическую структуру  P1 
+Нет системных design tokens  Дизайн расползается по мере роста  Средняя  Ввести токены для цветов, spacing, radius, shadows  P1 
+Слабый CSP  Уязвимость к XSS и вредным скриптам  Высокая  Настроить строгую CSP  P0 
+Нет rate limiting на формы  Спам и боты  Высокая  Добавить лимиты, captcha/turnstile, server checks  P0 
+Нет mobilefallback для эффекта  Плохой UX на слабых устройствах  Средняя  Упростить фон, отключать тяжёлый motion  P1 
+Неочевидные карточки игр  Трудно быстро найти контент  Средняя  Добавить жанр, платформы, CTA и фильтры  P1 
+Слабая брендсистема  Сайт не запоминается  Средняя  Создать символ, слоган, тональность, артнабор  P1 
+6. Productionready рекомендации
+Зафиксировать брендсистему: палитра, типографика, кнопки, карточки, glow, сетка, иконки, motion rules. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Пересобрать hero в формате “one message, one CTA, one world image”.  
+Ввести performance budget для изображений, скриптов и анимаций.  
+Настроить prefersreducedmotion, lazy loading и responsive media pipeline.  
+Добавить CSP, HSTS, anticlickjacking, rate limiting и защиту форм.  
+Проверить сайт на реальном iPhone/Android и на медленном 4G.  
+Убедиться, что сайт понятен издателям и инвесторам за первые 10 секунд.
+7. Идеи для улучшения
+Сделать фирменный “portal reveal” при загрузке главного экрана.  
+Добавить интерактивный магический курсор только на desktop, с отключением на mobile.  
+Сделать hero с живой сценой: свет, частицы, лёгкий parallax, один центральный артефакт.  
+Превратить карточки игр в коллекционные “spell cards” с состояниями hover/focus.  
+Добавить “world map” студии с точками: games, team, contact, devlog.  
+Сделать скрытое easter eggменю через символ WillowinWorld.  
+Добавить короткие “devlog notes” как будто это рабочий артбук студии.  
+Ввести режим “calm / magic” для слабых устройств.  
+Сделать footer не техническим, а атмосферным, как финальная сцена.  
+Использовать одну очень сильную фирменную форму: кругпортал, семя, ива или световой знак.  
+Добавить microcopy в стиле мира: не “Submit”, а “Send the scroll”.  
+Сделать страницу игры не лендингом, а миниисторией.  
+Добавить фильтры по платформам и жанрам в лёгком, не корпоративном виде.  
+Сделать живой блок “Now building” с текущими проектами.  
+Добавить короткий трейлерплеер с постером, а не автоплейролик.  
+Внедрить subtle sound cues только как optin.  
+Добавить page transitions между разделами в виде мягкого dissolvingportals.  
+Сделать отдельный presskit / mediakit для издателей и партнёров.  
+Добавить страницу “About the World” как брендовый манифест.  
+Встроить один очень запоминающийся interactive moment, но не больше.
+8. Финальная концепция
+Идеальный WillowinWorld это не просто сайт, а живой цифровой мир, где бренд, игры и студийная идентичность собраны в одну цельную систему. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+Структура должна быть простой: hero с мощным сообщением, блок игр, студия и команда, интерактивный magicsection, devlog/news, контакт и сильный footer.  
+Визуально это тёмный premiumfantasy с тонким свечением, дорогой типографикой, аккуратными artcards и очень контролируемым motion.  
+Технически это должен быть быстрый, семантичный, accessibilityfriendly и securityhardened сайт, где магия не мешает производительности.  
+По ощущениям он должен одновременно продавать доверие, авторство, игру и масштаб так, чтобы WillowinWorld выглядела как студия, которая уже существует на уровне сильного международного бренда.
+Если нужно, я могу следующим сообщением превратить это в конкретный production checklist на 1–2 недели, где будет расписано: дизайнсистема, структура файлов, motion rules, security headers, perfbudget и mobile breakpoints.
+Конечно вот ещё более прикладной уровень аудита, уже в формате, который можно напрямую превращать в roadmap для дизайна, фронтенда и security.
+Что я бы усилил в первую очередь
+1. Сделал бы брендсистему, а не просто красивый сайт. 
+Сейчас ключевая задача превратить WillowinWorld в узнаваемый digitalбренд с повторяемыми паттернами: один фирменный знак, один тип свечения, один тип карточек, одна система анимаций. Это важнее, чем добавлять новые декоративные эффекты. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+2. Убрал бы лишний “шума” из hero. 
+Первый экран должен быть кинематографичным, но не перегруженным: один главный месседж, один CTA, один выразительный visual anchor. Если на первом экране одновременно много текста, motion и декоративных слоёв, премиальность падает. [perplexity](https://www.perplexity.ai/search/cb617841ae504aedb0dd4191f1a32da3)
+3. Сделал бы сайт “понятным за 5 секунд”. 
+Игровая студия должна мгновенно отвечать на вопросы: кто вы, что делаете, какие у вас игры, почему вам можно доверять. Это напрямую влияет на игроков, издателей и инвесторов. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Более сильная структура сайта
+Вот структура, которую я бы рекомендовал как productionlevelдля WillowinWorld:
+1. Hero / Manifesto. 
+Короткий брендмесседж, сильный арт, 1 главный CTA, 1 вторичный CTA.
+2. Games. 
+Карточки игр как премиальные “art panels”: жанр, платформы, статус, короткий pitch, кнопка “View world”.
+3. Studio. 
+Кто вы, чем отличаетесь, как работаете, что для вас важно, какие ценности в подходе к играм.
+4. Magic / Interactive Moment. 
+Один фирменный интерактивный блок, который ощущается как часть мира, а не как отдельная игрушка.
+5. Devlog / News. 
+Короткие апдейты, концептарты, рабочие заметки, анонсы.
+6. Contact / Business. 
+Для игроков, прессы, издателей, партнёров с разными маршрутами связи.
+7. Footer. 
+Не “служебный”, а атмосферный: символ бренда, навигация, соцсети, legal, press kit.
+Что стоит добавить в дизайн
+Один фирменный знак. 
+ Для WillowinWorld нужен знак, который можно использовать в favicon, loader, social avatar, watermark и insidepage ornament. Это может быть портал, ивовый круг, семя света или монограмма.
+Сильнее типографику. 
+ Премиальный эффект почти всегда держится на типографике: контраст шрифтов, правильный ритм, аккуратный lineheight, крупные заголовки, спокойный bodytext.
+Больше “дорогих пауз”. 
+ Премиальный сайт не обязан быть плотным. Иногда один большой артблок с воздухом выглядит дороже, чем 4 перегруженных секции.
+Сдержанный glow. 
+ Свет должен быть как в дорогом game art direction: мягкий, локальный, оправданный, а не везде одновременно.
+Что добавить в UX
+Sticky CTAна mobile, чтобы контакт/игры были доступны без лишнего скролла.  
+Сегментацию контактов: издатели, пресса, игроки, business inquiries.  
+Карточки игр с быстрым сканированием: жанр, платформа, стадия, краткое описание.  
+Микрообъясненияна каждый интерактивный блок, чтобы пользователь не терялся.  
+Ненавязчивые transitions, чтобы сайт ощущался “живым”, но не замедленным.
+Что добавить по motion
+Лучший подход для WillowinWorld это one hero effect + small interactions.
+Подходит:
+мягкий магический cursor trail;
+portal reveal;
+glow on hover;
+лёгкий parallax;
+реакция карточек на курсор;
+микродвижение элементов в hero;
+редкие “spell pulses” при скролле.
+Опасно:
+постоянные частицы по всему экрану;
+сложный canvas на каждом блоке;
+тяжёлые blurэффекты;
+бесконечные анимации без необходимости;
+sound effects без optin.
+Что усилить по frontend
+Сделать дизайн на токенах: color, space, radius, shadow, motion, zindex.
+Убрать дублирование CSS через единые компоненты кнопок, карточек и секций.
+Использовать семантический HTML и понятные landmarks.
+Проверить focus states, arialabel, keyboard navigation.
+Разделить visual layer и content layer, чтобы эффекты не ломали контент.
+Убедиться, что все анимации имеют fallback для prefersreducedmotion.
+Что проверить по security
+Для публичного игрового сайта это musthave:
+CSP с запретом лишних scriptsrc.
+HSTS.
+Anticlickjacking через frameancestors.
+Санитизация всех полей формы.
+Rate limiting.
+Bot protection.
+Без секретов в frontend.
+Безопасные thirdparty embeds.
+Подписанные и ограниченные по сроку ссылки на приватные материалы.
+Проверка npmзависимостей на уязвимости.
+Что реально защищает ассеты
+Реально полезно:
+watermarks на promoart;
+previewonly assets;
+CDN policy;
+запрет hotlink;
+приватное хранение исходников;
+minify/obfuscate JS;
+serverside delivery для чувствительных материалов.
+Частично полезно:
+robots.txt;
+copyright footer;
+DMCA/contact policy;
+раздельные папки для public/private.
+Иллюзия защиты:
+попытка “спрятать” HTML/CSS/JS от браузера;
+надежда, что минификация сама по себе защитит контент;
+блокировка через один только disable right click.
+Мой следующий шаг для тебя
+Я бы предложил не продолжать абстрактный аудит, а сделать одно из трёх:
+1. Собрать тебе full production checklistдля WillowinWorld.  
+2. Сделать архитектуру сайта по блокам и компонентам. 
+3. Написать улучшенный HTML/CSS/JS каркасдля главной страницы WillowinWorld.
+Если нужен наиболее полезный вариант, я бы сразу сделал production checklist + structure + security budgetв одном документе.
+Вот ещё один слой уже не общий аудит, а уровень конкретных решений и правил, которые стоит внедрить в WillowinWorld перед релизом. [developer.mozilla](https://developer.mozilla.org/enUS/docs/Web/Security/Practical_implementation_guides/CSP)
+Что нужно зафиксировать как правила
+LCP должен быть под 2.5 секунды, иначе hero будет ощущаться тяжёлым и “непремиальным”. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+INP должен быть под 200 мс, иначе магические hover/cursor/scrollэффекты будут восприниматься как лаги. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+CLS должен быть ниже 0.1, иначе карточки, шрифты и изображения будут визуально “прыгать”. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+CSP лучше строить строго, с nonce/hashподходом, objectsrc 'none', baseuri 'none' и постепенным запуском через ReportOnly. [developer.mozilla](https://developer.mozilla.org/enUS/docs/Web/Security/Practical_implementation_guides/CSP)
+Что обязательно сделать по безопасности
+Настроить строгую Content Security Policyи сначала прогнать её в режиме ContentSecurityPolicyReportOnly, чтобы не сломать сайт при запуске. [developer.mozilla](https://developer.mozilla.org/enUS/docs/Web/Security/Practical_implementation_guides/CSP)
+Ограничить все формы серверной валидацией, rate limiting и защитой от ботов; frontendпроверки недостаточно для реальной защиты.  
+Не хранить секреты, APIключи и токены в клиентском коде; всё чувствительное должно быть на сервере.  
+Добавить защиту от clickjacking через frameancestors и не разрешать произвольные iframe/embed.  
+Проверить thirdparty скрипты и библиотеки: все внешние зависимости должны быть минимальными, актуальными и с понятным назначением.
+Что важно для performance
+Heroарт нужно отдавать в современных форматах и с правильными размерами под разные экраны, иначе LCP просядет. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+Все анимации должны иметь fallback для prefersreducedmotion, иначе часть пользователей получит тяжёлый интерфейс.  
+Фоновые частицы, blurслои и canvasэффекты надо использовать дозированно: они красивы, но быстро съедают FPS на mobile.  
+Шрифты стоит подрезать по наборам символов и загружать с fontdisplay: swap, иначе текст будет поздно появляться и визуально портить hero.
+Что улучшить по mobilefirst
+На телефоне герой должен быть короче, выше по контрасту и проще по композиции: один главный заголовок, один CTA, одна визуальная доминанта.  
+Карточки игр должны сканироваться за 1–2 секунды: жанр, платформа, стадия, кнопка.  
+Тапзоны и отступы нужно делать щедрее, чем на desktop, иначе премиальный UI начинает выглядеть “тесным”.  
+Все активные эффекты лучше перевести в короткие реакции на touch/scroll, а не в постоянный фоновой шум.
+Что это значит practically для WillowinWorld
+Если собрать всё вместе, то у сайта должен быть такой баланс:  
+много магии в ощущении, мало хаоса в интерфейсе, высокая ясность в структуре, строгая дисциплина в коде и безопасность как у productgrade проекта. [perplexity](https://www.perplexity.ai/search/6746d73368054ec1b23d237dd485d5e4)
+Практический next step
+Самый полезный следующий шаг сделать один из трёх артефактов:
+1. Production checklist на 100 пунктовдля WillowinWorld.  
+2. Архитектуру главной страницы по компонентам.  
+3. Список security headers + performance budgetв готовом формате для внедрения.
+Могу сразу следующим сообщением дать готовый production checklist дизайн, UX, motion, frontend, perf и security в одном списке.
+Ниже дополнительный глубокий разбор, сфокусированный не на очевидных советах, а на скрытых причинах багов, спорных решениях и productionрисках для WillowinWorld. Я опираюсь на ранее зафиксированную концепцию премиального магического игрового сайта и на актуальные рекомендации по Core Web Vitals, CSP, clickjacking, keyboard accessibility и mobilefirst практике. [owasp](https://owasp.org/wwwcommunity/attacks/Clickjacking)
+1. Что ещё удалось найти
+По дизайну: самый частый скрытый провал у таких проектов сайт выглядит дорого в статике, но дешево в движении, если анимации и glow не согласованы в одной системе.  
+По UX: если первый экран не отвечает “кто вы / что делаете / зачем мне дальше кликать”, интерактив начинает работать против конверсии, а не на неё.  
+По frontend: главные скрытые баги обычно не в HTML, а в несогласованности breakpoints, fixedвеличинах, zindex и в том, что desktopрешение просто “ужато” на mobile.  
+По performance: самые коварные тормоза backdropfilter, большие blurтени, canvas/particles, анимации layoutсвойств и большие heroизображения без заранее выделенного места; это напрямую бьёт по LCP/CLS/INP. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+По mobile: часто ломается не сама верстка, а поведение hoverэффектов, stickyэлементов, меню и карточек при маленьких экранах и iOS Safari.  
+По SEO: красивая, но почти “безтекстовая” главная страница плохо индексируется, особенно если смысл сайта спрятан в визуальных слоях или canvas; mobile parity и контентная симметрия важны. [sites.google](https://sites.google.com/view/technicalseoauditg5f5fa68a/technicalseoauditguidanceformobileperformanceandcorewebvitals)
+По accessibility: самые частые провалы отсутствие visible focus, hoveronly interactions, нечитабельный контраст на декоративном фоне и интерактивные элементы без клавиатурного доступа. [developer.mozilla](https://developer.mozilla.org/ru/docs/Web/Accessibility/Guides/Understanding_WCAG/Keyboard)
+По security: самые недооценённые риски CSP отсутствует или слишком мягкая, формы без серверной защиты, clickjacking через iframe, лишние thirdparty скрипты и source maps в production. [developer.mozilla](https://developer.mozilla.org/enUS/docs/Web/Security/Attacks/Clickjacking)
+По защите ассетов: реально защищать нужно не frontend как таковой, а приватные оригиналы, выдачу медиа, доступ к админке, подписи URL, hotlink и утечки в publicпапки.
+2. Новые возможные причины проблем
+Возможная причина  Почему это проблема  Как проверить  Вероятность  Опасность  Приоритет 
+Hero построен на слишком тяжёлом артслое  Убивает LCP и делает первый экран “вязким”  Lighthouse + WebPageTest + Network waterfall  Высокая  Высокая  P0 
+Glow/blur применяются ко многим крупным блокам  GPU и compositing перегружаются, особенно на mobile  Chrome Performance, layers panel, FPS meter  Высокая  Высокая  P0 
+Анимации идут через width/height/top/left  Вызывают reflow/layout thrashing  Performance trace, “Layout Shift Regions”  Средняя  Высокая  P0 
+Hoverсостояния не имеют mobileаналога  На touchустройствах интерфейс теряет смысл  Эмуляция touch + реальный телефон  Высокая  Средняя  P1 
+Desktopfirst верстка “сжимается” на mobile  Карточки, hero и CTA ломают иерархию  Тест 320–360px, landscape, iOS Safari  Высокая  Высокая  P0 
+Нет reserved space под изображения/iframe  Возникает CLS при загрузке  Lighthouse CLS, WebPageTest filmstrip  Высокая  Высокая  P0 
+Слишком мало текстового контента  SEO и доверие проседают  Просмотр исходного HTML и индексации  Средняя  Средняя  P1 
+Недоступные кнопки/меню сделаны divами  Ломается keyboard navigation и screen reader flow  Tabtest, Accessibility tree  Средняя  Высокая  P0 
+Слишком много thirdparty скриптов  Рост INP, риск supply chain, лишняя атака поверхности  Network tab, bundle audit  Средняя  Высокая  P0 
+CSP не настроена или слишком разрешающая  XSS становится гораздо проще эксплуатировать  Проверка response headers  Средняя  Высокая  P0 
+Source maps доступны публично  Упрощают чтение кода и секретов  Проверка .map в production  Средняя  Средняя  P1 
+Формы валидируются только на клиенте  Спам, инъекции, обход ограничений  Попытка отправки некорректных payloads  Высокая  Высокая  P0 
+Файлы ассетов лежат в public без контроля  Упрощает копирование и hotlink  Проверка структуры деплоя  Высокая  Средняя  P1 
+Анимации и автоэффекты не имеют prefersreducedmotion  Проблемы доступности и UX на слабых устройствах  OS setting + browser emulation  Средняя  Средняя  P1 
+Неправильный order заголовков  Падает semantic structure и accessibility  A11y checker + manual review  Средняя  Средняя  P1 
+3. Новые способы фикса
+Способ фикса  Что изменить  Почему поможет  Риски  Когда использовать  Productionready? 
+Отделить heroart от текста и CTA  Вынести тяжёлый visual в отдельный слой с фиксированной высотой  Снижает CLS и улучшает читаемость  Нужно аккуратно управлять адаптивом  Для главной и landingэкранов  Да 
+Ограничить motion одной системной рамкой  Ввести 3–5 типов анимаций вместо хаоса эффектов  Делает сайт дороже и стабильнее  Может показаться менее “богато”  Для premium game brand  Да 
+Перейти на semantic components  Использовать header/main/section/article/footer и единые UIкомпоненты  Улучшает SEO, a11y, поддержку  Требует рефакторинга  Для любого растущего сайта  Да 
+Добавить strict CSP + ReportOnly запуск  Настроить frameancestors, scriptsrc, objectsrc 'none'  Сильно уменьшает XSSповерхность  Можно сломать старые thirdparty интеграции  Перед публичным релизом  Да 
+Убрать layoutaffecting animations  Анимировать transform/opacity вместо размеров/позиции  Меньше reflow, лучше FPS  Не все эффекты можно так переписать  Для hero, cards, menus  Да 
+Ввести responsive image pipeline  AVIF/WebP, srcset/sizes, width/height, lazyload  Ускоряет mobile и снижает CLS  Нужно генерировать несколько размеров  Для игр, art, screenshots  Да 
+Сделать mobilespecific interaction model  Упростить hover в tap, сократить глубину секций  Улучшает touch UX  Требует отдельной логики  Для 320–430px экранов  Да 
+Вынести формы на серверную валидацию  Проверка, rate limit, antibot, sanitize  Защищает от спама и инъекций  Может добавить задержку  Для contact/press forms  Да 
+Заблокировать clickjacking  frameancestors + XFrameOptions  Защищает от iframeобмана  Почти нет, если не нужен embed  Для публичного бренда  Да 
+Отключать тяжелые эффекты по условиям  prefersreducedmotion, lowpower, slownet  Улучшает стабильность на слабых девайсах  Может снизить вауэффект у части пользователей  Для mobilefirst релиза  Да 
+4. Сравнение подходов
+Подход  Надёжность  Сложность  Performance  UX  SEO  Security  Риск багов  Production 
+Один heavy hero с сильным motion  Средняя  Низкая  Низкая  Высокий wow, но риск перегруза  Средняя  Средняя  Высокий  Только если очень хорошо оптимизирован 
+Лёгкий hero + отдельный magicblock  Высокая  Средняя  Высокая  Высокий и стабильный  Высокая  Высокая  Средний  Да 
+Canvas/WebGL везде  Низкая  Высокая  Низкая  Вау есть, но часто мешает  Низкая  Средняя  Высокий  Скорее нет 
+Трансформации и opacityonly motion  Высокая  Средняя  Высокая  Очень хороший баланс  Высокая  Высокая  Низкий  Да 
+Desktopfirst с mobile patching  Низкая  Низкая на старте, высокая потом  Средняя  Часто плохой mobile UX  Средняя  Средняя  Высокий  Плохо для роста 
+Mobilefirst с расширением на desktop  Высокая  Средняя  Высокая  Лучший общий UX  Высокая  Высокая  Низкий  Да 
+Только clientside validation  Низкая  Низкая  Высокая  Формально удобно  Средняя  Низкая  Высокий  Нет 
+Client + server validation  Высокая  Средняя  Высокая  Надёжно  Высокая  Высокая  Низкий  Да 
+Разрешить iframe “для удобства”  Низкая  Низкая  Высокая  Риск обмана  Средняя  Низкая  Средний  Нет 
+Strict frame restrictions  Высокая  Низкая  Высокая  Небольшой UXминус  Высокая  Высокая  Низкий  Да 
+5. Практический план
+🔴 Сделать в первую очередь
+Зафиксировать mobilefirst структуру hero, games и contact, чтобы сайт не ломался на 320–360px экранах.  
+Убрать анимации, которые меняют layoutсвойства, и оставить transform/opacitybased motion.  
+Проверить все изображения на width/height, aspectratio и корректный responsive delivery, чтобы убрать CLS. [sites.google](https://sites.google.com/view/technicalseoauditg5f5fa68a/technicalseoauditguidanceformobileperformanceandcorewebvitals)
+Включить строгую CSP, frameancestors и XFrameOptions, а также убрать любые секреты из frontend. [developer.mozilla](https://developer.mozilla.org/enUS/docs/Web/Security/Practical_implementation_guides/CSP)
+Перевести формы на серверную валидацию, rate limiting и антиспамзащиту.  
+Проверить keyboard navigation, focusvisible, labels, altтексты и контраст. [developer.mozilla](https://developer.mozilla.org/ru/docs/Web/Accessibility/Guides/Understanding_WCAG/Keyboard)
+Убедиться, что critical content не спрятан только в canvas, видео или декоративных слоях для SEO. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+🟠 Проверить после этого
+Thirdparty scripts и их влияние на INP/LCP.  
+Source maps, public assets, directory listing, hotlinking и приватные файлы.  
+Поведение iOS Safari, Android Chrome, landscape mode и увеличенного системного шрифта.  
+Реальную скорость hero на медленном 4G и слабом CPU.  
+Duplicated UI patterns и рост CSS complexity при добавлении новых игр.  
+Понятность CTA и маршрутов для игроков, прессы, издателей и партнёров.
+🟢 Дополнительные улучшения
+Ввести единый motion system и набор “allowed effects”.  
+Сделать брендовый symbol loader/favicon/mark.  
+Добавить пресскит и отдельную страницу для business inquiries.  
+Сделать сильный 404 и статусные страницы в стиле бренда.  
+Добавить аккуратные devlog/newsblocks для свежести и SEO.  
+Сделать page transitions очень мягкими, без лишней задержки.  
+Ввести performance budget и release checklist для каждой новой игры/страницы.
+6. Проверка фиксов
+Чтобы понять, что правки реально помогли, проверять нужно не “на глаз”, а по слоям.
+DevTools / Performance: смотреть long tasks, layout shifts, FPS, scripting time, compositing.  
+Lighthouse / PageSpeed Insights: отслеживать LCP, CLS, INP, TTFB и mobile score. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+WebPageTest: проверять filmstrip, waterfall и поведение hero на реальной сети.  
+Coverage: искать неиспользуемый CSS/JS и лишние библиотеки.  
+Network tab: смотреть порядок загрузки, блокирующие запросы, размеры assets.  
+Security tab / headers: проверять CSP, HSTS, frameancestors, cookies.  
+Mobile device testing: реальный iPhone и Android, а не только эмулятор.  
+Safari/iOS: отдельно тестировать sticky, viewport, animations, focus.  
+Keyboard navigation: полный Tabtest от header до footer.  
+Accessibility checkers: контраст, labels, aria, heading order.  
+OWASP ZAP / scanners: базовая проверка поверхностей атаки.  
+Формы вручную: пустые поля, инъекции, спамциклы, rate limit, ошибки.  
+404/redirects: проверить canonical routing и status codes.  
+Слабый телефон: budget по battery/CPU/GPU, отключённый motion, плохой интернет.
+7. Честный вывод
+Самый надёжный фикс это mobilefirst структура + строгая performance discipline + serverside security + ограниченная motionсистема; именно этот набор лучше всего подходит для production. [owasp](https://owasp.org/wwwcommunity/attacks/Clickjacking)
+Плохая идея пытаться “спасти” проект бесконечным декоративным motion, тяжёлыми blurэффектами и canvasперегрузкой: это почти всегда ухудшает mobile UX, FPS и Core Web Vitals. [sites.google](https://sites.google.com/view/technicalseoauditg5f5fa68a/technicalseoauditguidanceformobileperformanceandcorewebvitals)
+Перед финальным решением нужно проверить реальные устройства, iOS Safari, медленную сеть, keyboard navigation, headers и формы именно там чаще всего всплывают скрытые дефекты.  
+Неопределённость остаётся в том, какие именно thirdparty скрипты и какие именно блоки контента используются в текущей реализации; без этого нельзя на 100% подтвердить риски по INP, CSP и supply chain.  
+Перед публикацией обязательно сделать: mobile QA, accessibility QA, performance QA, security header check, form abuse test и asset exposure audit.  
+Часть советов подтверждена документацией по Core Web Vitals, CSP, clickjacking и keyboard accessibility; часть это практическая инженерная эвристика, которую всё равно нужно верифицировать на вашем конкретном коде и инфраструктуре. [developer.mozilla](https://developer.mozilla.org/enUS/docs/Web/Security/Attacks/Clickjacking)
+Да и здесь важно сделать это не просто через “SEOслова”, а как полноценную систему роста: структура, контент, техника, скорость, авторитет, внутренняя перелинковка и брендсигналы должны работать вместе. Для игрового сайта WillowinWorld самый сильный путь строить не одну страницу, а контентную экосистему вокруг игр, студии и мира бренда. [help.reg](https://help.reg.ru/support/hosting/prodvizheniyesayta/chtosdelatchtobymoysaytvidelipoiskovyyesistemy)
+Что реально поднимет сайт
+1. Разделить SEO на 3 кластера
+Сайт игровой студии должен ранжироваться не только по названию бренда, но и по тематике игр. Для этого нужны 3 направления:  
+Brand cluster: WillowinWorld, WillowinWorld games, WillowinWorld studio.  
+Game cluster: название каждой игры, жанр, механика, платформа, особенности.  
+Intent cluster: запросы вроде “игры с магией”, “инди игра про [жанр]”, “пазл игра на mobile”, “game studio portfolio”, “indie game developer”. [apptask](https://apptask.ru/blog/seodliasaitovovideoigrax)
+2. Сделать отдельные страницы под каждую игру
+Если игры существуют, у каждой должна быть своя индексируемая страница. На ней нужны:  
+title с названием игры и жанром;  
+короткий description;  
+H1 только один;  
+скриншоты с alt;  
+FAQ;  
+системные требования/платформы;  
+трейлер/видео с текстовым контекстом;  
+блок “about the game”;  
+внутренняя ссылка на студию и другие игры. [iteraciya](https://iteraciya.ru/articles/kakprodvinutsaytvtoppoiskovoyvydachiyandeksaigoogle/)
+3. Добавить контентный блог или devlog
+Для игрового сайта это один из самых недооценённых рычагов. Работают статьи про:  
+разработку игр;  
+арты и концепты;  
+персонажей и мир;  
+devlog;  
+подборки “how we built…”;  
+гайды по механикам;  
+новости студии. [m.seonews](https://m.seonews.ru/analytics/keys1500000trafikadlyaigrovogoportala/)
+Это нужно не только ради трафика, но и ради тематического авторитета: поисковик лучше понимает, что сайт действительно связан с играми, а не просто выглядит как красивый лендинг. [help.reg](https://help.reg.ru/support/hosting/prodvizheniyesayta/chtosdelatchtobymoysaytvidelipoiskovyyesistemy)
+Что нужно сделать технически
+1. Индексация и структура
+Обязательно должны быть:  
+sitemap.xml;  
+корректный robots.txt;  
+чистые канонические URL;  
+редиректы с дублей;  
+404страница;  
+отсутствие мусорных параметров в индексируемых URL. [help.reg](https://help.reg.ru/support/hosting/prodvizheniyesayta/chtosdelatchtobymoysaytvidelipoiskovyyesistemy)
+2. Скорость и mobilefirst
+Google и другие поисковые системы сильно завязаны на mobile usability и Core Web Vitals: LCP, INP, CLS. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+Для WillowinWorld это значит:  
+hero не должен быть тяжёлым;  
+изображения должны быть адаптивными;  
+шрифты должны грузиться быстро;  
+анимации не должны мешать взаимодействию;  
+mobileверсия должна быть не “обрезанной”, а полноценной. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+3. Семантика и HTML
+Если сайт красивый, но контент спрятан в divхаосе, canvas или декоративных слоях, SEO будет слабым.  
+Нужны:  
+правильная иерархия заголовков;  
+семантические секции;  
+текстовые описания игр;  
+altтексты;  
+открываемый ботам HTMLконтент. [apptask](https://apptask.ru/blog/seodliasaitovovideoigrax)
+Что даст максимум эффекта
+Самые сильные страницы для роста
+1. Главная страница бренда.  
+2. Страница каждой игры.  
+3. Страница “About / Studio”.  
+4. Devlog / News.  
+5. Press kit / Media kit.  
+6. Contact / Business inquiries.  
+7. FAQ по студии и играм.  
+Самые сильные типы запросов
+Название студии.  
+Название игр.  
+Жанр + игра.  
+Индистудия + направление.  
+“magical game studio”.  
+“puzzle game studio”.  
+“mobile game developer”.  
+“indie game portfolio”.  
+Как выдавить выше по запросам про игры
+Тут важно не пытаться конкурировать с огромными порталами по общим словам вроде “игры” или “games” это почти всегда слишком широкая и дорогая борьба.  
+Гораздо эффективнее брать длинные и точные запросы, где у вас есть шанс стать релевантнее за счёт структуры, контента и тематической глубины. [ru.linkedin](https://ru.linkedin.com/pulse/igamingseo%D0%BF%D0%BE%D0%BB%D0%BD%D0%BE%D0%B5%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE%D0%BF%D0%BE%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3%D1%83%D0%B22024%D0%B3%D0%BE%D0%B4%D1%83bpvee)
+Пример:  
+вместо “игры” → “магические головоломки для mobile”;  
+вместо “game studio” → “indie game studio magical worlds”;  
+вместо “игра” → конкретный жанр, механика и платформа.  
+Что часто мешает подняться
+слишком мало текста на сайте;  
+однаединственная landing page без структуры;  
+отсутствие страниц игр;  
+слабый title/description;  
+тяжёлые изображения и плохой mobile speed;  
+дубли страниц;  
+нет внутренней перелинковки;  
+сайт не объясняет, почему он связан с играми;  
+контент есть только в визуале, а не в HTML. [apptask](https://apptask.ru/blog/seodliasaitovovideoigrax)
+Приоритетный план
+Сначала
+Собрать семантику запросов по бренду, играм и жанрам.  
+Сделать отдельные страницы под игры.  
+Добавить уникальные title, description, H1 и alt.  
+Включить sitemap и нормальный robots.  
+Ускорить mobile performance. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+Потом
+Запустить devlog / news / blog.  
+Сделать FAQ и press kit.  
+Построить внутренние ссылки между страницами.  
+Добавить structured data, если есть подходящие сущности.  
+Затем
+Собирать внешние упоминания, публикации, обзоры, ссылки с релевантных игровых ресурсов.  
+Усилить брендовые запросы через PR, соцсети и страницы игры.  
+Честный вывод
+Самый надёжный путь к топам для WillowinWorld это не магия, а системная тематическая глубина: отдельные страницы игр, сильная структура, быстрый mobilefirst сайт, контент по разработке и понятная поисковикам семантика. [m.seonews](https://m.seonews.ru/analytics/keys1500000trafikadlyaigrovogoportala/)
+Лучше всего сейчас работает подход: сначала техническая база и структура, потом контенткластеры, затем ссылки и брендупоминания. [help.reg](https://help.reg.ru/support/hosting/prodvizheniyesayta/chtosdelatchtobymoysaytvidelipoiskovyyesistemy)
+Хуже всего работает попытка “переспамить” главную страницу ключами или прятать смысл только в графике и motion это почти всегда слабее для SEO и UX. [apptask](https://apptask.ru/blog/seodliasaitovovideoigrax)
+Если хочешь, я могу следующим сообщением дать готовую SEOструктуру WillowinWorld по страницам:  
+какие страницы создавать;  
+какие title и H1 использовать;  
+какие запросы брать под каждую страницу;  
+как выстроить внутреннюю перелинковку;  
+и как сделать контентплан на 30 дней.
+Отлично, тогда сделаем конкретный SEO‑план для сайта WillowinWorld как в топы по играм, бренд‑запросам, студийным и жанровым ключам, а не просто “какой‑то лендинг”.
+SEO‑структура сайта
+Сейчас основной риск это один лендинг, а не полноценная система страниц.  
+Нужно превратить WillowinWorld в игровой сайт‑экосистему, а не одну визитку. [apptask](https://apptask.ru/blog/seodliasaitovovideoigrax)
+1. Главные страницы
+1.1. Главная страница WillowinWorld  
+Назначение:  
+ бренд, студия, игры, контакты.  
+Пример title (платформа/региона):  
+ WillowinWorld – Magical Game Studio  Indie Puzzle & Mobile Games  
+Meta description:  
+ Кратко описывает, кто вы, что делаете, какие игры выпускаете и почему ваш мир магический.  
+H1:  
+ WillowinWorld Authorship Games Studio  
+Блоки:  
+ Hero‑манифест.  
+ Краткий блок “What we make”.  
+ Карточки игр с ссылками на страницы игр.  
+ Блок про студию.  
+ Блок “Magic / Interactive World” (с текстовым описанием).  
+ Contact/press‑блок.  
+Важно:  
+ Перелинковка: ссылки на страницы игр, “Studio”, “News/Devlog”.  
+1.2. Страница «Studio / About»  
+Цель:  
+ ранжироваться по запросам про студию, indie‑developer, magical game studio.  
+Пример title:  
+ WillowinWorld Studio – Team, Philosophy & Magical Worlds  
+H1:  
+ About WillowinWorld Studio  
+Блоки:  
+ Who we are.  
+ Our values & design philosophy.  
+ Team (если команда публичная).  
+ Media/press kit ссылка.  
+ “Where we find inspiration” связь с жанрами (puzzle, mobile, magical, cute, cozy).  
+Внутренние ссылки:  
+ на страницы игр, главную, contact, пресс‑кит.  
+1.3. Страница каждой игры  
+Для каждой игры отдельная индексируемая страница.  
+Пример для игры Candy Shop (физическая пазл‑игра):
+URL:  
+ /games/candyshop или /candyshop  
+Title:  
+ Candy Shop – Physics Puzzle Game by WillowinWorld  
+Meta description:  
+ 1–2 предложения про механику, атмосфера, платформы.  
+H1:  
+ Candy Shop – Merge Puzzle with Real Physics  
+Блоки на странице:
+ Описание игры.  
+ Жанр: Merge puzzle, physics‑based, casual, mobile.  
+ Платформы: iOS, Android, Web.  
+ Системные требования / ограничения.  
+ Скриншоты с alt‑текстами:
+ Candy Shop gameplay merger, Candy Shop level 1, Candy Shop color burst effect.  
+ Видео‑трейлер или гифка с текстовым описанием.  
+ FAQ:  
+ “Какие платформы?”,  
+ “Есть ли микроплатежи?”,  
+ “Можно ли играть офлайн?”.  
+ Ссылка на Steam/Google Play/App Store.  
+ Ссылка на “WillowinWorld Studio” и “Other games”.  
+Так же для каждой новой игры, просто меняется название и механика.
+1.4. Страница «Games / Library»  
+Назначение:  
+ ранжироваться по WillowinWorld games, games by WillowinWorld, magical puzzle games.  
+Title:  
+ WillowinWorld Games – Magical Puzzle & Mobile Titles  
+H1:  
+ Games by WillowinWorld  
+Блоки:  
+ Краткое описание подхода студии к играм.  
+ Список игр с краткими pitch и ссылками на страницы игр.  
+ Фильтры по жанрам (если технически).
+SEO‑плюс: 
+Страница собирает ссылочную силу от всех игр и отдаёт её вниз по страницам.
+1.5. Страница «News / Devlog»  
+Title:  
+ WillowinWorld Devlog & News – Behind the Magic  
+H1:  
+ Devlog & News from WillowinWorld  
+Структура:  
+ Блог/список статей:
+ How we designed the magic mechanics of Candy Shop,  
+ Our art style: cute, cozy, tactile,  
+ Switching from mobile to web: technical challenges.  
+Каждая статья:
+ свой title/H1, meta description, schema (если есть structured data).  
+ связана с одной игрой или студийным процессом.
+Такие страницы отлично работают против запросов вроде:  
+game development devlog,  
+how to design a puzzle game,  
+mobile game art style если написать осмысленно.
+1.6. Страница «Press / Media Kit»  
+Title:  
+ WillowinWorld Press Kit & Media Assets – Magical Puzzle Games  
+H1:  
+ Press Kit for WillowinWorld  
+Блоки:
+ Краткий описательный текст про студию и мир.  
+ Ссылки на:
+ логотипы (SVG/PNG),  
+ скриншоты (web‑версии),  
+ превью‑ролики,  
+ контакты PR.  
+Важно:  
+ Все файлы в отдельной папке/CDN с водяными знаками/preview‑версиями, не исходники.
+1.7. Страница «Contact / Business»  
+Title:  
+ WillowinWorld Contact – Publishers, Investors & Partners  
+H1:  
+ Contact WillowinWorld  
+Блоки:
+ Разделы для игроков, прессы, партнёров, издателей, инвесторов.  
+ Формы с серверной валидацией и CAPTCHA/turnstile.  
+ Ссылки на соцсети, email‑поля вида publishers@willowinworld.com.  
+Семантика и ключевые запросы
+Нужно собрать кластеры и распределить их по страницам.
+2.1. Брендовые ключи
+willowinworld  
+willowinworld games  
+willowinworld studio  
+willowinworld magical game studio  
+willowinworld indie games  
+Находят:  
+Главная.  
+Страница “Studio”.  
+Страница “Games / Library”.
+2.2. Игры + жанры
+Примеры для Candy Shop‑стиля:
+candy shop mobile game  
+candy shop puzzle game  
+merge puzzle with physics  
+casual puzzle game mobile  
+magic bubble puzzle game  
+merge candy game android  
+Находят:  
+Страницу конкретной игры.
+2.3. Студия и аудитория
+magical game studio  
+indie game studio puzzle  
+mobile game developer magical  
+game studio for enchanting games  
+puzzle game studio mobile  
+Находят:  
+Studio / About.  
+Games / Library.  
+2.4. Devlog / контент‑ключи
+game devlog magical puzzle  
+how to design a merge puzzle  
+indie devlog candy game  
+small game studio devlog  
+Находят:  
+News / Devlog и отдельные статьи.
+Внутренняя перелинковка
+Это критически важный слой для SEO.
+На главной:
+Ссылки на:
+ Studio,  
+ Games / Library,  
+ News / Devlog,  
+ Contact,  
+ Press Kit,  
+ Каждая страница игры.
+На каждой странице игры:
+Ссылки на:
+ WillowinWorld (brand page),  
+ Studio,  
+ Other Games,  
+ Contact,  
+ Devlog (если есть статья про эту игру).  
+На странице Studio:
+Ссылки на:
+ Главную,  
+ Games / Library,  
+ News / Devlog,  
+ Press Kit,  
+ Каждую игру (если проект небольшой).  
+Контент‑план на 30 дней
+Сделаем минимум, который уже даст толчок.
+День 1–3: Фундамент  
+Структура сайта:  
+ Создать страницы: главная, studio, games‑library.  
+Настроить:
+ title, description, корректные H1,  
+ sitemap.xml, базовый robots.txt.  
+День 4–10: Страницы игр  
+Создать по 1 странице на игру, если есть хотя бы 1–2 релиза:  
+ Описание, жанр, платформы, FAQ, скриншоты с alt.  
+Прописать title/description/H1 под ключевые запросы по игре.  
+Сделать карточки на главной и в секции Games / Library.
+День 11–17: Devlog / News  
+Написать 3–5 коротких статей:
+ “How we designed…”,  
+ “Behind the scenes of…”,  
+ “Our art style explained”,  
+ “From mobile to web: tech choices”.  
+Привязать статьи к конкретным играм (ссылки вверх/вниз).
+День 18–24: Press Kit & Contact  
+Собрать:
+ Логотипы,  
+ Скриншоты,  
+ Краткий текст о студии,  
+ Контакты для издателей/пресса.  
+Сделать страницу Press Kit и добавить внутренние ссылки на неё.
+День 25–30: Техника и ранжирование  
+Проверить:
+ LCP, CLS, INP (скорость мобильной версии).  
+Убедиться, что:
+ Все страницы открываются ботам,  
+ Нет дублей,  
+ Есть канонические ссылки.  
+Запустить сайт в Google Search Console / Яндекс.Вебмастер.
+Что нужно сделать перед релизом
+Убедиться, что у каждой игры есть индексируемая страницас понятным описанием и семантикой.  
+Проверить скорость на мобильныхи Core Web Vitals это напрямую влияет на место в выдаче.  
+Выстроить внутреннюю перелинковкутак, чтобы важные страницы (студия, игры, devlog) получали больше силы.  
+Собрать список ключевых запросови закрепить их на title/H1/meta/alt, а не просто спамить в тексте. [developers.google](https://developers.google.com/search/docs/appearance/corewebvitals)
+Честный вывод
+Самый надёжный способ вывести WillowinWorld выше в поиске по играм это не “один лендинг + 100 ключей”, а система:  
+страницы бренда,  
+страницы игр,  
+devlog / контент,  
+техническая база (скорость, мобильность, структура).  
+Если в следующем шаге ты скажешь, сколько игр у тебя уже есть и есть ли уже URL/домен, я могу:  
+подобрать конкретные title/H1/meta для каждой игры,  
+расписать мини‑семантический кластер по Яндекс/Google,  
+и сделать табличный шаблон SEO‑карты сайта(page  title  H1  ключи).

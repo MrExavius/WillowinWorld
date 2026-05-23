@@ -1,0 +1,1522 @@
+Я разобрал загруженные файлы сайта WillowinWorld: index.html, styles.css, scripts.js, security headers для Netlify/Apache/Nginx и securitycheck.mjs. Ниже аудит в формате, который ты задал: дизайн, UX, frontend, performance, motion, mobile, branding, security и защита ассетов. 
+1. Краткий вердикт
+Направление                                        Оценка  Вердикт                                                                             
+ :  
+Дизайн / Art Direction                  8.2 / 10 Уже есть ощущение магической игровой студии, не обычной визитки.                    
+UX                                      7.3 / 10 Структура понятная, но контакт/CTA и devlog/presskit пока слабые.                  
+Frontend                                8.0 / 10 Код аккуратный, без грубых XSSпаттернов, но CSS/анимации разрослись.               
+Performance                             6.4 / 10 Главный риск: много изображений, фильтров, теней, canvas + CSSанимаций.            
+Mobile                                  7.0 / 10 Адаптив есть, touchfriendly кнопки есть, но hero и game cards могут быть тяжёлыми. 
+Branding                                8.1 / 10 WillowinWorld запоминается, “магический кот / две W / портал” хорошая база.       
+Security               8.2 / 10для staticсайта  CSP/headers сильные, но контактная форма пока не productionready.                  
+Woweffect                              8.4 / 10 Canvasмагия, пасхалки и game cards дают вау, но нужно контролировать FPS.          
+Главный вывод:сайт уже выглядит как премиальная интерактивная страница игровой студии, а не “сайт на коленке”. Самые опасные места перед релизом производительность, реальная контактная форма, оптимизация ассетов, финальная доверительность бренда: press kit, ссылки, devlog, реальные контакты, Google Play/Steam/Discord/Telegram.
+2. Главные проблемы
+1. Слишком тяжёлый визуальный слой.
+По статическому скану: 57 изображений в HTML, 4464 строки CSS, 1820 строк JS, 56 @keyframes, 88 animationдеклараций, много filter, backdropfilter, boxshadow, transform. Само по себе это не “плохо”, но на слабых Android может дать лаги, особенно вместе с canvasмагией.
+2. Часть изображений без width/height.
+В HTML есть много картинок с размерами, но по скану 27 изображений без полного width/height. Это повышает риск CLS/layout shift, особенно в карточках Paint Blasters / Ball is God, где часть <img> идёт без явных размеров. 
+3. Некоторые изображения ниже первого экрана стоят loading="eager".
+Например, иконки Paint Blasters и Ball is God стоят eager, хотя это не heroasset первого экрана. Их лучше перевести в lazy или грузить только после появления блока games. 
+4. Контактная форма пока декоративная.
+В HTML прямо написано “Decorative form placeholder”, а JS на submit делает preventDefault(), показывает toast “Real sending is not connected yet” и сбрасывает форму. Для релиза это ломает доверие: издатель/игрок/партнёр думает, что отправил сообщение, но оно никуда не ушло. 
+5. Securitycheck скрипт может не запускаться из текущей структуры.
+В securitycheck.mjs пути идут через ../index.html, ../styles.css, ../scripts.js, ../_headers, ../deploy/nginxsecurity.conf. Если файл лежит так же, как в загруженном наборе, он ищет не там. У меня при локальном запуске он упал на поиске /mnt/index.html. Если в реальном проекте он лежит в tools/ или scripts/, тогда ок; если нет надо поправить пути. 
+3. Что уже хорошо
+Сильная первая идея.Hero с текстом “We create magical worlds that feel alive”, Nature Seed preview, canvas, magic HUD и переключение темы сразу дают ощущение “живого мира”, а не обычного лендинга. 
+Хорошее позиционирование четырёх игр.Nature Seed, Candy Shop, Paint Blasters и Ball is God?! имеют жанры, статусы, прогресс и понятные pillars. Это важно для портфолио студии: пользователь быстро понимает, что студия делает не один случайный проект, а линейку миров.  
+Securityбаза сильная.CSP очень строгая: defaultsrc 'self', objectsrc 'none', connectsrc 'none', formaction 'none', scriptsrc 'self', stylesrc 'self'. Nginxконфиг добавляет CSP, HSTS, nosniff, XFrameOptions: DENY, ReferrerPolicy, PermissionsPolicy, COOP/CORP. Для статического сайта это уже выше среднего. 
+JS написан относительно безопасно.Важный плюс: модалки заполняются через textContent, createElement, replaceChildren, а не через innerHTML. В securitycheck также явно запрещены innerHTML, outerHTML, insertAdjacentHTML, document.write, eval, Function, fetch, XMLHttpRequest, WebSocket, EventSource и утечки ключей. 
+Accessibility не забыта.Есть arialabel, ariahidden, role="dialog", ariamodal, arialive, focus trap в модалках, Escape для закрытия, prefersreducedmotion и lowmotion режим. Это прям productionмышление, не просто красивая картинка. 
+4. Подробный аудит
+Design / Art Direction
+Сайт уже имеет сильный fantasy/cozy/premium тон: мягкий свет, магическая палитра, rounded UI, glowing W, “живые” карточки игр, портал/кот/созвездие. Это хорошо подходит WillowinWorld, потому что бренд строится не вокруг “мы делаем игры”, а вокруг “мы открываем игровые миры”.
+Что ослабляет premium feel:
+Проблема                                     Почему плохо                                                Как усилить                                                                     
+
+Местами слишком много декоративных эффектов  Premium это не “всё светится”, а контролируемая иерархия  Оставить 1 главный magical effect на экран, остальное сделать тише              
+Hero слишком сильно продвигает Nature Seed   Остальные игры выглядят вторичными                          В hero добавить “studio reel” из 4 миров или миникарусель символов игр         
+Footer с placeholderссылками                Снижает доверие                                             Заменить на реальные Telegram/Discord/X/press email или убрать до готовности    
+Нет press/publisher блока                    Для игровой студии важно выглядеть готовой к партнёрствам   Добавить “Press Kit”, “Publisher Deck”, “Beta Access”, “Contact for publishing” 
+Сильное направление:сделать сайт как “магическую карту четырёх миров”. Hero портал WillowinWorld, ниже 4 мира как острова/карты/порталы: Nature Seed, Candy Shop, Paint Blasters, Ball is God?!.
+UX
+Сейчас пользователь понимает: это игровая студия, есть 4 игры, есть магический стиль, есть контакт. Это уже хорошо. Но для релиза нужно усилить доверие и действие.
+Что добавить:
+1. В hero две разные CTA:
+Explore Games и Join Beta / Get Press Kit. Сейчас Contact Studio слишком общий.
+2. Для Nature Seed:
+Написать конкретнее: “Beta opens July 1” и кнопка “Join Beta Waitlist”. У тебя в карточке уже есть 99% и July 1, но это должно быть сильнее видно. 
+3. Добавить roadmapблок:
+Now: Nature Seed Beta → Next: Candy Shop → Production: Paint Blasters → In Development: Ball is God?!.
+4. Добавить trustблок:
+“Mobilefirst”, “Unity”, “2D premium art”, “physicsbased systems”, “prototype → polish pipeline”. Это важно для издателей.
+5. Контакты сделать настоящими.
+Сейчас форма декоративная, а footer содержит placeholders. Для игрока это нормально на прототипе, но для студии минус доверия. 
+Frontend / Code Quality
+Хорошо:семантика нормальная, sectionструктура читаемая, JS не делает опасные HTMLинъекции, есть модалки, фильтры, focus trap, visibility pause, reducedmotion, активная навигация, адаптив.
+Что улучшить:
+1. Разделить JS на модули.
+Сейчас scripts.js один большой IIFE на 1820 строк. Для поддержки лучше разделить:
+theme.js
+magiccanvas.js
+modals.js
+gameprofiles.js
+filters.js
+secrets.js
+performance.js
+2. Разделить CSS.
+styles.css на 4464 строки уже сложно поддерживать. Разделить:
+base.css
+layout.css
+components/buttons.css
+components/cards.css
+components/modals.css
+effects/magic.css
+responsive.css
+3. Добавить width/height всем изображениям.
+Сейчас часть изображений без размеров. Это надо закрыть перед релизом, чтобы не было layout shift.
+4. Убрать loading="eager" с неhero картинок.
+Paint/Ball icons в game cards не должны конкурировать с hero за LCP. 
+5. Исправить securitycheck.mjs пути.
+Если он должен лежать в корне проекта, пути должны быть ./index.html, ./styles.css, ./scripts.js, ./_headers, ./nginxsecurity.conf. Если он должен лежать в /tools, тогда нужно реально держать структуру /deploy/nginxsecurity.conf. 
+Performance / Лаги
+Главный риск сайта не JSлогика, а визуальный слой: canvas, particles, blur, shadows, фильтры, множество анимированных карточек, много WebP/PNG.
+Что может лагать:
+Что                                    Почему                                                                        
+ 
+Canvas magic на fullscreen            Постоянный requestAnimationFrame, отрисовка звёзд, частиц, кота, trails     
+backdropfilter                      Дорогой blur, особенно на мобильных GPU                                       
+filter/dropshadow                   Часто вызывает repaint/compositing cost                                       
+10 candy backgrounds в одной карточке  Даже lazy может дать скачок памяти/декодинга при появлении блока              
+Большие PNG/WebP без responsive sizes  Мобильный может декодировать слишком крупные изображения                      
+Много CSSанимаций                     GPU/CPU нагрузка растёт, особенно если несколько карточек одновременно видимы 
+Что уже хорошо: JS сам снижает качество при prefersreducedmotion, saveData, slow network, small screen; particle count уменьшается на мобилке; есть visibility pause; есть lowmotion/disable magic controls.  
+Обязательные performanceправки перед релизом:
+1. Hero assets:
+добавить preload для главного heroизображения;
+добавить fetchpriority="high" только для реально главного heroimage;
+все остальные lazy.
+2. Responsive images:
+сделать 480w / 768w / 1280w версии;
+использовать <picture> или srcset;
+не отдавать 1440px картинку на телефон 360px.
+3. Candy card:
+не держать 10 background images в DOM сразу;
+грузить только 1–2 стартовых;
+остальные подгружать после IntersectionObserver или по hover/play.
+4. Canvas:
+на мобильных по умолчанию lowMotion = true, а full magic включать кнопкой;
+ограничить FPS canvas до 30 на мобильных;
+рендерить canvas только когда hero/magicблок в viewport.
+5. CSS effects:
+сократить backdropfilter в header/footer/modal;
+заменить часть blur/glow на статические PNG/gradient overlays;
+уменьшить количество simultaneous keyframes.
+Motion / Interactive Experience
+У сайта уже есть хороший интерактив: magic canvas, click bursts, trail, star path, hidden letters, модалки игр, hover shine, theme switch. Это сильный woweffect. 
+Но важно разделить эффекты:
+Безопасные для performance:
+hover shine только на desktop pointer;
+revealанимации через opacity/transform;
+маленькие particle burst по клику;
+статичные portal glow overlays;
+SVGлинии с ограниченной анимацией;
+карточки игр с 1–2 анимированными слоями.
+Опасные, если переборщить:
+постоянные fullscreen particles;
+много blur/backdropfilter;
+анимация больших картинок через filter;
+10+ одновременно движущихся PNG;
+canvas + CSS keyframes + hover effects одновременно на mobile.
+Идея лучше:сделать “Magic Quality Toggle”:
+Auto / Low / Full. Сейчас логика уже почти есть: state quality, low motion, disable magic. Нужно только красиво вывести это как понятный UI для пользователя.
+Branding / Game Company Image
+Сильная база бренда: WillowinWorld звучит мягко, магически, “worldbuilding”. В About уже есть идея magic cat, twin W, portal arc это можно сделать центральной айдентикой. 
+Позиционирование лучше сформулировать так:
+> WillowinWorld is a mobilefirst indie game studio creating magical, tactile worlds where cozy art, readable systems and playful physics become memorable experiences.
+Для сайта можно короче:
+> Magical mobile worlds players want to touch, replay and remember.
+Tone of voice:
+не corporate, а “storybook premium”: тёплый, уверенный, чуть магический, но без детскости.
+Что добавить для доверия:
+Press Kit;
+Beta Access;
+Contact for Publishing;
+Studio Roadmap;
+Screenshots / gameplay GIFs;
+Devlog;
+“Built with Unity / mobilefirst / performancetested”;
+реальные соцсети;
+privacy/copyright/DMCA page.
+Mobilefirst Audit
+Сейчас мобильная версия есть: меню сворачивается, кнопки становятся fullwidth, карточки идут в одну колонку, hero panel уменьшается, reducedmotion учитывается. 
+Что улучшить:
+1. Hero на телефоне:
+h1 с 17vw может быть очень крупным. Это эффектно, но может съесть первый экран. Я бы сделал mobile headline чуть компактнее: clamp(2.65rem, 14vw, 4rem).
+2. Hero panel:
+420px высоты на маленьком телефоне много. Можно сделать 340–380px и перенести часть decorative labels ниже.
+3. Фильтры игр:
+На mobile лучше horizontal scroll chips, а не перенос в несколько строк, иначе блок фильтров начинает выглядеть как “облако тегов”.
+4. Canvas:
+На mobile default lowmotion. Full magic по кнопке.
+5. Карточки игр:
+Оставить только один главный animated layer на карточку. Например:
+Nature Seed: sketch → bloom;
+Candy Shop: 2 candies merge;
+Paint Blasters: one shot impact;
+Ball is God: falling ball + clouds.
+5. Таблица проблем
+Проблема                     Почему плохо            Критичность  Как исправить                                     Приоритет 
+:   : 
+Contact form не отправляет   Потеря лидов/доверия        Высокая  Backend/API, captcha, rate limit, success email          P0 
+Placeholder соцсети          Выглядит незавершённо       Средняя  Реальные ссылки или убрать                               P0 
+Много тяжёлых эффектов       Лаги на Android             Высокая  Reduce effects, mobile lowmotion, FPS cap               P0 
+Не все img имеют размеры     CLS/layout shift            Средняя  Добавить width/height/aspectratio                       P0 
+Eager ниже fold              Плохой LCP                  Средняя  Только hero eager/high priority                          P1 
+Candy 10 backgrounds         Memory/decode cost          Высокая  Lazy via JS, sprite, видео/webm preview                  P1 
+CSS 4464 строки              Тяжело поддерживать         Средняя  Разделить CSS по слоям                                   P1 
+JS 1820 строк в одном файле  Сложнее масштабировать      Средняя  Разбить на модули                                        P1 
+securitycheck пути          CI может не работать        Средняя  Исправить структуру путей                                P1 
+Нет press/devlog             Слабее образ студии         Средняя  Press Kit + Studio Notes как реальные обновления         P2 
+Нет privacy/copyright pages  Для релиза/формы нужно      Средняя  Добавить /privacy, /press, /dmca                   P2 
+6. Productionready рекомендации
+Перед публикацией я бы сделал так:
+1. Подключить настоящую форму:backend endpoint, serverside validation, honeypot, Turnstile/reCAPTCHA, rate limit, email notification.
+2. Сделать privacy/copyright/DMCA pages.
+3. Проверить Lighthouse на реальном домене:mobile performance, CLS, LCP, INP.
+4. Оптимизировать все изображения:AVIF/WebP, responsive sizes, hero preload, lazy для всего ниже fold.
+5. Сделать mobile lowmotion default.
+6. Убрать placeholders из footer.
+7. Добавить Beta CTA для Nature Seed.
+8. Добавить Press Kit / Publisher Contact.
+9. Исправить securitycheck.mjs и запустить его в CI.
+10. Проверить headers на реальном хостинге, потому что meta CSP не заменяет полноценные HTTP security headers. У тебя уже есть Nginx/_headers/Apache варианты главное реально включить нужный для выбранного хостинга. 
+7. Защита от копирования / скачивания ассетов
+Честно: полностью запретить скачивание frontendсайта невозможно. Браузер уже получает HTML/CSS/JS/картинки. Можно только усложнить копирование и защитить ценные исходники.
+Реально полезно
+Не выкладывать PSD/AI/Unity source/оригинальные ассеты в public.
+Использовать previewверсии изображений, а не исходники.
+Водяные знаки на press/promotional art.
+CDN hotlink protection.
+Запрет directory listing.
+Copyright/DMCA/contact policy.
+Rate limit на формы/API.
+Хранить приватные материалы вне publicпапки.
+Логи доступа и мониторинг подозрительных скачиваний.
+Уникальные watermarkверсии press kit для партнёров.
+Частично полезно
+Minification JS/CSS.
+Obfuscation JS.
+robots.txt.
+noindex/noarchive для служебных страниц.
+Низкое разрешение previewкартинок.
+CSS userselect: none только для декоративных элементов.
+Почти бесполезная иллюзия
+Запрет правого клика.
+“Блокировка DevTools”.
+Попытка спрятать HTML/CSS/JS.
+Запрет drag image как основная защита.
+Надежда, что CSP защитит от скачивания ассетов. CSP защищает от инъекций/источников, но не от просмотра уже загруженных файлов.
+8. Идеи, чтобы сайт стал дороже и запоминающееся
+1. Hero как портал WillowinWorld: 4 маленьких мира вокруг центрального логотипа.
+2. Interactive studio map: игрок водит курсором, открываются острова игр.
+3. Nature Seed beta panel: “Beta opens July 1” + waitlist.
+4. Candy Shop teaser: drag/drop candy mini interaction.
+5. Paint Blasters microdemo: один клик шарик краской ломает минибашню.
+6. Ball is God?! vertical drop easter egg: минишар падает между облаками при скролле.
+7. Press Kit buttonв header/footer.
+8. Publisher mode toggle: короткая версия сайта для партнёров.
+9. Devlog cards: “What we polished this month”.
+10. Magic cat guide: кот подсказывает, где beta/devlog/contact.
+11. Soundoff microfeedback: визуальные “pop/spark” эффекты без аудио по умолчанию.
+12. Game status timeline: 99% / 85% / 80% / 70% в красивой roadmapлинии.
+13. Real screenshots/video GIFsвместо части декоративных превью.
+14. Brand manifesto: “Readable systems. Tactile worlds. Magic with restraint.”
+15. Awards/press placeholder не ставить, пока нет реального лучше “Coming soon” или убрать.
+16. Performance badge: “Mobilefirst, reducedmotion friendly”.
+17. Secret reward сделать безопасным marketing easter egg, не обещать реальные скины без backend.
+18. Logo animation: две W соединяются порталом, но только один раз при входе.
+9. Финальная концепция идеального WillowinWorld сайта
+Структура:
+1. Hero: портал WillowinWorld, слоган, CTA Explore Worlds, Join Nature Seed Beta.
+2. Four Worlds: 4 игры как магические порталы.
+3. Roadmap: Now / Next / In Production / In Development.
+4. Studio Philosophy: readable systems + tactile art + cozy magic.
+5. Interactive Magic Block: миниигра/созвездие/кот.
+6. Devlog: короткие новости разработки.
+7. Press & Publisher: press kit, contact, short pitch.
+8. Careers/Collab.
+9. Footer: реальные ссылки, copyright, privacy, DMCA.
+Визуальный стиль:premium storybook fantasy + mobile game UI. Мягкие градиенты, чистые карточки, 1 главный glow на экран, меньше случайного шума, больше брендовых символов: кот, портал, twin W, четыре мира.
+Техническая база:staticfirst, no unsafe inline, strict CSP, responsive images, lowmotion by default on weak/mobile, modular CSS/JS, CI security check, Lighthouse budget.
+Security:оставить строгий CSP/headers, подключить форму только через защищённый backend, добавить rate limiting/spam protection, не хранить ключи во frontend, не публиковать исходники ассетов, настроить CDN/hotlink protection.
+Итог:сайт уже на уровне сильного прототипа/почти production landing. Чтобы он стал реально “дорогим сайтом игровой компании”, нужно не столько добавлять ещё эффектов, сколько отполировать доверие, скорость, мобильную стабильность и реальные точки контакта.
+Да, давай ещё глубже что именно сделать, чтобы сайт WillowinWorld выглядел не просто “красиво”, а как сайт настоящей игровой студии уровня premium indie / publisherready.
+Часть 2. Самые сильные улучшения
+1. Главная проблема сайта: он уже красивый, но ещё не “доверительный”
+Сейчас сайт говорит:
+> “Мы магическая игровая студия, у нас красивые миры.”
+Но для издателя, инвестора, игрока или будущего партнёра нужно ещё:
+> “Мы реальная команда, у нас есть игры, планы, контакты, прогресс, press kit, beta, pipeline, безопасность и понятный путь связи.”
+У тебя уже есть сильный hero, games section, статусы игр, фильтры и интерактив. Например, в hero написано “We create magical worlds that feel alive”, а дальше есть CTA Explore Games и Contact Studio это хорошая база. 
+Но внизу сайта ещё стоят Telegram placeholder, Discord placeholder, X/Twitter placeholder, а контактная форма прямо называется decorative placeholder. Это сразу ломает ощущение “дорогой студии”. 
+Что сделать:
+До релиза либо подключить реальные ссылки и форму, либо честно заменить форму на:
+> For publishing, press and collaboration: [hello@willowinworld.com](mailto:hello@willowinworld.com)
+И кнопка:
+> Copy Email
+Лучше честный email, чем красивая форма, которая никуда не отправляет.
+2. Новый hero: сделать более “game studio”, а не только Nature Seed
+Сейчас hero визуально сильно завязан на Nature Seed: превью восстановления природы, Sketch / Guide water / Bloom, Beta Access Soon. Это красиво, но WillowinWorld делает 4 игры, а не только Nature Seed. 
+Я бы переделал hero так:
+Текущий смысл
+> We create magical worlds that feel alive.
+Более сильная версия
+> Magical mobile worlds built from physics, charm and wonder.
+И подзаголовок:
+> WillowinWorld creates tactile mobilefirst games where cozy art, readable systems and playful interactions turn every level into a small magical world.
+CTA
+Вместо двух обычных кнопок:
+Explore Our Worlds
+Join Nature Seed Beta
+маленькая ссылка: Press / Publishing Contact
+Так ты сразу показываешь:
+игрокам игры;
+тестерам beta;
+издателям контакт;
+художникам/разработчикам студия живая.
+3. Самый важный UXблок, которого не хватает: Roadmap
+У тебя уже есть прогресс игр в карточках: Nature Seed 99%, Candy Shop 85%, Paint Blasters 80%, Ball is God?! 70%. В JS эти статусы тоже прописаны как игровые профили: Nature Seed beta soon, Candy Shop coming next, Paint Blasters in production, Ball is God?! in development. 
+Но сейчас это спрятано внутри карточек/модалок. Нужно вынести в отдельный блок.
+Блок: Studio Roadmap
+text
+2026 Studio Roadmap
+01 Nature Seed
+Beta Access Soon 99%
+A meditative drawtosolve physics puzzle about restoring nature.
+02 Candy Shop
+Coming Next 85%
+A cozy physicsbased merge puzzle with candy evolution and satisfying combos.
+03 Paint Blasters
+In Production 80%
+A colordriven destruction puzzle with tactical shots and chain reactions.
+04 Ball is God?!
+In Development 70%
+A hardcore vertical arcade game about timing, divine towers and choices.
+Это резко повысит доверие. Пользователь видит не просто красивые карточки, а план студии.
+4. Нужно добавить Press Kit / Publisher Kit
+Для сайта игровой компании это почти обязательно.
+Новый блок
+For Press & Publishers
+Внутри:
+Studio oneliner;
+4 game pitches;
+screenshots;
+logos;
+contact email;
+beta status;
+platforms;
+genres;
+downloadable press kit.
+Даже если press kit пока не готов, можно сделать кнопку:
+> Press Kit Coming Soon
+Но лучше уже сделать простую страницу /press.html.
+Что должно быть в press kit
+Раздел     Что внутри                               
+ 
+Studio     WillowinWorld description, logo, contact 
+Games      4 коротких pitch по каждой игре          
+Media      screenshots, icons, key art              
+Factsheet  genre, platform, status, release/beta    
+Contact    email, social links                      
+5. Улучшить карточки игр: сейчас они красивые, но можно сделать сильнее
+Сейчас карточки дают жанр, статус, описание, feature callout, теги и кнопки. Это хорошо. 
+Но в premiumсайте карточка должна за 3 секунды объяснять:
+1. Что это за игра?
+2. Почему она уникальна?
+3. На какой стадии?
+4. Что делать дальше?
+Новый формат карточки
+text
+Nature Seed
+DrawtoSolve Physics Puzzle
+Beta Access Soon July 1
+99% complete
+Draw magical lines, guide water and restore a dying forest.
+Unique hook:
+Every solved puzzle transforms the world from sketch to living nature.
+[View Game] [Join Beta]
+Для каждой игры нужен Unique Hook. Например:
+Nature Seed
+> Every solution restores the world from gray sketch to living watercolor nature.
+Candy Shop
+> A cozy merge puzzle where candy physics, special sweets and evolving containers create longterm depth.
+Paint Blasters
+> Build colorpowered shots, break towers and trigger satisfying chain reactions.
+Ball is God?!
+> Onetouch vertical descent with hardcore timing, divine towers and story consequences.
+6. Motion: меньше “всё двигается”, больше “режиссура”
+У тебя уже есть умная система canvas: particle count, lowmotion, SaveData, slow connection, FPS auto downgrade. Это реально хорошо: скрипт снижает эффекты при reduced motion / savedata / slow network, уменьшает particleCount на маленьком экране и умеет переключаться в Low. 
+Но визуально важно не просто “много магии”, а режиссура.
+Правило premium motion
+На одном экране должен быть:
+1 главный живой эффект;
+1–2 маленьких microinteractions;
+всё остальное почти статично.
+Для WillowinWorld
+Экран    Главный эффект              Остальное                       
+
+Hero     портал / Nature Seed bloom  лёгкие частицы                  
+Games    hover карточки              без постоянной тяжёлой анимации 
+Studio   магический кот / созвездие  минимальные glow                
+Roadmap  progress line               без canvasheavy                
+Contact  спокойный портал            без лишних эффектов             
+Сейчас сайт местами может ощущаться как “много всего сразу”: canvas, glow, карточки, фильтры, hover, модалки, secret rewards. Это круто для wow, но может снизить premium feel, если всё одновременно активное.
+7. Performance: что я бы переписал первым
+P0 самое важное
+1. Не грузить много картинок в Candy card сразу.
+В HTML Candy Shop карточка содержит набор фоновых картинок back_glavnie_1.webp, back_glavnie_2.webp, back_glavnie_3.webp и так далее. Они lazy, но всё равно при попадании блока в viewport браузер может начать декодить пачку изображений. 
+Лучше:
+показывать 1 static preview;
+при hover/тапе подгружать 2–3 дополнительные картинки;
+или заменить на один короткий оптимизированный .webm / .avif sequence;
+на mobile вообще показывать static preview.
+2. Canvas на мобильных Low по умолчанию.
+Сейчас на smallScreen particleCount становится 34, но full canvas всё равно работает. 
+Я бы сделал:
+js
+if (smallScreen) {
+ state.lowMotion = true;
+ state.quality = "Low";
+ body.classList.add("lowmotion");
+ state.particleCount = 18;
+}
+И кнопка:
+> Enable Full Magic
+3. Ограничить canvas FPS на телефоне.
+Сейчас render идёт через requestAnimationFrame, то есть может пытаться идти 60 FPS. При heavy effects на телефоне лучше 30 FPS.
+Логика:
+js
+const targetFrame = smallScreen ? 1000 / 30 : 1000 / 60;
+if (now lastRenderTime < targetFrame) {
+ state.rafId = requestAnimationFrame(render);
+ return;
+}
+4. Убрать лишний backdropfilter на mobile.
+В CSS есть blur у footer/modal/header. Например modal использует backdropfilter: blur(10px), footer blur(16px). Это красиво, но на слабом телефоне может быть дорого. 
+На mobile:
+css
+@media (maxwidth: 700px) {
+ .siteheader,
+ .sitefooter,
+ .modal {
+ backdropfilter: none;
+ }
+}
+8. Security: сайт защищён хорошо, но есть важный нюанс
+У тебя очень строгая CSP в HTML: defaultsrc 'self', запрет object/frame/connect/formaction, script/style только self, Trusted Types. 
+В nginxконфиге тоже сильная защита: CSP, HSTS, nosniff, XFrameOptions DENY, ReferrerPolicy, PermissionsPolicy, COOP/CORP. 
+Это хорошо.
+Но есть нюанс:
+Сейчас formaction 'none'
+Это значит: обычная HTMLформа не сможет отправляться наружу. Пока форма декоративная ок. Но когда подключишь реальную отправку, нужно будет выбрать архитектуру.
+Вариант A через backend API
+Тогда CSP надо изменить:
+http
+connectsrc 'self' https://api.willowinworld.com;
+formaction 'self';
+И JS будет делать fetch на свой backend.
+Но у тебя securitycheck сейчас запрещает fetch, XMLHttpRequest, WebSocket, EventSource. 
+То есть для productionформы нужно либо:
+разрешить fetch только в файле contact module;
+либо отправлять форму обычным POST на backend;
+либо использовать serverless function с очень строгой CSP.
+Вариант B mailto
+Самый простой и безопасный:
+html
+<a href="mailto:hello@willowinworld.com">Contact Studio</a>
+Но это менее premium.
+Лучший вариант
+Backend endpoint:
+text
+POST /api/contact
+С защитой:
+serverside validation;
+honeypot field;
+Cloudflare Turnstile;
+rate limit по IP;
+max message length;
+email normalization;
+no HTML in emails;
+logs;
+spam filtering.
+9. securitycheck надо улучшить
+Текущий securitycheck.mjs хорошая идея. Он проверяет CSP, отсутствие inline style/script, запрет on handlers, запрет внешних URL, запрет innerHTML, eval, ключей и внешних CSS URL. 
+Но я бы добавил ещё проверки:
+js
+requireMatch("_headers", files.headers, /PermissionsPolicy/i);
+requireMatch("_headers", files.headers, /ReferrerPolicy:\snoreferrer/i);
+requireMatch("_headers", files.headers, /CrossOriginOpenerPolicy/i);
+requireMatch("_headers", files.headers, /CrossOriginResourcePolicy/i);
+forbidMatch("index.html", files.html, /target="_blank"(?![^>]rel="noopener noreferrer")/i);
+forbidMatch("index.html", files.html, /<iframe/i);
+forbidMatch("index.html", files.html, /<object/i);
+forbidMatch("index.html", files.html, /<embed/i);
+forbidMatch("index.html", files.html, /<input[^>]+type=["']file/i);
+И отдельно добавить проверку, что нет placeholderтекста перед релизом:
+js
+forbidMatch("index.html", files.html, /placeholder/i);
+forbidMatch("index.html", files.html, /Coming Soon social/i);
+forbidMatch("index.html", files.html, /Telegram placeholder/i);
+forbidMatch("index.html", files.html, /Discord placeholder/i);
+Потому что security это не только XSS. Это ещё и отсутствие случайно забытых черновиков.
+10. Что добавить в сайт, чтобы он стал “дороже”
+A. Studio Manifesto
+Блок:
+text
+Our Philosophy
+Readable Systems
+Every interaction should be instantly understandable.
+Tactile Worlds
+Every tap, shot, drop or line should feel physical.
+Soft Magic
+We build worlds that feel charming, alive and emotionally memorable.
+Mobilefirst Polish
+Every game is designed around touch, clarity, short sessions and performance.
+Это идеально связывает твои игры:
+Nature Seed lines/water/restoration;
+Candy Shop candy physics;
+Paint Blasters color destruction;
+Ball is God?! timing/falling.
+B. “Four Worlds” как карта
+Вместо обычных карточек можно сделать:
+text
+The WillowinWorld Map
+[Forest Portal] Nature Seed
+[Candy Shop Door] Candy Shop
+[Paint Tower Arena] Paint Blasters
+[Golden Sky Tower] Ball is God?!
+Пользователь водит мышкой/тапает портал открывается, карточка оживает.
+Это сильнее брендово, чем просто grid.
+C. “Beta Access Soon” отдельным premiumблоком
+Nature Seed почти готова. Это надо продавать сильнее.
+text
+Nature Seed Beta
+Opening July 1
+A calm drawtosolve physics puzzle about restoring a dying forest.
+[Join Beta Waitlist]
+[View Screenshots]
+Даже если пока нет backend, можно сделать кнопку на email:
+text
+mailto:hello@willowinworld.com?subject=Nature Seed Beta Access
+D. Devlog
+Даже 3 карточки хватит:
+text
+Studio Notes
+May 2026 Nature Seed polish pass
+We improved water readability, level flow and restoration feedback.
+May 2026 Candy Shop container experiments
+Testing new candy bags, shape variety and merge feedback.
+April 2026 Paint Blasters colorcombo prototype
+35 projectile combinations tested for readability and mobile performance.
+Devlog делает сайт живым.
+11. Конкретный список “сделай первым”
+За 1 день
+1. Убрать placeholders из footer.
+2. Заменить декоративную форму на честный email/contact block.
+3. Добавить Roadmap.
+4. Добавить Beta CTA для Nature Seed.
+5. Убрать eager/lazy ошибки у изображений ниже hero.
+6. Добавить width/height всем картинкам.
+7. На mobile выключить heavy canvas по умолчанию.
+За 2–3 дня
+1. Сделать /press.html.
+2. Сделать /privacy.html.
+3. Сделать /copyright.html.
+4. Оптимизировать изображения по размерам.
+5. Разделить CSS на модули.
+6. Разделить JS на модули.
+7. Добавить Lighthouse budget.
+Перед релизом
+1. Реальная контактная форма.
+2. Rate limiting.
+3. Spam protection.
+4. Проверка CSP на productionдомене.
+5. Проверка mobile FPS.
+6. Проверка Android Chrome на слабом устройстве.
+7. Проверка Safari iOS.
+8. Проверка Lighthouse mobile.
+9. Проверка всех ссылок.
+10. Проверка, что нигде нет placeholder/черновиков.
+12. Самая сильная финальная версия сайта
+Я бы позиционировал WillowinWorld так:
+text
+WillowinWorld
+Magical mobile worlds built from physics, charm and wonder.
+We create tactile games where readable systems, cozy art and playful interactions turn simple mechanics into memorable worlds.
+Главная структура
+1. Hero Portal
+логотип;
+слоган;
+4 маленьких портала игр;
+CTA: Explore Worlds / Join Beta / Press Contact.
+2. Four Worlds
+Nature Seed;
+Candy Shop;
+Paint Blasters;
+Ball is God?!
+3. Nature Seed Beta
+дата;
+screenshots;
+beta CTA.
+4. Studio Roadmap
+99 / 85 / 80 / 70.
+5. Studio Philosophy
+readable systems;
+tactile worlds;
+cozy magic;
+mobilefirst polish.
+6. Interactive Magic
+кот/созвездие/портал;
+lowmotion safe.
+7. Devlog
+3–6 коротких постов.
+8. Press & Publishers
+factsheet;
+contact;
+press kit.
+9. Contact
+настоящий email/form.
+10. Footer
+реальные соцсети;
+privacy;
+copyright;
+press kit.
+13. Главное правило для твоего сайта
+Не добавляй больше эффектов, пока не усилишь доверие.
+Сейчас визуал уже сильный. Следующий уровень не “ещё больше магии”, а:
+реальные контакты;
+roadmap;
+beta access;
+press kit;
+devlog;
+оптимизация;
+mobile FPS;
+настоящая форма;
+чистые ссылки;
+отсутствие placeholders.
+Вот тогда WillowinWorld будет выглядеть не как красивый концепт, а как реальная игровая студия с авторским миром и productionподходом.
+1. Что ещё удалось найти
+Я дополнительно разобрал проект как реальный prerelease сайт, а не просто красивый HTML. Важно: без живого URL я не могу честно измерить реальные LCP/CLS/INP/TTFB, поэтому часть performanceвыводов это технически обоснованные риски по коду, а не замер PageSpeed.
+Новые важные наблюдения
+Область               Что нашёл                                                                                                                                                                                                                                                                                             
+ 
+Design / UX      Сайт уже даёт магический premium vibe, но доверие ломают placeholderсоцсети и декоративная contact form.                                                                                                                                                                                             
+Frontend         Код аккуратный по безопасности, но CSS/JS уже стали “монолитом”: ~4465 строк CSS и ~1821 строк JS. Дальше поддерживать будет тяжелее.                                                                                                                                                                 
+Performance      В HTML 57 изображений; по статическому скану 27 изображений без width/height, 4 изображения ниже hero стоят loading="eager", CSS содержит много анимаций, фильтров, теней и absoluteслоёв.                                                                                                       
+Mobile           Есть адаптив и lowmotion логика, но на маленьких Android сайт может проседать изза canvas + animated cards + backdropfilter.                                                                                                                                                                     
+SEO              В <head> есть title и description, но нет Open Graph, Twitter Card, canonical, structured data, preload/fetchpriority для heroasset.                                                                                                                                                               
+Accessibility    Есть хорошие arialabel, modal roles, labels у формы, focus states. Но нужно проверить focus order, keyboard flow, hoveronly интерактив и reducedmotion на реальном устройстве.                                                                                                                   
+Security         CSP и headers сильные, но важно: защита должна приходить HTTPheader’ом, а не только metaтегом. frameancestors в meta CSP не работает; он должен быть в HTTP CSP header. OWASP отдельно отмечает, что frameancestors, заданный через meta, игнорируется. ([cheatsheetseries.owasp.org][1]) 
+Asset protection Полной защиты от скачивания frontendассетов нет. Нужно защищать исходники, press art и большие оригиналы, а не пытаться “запретить скачать сайт”.                                                                                                                                                    
+2. Новые возможные причины проблем
+Возможная причина                                           Почему это проблема                                                                                                                                                                             Как проверить                                                                                Вероятность        Опасность           Приоритет 
+ :  :  : 
+Декоративная contact form                              Пользователь думает, что отправил сообщение, но JS показывает “Real sending is not connected yet” и сбрасывает форму. Это убивает доверие и может потерять партнёров.                           Отправить форму вручную, проверить Network tab и emailдоставку.                                    100%          Высокая               🔴 P0 
+Placeholderсоцсети в footer                           “Telegram placeholder / Discord placeholder / X placeholder” сразу выглядит как незаконченный сайт.                                                                                             Открыть footer на desktop/mobile.                                                                   100%  Средняя/высокая               🔴 P0 
+Слишком много heroдекора вокруг Nature Seed           WillowinWorld выглядит как сайт одной игры, хотя студия делает 4 мира. Hero визуально доминирует Nature Seed.                                                                                   Показать сайт человеку на 5 секунд и спросить: “это сайт студии или игры?”                       Высокая          Средняя               🟠 P1 
+27 изображений без явных размеров                      Может давать CLS/layout shift, особенно когда lazyкартинки появляются в карточках. Chrome/Web.dev рекомендует бороться с CLS через резервирование места под элементы. ([web.dev][2])           Lighthouse → CLS; DevTools → Performance → Layout Shift Regions.                                 Высокая          Средняя               🔴 P0 
+Неверный eager loading ниже первого экрана             Paint/Ball icons не должны конкурировать с hero за загрузку. Web.dev предупреждает: LCPизображение нельзя lazyload, но ниже fold наоборот стоит lazyload. ([web.dev][3])                     Network tab → priority/order; Lighthouse LCP element.                                            Высокая          Средняя               🔴 P0 
+Canvas + CSSанимации одновременно                     Canvas requestAnimationFrame, particles, stars, cat, trails + CSS keyframes могут перегружать слабые телефоны. В JS есть автоdowngrade при FPS ниже 28, но это уже реакция после просадки.   Chrome Performance Profiler на Android; FPS meter; CPU throttling 4x/6x.                         Высокая          Высокая               🔴 P0 
+backdropfilter на header/footer/modal               Blur дорогой для мобильного GPU, особенно поверх сложного фона.                                                                                                                                 Performance Profiler → Paint/Composite; отключить blur и сравнить FPS.                   Средняя/высокая          Средняя               🟠 P1 
+CSSмонолит ~4465 строк                                Дальше будет сложно править карточки/адаптив/темы без случайных регрессий.                                                                                                                      Coverage + поиск повторов + stylelint.                                                           Высокая          Средняя               🟠 P1 
+JSмонолит ~1821 строк                                 Canvas, модалки, фильтры, secrets, theme, navigation в одном файле. Растёт риск багов при изменениях.                                                                                           Разделить mental map: сколько функций относится к разным зонам.                                  Высокая          Средняя               🟠 P1 
+CSP слишком строгая для будущей формы                  Сейчас connectsrc 'none' и formaction 'none'; это безопасно для static, но заблокирует реальную отправку формы.                                                                           DevTools Console/Security при подключении формы.                            100% при подключении backend  Средняя/высокая  🔴 P0 перед формой 
+HTTP headers могут не примениться на реальном хостинге В файлах есть Nginx headers, но нужно убедиться, что выбранный хостинг реально их отдаёт.                                                                                                       curl I / securityheaders.com / DevTools Security.                                               Средняя          Высокая               🔴 P0 
+Нет OG/Twitter/canonical/structured data               Сайт хуже выглядит в Telegram/Discord/X, хуже индексируется и слабее как брендстраница.                                                                                                        View source + Rich Results Test + social preview tools.                                          Высокая          Средняя               🟠 P1 
+Нет отдельного press/devlog/privacy/copyright слоя     Для игроков нормально, для издателей/партнёров выглядит неполно.                                                                                                                                UXаудит по целям: player / press / publisher / collaborator.                                    Высокая          Средняя               🟠 P1 
+Securitycheck может быть хрупким по путям             Скрипт читает ../index.html, ../styles.css, ../deploy/nginxsecurity.conf; если структура отличается, CI упадёт или проверит не то.                                                       Запустить из root и из scripts/tools folder.                                                     Средняя          Средняя               🟠 P1 
+Секретные rewards без backend                          В тексте есть “Secure reward delivery can be connected before launch”; если обещать реальные скины без backend, будет UX/security gap.                                                          Пройти easter egg и проверить delivery flow.                                                     Средняя          Средняя               🟢 P2 
+3. Новые способы фикса
+Способ фикса                                             Что изменить                                                                              Почему поможет                                                                                          Риски                                                     Когда использовать                 Productionready? 
+   
+Заменить decorative form на честный contact block   Пока backend не готов: email, copy button, subject links: Publishing / Press / Beta.      Убирает ложное ожидание отправки.                                                                       Менее “вау”, чем форма.                                   Немедленно перед публикацией.      Да                
+Подключить настоящую форму через backend/serverless POST /api/contact, server validation, honeypot, Turnstile, rate limit, email delivery.  Реальный лидогенератор для студии.                                                                      Нужно менять CSP, проверять spam/security.                Когда готов backend.               Да                
+Сделать mobile lowmotion default                   На maxwidth: 640px сразу включать Low, а Full Magic кнопкой.                         Снижает лаги на слабых телефонах до того, как FPS упал.                                                 Меньше wow на первом открытии.                            Для публичного релиза.             Да                
+Ограничить canvas FPS на mobile                     30 FPS на mobile, 60 FPS на desktop/highend.                                             Снижает battery drain и GPU load.                                                                       Менее плавные частицы.                                    Для canvas effects.                Да                
+Hero LCP strategy                                   Hero image: eager/high priority/preload; ниже fold: lazy.                                 Улучшает LCP. Web.dev рекомендует не lazyload LCP и повышать priority для LCPресурса. ([web.dev][3])  Нужно точно определить LCP element.                       После Lighthouse.                  Да                
+Добавить width/height/aspectratio всем img         Особенно Paint/Ball layers.                                                               Снижает CLS.                                                                                            Нужно знать реальные размеры.                             Всегда.                            Да                
+Responsive images                                   AVIF/WebP sizes: 360/720/1080/1440; srcset/sizes.                                       Мобильный не качает desktopкартинки.                                                                   Нужно генерировать несколько версий.                      Все большие арты.                  Да                
+Candy/Paint/Ball cards сделать staged loading       Сначала static poster, остальные слои после IntersectionObserver/interaction.             Снижает decode/memory spike.                                                                            Сложнее логика.                                           Для тяжёлых карточек.              Да                
+Разделить CSS на modules/layers                     Base, tokens, layout, components, effects, responsive.                                    Легче поддерживать и тестировать.                                                                       Потребуется build step или аккуратная структура imports.  Перед ростом сайта.                Да                
+Разделить JS на модули                              canvas, modals, filters, theme, secrets, analytics, contact.                Меньше регрессий, легче отключать эффекты.                                                              Нужно настроить bundling или ES modules.                  Перед добавлением backend/devlog.  Да                
+Добавить OG/Twitter/canonical/JSONLD               Studio schema, Organization, WebSite, VideoGame/Game pages.                               Лучше social preview и SEO.                                                                             Нужно качественные изображения.                           Перед public launch.               Да                
+Добавить /press, /privacy, /copyright, /404 Минимальные статические страницы.                                                         Повышает доверие и готовность к партнёрам.                                                              Нужно поддерживать актуальность.                          Перед релизом.                     Да                
+CSP ReportOnly этап                                Перед изменением CSP для формы включить reportonly.                                      Не ломает сайт молча.                                                                                   Нужно endpoint/report collector.                          При подключении API/аналитики.     Да                
+Securitycheck расширить на SEO/placeholders        Запрещать placeholder, проверять OG/canonical, headers, dangerous links.                  CI поймает черновики.                                                                                   Можно получить false positives.                           Перед релизом.                     Да                
+Hotlink/CDN protection                              Cloudflare hotlink protection, cache rules, no directory listing.                         Снижает прямое воровство трафика/ассетов.                                                               Не защищает от скачивания пользователем.                  После домена/CDN.                  Частично          
+4. Сравнение подходов
+Подход                                                                                                        Надёжность       Сложность             Performance                                        UX                   SEO                  Security                    Риск багов                Production 
+ :  :  :  :  :  :  :  : 
+Оставить как есть                                                                                           Средняя          Низкая              Риск лагов  Красиво, но недоверие изза placeholders                Слабее          Static безопасно  Низкий сейчас, высокий потом                       Нет 
+Минимальный релизный polish: убрать placeholders, email вместо формы, img sizes, lazy/eager cleanup          Высокая  Низкая/средняя                   Лучше                              Сильно лучше         Немного лучше                 Безопасно                        Низкий           Да, MVP release 
+Production contact backend                                                                                  Высокая         Средняя              Нейтрально                              Сильно лучше            Нейтрально    Нужно грамотно сделать                       Средний                        Да 
+Оставить heavy magic full на всех устройствах                                                                Низкая          Низкая         Плохо на mobile      Wow на desktop, плохо на weak mobile            Нейтрально                Нейтрально                       Средний                       Нет 
+Auto/Low/Full magic quality                                                                                 Высокая         Средняя                  Хорошо                                    Хорошо            Нейтрально                Нейтрально                       Средний                        Да 
+Полный SPA/React rewrite                                                                                    Средняя         Высокая        Может стать хуже                         Может стать лучше  Риск SEO без SSR/SSG  Зависимости/supply chain                       Высокий           Не нужно сейчас 
+Staticfirst + modular CSS/JS                                                                               Высокая         Средняя                  Хорошо                                    Хорошо                Хорошо                    Хорошо                Низкий/средний               Лучший путь 
+Всё спрятать от копирования через JS blockers                                                                Низкая          Низкая          Может ухудшить                                Раздражает      Нейтрально/плохо                   Иллюзия                       Средний                       Нет 
+Watermark/CDN/no originals                                                                          Средняя/высокая         Средняя              Нейтрально                                Нейтрально            Нейтрально        Хорошо для ассетов                        Низкий                        Да 
+Подключить аналитику/трекеры сразу                                                                          Средняя          Низкая  Может ухудшить INP/LCP                           Полезно бизнесу            Нейтрально       Privacy/CSP сложнее                       Средний  Только после CSP/privacy 
+5. Практический план
+🔴 Сделать в первую очередь
+1. Убрать все placeholders.
+Footer сейчас прямо показывает Telegram placeholder, Discord placeholder, X/Twitter placeholder; contact modal прямо говорит “Decorative form placeholder”. Это P0 для доверия. 
+2. Решить контактную форму: либо настоящая, либо честный email.
+Сейчас submit перехватывается, показывает toast и сбрасывает форму. 
+3. Добавить размеры всем изображениям.
+Особенно Paint Blasters и Ball is God layered assets.
+4. Исправить loading priority.
+Hero/LCP asset не lazy. Ниже первого экрана lazy. Web.dev прямо предупреждает не lazyload LCP image и рекомендует fetchpriority="high"/preload для LCPресурса. ([web.dev][3])
+5. Включить mobile lowmotion по умолчанию.
+В JS уже есть reducedmotion/savedata/slownetwork логика и particle count reduction, но small screen всё ещё может получать canvas loop. 
+6. Проверить реальные HTTP security headers на домене.
+Nginxконфиг хороший: CSP, HSTS, nosniff, XFrameOptions, ReferrerPolicy, PermissionsPolicy, COOP/CORP. Но важно, чтобы они реально отдавались сервером. 
+7. Не подключать backend форму, пока не изменён CSP.
+Сейчас connectsrc 'none' и formaction 'none' подходят для staticсайта, но блокируют настоящую форму. formaction как раз ограничивает адреса отправки форм. ([cheatsheetseries.owasp.org][1])
+🟠 Проверить после этого
+1. Lighthouse mobile:LCP, CLS, INP.
+2. Chrome Performance Profiler:canvas, paint, composite, long tasks.
+3. Coverage:сколько CSS/JS реально используется на первом экране.
+4. Safari iOS:sticky header, modal scroll, 100svh, backdrop blur, smooth scroll.
+5. Android Chrome слабый телефон:FPS, memory, scroll jank.
+6. Keyboard navigation:menu, modals, filters, FAQ, secret elements.
+7. Screen reader flow:decorative images hidden, real content readable.
+8. SEO preview:OG/Twitter/canonical/JSONLD.
+9. Security scanner:OWASP ZAP passive scan, Security Headers, CSP Evaluator.
+10. Проверка CI securitycheck.
+ Сейчас скрипт проверяет CSP, запрет inline scripts/styles, dangerous URLs, innerHTML/eval/fetch и ключи, но его пути надо проверить относительно реальной структуры проекта. 
+🟢 Дополнительные улучшения
+1. Добавить Roadmap:Nature Seed 99%, Candy Shop 85%, Paint Blasters 80%, Ball is God?! 70%.
+2. Добавить Press Kit page.
+3. Добавить Devlog / Studio Notes.
+4. Добавить Beta Access block для Nature Seed.
+5. Сделать social preview image 1200×630.
+6. Добавить /privacy, /copyright, /press, /404.
+7. Разделить CSS и JS на модули.
+8. Сделать “Magic Quality: Auto / Low / Full”.
+9. Сделать animated cards не постоянно активными, а interactionbased.
+10. Добавить asset policy:no originals in public, watermarked promo, previewonly images.
+6. Проверка фиксов
+DevTools
+Что проверять   Где смотреть                 Что должно быть хорошо                        
+
+LCP image       Performance / Lighthouse     LCP asset грузится рано, не lazy              
+CLS             Performance → Layout Shifts  Нет прыжков карточек/картинок                 
+INP/long tasks  Performance → Main thread    Нет длинных JS tasks при scroll/tap           
+Canvas cost     Performance → Frames         Стабильный FPS, нет постоянных drops          
+Image payload   Network → Img                Mobile не качает huge desktop assets          
+CSS/JS unused   Coverage                     Низкий unused на первом экране                
+Headers         Security / Network headers   CSP/HSTS/nosniff/frameancestors реально есть 
+CSP violations  Console                      Нет blocked нужных ресурсов                   
+Lighthouse / PageSpeed
+Проверять отдельно:
+Mobile;
+Desktop;
+slow 4G;
+после очистки cache;
+после второго захода с cache.
+Цели для релиза:
+Метрика               Хорошая цель 
+ : 
+LCP                         < 2.5s 
+CLS                          < 0.1 
+INP                        < 200ms 
+Performance mobile  80+ желательно 
+Accessibility                  90+ 
+Best Practices                 90+ 
+SEO                            90+ 
+Google/Web.dev сейчас рассматривает LCP, CLS и INP как ключевые Core Web Vitals; INP заменил FID как метрика отзывчивости страницы. ([web.dev][2])
+Security
+Проверить:
+curl I https://domain.com;
+securityheaders.com;
+Mozilla Observatory;
+OWASP ZAP passive scan;
+CSP Evaluator;
+ручной submit формы;
+rate limit на contact endpoint;
+нет stack trace;
+нет .env, source maps, admin/debugфайлов;
+directory listing off;
+no public PSD/AI/Figma/source assets.
+OWASP подчёркивает, что security headers помогают против XSS, clickjacking и information disclosure, но они не заменяют serverside validation и безопасную архитектуру. ([GitHub][4])
+Accessibility
+Проверить:
+Tab по всей странице;
+Shift+Tab назад;
+Escape закрывает модалки;
+focus возвращается на кнопку, которая открыла модалку;
+меню доступно с клавиатуры;
+форма имеет label/error state;
+hover effects имеют touch alternative;
+prefersreducedmotion реально снижает motion.
+WCAG 2.2 требует видимый keyboard focus для управляемых элементов; без focus indicator sighted keyboard users не понимают, где они находятся. ([W3C][5])
+7. Честный вывод
+Самый надёжный фикс
+Staticfirst production polish без полного rewrite:
+1. убрать placeholders;
+2. заменить декоративную форму на честный email или настоящий backend;
+3. исправить изображения/loading/CLS;
+4. сделать mobile lowmotion default;
+5. проверить реальные HTTP headers;
+6. добавить SEO/social meta;
+7. добавить press/beta/roadmap блоки.
+Это даст максимальный результат без риска сломать текущую сильную визуальную идею.
+Какой подход лучше не использовать
+Не стоит сейчас делать полный rewrite на React/SPA “потому что современно”. Текущий staticподход безопаснее, быстрее, проще для SEO и лучше контролируется CSP. SPA добавит зависимости, build complexity, hydration cost и новые supplychain риски.
+Также не стоит делать “защиту от скачивания” через запрет правого клика, блокировку DevTools или JSобфускацию как основную меру. Это не защита, а раздражающий слой. Браузер всё равно получает frontendкод и ассеты.
+Что обязательно проверить перед финальным решением
+реальный Lighthouse mobile;
+реальный FPS на слабом Android;
+Safari iOS;
+headers на production;
+поведение формы;
+social preview;
+keyboard navigation;
+отсутствие placeholder/черновиков;
+отсутствие исходников ассетов в public.
+Где остаётся неопределённость
+Я не вижу liveдомен, реальные размеры ассетов, server config, CDN и backend. Поэтому нельзя честно сказать точные LCP/INP/CLS, TTFB, cache policy и фактическую защиту headers. По файлам видно, что база сильная, но productionready статус можно дать только после liveпроверки.
+Что может стать проблемой при росте сайта
+CSS/JSмонолит;
+тяжёлые animated game cards;
+новые страницы без общей компонентной системы;
+подключение API/аналитики, которое сломает CSP;
+ассеты без pipeline;
+форма без rate limit/spam protection;
+“секретные награды” без backendлогики.
+Что можно оставить на потом
+сложная миниигра на сайте;
+полноценный blog CMS;
+advanced animation system;
+авторизация;
+реальные rewards/easter egg delivery;
+multilanguage support;
+analytics dashboard.
+Итог
+Сейчас WillowinWorld очень сильный визуальный prerelease сайт, но ещё не полностью productionready. Он уже создаёт магию и премиальность, но для публичного релиза нужно закрыть доверие, форму, performance, SEO и реальные headers. Самый правильный путь не ломать текущий стиль, а сделать его легче, честнее, быстрее и более издательски надёжным.
+[1]: https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html?utm_source=chatgpt.com "Content Security Policy OWASP Cheat Sheet Series"
+[2]: https://web.dev/articles/vitals?utm_source=chatgpt.com "Web Vitals  Articles"
+[3]: https://web.dev/articles/optimizelcp?utm_source=chatgpt.com "Optimize Largest Contentful Paint  Articles"
+[4]: https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/HTTP_Headers_Cheat_Sheet.md?utm_source=chatgpt.com "HTTP Security Response Headers Cheat Sheet"
+[5]: https://www.w3.org/TR/WCAG22/?utm_source=chatgpt.com "Web Content Accessibility Guidelines (WCAG) 2.2"
+Продолжаю ещё глубже уже как prerelease risk review: что может не сломать сайт прямо сейчас, но ударит по релизу, мобильным, SEO, доверию или безопасности через 1–2 итерации.
+Часть 4. Скрытые productionриски WillowinWorld
+1. Самый неочевидный риск: сайт красивый, но “релизная честность” пока слабее визуала
+Визуально сайт уже продаёт магию: hero, canvas, Nature Seed preview, game cards, фильтры, модалки, secret rewards. Но внизу всё ещё есть Telegram placeholder, Discord placeholder, X/Twitter placeholder, а contact modal прямо говорит “Decorative form placeholder for studio inquiries”. Это не техническая мелочь это брендовый стопсигнал. Для игрока это “сайт ещё не готов”, для издателя “команда не довела контактный слой до production”. 
+Фикс:до релиза убрать декоративную форму вообще или заменить её на честный контактный блок:
+text
+Publishing / Press / Partnerships:
+hello@willowinworld.com
+Nature Seed Beta:
+beta@willowinworld.com
+Форма должна появиться только тогда, когда она реально отправляет сообщения.
+2. Hero выглядит сильно, но может продавать не студию, а одну игру
+Hero сейчас строится вокруг Nature Seed: Nature Seed restoration preview, Sketch / Guide water / Bloom, Beta Access Soon. Это красиво, но WillowinWorld делает четыре мира. В результате новый пользователь может подумать: “это сайт Nature Seed”, а не “это сайт студии WillowinWorld”. 
+Что лучше:оставить Nature Seed как главный текущий релиз, но добавить в hero маленький “world strip”:
+Минипортал        Смысл          
+ 
+🌱 Nature Seed     Beta Soon      
+🍬 Candy Shop      Coming Next    
+🎨 Paint Blasters  In Production  
+⚪ Ball is God?!    In Development 
+Так hero будет говорить: “у нас есть главный ближайший релиз, но мы студия с несколькими IP.”
+3. contentvisibility: auto хорошее решение, но его надо протестировать с якорями и revealанимациями
+У тебя уже есть крутая performanceпрактика: секции, кроме hero, используют contentvisibility: auto и containintrinsicsize. Это может реально ускорять первичный рендер, потому что браузер может пропускать layout/paint для offscreenконтента.  MDN и web.dev описывают contentvisibility именно как способ пропускать рендеринг невидимых частей страницы для улучшения начальной производительности. ([MDN Web Docs][1])
+Но есть тонкий риск: у тебя containintrinsicsize: auto 980px. Если реальная высота секций сильно отличается от 980px, могут появляться небольшие “прыжки” скролла, странные anchorscroll позиции или поздние перерасчёты при переходе по меню. Особенно это важно, потому что у сайта много якорей: games, studio, careers, contact. 
+Как проверить:
+Открыть сайт на мобильном, нажать все пункты меню, затем назад/вперёд, затем refresh с hash URL типа site.com/contact. Если скролл приезжает выше/ниже нужного места надо подобрать containintrinsicsize по секциям отдельно.
+4. LCPриск: heroкартинки видимые, но нет явной стратегии приоритета
+В hero есть несколько крупных Nature Seed изображений: sketch, painted, tree, companions, icon. У них есть размеры, это хорошо. Но нет fetchpriority="high" и нет явного preload главного LCPресурса. 
+Web.dev отдельно предупреждает: LCPизображение нельзя lazyload, а для главного LCPресурса часто нужно управлять приоритетом загрузки через preload/fetchpriority. ([web.dev][2])
+Что сделать:
+Сначала определить реальный LCP element в Lighthouse/Performance. Если LCP hero text, всё ок. Если LCP Nature Seed image/icon, тогда:
+preload только одного главного изображения;
+fetchpriority="high" только на LCP image;
+остальные hero decorative images оставить обычными;
+не делать high priority на все hero images, иначе ухудшишь загрузку.
+5. Ниже fold есть eagerкартинки это может воровать приоритет у hero
+Paint Blasters и Ball is God карточки имеют loading="eager" на cover/hover icon, хотя они находятся ниже первого экрана. Это может быть не катастрофа, но на мобильном интернете браузер может потратить ранний bandwidth на картинки, которые пользователь ещё не видит.  
+Фикс:
+Для всех game cards ниже hero:
+text
+loading="lazy"
+decoding="async"
+А если нужна суперплавная карточка при скролле подгружать через IntersectionObserver за 300–600px до появления.
+6. Canvasмагия технически умная, но downgrade срабатывает поздно
+JS уже хорош: учитывает prefersreducedmotion, saveData, slow network, small screen, снижает particle count и умеет переводить сайт в lowmotion. 
+Но важный нюанс: если FPS просел ниже 28, сайт сам включает Low только после нескольких секунд работы canvas. То есть слабый Android уже успеет получить плохое первое впечатление. В renderфункции FPS score отслеживается, и lowmotion включается при падении ниже 28 после 4500ms. 
+Лучше для production:
+На мобильных стартовать сразу в Low, а Full Magic включать кнопкой:
+text
+Magic: Auto / Low / Full
+Это сохранит woweffect на desktop, но защитит слабые телефоны.
+7. backdropfilter красиво, но может быть дорогим на мобильных
+Header использует backdropfilter: blur(18px), footer blur(16px), modal overlay blur(10px). Это даёт дорогой premium glass look, но на слабых GPU blur поверх сложного градиентного/animatedфона может вызывать repaint/compositing cost.  
+Productionкомпромисс:
+Устройство                             Решение                                               
+ 
+Desktop                                оставить blur                                         
+Highend mobile                        blur 6–8px                                            
+Lowmotion / savedata / small screen  убрать blur, заменить полупрозрачным solid background 
+Так визуал сохранится, но сайт не будет лагать на дешёвых Android.
+8. Фильтры игр могут дать ложные совпадения
+Сейчас фильтрация берёт строку datatags и делает tags.includes(filter). Это быстро и просто, но это substring matching. Если позже появятся теги вроде NonArcade, MobilePlus, Puzzlelike, фильтр может сработать не так, как ожидается. 
+Лучше:хранить теги как разделённые токены и сравнивать точные значения:
+text
+datatags="PuzzlePhysicsCozyMobile"
+И сравнивать по массиву. Это маленький фикс, но он делает систему масштабируемой.
+9. Secret letters классная идея, но они могут шуметь в клавиатурной навигации
+Secret letters создаются как настоящие <button> элементы, получают arialabel="Hidden letter X" и добавляются в секции. Это безопаснее, чем divclick, но есть UX/a11yриск: пользователь на клавиатуре может внезапно табаться по скрытым буквам, не понимая, что это. 
+Варианты:
+Вариант                               Плюс               Минус                        
+
+Оставить как button                   Доступно и честно  Может шуметь в Tab flow      
+tabindex="1" до Magic Mode         Чище навигация     Секрет менее доступен        
+Отдельная зона “Find hidden letters”  Понятнее           Менее секретно               
+Показывать только после “Play Magic”  Лучший UX          Нужно чуть переписать логику 
+Я бы сделал: секретные буквы не участвуют в Tab до включения Play Magic.
+10. Контактная форма безопасна сейчас, но станет опасной при подключении backend
+Сейчас CSP запрещает connectsrc и formaction, а JS просто перехватывает submit и показывает toast “Real sending is not connected yet”. Это безопасно, потому что ничего не отправляется. 
+Но как только появится backend, появятся реальные риски:
+Риск                    Что делать                                    
+ 
+Спам через форму        rate limit + Turnstile/honeypot               
+XSS через сообщение     serverside escaping, no HTML email rendering 
+Email header injection  нормализация email/name                       
+Bot flood               IP/useragent throttling                      
+Утечка stack trace      production error handler                      
+CSRF                    SameSite cookies или token, если есть сессии  
+CSP breakage            разрешить только нужный endpoint              
+OWASP указывает, что formaction ограничивает URL, куда формы могут отправлять данные, а frameancestors защищает от встраивания страницы; важно, что frameancestors должен работать через HTTP CSP header, а не через meta. ([cheatsheetseries.owasp.org][3])
+11. Security headers хорошие, но надо не забыть: meta CSP ≠ полноценная защита
+В index.html есть meta CSP, но в nginxsecurity.conf есть полноценные headers: CSP с frameancestors 'none', HSTS, nosniff, XFrameOptions, ReferrerPolicy, PermissionsPolicy, COOP/CORP. Это сильная база.  
+Но productionправило такое:
+> Защита должна проверяться не по файлам, а по реальному ответу сервера.
+Проверка:
+bash
+curl I https://willowinworld.com
+Нужно увидеть:
+text
+ContentSecurityPolicy: ...
+StrictTransportSecurity: ...
+XContentTypeOptions: nosniff
+ReferrerPolicy: noreferrer
+PermissionsPolicy: ...
+CrossOriginOpenerPolicy: sameorigin
+CrossOriginResourcePolicy: sameorigin
+12. securitycheck.mjs полезный, но сейчас проверяет не всё, что реально ломает релиз
+Скрипт уже проверяет CSP, запрет inline script/style, запрет dangerous URL, innerHTML, eval, fetch, ключи и внешние URL в CSS. Это очень хорошая практика. 
+Но он не ловит:
+Что не ловит                     Почему важно             
+ 
+placeholder в текстах          Релизный позор           
+отсутствие OG/Twitter/canonical  SEO/social preview       
+отсутствие sitemap/robots        индексация               
+eager images ниже fold           performance              
+img без width/height             CLS                      
+пустые/декоративные ссылки       доверие                  
+отсутствие /privacy            форма/аналитика/доверие  
+source maps в public             риск раскрытия структуры 
+большие оригиналы ассетов        кража материалов         
+Идея:сделать два скрипта:
+text
+securitycheck.mjs
+releasecheck.mjs
+securitycheck ловит опасные паттерны.
+releasecheck ловит незавершённость сайта.
+13. SEO сейчас “минимально норм”, но не “game studio ready”
+В <head> есть title и meta description это хорошо. Но по коду не видно Open Graph, Twitter Cards, canonical, JSONLD, sitemap/robots. 
+Для сайта игровой студии это критично не только для Google. Это нужно для того, чтобы ссылка красиво выглядела в:
+Telegram;
+Discord;
+X/Twitter;
+LinkedIn;
+publisher decks;
+press chats.
+Google также рекомендует хорошие Core Web Vitals для успеха в Search и общего UX; текущие стабильные Core Web Vitals LCP, CLS и INP. ([Google for Developers][4])
+Минимальный SEO kit:
+Элемент           Что поставить                                                     
+ 
+og:title        WillowinWorld Magical Game Studio                               
+og:description  Magical mobilefirst worlds built from physics, charm and wonder. 
+og:image        1200×630 branded key art                                          
+twitter:card    summary_large_image                                               
+canonical       production URL                                                    
+JSONLD           Organization + WebSite                                            
+sitemap.xml       главная, press, privacy, games                                    
+robots.txt        allow main, disallow test/dev if есть                             
+14. A11y: база хорошая, но нужно проверить “красивые” места
+Сильные места уже есть: arialabel у nav/menu, role="dialog", ariamodal, labels в форме, focusvisible, prefersreducedmotion, реальные <button> для интерактива.  
+Что нужно проверить вручную:
+Место             Возможная проблема                                       
+ 
+Модалка contact   Возвращается ли focus на кнопку открытия после закрытия? 
+Secret letters    Не шумят ли в Tab flow?                                  
+Game filters      Есть ли понятное состояние active для screen reader?     
+FAQ               Достаточно ли ariaexpanded, нет ли потери контекста?  
+Canvas magic      Не является ли важная информация только визуальной?      
+Hover card shine  Есть ли touch/keyboard equivalent?                       
+Theme toggle      Меняется ли arialabel после переключения?             
+Самый важный a11yфикс: после закрытия модалки возвращать focus на элемент, который её открыл. Сейчас openContact() фокусит поле name, но в найденном фрагменте не видно сохранения opener element для возврата фокуса. 
+15. Mobile: главный риск не layout, а “усталость от секций”
+На mobile сайт может стать слишком длинным: hero, tags, 4 большие game cards, filters, studio, process, careers, FAQ, final CTA, footer. Даже если всё адаптируется, пользователь может устать до CTA.
+Что сделать на mobile:
+Блок               Mobileверсия                                     
+ 
+Hero tags          оставить 3, остальные спрятать                    
+Filters            horizontal scroll chips                           
+Game cards         compact mode: cover + title + status + 1 sentence 
+Long descriptions  раскрывать по “More”                              
+Magic canvas       Low by default                                    
+Roadmap            vertical timeline                                 
+Contact            emailfirst, форма second                         
+16. Новый prioritization: что реально даст максимум результата
+Улучшение                              Эффект на сайт        Сложность  Делать когда    
+ :  :  
+Убрать placeholders             Огромный рост доверия           Низкая  Сейчас          
+Реальный contact flow           Огромный рост доверия          Средняя  До релиза       
+Mobile lowmotion default   Сильный рост стабильности   Низкая/средняя  Сейчас          
+Img loading/priority audit               Рост LCP/CLS          Средняя  Сейчас          
+OG/Twitter/canonical                  Рост social/SEO           Низкая  Сейчас          
+Roadmap block                 Рост studio credibility           Низкая  Сейчас          
+Press page                   Рост publisherreadiness          Средняя  До релиза       
+Modular CSS/JS                         Рост поддержки          Средняя  После P0        
+Full backend form                       Рост качества  Средняя/высокая  После CSPплана 
+Minigame сложнее текущей     Wow рост, но риск лагов          Высокая  Позже           
+17. Самый правильный релизный вариант
+Я бы не выпускал сайт в текущем виде как final. Но я бы спокойно выпускал после короткого hardeningпрохода:
+Release Candidate 1
+1. Убрать footer placeholders.
+2. Убрать “Decorative form placeholder”.
+3. Сделать честный email/contact block.
+4. Добавить Roadmap.
+5. Добавить Nature Seed Beta CTA.
+6. Исправить eager images ниже fold.
+7. Проверить/добавить размеры всем <img>.
+8. Добавить OG/Twitter/canonical.
+9. На mobile включить Low Magic по умолчанию.
+10. Проверить реальные HTTP headers.
+После этого сайт уже можно показывать игрокам, партнёрам и потенциальным издателям.
+18. Что оставить как сильную основу
+Не надо ломать:
+магическую атмосферу;
+canvasидею;
+две темы Day/Night;
+4 game worlds;
+Nature Seed hero preview;
+карточки с progress;
+brand idea: magic cat + twin W portal;
+строгий CSPподход;
+отсутствие сторонних библиотек;
+reducedmotion/savedata подход;
+staticfirst архитектуру.
+Текущий сайт уже имеет хорошую productionбазу: он не тянет внешние библиотеки, не использует опасные HTMLинъекции в найденных местах, имеет строгую CSPидею и достаточно богатую интерактивность без React/SPAпереписывания. Это лучше сохранить. 
+19. Честный финальный вывод
+Самая большая проблема сейчас не дизайн.
+Дизайн уже сильный.
+Самая большая проблема несоответствие между визуальным уровнем и релизной инфраструктурой.
+Визуально сайт говорит: “мы premium game studio”.
+Placeholderконтакты и декоративная форма говорят: “это ещё черновик”.
+Самый надёжный путь:не делать новый сайт с нуля, а провести productionhardening:
+text
+Trust → Performance → Mobile → SEO → Security headers → Press/Beta layer
+После этого WillowinWorld будет выглядеть не просто как красивый интерактивный лендинг, а как реальная игровая студия, готовая к игрокам, betaтестерам, прессе и издателям.
+[1]: https://developer.mozilla.org/enUS/docs/Web/CSS/Reference/Properties/contentvisibility?utm_source=chatgpt.com "contentvisibility CSS property MDN Web Docs Mozilla"
+[2]: https://web.dev/articles/optimizelcp?utm_source=chatgpt.com "Optimize Largest Contentful Paint  Articles"
+[3]: https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html?utm_source=chatgpt.com "Content Security Policy OWASP Cheat Sheet Series"
+[4]: https://developers.google.com/search/docs/appearance/corewebvitals?utm_source=chatgpt.com "Understanding Core Web Vitals and Google search results"
+Да. Чтобы WillowinWorld реально поднимался выше по запросам про игры, нужно думать не как “сделать SEO на одной странице”, а как построить поисковую систему вокруг студии и 4 игр.
+Главное: по запросу “games” или “mobile games” быстро в топ не выйти там гиганты. Твой путь: забрать узкие игровые запросы, где игрок ищет конкретный тип игры:
+draw to solve physics puzzle game
+nature restoration puzzle game
+relaxing eco puzzle game
+candy merge puzzle game
+suika like candy game
+color destruction puzzle game
+physics tower destruction game
+vertical descent arcade game
+hardcore one tap arcade game
+Google прямо говорит: SEO не гарантирует первое место, но правильная структура, понятный контент, crawl/indexfriendly страницы и хороший UX помогают поисковику понимать сайт. ([Google for Developers][1])
+1. Главная SEOстратегия для WillowinWorld
+Сейчас сайт одна красивая страница студии. Это хорошо для бренда, но плохо для SEO, потому что одна страница пытается ранжироваться сразу за всё: студия, Nature Seed, Candy Shop, Paint Blasters, Ball is God?!, mobile games, puzzle games, physics games.
+Для топов нужно сделать так:
+text
+Главная страница
+/willowinworld game studio
+Отдельная страница Nature Seed
+/natureseed draw to solve physics puzzle game
+Отдельная страница Candy Shop
+/candyshop candy merge puzzle game
+Отдельная страница Paint Blasters
+/paintblasters color destruction physics puzzle game
+Отдельная страница Ball is God
+/ballisgod vertical descent arcade game
+Devlog / Blog
+/devlog
+/articles
+/press
+То есть не одна страница под всё, а кластер страниц.
+2. Какие запросы брать
+Главная страница WillowinWorld
+Главная должна ранжироваться не за “games”, а за бренд + студийные запросы.
+Основные запросы
+WillowinWorld
+WillowinWorld games
+WillowinWorld game studio
+indie game studio
+mobile game studio
+magical game studio
+cozy mobile games studio
+physics puzzle game studio
+Title
+text
+WillowinWorld Magical Mobile Game Studio
+Meta description
+text
+WillowinWorld is an indie mobile game studio creating magical, tactile and emotionally memorable games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?!
+Сейчас у тебя уже есть нормальный title и description, но они слишком общие: “Magical Game Studio” и “premium indie game studio creating magical…” хорошо для бренда, но нужно добавить названия игр и mobile/game keywords. 
+Nature Seed
+Это твой самый сильный SEOкандидат, потому что игра почти готова и у неё понятный niche: drawtosolve + physics puzzle + nature restoration + relaxing eco game.
+Основные запросы
+draw to solve physics puzzle game
+nature puzzle game
+eco puzzle game
+relaxing puzzle game
+meditative mobile puzzle game
+line drawing puzzle game
+restore nature game
+water physics puzzle game
+seed puzzle game
+cozy nature game
+Title
+text
+Nature Seed Relaxing DrawtoSolve Physics Puzzle Game
+Meta description
+text
+Nature Seed is a relaxing mobile physics puzzle game where you draw magical lines, guide water to seeds and restore a dying forest into a living world.
+H1
+text
+Nature Seed A relaxing drawtosolve physics puzzle about restoring nature
+На текущем сайте Nature Seed уже описан хорошо: “Players draw magical lines, guide water toward seeds and help revive a dying forest”, а теги включают Meditative Puzzle, Eco Puzzle, Line Drawing Puzzle, Nature Restoration. Это надо вынести в отдельную страницу, чтобы Google видел полноценный контент под эти запросы, а не только карточку на общей странице. 
+Candy Shop
+Основные запросы
+candy merge puzzle game
+suika like candy game
+cozy merge game
+physics based merge puzzle
+casual candy puzzle game
+relaxing mobile puzzle game
+drop and merge candy game
+Title
+text
+Candy Shop Cozy Candy Merge Puzzle Game
+Meta description
+text
+Candy Shop is a cozy mobile merge puzzle where players drop, combine and evolve candies into bigger sweets with satisfying physics, combos and longterm progression.
+У Candy Shop уже есть сильные ключи: Physicsbased Merge, Suikalike, Candy Puzzle, Combo Puzzle, Relaxing Mobile Puzzle. Их нельзя держать только в тегах нужны полноценные секции: gameplay, features, screenshots, FAQ. 
+Paint Blasters
+Основные запросы
+color destruction puzzle game
+physics tower destruction game
+paint shooting puzzle game
+aim and shoot puzzle game
+chain reaction puzzle game
+color puzzle arcade game
+physics puzzle arcade mobile game
+Title
+text
+Paint Blasters Color Destruction Physics Puzzle Game
+Meta description
+text
+Paint Blasters is a mobile physics puzzle arcade where players mix colorpowered shots, smash towers and trigger satisfying chain reactions.
+Paint Blasters уже описан очень SEOсильно: “mixing colors”, “smashing blocks”, “unique effects”, “chain reactions”, “Match3 logic”, “arcade physics”. Это надо превратить в отдельный landing. 
+Ball is God?!
+Основные запросы
+vertical descent arcade game
+hardcore one tap arcade game
+skill based mobile arcade game
+falling ball arcade game
+one hit kill arcade game
+narrative arcade mobile game
+boss rush arcade game
+Title
+text
+Ball is God?! Hardcore Vertical Descent Arcade Game
+Meta description
+text
+Ball is God?! is a hardcore mobile arcade game about guiding Espa down a divine tower, surviving onehitkill jumps, bosslike moments and moral choices.
+У игры уже есть сильные игровые keywords: Vertical Descent, OneHitKill, Timing Arcade, Moral Choice, Dark Fantasy, Storydriven. Это редкие, хорошие longtail запросы. 
+3. Что надо добавить на сайт для SEO
+Обязательно
+Что добавить                            Зачем                                                                                                                                                              
+ 
+Отдельные страницы для каждой игры Одна страница не сможет нормально ранжироваться по 4 разным играм.                                                                                                 
+Open Graph / Twitter Cards         Чтобы ссылки красиво выглядели в Telegram, Discord, X, LinkedIn.                                                                                                   
+Canonical URL                      Чтобы Google понимал главную версию страницы.                                                                                                                      
+sitemap.xml                        Чтобы Google быстрее находил все страницы. Google поддерживает sitemap и рекомендует отправлять его в Search Console. ([Google for Developers][2])                 
+robots.txt                         Чтобы указать sitemap и управлять crawler traffic. Важно: robots.txt не является защитой приватных файлов. ([Google for Developers][3])                            
+JSONLD structured data            Чтобы Google лучше понимал студию, сайт, игры и организацию. Google рекомендует опираться на Search Central docs для structured data. ([Google for Developers][4]) 
+FAQблоки на страницах игр         Можно закрывать longtail запросы: “What type of game is Nature Seed?”                                                                                             
+Devlog                             Свежий контент, больше страниц, больше запросов.                                                                                                                   
+Press Kit                          Доверие + внешние ссылки от медиа/партнёров.                                                                                                                       
+Оптимизация картинок               Google Image Search + скорость. Alt text должен быть полезным и не забитым ключами. ([Google for Developers][5])                                                   
+Core Web Vitals                    Google учитывает LCP, INP, CLS как реальные UXметрики; хорошие показатели помогают поиску и пользователям. ([Google for Developers][6])                           
+4. Структура страниц, чтобы Google понял сайт
+Главная /
+text
+H1:
+WillowinWorld Magical Mobile Game Studio
+Блоки:
+Hero: кто вы
+Four Worlds: 4 игры
+Featured Game: Nature Seed Beta
+Studio Roadmap
+Game Studio Philosophy
+Devlog
+Press / Publishing Contact
+Footer
+Главная должна продавать бренд студии.
+/games/natureseed/
+text
+H1:
+Nature Seed Relaxing DrawtoSolve Physics Puzzle Game
+H2:
+What is Nature Seed?
+Gameplay
+Draw Lines and Guide Water
+Restore a Dying Forest
+Features
+Screenshots
+Beta Access
+FAQ
+FAQзапросы:
+text
+What kind of game is Nature Seed?
+Is Nature Seed a relaxing puzzle game?
+Is Nature Seed a mobile game?
+How does the drawtosolve mechanic work?
+When is Nature Seed beta available?
+/games/candyshop/
+text
+H1:
+Candy Shop Cozy Candy Merge Puzzle Game
+H2:
+What is Candy Shop?
+Drop, Merge and Evolve Candies
+PhysicsBased Candy Combos
+Special Sweets and Containers
+Progression
+Screenshots
+FAQ
+/games/paintblasters/
+text
+H1:
+Paint Blasters Color Destruction Physics Puzzle Game
+H2:
+What is Paint Blasters?
+Mix ColorPowered Shots
+Smash Towers with Physics
+Chain Reactions and Combos
+Mobile Controls
+Screenshots
+FAQ
+/games/ballisgod/
+text
+H1:
+Ball is God?! Hardcore Vertical Descent Arcade Game
+H2:
+What is Ball is God?!
+OneTouch Vertical Descent
+Divine Tower and Broken Stones
+Hardcore Timing
+Story Choices
+Screenshots
+FAQ
+5. Очень важный момент: сайт должен быть не только красивый, но и индексируемый
+Твои тексты сейчас хорошие, но часть игрового опыта находится в визуале, canvas, карточках и модалках. Google лучше понимает обычный HTMLтекст, заголовки, ссылки, alt, structured data и отдельные страницы. Поэтому:
+text
+Плохо для SEO:
+всё в одной странице + модалки + красивые картинки
+Хорошо для SEO:
+отдельная HTMLстраница под каждую игру + нормальный H1/H2 + текст + screenshots + FAQ + внутренние ссылки
+У тебя сейчас карточки игр уже содержат сильные описания, жанры и теги, но их надо превратить в полноценные страницы. 
+6. Контентплан, который может реально поднять сайт
+Devlog / статьи
+Нужно публиковать не просто новости, а статьи под запросы.
+Nature Seed
+1. What is a drawtosolve physics puzzle game?
+2. How Nature Seed turns water physics into a relaxing puzzle
+3. Why nature restoration works so well in puzzle games
+4. Designing a calming eco puzzle game for mobile
+5. From sketch to bloom: the visual language of Nature Seed
+Candy Shop
+1. What makes a satisfying candy merge puzzle game?
+2. How Candy Shop improves the Suikalike merge formula
+3. Physics, candy combos and cozy progression in Candy Shop
+4. Designing readable merge chains for mobile puzzle games
+Paint Blasters
+1. Color mechanics in physics puzzle games
+2. How Paint Blasters combines aiming, colors and chain reactions
+3. Designing readable destruction in mobile arcade puzzle games
+4. Why colorcombination mechanics work in casual games
+Ball is God?!
+1. What is a vertical descent arcade game?
+2. Designing onetouch hardcore arcade gameplay for mobile
+3. How Ball is God?! mixes timing, story and divine tower descent
+4. Making a hard arcade game readable on mobile
+Это не “блог ради блога”. Это страницы под longtail запросы.
+7. Как сделать главную страницу сильнее для запросов
+Сейчас hero:
+text
+We create magical worlds that feel alive.
+Красиво, но для SEO можно чуть усилить:
+text
+WillowinWorld creates magical mobile games that feel alive.
+И подзаголовок:
+text
+An indie game studio building cozy physics puzzles, colorful arcade games and tactile mobile worlds: Nature Seed, Candy Shop, Paint Blasters and Ball is God?!
+Так ты сохраняешь стиль, но добавляешь ключевые сущности:
+indie game studio;
+mobile games;
+physics puzzles;
+arcade games;
+названия игр.
+Google должен видеть не только “магия”, но и что именно вы делаете.
+8. Внутренние ссылки
+На главной у тебя сейчас кнопки View Game, но они открывают модалку. Для SEO лучше:
+text
+View Game → /games/natureseed/
+View Game → /games/candyshop/
+View Game → /games/paintblasters/
+View Game → /games/ballisgod/
+Модалку можно оставить как быстрый preview, но должна быть обычная ссылка на страницу игры.
+Пример:
+text
+[View Game] открывает отдельную SEOстраницу
+[Quick Preview] открывает модалку
+9. SEO + ASO: сайт должен помогать Google Play
+Если Nature Seed скоро в beta, нужно думать не только о Google Search, но и о Google Play. Google Play прямо говорит, что качественная, policycompliant store listing помогает устанавливать доверие пользователей; Play Academy также обучает созданию listing, который увеличивает installs/conversions. ([Google Help][7])
+Что сделать для Google Play
+Для каждой игры подготовить:
+Поле                   Пример для Nature Seed                                                                                 
+ 
+App title              Nature Seed                                                                                            
+Short description      Draw lines, guide water and restore a magical forest.                                                  
+Long description       Использовать keywords естественно: relaxing puzzle, drawtosolve, physics puzzle, nature restoration. 
+Screenshots            Первые 3 должны объяснять core loop.                                                                   
+Feature graphic        Не просто арт, а “что за игра”.                                                                        
+Promo video            15–30 секунд: draw → water → seed → bloom.                                                             
+Custom store listings  Для разных стран/кампаний. Google Play поддерживает до 50 custom store listings. ([Google Play][8])    
+Сайт должен вести на Google Play страницу, а Google Play должен вести обратно на официальный сайт. Это создаёт доверие и брендсвязку.
+10. Steam / wishlist, если будешь выпускать на ПК
+Если когданибудь будешь делать Steamверсии, лучше заранее создать Coming Soon page. Steamworks пишет, что Coming Soon page можно поднять заранее для сбора аудитории и интереса, а для новых продуктов она должна быть опубликована минимум за две недели до релиза. ([Steamworks][9])
+Даже если сейчас mobilefirst, на сайте можно добавить:
+text
+Available / Planned Platforms:
+Google Play
+Steam Planned / Wishlist soon
+itch.io Demo soon
+Это помогает SEO и доверию.
+11. Backlinks: без ссылок в топ будет тяжело
+Чтобы сайт рос, нужны внешние упоминания. Не покупать мусорные ссылки. Лучше получать реальные ссылки из игровых мест.
+Где брать ссылки
+Источник                       Что публиковать               
+ 
+itch.io devlog                 Демо, devlog, screenshots     
+IndieDB                        Страницы игр                  
+Game Jolt                      Devlog/игры                   
+Reddit r/IndieDev / r/gamedev  Не спам, а development posts  
+Unity forums                   Технические посты, если есть  
+Medium / Dev.to                Статьи про разработку механик 
+YouTube Shorts / TikTok        10–20 сек gameplay clips      
+X/Twitter                      GIFs, progress, beta updates  
+LinkedIn                       Studio/publisher posts        
+Press kit directories          Press page                    
+Telegram/Discord communities   Beta access                   
+Самые сильные ссылки не SEOкаталоги, а страницы, где реально есть игроки и разработчики.
+12. Что сделать за 7 дней
+День 1–2: техническая SEOбаза
+Добавить Open Graph.
+Добавить Twitter Card.
+Добавить canonical.
+Добавить sitemap.xml.
+Добавить robots.txt.
+Добавить social preview image 1200×630.
+Исправить title/meta главной.
+Убрать placeholders в footer и contact.
+День 3–4: страницы игр
+Создать:
+text
+/games/natureseed/
+/games/candyshop/
+/games/paintblasters/
+/games/ballisgod/
+Каждая страница:
+H1;
+800–1500 слов;
+5–8 screenshots;
+gameplay section;
+features;
+FAQ;
+status;
+CTA;
+internal links.
+День 5: structured data
+Добавить JSONLD:
+Organization;
+WebSite;
+VideoGame или CreativeWork/Game для каждой игры;
+BreadcrumbList;
+FAQPage, если есть FAQ.
+Google поддерживает structured data для разных типов rich results и подчёркивает, что для поведения в Google Search надо опираться на Search Central documentation. ([Google for Developers][4])
+День 6: performance
+Проверить Lighthouse.
+Убрать eager ниже fold.
+Сжать изображения.
+Добавить width/height.
+Сделать mobile lowmotion.
+Проверить Core Web Vitals: LCP, INP, CLS. ([Google for Developers][6])
+День 7: индексация
+Добавить сайт в Google Search Console.
+Отправить sitemap.
+Проверить indexing.
+Проверить mobile usability.
+Проверить Rich Results.
+Проверить social previews.
+13. Что сделать за 30 дней
+Неделя 1
+SEOбаза + 4 страницы игр.
+Неделя 2
+8 статей/devlog:
+2 про Nature Seed;
+2 про Candy Shop;
+2 про Paint Blasters;
+2 про Ball is God?!
+Неделя 3
+Внешние площадки:
+itch.io страница;
+Game Jolt;
+IndieDB;
+YouTube Shorts;
+TikTok;
+Reddit posts;
+LinkedIn studio post.
+Неделя 4
+Оптимизация по данным:
+Search Console queries;
+какие страницы индексируются;
+где impressions есть, но CTR низкий;
+переписать title/meta;
+добавить FAQ;
+добавить скриншоты;
+улучшить internal links.
+14. Пример SEOтекстов для главной
+Новый H1
+text
+WillowinWorld creates magical mobile games that feel alive.
+Новый hero text
+text
+WillowinWorld is an indie game studio building cozy physics puzzles, colorful arcade worlds and tactile mobile games with premium 2D art, readable systems and playful interactions.
+Блок под H2
+text
+Four mobilefirst game worlds
+Текст:
+text
+Explore Nature Seed, Candy Shop, Paint Blasters and Ball is God?! four original game worlds built around physics, interaction, charm and replayability.
+Studio SEO paragraph
+text
+WillowinWorld develops mobile games with a focus on physicsbased puzzles, cozy art direction, tactile feedback, readable mechanics and memorable fantasy worlds. Our games combine approachable controls with deeper systems designed for longterm replay.
+15. Пример страницы Nature Seed
+text
+Title:
+Nature Seed Relaxing DrawtoSolve Physics Puzzle Game
+Meta:
+Nature Seed is a relaxing mobile physics puzzle where you draw magical lines, guide water to seeds and restore a dying forest into a living world.
+H1:
+Nature Seed A relaxing drawtosolve physics puzzle about restoring nature
+H2:
+Draw lines, guide water, restore the forest
+Text:
+Nature Seed is a meditative mobile puzzle game about connecting water and seeds through simple touch drawing. Players draw magical lines, redirect water flow and solve calm physics puzzles that transform gray environments into living nature.
+H2:
+Why Nature Seed is different
+Bullets:
+Drawtosolve physics gameplay
+Relaxing eco puzzle atmosphere
+Water routing and seed restoration
+No rush, no pressure, calm mobile sessions
+Visual transformation from sketch to bloom
+H2:
+FAQ
+What type of game is Nature Seed?
+Nature Seed is a relaxing drawtosolve physics puzzle game for mobile.
+Is Nature Seed a nature restoration game?
+Yes. Each solved puzzle helps restore a dying forest with water, seeds and magical growth.
+When is Nature Seed beta?
+Beta access is planned soon.
+16. Что НЕ делать
+Не надо пытаться выйти в топ по:
+text
+games
+mobile games
+best games
+free games
+puzzle games
+arcade games
+Это слишком широкие запросы. Там конкуренция огромная.
+Не надо:
+набивать meta keywords это не поможет;
+писать невидимый текст;
+копировать чужие описания;
+покупать мусорные backlinks;
+делать 50 одинаковых страниц;
+прятать ключи в alt;
+перегружать title ключами;
+делать “лучшие игры 2026 скачать бесплатно” если это не правда.
+Google Image SEO docs отдельно предупреждают не делать keyword stuffing в alt, потому что это плохой UX и может выглядеть как спам. ([Google for Developers][5])
+17. Самая сильная SEOформула для тебя
+text
+Брендовая страница WillowinWorld
++
+4 отдельные страницы игр
++
+Devlog под longtail запросы
++
+Google Play / itch.io / Steam / press links
++
+быстрый mobile сайт
++
+хорошие social previews
++
+регулярные screenshots/GIFs/videos
+Итоговая цель:
+text
+Не “выйти в топ по игры”.
+А занять топы по конкретным запросам:
+drawtosolve physics puzzle game
+nature restoration puzzle game
+candy merge puzzle game
+color destruction puzzle game
+vertical descent arcade game
+Вот так у WillowinWorld реально появляется шанс получать органический трафик, игроков, betaтестеров и доверие от издателей.
+[1]: https://developers.google.com/search/docs/fundamentals/seostarterguide?utm_source=chatgpt.com "Search Engine Optimization (SEO) Starter Guide"
+[2]: https://developers.google.com/search/docs/crawlingindexing/sitemaps/buildsitemap?utm_source=chatgpt.com "Build and Submit a Sitemap  Google Search Central"
+[3]: https://developers.google.com/search/docs/crawlingindexing/robots/intro?utm_source=chatgpt.com "Robots.txt Introduction and Guide  Google Search Central"
+[4]: https://developers.google.com/search/docs/appearance/structureddata/introstructureddata?utm_source=chatgpt.com "Introduction to structured data markup in Google Search"
+[5]: https://developers.google.com/search/docs/appearance/googleimages?utm_source=chatgpt.com "Image SEO Best Practices  Google Search Central"
+[6]: https://developers.google.com/search/docs/appearance/corewebvitals?utm_source=chatgpt.com "Understanding Core Web Vitals and Google search results"
+[7]: https://support.google.com/googleplay/androiddeveloper/answer/13393723?hl=en&utm_source=chatgpt.com "Best practices for your store listing Play Console Help"
+[8]: https://play.google.com/console/about/storelistings/?utm_source=chatgpt.com "Store listings  Google Play Console"
+[9]: https://partner.steamgames.com/doc/store/coming_soon?utm_source=chatgpt.com "Coming Soon (Steamworks Documentation)"
