@@ -18,6 +18,10 @@
   const contactModal = document.getElementById("contactModal");
   const closeContact = document.getElementById("closeContact");
   const contactForm = document.getElementById("contactForm");
+  const careersModal = document.getElementById("careersModal");
+  const closeCareers = document.getElementById("closeCareers");
+  const pressModal = document.getElementById("pressModal");
+  const closePress = document.getElementById("closePress");
   const gameModal = document.getElementById("gameModal");
   const gameDialog = document.getElementById("gameDialog");
   const closeGame = document.getElementById("closeGame");
@@ -1272,6 +1276,11 @@
   }
 
   let activeGameTrigger = null;
+  let activeInfoTrigger = null;
+  const infoModals = {
+    careers: { modal: careersModal, closeButton: closeCareers },
+    press: { modal: pressModal, closeButton: closePress }
+  };
 
   function renderGameProfile(key) {
     const profile = gameProfiles[key];
@@ -1317,8 +1326,40 @@
     }
   }
 
+  function openInfoModal(key, trigger) {
+    const entry = infoModals[key];
+    if (!entry || !entry.modal) return;
+    closeGameDetails(false);
+    closeContactModal(false);
+    closeSecretReward();
+    closeInfoModals(false);
+    activeInfoTrigger = trigger || document.activeElement;
+    entry.modal.hidden = false;
+    entry.modal.classList.add("is-open");
+    syncModalLock();
+    window.setTimeout(() => (entry.closeButton || entry.modal).focus(), 30);
+  }
+
+  function closeInfoModal(key, restoreFocus = true) {
+    const entry = infoModals[key];
+    if (!entry || !entry.modal || !entry.modal.classList.contains("is-open")) return;
+    entry.modal.classList.remove("is-open");
+    entry.modal.hidden = true;
+    syncModalLock();
+    if (restoreFocus && activeInfoTrigger && typeof activeInfoTrigger.focus === "function") {
+      activeInfoTrigger.focus();
+    }
+  }
+
+  function closeInfoModals(restoreFocus = true) {
+    Object.keys(infoModals).forEach(key => closeInfoModal(key, false));
+    if (restoreFocus && activeInfoTrigger && typeof activeInfoTrigger.focus === "function") {
+      activeInfoTrigger.focus();
+    }
+  }
+
   function getOpenModal() {
-    return [contactModal, gameModal, secretModal].find(modal => modal.classList.contains("is-open")) || null;
+    return [contactModal, careersModal, pressModal, gameModal, secretModal].find(modal => modal.classList.contains("is-open")) || null;
   }
 
   function trapModalFocus(event) {
@@ -1348,6 +1389,8 @@
   function syncModalLock() {
     const modalOpen =
       contactModal.classList.contains("is-open") ||
+      careersModal.classList.contains("is-open") ||
+      pressModal.classList.contains("is-open") ||
       gameModal.classList.contains("is-open") ||
       secretModal.classList.contains("is-open");
     body.classList.toggle("modal-open", modalOpen);
@@ -1448,6 +1491,7 @@
 
   function openContact() {
     closeGameDetails(false);
+    closeInfoModals(false);
     contactModal.hidden = false;
     contactModal.classList.add("is-open");
     syncModalLock();
@@ -1455,6 +1499,7 @@
   }
 
   function closeContactModal() {
+    if (!contactModal.classList.contains("is-open")) return;
     contactModal.classList.remove("is-open");
     contactModal.hidden = true;
     syncModalLock();
@@ -1495,11 +1540,7 @@
       ".system-card",
       ".about-grid > *",
       ".step",
-      ".careers",
-      ".roadmap-feature",
-      ".roadmap-item",
       ".devlog-card",
-      ".press-card",
       ".quote-card",
       ".faq-item",
       ".final-cta .container"
@@ -1610,6 +1651,9 @@
   function initControls() {
     document.querySelectorAll("[data-play]").forEach(button => button.addEventListener("click", startPlayMode));
     document.querySelectorAll("[data-open-contact]").forEach(button => button.addEventListener("click", openContact));
+    document.querySelectorAll("[data-open-info]").forEach(button => {
+      button.addEventListener("click", () => openInfoModal(button.dataset.openInfo, button));
+    });
 
     themeToggle.addEventListener("click", () => setTheme(state.theme === "dark" ? "light" : "dark"));
     if (pauseMagic) {
@@ -1655,6 +1699,14 @@
     contactModal.addEventListener("click", event => {
       if (event.target === contactModal) closeContactModal();
     });
+    closeCareers.addEventListener("click", () => closeInfoModal("careers"));
+    careersModal.addEventListener("click", event => {
+      if (event.target === careersModal) closeInfoModal("careers");
+    });
+    closePress.addEventListener("click", () => closeInfoModal("press"));
+    pressModal.addEventListener("click", event => {
+      if (event.target === pressModal) closeInfoModal("press");
+    });
     closeSecret.addEventListener("click", closeSecretReward);
     dismissSecret.addEventListener("click", closeSecretReward);
     secretModal.addEventListener("click", event => {
@@ -1685,6 +1737,7 @@
         closeMenu();
         closeContactModal();
         closeGameDetails();
+        closeInfoModals();
         closeSecretReward();
       }
     });
