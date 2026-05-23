@@ -1583,6 +1583,7 @@ h1 {
 
 .game-card {
   position: relative;
+  scroll-margin-top: calc(var(--header-h) + 28px);
   min-height: 650px;
   display: flex;
   flex-direction: column;
@@ -1788,51 +1789,339 @@ h1 {
 
 .paint-card {
   --card-accent: #ffd36e;
-  --card-bg: linear-gradient(155deg, #101325, #172a4d 46%, #581c5c);
+  --paint-cycle: 8.4s;
+  --card-bg: linear-gradient(155deg, #101325, #19304d 46%, #582647);
   --cover-atmosphere:
-    radial-gradient(circle at 28% 32%, rgba(255,211,110,0.7), transparent 18%),
-    radial-gradient(circle at 68% 28%, rgba(255,79,115,0.58), transparent 18%),
-    radial-gradient(circle at 58% 68%, rgba(113,231,255,0.54), transparent 22%),
-    radial-gradient(circle at 36% 74%, rgba(125,240,176,0.44), transparent 20%);
+    radial-gradient(circle at 22% 22%, rgba(255, 216, 93, 0.48), transparent 17%),
+    radial-gradient(circle at 76% 28%, rgba(0, 220, 255, 0.42), transparent 18%),
+    radial-gradient(circle at 78% 72%, rgba(255, 45, 184, 0.34), transparent 22%),
+    radial-gradient(circle at 32% 74%, rgba(101, 255, 64, 0.34), transparent 21%);
 }
 
-.paint-card .cover-orb {
-  left: 61%;
-  top: 35%;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: conic-gradient(#ff4f73, #ffd36e, #7df0b0, #71e7ff, #ff4f73);
-  box-shadow: 0 0 46px rgba(255,211,110,0.34);
+.paint-game-cover {
+  min-height: 380px;
+  background: #111928;
 }
 
-.paint-card .cover-shape {
-  left: 22%;
-  bottom: 38px;
-  width: 180px;
-  height: 210px;
+.paint-card .game-cover::before {
+  inset: 0;
+  z-index: 2;
+  opacity: 0.72;
+  mix-blend-mode: screen;
+}
+
+.paint-card .game-cover::after {
   background:
-    linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px),
-    linear-gradient(180deg, rgba(255,255,255,0.16), rgba(0,0,0,0.24));
-  background-size: 32px 100%, 100% 100%;
-  clip-path: polygon(0 36%, 24% 20%, 24% 0, 46% 0, 46% 24%, 70% 16%, 70% 2%, 96% 2%, 96% 100%, 0 100%);
-  filter: drop-shadow(0 20px 26px rgba(0,0,0,0.28));
+    linear-gradient(180deg, rgba(5, 9, 18, 0.02) 18%, rgba(5, 9, 18, 0.2) 52%, rgba(2, 5, 11, 0.74)),
+    radial-gradient(ellipse at 52% 106%, rgba(255, 83, 48, 0.34), transparent 42%);
 }
 
-.paint-card .cover-shape::before,
-.paint-card .cover-shape::after {
+.paint-stage,
+.paint-bg,
+.paint-arena {
+  position: absolute;
+}
+
+.paint-stage {
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.paint-stage::before,
+.paint-stage::after {
   content: "";
-  border-radius: 50%;
-  background: var(--cyan);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
 }
 
-.paint-card .cover-shape::before {
-  left: 148px;
-  top: -22px;
-  width: 42px;
-  height: 42px;
-  background: var(--rose);
-  box-shadow: -62px 30px 0 var(--gold), 10px 82px 0 var(--green);
+.paint-stage::before {
+  z-index: 1;
+  background:
+    linear-gradient(90deg, rgba(8, 15, 25, 0.52), transparent 28%, transparent 72%, rgba(8, 15, 25, 0.48)),
+    radial-gradient(circle at 48% 30%, rgba(255, 255, 255, 0.18), transparent 14rem);
+}
+
+.paint-stage::after {
+  z-index: 7;
+  background:
+    linear-gradient(180deg, transparent 42%, rgba(8, 6, 16, 0.52)),
+    radial-gradient(ellipse at 50% 108%, rgba(255, 216, 93, 0.34), transparent 44%);
+}
+
+.paint-bg {
+  inset: -13% -8%;
+  z-index: 0;
+  width: 116%;
+  height: 126%;
+  object-fit: cover;
+  object-position: center 53%;
+  filter: saturate(1.08) contrast(1.03) brightness(0.82);
+  transform: scale(1.04);
+  transition: transform .85s var(--ease), filter .55s var(--ease);
+}
+
+.paint-card:hover .paint-bg {
+  filter: saturate(1.22) contrast(1.06) brightness(0.9);
+  transform: scale(1.1) translate3d(0, -2%, 0);
+}
+
+.paint-module {
+  position: absolute;
+  left: 50%;
+  top: -11%;
+  z-index: 5;
+  width: auto;
+  height: 125%;
+  max-width: none;
+  transform: translateX(-50%);
+  filter:
+    drop-shadow(0 18px 22px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 24px rgba(255, 201, 73, 0.18));
+  pointer-events: none;
+}
+
+.paint-arena {
+  left: 50%;
+  top: 9%;
+  z-index: 3;
+  width: clamp(178px, 41%, 242px);
+  height: 86%;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    linear-gradient(180deg, rgba(164, 196, 232, 0.96), rgba(175, 207, 238, 0.96) 28%, rgba(124, 125, 126, 0.98) 28%, rgba(122, 122, 122, 0.98) 100%);
+  box-shadow:
+    inset 0 0 24px rgba(255, 255, 255, 0.18),
+    inset 0 -36px 44px rgba(24, 20, 24, 0.32);
+  transform: translateX(-50%);
+}
+
+.paint-arena::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.12), transparent 34%),
+    radial-gradient(circle at 50% 19%, rgba(255, 255, 255, 0.36), transparent 8rem);
+}
+
+.paint-cube-stack {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  z-index: 2;
+  width: 178px;
+  height: 122px;
+  transform: translateX(-50%);
+}
+
+.paint-cube {
+  --cube-size: 34px;
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  border-radius: 4px;
+  background: var(--cube-color);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset -9px -9px 0 rgba(0, 0, 0, 0.12),
+    0 8px 14px rgba(0, 0, 0, 0.18);
+  transform: translate3d(0, 0, 0) rotate(var(--cube-rot, 0deg));
+  transform-origin: 50% 50%;
+  animation: paintCubeBlast var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-cube-a { left: 0; top: 72px; --cube-color: #76ff00; --cube-rot: 0deg; --blast-x: -72px; --blast-y: -78px; --blast-r: -92deg; }
+.paint-cube-b { left: 36px; top: 72px; --cube-color: #ff4137; --cube-rot: 0deg; --blast-x: -28px; --blast-y: -112px; --blast-r: 64deg; }
+.paint-cube-c { left: 72px; top: 72px; --cube-color: #ffd923; --cube-rot: 0deg; --blast-x: 16px; --blast-y: -96px; --blast-r: -38deg; }
+.paint-cube-d { left: 108px; top: 72px; --cube-color: #bc00ff; --cube-rot: 0deg; --blast-x: 68px; --blast-y: -72px; --blast-r: 82deg; }
+.paint-cube-e { left: 144px; top: 72px; --cube-color: #49d400; --cube-rot: 0deg; --blast-x: 112px; --blast-y: -42px; --blast-r: -76deg; }
+.paint-cube-f { left: 18px; top: 38px; --cube-color: #d62f29; --cube-rot: 0deg; --blast-x: -92px; --blast-y: -34px; --blast-r: 43deg; }
+.paint-cube-g { left: 54px; top: 38px; --cube-color: #40f900; --cube-rot: 0deg; --blast-x: -36px; --blast-y: -54px; --blast-r: -58deg; }
+.paint-cube-h { left: 90px; top: 38px; --cube-color: #326df3; --cube-rot: 0deg; --blast-x: 42px; --blast-y: -64px; --blast-r: 98deg; }
+.paint-cube-i { left: 126px; top: 38px; --cube-color: #ff3c34; --cube-rot: 0deg; --blast-x: 86px; --blast-y: -98px; --blast-r: -44deg; }
+.paint-cube-j { left: 72px; top: 4px; --cube-size: 40px; --cube-color: #ffd826; --cube-rot: 0deg; --blast-x: 8px; --blast-y: -128px; --blast-r: 28deg; }
+
+.paint-platform {
+  position: absolute;
+  left: 50%;
+  bottom: 54px;
+  z-index: 1;
+  width: 166px;
+  height: 116px;
+  border-radius: 4px 4px 12px 12px;
+  background:
+    linear-gradient(142deg, rgba(255,255,255,0.1), transparent 34%),
+    linear-gradient(180deg, #848484, #707070 64%, #1c1e26 65%, #11131b 100%);
+  box-shadow:
+    inset -18px -20px 0 rgba(0, 0, 0, 0.14),
+    0 20px 28px rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%) perspective(220px) rotateX(11deg);
+}
+
+.paint-aim-line {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  z-index: 3;
+  width: 5px;
+  height: 206px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255,255,255,0.92) 24%, rgba(255,255,255,0.86) 72%, rgba(255,255,255,0));
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.54),
+    0 0 36px rgba(112, 225, 255, 0.3);
+  transform: translateX(-50%) rotate(var(--aim-tilt, 0deg));
+  transform-origin: 50% 100%;
+  animation: paintAimCharge var(--paint-cycle) ease-in-out infinite;
+}
+
+.paint-projectile {
+  position: absolute;
+  left: 50%;
+  bottom: 62px;
+  z-index: 4;
+  width: 14px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--shot-color);
+  box-shadow:
+    0 0 16px var(--shot-color),
+    0 0 34px color-mix(in srgb, var(--shot-color) 58%, transparent);
+  opacity: 0;
+  transform: translate3d(-50%, 0, 0) scale(0.68);
+  animation: paintProjectile var(--paint-cycle) cubic-bezier(.17,.84,.32,1) infinite;
+}
+
+.paint-projectile-one {
+  --shot-color: #fff4a5;
+  --shot-x: 0px;
+}
+
+.paint-projectile-two {
+  --shot-color: #a56dff;
+  --shot-x: -16px;
+  animation-delay: -2.7s;
+}
+
+.paint-projectile-three {
+  --shot-color: #55d9ff;
+  --shot-x: 18px;
+  animation-delay: -5.4s;
+}
+
+.paint-impact {
+  position: absolute;
+  left: 50%;
+  top: 89px;
+  z-index: 5;
+  width: 118px;
+  aspect-ratio: 1;
+  border-radius: 47% 53% 48% 52%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.9) 0 7%, transparent 8%),
+    radial-gradient(circle at 30% 44%, #ff3e52 0 8%, transparent 9%),
+    radial-gradient(circle at 64% 40%, #ffe35e 0 10%, transparent 11%),
+    radial-gradient(circle at 48% 64%, #45ff28 0 11%, transparent 12%),
+    radial-gradient(circle at 72% 65%, #24d9ff 0 8%, transparent 9%),
+    radial-gradient(circle at 38% 72%, #c017ff 0 8%, transparent 9%);
+  filter: drop-shadow(0 0 18px rgba(255, 231, 101, 0.42));
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.34) rotate(-8deg);
+  animation: paintImpact var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-shard {
+  position: absolute;
+  left: 50%;
+  top: 112px;
+  z-index: 5;
+  width: 16px;
+  aspect-ratio: 1;
+  border-radius: 3px;
+  background: var(--shard-color);
+  opacity: 0;
+  box-shadow: 0 0 14px color-mix(in srgb, var(--shard-color) 55%, transparent);
+  animation: paintShardFlight var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-shard-one { --shard-color: #ff35c8; --shard-x: -88px; --shard-y: 94px; --shard-r: 142deg; }
+.paint-shard-two { --shard-color: #39d3ff; --shard-x: -56px; --shard-y: 144px; --shard-r: -84deg; animation-delay: .08s; }
+.paint-shard-three { --shard-color: #ffe24b; --shard-x: 72px; --shard-y: 122px; --shard-r: 92deg; animation-delay: .12s; }
+.paint-shard-four { --shard-color: #5fff1c; --shard-x: 96px; --shard-y: 58px; --shard-r: -132deg; animation-delay: .16s; }
+
+.paint-blaster {
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  z-index: 4;
+  width: 148px;
+  height: auto;
+  max-width: none;
+  filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.26));
+  transform: translateX(-50%) rotate(-90deg);
+  transform-origin: 50% 52%;
+  animation: paintBlasterKick var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-hero {
+  position: absolute;
+  left: -96px;
+  bottom: -118px;
+  z-index: 6;
+  width: clamp(340px, 72%, 440px);
+  height: auto;
+  max-width: none;
+  filter:
+    drop-shadow(0 22px 24px rgba(0, 0, 0, 0.38))
+    drop-shadow(0 0 24px rgba(255, 220, 70, 0.14));
+  transform: rotate(-2deg);
+  transform-origin: 52% 78%;
+  animation: paintHeroRecoil var(--paint-cycle) var(--ease) infinite;
+  pointer-events: none;
+}
+
+.paint-cover-icon,
+.paint-hover-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 9;
+  width: clamp(78px, 11vw, 112px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 34px rgba(23, 14, 18, 0.34),
+    0 0 0 6px rgba(255, 255, 255, 0.16);
+  transition: opacity .24s var(--ease), transform .42s var(--ease), filter .35s var(--ease);
+}
+
+.paint-cover-icon {
+  transform: rotate(3deg);
+}
+
+.paint-hover-icon {
+  opacity: 0;
+  filter: saturate(1.14);
+  transform: translate3d(22px, -20px, 0) rotate(8deg) scale(0.9);
+}
+
+.paint-card:hover .paint-cover-icon {
+  opacity: 0;
+  transform: translate3d(-18px, 18px, 0) rotate(-12deg) scale(0.82);
+}
+
+.paint-card:hover .paint-hover-icon {
+  opacity: 1;
+  animation: paintIconImpact .72s var(--ease) both;
 }
 
 .candy-card {
@@ -2568,10 +2857,9 @@ h1 {
 .game-dialog[data-game="paint"] {
   --dialog-accent: #ffd36e;
   --dialog-cover:
-    radial-gradient(circle at 20% 34%, rgba(255,211,110,0.72), transparent 10rem),
-    radial-gradient(circle at 68% 24%, rgba(255,79,115,0.62), transparent 11rem),
-    radial-gradient(circle at 78% 76%, rgba(113,231,255,0.48), transparent 11rem),
-    linear-gradient(145deg, #091427, #19315a 48%, #5a1e63);
+    linear-gradient(180deg, rgba(14, 10, 7, 0.08), rgba(12, 9, 13, 0.56)),
+    radial-gradient(circle at 48% 32%, rgba(255, 231, 105, 0.42), transparent 12rem),
+    url("assets/Paint%20Blasters/site/back.webp") center 52% / cover no-repeat;
 }
 
 .game-dialog[data-game="ball"] {
@@ -3199,6 +3487,134 @@ body.magic-off .secret-glint {
   100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
 }
 
+@keyframes paintAimCharge {
+  0%, 15% {
+    opacity: 0.42;
+    transform: translateX(-50%) rotate(-1deg) scaleY(0.72);
+  }
+  24%, 32% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(0deg) scaleY(1);
+  }
+  36% {
+    opacity: 0.34;
+    transform: translateX(-50%) rotate(0deg) scale(1.7, 0.86);
+  }
+  48%, 100% {
+    opacity: 0.42;
+    transform: translateX(-50%) rotate(1deg) scaleY(0.72);
+  }
+}
+
+@keyframes paintProjectile {
+  0%, 17%, 100% {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0) scale(0.46);
+  }
+  20% {
+    opacity: 1;
+    transform: translate3d(-50%, -18px, 0) scale(0.78);
+  }
+  31% {
+    opacity: 1;
+    transform: translate3d(calc(-50% + var(--shot-x, 0px)), -188px, 0) scale(0.92);
+  }
+  35% {
+    opacity: 0;
+    transform: translate3d(calc(-50% + var(--shot-x, 0px)), -214px, 0) scale(0.22);
+  }
+}
+
+@keyframes paintCubeBlast {
+  0%, 25%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: translate3d(0, 0, 0) rotate(var(--cube-rot, 0deg)) scale(1);
+  }
+  32% {
+    opacity: 1;
+    filter: brightness(1.45);
+    transform: translate3d(0, -6px, 0) rotate(var(--cube-rot, 0deg)) scale(1.08);
+  }
+  52%, 72% {
+    opacity: 0.92;
+    filter: brightness(1.08);
+    transform: translate3d(var(--blast-x), var(--blast-y), 0) rotate(var(--blast-r)) scale(0.94);
+  }
+  86% {
+    opacity: 0;
+    transform: translate3d(var(--blast-x), calc(var(--blast-y) + 52px), 0) rotate(var(--blast-r)) scale(0.72);
+  }
+}
+
+@keyframes paintImpact {
+  0%, 28%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.34) rotate(-8deg);
+  }
+  33% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.9) rotate(4deg);
+  }
+  45% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.62) rotate(18deg);
+  }
+}
+
+@keyframes paintShardFlight {
+  0%, 30%, 100% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(0.4);
+  }
+  36% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) rotate(12deg) scale(1);
+  }
+  70% {
+    opacity: 0.62;
+    transform: translate3d(calc(-50% + var(--shard-x)), calc(-50% + var(--shard-y)), 0) rotate(var(--shard-r)) scale(0.88);
+  }
+  84% {
+    opacity: 0;
+    transform: translate3d(calc(-50% + var(--shard-x)), calc(-50% + var(--shard-y) + 40px), 0) rotate(var(--shard-r)) scale(0.58);
+  }
+}
+
+@keyframes paintBlasterKick {
+  0%, 24%, 100% {
+    transform: translateX(-50%) rotate(-90deg) translateX(0);
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.26));
+  }
+  31% {
+    transform: translateX(-50%) rotate(-90deg) translateX(-9px) scale(1.04);
+    filter:
+      drop-shadow(0 12px 12px rgba(0, 0, 0, 0.26))
+      drop-shadow(0 0 16px rgba(255, 236, 132, 0.34));
+  }
+  42% {
+    transform: translateX(-50%) rotate(-90deg) translateX(3px);
+  }
+}
+
+@keyframes paintHeroRecoil {
+  0%, 24%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  31% {
+    transform: translate3d(-7px, 4px, 0) rotate(-4deg) scale(1.015);
+  }
+  44% {
+    transform: translate3d(3px, -2px, 0) rotate(-1deg);
+  }
+}
+
+@keyframes paintIconImpact {
+  0% { transform: translate3d(22px, -30px, 0) rotate(10deg) scale(0.86); }
+  58% { transform: translate3d(-6px, 7px, 0) rotate(-4deg) scale(1.05); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
 @keyframes drawPath {
   0% { stroke-dashoffset: 520; opacity: 0.25; }
   45%, 72% { stroke-dashoffset: 0; opacity: 1; }
@@ -3467,6 +3883,38 @@ body.magic-off .secret-glint {
 
   .candy-cover-icon,
   .candy-hover-icon {
+    top: 14px;
+    right: 14px;
+    width: 78px;
+    border-radius: 18px;
+  }
+
+  .paint-game-cover {
+    min-height: 330px;
+  }
+
+  .paint-arena {
+    top: 10%;
+    width: clamp(166px, 52%, 214px);
+    height: 84%;
+  }
+
+  .paint-module {
+    height: 120%;
+  }
+
+  .paint-hero {
+    left: -92px;
+    bottom: -104px;
+    width: 342px;
+  }
+
+  .paint-blaster {
+    width: 132px;
+  }
+
+  .paint-cover-icon,
+  .paint-hover-icon {
     top: 14px;
     right: 14px;
     width: 78px;
