@@ -139,11 +139,11 @@
       title: "Ball is God?!",
       genre: "Hardcore Arcade",
       status: "In Development - 70%",
-      copy: "A vertical one-hit-kill arcade journey with bosses, story pressure and moral choices. Ball is God?! takes a deadly mobile descent and gives it dark-fantasy stakes, worlds that react to decisions and a route toward different endings.",
-      tags: ["Mobile", "Narrative Arcade", "Vertical Action", "Boss Rush", "Moral Choice"],
+      copy: "A fast vertical descent where Espa drops through gaps between broken olympic stones around a golden divine tower. Ball is God?! turns one-touch timing, falling platforms, boss-like pressure and story choices into a bright but punishing mobile arcade loop.",
+      tags: ["Mobile", "Vertical Descent", "One-Hit-Kill", "Timing Arcade", "Moral Choice"],
       pillars: [
-        "Make every movement decision matter under one-hit-kill tension.",
-        "Break runs with boss-like challenges and story events.",
+        "Read gaps between moving stone platforms before every drop.",
+        "Keep Espa readable against clouds, tower motion and fast descent.",
         "Let choices reshape character fates, world mood and endings."
       ]
     }
