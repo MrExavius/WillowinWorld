@@ -1658,6 +1658,21 @@
     sections.forEach(section => observer.observe(section));
   }
 
+  function initGameAnimationVisibility() {
+    const gameCards = document.querySelectorAll(".game-card");
+    if (!gameCards.length || !("IntersectionObserver" in window)) return;
+
+    gameCards.forEach(card => card.classList.add("is-animation-paused"));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("is-animation-paused", !entry.isIntersecting);
+      });
+    }, { rootMargin: "260px 0px", threshold: 0.01 });
+
+    gameCards.forEach(card => observer.observe(card));
+  }
+
   function initFilters() {
     const filters = document.querySelectorAll("[data-filter]");
     const cards = document.querySelectorAll(".game-card");
@@ -1844,6 +1859,7 @@
   initCardShine();
   initReveals();
   initActiveNavigation();
+  initGameAnimationVisibility();
   initPerformanceVisibility();
   setTheme(initialTheme, false);
   resize();
