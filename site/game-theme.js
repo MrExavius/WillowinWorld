@@ -28,7 +28,9 @@
     if (metaThemeColor) {
       metaThemeColor.content = body.classList.contains("nature-seed-page")
         ? theme === "dark" ? "#07162d" : "#f7fae8"
-        : theme === "dark" ? "#031735" : "#fcfff2";
+        : body.classList.contains("candy-shop-page")
+          ? theme === "dark" ? "#211027" : "#fff3fa"
+          : theme === "dark" ? "#031735" : "#fcfff2";
     }
     if (themeToggle) {
       themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
@@ -50,41 +52,40 @@
     prefersDark.addEventListener("change", event => setTheme(event.matches ? "dark" : "light", false));
   }
 
-  function initNatureCursorMascot() {
-    if (!body.classList.contains("nature-seed-page")) return;
-
+  function initCursorMascot(options) {
+    if (!body.classList.contains(options.pageClass)) return;
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (!finePointer.matches || reducedMotion.matches) return;
 
     const mascot = document.createElement("div");
-    mascot.className = "nature-cursor-mascot";
+    mascot.className = options.mascotClass;
     mascot.setAttribute("aria-hidden", "true");
 
     const glow = document.createElement("span");
-    glow.className = "nature-cursor-glow";
+    glow.className = options.glowClass;
 
     const image = document.createElement("img");
-    image.className = "nature-cursor-image";
-    image.src = "../assets/Nature%20Seeds/Galvnie2.png";
-    image.width = 500;
-    image.height = 500;
+    image.className = options.imageClass;
+    image.src = options.src;
+    image.width = options.imageWidth;
+    image.height = options.imageHeight;
     image.alt = "";
     image.decoding = "async";
 
     mascot.append(glow, image);
-    (document.querySelector(".nature-seed-shell") || body).appendChild(mascot);
+    (document.querySelector(options.shellSelector) || body).appendChild(mascot);
 
     let frame = 0;
-    let x = window.innerWidth * 0.58;
-    let y = window.innerHeight * 0.42;
+    let x = window.innerWidth * options.startX;
+    let y = window.innerHeight * options.startY;
     let targetX = x;
     let targetY = y;
     let lastX = x;
 
     function render(time) {
-      x += (targetX - x) * 0.11;
-      y += (targetY - y) * 0.11;
+      x += (targetX - x) * options.smoothing;
+      y += (targetY - y) * options.smoothing;
 
       const bob = Math.sin(time * 0.005) * 5;
       const tilt = Math.max(-10, Math.min(10, (x - lastX) * 0.12));
@@ -108,8 +109,8 @@
 
     window.addEventListener("pointermove", event => {
       if (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen") return;
-      targetX = Math.min(window.innerWidth - 54, Math.max(54, event.clientX + 72));
-      targetY = Math.min(window.innerHeight - 54, Math.max(54, event.clientY + 96));
+      targetX = Math.min(window.innerWidth - options.boundary, Math.max(options.boundary, event.clientX + options.offsetX));
+      targetY = Math.min(window.innerHeight - options.boundary, Math.max(options.boundary, event.clientY + options.offsetY));
       mascot.classList.add("is-active");
       start();
     }, { passive: true });
@@ -118,5 +119,37 @@
     window.addEventListener("blur", stop);
   }
 
-  initNatureCursorMascot();
+  initCursorMascot({
+    pageClass: "nature-seed-page",
+    shellSelector: ".nature-seed-shell",
+    mascotClass: "nature-cursor-mascot",
+    glowClass: "nature-cursor-glow",
+    imageClass: "nature-cursor-image",
+    src: "../assets/Nature%20Seeds/Galvnie2.png",
+    imageWidth: 500,
+    imageHeight: 500,
+    startX: 0.58,
+    startY: 0.42,
+    offsetX: 72,
+    offsetY: 96,
+    boundary: 54,
+    smoothing: 0.11
+  });
+
+  initCursorMascot({
+    pageClass: "candy-shop-page",
+    shellSelector: ".candy-shop-shell",
+    mascotClass: "candy-cursor-mascot",
+    glowClass: "candy-cursor-glow",
+    imageClass: "candy-cursor-image",
+    src: "../assets/Candy%20Shop/site/mascot-cursor.png",
+    imageWidth: 640,
+    imageHeight: 640,
+    startX: 0.62,
+    startY: 0.42,
+    offsetX: 86,
+    offsetY: 88,
+    boundary: 64,
+    smoothing: 0.1
+  });
 })();

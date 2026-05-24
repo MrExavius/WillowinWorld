@@ -18,9 +18,11 @@
   <title>Candy Shop - Cozy Candy Merge Puzzle Game</title>
   <link rel="canonical" href="https://willowinworld.com/games/candy-shop.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/Candy%20Shop/site/back_glavnie_10.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="game-detail-page game-theme-candy" data-theme="light">
+<body class="game-detail-page game-theme-candy candy-shop-page" data-theme="light">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html#games" aria-label="Back to WillowinWorld games">
       <img src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="" decoding="async">
@@ -37,33 +39,86 @@
       </svg>
     </button>
   </header>
-  <main class="section game-page game-detail-shell">
-    <div class="container game-page-grid">
-      <section class="soft-card game-page-copy game-hero-card">
-        <div class="eyebrow">Candy Shop</div>
-        <h1>Cozy Physics-Based Candy Merge Puzzle</h1>
-        <p class="hero-copy">Candy Shop is a casual mobile puzzle game about dropping sweets, merging matching candies and building bigger treats through soft, satisfying physics.</p>
-        <p>What started as a playful candy idea has grown into WillowinWorld's second active game project. The game now has its core candy mechanics, 13-candy merge chain, early container systems and UI direction in place.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:hello@willowinworld.com?subject=Candy%20Shop%20updates">Follow Development</a>
-          <a class="btn btn-ghost" href="../index.html#games">Back to Games</a>
+  <main class="game-page game-detail-shell candy-shop-shell">
+    <div class="candy-page-backdrop ambient-only" aria-hidden="true">
+      <div class="candy-bg-stack">
+        <img class="candy-bg candy-bg-1" src="../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-2" src="../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-3" src="../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-4" src="../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-5" src="../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-6" src="../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-7" src="../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-8" src="../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-9" src="../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+        <img class="candy-bg candy-bg-10" src="../assets/Candy%20Shop/site/back_glavnie_10.webp" width="640" height="1137" alt="" decoding="async">
+      </div>
+      <div class="candy-menu-world">
+        <span class="candy-menu-shelf candy-menu-shelf-top"></span>
+        <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-one"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-one"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-three"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-four"></span>
+      </div>
+    </div>
+
+    <section class="candy-game-hero" aria-labelledby="candyHeroTitle">
+      <div class="container candy-hero-layout">
+        <div class="candy-hero-copy">
+          <div class="eyebrow">Candy Shop</div>
+          <h1 id="candyHeroTitle">Drop sweets. Build bigger treats.</h1>
+          <p class="hero-copy">A cozy mobile merge puzzle about placing candy, triggering soft physics combos and chasing one more satisfying evolution.</p>
+          <p class="candy-hero-note">Now in internal beta, with current work focused on mobile performance, UI polish, candy size balance, container pressure and readable combo feedback.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:hello@willowinworld.com?subject=Candy%20Shop%20updates">Follow Development</a>
+            <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
+          </div>
+          <div class="candy-hero-stats" role="group" aria-label="Candy Shop highlights">
+            <span><strong>Drop</strong><small>place candy with soft physics</small></span>
+            <span><strong>Merge</strong><small>grow through 13 stages</small></span>
+            <span><strong>Combo</strong><small>chain sweets and rewards</small></span>
+          </div>
         </div>
-        <div class="game-tags">
-          <span class="tag">Candy merge puzzle</span>
-          <span class="tag">Suika-like</span>
-          <span class="tag">Cozy mobile game</span>
-          <span class="tag">Combo puzzle</span>
-        </div>
-      </section>
-      <aside class="soft-card game-page-panel game-visual-card">
-        <img src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop game icon with bright sweets" decoding="async">
-        <h2>Gameplay pillars</h2>
-        <ul>
-          <li>Place each candy carefully and let soft physics shape the result.</li>
-          <li>Match identical sweets to create larger candies, build chains and push toward the final cake.</li>
-          <li>Use different bags and container shapes to create new pressure, strategy and replay value.</li>
-        </ul>
-      </aside>
+
+        <aside class="candy-hero-showcase" aria-label="Candy Shop gameplay preview">
+          <div class="candy-device-frame">
+            <div class="candy-stage candy-stage-showcase" aria-hidden="true">
+              <div class="candy-bg-stack">
+                <img class="candy-bg candy-bg-1" src="../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-2" src="../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-3" src="../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-4" src="../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-5" src="../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-6" src="../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-7" src="../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-8" src="../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-9" src="../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-10" src="../assets/Candy%20Shop/site/back_glavnie_10.webp" width="640" height="1137" alt="" decoding="async">
+              </div>
+              <img class="candy-piece candy-piece-left" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img class="candy-piece candy-piece-right" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img class="candy-piece candy-piece-result" src="../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
+              <span class="candy-impact"></span>
+            </div>
+            <img class="candy-showcase-icon" src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop game icon with bright sweets" decoding="async">
+            <span class="candy-preview-title">
+              <small>Cozy Physics Merge Puzzle</small>
+              <strong>Candy Shop</strong>
+              <span class="candy-cycle"><b>Drop</b><b>Merge</b><b>Combo</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>Internal Beta · Optimization</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid candy-shop-content">
       <section class="soft-card game-page-section">
         <div class="eyebrow">Game overview</div>
         <h2>Drop sweets, create bigger treats and chase one more satisfying merge.</h2>
@@ -74,7 +129,7 @@
           <article class="detail-card"><h3>Status</h3><p>Internal Beta - Optimization and Polish. Current work focuses on mobile performance, UI polish, candy size balance, container pressure and combo readability.</p></article>
         </div>
       </section>
-      <section class="soft-card game-page-section">
+      <section class="soft-card game-page-section candy-story-section">
         <div class="eyebrow">Origin</div>
         <h2>A bright candy idea rebuilt until the merge loop felt right.</h2>
         <div class="info-grid">
@@ -90,7 +145,7 @@
           </dl>
         </div>
       </section>
-      <section class="soft-card game-page-section">
+      <section class="soft-card game-page-section candy-story-section">
         <div class="eyebrow">Publisher angle</div>
         <h2>A recognizable merge format with a sweeter studio identity.</h2>
         <div class="info-grid">
