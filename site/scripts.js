@@ -1599,10 +1599,8 @@
   function initFilters() {
     const filters = document.querySelectorAll("[data-filter]");
     const cards = document.querySelectorAll(".game-card");
-    const status = document.getElementById("filterStatus");
     const updateFilter = activeButton => {
       const filter = activeButton.dataset.filter;
-      let visibleCount = 0;
       filters.forEach(btn => {
         const active = btn === activeButton;
         btn.classList.toggle("is-active", active);
@@ -1612,13 +1610,7 @@
         const tags = card.dataset.tags || "";
         const visible = filter === "All" || tags.includes(filter);
         card.classList.toggle("is-hidden", !visible);
-        if (visible) visibleCount += 1;
       });
-      if (status) {
-        status.textContent = filter === "All"
-          ? "Showing all WillowinWorld games."
-          : "Showing " + visibleCount + " " + filter + " game" + (visibleCount === 1 ? "." : "s.");
-      }
     };
     filters.forEach(button => {
       button.addEventListener("click", () => updateFilter(button));
