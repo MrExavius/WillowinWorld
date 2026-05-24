@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Candy Shop is a cozy candy merge puzzle game with satisfying physics, special sweets, combos and long-term mobile progression.">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
   <meta property="og:title" content="Candy Shop - Cozy Candy Merge Puzzle Game">
   <meta property="og:description" content="Drop, combine and evolve candies in a cozy mobile merge puzzle by WillowinWorld.">
   <meta property="og:image" content="https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp">
@@ -19,10 +20,27 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body data-theme="light">
-  <main class="section game-page">
+<body class="game-detail-page game-theme-candy" data-theme="light">
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html#games" aria-label="Back to WillowinWorld games">
+      <img src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="" decoding="async">
+      <span><strong>Candy Shop</strong><small>WillowinWorld game page</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Game page navigation">
+      <a href="../index.html#games">Games</a>
+      <a href="#devlog">Devlog</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span id="themeState">Day</span>
+    </button>
+  </header>
+  <main class="section game-page game-detail-shell">
     <div class="container game-page-grid">
-      <section class="soft-card game-page-copy">
+      <section class="soft-card game-page-copy game-hero-card">
         <div class="eyebrow">Candy Shop</div>
         <h1>Cozy candy merge puzzle with satisfying physics.</h1>
         <p class="hero-copy">Candy Shop is a casual mobile merge puzzle where players drop and combine sweets into larger treats. It focuses on readable candy physics, combos, special sweets and long-term progression without pay-to-win pressure.</p>
@@ -37,7 +55,7 @@
           <span class="tag">Combo puzzle</span>
         </div>
       </section>
-      <aside class="soft-card game-page-panel">
+      <aside class="soft-card game-page-panel game-visual-card">
         <img src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop game icon with bright sweets" decoding="async">
         <h2>Gameplay pillars</h2>
         <ul>
@@ -92,5 +110,6 @@
       </section>
     </div>
   </main>
+  <script src="../game-theme.js"></script>
 </body>
 </html>

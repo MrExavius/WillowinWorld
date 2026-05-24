@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Nature Seed is a relaxing draw-to-solve physics puzzle game where players draw magical lines, guide water to seeds and restore a dying forest.">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
   <meta property="og:title" content="Nature Seed - Draw-to-Solve Physics Puzzle Game">
   <meta property="og:description" content="Draw magical lines, guide water and restore nature in WillowinWorld's relaxing mobile physics puzzle.">
   <meta property="og:image" content="https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp">
@@ -19,10 +20,27 @@
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body data-theme="light">
-  <main class="section game-page">
+<body class="game-detail-page game-theme-nature" data-theme="light">
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html#games" aria-label="Back to WillowinWorld games">
+      <img src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="" decoding="async">
+      <span><strong>Nature Seed</strong><small>WillowinWorld game page</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Game page navigation">
+      <a href="../index.html#games">Games</a>
+      <a href="#devlog">Devlog</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span id="themeState">Day</span>
+    </button>
+  </header>
+  <main class="section game-page game-detail-shell">
     <div class="container game-page-grid">
-      <section class="soft-card game-page-copy">
+      <section class="soft-card game-page-copy game-hero-card">
         <div class="eyebrow">Nature Seed</div>
         <h1>Relaxing draw-to-solve physics puzzle about restoring nature.</h1>
         <p class="hero-copy">Nature Seed is a meditative mobile physics puzzle where players draw magical lines, guide water toward seeds and turn a dying forest into a living watercolor ecosystem.</p>
@@ -37,7 +55,7 @@
           <span class="tag">Relaxing mobile game</span>
         </div>
       </section>
-      <aside class="soft-card game-page-panel">
+      <aside class="soft-card game-page-panel game-visual-card">
         <img src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed game icon with a magical forest character" decoding="async">
         <h2>Gameplay pillars</h2>
         <ul>
@@ -92,5 +110,6 @@
       </section>
     </div>
   </main>
+  <script src="../game-theme.js"></script>
 </body>
 </html>

@@ -2894,6 +2894,284 @@ h1 {
   align-items: start;
 }
 
+.game-detail-page {
+  --game-accent: var(--cyan);
+  --game-accent-2: var(--violet);
+  --game-warm: var(--gold);
+  --game-shadow: rgba(4, 21, 51, 0.2);
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 14%, color-mix(in srgb, var(--game-accent) 18%, transparent), transparent 28%),
+    radial-gradient(circle at 86% 10%, color-mix(in srgb, var(--game-warm) 18%, transparent), transparent 24%),
+    linear-gradient(180deg, color-mix(in srgb, var(--paper) 82%, var(--game-accent)), var(--bg));
+}
+
+.game-detail-page[data-theme="dark"] {
+  --game-shadow: rgba(0, 0, 0, 0.34);
+  background:
+    radial-gradient(circle at 12% 12%, color-mix(in srgb, var(--game-accent) 20%, transparent), transparent 28%),
+    radial-gradient(circle at 86% 10%, color-mix(in srgb, var(--game-warm) 14%, transparent), transparent 25%),
+    linear-gradient(180deg, #031735, color-mix(in srgb, #031735 72%, var(--game-accent)) 48%, #020a1b);
+}
+
+.game-theme-nature {
+  --game-accent: #78c76c;
+  --game-accent-2: #67d8e8;
+  --game-warm: #f3dd8b;
+  --game-scene-image: url("assets/Nature Seeds/Galvnie_3_1-site.webp");
+}
+
+.game-theme-candy {
+  --game-accent: #ff8fbd;
+  --game-accent-2: #91d7ff;
+  --game-warm: #ffe08c;
+  --game-scene-image: url("assets/Candy Shop/site/back_glavnie_10.webp");
+}
+
+.game-theme-paint {
+  --game-accent: #36d3ff;
+  --game-accent-2: #a55cff;
+  --game-warm: #ffe24b;
+  --game-scene-image: url("assets/Paint Blasters/site/back.webp");
+}
+
+.game-theme-ball {
+  --game-accent: #ffd43d;
+  --game-accent-2: #7ec3ff;
+  --game-warm: #f6ad37;
+  --game-scene-image: url("assets/Ball is God/site/back.webp");
+}
+
+.game-detail-page::before {
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 60%, transparent), color-mix(in srgb, var(--bg-2) 34%, transparent)),
+    radial-gradient(circle at 16% 18%, color-mix(in srgb, var(--paper) 60%, transparent), transparent 22%),
+    var(--game-scene-image) center / cover no-repeat;
+  opacity: 0.24;
+  mix-blend-mode: normal;
+  mask-image: none;
+}
+
+.game-detail-page[data-theme="dark"]::before {
+  opacity: 0.18;
+  filter: saturate(1.08) contrast(1.08);
+}
+
+.game-detail-page::after {
+  height: min(38vh, 380px);
+  background:
+    radial-gradient(ellipse at 18% 100%, color-mix(in srgb, var(--game-accent) 24%, transparent), transparent 46%),
+    radial-gradient(ellipse at 82% 100%, color-mix(in srgb, var(--game-accent-2) 18%, transparent), transparent 44%),
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--game-accent) 20%, transparent));
+  opacity: 0.85;
+}
+
+.game-detail-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  min-height: 74px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 18px;
+  padding: 12px max(20px, calc((100vw - var(--max)) / 2));
+  border-bottom: 1px solid color-mix(in srgb, var(--paper) 22%, var(--line));
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--surface-strong) 88%, transparent), color-mix(in srgb, var(--surface) 78%, transparent)),
+    linear-gradient(135deg, color-mix(in srgb, var(--game-accent) 12%, transparent), color-mix(in srgb, var(--game-accent-2) 8%, transparent));
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 50px var(--game-shadow);
+}
+
+.game-detail-brand {
+  min-width: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 900;
+}
+
+.game-detail-brand img {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  object-fit: cover;
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--game-accent) 24%, transparent);
+}
+
+.game-detail-brand span {
+  display: grid;
+  gap: 2px;
+}
+
+.game-detail-brand strong {
+  overflow: hidden;
+  color: var(--text);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.game-detail-brand small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.game-detail-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.game-detail-nav a,
+.game-theme-toggle {
+  min-height: 42px;
+  border: 1px solid color-mix(in srgb, var(--paper) 22%, var(--line));
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+}
+
+.game-detail-nav a {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 13px;
+  border-radius: 999px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.game-detail-nav a:hover,
+.game-detail-nav a:focus-visible,
+.game-theme-toggle:hover,
+.game-theme-toggle:focus-visible {
+  border-color: color-mix(in srgb, var(--game-accent) 52%, var(--line));
+  color: var(--text);
+  outline: none;
+}
+
+.game-theme-toggle {
+  width: auto;
+  gap: 8px;
+  padding: 0 13px;
+  color: var(--text);
+}
+
+.game-theme-toggle span {
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.game-detail-shell {
+  padding-top: clamp(34px, 5vw, 62px);
+}
+
+.game-detail-page .game-page-grid {
+  grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.48fr);
+}
+
+.game-detail-page .soft-card {
+  border-color: color-mix(in srgb, var(--game-accent) 22%, var(--line));
+  background:
+    linear-gradient(140deg, color-mix(in srgb, var(--game-accent) 9%, transparent), transparent 44%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 88%, transparent), color-mix(in srgb, var(--surface) 84%, transparent));
+  box-shadow:
+    0 26px 62px var(--game-shadow),
+    inset 0 1px 0 color-mix(in srgb, var(--paper) 14%, transparent);
+}
+
+.game-detail-page .eyebrow {
+  border-color: color-mix(in srgb, var(--game-accent) 34%, var(--line));
+  color: color-mix(in srgb, var(--text) 84%, var(--game-accent));
+}
+
+.game-detail-page .eyebrow::before,
+.game-detail-page .hud-dot {
+  background: var(--game-accent);
+  box-shadow: 0 0 18px var(--game-accent);
+}
+
+.game-detail-page .btn-primary {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--game-accent) 72%, white), color-mix(in srgb, var(--game-accent-2) 66%, white));
+}
+
+.game-detail-page .tag {
+  color: color-mix(in srgb, var(--game-accent) 76%, var(--text));
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--game-accent) 11%, transparent), transparent 70%),
+    color-mix(in srgb, var(--surface) 86%, transparent);
+}
+
+.game-hero-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.game-hero-card::after {
+  content: "";
+  position: absolute;
+  right: -8%;
+  bottom: -18%;
+  width: 42%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--game-accent) 26%, transparent), transparent 66%);
+  pointer-events: none;
+}
+
+.game-hero-card h1 {
+  max-width: 900px;
+  color: var(--text);
+  font-size: clamp(3rem, 5.3vw, 6rem);
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.game-visual-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.game-visual-card::before {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 26%, transparent);
+  border-radius: calc(var(--radius-lg) - 8px);
+  pointer-events: none;
+}
+
+.game-visual-card img {
+  position: relative;
+  z-index: 1;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 30%, transparent);
+}
+
+.game-theme-nature .game-visual-card {
+  background:
+    radial-gradient(circle at 52% 30%, rgba(210, 255, 201, 0.28), transparent 31%),
+    linear-gradient(160deg, color-mix(in srgb, var(--surface) 82%, #eafbd7), color-mix(in srgb, var(--surface) 80%, #78c76c));
+}
+
+.game-theme-candy .game-visual-card {
+  background:
+    radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.58), transparent 22%),
+    radial-gradient(circle at 72% 24%, rgba(255, 143, 189, 0.2), transparent 24%),
+    linear-gradient(160deg, color-mix(in srgb, var(--surface) 82%, #fff1fb), color-mix(in srgb, var(--surface) 74%, #ff8fbd));
+}
+
+.game-theme-paint .game-visual-card {
+  background:
+    radial-gradient(circle at 28% 25%, color-mix(in srgb, var(--game-warm) 24%, transparent), transparent 18%),
+    radial-gradient(circle at 68% 34%, color-mix(in srgb, var(--game-accent-2) 26%, transparent), transparent 24%),
+    linear-gradient(160deg, color-mix(in srgb, var(--surface) 78%, #28324b), color-mix(in srgb, var(--surface) 72%, #36d3ff));
+}
+
+.game-theme-ball .game-visual-card {
+  background:
+    radial-gradient(circle at 50% 12%, rgba(255, 245, 159, 0.45), transparent 20%),
+    linear-gradient(160deg, color-mix(in srgb, var(--surface) 78%, #a9d7ff), color-mix(in srgb, var(--surface) 68%, #ffd43d));
+}
+
 .game-page-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);

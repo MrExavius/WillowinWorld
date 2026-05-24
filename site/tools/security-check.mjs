@@ -5,6 +5,7 @@ const files = {
   html: await readFile(new URL("../index.html", import.meta.url), "utf8"),
   css: await readFile(new URL("../styles.css", import.meta.url), "utf8"),
   js: await readFile(new URL("../scripts.js", import.meta.url), "utf8"),
+  gameThemeJs: await readFile(new URL("../game-theme.js", import.meta.url), "utf8"),
   headers: await readFile(new URL("../_headers", import.meta.url), "utf8"),
   nginx: await readFile(new URL("../deploy/nginx-security.conf", import.meta.url), "utf8"),
   sitemap: await readFile(new URL("../sitemap.xml", import.meta.url), "utf8")
@@ -65,10 +66,12 @@ for (const [name, html] of Object.entries(htmlPages)) {
     }
   }
 }
-forbidMatch("scripts.js", files.js, /\b(?:innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval|Function)\b/);
-forbidMatch("scripts.js", files.js, /\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/);
-forbidMatch("scripts.js", files.js, /\b(?:api[_-]?key|private[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._-]+)\b/i);
-forbidMatch("scripts.js", files.js, /\b[A-Z0-9]{3,}-(?:[A-Z0-9]+-){1,}[A-Z0-9]{2,}\b/);
+for (const [name, js] of Object.entries({ "scripts.js": files.js, "game-theme.js": files.gameThemeJs })) {
+  forbidMatch(name, js, /\b(?:innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval|Function)\b/);
+  forbidMatch(name, js, /\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/);
+  forbidMatch(name, js, /\b(?:api[_-]?key|private[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._-]+)\b/i);
+  forbidMatch(name, js, /\b[A-Z0-9]{3,}-(?:[A-Z0-9]+-){1,}[A-Z0-9]{2,}\b/);
+}
 forbidMatch("styles.css", files.css, /@import\s+url\s*\(/i);
 forbidMatch("styles.css", files.css, /url\(\s*["']?(?:https?:|\/\/)/i);
 
