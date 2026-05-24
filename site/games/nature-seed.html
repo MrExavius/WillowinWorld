@@ -18,9 +18,11 @@
   <title>Nature Seed - Relaxing Draw-to-Solve Physics Puzzle Game</title>
   <link rel="canonical" href="https://willowinworld.com/games/nature-seed.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/Nature%20Seeds/Galvnie_3_1-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="game-detail-page game-theme-nature" data-theme="light">
+<body class="game-detail-page game-theme-nature nature-seed-page" data-theme="light">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html#games" aria-label="Back to WillowinWorld games">
       <img src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="" decoding="async">
@@ -35,36 +37,122 @@
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <span id="themeState">Day</span>
     </button>
   </header>
-  <main class="section game-page game-detail-shell">
-    <div class="container game-page-grid">
-      <section class="soft-card game-page-copy game-hero-card">
-        <div class="eyebrow">Nature Seed</div>
-        <h1>Relaxing Draw-to-Solve Physics Puzzle</h1>
-        <p class="hero-copy">Nature Seed is a meditative mobile puzzle game about drawing magical lines, guiding water to seeds and restoring a dying forest into a living watercolor world.</p>
-        <p>What began as a small idea about connection and nature has grown into WillowinWorld's nearest active release. The game is now in beta polish, with the first public beta planned for July 2026.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:hello@willowinworld.com?subject=Nature%20Seed%20Beta%20Access">Join Beta Waitlist</a>
-          <a class="btn btn-ghost" href="../index.html#games">Back to Games</a>
+  <main class="game-page game-detail-shell nature-seed-shell">
+    <div class="nature-page-backdrop ambient-only" aria-hidden="true">
+      <div class="nature-hero-bg">
+        <div class="nature-stage nature-stage-backdrop">
+          <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_3_1-site.webp" width="1376" height="768" alt="" decoding="async">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+            <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
+            <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
+          </svg>
+          <span class="nature-water-drop is-first"></span>
+          <span class="nature-water-drop is-second"></span>
+          <span class="nature-water-drop is-third"></span>
+          <span class="nature-bloom"></span>
+          <img class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.png" width="669" height="373" alt="" decoding="async">
+          <img class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.png" width="500" height="500" alt="" decoding="async">
+          <img class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.png" width="500" height="500" alt="" decoding="async">
         </div>
-        <div class="game-tags">
-          <span class="tag">Draw-to-solve puzzle</span>
-          <span class="tag">Water physics</span>
-          <span class="tag">Nature restoration</span>
-          <span class="tag">Relaxing mobile game</span>
+      </div>
+      <div class="nature-menu-world">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+    </div>
+    <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
+      <div class="nature-hero-bg ambient-only" aria-hidden="true">
+        <div class="nature-stage nature-stage-backdrop">
+          <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_3_1-site.webp" width="1376" height="768" alt="" decoding="async">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+            <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
+            <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
+          </svg>
+          <span class="nature-water-drop is-first"></span>
+          <span class="nature-water-drop is-second"></span>
+          <span class="nature-water-drop is-third"></span>
+          <span class="nature-bloom"></span>
+          <img class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.png" width="669" height="373" alt="" decoding="async">
+          <img class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.png" width="500" height="500" alt="" decoding="async">
+          <img class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.png" width="500" height="500" alt="" decoding="async">
         </div>
-      </section>
-      <aside class="soft-card game-page-panel game-visual-card">
-        <img src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed game icon with a magical forest character" decoding="async">
-        <h2>Gameplay pillars</h2>
-        <ul>
-          <li>Create simple magical lines with your finger and shape the route water will follow.</li>
-          <li>Use readable physics to move water toward seeds, around obstacles and through calm puzzle spaces.</li>
-          <li>Transform gray, lifeless scenes into green, blooming nature through visible restoration feedback.</li>
-        </ul>
-      </aside>
+      </div>
+      <div class="nature-menu-world ambient-only" aria-hidden="true">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+
+      <div class="container nature-hero-layout">
+        <div class="nature-hero-copy">
+          <div class="eyebrow">Nature Seed</div>
+          <h1 id="natureHeroTitle">Draw water paths. Wake the forest.</h1>
+          <p class="hero-copy">A meditative mobile physics puzzle where every drawn line becomes a route for water, and every solved level restores a fragile watercolor world.</p>
+          <p class="nature-hero-note">Now in beta polish, with the first public beta planned for July 2026. Current work focuses on onboarding, touch feel, level readability and restoration feedback.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:hello@willowinworld.com?subject=Nature%20Seed%20Beta%20Access">Join Beta Waitlist</a>
+            <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
+          </div>
+          <div class="nature-hero-stats" role="group" aria-label="Nature Seed highlights">
+            <span><strong>Draw</strong><small>shape magical line routes</small></span>
+            <span><strong>Guide</strong><small>move water through physics</small></span>
+            <span><strong>Bloom</strong><small>restore each puzzle scene</small></span>
+          </div>
+        </div>
+
+        <aside class="nature-hero-showcase" aria-label="Nature Seed gameplay preview">
+          <div class="nature-device-frame">
+            <div class="nature-stage nature-stage-showcase" aria-hidden="true">
+              <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
+              <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+              </svg>
+              <span class="nature-water-drop is-first"></span>
+              <span class="nature-water-drop is-second"></span>
+              <span class="nature-bloom"></span>
+              <img class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.png" width="669" height="373" alt="" decoding="async">
+              <img class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.png" width="500" height="500" alt="" decoding="async">
+              <img class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.png" width="500" height="500" alt="" decoding="async">
+            </div>
+            <img class="nature-showcase-icon" src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed game icon with water and seed characters" decoding="async">
+            <span class="nature-preview-title">
+              <small>Draw-to-Solve Physics Puzzle</small>
+              <strong>Nature Seed</strong>
+            </span>
+            <span class="nature-cycle"><b>Sketch</b><b>Guide water</b><b>Bloom</b></span>
+            <div class="magic-hud">
+              <span>Beta Polish · July 2026</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid nature-seed-content">
       <section class="soft-card game-page-section">
         <div class="eyebrow">Game overview</div>
         <h2>Draw a line, guide the water, awaken the seed.</h2>
@@ -75,7 +163,7 @@
           <article class="detail-card"><h3>Status</h3><p>Beta Polish - Public Beta Planned for July 2026. Current work focuses on mobile optimization, onboarding, level readability and restoration feedback.</p></article>
         </div>
       </section>
-      <section class="soft-card game-page-section">
+      <section class="soft-card game-page-section nature-story-section">
         <div class="eyebrow">Origin</div>
         <h2>What if a draw-to-solve puzzle was about restoring something fragile?</h2>
         <div class="info-grid">
@@ -91,7 +179,7 @@
           </dl>
         </div>
       </section>
-      <section class="soft-card game-page-section">
+      <section class="soft-card game-page-section nature-story-section">
         <div class="eyebrow">Publisher angle</div>
         <h2>A cozy puzzle with a clear mobile hook.</h2>
         <div class="info-grid">
