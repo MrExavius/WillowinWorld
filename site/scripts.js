@@ -2,7 +2,10 @@
   const root = document.documentElement;
   const body = document.body;
   const canvas = document.getElementById("magicCanvas");
-  const ctx = canvas.getContext("2d", { alpha: true });
+  const screenCtx = canvas.getContext("2d", { alpha: true });
+  let ctx = screenCtx;
+  const backgroundCache = document.createElement("canvas");
+  const backgroundCacheCtx = backgroundCache.getContext("2d", { alpha: true });
   const themeToggle = document.getElementById("themeToggle");
   const themeState = document.getElementById("themeState");
   const magicState = document.getElementById("magicState");
@@ -92,6 +95,8 @@
     nextStar: 0,
     autoLineProgress: 0,
     lastFrame: performance.now(),
+    lastDraw: 0,
+    backgroundCacheKey: "",
     fpsScore: 60,
     rafId: null
   };
@@ -206,7 +211,7 @@
   }
 
   if (smallScreen) {
-    state.particleCount = 34;
+    state.particleCount = 24;
   } else if (state.lowMotion) {
     state.particleCount = 18;
   }
@@ -257,19 +262,31 @@
   function resize() {
     state.width = window.innerWidth;
     state.height = window.innerHeight;
-    state.dpr = Math.min(window.devicePixelRatio || 1, state.lowMotion ? 1.4 : 2);
+    const maxDpr = state.lowMotion ? 1.2 : state.width < 760 ? 1.15 : state.width > 1760 || state.height > 980 ? 1.45 : 1.65;
+    state.dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
     canvas.width = Math.floor(state.width * state.dpr);
     canvas.height = Math.floor(state.height * state.dpr);
     canvas.style.width = state.width + "px";
     canvas.style.height = state.height + "px";
-    ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+    backgroundCache.width = canvas.width;
+    backgroundCache.height = canvas.height;
+    screenCtx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+    backgroundCacheCtx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
+    state.backgroundCacheKey = "";
     seedScene();
     placeCat();
   }
 
+  function targetFrameInterval() {
+    if (state.lowMotion) return 1000 / 31;
+    if (state.width < 760 || state.height < 620) return 1000 / 31;
+    return 0;
+  }
+
   function seedScene() {
-    const nightCount = state.lowMotion ? 34 : smallScreen ? 52 : 92;
-    const dayCount = state.lowMotion ? 18 : smallScreen ? 30 : 48;
+    const compact = state.width < 760;
+    const nightCount = state.lowMotion ? 34 : compact ? 38 : 92;
+    const dayCount = state.lowMotion ? 18 : compact ? 24 : 48;
     const starCount = state.theme === "dark" ? nightCount : dayCount;
     state.backgroundStars = Array.from({ length: starCount }, (_, i) => ({
       x: Math.random() * state.width,
@@ -454,7 +471,8 @@
     });
   }
 
-  function drawBackground(now) {
+  function drawBackground(now, options = {}) {
+    const drawDynamicLeaves = options.dynamicLeaves !== false;
     const w = state.width;
     const h = state.height;
     const dark = state.theme === "dark";
@@ -531,7 +549,28 @@
     drawCastle(w, h, dark);
     drawPaintedValley(w, h, dark, now);
     drawWillowFrame(w, h, dark);
-    drawWillowLeaves(now, dark);
+    if (drawDynamicLeaves) drawWillowLeaves(now, dark);
+  }
+
+  function drawCachedBackground(now) {
+    const cacheKey = [
+      state.width,
+      state.height,
+      state.dpr,
+      state.theme,
+      state.lowMotion ? "low" : "full"
+    ].join(":");
+
+    if (state.backgroundCacheKey !== cacheKey) {
+      ctx = backgroundCacheCtx;
+      backgroundCacheCtx.clearRect(0, 0, state.width, state.height);
+      drawBackground(now, { dynamicLeaves: false });
+      ctx = screenCtx;
+      state.backgroundCacheKey = cacheKey;
+    }
+
+    screenCtx.drawImage(backgroundCache, 0, 0, state.width, state.height);
+    drawWillowLeaves(now, state.theme === "dark");
   }
 
   function drawCastle(w, h, dark) {
@@ -767,10 +806,13 @@
       ctx.save();
       ctx.translate(x, y + breathe);
       ctx.rotate(tilt);
+      ctx.globalAlpha = state.theme === "dark" ? 0.2 : 0.16;
+      ctx.fillStyle = css("--cyan");
+      ctx.beginPath();
+      ctx.ellipse(0, drawH * 0.18, drawW * 0.36, drawH * 0.08, 0, 0, Math.PI * 2);
+      ctx.fill();
       ctx.globalAlpha = state.theme === "dark" ? 0.96 : 0.9;
-      ctx.filter = "drop-shadow(0 22px 28px rgba(3, 21, 50, 0.18))";
       ctx.drawImage(mascotImage, -drawW * 0.5, -drawH * 0.72, drawW, drawH);
-      ctx.filter = "none";
 
       if (casting && !state.lowMotion) {
         const castPower = Math.max(0, Math.min(1, cat.cast / 55));
@@ -1118,6 +1160,12 @@
   }
 
   function render(now) {
+    const frameInterval = targetFrameInterval();
+    if (frameInterval && state.lastDraw && now - state.lastDraw < frameInterval) {
+      state.rafId = requestAnimationFrame(render);
+      return;
+    }
+    state.lastDraw = now;
     const dt = Math.min(48, now - state.lastFrame);
     state.lastFrame = now;
     state.time = now;
@@ -1126,13 +1174,14 @@
       state.lowMotion = true;
       state.quality = "Low";
       body.classList.add("low-motion");
+      state.backgroundCacheKey = "";
       seedScene();
       updateLabels();
     }
 
     ctx.clearRect(0, 0, state.width, state.height);
     updateCat(now, dt);
-    drawBackground(now);
+    drawCachedBackground(now);
     drawStars(now);
     drawConstellation(now);
     drawParticles(now, dt);
@@ -1151,13 +1200,25 @@
     if (!state.running || state.inactive || state.paused || state.disabled) return;
     if (state.rafId) return;
     state.lastFrame = performance.now();
+    state.lastDraw = 0;
     state.rafId = requestAnimationFrame(render);
+  }
+
+  function startLoopAfterFirstPaint() {
+    const delay = state.lowMotion ? 360 : 900;
+    const schedule = () => window.setTimeout(startLoop, delay);
+    if ("requestAnimationFrame" in window) {
+      requestAnimationFrame(() => requestAnimationFrame(schedule));
+      return;
+    }
+    schedule();
   }
 
   function setTheme(theme, persist = true) {
     state.theme = theme;
     body.setAttribute("data-theme", theme);
     root.style.colorScheme = theme === "dark" ? "dark" : "light";
+    state.backgroundCacheKey = "";
     refreshCssCache();
     document.querySelectorAll("[data-logo-theme]").forEach(logo => {
       logo.src = theme === "dark" ? "assets/willowinworld-logo.webp" : "assets/willowinworld-logo-day.webp";
@@ -1206,6 +1267,7 @@
     state.pointer.y = point.y;
     state.pointer.active = true;
     state.pointer.lastMove = performance.now();
+    startLoop();
     if (!state.lowMotion && !state.disabled && state.pointer.lastMove - state.pointer.lastTrail > 34) {
       state.pointer.lastTrail = state.pointer.lastMove;
       state.trails.push({ x: point.x, y: point.y, t: state.pointer.lastMove });
@@ -1229,6 +1291,7 @@
     state.pointer.active = true;
     state.pointer.lastMove = performance.now();
     state.cat.cast = state.playMode ? 62 : 38;
+    startLoop();
     if (!state.disabled && !state.lowMotion) {
       state.clickBursts.push({
         x: point.x,
@@ -1533,7 +1596,6 @@
 
   function initReveals() {
     const selectors = [
-      ".hero-grid > *",
       ".section-head",
       ".game-card",
       ".principle",
@@ -1662,6 +1724,7 @@
         state.lowMotion = !state.lowMotion;
         state.quality = state.lowMotion ? "Low" : "Auto";
         body.classList.toggle("low-motion", state.lowMotion);
+        state.backgroundCacheKey = "";
         seedScene();
         updateLabels();
         if (!state.paused && !state.disabled) startLoop();
@@ -1676,7 +1739,7 @@
         updateLabels();
         if (state.disabled) {
           ctx.clearRect(0, 0, state.width, state.height);
-          drawBackground(performance.now());
+          drawCachedBackground(performance.now());
           drawStars(performance.now());
           drawConstellation(performance.now());
           drawCat(performance.now());
@@ -1784,5 +1847,5 @@
   initPerformanceVisibility();
   setTheme(initialTheme, false);
   resize();
-  startLoop();
+  startLoopAfterFirstPaint();
 })();

@@ -38,3 +38,30 @@ be issued by a server after the secret interaction is verified or redeemed.
 
 `Strict-Transport-Security` currently uses one year without `includeSubDomains`.
 Add `includeSubDomains` or preload only after every subdomain is HTTPS-ready.
+
+## Contact form release path
+
+The current contact form intentionally opens a prepared email instead of sending
+data from the browser. That keeps the static site simple and avoids exposing API
+keys, form tokens, SMTP credentials, or bot-abusable endpoints in frontend code.
+
+If a real hosted form is added later, put it behind a server-side endpoint with:
+
+- server-side validation and output escaping;
+- rate limiting per IP and per email address;
+- spam protection that does not leak a private key to the browser;
+- CSRF protection if cookies or authenticated sessions are introduced;
+- structured logging without storing unnecessary personal data;
+- a strict CORS allowlist for the production domain only.
+
+Never enforce business rules only in frontend JavaScript. Anything that matters
+for rewards, beta access, uploads, private material, or publisher contact should
+be verified on the server.
+
+## Press and asset policy
+
+The public `press-kit.html` and game pages only link optimized preview assets.
+Do not place layered source files, store submission packages, unpublished builds,
+PSD/AI/Figma files, original Unity assets, or private publisher decks in `site/`.
+Keep those materials in private storage and share them intentionally by email,
+cloud link with access control, or publisher portal.
