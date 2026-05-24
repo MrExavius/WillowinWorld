@@ -110,49 +110,49 @@
     nature: {
       title: "Nature Seed",
       genre: "Draw-to-Solve Physics Puzzle",
-      status: "Beta Access Soon - 99% - July 1",
-      copy: "A meditative mobile physics puzzle where magical lines guide water to seeds and restore a dying forest. Nature Seed pairs readable touch drawing with calm environmental transformation, so each solved level leaves the world softer, greener and more alive.",
-      tags: ["Mobile", "Line Drawing Puzzle", "Eco Puzzle", "Zen Puzzle", "Nature Restoration"],
+      status: "Beta Polish - Public Beta Planned for July 2026",
+      copy: "A meditative mobile puzzle game about drawing magical lines, guiding water to seeds and restoring a dying forest into a living watercolor world. Nature Seed turns every solved puzzle into a small act of growth.",
+      tags: ["Mobile", "Draw-to-Solve", "Water Physics", "Nature Restoration", "Relaxing Puzzle"],
       pillars: [
-        "Draw paths that turn water flow into a readable puzzle tool.",
-        "Connect seeds, terrain and restoration beats in one relaxing loop.",
-        "Let handcrafted scenery evolve as the player heals each space."
+        "Draw simple magical lines with your finger and shape the route water will follow.",
+        "Guide water toward seeds through readable cause and effect.",
+        "Transform gray scenes into green, blooming nature through restoration feedback."
       ]
     },
     candy: {
       title: "Candy Shop",
       genre: "Casual Merge Puzzle",
-      status: "Coming Next - 85%",
-      copy: "A cozy merge world built around satisfying candy physics, smart container pressure and feel-good progression. Candy Shop keeps the drop-and-combine loop instantly readable while special sweets, combos and evolving containers give longer sessions a premium rhythm.",
-      tags: ["Mobile", "Physics-based Merge", "Suika-like", "Combo Puzzle", "Cozy Puzzle"],
+      status: "Internal Beta - Optimization and Polish",
+      copy: "A cozy physics-based candy merge puzzle about dropping sweets, merging matching candies and building bigger treats through soft, satisfying physics. Current work focuses on optimization, UI polish, balance and combo readability.",
+      tags: ["Mobile", "Candy Merge", "Physics Puzzle", "Cozy Game", "Combo Puzzle"],
       pillars: [
-        "Drop and merge sweets through a clear evolution chain.",
-        "Use collisions, combos and special candies to manage scarce space.",
-        "Grow a rich casual meta without pay-to-win pressure."
+        "Drop sweets carefully and let soft physics shape the result.",
+        "Merge matching candies through a 13-candy chain toward bigger treats.",
+        "Use containers, special sweets and combos to create satisfying replay value."
       ]
     },
     paint: {
       title: "Paint Blasters",
       genre: "Physics Puzzle / Arcade Hybrid",
-      status: "In Production - 80%",
-      copy: "A bright mobile destruction puzzle where color building happens before the shot and physics answers after it. Paint Blasters turns aiming, payload choice and tower collapse into a tactical arcade loop with juicy chain reactions.",
-      tags: ["Mobile", "Destruction Puzzle", "Color Puzzle", "Aim & Shoot", "Chain Reactions"],
+      status: "Production Draft - Core Mechanics Complete",
+      copy: "A vibrant mobile puzzle arcade where players build color-powered projectiles before every shot, aim at readable towers and trigger chain reactions through physics-based destruction. The current GDD-based prototype is implemented in draft form.",
+      tags: ["Mobile", "Color Puzzle", "Physics Arcade", "Aim & Shoot", "Chain Reactions"],
       pillars: [
-        "Compose color-and-charge projectiles before each shot.",
-        "Read towers, weak points and chain reactions at a glance.",
-        "Reward tactical aim with explosive arcade feedback."
+        "Mix colors and charge types before each shot to create tactical effects.",
+        "Read block colors, weak points, supports and chain reaction opportunities.",
+        "Turn one smart impact into colorful physics collapse."
       ]
     },
     ball: {
       title: "Ball is God?!",
       genre: "Hardcore Arcade",
-      status: "In Development - 70%",
-      copy: "A fast vertical descent where Espa drops through gaps between broken olympic stones around a golden divine tower. Ball is God?! turns one-touch timing, falling platforms, boss-like pressure and story choices into a bright but punishing mobile arcade loop.",
-      tags: ["Mobile", "Vertical Descent", "One-Hit-Kill", "Timing Arcade", "Moral Choice"],
+      status: "Longterm Project - Planned After Current Releases",
+      copy: "A hardcore vertical descent arcade where Espa drops through broken stone gaps inside a divine tower. Ball is God?! combines one-touch timing, one-hit-kill tension, boss-like pressure and moral choices inside a larger mythic story world.",
+      tags: ["Mobile", "Vertical Descent", "One-Touch Arcade", "One-Hit-Kill", "Moral Choices"],
       pillars: [
-        "Read gaps between moving stone platforms before every drop.",
-        "Keep Espa readable against clouds, tower motion and fast descent.",
-        "Let choices reshape character fates, world mood and endings."
+        "Read moving stone gaps, cloud depth and platform timing before each drop.",
+        "Survive short, tense runs where one mistake can end everything.",
+        "Let major choices reshape world mood, character fates and endings."
       ]
     }
   };
