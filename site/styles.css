@@ -90,6 +90,22 @@ html:has(body.candy-shop-page[data-theme="dark"]) {
   background: #211027;
 }
 
+html:has(body.paint-blasters-page[data-theme="light"]) {
+  background: #eef7ff;
+}
+
+html:has(body.paint-blasters-page[data-theme="dark"]) {
+  background: #071225;
+}
+
+html:has(body.ball-is-god-page[data-theme="light"]) {
+  background: #eaf6ff;
+}
+
+html:has(body.ball-is-god-page[data-theme="dark"]) {
+  background: #071530;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -4841,6 +4857,1693 @@ body.candy-shop-page[data-theme="dark"] {
   background: rgba(42, 18, 48, 0.68);
 }
 
+.paint-blasters-page {
+  --paint-cycle: 8.4s;
+  --bg: #eef7ff;
+  --bg-2: #fff0df;
+  --surface: rgba(241, 249, 255, 0.72);
+  --surface-strong: rgba(250, 253, 255, 0.95);
+  --surface-soft: rgba(54, 211, 255, 0.12);
+  --text: #10213a;
+  --muted: #405b73;
+  --muted-2: #71889c;
+  --line: rgba(20, 44, 70, 0.16);
+  --paper: #fff6e8;
+  --paint-ink: #10213a;
+  --paint-metal: #294465;
+  --paint-copper: #b06f3f;
+  --paint-glow: #36d3ff;
+  --paint-rose: #ff3ab5;
+  --paint-lime: #73ff31;
+}
+
+.paint-blasters-page[data-theme="dark"] {
+  --bg: #071225;
+  --bg-2: #111f38;
+  --surface: rgba(9, 21, 42, 0.72);
+  --surface-strong: rgba(7, 14, 29, 0.95);
+  --surface-soft: rgba(54, 211, 255, 0.1);
+  --text: #f2f8ff;
+  --muted: #b8c9dc;
+  --muted-2: #8298b0;
+  --line: rgba(202, 228, 255, 0.18);
+  --paper: #17283f;
+  --paint-ink: #f2f8ff;
+  --paint-metal: #172d4a;
+  --paint-copper: #d49864;
+}
+
+body.paint-blasters-page[data-theme="light"] {
+  background-color: #eef7ff;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(54, 211, 255, 0.24), transparent 30%),
+    radial-gradient(ellipse at 82% 16%, rgba(255, 58, 181, 0.2), transparent 34%),
+    linear-gradient(180deg, #f4fbff 0%, #eef7ff 42%, #fff0df 100%);
+}
+
+body.paint-blasters-page[data-theme="dark"] {
+  background-color: #071225;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(54, 211, 255, 0.18), transparent 30%),
+    radial-gradient(ellipse at 82% 16%, rgba(255, 58, 181, 0.14), transparent 34%),
+    linear-gradient(180deg, #071225 0%, #10213c 48%, #050b18 100%);
+}
+
+.paint-blasters-page::before {
+  opacity: 0;
+}
+
+.game-detail-page .paint-blasters-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: block;
+  padding-top: 0;
+  background: transparent;
+}
+
+.paint-blasters-shell::before,
+.paint-blasters-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.paint-blasters-shell::before {
+  background:
+    linear-gradient(92deg, rgba(241, 249, 255, 0.92) 0 17%, rgba(241, 249, 255, 0.7) 42%, rgba(241, 249, 255, 0.34) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(54, 211, 255, 0.22), transparent 28%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 58, 181, 0.16), transparent 28%),
+    url("assets/Paint Blasters/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #eef7ff, #fff0df);
+  filter: saturate(1.03) contrast(1.02);
+  opacity: 0.78;
+}
+
+.paint-blasters-shell::after {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.14) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 18px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 46%, rgba(54, 211, 255, 0.12));
+  mix-blend-mode: multiply;
+  opacity: 0.74;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-blasters-shell::before {
+  background:
+    linear-gradient(92deg, rgba(7, 18, 37, 0.9) 0 17%, rgba(7, 18, 37, 0.68) 42%, rgba(15, 32, 57, 0.44) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(54, 211, 255, 0.13), transparent 28%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 58, 181, 0.11), transparent 28%),
+    url("assets/Paint Blasters/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #071225, #050b18);
+  filter: saturate(0.92) contrast(1.05) brightness(0.68);
+  opacity: 0.82;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-blasters-shell::after {
+  background:
+    linear-gradient(90deg, rgba(7, 18, 37, 0.58), rgba(11, 28, 52, 0.22) 48%, rgba(5, 11, 24, 0.62)),
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.1) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(202, 228, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.paint-page-backdrop {
+  position: fixed;
+  inset: 74px 0 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.paint-page-backdrop::before,
+.paint-page-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.paint-page-backdrop::before {
+  z-index: 2;
+  background:
+    linear-gradient(92deg, rgba(241, 249, 255, 0.94) 0 17%, rgba(241, 249, 255, 0.68) 42%, rgba(241, 249, 255, 0.28) 76%),
+    radial-gradient(ellipse at 28% 38%, rgba(54, 211, 255, 0.28), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 58, 181, 0.2), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 226, 75, 0.12));
+}
+
+.paint-page-backdrop::after {
+  z-index: 5;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.14) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 18px),
+    radial-gradient(ellipse at 50% 100%, rgba(54, 211, 255, 0.16), transparent 48%);
+  mix-blend-mode: multiply;
+  opacity: 0.82;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-page-backdrop::before {
+  background:
+    linear-gradient(92deg, rgba(7, 18, 37, 0.9) 0 17%, rgba(7, 18, 37, 0.68) 42%, rgba(15, 32, 57, 0.42) 76%),
+    radial-gradient(ellipse at 28% 38%, rgba(54, 211, 255, 0.16), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 58, 181, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(7, 18, 37, 0.26), rgba(5, 11, 24, 0.58));
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-page-backdrop::after {
+  background:
+    linear-gradient(90deg, rgba(7, 18, 37, 0.54), rgba(11, 28, 52, 0.16) 48%, rgba(5, 11, 24, 0.58)),
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.1) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.1) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(202, 228, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.paint-backdrop-image {
+  position: absolute;
+  inset: -8% -4%;
+  z-index: 0;
+  width: 108%;
+  height: 118%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 52%;
+  filter: saturate(1.02) contrast(1.02);
+  opacity: 0.82;
+  transform: scale(1.08);
+  animation: paintBackdropDrift 18s ease-in-out infinite;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-backdrop-image {
+  filter: saturate(0.9) contrast(1.06) brightness(0.72);
+  opacity: 0.9;
+}
+
+.paint-ship-panel {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  z-index: 1;
+  width: min(116vw, 1920px);
+  height: auto;
+  max-width: none;
+  opacity: 0.32;
+  filter: saturate(1.08) contrast(1.03);
+  transform: translateX(-50%) scale(1.02);
+  animation: paintShipPanelDrift 16s ease-in-out infinite;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-ship-panel {
+  opacity: 0.26;
+  filter: saturate(0.92) contrast(1.08) brightness(0.82);
+}
+
+.paint-menu-world {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.paint-menu-pipe,
+.paint-menu-beam,
+.paint-menu-splash,
+.paint-menu-gauge {
+  position: absolute;
+  pointer-events: none;
+}
+
+.paint-menu-pipe {
+  width: 62vw;
+  height: 28px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 42%),
+    repeating-linear-gradient(90deg, rgba(64, 36, 24, 0.18) 0 2px, transparent 2px 54px),
+    linear-gradient(90deg, rgba(103, 66, 46, 0.42), rgba(198, 126, 70, 0.32), rgba(31, 64, 88, 0.36));
+  box-shadow: 0 22px 36px rgba(20, 44, 70, 0.14);
+  opacity: 0.7;
+}
+
+.paint-menu-pipe-one {
+  top: 18%;
+  left: 12%;
+  transform: rotate(22deg);
+}
+
+.paint-menu-pipe-two {
+  top: 39%;
+  right: -12%;
+  width: 54vw;
+  transform: rotate(-12deg);
+}
+
+.paint-menu-pipe-three {
+  bottom: 12%;
+  left: -8%;
+  width: 70vw;
+  height: 24px;
+  transform: rotate(-5deg);
+}
+
+.paint-menu-beam {
+  width: 46vw;
+  height: 18px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent, rgba(54, 211, 255, 0.42), rgba(255, 226, 75, 0.34), rgba(255, 58, 181, 0.38), transparent);
+  filter: blur(0.2px);
+  opacity: 0.66;
+  animation: paintBeamFlow 7s ease-in-out infinite;
+}
+
+.paint-menu-beam-one {
+  top: 29%;
+  left: -7%;
+  transform: rotate(-18deg);
+}
+
+.paint-menu-beam-two {
+  bottom: 18%;
+  right: -9%;
+  transform: rotate(14deg);
+  animation-delay: -2.8s;
+}
+
+.paint-menu-splash {
+  width: clamp(92px, 8vw, 156px);
+  aspect-ratio: 1;
+  border-radius: 43% 57% 46% 54%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.72) 0 8%, transparent 9%),
+    radial-gradient(circle at 62% 35%, #ffe24b 0 14%, transparent 15%),
+    radial-gradient(circle at 34% 62%, #36d3ff 0 17%, transparent 18%),
+    radial-gradient(circle at 70% 70%, #ff3ab5 0 16%, transparent 17%),
+    #73ff31;
+  filter: drop-shadow(0 20px 30px rgba(20, 44, 70, 0.16));
+  opacity: 0.68;
+  transform-origin: center;
+  animation: paintSplashFloat 8s ease-in-out infinite;
+}
+
+.paint-menu-splash-one {
+  right: 12%;
+  top: 14%;
+}
+
+.paint-menu-splash-two {
+  left: 8%;
+  bottom: 12%;
+  width: clamp(70px, 6vw, 116px);
+  animation-delay: -2.2s;
+}
+
+.paint-menu-splash-three {
+  right: 24%;
+  bottom: 9%;
+  width: clamp(62px, 5vw, 96px);
+  animation-delay: -4.4s;
+}
+
+.paint-menu-gauge {
+  width: 74px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid rgba(126, 82, 52, 0.36);
+  background:
+    radial-gradient(circle at 50% 54%, rgba(255, 255, 245, 0.84) 0 38%, transparent 39%),
+    conic-gradient(from -42deg, #73ff31, #ffe24b, #ff3ab5, #36d3ff, #73ff31);
+  box-shadow: 0 18px 32px rgba(20, 44, 70, 0.16);
+  opacity: 0.62;
+  animation: paintGaugePulse 6s ease-in-out infinite;
+}
+
+.paint-menu-gauge-one {
+  top: 13%;
+  left: 22%;
+}
+
+.paint-menu-gauge-two {
+  right: 10%;
+  bottom: 26%;
+  width: 58px;
+  animation-delay: -2s;
+}
+
+.paint-game-hero {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100svh - 74px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(44px, 6vw, 76px) 0 clamp(48px, 7vw, 92px);
+}
+
+.paint-hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.7fr);
+  gap: clamp(30px, 4.6vw, 58px);
+  align-items: center;
+}
+
+.paint-hero-copy {
+  max-width: 840px;
+  padding: clamp(18px, 3vw, 38px) 0;
+}
+
+.paint-hero-copy h1 {
+  max-width: 820px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+  color: var(--paint-ink);
+  font-size: clamp(4rem, 5.15vw, 6.2rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.52),
+    0 26px 70px rgba(20, 44, 70, 0.18);
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-hero-copy h1 {
+  text-shadow: 0 26px 70px rgba(0, 0, 0, 0.36);
+}
+
+.paint-hero-copy .hero-copy {
+  max-width: 720px;
+  color: color-mix(in srgb, var(--text) 82%, var(--game-accent));
+  font-size: clamp(1.08rem, 1.55vw, 1.32rem);
+  line-height: 1.62;
+}
+
+.paint-hero-note {
+  max-width: 690px;
+  margin-bottom: 28px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.paint-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 18px;
+}
+
+.paint-hero-stats span {
+  min-height: 78px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 28%, var(--line));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(54, 211, 255, 0.16), transparent 34%),
+    radial-gradient(ellipse at 88% 20%, rgba(255, 58, 181, 0.1), transparent 36%),
+    repeating-linear-gradient(118deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface-strong) 76%, transparent);
+  box-shadow: 0 18px 42px rgba(20, 44, 70, 0.12);
+  backdrop-filter: blur(14px) saturate(1.04);
+}
+
+.paint-hero-stats strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.paint-hero-stats small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.paint-hero-showcase {
+  position: relative;
+  min-height: clamp(520px, 58vw, 690px);
+  display: grid;
+  place-items: center;
+}
+
+.paint-device-frame {
+  --paint-cycle: 8.4s;
+  position: relative;
+  width: min(100%, 456px);
+  aspect-ratio: 0.72;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 30px;
+  background: rgba(10, 24, 44, 0.42);
+  box-shadow:
+    0 34px 82px rgba(20, 44, 70, 0.28),
+    0 0 0 9px rgba(255, 255, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  isolation: isolate;
+  transform: rotate(-1.4deg);
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-device-frame {
+  border-color: rgba(202, 228, 255, 0.24);
+  background: rgba(5, 11, 24, 0.48);
+  box-shadow:
+    0 34px 82px rgba(0, 0, 0, 0.42),
+    0 0 0 9px rgba(54, 211, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.paint-device-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%, rgba(4, 9, 18, 0.18)),
+    radial-gradient(ellipse at 50% 18%, rgba(255, 226, 75, 0.14), transparent 24%);
+  mix-blend-mode: screen;
+}
+
+.paint-stage-showcase {
+  position: absolute;
+  inset: 0;
+}
+
+.paint-stage-showcase .paint-bg {
+  inset: -9% -8%;
+  width: 116%;
+  height: 122%;
+  object-position: center 52%;
+  filter: saturate(1.12) contrast(1.04) brightness(0.78);
+}
+
+.paint-stage-showcase .paint-module {
+  top: -5%;
+  height: 114%;
+}
+
+.paint-stage-showcase .paint-arena {
+  top: 9%;
+  width: clamp(188px, 44%, 260px);
+  height: 84%;
+}
+
+.paint-stage-showcase .paint-hero {
+  left: -122px;
+  bottom: -128px;
+  width: clamp(370px, 78%, 500px);
+}
+
+.paint-stage-showcase .paint-blaster {
+  bottom: -9px;
+  width: 158px;
+}
+
+.paint-showcase-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  width: clamp(82px, 10vw, 118px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 42px rgba(8, 15, 25, 0.34),
+    0 0 0 7px rgba(255, 255, 255, 0.18);
+  transition: opacity .28s var(--ease), transform .42s var(--ease);
+}
+
+.paint-showcase-icon-primary {
+  transform: rotate(3deg);
+  animation: paintShowcaseIconPrimary var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-showcase-icon-alt {
+  opacity: 0;
+  transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  animation: paintShowcaseIconAlt var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-preview-title {
+  position: absolute;
+  left: 26px;
+  top: 28px;
+  z-index: 10;
+  max-width: min(60%, 286px);
+  display: grid;
+  gap: 8px;
+}
+
+.paint-preview-title small,
+.paint-cycle b {
+  width: max-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #10213a;
+  background: rgba(244, 251, 255, 0.82);
+  box-shadow: 0 12px 26px rgba(8, 15, 25, 0.18);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.paint-preview-title strong {
+  color: #f7fbff;
+  font-size: clamp(3.05rem, 4.35vw, 4.7rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.22),
+    0 18px 44px rgba(0, 0, 0, 0.42);
+}
+
+.paint-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.paint-cycle b {
+  color: #18263a;
+  font-size: 0.72rem;
+}
+
+.paint-device-frame .magic-hud {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 11;
+  color: #f7fbff;
+  background: rgba(10, 24, 44, 0.72);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.paint-device-frame .hud-dot {
+  background: #36d3ff;
+  box-shadow: 0 0 18px rgba(54, 211, 255, 0.58);
+  animation: paintButtonBlink 1.6s ease-in-out infinite;
+}
+
+.paint-device-frame .hud-dot:nth-child(2) {
+  animation-delay: .28s;
+}
+
+.paint-device-frame .hud-dot:nth-child(3) {
+  animation-delay: .56s;
+}
+
+.paint-control-lights {
+  position: absolute;
+  right: 28px;
+  bottom: 92px;
+  z-index: 12;
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(7, 18, 37, 0.68);
+  box-shadow:
+    0 12px 26px rgba(4, 9, 18, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.paint-control-lights span {
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--paint-light, #36d3ff);
+  box-shadow:
+    0 0 10px var(--paint-light, #36d3ff),
+    0 0 22px color-mix(in srgb, var(--paint-light, #36d3ff) 56%, transparent);
+  animation: paintButtonBlink 1.85s ease-in-out infinite;
+}
+
+.paint-control-lights span:nth-child(1) { --paint-light: #ff3d45; animation-delay: 0s; }
+.paint-control-lights span:nth-child(2) { --paint-light: #ffe24b; animation-delay: .18s; }
+.paint-control-lights span:nth-child(3) { --paint-light: #36d3ff; animation-delay: .36s; }
+.paint-control-lights span:nth-child(4) { --paint-light: #73ff31; animation-delay: .54s; }
+.paint-control-lights span:nth-child(5) { --paint-light: #bc5cff; animation-delay: .72s; }
+
+.paint-device-frame .magic-hud::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 92px;
+  top: -8px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #36d3ff, #73ff31, #ffe24b, #ff3ab5);
+  box-shadow: 0 0 18px rgba(54, 211, 255, 0.38);
+  animation: paintButtonBlink 1.9s ease-in-out infinite;
+}
+
+.paint-blasters-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: clamp(42px, 5vw, 76px);
+  padding-bottom: 108px;
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.paint-blasters-page .game-page-section,
+.paint-blasters-page .game-page-updates {
+  padding-inline: 0;
+  border-color: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.paint-blasters-page .game-page-section + .game-page-section,
+.paint-blasters-page .game-page-section + .game-page-updates {
+  border-top: 0;
+  padding-top: clamp(30px, 4vw, 52px);
+}
+
+.paint-blasters-page .game-page-section h2,
+.paint-blasters-page .game-page-updates h2 {
+  max-width: 940px;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.48),
+    0 18px 46px rgba(20, 44, 70, 0.14);
+}
+
+.paint-blasters-page[data-theme="dark"] .game-page-section h2,
+.paint-blasters-page[data-theme="dark"] .game-page-updates h2 {
+  text-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+}
+
+@media (min-width: 901px) {
+  .paint-blasters-page .paint-story-section {
+    padding-top: clamp(34px, 4.4vw, 64px);
+    padding-bottom: clamp(34px, 4.4vw, 64px);
+  }
+
+  .paint-blasters-page .paint-story-section + .paint-story-section {
+    padding-top: clamp(20px, 3vw, 38px);
+  }
+
+  .paint-blasters-page .paint-story-section h2 {
+    max-width: 780px;
+    margin-bottom: clamp(18px, 2.2vw, 28px);
+    font-size: clamp(2.25rem, 3.05vw, 3.9rem);
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid {
+    grid-template-columns: minmax(0, 0.84fr) minmax(390px, 0.56fr);
+    gap: clamp(36px, 5vw, 76px);
+    align-items: center;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid > div {
+    max-width: 720px;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid > div p {
+    max-width: 680px;
+    font-size: clamp(1.02rem, 1.04vw, 1.13rem);
+    line-height: 1.66;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid > div p + p {
+    margin-top: 16px;
+  }
+
+  .paint-blasters-page .paint-story-section .game-page-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    padding: 24px;
+  }
+
+  .paint-blasters-page .paint-story-section .game-page-facts div {
+    gap: 6px;
+    min-height: 74px;
+    padding-bottom: 16px;
+  }
+
+  .paint-blasters-page .paint-story-section .game-page-facts div:nth-last-child(-n+2) {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.paint-blasters-page .detail-card,
+.paint-blasters-page .asset-link,
+.paint-blasters-page .update-list li,
+.paint-blasters-page .game-page-facts {
+  border-color: color-mix(in srgb, var(--game-accent) 24%, rgba(20, 44, 70, 0.16));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(54, 211, 255, 0.12), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 58, 181, 0.08), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 13px),
+    rgba(241, 249, 255, 0.68);
+  box-shadow: 0 18px 42px rgba(20, 44, 70, 0.12);
+  backdrop-filter: blur(12px) saturate(1.04);
+}
+
+.paint-blasters-page[data-theme="dark"] .detail-card,
+.paint-blasters-page[data-theme="dark"] .asset-link,
+.paint-blasters-page[data-theme="dark"] .update-list li,
+.paint-blasters-page[data-theme="dark"] .game-page-facts {
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(54, 211, 255, 0.1), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 58, 181, 0.08), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(202, 228, 255, 0.04) 0 1px, transparent 1px 13px),
+    rgba(9, 21, 42, 0.7);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+}
+
+.paint-blasters-page .game-page-section .eyebrow,
+.paint-blasters-page .game-page-updates .eyebrow {
+  background: rgba(241, 249, 255, 0.68);
+}
+
+.paint-blasters-page[data-theme="dark"] .game-page-section .eyebrow,
+.paint-blasters-page[data-theme="dark"] .game-page-updates .eyebrow {
+  background: rgba(9, 21, 42, 0.7);
+}
+
+.paint-cursor-mascot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: clamp(72px, 5.7vw, 108px);
+  height: clamp(96px, 7.5vw, 144px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-150px, -150px, 0);
+  transition: opacity .22s var(--ease);
+  will-change: transform, opacity;
+}
+
+.paint-cursor-mascot.is-active {
+  opacity: 0.86;
+}
+
+.paint-cursor-glow,
+.paint-cursor-image {
+  position: absolute;
+  pointer-events: none;
+}
+
+.paint-cursor-glow {
+  inset: -18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(54, 211, 255, 0.34), rgba(255, 58, 181, 0.18) 48%, transparent 72%);
+  filter: blur(1px);
+  animation: natureCursorPulse 2.8s ease-in-out infinite;
+}
+
+.paint-cursor-image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 20px 24px rgba(8, 15, 25, 0.3))
+    drop-shadow(0 0 18px rgba(54, 211, 255, 0.24));
+  animation: natureCursorBreathe 3.35s ease-in-out infinite;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-cursor-image {
+  filter:
+    drop-shadow(0 22px 26px rgba(0, 0, 0, 0.46))
+    drop-shadow(0 0 22px rgba(54, 211, 255, 0.22));
+}
+
+.ball-is-god-page {
+  --ball-cycle: 8.8s;
+  --bg: #eaf6ff;
+  --bg-2: #fff2c5;
+  --surface: rgba(247, 252, 255, 0.72);
+  --surface-strong: rgba(255, 253, 246, 0.95);
+  --surface-soft: rgba(255, 212, 61, 0.14);
+  --text: #10213a;
+  --muted: #405d78;
+  --muted-2: #7891a8;
+  --line: rgba(47, 91, 150, 0.16);
+  --paper: #fff8dc;
+  --ball-ink: #10213a;
+  --ball-sky: #8fc7ff;
+  --ball-gold: #ffd43d;
+  --ball-gold-deep: #d5961e;
+  --ball-stone: #575452;
+  --ball-green: #4ea83a;
+}
+
+.ball-is-god-page[data-theme="dark"] {
+  --bg: #071530;
+  --bg-2: #10254d;
+  --surface: rgba(7, 21, 48, 0.74);
+  --surface-strong: rgba(6, 15, 34, 0.95);
+  --surface-soft: rgba(255, 212, 61, 0.1);
+  --text: #f6fbff;
+  --muted: #c2d5e8;
+  --muted-2: #8ea9c4;
+  --line: rgba(214, 235, 255, 0.18);
+  --paper: #152d55;
+  --ball-ink: #f6fbff;
+  --ball-gold: #ffe274;
+  --ball-gold-deep: #c99330;
+}
+
+body.ball-is-god-page[data-theme="light"] {
+  background-color: #eaf6ff;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.74), transparent 32%),
+    radial-gradient(ellipse at 78% 14%, rgba(255, 212, 61, 0.28), transparent 30%),
+    linear-gradient(180deg, #eaf6ff 0%, #cde8ff 52%, #fff2c5 100%);
+}
+
+body.ball-is-god-page[data-theme="dark"] {
+  background-color: #071530;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(126, 195, 255, 0.14), transparent 32%),
+    radial-gradient(ellipse at 78% 14%, rgba(255, 212, 61, 0.14), transparent 30%),
+    linear-gradient(180deg, #071530 0%, #10254d 52%, #050c1d 100%);
+}
+
+.ball-is-god-page::before {
+  opacity: 0;
+}
+
+.game-detail-page .ball-is-god-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: block;
+  padding-top: 0;
+  background: transparent;
+}
+
+.ball-is-god-shell::before,
+.ball-is-god-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ball-is-god-shell::before {
+  background:
+    linear-gradient(92deg, rgba(234, 246, 255, 0.94) 0 18%, rgba(234, 246, 255, 0.68) 42%, rgba(234, 246, 255, 0.24) 76%),
+    radial-gradient(ellipse at 28% 28%, rgba(255, 255, 255, 0.48), transparent 30%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 212, 61, 0.24), transparent 28%),
+    url("assets/Ball is God/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #eaf6ff, #fff2c5);
+  filter: saturate(1.02) contrast(1);
+  opacity: 0.82;
+}
+
+.ball-is-god-shell::after {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.34) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(47, 91, 150, 0.04) 0 1px, transparent 1px 18px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 46%, rgba(255, 212, 61, 0.14));
+  mix-blend-mode: multiply;
+  opacity: 0.74;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-is-god-shell::before {
+  background:
+    linear-gradient(92deg, rgba(7, 21, 48, 0.9) 0 18%, rgba(7, 21, 48, 0.68) 42%, rgba(16, 37, 77, 0.42) 76%),
+    radial-gradient(ellipse at 28% 28%, rgba(126, 195, 255, 0.12), transparent 30%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 212, 61, 0.12), transparent 28%),
+    url("assets/Ball is God/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #071530, #050c1d);
+  filter: saturate(0.9) contrast(1.05) brightness(0.72);
+  opacity: 0.84;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-is-god-shell::after {
+  background:
+    linear-gradient(90deg, rgba(7, 21, 48, 0.62), rgba(12, 32, 66, 0.28) 48%, rgba(5, 12, 29, 0.64)),
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(214, 235, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.ball-page-backdrop {
+  position: fixed;
+  inset: 74px 0 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.ball-page-backdrop::before,
+.ball-page-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ball-page-backdrop::before {
+  z-index: 2;
+  background:
+    linear-gradient(92deg, rgba(234, 246, 255, 0.94) 0 18%, rgba(234, 246, 255, 0.66) 42%, rgba(234, 246, 255, 0.22) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(255, 255, 255, 0.54), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 212, 61, 0.24), transparent 26%);
+}
+
+.ball-page-backdrop::after {
+  z-index: 5;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.32) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(47, 91, 150, 0.04) 0 1px, transparent 1px 18px),
+    radial-gradient(ellipse at 50% 100%, rgba(255, 212, 61, 0.16), transparent 48%);
+  mix-blend-mode: multiply;
+  opacity: 0.82;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-page-backdrop::before {
+  background:
+    linear-gradient(92deg, rgba(7, 21, 48, 0.9) 0 18%, rgba(7, 21, 48, 0.66) 42%, rgba(16, 37, 77, 0.42) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(126, 195, 255, 0.12), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 212, 61, 0.1), transparent 26%);
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-page-backdrop::after {
+  background:
+    linear-gradient(90deg, rgba(7, 21, 48, 0.58), rgba(12, 32, 66, 0.2) 48%, rgba(5, 12, 29, 0.62)),
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(214, 235, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.ball-backdrop-image {
+  position: absolute;
+  inset: -8% -4%;
+  z-index: 0;
+  width: 108%;
+  height: 118%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 45%;
+  opacity: 0.74;
+  transform: scale(1.08);
+  animation: ballSkyFloat 14s ease-in-out infinite;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-backdrop-image {
+  filter: saturate(0.88) contrast(1.04) brightness(0.72);
+  opacity: 0.84;
+}
+
+.ball-backdrop-clouds {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.ball-backdrop-clouds .ball-cloud {
+  width: clamp(130px, 14vw, 270px);
+  opacity: 0.48;
+  filter: blur(0.2px);
+}
+
+.ball-menu-world {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.ball-menu-sun,
+.ball-menu-halo,
+.ball-menu-pillar,
+.ball-menu-beam,
+.ball-menu-rock {
+  position: absolute;
+  pointer-events: none;
+}
+
+.ball-menu-sun {
+  top: 8%;
+  right: 15%;
+  width: clamp(118px, 9vw, 176px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255,255,244,0.78), transparent 12%),
+    radial-gradient(circle at 60% 70%, rgba(197, 139, 38, 0.18), transparent 30%),
+    linear-gradient(135deg, #fff28c, #f0b83a 72%);
+  box-shadow:
+    0 0 0 58px rgba(255, 224, 128, 0.14),
+    0 28px 70px rgba(188, 126, 24, 0.24);
+  animation: moonFloat 8s ease-in-out infinite;
+}
+
+.ball-menu-halo {
+  width: 190px;
+  height: 46px;
+  border: 10px solid rgba(255, 212, 61, 0.42);
+  border-radius: 50%;
+  box-shadow: 0 0 28px rgba(255, 212, 61, 0.18);
+  opacity: 0.66;
+  animation: ballHaloFloat 8s ease-in-out infinite;
+}
+
+.ball-menu-halo-one {
+  top: 20%;
+  left: 12%;
+  transform: rotate(-12deg);
+}
+
+.ball-menu-halo-two {
+  right: 8%;
+  bottom: 17%;
+  width: 138px;
+  height: 34px;
+  transform: rotate(18deg);
+  animation-delay: -3.2s;
+}
+
+.ball-menu-pillar {
+  bottom: -10%;
+  width: clamp(150px, 14vw, 260px);
+  height: 58%;
+  border-radius: 999px 999px 0 0;
+  background:
+    radial-gradient(ellipse at 50% 5%, rgba(255, 252, 212, 0.58), transparent 26%),
+    repeating-linear-gradient(90deg, rgba(146, 103, 25, 0.16) 0 2px, transparent 2px 32px),
+    linear-gradient(90deg, rgba(177, 122, 25, 0.34), rgba(255, 224, 108, 0.38), rgba(177, 122, 25, 0.28));
+  box-shadow: 0 26px 46px rgba(47, 91, 150, 0.16);
+  opacity: 0.54;
+}
+
+.ball-menu-pillar-left {
+  left: -8%;
+  transform: rotate(-6deg);
+}
+
+.ball-menu-pillar-right {
+  right: -7%;
+  transform: rotate(6deg);
+}
+
+.ball-menu-beam {
+  width: 54vw;
+  height: 18px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.62), rgba(255, 212, 61, 0.44), transparent);
+  opacity: 0.68;
+  animation: ballBeamFlow 7s ease-in-out infinite;
+}
+
+.ball-menu-beam-one {
+  top: 31%;
+  left: -9%;
+  transform: rotate(-18deg);
+}
+
+.ball-menu-beam-two {
+  bottom: 18%;
+  right: -10%;
+  transform: rotate(13deg);
+  animation-delay: -2.8s;
+}
+
+.ball-menu-rock {
+  width: 118px;
+  height: 74px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.14), transparent 30%),
+    linear-gradient(180deg, #77736e, #4d4a46 72%, #343333);
+  clip-path: polygon(4% 16%, 46% 0, 96% 14%, 86% 70%, 61% 96%, 22% 88%, 0 54%);
+  box-shadow: 0 18px 28px rgba(47, 91, 150, 0.18);
+  opacity: 0.62;
+  animation: ballRockFloat 8s ease-in-out infinite;
+}
+
+.ball-menu-rock-one {
+  top: 16%;
+  left: 34%;
+  transform: rotate(-16deg);
+}
+
+.ball-menu-rock-two {
+  right: 20%;
+  bottom: 30%;
+  width: 86px;
+  height: 58px;
+  animation-delay: -2.2s;
+  transform: rotate(18deg);
+}
+
+.ball-menu-rock-three {
+  left: 16%;
+  bottom: 14%;
+  width: 92px;
+  height: 62px;
+  animation-delay: -4.2s;
+  transform: rotate(10deg);
+}
+
+.ball-game-hero {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100svh - 74px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(44px, 6vw, 76px) 0 clamp(48px, 7vw, 92px);
+}
+
+.ball-hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.7fr);
+  gap: clamp(30px, 4.6vw, 58px);
+  align-items: center;
+}
+
+.ball-hero-copy {
+  max-width: 850px;
+  padding: clamp(18px, 3vw, 38px) 0;
+}
+
+.ball-hero-copy h1 {
+  max-width: 840px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+  color: var(--ball-ink);
+  font-size: clamp(4rem, 5.15vw, 6.2rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.55),
+    0 26px 70px rgba(47, 91, 150, 0.2);
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-hero-copy h1 {
+  text-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+}
+
+.ball-hero-copy .hero-copy {
+  max-width: 720px;
+  color: color-mix(in srgb, var(--text) 82%, var(--game-accent));
+  font-size: clamp(1.08rem, 1.55vw, 1.32rem);
+  line-height: 1.62;
+}
+
+.ball-hero-note {
+  max-width: 700px;
+  margin-bottom: 28px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.ball-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 18px;
+}
+
+.ball-hero-stats span {
+  min-height: 78px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 30%, var(--line));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(255, 255, 255, 0.22), transparent 34%),
+    radial-gradient(ellipse at 88% 20%, rgba(255, 212, 61, 0.14), transparent 36%),
+    repeating-linear-gradient(118deg, rgba(47, 91, 150, 0.045) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface-strong) 76%, transparent);
+  box-shadow: 0 18px 42px rgba(47, 91, 150, 0.12);
+  backdrop-filter: blur(14px) saturate(1.04);
+}
+
+.ball-hero-stats strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.ball-hero-stats small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.ball-hero-showcase {
+  position: relative;
+  min-height: clamp(520px, 58vw, 690px);
+  display: grid;
+  place-items: center;
+}
+
+.ball-device-frame {
+  --ball-cycle: 8.8s;
+  position: relative;
+  width: min(100%, 456px);
+  aspect-ratio: 0.72;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 30px;
+  background: rgba(143, 199, 255, 0.38);
+  box-shadow:
+    0 34px 82px rgba(47, 91, 150, 0.26),
+    0 0 0 9px rgba(255, 255, 255, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  isolation: isolate;
+  transform: rotate(1.2deg);
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-device-frame {
+  border-color: rgba(214, 235, 255, 0.24);
+  background: rgba(7, 21, 48, 0.46);
+  box-shadow:
+    0 34px 82px rgba(0, 0, 0, 0.42),
+    0 0 0 9px rgba(255, 212, 61, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.ball-device-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 34%, rgba(18, 43, 93, 0.18)),
+    radial-gradient(ellipse at 50% 18%, rgba(255, 212, 61, 0.18), transparent 24%);
+  mix-blend-mode: screen;
+}
+
+.ball-stage-showcase {
+  position: absolute;
+  inset: 0;
+}
+
+.ball-stage-showcase .ball-bg {
+  inset: -10% -8%;
+  width: 116%;
+  height: 124%;
+  object-position: center 45%;
+}
+
+.ball-stage-showcase .ball-tower {
+  top: -34px;
+  width: clamp(132px, 29%, 172px);
+  height: 590px;
+}
+
+.ball-stage-showcase .ball-espa-wrap {
+  width: clamp(168px, 36%, 238px);
+}
+
+.ball-stage-showcase .ball-cloud {
+  filter: drop-shadow(0 10px 14px rgba(55, 101, 160, 0.12));
+}
+
+.ball-showcase-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  width: clamp(82px, 10vw, 118px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 42px rgba(47, 91, 150, 0.26),
+    0 0 0 7px rgba(255, 255, 255, 0.24);
+  transition: opacity .28s var(--ease), transform .42s var(--ease);
+}
+
+.ball-showcase-icon-primary {
+  transform: rotate(-3deg);
+  animation: ballShowcaseIconPrimary var(--ball-cycle) var(--ease) infinite;
+}
+
+.ball-showcase-icon-alt {
+  opacity: 0;
+  transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  animation: ballShowcaseIconAlt var(--ball-cycle) var(--ease) infinite;
+}
+
+.ball-preview-title {
+  position: absolute;
+  left: 26px;
+  top: 28px;
+  z-index: 10;
+  max-width: min(60%, 286px);
+  display: grid;
+  gap: 8px;
+}
+
+.ball-preview-title small,
+.ball-cycle b {
+  width: max-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #10213a;
+  background: rgba(255, 253, 246, 0.82);
+  box-shadow: 0 12px 26px rgba(47, 91, 150, 0.16);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.ball-preview-title strong {
+  color: #10213a;
+  font-size: clamp(3.05rem, 4.35vw, 4.7rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.58),
+    0 18px 44px rgba(47, 91, 150, 0.22);
+}
+
+.ball-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ball-cycle b {
+  color: #725010;
+  font-size: 0.72rem;
+}
+
+.ball-device-frame .magic-hud {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 11;
+  color: #10213a;
+  background: rgba(255, 253, 246, 0.82);
+  border-color: rgba(146, 103, 25, 0.18);
+}
+
+.ball-device-frame .hud-dot {
+  background: #ffd43d;
+  box-shadow: 0 0 18px rgba(255, 212, 61, 0.58);
+  animation: ballHudPulse 1.8s ease-in-out infinite;
+}
+
+.ball-device-frame .hud-dot:nth-child(2) {
+  animation-delay: .25s;
+}
+
+.ball-device-frame .hud-dot:nth-child(3) {
+  animation-delay: .5s;
+}
+
+.ball-is-god-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: clamp(42px, 5vw, 76px);
+  padding-bottom: 108px;
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.ball-is-god-page .game-page-section,
+.ball-is-god-page .game-page-updates {
+  padding-inline: 0;
+  border-color: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ball-is-god-page .game-page-section + .game-page-section,
+.ball-is-god-page .game-page-section + .game-page-updates {
+  border-top: 0;
+  padding-top: clamp(30px, 4vw, 52px);
+}
+
+.ball-is-god-page .game-page-section h2,
+.ball-is-god-page .game-page-updates h2 {
+  max-width: 940px;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.5),
+    0 18px 46px rgba(47, 91, 150, 0.14);
+}
+
+.ball-is-god-page[data-theme="dark"] .game-page-section h2,
+.ball-is-god-page[data-theme="dark"] .game-page-updates h2 {
+  text-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+}
+
+@media (min-width: 901px) {
+  .ball-is-god-page .ball-story-section {
+    padding-top: clamp(34px, 4.4vw, 64px);
+    padding-bottom: clamp(34px, 4.4vw, 64px);
+  }
+
+  .ball-is-god-page .ball-story-section + .ball-story-section {
+    padding-top: clamp(20px, 3vw, 38px);
+  }
+
+  .ball-is-god-page .ball-story-section h2 {
+    max-width: 790px;
+    margin-bottom: clamp(18px, 2.2vw, 28px);
+    font-size: clamp(2.25rem, 3.05vw, 3.9rem);
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid {
+    grid-template-columns: minmax(0, 0.84fr) minmax(390px, 0.56fr);
+    gap: clamp(36px, 5vw, 76px);
+    align-items: center;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid > div {
+    max-width: 720px;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid > div p {
+    max-width: 680px;
+    font-size: clamp(1.02rem, 1.04vw, 1.13rem);
+    line-height: 1.66;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid > div p + p {
+    margin-top: 16px;
+  }
+
+  .ball-is-god-page .ball-story-section .game-page-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    padding: 24px;
+  }
+
+  .ball-is-god-page .ball-story-section .game-page-facts div {
+    gap: 6px;
+    min-height: 74px;
+    padding-bottom: 16px;
+  }
+
+  .ball-is-god-page .ball-story-section .game-page-facts div:nth-last-child(-n+2) {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.ball-is-god-page .detail-card,
+.ball-is-god-page .asset-link,
+.ball-is-god-page .update-list li,
+.ball-is-god-page .game-page-facts {
+  border-color: color-mix(in srgb, var(--game-accent) 25%, rgba(47, 91, 150, 0.16));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(255, 255, 255, 0.24), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 212, 61, 0.12), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(47, 91, 150, 0.045) 0 1px, transparent 1px 13px),
+    rgba(247, 252, 255, 0.7);
+  box-shadow: 0 18px 42px rgba(47, 91, 150, 0.12);
+  backdrop-filter: blur(12px) saturate(1.04);
+}
+
+.ball-is-god-page[data-theme="dark"] .detail-card,
+.ball-is-god-page[data-theme="dark"] .asset-link,
+.ball-is-god-page[data-theme="dark"] .update-list li,
+.ball-is-god-page[data-theme="dark"] .game-page-facts {
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(126, 195, 255, 0.08), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 212, 61, 0.08), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(214, 235, 255, 0.04) 0 1px, transparent 1px 13px),
+    rgba(7, 21, 48, 0.72);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+}
+
+.ball-is-god-page .game-page-section .eyebrow,
+.ball-is-god-page .game-page-updates .eyebrow {
+  background: rgba(247, 252, 255, 0.7);
+}
+
+.ball-is-god-page[data-theme="dark"] .game-page-section .eyebrow,
+.ball-is-god-page[data-theme="dark"] .game-page-updates .eyebrow {
+  background: rgba(7, 21, 48, 0.72);
+}
+
+.ball-cursor-mascot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: clamp(86px, 7vw, 132px);
+  height: clamp(48px, 3.9vw, 74px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-150px, -150px, 0);
+  transition: opacity .22s var(--ease);
+  will-change: transform, opacity;
+}
+
+.ball-cursor-mascot.is-active {
+  opacity: 0.88;
+}
+
+.ball-cursor-glow,
+.ball-cursor-image {
+  position: absolute;
+  pointer-events: none;
+}
+
+.ball-cursor-glow {
+  inset: -20px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 212, 61, 0.34), rgba(126, 195, 255, 0.18) 48%, transparent 72%);
+  filter: blur(1px);
+  animation: natureCursorPulse 2.8s ease-in-out infinite;
+}
+
+.ball-cursor-image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 18px 20px rgba(47, 91, 150, 0.24))
+    drop-shadow(0 0 18px rgba(255, 212, 61, 0.28));
+  animation: natureCursorBreathe 3.35s ease-in-out infinite;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-cursor-image {
+  filter:
+    drop-shadow(0 20px 22px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 0 22px rgba(255, 212, 61, 0.22));
+}
+
+@media (min-width: 921px) and (max-height: 980px) {
+  .ball-game-hero {
+    align-items: start;
+    padding: clamp(28px, 4vh, 46px) 0 42px;
+  }
+
+  .ball-hero-layout {
+    gap: clamp(24px, 3vw, 42px);
+    align-items: center;
+  }
+
+  .ball-hero-copy {
+    max-width: 760px;
+    padding: 0;
+  }
+
+  .ball-hero-copy h1 {
+    max-width: 720px;
+    margin-bottom: 16px;
+    font-size: clamp(3.7rem, 4.65vw, 5.25rem);
+  }
+
+  .ball-hero-copy .hero-copy {
+    max-width: 660px;
+    font-size: clamp(1rem, 1.14vw, 1.16rem);
+    line-height: 1.52;
+  }
+
+  .ball-hero-note {
+    max-width: 650px;
+    margin-bottom: 18px;
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .ball-hero-stats {
+    max-width: 690px;
+    margin-top: 14px;
+  }
+
+  .ball-hero-stats span {
+    min-height: 66px;
+    padding: 11px 12px;
+  }
+
+  .ball-hero-showcase {
+    min-height: min(610px, calc(100svh - 170px));
+  }
+
+  .ball-device-frame {
+    width: min(100%, 398px);
+  }
+
+  .ball-stage-showcase .ball-tower {
+    top: -40px;
+    height: 555px;
+  }
+
+  .ball-stage-showcase .ball-espa-wrap {
+    width: clamp(154px, 33%, 210px);
+  }
+}
+
 .game-theme-candy .game-visual-card {
   background:
     radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.58), transparent 22%),
@@ -6548,6 +8251,56 @@ body.magic-off .secret-glint {
   100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
 }
 
+@keyframes ballHaloFloat {
+  0%, 100% { translate: 0 0; opacity: 0.54; filter: saturate(1); }
+  50% { translate: 0 -14px; opacity: 0.78; filter: saturate(1.22); }
+}
+
+@keyframes ballBeamFlow {
+  0%, 100% { opacity: 0.42; filter: saturate(1); }
+  50% { opacity: 0.76; filter: saturate(1.22); }
+}
+
+@keyframes ballRockFloat {
+  0%, 100% { translate: 0 0; filter: brightness(1); }
+  50% { translate: 0 -16px; filter: brightness(1.08); }
+}
+
+@keyframes ballShowcaseIconPrimary {
+  0%, 26%, 100% {
+    opacity: 1;
+    transform: rotate(-3deg) scale(1);
+  }
+  34%, 46% {
+    opacity: 0;
+    transform: translate3d(-16px, 18px, 0) rotate(-12deg) scale(0.82);
+  }
+  58% {
+    opacity: 1;
+    transform: rotate(-3deg) scale(1);
+  }
+}
+
+@keyframes ballShowcaseIconAlt {
+  0%, 26%, 100% {
+    opacity: 0;
+    transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  }
+  34%, 46% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  58% {
+    opacity: 0;
+    transform: translate3d(-12px, 12px, 0) rotate(-7deg) scale(0.86);
+  }
+}
+
+@keyframes ballHudPulse {
+  0%, 100% { opacity: 0.5; filter: saturate(0.86) brightness(0.9); }
+  42%, 62% { opacity: 1; filter: saturate(1.28) brightness(1.36); }
+}
+
 @keyframes paintAimCharge {
   0%, 15% {
     opacity: 0.42;
@@ -6674,6 +8427,66 @@ body.magic-off .secret-glint {
   0% { transform: translate3d(22px, -30px, 0) rotate(10deg) scale(0.86); }
   58% { transform: translate3d(-6px, 7px, 0) rotate(-4deg) scale(1.05); }
   100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes paintBackdropDrift {
+  0%, 100% { transform: scale(1.08) translate3d(0, 0, 0); }
+  50% { transform: scale(1.12) translate3d(1.5%, -1.2%, 0); }
+}
+
+@keyframes paintShipPanelDrift {
+  0%, 100% { transform: translateX(-50%) scale(1.02); }
+  50% { transform: translateX(-50%) translateY(-12px) scale(1.05); }
+}
+
+@keyframes paintBeamFlow {
+  0%, 100% { opacity: 0.42; filter: blur(0.2px) saturate(1); }
+  50% { opacity: 0.78; filter: blur(0.2px) saturate(1.28); }
+}
+
+@keyframes paintSplashFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-6deg) scale(1); }
+  50% { transform: translate3d(0, -16px, 0) rotate(8deg) scale(1.05); }
+}
+
+@keyframes paintGaugePulse {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-4deg) scale(1); opacity: 0.54; }
+  50% { transform: translate3d(0, -8px, 0) rotate(5deg) scale(1.04); opacity: 0.74; }
+}
+
+@keyframes paintShowcaseIconPrimary {
+  0%, 26%, 100% {
+    opacity: 1;
+    transform: rotate(3deg) scale(1);
+  }
+  34%, 46% {
+    opacity: 0;
+    transform: translate3d(-18px, 16px, 0) rotate(-10deg) scale(0.82);
+  }
+  58% {
+    opacity: 1;
+    transform: rotate(3deg) scale(1);
+  }
+}
+
+@keyframes paintShowcaseIconAlt {
+  0%, 26%, 100% {
+    opacity: 0;
+    transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  }
+  34%, 46% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  58% {
+    opacity: 0;
+    transform: translate3d(-12px, 12px, 0) rotate(-7deg) scale(0.86);
+  }
+}
+
+@keyframes paintButtonBlink {
+  0%, 100% { opacity: 0.44; filter: saturate(0.8) brightness(0.8); }
+  42%, 62% { opacity: 1; filter: saturate(1.28) brightness(1.45); }
 }
 
 @keyframes drawPath {
@@ -6841,12 +8654,30 @@ body.magic-off .secret-glint {
     padding-top: 0;
   }
 
+  .paint-blasters-shell {
+    padding-top: 0;
+  }
+
+  .ball-is-god-shell {
+    padding-top: 0;
+  }
+
   .nature-game-hero {
     min-height: auto;
     padding: 42px 0 64px;
   }
 
   .candy-game-hero {
+    min-height: auto;
+    padding: 42px 0 64px;
+  }
+
+  .paint-game-hero {
+    min-height: auto;
+    padding: 42px 0 64px;
+  }
+
+  .ball-game-hero {
     min-height: auto;
     padding: 42px 0 64px;
   }
@@ -6863,12 +8694,34 @@ body.magic-off .secret-glint {
     align-items: start;
   }
 
+  .paint-hero-layout {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .ball-hero-layout {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
   .nature-hero-copy {
     max-width: 760px;
     padding-top: 0;
   }
 
   .candy-hero-copy {
+    max-width: 760px;
+    padding-top: 0;
+  }
+
+  .paint-hero-copy {
+    max-width: 760px;
+    padding-top: 0;
+  }
+
+  .ball-hero-copy {
     max-width: 760px;
     padding-top: 0;
   }
@@ -6881,11 +8734,29 @@ body.magic-off .secret-glint {
     font-size: clamp(3.35rem, 9.8vw, 4.9rem);
   }
 
+  .paint-hero-copy h1 {
+    font-size: clamp(3.35rem, 9.8vw, 4.9rem);
+  }
+
+  .ball-hero-copy h1 {
+    font-size: clamp(3.35rem, 9.8vw, 4.9rem);
+  }
+
   .nature-hero-showcase {
     min-height: 480px;
   }
 
   .candy-hero-showcase {
+    min-height: 540px;
+    place-items: start center;
+  }
+
+  .paint-hero-showcase {
+    min-height: 540px;
+    place-items: start center;
+  }
+
+  .ball-hero-showcase {
     min-height: 540px;
     place-items: start center;
   }
@@ -6972,6 +8843,14 @@ body.magic-off .secret-glint {
     padding: 34px 0 56px;
   }
 
+  .paint-game-hero {
+    padding: 34px 0 56px;
+  }
+
+  .ball-game-hero {
+    padding: 34px 0 56px;
+  }
+
   .nature-hero-copy h1 {
     font-size: clamp(3rem, 13.2vw, 3.85rem);
     line-height: 0.9;
@@ -6979,6 +8858,16 @@ body.magic-off .secret-glint {
 
   .candy-hero-copy h1 {
     font-size: clamp(2.9rem, 12.6vw, 3.8rem);
+    line-height: 0.9;
+  }
+
+  .paint-hero-copy h1 {
+    font-size: clamp(2.9rem, 12.6vw, 3.8rem);
+    line-height: 0.9;
+  }
+
+  .ball-hero-copy h1 {
+    font-size: clamp(2.85rem, 12.4vw, 3.72rem);
     line-height: 0.9;
   }
 
@@ -6990,6 +8879,14 @@ body.magic-off .secret-glint {
     font-size: 1rem;
   }
 
+  .paint-hero-copy .hero-copy {
+    font-size: 1rem;
+  }
+
+  .ball-hero-copy .hero-copy {
+    font-size: 1rem;
+  }
+
   .nature-hero-note {
     display: none;
   }
@@ -6998,11 +8895,27 @@ body.magic-off .secret-glint {
     display: none;
   }
 
+  .paint-hero-note {
+    display: none;
+  }
+
+  .ball-hero-note {
+    display: none;
+  }
+
   .nature-hero-stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .candy-hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .paint-hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ball-hero-stats {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -7016,6 +8929,16 @@ body.magic-off .secret-glint {
     padding: 10px;
   }
 
+  .paint-hero-stats span {
+    min-height: 70px;
+    padding: 10px;
+  }
+
+  .ball-hero-stats span {
+    min-height: 70px;
+    padding: 10px;
+  }
+
   .nature-hero-stats strong {
     font-size: 0.9rem;
   }
@@ -7024,11 +8947,27 @@ body.magic-off .secret-glint {
     font-size: 0.9rem;
   }
 
+  .paint-hero-stats strong {
+    font-size: 0.9rem;
+  }
+
+  .ball-hero-stats strong {
+    font-size: 0.9rem;
+  }
+
   .nature-hero-stats small {
     font-size: 0.68rem;
   }
 
   .candy-hero-stats small {
+    font-size: 0.68rem;
+  }
+
+  .paint-hero-stats small {
+    font-size: 0.68rem;
+  }
+
+  .ball-hero-stats small {
     font-size: 0.68rem;
   }
 
@@ -7059,11 +8998,29 @@ body.magic-off .secret-glint {
     min-height: 520px;
   }
 
+  .paint-hero-showcase {
+    min-height: 520px;
+  }
+
+  .ball-hero-showcase {
+    min-height: 520px;
+  }
+
   .nature-device-frame {
     border-radius: 24px;
   }
 
   .candy-device-frame {
+    width: min(100%, 340px);
+    border-radius: 24px;
+  }
+
+  .paint-device-frame {
+    width: min(100%, 340px);
+    border-radius: 24px;
+  }
+
+  .ball-device-frame {
     width: min(100%, 340px);
     border-radius: 24px;
   }
@@ -7080,6 +9037,153 @@ body.magic-off .secret-glint {
     right: 16px;
     width: 76px;
     border-radius: 18px;
+  }
+
+  .paint-showcase-icon {
+    top: 16px;
+    right: 16px;
+    width: 76px;
+    border-radius: 18px;
+  }
+
+  .ball-showcase-icon {
+    top: 16px;
+    right: 16px;
+    width: 76px;
+    border-radius: 18px;
+  }
+
+  .ball-preview-title {
+    left: 16px;
+    top: 18px;
+    max-width: calc(100% - 126px);
+    gap: 7px;
+  }
+
+  .ball-preview-title small {
+    padding: 8px 10px;
+    font-size: 0.66rem;
+  }
+
+  .ball-preview-title strong {
+    font-size: clamp(2.25rem, 11.4vw, 3rem);
+  }
+
+  .ball-cycle {
+    gap: 6px;
+  }
+
+  .ball-menu-sun {
+    top: 15%;
+    right: -12%;
+    width: 150px;
+    opacity: 0.62;
+  }
+
+  .ball-menu-halo-one {
+    left: -21%;
+    top: 19%;
+    opacity: 0.34;
+  }
+
+  .ball-menu-halo-two {
+    right: -16%;
+    bottom: 16%;
+    opacity: 0.32;
+  }
+
+  .ball-menu-pillar {
+    opacity: 0.34;
+  }
+
+  .ball-menu-rock {
+    opacity: 0.34;
+  }
+
+  .ball-stage-showcase .ball-tower {
+    top: -30px;
+    width: 140px;
+    height: 560px;
+  }
+
+  .ball-stage-showcase .ball-espa-wrap {
+    width: 178px;
+  }
+
+  .paint-preview-title {
+    left: 16px;
+    top: 18px;
+    max-width: calc(100% - 126px);
+    gap: 7px;
+  }
+
+  .paint-preview-title small {
+    padding: 8px 10px;
+    font-size: 0.66rem;
+  }
+
+  .paint-preview-title strong {
+    font-size: clamp(2.25rem, 11.4vw, 3rem);
+  }
+
+  .paint-cycle {
+    gap: 6px;
+  }
+
+  .paint-control-lights {
+    right: 18px;
+    bottom: 82px;
+    gap: 6px;
+    padding: 7px 9px;
+  }
+
+  .paint-control-lights span {
+    width: 8px;
+  }
+
+  .paint-stage-showcase .paint-module {
+    top: -4%;
+    height: 111%;
+  }
+
+  .paint-stage-showcase .paint-hero {
+    left: -92px;
+    bottom: -96px;
+    width: 360px;
+  }
+
+  .paint-menu-splash-one {
+    top: 15%;
+    right: -22%;
+    opacity: 0.34;
+  }
+
+  .paint-menu-splash-two {
+    left: -20%;
+    bottom: 22%;
+    opacity: 0.36;
+  }
+
+  .paint-menu-splash-three {
+    right: -14%;
+    bottom: 13%;
+    opacity: 0.32;
+  }
+
+  .paint-menu-pipe {
+    opacity: 0.42;
+  }
+
+  .paint-menu-gauge-one {
+    top: 8%;
+    left: -13%;
+    opacity: 0.28;
+  }
+
+  .paint-menu-gauge-two {
+    right: -12%;
+    bottom: 20%;
+    opacity: 0.3;
   }
 
   .candy-preview-title {

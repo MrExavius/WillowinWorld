@@ -18,9 +18,12 @@
   <title>Ball is God?! - Hardcore Vertical Descent Arcade Game</title>
   <link rel="canonical" href="https://willowinworld.com/games/ball-is-god.html">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/Ball%20is%20God/site/back.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../assets/Ball%20is%20God/site/icon1.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../assets/Ball%20is%20God/site/espa.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
 </head>
-<body class="game-detail-page game-theme-ball" data-theme="light">
+<body class="game-detail-page game-theme-ball ball-is-god-page" data-theme="light">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html#games" aria-label="Back to WillowinWorld games">
       <img src="../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="" decoding="async">
@@ -37,33 +40,109 @@
       </svg>
     </button>
   </header>
-  <main class="section game-page game-detail-shell">
-    <div class="container game-page-grid">
-      <section class="soft-card game-page-copy game-hero-card">
-        <div class="eyebrow">Ball is God?!</div>
-        <h1>Hardcore Vertical Descent Arcade</h1>
-        <p class="hero-copy">Ball is God?! is a fast one-touch arcade game about guiding Espa down a divine tower, slipping through broken stone gaps and surviving a mythic world where one mistake can end the run.</p>
-        <p>What started as a small arcade concept grew into a larger narrative project with ten planned worlds, boss encounters, moral choices and a complete long-form story draft.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="mailto:hello@willowinworld.com?subject=Ball%20is%20God%20updates">Follow Development</a>
-          <a class="btn btn-ghost" href="../index.html#games">Back to Games</a>
+  <main class="game-page game-detail-shell ball-is-god-shell">
+    <div class="ball-page-backdrop ambient-only" aria-hidden="true">
+      <img class="ball-backdrop-image" src="../assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" decoding="async">
+      <div class="ball-backdrop-clouds">
+        <img class="ball-cloud ball-cloud-1" src="../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" decoding="async">
+        <img class="ball-cloud ball-cloud-2" src="../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" decoding="async">
+        <img class="ball-cloud ball-cloud-4" src="../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" decoding="async">
+        <img class="ball-cloud ball-cloud-8" src="../assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" decoding="async">
+        <img class="ball-cloud ball-cloud-11 is-reverse" src="../assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" decoding="async">
+        <img class="ball-cloud ball-cloud-15 is-reverse" src="../assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" decoding="async">
+      </div>
+      <div class="ball-menu-world">
+        <span class="ball-menu-sun"></span>
+        <span class="ball-menu-halo ball-menu-halo-one"></span>
+        <span class="ball-menu-halo ball-menu-halo-two"></span>
+        <span class="ball-menu-pillar ball-menu-pillar-left"></span>
+        <span class="ball-menu-pillar ball-menu-pillar-right"></span>
+        <span class="ball-menu-beam ball-menu-beam-one"></span>
+        <span class="ball-menu-beam ball-menu-beam-two"></span>
+        <span class="ball-menu-rock ball-menu-rock-one"></span>
+        <span class="ball-menu-rock ball-menu-rock-two"></span>
+        <span class="ball-menu-rock ball-menu-rock-three"></span>
+      </div>
+    </div>
+
+    <section class="ball-game-hero" aria-labelledby="ballHeroTitle">
+      <div class="container ball-hero-layout">
+        <div class="ball-hero-copy">
+          <div class="eyebrow">Ball is God?!</div>
+          <h1 id="ballHeroTitle">Drop through heaven. Survive the fall.</h1>
+          <p class="hero-copy">A hardcore one-touch vertical arcade about guiding Espa down a divine tower, threading broken stone gaps and surviving a mythic world where one mistake can end the run.</p>
+          <p class="ball-hero-note">A longterm narrative arcade project planned after current releases, with ten worlds, boss pressure, moral choices and a complete long-form story draft already shaped.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:hello@willowinworld.com?subject=Ball%20is%20God%20updates">Follow Development</a>
+            <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
+          </div>
+          <div class="ball-hero-stats" role="group" aria-label="Ball is God highlights">
+            <span><strong>Drop</strong><small>fall through divine towers</small></span>
+            <span><strong>Dodge</strong><small>thread broken stone gaps</small></span>
+            <span><strong>Choose</strong><small>shape mythic consequences</small></span>
+          </div>
         </div>
-        <div class="game-tags">
-          <span class="tag">Vertical descent</span>
-          <span class="tag">One-touch arcade</span>
-          <span class="tag">One-hit-kill</span>
-          <span class="tag">Story choices</span>
-        </div>
-      </section>
-      <aside class="soft-card game-page-panel game-visual-card">
-        <img src="../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God game icon with a golden divine arcade world" decoding="async">
-        <h2>Gameplay pillars</h2>
-        <ul>
-          <li>Read moving stone gaps, cloud depth and platform timing before committing to each drop.</li>
-          <li>Use the one-hit-kill structure to create fast tension, short retries and high mastery.</li>
-          <li>Let major choices affect world mood, character fates, visual tone and endings.</li>
-        </ul>
-      </aside>
+
+        <aside class="ball-hero-showcase" aria-label="Ball is God gameplay preview">
+          <div class="ball-device-frame">
+            <div class="ball-stage ball-stage-showcase" aria-hidden="true">
+              <img class="ball-bg" src="../assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" decoding="async">
+              <div class="ball-cloud-field">
+                <img class="ball-cloud ball-cloud-1" src="../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-2" src="../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-3" src="../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="162" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-4" src="../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-5" src="../assets/Ball%20is%20God/site/cloud-5.webp" width="460" height="184" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-6" src="../assets/Ball%20is%20God/site/cloud-6.webp" width="460" height="167" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-7" src="../assets/Ball%20is%20God/site/cloud-7.webp" width="460" height="168" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-8" src="../assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-9 is-reverse" src="../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-10 is-reverse" src="../assets/Ball%20is%20God/site/cloud-10.webp" width="460" height="179" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-11 is-reverse" src="../assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-12 is-reverse" src="../assets/Ball%20is%20God/site/cloud-12.webp" width="460" height="159" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-13 is-reverse" src="../assets/Ball%20is%20God/site/cloud-13.webp" width="460" height="155" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-14 is-reverse" src="../assets/Ball%20is%20God/site/cloud-14.webp" width="460" height="153" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-15 is-reverse" src="../assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" decoding="async">
+                <img class="ball-cloud ball-cloud-16 is-reverse" src="../assets/Ball%20is%20God/site/cloud-16.webp" width="460" height="156" alt="" decoding="async">
+              </div>
+              <div class="ball-tower">
+                <span class="ball-vine ball-vine-one"></span>
+                <span class="ball-vine ball-vine-two"></span>
+                <span class="ball-leaf ball-leaf-one"></span>
+                <span class="ball-leaf ball-leaf-two"></span>
+                <span class="ball-leaf ball-leaf-three"></span>
+                <span class="ball-leaf ball-leaf-four"></span>
+              </div>
+              <div class="ball-platforms">
+                <span class="ball-platform ball-platform-a"><i></i></span>
+                <span class="ball-platform ball-platform-b"><i></i></span>
+                <span class="ball-platform ball-platform-c"><i></i></span>
+                <span class="ball-platform ball-platform-d"><i></i></span>
+                <span class="ball-platform ball-platform-e"><i></i></span>
+                <span class="ball-platform ball-platform-f"><i></i></span>
+              </div>
+              <div class="ball-espa-wrap">
+                <img class="ball-espa ball-espa-base" src="../assets/Ball%20is%20God/site/espa.webp" width="520" height="285" alt="" decoding="async">
+                <img class="ball-espa ball-espa-alt" src="../assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" decoding="async">
+              </div>
+            </div>
+            <img class="ball-showcase-icon ball-showcase-icon-primary" src="../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God game icon with a golden divine arcade world" decoding="async">
+            <img class="ball-showcase-icon ball-showcase-icon-alt" src="../assets/Ball%20is%20God/site/icon2.webp" width="520" height="520" alt="" decoding="async">
+            <span class="ball-preview-title">
+              <small>Hardcore Vertical Descent Arcade</small>
+              <strong>Ball is God?!</strong>
+              <span class="ball-cycle"><b>Drop</b><b>Dodge</b><b>Decide</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>Longterm Project · Story Draft</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid ball-is-god-content">
       <section class="soft-card game-page-section">
         <div class="eyebrow">Game overview</div>
         <h2>Every drop matters, every mistake can end the run.</h2>
@@ -74,7 +153,7 @@
           <article class="detail-card"><h3>Status</h3><p>Longterm Project - Planned After Current Releases. Active production is paused while WillowinWorld focuses on Nature Seed, Candy Shop and Paint Blasters.</p></article>
         </div>
       </section>
-      <section class="soft-card game-page-section">
+      <section class="soft-card game-page-section ball-story-section">
         <div class="eyebrow">Origin</div>
         <h2>What if vertical arcade pressure carried story consequences?</h2>
         <div class="info-grid">
@@ -90,7 +169,7 @@
           </dl>
         </div>
       </section>
-      <section class="soft-card game-page-section">
+      <section class="soft-card game-page-section ball-story-section">
         <div class="eyebrow">Publisher angle</div>
         <h2>A one-touch arcade hook with a stronger world than a score chaser.</h2>
         <div class="info-grid">

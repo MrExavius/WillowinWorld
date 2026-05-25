@@ -30,7 +30,11 @@
         ? theme === "dark" ? "#07162d" : "#f7fae8"
         : body.classList.contains("candy-shop-page")
           ? theme === "dark" ? "#211027" : "#fff3fa"
-          : theme === "dark" ? "#031735" : "#fcfff2";
+          : body.classList.contains("paint-blasters-page")
+            ? theme === "dark" ? "#071225" : "#eef7ff"
+            : body.classList.contains("ball-is-god-page")
+              ? theme === "dark" ? "#071530" : "#eaf6ff"
+              : theme === "dark" ? "#031735" : "#fcfff2";
     }
     if (themeToggle) {
       themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
@@ -150,6 +154,40 @@
     offsetX: 86,
     offsetY: 88,
     boundary: 64,
+    smoothing: 0.1
+  });
+
+  initCursorMascot({
+    pageClass: "paint-blasters-page",
+    shellSelector: ".paint-blasters-shell",
+    mascotClass: "paint-cursor-mascot",
+    glowClass: "paint-cursor-glow",
+    imageClass: "paint-cursor-image",
+    src: "../assets/Paint%20Blasters/site/hero.webp",
+    imageWidth: 430,
+    imageHeight: 579,
+    startX: 0.64,
+    startY: 0.42,
+    offsetX: 82,
+    offsetY: 96,
+    boundary: 64,
+    smoothing: 0.1
+  });
+
+  initCursorMascot({
+    pageClass: "ball-is-god-page",
+    shellSelector: ".ball-is-god-shell",
+    mascotClass: "ball-cursor-mascot",
+    glowClass: "ball-cursor-glow",
+    imageClass: "ball-cursor-image",
+    src: "../assets/Ball%20is%20God/site/espa.webp",
+    imageWidth: 520,
+    imageHeight: 285,
+    startX: 0.62,
+    startY: 0.4,
+    offsetX: 88,
+    offsetY: 88,
+    boundary: 62,
     smoothing: 0.1
   });
 })();
