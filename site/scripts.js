@@ -1509,30 +1509,21 @@
     startLoop();
   }
 
-  function shuffled(items) {
-    const copy = [...items];
-    for (let i = copy.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
-    }
-    return copy;
-  }
-
   function initSecrets() {
-    const surfaces = shuffled(document.querySelectorAll("main .section"));
-    const spots = shuffled(sectionSecretSpots);
+    const surfaces = [...document.querySelectorAll("main .section")];
+    const spots = sectionSecretSpots;
     if (!surfaces.length || !spots.length) return;
 
     secretRewards.forEach((secret, secretIndex) => {
-      const letters = shuffled(secret.letters.map((letter, index) => ({ letter, index })));
+      const letters = secret.letters.map((letter, index) => ({ letter, index }));
       letters.forEach(({ letter, index }, order) => {
         const surface = surfaces[(order + secretIndex) % surfaces.length];
         const spot = spots[(order * 5 + secretIndex) % spots.length];
         const glint = document.createElement("button");
         glint.type = "button";
         glint.className = "secret-glint ambient-only";
-        glint.textContent = letter;
-        glint.setAttribute("aria-label", "Hidden letter " + letter);
+        glint.dataset.letter = letter;
+        glint.setAttribute("aria-label", "Hidden portal symbol");
         glint.style.setProperty("--glint-x", spot[0] + "%");
         glint.style.setProperty("--glint-y", spot[1] + "%");
         glint.style.setProperty("--glint-delay", -((index + secretIndex * 2) % 9) * 0.54 + "s");
@@ -1595,23 +1586,35 @@
   }
 
   function initReveals() {
-    const selectors = [
-      ".section-head",
-      ".game-card",
-      ".principle",
-      ".system-card",
-      ".about-grid > *",
-      ".step",
-      ".devlog-card",
-      ".quote-card",
-      ".faq-item",
-      ".final-cta .container"
-    ];
-    const targets = [...new Set(document.querySelectorAll(selectors.join(",")))];
-    targets.forEach((target, index) => {
+    const targets = [];
+    const seen = new Set();
+
+    function queueReveal(target, delay) {
+      if (!target || seen.has(target)) return;
+      seen.add(target);
       target.setAttribute("data-reveal", "");
-      target.style.setProperty("--reveal-delay", Math.min((index % 6) * 62, 248) + "ms");
-    });
+      target.style.setProperty("--reveal-delay", delay + "ms");
+      targets.push(target);
+    }
+
+    function queueRevealGroup(rootSelector, selector, step, maxDelay) {
+      document.querySelectorAll(rootSelector).forEach(root => {
+        root.querySelectorAll(selector).forEach((target, index) => {
+          queueReveal(target, Math.min(index * step, maxDelay));
+        });
+      });
+    }
+
+    document.querySelectorAll("main .section .section-head").forEach(target => queueReveal(target, 0));
+    queueRevealGroup("#games", ".game-card", 64, 320);
+    queueRevealGroup("#studio", ".principle", 68, 408);
+    queueRevealGroup("#systems", ".system-card", 58, 348);
+    queueRevealGroup("#about", ".about-grid > *", 86, 172);
+    queueRevealGroup("#process", ".step", 70, 420);
+    queueRevealGroup("#devlog", ".devlog-card", 76, 304);
+    queueRevealGroup("#testimonials", ".quote-card", 78, 312);
+    queueRevealGroup("#faq", ".faq-item", 54, 378);
+    queueReveal(document.querySelector(".final-cta .container"), 0);
 
     if (state.lowMotion || !("IntersectionObserver" in window)) {
       targets.forEach(target => target.classList.add("is-visible"));

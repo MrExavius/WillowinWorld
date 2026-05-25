@@ -1,17 +1,41 @@
-import { readFile } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
+import { createHash } from "node:crypto";
 import { exit } from "node:process";
+import { join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
+
+const siteRoot = fileURLToPath(new URL("../", import.meta.url));
+
+async function walkFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const entryPath = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...await walkFiles(entryPath));
+    } else if (entry.isFile()) {
+      files.push(entryPath);
+    }
+  }
+  return files;
+}
 
 const files = {
   html: await readFile(new URL("../index.html", import.meta.url), "utf8"),
   css: await readFile(new URL("../styles.css", import.meta.url), "utf8"),
+  lostStarsCss: await readFile(new URL("../404.css", import.meta.url), "utf8"),
   js: await readFile(new URL("../scripts.js", import.meta.url), "utf8"),
   gameThemeJs: await readFile(new URL("../game-theme.js", import.meta.url), "utf8"),
+  lostStarsJs: await readFile(new URL("../404.js", import.meta.url), "utf8"),
   headers: await readFile(new URL("../_headers", import.meta.url), "utf8"),
   nginx: await readFile(new URL("../deploy/nginx-security.conf", import.meta.url), "utf8"),
+  apache: await readFile(new URL("../deploy/apache-security.htaccess", import.meta.url), "utf8"),
+  securityTxt: await readFile(new URL("../.well-known/security.txt", import.meta.url), "utf8"),
   sitemap: await readFile(new URL("../sitemap.xml", import.meta.url), "utf8")
 };
 
 const errors = [];
+const siteFiles = await walkFiles(siteRoot);
 const htmlPages = {
   "index.html": files.html,
   "press-kit.html": await readFile(new URL("../press-kit.html", import.meta.url), "utf8"),
@@ -30,6 +54,21 @@ function forbidMatch(name, text, pattern) {
   if (pattern.test(text)) errors.push(`${name}: forbidden ${pattern}`);
 }
 
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function getStructuredDataHash() {
+  const match = files.html.match(/<script\b(?=[^>]*\btype=["']application\/ld\+json["'])(?=[^>]*\bid=["']structuredData["'])[^>]*>([\s\S]*?)<\/script>/i);
+  if (!match) {
+    errors.push("index.html: missing structuredData JSON-LD script");
+    return null;
+  }
+  return `sha256-${createHash("sha256").update(match[1]).digest("base64")}`;
+}
+
+const structuredDataHash = getStructuredDataHash();
+
 requireMatch("index.html", files.html, /Content-Security-Policy/i);
 requireMatch("index.html", files.html, /script-src 'self'/i);
 requireMatch("index.html", files.html, /style-src 'self'/i);
@@ -41,9 +80,34 @@ requireMatch("sitemap.xml", files.sitemap, /https:\/\/willowinworld\.com\/press-
 requireMatch("_headers", files.headers, /frame-ancestors 'none'/i);
 requireMatch("_headers", files.headers, /Strict-Transport-Security:/i);
 requireMatch("_headers", files.headers, /X-Content-Type-Options:\s*nosniff/i);
+requireMatch("_headers", files.headers, /Origin-Agent-Cluster:\s*\?1/i);
+requireMatch("_headers", files.headers, /X-Permitted-Cross-Domain-Policies:\s*none/i);
+requireMatch("_headers", files.headers, /Cache-Control:\s*no-cache/i);
 requireMatch("nginx-security.conf", files.nginx, /X-Frame-Options\s+"DENY"/i);
+requireMatch("nginx-security.conf", files.nginx, /Origin-Agent-Cluster\s+"\?1"/i);
+requireMatch("nginx-security.conf", files.nginx, /X-Permitted-Cross-Domain-Policies\s+"none"/i);
+requireMatch("nginx-security.conf", files.nginx, /location\s+\^~\s+\/assets\/\s*\{[\s\S]*?expires\s+1y;/i);
+requireMatch("nginx-security.conf", files.nginx, /location\s+~\*\s+\\\.html\$\s*\{[\s\S]*?expires\s+-1;/i);
+forbidMatch("nginx-security.conf", files.nginx, /location\s+\^~\s+\/assets\/\s*\{[\s\S]*?add_header\s+Cache-Control/i);
+requireMatch("apache-security.htaccess", files.apache, /X-Frame-Options\s+"DENY"/i);
+requireMatch("apache-security.htaccess", files.apache, /Origin-Agent-Cluster\s+"\?1"/i);
+requireMatch("apache-security.htaccess", files.apache, /X-Permitted-Cross-Domain-Policies\s+"none"/i);
+requireMatch("apache-security.htaccess", files.apache, /ExpiresByType\s+text\/html\s+"access plus 0 seconds"/i);
+requireMatch("security.txt", files.securityTxt, /Contact:\s*mailto:contact@willowinworld\.com/i);
+
+if (structuredDataHash) {
+  const hashPattern = new RegExp(escapeRegExp(structuredDataHash));
+  requireMatch("index.html", files.html, hashPattern);
+  requireMatch("_headers", files.headers, hashPattern);
+  requireMatch("nginx-security.conf", files.nginx, hashPattern);
+  requireMatch("apache-security.htaccess", files.apache, hashPattern);
+}
 
 for (const [name, html] of Object.entries(htmlPages)) {
+  requireMatch(name, html, /Content-Security-Policy/i);
+  requireMatch(name, html, /default-src 'self'/i);
+  requireMatch(name, html, /script-src 'self'/i);
+  forbidMatch(name, html, /unsafe-inline|unsafe-eval/i);
   forbidMatch(name, html, /<style(?:\s|>)/i);
   forbidMatch(name, html, /\sstyle\s*=/i);
   forbidMatch(name, html, /\son[a-z]+\s*=/i);
@@ -66,14 +130,29 @@ for (const [name, html] of Object.entries(htmlPages)) {
     }
   }
 }
-for (const [name, js] of Object.entries({ "scripts.js": files.js, "game-theme.js": files.gameThemeJs })) {
+for (const [name, js] of Object.entries({ "scripts.js": files.js, "game-theme.js": files.gameThemeJs, "404.js": files.lostStarsJs })) {
   forbidMatch(name, js, /\b(?:innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval|Function)\b/);
   forbidMatch(name, js, /\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/);
   forbidMatch(name, js, /\b(?:api[_-]?key|private[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._-]+)\b/i);
   forbidMatch(name, js, /\b[A-Z0-9]{3,}-(?:[A-Z0-9]+-){1,}[A-Z0-9]{2,}\b/);
 }
-forbidMatch("styles.css", files.css, /@import\s+url\s*\(/i);
-forbidMatch("styles.css", files.css, /url\(\s*["']?(?:https?:|\/\/)/i);
+for (const [name, css] of Object.entries({ "styles.css": files.css, "404.css": files.lostStarsCss })) {
+  forbidMatch(name, css, /@import\s+url\s*\(/i);
+  forbidMatch(name, css, /url\(\s*["']?(?:https?:|\/\/)/i);
+}
+
+for (const file of siteFiles) {
+  const relativePath = relative(siteRoot, file).replaceAll("\\", "/");
+  if (/\.(?:fbx|prefab|psd|ai|fig|sketch|blend|unitypackage)$/i.test(relativePath)) {
+    errors.push(`${relativePath}: raw/source asset must not be deployed`);
+  }
+  if (relativePath.startsWith("assets/")) {
+    const { size } = await stat(file);
+    if (size > 512 * 1024) {
+      errors.push(`${relativePath}: asset exceeds 512 KiB performance budget`);
+    }
+  }
+}
 
 if (errors.length) {
   console.error("WillowinWorld security check failed:");

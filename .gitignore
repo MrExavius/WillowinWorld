@@ -1,0 +1,24 @@
+# Local/raw source assets should not be deployed or committed.
+private-assets/
+papka/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.orig
+
+# Local dependency/build folders
+node_modules/
+dist/
+build/
+.cache/
+.pytest_cache/
+__pycache__/

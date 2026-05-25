@@ -63,6 +63,46 @@
     prefersDark.addEventListener("change", event => setTheme(event.matches ? "dark" : "light", false));
   }
 
+  function initGameFilters() {
+    document.querySelectorAll(".game-filters").forEach(group => {
+      const filters = group.querySelectorAll("[data-filter]");
+      if (!filters.length) return;
+
+      const scope = group.closest("section") || document;
+      const cards = scope.querySelectorAll(".game-card");
+      if (!cards.length) return;
+
+      const status = scope.querySelector("[data-filter-status]");
+      const updateFilter = activeButton => {
+        const filter = activeButton.dataset.filter || "All";
+        let visibleCount = 0;
+
+        filters.forEach(button => {
+          const active = button === activeButton;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+
+        cards.forEach(card => {
+          const tags = card.dataset.tags || "";
+          const visible = filter === "All" || tags.includes(filter);
+          card.classList.toggle("is-hidden", !visible);
+          if (visible) visibleCount += 1;
+        });
+
+        if (status) {
+          status.textContent = filter === "All"
+            ? `Showing all ${visibleCount} game worlds.`
+            : `Showing ${visibleCount} ${filter} game ${visibleCount === 1 ? "world" : "worlds"}.`;
+        }
+      };
+
+      filters.forEach(button => {
+        button.addEventListener("click", () => updateFilter(button));
+      });
+    });
+  }
+
   function initCursorMascot(options) {
     if (!body.classList.contains(options.pageClass)) return;
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -136,7 +176,7 @@
     mascotClass: "nature-cursor-mascot",
     glowClass: "nature-cursor-glow",
     imageClass: "nature-cursor-image",
-    src: "../assets/Nature%20Seeds/Galvnie2.png",
+    src: "../assets/Nature%20Seeds/Galvnie2.webp",
     imageWidth: 500,
     imageHeight: 500,
     startX: 0.58,
@@ -153,7 +193,7 @@
     mascotClass: "candy-cursor-mascot",
     glowClass: "candy-cursor-glow",
     imageClass: "candy-cursor-image",
-    src: "../assets/Candy%20Shop/site/mascot-cursor.png",
+    src: "../assets/Candy%20Shop/site/mascot-cursor.webp",
     imageWidth: 640,
     imageHeight: 640,
     startX: 0.62,
@@ -204,7 +244,7 @@
     mascotClass: "press-cursor-mascot",
     glowClass: "press-cursor-glow",
     imageClass: "press-cursor-image",
-    src: "assets/Nature%20Seeds/Galvnie1.png",
+    src: "assets/Nature%20Seeds/Galvnie1.webp",
     imageWidth: 500,
     imageHeight: 500,
     startX: 0.6,
@@ -214,4 +254,5 @@
     boundary: 58,
     smoothing: 0.1
   });
+  initGameFilters();
 })();

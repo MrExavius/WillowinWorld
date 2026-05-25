@@ -15,6 +15,7 @@
   <meta name="twitter:title" content="WillowinWorld Press Kit">
   <meta name="twitter:description" content="Studio facts, game portfolio and preview assets for WillowinWorld's mobile game worlds.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/willowinworld-logo-day.webp">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>WillowinWorld Press Kit</title>
   <link rel="canonical" href="https://willowinworld.com/press-kit.html">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -128,17 +129,18 @@
         </div>
 
         <div class="game-filters" role="group" aria-label="Game filters">
-          <button class="filter-btn is-active" data-filter="All" type="button" aria-pressed="true" aria-controls="gamesGrid">All</button>
-          <button class="filter-btn" data-filter="Arcade" type="button" aria-pressed="false" aria-controls="gamesGrid">Arcade</button>
-          <button class="filter-btn" data-filter="Puzzle" type="button" aria-pressed="false" aria-controls="gamesGrid">Puzzle</button>
-          <button class="filter-btn" data-filter="Physics" type="button" aria-pressed="false" aria-controls="gamesGrid">Physics</button>
-          <button class="filter-btn" data-filter="Cozy" type="button" aria-pressed="false" aria-controls="gamesGrid">Cozy</button>
-          <button class="filter-btn" data-filter="Mobile" type="button" aria-pressed="false" aria-controls="gamesGrid">Mobile</button>
-          <button class="filter-btn" data-filter="Magic" type="button" aria-pressed="false" aria-controls="gamesGrid">Magic</button>
-          <button class="filter-btn" data-filter="In Development" type="button" aria-pressed="false" aria-controls="gamesGrid">In Development</button>
+          <button class="filter-btn is-active" data-filter="All" type="button" aria-pressed="true" aria-controls="pressGamesGrid">All</button>
+          <button class="filter-btn" data-filter="Arcade" type="button" aria-pressed="false" aria-controls="pressGamesGrid">Arcade</button>
+          <button class="filter-btn" data-filter="Puzzle" type="button" aria-pressed="false" aria-controls="pressGamesGrid">Puzzle</button>
+          <button class="filter-btn" data-filter="Physics" type="button" aria-pressed="false" aria-controls="pressGamesGrid">Physics</button>
+          <button class="filter-btn" data-filter="Cozy" type="button" aria-pressed="false" aria-controls="pressGamesGrid">Cozy</button>
+          <button class="filter-btn" data-filter="Mobile" type="button" aria-pressed="false" aria-controls="pressGamesGrid">Mobile</button>
+          <button class="filter-btn" data-filter="Magic" type="button" aria-pressed="false" aria-controls="pressGamesGrid">Magic</button>
+          <button class="filter-btn" data-filter="In Development" type="button" aria-pressed="false" aria-controls="pressGamesGrid">In Development</button>
         </div>
+        <p class="filter-status" data-filter-status role="status" aria-live="polite">Showing all game worlds.</p>
 
-        <div class="games-grid press-games-grid">
+        <div class="games-grid press-games-grid" id="pressGamesGrid">
           <article class="game-card nature-card" id="nature-card" aria-label="Nature Seed draw-to-solve physics puzzle" data-tags="Puzzle Physics Cozy Ecology Nature Draw-to-solve Magic Mobile Meditative Relaxing Zen Atmospheric Restoration Beta">
             <div class="game-cover nature-game-cover">
               <div class="nature-stage nature-stage-card" aria-hidden="true">
@@ -151,9 +153,9 @@
                 <span class="nature-water-drop is-first"></span>
                 <span class="nature-water-drop is-second"></span>
                 <span class="nature-bloom"></span>
-                <img class="nature-growth" src="assets/Nature%20Seeds/Galvnie_tree.png" width="669" height="373" alt="" loading="lazy" decoding="async">
-                <img class="nature-companion nature-companion-water" src="assets/Nature%20Seeds/Galvnie1.png" width="500" height="500" alt="" loading="lazy" decoding="async">
-                <img class="nature-companion nature-companion-seed" src="assets/Nature%20Seeds/Galvnie2.png" width="500" height="500" alt="" loading="lazy" decoding="async">
+                <img class="nature-growth" src="assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" loading="lazy" decoding="async">
+                <img class="nature-companion nature-companion-water" src="assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
+                <img class="nature-companion nature-companion-seed" src="assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
               </div>
               <img class="nature-cover-icon" src="assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
               <img class="nature-hover-icon" src="assets/Nature%20Seeds/Icon2-site.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
@@ -167,7 +169,7 @@
                 <span class="status-pill">Public Beta Planned</span>
                 <span class="game-genre">Main genre: Draw-to-Solve Physics Puzzle</span>
               </div>
-              <div class="game-progress progress-99" role="group" aria-label="Nature Seed beta build progress 99 percent">
+              <div class="game-progress progress-99" role="group" aria-label="Nature Seed beta build progress 99 percent" title="99% means beta polish: onboarding, readability, optimization and restoration feedback.">
                 <div><strong>July 2026</strong><span>Beta polish</span></div>
                 <span class="game-progress-track" aria-hidden="true"></span>
               </div>
@@ -215,7 +217,7 @@
                 <span class="status-pill">Internal Beta</span>
                 <span class="game-genre">Main genre: Casual Merge Puzzle</span>
               </div>
-              <div class="game-progress progress-internal" role="group" aria-label="Candy Shop internal beta optimization and polish">
+              <div class="game-progress progress-internal" role="group" aria-label="Candy Shop internal beta optimization and polish" title="Internal beta means the core merge loop works and current work is polish, balance and optimization.">
                 <div><strong>Beta</strong><span>Optimization</span></div>
                 <span class="game-progress-track" aria-hidden="true"></span>
               </div>
@@ -275,7 +277,7 @@
                 <span class="status-pill">Production Draft</span>
                 <span class="game-genre">Main genre: Physics Puzzle / Arcade Hybrid</span>
               </div>
-              <div class="game-progress progress-draft" role="group" aria-label="Paint Blasters production draft core mechanics complete">
+              <div class="game-progress progress-draft" role="group" aria-label="Paint Blasters production draft core mechanics complete" title="Production draft means the core mechanics are playable, with final scope and feedback still being refined.">
                 <div><strong>Draft</strong><span>Core mechanics</span></div>
                 <span class="game-progress-track" aria-hidden="true"></span>
               </div>
@@ -346,7 +348,7 @@
                 <span class="status-pill">Longterm Project</span>
                 <span class="game-genre">Main genre: Hardcore Arcade</span>
               </div>
-              <div class="game-progress progress-planned" role="group" aria-label="Ball is God longterm project planned after current releases">
+              <div class="game-progress progress-planned" role="group" aria-label="Ball is God longterm project planned after current releases" title="Longterm means the story and direction exist, with active production planned after nearer releases.">
                 <div><strong>Planned</strong><span>After current releases</span></div>
                 <span class="game-progress-track" aria-hidden="true"></span>
               </div>
@@ -373,10 +375,10 @@
           <p class="section-copy">Optimized preview files for articles, decks and quick references. Source files stay private until requested directly.</p>
         </div>
         <div class="asset-list press-asset-list">
-          <a class="asset-link" href="assets/willowinworld-logo-day.webp"><img src="assets/willowinworld-logo-day.webp" width="1024" height="1024" alt="WillowinWorld day logo" loading="eager" decoding="sync"><strong>Studio logo</strong><span>Public web preview logo.</span></a>
-          <a class="asset-link" href="assets/Nature%20Seeds/Icon-site.webp"><img src="assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed icon" loading="eager" decoding="sync"><strong>Nature Seed icon</strong><span>Flagship draw-to-solve physics game.</span></a>
-          <a class="asset-link" href="assets/Candy%20Shop/site/icon_playmarket.webp"><img src="assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop icon" loading="eager" decoding="sync"><strong>Candy Shop icon</strong><span>Cozy candy merge puzzle.</span></a>
-          <a class="asset-link" href="assets/Paint%20Blasters/site/picon1.webp"><img src="assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters icon" loading="eager" decoding="sync"><strong>Paint Blasters icon</strong><span>Color arcade physics puzzle.</span></a>
+          <a class="asset-link" href="assets/willowinworld-logo-day.webp"><img src="assets/willowinworld-logo-day.webp" width="1024" height="1024" alt="WillowinWorld day logo" loading="lazy" decoding="async"><strong>Studio logo</strong><span>Public web preview logo.</span></a>
+          <a class="asset-link" href="assets/Nature%20Seeds/Icon-site.webp"><img src="assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed icon" loading="lazy" decoding="async"><strong>Nature Seed icon</strong><span>Flagship draw-to-solve physics game.</span></a>
+          <a class="asset-link" href="assets/Candy%20Shop/site/icon_playmarket.webp"><img src="assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop icon" loading="lazy" decoding="async"><strong>Candy Shop icon</strong><span>Cozy candy merge puzzle.</span></a>
+          <a class="asset-link" href="assets/Paint%20Blasters/site/picon1.webp"><img src="assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters icon" loading="lazy" decoding="async"><strong>Paint Blasters icon</strong><span>Color arcade physics puzzle.</span></a>
         </div>
       </section>
 
