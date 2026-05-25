@@ -2931,6 +2931,37 @@ h1 {
   gap: 10px;
 }
 
+.game-actions .btn-primary {
+  min-width: 128px;
+  border-color: color-mix(in srgb, var(--card-accent, var(--cyan)) 58%, rgba(255, 255, 255, 0.42));
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--card-accent, var(--cyan)) 72%, white),
+      color-mix(in srgb, var(--violet) 64%, white));
+  color: #06223c;
+  font-weight: 900;
+  box-shadow:
+    0 18px 48px color-mix(in srgb, var(--card-accent, var(--cyan)) 26%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.game-actions .btn-primary::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(45deg);
+  opacity: 0.82;
+}
+
+.game-actions .btn-primary:hover,
+.game-actions .btn-primary:focus-visible {
+  box-shadow:
+    0 22px 58px color-mix(in srgb, var(--card-accent, var(--cyan)) 34%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
 .game-page {
   min-height: 100svh;
   display: grid;
