@@ -37,7 +37,7 @@
           <div class="eyebrow">404 - Lost portal</div>
           <h1>Catch the Lost Stars</h1>
           <p class="lead">This page slipped into a magical sky. Press Space or Start, move the cat left and right, catch falling stars and avoid black holes.</p>
-          <p class="microcopy">Choose mouse or keyboard on desktop. On mobile, move the cat with your finger. Space starts the game and toggles pause.</p>
+          <p class="microcopy">Choose mouse or keyboard on desktop. On mobile, move the cat with your finger. Space starts the game and toggles pause. Scores reset when the page closes.</p>
           <div class="actions">
             <button class="pill pill-primary" type="button" data-start-game>Start - Space</button>
             <a class="pill" href="index.html">Main Menu</a>
@@ -50,13 +50,20 @@
 
         <aside class="preview-card" aria-hidden="true">
           <div class="preview-stage">
+            <span class="preview-lane preview-lane-left"></span>
+            <span class="preview-lane preview-lane-mid"></span>
+            <span class="preview-lane preview-lane-right"></span>
             <span class="preview-aura"></span>
             <span class="preview-orbit preview-orbit-one"></span>
             <span class="preview-orbit preview-orbit-two"></span>
             <span class="preview-platform"></span>
+            <span class="preview-catch-ring"></span>
+            <span class="preview-danger-ring"></span>
             <span class="preview-spark preview-spark-one"></span>
             <span class="preview-spark preview-spark-two"></span>
             <span class="preview-spark preview-spark-three"></span>
+            <span class="preview-score-pop">+10</span>
+            <span class="preview-combo-pop">x3</span>
             <img class="preview-item star-a" src="assets/404/magic-cat-mascot_star1_clean.webp" width="512" height="512" data-sprite-preview="star1" alt="">
             <img class="preview-item star-b" src="assets/404/magic-cat-mascot_star3_clean.webp" width="512" height="512" data-sprite-preview="star3" alt="">
             <img class="preview-item heart" src="assets/404/magic-cat-mascot_heart_clean.webp" width="512" height="512" data-sprite-preview="heart" alt="">
@@ -69,7 +76,8 @@
 
     <div class="hud" aria-live="polite">
       <div class="score-pill"><span>Score</span><b id="scoreValue">0</b></div>
-      <div class="score-pill"><span>Best</span><b id="bestValue">0</b></div>
+      <div class="score-pill"><span>Run Best</span><b id="bestValue">0</b></div>
+      <div class="score-pill combo-pill"><span>Combo</span><b id="comboValue">x1</b></div>
       <div class="score-pill"><span>Lives</span><b id="livesValue">3</b></div>
       <div class="score-pill effect-pill"><span>Effect</span><b id="effectValue">None</b></div>
       <button class="pill" type="button" data-pause-game>Pause</button>

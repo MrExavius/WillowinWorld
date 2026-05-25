@@ -204,7 +204,7 @@
       z-index: 4;
       left: 50%;
       bottom: 20px;
-      width: min(760px, calc(100vw - 28px));
+      width: min(940px, calc(100vw - 28px));
       transform: translateX(-50%);
       justify-content: center;
       padding: 10px;
@@ -240,6 +240,10 @@
 
     .effect-pill {
       min-width: 154px;
+    }
+
+    .combo-pill {
+      min-width: 104px;
     }
 
     .overlay {
@@ -452,6 +456,7 @@
       box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.08),
         inset 0 -80px 110px rgba(7, 18, 34, 0.38);
+      animation: previewSkyShift 9.5s ease-in-out infinite;
     }
 
     .preview-stage::before {
@@ -478,6 +483,7 @@
         linear-gradient(115deg, rgba(255, 255, 255, 0.16) 0 8%, transparent 8% 17%, rgba(255, 255, 255, 0.1) 17% 20%, transparent 20%);
       background-size: 120px 120px, 156px 156px, 134px 134px, auto;
       opacity: 0.6;
+      animation: previewStarsDrift 7.5s linear infinite;
     }
 
     body[data-theme="light"] .preview-card {
@@ -504,9 +510,41 @@
     .preview-aura,
     .preview-orbit,
     .preview-platform,
-    .preview-spark {
+    .preview-spark,
+    .preview-lane,
+    .preview-catch-ring,
+    .preview-danger-ring,
+    .preview-score-pop,
+    .preview-combo-pop {
       position: absolute;
       pointer-events: none;
+    }
+
+    .preview-lane {
+      z-index: 1;
+      top: -14%;
+      width: 2px;
+      height: 78%;
+      border-radius: 999px;
+      background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+      box-shadow: 0 0 22px rgba(103, 220, 255, 0.22);
+      opacity: 0.4;
+      transform: rotate(13deg);
+      animation: lanePulse 3.8s ease-in-out infinite;
+    }
+
+    .preview-lane-left {
+      left: 26%;
+    }
+
+    .preview-lane-mid {
+      left: 51%;
+      animation-delay: -1.2s;
+    }
+
+    .preview-lane-right {
+      right: 25%;
+      animation-delay: -2.1s;
     }
 
     .preview-aura {
@@ -539,6 +577,7 @@
       border-radius: 50%;
       transform: translateX(-50%) rotate(-11deg);
       opacity: 0.68;
+      animation: orbitSweep 5.2s ease-in-out infinite;
     }
 
     .preview-orbit-two {
@@ -549,6 +588,7 @@
       border-top-color: transparent;
       transform: translateX(-50%) rotate(18deg);
       opacity: 0.5;
+      animation: orbitSweepAlt 6.4s ease-in-out infinite;
     }
 
     .preview-platform {
@@ -562,6 +602,36 @@
         radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.6), rgba(103, 220, 255, 0.28) 42%, transparent 72%);
       filter: blur(1px);
       transform: translateX(-50%);
+    }
+
+    .preview-catch-ring {
+      z-index: 5;
+      left: 50%;
+      bottom: 104px;
+      width: min(46%, 176px);
+      aspect-ratio: 1;
+      border: 2px solid rgba(103, 220, 255, 0.42);
+      border-radius: 50%;
+      box-shadow:
+        0 0 30px rgba(103, 220, 255, 0.28),
+        inset 0 0 26px rgba(255, 255, 255, 0.12);
+      opacity: 0;
+      transform: translateX(-50%) scale(0.76);
+      animation: catchPulse 4.8s ease-in-out infinite;
+    }
+
+    .preview-danger-ring {
+      z-index: 5;
+      right: 58px;
+      bottom: 124px;
+      width: 92px;
+      aspect-ratio: 1;
+      border: 2px solid rgba(179, 108, 255, 0.52);
+      border-radius: 50%;
+      box-shadow:
+        0 0 28px rgba(179, 108, 255, 0.34),
+        inset 0 0 24px rgba(179, 108, 255, 0.14);
+      animation: dangerPulse 2.2s ease-in-out infinite;
     }
 
     .preview-spark {
@@ -610,6 +680,34 @@
       animation: previewFloat 3.2s ease-in-out infinite;
     }
 
+    .preview-score-pop,
+    .preview-combo-pop {
+      z-index: 7;
+      left: 50%;
+      bottom: 198px;
+      min-width: 54px;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      border-radius: 999px;
+      color: #09233b;
+      background: linear-gradient(135deg, #ffe277, #9df2ff);
+      font-size: 14px;
+      font-weight: 950;
+      text-align: center;
+      box-shadow: 0 14px 32px rgba(103, 220, 255, 0.28);
+      opacity: 0;
+      transform: translate(-50%, 16px) scale(0.82);
+      animation: scorePop 4.8s ease-in-out infinite;
+    }
+
+    .preview-combo-pop {
+      left: 62%;
+      bottom: 234px;
+      min-width: 46px;
+      background: linear-gradient(135deg, #bba5ff, #ff8bc2);
+      animation-delay: -1.6s;
+    }
+
     .preview-item {
       position: absolute;
       z-index: 6;
@@ -628,6 +726,7 @@
       left: 60px;
       width: 74px;
       height: 74px;
+      animation: previewFallA 4.8s ease-in-out infinite;
     }
 
     .preview-item.star-b {
@@ -635,7 +734,7 @@
       right: 52px;
       width: 86px;
       height: 86px;
-      animation-delay: -1.2s;
+      animation: previewFallB 5.4s ease-in-out -1.2s infinite;
     }
 
     .preview-item.heart {
@@ -643,7 +742,7 @@
       left: 44px;
       width: 70px;
       height: 70px;
-      animation-delay: -0.6s;
+      animation: heartFloat 3.7s ease-in-out -0.6s infinite;
     }
 
     .preview-item.hole {
@@ -651,7 +750,7 @@
       right: 54px;
       width: 84px;
       height: 84px;
-      animation-delay: -1.8s;
+      animation: holeThreat 4.8s ease-in-out -1.8s infinite;
     }
 
     .mobile-controls {
@@ -714,6 +813,21 @@
       }
     }
 
+    @keyframes previewSkyShift {
+      0%, 100% {
+        background-position: 0 0, 0 0, 0 0;
+      }
+      50% {
+        background-position: 0 0, 24px -18px, 0 0;
+      }
+    }
+
+    @keyframes previewStarsDrift {
+      to {
+        background-position: 120px 120px, -156px 156px, 134px -134px, 0 0;
+      }
+    }
+
     @keyframes previewFloat {
       50% {
         transform: translateX(-50%) translateY(-8px);
@@ -723,6 +837,124 @@
     @keyframes itemBob {
       50% {
         transform: translateY(-12px) rotate(5deg);
+      }
+    }
+
+    @keyframes previewFallA {
+      0% {
+        opacity: 0;
+        transform: translate3d(-18px, -86px, 0) rotate(-22deg) scale(0.72);
+      }
+      12%, 70% {
+        opacity: 1;
+      }
+      74% {
+        opacity: 1;
+        transform: translate3d(106px, 228px, 0) rotate(18deg) scale(1);
+      }
+      82%, 100% {
+        opacity: 0;
+        transform: translate3d(128px, 278px, 0) rotate(38deg) scale(0.36);
+      }
+    }
+
+    @keyframes previewFallB {
+      0% {
+        opacity: 0;
+        transform: translate3d(28px, -104px, 0) rotate(18deg) scale(0.72);
+      }
+      14%, 66% {
+        opacity: 1;
+      }
+      76% {
+        opacity: 1;
+        transform: translate3d(-96px, 174px, 0) rotate(-24deg) scale(1.04);
+      }
+      88%, 100% {
+        opacity: 0;
+        transform: translate3d(-128px, 238px, 0) rotate(-46deg) scale(0.4);
+      }
+    }
+
+    @keyframes heartFloat {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(-4deg) scale(1);
+      }
+      50% {
+        transform: translate3d(8px, -12px, 0) rotate(5deg) scale(1.06);
+      }
+    }
+
+    @keyframes holeThreat {
+      0%, 100% {
+        transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+        filter: saturate(1.08) drop-shadow(0 12px 14px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 12px rgba(179, 108, 255, 0.18));
+      }
+      50% {
+        transform: translate3d(-10px, 8px, 0) rotate(18deg) scale(1.08);
+        filter: saturate(1.18) drop-shadow(0 16px 18px rgba(0, 0, 0, 0.26)) drop-shadow(0 0 24px rgba(179, 108, 255, 0.36));
+      }
+    }
+
+    @keyframes lanePulse {
+      50% {
+        opacity: 0.74;
+        transform: rotate(13deg) translateY(18px);
+      }
+    }
+
+    @keyframes orbitSweep {
+      50% {
+        transform: translateX(-50%) rotate(-2deg) scaleX(1.05);
+        opacity: 0.9;
+      }
+    }
+
+    @keyframes orbitSweepAlt {
+      50% {
+        transform: translateX(-50%) rotate(30deg) scaleX(0.96);
+        opacity: 0.72;
+      }
+    }
+
+    @keyframes catchPulse {
+      64% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.76);
+      }
+      72% {
+        opacity: 0.86;
+        transform: translateX(-50%) scale(0.96);
+      }
+      86%, 100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(1.34);
+      }
+    }
+
+    @keyframes dangerPulse {
+      0%, 100% {
+        opacity: 0.4;
+        transform: scale(0.88);
+      }
+      50% {
+        opacity: 0.95;
+        transform: scale(1.08);
+      }
+    }
+
+    @keyframes scorePop {
+      0%, 62% {
+        opacity: 0;
+        transform: translate(-50%, 16px) scale(0.82);
+      }
+      72% {
+        opacity: 1;
+        transform: translate(-50%, 0) scale(1);
+      }
+      88%, 100% {
+        opacity: 0;
+        transform: translate(-50%, -24px) scale(0.96);
       }
     }
 
@@ -809,6 +1041,25 @@
       .preview-platform {
         bottom: 22px;
         width: min(48%, 180px);
+      }
+
+      .preview-catch-ring {
+        bottom: 78px;
+        width: min(40%, 132px);
+      }
+
+      .preview-danger-ring {
+        right: 18%;
+        bottom: 76px;
+        width: 66px;
+      }
+
+      .preview-score-pop {
+        bottom: 146px;
+      }
+
+      .preview-combo-pop {
+        bottom: 172px;
       }
 
       .preview-item {

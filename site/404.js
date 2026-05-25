@@ -4,6 +4,7 @@
       const ctx = canvas.getContext("2d", { alpha: true });
       const scoreValue = document.getElementById("scoreValue");
       const bestValue = document.getElementById("bestValue");
+      const comboValue = document.getElementById("comboValue");
       const livesValue = document.getElementById("livesValue");
       const effectValue = document.getElementById("effectValue");
       const toast = document.getElementById("gameToast");
@@ -28,23 +29,6 @@
         star3: "magic-cat-mascot_star3_clean.webp"
       };
 
-      function readStorage(key, fallback = "") {
-        try {
-          const value = localStorage.getItem(key);
-          return value === null ? fallback : value;
-        } catch (error) {
-          return fallback;
-        }
-      }
-
-      function writeStorage(key, value) {
-        try {
-          localStorage.setItem(key, value);
-        } catch (error) {
-          // The mini game keeps working when storage is blocked.
-        }
-      }
-
       const images = {};
       const sprites = {};
       Object.entries(imageSources).forEach(([key, file]) => {
@@ -62,7 +46,11 @@
         running: true,
         mode: "idle",
         score: 0,
-        best: Number(readStorage("wiwLostStarsBest", "0")) || 0,
+        best: 0,
+        combo: 0,
+        comboTimer: 0,
+        comboMultiplier: 1,
+        grace: 0,
         lives: 3,
         spawnTimer: 0,
         elapsed: 0,
@@ -73,7 +61,7 @@
           shield: 0,
           calm: 0
         },
-        controlMode: readStorage("wiwLostStarsControl", "mouse"),
+        controlMode: "mouse",
         pointerX: null,
         keys: { left: false, right: false },
         items: [],
@@ -214,6 +202,7 @@
       function updateHud() {
         scoreValue.textContent = state.score;
         bestValue.textContent = state.best;
+        comboValue.textContent = "x" + state.comboMultiplier;
         livesValue.textContent = state.lives;
         const active = [];
         if (state.effects.speed > 0) active.push("Speed " + Math.ceil(state.effects.speed));
@@ -229,6 +218,27 @@
         showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 1450);
       }
 
+      function comboMultiplierFor(combo) {
+        if (combo >= 18) return 4;
+        if (combo >= 11) return 3;
+        if (combo >= 5) return 2;
+        return 1;
+      }
+
+      function resetCombo() {
+        state.combo = 0;
+        state.comboTimer = 0;
+        state.comboMultiplier = 1;
+      }
+
+      function addCombo() {
+        state.combo += 1;
+        state.comboTimer = 4.4;
+        const previousMultiplier = state.comboMultiplier;
+        state.comboMultiplier = comboMultiplierFor(state.combo);
+        return state.comboMultiplier > previousMultiplier;
+      }
+
       function startGame() {
         state.score = 0;
         state.lives = 3;
@@ -236,6 +246,8 @@
         state.elapsed = 0;
         state.minute = 0;
         state.difficulty = 1;
+        resetCombo();
+        state.grace = 1.2;
         state.effects.speed = 0;
         state.effects.shield = 0;
         state.effects.calm = 0;
@@ -262,6 +274,34 @@
         showToast("Game over. Score " + state.score + ".");
       }
 
+      function resetEphemeralRun() {
+        state.score = 0;
+        state.best = 0;
+        state.lives = 3;
+        state.spawnTimer = 0;
+        state.elapsed = 0;
+        state.minute = 0;
+        state.difficulty = 1;
+        state.grace = 0;
+        resetCombo();
+        state.effects.speed = 0;
+        state.effects.shield = 0;
+        state.effects.calm = 0;
+        state.items.length = 0;
+        state.particles.length = 0;
+        state.pointerX = null;
+        state.keys.left = false;
+        state.keys.right = false;
+        cat.x = state.width * 0.5;
+        cat.vx = 0;
+        cat.direction = 1;
+        cat.hurtTime = 0;
+        cat.caughtTime = 0;
+        setMode("idle");
+        updateHud();
+        draw();
+      }
+
       function togglePause() {
         if (state.mode === "idle") {
           startGame();
@@ -278,7 +318,6 @@
         body.dataset.theme = theme;
         themeToggle.textContent = theme === "light" ? "☀" : "☾";
         themeToggle.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
-        writeStorage("wiwLostStarsTheme", theme);
       }
 
       function toggleTheme() {
@@ -291,7 +330,6 @@
 
       function setControlMode(mode) {
         state.controlMode = mode === "keyboard" ? "keyboard" : "mouse";
-        writeStorage("wiwLostStarsControl", state.controlMode);
         if (state.controlMode === "keyboard") state.pointerX = null;
         controlButtons.forEach((button) => {
           const active = button.dataset.controlMode === state.controlMode;
@@ -311,7 +349,10 @@
       }
 
       function spawnItem() {
-        const type = chooseItemType();
+        let type = chooseItemType();
+        const blackHoleLimit = Math.max(2, Math.min(5, Math.floor(1 + state.difficulty)));
+        const activeBlackHoles = state.items.filter((item) => item.type === "blackhole").length;
+        if (type === "blackhole" && activeBlackHoles >= blackHoleLimit) type = "star1";
         const config = itemConfigs[type];
         const margin = Math.max(46, state.width * 0.055);
         const variant = chooseStarVariant(type);
@@ -391,13 +432,15 @@
 
       function collectItem(item) {
         if (item.type === "blackhole") {
-          if (state.effects.shield > 0) {
+          if (state.effects.shield > 0 || state.grace > 0) {
             createBurst(item.x, item.y, "#8ff1ff", 18);
             showToast("Shield blocked the black hole.");
             updateHud();
             return;
           }
           state.lives -= 1;
+          resetCombo();
+          state.grace = 1.15;
           cat.hurtTime = 0.38;
           createBurst(item.x, item.y, "#b36cff", 18);
           updateHud();
@@ -415,10 +458,11 @@
           showToast("Heart caught. +1 life.");
         } else {
           const basePoints = itemConfigs[item.type].score;
-          const points = item.variant === "double" ? basePoints * 2 : basePoints;
+          const comboLeveled = addCombo();
+          const variantMultiplier = item.variant === "double" ? 2 : 1;
+          const points = basePoints * variantMultiplier * state.comboMultiplier;
           state.score += points;
           state.best = Math.max(state.best, state.score);
-          writeStorage("wiwLostStarsBest", String(state.best));
           const variant = item.variant ? variantConfigs[item.variant] : null;
           createBurst(item.x, item.y, variant ? variant.color : item.type === "star3" ? "#ffe277" : "#67dcff", item.type === "star1" ? 12 : 18);
           if (item.variant === "speed") {
@@ -434,6 +478,8 @@
             showToast("Red star: cleared " + removed + " drops and called a heart.");
           } else if (item.variant === "double") {
             showToast("Purple star: double points.");
+          } else if (comboLeveled) {
+            showToast("Combo x" + state.comboMultiplier + ". Keep the chain alive.");
           }
           cat.caughtTime = 0.18;
         }
@@ -462,6 +508,11 @@
         state.effects.speed = Math.max(0, state.effects.speed - dt);
         state.effects.shield = Math.max(0, state.effects.shield - dt);
         state.effects.calm = Math.max(0, state.effects.calm - dt);
+        state.grace = Math.max(0, state.grace - dt);
+        if (state.comboTimer > 0) {
+          state.comboTimer = Math.max(0, state.comboTimer - dt);
+          if (state.comboTimer === 0) resetCombo();
+        }
 
         const speedMultiplier = state.effects.speed > 0 ? 1.45 : 1;
         const maxSpeed = Math.max(520, state.width * 0.62) * speedMultiplier;
@@ -513,6 +564,12 @@
 
         for (let i = state.items.length - 1; i >= 0; i -= 1) {
           const item = state.items[i];
+          const catchY = cat.y - cat.height * 0.44;
+          if (item.type !== "blackhole" && item.y < catchY && catchY - item.y < 210) {
+            const pull = clamp(1 - Math.abs(item.x - cat.x) / (cat.width * 1.35), 0, 1);
+            item.x += (cat.x - item.x) * pull * dt * 1.8;
+            item.y += (catchY - item.y) * pull * dt * 0.18;
+          }
           item.y += item.vy * dt;
           item.x += (item.vx + Math.sin(state.time * 0.002 + item.wobble) * 18) * dt;
           item.angle += item.spin * dt;
@@ -520,7 +577,17 @@
             state.items.splice(i, 1);
             collectItem(item);
           } else if (item.y > state.height + item.size) {
+            if (item.type.startsWith("star") && state.combo > 0) resetCombo();
             state.items.splice(i, 1);
+          } else if (item.type === "blackhole" && !item.nearMissed && item.y > catchY + item.size * 0.35) {
+            const nearMiss = Math.abs(item.x - cat.x) < cat.width * 0.78;
+            if (nearMiss) {
+              item.nearMissed = true;
+              state.score += 1;
+              state.best = Math.max(state.best, state.score);
+              createBurst(item.x, catchY, "#8ff1ff", 8);
+              showToast("Close dodge. +1");
+            }
           }
         }
 
@@ -636,6 +703,25 @@
         for (const item of state.items) {
           const img = sprites[item.type] || images[item.type];
           const variant = item.variant ? variantConfigs[item.variant] : null;
+          const glowColor = item.type === "blackhole" ? "#b36cff" : variant ? variant.color : item.type === "star3" ? "#ffe277" : item.type === "heart" ? "#ff8bc2" : "#67dcff";
+          ctx.save();
+          ctx.globalAlpha = item.type === "blackhole" ? 0.42 : 0.24;
+          const tail = ctx.createLinearGradient(item.x, item.y - item.size * 1.45, item.x, item.y + item.size * 0.25);
+          tail.addColorStop(0, "rgba(255, 255, 255, 0)");
+          tail.addColorStop(1, glowColor);
+          ctx.fillStyle = tail;
+          ctx.beginPath();
+          ctx.ellipse(item.x, item.y - item.size * 0.44, item.size * 0.18, item.size * 0.86, 0, 0, Math.PI * 2);
+          ctx.fill();
+          if (item.type === "blackhole") {
+            ctx.globalAlpha = 0.52 + Math.sin(state.time * 0.014 + item.wobble) * 0.18;
+            ctx.strokeStyle = "rgba(179, 108, 255, 0.72)";
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.arc(item.x, item.y, item.size * 0.58 + Math.sin(state.time * 0.011) * 7, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          ctx.restore();
           ctx.save();
           ctx.translate(item.x, item.y);
           ctx.rotate(item.angle);
@@ -708,6 +794,7 @@
         ctx.shadowColor = "rgba(0, 0, 0, 0.38)";
         ctx.shadowBlur = 22;
         ctx.shadowOffsetY = 18;
+        if (state.grace > 0 && Math.floor(state.time / 90) % 2 === 0) ctx.globalAlpha = 0.62;
         ctx.drawImage(img, -cat.width * 0.5, -cat.height * 0.68, cat.width, cat.height);
         ctx.restore();
       }
@@ -723,7 +810,9 @@
         ctx.fillText(state.mode === "paused" ? "Paused" : "Game Over", state.width * 0.5, state.height * 0.48);
         ctx.font = "800 16px system-ui, sans-serif";
         ctx.fillStyle = "#b9d0df";
-        ctx.fillText("Press Space or Start to continue", state.width * 0.5, state.height * 0.48 + 38);
+        const detail = state.mode === "gameover" ? "Score " + state.score + " / run best " + state.best : "Press Space or Start to continue";
+        ctx.fillText(detail, state.width * 0.5, state.height * 0.48 + 38);
+        if (state.mode === "gameover") ctx.fillText("Close the page and this run is forgotten.", state.width * 0.5, state.height * 0.48 + 64);
         ctx.restore();
       }
 
@@ -783,6 +872,7 @@
       });
       themeToggle.addEventListener("click", toggleTheme);
       window.addEventListener("resize", fitCanvas);
+      window.addEventListener("pointerdown", pointerMove, { passive: true });
       window.addEventListener("pointermove", pointerMove, { passive: true });
       window.addEventListener("pointerup", pointerEnd, { passive: true });
       window.addEventListener("pointercancel", pointerEnd, { passive: true });
@@ -813,10 +903,14 @@
       document.addEventListener("visibilitychange", () => {
         if (document.hidden && state.mode === "playing") setMode("paused");
       });
+      window.addEventListener("pagehide", resetEphemeralRun);
+      window.addEventListener("pageshow", (event) => {
+        if (event.persisted) resetEphemeralRun();
+      });
 
       fitCanvas();
       const themeParam = new URLSearchParams(window.location.search).get("theme");
-      setTheme(themeParam === "light" || themeParam === "dark" ? themeParam : readStorage("wiwLostStarsTheme", body.dataset.theme || "dark"));
+      setTheme(themeParam === "light" || themeParam === "dark" ? themeParam : body.dataset.theme || "dark");
       setControlMode(state.controlMode);
       updateHud();
       draw();
