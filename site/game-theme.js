@@ -34,8 +34,15 @@
             ? theme === "dark" ? "#071225" : "#eef7ff"
             : body.classList.contains("ball-is-god-page")
               ? theme === "dark" ? "#071530" : "#eaf6ff"
-              : theme === "dark" ? "#031735" : "#fcfff2";
+              : body.classList.contains("press-kit-ocean-page")
+                ? theme === "dark" ? "#07162d" : "#eafcff"
+                : theme === "dark" ? "#031735" : "#fcfff2";
     }
+    document.querySelectorAll("[data-logo-theme]").forEach(logo => {
+      const lightLogo = logo.getAttribute("data-logo-light") || "assets/willowinworld-logo-day.webp";
+      const darkLogo = logo.getAttribute("data-logo-dark") || "assets/willowinworld-logo.webp";
+      logo.src = theme === "dark" ? darkLogo : lightLogo;
+    });
     if (themeToggle) {
       themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
       themeToggle.title = theme === "dark" ? "Switch to light theme" : "Switch to dark theme";
@@ -188,6 +195,23 @@
     offsetX: 88,
     offsetY: 88,
     boundary: 62,
+    smoothing: 0.1
+  });
+
+  initCursorMascot({
+    pageClass: "press-kit-ocean-page",
+    shellSelector: ".press-kit-ocean-shell",
+    mascotClass: "press-cursor-mascot",
+    glowClass: "press-cursor-glow",
+    imageClass: "press-cursor-image",
+    src: "assets/Nature%20Seeds/Galvnie1.png",
+    imageWidth: 500,
+    imageHeight: 500,
+    startX: 0.6,
+    startY: 0.42,
+    offsetX: 82,
+    offsetY: 92,
+    boundary: 58,
     smoothing: 0.1
   });
 })();
