@@ -455,6 +455,27 @@
         linear-gradient(180deg, transparent, rgba(7, 18, 34, 0.52));
     }
 
+    body[data-theme="light"] .preview-card {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(229, 248, 255, 0.44)),
+        var(--panel);
+      box-shadow: 0 30px 100px rgba(48, 126, 158, 0.18);
+    }
+
+    body[data-theme="light"] .preview-stage {
+      border-color: rgba(33, 142, 181, 0.18);
+      background:
+        radial-gradient(circle at 52% 26%, rgba(255, 220, 89, 0.42), transparent 13%),
+        radial-gradient(circle at 50% 32%, rgba(255, 255, 255, 0.42), transparent 25%),
+        linear-gradient(180deg, rgba(220, 246, 255, 0.92), rgba(166, 222, 238, 0.9) 57%, rgba(213, 245, 253, 0.96));
+    }
+
+    body[data-theme="light"] .preview-stage::before {
+      background:
+        radial-gradient(ellipse at 50% 0, rgba(255, 255, 255, 0.48), transparent 58%),
+        linear-gradient(180deg, transparent, rgba(103, 190, 213, 0.24));
+    }
+
     .preview-cat {
       position: absolute;
       left: 50%;

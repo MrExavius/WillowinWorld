@@ -1796,7 +1796,7 @@
         "Inquiry type: " + type + "\n\n" +
         message
       );
-      window.location.href = "mailto:hello@willowinworld.com?subject=" + subject + "&body=" + body;
+      window.location.href = "mailto:contact@willowinworld.com?subject=" + subject + "&body=" + body;
       showToast("Opening your email app with the message prepared.");
       closeContactModal();
       contactForm.reset();
