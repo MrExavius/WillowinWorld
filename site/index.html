@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WillowinWorld is an indie mobile game studio creating tactile magical games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?! Cozy physics puzzles, merge games and arcade worlds.">
+  <meta name="description" content="WillowinWorld makes mobile puzzle and arcade games: Nature Seed (draw-to-solve water physics), Candy Shop (cozy candy merge), Paint Blasters (color chain puzzle) and Ball is God?! (vertical arcade). Beta &amp; dev updates.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="WillowinWorld">
   <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
@@ -22,8 +22,8 @@
   <meta name="twitter:title" content="WillowinWorld - Magical Mobile Games">
   <meta name="twitter:description" content="Cozy physics puzzles, candy merge games, color arcade action and vertical descent worlds with tactile mobile-first polish.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/willowinworld-logo-day.webp">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-YEmRj4MUCAFjWbGin8kF7Sx3sRy60JEX+N5xb8TIze4='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>WillowinWorld - Indie Mobile Game Studio</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-GatsUKPt8OFTn4hMxdAKV7POviQPZKF20g9jdg4MMng='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>WillowinWorld | Nature Seed &amp; Mobile Puzzle Games</title>
   <link rel="canonical" href="https://willowinworld.com/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="manifest.webmanifest">
@@ -42,50 +42,143 @@
       "logo": "https://willowinworld.com/assets/willowinworld-logo-day.webp",
       "email": "contact@willowinworld.com",
       "description": "WillowinWorld is an indie mobile game studio creating tactile magical games, cozy physics puzzles and premium 2D worlds.",
-      "knowsAbout": ["Mobile game development", "Physics puzzle games", "Cozy games", "Arcade games", "2D art direction"]
+      "knowsAbout": ["Mobile game development", "Physics puzzle games", "Merge puzzle games", "Cozy games", "Arcade games", "2D art direction"]
     },
     {
       "@type": "WebSite",
       "@id": "https://willowinworld.com/#website",
       "name": "WillowinWorld",
       "url": "https://willowinworld.com/",
+      "inLanguage": "en",
+      "description": "Official site for WillowinWorld mobile puzzle and arcade games including Nature Seed, Candy Shop, Paint Blasters and Ball is God?!",
       "publisher": { "@id": "https://willowinworld.com/#studio" }
     },
     {
+      "@type": "ItemList",
+      "@id": "https://willowinworld.com/#games-list",
+      "name": "WillowinWorld Mobile Games",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Nature Seed", "url": "https://willowinworld.com/games/nature-seed.html" },
+        { "@type": "ListItem", "position": 2, "name": "Candy Shop", "url": "https://willowinworld.com/games/candy-shop.html" },
+        { "@type": "ListItem", "position": 3, "name": "Paint Blasters", "url": "https://willowinworld.com/games/paint-blasters.html" },
+        { "@type": "ListItem", "position": 4, "name": "Ball is God?!", "url": "https://willowinworld.com/games/ball-is-god.html" }
+      ]
+    },
+    {
       "@type": "VideoGame",
-      "@id": "https://willowinworld.com/#nature-seed",
+      "@id": "https://willowinworld.com/games/nature-seed.html#game",
       "name": "Nature Seed",
-      "genre": ["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle"],
+      "url": "https://willowinworld.com/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "genre": ["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Water puzzle"],
       "gamePlatform": ["iOS", "Android", "Mobile"],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "Game",
       "description": "A relaxing draw-to-solve physics puzzle where players draw magical lines, guide water to seeds and restore a dying forest.",
-      "author": { "@id": "https://willowinworld.com/#studio" }
+      "author": { "@id": "https://willowinworld.com/#studio" },
+      "publisher": { "@id": "https://willowinworld.com/#studio" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://willowinworld.com/games/nature-seed.html",
+        "availability": "https://schema.org/PreOrder",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     },
     {
       "@type": "VideoGame",
-      "@id": "https://willowinworld.com/#candy-shop",
+      "@id": "https://willowinworld.com/games/candy-shop.html#game",
       "name": "Candy Shop",
-      "genre": ["Merge puzzle", "Candy puzzle", "Casual puzzle"],
+      "url": "https://willowinworld.com/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "genre": ["Merge puzzle", "Candy puzzle", "Casual puzzle", "Physics puzzle"],
       "gamePlatform": ["iOS", "Android", "Mobile"],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "Game",
       "description": "A cozy candy merge puzzle with satisfying physics, combos, special sweets and long-term progression.",
-      "author": { "@id": "https://willowinworld.com/#studio" }
+      "author": { "@id": "https://willowinworld.com/#studio" },
+      "publisher": { "@id": "https://willowinworld.com/#studio" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://willowinworld.com/games/candy-shop.html",
+        "availability": "https://schema.org/PreOrder",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     },
     {
       "@type": "VideoGame",
-      "@id": "https://willowinworld.com/#paint-blasters",
+      "@id": "https://willowinworld.com/games/paint-blasters.html#game",
       "name": "Paint Blasters",
-      "genre": ["Color puzzle", "Physics arcade", "Destruction puzzle"],
+      "url": "https://willowinworld.com/games/paint-blasters.html",
+      "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
+      "genre": ["Color puzzle", "Physics arcade", "Destruction puzzle", "Chain reaction"],
       "gamePlatform": ["iOS", "Android", "Mobile"],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "Game",
       "description": "A vibrant physics puzzle arcade about mixing color-powered shots, smashing towers and triggering chain reactions.",
-      "author": { "@id": "https://willowinworld.com/#studio" }
+      "author": { "@id": "https://willowinworld.com/#studio" },
+      "publisher": { "@id": "https://willowinworld.com/#studio" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://willowinworld.com/games/paint-blasters.html",
+        "availability": "https://schema.org/PreOrder",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
     },
     {
       "@type": "VideoGame",
-      "@id": "https://willowinworld.com/#ball-is-god",
+      "@id": "https://willowinworld.com/games/ball-is-god.html#game",
       "name": "Ball is God?!",
-      "genre": ["Vertical descent arcade", "Hardcore arcade", "Skill-based arcade"],
+      "url": "https://willowinworld.com/games/ball-is-god.html",
+      "image": "https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp",
+      "genre": ["Vertical descent arcade", "Hardcore arcade", "One-touch arcade"],
       "gamePlatform": ["iOS", "Android", "Mobile"],
+      "operatingSystem": "iOS, Android",
+      "applicationCategory": "Game",
       "description": "A hardcore vertical descent arcade game about guiding Espa down a divine tower through one-touch timing and moral choices.",
-      "author": { "@id": "https://willowinworld.com/#studio" }
+      "author": { "@id": "https://willowinworld.com/#studio" },
+      "publisher": { "@id": "https://willowinworld.com/#studio" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://willowinworld.com/games/ball-is-god.html",
+        "availability": "https://schema.org/PreOrder",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://willowinworld.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What kind of games does WillowinWorld make?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WillowinWorld makes mobile-first games with tactile systems, cozy fantasy identity, physics-driven moments, polished UI and characters that feel alive."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are your games mobile-first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. WillowinWorld designs around mobile input, session length, screen clarity and performance from the first prototype."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work with publishers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. WillowinWorld is open to publisher conversations around production, platform strategy, UA, live operations and long-term game growth."
+          }
+        }
+      ]
     }
   ]
 }
@@ -195,7 +288,7 @@
               <div class="eyebrow">Our Worlds</div>
               <h2 class="section-title">Four game worlds, one philosophy.</h2>
             </div>
-            <p class="section-copy">Four mobile-first game worlds, one philosophy: playful systems, strong visual identity, and interactions that feel magical.</p>
+            <p class="section-copy">Four mobile-first game worlds, one philosophy: playful systems, strong visual identity, and interactions that feel magical. Explore our draw-to-solve physics puzzle, cozy merge game, color destruction arcade and hardcore vertical descent — each with its own game page, screenshots and devlog.</p>
           </div>
 
           <div class="studio-roadmap" aria-label="WillowinWorld roadmap">
@@ -253,7 +346,7 @@
                   <img class="nature-companion nature-companion-water" src="assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
                   <img class="nature-companion nature-companion-seed" src="assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
                 </div>
-                <img class="nature-cover-icon" src="assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
+                <img class="nature-cover-icon" src="assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed draw-to-solve water physics puzzle game icon" loading="lazy" decoding="async">
                 <img class="nature-hover-icon" src="assets/Nature%20Seeds/Icon2-site.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
                 <div class="cover-title">
                   <span>Draw-to-Solve Physics Puzzle</span>
@@ -301,7 +394,7 @@
                   <img class="candy-piece candy-piece-result" src="assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
                   <span class="candy-impact"></span>
                 </div>
-                <img class="candy-cover-icon" src="assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
+                <img class="candy-cover-icon" src="assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop cozy candy merge puzzle game icon" loading="lazy" decoding="async">
                 <img class="candy-hover-icon" src="assets/Candy%20Shop/site/icon_playmarket1.webp" width="640" height="640" alt="" loading="lazy" decoding="async">
                 <div class="cover-title">
                   <span>Casual Merge Puzzle</span>
@@ -361,7 +454,7 @@
                   <img class="paint-module" src="assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" loading="lazy" decoding="async">
                   <img class="paint-hero" src="assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" loading="lazy" decoding="async">
                 </div>
-                <img class="paint-cover-icon" src="assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
+                <img class="paint-cover-icon" src="assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters color physics puzzle arcade game icon" loading="lazy" decoding="async">
                 <img class="paint-hover-icon" src="assets/Paint%20Blasters/site/picon2.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
                 <div class="cover-title">
                   <span>Physics Puzzle / Arcade Hybrid</span>
@@ -432,7 +525,7 @@
                     <img class="ball-espa ball-espa-alt" src="assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" loading="lazy" decoding="async">
                   </div>
                 </div>
-                <img class="ball-cover-icon" src="assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
+                <img class="ball-cover-icon" src="assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God one-touch vertical arcade game icon" loading="lazy" decoding="async">
                 <img class="ball-hover-icon" src="assets/Ball%20is%20God/site/icon2.webp" width="520" height="520" alt="" loading="lazy" decoding="async">
                 <div class="cover-title">
                   <span>Vertical Descent Arcade</span>
