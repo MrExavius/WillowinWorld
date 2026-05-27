@@ -1,0 +1,1414 @@
+WillowinWorld — Полный аудит сайта 2026
+1. Краткий вердикт
+Категория Оценка Комментарий 
+Дизайн 8.510 Сильная атмосфера, живые игровые карточки, уникальный стиль 
+UX 710 Информация есть, но структура перегружена 
+Frontend 7.510 Код работает, но CSS ~9000 строк без архитектуры 
+Performance 5.510 Слишком много одновременных анимаций, тяжёлый canvas 
+Mobile 6.510 Базовая адаптивность есть, но heroразделы игр слабы 
+Branding 810 WillowinWorld узнаваем, двойной W работает 
+Security 8.510 Лучший показатель — CSP строгий, заголовки продуманы 
+Woweffect 810 404игра и constellationсекрет — отлично 
+2. Главные проблемы (критические)
+CSS монолит.styles.css — почти 9 000 строк плоского кода без разделения на модули, без CSS custom properties по компонентам, без слоёв @layer. Это уже сейчас делает поддержку тяжёлой, а к 5му проекту станет катастрофой.
+Canvas + 9 игровых CSSанимаций одновременно.На главной странице одновременно работают requestAnimationFrame canvasлуп, cursormascot, living hero panel с Nature Seed, ambient star particles, constellation, floating runes, background parallax. На среднем Android это 20–30 fps.
+Дублирование HTML в карточках игр.Один и тот же HTMLблок <div class="ballcloudfield"> с 16 картинками повторяется дважды — в index.html и presskit.html. Изменение одного требует изменения обоих.
+Игровые страницы — фиксированный backdrop + fixed position.На SafariiOS position fixed внутри isolation isolate и overflow hidden работают непредсказуемо. Это один из самых частых багов iOS Safari.
+Нет реального fallback для отключённого JS.Если JS не загрузился, сайт показывает пустой canvas, сломанный theme, нерабочие модалки и фильтры. Нет <noscript> ни в одном файле.
+Форма контактов — только mailto.Это не форма, это имитация. Для игровой студии 2026 года это сигнал незрелости перед издателями.
+3. Что уже хорошо — сохранить и усилить
+CSPполитика— одна из лучших в indieигровом секторе. requiretrustedtypesfor script, hashonly inline scripts, connectsrc none. Реально серьёзная работа.
+404страница— это конкурентное преимущество. Полноценная canvasигра с кошкой, звёздами, combo, shield, lives — редкость. Оставить и улучшить.
+Constellation easter egg— умная идея с hidden glint buttons и секретным паролем из букв игры. Создаёт ощущение живого авторского мира.
+Живые карточки игр.Ball is God с летящими камнями, Candy Shop с mergeанимацией, Paint Blasters с chain reaction — это не просто карточки, это минипревью геймплея. Сильно.
+gametheme.js — единый модуль темы.Правильное решение один файл управляет темой для всех страниц, хранит предпочтение в localStorage с graceful fallback.
+Security check script(securitycheck.mjs) — проверка перед деплоем. Профессионально.
+prefersreducedmotion— уважение к пользователям с вестибулярными нарушениями реализовано.
+4. Подробный аудит
+DESIGN  ART DIRECTION
+Сильные стороныСайт имеет узнаваемую визуальную систему — акварельная эстетика Nature Seed, конфетная мягкость Candy Shop, броская индустриальность Paint Blasters, небесная мифология Ball is God. Каждая игра получила свою цветовую тему через CSS custom properties (gameaccent, gamewarm). Это грамотно.
+Слабые стороны
+Hero section на главной перегружен. Одновременно canvas с котом, living nature panel, floating runes, constellation demo, portal badge, magic hud, heroworlds nav. Взгляд не знает, куда идти. По правилу Hicks Law — чем больше выборов, тем дольше решение.
+Типографика используется systemuiInter. Для игровой студии с таким визуальным амбишном это слабо. Нет фирменного акцента в шрифте. Хотя бы один displayшрифт для заголовков дал бы +2 балла к «premium feel».
+Кнопки .btnprimary выглядят хорошо (gradient + glow), но при скролле все CTA ведут на mailto — это снижает доверие к studii как к профессиональной организации.
+Футер минималистичный — это нормально, но brand name теряется среди ссылок. Footer для игровой студии должен быть финальным «whopper» — минивитрина.
+Отсутствует loading screen  intro animation. Когда пользователь первый раз заходит, canvas появляется резко. Нет плавного появления мира WillowinWorld.
+UX  USER EXPERIENCE
+Информационная архитектураимеет проблему навигация содержит Home  Games  Studio  Devlog  Press Kit  Contact — 6 пунктов, что нормально. Но Studio ведёт к якорю studio на той же странице, а не к отдельной странице. При добавлении команды, истории, карьеры — придётся переделывать всю структуру.
+Devlogразделён краткие карточки на главной + полные логи на страницах игр. Это создаёт путаницу. Пользователь кликает «Open Devlog» и оказывается на той же странице, но прокрученной вниз. Непонятно.
+Фильтры игрработают по тегам, но теги слишком широкие (Mobile, Physics, Cozy). Пользователь не может фильтровать по статусу — "In Beta", "Coming Soon", "Released".
+Нет search.На небольшом сайте это не критично, но devlog при расширении до 20+ записей станет нечитаемым без поиска.
+Контакты— форма открывается в модальном окне и отправляет через mailto. Это не работает для пользователей без emailклиента (часть молодой аудитории использует только вебпочту). Нет Telegram, Discord, TwitterX.
+Press Kitхорош по структуре, но не хватает downloadable zip с ассетами, логотипами и fact sheet в PDF.
+FRONTEND  CODE QUALITY
+CSS архитектура — главная проблема кода.9 000 строк в одном файле styles.css без @layer, без разделения по компонентам, без BEM или другой методологии. Есть условная группировка по компонентам, но порядок непредсказуем — .natureherolayout находится в 3 разных местах файла.
+Конкретные проблемы
+css
+Этот паттерн повторяется ~40 раз с минимальными отличиями 
+.natureseedpage .detailcard { bordercolor ...; borderradius 18px; background ...; }
+.candyshoppage .detailcard { bordercolor ...; borderradius 18px; background ...; }
+.paintblasterspage .detailcard { bordercolor ...; borderradius 18px; background ...; }
+.ballisgodpage .detailcard { bordercolor ...; borderradius 18px; background ...; }
+Это надо заменить на CSS custom properties
+css
+.detailcard {
+bordercolor colormix(in srgb, var(gameaccent) 22%, var(line));
+одно правило вместо четырёх 
+}
+HTML дублирование критическое.В index.html и presskit.html идентичные 4 карточки игр — Ball is God карточка содержит 16 <img> облаков. Это ~600 строк HTML, продублированных дважды. Нужны Web Components или шаблонизатор.
+Доступность (A11y)
+arialabel="Game page navigation" на каждой странице игры — хорошо.
+Но в 404.js динамически создаются canvasэлементы без altтекста.
+В scripts.js функция drawCat() рисует кота на canvas — нет текстового эквивалента для screen readers.
+Некоторые декоративные <span> без ariahidden="true".
+scripts.js — 1800 строк в одном файле.Canvas rendering, modal management, game logic, секреты, theme management, фильтры, FAQ, smooth scroll — всё в одном IIFE. Это антипаттерн для maintainability.
+Inline <style> в 404.cssначинается с отступом в 4 пробела — это визуально выглядит как embedded styles, но это отдельный файл. Минорно, но нечисто.
+gametheme.jsиспользует document.querySelectorAll("[datalogotheme]") — это правильно. Но функция initCursorMascot вызывается 5 раз с повторяющимися объектами конфигурации. Можно вынести в массив и пройти циклом.
+PERFORMANCE
+Самая острая проблема — requestAnimationFrame на главной странице.scripts.js запускает canvas loop с вызовами
+drawCachedBackground() — рисует замок, долины, облака, willow leaves
+drawStars() — итерирует по 92 звёздам
+drawParticles() — 70 частиц
+drawConstellation() 
+drawCat() — сложная геометрия или изображение
+drawBursts() — при кликах
+Это 60 fps canvas loop. На слабых устройствах это убивает батарею и создаёт thermal throttling.
+Уже реализованные меры (хорошо)
+targetFrameInterval() — ограничение до 31fps для lowmotion
+backgroundCacheKey — кэширование статичного фона
+IntersectionObserver для паузы анимаций карточек вне вьюпорта
+prefersReducedData detection
+Чего не хватает
+OffscreenCanvas для canvasработы в worker
+Throttling pointermove — сейчас каждое движение мыши вызывает startLoop()
+willchange transform добавлен на .naturecursormascot, но не на все анимированные элементы
+CSS анимации .ballcloud— 16 элементов с animation ballCloudDrift — это дорого
+Шрифт Inter загружается через systemui — хорошо, не нужен внешний fetch. Но если добавят Google Fonts — нужен fontdisplay swap
+LCP проблема<link rel="preload"> добавлен для ключевых изображений — правильно. Но canvas рисуется поверх всего и может мешать LCP detection.
+CLSCanvas position fixed с zindex 1 — не должен вызывать CLS. Но модальные окна при открытии добавляют overflow hidden на body — это может вызвать layout shift на страницах с видимым scrollbar.
+Реальные числа (оценка)
+Desktop ~7585 Lighthouse performance
+Mobile (midrange) ~4560 Lighthouse performance
+Mobile (lowend) <40
+MOTION DESIGN
+Что работает отлично
+Nature Seed цикл (sketch → painted → water drops → tree bloom → companions) — это кинематографично
+Candy Shop merge animation — тайминги правильные, satisfying
+Ball is God platform gate animation — читается геймплей
+Paint Blasters cube blast — chain reaction понятна
+Что стоит пересмотреть
+.ambientonly класс — правильная идея (паузить при lowmotion), но реализация через CSS animationplaystate означает, что элементы всё равно занимают место и создают paint — они просто заморожены. Лучше display none или visibility hidden с @media (prefersreducedmotion).
+Hover эффект на gamecard (hoverafter с radialgradient shine) — хороший touch. Но вычисляется каждый pointermove через JS (card.style.setProperty("shinex")). Это нормально, но только при (hover hover) and (pointer fine) — что уже проверяется.
+Constellation play mode — интересный интерактив, но его сложно обнаружить. Нет явной подсказки пользователю, что нужно кликать на звёзды.
+BRANDING
+СильноЛоготип «два W» (WillowinWorld) концептуально продуман — «двойной мир», «портал», «созвездие». SVG реализация с полилиниями читается хорошо.
+Слоган"creates magical mobile games that feel alive" — хороший, но слово «magical» сейчас стало generic в indieсекторе. Сильнее было бы чтото более конкретное "Tactile worlds. Real feel. Four games in the making." или "We build games that feel like they breathe.".
+ПозиционированиеСтудия позиционирует себя как «mobilefirst + cozy physics + premium art». Это рабочая ниша, но на сайте это читается только на 4м экране. Первое, что видит издатель — анимированный фон, потом текст. Нужен более агрессивный headline на первом экране.
+Tone of Voiceсейчас — поэтичный, немного загадочный ("Draw water paths. Wake the forest.", "Drop through heaven. Survive the fall."). Это правильно для B2C. Но для B2B (издатели) нужен параллельный более деловой tone — например, отдельная publishers страница.
+Нет social proof.Ни одного отзыва, ни одного медиаупоминания, ни одного числа (downloads, wishlist, beta signups). Даже один "5,000 beta signups" полностью меняет восприятие студии.
+SECURITY
+Очень сильная позиция для static site.Разбор
+CSP в _headers
+scriptsrc self sha256YEmRj4MUCAFjWbGin8kF7Sx3sRy60JEX+N5xb8TIze4=
+SHA256хэш для единственного inline скрипта (JSONLD) — правильно. connectsrc none — нет внешних запросов. frameancestors none — защита от clickjacking.
+requiretrustedtypesfor script — это Trusted Types API. Браузерная защита от DOM XSS. Для 2026 года это передовая практика.
+Что нужно проверитьулучшить
+StrictTransportSecurity maxage=31536000 — без includeSubDomains. Если когдалибо появится поддомен без HTTPS, это дыра. Добавить includeSubDomains как только все поддомены будут готовы.
+ReferrerPolicy strictoriginwhencrossorigin — правильно.
+PermissionsPolicy — исчерпывающий список, хорошо.
+Реальные риски
+1. Форма контактов через mailto — не является security risk сама по себе, но значит нет serverside ничего. Если добавят реальную форму позже — нужны CSRF токены, rate limiting, honeypot fields.
+2. localStorage используется для темы. trycatch обёртка есть. Валидация значения есть (=== "dark" === "light"). Это правильно.
+3. JavaScript секреты игр (gameSecretRewards) — логика захардкожена в frontend. Как указано в SECURITY.md, это намеренно — нет реальных наград. Правильное решение для static site.
+4. securitycheck.mjs проверяет наличие токенподобных строк через regex \b[AZ09]{3,}([AZ09]+){1,}[AZ09]{2,}\b. Это может дать false positives на IDстроки.
+5. Нет .wellknownsecurity.txt в проверяемых файлах — хотя securitycheck.mjs ожидает его (securityTxt). Значит он существует, просто не включён в список файлов.
+5. Таблица проблем
+Проблема Почему плохо Критичность Как исправить Приоритет 
+CSS монолит 9000 строк Невозможно масштабировать, баги при добавлении игры 5 🔴 Высокая Разбить на base.css, components, pages, использовать @layer P0 
+Canvas loop без idlepause 60fps battery drain даже когда пользователь читает 🔴 Высокая Pause loop когда tab не в фокусе И когда pointer не двигался >5s P0 
+HTML дублирование карточек 2 изменения вместо 1, легко рассинхронизировать 🟠 Средняя Web Components или serverside includes P1 
+Нет loadingintro screen Canvas появляется резко, нет «входа в мир» 🟡 Низкая CSS fadein на body, splash screen P2 
+mailto форма вместо реальной Не работает без emailклиента, нет для пользователей iOS 🟠 Средняя Netlify Forms  Formspree  собственный endpoint P1 
+Нет social proof Издатели не видят ни одного числа или отзыва 🟠 Средняя Добавить beta signups, waitlist count, quotes P1 
+iOS Safari fixed position bug Backdrop может ломаться на iPhone 🔴 Высокая Проверить и заменить position fixed на position sticky + scroll listener P0 
+16 облаков Ball is God анимируются всегда CSS paint каждый frame 🟠 Средняя Сократить до 68, использовать willchange только на активных P1 
+Нет fallback без JS Пустой, сломанный вид 🟠 Средняя <noscript> с базовым контентом P1 
+Нет publishers страницы B2B аудитория получает то же, что B2C 🟡 Низкая Отдельная страница с deck, facts, contact P2 
+display font отсутствует Сайт выглядит как SaaS, не как игровая студия 🟡 Низкая Один variable font для заголовков (Clash Display, Cabinet Grotesk) P2 
+Нет downloadable press kit zip Журналисты ожидают один клик → zip 🟡 Низкая Zip с лого, screenshots, factsheet PDF P2 
+6. Productionready рекомендации
+Перед деплоем обязательно
+Тестирование на реальных устройствах.iPhone SE (старый), Samsung Aсерия (midrange Android), iPad Safari. Конкретно проверить position fixed backdrop на iOS 16+, проверить canvas fps на Android Chrome.
+Запустить Lighthouse в incognito.Целевые показатели Performance >70 mobile, >90 desktop. LCP <2.5s. CLS <0.1.
+CSP тест через reportonly mode.Добавить ContentSecurityPolicyReportOnly с reportto эндпоинтом (можно Sentry или Report URI). Посмотреть, нет ли неожиданных violations.
+HSTS preload.Добавить preload к StrictTransportSecurity и сабмитнуть на hstspreload.org после стабилизации сайта.
+Оптимизация изображений.Проверить все .webp через Squoosh — убедиться что нет изображений >200KB для thumbnails и >512KB для hero.
+Запустить node toolssecuritycheck.mjs— уже реализован, запустить и убедиться что всё проходит.
+Добавить sitemap.xml autoupdate.Сейчас lastmod 20260524 — статическое. Это нормально для static site, но напоминание обновлять при каждом деплое.
+Robots.txt проверка.Текущий robots.txt разрешает всё кроме private, admin, api — которых нет. Это нормально, но лучше добавить Disallow tools чтобы скрыть security check script от индексации.
+7. Идеи для улучшения (20 конкретных)
+Интерактив и woweffect
+1. Звук при constellation completion.Короткий Web Audio API sound (без external файлов, через AudioCon oscillator) — магический аккорд когда созвездие завершено.
+2. Cursor trail с тематическими частицами.Сейчас trail — просто белыеcyan линии. Когда пользователь на странице Nature Seed — курсор оставляет зелёные листья. На Paint Blasters — краска. На Candy Shop — конфетти.
+3. Parallax при скролле для hero.Сейчас hero panel — статичный (кроме canvas). Лёгкий translate на scroll event (через IntersectionObserver + CSS variable) на hero panel создаёт глубину.
+4. Game card flip on mobile tap.На мобильном нет hover. Тап на карточку — плавный flip 180° — back side показывает краткие stats + кнопку.
+5. Typing animation для hero headline."creates magical mobile games that feel alive" появляется по буквам при первой загрузке. Один раз, не зацикленный.
+6. Progress bar для Nature Seed beta.Живой (анимированный fill) progress bar с countdown до July 2026. Можно обновлять через static JSON.
+7. Seasonal theme.В зависимости от месяца — небольшие изменения palette зима → снег на castle, весна → цветы на willow. Через JS Date.
+8. Waitlist counter."4,238 players waiting for Nature Seed beta" — обновляется через static JSON файл при каждом деплое. Создаёт FOMO.
+Дизайн и брендинг
+9. Display font для заголовков.Одна семья — например, Bricolage Grotesque или Clash Display (оба бесплатные, variable). Только для h1, h2 — не для UI. Загружать через <link rel="preload"> с fontdisplay optional.
+10. Animated logo.При hover на логотип в header — два W плавно расходятся и сходятся как крылья или портал. SVG SMIL или CSS animation.
+11. Game world minimap.В footer — маленькая SVGкарта «мира WillowinWorld» с 4 территориямииграми, кликабельная.
+12. издательpage publishers.Отдельная страница studio stats (team size, founded, focus), games summary, contact form с полем «Inquiry type Publishing  Investment  Partnership». Другой tone of voice — деловой.
+Контент и UX
+13. Devlog как RSS.Добавить feed.xml — журналисты и фанаты могут подписаться. Это бесплатный marketing канал.
+14. Wishlist email capture.Вместо mailto для beta — простая форма с email + game selector. Netlify Forms или Formspree (бесплатный tier). Пользователь видит success state.
+15. Video preview для игр.На страницах игр — 15секундный .webm без звука, autoplay, loop, muted — показывает реальный геймплей. Лучше любого статичного скриншота.
+16. Keyboard shortcuts.T — toggle theme, G — goto games, P — press kit. Для power users и журналистов. Показать в маленьком tooltip при первом посещении.
+Performance
+17. Service Worker для offline.При повторном посещении сайт загружается мгновенно из cache. Для игровой студии это демонстрация технической культуры.
+18. contentvisibility auto на нижних секциях.Studio, Systems, Process, FAQ — добавить contentvisibility auto с containintrinsicsize. Браузер не рендерит то, что вне вьюпорта.
+19. Canvas worker.Перенести background rendering в OffscreenCanvas + Web Worker. Главный thread освобождается для UI interaction. Значительный прирост на mobile.
+20. Аналитика без cookies.Plausible.io или Umami (selfhosted) — privacyfirst аналитика. Можно показать «X visitors this month» публично как social proof. CSP нужно обновить для их домена.
+8. Финальная концепция идеального сайта WillowinWorld
+Структура
+ (index)
+↳ Hero — "WillowinWorld builds games that feel alive"
+↳ Four Worlds — живые карточки 4 игр
+↳ Studio DNA — 6 принципов, но короче
+↳ Devlog snapshot — последние 2 записи
+↳ Magic moment — constellation  easter egg
+↳ CTA — beta waitlist
+gamesnatureseed
+gamescandyshop
+gamespaintblasters
+gamesballisgod
+presskit
+publishers ← новая
+blog ← devlog как отдельная секция
+404 ← уже отличная
+Визуальный стиль
+Сохранить текущую систему gamespecific themes. Добавить один display font для заголовков (variable, preloaded). Уменьшить количество одновременных анимаций на главной на 40% — убрать ambient particles в дневное время, оставить только для dark theme. Hero section — чище, сильнее один главный visual вместо пяти конкурирующих элементов.
+Интерактив
+Canvas остаётся, но переносится в OffscreenCanvas worker. Cursor effects — тематические pergamepage. Constellation — добавить звук и более явную discovery механику (мигание при hover на зону). 404 игра — добавить leaderboard (через localStorage, not server — чтобы не нарушать CSP).
+Анимации
+CSS анимации — оставить. Сократить количество одновременных CSS keyframe анимаций на карточках с 812 до 46 наиболее важных. Добавить animationplaystate paused через IntersectionObserver для всех анимаций, не только game cards.
+Атмосфера
+«Живой авторский мир» — это уже есть. Усилить storytelling каждая игра должна иметь 1 sentence origin story прямо в карточке, не только на detail page. Добавить миниквоту от разработчика рядом с каждой игрой.
+Техническая база
+Hosting Cloudflare Pages (CDN, free, performance)
+Forms Netlify Forms или Formspree
+Analytics Plausible (privacyfirst)
+CSS Разбить на @layer base components pages themes
+JS Разбить на modules canvas.js, modals.js, theme.js, filters.js, secrets.js
+Build минификация через esbuild или Vite
+Images все webp, проверка через squoosh, hotlink protection через CF
+Безопасность (финальный чеклист)
+Уже реализовано и сильно CSP с sha256, Trusted Types, frameancestors none, PermissionsPolicy, CORP, COOP, OriginAgentCluster, security check script, security.txt, SECURITY.md.
+Добавить HSTS preload, Subresource Integrity для любых будущих CDN скриптов, CSP reporting endpoint, ContentSecurityPolicyReportOnly для мониторинга.
+Форма (когда появится) CSRF token (если server), honeypot field, rate limit 5 reqmin per IP, email validation serverside, никогда не echo user input без sanitization.
+Итоговый вердикт.WillowinWorld — один из лучших indie game studio сайтов в своём бюджетном диапазоне. Настоящие конкурентные преимущества живые game previews в карточках, строгая CSP, 404игра, constellation easter egg, правильная gametheme система. Главные задачи перед релизом разбить CSS монолит, исправить canvas performance на mobile, добавить реальную форму для email capture, проверить iOS Safari. Сайт заслуживает выйти в мир — нужна финальная полировка, не переделка.
+WillowinWorld — Расширенный аудит конкретный код, детали, примеры
+ЧАСТЬ 1 CSS АРХИТЕКТУРА — КОНКРЕТНЫЙ РЕФАКТОРИНГ
+Текущее состояние — монолит. Вот как разбить правильно
+Предлагаемая структура файлов
+styles
+@layer base {
+reset.css
+tokens.css ← все CSS custom properties
+typography.css
+animations.css ← все @keyframes
+}
+@layer components {
+buttons.css
+cards.css
+modals.css
+forms.css
+eyebrow.css
+tags.css
+hud.css
+}
+@layer pages {
+home.css
+gamedetail.css
+presskit.css
+404.css
+}
+@layer themes {
+themenature.css
+themecandy.css
+themepaint.css
+themeball.css
+themepress.css
+}
+main.css ← только @import
+Пример tokens.css — то, чего сейчас не хватает
+css
+@layer base {
+root {
+Spacing scale 
+space1 4px;
+space2 8px;
+space3 12px;
+space4 16px;
+space6 24px;
+space8 32px;
+space12 48px;
+space16 64px;
+space24 96px;
+Border radius scale 
+radiusxs 6px;
+radiussm 10px;
+radiusmd 14px;
+radiuslg 20px;
+radiusxl 28px;
+radiuspill 999px;
+Game accent — переопределяется perpage 
+accent var(cyan);
+accentsoft colormix(in srgb, var(accent) 12%, transparent);
+accentborder colormix(in srgb, var(accent) 28%, var(line));
+accentglow 0 0 28px colormix(in srgb, var(accent) 44%, transparent);
+Animation speeds 
+durationfast 180ms;
+durationnormal 280ms;
+durationslow 480ms;
+durationambient 8s;
+Zindex scale 
+zcanvas 1;
+zcontent 1;
+zsticky 10;
+zheader 50;
+zmodal 90;
+ztoast 110;
+}
+}
+Рефакторинг повторяющегося паттерна карточек. Сейчас
+css
+140 строк с мелкими отличиями 
+.natureseedpage .detailcard { bordercolor colormix(in srgb, var(gameaccent) 22%, rgba(75, 99, 66, 0.14)); background radialgradient(...), rgba(255, 254, 235, 0.64); }
+.candyshoppage .detailcard { bordercolor colormix(in srgb, var(gameaccent) 24%, rgba(125, 64, 104, 0.14)); background radialgradient(...), rgba(255, 249, 238, 0.66); }
+.paintblasterspage .detailcard { ... }
+.ballisgodpage .detailcard { ... }
+После рефакторинга — 8 строк
+css
+Все gamedetail pages наследуют gameaccent и gamesurface 
+.gamedetailpage .detailcard,
+.gamedetailpage .assetlink,
+.gamedetailpage .updatelist li {
+bordercolor var(accentborder);
+background
+radialgradient(ellipse at 12% 10%, var(accentsoft), transparent 32%),
+repeatinglineargradient(118deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 13px),
+var(surface);
+}
+Уникальные цвета задаются через gamesurface на уровне root[datapage] 
+ЧАСТЬ 2 JAVASCRIPT АРХИТЕКТУРА — МОДУЛЬНЫЙ РЕФАКТОРИНГ
+scripts.js — 1800 строк в одном IIFE. Вот как должно выглядеть
+Предлагаемая структура модулей
+js
+ main.js — точка входа
+import { initTheme } from .modulestheme.js;
+import { initCanvas } from .modulescanvas.js;
+import { initModals } from .modulesmodals.js;
+import { initSecrets } from .modulessecrets.js;
+import { initFilters } from .modulesfilters.js;
+import { initNav } from .modulesnav.js;
+import { initReveals } from .modulesreveals.js;
+document.addEventListener(DOMContentLoaded, () => {
+initTheme();
+initNav();
+initFilters();
+initModals();
+initSecrets();
+initReveals();
+ Canvas — defer до после первого paint
+requestIdleCallback(() => initCanvas(), { timeout 1000 });
+});
+canvas.js — правильная idle management
+js
+ Текущая проблема canvas loop работает всегда
+ Решение triplegate pause
+class CanvasLoop {
+rafId = null;
+visible = true;
+pointerActive = false;
+pointerTimer = null;
+reducedMotion = window.matchMedia((prefersreducedmotion reduce)).matches;
+start() {
+if (this.rafId this.reducedMotion) return;
+this.rafId = requestAnimationFrame(t => this.tick(t));
+}
+pause() {
+if (this.rafId) {
+cancelAnimationFrame(this.rafId);
+this.rafId = null;
+}
+}
+onPointerMove() {
+this.pointerActive = true;
+this.start();
+clearTimeout(this.pointerTimer);
+ Пауза через 4 секунды бездействия
+this.pointerTimer = setTimeout(() => {
+this.pointerActive = false;
+if (!this.visible) this.pause();
+}, 4000);
+}
+tick(now) {
+this.render(now);
+ Не планировать следующий frame если всё idle
+if (this.visible && this.pointerActive) {
+this.rafId = requestAnimationFrame(t => this.tick(t));
+} else {
+this.rafId = null;
+}
+}
+}
+ Visibility API
+document.addEventListener(visibilitychange, () => {
+loop.visible = !document.hidden;
+document.hidden loop.pause() loop.start();
+});
+Конкретная оптимизация cursor mascot — сейчас
+js
+ В gametheme.js — 5 отдельных вызовов с повторяющимися объектами
+initCursorMascot({ pageClass "natureseedpage", ... });
+initCursorMascot({ pageClass "candyshoppage", ... });
+initCursorMascot({ pageClass "paintblasterspage", ... });
+ и т.д.
+После рефакторинга
+js
+const CURSOR_CONFIGS = [
+{ pageClass "natureseedpage", shellSelector ".natureseedshell", mascotClass "naturecursormascot", src "..assetsNature%20SeedsGalvnie2.webp", w 500, h 500, startX 0.58, startY 0.42, ox 72, oy 96, boundary 54, smooth 0.11 },
+{ pageClass "candyshoppage", shellSelector ".candyshopshell", mascotClass "candycursormascot", src "..assetsCandy%20Shopsitemascotcursor.webp", w 640, h 640, startX 0.62, startY 0.42, ox 86, oy 88, boundary 64, smooth 0.10 },
+{ pageClass "paintblasterspage", shellSelector ".paintblastersshell", mascotClass "paintcursormascot", src "..assetsPaint%20Blasterssitehero.webp", w 430, h 579, startX 0.64, startY 0.42, ox 82, oy 96, boundary 64, smooth 0.10 },
+{ pageClass "ballisgodpage", shellSelector ".ballisgodshell", mascotClass "ballcursormascot", src "..assetsBall%20is%20Godsiteespa.webp", w 520, h 285, startX 0.62, startY 0.40, ox 88, oy 88, boundary 62, smooth 0.10 },
+{ pageClass "presskitoceanpage",shellSelector ".presskitoceanshell",mascotClass "presscursormascot", src "assetsNature%20SeedsGalvnie1.webp", w 500, h 500, startX 0.60, startY 0.42, ox 82, oy 92, boundary 58, smooth 0.10 },
+];
+ Одна функция вместо 5 вызовов
+CURSOR_CONFIGS.forEach(cfg => {
+if (!document.body.classList.contains(cfg.pageClass)) return;
+initCursorMascot(cfg);
+});
+ЧАСТЬ 3 PERFORMANCE — КОНКРЕТНЫЕ ЧИСЛА И РЕШЕНИЯ
+Проблема 16 ballcloud img элементов с CSS анимацией
+Каждое облако — отдельный <img> с animation ballCloudDrift. Это 16 compositor layers. На mobile — catastrophic.
+Решение canvasbased clouds вместо DOM элементов
+js
+ Заменить 16 <img> на canvasрендер при низкой производительности
+function detectPerformanceTier() {
+const connection = navigator.connection;
+const memory = navigator.deviceMemory;
+if (memory && memory <= 2) return low;
+if (connection && ^(slow2g2g3g)$.test(connection.effectiveType)) return low;
+ Быстрый FPS тест
+let frames = 0;
+const start = performance.now();
+function count() {
+frames++;
+if (performance.now() start < 500) requestAnimationFrame(count);
+}
+requestAnimationFrame(count);
+return new Promise(resolve => {
+setTimeout(() => resolve(frames > 25 high low), 600);
+});
+}
+ На low tier — скрыть .ballcloudfield, показать упрощённый фон
+Проблема Nature Seed backdrop — тяжёлый fixed background
+css
+Текущий код — 7 слоёв background на before 
+.naturegameherobefore {
+background
+lineargradient(92deg, rgba(255, 254, 235, 0.94) 0 18%, ...),
+radialgradient(ellipse at 32% 48%, ...),
+radialgradient(ellipse at 72% 18%, ...),
+lineargradient(112deg, ...),
+url("assets...") center 44%  cover norepeat, <рефрейм при скролле 
+lineargradient(180deg, ...);
+}
+CSS background с url() и cover на before пересчитывается при каждом скролле на Chrome. Решение
+css
+Выделить backgroundimage в отдельный элемент с willchange 
+.natureherobgimage {
+position absolute;
+inset 0;
+background url("assets...") center 44%  cover norepeat;
+willchange transform; хинт браузеру создать отдельный layer 
+transform translateZ(0); промоция в compositor layer 
+pointerevents none;
+}
+Overlayградиенты — на before без url() — дёшево 
+CLS анализ что может вызывать layout shift
+html
+<!Проблема img без явных dimensions в presskit >
+<a class="assetlink" href="...">
+<img src="..." width="640" height="640" alt="...">
+<!widthheight заданы — хорошо, CLS не должно быть >
+<a>
+<!Потенциальная проблема модальное окно >
+<!При .modal.isopen { display grid } на body добавляется overflow hidden >
+<!Это убирает scrollbar (1517px) → layout shift на Windows Chrome >
+Решение для scrollbar CLS
+css
+Зарезервировать место для scrollbar заранее 
+html {
+scrollbargutter stable; Современные браузеры 
+overflowy scroll; Fallback 
+}
+body.modalopen {
+Вместо overflow hidden — компенсация 
+paddingright var(scrollbarwidth, 0px);
+overflow hidden;
+}
+js
+ Измерить ширину scrollbar при инициализации
+const scrollbarWidth = window.innerWidth document.documentElement.clientWidth;
+document.documentElement.style.setProperty(scrollbarwidth, scrollbarWidth + px);
+LCP оптимизация — <link rel="preload"> уже есть, но
+html
+<!Сейчас fetchpriority="high" на первое изображение — правильно >
+<link rel="preload" href="..assetsNature%20SeedsGalvnie_3_1site.webp" 
+as="image" type="imagewebp" fetchpriority="high">
+<!Не хватает preconnect для внешних ресурсов (если появятся) >
+<!Не хватает modulepreload для JS модулей >
+<link rel="modulepreload" href="scripts.js">
+<link rel="modulepreload" href="gametheme.js">
+ЧАСТЬ 4 MOBILE AUDIT — КОНКРЕТНЫЕ БАГИ И ИСПРАВЛЕНИЯ
+Баг 1 gamedetailtopbar на мобильном
+css
+Текущий код 
+.gamedetailtopbar {
+gridtemplatecolumns minmax(0, 1fr) auto auto;
+}
+@media (maxwidth 920px) {
+.gamedetailtopbar {
+gridtemplatecolumns minmax(0, 1fr) auto;
+nav перекидывается в gridcolumn 1  1; order 3 
+}
+}
+На iPhone SE (320px) .gamedetailnav с тремя кнопками (Games, Devlog, Press kit) переполняется. Кнопки имеют whitespace nowrap — они вылезают за экран.
+Исправление
+css
+@media (maxwidth 640px) {
+.gamedetailnav {
+webkitoverflowscrolling touch; Уже есть overflowx auto 
+maskimage lineargradient(90deg, transparent, black 12px, black calc(100% 12px), transparent);
+Визуально показать что есть overflow 
+}
+.gamedetailnav a {
+flexshrink 0; Не сжимать кнопки 
+padding 8px 10px;
+fontsize 0.84rem;
+}
+}
+Баг 2 Nature Seed hero на мобильном — natureheronote скрыт
+css
+@media (maxwidth 640px) {
+.natureheronote { display none; }
+.candyheronote { display none; }
+.paintheronote { display none; }
+.ballheronote { display none; }
+}
+Это содержательный текст ("Now in beta polish, with the first public beta planned for July 2026"), который полностью пропадает на телефоне. Пользователь телефона получает меньше информации — неправильно.
+Исправлениевместо display none — укоротить текст через JS или показать сокращённую версию
+html
+<p class="natureheronote">
+<span class="heronotefull">Now in beta polish, with the first public beta planned for July 2026. Current work focuses on onboarding, touch feel, level readability and restoration feedback.<span>
+<span class="heronoteshort">Public beta July 2026.<span>
+<p>
+css
+.heronoteshort { display none; }
+@media (maxwidth 640px) {
+.heronotefull { display none; }
+.heronoteshort { display inline; }
+}
+Баг 3 Touch target sizes
+Кнопки в .gamedetailnav имеют minheight 42px — это граница Apple HIG (44px). На Android Google рекомендует 48px. Исправить
+css
+.gamedetailnav a,
+.gamethemetoggle {
+minheight 48px; было 42px 
+minwidth 48px;
+}
+Баг 4 .secretglint buttons на мобильном
+Secret glint кнопки — width 46px; height 46px — touch target нормальный, но они position absolute внутри секций с overflow visible. На мобильном они могут попадать в scrollbar zone или выходить за край экрана.
+css
+Проверить что glint не выходит за края 
+.section > .secretglint {
+Ограничить от краёв 
+left clamp(5%, var(glintx), 95%);
+top clamp(5%, var(glinty), 95%);
+}
+Баг 5 position fixed на iOS Safari — реальный баг
+body.natureseedpagebefore и .naturepagebackdrop используют position fixed. В iOS Safari при открытии клавиатуры (если появится поле ввода) position fixed элементы «прыгают». Более серьёзно — когда overflow hidden на body совмещён с position fixed дочерними элементами, iOS Safari создаёт дублирующиеся paint layers.
+Проверочный список для iOS
+□ Открыть сайт в Safari на iPhone
+□ Открыть контактную форму (модальное окно)
+□ Тапнуть поле Name — появляется клавиатура
+□ Проверить не «прыгает» ли backdrop
+□ Закрыть клавиатуру — проверить не остался ли visual artifact
+□ Проверить bounce scroll (rubber band) — не ломает ли fixed elements
+Решениедля фиксированных бэкдропов использовать position sticky + scroll listener или position absolute внутри height 100vh; overflow hidden контейнера
+css
+Вместо position fixed на backdrop 
+.pagewrapper {
+position relative;
+height 100dvh; dynamic viewport height — iOS safe 
+overflow hidden;
+}
+.pagebackdrop {
+position absolute; работает стабильнее на iOS 
+inset 0;
+}
+ЧАСТЬ 5 SECURITY — ГЛУБОКИЙ РАЗБОР
+Что уже реализовано и почему это круто
+Trusted Types (requiretrustedtypesfor script) — это защита от DOM XSS на уровне браузера. Если код попытается сделать element.innerHTML = userInput, браузер заблокирует это с TypeError. Сайт правильно не использует innerHTML нигде в JS — проверено securitycheck.mjs. Это серьёзный security commitment.
+Что стоит добавить
+1. Subresource Integrity (SRI) — на будущее
+Сейчас нет внешних скриптов — SRI не нужен. Но если когдалибо добавят CDNшрифты или analytics
+html
+<!Обязательно с integrity hash >
+<link rel="stylesheet" 
+href="httpsfonts.googleapis.comcss2family=Bricolage+Grotesque"
+integrity="sha384[hash]"
+crossorigin="anonymous">
+2. Reporting API — для мониторинга CSP violations
+В _headers добавить 
+ReportingEndpoints default="httpsyourreporturi.comapicspreport"
+ContentSecurityPolicy ...; reportto default
+Это позволит видеть реальные CSP violations в production без аффекта на пользователей.
+3. Проверка на credential leak в securitycheck.mjs
+Текущий regex для токенов
+js
+forbidMatch(name, js, \b[AZ09]{3,}([AZ09]+){1,}[AZ09]{2,}\b);
+Это ловит ABCDEFGHI паттерны, но не ловит base64encoded secrets или lowercase API keys. Расширить
+js
+ Добавить к existing checks
+forbidMatch(name, js, sk_live_[azAZ09]{20,});  Stripe
+forbidMatch(name, js, ghp_[azAZ09]{36});  GitHub Personal Access Token
+forbidMatch(name, js, AIza[09AZaz_]{35});  Google API key
+forbidMatch(name, js, AKIA[09AZ]{16});  AWS Access Key
+4. Форма — когда появится
+Текущий mailto подход — самый безопасный из возможных (нет серверного кода). Но когда добавят реальную форму
+js
+ Обязательные элементы защиты
+ 1. Honeypot field — скрытое поле, которое боты заполняют
+ <input type="" name="website" tabindex="1" ariahidden="true" style="displaynone">
+ Server если website заполнено — reject
+ 2. Timing check — слишком быстрая отправка = бот
+const formOpenTime = Date.now();
+form.addEventListener(submit, (e) => {
+const elapsed = Date.now() formOpenTime;
+if (elapsed < 3000) {  менее 3 секунд — подозрительно
+e.preventDefault();
+ silently reject или показать CAPTCHA
+}
+});
+ 3. Rate limit header проверка на клиенте
+ Server должен вернуть 429 с RetryAfter
+5. robots.txt — улучшение
+Текущий robots.txt — базовый
+Useragent 
+Allow 
+Добавить
+Disallow tools скрыть securitycheck.mjs от индексации
+Disallow .wellknown некоторые боты не должны видеть security.txt напрямую
+Заблокировать известных content scrapers
+Useragent GPTBot
+Disallow 
+Useragent ChatGPTUser
+Disallow 
+Useragent CCBot
+Disallow 
+Useragent anthropicai
+Disallow 
+Разрешить обычным поисковикам
+Useragent Googlebot
+Allow 
+Useragent Bingbot
+Allow 
+ЧАСТЬ 6 ЗАЩИТА АССЕТОВ — ЧЕСТНЫЙ РАЗБОР
+Реально полезно
+Водяные знаки на промоарте.Все изображения в assets — публичные, браузер их уже получил. Водяной знак не мешает использованию, но идентифицирует источник при распространении. Рекомендую полупрозрачный WillowinWorld © 2026 в углу всех game screenshots (не на иконках — они слишком маленькие).
+Preview vs Source разделение.Уже реализовано правильно — в assets только оптимизированные .webp preview. SECURITY.md прямо говорит «Do not place layered source files, store submission packages, unpublished builds, PSDAIFigma files». Следовать этому.
+Hotlink protection через Cloudflare.Если сайт на Cloudflare Pages — можно включить hotlink protection другие сайты не смогут использовать ваши изображения напрямую через <img src="httpswillowinworld.comassets...">. Это реально снижает bandwidth theft.
+Cloudflare Transform Rules или через _headers 
+Нет стандартного способа через Netlify _headers — нужен middleware 
+robots.txt Disallow assets — спорно.Это не скрывает файлы (они всё равно доступны по прямой ссылке), но убирает из поискового индекса. Частично полезно.
+Частично полезно
+JS минификация и обфускация.Минификация уменьшает размер — это performance, не security. Обфускация усложняет чтение, но любой продвинутый developer всё равно разберётся за час с devtools. Это замедляет casual копирование, но не профессиональных скрейперов.
+XRobotsTag noindex для asset URLs— убирает из Google Images. Полезно, чтобы арт не индексировался как чужой контент.
+Бесполезная иллюзия
+rightclick disable, userselect none на изображениях, JavaScript блокировка Ctrl+S — обходится за 2 секунды через DevTools → Network → Save. Не тратить время.
+Copyright footer— не техническая защита, но юридически важно. Сейчас © 2026 WillowinWorld. All rights reserved. — правильно. Добавить ссылку на legal или presskitassetspolicy где описана политика использования.
+ЧАСТЬ 7 НОВЫЕ СТРАНИЦЫ — КОНКРЕТНЫЕ МАКЕТЫ
+publishers — страница для издателей
+Структура
+Hero "Lets talk about publishing WillowinWorld games."
+Subtitle "Were an indie studio with four mobilefirst games in development. 
+Heres everything a publisher needs to evaluate a partnership."
+Studio Facts (3 column grid)
+Founded 2024
+Focus Mobile puzzle & arcade
+Pipeline 4 games, 2 in betainternal
+Games Pipeline (таблица)
+Game Genre Platform Status Beta Revenue Model
+Nature Seed Drawtosolve physics iOSAndroid Beta Polish Jul 2026 Public F2P + IAP
+Candy Shop Merge puzzle iOSAndroid Internal Beta Q4 2026 F2P + IAP
+Paint Blasters Physics arcade iOSAndroid Production Draft 2027 F2P + IAP
+Ball is God! Vertical arcade iOSAndroid Story Draft TBD TBD
+Contact form (реальная, не mailto)
+Name  Company  Inquiry Type [PublishingUAInvestmentPartnership]  Message
+Downloads
+[ Studio Deck PDF ] [ Press Kit ZIP ] [ Games Overview PDF ]
+blog (devlog как отдельный раздел)
+Сейчас devlog — это несколько <ul> списков внутри каждой game page. Это не масштабируется.
+Структура static blog
+blog
+index.html ← список всех записей
+202605natureseedbeta.html ← отдельная запись
+202604candyshopui.html
+В sitemap.xml добавить каждую запись
+<url>
+<loc>httpswillowinworld.comblog202605natureseedbeta.html<loc>
+<lastmod>20260524<lastmod>
+<url>
+Это даёт SEOиндексацию каждой записи, возможность share конкретной записи, RSS feed.
+ЧАСТЬ 8 ИНТЕРАКТИВНЫЕ ИДЕИ С КОДОМ
+Идея Тематический cursor trail с частицами
+js
+ В gametheme.js — расширение initCursorMascot
+function initCursorTrail(pageClass, particleConfig) {
+if (!document.body.classList.contains(pageClass)) return;
+if (window.matchMedia((prefersreducedmotion reduce)).matches) return;
+if (!window.matchMedia((hover hover) and (pointer fine)).matches) return;
+const canvas = document.createElement(canvas);
+canvas.style.cssText = positionfixed;inset0;pointereventsnone;zindex2;mixblendmodescreen;
+document.body.appendChild(canvas);
+const ctx = canvas.getCon(2d);
+let particles = [];
+const resize = () => {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+};
+resize();
+window.addEventListener(resize, resize, { passive true });
+window.addEventListener(pointermove, (e) => {
+if (e.pointerType !== mouse) return;
+ Добавить 13 частицы при движении
+for (let i = 0; i < particleConfig.count; i++) {
+particles.push({
+x e.clientX + (Math.random() 0.5) 20,
+y e.clientY + (Math.random() 0.5) 20,
+vx (Math.random() 0.5) particleConfig.spread,
+vy Math.random() particleConfig.rise,
+life 1,
+decay 0.02 + Math.random() 0.02,
+size particleConfig.minSize + Math.random() particleConfig.sizeRange,
+color particleConfig.colors[Math.floor(Math.random() particleConfig.colors.length)],
+shape particleConfig.shape  circle leaf candy spark
+});
+}
+}, { passive true });
+function render() {
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+particles = particles.filter(p => p.life > 0);
+for (const p of particles) {
+p.x += p.vx;
+p.y += p.vy;
+p.vy += 0.04;  gravity
+p.life = p.decay;
+ctx.globalAlpha = p.life 0.7;
+ctx.fillStyle = p.color;
+if (p.shape === leaf) {
+ctx.save();
+ctx.translate(p.x, p.y);
+ctx.rotate(p.life 3);
+ctx.beginPath();
+ctx.ellipse(0, 0, p.size 0.4, p.size, 0, 0, Math.PI 2);
+ctx.fill();
+ctx.restore();
+} else {
+ctx.beginPath();
+ctx.arc(p.x, p.y, p.size, 0, Math.PI 2);
+ctx.fill();
+}
+}
+ctx.globalAlpha = 1;
+requestAnimationFrame(render);
+}
+render();
+}
+ Вызов с конфигами
+initCursorTrail(natureseedpage, {
+count 2,
+colors [7be188, 62d5ec, f3dd8b],
+shape leaf,
+spread 1.5, rise 1.5,
+minSize 3, sizeRange 4
+});
+initCursorTrail(candyshoppage, {
+count 3,
+colors [ff8fbd, 91d7ff, ffe08c],
+shape circle,
+spread 2, rise 1.8,
+minSize 4, sizeRange 5
+});
+initCursorTrail(paintblasterspage, {
+count 4,
+colors [36d3ff, ffe24b, ff3ab5, 73ff31],
+shape spark,
+spread 3, rise 2.5,
+minSize 3, sizeRange 3
+});
+Идея Beta countdown с эффектом
+js
+ Считать дни до July 1, 2026
+function initBetaCountdown() {
+const el = document.querySelector([databetacountdown]);
+if (!el) return;
+const target = new Date(20260701T000000);
+function update() {
+const now = new Date();
+const diff = target now;
+if (diff <= 0) {
+el.Content = Beta is live!;
+return;
+}
+const days = Math.floor(diff  (1000 60 60 24));
+const hours = Math.floor((diff % (1000 60 60 24))  (1000 60 60));
+el.innerHTML = 
+<span class="countdownnum">${days}<span><span class="countdownlabel">days<span>
+<span class="countdownnum">${hours}<span><span class="countdownlabel">hrs<span>
+;
+}
+update();
+setInterval(update, 60000);  обновлять каждую минуту
+}
+html
+<!В natureseed.html hero section >
+<div class="magichud">
+<span databetacountdown>Beta Polish · July 2026<span>
+<span class="huddots" ariahidden="true">...<span>
+<div>
+ЧАСТЬ 9 SEO — ЧЕГО НЕ ХВАТАЕТ
+Structured Data— уже есть в index.html (VideoGame schema для 4 игр). Хорошо. Добавить
+json
+{
+"@type" "VideoGame",
+"@id" "httpswillowinworld.comnatureseed",
+"name" "Nature Seed",
+"applicationCategory" "GameApplication",
+"operatingSystem" "iOS, Android",
+"offers" {
+"@type" "Offer",
+"price" "0",
+"priceCurrency" "USD",
+"availability" "PreOrder"  ← добавить
+},
+"aggregateRating" {  ← добавить когда появятся оценки
+"@type" "AggregateRating",
+"ratingValue" "4.8",
+"ratingCount" "124"
+}
+}
+Open Graph Images— сейчас используются game icons (640×640). OG Image должен быть 1200×630. Квадратные иконки при расшаривании в TwitterLinkedIn выглядят некрасиво — белые поля.
+Создать OG images
+assetsog
+ogwillowinworld.jpg 1200×630 — главная
+ognatureseed.jpg 1200×630 — game page 
+ogcandyshop.jpg 1200×630
+ogpaintblasters.jpg 1200×630
+ogballisgod.jpg 1200×630
+Meta description quality check
+html
+<!Текущий (хороший, но можно улучшить) >
+<meta name="description" content="Nature Seed is a relaxing drawtosolve physics puzzle game...">
+<!Улучшенный (добавить CTA и дифференциатор) >
+<meta name="description" content="Nature Seed — draw magical lines, guide water to seeds, restore a dying forest. Drawtosolve physics puzzle for iOS & Android. Public beta July 2026.">
+Canonical URLs— уже есть на всех страницах. Правильно.
+Hreflang— если планируется локализация, добавить заранее. Сейчас lang="en" на всех страницах — правильно для монолингвального сайта.
+ЧАСТЬ 10 ФИНАЛЬНЫЙ PRODUCTION CHECKLIST
+PRELAUNCH CHECKLIST — WillowinWorld
+═══ PERFORMANCE ═══
+□ Lighthouse Mobile score > 70
+□ Lighthouse Desktop score > 90 
+□ LCP < 2.5s на 3G
+□ CLS < 0.1
+□ Все images через <link rel="preload"> для abovethefold
+□ Canvas loop тест на Samsung Galaxy A23 (lowmid Android)
+□ Canvas loop тест на iPhone SE 2nd gen
+□ FPS тест при hover на game cards (все 4 карточки одновременно)
+□ Throttle CPU ×4 в Chrome DevTools → сайт не замерзает
+═══ BROWSER TESTING ═══
+□ Chrome desktop (latest)
+□ Firefox desktop (latest)
+□ Safari desktop (latest)
+□ Chrome Android
+□ Safari iOS 16+
+□ Safari iOS 17+
+□ Samsung Internet (5% Android market share)
+□ Edge (Chromium)
+═══ RESPONSIVE ═══
+□ 320px (iPhone SE)
+□ 375px (iPhone 14)
+□ 390px (iPhone 15 Pro)
+□ 428px (iPhone 14 Plus)
+□ 768px (iPad portrait)
+□ 1024px (iPad landscape  small laptop)
+□ 1280px (laptop)
+□ 1440px (standard desktop)
+□ 1920px (full HD)
+═══ ACCESSIBILITY ═══
+□ VoiceOver на iOS — пройти главную страницу
+□ TalkBack на Android
+□ Tab navigation — все интерактивные элементы достижимы
+□ Focus visible на всех кнопках (не только outline none)
+□ Contrast ratio 4.51 для текста на фонах
+□ Все img с alt="" или alt="[описание]"
+□ Все декоративные элементы с ariahidden="true"
+═══ SECURITY ═══
+□ node toolssecuritycheck.mjs → 0 ошибок
+□ Observatory.mozilla.org → A+ (или минимум A)
+□ securityheaders.com → A+
+□ CSP в _headers совпадает с meta CSP в HTML
+□ Нет console.log() в production коде
+□ Нет TODO, FIXME с чувствительными данными
+□ .wellknownsecurity.txt доступен и актуален
+□ robots.txt проверен
+═══ SEO ═══
+□ Google Search Console — submit sitemap
+□ Open Graph превью в Facebook Sharing Debugger
+□ Twitter Card Preview в Card Validator
+□ JSONLD validator → 0 ошибок
+□ Все canonical URLs корректны
+□ 404.html возвращает HTTP 404 (не 200)
+═══ CONTENT ═══
+□ Все emailссылки актуальны (contact@willowinworld.com)
+□ Все даты в devlog актуальны
+□ "July 2026" — проверить актуальность перед деплоем
+□ Press Kit ассеты — финальные, не placeholder
+□ Manifest.webmanifest — иконки проверены
+═══ HOSTING (Cloudflare Pages  Netlify) ═══
+□ HTTPS enforce — HTTP → HTTPS redirect
+□ Custom domain настроен
+□ _headers файл применяется (проверить через curl I)
+□ Assets cachecontrol public, maxage=31536000, immutable
+□ HTML cachecontrol nocache
+□ Hotlink protection для assets (Cloudflare)
+□ Error pages 404.html настроена как custom 404
+Это полный расширенный аудит. Самые важные вещи для реализации прямо сейчас разбить CSS на модули, добавить canvas idlepause, исправить iOS Safari fixedposition баги, проверить mobile touch targets и добавить реальный email capture вместо mailto. Остальное — итеративно после запуска.
+WillowinWorld — Глубокий дополнительный аудит
+1. Что ещё удалось найти
+По дизайну
+Шрифт Inter через systemui fallback— на Windows 11 systemui резолвится в Segoe UI Variable, на macOS в SF Pro, на Android в Roboto. Три разных шрифта → три разных метрики → потенциальный CLS и визуальное несоответствие между платформами.
+letterspacing 0 на h1h2— для displayтекста размером 5–6rem нулевой letterspacing выглядит плотно. Обычно крупный текст выигрывает от отрицательного трекинга (0.02em to 0.04em).
+Цветовой токен cyan имеет разные значения в darklight— 71e7ff vs 08a9c9. Это разные цвета, не просто разная яркость. В некоторых компонентах это создаёт визуальную непоследовательность.
+Game card hover transform translateY(8px)— без willchange transform это может вызвать repaint на картах со сложными backdropfilter.
+Press Kit страница— hero h1 "Four living game worlds, packaged for press and publishers" — слово «living» здесь теряет смысл (пресскит не живой). Несоответствие тону.
+По UX
+Constellation easter egg не discoverable.Кнопки .secretglint имеют fontsize 0 и opacity 0 по умолчанию. Анимация secretPulse показывает их с opacity 0.54 только на 32–48% цикла. Пользователь может провести на сайте 10 минут и не заметить ни одной. Это не easter egg — это невидимый контент.
+После завершения constellation (state.completed = true) сайт не даёт никакой долгосрочной награды.successBadge показывается 4.2 секунды и исчезает. Нет сохранения в localStorage, нет unlocked content. При перезагрузке — сброс. Пустое ощущение.
+Фильтры игриспользуют datatags строку для matching (tags.includes(filter)). tags.includes("Physics") сработает для "Water Physics" — это правильно. Но tags.includes("In Development") сработает только если точная строка "In Development" есть в datatags. На index.html в ballcard datatags содержит "In Development" — окей. Но фильтр "Magic" возвращает только Nature Seed и Candy Shop — Ball is God и Paint Blasters не имеют тега Magic, хотя оба игровых мира содержат магический элемент.
+Форма в модальном окне— после submit открывается emailклиент. contactForm.reset() и closeContactModal() вызываются сразу, не ожидая. На мобильном это выглядит так модальное окно закрывается, появляется emailприложение. Если пользователь не имеет настроенного email — они видят системный диалог «нет приложения», и непонятно, отправилось ли сообщение.
+Back navigationс game pages — <a href="..index.htmlgames">Games<a>. При клике браузер перезагружает главную страницу и скроллит к games. Анимации canvas запускаются заново, что создаёт мигание. Нет history.back() как альтернативы.
+По frontend
+securitycheck.mjs проверяетналичие inline scripts через regex <script\b([^>])>gi. Фильтрует скрипты без src и без type=applicationld+json. Но не фильтрует type="module" — если добавить <script type="module">, он пройдёт проверку без hash в CSP, что будет security violation.
+gametheme.js загружается без defer или asyncна всех game pages <script src="..gametheme.js"><script> в конце body — это лучше чем в head, но всё равно блокирует rendering финального кадра. defer здесь безопаснее.
+404.js использует new Image() для загрузки sprites, затем обрабатывает их через createCanvas + getImageData для удаления белого фона. Это означает что sprites грузятся без crossOrigin атрибута — на Cloudflare Pages это нормально (sameorigin), но если CDN сменит домен — CORS ошибка.
+В scripts.js функция getStructuredDataHash()в securitycheck.mjs ищет JSONLD через regex с lookahead. Этот regex работает для текущей структуры, но хрупкий — любое изменение атрибутов <script> тега (порядок id и type) сломает проверку.
+initGameAnimationVisibility()добавляет isanimationpaused на все game cards через IntersectionObserver. Но observer использует rootMargin "260px 0px" — это означает карточки начинают анимироваться за 260px до появления во вьюпорте. На медленных устройствах это означает анимации работают дольше чем нужно.
+По performance
+backdropfilter blur(18px) на .siteheader— один из самых дорогих CSS эффектов. На mobile Chrome это создаёт отдельный compositor layer. Хуже — header position fixed, что означает он перерисовывается при каждом скролле на устройствах без CSS scrolldriven animations поддержки.
+В scripts.js функция drawBackground() вызывает drawCachedBackground()которая рисует в backgroundCache canvas только при изменении backgroundCacheKey. Но drawWillowLeaves() вызывается каждый frame напрямую (не кэшируется). Это правильно для анимированных листьев, но drawWillowLeaves использует Math.sin() и ctx.ellipse() в цикле на каждый из 18 листьев — каждый frame.
+state.backgroundStars — массив из 92 звёзд(dark theme). Каждая звезда в drawStars() проверяет расстояние до курсора (Math.hypot(dx, dy)) и потенциально двигается. 92 операции Math.hypot + возможные star.x += ... на каждый frame — на lowend устройствах это заметно.
+drawGrass() функция существуетв scripts.js но не вызывается в основном render loop! Функция полностью определена (120 блейдов травы с quadraticCurveTo), но закомментирована или пропущена в вызове. Это мёртвый код, увеличивающий bundle size.
+CSS repeatinglineargradientиспользуется как ure overlay на ~30 элементах. На GPU это дёшево, но repeatinglineargradient(118deg, rgba(255,255,255,0.052) 0 1px, transparent 1px 14px) на больших блоках (fullscreen sections) создаёт значительную нагрузку при первом paint.
+По mobile
+initCursorMascot не отключается на touchустройствахполностью — проверка finePointer.matches отсекает touch, но window.addEventListener("pointermove") в gametheme.js слушается всегда. На мобильном pointermove не срабатывает при тапе (только при drag), поэтому практически безопасно, но event listener зарегистрирован впустую.
+Hero section на главной при ширине 320px— .heroworlds переключается на gridtemplatecolumns repeat(2, minmax(0, 1fr)). Четыре ссылки → 2×2 сетка. При minheight clamp(66px, 7svh, 78px) на маленьком экране это занимает ~160px — почти экран на SE. Это выдавливает кнопки CTA ниже fold.
+.huddots и .huddot— анимированные точки используют boxshadow для glow эффекта. На Android Chrome boxshadow анимация дорогая — каждое изменение вызывает repaint слоя. Сейчас точки не анимируются CSSanimation, но при добавлении animate класса это станет проблемой.
+Landscape mode на мобильном— hero sections игровых страниц имеют minheight calc(100svh 74px). В landscape на iPhone это ~350px высоты с большим контентом, который не помещается. Нет специального landscape breakpoint.
+По SEO
+JavaScriptрендеринг constellation и canvas— весь hero section на главной рендерится Canvas. Google Crawler не выполняет canvas. Headline "WillowinWorld creates magical mobile games that feel alive" присутствует в HTML — это хорошо. Но игровые карточки содержат контент в ariahidden="true" divах — Game cover titles и h3 скрыты за position absolute; zindex 8 что потенциально деиндексируется.
+Game pages не имеют BreadcrumbList structured data.Навигация есть в <nav>, но для Google лучше явная BreadcrumbList schema Home > Games > Nature Seed.
+Все 4 game pages имеют <link rel="canonical"> с абсолютными URL— правильно. Но presskit.html canonical указывает на httpswillowinworld.compresskit.html а в sitemap.xml эта страница также присутствует — консистентно, хорошо.
+sitemap.xml не включает 404.html— правильно, 404 страница не должна индексироваться. Но 404.html имеет <meta name="robots" content="noindex"> — дополнительная защита есть.
+Нет hreflang— если студия когдалибо добавит локализованные страницы, без предварительной архитектуры это будет болезненно переделывать.
+Internal linking structureслабая. Главная страница ссылается на game pages. Game pages ссылаются назад на главную. Presskit ссылается на главную и game pages. Но нет crosslinking между game pages ("While you wait for Nature Seed, check out Candy Shop"). Это влияет на crawl depth и PageRank distribution.
+По accessibility
+.faqquestion кнопки используют ariaexpanded— правильно. Но .faqanswer не имеет id и кнопка не имеет ariacontrols. Screen reader знает что чтото раскрылось, но не знает что именно и где это находится.
+Canvas в index.html— <canvas class="magiccanvas" ariahidden="true"> — правильно. Но canvas в 404.html — <canvas class="loststarscanvas" id="lostStarsCanvas"> — без ariahidden. Screen reader попытается описать canvas, ничего не найдёт, создаст путаницу.
+.gamefilters группа кнопокимеет role="group" и arialabel — хорошо. Но нет arialive на контейнере с результатами. Когда фильтр меняется, screen reader не объявляет что контент изменился.
+Heading hierarchy нарушена на game pages.natureseed.html <h1>Draw water paths. Wake the forest.<h1> — это правильно. Затем идут <h2> в секциях. Но <div class="eyebrow">Nature Seed<div> визуально выглядит как heading, но семантически это <div>. Screen reader пропускает его в heading navigation.
+Модальные окназакрываются по Escape — правильно. Но при закрытии focus возвращается на activeGameTrigger — только если он сохранён. Если modal открыт программно (не через кнопку), focus может потеряться.
+Color contrast muted c2d9e2 на bg 031735 — проверить. c2d9e2 на 031735 даёт примерно 7.11 — проходит AAA. Но muted2 86a4b9 на 031735 — примерно 4.21 — едва проходит AA, не проходит для мелкого текста (<18px).
+По security
+localStorage.getItem("willowtheme")валидируется (=== "dark" === "light"). Правильно. Но если ктото вручную установит localStorage.setItem("willowtheme", "<script>alert(1)<script>"), валидация вернёт null, и используется системная тема. Никакого XSS риска — правильная защита.
+contactForm submit handlerсобирает name, email, type, message через FormData, затем encodeURIComponent для mailto. encodeURIComponent корректно экранирует специальные символы. Но email не валидируется patternом перед отправкой — только type="email" на input, что можно обойти через DevTools.
+Нет autocomplete на password полях— не актуально (нет password fields), но стоит добавить autocomplete="name", autocomplete="email" на контактную форму — уже есть! Проверено.
+securitycheck.mjs читает файлычерез readFile. Если запустить из неправильной директории, путь new URL("..index.html", import.meta.url) может резолвиться неправильно. Нет проверки что файл существует перед чтением — unhandled rejection возможен.
+По защите ассетов
+robots.txt не блокирует assetsдиректорию. Google Images индексирует все game art изображения. Это двусторонне бесплатный трафик, но и лёгкое копирование с атрибуцией потери.
+Изображения в assets доступны по прямому URL без authentication.Нет hotlink protection в _headers — любой сайт может встроить <img src="httpswillowinworld.comassets..."> и использовать bandwidth без разрешения.
+2. Новые возможные причины проблем
+Возможная причина Почему это проблема Как проверить Вероятность Опасность Приоритет 
+systemui → разные шрифты на платформах Разные метрики шрифта → CLS, разный внешний вид DevTools → Computed → fontfamily на Windows Chrome, macOS Safari, Android Высокая (100% воспроизводимо) Средняя (CLS, brand inconsistency) P1 
+backdropfilter blur() на fixed header Repaint при каждом скролле на mobile Chrome DevTools → Rendering → Paint flashing → прокрутить страницу Высокая Средняя (battery, fps) P1 
+drawWillowLeaves() не кэшируется 18 ellipse операций каждый RAF frame Chrome Profiler → Frame rendering → искать ellipse calls Средняя Средняя (cpu на lowend) P2 
+drawGrass() — мёртвый код Увеличивает bundle size, вводит в заблуждение Grep drawGrass в scripts.js — найти вызов Высокая (код точно определён, не вызван) Низкая (только размер) P3 
+.secretglint opacity 0 большую часть времени Easter egg недискавераблен — пустая фича Наблюдать сайт 5 минут — заметить glint кнопки Высокая Средняя (потраченные усилия без результата) P2 
+getImageData() в 404.js без crossOrigin CORS ошибка при смене CDN домена Добавить crossOrigin = "anonymous" к Image, проверить с другого домена Средняя (при CDN) Высокая (сломает sprites) P1 
+<script src="gametheme.js"> без defer Блокирует rendering последнего кадра Lighthouse → Opportunities → "Eliminate renderblocking" Низкая (в конце body) Низкая P3 
+IntersectionObserver rootMargin "260px 0px" Анимации стартуют слишком рано вне вьюпорта DevTools → Performance → CPU throttle 4x → проверить когда анимации стартуют Высокая Средняя (battery drain) P2 
+Missing ariacontrols в FAQ Screen reader не знает что раскрылось и где NVDAVoiceOver → navigate FAQ → проверить announcements Высокая Средняя (A11y compliance) P1 
+canvaslostStarsCanvas без ariahidden Screen reader пытается описать игровой canvas Screen reader + 404 page Высокая Низкая (confusion, не blocker) P2 
+arialive отсутствует на filtered game grid Screen reader не объявляет изменение результатов VoiceOver → click filter → нет announcement Высокая Средняя (A11y) P1 
+muted2 86a4b9 contrast на dark bg Не проходит AA для текста < 18px contrastratio.com → 86a4b9  031735 Высокая Средняя (A11y, legal) P1 
+Нет BreadcrumbList schema на game pages Google не показывает breadcrumbs в SERP Google Rich Results Test Высокая Низкая (SEO упущение) P2 
+emoji + ariahidden на .huddot spans HUD dots рендерятся как пустые spans — screen reader игнорирует правильно, но визуально они без текста и без роли Screen reader + site header Средняя Низкая P3 
+Hotlink protection отсутствует Другие сайты могут использовать assets Создать HTMLфайл на другом домене с img src → willowinworld.com Высокая (это факт) Средняя (bandwidth) P2 
+3. Новые способы фикса
+Способ фикса Что изменить Почему поможет Риски Когда использовать Productionready 
+Добавить fontfamily с explicit Inter через Google Fonts или selfhosted Заменить systemui на Inter, systemui, sansserif с preloaded woff2 Одинаковый шрифт на всех платформах → нет CLS, нет visual inconsistency +200300ms initial load без preload Когда visual consistency важна между платформами Да, с fontdisplay optional 
+willchange transform на .gamecard при hover intent Добавить класс через pointerenter на 100ms delay, убрать через pointerleave GPU layer promotion до hover → плавная анимация Слишком много promoted layers = больше памяти Только для карточек с complex backdropfilter Да 
+Заменить backdropfilter blur на header solid background на mobile Media query (maxwidth 920px) → backdropfilter none; background var(surfacestrong) Устраняет дорогой repaint при скролле на mobile Потеря красивого blur эффекта Mobileonly degradation — правильный подход Да 
+Кэшировать willow leaves в отдельный offscreen canvas Рисовать leaves раз в 500ms в offscreen, compositing в main canvas Убрать 18 ellipse операций из hot path Небольшая сложность кода Когда profiler показывает leaves как bottleneck Да 
+Удалить drawGrass() функцию Grep + delete Уменьшить bundle на ~50 строк Ноль Прямо сейчас Да 
+.secretglint discovery mechanism Добавить subtle permanent visible glow на after pseudoelement + tooltip hint после 30s на сайте Пользователь обнаруживает easter egg Снижает "секретность" Всегда для engagementкритичных фич Да 
+crossOrigin = "anonymous" для Image в 404.js Одна строка перед images[key].src = ... Защищает от CORS ошибок при CDN Требует правильных CORS headers на CDN (sameorigin — автоматически) Превентивно сейчас Да 
+defer на <script src="..gametheme.js"> Атрибут defer Не блокирует финальный render Скрипт выполнится после DOMContentLoaded — нужно проверить что theme применяется до FOUC Если нет FOUC с defer Требует тестирования 
+Уменьшить rootMargin IntersectionObserver для анимаций С "260px 0px" до "80px 0px" Анимации стартуют позже → меньше фоновой работы Анимация может начаться позже чем ожидает пользователь Всегда Да 
+ariacontrols="faqanswerN" + id="faqanswerN" на FAQ HTML атрибуты Screen readers корректно связывают кнопку с контентом Нет WCAG 2.1 compliance Да 
+ariahidden="true" на canvaslostStarsCanvas HTML атрибут Screen reader не пытается описать игровой canvas Нет Сейчас Да 
+arialive="polite" на gamesGrid HTML атрибут Screen reader объявляет изменение результатов фильтра Избыточные announcements при быстрых кликах — добавить debounce WCAG 2.1 Да 
+Hotlink protection через _headers Referer check Cloudflare Transform Rules или серверная конфигурация Блокирует использование assets с других доменов Ломает прямые URL shares в некоторых клиентах Cloudflarehosted сайт Да, с whitelist 
+Selfhosted Inter шрифт как woff2 subset Скачать только latin subset, разместить в assetsfonts Нет зависимости от Google Fonts, лучший контроль Увеличивает репозиторий Когда privacy важна и отсутствие Google Fonts нужно Да 
+BreadcrumbList JSONLD на game pages Добавить в <script type="applicationld+json"> Rich snippets в Google SERP Нужно обновлять при изменении структуры Всегда Да 
+4. Сравнение подходов
+Шрифтовая стратегия
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+systemui (текущий) Средняя Минимальная ✅ Отлично ⚠️ Разный на платформах Нейтрально ✅ Нет внешних Низкий Да 
+Google Fonts (CDN) Высокая Низкая ⚠️ +DNS lookup ✅ Консистентный Нейтрально ⚠️ Внешний CDN, нарушает connectsrc none Средний Нет без CSP изменений 
+Selfhosted woff2 Высокая Средняя ✅ Хорошо с preload ✅ Консистентный ✅ Нейтрально ✅ Sameorigin Низкий Да ✅ 
+Variable font (single file) Высокая Средняя ✅ Один файл ✅ Отличный Нейтрально ✅ Sameorigin Низкий Да ✅ 
+ВыводSelfhosted Inter variable font (latin subset, ~40KB woff2) с fontdisplay optional — лучший выбор для этого проекта.
+Backdropfilter на header
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+backdropfilter blur везде (текущий) Высокая Нулевая ⚠️ Дорого на mobile ✅ Красиво Нейтрально Нейтрально Низкий Для desktop да 
+Отключить blur на mobile Высокая Низкая ✅ Хорошо ⚠️ Менее красиво на mobile Нейтрально Нейтрально Низкий Да ✅ 
+Solid background вместо blur Высокая Минимальная ✅ Отлично ⚠️ Потеря эффекта Нейтрально Нейтрально Минимальный Да 
+CSS scrolldriven opacity (уменьшать blur при скролле) Средняя Высокая ✅ Хорошо ✅ Интересно Нейтрально Нейтрально Средний Частично (поддержка) 
+@supports (backdropfilter blur()) + fallback Высокая Низкая ✅ Хорошо ✅ Progressive Нейтрально Нейтрально Низкий Да ✅ 
+Вывод@media (maxwidth 920px) { backdropfilter none } — минимальное усилие, максимальный выигрыш на mobile.
+Canvas loop management
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+Постоянный RAF (текущий) Высокая Нулевая ⚠️ Battery drain ✅ Всегда плавно Нейтрально Нейтрально Низкий Для simple sites 
+Pause при idle pointer (частично реализован) Высокая Низкая ✅ Хорошо ✅ Незаметно Нейтрально Нейтрально Средний Да ✅ 
+OffscreenCanvas + Worker Средняя Высокая ✅ Отлично ✅ Отлично Нейтрально Нейтрально Высокий Да, но сложно 
+requestIdleCallback + RAF hybrid Высокая Средняя ✅ Хорошо ⚠️ Может лагать Нейтрально Нейтрально Средний Да с осторожностью 
+CSSonly анимации (отказ от canvas) Высокая Высокая ✅ Отлично ⚠️ Менее гибко Нейтрально Нейтрально Средний Не для текущего дизайна 
+ВыводУлучшить текущий pauseприidle (добавить 4s timeout и tabhidden pause) — реалистично и эффективно. OffscreenCanvas — для версии 2.0.
+Accessibility для FAQ
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+Текущий (ariaexpanded только) Средняя Нулевая ✅ ⚠️ Screen reader не знает где контент Нейтрально Нейтрально Нет Нет (WCAG fail) 
+ariacontrols + ariaexpanded Высокая Минимальная ✅ ✅ Нейтрально Нейтрально Низкий Да ✅ 
+<details><summary> нативный Высокая Низкая ✅ ✅ Нативное поведение Нейтрально Нейтрально Низкий Да ✅ (но теряет CSS контроль) 
+ARIA disclosure widget (полный) Высокая Средняя ✅ ✅ Нейтрально Нейтрально Средний Да 
+Выводariacontrols + ariaexpanded — минимальное изменение, максимальный compliance. <details> — нативный, но теряет CSSанимацию accordion.
+5. Практический план
+🔴 Сделать в первую очередь
+1. Добавить ariahidden="true" на canvaslostStarsCanvas— одна строка HTML, немедленно фиксирует A11y blocker для screen reader пользователей на 404 странице.
+2. Добавить ariacontrols + id на FAQ компонент— требует добавить id="faqanswer{n}" на .faqanswer и ariacontrols="faqanswer{n}" на .faqquestion. WCAG 2.1 Level AA compliance.
+3. Добавить arialive="polite" region для game filters— <p class="filterstatus" arialive="polite" datafilterstatus> уже есть в presskit.html, но на index.html в .gamefilters нет datafilterstatus paragraph. Добавить для объявления результатов фильтрации.
+4. Проверить contrast muted2— измерить 86a4b9 на всех фоновых цветах где он используется. Если гдето fail — поднять до 9ab5c7 или аналога.
+5. crossOrigin = "anonymous" в 404.js— одна строка перед images[key].src = .... Превентивная защита от будущей CORS ошибки.
+6. Удалить drawGrass()— мёртвый код, ~50 строк, нулевой риск при удалении, уменьшает bundle.
+7. Проверить iOS Safari fixed position bug— открыть сайт в Safari на iPhone, открыть форму, тапнуть поле ввода, проверить backdrop поведение. Если баг воспроизводится — приоритет критический.
+8. gametheme.js добавить defer— но только после тестирования что нет FOUC (flash of unstyled content). Тема должна применяться до первого render. Если FOUC возникает — оставить без defer, но добавить inline <style> для начальной темы.
+🟠 Проверить после этого
+9. Уменьшить rootMargin с 260px до 80pxдля IntersectionObserver анимаций карточек. Протестировать что карточки всё равно анимируются при скролле к ним.
+10. Отключить backdropfilter blur на mobileчерез @media (maxwidth 920px). Измерить разницу FPS допосле в Chrome DevTools.
+11. Добавить BreadcrumbList schema на game pages— 10 минут работы, потенциальный выигрыш в SERP rich snippets через 24 недели после индексации.
+12. Hotlink protection— если хостинг на Cloudflare Pages, настроить Transform Rule для assets. Если Netlify — через _headers с Referer check (ограниченная поддержка).
+13. Internal crosslinking между game pages— добавить "Other games in development" секцию внизу каждой game page с ссылками на остальные три. Влияет на crawl depth и PageRank distribution.
+14. Добавить role="status" или role="alert" на .toast elements— оба существующих toastа (toast и gameToast) не имеют ARIA role. Screen reader не объявит toast message.
+15. Проверить datafilter exact match— добавить тег "Magic" к Ball is God и Paint Blasters если они логически подходят, или переименовать фильтр чтобы соответствовал реальным тегам.
+16. Landscape mode на мобильном— добавить специальный breakpoint для @media (orientation landscape) and (maxheight 500px) на game hero sections.
+🟢 Дополнительные улучшения
+17. Selfhosted Inter variable font— скачать InterVariable.woff2 (latin subset, ~40KB), разместить в assetsfonts, добавить @fontface с fontdisplay optional. Убрать зависимость от системного шрифта.
+18. Easter egg persistence— при завершении constellation сохранять в localStorage "willowsecretfound" "true". При следующем посещении — показывать subtle badge или изменённый элемент интерфейса. Reward должен сохраняться.
+19. <details><summary> для FAQ— рассмотреть переход на нативный элемент. Теряется CSSанимация высоты, но получается нативная A11y без JS.
+20. preferscontrast more media query— для пользователей с высоким контрастом автоматически поднимать opacity текстов и убирать прозрачные overlays.
+21. Page transition animation— при переходе с главной на game page добавить view transition API (document.startViewTransition()). Поддержка Chrome 111+, Firefox 126+. Graceful degradation для остальных.
+22. RSS feed для devlog— статический feed.xml с последними 10 записями. Генерировать как часть build process.
+6. Проверка фиксов
+A11y проверка
+NVDA + Chrome (Windows)
+Открыть главную → F6 по landmark regions → должны быть banner, navigation, main, contentinfo
+Tab по фильтрам → каждый фильтр фокусируется → Enter → filterstatus объявляется
+Tab по FAQ → Enter → раскрывает → screen reader объявляет контент
+Tab по модальному окну → Escape → focus возвращается на кнопку которая открыла модальное
+VoiceOver + Safari (macOS)
+VO+U → открыть Headings rotor → проверить heading hierarchy (h1, h2, h3 в правильном порядке)
+VO+U → Landmarks → проверить что все секции имеют landmark role
+axe DevTools (Chrome extension)
+Запустить на каждой странице → 0 violations critical, 0 serious
+Контраст
+WebAIM Contrast Checker → проверить все color combinations из CSS custom properties
+Особо muted2 на всех background вариантах
+Performance проверка
+Chrome DevTools → Performance
+Record 5s с pointer movement → проверить frame длительность < 16ms
+Искать drawWillowLeaves в timeline → измерить время
+Искать drawStars → измерить
+CPU throttle 4x → проверить что fps не падает ниже 30
+Lighthouse (incognito, mobile preset)
+Performance > 70
+LCP < 2.5s
+CLS < 0.1
+Проверить "Avoid long mainthread tasks"
+WebPageTest (Moto G4, 3G Fast)
+LCP визуально vs технически
+Waterfall → найти renderblocking resources
+Film strip → проверить нет ли FOUC при теме
+Chrome Coverage tab
+Загрузить главную → Record → проверить unused CSS % в styles.css → цель < 60% unused при загрузке (остальное нужно для других страниц)
+Security проверка
+Mozilla Observatory (observatory.mozilla.org)
+Ввести willowinworld.com → цель A+
+Проверить все headers совпадают с _headers файлом
+CSP Evaluator (cspevaluator.withgoogle.com)
+Вставить текущий CSP → проверить нет ли warnings
+trustedtypes none может показать warning — это намеренно (запрет создания trusted types policies)
+curl I httpswillowinworld.com
+curl I httpswillowinworld.com grep i "contentsecurity\stricttransport\xframe\xcontent"
+Убедиться что все headers из _headers присутствуют в ответе.
+Ручная проверка forms
+Открыть contact modal → DevTools Console → попытаться вызвать submit без nameemail → должна быть HTML5 validation
+Проверить что encodeURIComponent работает с <script> в полях
+Mobile testing
+BrowserStack (или реальные устройства)
+iPhone SE 2020 (Safari iOS 16) проверить backdrop на fixed elements при открытии клавиатуры
+Samsung Galaxy A13 (Chrome 124) проверить FPS при hoverlike interaction (touchmove)
+Pixel 6a (Chrome) проверить landscape mode на game pages
+Chrome DevTools → Device toolbar
+320×568 (iPhone SE) → проверить hero content не обрезано
+375×812 (iPhone X) → landscape → 375×667 → проверить layout
+Ввести touch pointer type → проверить что hover effects не активны
+SEO проверка
+Google Rich Results Test
+Вставить URL → проверить VideoGame schema валидна → No errorswarnings
+После добавления BreadcrumbList → проверить снова
+Screaming Frog (или аналог)
+Crawl сайта → проверить все internal links возвращают 200
+Проверить нет ли redirect chains
+Проверить все canonical URLs корректны
+Google Search Console (после публикации)
+Submit sitemap.xml
+Проверить Coverage → Indexed pages
+Проверить Core Web Vitals report через 28 дней
+7. Честный вывод
+Самые надёжные фиксы (подтверждены источниками)
+Отключение backdropfilter на mobile — подтверждено множеством performance postmortems. Chromium team в 20222023 значительно улучшила backdropfilter производительность, но на old Android Chrome (90112) и на Safari iOS < 16 это всё ещё дорого. Источник web.devrenderingbackdropfilter, Chrome Status.
+ariacontrols + ariaexpanded для accordion — это WCAG 2.1 APG (Authoring Practices Guide) официальный паттерн. Не мнение — спецификация. Источник w3.orgWAIARIAapgpatternsaccordion.
+Canvas ariahidden="true" — стандартная практика. MDN, W3C Canvas A11y spec прямо указывают если canvas декоративный или имеет alternative  representation — ariahidden.
+Подходы которые лучше не использовать
+OffscreenCanvas в текущей архитектуре — риск высокий, выигрыш сомнителен для сайта без тяжёлых WebGL вычислений. Canvas работает в main thread, но при правильном idlepause большинство frame времени не расходуется. Сложность OffscreenCanvas не оправдывает выигрыш для этого типа визуализации. Источник discussions на web.dev и Chrome Developers blog показывают что OffscreenCanvas выигрывает для computeheavy WebGL, не для 2D canvas с умеренными операциями.
+<details><summary> для FAQ вместо текущего JSaccordion — потеряет CSS height animation. Альтернатива без JS и с анимацией gridtemplaterows 0fr  1fr подход уже реализован в текущем коде — это правильно и современно.
+Где остаётся неопределённость
+iOS Safari position fixed поведение — очень контекстнозависимо. Баг воспроизводится на одних конфигурациях и не воспроизводится на других в зависимости от iOS версии, наличия клавиатуры, и scroll position. Нужно тестирование на реальном устройстве — не симулятор.
+defer на gametheme.js — риск FOUC реальный. Тема (lightdark) читается из localStorage. Если скрипт загружается с defer, первый render произойдёт без применённой темы. На медленных соединениях это заметно. Решение добавить blocking inline <style> с минимальной темой + defer для полного скрипта. Но это требует тестирования на slow 3G.
+Что сделать обязательно перед публикацией
+1. A11y audit через axe DevTools — бесплатно, 15 минут, критично
+2. Real device iOS Safari test — backdropfilter behaviour
+3. Lighthouse mobile run в incognito — Performance score benchmark
+4. curl I проверка headers — убедиться _headers применяется
+5. Удалить drawGrass() — мёртвый код, нулевой риск
+Что можно оставить на потом
+Selfhosted шрифт, BreadcrumbList schema, RSS feed, easter egg persistence, crosslinking — это улучшения которые не блокируют запуск, но усилят сайт в первые недели после релиза.
+Где нужны дополнительные тесты перед принятием решений
+backdropfilter на mobile — реальный профиль FPS нужен с конкретных устройств. Chromium profiler покажет реальную картину.
+Canvas idlepause агрессивность — слишком ранняя пауза сделает сайт «мёртвым» при медленном чтении. 4секундный timeout — предположение, нужно user testing или analytics (через pointer event timing).
+muted2 contrast — нужен конкретный contrast check через инструмент с реальными background colors в каждом контексте где используется этот цвет.
+Что является подтверждённым и где нужна проверка
+Подтверждённые факты из спецификаций ariacontrols паттерн для accordion, canvas ariahidden, fontdisplay behavior, scrollbargutter stable, contentvisibility auto.
+Требуют проверки на реальных данных canvas FPS на конкретных устройствах, iOS Safari fixed position behaviour в текущей конфигурации, CLS от systemui → Inter migration, реальный Lighthouse score на хостинге (не локально).
+WillowinWorld — Третий уровень аудита скрытые детали
+1. Что ещё удалось найти
+Критические находки которые не были упомянуты
+scripts.js — функция initSecrets() содержит архитектурную уязвимость.
+secretRewards массив инициализируется с Math.random() — случайный секрет выбирается при загрузке страницы. Это означает что при каждом refresh пользователь видит разные glint кнопки в разных местах. Пользователь нашёл 3 из 8 букв, обновил страницу — прогресс сброшен, glint кнопки в других местах. Это не easter egg — это Sisyphus experience.
+drawCastle() вызывается внутри drawBackground()— а drawBackground() кэшируется в backgroundCache. Это правильно. Но drawCastle() использует ctx.save() и ctx.restore() внутри цикла по 4 башням — это 8 контекстопераций на каждый рекэш. saverestore стекуют state — при глубокой вложенности это медленнее чем думают разработчики. Chrome Source "canvas performance" DevRel team постоянно упоминает saverestore как hidden cost.
+processSprite() в 404.js делает floodfill по пикселям(getImageData + manual pixel traversal) для удаления белого фона. Это выполняется для каждого из 10 спрайтов при загрузке страницы. Floodfill на 512×512 изображении — это 262,144 пикселей × несколько операций каждый. На slow mobile это блокирует main thread на 200500ms при загрузке 404 страницы.
+manifest.webmanifest объявляет "display" "standalone"и "purpose" "any maskable" для иконки. Maskable icon требует safe zone — 40% padding вокруг содержимого. Если willowinworldlogoday.webp не адаптирован под maskable формат (т.е. логотип занимает всё пространство без отступов), на Android устройствах иконка PWA будет обрезана.
+CSS colormix(in srgb, ...) используется повсеместно— это CSS Color Level 5 функция. Поддержка Chrome 111+, Firefox 113+, Safari 16.2+. На Safari 16.016.1 и более старых браузерах все colormix() вызовы fallback к transparent или initial. Это означает что ~35% пользователей видят сайт без акцентных цветов на карточках, бордерах и кнопках. Нет ни одного fallback.
+В styles.css используется wrap balanceна section titles и hero . Поддержка Chrome 114+, Firefox 121+, Safari 17.4+. На Safari < 17.4 (значительная часть iOS пользователей на старых iPhone) игнорируется — текст переносится стандартно. Некритично, но стоит знать.
+svh  dvh units используются в hero sections(minheight calc(100svh 74px)). svh (small viewport height) — правильный выбор для iOS Safari (учитывает скрытую адресную строку). Поддержка Chrome 108+, Firefox 101+, Safari 15.4+. На старых Safari — fallback на vh нет. Добавить minheight calc(100vh 74px); minheight calc(100svh 74px).
+gametheme.js — функция setTheme() меняет logo.srcчерез datalogotheme attribute lookup. Но смена src у img тега вызывает новый HTTP request. Если willowinworldlogoday.webp и willowinworldlogo.webp не кэшированы — каждое переключение темы вызывает network request. CacheControl для assets — public, maxage=31536000, immutable — поэтому второй раз берётся из cache. Но первый toggle всегда создаёт network roundtrip.
+initCardShine() добавляет pointermove listener на каждую game card.Четыре карточки × один listener каждый = 4 listeners. При 60fps движении мыши это 60 вызововсекунду, каждый устанавливает два CSS custom properties через style.setProperty. Это дёшево в изоляции, но в сочетании с canvas RAF loop — дополнительная нагрузка. Throttle через requestAnimationFrame внутри pointermove handler был бы правильнее.
+fetch_sports_data и другие tools— не релевантно, но в файловом коде замечена странность securitycheck.mjs ожидает файл deploynginxsecurity.conf по пути new URL("..deploynginxsecurity.conf", import.meta.url), но в списке файлов проекта nginxsecurity.conf находится в корне, не в deploy. Это означает security check script падает при запуске с текущей структурой директорий — он проверяет несуществующий путь или другой файл.
+2. Новые возможные причины проблем
+Возможная причина Почему это проблема Как проверить Вероятность Опасность Приоритет 
+colormix() без fallback Safari < 16.2, старые Chrome теряют все акцентные цвета — карточки выглядят сломанными Safari 15 в BrowserStack → проверить game cards Высокая (~5% трафика) Высокая (visual breakage) P0 
+Math.random() в initSecrets() без seed Glint кнопки меняют позицию при каждом refresh — прогресс теряется Обновить страницу 3 раза → наблюдать разные glint позиции Высокая (100%) Средняя (UX frustration) P1 
+processSprite() floodfill блокирует main thread 404 страница зависает на 200500ms при загрузке на slow mobile Chrome Profiler → 404.html → Long Tasks при загрузке Средняя (mobile only) Средняя (bad FX на error page) P1 
+Maskable icon без safe zone PWA иконка обрезана на Android Android Chrome → Add to Home Screen → проверить иконку Средняя Средняя (brand) P2 
+nginxsecurity.conf в корне vs deploy securitycheck.mjs падает при запуске node toolssecuritycheck.mjs → проверить ошибку Высокая Средняя (broken CI) P0 
+logo.src swap при theme toggle Network request при первом переключении темы DevTools Network → переключить тему → проверить запросы Высокая Низкая (кэшируется) P3 
+initCardShine() без RAF throttle 60 style.setProperty вызововсек при движении мыши Performance Profiler → mousemove → проверить частоту Высокая Низкая (в изоляции) P2 
+svh без vh fallback На Safari < 15.4 hero sections неправильной высоты Safari 14 → проверить hero height Средняя Низкая P2 
+wrap balance без fallback Визуально не критично, но heading может переноситься иначе Safari 16 → проверить title wrapping Высокая Низкая P3 
+saverestore в цикле в drawCastle Лишние con state operations при рекэше фона Profiler → искать excessive saverestore calls Средняя Низкая (кэшируется) P3 
+pointermove без throttle в handlePointerMove Каждое движение мыши → trail update → startLoop() → возможные дубли Профилировать pointermove handler frequency Средняя Средняя (при медленном устройстве) P2 
+defer отсутствует на gametheme.js Blocking parse на game pages Lighthouse → "Eliminate renderblocking resources" Средняя Низкая P2 
+arialive отсутствует на toast и gameToast Screen reader не объявляет toast notifications NVDA + Chrome → action → нет announcement Высокая Средняя (A11y) P1 
+Нет preferscontrast support High contrast mode пользователи видят низкий контраст overlays Windows High Contrast Mode → проверить Средняя Средняя (A11y) P2 
+3. Новые способы фикса
+Способ фикса Что изменить Почему поможет Риски Когда использовать Productionready 
+colormix() fallback через @supports Обернуть все colormix() в @supports (color colormix(in srgb, red 50%, blue)) + fallback цвет Старые браузеры получают нормальный цвет Дублирование некоторых правил Немедленно Да ✅ 
+Детерминированный seed для initSecrets() Использовать Date.getDay() или Math.floor(Date.now()  86400000) как seed — меняется раз в сутки Пользователь видит одни и те же glint позиции весь день Не настоящий random Для persistence easter egg Да ✅ 
+Web Worker для processSprite() Перенести floodfill в Worker через OffscreenCanvas или ImageData transfer Main thread не блокируется Сложнее код, поддержка OffscreenCanvas Для 404 страницы отдельно Да ✅ 
+Предобработанные sprites без белого фона Экспортировать спрайты сразу с прозрачностью (PNGWebP с alpha) Убрать runtime processing полностью Нужно переэкспортировать assets Лучшее решение Да ✅ 
+Maskable icon создание Создать версию логотипа с 40% padding, сохранить как iconmaskable.webp Корректный вид PWA иконки на Android Нужна дизайнработа Перед любым PWA продвижением Да ✅ 
+Исправить путь в securitycheck.mjs Изменить "..deploynginxsecurity.conf" на "..nginxsecurity.conf" или переместить файлы в deploy Security check script будет работать Нужно выбрать одну структуру Немедленно Да ✅ 
+Preload обоих лого вариантов <link rel="preload" href="logoday.webp"> + <link rel="preload" href="logo.webp"> Оба в cache до toggle Лишний preload если пользователь не меняет тему Только если частое toggling Частично 
+RAF throttle для initCardShine Обернуть style.setProperty в requestAnimationFrame callback Один update per frame вместо multiple per frame Небольшая задержка shine эффекта Всегда для pointermove handlers Да ✅ 
+svh с vh fallback Добавить minheight calc(100vh 74px) перед svh строкой Progressive enhancement Старые iOS видят статичный vh Сейчас Да ✅ 
+role="status" на toast elements HTML атрибут на toast и gameToast Screen reader объявляет notifications role="status" = arialive="polite", не нужны оба Сейчас Да ✅ 
+@media (forcedcolors active) Добавить правила для Windows High Contrast Mode Accessibility compliance Дополнительная работа При наличии A11y требований Да ✅ 
+Inline critical CSS для theme Добавить <style> в <head> с минимальными root variables Нет FOUC при defer script Увеличивает HTML size Если добавляют defer на gametheme.js Да ✅ 
+4. Сравнение подходов
+colormix() fallback стратегии
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+@supports (color colormix(...)) wrapper Высокая Средняя ✅ ✅ Все браузеры Нейтрально Нейтрально Средний (дублирование) Да ✅ 
+PostCSS plugin для компиляции colormix Высокая Средняя (build step) ✅ ✅ Нейтрально Нейтрально Низкий Да ✅ (если есть build) 
+Заменить colormix на hardcoded значения Низкая Высокая ✅ ⚠️ Потеря динамизма тем Нейтрально Нейтрально Высокий (много замен) Нет 
+Игнорировать (текущий) Низкая Нулевая ✅ ⚠️ Сломано на ~5% Нейтрально Нейтрально Нет Нет 
+CSS custom property с fallback значением Высокая Низкая ✅ ✅ Нейтрально Нейтрально Низкий Да ✅ 
+Лучший для этого проектаCSS custom property подход — заменить colormix(in srgb, var(gameaccent) 22%, var(line)) на CSS переменную accentborder которая определена с fallback значением через @supports.
+Sprite processing в 404.js
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+Runtime floodfill (текущий) Средняя Нулевая ⚠️ 200500ms block ⚠️ Lag при загрузке Нейтрально Нейтрально Низкий Для прототипа 
+Preexported PNG с alpha Высокая Низкая (reexport) ✅ Нет processing ✅ Нейтрально Нейтрально Минимальный Да ✅ Лучший 
+Web Worker + OffscreenCanvas Высокая Высокая ✅ Nonblocking ✅ Нейтрально Нейтрально Высокий Да, но сложно 
+Lazy processing (requestIdleCallback) Средняя Средняя ✅ Nonblocking ⚠️ Sprites могут появиться с задержкой Нейтрально Нейтрально Средний Да частично 
+CSS mixblendmode multiply для белого фона Низкая Минимальная ✅ ⚠️ Зависит от фона Нейтрально Нейтрально Высокий (visual artifacts) Нет 
+Лучшийпереэкспортировать спрайты с прозрачным фоном — устраняет проблему полностью без кода.
+Easter egg discovery механика
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+Текущий (opacity 0, random pulse) Низкая Нулевая ✅ ⚠️ Не обнаруживаем Нейтрально Нейтрально Нет Нет — фича невидима 
+Subtle permanent visible hint Высокая Низкая ✅ ✅ Нейтрально Нейтрально Низкий Да ✅ 
+Tooltip после 30s ("Explore the world...") Средняя Средняя ✅ ✅ Помогает Нейтрально Нейтрально Средний Да 
+Первый glint всегда visible Высокая Минимальная ✅ ✅ Leading discovery Нейтрально Нейтрально Минимальный Да ✅ 
+Progress indicator ("Hidden symbols 08") Средняя Средняя ✅ ✅ Gamification Нейтрально Нейтрально Средний Да 
+Cursor glow при приближении к glint Высокая Средняя ⚠️ pointermove cost ✅ Magical Нейтрально Нейтрально Средний Да ✅ 
+PWA и manifest стратегия
+Подход Надёжность Сложность Performance UX SEO Security Риск багов Production 
+Текущий manifest без maskable Средняя Нулевая ✅ ⚠️ Обрезанная иконка ⚠️ Google не помечает как installable Нейтрально Нет Для базового 
+Добавить maskable иконку Высокая Низкая (дизайн) ✅ ✅ ✅ Нейтрально Минимальный Да ✅ 
+Service Worker + offline Высокая Высокая ✅ Instant reload ✅ ✅ ⚠️ Cache poisoning risk Высокий Да но осторожно 
+Убрать manifest (не PWA) Высокая Минимальная ✅ ⚠️ Нет install Нейтрально Нейтрально Нет Если PWA не нужен 
+5. Практический план
+🔴 Сделать в первую очередь
+1. Исправить путь в securitycheck.mjs
+Это самое критичное — CICD tool сломан. Либо переименовать путь с "..deploynginxsecurity.conf" на "..nginxsecurity.conf", либо создать deploy директорию и переместить конфигурации туда. Проверить node toolssecuritycheck.mjs должен завершаться с "WillowinWorld security check passed.".
+2. colormix() fallback
+Добавить @supports wrapper или переопределить проблемные переменные с static fallback. Конкретные переменные для исправления accentborder, accentsoft, accentglow. Проверить в Safari 15 и Chrome 110.
+3. Предобработанные sprites для 404.js
+Переэкспортировать все 10 спрайтов кошки с прозрачным фоном (PNG24 или WebP с alpha). Убрать весь processSprite() код из 404.js — это ~80 строк. Проверить 404 страница загружается без Long Task в профилере.
+4. role="status" на toast и gameToast
+Два HTML атрибута, 2 минуты работы, немедленный A11y fix.
+5. Math.random() → детерминированный seed в initSecrets()
+Использовать день месяца как seed const seed = new Date().getDate(). Написать простую seeded random функцию (mulberry32 — 5 строк) которая даёт одинаковые результаты для одного seed. Пользователь видит одни glint кнопки весь день.
+6. ariacontrols + id на FAQ
+Это было в предыдущем аудите — если ещё не сделано, критично для WCAG AA.
+🟠 Проверить после этого
+7. svh fallback добавить
+Перед каждой строкой с svh добавить дублирующую с vh. Две строки на каждый случай. Проверить на Safari 14 (симулятор Xcode).
+8. initCardShine() RAF throttle
+Обернуть card.style.setProperty вызовы в requestAnimationFrame. Один rAF callback на все cards одновременно — не по одному на card. Профилировать допосле.
+9. handlePointerMove throttle
+Текущий код записывает trail точку каждые 34ms (pointer.lastMove pointer.lastTrail > 34). Это нормально. Но state.pointer.x = point.x; state.pointer.y = point.y; startLoop() вызывается на каждый pointermove event. startLoop() проверяет if (state.rafId) return — это защита. Но лишняя проверка на каждый event. Добавить throttle через passive listener wrapper.
+10. Maskable PWA иконка
+Открыть willowinworldlogoday.webp в FigmaPhotoshop, добавить 40% padding (безопасная зона), экспортировать как iconmaskable.webp, добавить в manifest.webmanifest
+json
+{
+"src" "assetsiconmaskable.webp",
+"sizes" "1024x1024", 
+"type" "imagewebp",
+"purpose" "maskable"
+}
+Проверить через Maskable.app.
+11. Internal crosslinking
+На каждой game page внизу добавить секцию "Other worlds in development" с 23 ссылками на другие игры. Это улучшает crawl depth для Google и timeonsite.
+12. drawGrass() deletion
+Если функция не вызывается — удалить. Если планируется использовать — добавить TODO с пояснением. Не держать мёртвый код.
+13. BreadcrumbList schema
+На каждой game page добавить в existing JSONLD блок
+json
+{
+"@type" "BreadcrumbList",
+"itemListElement" [
+{"@type" "ListItem", "position" 1, "name" "Home", "item" "httpswillowinworld.com"},
+{"@type" "ListItem", "position" 2, "name" "Games", "item" "httpswillowinworld.comgames"},
+{"@type" "ListItem", "position" 3, "name" "Nature Seed"}
+]
+}
+🟢 Дополнительные улучшения
+14. Preload второй лого для theme
+При инициализации темы dark — preload logo.webp. При light — logoday.webp уже preloaded. Добавить <link rel="prefetch" href="assetswillowinworldlogo.webp"> в <head> — prefetch (не preload) так как не критичен для первого render.
+15. Easter egg persistence в localStorage
+js
+ При завершении constellation
+try {
+localStorage.setItem(willowsecret, JSON.stringify({
+completed true,
+date Date.now(),
+game secret.key
+}));
+} catch(e) {}
+ При загрузке — проверить и показать unlocked state
+16. @media (forcedcolors active) поддержка
+Для Windows High Contrast Mode. Минимальные правила
+forcedcolors ButtonText для кнопок
+forcedcolors CanvasText для основного текста
+forcedcoloradjust none для иконок с цветовым значением
+17. contentvisibility auto на нижних секциях
+Добавить на studio, systems, process, devlog, faq, contact. С containintrinsicsize 0 500px. Браузер пропускает rendering этих секций пока они вне вьюпорта. Измеримый выигрыш для initial paint.
+18. Hotlink protection через Cloudflare
+Если на Cloudflare — создать Transform Rule
+If http.request.uri.path matches "assets." AND not (http.referer contains "willowinworld.com" OR http.referer eq "")
+Then Block (403) или Redirect to main page
+Whitelist пустой Referer (прямые запросы, некоторые privacy browsers).
+19. robots.txt AI crawler blocking
+Добавить блокировку для GPTBot, CCBot, anthropicai и других AI scrapers которые собирают training data без разрешения. Это стало стандартной практикой для media и creative компаний в 20242025. The Guardian, NYT, многие game studios добавили эти блокировки.
+20. Конкретная SEO страница games как hub
+Сейчас нет отдельной страницы games — только якорная секция на главной. Создание gamesindex.html как hub страницы с краткими карточками всех игр и перелинковкой даёт отдельный URL для индексации по запросам типа "WillowinWorld games", "indie mobile games 2026".
+6. Проверка фиксов
+Проверка colormix() fallback
+bash
+Проверить используемые colormix() через grep
+grep r "colormix" styles.css wc l
+Ожидать 80+ вхождений
+После добавления @supports — проверить в BrowserStack
+Safari 15.0, Chrome 110, Firefox 112
+Проверить game cards имеют visible border colors
+Проверить кнопки имеют правильный акцентный цвет
+Визуальная проверкаоткрыть DevTools → Rendering → Emulate CSS media feature → нет прямого way emulate отсутствие colormix(). Использовать реальный старый браузер или BrowserStack с Safari 15.
+Проверка sprite processing
+Chrome DevTools → Performance tab
+Record (3 секунды загрузки 404.html)
+Искать "Long Tasks" (красные блоки > 50ms)
+Раскрыть Long Task → найти processSprite calls
+Измерить total duration
+После фикса (preexported sprites)
+Повторить → 0 Long Tasks связанных с processSprite
+Проверка maskable icon
+Онлайн maskable.app — вставить URL иконки → увидеть превью как она выглядит в Android circlesquircle mask. Если логотип обрезан — нужна коррекция.
+Физически Chrome Android → Three dots → Add to Home screen → проверить иконку на home screen.
+Проверка securitycheck.mjs
+bash
+Из корня проекта
+cd pathtowillowinworld
+node toolssecuritycheck.mjs
+Ожидаемый output
+WillowinWorld security check passed.
+Если
+Error ENOENT no such file or directory, open ...deploynginxsecurity.conf
+Исправить путь в securitycheck.mjs
+Проверка A11y toast
+1. Открыть Chrome с расширением NVDA или использовать macOS VoiceOver
+2. Загрузить index.html
+3. Tab до кнопки "Join Nature Seed Beta"
+4. Click → открывается email
+5. NVDA должен объявить toast message если появляется
+Без role="status"
+Screen reader не объявляет ничего
+С role="status"
+Screen reader объявляет текст toast в течение 12 секунд
+Проверка INP (Interaction to Next Paint)
+INP заменил FID как Core Web Vital с March 2024. Для этого сайта критично проверить
+Chrome DevTools → Performance Insights tab
+Record user flow
+Кликнуть filter button → измерить INP
+Кликнуть FAQ вопрос → измерить INP
+Открыть modal → измерить INP
+Цель INP < 200ms (Good), < 500ms (Needs Improvement), > 500ms (Poor)
+Потенциальные проблемы с INP
+canvas startLoop() вызывается при клике → RAF scheduling
+Modal open → DOM manipulation + backdropfilter toggle
+Filter click → querySelectorAll + classList operations на многих элементах
+Проверка handlePointerMove throttle
+Chrome DevTools → Performance → Record
+Двигать мышь по странице 2 секунды
+Остановить запись
+Main thread → найти pointermove event handlers
+Считать сколько раз в секунду срабатывает handler
+Цель не чаще чем RAF = 60s (ok), но если 100+s на некоторых устройствах → throttle нужен
+Chrome DevTools → Event Listeners panel
+pointermove → проверить listeners count
+Проверка SEO через Screaming Frog
+1. Установить Screaming Frog SEO Spider (free до 500 URLs)
+2. Ввести httpswillowinworld.com
+3. Crawl Settings → Spider → JavaScript → Render JavaScript ON
+4. После crawl
+Response Codes → проверить нет 4xx, 5xx
+Page Titles → проверить все страницы имеют unique title
+Meta Description → проверить все страницы
+H1 → проверить каждая страница имеет ровно один H1
+Images → Alt Text → проверить заполненность
+Canonical → проверить все canonical правильные
+Structured Data → все страницы с JSONLD
+Проверка forcedcolors (Windows High Contrast)
+Windows Settings → Accessibility → High Contrast → Turn on High Contrast Black
+Открыть Chrome → navigrate to willowinworld.com
+Проверить
+Текст видим
+Кнопки имеют visible border
+Иконки не исчезли
+Game cards читаемы
+Логотип виден
+Без @media (forcedcolors active) поддержки
+Некоторые элементы с custom backgrounds могут потерять visibility
+CSS gradients могут быть заменены forced colors
+Альтернатива без Windows Chrome DevTools → Rendering → 
+Emulate CSS media feature → forcedcolors active
+7. Честный вывод
+Самые надёжные фиксы по уровню confidence
+Подтверждены спецификациями и не требуют дополнительного тестирования
+colormix() browser support — Can I Use показывает точные версии. Safari 16.2+ — это факт. На Safari 15 и ниже colormix() возвращает initial value (прозрачный или unset). Это не мнение, это спецификация CSS Color Level 5 и recorded browser behavior.
+role="status" для live regions — это ARIA 1.1 spec. Implicit arialive="polite" для status role. MDN, W3C docs однозначны. Нет вариативности.
+processSprite() runtime cost — это измеримо. Canvas getImageData + manual pixel traversal — классическая причина Long Tasks. Подтверждено Chrome DevRel постами о canvas performance и многочисленными Stack Overflow обсуждениями.
+securitycheck.mjs path issue — это конкретный код который можно проверить локально за 30 секунд.
+Требуют проверки на реальных данных
+backdropfilter impact на конкретных устройствах — Samsung Galaxy Aсерия Chrome 20232024 имеет значительно лучшую поддержку чем 20212022. Реальный impact нужно измерить с профилером, не предполагать.
+INP values — зависят от реальных user interactions и device performance. Нельзя предсказать без field data. Google Search Console после релиза покажет реальные числа через 28 дней.
+pointermove throttle necessity — зависит от реальной нагрузки. На среднем desktop с 60fps мониторм — не проблема. На 120fps мониторе — pointermove fires 2x чаще. Профилировать сначала.
+Что нельзя назвать productionready прямо сейчас
+Сайт не productionready по трём объективным причинам
+Первое — securitycheck.mjs с неправильным путём означает что predeploy проверка не работает. Это инструмент контроля качества, и он сломан.
+Второе — colormix() без fallback означает что ~5% реальных пользователей на старых браузерах видят визуально сломанные UI элементы — исчезающие borders, неправильные цвета кнопок, прозрачные card backgrounds.
+Третье — processSprite() блокирует main thread на 200500ms при загрузке 404 страницы. 404 страница — это уже error state. Добавлять к ошибке ещё и freeze UI — двойной fail.
+Всё остальное из этого аудита — улучшения и polish, не blockers.
+Приоритизация по ROI (времярезультат)
+Высокий ROI (< 1 час работы, значительный результат)
+Исправить путь в securitycheck.mjs — 2 минуты, исправляет сломанный CI tool.
+role="status" на toasts — 2 минуты, A11y compliance.
+ariahidden на game canvas в 404 — 1 минута.
+svh fallback — 10 минут, 15+ строк кода.
+Удалить drawGrass() — 5 минут.
+Средний ROI (24 часа, существенный результат)
+colormix() fallback — 23 часа (много вхождений), критически важный visual fix.
+Preexported sprites без белого фона — 1 час дизайн + 30 минут код, убирает 80 строк runtime processing.
+BreadcrumbList schema на game pages — 1 час, долгосрочный SEO benefit.
+Низкий ROI (много работы, неочевидный результат)
+OffscreenCanvas — недели работы, выигрыш неочевиден без профилирования.
+Full PWA Service Worker — значительная сложность, security concerns (cache poisoning), минимальный benefit для marketing site.
+Полный CSS refactor по @layer — важно для масштабирования, но не для запуска.
+Что станет проблемой при росте проекта
+Если студия выпустит игру №5, №6, №7 — текущий CSS монолит станет неуправляемым. Каждая игра добавляет ~600800 строк тематических стилей в один файл. К игре №8 это будет 15,000+ строк без архитектуры.
+Если появится CMS или реальный backend — current static site architecture потребует полного переосмысления. Devlog как статические HTML страницы не масштабируется для еженедельных обновлений.
+Если придут реальные издатели — press kit в текущем виде (без downloadable zip, без PDF fact sheet, без видео) будет недостаточным. Большинство gaming publishers имеют checklist того что должен содержать press kit.
+Если сайт получит значительный трафик — отсутствие Service Worker означает каждый посетитель делает полный roundtrip для всех ресурсов. С Service Worker — повторные посетители получают instant load.

@@ -1,0 +1,1316 @@
+# Аудит WillowinWorld — полный разбор
+
+Анализ выполнен по исходникам в `/site`: статический HTML/CSS/JS без сборщика, ~3.1 MB ассетов, `styles.css` 267 KB, `scripts.js` 69 KB, `index.html` 62 KB, 58 `<img>` на главной. `node tools/security-check.mjs` — **passed**.
+
+---
+
+## 1. Краткий вердикт
+
+| Направление | Оценка | Комментарий |
+|-------------|--------|-------------|
+| **Дизайн** | **7.5 / 10** | Сильная «storybook»-эстетика, живые карточки игр, но перегруз секциями и слабая визуальная иерархия CTA |
+| **UX** | **6.5 / 10** | Понятно «кто вы» и «какие игры», но длинный скролл, дубли блоков, часть интерактива спрятана |
+| **Frontend** | **6 / 10** | Хорошая семантика и a11y-паттерны, но монолитный CSS и отсутствие пайплайна |
+| **Performance** | **5.5 / 10** | Умная адаптация canvas, но тяжёлый first load и 267 KB CSS на всех страницах |
+| **Mobile** | **6 / 10** | Breakpoints есть, hero и анимации тяжёлые для слабых телефонов |
+| **Branding** | **7 / 10** | Узнаваемый W/кот/портал, но позиционирование размыто между cozy и hardcore |
+| **Security** | **8.5 / 10** | Один из лучших статических профилей: CSP, headers, security-check |
+| **Wow-effect** | **7.5 / 10** | Nature restoration, candy merge, canvas-магия — но не хватает одного «главного ритуала» |
+
+**Общий уровень:** сильный **indie studio site above average**, ещё не **AAA product landing 2026**. Ближе к «премиум-прототипу с production security», чем к финальному релизу для издателей.
+
+---
+
+## 2. Главные проблемы
+
+1. **First load тяжёлый:** 267 KB CSS + 69 KB JS + preload двух крупных WebP (лого ~117 KB + Nature hero ~188 KB) на главной.
+2. **Один `styles.css` на все страницы** — game pages тянут весь файл (~10.8k строк), хотя им нужна доля стилей.
+3. **Главная перегружена:** Games → Roadmap → 8 фильтров → 4 тяжёлые карточки → Studio → Systems → About → Process → Devlog → FAQ → CTA (~9 «этажей»).
+4. **Интерактив constellation/play mode в JS есть, UI-триггера нет** — `[data-play]` в HTML отсутствует, мини-игра со звёздами фактически недоступна.
+5. **Кнопка «404» в production header** — ломает ощущение премиум-студии.
+6. **58 изображений с `alt=""` на index** — SEO и screen readers теряют контекст игр.
+7. **Candy/Ball карточки — десятки слоёв** (10 candy backgrounds, 16 clouds) → repaint/composite cost на mobile.
+8. **Дублирование контента** `#studio`, `#systems`, `#about`, `#process` — одна мысль четырьмя блоками.
+9. **Press kit отдаёт полноразмерные файлы** (например `ship.webp` 236 KB) без watermark/preview-tier.
+10. **Нет build/minify** — gzip поможет, но архитектура не масштабируется под 5+ игр.
+
+---
+
+## 3. Что уже хорошо (сохранить и усилить)
+
+- **Цветовая система** в `:root` / `[data-theme="light"]` — coherent night/day magic (`styles.css` строки 1–65).
+- **Живые game covers:** Nature sketch→water→bloom, Candy merge stack, Paint cubes, Ball clouds — это реальный wow, не stock.
+- **Performance-aware JS:** `prefers-reduced-motion`, `saveData`, FPS fallback `< 28`, pause при `document.hidden`, `is-animation-paused` на карточках (`scripts.js` 200–217, 1162–1180, 1664–1676).
+- **Security-by-design:** strict CSP, no third-party, mailto вместо fake forms, `security-check.mjs`, `_headers`, nginx/apache configs, `SECURITY.md`.
+- **Доступность базового уровня:** skip-link, `aria-*` на FAQ/modals, focus trap, `prefers-reduced-motion` в CSS.
+- **SEO foundation:** JSON-LD VideoGame ×4, canonical, OG/Twitter, sitemap, press-kit.
+- **Отдельные game pages** с тематическим hero — правильная модель портфолио.
+- **404 как Easter egg** (`404.js` + touch controls) — в духе бренда.
+
+---
+
+## 4. Подробный аудит по разделам
+
+### 4.1 Design / Art Direction
+
+**Сильные стороны**
+- Палитра: cyan `#71e7ff`, violet, rose, gold, grass — «волшебный storybook», не generic dark SaaS.
+- Hero panel с Nature Seed loop (sketch → water → bloom) — сразу показывает **фирменную механику**, не абстрактный арт.
+- Карточки игр — мини-сцены, не плоские thumbnails.
+- Twin-W symbol block (`#about`) — зачаток сильной айдентики.
+
+**Слабые места**
+- **Типографика:** `h1` до `clamp(3.85rem … 5.05rem)` на hero — на 360px экране заголовок доминирует над preview; brand name + длинный tagline в два блока визуально «давят».
+- **Кнопки hero:** 3 CTA одного веса (Beta / Explore / Publishers) — нет одного доминирующего действия.
+- **Фильтры игр (8 штук)** визуально спорят с roadmap pills — два «контрольных» ряда подряд.
+- **Header:** ghost-кнопка «404» рядом с Contact — anti-premium.
+- **Footer** функционален, но без social proof (нет логотипов платформ, awards, «featured in»).
+- **Light theme** иногда «детский пастель» vs **dark** «ночная магия» — переключение меняет характер бренда сильнее, чем у топ-студий (нужен единый emotional core в обеих темах).
+
+**Как усилить**
+- Сделать **один visual anchor** above the fold: только Nature Seed + «July 2026 beta» + один CTA.
+- Упростить фильтры до 3–4 (All / Puzzle / Arcade / In dev).
+- Добавить **1 full-bleed cinematic strip** между hero и games (15–20s loop video/WebP sequence) — без autoplay sound.
+- Press-quality **wordmark SVG** вместо растра 1024×1024 в header.
+
+---
+
+### 4.2 UX
+
+**Что работает**
+- За 5 секунд ясно: mobile indie studio, 4 игры, Nature Seed — flagship.
+- Навигация: Games, Studio, Devlog, Press Kit, Contact — логична.
+- Contact через modal → mailto — честно, без «мёртвой формы».
+
+**Проблемы**
+| Проблема | Деталь |
+|----------|--------|
+| Длина страницы | ~880 строк HTML, много повторяющихся paragraph patterns |
+| Redundant IA | `#studio`, `#systems`, `#about`, `#process` — nav ведёт только на `#studio` |
+| Скрытый интерактив | Constellation `startPlayMode()` без `[data-play]` в DOM |
+| Magic controls | JS ищет `#pauseMagic`, `#disableMagic` — в index их нет; FAQ обещает control, UI нет |
+| Game discovery | Фильтры полезны, но roadmap + progress bars + tags + feature-callout = cognitive load |
+| Devlog | Homepage teaser OK, но нет RSS/даты сортировки на hub |
+| 404 в menu | Путает новых пользователей |
+
+**Предлагаемая структура**
+
+```
+1. Hero — WillowinWorld + one-liner + Nature Seed beta CTA + living preview
+2. Featured game — Nature Seed (80% width story)
+3. Other worlds — 3 cards (compact)
+4. Magic moment — constellation / portal (ONE interactive block, с явной CTA «Awaken stars»)
+5. Studio — philosophy + team tone (merge studio/systems/about)
+6. Devlog feed — 4 cards + «all updates»
+7. For partners — publishers / press (compact)
+8. Contact + footer
+```
+
+Убрать с главной или свернуть: Process timeline, FAQ (→ отдельная страница или footer accordion), Systems grid (→ внутрь Studio).
+
+---
+
+### 4.3 Frontend / Code Quality
+
+**Плюсы**
+- Семантика: `<main>`, `<article>`, `<nav aria-label>`, modals с `role="dialog"`.
+- Нет inline handlers (security-check это enforce'ит).
+- DOM из JS через `textContent`, не `innerHTML` (scripts.js policy).
+- Game pages: только `game-theme.js` (8.5 KB) — правильное разделение.
+
+**Минусы**
+- **`styles.css` 10 837 строк / 267 KB** — god file; game-specific (nature, candy, ball, paint, press-kit, 404) всё вместе.
+- **`index.html` 62 KB** — дублирование разметки Nature stage в hero + 4 карточках.
+- **Dead code paths:** `themeState`, `magicState`, `pauseMagic`, `disableMagic`, `magic-console` в CSS — UI удалён, логика осталась.
+- **Inline style mutation** на карточках (`--shine-x`) — ок, но усложняет CSP если когда-то понадобятся inline styles.
+- **Нет модульности:** добавление 5-й игры = правки в 5+ местах (index, styles, scripts profiles, sitemap, JSON-LD).
+- **Game page Nature:** один и тот же `Galvnie_3_*` блок повторяется 3 раза в `nature-seed.html` (строки 44–60, 77–92, …) — лишние HTTP-запросы при первом визите.
+
+**Конкретные рекомендации**
+1. Split CSS: `core.css` + `home.css` + `game-nature.css` … или `@layer` + critical CSS inline для hero.
+2. Вынести game card covers в `<template>` или генерировать из JSON (один source of truth).
+3. Вернуть **Magic panel** в footer или settings drawer: Pause / Low motion / Off (элементы уже в JS).
+4. Добавить `[data-play]` на hero: «Connect the constellation».
+5. Build step: `esbuild`/`lightningcss` minify — даже без React.
+
+---
+
+### 4.4 Performance
+
+**Бюджет (факт)**
+
+| Ресурс | Размер |
+|--------|--------|
+| styles.css | 267 KB |
+| scripts.js | 69 KB |
+| index.html | 62 KB |
+| assets/ | ~3.1 MB |
+| Крупнейшие WebP | `ship.webp` 236 KB, `Galvnie_3_1` 188 KB, logos 117–137 KB |
+
+**Что может лагать и почему**
+
+| Источник | Почему | Где |
+|----------|--------|-----|
+| Full-screen canvas rAF | Каждый кадр: фон, звёзды, частицы, кот, trails, bursts | `#magicCanvas` |
+| Много CSS animations | Candy 10 layers, Ball 16 clouds, Nature water SVG | `.game-card` |
+| Paint/composite | `backdrop-filter`, `mix-blend-mode`, shadows на больших блоках | hero, cards |
+| Decode jank | 58 images на index, preload 2 heavy above fold | index.html:30–31 |
+| Main thread | `scripts.js` 1870 строк sync init на load | конец scripts.js |
+
+**Уже сделано правильно**
+- Cap DPR 1.15–1.65, frame skip 31 FPS на mobile/low motion.
+- Background cache canvas (`drawCachedBackground`).
+- Lazy loading на card images.
+- Pause animations off-screen (`is-animation-paused`).
+
+**Обязательно до релиза**
+1. Убрать preload `Galvnie_3_1` с главной или заменить на **LQIP ~20 KB**.
+2. Responsive images: `srcset` для hero/logo (не грузить 1024×1024 в 38px brand mark).
+3. Minify + Brotli: CSS/JS/HTML.
+4. На mobile **отключать canvas по умолчанию** (static poster + toggle «Enable magic»).
+5. Candy card: 10 backgrounds → **1 sprite sheet** или CSS gradient + 2 keyframes.
+6. Проверить Lighthouse mobile на реальном хостинге (CLS от canvas resize, LCP от hero image).
+
+**CLS риски:** canvas resize на `orientationchange`; modals без reserved space; animated card heights.
+
+**LCP кандидат:** `Galvnie_3_1-site.webp` или logo — оптимизировать до <100 KB display size.
+
+---
+
+### 4.5 Motion / Interactive
+
+**Что работает**
+- Canvas: кот-маскот, луна/солнце, долина, клик-bursts — brand-aligned.
+- Card hover shine (desktop only) — premium touch.
+- Secret glints + letter hunt — хороший easter egg слой.
+- 404 mini-game — отдельный интерактивный момент.
+
+**Что мешает**
+- Canvas **всегда активен** на главной — конкурирует с CSS-анимациями карточек.
+- Constellation game **недоступна** без скрытого play mode.
+- Нет **связи интерактива с конкретной игрой** на главной (portal/spell per game — только в CSS классах карточек).
+
+**Идеи (с оценкой perf)**
+
+| Идея | Perf | Приоритет |
+|------|------|-----------|
+| Магический курсор (CSS only, `mix-blend-mode`) | Безопасно | Средний |
+| «Awaken constellation» CTA → play mode | Безопасно | Высокий |
+| Particles только в hero viewport | Безопасно | Высокий |
+| Per-game portal hover (seed/candy/paint/ball palette) | Средне | Высокий |
+| Mini-game на 404 (уже есть) | Средне | Сохранить |
+| Full-screen WebGL / Three.js | Опасно | Нет |
+| Continuous parallax на scroll | Опасно на mobile | Низкий |
+| Video backgrounds autoplay | Тяжело | Только desktop + reduced motion off |
+
+---
+
+### 4.6 Branding
+
+**Запоминается ли WillowinWorld?** — Да, имя в hero крупно, twin-W, magic cat в canvas.
+
+**Слабости positioning**
+- Слоган размыт: «magical mobile games that feel alive» — подходит и Nature, и Candy, и Ball, но **не отстраивает** от других cozy studios.
+- Четыре игры в разных жанрах без **единой «studio DNA» строки** (например: *«Tactile physics worlds you can feel in one touch»*).
+- Tone of voice хороший (warm, confident), но много marketing-repeat: «tactile», «cozy», «premium» без конкретики.
+
+**Рекомендации**
+- **Слоган:** «We build mobile worlds you can feel in one touch.» + sub: draw, merge, blast, descend.
+- **Visual hook:** always show **twin-W + cat + water line** — фирменная тройка.
+- **Logo:** vector W-portal; WebP только для OG.
+- **Trust row:** «Mobile-first · Physics-led · Beta 2026» + store icons (even «Coming soon»).
+- Press kit: **one-page PDF factsheet** link alongside HTML.
+
+**Для Steam / publishers / investors:** press-kit + game pages достаточны; главной не хватает **metrics slide** (team size, timeline, monetization hint, contact SLA).
+
+---
+
+### 4.7 Security (defensive)
+
+**Реальный профиль: очень сильный для static site.**
+
+| Контроль | Статус |
+|----------|--------|
+| Strict CSP (no inline JS except hashed JSON-LD) | ✅ |
+| No fetch/XHR/WebSocket in client | ✅ |
+| Contact → mailto, `form-action 'none'` | ✅ |
+| Headers: HSTS, XFO DENY, COOP, CORP | ✅ (при деплое `_headers`/nginx) |
+| security.txt | ✅ |
+| security-check CI script | ✅ |
+| No secrets in JS | ✅ |
+| Theme localStorage validated | ✅ |
+
+**Риски (низкие–средние)**
+
+| Риск | Критичность | Mitigation |
+|------|-------------|------------|
+| CSP только meta на HTML без server headers | Средняя | Обязательно deploy `_headers` |
+| mailto form — нет server-side spam filter | Низкая | OK для static; при Formspree — rate limit |
+| Secret rewards «skin» в UI — social engineering если добавят real codes | Средняя при будущем backend | Server-side redemption only |
+| Asset hotlinking | Низкая | CDN Referer policy |
+| No Subresource Integrity (нет внешних ресурсов) | N/A | — |
+| `Cache-Control: no-cache` на HTML | OK security, hurts perf | Separate immutable assets (уже есть `/assets/*`) |
+
+**Перед публикацией**
+1. Verify live headers (securityheaders.com).
+2. HTTPS only + redirect.
+3. MFA на GitHub/hosting/DNS.
+4. Не класть в `site/` приватные builds, PSD, API keys.
+5. При добавлении analytics — пересобрать CSP hash/allowlist.
+
+**XSS:** практически закрыт (no innerHTML, strict CSP). **Clickjacking:** `frame-ancestors 'none'`. **CSRF:** нет state-changing endpoints.
+
+---
+
+### 4.8 Защита от копирования ассетов
+
+| Мера | Эффект |
+|------|--------|
+| WebP preview-only в public | **Реально полезно** |
+| Watermark на press downloads | **Реально полезно** |
+| Не выкладывать PSD/4K/源 files | **Реально полезно** |
+| `Referer` hotlink protection на CDN | **Частично** |
+| robots Disallow `/private/` | **Частично** (security through obscurity) |
+| JS minify/obfuscation | **Частично** |
+| Disable right-click / drag | **Иллюзия** |
+| «Запретить скачивание» HTML | **Иллюзия** |
+
+Сейчас press-kit даёт прямые ссылки на полные WebP (`ship.webp` 236 KB) — для публики OK, для защиты арта — добавить **отдельный `-press.webp` с watermark** и lower resolution.
+
+---
+
+### 4.9 Mobile-first
+
+**Плюсы**
+- Breakpoints 1120 / 920 / 640 px.
+- `100svh` hero, touch-friendly nav toggle.
+- `hero-worlds` → 2 columns на 640px.
+- Game animation pause off-screen.
+- 404: touch buttons.
+
+**Минусы**
+- Hero **min-height 100svh** + panel 420–480px → много скролла до Games.
+- **3 hero buttons** в столбик — длинный thumb path.
+- Canvas magic на touch — bursts on `touchend` могут мешать scroll (click handler на window).
+- `hero-note` скрывается на game pages при 640px — теряется beta date.
+- 16 cloud images в Ball card — риск dropped frames на Mali-G57 tier.
+
+**Конкретные mobile fixes**
+1. Hero: 1 primary CTA, остальное в «More».
+2. `touch-action: manipulation` на interactive cards.
+3. Default `body.low-motion` на `(max-width: 640px)` OR user never sees canvas until opt-in.
+4. Увеличить tap targets фильтров до min 44×44px (проверить `.filter-btn` padding).
+5. Sticky bottom bar: Games | Beta | Contact.
+
+---
+
+## 5. Таблица проблем
+
+| Проблема | Почему плохо | Критичность | Как исправить | Приоритет |
+|----------|--------------|-------------|---------------|-----------|
+| 267 KB CSS на всех страницах | Медленный FCP на game pages | Высокая | Split CSS + critical path | P0 |
+| Preload тяжёлого Nature art | Плохой LCP | Высокая | LQIP / убрать preload | P0 |
+| Кнопка 404 в header | Ломает trust | Средняя | Убрать или спрятать в easter egg | P0 |
+| Нет UI для magic/constellation | Обещанный wow недоступен | Средняя | `[data-play]` + settings | P1 |
+| 4 перегружающих «о студии» блока | Усталость, bounce | Средняя | Merge в один Studio | P1 |
+| 58× `alt=""` | SEO/a11y | Средняя | Описательные alt на key art | P1 |
+| Candy 10 BG images | Mobile jank | Средняя | Sprite / упростить | P1 |
+| Дубли Nature markup на game page | Лишний bandwidth | Средняя | Один backdrop | P2 |
+| Нет minify/build | Рост техдолга | Средняя | esbuild + cssnano | P2 |
+| Press full-res links | Asset theft | Низкая | Watermarked tier | P2 |
+| Dead JS UI refs | Путаница в коде | Низкая | Удалить или вернуть panel | P3 |
+| HTML `no-cache` | Медленные repeat visits | Низкая | Short cache + ETag | P3 |
+
+---
+
+## 6. Production-ready рекомендации
+
+**Must (до публичного релиза)**
+- [ ] Deploy с `_headers` / nginx config на HTTPS
+- [ ] Run `node tools/security-check.mjs` в CI
+- [ ] Lighthouse mobile ≥85 (после оптимизации LCP)
+- [ ] Убрать 404 из header
+- [ ] Minify CSS/JS/HTML + Brotli
+- [ ] `srcset`/`sizes` для logo и hero
+- [ ] Проверить все canonical/OG URLs на prod domain
+- [ ] Добавить explicit **Privacy** (mailto forms всё равно PII в email client)
+
+**Should**
+- [ ] Magic toggle UI (Pause / Low / Off) — соответствие FAQ
+- [ ] Merge studio sections
+- [ ] Critical CSS для hero
+- [ ] Watermarked press assets
+- [ ] `loading="lazy"` на footer logo (сейчас lazy — OK)
+
+**Could**
+- [ ] RSS devlog
+- [ ] Analytics (Plausible self-hosted + CSP update)
+- [ ] RU/EN i18n если аудитория CIS
+
+---
+
+## 7. Идеи улучшения (18 конкретных)
+
+1. **«Awaken the constellation»** — одна кнопка в hero, запускает `startPlayMode()`.
+2. **Nature Seed cinematic hero** — 3-frame WebP loop 800px wide вместо static stack.
+3. **Game portal hover** — при hover на карточку canvas particles меняют цвет (seed=green, candy=pink…).
+4. **Sticky «Join Nature Seed Beta»** на mobile после scroll past hero.
+5. **Trust strip:** Apple/Google «Coming 2026» + «Physics-first studio».
+6. **Один merged Studio block** с 4 principles вместо 8+8 cards.
+7. **Devlog как timeline** с датами ISO и filter by game.
+8. **Press kit:** downloadable ZIP только по email request (не public folder).
+9. **Per-game sound-less micro-interaction** — tap card = 0.3s CSS haptic-like shake.
+10. **Konami / W-W-W keyboard** opens secret modal (уже есть secrets — расширить).
+11. **Video-free** «living logo» — SVG stroke animation twin-W.
+12. **Dark/light** unified accent: cyan stays, меняется только luminance background.
+13. **Game page:** один hero, убрать triple Nature duplicate.
+14. **Sprite sheet** для Candy backgrounds.
+15. **Ball card:** 6 clouds + CSS repeat вместо 16 `<img>`.
+16. **Footer:** Discord/Telegram только когда реальные, иначе не placeholder.
+17. **Publisher block** с bullet facts: team, engine (Unity), stage, ask.
+18. **Post-launch:** lightweight `/play` demo WebGL Nature level — отдельный origin, не main site.
+
+---
+
+## 8. Финальная концепция идеального сайта WillowinWorld
+
+### Структура
+```
+/                 → Cinematic hero + 4 worlds + magic ritual + studio + devlog + partners
+/games/[slug]     → Immersive single-game story (уже почти есть)
+/press-kit        → Facts + gated downloads
+/404              → Lost stars game (оставить)
+```
+
+### Визуальный стиль
+- **«Enchanted storybook mobile studio»** — watercolor nature + candy gloss + paint splatter + divine verticality, но **единая типографика и сетка**.
+- Day/night = освещение одного мира, не два разных бренда.
+- Wordmark SVG twin-W + cat silhouette как favicon system.
+
+### Интерактив
+- **Главный ритуал:** constellation на canvas (явный CTA).
+- **Вторичный:** secret letters + 404 game.
+- **Третичный:** per-card CSS scenes (без 10+ images где можно).
+
+### Анимации
+- Hero: 1 loop.
+- Scroll: reveal (уже есть).
+- Rest: pause off-screen (уже есть).
+- Mobile default: static beauty + opt-in magic.
+
+### Атмосфера
+- Calm confidence, не «кричащий indie».
+- Первые 3 секунды: *touchable physics worlds*.
+- Для издателя: clarity > spectacle.
+
+### Техническая база
+- Static site + `security-check` CI.
+- Build: minify, split CSS, image pipeline (sharp/cli → webp q=80).
+- Optional: Eleventy/astro для DRY game data из `games.json`.
+
+### Безопасность
+- Текущая модель сохранить.
+- Любой backend (forms, beta keys) — **отдельный API subdomain**, не в static repo.
+- Rewards/secrets — server redemption only.
+
+---
+
+**Итог:** у WillowinWorld уже есть **душа, арт и security-зрелость** уровня студии, которая серьёзно относится к релизу. До «дорогого запоминающегося» не хватает **дисциплины веса** (меньше, но сильнее), **performance budget** и **одного главного интерактивного ритуала**, который виден с первого экрана — не только в коде canvas.
+
+Если нужно, могу следующим шагом сделать **приоритизированный backlog в issues** или начать с P0 (split CSS, убрать 404 из header, magic CTA, LCP preload).
+# Полный аудит WillowinWorld (продолжение)
+
+Аудит по репозиторию `site/`: статический сайт без сборки, ~10 836 строк CSS, ~1 870 строк JS на главной, 7 HTML-страниц, ~3.1 MB ассетов.
+
+---
+
+## 1. Краткий вердикт
+
+| Направление | Оценка | Комментарий |
+|-------------|--------|-------------|
+| **Дизайн** | **7.5 / 10** | Сильная «storybook»-эстетика, живые карточки игр, но перегруз секциями и слабая типографическая иерархия на длинном скролле |
+| **UX** | **6.5 / 10** | Портфолио понятно, навигация рабочая; страница длинная, часть интерактива «спрятана» или не подключена к UI |
+| **Frontend** | **6 / 10** | Хорошая семантика и a11y-паттерны, но монолитный CSS и мёртвый код в JS |
+| **Performance** | **5.5 / 10** | Умная адаптация canvas, но тяжёлый first load и DOM с десятками `<img>` на главной |
+| **Mobile** | **6 / 10** | Breakpoints есть; hero и анимации тяжёлые для слабых телефонов |
+| **Branding** | **7 / 10** | Узнаваемый мир и тон; не хватает одного «якорного» слогана и витрины для издателей |
+| **Security** | **8.5 / 10** | Один из лучших статических профилей: CSP, заголовки, security-check, без внешних скриптов |
+| **Wow-effect** | **7.5 / 10** | Nature hero, карточки игр, canvas-кот, easter eggs — но нет явного «главного ритуала» для пользователя |
+
+**Итог:** сайт уже выше уровня типичной indie-визитки и ближе к **премиальному портфолио-лендингу**, но ещё не доходит до «дорогого интерактивного опыта уровня Awwwards / top game studio 2026» из‑за веса, длины страницы и незавершённых UX-связок в коде.
+
+---
+
+## 2. Главные проблемы
+
+1. **Монолит `styles.css` (~267 KB / ~10.8k строк)** — грузится на всех страницах, включая game pages с `game-theme.js` (~8.5 KB).
+2. **Главная перегружена контентом и картинками** — 58 `<img>`, Candy (10 фонов), Ball (16 облаков) в одной сетке.
+3. **LCP под ударом** — `preload` логотипа (~117 KB) + `Galvnie_3_1-site.webp` (~188 KB) до первого осмысленного контента.
+4. **Мёртвый интерактив в JS** — `gameModal` и режим созвездия (`data-play`, `data-game`) **нет в HTML**; логика есть, входа для пользователя нет.
+5. **Дублирование секций** — `#studio`, `#systems`, `#about`, `#process` повторяют одну мысль четырьмя блоками.
+6. **Кнопка «404» в production-header** — выглядит как внутренняя ссылка для теста, не для издателя/игрока.
+7. **Все декоративные изображения с `alt=""`** — SEO и screen reader теряют контекст игр.
+8. **Canvas magic loop на всю страницу** — даже с throttling на mobile это постоянный GPU/CPU cost.
+9. **Game pages дублируют тяжёлые сцены** (Nature: одна и та же сцена до 3 раз в DOM).
+10. **Press kit отдаёт крупные preview напрямую** (`ship.webp` ~236 KB) без watermark / tiered downloads.
+
+---
+
+## 3. Что уже хорошо (сохранить и усилить)
+
+- **Арт-направление:** палитра (`--cyan`, `--brand-w`, `--rose`, day/night), «иллюстрированный» фон `body::before/::after`, карточки с мини-сценами игр.
+- **Hero Nature Seed** — sketch → water → bloom в `.hero-panel` — сильнейший brand moment на сайте.
+- **Roadmap + progress pills** — честно показывает стадии (Beta 99%, Internal beta и т.д.) → доверие издателей.
+- **Фильтры игр** с `aria-pressed` и `data-tags` — продуманно.
+- **Performance-инженерия в JS:** `prefers-reduced-motion`, `saveData`, FPS fallback → `low-motion`, pause при `visibilitychange`, `IntersectionObserver` для паузы анимаций карточек.
+- **Security baseline:** meta CSP + `_headers` + `tools/security-check.mjs` + `SECURITY.md` — редкость для static indie.
+- **Контакт через mailto** — нет утечки API-ключей и attack surface формы.
+- **Отдельные game pages + press-kit + JSON-LD VideoGame** — готово для SEO и партнёров.
+- **404 как мини-игра** — отдельный wow-слой (если убрать из header).
+
+---
+
+## 4. Подробный аудит по разделам
+
+### 4.1 Design / Art Direction
+
+**Сильные стороны**
+- Единый «магический mobile cozy» язык: glass surfaces, glow, runes, portal badge.
+- Карточки игр — по сути **мини-трейлеры в CSS**: Nature restoration, Candy merge stack, Paint cubes, Ball descent.
+- Типографика: крупные display-заголовки (`hero h1` до ~5rem), balance на `.section-title`.
+- Бренд **WillowinWorld** в шапке с подсветкой букв **W** — запоминается.
+
+**Слабые места**
+- **Визуальный шум на scroll:** фон + canvas + карточки с 10–16 слоями → конкурируют за внимание.
+- **Hero h1 дублируется:** «WillowinWorld» в заголовке и в `.hero-brand-title` — избыточно.
+- **Три CTA в hero** + 4 mini-links — на 390px экране плотно; иерархия «главного действия» размыта (Beta vs Explore vs Publishers).
+- **Иконки principles/systems** — generic SVG, не игровые; ниже уровня карточек игр.
+- **Стили `.magic-console` в CSS есть, в HTML нет** — признак недоведённого art/UI слоя.
+
+**Как сделать дороже**
+- Один **signature motion** на весь сайт (например, «линия воды» из Nature Seed как переход между секциями).
+- Сжать палитру до 1 hero-accent на экран (сейчас cyan + gold + rose + green одновременно).
+- Заменить generic icon grid на **1 кадр из каждой игры** в блоке философии.
+
+---
+
+### 4.2 UX
+
+**Понятно ли, чем занимается студия?**  
+Да, с первого экрана: mobile-first, 4 игры, Nature Seed как flagship.
+
+**Предлагаемая структура (упрощённая)**
+
+| Блок | Содержание |
+|------|------------|
+| **Hero** | 1 слоган + 1 primary CTA (Beta) + 1 secondary (#games) + living Nature panel |
+| **Games** | Roadmap strip + 4 карточки (без 8 фильтров на первом экране — вынести в «All tags») |
+| **Magic / Interactive** | Созвездие, секретные буквы, toggle magic — **с явной CTA «Awaken the sky»** |
+| **Studio** | 1 блок: философия + twin-W + 3 факта (mobile / tactile / 2D) |
+| **Devlog** | 4 карточки (как сейчас) |
+| **Trust** | Press / Publishers / FAQ (сжатый) |
+| **Contact** | CTA + mailto |
+| **Footer** | Без dev-link «404» |
+
+**Критичные UX-баги в коде**
+- `initGameDetails()` ищет `[data-game]` — **в `index.html` таких элементов нет** → модалка `#gameModal` не открывается с карточек (только «Game Page»).
+- `startPlayMode()` вешается на `[data-play]` — **тоже нет в HTML** → мини-игра созвездия недоступна.
+- Секреты (`secret-glint`) работают, но **без onboarding** пользователь не поймёт механику.
+
+**Перегруз:** ~9 крупных секций до footer — для игрока ок, для издателя длинно; нужен **«Publisher jump»** (якорь / sticky bar).
+
+---
+
+### 4.3 Frontend / Code Quality
+
+| Аспект | Оценка |
+|--------|--------|
+| HTML | Семантичный (`header`, `main`, `article`, `nav`, `dialog`) |
+| CSS | Мощный, но **не масштабируется** без split по страницам/играм |
+| JS | Один IIFE, без модулей; много state в `scripts.js` |
+| A11y | Skip-link, modals, FAQ `aria-expanded`, focus trap — хорошо |
+| Повторы | Дубли CSS для `.nature-*`, `.candy-*`, `.paint-*`, `.ball-*` (зеркальные блоки) |
+
+**Конкретно переписать**
+1. Разбить CSS: `base.css`, `home.css`, `games/nature.css`… или critical CSS inline + async rest.
+2. Удалить или подключить UI для: `gameModal`, `magic-console`, `pauseMagic`, `themeState`.
+3. Game pages: **один** `.nature-stage` в hero, убрать дубликаты backdrop (сейчас 3 копии одних webp в `nature-seed.html`).
+4. Вынести `gameProfiles` в JSON — проще обновлять devlog/статусы.
+5. Добавить `loading="lazy"` на hero Nature images кроме LCP-кандидата (сейчас hero без lazy — ок для LCP, но 6+ img в panel тяжело).
+
+**CLS:** `width`/`height` на img везде — плюс. Риск CLS от canvas и toast/badge — проверить на реальном Lighthouse.
+
+---
+
+### 4.4 Performance
+
+**Ориентиры по репозиторию**
+
+| Ресурс | Размер |
+|--------|--------|
+| `index.html` + `styles.css` + `scripts.js` | **~398 KB** (без gzip) |
+| `styles.css` | **267 KB** |
+| `scripts.js` | **69 KB** |
+| `assets/` | **~3.1 MB** |
+| Крупнейшие файлы | `ship.webp` 236 KB, `Galvnie_3_1` 188 KB, logos ~117–137 KB |
+
+**Что будет лагать и почему**
+
+| Источник | Почему | Где |
+|----------|--------|-----|
+| Full-screen canvas rAF | Рисует небо, холмы, замок, кота, частицы каждый кадр | `magicCanvas` + `render()` |
+| 58 изображений на главной | Декодирование, память | `#gamesGrid` |
+| Candy 10× `back_glavnie_*.webp` | Даже с `lazy` — тяжёлый DOM | `.candy-bg-stack` |
+| Ball 16 clouds | 16 отдельных img + CSS animation | `.ball-cloud-field` |
+| `backdrop-filter: blur` на `.eyebrow`, cards | Дорого на mobile GPU | по всему CSS |
+| `will-change: transform` на многих слоях | Лишние compositor layers | game cover CSS |
+| Preload 2 heavy images | Конкурируют с LCP text | `<head>` index |
+
+**Уже сделано правильно**
+- Throttle 31 FPS на mobile / low-motion.
+- Background cache canvas.
+- `is-animation-paused` вне viewport.
+- Budget 512 KB на asset в `security-check.mjs`.
+
+**Перед релизом обязательно**
+1. Brotli/Gzip на CDN + `Cache-Control` для assets (в `_headers` уже есть immutable для `/assets/*`).
+2. Сжать hero preload до **одного** LCP-изображения (скорее painted level ~80–120 KB WebP).
+3. Responsive images: `srcset` для icons 640→256 display size.
+4. Разделить CSS; game pages не должны тянуть paint/ball/candy анимации с главной.
+5. Lighthouse mobile: цель LCP < 2.5s, INP < 200ms (canvas + scroll listeners влияют на INP).
+
+---
+
+### 4.5 Motion / Interactive
+
+**Работает**
+- Canvas: кот, луна/солнце, частицы, клик-bursts, trails.
+- Карточки: hover shine (только fine pointer), paused offscreen.
+- Nature card/hero: water route SVG animation.
+- Secrets: `.secret-glint` + сбор букв фразы игры.
+
+**Не работает / скрыто**
+- Constellation play (`data-play` отсутствует).
+- Game quick-view modal (`data-game` отсутствует).
+- Magic controls UI (`pauseMagic`, `disableMagic` — null без разметки).
+
+**Идеи с оценкой perf**
+
+| Идея | Perf | Рекомендация |
+|------|------|----------------|
+| Магический курсор (trail) | Средний | Уже есть; на touch отключить (частично есть) |
+| Мини-игра созвездия | Низкий | **Вернуть кнопку** «Connect the stars» |
+| Частицы только в hero | Низкий | Ограничить canvas высотой hero, не fullscreen |
+| Живой фон CSS only вне canvas | Низкий | Для low-end |
+| Интерактивные карточки (tap = play 2s loop) | Средний | Только 1 активная карточка |
+| Portal spell на scroll | Средний | 1 раз при входе в `#games` |
+| Easter egg 404 | Низкий | Оставить, убрать из nav |
+| Paint color burst on hover | Высокий | Только desktop |
+| Fullscreen particles 200+ | **Опасно** | Не делать |
+
+---
+
+### 4.6 Branding
+
+**Запоминается ли WillowinWorld?** Да, имя + twin W + magic cat.
+
+**Слоган сейчас:** *«creates magical mobile games that feel alive»* — хороший, но generic.
+
+**Улучшения**
+- **Позиционирование:** «Tactile magic mobile worlds» / «Игры, которые хочется трогать».
+- **Tone of voice:** тёплый, уверенный, без corporate («mechanic, art and emotion» — сильно; «premium 2D» — повторяется часто).
+- **Визуальные фишки:** линия воды, twin-W portal, magic cat — оформить как **brand kit** на 1 экране.
+- **Для Steam/издателей:** добавить блок **«Coming to stores»** + logos placeholders + 1 screenshot row per game.
+- **Логотип:** текущий webp 1024×1024 избыточен для header 38px — нужен SVG symbol mark.
+
+---
+
+### 4.7 Security (defensive)
+
+**Реальные риски**
+
+| Риск | Критичность | Статус |
+|------|-------------|--------|
+| XSS через innerHTML | — | Запрещено в security-check |
+| XSS через форму | Низкая | mailto only, нет server |
+| Clickjacking | Низкая | `frame-ancestors 'none'`, XFO DENY |
+| MIME sniffing | Низкая | `nosniff` |
+| Supply chain (CDN scripts) | — | Нет внешних скриптов |
+| CSP слишком строгий для будущего | Инфо | `connect-src 'none'` — сломает analytics/forms |
+| Утечка ассетов | Средняя | Прямые URL на webp в press-kit |
+| Hosting misconfig | Средняя | Нужна проверка live headers |
+| localStorage theme | Низкая | Валидация `dark`/`light` есть |
+
+**Перед публикацией**
+1. HTTPS + применить `deploy/nginx-security.conf` или `_headers`.
+2. `node tools/security-check.mjs` в CI.
+3. `security.txt` уже в `.well-known/` — ок.
+4. При добавлении формы — server-side only, не Formspree key в JS.
+5. Subresource Integrity если появятся внешние скрипты.
+
+**Secret rewards в JS:** текст про «skin reward» — **не внедрять реальные коды** в frontend (у вас в SECURITY.md это уже указано верно).
+
+---
+
+### 4.8 Защита от копирования
+
+| Мера | Эффект |
+|------|--------|
+| Preview WebP ≤512 KB, не PSD/Unity в `site/` | **Реально полезно** |
+| Watermark на press assets | **Реально полезно** |
+| Hotlink protection (CDN) | **Частично** |
+| `Referrer-Policy` | **Частично** |
+| robots Disallow `/private/` | **Частично** (если папки нет — символически) |
+| JS obfuscation | **Иллюзия** |
+| `user-select: none` | **Иллюзия** (легко обойти) |
+| Disable right-click | **Иллюзия** + вред UX |
+| «Запрет скачивания» HTML | **Невозможно** |
+
+**Практика:** в press-kit — zip с watermark + low-res; full-res по email; `ship.webp` не отдавать как открытый `<a href>` без tier.
+
+---
+
+### 4.9 Mobile-first
+
+**Плюсы:** `100svh` hero, breakpoints 1120/920/640, touch targets на nav, `hero-worlds` → 2 колонки, stats 3-col.
+
+**Минусы**
+- Canvas на весь viewport — battery drain.
+- `hero-worlds` 2×2 с мелким текстом 0.75rem — на 320px тесно.
+- 3 кнопки hero в столбец — длинный first screen.
+- `.nature-hero-note` скрыт на mobile (`display: none`) — теряется контекст Beta July 2026.
+- Game hero showcases `min-height: 410–520px` — много скролла до текста.
+
+**Конкретные улучшения**
+1. Sticky bottom bar: Games | Beta | Contact.
+2. Отключить canvas на `(max-width: 640px)` или `(pointer: coarse)` по умолчанию.
+3. Hero: один CTA, остальное в «More».
+4. Увеличить `hero-worlds span` до 0.8rem min.
+5. Показывать `nature-hero-note` как 1 строку под CTA.
+
+---
+
+## 5. Таблица проблем
+
+| Проблема | Почему плохо | Критичность | Как исправить | Приоритет |
+|----------|--------------|-------------|---------------|-----------|
+| CSS 267 KB на все страницы | Медленный FCP на game pages | Высокая | Split CSS / purge unused | P0 |
+| 58 img на главной | Память, decode, scroll jank | Высокая | CSS sprites / fewer layers / 1 bg per card | P0 |
+| Preload logo + level | Плохой LCP | Высокая | 1 preload; logo inline SVG или 48px src | P0 |
+| Нет UI для созвездия/модалки | Потерян wow и UX | Средняя | Добавить `[data-play]`, `[data-game]` или удалить код | P1 |
+| Кнопка 404 в header | Непрофессионально | Средняя | Убрать в footer/easter egg only | P1 |
+| 4 похожие секции о студии | Усталость, bounce | Средняя | Слить в 1 блок | P1 |
+| Пустые `alt` на всех img | SEO/a11y | Средняя | Осмысленный alt на key art | P1 |
+| Fullscreen canvas mobile | FPS, батарея | Средняя | Hero-only canvas / off by default | P1 |
+| Дубли Nature scene на game page | Лишние 400+ KB decode | Средняя | 1 instance + CSS background | P2 |
+| Press-kit прямые full webp | Кража арта | Средняя | Watermark + zip + noindex full | P2 |
+| `connect-src 'none'` | Блокирует легитимный analytics | Низкая | Обновить CSP при добавлении | P3 |
+| Два logo 117+137 KB | Лишний вес при theme switch | Низкая | SVG + 1 raster fallback | P3 |
+
+---
+
+## 6. Production-ready рекомендации
+
+**Must (до публичного релиза)**
+- [ ] Live: HTTPS + security headers из `_headers` / nginx
+- [ ] Lighthouse Mobile + Desktop (LCP, CLS, INP)
+- [ ] `node tools/security-check.mjs` в CI
+- [ ] Убрать/скрыть dev-ссылку 404 из header
+- [ ] Оптимизировать LCP hero (1 preload, сжатые WebP)
+- [ ] Разделить или урезать CSS для подстраниц
+- [ ] Проверить все `mailto:` на production домене
+- [ ] sitemap + canonical (уже есть) — проверить live URL
+- [ ] Copyright + privacy note если EU traffic
+
+**Should**
+- [ ] Подключить или удалить мёртвый JS (modal, play mode, magic console)
+- [ ] alt-тексты для игровых превью
+- [ ] Publisher strip (facts + press-kit CTA above fold на desktop)
+- [ ] WebP srcset для иконок
+
+**Nice**
+- [ ] RU/EN toggle если аудитория СНГ
+- [ ] Store badges (Soon™)
+- [ ] OG video 5–8 sec loop Nature Seed
+
+---
+
+## 7. Идеи улучшения (18 конкретных)
+
+1. **«Awaken the sky»** — кнопка запуска созвездия в hero (починить `data-play`).
+2. **Quick View** на карточке — long-press / кнопка «Preview» → `#gameModal` без ухода со страницы.
+3. **Один водяной знак** «WillowinWorld preview» на все press assets.
+4. **Scroll-story:** при скролле к `#games` Nature panel «оживает» (уже почти есть — усилить связку).
+5. **Sound toggle** (off by default) — 1 soft chime на secret found.
+6. **Game-specific cursor** только на hover карточки (candy/paint/seed/ball) — desktop only.
+7. **Magnetic CTA** на primary button (CSS transform, не JS loop).
+8. **Devlog как timeline** с вертикальной линией-water route.
+9. **«Studio in 30 seconds»** — 4 auto-playing 3s loops вместо статичных principles.
+10. **Publisher mode** — `?view=publisher` скрывает magic, показывает factsheet first.
+11. **Video teaser** 720p WebM < 1.5 MB в hero вместо 6 img в panel.
+12. **CSS `@layer`** для порядка каскада — упростит 10k строк.
+13. **Critical CSS** inline ~14 KB для hero + header.
+14. **Constellation progress** в footer «3/10 stars found».
+15. **Konami / W W W** easter egg → secret modal (уже есть буквы — добавить код).
+16. **Ball card:** 16 clouds → 1 sprite sheet webp.
+17. **Candy card:** 10 backgrounds → CSS gradient + 2 keyframes frames.
+18. **Favicon + PWA icons** из SVG, не 1024 webp в manifest.
+
+---
+
+## 8. Финальная концепция идеального сайта WillowinWorld
+
+### Структура
+1. **Portal Hero** — слоган + Nature living demo + 1 CTA Beta  
+2. **Worlds** — 4 immersive cards (fullscreen feel on hover/tap)  
+3. **Magic Layer** — интерактив созвездия + secrets (tutorial 1 line)  
+4. **Studio** — 1 экран: философия + twin-W + team tone  
+5. **Roadmap rail** — горизонтальный timeline 2026  
+6. **Devlog** — feed с game pages  
+7. **For Partners** — press, publisher, contact  
+8. **Footer** — legal, socials, 404 hidden  
+
+### Визуальный стиль
+- Storybook fantasy + mobile UI clarity  
+- Day = «sunlit meadow», Night = «moonlit portal» (уже есть — довести контраст)  
+- Меньше одновременных glow-эффектов  
+
+### Интерактив
+- Hero canvas **только в hero**  
+- Игровые механики **только в карточках** (draw line, merge, shoot, drop)  
+- 1 обучаемый secret за визит  
+
+### Анимации
+- 60fps desktop / 30fps mobile cap  
+- `prefers-reduced-motion` — полный static beautiful frame (не «пустой» сайт)  
+
+### Атмосфера
+- «Мир уже живёт до скачивания игры»  
+- Кот-проводник как recurring character  
+
+### Техническая база
+- Static + optional lightweight API только для forms/rewards  
+- Build: minify, split CSS, image pipeline (sharp/squoosh)  
+- CI: security-check + Lighthouse budget  
+
+### Безопасность
+- Текущая модель сохранить; любые формы/rewards — только server  
+- Ассеты: public preview / private source separation  
+
+---
+
+## Дополнение: быстрые wins на этой неделе
+
+Если нужен максимальный эффект при минимальном diff:
+
+1. Убрать `<a href="404.html">` из header.  
+2. Добавить в hero: `<button data-play type="button">Awaken the stars</button>`.  
+3. Оставить один `rel=preload` — `Galvnie_3_1-site.webp` (logo грузить без preload).  
+4. Слить `#systems` + `#about` в `#studio`.  
+5. Запустить сжатие всех webp >100 KB через `cwebp -q 82`.  
+
+Могу следующим шагом **внедрить эти P0/P1 правки в код** или сделать **отдельный чеклист Lighthouse** под ваш хостинг (Cloudflare / nginx / GitHub Pages).
+# Углублённый дополнительный аудит WillowinWorld
+
+Ниже — **новые** находки поверх предыдущего разбора, с опорой на код в `site/` и на подтверждённые практики (MDN, web.dev/W3C, OWASP, постмортемы perf-сообществ). **Lighthouse/PageSpeed по live-URL не запускались** — метрики LCP/INP ниже даны как прогноз по весу и архитектуре; их нужно подтвердить на проде.
+
+---
+
+## 1. Что ещё удалось найти
+
+### Дизайн
+- **28× `backdrop-filter`** + **fixed header** с `blur(18px)` — при скролле под шапкой постоянно пересчитывается «стекло» (типичный источник micro-freeze на iPhone; см. [обсуждение Phanpy #212](https://github.com/cheeaun/phanpy/issues/212), [ColorFYI — backdrop-filter](https://colorfyi.com/blog/web-color-performance/)).
+- **70× `filter:` / 146× `clip-path` в анимациях** (например `natureBackdropRepaint` анимирует `clip-path` + `filter`) — дороже, чем анимация только `transform`/`opacity` ([web.dev — filter effects](https://web.dev/articles/understanding-css)).
+- **172 z-index** в одном файле — риск «невидимых» перекрытий при добавлении модалок/тостов/секретов.
+- **`.brand-w` с `background-clip: text` + двойной `drop-shadow`** — красиво, но на слабых GPU увеличивает paint cost в шапке на каждом кадре скролла.
+
+### UX
+- **Мёртвые UX-ветки в JS без HTML:** нет `[data-play]` (созвездие), нет `[data-game]` (quick-view modal) — пользователь не может получить задуманный опыт, хотя код и модалки есть.
+- **Easter eggs (`secret-glint`):** ~10 невидимых кнопок (`opacity: 0`) с `aria-label="Hidden portal symbol"` — для screen reader это «пустые порталы» без контекста; для sighted users — ноль discoverability.
+- **Фильтр `tags.includes(filter)`** — хрупкая логика (см. раздел причин); на press-kit есть `aria-live` для фильтра, на главной — **нет** `data-filter-status`.
+- **Навигация не покрывает половину страницы:** в меню есть `#studio`, но нет `#about`, `#systems`, `#process`, `#faq` — при скролле «потерянность» и неверный `aria-current`.
+- **Кнопка «404» в production-header** — сигнал «сайт ещё в dev», режет доверие издателя.
+- **mailto как единственный «submit»** — на iOS без настроенной почты CTA «отправить» может ничего не сделать (типичный UX-кейс, не баг кода, но риск конверсии).
+
+### Frontend
+- **Монолит `styles.css` (~10 836 строк / ~267 KB)** грузится на **все** страницы, включая game pages, которым нужна ~5–15% стилей.
+- **Дублирование разметки Nature** на `games/nature-seed.html`: одни и те же `Galvnie_3_0/3_1` до **3 раз** в DOM → лишний decode памяти.
+- **CSS `url("assets/Nature Seeds/...")` с пробелами** в путях (`repeat-y`, `max(100vw, 1440px)`) — на game-страницах фон может тянуть **сотни KB при каждом вертикальном скролле** через repaint большого background.
+- **`game-theme.js` — бесконечный `requestAnimationFrame`** после первого `pointermove`: цикл **не останавливается**, пока не сработает `document mouseleave` (строки 137–167). На game pages курсор-маскот крутит rAF постоянно после первого движения мыши.
+- **Apache vs Cloudflare `_headers`:** в `.htaccess` CSS/JS кэшируются **1 час**, в `_headers` для HTML — `no-cache`, для `/assets/` — 1 год. При смешанном деплое легко получить неожиданный cache mix.
+- **Внутренние ссылки `index.html#games`**, canonical — `https://willowinworld.com/` → риск **дубля URL** `/` vs `/index.html` для SEO (зависит от хостинга).
+
+### Performance
+- **Прогноз critical path главной:** HTML+CSS+JS ≈ **398 KB** до gzip + 2 preload (logo ~117 KB + level ~188 KB) → LCP-кандидат почти наверняка **картинка**, не текст.
+- **58 `<img>` на index** — даже с `lazy` ниже fold, при фильтрации/скролле к `#games` всплеск decode.
+- **Candy: 10 фонов в DOM; Ball: 16 cloud img** — при входе в viewport снимается `is-animation-paused`, но **узлы остаются**.
+- **Canvas `shadowBlur` в цикле отрисовки** (bursts, trails, stars) — известный GPU cost; на mid Android даст просадку после нескольких тапов.
+- **`prefers-reduced-motion` в CSS** обнуляет анимации, но **canvas loop на главной всё равно стартует** (если не сработал ранний `lowMotion` по saveData) — частичный, не полный degrade.
+
+### Mobile
+- **Fixed header + `100svh` hero** — на iOS Safari адресная строка меняет viewport; `svh` лучше `vh`, но **safe-area-inset** для notch/ home indicator **не найден** в CSS.
+- **`.hero-worlds` → 2 колонки на 640px** с текстом 0.75rem — на **320px** подписи жанров почти нечитаемы без zoom.
+- **Скрытие `*-hero-note` на mobile** (Nature/Candy/Paint/Ball) — теряется ключевой контекст «Beta July 2026» на game pages.
+- **Touch: глобальные `click`/`touchend` на `window`** в `scripts.js` для magic bursts — возможны **случайные вспышки** при тапе по кнопкам (частично отфильтровано `closest("button, a, ...")`, но не все интерактивы).
+- **Game cursor mascots** отключены на coarse pointer — правильно; **главный canvas — нет** такого же hard-off по умолчанию на touch.
+
+### SEO
+- **Sitemap без `404.html`** — правильно (`noindex` на 404).
+- **Все ключевые game images с `alt=""`** — Google Image Search и accessibility теряют сигналы; текст есть в `aria-label` на `article`, но **не на `<img>`**.
+- **JSON-LD VideoGame** без `url`, `image`, `datePublished` — богатые сниппеты ограничены.
+- **Один `lang="en"`** при возможной СНГ-аудитории — нет `hreflang` (если планируется RU).
+- **Пробелы в URL ассетов** (`Nature%20Seeds`) — не ломает SEO, но хуже для sharing/CDN rules.
+
+### Accessibility
+- **Мобильное меню без focus trap** — при `menu-open` Tab уходит на контент под меню (модалки делают trap, меню — нет).
+- **`.main-nav a { outline: none }`** на hover/focus path — компенсируется на части элементов, но **hero-worlds** тоже `outline: none` при `:focus-visible` (есть только border/transform — нужно проверить контраст фокуса).
+- **FAQ** — нет `aria-controls` / связи с панелью, только `aria-expanded` (работает, но слабее для SR).
+- **Секретные кнопки** — фокусируемые, но невидимые до focus/hover → **ловушка для keyboard users** (10+ таб-стопов).
+- **Модалки:** `hidden` + focus trap есть; **`inert` на фоне нет** — фон теоретически фокусируем в edge cases.
+
+### Security
+- **Сильная база:** CSP, nosniff, COOP/CORP, no external scripts, `textContent` вместо HTML, `security-check.mjs`.
+- **CSP meta + HTTP header** — при двойной политике браузер применяет **пересечение (строже)** ([MDN / CSP multiple policies](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy)); `connect-src 'none'` заблокирует любой будущий analytics без обновления CSP.
+- **`frame-ancestors` только в HTTP CSP** — meta его **не поддерживает** ([csplite / MDN](https://csplite.com/csp67/)); без nginx/_headers кликджекинг через iframe теоретически возможен.
+- **`require-trusted-types-for 'script'`** — продвинуто; при расширении JS нужно соблюдать Trusted Types (сейчас ок при `textContent`).
+- **mailto injection:** subject/body из формы — не XSS на сайте, но **CRLF/header injection в mail-клиент** теоретически возможен при `\n` в полях (низкий риск, зависит от клиента).
+- **Нет Privacy Policy / cookie banner** — localStorage `willow-theme` юридически спорен для EU (скорее exempt, но лучше упомянуть в privacy).
+
+### Защита ассетов
+- **`press-kit.html` прямые ссылки на full `.webp`** (в т.ч. `ship.webp` ~236 KB) — легальный hotlink/download.
+- **Два полных логотипа** (day/night ~117+137 KB) — удваивает «кражу» бренда.
+- **`security-check` блокирует >512 KB** в `assets/` — хорошо; `ship.webp` в пределах, но всё ещё крупный оригинал для web.
+- **Папки с пробелами** — не дыра, но усложняет WAF/CDN правила.
+
+---
+
+## 2. Новые возможные причины проблем
+
+| Возможная причина | Почему это проблема | Как проверить | Вероятность | Опасность | Приоритет |
+|-------------------|---------------------|---------------|-------------|-----------|-----------|
+| Fixed header + `backdrop-filter: blur(18px)` на весь viewport width | Пересчёт backdrop при скролле → jank, особенно iOS | Chrome Performance: Paint при scroll; отключить blur в DevTools | **Высокая** | Средняя (UX/perf) | **P0** |
+| 28 backdrop-filter + 70 filter по странице | GPU saturation, падение FPS | Layers panel, «Paint flashing» | **Высокая** | Средняя | **P0** |
+| Анимация `clip-path` + `filter` в Nature keyframes | Не compositor-only → main thread | Performance tab, отключить `.nature-*` animations | **Высокая** | Средняя | **P1** |
+| Fullscreen canvas rAF + shadowBlur | Постоянная нагрузка + пики при тапах | Performance monitor GPU; `state.disabled=true` в консоли | **Высокая** | Средняя–высокая на mobile | **P0** |
+| `game-theme.js` rAF не останавливается после первого move | Лишний 60/30 FPS на game pages (desktop) | Performance: JS FPS на game page без движения мыши → подвинуть мышь → FPS не падает до 0 | **Высокая** | Средняя | **P1** |
+| 267 KB CSS на все routes | Долгий FCP на 3G, parse блокирует render | Network: `styles.css` transfer size; Coverage tab | **Высокая** | Высокая (mobile) | **P0** |
+| 2× preload тяжёлых hero images | Конкурируют с LCP текстом/шрифтом | Lighthouse LCP element; Network priority | **Высокая** | Высокая (LCP) | **P0** |
+| 58 img + 10/16 слоёв в карточках | Memory pressure, scroll jank в `#games` | Chrome Memory; скролл к games на Moto G | **Высокая** | Средняя | **P1** |
+| `tags.includes(filter)` без токенизации | Ложные совпадения при будущих тегах (`Art`⊂`Smart`, `Co`⊂`Cozy`) | Добавить тег `Co-op`; фильтр `Co` | **Средняя** | Низкая сейчас | **P2** |
+| Дубли `/` и `/index.html` в ссылках | Duplicate content, размытие PageRank | `curl -I` оба URL; Search Console | **Средняя** (зависит от хоста) | Средняя SEO | **P1** |
+| Мёртвый UI (`data-play`, `data-game`) | Wow обещан, но недоступен → ощущение «сырости» | Grep + ручной клик | **100%** | Репутация | **P1** |
+| Меню без focus trap | a11y провал WCAG 2.4.3 | Tab при открытом меню <1120px | **Высокая** | Средняя (a11y/legal) | **P1** |
+| CSP только meta (без headers на хосте) | Нет `frame-ancestors`, слабее clickjacking | securityheaders.com на проде | **Зависит от деплоя** | Средняя | **P0** перед релизом |
+| JSON-LD без `url`/`image` per game | Слабее rich results | Rich Results Test | **Высокая** | Низкая–средняя SEO | **P2** |
+| mailto-only contact | Потеря лидов без mail client | Тест iPhone без Mail | **Средняя** | Бизнес | **P1** |
+| `Cache-Control: no-cache` на HTML | Правильно для свежести; TTFB всегда с origin | Network на document | **100%** | Низкая | — |
+| Secret buttons `opacity:0` в tab order | 10+ «пустых» фокусов | Tab с клавиатуры по главной | **Высокая** | a11y | **P2** |
+| Пробелы в путях assets | Ошибки на экзотических серверах/CDN | Деплой на целевой хост | **Низкая** | Средняя при миграции | **P3** |
+
+---
+
+## 3. Новые способы фикса
+
+| Способ фикса | Что изменить | Почему поможет | Риски | Когда использовать | Production-ready? |
+|--------------|--------------|----------------|-------|---------------------|-------------------|
+| **A. Hero-only canvas** | Ограничить `#magicCanvas` высотой hero, `pointer-events: none` ниже fold | −60–80% GPU на длинном скролле | Нужно пересчитать координаты созвездия | Главная, mobile в приоритете | **Да** |
+| **B. Отключить canvas на `(pointer: coarse)`** | В `scripts.js` при init: `state.disabled=true` | Мгновенный mobile win | Меньше «магии» на телефоне | Mobile-first релиз | **Да** |
+| **C. Split CSS по route** | `base.css` + `home.css` + `game-nature.css`… | Game pages −200KB+ CSS | Сложнее деплой без build | Рост числа страниц | **Да** (с build или ручным split) |
+| **D. Critical CSS inline** | ~12–15 KB above-the-fold inline, остальное async | LCP/FCP ↓ | Дублирование, drift | Одностраничный hero-критичный релиз | **Да** (с дисциплиной) |
+| **E. Замена backdrop на opaque header @mobile** | `@media (max-width:920px){.site-header{backdrop-filter:none;background:...}}` | Убирает scroll jank ([industry pattern](https://colorfyi.com/blog/web-color-performance/)) | Чуть «площе» дизайн | Mobile perf P0 | **Да** |
+| **F. Sprite sheet / 1 bg для Candy & Ball** | 10→1 webp, 16 clouds→1 atlas | Меньше DOM, decode | Art pipeline | Карточки games | **Да** |
+| **G. `srcset` + sizes для icons** | 640px file → display 80px | −80% bytes на icons | Генерация размеров | Все страницы | **Да** |
+| **H. Подключить мёртвый UI** | Кнопки `[data-play]`, `[data-game]` на карточках | Закрывает UX-долг без нового кода | Модалка дублирует game page | Быстрый wow | **Да** |
+| **I. Удалить мёртвый код** | gameModal, playMode, magic-console CSS | Меньше веса и путаницы | Потеря «задела» | Если не планируете фичу | **Да** |
+| **J. Токенизированные фильтры** | `data-tags` → `data-tags="Mobile|Puzzle|..."`, split по `\|` | Нет false positive | Миграция разметки | Любой фильтр | **Да** |
+| **J2. `aria-live` на главной** | Как в press-kit `data-filter-status` | SR понимают фильтр | — | a11y | **Да** |
+| **K. Serverless form (CF/Netlify)** | POST + rate limit + Turnstile | Лиды без mailto; spam control | CSP `connect-src`, секреты **только server** | Публикация | **Да** (не в static-only) |
+| **L. Оставить mailto** | + fallback текст «или email напрямую» | Нулевой attack surface | Потеря конверсии | MVP / security-first | **Да** (ограниченно) |
+| **M. Остановка rAF в game-theme** | `cancelAnimationFrame` когда pointer idle >2s | −CPU на game pages | Чуть рывков маскота | Game pages desktop | **Да** |
+| **N. `inert` на `.page` при modal/menu** | Полифилл или native | a11y + фокус | Старые браузеры без `inert` | Модалки/меню | **Да** (с fallback) |
+| **O. Press assets: zip + watermark** | Убрать прямые href на full art | Реальная защита промо | Трение для прессы | Press kit | **Да** |
+| **P. Obfuscation / disable right-click** | — | — | UX вред, не security | **Не использовать** | **Нет** |
+| **Q. Полный SSR framework** | Next/Astro | Масштаб | Overkill сейчас | 20+ страниц, CMS | Для будущего |
+
+---
+
+## 4. Сравнение подходов
+
+### Performance: фон и эффекты
+
+| Подход | Надёжность | Сложность | Performance | UX | SEO | Security | Риск багов | Production |
+|--------|------------|-----------|-------------|-----|-----|----------|------------|------------|
+| **Убрать backdrop на mobile** | Высокая | Низкая | ★★★★★ | ★★★★☆ | — | — | Низкий | **Да** |
+| **Меньше blur radius (18→6px)** | Средняя | Низкая | ★★★☆☆ | ★★★☆☆ | — | — | Низкий | **Да** |
+| **CSS blur вместо backdrop** | Средняя | Средняя | ★★★★☆ | ★★★☆☆ | — | — | Средний | **Да** |
+| **Оставить как есть** | — | — | ★☆☆☆☆ | ★★★★★ | — | — | — | **Нет** для mobile |
+
+### Magic / интерактив
+
+| Подход | Надёжность | Сложность | Performance | UX | SEO | Security | Риск багов | Production |
+|--------|------------|-----------|-------------|-----|-----|----------|------------|
+| **Hero-only canvas** | Высокая | Средняя | ★★★★☆ | ★★★★☆ | — | ★★★★★ | Средний | **Да** |
+| **Off on touch** | Высокая | Низкая | ★★★★★ | ★★★☆☆ | — | ★★★★★ | Низкий | **Да** |
+| **CSS-only ambient** | Высокая | Средняя | ★★★★★ | ★★★☆☆ | — | ★★★★★ | Низкий | **Да** |
+| **Fullscreen canvas везде** | — | — | ★★☆☆☆ | ★★★★★ | — | ★★★★★ | Средний | **Только desktop** |
+
+### CSS architecture
+
+| Подход | Надёжность | Сложность | Performance | UX | SEO | Security | Риск багов | Production |
+|--------|------------|-----------|-------------|-----|-----|----------|------------|
+| **Manual split CSS** | Средняя | Средняя | ★★★★☆ | — | — | ★★★★★ | Средний (missing styles) | **Да** |
+| **Build (Vite/Astro)** | Высокая | Высокая | ★★★★★ | — | ★★★★☆ | ★★★★★ | Низкий при CI | **Да** (лучший long-term) |
+| **Critical CSS only** | Средняя | Средняя | ★★★★☆ | — | — | — | Drift | **Да** как этап |
+| **Один styles.css** | — | Низкая | ★★☆☆☆ | — | — | ★★★★★ | Низкий | **Прототип / не финал** |
+
+### Contact / leads
+
+| Подход | Надёжность | Сложность | Performance | UX | SEO | Security | Риск багов | Production |
+|--------|------------|-----------|-------------|-----|-----|----------|------------|
+| **mailto (сейчас)** | Высокая | Низкая | ★★★★★ | ★★☆☆☆ | — | ★★★★★ | Низкий | **MVP да** |
+| **Form + server + Turnstile** | Высокая | Высокая | ★★★★☆ | ★★★★★ | — | ★★★★☆ (CSP!) | Средний | **Да** для релиза |
+| **Formspree с ключом в JS** | Средняя | Низкая | ★★★★☆ | ★★★★☆ | — | ★☆☆☆☆ | Высокий | **Нет** |
+
+### Защита ассетов
+
+| Подход | Надёжность | Сложность | Performance | UX | Security | Production |
+|--------|------------|-----------|-------------|-----|------------|
+| Preview + watermark + zip | Высокая | Средняя | — | ★★★★☆ | ★★★☆☆ | **Да** |
+| CDN hotlink protection | Средняя | Средняя | — | — | ★★★☆☆ | **Да** |
+| `user-select: none` / block DevTools | Низкая | Низкая | — | ★☆☆☆☆ | ★☆☆☆☆ | **Нет** |
+
+---
+
+## 5. Практический план
+
+### 🔴 Сделать в первую очередь
+
+1. **Проверить live security headers** (`securityheaders.com` / curl) — без nginx/`_headers` сайт **не** защищён от clickjacking так, как задумано.
+2. **Снять или ограничить canvas на mobile / touch** (подход B) — самый дешёвый perf win.
+3. **Убрать `backdrop-filter` с header на ≤920px** (подход E) — подтверждённый industry fix.
+4. **Один preload** — оставить только LCP Nature painted frame; logo без preload или SVG.
+5. **Убрать «404» из header** — или спрятать в easter egg.
+6. **Решить судьбу мёртвого JS:** подключить `[data-play]` + `[data-game]` **или** вырезать ~15% `scripts.js` и HTML модалок.
+7. **Redirect `/index.html` → `/`** на сервере — SEO hygiene.
+8. **`node tools/security-check.mjs` в CI** перед каждым деплоем.
+
+### 🟠 Проверить после этого
+
+1. Split CSS или Astro/Vite — game pages не должны тянуть Ball/Candy keyframes.
+2. Candy 10→1 asset; Ball clouds→sprite.
+3. `srcset` для всех icon 520–640px → 96–128px display.
+4. Focus trap + `inert` для mobile menu.
+5. Исправить `game-theme.js` idle stop rAF.
+6. Убрать тройное дублирование Nature scenes на game page.
+7. Добавить `data-filter-status` + токенизацию тегов.
+8. Осмысленные `alt` на ключевых game images.
+9. Расширить JSON-LD (`image`, `url`, `applicationCategory`).
+10. Press-kit: tiered downloads, не прямые full PNG/WebP.
+11. Safari iOS: 320px, landscape, `prefers-reduced-motion`, увеличенный system font (200%).
+12. Тест mailto на iOS/Android без почтового клиента.
+
+### 🟢 Дополнительные улучшения
+
+1. Publisher mode `?view=publisher` (меньше magic, выше factsheet).
+2. Sticky mobile bar: Games | Beta | Contact.
+3. Video loop hero 5–8s WebM <1.5 MB вместо 6 img в panel.
+4. RU/EN + hreflang при необходимости.
+5. Privacy policy (localStorage theme, email).
+6. Store badges «Coming 2026».
+7. Konami / `W W W` easter egg с подсказкой в FAQ.
+8. Lighthouse CI budget (LCP <2.5s, CLS <0.1).
+9. `content-visibility: auto` на длинных секциях ниже fold.
+10. Favicon/mark из SVG, не 1024 webp в manifest.
+
+---
+
+## 6. Проверка фиксов
+
+| Инструмент | Что смотреть | Критерий «помогло» |
+|------------|--------------|-------------------|
+| **Lighthouse Mobile** | LCP element, TBT, CLS | LCP img ≤120 KB equiv; LCP <2.5s |
+| **PageSpeed Insights** | Field vs Lab | Lab улучшился; field — через 28d |
+| **Chrome Performance** | Scroll с header, Paint flashing | Меньше full-screen green flashes |
+| **Layers / Rendering** | Compositor layers count | Не 50+ layers на главной |
+| **Coverage** | `styles.css` unused % | <40% unused на game pages после split |
+| **Network** | CSS transfer, preload count | 1 preload; CSS ↓ на game routes |
+| **Memory** | Heap при scroll #games | Нет роста >30–50 MB |
+| **WebPageTest** | 3G Fast, Moto G4 | Start render <3s |
+| **Security tab / curl -I** | CSP, HSTS, XFO, frame-ancestors | Все директивы из `_headers` |
+| **OWASP ZAP passive** | XSS, headers | 0 high на static |
+| **keyboard only** | Menu, modals, secrets | Menu trap; secrets optional skip link |
+| **axe / WAVE** | alt, contrast, focus | 0 critical |
+| **VoiceOver iOS** | Фильтры, FAQ, secrets | Нет «10 Hidden portal» без объяснения |
+| **Safari iOS** | 100svh hero, mailto CTA | Нет обрезанного CTA |
+| **Rich Results Test** | JSON-LD | Valid VideoGame items |
+| **Ручной** | Фильтры, theme toggle, game cards pause offscreen | Карточки вне viewport не анимируются |
+
+---
+
+## 7. Честный вывод
+
+### Самый надёжный фикс (пакет для релиза)
+**Mobile perf triad:** отключить/сузить canvas на touch + убрать header backdrop-filter на mobile + один LCP preload + split или purge CSS для subpages. Это даёт измеримый выигрыш без смены визуальной концепции.
+
+### Что лучше не использовать
+- **Right-click block, obfuscation, «защита от скачивания»** — иллюзия, вред UX/SEO.
+- **Formspree/API keys в frontend** при вашей CSP-философии — ломает модель безопасности.
+- **Fullscreen canvas на всех устройствах** как default — противоречит mobile-first.
+- **Оставить мёртвый gameModal/playMode** без UI — хуже, чем удалить (ощущение недоделки).
+
+### Перед финальным решением проверить
+- Реальный хостинг: применяются ли `_headers` / nginx / apache (не только meta CSP).
+- Lighthouse на **прод-домене**, не `file://`.
+- iOS Safari на реальном устройстве (backdrop + svh + mailto).
+- Дубли URL `/` vs `/index.html`.
+- Нужен ли вам **server form** для издателей (если да — планируйте CSP `connect-src` заранее).
+
+### Неопределённость
+- Точные LCP/INP без live run.
+- Поведение конкретного CDN (Cloudflare vs nginx only).
+- Влияние `require-trusted-types-for` на старые браузеры (мало данных, низкий риск).
+
+### При росте сайта
+- Монолит CSS станет **неподдерживаемым** (>15k строк).
+- Ручное обновление CSP hash для JSON-LD при каждом изменении — точка отказа (у вас уже есть check — хорошо).
+- Больше игр → больше дублирующихся card CSS blocks — нужен build/design tokens.
+
+### Production-ready?
+**Нет, в текущем виде для публичного релиза уровня «издатель + массовый mobile трафик»** — из‑за perf-бюджета (CSS + canvas + images), UX-долгов (мёртвый интерактив, 404 в header), a11y (menu, secrets), SEO (alt, duplicate URLs).  
+
+**Да для закрытой beta / портфолио для знакомых партнёров**, если задеплоить security headers и принять mobile perf компромиссы.
+
+### Подтверждено кодом vs нужны тесты
+| Утверждение | Статус |
+|-------------|--------|
+| Мёртвые `data-play` / `data-game` | **Подтверждено** (grep) |
+| rAF в game-theme не idle-stop | **Подтверждено** (код) |
+| 28 backdrop-filter | **Подтверждено** (grep) |
+| security-check passes | **Подтверждено** (локальный run) |
+| LCP <2.5s on 4G | **Нужен тест** |
+| Clickjacking без headers | **Нужен тест проде** |
+| mailto fail rate on iOS | **Нужен тест** |
+
+### Что можно отложить
+- Framework migration (Astro).
+- RU локализация.
+- Server form (если mailto + явный email в footer достаточно на beta).
+- Konami easter egg.
+
+---
+
+Если нужно следующим шагом — могу **внедрить только 🔴 блок** (без смены визуальной идеи) или подготовить **чеклист деплоя под ваш хостинг** (Cloudflare Pages / nginx / GitHub Pages).
+# Углублённый аудит — третий слой (новые находки)
+
+Ниже — то, что **ещё не разбиралось** или разбиралось поверхностно: скрытые баги, edge cases, архитектурный долг, SEO/social, progressive enhancement. Предыдущие выводы (CSS 267 KB, canvas, мёртвый `data-play`) учтены, но не повторяются без нового угла.
+
+---
+
+## 1. Что ещё удалось найти
+
+### Дизайн
+- **OG/Twitter превью:** везде квадратные иконки 1024×1024 / 520×520 при `summary_large_image` — в Discord/Telegram/LinkedIn обрежется, слабый **link preview** ([рекомендация ~1200×630](https://developers.facebook.com/docs/sharing/webmasters/images/)).
+- **Press-kit nav:** якоря оформлены как `filter-btn` — визуально «фильтр», по смыслу «разделы» → когнитивный диссонанс.
+- **Фильтр «Mobile»** на главной и press-kit: у всех 4 карточек есть тег `Mobile` → кнопка **бесполезна**, создаёт ощущение сломанного UI.
+
+### UX
+- **Тема по умолчанию в HTML — всегда `light`** на всех страницах (`<body data-theme="light">`), хотя JS потом читает `prefers-color-scheme` / `localStorage` → **вспышка светлой темы** у dark-пользователей до конца `scripts.js` / `game-theme.js`.
+- **Случайный secret на каждый reload** (`secretRewards[Math.floor(Math.random()...)]`) — нельзя «дойти» до награды стабильно; для игрового сайта это скорее раздражитель, чем easter egg.
+- **Press-kit ≈ клон блока `#games` с index** (те же карточки, те же тексты, те же `id="nature-card"` и т.д.) — при правках легко **рассинхронить** факты (July 2026, % beta).
+
+### Frontend
+- **Без JavaScript контент с `[data-reveal]` остаётся `opacity: 0`** — сайт выглядит «пустым» (нет `<noscript>` fallback).
+- **Двойной вызов magic-tap на touch:** одновременно `window.addEventListener("click", handlePointerDown)` и `touchend` → **двойные burst-эффекты** ([классическая проблема touch+click](https://patrickhlauke.github.io/getting-touchy-presentation/); лучше один `pointerup` — [MDN Pointer events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events)).
+- **`initActiveNavigation`:** IO вызывает `setActiveSection` для **каждой** пересекающейся секции подряд — «побеждает» последняя в batch, не верхняя → **мигающий/неверный active** в nav при скролле через `#about` / `#systems` / `#process` (их нет в меню).
+- **178× `color-mix()`** без запасных значений — на Safari **&lt; 16.2** / старых Android WebView бордеры/фоны могут **не отрисоваться** (проверить на Can I use; fallback не везде).
+- **Press-kit + index:** дублирование ~400 строк разметки игр — антипаттерн **copy-paste architecture** (любая студия через 6 месяцев ломает sync).
+
+### Performance
+- **404-страница:** `requestAnimationFrame(frame)` **всегда крутится**, даже в idle до Start — второй тяжёлый canvas-сайт.
+- **404 sprite pipeline:** на каждый из 10 спрайтов — `getImageData` + flood-fill на main thread при load → **длинные задачи** (Long Tasks) при первом заходе на 404.
+- **`[data-reveal]`:** десятки элементов с `opacity:0` + transition — при скролле IO добавляет классы → **layout+paint волна** на слабых CPU.
+- **Дублирование обработчиков resize/move** на главной: глобальные listeners без teardown (норма для SPA, но при будущем partial navigation — утечки).
+
+### Mobile
+- **Нет `safe-area-inset`** для fixed header / bottom UI — на iPhone с notch кнопки header могут быть близко к краю (проверить в Safari).
+- **Только 404.css имеет `touch-action: none`** на игровой области; главный canvas — `pointer-events: none`, но **scroll + magic listeners** на `touchmove` всё равно работают → лишняя работа при скролле пальцем.
+- **Двойной tap burst** (см. выше) — ощущение «лага»/перегруза на touch.
+
+### SEO
+- **Дублирующийся текст** index ↔ press-kit («Four game worlds, one philosophy» + полные описания игр) — индексируется, но **размывает релевантность**; Google формально индексирует `display:none` ([Search Off The Record / Gary Illyes](https://www.seroundtable.com/google-not-visible-content-33630.html)), но **эксперименты** часто показывают преимущество видимого текста ([seoexamples.com — accordions](https://www.seoexamples.com/p/hidden-content-in-seo-unmasking-the)) — **нужен тест в GSC**.
+- **FAQ ответы** свёрнуты через `grid-template-rows: 0fr` — в DOM есть, для SEO ок; для **featured snippet** хуже, чем открытый FAQ.
+- **404 с `noindex`, но ссылка из header** — crawl budget тратится впустую (мелочь).
+- **Внутренние ссылки `index.html#`** vs canonical `/` — риск двух URL (зависит от сервера).
+
+### Accessibility
+- **No-JS = невидимый контент** — провал progressive enhancement (критичнее, чем отсутствие alt).
+- **10× `secret-glint` с `opacity:0`** — фокусируемые, SR видит «Hidden portal symbol» без контекста игры.
+- **`aria-current="page"`** на якорях nav может прыгать из-за IO-бага.
+- **FAQ:** нет `aria-controls` / `id` связки панели с кнопкой (только `aria-expanded`).
+
+### Security
+- **404: `?theme=light|dark` в URL** — безопасно (только класс), но стоит **валидировать** (уже есть) — ок.
+- **Нет `.env`, source maps, ключей** в `site/` — хорошо.
+- **CSP + JSON-LD hash:** при любом изменении structured data без обновления hash — **сайт ломается в браузерах с meta-CSP** (у вас есть `security-check` — это production-gate, не забыть в CI).
+- **Secret modal обещает «skin reward»** — если позже подключите реальный код в JS, это станет **обманом + fraud vector**; сейчас безопасно, но опасно как product promise.
+
+### Защита ассетов
+- **404 sprites** в `assets/404/` (~188 KB, 10 файлов) — отдельный набор, не watermark; легко скачать по прямым URL.
+- **Press-kit дублирует те же preview**, что и публичный сайт — удвоенная поверхность для скрейперов.
+
+---
+
+## 2. Новые возможные причины проблем
+
+| Возможная причина | Почему это проблема | Как проверить | Вероятность | Опасность | Приоритет |
+|-------------------|---------------------|---------------|-------------|-----------|-----------|
+| `body data-theme="light"` до загрузки JS | FOUC, раздражает dark users, «дешёвый» polish | Slow 3G + prefers dark в DevTools | **100%** | Средняя UX | **P1** |
+| `[data-reveal]{opacity:0}` без noscript | Пустая страница без JS | Отключить JS в Chrome | **100%** | Высокая a11y/SEO edge | **P1** |
+| `click` + `touchend` на `handlePointerDown` | Двойные эффекты, лишний GPU на tap | Mobile emulation, один tap → 2 burst | **Высокая** | Средняя | **P1** |
+| IO nav без выбора «главной» секции | Неверная подсветка меню | Медленный скролл home→studio→about | **Высокая** | Низкая–средняя | **P2** |
+| 404 rAF всегда активен | Батарея/heat на «случайной» 404 | Performance monitor на 404 idle | **100%** | Средняя | **P2** |
+| Flood-fill sprites на main thread | Jank при первом 404 | Performance → Main thread 200–800ms blocks | **Высокая** | Средняя | **P2** |
+| `color-mix` без fallback | Сломанные стили на старых WebView | BrowserStack Safari 15 / старый Android | **Средняя** | Средняя для mobile games audience | **P2** |
+| OG image 1:1 вместо 1.91:1 | Слабые соц. превью → меньше кликов | [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) | **100%** | Бизнес/маркетинг | **P2** |
+| Press-kit = копия index games | Рассинхрон текстов, двойной SEO noise | diff index.html press-kit.html | **100%** | Средняя долгосрочно | **P2** |
+| Фильтр `tags.includes()` | Ложные совпадения при новых тегах | Добавить тег `Co-op`, фильтр `Co` | Средняя | Низкая сейчас | **P3** |
+| Дубли URL `/` vs `/index.html` | Duplicate signals | `curl -I` оба пути | Зависит от хоста | SEO средняя | **P1** (если оба 200) |
+
+---
+
+## 3. Новые способы фикса
+
+| Способ фикса | Что изменить | Почему поможет | Риски | Когда использовать | Production-ready? |
+|--------------|--------------|----------------|-------|---------------------|-------------------|
+| **Blocking theme snippet в `<head>`** | 5–15 строк: read `localStorage` + `matchMedia`, set `data-theme` до paint | Убирает FOUC | Нужен CSP hash для inline | Любой релиз | **Да** (с обновлением CSP hash) |
+| **`<noscript><style>[data-reveal]{opacity:1;transform:none}</style></noscript>`** | 1 строка в HTML | No-JS читаемость | — | Всегда | **Да** |
+| **Один `pointerup` вместо click+touchend** | `scripts.js` listeners | Нет double fire | Проверить старые браузеры | Mobile magic | **Да** |
+| **IO nav: max `intersectionRatio`** | В callback выбирать секцию с max ratio | Стабильный active | Чуть сложнее код | Длинная главная | **Да** |
+| **404: rAF только в playing/paused game** | `frame()` idle → не вызывать rAF | −CPU на 404 | — | 404 page | **Да** |
+| **404: preprocessed PNG/WebP без runtime flood-fill** | Ассеты из редактора | Нет Long Tasks | Пайплайн арта | 404 | **Да** |
+| **`color-mix` + fallback** | `background: rgba(...); background: color-mix(...)` | Старые браузеры | Больше CSS | Поддержка старых WebView | **Да** |
+| **OG image 1200×630** | Отдельный `og-press.webp` с Nature hero | CTR в соцсетях | Нужен дизайн | Перед анонсами | **Да** |
+| **Press-kit: data partial / build** | Вынести games в JSON или include | Один source of truth | Нужен minimal build | 2+ страницы с играми | **Да** (лучший long-term) |
+| **Убрать фильтр Mobile или сделать «Flagship»** | UX | Меньше шума | — | Быстро | **Да** |
+| **Redirect 301 index.html → /** | server config | SEO | — | Деплой | **Да** |
+
+---
+
+## 4. Сравнение подходов
+
+### Progressive enhancement (контент без JS)
+
+| Подход | Надёжность | Сложность | Performance | UX | SEO | Security | Риск багов | Production |
+|--------|------------|-----------|-------------|-----|-----|----------|------------|------------|
+| **noscript CSS override** | Высокая | Низкая | ★★★★★ | ★★★★☆ | ★★★★☆ | ★★★★★ | Низкий | **Да** |
+| **Не прятать контент (убрать data-reveal)** | Высокая | Средняя | ★★★★☆ | ★★★☆☆ | ★★★★★ | ★★★★★ | Низкий | **Да** |
+| **Только JS reveal (сейчас)** | Низкая | — | ★★★☆☆ | ★★★★★ с JS | ★★☆☆☆ без JS | ★★★★★ | — | **Нет** |
+
+### Touch / magic input
+
+| Подход | Надёжность | Сложность | Performance | UX | Риск багов | Production |
+|--------|------------|-----------|-------------|-----|------------|------------|
+| **Только `pointerup`** | Высокая | Низкая | ★★★★★ | ★★★★★ | Низкий | **Да** |
+| **Только `click` + `touch-action: manipulation`** | Средняя | Низкая | ★★★★☆ | ★★★★☆ | Средний | **Да** |
+| **click + touchend (сейчас)** | — | — | ★★☆☆☆ | ★★☆☆☆ | Высокий | **Нет** |
+| **debounce 300ms** | Средняя | Низкая | ★★★★☆ | ★★★☆☆ | Пропуск быстрых тапов | Запасной |
+
+### Theme FOUC
+
+| Подход | Надёжность | Сложность | Security (CSP) | Production |
+|--------|------------|-----------|------------------|------------|
+| **Inline head script + CSP hash** | Высокая | Средняя | Нужен hash в CSP | **Да** |
+| **`<meta name="color-scheme">` + CSS only dark default** | Средняя | Низкая | ★★★★★ | Частично |
+| **SSR/theme cookie от CDN** | Высокая | Высокая | — | Для будущего |
+
+### Press-kit / контент-архитектура
+
+| Подход | Надёжность | Сложность | Масштаб | Production |
+|--------|------------|-----------|---------|------------|
+| **JSON `games.json` + render** | Высокая | Средняя | ★★★★★ | **Да** |
+| **SSG (Astro/11ty)** | Высокая | Высокая | ★★★★★ | **Да** best |
+| **Ручной copy-paste (сейчас)** | Низкая | Низкая | ★☆☆☆☆ | **Только прототип** |
+
+---
+
+## 5. Практический план
+
+### 🔴 Сделать в первую очередь
+1. **FOUC темы** — blocking script в `<head>` + обновить CSP hash (и `_headers`, nginx, apache).
+2. **noscript для `[data-reveal]`** — иначе сайт без JS неприемлем для accessibility baseline.
+3. **Убрать дубль `touchend`+`click`** → один `pointerup` на magic handlers.
+4. **Проверить live:** дубль `/index.html`, security headers, OG preview в соц. дебаггерах.
+5. **Решить press-kit drift** — хотя бы чеклист «меняем игры → 2 файла» до появления `games.json`.
+
+### 🟠 Проверить после этого
+1. IO navigation — max intersectionRatio.
+2. 404: stop idle rAF; вынести sprite processing в build-time.
+3. `color-mix` fallbacks на header, buttons, cards.
+4. OG 1200×630; Twitter `summary_large_image` с правильным crop.
+5. Safe-area на `.site-header`, mobile menu, final CTA.
+6. Secret buttons: `tabindex="-1"` до «Discover secrets» или вынести в optional mode.
+7. GSC URL Inspection: rendered HTML press-kit vs index (duplicate content).
+8. Удалить/переименовать бесполезный фильтр Mobile.
+
+### 🟢 Дополнительные улучшения
+1. Astro/11ty + partials для games/press/devlog.
+2. FAQ schema.org `FAQPage` (если ответы стабильны).
+3. `prefers-reduced-motion`: отключать canvas, не только CSS.
+4. Единый `games.json` для JSON-LD + карточек + devlog status.
+5. Lighthouse CI в GitHub Actions.
+6. 404: persist best score в `sessionStorage` (опционально, с disclosure в microcopy).
+
+---
+
+## 6. Проверка фиксов
+
+| Что исправили | Как проверить | Ожидаемый результат |
+|---------------|---------------|---------------------|
+| FOUC | Chrome → Rendering → Emulate CSS `prefers-color-scheme: dark`, hard reload | Нет белой вспышки |
+| noscript reveal | Settings → disable JS | Видны studio, games, FAQ |
+| pointerup | Mobile tap по фону → Performance | 1 burst на tap |
+| IO nav | Скролл медленно через середину страницы | Active nav = видимая секция |
+| 404 rAF | 404 idle 30s, CPU | CPU ≈ idle |
+| OG image | FB/Twitter/LinkedIn debugger | Crop корректный, не квадрат-лого |
+| CSP hash | Изменить JSON-LD, run `security-check.mjs` | CI fail до деплоя |
+| press-kit sync | diff после правки одной игры | Один файл-источник или 0 diff |
+
+---
+
+## 7. Честный вывод
+
+### Самый надёжный пакет «мало кода — большой эффект»
+**Head theme snippet + noscript reveal + pointerup вместо touch/click duo.** Это не ломает визуальную концепцию, закрывает три **скрытых** класса багов (FOUC, no-JS, double tap).
+
+### Что лучше не использовать
+- Оставлять **copy-paste press-kit** без плана на `games.json`/SSG — гарантированный рассинхрон к July 2026 beta.
+- **Обещания reward** в secret modal без backend — репутационный риск.
+- **Два canvas-сайта** (index + 404) с вечным rAF как default — противоречит mobile-first narrative студии.
+
+### Перед финальным решением проверить
+- Реальный **duplicate URL** и **соц. превью** на проде.
+- **Safari iOS** с `prefers-color-scheme: dark` и увеличенным шрифтом.
+- **GSC** — не пессимизирует ли press-kit главную (нужны данные, не догадка).
+
+### Неопределённость
+- Насколько `color-mix` ломает вид в вашей целевой аудитории — **нужен BrowserStack**, не код-ревью.
+- Влияние duplicate press-kit на ранжирование — **нужен GSC 4–8 недель**.
+
+### Production-ready?
+По-прежнему: **для публичного масштабного релиза — нет** (perf + progressive enhancement + social + архитектурный долг).  
+**Для закрытой beta / портфолио** — да, если закрыть 🔴 пункты выше.
+
+### Подтверждено vs нужны тесты
+| Утверждение | Статус |
+|------------|--------|
+| FOUC из `data-theme="light"` | **Подтверждено в HTML** |
+| No-JS invisible reveals | **Подтверждено CSS** |
+| Double tap click+touchend | **Подтверждено в scripts.js:1849–1850** |
+| 404 idle rAF | **Подтверждено 404.js:917–918** |
+| OG 1:1 suboptimal | **Подтверждено meta tags** |
+| Google индексирует display:none фильтр | **Официально да**; ranking boost visible — **спорно, тест** |
+| backdrop-filter jank | **Industry consensus**; ваш count 28 — **подтверждено grep** |
+
+---
+
+Могу следующим сообщением сделать **четвёртый слой** только по одной оси (например, только 404 mini-game как продукт, только press-kit для издателей, или только чеклист деплоя под Cloudflare Pages / nginx) — напишите, какая ось важнее.
