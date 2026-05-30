@@ -8,13 +8,16 @@
   <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
   <meta property="og:title" content="Ball is God?! - Hardcore Vertical Descent Arcade Game">
   <meta property="og:description" content="Guide Espa down a divine tower through one-touch timing, dangerous gaps and story choices.">
-  <meta property="og:image" content="https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/ball-is-god-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ball is God one-touch vertical descent arcade by WillowinWorld">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://willowinworld.com/games/ball-is-god.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ball is God?! - Hardcore Vertical Descent Arcade Game">
   <meta name="twitter:description" content="Guide Espa down a divine tower through one-touch timing, dangerous gaps and story choices.">
-  <meta name="twitter:image" content="https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/ball-is-god-og-1200x630.webp">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>Ball is God?! | One-Touch Vertical Arcade Game (Mobile)</title>
   <link rel="canonical" href="https://willowinworld.com/games/ball-is-god.html">
@@ -32,7 +35,7 @@
       ]
     },
     {
-      "@type": "VideoGame",
+      "@type": ["VideoGame", "SoftwareApplication"],
       "name": "Ball is God?!",
       "url": "https://willowinworld.com/games/ball-is-god.html",
       "image": "https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp",
@@ -50,24 +53,47 @@
         "price": "0",
         "priceCurrency": "USD"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://willowinworld.com/games/ball-is-god.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What kind of game is Ball is God?!",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ball is God?! is a hardcore one-touch vertical descent arcade for mobile about guiding Espa through divine towers, timing gaps and surviving mythic pressure." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the current production status?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Ball is God?! is planned after the current releases. The narrative direction, worlds and long-form story draft are shaped, but active production is paused." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can press or publishers download Ball is God assets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The public files are optimized preview assets for articles, publisher review and store references. Source files are available by request." }
+        }
+      ]
     }
   ]
 }
   </script>
-  <link rel="preload" href="../assets/Ball%20is%20God/site/back.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
+  <link rel="preload" href="../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../assets/responsive/ball-is-god-hero-480.avif 480w, ../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../assets/Ball%20is%20God/site/icon1.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="preload" href="../assets/Ball%20is%20God/site/espa.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="game-detail-page game-theme-ball ball-is-god-page" data-theme="light">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="/#games" aria-label="Back to WillowinWorld games">
-      <img src="../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="" decoding="async">
+      <img src="../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God one-touch vertical descent arcade game icon" fetchpriority="high" decoding="async">
       <span><strong>Ball is God?!</strong><small>WillowinWorld game page</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="/#games">Games</a>
       <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
@@ -78,15 +104,6 @@
   </header>
   <main class="game-page game-detail-shell ball-is-god-shell">
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
-      <img class="ball-backdrop-image" src="../assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" decoding="async">
-      <div class="ball-backdrop-clouds">
-        <img class="ball-cloud ball-cloud-1" src="../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" decoding="async">
-        <img class="ball-cloud ball-cloud-2" src="../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" decoding="async">
-        <img class="ball-cloud ball-cloud-4" src="../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" decoding="async">
-        <img class="ball-cloud ball-cloud-8" src="../assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" decoding="async">
-        <img class="ball-cloud ball-cloud-11 is-reverse" src="../assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" decoding="async">
-        <img class="ball-cloud ball-cloud-15 is-reverse" src="../assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" decoding="async">
-      </div>
       <div class="ball-menu-world">
         <span class="ball-menu-sun"></span>
         <span class="ball-menu-halo ball-menu-halo-one"></span>
@@ -122,7 +139,10 @@
         <aside class="ball-hero-showcase" aria-label="Ball is God gameplay preview">
           <div class="ball-device-frame">
             <div class="ball-stage ball-stage-showcase" aria-hidden="true">
-              <img class="ball-bg" src="../assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" decoding="async">
+              <picture>
+                <source type="image/avif" srcset="../assets/responsive/ball-is-god-hero-480.avif 480w, ../assets/responsive/ball-is-god-hero-760.avif 760w" sizes="(max-width: 760px) 82vw, 360px">
+                <img class="ball-bg" src="../assets/responsive/ball-is-god-hero-760.webp" srcset="../assets/responsive/ball-is-god-hero-480.webp 480w, ../assets/responsive/ball-is-god-hero-760.webp 760w" sizes="(max-width: 760px) 82vw, 360px" width="760" height="1340" alt="" fetchpriority="high" decoding="async">
+              </picture>
               <div class="ball-cloud-field">
                 <img class="ball-cloud ball-cloud-1" src="../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" decoding="async">
                 <img class="ball-cloud ball-cloud-2" src="../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" decoding="async">
@@ -277,6 +297,24 @@
           <li><span>February 2026</span><strong>Project scope review</strong><p>The team reviewed the full scale of the project after story integration and recognized it had become a larger narrative arcade game.</p></li>
           <li><span>Current status</span><strong>Planned after current releases</strong><p>Active development is paused so WillowinWorld can release Nature Seed, Candy Shop and Paint Blasters first.</p></li>
         </ul>
+      </section>
+      <section class="soft-card game-page-section" id="related">
+        <div class="eyebrow">Related Worlds</div>
+        <h2>Continue through the WillowinWorld portfolio.</h2>
+        <div class="game-actions">
+          <a class="btn btn-primary" href="nature-seed.html">Nature Seed</a>
+          <a class="btn btn-ghost" href="paint-blasters.html">Paint Blasters</a>
+          <a class="btn btn-ghost" href="../press-kit.html#press-games">Publisher portfolio</a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Ball is God?! FAQ</div>
+        <h2>Quick answers for players, press and publishers.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>What kind of game is it?</h3><p>A hardcore one-touch vertical descent arcade about timing gaps, boss-like pressure and mythic choices.</p></article>
+          <article class="detail-card"><h3>What is the current status?</h3><p>Planned after current releases. The world, story direction and long-form narrative draft are shaped.</p></article>
+          <article class="detail-card"><h3>Can public assets be used?</h3><p>Yes, for press, publisher review and store references. Source assets stay private unless requested directly.</p></article>
+        </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
         <div class="eyebrow">Ball is God?! Devlog</div>

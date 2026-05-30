@@ -8,13 +8,16 @@
   <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
   <meta property="og:title" content="Paint Blasters - Color Destruction Physics Puzzle">
   <meta property="og:description" content="Mix color shots, smash blocks and trigger chain reactions in WillowinWorld's mobile physics arcade puzzle.">
-  <meta property="og:image" content="https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Paint Blasters color destruction physics puzzle arcade by WillowinWorld">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://willowinworld.com/games/paint-blasters.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Paint Blasters - Color Destruction Physics Puzzle Game">
   <meta name="twitter:description" content="Mix color shots, smash towers and trigger chain reactions in WillowinWorld's mobile physics arcade puzzle.">
-  <meta name="twitter:image" content="https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>Paint Blasters | Color Physics Puzzle Arcade (Mobile)</title>
   <link rel="canonical" href="https://willowinworld.com/games/paint-blasters.html">
@@ -32,7 +35,7 @@
       ]
     },
     {
-      "@type": "VideoGame",
+      "@type": ["VideoGame", "SoftwareApplication"],
       "name": "Paint Blasters",
       "url": "https://willowinworld.com/games/paint-blasters.html",
       "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
@@ -50,24 +53,47 @@
         "price": "0",
         "priceCurrency": "USD"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://willowinworld.com/games/paint-blasters.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What kind of game is Paint Blasters?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Paint Blasters is a mobile color destruction physics puzzle arcade about mixing shots, smashing towers and triggering chain reactions." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the current production status?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Paint Blasters is in prototype and production draft, with work focused on projectile readability, tower clarity, color-combo logic and destruction feedback." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can press or publishers download Paint Blasters assets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The public files are optimized preview assets for articles, publisher review and store references. Source files are available by request." }
+        }
+      ]
     }
   ]
 }
   </script>
-  <link rel="preload" href="../assets/Paint%20Blasters/site/back.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="preload" href="../assets/Paint%20Blasters/site/hero_blasters.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
+  <link rel="preload" href="../assets/responsive/paint-blasters-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../assets/responsive/paint-blasters-hero-480.avif 480w, ../assets/responsive/paint-blasters-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../assets/Paint%20Blasters/site/picon1.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="game-detail-page game-theme-paint paint-blasters-page" data-theme="light">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="/#games" aria-label="Back to WillowinWorld games">
-      <img src="../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="" decoding="async">
+      <img src="../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters color destruction puzzle game icon" fetchpriority="high" decoding="async">
       <span><strong>Paint Blasters</strong><small>WillowinWorld game page</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="/#games">Games</a>
       <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
@@ -78,8 +104,7 @@
   </header>
   <main class="game-page game-detail-shell paint-blasters-shell">
     <div class="paint-page-backdrop ambient-only" aria-hidden="true">
-      <img class="paint-backdrop-image" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" decoding="async">
-      <img class="paint-ship-panel" src="../assets/Paint%20Blasters/site/ship.webp" width="1672" height="941" alt="" decoding="async">
+      <img class="paint-ship-panel" src="../assets/Paint%20Blasters/site/ship.webp" width="1672" height="941" alt="" loading="lazy" decoding="async">
       <div class="paint-menu-world">
         <span class="paint-menu-pipe paint-menu-pipe-one"></span>
         <span class="paint-menu-pipe paint-menu-pipe-two"></span>
@@ -115,7 +140,10 @@
         <aside class="paint-hero-showcase" aria-label="Paint Blasters gameplay preview">
           <div class="paint-device-frame">
             <div class="paint-stage paint-stage-showcase" aria-hidden="true">
-              <img class="paint-bg" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" decoding="async">
+              <picture>
+                <source type="image/avif" srcset="../assets/responsive/paint-blasters-hero-480.avif 480w, ../assets/responsive/paint-blasters-hero-760.avif 760w" sizes="(max-width: 760px) 82vw, 360px">
+                <img class="paint-bg" src="../assets/responsive/paint-blasters-hero-760.webp" srcset="../assets/responsive/paint-blasters-hero-480.webp 480w, ../assets/responsive/paint-blasters-hero-760.webp 760w" sizes="(max-width: 760px) 82vw, 360px" width="760" height="1361" alt="" fetchpriority="high" decoding="async">
+              </picture>
               <div class="paint-arena">
                 <div class="paint-cube-stack">
                   <span class="paint-cube paint-cube-a"></span>
@@ -229,6 +257,24 @@
           <li><span>Current stage</span><strong>Design expansion and polish</strong><p>Current work focuses on projectile effects, tower readability, chain reaction pacing and future mechanic scope.</p></li>
           <li><span>Production focus</span><strong>Secondary active project</strong><p>WillowinWorld's main release focus is Nature Seed and Candy Shop, while Paint Blasters continues through design and prototype refinement.</p></li>
         </ul>
+      </section>
+      <section class="soft-card game-page-section" id="related">
+        <div class="eyebrow">Related Worlds</div>
+        <h2>Continue through the WillowinWorld portfolio.</h2>
+        <div class="game-actions">
+          <a class="btn btn-primary" href="nature-seed.html">Nature Seed</a>
+          <a class="btn btn-ghost" href="candy-shop.html">Candy Shop</a>
+          <a class="btn btn-ghost" href="../press-kit.html#press-games">Publisher portfolio</a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Paint Blasters FAQ</div>
+        <h2>Quick answers for players, press and publishers.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>What kind of game is it?</h3><p>A mobile color destruction physics puzzle arcade about mixing shots and turning impacts into chain reactions.</p></article>
+          <article class="detail-card"><h3>What is the current status?</h3><p>Prototype and production draft. The focus is projectile readability, tower clarity and color-combo logic.</p></article>
+          <article class="detail-card"><h3>Can public assets be used?</h3><p>Yes, for press, publisher review and store references. Source assets stay private unless requested directly.</p></article>
+        </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
         <div class="eyebrow">Paint Blasters Devlog</div>

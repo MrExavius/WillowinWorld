@@ -44,6 +44,8 @@
         time: 0,
         lastFrame: performance.now(),
         running: true,
+        rafId: 0,
+        frameTimer: 0,
         mode: "idle",
         score: 0,
         best: 0,
@@ -197,6 +199,7 @@
         pauseButtons.forEach((button) => {
           button.textContent = mode === "paused" ? "Resume" : button.classList.contains("icon-pill") ? "II" : "Pause";
         });
+        queueFrame(mode === "playing");
       }
 
       function updateHud() {
@@ -823,13 +826,40 @@
         drawOverlayText();
       }
 
+      function nextFrameDelay() {
+        if (document.hidden) return 800;
+        if (state.mode === "playing") return 0;
+        if (state.mode === "idle" || state.mode === "gameover") return 260;
+        return 420;
+      }
+
+      function queueFrame(immediate = false) {
+        if (!state.running) return;
+        if (immediate && state.frameTimer) {
+          window.clearTimeout(state.frameTimer);
+          state.frameTimer = 0;
+        }
+        if (state.rafId || state.frameTimer) return;
+
+        const delay = immediate ? 0 : nextFrameDelay();
+        if (delay > 0) {
+          state.frameTimer = window.setTimeout(() => {
+            state.frameTimer = 0;
+            state.rafId = requestAnimationFrame(frame);
+          }, delay);
+          return;
+        }
+        state.rafId = requestAnimationFrame(frame);
+      }
+
       function frame(now) {
+        state.rafId = 0;
         const dt = clamp((now - state.lastFrame) / 1000, 0.001, 0.033);
         state.lastFrame = now;
         state.time += dt * 1000;
         update(dt);
         draw();
-        if (state.running) requestAnimationFrame(frame);
+        queueFrame();
       }
 
       function pointerMove(event) {
@@ -902,6 +932,8 @@
 
       document.addEventListener("visibilitychange", () => {
         if (document.hidden && state.mode === "playing") setMode("paused");
+        state.lastFrame = performance.now();
+        queueFrame(!document.hidden && state.mode === "playing");
       });
       window.addEventListener("pagehide", resetEphemeralRun);
       window.addEventListener("pageshow", (event) => {
@@ -914,5 +946,5 @@
       setControlMode(state.controlMode);
       updateHud();
       draw();
-      requestAnimationFrame(frame);
+      queueFrame(true);
     })();

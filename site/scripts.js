@@ -1340,6 +1340,7 @@
 
   let activeGameTrigger = null;
   let activeInfoTrigger = null;
+  let activeContactTrigger = null;
   const infoModals = {
     careers: { modal: careersModal, closeButton: closeCareers },
     press: { modal: pressModal, closeButton: closePress }
@@ -1522,8 +1523,10 @@
         const glint = document.createElement("button");
         glint.type = "button";
         glint.className = "secret-glint ambient-only";
+        glint.tabIndex = -1;
         glint.dataset.letter = letter;
         glint.setAttribute("aria-label", "Hidden portal symbol");
+        glint.setAttribute("aria-hidden", "true");
         glint.style.setProperty("--glint-x", spot[0] + "%");
         glint.style.setProperty("--glint-y", spot[1] + "%");
         glint.style.setProperty("--glint-delay", -((index + secretIndex * 2) % 9) * 0.54 + "s");
@@ -1543,20 +1546,24 @@
     menuToggle.setAttribute("aria-expanded", "false");
   }
 
-  function openContact() {
+  function openContact(trigger) {
     closeGameDetails(false);
     closeInfoModals(false);
+    activeContactTrigger = trigger || document.activeElement;
     contactModal.hidden = false;
     contactModal.classList.add("is-open");
     syncModalLock();
     window.setTimeout(() => document.getElementById("name").focus(), 30);
   }
 
-  function closeContactModal() {
+  function closeContactModal(restoreFocus = true) {
     if (!contactModal.classList.contains("is-open")) return;
     contactModal.classList.remove("is-open");
     contactModal.hidden = true;
     syncModalLock();
+    if (restoreFocus && activeContactTrigger && typeof activeContactTrigger.focus === "function") {
+      activeContactTrigger.focus();
+    }
   }
 
   function initGameDetails() {
@@ -1677,23 +1684,40 @@
   }
 
   function initFilters() {
-    const filters = document.querySelectorAll("[data-filter]");
-    const cards = document.querySelectorAll(".game-card");
-    const updateFilter = activeButton => {
-      const filter = activeButton.dataset.filter;
-      filters.forEach(btn => {
-        const active = btn === activeButton;
-        btn.classList.toggle("is-active", active);
-        btn.setAttribute("aria-pressed", String(active));
+    document.querySelectorAll(".game-filters").forEach(group => {
+      const filters = [...group.querySelectorAll("[data-filter]")];
+      if (!filters.length) return;
+
+      const controlsId = filters[0].getAttribute("aria-controls");
+      const grid = controlsId ? document.getElementById(controlsId) : group.parentElement.querySelector(".games-grid");
+      if (!grid) return;
+
+      const cards = [...grid.querySelectorAll(".game-card")];
+      const status = group.parentElement.querySelector("[data-filter-status]");
+      const updateFilter = activeButton => {
+        const filter = activeButton.dataset.filter;
+        let visibleCount = 0;
+        filters.forEach(btn => {
+          const active = btn === activeButton;
+          btn.classList.toggle("is-active", active);
+          btn.setAttribute("aria-pressed", String(active));
+        });
+        cards.forEach(card => {
+          const tags = card.dataset.tags || "";
+          const visible = filter === "All" || tags.includes(filter);
+          card.classList.toggle("is-hidden", !visible);
+          if (visible) visibleCount += 1;
+        });
+        if (status) {
+          status.textContent = filter === "All"
+            ? "Showing all game worlds."
+            : "Showing " + visibleCount + " " + filter.toLowerCase() + " game" + (visibleCount === 1 ? "." : "s.");
+        }
+      };
+
+      filters.forEach(button => {
+        button.addEventListener("click", () => updateFilter(button));
       });
-      cards.forEach(card => {
-        const tags = card.dataset.tags || "";
-        const visible = filter === "All" || tags.includes(filter);
-        card.classList.toggle("is-hidden", !visible);
-      });
-    };
-    filters.forEach(button => {
-      button.addEventListener("click", () => updateFilter(button));
     });
   }
 
@@ -1722,7 +1746,7 @@
 
   function initControls() {
     document.querySelectorAll("[data-play]").forEach(button => button.addEventListener("click", startPlayMode));
-    document.querySelectorAll("[data-open-contact]").forEach(button => button.addEventListener("click", openContact));
+    document.querySelectorAll("[data-open-contact]").forEach(button => button.addEventListener("click", () => openContact(button)));
     document.querySelectorAll("[data-open-info]").forEach(button => {
       button.addEventListener("click", () => openInfoModal(button.dataset.openInfo, button));
     });

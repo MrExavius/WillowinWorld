@@ -8,13 +8,16 @@
   <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
   <meta property="og:title" content="Nature Seed - Draw-to-Solve Physics Puzzle Game">
   <meta property="og:description" content="Draw magical lines, guide water and restore nature in WillowinWorld's relaxing mobile physics puzzle.">
-  <meta property="og:image" content="https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nature Seed draw-to-solve water physics puzzle by WillowinWorld">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://willowinworld.com/games/nature-seed.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nature Seed - Relaxing Draw-to-Solve Physics Puzzle Game">
   <meta name="twitter:description" content="Draw magical lines, guide water to seeds and restore a dying forest in WillowinWorld's mobile physics puzzle.">
-  <meta name="twitter:image" content="https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>Nature Seed | Draw-to-Solve Water Physics Puzzle (Mobile)</title>
   <link rel="canonical" href="https://willowinworld.com/games/nature-seed.html">
@@ -32,7 +35,7 @@
       ]
     },
     {
-      "@type": "VideoGame",
+      "@type": ["VideoGame", "SoftwareApplication"],
       "name": "Nature Seed",
       "url": "https://willowinworld.com/games/nature-seed.html",
       "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
@@ -50,23 +53,47 @@
         "price": "0",
         "priceCurrency": "USD"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://willowinworld.com/games/nature-seed.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What kind of puzzle game is Nature Seed?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nature Seed is a relaxing mobile draw-to-solve physics puzzle where players draw lines to guide water toward seeds and restore each forest scene." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the current production status?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nature Seed is in beta polish, with current work focused on onboarding, level readability, restoration feedback and mobile performance." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can publishers or press use the public assets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The public assets on this page are optimized preview files for press, publisher review and store references. Source files are available by request." }
+        }
+      ]
     }
   ]
 }
   </script>
-  <link rel="preload" href="../assets/Nature%20Seeds/Galvnie_3_1-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
+  <link rel="preload" href="../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../assets/responsive/nature-seed-hero-720.avif 720w, ../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
   <link rel="preload" href="../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="game-detail-page game-theme-nature nature-seed-page" data-theme="light">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="/#games" aria-label="Back to WillowinWorld games">
-      <img src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed mobile puzzle game icon" decoding="async">
+      <img src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed mobile draw-to-solve puzzle game icon" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>WillowinWorld game page</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="/#games">Games</a>
       <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
@@ -77,23 +104,6 @@
   </header>
   <main class="game-page game-detail-shell nature-seed-shell">
     <div class="nature-page-backdrop ambient-only" aria-hidden="true">
-      <div class="nature-hero-bg">
-        <div class="nature-stage nature-stage-backdrop">
-          <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
-          <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_3_1-site.webp" width="1376" height="768" alt="" decoding="async">
-          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
-            <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
-            <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
-          </svg>
-          <span class="nature-water-drop is-first"></span>
-          <span class="nature-water-drop is-second"></span>
-          <span class="nature-water-drop is-third"></span>
-          <span class="nature-bloom"></span>
-          <img class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
-          <img class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
-          <img class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
-        </div>
-      </div>
       <div class="nature-menu-world">
         <span class="nature-menu-sun"></span>
         <span class="nature-menu-hill nature-menu-hill-left"></span>
@@ -112,7 +122,10 @@
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
           <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
-          <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_3_1-site.webp" width="1376" height="768" alt="" decoding="async">
+          <picture>
+            <source type="image/avif" srcset="../assets/responsive/nature-seed-hero-720.avif 720w, ../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
+            <img class="nature-level nature-level-painted" src="../assets/responsive/nature-seed-hero-1376.webp" srcset="../assets/responsive/nature-seed-hero-720.webp 720w, ../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+          </picture>
           <svg class="nature-route" viewBox="0 0 640 560" fill="none">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
             <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
@@ -281,6 +294,24 @@
           <li><span>March-April 2026</span><strong>Mechanics and level review</strong><p>Extra mechanics and draft levels were reviewed, simplified and reworked to keep the game calmer, clearer and more focused.</p></li>
           <li><span>May-July 2026</span><strong>Public beta preparation</strong><p>The team is preparing the first public beta with focus on onboarding, restoration feedback, level clarity and mobile performance.</p></li>
         </ul>
+      </section>
+      <section class="soft-card game-page-section" id="related">
+        <div class="eyebrow">Related Worlds</div>
+        <h2>Continue through the WillowinWorld portfolio.</h2>
+        <div class="game-actions">
+          <a class="btn btn-primary" href="candy-shop.html">Candy Shop</a>
+          <a class="btn btn-ghost" href="paint-blasters.html">Paint Blasters</a>
+          <a class="btn btn-ghost" href="../press-kit.html#press-games">Publisher portfolio</a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Nature Seed FAQ</div>
+        <h2>Quick answers for players, press and publishers.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>What kind of puzzle is it?</h3><p>A relaxing draw-to-solve water physics puzzle where drawn lines shape how water reaches each seed.</p></article>
+          <article class="detail-card"><h3>What is the current status?</h3><p>Beta polish. The focus is onboarding, level readability, restoration feedback and mobile performance.</p></article>
+          <article class="detail-card"><h3>Can public assets be used?</h3><p>Yes, for press, publisher review and store references. Source assets stay private unless requested directly.</p></article>
+        </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
         <div class="eyebrow">Nature Seed Devlog</div>

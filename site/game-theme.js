@@ -167,6 +167,9 @@
     }, { passive: true });
 
     document.addEventListener("mouseleave", stop);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) stop();
+    });
     window.addEventListener("blur", stop);
   }
 

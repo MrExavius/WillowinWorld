@@ -8,13 +8,16 @@
   <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
   <meta property="og:title" content="Candy Shop - Cozy Candy Merge Puzzle Game">
   <meta property="og:description" content="Drop, combine and evolve candies in a cozy mobile merge puzzle by WillowinWorld.">
-  <meta property="og:image" content="https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Candy Shop cozy candy merge puzzle game by WillowinWorld">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://willowinworld.com/games/candy-shop.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Candy Shop - Cozy Candy Merge Puzzle Game">
   <meta name="twitter:description" content="Drop, combine and evolve candies in a cozy mobile merge puzzle by WillowinWorld.">
-  <meta name="twitter:image" content="https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>Candy Shop | Cozy Candy Merge Puzzle Game (Mobile)</title>
   <link rel="canonical" href="https://willowinworld.com/games/candy-shop.html">
@@ -32,7 +35,7 @@
       ]
     },
     {
-      "@type": "VideoGame",
+      "@type": ["VideoGame", "SoftwareApplication"],
       "name": "Candy Shop",
       "url": "https://willowinworld.com/games/candy-shop.html",
       "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
@@ -50,23 +53,47 @@
         "price": "0",
         "priceCurrency": "USD"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://willowinworld.com/games/candy-shop.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What kind of game is Candy Shop?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Candy Shop is a cozy mobile candy merge puzzle with soft physics drops, combos, special sweets and long-term progression." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the current production status?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Candy Shop is in internal beta, with current work focused on optimization, UI polish, candy balance, container pressure and combo readability." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can press or publishers download Candy Shop assets?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The public files are optimized preview assets for articles, publisher review and store references. Source files are available by request." }
+        }
+      ]
     }
   ]
 }
   </script>
-  <link rel="preload" href="../assets/Candy%20Shop/site/back_glavnie_10.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
+  <link rel="preload" href="../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../assets/responsive/candy-shop-hero-480.avif 480w, ../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
   <link rel="preload" href="../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body class="game-detail-page game-theme-candy candy-shop-page" data-theme="light">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="/#games" aria-label="Back to WillowinWorld games">
-      <img src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="" decoding="async">
+      <img src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop cozy candy merge puzzle game icon" fetchpriority="high" decoding="async">
       <span><strong>Candy Shop</strong><small>WillowinWorld game page</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="/#games">Games</a>
       <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
@@ -77,18 +104,6 @@
   </header>
   <main class="game-page game-detail-shell candy-shop-shell">
     <div class="candy-page-backdrop ambient-only" aria-hidden="true">
-      <div class="candy-bg-stack">
-        <img class="candy-bg candy-bg-1" src="../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-2" src="../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-3" src="../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-4" src="../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-5" src="../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-6" src="../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-7" src="../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-8" src="../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-9" src="../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
-        <img class="candy-bg candy-bg-10" src="../assets/Candy%20Shop/site/back_glavnie_10.webp" width="640" height="1137" alt="" decoding="async">
-      </div>
       <div class="candy-menu-world">
         <span class="candy-menu-shelf candy-menu-shelf-top"></span>
         <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
@@ -132,7 +147,10 @@
                 <img class="candy-bg candy-bg-7" src="../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
                 <img class="candy-bg candy-bg-8" src="../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
                 <img class="candy-bg candy-bg-9" src="../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
-                <img class="candy-bg candy-bg-10" src="../assets/Candy%20Shop/site/back_glavnie_10.webp" width="640" height="1137" alt="" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../assets/responsive/candy-shop-hero-480.avif 480w, ../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
+                  <img class="candy-bg candy-bg-10" src="../assets/responsive/candy-shop-hero-640.webp" srcset="../assets/responsive/candy-shop-hero-480.webp 480w, ../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                </picture>
               </div>
               <img class="candy-piece candy-piece-left" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
               <img class="candy-piece candy-piece-right" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
@@ -251,6 +269,24 @@
           <li><span>December 2025-February 2026</span><strong>Core candy systems</strong><p>The main candy mechanics were implemented, the candy set was completed and early container systems began.</p></li>
           <li><span>April 2026-current</span><strong>UI pass and internal beta</strong><p>The first major UI elements were created, and the game moved into internal testing, optimization, balance and polish.</p></li>
         </ul>
+      </section>
+      <section class="soft-card game-page-section" id="related">
+        <div class="eyebrow">Related Worlds</div>
+        <h2>Continue through the WillowinWorld portfolio.</h2>
+        <div class="game-actions">
+          <a class="btn btn-primary" href="nature-seed.html">Nature Seed</a>
+          <a class="btn btn-ghost" href="paint-blasters.html">Paint Blasters</a>
+          <a class="btn btn-ghost" href="../press-kit.html#press-games">Publisher portfolio</a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Candy Shop FAQ</div>
+        <h2>Quick answers for players, press and publishers.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>What kind of game is it?</h3><p>A cozy candy merge puzzle with soft physics drops, special sweets, combos and progression.</p></article>
+          <article class="detail-card"><h3>What is the current status?</h3><p>Internal beta. The focus is mobile optimization, UI polish, candy balance and readable combo feedback.</p></article>
+          <article class="detail-card"><h3>Can public assets be used?</h3><p>Yes, for press, publisher review and store references. Source assets stay private unless requested directly.</p></article>
+        </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
         <div class="eyebrow">Candy Shop Devlog</div>

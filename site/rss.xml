@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>WillowinWorld Devlog</title>
+    <link>https://willowinworld.com/#devlog</link>
+    <description>Latest production notes for WillowinWorld mobile games.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 31 May 2026 00:00:00 +0300</lastBuildDate>
+    <item>
+      <title>Nature Seed: Public beta preparation</title>
+      <link>https://willowinworld.com/games/nature-seed.html#devlog</link>
+      <guid>https://willowinworld.com/games/nature-seed.html#devlog-may-2026</guid>
+      <pubDate>Sun, 31 May 2026 00:00:00 +0300</pubDate>
+      <description>Mobile optimization, onboarding, level readability and restoration feedback are moving toward the July 2026 public beta.</description>
+    </item>
+    <item>
+      <title>Candy Shop: Internal beta and optimization</title>
+      <link>https://willowinworld.com/games/candy-shop.html#devlog</link>
+      <guid>https://willowinworld.com/games/candy-shop.html#devlog-current-stage</guid>
+      <pubDate>Sun, 31 May 2026 00:00:00 +0300</pubDate>
+      <description>Candy Shop is being tested internally with focus on mobile performance, UI polish, candy balance and combo readability.</description>
+    </item>
+    <item>
+      <title>Paint Blasters: Design expansion and polish</title>
+      <link>https://willowinworld.com/games/paint-blasters.html#devlog</link>
+      <guid>https://willowinworld.com/games/paint-blasters.html#devlog-current-stage</guid>
+      <pubDate>Sun, 31 May 2026 00:00:00 +0300</pubDate>
+      <description>The core mechanics are implemented in draft form while projectile readability, tower clarity and final scope are refined.</description>
+    </item>
+    <item>
+      <title>Ball is God?!: Project scope review</title>
+      <link>https://willowinworld.com/games/ball-is-god.html#devlog</link>
+      <guid>https://willowinworld.com/games/ball-is-god.html#devlog-february-2026</guid>
+      <pubDate>Sun, 31 May 2026 00:00:00 +0300</pubDate>
+      <description>Active production is paused after a major story and world-planning pass, with continuation planned after current releases.</description>
+    </item>
+  </channel>
+</rss>

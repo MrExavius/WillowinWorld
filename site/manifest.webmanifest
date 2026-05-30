@@ -14,5 +14,35 @@
       "type": "image/webp",
       "purpose": "any maskable"
     }
+  ],
+  "shortcuts": [
+    {
+      "name": "Games",
+      "short_name": "Games",
+      "description": "Open the WillowinWorld game portfolio.",
+      "url": "/#games",
+      "icons": [{ "src": "/assets/willowinworld-logo-day.webp", "sizes": "1024x1024", "type": "image/webp" }]
+    },
+    {
+      "name": "Nature Seed Beta",
+      "short_name": "Nature Seed",
+      "description": "Open the Nature Seed beta and devlog page.",
+      "url": "/games/nature-seed.html",
+      "icons": [{ "src": "/assets/Nature%20Seeds/Icon-site.webp", "sizes": "640x640", "type": "image/webp" }]
+    },
+    {
+      "name": "Press Kit",
+      "short_name": "Press Kit",
+      "description": "Open WillowinWorld press facts and assets.",
+      "url": "/press-kit.html",
+      "icons": [{ "src": "/assets/willowinworld-logo-day.webp", "sizes": "1024x1024", "type": "image/webp" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Open the WillowinWorld contact section.",
+      "url": "/#contact",
+      "icons": [{ "src": "/assets/willowinworld-logo-day.webp", "sizes": "1024x1024", "type": "image/webp" }]
+    }
   ]
 }
