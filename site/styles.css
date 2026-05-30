@@ -7979,6 +7979,23 @@ body.ball-is-god-page[data-theme="dark"] {
   line-height: 1.35;
 }
 
+.asset-kit-copy {
+  max-width: 760px;
+  margin: -4px 0 18px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.asset-group-title {
+  margin: 26px 0 12px;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.25;
+}
+
+.asset-kit-copy + .asset-group-title {
+  margin-top: 18px;
+}
+
 .principles-grid,
 .systems-grid {
   display: grid;
