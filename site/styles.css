@@ -1346,24 +1346,12 @@ h1 {
     linear-gradient(156deg, rgba(255,255,239,0.96), rgba(212,248,255,0.78));
 }
 
-.audience-paths {
-  margin-top: -12px;
-}
-
-.scenario-grid,
-.publisher-status-strip,
 .press-status-strip,
 .brand-rules {
   display: grid;
   gap: 14px;
 }
 
-.scenario-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.scenario-card,
-.publisher-status-strip,
 .press-status-strip,
 .brand-rules {
   border: 1px solid color-mix(in srgb, var(--paper) 17%, var(--line));
@@ -1374,26 +1362,12 @@ h1 {
   box-shadow: var(--shadow-soft);
 }
 
-.scenario-card {
-  min-height: 232px;
-  padding: 24px;
-}
-
-.scenario-card h3 {
-  margin: 8px 0 10px;
-  font-size: clamp(1.25rem, 2vw, 1.78rem);
-}
-
-.scenario-card p,
-.scenario-card li,
-.publisher-status-strip dd,
 .press-status-strip dd,
 .brand-rules li {
   color: var(--muted);
   line-height: 1.58;
 }
 
-.scenario-card ul,
 .brand-rules ul {
   display: grid;
   gap: 8px;
@@ -1402,13 +1376,11 @@ h1 {
   list-style: none;
 }
 
-.scenario-card li,
 .brand-rules li {
   position: relative;
   padding-left: 18px;
 }
 
-.scenario-card li::before,
 .brand-rules li::before {
   content: "";
   position: absolute;
@@ -1421,20 +1393,17 @@ h1 {
   box-shadow: 0 0 18px color-mix(in srgb, var(--cyan) 54%, transparent);
 }
 
-.publisher-status-strip,
 .press-status-strip {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   padding: 16px;
   margin: 18px 0 24px;
 }
 
-.publisher-status-strip div,
 .press-status-strip div {
   min-width: 0;
   padding: 4px 10px;
 }
 
-.publisher-status-strip dt,
 .press-status-strip dt {
   color: var(--cyan);
   font-size: 0.74rem;
@@ -1443,7 +1412,6 @@ h1 {
   text-transform: uppercase;
 }
 
-.publisher-status-strip dd,
 .press-status-strip dd {
   margin: 6px 0 0;
   font-size: 0.96rem;
@@ -1452,85 +1420,6 @@ h1 {
 
 .brand-rules {
   padding: 22px;
-}
-
-.studio-roadmap {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
-  margin: -14px 0 26px;
-}
-
-.roadmap-item {
-  position: relative;
-  min-height: 176px;
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: 8px;
-  padding: 18px;
-  overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
-  border-radius: var(--radius-lg);
-  background:
-    linear-gradient(145deg, color-mix(in srgb, var(--cyan) 10%, transparent), transparent 38%),
-    repeating-linear-gradient(118deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 14px),
-    color-mix(in srgb, var(--surface) 92%, transparent);
-  box-shadow: var(--shadow-soft);
-}
-
-.roadmap-item::before {
-  content: "";
-  position: absolute;
-  left: 18px;
-  right: 18px;
-  bottom: 18px;
-  height: 3px;
-  border-radius: 999px;
-  background:
-    linear-gradient(90deg, color-mix(in srgb, var(--cyan) 70%, transparent), color-mix(in srgb, var(--paper) 12%, transparent));
-}
-
-.roadmap-now {
-  border-color: color-mix(in srgb, var(--green) 42%, var(--line));
-  background:
-    linear-gradient(145deg, color-mix(in srgb, var(--green) 14%, transparent), transparent 40%),
-    repeating-linear-gradient(118deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 14px),
-    color-mix(in srgb, var(--surface) 92%, transparent);
-}
-
-.roadmap-item span {
-  color: var(--cyan);
-  font-size: 0.76rem;
-  font-weight: 950;
-  text-transform: uppercase;
-}
-
-.roadmap-item strong {
-  font-size: 1.08rem;
-  line-height: 1.15;
-}
-
-.roadmap-item p {
-  margin: 0 0 18px;
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.46;
-}
-
-.roadmap-item b {
-  position: relative;
-  z-index: 1;
-  justify-self: start;
-  align-self: end;
-  display: inline-flex;
-  min-height: 30px;
-  align-items: center;
-  border: 1px solid color-mix(in srgb, var(--cyan) 30%, var(--line));
-  border-radius: 999px;
-  padding: 5px 10px;
-  color: color-mix(in srgb, var(--text) 72%, var(--cyan));
-  background: color-mix(in srgb, var(--cyan) 11%, transparent);
-  font-size: 0.86rem;
 }
 
 .game-filters {
@@ -8274,7 +8163,7 @@ body.ball-is-god-page[data-theme="dark"] {
   border-radius: 50%;
   color: color-mix(in srgb, var(--cyan) 66%, var(--moon));
   background: transparent;
-  font-size: 0;
+  font-size: clamp(1rem, 1.4vw, 1.3rem);
   font-weight: 950;
   line-height: 1;
   text-transform: uppercase;
@@ -8329,6 +8218,15 @@ body.ball-is-god-page[data-theme="dark"] {
     0 0 12px color-mix(in srgb, var(--moon) 86%, transparent),
     0 0 34px color-mix(in srgb, var(--cyan) 76%, transparent);
   transform: translate(-50%, -50%) scale(1.14);
+}
+
+body.promo-hunt-active .secret-glint {
+  opacity: 0.72;
+  animation-duration: 4.8s;
+}
+
+body.promo-hunt-active .secret-glint:focus-visible {
+  outline-offset: 6px;
 }
 
 .section > .secret-glint {
@@ -9193,8 +9091,6 @@ body.magic-off .secret-glint {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .scenario-grid,
-  .publisher-status-strip,
   .press-status-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -9236,7 +9132,6 @@ body.magic-off .secret-glint {
 
   .hero-grid,
   .about-grid,
-  .scenario-grid,
   .game-page-grid,
   .info-grid,
   .update-list,
@@ -9246,13 +9141,8 @@ body.magic-off .secret-glint {
     grid-template-columns: 1fr;
   }
 
-  .publisher-status-strip,
   .press-status-strip {
     grid-template-columns: 1fr;
-  }
-
-  .studio-roadmap {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .game-detail-topbar {
@@ -9905,10 +9795,6 @@ body.magic-off .secret-glint {
     font-size: 0.72rem;
   }
 
-  .studio-roadmap {
-    grid-template-columns: 1fr;
-  }
-
   .hero-actions,
   .cta-row,
   .game-actions {
@@ -10172,8 +10058,6 @@ body.magic-off .secret-glint {
   .game-card,
   .detail-card,
   .asset-link,
-  .scenario-card,
-  .publisher-status-strip,
   .press-status-strip {
     border-color: color-mix(in srgb, var(--text) 44%, var(--cyan));
   }

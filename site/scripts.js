@@ -174,26 +174,26 @@
     {
       key: "ball",
       phrase: "Ball is God?!",
-      title: "Ball is God?! reward found",
-      message: "A hidden run marked a skin reward. Secure reward delivery can be connected before launch."
+      title: "Ball is God?! promo word found",
+      message: "You found the hidden Ball is God?! word. Use this claim phrase when requesting a promo code from WillowinWorld."
     },
     {
       key: "candy",
       phrase: "Candy Shop",
-      title: "Candy Shop reward found",
-      message: "A sweet secret marked a skin reward. Secure reward delivery can be connected before launch."
+      title: "Candy Shop promo word found",
+      message: "You found the hidden Candy Shop word. Use this claim phrase when requesting a promo code from WillowinWorld."
     },
     {
       key: "paint",
       phrase: "Paint Blasters",
-      title: "Paint Blasters reward found",
-      message: "A color spark marked a skin reward. Secure reward delivery can be connected before launch."
+      title: "Paint Blasters promo word found",
+      message: "You found the hidden Paint Blasters word. Use this claim phrase when requesting a promo code from WillowinWorld."
     },
     {
       key: "seed",
       phrase: "Nature Seed",
-      title: "Nature Seed reward found",
-      message: "A quiet seed secret marked a skin reward. Secure reward delivery can be connected before launch."
+      title: "Nature Seed promo word found",
+      message: "You found the hidden Nature Seed word. Use this claim phrase when requesting a promo code from WillowinWorld."
     }
   ].map(secret => ({
     ...secret,
@@ -1480,7 +1480,7 @@
 
   function openSecretReward(secret) {
     secretTitle.textContent = secret.title;
-    secretMessage.textContent = secret.message;
+    secretMessage.textContent = `${secret.message} Claim phrase: ${secret.phrase}.`;
     secretModal.hidden = false;
     secretModal.classList.add("is-open");
     syncModalLock();
@@ -1528,28 +1528,63 @@
     startLoop();
   }
 
+  function shuffled(items) {
+    const copy = [...items];
+    for (let i = copy.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }
+
+  function syncSecretHuntMode(active) {
+    body.classList.toggle("promo-hunt-active", active);
+    document.querySelectorAll(".secret-glint").forEach(glint => {
+      const letter = glint.dataset.letter || glint.textContent.trim();
+      glint.tabIndex = active ? 0 : -1;
+      glint.setAttribute("aria-hidden", active ? "false" : "true");
+      glint.setAttribute(
+        "aria-label",
+        active ? `Hidden promo letter ${letter}` : "Hidden promo letter"
+      );
+    });
+    document.querySelectorAll("[data-enable-secret-hunt]").forEach(button => {
+      button.setAttribute("aria-pressed", active ? "true" : "false");
+      button.textContent = active ? "Promo Hunt On" : "Promo Word Hunt";
+    });
+  }
+
   function initSecrets() {
-    const surfaces = [...document.querySelectorAll("main .section")];
-    const spots = sectionSecretSpots;
+    const surfaces = shuffled(document.querySelectorAll("main .section"));
+    const spots = shuffled(sectionSecretSpots);
     if (!surfaces.length || !spots.length) return;
 
     secretRewards.forEach((secret, secretIndex) => {
-      const letters = secret.letters.map((letter, index) => ({ letter, index }));
+      const letters = shuffled(secret.letters.map((letter, index) => ({ letter, index })));
       letters.forEach(({ letter, index }, order) => {
         const surface = surfaces[(order + secretIndex) % surfaces.length];
         const spot = spots[(order * 5 + secretIndex) % spots.length];
         const glint = document.createElement("button");
         glint.type = "button";
         glint.className = "secret-glint ambient-only";
+        glint.textContent = letter;
         glint.tabIndex = -1;
         glint.dataset.letter = letter;
-        glint.setAttribute("aria-label", "Hidden portal symbol");
         glint.setAttribute("aria-hidden", "true");
+        glint.setAttribute("aria-label", "Hidden promo letter");
         glint.style.setProperty("--glint-x", spot[0] + "%");
         glint.style.setProperty("--glint-y", spot[1] + "%");
         glint.style.setProperty("--glint-delay", -((index + secretIndex * 2) % 9) * 0.54 + "s");
         glint.addEventListener("click", event => collectSecret(secret, index, glint, event));
         surface.append(glint);
+      });
+    });
+
+    document.querySelectorAll("[data-enable-secret-hunt]").forEach(button => {
+      button.addEventListener("click", () => {
+        const active = !body.classList.contains("promo-hunt-active");
+        syncSecretHuntMode(active);
+        showToast(active ? "Promo hunt enabled. Find the glowing letters." : "Promo hunt hidden in the magic again.");
       });
     });
   }

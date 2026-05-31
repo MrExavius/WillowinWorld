@@ -611,6 +611,7 @@
       function drawBackground() {
         const { width, height } = state;
         const light = body.dataset.theme === "light";
+        const motionTime = state.mode === "playing" ? state.time : 0;
         const gradient = ctx.createLinearGradient(0, 0, width, height);
         gradient.addColorStop(0, light ? "#eaf7ff" : "#08162b");
         gradient.addColorStop(0.54, light ? "#cceeff" : "#102a4d");
@@ -649,16 +650,16 @@
         ctx.restore();
 
         for (const star of state.backgroundStars) {
-          const alpha = star.alpha * (0.65 + Math.sin(state.time * 0.002 + star.drift) * 0.28);
+          const alpha = star.alpha * (0.65 + Math.sin(motionTime * 0.002 + star.drift) * 0.28);
           ctx.globalAlpha = clamp(alpha, 0.08, 0.9);
           drawSpark(star.x, star.y, star.radius * 3.2, star.color);
         }
         ctx.globalAlpha = 1;
 
-        drawGround();
+        drawGround(motionTime);
       }
 
-      function drawGround() {
+      function drawGround(motionTime) {
         const light = body.dataset.theme === "light";
         const y = state.height * 0.78;
         const layers = light
@@ -677,7 +678,7 @@
           ctx.beginPath();
           ctx.moveTo(0, y + offset);
           for (let x = 0; x <= state.width + 26; x += 26) {
-            const wave = Math.sin(x * 0.008 + state.time * speed) * amp + Math.cos(x * 0.004 + state.time * speed * 1.8) * amp * 0.42;
+            const wave = Math.sin(x * 0.008 + motionTime * speed) * amp + Math.cos(x * 0.004 + motionTime * speed * 1.8) * amp * 0.42;
             ctx.lineTo(x, y + offset + wave);
           }
           ctx.lineTo(state.width, state.height);
