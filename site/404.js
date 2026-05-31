@@ -55,6 +55,9 @@
         grace: 0,
         lives: 3,
         spawnTimer: 0,
+        dangerCooldown: 0,
+        heartCooldown: 0,
+        lastDangerLane: -1,
         elapsed: 0,
         minute: 0,
         difficulty: 1,
@@ -135,25 +138,60 @@
         }
 
         workCtx.putImageData(imageData, 0, 0);
-        sprites[key] = work;
+        sprites[key] = trimTransparentCanvas(work, 6);
 
         document.querySelectorAll(`[data-sprite-preview="${key}"]`).forEach((previewImage) => {
-          previewImage.src = work.toDataURL("image/png");
+          previewImage.src = sprites[key].toDataURL("image/png");
         });
       }
 
+      function trimTransparentCanvas(source, padding) {
+        const sourceCtx = source.getContext("2d", { willReadFrequently: true });
+        const { width, height } = source;
+        const imageData = sourceCtx.getImageData(0, 0, width, height);
+        const data = imageData.data;
+        let minX = width;
+        let minY = height;
+        let maxX = -1;
+        let maxY = -1;
+
+        for (let y = 0; y < height; y += 1) {
+          for (let x = 0; x < width; x += 1) {
+            const alpha = data[(y * width + x) * 4 + 3];
+            if (alpha <= 8) continue;
+            if (x < minX) minX = x;
+            if (x > maxX) maxX = x;
+            if (y < minY) minY = y;
+            if (y > maxY) maxY = y;
+          }
+        }
+
+        if (maxX < minX || maxY < minY) return source;
+
+        minX = Math.max(0, minX - padding);
+        minY = Math.max(0, minY - padding);
+        maxX = Math.min(width - 1, maxX + padding);
+        maxY = Math.min(height - 1, maxY + padding);
+
+        const trimmed = document.createElement("canvas");
+        trimmed.width = maxX - minX + 1;
+        trimmed.height = maxY - minY + 1;
+        trimmed.getContext("2d").drawImage(source, minX, minY, trimmed.width, trimmed.height, 0, 0, trimmed.width, trimmed.height);
+        return trimmed;
+      }
+
       const itemConfigs = {
-        star1: { score: 1, size: 72, weight: 0.62, speed: 170 },
-        star2: { score: 5, size: 80, weight: 0.24, speed: 188 },
-        star3: { score: 10, size: 90, weight: 0.1, speed: 204 },
-        heart: { score: 0, size: 58, weight: 0.055, speed: 168 },
-        blackhole: { score: 0, size: 64, weight: 0.16, speed: 196 }
+        star1: { score: 1, size: 64, weight: 0.58, speed: 188 },
+        star2: { score: 5, size: 70, weight: 0.23, speed: 212 },
+        star3: { score: 10, size: 78, weight: 0.11, speed: 236 },
+        heart: { score: 0, size: 50, weight: 0.035, speed: 190 },
+        blackhole: { score: 0, size: 62, weight: 0.19, speed: 226 }
       };
 
       const variantConfigs = {
-        speed: { color: "#ffe260", label: "Speed", duration: 5 },
-        shield: { color: "#8ff1ff", label: "Shield", duration: 5 },
-        red: { color: "#ff5b69", label: "Clear", duration: 5 },
+        speed: { color: "#ffe260", label: "Speed", duration: 3.8 },
+        shield: { color: "#8ff1ff", label: "Shield", duration: 3.2 },
+        red: { color: "#ff5b69", label: "Clear", duration: 2.4 },
         double: { color: "#b56cff", label: "x2", duration: 0 }
       };
 
@@ -166,10 +204,10 @@
         canvas.style.width = state.width + "px";
         canvas.style.height = state.height + "px";
         ctx.setTransform(state.dpr, 0, 0, state.dpr, 0, 0);
-        cat.width = Math.max(108, Math.min(150, state.width * 0.11));
+        cat.width = Math.max(102, Math.min(138, state.width * 0.095));
         cat.height = cat.width;
         cat.x = cat.x || state.width * 0.5;
-        cat.y = Math.max(160, state.height - Math.max(110, state.height * 0.16));
+        cat.y = Math.max(156, state.height - clamp(state.height * 0.145, 96, 130));
         cat.x = clamp(cat.x, cat.width * 0.5, state.width - cat.width * 0.5);
         makeBackgroundStars();
       }
@@ -222,9 +260,9 @@
       }
 
       function comboMultiplierFor(combo) {
-        if (combo >= 18) return 4;
-        if (combo >= 11) return 3;
-        if (combo >= 5) return 2;
+        if (combo >= 24) return 4;
+        if (combo >= 14) return 3;
+        if (combo >= 6) return 2;
         return 1;
       }
 
@@ -236,7 +274,7 @@
 
       function addCombo() {
         state.combo += 1;
-        state.comboTimer = 4.4;
+        state.comboTimer = 3.5;
         const previousMultiplier = state.comboMultiplier;
         state.comboMultiplier = comboMultiplierFor(state.combo);
         return state.comboMultiplier > previousMultiplier;
@@ -246,11 +284,14 @@
         state.score = 0;
         state.lives = 3;
         state.spawnTimer = 0.3;
+        state.dangerCooldown = 0;
+        state.heartCooldown = 0;
+        state.lastDangerLane = -1;
         state.elapsed = 0;
         state.minute = 0;
         state.difficulty = 1;
         resetCombo();
-        state.grace = 1.2;
+        state.grace = 0.75;
         state.effects.speed = 0;
         state.effects.shield = 0;
         state.effects.calm = 0;
@@ -282,6 +323,9 @@
         state.best = 0;
         state.lives = 3;
         state.spawnTimer = 0;
+        state.dangerCooldown = 0;
+        state.heartCooldown = 0;
+        state.lastDangerLane = -1;
         state.elapsed = 0;
         state.minute = 0;
         state.difficulty = 1;
@@ -344,30 +388,90 @@
       function chooseItemType() {
         const total = Object.values(itemConfigs).reduce((sum, item) => sum + item.weight, 0);
         let pick = Math.random() * total;
+        let selected = "star1";
         for (const [type, config] of Object.entries(itemConfigs)) {
           pick -= config.weight;
-          if (pick <= 0) return type;
+          if (pick <= 0) {
+            selected = type;
+            break;
+          }
         }
-        return "star1";
+        if (selected === "blackhole" && (state.elapsed < 2.2 || state.dangerCooldown > 0)) return "star2";
+        if (selected === "heart" && (state.lives >= 4 || state.heartCooldown > 0)) return "star1";
+        return selected;
       }
 
       function spawnItem() {
-        let type = chooseItemType();
-        const blackHoleLimit = Math.max(2, Math.min(5, Math.floor(1 + state.difficulty)));
-        const activeBlackHoles = state.items.filter((item) => item.type === "blackhole").length;
-        if (type === "blackhole" && activeBlackHoles >= blackHoleLimit) type = "star1";
+        const maxDrops = Math.max(10, Math.min(28, Math.floor(state.width / 88 + state.difficulty * 3.2)));
+        if (state.items.length > maxDrops) return;
+
+        let waveSize = 1;
+        if (state.elapsed > 14 && Math.random() < clamp((state.difficulty - 1) * 0.5, 0.16, 0.54)) waveSize = 2;
+        if (state.elapsed > 38 && Math.random() < clamp((state.difficulty - 1) * 0.26, 0.06, 0.26)) waveSize = 3;
+
+        let hazardsInWave = 0;
+        const usedLanes = [];
+        for (let i = 0; i < waveSize; i += 1) {
+          let type = i === 0 ? chooseItemType() : chooseWaveFollower(hazardsInWave);
+          const blackHoleLimit = Math.max(2, Math.min(6, Math.floor(1.2 + state.difficulty * 0.95)));
+          const activeBlackHoles = state.items.filter((item) => item.type === "blackhole").length + hazardsInWave;
+          if (type === "blackhole" && activeBlackHoles >= blackHoleLimit) type = "star2";
+          if (type === "blackhole") hazardsInWave += 1;
+          const laneInfo = chooseSpawnLane(type, usedLanes);
+          usedLanes.push(laneInfo.lane);
+          spawnDrop(type, laneInfo, -i * 76);
+        }
+      }
+
+      function chooseWaveFollower(hazardsInWave) {
+        if (state.elapsed < 16) return Math.random() > 0.42 ? "star1" : "star2";
+        const roll = Math.random();
+        if (hazardsInWave === 0 && state.dangerCooldown <= 0 && roll < 0.36) return "blackhole";
+        if (roll < 0.58) return "star1";
+        if (roll < 0.84) return "star2";
+        return "star3";
+      }
+
+      function chooseSpawnLane(type, usedLanes = []) {
+        const count = Math.max(4, Math.min(9, Math.floor(state.width / 150)));
+        let lane = Math.floor(Math.random() * count);
+        if (usedLanes.length < count) {
+          let guard = 0;
+          while (usedLanes.includes(lane) && guard < count + 2) {
+            lane = (lane + 1 + Math.floor(Math.random() * Math.max(1, count - 1))) % count;
+            guard += 1;
+          }
+        }
+        if (type === "blackhole" && count > 1 && lane === state.lastDangerLane) {
+          lane = (lane + 1 + Math.floor(Math.random() * (count - 1))) % count;
+        }
+        return { lane, count };
+      }
+
+      function spawnDrop(type, laneInfo, yOffset) {
         const config = itemConfigs[type];
         const margin = Math.max(46, state.width * 0.055);
         const variant = chooseStarVariant(type);
+        const usableWidth = Math.max(1, state.width - margin * 2);
+        const laneWidth = usableWidth / laneInfo.count;
+        const jitter = (Math.random() - 0.5) * Math.min(54, laneWidth * 0.5);
+        const x = clamp(margin + laneWidth * (laneInfo.lane + 0.5) + jitter, margin, state.width - margin);
+        const speedPressure = state.difficulty * (type === "blackhole" ? 25 : 22);
+        if (type === "blackhole") {
+          state.dangerCooldown = Math.max(0.18, 0.8 - state.difficulty * 0.08);
+          state.lastDangerLane = laneInfo.lane;
+        }
+        if (type === "heart") state.heartCooldown = 13;
         state.items.push({
           type,
           variant,
-          x: margin + Math.random() * (state.width - margin * 2),
-          y: -config.size,
+          lane: laneInfo.lane,
+          x,
+          y: -config.size + yOffset,
           size: config.size,
-          vy: config.speed + Math.random() * 78 + state.difficulty * 18,
-          vx: (Math.random() - 0.5) * 24,
-          spin: (Math.random() - 0.5) * 2.2,
+          vy: config.speed + Math.random() * 86 + speedPressure,
+          vx: (Math.random() - 0.5) * (type === "blackhole" ? 38 : 28),
+          spin: (Math.random() - 0.5) * (type === "blackhole" ? 2.8 : 2.4),
           angle: Math.random() * Math.PI * 2,
           wobble: Math.random() * Math.PI * 2
         });
@@ -376,10 +480,10 @@
       function chooseStarVariant(type) {
         if (!type.startsWith("star")) return null;
         const roll = Math.random();
-        if (roll < 0.1) return "speed";
-        if (roll < 0.2) return "shield";
-        if (roll < 0.3) return "red";
-        if (roll < 0.4) return "double";
+        if (roll < 0.08) return "speed";
+        if (roll < 0.14) return "shield";
+        if (roll < 0.19) return "red";
+        if (roll < 0.27) return "double";
         return null;
       }
 
@@ -391,12 +495,13 @@
           x: clamp(cat.x + (Math.random() - 0.5) * 180, config.size, state.width - config.size),
           y: Math.max(86, cat.y - 300),
           size: config.size,
-          vy: config.speed * 0.82,
+          vy: config.speed * 0.92,
           vx: (Math.random() - 0.5) * 18,
           spin: (Math.random() - 0.5) * 1.8,
           angle: Math.random() * Math.PI * 2,
           wobble: Math.random() * Math.PI * 2
         });
+        state.heartCooldown = 13;
       }
 
       function clearDropAroundCat() {
@@ -406,7 +511,7 @@
           if (item.type === "heart") continue;
           const dx = Math.abs(item.x - cat.x);
           const dy = Math.abs(item.y - cat.y);
-          if (dx < state.width * 0.34 && dy < state.height * 0.55) {
+          if (dx < state.width * 0.24 && dy < state.height * 0.42) {
             createBurst(item.x, item.y, "#ff5b69", 7);
             state.items.splice(i, 1);
             removed += 1;
@@ -443,7 +548,7 @@
           }
           state.lives -= 1;
           resetCombo();
-          state.grace = 1.15;
+          state.grace = 0.75;
           cat.hurtTime = 0.38;
           createBurst(item.x, item.y, "#b36cff", 18);
           updateHud();
@@ -456,7 +561,7 @@
         }
 
         if (item.type === "heart") {
-          state.lives = Math.min(5, state.lives + 1);
+          state.lives = Math.min(4, state.lives + 1);
           createBurst(item.x, item.y, "#ff8bc2", 16);
           showToast("Heart caught. +1 life.");
         } else {
@@ -493,8 +598,9 @@
         const catchY = cat.y - cat.height * 0.44;
         const dx = Math.abs(item.x - cat.x);
         const dy = Math.abs(item.y - catchY);
-        const catchWidth = cat.width * 0.48 + item.size * 0.28;
-        const catchHeight = cat.height * 0.2 + item.size * 0.24;
+        const danger = item.type === "blackhole";
+        const catchWidth = cat.width * (danger ? 0.34 : 0.43) + item.size * (danger ? 0.18 : 0.24);
+        const catchHeight = cat.height * (danger ? 0.14 : 0.18) + item.size * (danger ? 0.18 : 0.2);
         return dx < catchWidth && dy < catchHeight;
       }
 
@@ -507,10 +613,12 @@
           state.minute = nextMinute;
           showToast("Minute " + (state.minute + 1) + ": the sky gets heavier.");
         }
-        state.difficulty = 1 + state.elapsed / 60 * 0.72;
+        state.difficulty = 1 + state.elapsed / 60 * 0.92;
         state.effects.speed = Math.max(0, state.effects.speed - dt);
         state.effects.shield = Math.max(0, state.effects.shield - dt);
         state.effects.calm = Math.max(0, state.effects.calm - dt);
+        state.dangerCooldown = Math.max(0, state.dangerCooldown - dt);
+        state.heartCooldown = Math.max(0, state.heartCooldown - dt);
         state.grace = Math.max(0, state.grace - dt);
         if (state.comboTimer > 0) {
           state.comboTimer = Math.max(0, state.comboTimer - dt);
@@ -518,8 +626,8 @@
         }
 
         const speedMultiplier = state.effects.speed > 0 ? 1.45 : 1;
-        const maxSpeed = Math.max(520, state.width * 0.62) * speedMultiplier;
-        const acceleration = maxSpeed * 7.2;
+        const maxSpeed = Math.max(560, state.width * 0.66) * speedMultiplier;
+        const acceleration = maxSpeed * 7.6;
         let moving = false;
 
         const keyboardEnabled = state.controlMode === "keyboard" || isTouchMode();
@@ -539,12 +647,12 @@
 
         if (pointerEnabled && state.pointerX !== null) {
           const delta = state.pointerX - cat.x;
-          cat.vx += clamp(delta * 18, -acceleration, acceleration) * dt;
+          cat.vx += clamp(delta * 15, -acceleration, acceleration) * dt;
           moving = Math.abs(delta) > 8;
           if (Math.abs(delta) > 8) cat.direction = delta > 0 ? 1 : -1;
         }
 
-        cat.vx *= Math.pow(0.84, dt * 60);
+        cat.vx *= Math.pow(0.88, dt * 60);
         cat.vx = clamp(cat.vx, -maxSpeed, maxSpeed);
         cat.x += cat.vx * dt;
         cat.x = clamp(cat.x, cat.width * 0.52, state.width - cat.width * 0.52);
@@ -561,17 +669,26 @@
         if (state.spawnTimer <= 0) {
           spawnItem();
           const calmMultiplier = state.effects.calm > 0 ? 1.75 : 1;
-          const base = Math.max(0.22, 0.82 - state.difficulty * 0.09) * calmMultiplier;
-          state.spawnTimer = base * (0.74 + Math.random() * 0.72);
+          const base = Math.max(0.16, 0.7 - state.difficulty * 0.065) * calmMultiplier;
+          state.spawnTimer = base * (0.68 + Math.random() * 0.48);
         }
 
         for (let i = state.items.length - 1; i >= 0; i -= 1) {
           const item = state.items[i];
           const catchY = cat.y - cat.height * 0.44;
-          if (item.type !== "blackhole" && item.y < catchY && catchY - item.y < 210) {
-            const pull = clamp(1 - Math.abs(item.x - cat.x) / (cat.width * 1.35), 0, 1);
-            item.x += (cat.x - item.x) * pull * dt * 1.8;
-            item.y += (catchY - item.y) * pull * dt * 0.18;
+          if (item.type !== "blackhole" && item.variant && item.y < catchY && catchY - item.y < 112) {
+            const pull = clamp(1 - Math.abs(item.x - cat.x) / (cat.width * 1.15), 0, 1);
+            item.x += (cat.x - item.x) * pull * dt * 0.72;
+            item.y += (catchY - item.y) * pull * dt * 0.08;
+          }
+          if (item.type === "blackhole" && state.grace <= 0) {
+            const dx = item.x - cat.x;
+            const dy = Math.abs(item.y - catchY);
+            const pullRadius = cat.width * 2.35;
+            if (dy < cat.height * 1.45 && Math.abs(dx) < pullRadius) {
+              const pull = 1 - Math.abs(dx) / pullRadius;
+              cat.vx += Math.sign(dx || 1) * pull * maxSpeed * 1.05 * dt;
+            }
           }
           item.y += item.vy * dt;
           item.x += (item.vx + Math.sin(state.time * 0.002 + item.wobble) * 18) * dt;
@@ -703,6 +820,22 @@
         ctx.fill();
       }
 
+      function drawImageContained(image, maxWidth, maxHeight, offsetY = 0) {
+        const sourceWidth = image.width || image.naturalWidth || maxWidth;
+        const sourceHeight = image.height || image.naturalHeight || maxHeight;
+        const aspect = sourceWidth > 0 && sourceHeight > 0 ? sourceWidth / sourceHeight : 1;
+        let drawWidth = maxWidth;
+        let drawHeight = maxHeight;
+
+        if (drawWidth / drawHeight > aspect) {
+          drawWidth = drawHeight * aspect;
+        } else {
+          drawHeight = drawWidth / aspect;
+        }
+
+        ctx.drawImage(image, -drawWidth * 0.5, -drawHeight * 0.5 + offsetY, drawWidth, drawHeight);
+      }
+
       function drawItems() {
         for (const item of state.items) {
           const img = sprites[item.type] || images[item.type];
@@ -731,7 +864,7 @@
           ctx.rotate(item.angle);
           ctx.shadowColor = item.type === "blackhole" ? "rgba(179, 108, 255, 0.55)" : variant ? variant.color : "rgba(103, 220, 255, 0.38)";
           ctx.shadowBlur = item.type === "blackhole" || variant ? 28 : 18;
-          ctx.drawImage(img, -item.size * 0.5, -item.size * 0.5, item.size, item.size);
+          drawImageContained(img, item.size, item.size);
           if (variant) {
             ctx.globalCompositeOperation = "source-atop";
             ctx.globalAlpha = 0.36;
@@ -775,17 +908,26 @@
         const img = currentCatImage();
         ctx.save();
         ctx.translate(cat.x + hurtShake, cat.y + bob);
-        ctx.globalAlpha = 0.4;
+        ctx.globalAlpha = 0.34;
         ctx.fillStyle = "#67dcff";
         ctx.beginPath();
-        ctx.ellipse(0, cat.height * 0.39, cat.width * 0.34, cat.height * 0.075, 0, 0, Math.PI * 2);
+        ctx.ellipse(0, cat.height * 0.43, cat.width * 0.38, cat.height * 0.08, 0, 0, Math.PI * 2);
         ctx.fill();
         ctx.globalAlpha = 1;
+        if (state.mode === "playing") {
+          ctx.globalAlpha = 0.46 + Math.sin(state.time * 0.014) * 0.12;
+          ctx.strokeStyle = state.effects.shield > 0 ? "rgba(143, 241, 255, 0.9)" : "rgba(103, 220, 255, 0.58)";
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(0, -cat.height * 0.44, cat.width * 0.43, Math.PI * 0.08, Math.PI * 0.92);
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
         if (state.effects.shield > 0) {
           ctx.strokeStyle = "rgba(143, 241, 255, 0.82)";
           ctx.lineWidth = 4;
           ctx.beginPath();
-          ctx.arc(0, -cat.height * 0.12, cat.width * 0.55 + Math.sin(state.time * 0.012) * 5, 0, Math.PI * 2);
+          ctx.arc(0, -cat.height * 0.16, cat.width * 0.56 + Math.sin(state.time * 0.012) * 5, 0, Math.PI * 2);
           ctx.stroke();
         }
         if (state.effects.speed > 0) {
@@ -799,7 +941,7 @@
         ctx.shadowBlur = 22;
         ctx.shadowOffsetY = 18;
         if (state.grace > 0 && Math.floor(state.time / 90) % 2 === 0) ctx.globalAlpha = 0.62;
-        ctx.drawImage(img, -cat.width * 0.5, -cat.height * 0.68, cat.width, cat.height);
+        drawImageContained(img, cat.width * 1.34, cat.height * 1.26, -cat.height * 0.2);
         ctx.restore();
       }
 

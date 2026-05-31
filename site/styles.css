@@ -1335,8 +1335,35 @@ h1 {
     max-width: 730px;
   }
 
+  #games .section-head,
+  #game-cluster .section-head,
+  #studio .section-head,
+  #devlog .section-head {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  #games .section-head .section-title,
+  #game-cluster .section-head .section-title,
+  #studio .section-head .section-title,
   #devlog .section-head .section-title {
-    max-width: 820px;
+    max-width: 650px;
+    font-size: clamp(2.35rem, 3.35vw, 3.85rem);
+    line-height: 1.02;
+  }
+
+  #games .section-head .section-copy,
+  #game-cluster .section-head .section-copy,
+  #studio .section-head .section-copy,
+  #devlog .section-head .section-copy {
+    width: 100%;
+    max-width: 650px;
+    margin-left: auto;
+    font-size: clamp(1rem, 1.18vw, 1.12rem);
+    line-height: 1.62;
+  }
+
+  #devlog .section-head .section-title {
+    max-width: 640px;
   }
 
   #systems .section-head .section-title,
@@ -6282,6 +6309,119 @@ body.ball-is-god-page[data-theme="dark"] {
   line-height: 1.6;
 }
 
+.related-worlds {
+  position: relative;
+  overflow: hidden;
+}
+
+.related-worlds::after {
+  content: "";
+  position: absolute;
+  inset: auto 4% -34% 52%;
+  height: 240px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 68%),
+    radial-gradient(ellipse at 35% 42%, color-mix(in srgb, var(--violet) 16%, transparent), transparent 62%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.related-worlds > * {
+  position: relative;
+  z-index: 1;
+}
+
+.related-worlds-copy {
+  max-width: 980px;
+  margin: -8px 0 24px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.related-world-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.related-world-link {
+  min-height: 238px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 18%, var(--line));
+  border-radius: 18px;
+  color: var(--text);
+  text-decoration: none;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--paper) 9%, transparent), transparent 58%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform .24s var(--ease), border-color .24s var(--ease), background .24s var(--ease), box-shadow .24s var(--ease);
+}
+
+.related-world-link:hover,
+.related-world-link:focus-visible {
+  outline: none;
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--cyan) 44%, var(--line));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--cyan) 13%, transparent), transparent 58%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.052) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface) 86%, transparent);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.related-world-link.is-primary {
+  border-color: color-mix(in srgb, var(--cyan) 38%, var(--line));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--cyan) 16%, transparent), transparent 58%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.052) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.related-world-kicker {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 14px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 36%, var(--line));
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--cyan) 82%, var(--text));
+  background: color-mix(in srgb, var(--cyan) 9%, transparent);
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.related-world-link strong {
+  font-size: clamp(1.16rem, 1.45vw, 1.34rem);
+  line-height: 1.05;
+}
+
+.related-world-link p {
+  margin: 12px 0 auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.58;
+}
+
+.related-world-meta {
+  display: block;
+  margin-top: 18px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: color-mix(in srgb, var(--text) 76%, var(--cyan));
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
 .game-page-facts,
 .press-kit-facts {
   display: grid;
@@ -9134,7 +9274,8 @@ body.magic-off .secret-glint {
 
   .detail-grid,
   .press-kit-grid,
-  .asset-list {
+  .asset-list,
+  .related-world-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -9184,7 +9325,8 @@ body.magic-off .secret-glint {
   .update-list,
   .detail-grid,
   .press-kit-grid,
-  .asset-list {
+  .asset-list,
+  .related-world-grid {
     grid-template-columns: 1fr;
   }
 
@@ -9852,6 +9994,10 @@ body.magic-off .secret-glint {
   .btn {
     width: 100%;
     min-height: 48px;
+  }
+
+  .related-world-link {
+    min-height: auto;
   }
 
   .hero-worlds {
