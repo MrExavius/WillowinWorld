@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Paint Blasters is a mobile color physics puzzle arcade: mix shots, smash towers and trigger chain reactions. In development by WillowinWorld.">
+  <meta name="description" content="Paint Blasters is a mobile color destruction physics puzzle arcade. Mix color-powered shots, smash towers, trigger chain reactions and follow WillowinWorld's prototype development.">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
+  <meta name="theme-color" content="#071225" id="metaThemeColor">
   <meta property="og:title" content="Paint Blasters - Color Destruction Physics Puzzle">
   <meta property="og:description" content="Mix color shots, smash blocks and trigger chain reactions in WillowinWorld's mobile physics arcade puzzle.">
   <meta property="og:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
@@ -19,9 +19,11 @@
   <meta name="twitter:description" content="Mix color shots, smash towers and trigger chain reactions in WillowinWorld's mobile physics arcade puzzle.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Paint Blasters | Color Physics Puzzle Arcade (Mobile)</title>
+  <title>Paint Blasters | Color Destruction Physics Puzzle Arcade</title>
   <link rel="canonical" href="https://willowinworld.com/games/paint-blasters.html">
-  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/willowinworld-logo.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -83,8 +85,9 @@
   <link rel="preload" href="../assets/responsive/paint-blasters-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../assets/responsive/paint-blasters-hero-480.avif 480w, ../assets/responsive/paint-blasters-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../assets/Paint%20Blasters/site/picon1.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../motion.css">
 </head>
-<body class="game-detail-page game-theme-paint paint-blasters-page" data-theme="light">
+<body class="game-detail-page game-theme-paint paint-blasters-page" data-theme="dark">
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="/#games" aria-label="Back to WillowinWorld games">
       <img src="../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters color destruction puzzle game icon" fetchpriority="high" decoding="async">
@@ -104,7 +107,10 @@
   </header>
   <main class="game-page game-detail-shell paint-blasters-shell">
     <div class="paint-page-backdrop ambient-only" aria-hidden="true">
-      <img class="paint-ship-panel" src="../assets/Paint%20Blasters/site/ship.webp" width="1672" height="941" alt="" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/avif" srcset="../assets/responsive/paint-blasters-ship-840.avif 840w" sizes="(max-width: 760px) 64vw, 38vw">
+        <img class="paint-ship-panel" src="../assets/responsive/paint-blasters-ship-840.webp" srcset="../assets/responsive/paint-blasters-ship-480.webp 480w, ../assets/responsive/paint-blasters-ship-840.webp 840w, ../assets/Paint%20Blasters/site/ship.webp 1672w" sizes="(max-width: 760px) 64vw, 38vw" width="1672" height="941" alt="" loading="lazy" decoding="async">
+      </picture>
       <div class="paint-menu-world">
         <span class="paint-menu-pipe paint-menu-pipe-one"></span>
         <span class="paint-menu-pipe paint-menu-pipe-two"></span>
@@ -167,13 +173,13 @@
                 <span class="paint-shard paint-shard-two"></span>
                 <span class="paint-shard paint-shard-three"></span>
                 <span class="paint-shard paint-shard-four"></span>
-                <img class="paint-blaster" src="../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" decoding="async">
+                <img loading="lazy" class="paint-blaster" src="../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" decoding="async">
               </div>
-              <img class="paint-module" src="../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" decoding="async">
-              <img class="paint-hero" src="../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" decoding="async">
+              <img loading="lazy" class="paint-module" src="../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" decoding="async">
+              <img loading="lazy" class="paint-hero" src="../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" decoding="async">
             </div>
-            <img class="paint-showcase-icon paint-showcase-icon-primary" src="../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters game icon with colorful arcade action" decoding="async">
-            <img class="paint-showcase-icon paint-showcase-icon-alt" src="../assets/Paint%20Blasters/site/picon2.webp" width="520" height="520" alt="" decoding="async">
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-primary" src="../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters game icon with colorful arcade action" decoding="async">
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-alt" src="../assets/Paint%20Blasters/site/picon2.webp" width="520" height="520" alt="" decoding="async">
             <span class="paint-preview-title">
               <small>Color Destruction Physics Puzzle</small>
               <strong>Paint Blasters</strong>
@@ -239,11 +245,11 @@
         <h2>SEO-ready Paint Blasters WebP asset kit</h2>
         <p class="asset-kit-copy">Optimized public files for press, publisher review, store references and image search. Every download uses descriptive genre naming for the color destruction physics puzzle page.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" download><img src="../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" width="1024" height="1024" alt="Paint Blasters color destruction physics puzzle game icon" loading="lazy" decoding="async"><strong>Game icon</strong><span>Color destruction physics puzzle icon.</span></a>
-          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" download><img src="../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" width="1024" height="1024" alt="Paint Blasters color chain reaction arcade logo" loading="lazy" decoding="async"><strong>Arcade logo</strong><span>Color chain reaction brand asset.</span></a>
-          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp" download><img src="../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp" width="1024" height="1024" alt="Paint Blasters Zetun robot character" loading="lazy" decoding="async"><strong>Zetun character</strong><span>Robot character asset for the arcade puzzle.</span></a>
-          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" download><img src="../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" width="387" height="645" alt="Paint Blasters color destruction puzzle game background" loading="lazy" decoding="async"><strong>Gameplay background</strong><span>Color destruction puzzle scene.</span></a>
-          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" download><img src="../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" width="782" height="1400" alt="Paint Blasters color arcade puzzle menu background" loading="lazy" decoding="async"><strong>Menu background</strong><span>Arcade puzzle menu scene.</span></a>
+          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" download><img src="../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" srcset="../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 360w, ../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters color destruction physics puzzle game icon" loading="lazy" decoding="async"><strong>Game icon</strong><span>Color destruction physics puzzle icon.</span></a>
+          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" download><img src="../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" srcset="../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 360w, ../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters color chain reaction arcade logo" loading="lazy" decoding="async"><strong>Arcade logo</strong><span>Color chain reaction brand asset.</span></a>
+          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp" download><img src="../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp" srcset="../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp 360w, ../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters Zetun robot character" loading="lazy" decoding="async"><strong>Zetun character</strong><span>Robot character asset for the arcade puzzle.</span></a>
+          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" download><img src="../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" srcset="../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 360w, ../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 387w" sizes="(max-width: 760px) 34vw, 76px" width="387" height="645" alt="Paint Blasters color destruction puzzle game background" loading="lazy" decoding="async"><strong>Gameplay background</strong><span>Color destruction puzzle scene.</span></a>
+          <a class="asset-link" href="../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" download><img src="../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" srcset="../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 360w, ../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 782w" sizes="(max-width: 760px) 34vw, 76px" width="782" height="1400" alt="Paint Blasters color arcade puzzle menu background" loading="lazy" decoding="async"><strong>Menu background</strong><span>Arcade puzzle menu scene.</span></a>
         </div>
       </section>
       <section class="soft-card game-page-section">

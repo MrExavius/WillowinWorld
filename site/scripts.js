@@ -43,7 +43,7 @@
   const metaThemeColor = document.getElementById("metaThemeColor");
   const mascotImage = new Image();
   const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-  const browserPrefersDark = colorSchemeQuery.matches;
+  const colorSchemeLightQuery = window.matchMedia("(prefers-color-scheme: light)");
   const savedTheme = (() => {
     try {
       const theme = localStorage.getItem("willow-theme");
@@ -52,7 +52,20 @@
       return null;
     }
   })();
-  const initialTheme = savedTheme || (browserPrefersDark ? "dark" : "light");
+  function timeBasedThemeFallback() {
+    const hour = new Date().getHours();
+    if (!Number.isFinite(hour)) return "dark";
+    return hour >= 7 && hour < 19 ? "light" : "dark";
+  }
+
+  function resolveInitialTheme() {
+    if (savedTheme) return savedTheme;
+    if (colorSchemeQuery.matches) return "dark";
+    if (colorSchemeLightQuery.matches) return "light";
+    return timeBasedThemeFallback() || "dark";
+  }
+
+  const initialTheme = resolveInitialTheme();
 
   const state = {
     width: 0,
@@ -1220,7 +1233,13 @@
     state.backgroundCacheKey = "";
     refreshCssCache();
     document.querySelectorAll("[data-logo-theme]").forEach(logo => {
-      logo.src = theme === "dark" ? "assets/willowinworld-logo.webp" : "assets/willowinworld-logo-day.webp";
+      const darkLogo = "assets/willowinworld-logo.webp";
+      const lightLogo = "assets/willowinworld-logo-day.webp";
+      const darkSrcset = "assets/responsive/willowinworld-logo-256.webp 256w, assets/responsive/willowinworld-logo-512.webp 512w, assets/willowinworld-logo.webp 1024w";
+      const lightSrcset = "assets/responsive/willowinworld-logo-day-256.webp 256w, assets/responsive/willowinworld-logo-day-512.webp 512w, assets/willowinworld-logo-day.webp 1024w";
+      logo.src = theme === "dark" ? darkLogo : lightLogo;
+      logo.srcset = theme === "dark" ? darkSrcset : lightSrcset;
+      logo.sizes = "(max-width: 760px) 44px, 52px";
     });
     if (metaThemeColor) metaThemeColor.content = theme === "dark" ? "#031735" : "#fcfff2";
     if (persist) {
@@ -1618,7 +1637,6 @@
     queueRevealGroup("#about", ".about-grid > *", 86, 172);
     queueRevealGroup("#process", ".step", 70, 420);
     queueRevealGroup("#devlog", ".devlog-card", 76, 304);
-    queueRevealGroup("#testimonials", ".quote-card", 78, 312);
     queueRevealGroup("#faq", ".faq-item", 54, 378);
     queueReveal(document.querySelector(".final-cta .container"), 0);
 

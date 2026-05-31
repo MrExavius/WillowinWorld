@@ -4,6 +4,7 @@
   const themeToggle = document.getElementById("themeToggle");
   const metaThemeColor = document.getElementById("metaThemeColor");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
 
   function readStoredTheme() {
     try {
@@ -41,7 +42,14 @@
     document.querySelectorAll("[data-logo-theme]").forEach(logo => {
       const lightLogo = logo.getAttribute("data-logo-light") || "assets/willowinworld-logo-day.webp";
       const darkLogo = logo.getAttribute("data-logo-dark") || "assets/willowinworld-logo.webp";
+      const darkSrcset = logo.getAttribute("data-logo-dark-srcset");
+      const lightSrcset = logo.getAttribute("data-logo-light-srcset");
       logo.src = theme === "dark" ? darkLogo : lightLogo;
+      const srcset = theme === "dark" ? darkSrcset : lightSrcset;
+      if (srcset) {
+        logo.srcset = srcset;
+        logo.sizes = "(max-width: 760px) 44px, 52px";
+      }
     });
     if (themeToggle) {
       themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light theme" : "Switch to dark theme");
@@ -50,7 +58,21 @@
     if (persist) writeStoredTheme(theme);
   }
 
-  const initialTheme = readStoredTheme() || (prefersDark.matches ? "dark" : "light");
+  function timeBasedThemeFallback() {
+    const hour = new Date().getHours();
+    if (!Number.isFinite(hour)) return "dark";
+    return hour >= 7 && hour < 19 ? "light" : "dark";
+  }
+
+  function resolveInitialTheme() {
+    const storedTheme = readStoredTheme();
+    if (storedTheme) return storedTheme;
+    if (prefersDark.matches) return "dark";
+    if (prefersLight.matches) return "light";
+    return timeBasedThemeFallback() || "dark";
+  }
+
+  const initialTheme = resolveInitialTheme();
   setTheme(initialTheme, false);
 
   if (themeToggle) {

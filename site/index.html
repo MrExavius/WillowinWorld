@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="WillowinWorld makes mobile puzzle and arcade games: Nature Seed (draw-to-solve water physics), Candy Shop (cozy candy merge), Paint Blasters (color chain puzzle) and Ball is God?! (vertical arcade). Beta &amp; dev updates.">
+  <meta name="description" content="WillowinWorld is an indie mobile game studio creating Nature Seed, Candy Shop, Paint Blasters and Ball is God?! Explore draw-to-solve water physics, cozy candy merge puzzles, color destruction arcade and one-touch vertical descent games.">
   <meta name="robots" content="index, follow">
   <meta name="author" content="WillowinWorld">
-  <meta name="theme-color" content="#fcfff2" id="metaThemeColor">
+  <meta name="theme-color" content="#031735" id="metaThemeColor">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WillowinWorld">
-  <meta property="og:title" content="WillowinWorld - Indie Mobile Game Studio">
+  <meta property="og:title" content="WillowinWorld - Indie Mobile Puzzle &amp; Arcade Game Studio">
   <meta property="og:description" content="Tactile magical mobile games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?! Cozy physics, merge and arcade worlds by WillowinWorld.">
   <meta property="og:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
   <meta property="og:image:width" content="1200">
@@ -19,18 +19,21 @@
   <meta property="og:url" content="https://willowinworld.com/">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="WillowinWorld - Magical Mobile Games">
+  <meta name="twitter:title" content="WillowinWorld - Magical Mobile Puzzle &amp; Arcade Games">
   <meta name="twitter:description" content="Cozy physics puzzles, candy merge games, color arcade action and vertical descent worlds with tactile mobile-first polish.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-GatsUKPt8OFTn4hMxdAKV7POviQPZKF20g9jdg4MMng='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>WillowinWorld | Nature Seed &amp; Mobile Puzzle Games</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-UQwD1CzNK4Rzd2AQ/98ws+O6D7OEIxax/HFFzCcXhzc='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>WillowinWorld | Nature Seed, Candy Shop &amp; Magical Mobile Games</title>
   <link rel="canonical" href="https://willowinworld.com/">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/willowinworld-logo.webp" type="image/webp">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="rss.xml">
-  <link rel="preload" href="assets/willowinworld-logo-day.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="assets/willowinworld-logo.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="preload" href="assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="assets/responsive/nature-seed-hero-720.avif 720w, assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 50vw">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion.css">
   <script type="application/ld+json" id="structuredData">
 {
   "@context": "https://schema.org",
@@ -40,7 +43,7 @@
       "@id": "https://willowinworld.com/#studio",
       "name": "WillowinWorld",
       "url": "https://willowinworld.com/",
-      "logo": "https://willowinworld.com/assets/willowinworld-logo-day.webp",
+      "logo": "https://willowinworld.com/assets/willowinworld-logo.webp",
       "email": "contact@willowinworld.com",
       "description": "WillowinWorld is an indie mobile game studio creating tactile magical games, cozy physics puzzles and premium 2D worlds.",
       "knowsAbout": ["Mobile game development", "Physics puzzle games", "Merge puzzle games", "Cozy games", "Arcade games", "2D art direction"]
@@ -185,7 +188,7 @@
 }
   </script>
 </head>
-<body data-theme="light">
+<body data-theme="dark">
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
   <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magic unlocked - Welcome to WillowinWorld</div>
@@ -196,7 +199,7 @@
       <div class="container header-inner">
         <a class="brand" href="#home" aria-label="WillowinWorld home">
           <span class="brand-mark" aria-hidden="true">
-            <img src="assets/willowinworld-logo-day.webp" data-logo-theme width="1024" height="1024" alt="" fetchpriority="high" decoding="async">
+            <img src="assets/willowinworld-logo.webp" srcset="assets/responsive/willowinworld-logo-256.webp 256w, assets/responsive/willowinworld-logo-512.webp 512w, assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" fetchpriority="high" decoding="async">
           </span>
           <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
         </a>
@@ -228,6 +231,7 @@
           <div>
             <div class="eyebrow hero-eyebrow">Mobile-first game studio</div>
             <h1><span class="hero-brand-title">WillowinWorld</span><span class="hero-title-line">creates magical mobile games that feel alive.</span></h1>
+            <p class="brand-slogan-lockup">Magical mobile games. Readable systems. Worlds that feel alive.</p>
             <p class="hero-copy">Cozy physics puzzles, tactile mobile worlds and premium 2D art, built around readable systems and interactions players can feel from the first touch.</p>
             <div class="hero-actions">
               <a class="btn btn-primary" href="#games">Explore Games</a>
@@ -244,7 +248,7 @@
           <div class="hero-panel" role="img" aria-label="Nature Seed restoration preview">
             <div class="nature-preview ambient-only" aria-hidden="true">
               <div class="nature-stage nature-stage-hero">
-                <img class="nature-level nature-level-sketch" src="assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+                <img loading="lazy" class="nature-level nature-level-sketch" src="assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
                 <picture>
                   <source type="image/avif" srcset="assets/responsive/nature-seed-hero-720.avif 720w, assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 50vw">
                   <img class="nature-level nature-level-painted" src="assets/responsive/nature-seed-hero-1376.webp" srcset="assets/responsive/nature-seed-hero-720.webp 720w, assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 50vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
@@ -257,11 +261,11 @@
                 <span class="nature-water-drop is-second"></span>
                 <span class="nature-water-drop is-third"></span>
                 <span class="nature-bloom"></span>
-                <img class="nature-growth" src="assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
-                <img class="nature-companion nature-companion-water" src="assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
-                <img class="nature-companion nature-companion-seed" src="assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+                <img loading="lazy" class="nature-growth" src="assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-water" src="assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-seed" src="assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
               </div>
-              <img class="nature-preview-icon" src="assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="" decoding="async">
+              <img loading="lazy" class="nature-preview-icon" src="assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="" decoding="async">
               <span class="nature-preview-title">
                 <small>Draw-to-Solve Physics Puzzle</small>
                 <strong>Nature Seed</strong>
@@ -272,7 +276,7 @@
             <span class="floating-rune ambient-only"></span>
             <span class="floating-rune ambient-only"></span>
             <div class="hero-portal-badge ambient-only" aria-hidden="true">
-              <img src="assets/willowinworld-logo-day.webp" data-logo-theme width="1024" height="1024" alt="" decoding="async">
+              <img loading="lazy" src="assets/willowinworld-logo.webp" srcset="assets/responsive/willowinworld-logo-256.webp 256w, assets/responsive/willowinworld-logo-512.webp 512w, assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
               <span>Four worlds</span>
             </div>
             <div class="magic-hud">
@@ -394,9 +398,9 @@
                   <span class="status-pill">Public Beta Planned</span>
                   <span class="game-genre">Main genre: Draw-to-Solve Physics Puzzle</span>
                 </div>
-                <div class="game-progress progress-99" role="group" aria-label="Nature Seed beta build progress 99 percent" title="99% means beta polish: onboarding, readability, optimization and restoration feedback.">
+                <div class="game-progress progress-99" role="group" aria-label="Nature Seed beta polish progress" title="Beta polish means onboarding, readability, optimization and restoration feedback.">
                   <div><strong>July 2026</strong><span>Beta polish</span></div>
-                  <span class="game-progress-track" aria-hidden="true"></span>
+                  <progress class="game-progress-track" max="100" value="99">Beta polish</progress>
                 </div>
                 <p>Nature Seed is a meditative draw-to-solve physics puzzle about drawing magical lines, guiding water toward seeds and restoring a dying forest into a living watercolor world. It is now in beta polish, with the first public beta planned for July 2026.</p>
                 <div class="feature-callout">Mobile edge: line drawing, water routing and nature restoration become one calming physics loop.</div>
@@ -444,7 +448,7 @@
                 </div>
                 <div class="game-progress progress-internal" role="group" aria-label="Candy Shop internal beta optimization and polish" title="Internal beta means the core merge loop works and current work is polish, balance and optimization.">
                   <div><strong>Beta</strong><span>Optimization</span></div>
-                  <span class="game-progress-track" aria-hidden="true"></span>
+                  <progress class="game-progress-track" max="100" value="82">Internal beta</progress>
                 </div>
                 <p>Candy Shop is a cozy physics-based candy merge puzzle about dropping sweets, merging matching candies and building bigger treats through soft, satisfying physics. The game is now in internal beta, with optimization, UI polish, balance and combo readability as the current focus.</p>
                 <div class="feature-callout">Mobile edge: Suika-like drops grow into candy combos, special sweets, containers and long progression.</div>
@@ -504,7 +508,7 @@
                 </div>
                 <div class="game-progress progress-draft" role="group" aria-label="Paint Blasters production draft core mechanics complete" title="Production draft means the core mechanics are playable, with final scope and feedback still being refined.">
                   <div><strong>Draft</strong><span>Core mechanics</span></div>
-                  <span class="game-progress-track" aria-hidden="true"></span>
+                  <progress class="game-progress-track" max="100" value="68">Prototype</progress>
                 </div>
                 <p>Paint Blasters is a color destruction physics puzzle where players build color-powered projectiles before every shot, aim at readable towers and trigger chain reactions. The current GDD-based prototype has its core mechanics implemented in draft form while final scope is refined.</p>
                 <div class="feature-callout">Mobile edge: build a color shot before aiming, then turn destruction into tactical chain reactions.</div>
@@ -575,7 +579,7 @@
                 </div>
                 <div class="game-progress progress-planned" role="group" aria-label="Ball is God longterm project planned after current releases" title="Longterm means the story and direction exist, with active production planned after nearer releases.">
                   <div><strong>Planned</strong><span>After current releases</span></div>
-                  <span class="game-progress-track" aria-hidden="true"></span>
+                  <progress class="game-progress-track" max="100" value="36">Planned</progress>
                 </div>
                 <p>Ball is God?! is a hardcore vertical descent arcade about guiding Espa down a divine tower, slipping through broken stone gaps and surviving a mythic world where one mistake can end the run. It remains a longterm narrative arcade project planned after the current releases.</p>
                 <div class="feature-callout">Mobile edge: fast downward jumps through stone gaps become a tense one-touch vertical descent.</div>
@@ -588,6 +592,24 @@
                 </div>
               </div>
             </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section seo-cluster" id="game-cluster">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Game Search Hub</div>
+              <h2 class="section-title">Find each WillowinWorld game by mechanic, mood and genre.</h2>
+            </div>
+            <p class="section-copy">A compact content cluster for players, press and publishers looking for specific mobile puzzle and arcade genres.</p>
+          </div>
+          <div class="detail-grid">
+            <article class="detail-card"><h3>Nature Seed</h3><p>Relaxing draw-to-solve water physics puzzle about drawing magical paths, guiding water and restoring a forest.</p><a href="games/nature-seed.html">Open Nature Seed</a></article>
+            <article class="detail-card"><h3>Candy Shop</h3><p>Cozy candy merge puzzle with soft physics drops, combos, special sweets, containers and long-term progression.</p><a href="games/candy-shop.html">Open Candy Shop</a></article>
+            <article class="detail-card"><h3>Paint Blasters</h3><p>Color destruction physics puzzle arcade about mixing shots, smashing towers and triggering chain reactions.</p><a href="games/paint-blasters.html">Open Paint Blasters</a></article>
+            <article class="detail-card"><h3>Ball is God?!</h3><p>Hardcore one-touch vertical descent arcade with divine towers, broken stone gaps, story pressure and moral choices.</p><a href="games/ball-is-god.html">Open Ball is God?!</a></article>
           </div>
         </div>
       </section>
@@ -784,7 +806,7 @@
             </article>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Does the site follow my day or night theme?<span class="faq-icon" aria-hidden="true"></span></button>
-              <div class="faq-answer"><div><p>Yes. It starts from the browser color preference and keeps the theme switch available in the header.</p></div></div>
+              <div class="faq-answer"><div><p>Yes. On a first visit it uses the saved theme if one exists, then the system color preference, then local time. If none of those can be read, WillowinWorld starts in dark mode.</p></div></div>
             </article>
             <article class="faq-item">
               <button class="faq-question" type="button" aria-expanded="false">Do you work with publishers?<span class="faq-icon" aria-hidden="true"></span></button>
@@ -824,7 +846,7 @@
         <div>
           <a class="brand" href="#home" aria-label="WillowinWorld home">
             <span class="brand-mark" aria-hidden="true">
-              <img src="assets/willowinworld-logo-day.webp" data-logo-theme width="1024" height="1024" alt="" loading="lazy" decoding="async">
+              <img src="assets/willowinworld-logo.webp" srcset="assets/responsive/willowinworld-logo-256.webp 256w, assets/responsive/willowinworld-logo-512.webp 512w, assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" loading="lazy" decoding="async">
             </span>
             <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
           </a>
@@ -836,13 +858,17 @@
           <a href="press-kit.html">Press Kit</a>
           <a href="#contact">Contact</a>
           <a href="404.html">Lost Stars</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="legal.html">Legal</a>
+          <a href="asset-usage.html">Asset Usage</a>
         </nav>
         <div class="footer-contact">
           <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a>
           <a href="mailto:contact@willowinworld.com?subject=Nature%20Seed%20Beta%20Access">Nature Seed beta</a>
           <a href="press-kit.html">Press kit</a>
-          <a href="press-kit.html#asset-policy">Asset usage</a>
-          <a href="mailto:contact@willowinworld.com?subject=Privacy%20question">Privacy</a>
+          <a href="asset-usage.html">Asset usage</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="legal.html">Legal</a>
           <a href=".well-known/security.txt">Security</a>
           <a href="mailto:contact@willowinworld.com?subject=Publisher%20inquiry">Publisher contact</a>
           <button class="footer-action" type="button" data-open-info="careers">Careers / Collaboration</button>

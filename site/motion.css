@@ -1,0 +1,43 @@
+@layer motion {
+  :root {
+    --motion-signature-duration: 620ms;
+    --motion-signature-distance: 10px;
+    --motion-signature-scale: 0.985;
+  }
+
+  .brand-slogan-lockup,
+  .scenario-card,
+  .detail-card,
+  .devlog-card,
+  .press-window {
+    animation-duration: var(--motion-signature-duration);
+    animation-timing-function: var(--ease);
+  }
+
+  .game-card:hover .cover-title,
+  .asset-link:hover strong,
+  .asset-link:focus-visible strong {
+    animation: willowSignatureBloom var(--motion-signature-duration) var(--ease) both;
+  }
+
+  @keyframes willowSignatureBloom {
+    from {
+      opacity: 0.84;
+      transform: translateY(var(--motion-signature-distance)) scale(var(--motion-signature-scale));
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @layer motion {
+    .game-card:hover .cover-title,
+    .asset-link:hover strong,
+    .asset-link:focus-visible strong {
+      animation: none;
+    }
+  }
+}

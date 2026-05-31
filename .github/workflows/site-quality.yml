@@ -1,0 +1,40 @@
+name: Site Quality
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 6 * * 1"
+
+jobs:
+  static-site-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Check JavaScript syntax
+        run: |
+          node --check site/scripts.js
+          node --check site/game-theme.js
+          node --check site/404.js
+          node --check site/tools/update-sitemap-lastmod.mjs
+          node --check site/tools/build-minified.mjs
+          node --check site/tools/css-coverage-audit.mjs
+          node --check site/tools/quality-check.mjs
+          node --check site/tools/security-check.mjs
+
+      - name: Run security baseline
+        run: node site/tools/security-check.mjs
+
+      - name: Run CSS coverage audit
+        run: node site/tools/css-coverage-audit.mjs
+
+      - name: Build minified static output
+        run: node site/tools/build-minified.mjs

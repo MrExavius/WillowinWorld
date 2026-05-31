@@ -23,6 +23,7 @@ async function walkFiles(directory) {
 const files = {
   html: await readFile(new URL("../index.html", import.meta.url), "utf8"),
   css: await readFile(new URL("../styles.css", import.meta.url), "utf8"),
+  motionCss: await readFile(new URL("../motion.css", import.meta.url), "utf8"),
   lostStarsCss: await readFile(new URL("../404.css", import.meta.url), "utf8"),
   js: await readFile(new URL("../scripts.js", import.meta.url), "utf8"),
   gameThemeJs: await readFile(new URL("../game-theme.js", import.meta.url), "utf8"),
@@ -43,6 +44,9 @@ const htmlPages = {
   "games/candy-shop.html": await readFile(new URL("../games/candy-shop.html", import.meta.url), "utf8"),
   "games/paint-blasters.html": await readFile(new URL("../games/paint-blasters.html", import.meta.url), "utf8"),
   "games/ball-is-god.html": await readFile(new URL("../games/ball-is-god.html", import.meta.url), "utf8"),
+  "privacy.html": await readFile(new URL("../privacy.html", import.meta.url), "utf8"),
+  "legal.html": await readFile(new URL("../legal.html", import.meta.url), "utf8"),
+  "asset-usage.html": await readFile(new URL("../asset-usage.html", import.meta.url), "utf8"),
   "404.html": await readFile(new URL("../404.html", import.meta.url), "utf8")
 };
 
@@ -136,7 +140,7 @@ for (const [name, js] of Object.entries({ "scripts.js": files.js, "game-theme.js
   forbidMatch(name, js, /\b(?:api[_-]?key|private[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._-]+)\b/i);
   forbidMatch(name, js, /\b[A-Z0-9]{3,}-(?:[A-Z0-9]+-){1,}[A-Z0-9]{2,}\b/);
 }
-for (const [name, css] of Object.entries({ "styles.css": files.css, "404.css": files.lostStarsCss })) {
+for (const [name, css] of Object.entries({ "styles.css": files.css, "motion.css": files.motionCss, "404.css": files.lostStarsCss })) {
   forbidMatch(name, css, /@import\s+url\s*\(/i);
   forbidMatch(name, css, /url\(\s*["']?(?:https?:|\/\/)/i);
 }
