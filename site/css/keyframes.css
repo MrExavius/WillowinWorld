@@ -1,0 +1,726 @@
+/* WillowinWorld CSS: keyframes used by game previews and decorative systems. */
+@keyframes moonFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes leafSway {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 8px -14px; }
+}
+
+@keyframes panelDrift {
+  0%, 100% { transform: scale(1.025) translate3d(0, 0, 0); }
+  50% { transform: scale(1.055) translate3d(-1.2%, -0.8%, 0); }
+}
+
+@keyframes runeFloat {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.62; }
+  50% { transform: translateY(-16px) scale(1.22); opacity: 1; }
+}
+
+@keyframes natureLevelDrift {
+  0%, 100% { transform: scale(1.045) translate3d(0, 0, 0); }
+  50% { transform: scale(1.085) translate3d(-1.2%, -0.8%, 0); }
+}
+
+@keyframes natureSketchCycle {
+  0%, 31% { opacity: 1; }
+  48% { opacity: 0.62; }
+  60%, 88% { opacity: 0.08; }
+  100% { opacity: 1; }
+}
+
+@keyframes naturePaintCycle {
+  0%, 31% { opacity: 0; }
+  48% { opacity: 0.58; }
+  61%, 88% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes natureBackdropRepaint {
+  0%, 18%, 100% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    filter: saturate(1.02) contrast(1);
+  }
+  30% {
+    opacity: 0.42;
+    clip-path: inset(0 54% 0 0);
+  }
+  48%, 72% {
+    opacity: 0.74;
+    clip-path: inset(0 0 0 0);
+    filter: saturate(1.18) contrast(1.04);
+  }
+  86% {
+    opacity: 0.26;
+    clip-path: inset(0 0 0 42%);
+  }
+}
+
+@keyframes natureBackdropGreenRepaint {
+  0%, 14%, 100% {
+    opacity: 0.04;
+    clip-path: inset(0 100% 0 0);
+    filter: sepia(0.16) saturate(0.78) contrast(0.98);
+  }
+  28% {
+    opacity: 0.3;
+    clip-path: inset(0 48% 0 0);
+  }
+  46%, 76% {
+    opacity: 0.58;
+    clip-path: inset(0 0 0 0);
+    filter: sepia(0.08) saturate(1.05) contrast(1);
+  }
+  90% {
+    opacity: 0.18;
+    clip-path: inset(0 0 0 38%);
+  }
+}
+
+@keyframes naturePaperCycle {
+  0%, 30%, 100% { opacity: 1; }
+  56%, 88% { opacity: 0.28; }
+}
+
+@keyframes natureRouteCycle {
+  0%, 8%, 50%, 100% { opacity: 0; }
+  16%, 39% { opacity: 1; }
+}
+
+@keyframes natureDrawRoute {
+  0%, 12% { stroke-dashoffset: 720; }
+  36% { stroke-dashoffset: 0; }
+  48%, 100% { stroke-dashoffset: -60; }
+}
+
+@keyframes natureWaterCycle {
+  0%, 17%, 49%, 100% { opacity: 0; transform: translateY(-16px) rotate(34deg) scale(0.78); }
+  25%, 40% { opacity: 1; transform: translateY(8px) rotate(34deg) scale(1); }
+}
+
+@keyframes natureBloomCycle {
+  0%, 29%, 100% { opacity: 0; transform: scale(0.48); }
+  35% { opacity: 1; transform: scale(0.92); }
+  43% { opacity: 0.72; transform: scale(1.08); }
+  72%, 88% { opacity: 0.42; transform: scale(1.16); }
+}
+
+@keyframes natureTreeCycle {
+  0%, 34%, 100% {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-50%) scale(0.78);
+  }
+  40% {
+    opacity: 1;
+    clip-path: inset(0 80% 0 0);
+    transform: translateX(-50%) scale(0.82);
+  }
+  49% {
+    opacity: 1;
+    clip-path: inset(0 60% 0 0);
+    transform: translateX(-50%) scale(0.87);
+  }
+  58% {
+    opacity: 1;
+    clip-path: inset(0 40% 0 0);
+    transform: translateX(-50%) scale(0.92);
+  }
+  67% {
+    opacity: 1;
+    clip-path: inset(0 20% 0 0);
+    transform: translateX(-50%) scale(0.97);
+  }
+  76%, 88% {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateX(-50%) scale(1);
+  }
+}
+
+@keyframes natureCompanionWaterCycle {
+  0%, 8% {
+    opacity: 1;
+    transform: translate3d(-180%, 0, 0) rotate(-3deg) scale(1);
+  }
+  16% {
+    opacity: 1;
+    transform: translate3d(-154%, -10px, 0) rotate(2deg) scale(1.02);
+  }
+  29% {
+    opacity: 1;
+    transform: translate3d(-66%, -4px, 0) rotate(7deg) scale(1.04);
+  }
+  33% {
+    opacity: 1;
+    transform: translate3d(-48%, 3px, 0) rotate(-8deg) scale(0.94, 1.08);
+  }
+  38%, 91% {
+    opacity: 0;
+    transform: translate3d(-48%, 3px, 0) rotate(-8deg) scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(-180%, 0, 0) rotate(-3deg) scale(1);
+  }
+}
+
+@keyframes natureCompanionSeedCycle {
+  0%, 8% {
+    opacity: 1;
+    transform: translate3d(80%, 0, 0) rotate(3deg) scale(1);
+  }
+  16% {
+    opacity: 1;
+    transform: translate3d(54%, -9px, 0) rotate(-2deg) scale(1.02);
+  }
+  29% {
+    opacity: 1;
+    transform: translate3d(-34%, -4px, 0) rotate(-7deg) scale(1.04);
+  }
+  33% {
+    opacity: 1;
+    transform: translate3d(-52%, 3px, 0) rotate(8deg) scale(0.94, 1.08);
+  }
+  38%, 91% {
+    opacity: 0;
+    transform: translate3d(-52%, 3px, 0) rotate(8deg) scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(80%, 0, 0) rotate(3deg) scale(1);
+  }
+}
+
+@keyframes natureIconFloat {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-8px) rotate(0deg); }
+}
+
+@keyframes natureCursorPulse {
+  0%, 100% { opacity: 0.72; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes natureCursorBreathe {
+  0%, 100% { transform: scale(1, 1); }
+  50% { transform: scale(1.05, 0.96); }
+}
+
+@keyframes candyBg1 {
+  0%, 8% { opacity: 1; }
+  10%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg2 {
+  0%, 8% { opacity: 0; }
+  10%, 18% { opacity: 1; }
+  20%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg3 {
+  0%, 18% { opacity: 0; }
+  20%, 28% { opacity: 1; }
+  30%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg4 {
+  0%, 28% { opacity: 0; }
+  30%, 38% { opacity: 1; }
+  40%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg5 {
+  0%, 38% { opacity: 0; }
+  40%, 48% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg6 {
+  0%, 48% { opacity: 0; }
+  50%, 58% { opacity: 1; }
+  60%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg7 {
+  0%, 58% { opacity: 0; }
+  60%, 68% { opacity: 1; }
+  70%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg8 {
+  0%, 68% { opacity: 0; }
+  70%, 78% { opacity: 1; }
+  80%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg9 {
+  0%, 78% { opacity: 0; }
+  80%, 88% { opacity: 1; }
+  90%, 100% { opacity: 0; }
+}
+
+@keyframes candyBg10 {
+  0%, 88% { opacity: 0; }
+  90%, 100% { opacity: 1; }
+}
+
+@keyframes candyMergeLeft {
+  0%, 8% { opacity: 1; transform: translate3d(-260%, -96%, 0) rotate(-16deg) scale(0.86); }
+  18% { opacity: 1; transform: translate3d(-180%, -58%, 0) rotate(8deg) scale(1); }
+  30% { opacity: 1; transform: translate3d(-110%, -46%, 0) rotate(-6deg) scale(1.03); }
+  35% { opacity: 1; transform: translate3d(-106%, -43%, 0) rotate(8deg) scale(0.9, 1.08); }
+  40%, 90% { opacity: 0; transform: translate3d(-106%, -43%, 0) rotate(8deg) scale(0.28); }
+  100% { opacity: 1; transform: translate3d(-260%, -96%, 0) rotate(-16deg) scale(0.86); }
+}
+
+@keyframes candyMergeRight {
+  0%, 8% { opacity: 1; transform: translate3d(160%, -98%, 0) rotate(16deg) scale(0.86); }
+  18% { opacity: 1; transform: translate3d(88%, -60%, 0) rotate(-8deg) scale(1); }
+  30% { opacity: 1; transform: translate3d(10%, -46%, 0) rotate(6deg) scale(1.03); }
+  35% { opacity: 1; transform: translate3d(6%, -43%, 0) rotate(-8deg) scale(0.9, 1.08); }
+  40%, 90% { opacity: 0; transform: translate3d(6%, -43%, 0) rotate(-8deg) scale(0.28); }
+  100% { opacity: 1; transform: translate3d(160%, -98%, 0) rotate(16deg) scale(0.86); }
+}
+
+@keyframes candyMergeResult {
+  0%, 34%, 100% { opacity: 0; transform: translate3d(-50%, -44%, 0) scale(0.22) rotate(0deg); }
+  40% { opacity: 1; transform: translate3d(-50%, -44%, 0) scale(1.12) rotate(-4deg); }
+  52% { opacity: 1; transform: translate3d(-50%, -52%, 0) scale(0.98) rotate(3deg); }
+  72%, 90% { opacity: 1; transform: translate3d(-50%, -48%, 0) scale(1) rotate(0deg); }
+}
+
+@keyframes candyImpact {
+  0%, 29%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.28); }
+  34% { opacity: 0.9; transform: translate(-50%, -50%) scale(0.72); }
+  43% { opacity: 0; transform: translate(-50%, -50%) scale(1.52); }
+}
+
+@keyframes candyIconDrop {
+  0% { transform: translate3d(0, -34px, 0) rotate(-12deg) scale(0.88); }
+  62% { transform: translate3d(0, 7px, 0) rotate(5deg) scale(1.04); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes candySwirlFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(7deg); }
+}
+
+@keyframes candySugarFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 8px -14px; }
+}
+
+@keyframes candyIconFloat {
+  0%, 100% { transform: translateY(0) rotate(3deg); }
+  50% { transform: translateY(-8px) rotate(-1deg); }
+}
+
+@keyframes ballSkyFloat {
+  0%, 100% { transform: scale(1.04) translate3d(0, 0, 0); }
+  50% { transform: scale(1.08) translate3d(-1.2%, -1%, 0); }
+}
+
+@keyframes ballCloudDrift {
+  0% { transform: translate3d(-72px, 0, 0) scale(var(--cloud-scale, 1)); }
+  100% { transform: translate3d(410px, 0, 0) scale(var(--cloud-scale, 1)); }
+}
+
+@keyframes ballCloudDriftReverse {
+  0% { transform: translate3d(72px, 0, 0) scale(var(--cloud-scale, 1)); }
+  100% { transform: translate3d(-410px, 0, 0) scale(var(--cloud-scale, 1)); }
+}
+
+@keyframes ballTowerDrift {
+  0%, 100% { transform: translateX(-50%) translateY(-12px); }
+  50% { transform: translateX(-50%) translateY(20px); }
+}
+
+@keyframes ballPlatformLayerSway {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-8px); }
+}
+
+@keyframes ballPlatformGate {
+  0% {
+    opacity: 0;
+    transform: translate3d(var(--rock-in-x), -160px, 0) rotate(var(--rock-rotate)) scale(0.9);
+  }
+  10% {
+    opacity: 1;
+    transform: translate3d(var(--rock-in-x), -118px, 0) rotate(var(--rock-rotate)) scale(0.94);
+  }
+  28% {
+    opacity: 1;
+    transform: translate3d(var(--rock-mid-x), -16px, 0) rotate(var(--rock-rotate)) scale(1);
+  }
+  39% {
+    opacity: 1;
+    transform: translate3d(var(--rock-out-x), 50px, 0) rotate(calc(var(--rock-rotate) + var(--rock-dodge-rot))) scale(1.02);
+  }
+  62% {
+    opacity: 1;
+    transform: translate3d(var(--rock-out-x), 148px, 0) rotate(calc(var(--rock-rotate) + var(--rock-dodge-rot))) scale(1);
+  }
+  82% {
+    opacity: 1;
+    transform: translate3d(var(--rock-far-x), 266px, 0) rotate(calc(var(--rock-rotate) + var(--rock-dodge-rot) + 14deg)) scale(0.96);
+  }
+  96%, 100% {
+    opacity: 0;
+    transform: translate3d(var(--rock-exit-x), 374px, 0) rotate(calc(var(--rock-rotate) + var(--rock-dodge-rot) + 30deg)) scale(0.82);
+  }
+}
+
+@keyframes ballEspaDive {
+  0%, 100% {
+    transform: translate(-50%, -50%) translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  16% {
+    transform: translate(-50%, -50%) translate3d(-12px, -48px, 0) rotate(-6deg) scale(1.04);
+  }
+  29% {
+    transform: translate(-50%, -50%) translate3d(2px, -10px, 0) rotate(1deg) scale(1.02);
+  }
+  39% {
+    transform: translate(-50%, -50%) translate3d(10px, 48px, 0) rotate(5deg) scale(0.95, 1.08);
+  }
+  54% {
+    transform: translate(-50%, -50%) translate3d(0, -36px, 0) rotate(-3deg) scale(1.04);
+  }
+  72% {
+    transform: translate(-50%, -50%) translate3d(-14px, 34px, 0) rotate(-5deg) scale(0.97, 1.04);
+  }
+}
+
+@keyframes ballDiveTrail {
+  0%, 23%, 100% {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0.28);
+  }
+  30% {
+    opacity: 0.7;
+    transform: translateX(-50%) scaleY(0.82);
+  }
+  41% {
+    opacity: 0.96;
+    transform: translateX(-50%) scaleY(1.2);
+  }
+  56% {
+    opacity: 0;
+    transform: translateX(-50%) scaleY(0.64);
+  }
+}
+
+@keyframes ballEspaFace {
+  0%, 25%, 100% { opacity: 0; }
+  26%, 54% { opacity: 1; }
+  55%, 78% { opacity: 0; }
+  79%, 90% { opacity: 1; }
+}
+
+@keyframes ballIconDrop {
+  0% { transform: translate3d(12px, -34px, 0) rotate(10deg) scale(0.86); }
+  62% { transform: translate3d(-5px, 7px, 0) rotate(-5deg) scale(1.04); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes ballHaloFloat {
+  0%, 100% { translate: 0 0; opacity: 0.54; filter: saturate(1); }
+  50% { translate: 0 -14px; opacity: 0.78; filter: saturate(1.22); }
+}
+
+@keyframes ballBeamFlow {
+  0%, 100% { opacity: 0.42; filter: saturate(1); }
+  50% { opacity: 0.76; filter: saturate(1.22); }
+}
+
+@keyframes ballRockFloat {
+  0%, 100% { translate: 0 0; filter: brightness(1); }
+  50% { translate: 0 -16px; filter: brightness(1.08); }
+}
+
+@keyframes ballShowcaseIconPrimary {
+  0%, 26%, 100% {
+    opacity: 1;
+    transform: rotate(-3deg) scale(1);
+  }
+  34%, 46% {
+    opacity: 0;
+    transform: translate3d(-16px, 18px, 0) rotate(-12deg) scale(0.82);
+  }
+  58% {
+    opacity: 1;
+    transform: rotate(-3deg) scale(1);
+  }
+}
+
+@keyframes ballShowcaseIconAlt {
+  0%, 26%, 100% {
+    opacity: 0;
+    transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  }
+  34%, 46% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  58% {
+    opacity: 0;
+    transform: translate3d(-12px, 12px, 0) rotate(-7deg) scale(0.86);
+  }
+}
+
+@keyframes ballHudPulse {
+  0%, 100% { opacity: 0.5; filter: saturate(0.86) brightness(0.9); }
+  42%, 62% { opacity: 1; filter: saturate(1.28) brightness(1.36); }
+}
+
+@keyframes pressOceanSwell {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+  50% { transform: translate3d(0, -14px, 0) rotate(2deg); }
+}
+
+@keyframes pressCurrentDrift {
+  0%, 100% { translate: 0 0; opacity: 1; }
+  50% { translate: 34px -10px; opacity: 0.82; }
+}
+
+@keyframes pressLightSweep {
+  0%, 100% { transform: rotate(var(--ray-rotate, -48deg)) translate3d(0, 0, 0); opacity: 0.28; }
+  42%, 62% { transform: rotate(var(--ray-rotate, -48deg)) translate3d(20px, 0, 0); opacity: 0.54; }
+}
+
+@keyframes pressSeaweedSway {
+  0%, 100% { transform: rotate(calc(var(--weed-rotate, 0deg) - 3deg)); }
+  50% { transform: rotate(calc(var(--weed-rotate, 0deg) + 5deg)); }
+}
+
+@keyframes pressFishSwim {
+  0% { transform: translate3d(-18vw, 0, 0) rotate(0deg); }
+  48% { transform: translate3d(54vw, -18px, 0) rotate(2deg); }
+  49% { transform: translate3d(54vw, -18px, 0) rotateY(180deg) rotate(2deg); }
+  96% { transform: translate3d(-18vw, 12px, 0) rotateY(180deg) rotate(-2deg); }
+  100% { transform: translate3d(-18vw, 0, 0) rotate(0deg); }
+}
+
+@keyframes pressFishTail {
+  0%, 100% { transform: translateX(0) scaleX(1); }
+  50% { transform: translateX(-3px) scaleX(0.72); }
+}
+
+@keyframes pressBubbleRise {
+  0% { opacity: 0; transform: translate3d(0, 0, 0) scale(0.72); }
+  16% { opacity: 0.46; }
+  88% { opacity: 0.28; }
+  100% { opacity: 0; transform: translate3d(18px, -94vh, 0) scale(1.18); }
+}
+
+@keyframes paintAimCharge {
+  0%, 15% {
+    opacity: 0.42;
+    transform: translateX(-50%) rotate(-1deg) scaleY(0.72);
+  }
+  24%, 32% {
+    opacity: 1;
+    transform: translateX(-50%) rotate(0deg) scaleY(1);
+  }
+  36% {
+    opacity: 0.34;
+    transform: translateX(-50%) rotate(0deg) scale(1.7, 0.86);
+  }
+  48%, 100% {
+    opacity: 0.42;
+    transform: translateX(-50%) rotate(1deg) scaleY(0.72);
+  }
+}
+
+@keyframes paintProjectile {
+  0%, 17%, 100% {
+    opacity: 0;
+    transform: translate3d(-50%, 0, 0) scale(0.46);
+  }
+  20% {
+    opacity: 1;
+    transform: translate3d(-50%, -18px, 0) scale(0.78);
+  }
+  31% {
+    opacity: 1;
+    transform: translate3d(calc(-50% + var(--shot-x, 0px)), -188px, 0) scale(0.92);
+  }
+  35% {
+    opacity: 0;
+    transform: translate3d(calc(-50% + var(--shot-x, 0px)), -214px, 0) scale(0.22);
+  }
+}
+
+@keyframes paintCubeBlast {
+  0%, 25%, 100% {
+    opacity: 1;
+    filter: brightness(1);
+    transform: translate3d(0, 0, 0) rotate(var(--cube-rot, 0deg)) scale(1);
+  }
+  32% {
+    opacity: 1;
+    filter: brightness(1.45);
+    transform: translate3d(0, -6px, 0) rotate(var(--cube-rot, 0deg)) scale(1.08);
+  }
+  52%, 72% {
+    opacity: 0.92;
+    filter: brightness(1.08);
+    transform: translate3d(var(--blast-x), var(--blast-y), 0) rotate(var(--blast-r)) scale(0.94);
+  }
+  86% {
+    opacity: 0;
+    transform: translate3d(var(--blast-x), calc(var(--blast-y) + 52px), 0) rotate(var(--blast-r)) scale(0.72);
+  }
+}
+
+@keyframes paintImpact {
+  0%, 28%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.34) rotate(-8deg);
+  }
+  33% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.9) rotate(4deg);
+  }
+  45% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.62) rotate(18deg);
+  }
+}
+
+@keyframes paintShardFlight {
+  0%, 30%, 100% {
+    opacity: 0;
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(0.4);
+  }
+  36% {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0) rotate(12deg) scale(1);
+  }
+  70% {
+    opacity: 0.62;
+    transform: translate3d(calc(-50% + var(--shard-x)), calc(-50% + var(--shard-y)), 0) rotate(var(--shard-r)) scale(0.88);
+  }
+  84% {
+    opacity: 0;
+    transform: translate3d(calc(-50% + var(--shard-x)), calc(-50% + var(--shard-y) + 40px), 0) rotate(var(--shard-r)) scale(0.58);
+  }
+}
+
+@keyframes paintBlasterKick {
+  0%, 24%, 100% {
+    transform: translateX(-50%) rotate(-90deg) translateX(0);
+    filter: drop-shadow(0 12px 12px rgba(0, 0, 0, 0.26));
+  }
+  31% {
+    transform: translateX(-50%) rotate(-90deg) translateX(-9px) scale(1.04);
+    filter:
+      drop-shadow(0 12px 12px rgba(0, 0, 0, 0.26))
+      drop-shadow(0 0 16px rgba(255, 236, 132, 0.34));
+  }
+  42% {
+    transform: translateX(-50%) rotate(-90deg) translateX(3px);
+  }
+}
+
+@keyframes paintHeroRecoil {
+  0%, 24%, 100% {
+    transform: translate3d(0, 0, 0) rotate(-2deg);
+  }
+  31% {
+    transform: translate3d(-7px, 4px, 0) rotate(-4deg) scale(1.015);
+  }
+  44% {
+    transform: translate3d(3px, -2px, 0) rotate(-1deg);
+  }
+}
+
+@keyframes paintIconImpact {
+  0% { transform: translate3d(22px, -30px, 0) rotate(10deg) scale(0.86); }
+  58% { transform: translate3d(-6px, 7px, 0) rotate(-4deg) scale(1.05); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes paintBackdropDrift {
+  0%, 100% { transform: scale(1.08) translate3d(0, 0, 0); }
+  50% { transform: scale(1.12) translate3d(1.5%, -1.2%, 0); }
+}
+
+@keyframes paintShipPanelDrift {
+  0%, 100% { transform: translateX(-50%) scale(1.02); }
+  50% { transform: translateX(-50%) translateY(-12px) scale(1.05); }
+}
+
+@keyframes paintBeamFlow {
+  0%, 100% { opacity: 0.42; filter: blur(0.2px) saturate(1); }
+  50% { opacity: 0.78; filter: blur(0.2px) saturate(1.28); }
+}
+
+@keyframes paintSplashFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-6deg) scale(1); }
+  50% { transform: translate3d(0, -16px, 0) rotate(8deg) scale(1.05); }
+}
+
+@keyframes paintGaugePulse {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-4deg) scale(1); opacity: 0.54; }
+  50% { transform: translate3d(0, -8px, 0) rotate(5deg) scale(1.04); opacity: 0.74; }
+}
+
+@keyframes paintShowcaseIconPrimary {
+  0%, 26%, 100% {
+    opacity: 1;
+    transform: rotate(3deg) scale(1);
+  }
+  34%, 46% {
+    opacity: 0;
+    transform: translate3d(-18px, 16px, 0) rotate(-10deg) scale(0.82);
+  }
+  58% {
+    opacity: 1;
+    transform: rotate(3deg) scale(1);
+  }
+}
+
+@keyframes paintShowcaseIconAlt {
+  0%, 26%, 100% {
+    opacity: 0;
+    transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  }
+  34%, 46% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+  }
+  58% {
+    opacity: 0;
+    transform: translate3d(-12px, 12px, 0) rotate(-7deg) scale(0.86);
+  }
+}
+
+@keyframes paintButtonBlink {
+  0%, 100% { opacity: 0.44; filter: saturate(0.8) brightness(0.8); }
+  42%, 62% { opacity: 1; filter: saturate(1.28) brightness(1.45); }
+}
+
+@keyframes secretPulse {
+  0%, 14%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.84); }
+  32%, 48% { opacity: 0.54; transform: translate(-50%, -50%) scale(1); }
+  62% { opacity: 0.12; transform: translate(-50%, -50%) scale(0.94); }
+}
+
+@keyframes navLinkEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

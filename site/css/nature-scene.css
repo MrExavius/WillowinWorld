@@ -1,0 +1,350 @@
+/* WillowinWorld CSS: Nature Seed reusable preview scene. */
+.nature-preview {
+  --nature-cycle: 14s;
+  --nature-ink: #264b3e;
+  --nature-paper: rgba(255, 251, 238, 0.88);
+  --nature-water: #82d9eb;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f5f0e6;
+  transform: scale(1.03);
+  animation: panelDrift 16s ease-in-out infinite;
+}
+
+[data-theme="dark"] .nature-preview {
+  --nature-ink: #14382e;
+  --nature-paper: rgba(252, 246, 229, 0.86);
+  --nature-water: #9ce8f3;
+}
+
+.nature-preview::before,
+.nature-preview::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.nature-preview::before {
+  inset: 0;
+  z-index: 4;
+  background:
+    radial-gradient(circle at 49% 46%, transparent 12%, rgba(27, 39, 30, 0.14) 100%),
+    repeating-linear-gradient(114deg, rgba(69, 72, 52, 0.07) 0 1px, transparent 1px 15px);
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+.nature-preview::after {
+  inset: 0;
+  z-index: 5;
+  background:
+    linear-gradient(180deg, rgba(255, 252, 238, 0.14), transparent 24%, rgba(20, 46, 37, 0.22)),
+    radial-gradient(ellipse at 50% 108%, rgba(18, 67, 49, 0.52), transparent 42%);
+}
+
+.nature-stage {
+  --nature-cycle: 14s;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: #f6f1e7;
+}
+
+.nature-stage::before,
+.nature-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.nature-stage::before {
+  z-index: 3;
+  background:
+    radial-gradient(ellipse at 48% 48%, rgba(255, 249, 222, 0.3), transparent 28%),
+    linear-gradient(90deg, rgba(255,255,255,0.3), transparent 18% 82%, rgba(32, 54, 39, 0.14));
+  animation: naturePaperCycle var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-stage::after {
+  z-index: 8;
+  background:
+    linear-gradient(180deg, rgba(255, 253, 243, 0.08), transparent 22%, rgba(17, 35, 27, 0.2)),
+    radial-gradient(ellipse at 50% 106%, rgba(34, 77, 55, 0.5), transparent 42%);
+}
+
+.nature-level {
+  position: absolute;
+  z-index: 1;
+  inset: -2%;
+  width: 104%;
+  height: 104%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.045);
+  animation: natureLevelDrift 18s ease-in-out infinite;
+}
+
+.nature-level-sketch {
+  z-index: 1;
+  filter: sepia(0.14) contrast(1.03);
+  animation-name: natureLevelDrift, natureSketchCycle;
+  animation-duration: 18s, var(--nature-cycle);
+  animation-timing-function: ease-in-out, var(--ease);
+  animation-iteration-count: infinite;
+}
+
+.nature-level-painted {
+  z-index: 2;
+  opacity: 0;
+  filter: saturate(1.08) contrast(1.02);
+  animation-name: natureLevelDrift, naturePaintCycle;
+  animation-duration: 18s, var(--nature-cycle);
+  animation-timing-function: ease-in-out, var(--ease);
+  animation-iteration-count: infinite;
+}
+
+.nature-route {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  filter:
+    drop-shadow(0 0 8px rgba(255, 255, 238, 0.96))
+    drop-shadow(0 0 18px rgba(115, 222, 214, 0.34));
+  opacity: 0;
+  animation: natureRouteCycle var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-route path {
+  stroke: rgba(255, 253, 230, 0.92);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 720;
+  stroke-dashoffset: 720;
+  animation: natureDrawRoute var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-route path + path {
+  stroke-width: 7;
+  animation-delay: 0.56s;
+}
+
+.nature-water-drop {
+  position: absolute;
+  z-index: 4;
+  width: 26px;
+  height: 34px;
+  border-radius: 56% 44% 62% 38% / 36% 40% 60% 64%;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.98), var(--nature-water) 44%, #3d8fc4);
+  box-shadow:
+    0 11px 24px rgba(52, 117, 142, 0.28),
+    inset 2px 3px 0 rgba(255,255,255,0.38);
+  opacity: 0;
+  transform: rotate(34deg);
+  animation: natureWaterCycle var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-water-drop.is-first {
+  top: 31%;
+  right: 23%;
+}
+
+.nature-water-drop.is-second {
+  top: 48%;
+  right: 33%;
+  width: 20px;
+  height: 27px;
+  animation-delay: 0.38s;
+}
+
+.nature-water-drop.is-third {
+  top: 60%;
+  left: 28%;
+  width: 23px;
+  height: 30px;
+  animation-delay: 0.82s;
+}
+
+.nature-bloom {
+  position: absolute;
+  right: 8%;
+  bottom: -20%;
+  left: 8%;
+  z-index: 3;
+  height: 54%;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 36%, rgba(239, 255, 177, 0.78), rgba(132, 201, 105, 0.28) 34%, transparent 70%);
+  filter: blur(18px);
+  opacity: 0;
+  animation: natureBloomCycle var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-growth {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  z-index: 6;
+  width: min(76%, 440px);
+  height: auto;
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  filter:
+    drop-shadow(0 14px 16px rgba(35, 62, 36, 0.2))
+    drop-shadow(0 0 20px rgba(226, 255, 174, 0.46));
+  transform: translateX(-50%) scale(0.78);
+  transform-origin: 50% 100%;
+  animation: natureTreeCycle var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-companion {
+  position: absolute;
+  z-index: 7;
+  height: auto;
+  filter: drop-shadow(0 18px 18px rgba(28, 57, 51, 0.22));
+  transform-origin: 50% 100%;
+}
+
+.nature-companion-water {
+  bottom: 68px;
+  left: 50%;
+  width: min(24%, 128px);
+  animation: natureCompanionWaterCycle var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-companion-seed {
+  left: 50%;
+  bottom: 70px;
+  width: min(25%, 136px);
+  animation: natureCompanionSeedCycle var(--nature-cycle) var(--ease) infinite;
+}
+
+.nature-preview-icon {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  z-index: 8;
+  width: clamp(86px, 16vw, 126px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(108, 88, 40, 0.24);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 44px rgba(35, 52, 34, 0.28),
+    0 0 0 7px rgba(255, 249, 225, 0.34);
+  transform: rotate(3deg);
+  animation: natureIconFloat 7s ease-in-out infinite;
+}
+
+.nature-preview-title {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 8;
+  display: grid;
+  gap: 8px;
+  max-width: calc(100% - 190px);
+  color: var(--nature-ink);
+  text-shadow: 0 2px 18px rgba(255, 252, 237, 0.98);
+}
+
+.nature-preview-title small {
+  justify-self: start;
+  padding: 8px 11px;
+  border: 1px solid rgba(68, 91, 62, 0.18);
+  border-radius: 999px;
+  background: var(--nature-paper);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 24px rgba(43, 58, 37, 0.1);
+  font-size: 0.76rem;
+  font-weight: 820;
+}
+
+.nature-preview-title strong {
+  font-size: clamp(2.1rem, 4vw, 4.35rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+}
+
+.nature-cycle {
+  position: absolute;
+  top: 198px;
+  left: 24px;
+  z-index: 8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  max-width: calc(100% - 200px);
+}
+
+.nature-cycle b {
+  min-height: 27px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 9px;
+  border: 1px solid rgba(71, 100, 66, 0.18);
+  border-radius: 999px;
+  color: #315d47;
+  background: rgba(255, 249, 228, 0.72);
+  box-shadow: 0 10px 24px rgba(39, 58, 37, 0.08);
+  backdrop-filter: blur(12px);
+  font-size: 0.72rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.nature-cycle b::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #73a662;
+  box-shadow: 0 0 10px rgba(115, 166, 98, 0.54);
+}
+
+.nature-stage-card .nature-level {
+  object-position: center 56%;
+}
+
+.nature-stage-card .nature-route path {
+  stroke-width: 6;
+}
+
+.nature-stage-card .nature-route path + path {
+  stroke-width: 5;
+}
+
+.nature-stage-card .nature-growth {
+  bottom: 12px;
+  width: min(65%, 310px);
+}
+
+.nature-stage-card .nature-companion-water {
+  bottom: 16px;
+  width: min(24%, 116px);
+}
+
+.nature-stage-card .nature-companion-seed {
+  bottom: 18px;
+  width: min(25%, 122px);
+}
+
+.nature-stage-card .nature-water-drop.is-first {
+  top: 29%;
+  right: 21%;
+}
+
+.nature-stage-card .nature-water-drop.is-second {
+  top: 52%;
+  right: 31%;
+}

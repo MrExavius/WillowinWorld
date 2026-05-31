@@ -4,7 +4,29 @@ import { fileURLToPath } from "node:url";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const reportPath = join(siteRoot, "reports", "css-coverage.json");
-const css = await readFile(join(siteRoot, "styles.css"), "utf8") + "\n" + await readFile(join(siteRoot, "motion.css"), "utf8");
+const cssFiles = [
+  "styles.css",
+  "css/base.css",
+  "css/nature-scene.css",
+  "css/home-card-base.css",
+  "css/home-ball-card.css",
+  "css/home-nature-card.css",
+  "css/home-paint-card.css",
+  "css/home-candy-card.css",
+  "css/game-components.css",
+  "css/game-shell.css",
+  "css/game-content.css",
+  "css/nature-page.css",
+  "css/candy-page.css",
+  "css/paint-page.css",
+  "css/ball-page.css",
+  "css/press-kit.css",
+  "css/site-sections.css",
+  "css/keyframes.css",
+  "css/responsive.css",
+  "motion.css"
+];
+const css = (await Promise.all(cssFiles.map(file => readFile(join(siteRoot, file), "utf8")))).join("\n");
 const files = [
   "index.html",
   "press-kit.html",

@@ -1,0 +1,57 @@
+/* WillowinWorld CSS: Nature Seed portfolio card. */
+.nature-card {
+  --card-accent: #92c97b;
+  --card-bg: linear-gradient(160deg, #faf4e8, #c5dca8 48%, #6e9c8d);
+  --cover-atmosphere:
+    radial-gradient(circle at 48% 22%, rgba(255,251,222,0.7), transparent 24%),
+    linear-gradient(180deg, rgba(255,255,255,0.16), transparent 30%, rgba(14,35,27,0.2));
+}
+
+.nature-game-cover {
+  min-height: 360px;
+}
+
+.nature-card .game-cover::before {
+  inset: 0;
+  z-index: 3;
+  opacity: 0.86;
+  mix-blend-mode: soft-light;
+}
+
+.nature-cover-icon,
+.nature-hover-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 8;
+  width: clamp(76px, 10vw, 108px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 248, 222, 0.36);
+  border-radius: 22px;
+  object-fit: cover;
+  box-shadow:
+    0 16px 34px rgba(24, 39, 30, 0.34),
+    0 0 0 6px rgba(255, 248, 221, 0.22);
+  transition: opacity .28s var(--ease), transform .65s var(--ease), filter .35s var(--ease);
+}
+
+.nature-cover-icon {
+  transform: rotate(3deg);
+}
+
+.nature-hover-icon {
+  opacity: 0;
+  filter: saturate(1.05);
+  transform: translate3d(0, -20px, 0) rotate(-5deg) scale(0.9);
+}
+
+.nature-card:hover .nature-cover-icon {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0) rotate(9deg) scale(0.84);
+}
+
+.nature-card:hover .nature-hover-icon {
+  opacity: 1;
+  transform: translate3d(0, -6px, 0) rotate(0deg) scale(1.04);
+}

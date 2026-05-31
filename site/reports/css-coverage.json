@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-05-31T09:50:26.721Z",
+  "generatedAt": "2026-05-31T21:28:42.647Z",
   "note": "Static scan only. Dynamic state classes, media-only selectors and pseudo selectors need manual review before deletion.",
   "totals": {
-    "classSelectors": 467,
-    "idSelectors": 5,
+    "classSelectors": 474,
+    "idSelectors": 7,
     "probablyUnusedClasses": 0,
     "probablyUnusedIds": 0
   },

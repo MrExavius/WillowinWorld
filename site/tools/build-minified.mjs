@@ -17,6 +17,30 @@ const staticFiles = [
   "rss.xml"
 ];
 
+const cssFiles = [
+  "styles.css",
+  "css/base.css",
+  "css/nature-scene.css",
+  "css/home-card-base.css",
+  "css/home-ball-card.css",
+  "css/home-nature-card.css",
+  "css/home-paint-card.css",
+  "css/home-candy-card.css",
+  "css/game-components.css",
+  "css/game-shell.css",
+  "css/game-content.css",
+  "css/nature-page.css",
+  "css/candy-page.css",
+  "css/paint-page.css",
+  "css/ball-page.css",
+  "css/press-kit.css",
+  "css/site-sections.css",
+  "css/keyframes.css",
+  "css/responsive.css",
+  "motion.css",
+  "404.css"
+];
+
 const sourceFiles = [
   "index.html",
   "press-kit.html",
@@ -24,9 +48,7 @@ const sourceFiles = [
   "legal.html",
   "asset-usage.html",
   "404.html",
-  "styles.css",
-  "motion.css",
-  "404.css",
+  ...cssFiles,
   "scripts.js",
   "game-theme.js",
   "404.js",

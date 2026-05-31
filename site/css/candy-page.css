@@ -1,0 +1,590 @@
+/* WillowinWorld CSS: Candy Shop game page. */
+.candy-cursor-mascot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: clamp(82px, 6vw, 112px);
+  height: clamp(82px, 6vw, 112px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-140px, -140px, 0);
+  transition: opacity .22s var(--ease);
+  will-change: transform, opacity;
+}
+
+.candy-cursor-mascot.is-active {
+  opacity: 0.9;
+}
+
+.candy-cursor-glow,
+.candy-cursor-image {
+  position: absolute;
+  pointer-events: none;
+}
+
+.candy-cursor-glow {
+  inset: -18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 143, 202, 0.32), rgba(145, 215, 255, 0.18) 48%, transparent 72%);
+  filter: blur(1px);
+  animation: natureCursorPulse 2.9s ease-in-out infinite;
+}
+
+.candy-cursor-image {
+  inset: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  object-fit: contain;
+  filter:
+    drop-shadow(0 20px 24px rgba(115, 50, 85, 0.24))
+    drop-shadow(0 0 18px rgba(255, 143, 202, 0.24));
+  animation: natureCursorBreathe 3.3s ease-in-out infinite;
+}
+
+.candy-shop-page[data-theme="dark"] .candy-cursor-image {
+  filter:
+    drop-shadow(0 22px 26px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 0 22px rgba(255, 143, 202, 0.22));
+}
+
+.candy-shop-page {
+  --candy-cycle: 14s;
+  --bg: #fff3fa;
+  --bg-2: #e9f8ff;
+  --surface: rgba(255, 248, 251, 0.76);
+  --surface-strong: rgba(255, 252, 255, 0.95);
+  --surface-soft: rgba(255, 143, 202, 0.12);
+  --text: #351237;
+  --muted: #6e5269;
+  --muted-2: #9b728e;
+  --line: rgba(125, 64, 104, 0.16);
+  --paper: #fff9f0;
+  --candy-ink: #351237;
+  --candy-cream: #fff9ee;
+  --candy-pink: #ff8fbd;
+  --candy-blue: #91d7ff;
+  --candy-mint: #9beecf;
+  --candy-choco: #6b3b50;
+}
+
+.candy-shop-page[data-theme="dark"] {
+  --bg: #211027;
+  --bg-2: #321741;
+  --surface: rgba(42, 18, 48, 0.74);
+  --surface-strong: rgba(28, 12, 34, 0.95);
+  --surface-soft: rgba(255, 143, 202, 0.1);
+  --text: #fff7fb;
+  --muted: #e7c8dc;
+  --muted-2: #c898b8;
+  --line: rgba(255, 224, 246, 0.18);
+  --paper: #ffe9f5;
+  --candy-ink: #fff7fb;
+  --candy-cream: rgba(42, 18, 48, 0.74);
+  --candy-choco: #ffe3f2;
+}
+
+body.candy-shop-page[data-theme="light"] {
+  background-color: #fff3fa;
+  background:
+    radial-gradient(ellipse at 15% 10%, rgba(255, 206, 226, 0.58), transparent 30%),
+    radial-gradient(ellipse at 82% 18%, rgba(145, 215, 255, 0.34), transparent 34%),
+    linear-gradient(180deg, #fff7fc 0%, #fff0f7 42%, #e9f8ff 100%);
+}
+
+body.candy-shop-page[data-theme="dark"] {
+  background-color: #211027;
+  background:
+    radial-gradient(ellipse at 18% 10%, rgba(255, 143, 202, 0.18), transparent 30%),
+    radial-gradient(ellipse at 82% 18%, rgba(145, 215, 255, 0.15), transparent 34%),
+    linear-gradient(180deg, #211027 0%, #321741 50%, #180c20 100%);
+}
+
+.game-detail-page .candy-shop-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: block;
+  padding-top: 0;
+  background: transparent;
+}
+
+.candy-page-backdrop {
+  position: fixed;
+  inset: 74px 0 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.candy-page-backdrop::before,
+.candy-page-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.candy-page-backdrop::before {
+  z-index: 2;
+  background:
+    linear-gradient(96deg, rgba(255, 247, 252, 0.93) 0 18%, rgba(255, 247, 252, 0.66) 42%, rgba(255, 247, 252, 0.34) 72%),
+    radial-gradient(ellipse at 25% 28%, rgba(255, 143, 202, 0.28), transparent 28%),
+    radial-gradient(ellipse at 72% 24%, rgba(145, 215, 255, 0.28), transparent 30%),
+    linear-gradient(180deg, rgba(255, 252, 248, 0.3), rgba(255, 211, 236, 0.22));
+}
+
+.candy-page-backdrop::after {
+  z-index: 5;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(255, 143, 202, 0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 28% 38%, rgba(145, 215, 255, 0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 224, 140, 0.18) 0 2px, transparent 3px),
+    repeating-linear-gradient(115deg, rgba(125, 64, 104, 0.04) 0 1px, transparent 1px 16px),
+    radial-gradient(ellipse at 50% 100%, rgba(255, 143, 202, 0.18), transparent 48%);
+  mix-blend-mode: multiply;
+  opacity: 0.86;
+}
+
+.candy-shop-page[data-theme="dark"] .candy-page-backdrop::before {
+  background:
+    linear-gradient(96deg, rgba(33, 16, 39, 0.9) 0 18%, rgba(33, 16, 39, 0.68) 42%, rgba(48, 21, 61, 0.44) 72%),
+    radial-gradient(ellipse at 25% 28%, rgba(255, 143, 202, 0.18), transparent 28%),
+    radial-gradient(ellipse at 72% 24%, rgba(145, 215, 255, 0.14), transparent 30%),
+    linear-gradient(180deg, rgba(33, 16, 39, 0.38), rgba(24, 12, 32, 0.62));
+}
+
+.candy-shop-page[data-theme="dark"] .candy-page-backdrop::after {
+  background:
+    linear-gradient(90deg, rgba(33, 16, 39, 0.44), rgba(33, 16, 39, 0.18) 46%, rgba(24, 12, 32, 0.46)),
+    radial-gradient(circle at 10% 20%, rgba(255, 143, 202, 0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 28% 38%, rgba(145, 215, 255, 0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 224, 140, 0.12) 0 2px, transparent 3px),
+    repeating-linear-gradient(115deg, rgba(255, 224, 246, 0.035) 0 1px, transparent 1px 16px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.candy-menu-world {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.candy-menu-shelf,
+.candy-menu-swirl,
+.candy-menu-sugar {
+  position: absolute;
+  pointer-events: none;
+}
+
+.candy-menu-shelf {
+  left: -6%;
+  width: 76vw;
+  height: 56px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.54) 30% 44%, transparent 70%),
+    repeating-linear-gradient(106deg, rgba(189, 89, 138, 0.1) 0 1px, transparent 1px 18px),
+    rgba(255, 143, 202, 0.32);
+  transform-origin: center;
+}
+
+.candy-menu-shelf-top {
+  top: 18%;
+  left: 16%;
+  transform: rotate(28deg);
+  box-shadow:
+    -20vw 31vh 0 rgba(145, 215, 255, 0.24),
+    22vw 24vh 0 rgba(255, 211, 110, 0.24);
+}
+
+.candy-menu-shelf-bottom {
+  bottom: 8%;
+  left: 10%;
+  height: 42px;
+  transform: rotate(-3deg);
+  background: rgba(255, 255, 255, 0.48);
+  box-shadow:
+    -16vw 6vh 0 rgba(255, 143, 202, 0.32),
+    24vw 7vh 0 rgba(145, 215, 255, 0.34);
+}
+
+.candy-menu-swirl {
+  width: clamp(120px, 11vw, 210px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 18px solid rgba(255, 143, 202, 0.42);
+  border-left-color: rgba(145, 215, 255, 0.36);
+  border-bottom-color: rgba(255, 224, 140, 0.38);
+  filter: blur(0.2px);
+  animation: candySwirlFloat 8s ease-in-out infinite;
+}
+
+.candy-menu-swirl-one {
+  right: 12%;
+  top: 9%;
+}
+
+.candy-menu-swirl-two {
+  left: 7%;
+  bottom: 12%;
+  width: clamp(92px, 8vw, 150px);
+  opacity: 0.72;
+  animation-delay: -2.4s;
+}
+
+.candy-menu-sugar {
+  width: 38px;
+  height: 72px;
+  border-radius: 80% 20% 80% 20%;
+  background: linear-gradient(155deg, #fff9ee, #ff8fbd 58%, #91d7ff);
+  box-shadow: 0 18px 30px rgba(160, 72, 118, 0.16);
+  animation: candySugarFloat 7s ease-in-out infinite;
+}
+
+.candy-menu-sugar-one { top: 16%; right: 21%; transform: rotate(34deg); }
+.candy-menu-sugar-two { top: 30%; right: 9%; animation-delay: -1.6s; transform: rotate(-38deg); }
+.candy-menu-sugar-three { bottom: 11%; left: 12%; animation-delay: -2.4s; transform: rotate(18deg); }
+.candy-menu-sugar-four { bottom: 8%; left: 18%; animation-delay: -3.2s; transform: rotate(64deg); }
+
+.candy-game-hero {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100svh - 74px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(44px, 6vw, 76px) 0 clamp(48px, 7vw, 92px);
+}
+
+.candy-hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 0.66fr);
+  gap: clamp(30px, 4.6vw, 58px);
+  align-items: center;
+}
+
+.candy-hero-copy {
+  max-width: 820px;
+  padding: clamp(18px, 3vw, 38px) 0;
+}
+
+.candy-hero-copy h1 {
+  max-width: 830px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+  color: var(--candy-ink);
+  font-size: clamp(4rem, 5.2vw, 6.3rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.52),
+    0 24px 70px rgba(150, 67, 111, 0.16);
+}
+
+.candy-shop-page[data-theme="dark"] .candy-hero-copy h1 {
+  text-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+}
+
+.candy-hero-copy .hero-copy {
+  max-width: 700px;
+  color: color-mix(in srgb, var(--text) 80%, var(--game-accent));
+  font-size: clamp(1.08rem, 1.55vw, 1.32rem);
+  line-height: 1.62;
+}
+
+.candy-hero-note {
+  max-width: 690px;
+  margin-bottom: 28px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.candy-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 18px;
+}
+
+.candy-hero-stats span {
+  min-height: 78px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 24%, var(--line));
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--candy-cream) 72%, transparent), color-mix(in srgb, var(--surface) 68%, transparent));
+  box-shadow: 0 16px 36px rgba(150, 67, 111, 0.12);
+  backdrop-filter: blur(14px);
+}
+
+.candy-hero-stats strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.candy-hero-stats small {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 780;
+}
+
+.candy-hero-showcase {
+  position: relative;
+  min-height: clamp(520px, 58vw, 680px);
+  display: grid;
+  place-items: center;
+}
+
+.candy-device-frame {
+  --candy-cycle: 12s;
+  position: relative;
+  width: min(100%, 440px);
+  aspect-ratio: 0.72;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 30px;
+  background: rgba(255, 247, 252, 0.36);
+  box-shadow:
+    0 32px 72px rgba(150, 67, 111, 0.22),
+    0 0 0 9px rgba(255, 255, 255, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  isolation: isolate;
+  transform: rotate(1.5deg);
+}
+
+.candy-shop-page[data-theme="dark"] .candy-device-frame {
+  border-color: rgba(255, 224, 246, 0.26);
+  background: rgba(42, 18, 48, 0.36);
+  box-shadow:
+    0 32px 72px rgba(0, 0, 0, 0.34),
+    0 0 0 9px rgba(255, 143, 202, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.candy-stage-showcase {
+  position: absolute;
+  inset: 0;
+}
+
+.candy-stage-showcase .candy-piece {
+  width: clamp(100px, 11vw, 142px);
+}
+
+.candy-stage-showcase .candy-piece-result {
+  width: clamp(116px, 13vw, 162px);
+}
+
+.candy-showcase-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  width: clamp(82px, 10vw, 116px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 42px rgba(115, 50, 85, 0.28),
+    0 0 0 7px rgba(255, 255, 255, 0.3);
+  transform: rotate(3deg);
+  animation: candyIconFloat 7s ease-in-out infinite;
+}
+
+.candy-preview-title {
+  position: absolute;
+  left: 24px;
+  top: 28px;
+  z-index: 10;
+  max-width: min(62%, 282px);
+  display: grid;
+  gap: 8px;
+}
+
+.candy-preview-title small,
+.candy-cycle b {
+  width: max-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #50233e;
+  background: rgba(255, 249, 238, 0.78);
+  box-shadow: 0 12px 26px rgba(115, 50, 85, 0.12);
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.candy-preview-title strong {
+  color: #40152d;
+  font-size: clamp(3.2rem, 4.6vw, 4.85rem);
+  line-height: 0.9;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.52);
+}
+
+.candy-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: -1px;
+}
+
+.candy-cycle b {
+  color: #6d2d50;
+  font-size: 0.72rem;
+}
+
+.candy-device-frame .magic-hud {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 11;
+  background: rgba(255, 249, 238, 0.82);
+}
+
+.candy-device-frame .hud-dot {
+  background: #ff8fbd;
+  box-shadow: 0 0 18px rgba(255, 143, 189, 0.58);
+}
+
+.candy-shop-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: clamp(42px, 5vw, 76px);
+  padding-bottom: 108px;
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.candy-shop-page .game-page-section,
+.candy-shop-page .game-page-updates {
+  padding-inline: 0;
+  border-color: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.candy-shop-page .game-page-section + .game-page-section,
+.candy-shop-page .game-page-section + .game-page-updates {
+  border-top: 0;
+  padding-top: clamp(30px, 4vw, 52px);
+}
+
+.candy-shop-page .game-page-section h2,
+.candy-shop-page .game-page-updates h2 {
+  max-width: 940px;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.48),
+    0 18px 46px rgba(150, 67, 111, 0.13);
+}
+
+.candy-shop-page[data-theme="dark"] .game-page-section h2,
+.candy-shop-page[data-theme="dark"] .game-page-updates h2 {
+  text-shadow: 0 18px 46px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 901px) {
+  .candy-shop-page .candy-story-section {
+    padding-top: clamp(34px, 4.4vw, 64px);
+    padding-bottom: clamp(34px, 4.4vw, 64px);
+  }
+
+  .candy-shop-page .candy-story-section + .candy-story-section {
+    padding-top: clamp(20px, 3vw, 38px);
+  }
+
+  .candy-shop-page .candy-story-section h2 {
+    max-width: 760px;
+    margin-bottom: clamp(18px, 2.2vw, 28px);
+    font-size: clamp(2.25rem, 3.05vw, 3.9rem);
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .candy-shop-page .candy-story-section .info-grid {
+    grid-template-columns: minmax(0, 0.84fr) minmax(390px, 0.56fr);
+    gap: clamp(36px, 5vw, 76px);
+    align-items: center;
+  }
+
+  .candy-shop-page .candy-story-section .info-grid > div {
+    max-width: 720px;
+  }
+
+  .candy-shop-page .candy-story-section .info-grid > div p {
+    max-width: 680px;
+    font-size: clamp(1.02rem, 1.04vw, 1.13rem);
+    line-height: 1.66;
+  }
+
+  .candy-shop-page .candy-story-section .info-grid > div p + p {
+    margin-top: 16px;
+  }
+
+  .candy-shop-page .candy-story-section .game-page-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    padding: 24px;
+  }
+
+  .candy-shop-page .candy-story-section .game-page-facts div {
+    gap: 6px;
+    min-height: 74px;
+    padding-bottom: 16px;
+  }
+
+  .candy-shop-page .candy-story-section .game-page-facts div:nth-last-child(-n+2) {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.candy-shop-page .detail-card,
+.candy-shop-page .asset-link,
+.candy-shop-page .update-list li,
+.candy-shop-page .game-page-facts {
+  border-color: color-mix(in srgb, var(--game-accent) 24%, rgba(125, 64, 104, 0.14));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(255, 143, 202, 0.12), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(125, 64, 104, 0.045) 0 1px, transparent 1px 13px),
+    rgba(255, 249, 238, 0.66);
+  box-shadow: 0 18px 42px rgba(150, 67, 111, 0.12);
+  backdrop-filter: blur(12px) saturate(1.04);
+}
+
+.candy-shop-page[data-theme="dark"] .detail-card,
+.candy-shop-page[data-theme="dark"] .asset-link,
+.candy-shop-page[data-theme="dark"] .update-list li,
+.candy-shop-page[data-theme="dark"] .game-page-facts {
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(255, 143, 202, 0.08), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(255, 224, 246, 0.04) 0 1px, transparent 1px 13px),
+    rgba(42, 18, 48, 0.68);
+  box-shadow: 0 18px 42px rgba(8, 0, 16, 0.34);
+}
+
+.candy-shop-page .game-page-section .eyebrow,
+.candy-shop-page .game-page-updates .eyebrow {
+  background: rgba(255, 249, 238, 0.66);
+}
+
+.candy-shop-page[data-theme="dark"] .game-page-section .eyebrow,
+.candy-shop-page[data-theme="dark"] .game-page-updates .eyebrow {
+  background: rgba(42, 18, 48, 0.68);
+}
+

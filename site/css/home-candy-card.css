@@ -1,0 +1,170 @@
+/* WillowinWorld CSS: Candy Shop card and reusable stage. */
+.candy-card {
+  --card-accent: #ff8fca;
+  --candy-cycle: 12s;
+  --card-bg: linear-gradient(155deg, #fff2fa, #bdefff 42%, #ffd3ec 100%);
+  --cover-atmosphere:
+    radial-gradient(circle at 28% 34%, rgba(255,255,255,0.82), transparent 16%),
+    radial-gradient(circle at 70% 32%, rgba(255,143,202,0.7), transparent 18%),
+    radial-gradient(circle at 45% 74%, rgba(255,211,110,0.54), transparent 22%);
+}
+
+.candy-game-cover {
+  min-height: 360px;
+  background: #ffe7ee;
+}
+
+.candy-card .game-cover::before {
+  inset: 0;
+  z-index: 3;
+  opacity: 0.54;
+  mix-blend-mode: screen;
+}
+
+.candy-stage,
+.candy-bg-stack,
+.candy-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.candy-stage {
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.candy-stage::before,
+.candy-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.candy-stage::before {
+  z-index: 3;
+  background:
+    radial-gradient(circle at 50% 44%, rgba(255,255,255,0.78), transparent 11rem),
+    linear-gradient(180deg, rgba(255,255,255,0.2), transparent 34%, rgba(92, 43, 79, 0.36));
+}
+
+.candy-stage::after {
+  z-index: 6;
+  background:
+    linear-gradient(180deg, transparent 46%, rgba(31, 20, 38, 0.62)),
+    radial-gradient(ellipse at 50% 112%, rgba(255, 143, 202, 0.56), transparent 46%);
+}
+
+.candy-bg-stack {
+  z-index: 0;
+}
+
+.candy-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 56%;
+  opacity: 0;
+  transform: scale(1.08);
+  animation-duration: var(--candy-cycle);
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.candy-bg-1 { animation-name: candyBg1; }
+.candy-bg-2 { animation-name: candyBg2; }
+.candy-bg-3 { animation-name: candyBg3; }
+.candy-bg-4 { animation-name: candyBg4; }
+.candy-bg-5 { animation-name: candyBg5; }
+.candy-bg-6 { animation-name: candyBg6; }
+.candy-bg-7 { animation-name: candyBg7; }
+.candy-bg-8 { animation-name: candyBg8; }
+.candy-bg-9 { animation-name: candyBg9; }
+.candy-bg-10 { animation-name: candyBg10; }
+
+.candy-piece {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  z-index: 5;
+  width: clamp(88px, 18vw, 138px);
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 16px 18px rgba(72, 36, 59, 0.25))
+    drop-shadow(0 0 22px rgba(255, 255, 255, 0.46));
+  transform-origin: 50% 50%;
+  animation-duration: var(--candy-cycle);
+  animation-timing-function: var(--ease);
+  animation-iteration-count: infinite;
+}
+
+.candy-piece-left {
+  animation-name: candyMergeLeft;
+}
+
+.candy-piece-right {
+  animation-name: candyMergeRight;
+}
+
+.candy-piece-result {
+  z-index: 6;
+  width: clamp(102px, 20vw, 156px);
+  opacity: 0;
+  animation-name: candyMergeResult;
+}
+
+.candy-impact {
+  position: absolute;
+  left: 50%;
+  top: 46%;
+  z-index: 4;
+  width: 132px;
+  aspect-ratio: 1;
+  border: 3px solid rgba(255,255,255,0.86);
+  border-radius: 50%;
+  box-shadow:
+    0 0 28px rgba(255, 255, 255, 0.6),
+    inset 0 0 22px rgba(255, 143, 202, 0.28);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.28);
+  animation: candyImpact var(--candy-cycle) var(--ease) infinite;
+}
+
+.candy-cover-icon,
+.candy-hover-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 9;
+  width: clamp(78px, 11vw, 112px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 34px rgba(95, 46, 74, 0.24),
+    0 0 0 6px rgba(255, 255, 255, 0.24);
+  transition: opacity .24s var(--ease), transform .42s var(--ease);
+}
+
+.candy-cover-icon {
+  transform: rotate(3deg);
+}
+
+.candy-hover-icon {
+  opacity: 0;
+  transform: translate3d(0, -26px, 0) rotate(-8deg) scale(0.9);
+}
+
+.candy-card:hover .candy-cover-icon {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0) rotate(12deg) scale(0.84);
+}
+
+.candy-card:hover .candy-hover-icon {
+  opacity: 1;
+  animation: candyIconDrop .72s var(--ease) both;
+}

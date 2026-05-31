@@ -1,0 +1,116 @@
+/* WillowinWorld CSS: home portfolio card shell. */
+.game-card {
+  position: relative;
+  scroll-margin-top: calc(var(--header-h) + 28px);
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--card-accent, var(--paper)) 22%, var(--line));
+  border-radius: var(--radius-xl);
+  background:
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.045) 0 1px, transparent 1px 15px),
+    linear-gradient(160deg, color-mix(in srgb, var(--surface) 92%, var(--card-accent, var(--cyan))), var(--surface));
+  box-shadow: var(--shadow-soft);
+  transition: transform .45s var(--ease), border-color .35s var(--ease), opacity .35s var(--ease), filter .35s var(--ease);
+}
+
+.game-card::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 10;
+  border-radius: inherit;
+  background:
+    radial-gradient(34rem circle at var(--shine-x, 50%) var(--shine-y, 18%), color-mix(in srgb, var(--card-accent, var(--cyan)) 24%, transparent), transparent 44%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .35s var(--ease);
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  border-color: color-mix(in srgb, var(--card-accent, var(--cyan)) 48%, var(--line));
+  filter: saturate(1.06);
+}
+
+.game-card:hover::after {
+  opacity: 1;
+}
+
+.game-card.is-hidden {
+  display: none;
+}
+
+.game-card.is-hidden * {
+  animation-play-state: paused !important;
+}
+
+.game-cover {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  background: var(--card-bg);
+  isolation: isolate;
+}
+
+.game-cover::before {
+  content: "";
+  position: absolute;
+  inset: -26%;
+  background: var(--cover-atmosphere);
+  transform: translate3d(0,0,0);
+  transition: transform .7s var(--ease), opacity .35s var(--ease);
+}
+
+.game-card:hover .game-cover::before {
+  transform: translate3d(2%, -2%, 0) scale(1.08) rotate(2deg);
+}
+
+.game-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 42%, rgba(0,0,0,0.52));
+  z-index: 4;
+  pointer-events: none;
+}
+
+.cover-title {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  z-index: 8;
+  max-width: calc(100% - 44px);
+}
+
+.cover-title span {
+  display: inline-flex;
+  margin-bottom: 8px;
+  padding: 7px 10px;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  color: rgba(255,255,255,0.78);
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(12px);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.cover-title h3 {
+  margin: 0;
+  color: white;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 0.92;
+  letter-spacing: 0;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.38);
+}
+
+.game-card.is-animation-paused,
+.game-card.is-animation-paused::before,
+.game-card.is-animation-paused::after,
+.game-card.is-animation-paused *,
+.game-card.is-animation-paused *::before,
+.game-card.is-animation-paused *::after {
+  animation-play-state: paused !important;
+}

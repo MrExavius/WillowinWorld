@@ -1,0 +1,824 @@
+/* WillowinWorld CSS: Paint Blasters game page. */
+.paint-blasters-page {
+  --paint-cycle: 8.4s;
+  --bg: #eef7ff;
+  --bg-2: #fff0df;
+  --surface: rgba(241, 249, 255, 0.72);
+  --surface-strong: rgba(250, 253, 255, 0.95);
+  --surface-soft: rgba(54, 211, 255, 0.12);
+  --text: #10213a;
+  --muted: #405b73;
+  --muted-2: #71889c;
+  --line: rgba(20, 44, 70, 0.16);
+  --paper: #fff6e8;
+  --paint-ink: #10213a;
+  --paint-metal: #294465;
+  --paint-copper: #b06f3f;
+  --paint-glow: #36d3ff;
+  --paint-rose: #ff3ab5;
+  --paint-lime: #73ff31;
+}
+
+.paint-blasters-page[data-theme="dark"] {
+  --bg: #071225;
+  --bg-2: #111f38;
+  --surface: rgba(9, 21, 42, 0.72);
+  --surface-strong: rgba(7, 14, 29, 0.95);
+  --surface-soft: rgba(54, 211, 255, 0.1);
+  --text: #f2f8ff;
+  --muted: #b8c9dc;
+  --muted-2: #8298b0;
+  --line: rgba(202, 228, 255, 0.18);
+  --paper: #17283f;
+  --paint-ink: #f2f8ff;
+  --paint-metal: #172d4a;
+  --paint-copper: #d49864;
+}
+
+body.paint-blasters-page[data-theme="light"] {
+  background-color: #eef7ff;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(54, 211, 255, 0.24), transparent 30%),
+    radial-gradient(ellipse at 82% 16%, rgba(255, 58, 181, 0.2), transparent 34%),
+    linear-gradient(180deg, #f4fbff 0%, #eef7ff 42%, #fff0df 100%);
+}
+
+body.paint-blasters-page[data-theme="dark"] {
+  background-color: #071225;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(54, 211, 255, 0.18), transparent 30%),
+    radial-gradient(ellipse at 82% 16%, rgba(255, 58, 181, 0.14), transparent 34%),
+    linear-gradient(180deg, #071225 0%, #10213c 48%, #050b18 100%);
+}
+
+.paint-blasters-page::before {
+  opacity: 0;
+}
+
+.game-detail-page .paint-blasters-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: block;
+  padding-top: 0;
+  background: transparent;
+}
+
+.paint-blasters-shell::before,
+.paint-blasters-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.paint-blasters-shell::before {
+  background:
+    linear-gradient(92deg, rgba(241, 249, 255, 0.92) 0 17%, rgba(241, 249, 255, 0.7) 42%, rgba(241, 249, 255, 0.34) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(54, 211, 255, 0.22), transparent 28%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 58, 181, 0.16), transparent 28%),
+    url("../assets/Paint Blasters/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #eef7ff, #fff0df);
+  filter: saturate(1.03) contrast(1.02);
+  opacity: 0.78;
+}
+
+.paint-blasters-shell::after {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.14) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.16) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 18px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 46%, rgba(54, 211, 255, 0.12));
+  mix-blend-mode: multiply;
+  opacity: 0.74;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-blasters-shell::before {
+  background:
+    linear-gradient(92deg, rgba(7, 18, 37, 0.9) 0 17%, rgba(7, 18, 37, 0.68) 42%, rgba(15, 32, 57, 0.44) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(54, 211, 255, 0.13), transparent 28%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 58, 181, 0.11), transparent 28%),
+    url("../assets/Paint Blasters/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #071225, #050b18);
+  filter: saturate(0.92) contrast(1.05) brightness(0.68);
+  opacity: 0.82;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-blasters-shell::after {
+  background:
+    linear-gradient(90deg, rgba(7, 18, 37, 0.58), rgba(11, 28, 52, 0.22) 48%, rgba(5, 11, 24, 0.62)),
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.12) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.1) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(202, 228, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.paint-page-backdrop {
+  position: fixed;
+  inset: 74px 0 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.paint-page-backdrop::before,
+.paint-page-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.paint-page-backdrop::before {
+  z-index: 2;
+  background:
+    linear-gradient(92deg, rgba(241, 249, 255, 0.94) 0 17%, rgba(241, 249, 255, 0.68) 42%, rgba(241, 249, 255, 0.28) 76%),
+    radial-gradient(ellipse at 28% 38%, rgba(54, 211, 255, 0.28), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 58, 181, 0.2), transparent 26%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 226, 75, 0.12));
+}
+
+.paint-page-backdrop::after {
+  z-index: 5;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.14) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.18) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 18px),
+    radial-gradient(ellipse at 50% 100%, rgba(54, 211, 255, 0.16), transparent 48%);
+  mix-blend-mode: multiply;
+  opacity: 0.82;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-page-backdrop::before {
+  background:
+    linear-gradient(92deg, rgba(7, 18, 37, 0.9) 0 17%, rgba(7, 18, 37, 0.68) 42%, rgba(15, 32, 57, 0.42) 76%),
+    radial-gradient(ellipse at 28% 38%, rgba(54, 211, 255, 0.16), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 58, 181, 0.12), transparent 26%),
+    linear-gradient(180deg, rgba(7, 18, 37, 0.26), rgba(5, 11, 24, 0.58));
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-page-backdrop::after {
+  background:
+    linear-gradient(90deg, rgba(7, 18, 37, 0.54), rgba(11, 28, 52, 0.16) 48%, rgba(5, 11, 24, 0.58)),
+    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.1) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.1) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(202, 228, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.paint-ship-panel {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  z-index: 1;
+  width: min(116vw, 1920px);
+  height: auto;
+  max-width: none;
+  opacity: 0.32;
+  filter: saturate(1.08) contrast(1.03);
+  transform: translateX(-50%) scale(1.02);
+  animation: paintShipPanelDrift 16s ease-in-out infinite;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-ship-panel {
+  opacity: 0.26;
+  filter: saturate(0.92) contrast(1.08) brightness(0.82);
+}
+
+.paint-menu-world {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.paint-menu-pipe,
+.paint-menu-beam,
+.paint-menu-splash,
+.paint-menu-gauge {
+  position: absolute;
+  pointer-events: none;
+}
+
+.paint-menu-pipe {
+  width: 62vw;
+  height: 28px;
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 42%),
+    repeating-linear-gradient(90deg, rgba(64, 36, 24, 0.18) 0 2px, transparent 2px 54px),
+    linear-gradient(90deg, rgba(103, 66, 46, 0.42), rgba(198, 126, 70, 0.32), rgba(31, 64, 88, 0.36));
+  box-shadow: 0 22px 36px rgba(20, 44, 70, 0.14);
+  opacity: 0.7;
+}
+
+.paint-menu-pipe-one {
+  top: 18%;
+  left: 12%;
+  transform: rotate(22deg);
+}
+
+.paint-menu-pipe-two {
+  top: 39%;
+  right: -12%;
+  width: 54vw;
+  transform: rotate(-12deg);
+}
+
+.paint-menu-pipe-three {
+  bottom: 12%;
+  left: -8%;
+  width: 70vw;
+  height: 24px;
+  transform: rotate(-5deg);
+}
+
+.paint-menu-beam {
+  width: 46vw;
+  height: 18px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent, rgba(54, 211, 255, 0.42), rgba(255, 226, 75, 0.34), rgba(255, 58, 181, 0.38), transparent);
+  filter: blur(0.2px);
+  opacity: 0.66;
+  animation: paintBeamFlow 7s ease-in-out infinite;
+}
+
+.paint-menu-beam-one {
+  top: 29%;
+  left: -7%;
+  transform: rotate(-18deg);
+}
+
+.paint-menu-beam-two {
+  bottom: 18%;
+  right: -9%;
+  transform: rotate(14deg);
+  animation-delay: -2.8s;
+}
+
+.paint-menu-splash {
+  width: clamp(92px, 8vw, 156px);
+  aspect-ratio: 1;
+  border-radius: 43% 57% 46% 54%;
+  background:
+    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.72) 0 8%, transparent 9%),
+    radial-gradient(circle at 62% 35%, #ffe24b 0 14%, transparent 15%),
+    radial-gradient(circle at 34% 62%, #36d3ff 0 17%, transparent 18%),
+    radial-gradient(circle at 70% 70%, #ff3ab5 0 16%, transparent 17%),
+    #73ff31;
+  filter: drop-shadow(0 20px 30px rgba(20, 44, 70, 0.16));
+  opacity: 0.68;
+  transform-origin: center;
+  animation: paintSplashFloat 8s ease-in-out infinite;
+}
+
+.paint-menu-splash-one {
+  right: 12%;
+  top: 14%;
+}
+
+.paint-menu-splash-two {
+  left: 8%;
+  bottom: 12%;
+  width: clamp(70px, 6vw, 116px);
+  animation-delay: -2.2s;
+}
+
+.paint-menu-splash-three {
+  right: 24%;
+  bottom: 9%;
+  width: clamp(62px, 5vw, 96px);
+  animation-delay: -4.4s;
+}
+
+.paint-menu-gauge {
+  width: 74px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid rgba(126, 82, 52, 0.36);
+  background:
+    radial-gradient(circle at 50% 54%, rgba(255, 255, 245, 0.84) 0 38%, transparent 39%),
+    conic-gradient(from -42deg, #73ff31, #ffe24b, #ff3ab5, #36d3ff, #73ff31);
+  box-shadow: 0 18px 32px rgba(20, 44, 70, 0.16);
+  opacity: 0.62;
+  animation: paintGaugePulse 6s ease-in-out infinite;
+}
+
+.paint-menu-gauge-one {
+  top: 13%;
+  left: 22%;
+}
+
+.paint-menu-gauge-two {
+  right: 10%;
+  bottom: 26%;
+  width: 58px;
+  animation-delay: -2s;
+}
+
+.paint-game-hero {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100svh - 74px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(44px, 6vw, 76px) 0 clamp(48px, 7vw, 92px);
+}
+
+.paint-hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.7fr);
+  gap: clamp(30px, 4.6vw, 58px);
+  align-items: center;
+}
+
+.paint-hero-copy {
+  max-width: 840px;
+  padding: clamp(18px, 3vw, 38px) 0;
+}
+
+.paint-hero-copy h1 {
+  max-width: 820px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+  color: var(--paint-ink);
+  font-size: clamp(4rem, 5.15vw, 6.2rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.52),
+    0 26px 70px rgba(20, 44, 70, 0.18);
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-hero-copy h1 {
+  text-shadow: 0 26px 70px rgba(0, 0, 0, 0.36);
+}
+
+.paint-hero-copy .hero-copy {
+  max-width: 720px;
+  color: color-mix(in srgb, var(--text) 82%, var(--game-accent));
+  font-size: clamp(1.08rem, 1.55vw, 1.32rem);
+  line-height: 1.62;
+}
+
+.paint-hero-note {
+  max-width: 690px;
+  margin-bottom: 28px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.paint-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 18px;
+}
+
+.paint-hero-stats span {
+  min-height: 78px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 28%, var(--line));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(54, 211, 255, 0.16), transparent 34%),
+    radial-gradient(ellipse at 88% 20%, rgba(255, 58, 181, 0.1), transparent 36%),
+    repeating-linear-gradient(118deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface-strong) 76%, transparent);
+  box-shadow: 0 18px 42px rgba(20, 44, 70, 0.12);
+  backdrop-filter: blur(14px) saturate(1.04);
+}
+
+.paint-hero-stats strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.paint-hero-stats small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.paint-hero-showcase {
+  position: relative;
+  min-height: clamp(520px, 58vw, 690px);
+  display: grid;
+  place-items: center;
+}
+
+.paint-device-frame {
+  --paint-cycle: 8.4s;
+  position: relative;
+  width: min(100%, 456px);
+  aspect-ratio: 0.72;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 30px;
+  background: rgba(10, 24, 44, 0.42);
+  box-shadow:
+    0 34px 82px rgba(20, 44, 70, 0.28),
+    0 0 0 9px rgba(255, 255, 255, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  isolation: isolate;
+  transform: rotate(-1.4deg);
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-device-frame {
+  border-color: rgba(202, 228, 255, 0.24);
+  background: rgba(5, 11, 24, 0.48);
+  box-shadow:
+    0 34px 82px rgba(0, 0, 0, 0.42),
+    0 0 0 9px rgba(54, 211, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.paint-device-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 34%, rgba(4, 9, 18, 0.18)),
+    radial-gradient(ellipse at 50% 18%, rgba(255, 226, 75, 0.14), transparent 24%);
+  mix-blend-mode: screen;
+}
+
+.paint-stage-showcase {
+  position: absolute;
+  inset: 0;
+}
+
+.paint-stage-showcase .paint-bg {
+  inset: -9% -8%;
+  width: 116%;
+  height: 122%;
+  object-position: center 52%;
+  filter: saturate(1.12) contrast(1.04) brightness(0.78);
+}
+
+.paint-stage-showcase .paint-module {
+  top: -5%;
+  height: 114%;
+}
+
+.paint-stage-showcase .paint-arena {
+  top: 9%;
+  width: clamp(188px, 44%, 260px);
+  height: 84%;
+}
+
+.paint-stage-showcase .paint-hero {
+  left: -122px;
+  bottom: -128px;
+  width: clamp(370px, 78%, 500px);
+}
+
+.paint-stage-showcase .paint-blaster {
+  bottom: -9px;
+  width: 158px;
+}
+
+.paint-showcase-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  width: clamp(82px, 10vw, 118px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 42px rgba(8, 15, 25, 0.34),
+    0 0 0 7px rgba(255, 255, 255, 0.18);
+  transition: opacity .28s var(--ease), transform .42s var(--ease);
+}
+
+.paint-showcase-icon-primary {
+  transform: rotate(3deg);
+  animation: paintShowcaseIconPrimary var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-showcase-icon-alt {
+  opacity: 0;
+  transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  animation: paintShowcaseIconAlt var(--paint-cycle) var(--ease) infinite;
+}
+
+.paint-preview-title {
+  position: absolute;
+  left: 26px;
+  top: 28px;
+  z-index: 10;
+  max-width: min(60%, 286px);
+  display: grid;
+  gap: 8px;
+}
+
+.paint-preview-title small,
+.paint-cycle b {
+  width: max-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #10213a;
+  background: rgba(244, 251, 255, 0.82);
+  box-shadow: 0 12px 26px rgba(8, 15, 25, 0.18);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.paint-preview-title strong {
+  color: #f7fbff;
+  font-size: clamp(3.05rem, 4.35vw, 4.7rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(0, 0, 0, 0.22),
+    0 18px 44px rgba(0, 0, 0, 0.42);
+}
+
+.paint-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.paint-cycle b {
+  color: #18263a;
+  font-size: 0.72rem;
+}
+
+.paint-device-frame .magic-hud {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 11;
+  color: #f7fbff;
+  background: rgba(10, 24, 44, 0.72);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.paint-device-frame .hud-dot {
+  background: #36d3ff;
+  box-shadow: 0 0 18px rgba(54, 211, 255, 0.58);
+  animation: paintButtonBlink 1.6s ease-in-out infinite;
+}
+
+.paint-device-frame .hud-dot:nth-child(2) {
+  animation-delay: .28s;
+}
+
+.paint-device-frame .hud-dot:nth-child(3) {
+  animation-delay: .56s;
+}
+
+.paint-control-lights {
+  position: absolute;
+  right: 28px;
+  bottom: 92px;
+  z-index: 12;
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(7, 18, 37, 0.68);
+  box-shadow:
+    0 12px 26px rgba(4, 9, 18, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.paint-control-lights span {
+  width: 10px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--paint-light, #36d3ff);
+  box-shadow:
+    0 0 10px var(--paint-light, #36d3ff),
+    0 0 22px color-mix(in srgb, var(--paint-light, #36d3ff) 56%, transparent);
+  animation: paintButtonBlink 1.85s ease-in-out infinite;
+}
+
+.paint-control-lights span:nth-child(1) { --paint-light: #ff3d45; animation-delay: 0s; }
+.paint-control-lights span:nth-child(2) { --paint-light: #ffe24b; animation-delay: .18s; }
+.paint-control-lights span:nth-child(3) { --paint-light: #36d3ff; animation-delay: .36s; }
+.paint-control-lights span:nth-child(4) { --paint-light: #73ff31; animation-delay: .54s; }
+.paint-control-lights span:nth-child(5) { --paint-light: #bc5cff; animation-delay: .72s; }
+
+.paint-device-frame .magic-hud::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 92px;
+  top: -8px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #36d3ff, #73ff31, #ffe24b, #ff3ab5);
+  box-shadow: 0 0 18px rgba(54, 211, 255, 0.38);
+  animation: paintButtonBlink 1.9s ease-in-out infinite;
+}
+
+.paint-blasters-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: clamp(42px, 5vw, 76px);
+  padding-bottom: 108px;
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.paint-blasters-page .game-page-section,
+.paint-blasters-page .game-page-updates {
+  padding-inline: 0;
+  border-color: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.paint-blasters-page .game-page-section + .game-page-section,
+.paint-blasters-page .game-page-section + .game-page-updates {
+  border-top: 0;
+  padding-top: clamp(30px, 4vw, 52px);
+}
+
+.paint-blasters-page .game-page-section h2,
+.paint-blasters-page .game-page-updates h2 {
+  max-width: 940px;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.48),
+    0 18px 46px rgba(20, 44, 70, 0.14);
+}
+
+.paint-blasters-page[data-theme="dark"] .game-page-section h2,
+.paint-blasters-page[data-theme="dark"] .game-page-updates h2 {
+  text-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+}
+
+@media (min-width: 901px) {
+  .paint-blasters-page .paint-story-section {
+    padding-top: clamp(34px, 4.4vw, 64px);
+    padding-bottom: clamp(34px, 4.4vw, 64px);
+  }
+
+  .paint-blasters-page .paint-story-section + .paint-story-section {
+    padding-top: clamp(20px, 3vw, 38px);
+  }
+
+  .paint-blasters-page .paint-story-section h2 {
+    max-width: 780px;
+    margin-bottom: clamp(18px, 2.2vw, 28px);
+    font-size: clamp(2.25rem, 3.05vw, 3.9rem);
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid {
+    grid-template-columns: minmax(0, 0.84fr) minmax(390px, 0.56fr);
+    gap: clamp(36px, 5vw, 76px);
+    align-items: center;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid > div {
+    max-width: 720px;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid > div p {
+    max-width: 680px;
+    font-size: clamp(1.02rem, 1.04vw, 1.13rem);
+    line-height: 1.66;
+  }
+
+  .paint-blasters-page .paint-story-section .info-grid > div p + p {
+    margin-top: 16px;
+  }
+
+  .paint-blasters-page .paint-story-section .game-page-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    padding: 24px;
+  }
+
+  .paint-blasters-page .paint-story-section .game-page-facts div {
+    gap: 6px;
+    min-height: 74px;
+    padding-bottom: 16px;
+  }
+
+  .paint-blasters-page .paint-story-section .game-page-facts div:nth-last-child(-n+2) {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.paint-blasters-page .detail-card,
+.paint-blasters-page .asset-link,
+.paint-blasters-page .update-list li,
+.paint-blasters-page .game-page-facts {
+  border-color: color-mix(in srgb, var(--game-accent) 24%, rgba(20, 44, 70, 0.16));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(54, 211, 255, 0.12), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 58, 181, 0.08), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 13px),
+    rgba(241, 249, 255, 0.68);
+  box-shadow: 0 18px 42px rgba(20, 44, 70, 0.12);
+  backdrop-filter: blur(12px) saturate(1.04);
+}
+
+.paint-blasters-page[data-theme="dark"] .detail-card,
+.paint-blasters-page[data-theme="dark"] .asset-link,
+.paint-blasters-page[data-theme="dark"] .update-list li,
+.paint-blasters-page[data-theme="dark"] .game-page-facts {
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(54, 211, 255, 0.1), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 58, 181, 0.08), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(202, 228, 255, 0.04) 0 1px, transparent 1px 13px),
+    rgba(9, 21, 42, 0.7);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+}
+
+.paint-blasters-page .game-page-section .eyebrow,
+.paint-blasters-page .game-page-updates .eyebrow {
+  background: rgba(241, 249, 255, 0.68);
+}
+
+.paint-blasters-page[data-theme="dark"] .game-page-section .eyebrow,
+.paint-blasters-page[data-theme="dark"] .game-page-updates .eyebrow {
+  background: rgba(9, 21, 42, 0.7);
+}
+
+.paint-cursor-mascot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: clamp(72px, 5.7vw, 108px);
+  height: clamp(96px, 7.5vw, 144px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-150px, -150px, 0);
+  transition: opacity .22s var(--ease);
+  will-change: transform, opacity;
+}
+
+.paint-cursor-mascot.is-active {
+  opacity: 0.86;
+}
+
+.paint-cursor-glow,
+.paint-cursor-image {
+  position: absolute;
+  pointer-events: none;
+}
+
+.paint-cursor-glow {
+  inset: -18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(54, 211, 255, 0.34), rgba(255, 58, 181, 0.18) 48%, transparent 72%);
+  filter: blur(1px);
+  animation: natureCursorPulse 2.8s ease-in-out infinite;
+}
+
+.paint-cursor-image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 20px 24px rgba(8, 15, 25, 0.3))
+    drop-shadow(0 0 18px rgba(54, 211, 255, 0.24));
+  animation: natureCursorBreathe 3.35s ease-in-out infinite;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-cursor-image {
+  filter:
+    drop-shadow(0 22px 26px rgba(0, 0, 0, 0.46))
+    drop-shadow(0 0 22px rgba(54, 211, 255, 0.22));
+}
+

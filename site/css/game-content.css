@@ -1,0 +1,294 @@
+/* WillowinWorld CSS: shared game-page content blocks, related worlds, facts and assets. */
+.game-page-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.game-page-updates {
+  grid-column: 1 / -1;
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.game-page-updates h2 {
+  margin: 8px 0 22px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.update-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.update-list li {
+  min-height: 170px;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(138deg, color-mix(in srgb, var(--paper) 7%, transparent), transparent 44%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 14px),
+    var(--surface);
+}
+
+.update-list span {
+  display: inline-flex;
+  margin-bottom: 16px;
+  color: var(--cyan);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.update-list strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.update-list p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.56;
+}
+
+.game-page-section,
+.press-kit-section {
+  grid-column: 1 / -1;
+  padding: clamp(24px, 4vw, 38px);
+}
+
+.game-page-section h2,
+.press-kit-section h2 {
+  margin: 8px 0 22px;
+  font-size: clamp(1.6rem, 3vw, 2.45rem);
+}
+
+.detail-grid,
+.press-kit-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.detail-card {
+  min-height: 172px;
+  padding: 20px;
+  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(138deg, color-mix(in srgb, var(--paper) 7%, transparent), transparent 44%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 14px),
+    var(--surface);
+}
+
+.detail-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.06rem;
+}
+
+.detail-card p,
+.press-kit-section p {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.related-worlds {
+  position: relative;
+  overflow: hidden;
+}
+
+.related-worlds::after {
+  content: "";
+  position: absolute;
+  inset: auto 4% -34% 52%;
+  height: 240px;
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--cyan) 18%, transparent), transparent 68%),
+    radial-gradient(ellipse at 35% 42%, color-mix(in srgb, var(--violet) 16%, transparent), transparent 62%);
+  filter: blur(24px);
+  pointer-events: none;
+}
+
+.related-worlds > * {
+  position: relative;
+  z-index: 1;
+}
+
+.related-worlds-copy {
+  max-width: 980px;
+  margin: -8px 0 24px;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.14rem);
+  line-height: 1.72;
+}
+
+.related-world-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.related-world-link {
+  min-height: 238px;
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 18%, var(--line));
+  border-radius: 18px;
+  color: var(--text);
+  text-decoration: none;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--paper) 9%, transparent), transparent 58%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface) 92%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: transform .24s var(--ease), border-color .24s var(--ease), background .24s var(--ease), box-shadow .24s var(--ease);
+}
+
+.related-world-link:hover,
+.related-world-link:focus-visible {
+  outline: none;
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--cyan) 44%, var(--line));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--cyan) 13%, transparent), transparent 58%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.052) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface) 86%, transparent);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.related-world-link.is-primary {
+  border-color: color-mix(in srgb, var(--cyan) 38%, var(--line));
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--cyan) 16%, transparent), transparent 58%),
+    repeating-linear-gradient(118deg, rgba(255,255,255,0.052) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface) 88%, transparent);
+}
+
+.related-world-kicker {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 14px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 36%, var(--line));
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--cyan) 82%, var(--text));
+  background: color-mix(in srgb, var(--cyan) 9%, transparent);
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.related-world-link strong {
+  font-size: clamp(1.16rem, 1.45vw, 1.34rem);
+  line-height: 1.05;
+}
+
+.related-world-link p {
+  margin: 12px 0 auto;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.58;
+}
+
+.related-world-meta {
+  display: block;
+  margin-top: 18px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+  color: color-mix(in srgb, var(--text) 76%, var(--cyan));
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.35;
+}
+
+.game-page-facts,
+.press-kit-facts {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+}
+
+.game-page-facts div,
+.press-kit-facts div {
+  display: grid;
+  gap: 4px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.game-page-facts div:last-child,
+.press-kit-facts div:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.game-page-facts dt,
+.press-kit-facts dt {
+  color: var(--muted-2);
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.game-page-facts dd,
+.press-kit-facts dd {
+  margin: 0;
+  color: var(--text);
+  font-weight: 820;
+}
+
+.asset-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.asset-link {
+  position: relative;
+  min-height: 172px;
+  display: grid;
+  align-content: end;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 70%, transparent), color-mix(in srgb, var(--surface-strong) 88%, transparent));
+  box-shadow: var(--shadow-soft);
+  transition: transform .25s var(--ease), border-color .25s var(--ease);
+}
+
+.asset-link:hover,
+.asset-link:focus-visible {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--cyan) 52%, var(--line));
+  outline: none;
+}
+
+.asset-link img {
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: var(--shadow-soft);
+}
+
+.asset-link strong {
+  display: block;
+}
+
+.asset-link span {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}

@@ -1,0 +1,822 @@
+/* WillowinWorld CSS: Ball is God game page. */
+.ball-is-god-page {
+  --ball-cycle: 8.8s;
+  --bg: #eaf6ff;
+  --bg-2: #fff2c5;
+  --surface: rgba(247, 252, 255, 0.72);
+  --surface-strong: rgba(255, 253, 246, 0.95);
+  --surface-soft: rgba(255, 212, 61, 0.14);
+  --text: #10213a;
+  --muted: #405d78;
+  --muted-2: #7891a8;
+  --line: rgba(47, 91, 150, 0.16);
+  --paper: #fff8dc;
+  --ball-ink: #10213a;
+  --ball-sky: #8fc7ff;
+  --ball-gold: #ffd43d;
+  --ball-gold-deep: #d5961e;
+  --ball-stone: #575452;
+  --ball-green: #4ea83a;
+}
+
+.ball-is-god-page[data-theme="dark"] {
+  --bg: #071530;
+  --bg-2: #10254d;
+  --surface: rgba(7, 21, 48, 0.74);
+  --surface-strong: rgba(6, 15, 34, 0.95);
+  --surface-soft: rgba(255, 212, 61, 0.1);
+  --text: #f6fbff;
+  --muted: #c2d5e8;
+  --muted-2: #8ea9c4;
+  --line: rgba(214, 235, 255, 0.18);
+  --paper: #152d55;
+  --ball-ink: #f6fbff;
+  --ball-gold: #ffe274;
+  --ball-gold-deep: #c99330;
+}
+
+body.ball-is-god-page[data-theme="light"] {
+  background-color: #eaf6ff;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.74), transparent 32%),
+    radial-gradient(ellipse at 78% 14%, rgba(255, 212, 61, 0.28), transparent 30%),
+    linear-gradient(180deg, #eaf6ff 0%, #cde8ff 52%, #fff2c5 100%);
+}
+
+body.ball-is-god-page[data-theme="dark"] {
+  background-color: #071530;
+  background:
+    radial-gradient(ellipse at 18% 8%, rgba(126, 195, 255, 0.14), transparent 32%),
+    radial-gradient(ellipse at 78% 14%, rgba(255, 212, 61, 0.14), transparent 30%),
+    linear-gradient(180deg, #071530 0%, #10254d 52%, #050c1d 100%);
+}
+
+.ball-is-god-page::before {
+  opacity: 0;
+}
+
+.game-detail-page .ball-is-god-shell {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: block;
+  padding-top: 0;
+  background: transparent;
+}
+
+.ball-is-god-shell::before,
+.ball-is-god-shell::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.ball-is-god-shell::before {
+  background:
+    linear-gradient(92deg, rgba(234, 246, 255, 0.94) 0 18%, rgba(234, 246, 255, 0.68) 42%, rgba(234, 246, 255, 0.24) 76%),
+    radial-gradient(ellipse at 28% 28%, rgba(255, 255, 255, 0.48), transparent 30%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 212, 61, 0.24), transparent 28%),
+    url("../assets/Ball is God/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #eaf6ff, #fff2c5);
+  filter: saturate(1.02) contrast(1);
+  opacity: 0.82;
+}
+
+.ball-is-god-shell::after {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.34) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(47, 91, 150, 0.04) 0 1px, transparent 1px 18px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 46%, rgba(255, 212, 61, 0.14));
+  mix-blend-mode: multiply;
+  opacity: 0.74;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-is-god-shell::before {
+  background:
+    linear-gradient(92deg, rgba(7, 21, 48, 0.9) 0 18%, rgba(7, 21, 48, 0.68) 42%, rgba(16, 37, 77, 0.42) 76%),
+    radial-gradient(ellipse at 28% 28%, rgba(126, 195, 255, 0.12), transparent 30%),
+    radial-gradient(ellipse at 78% 20%, rgba(255, 212, 61, 0.12), transparent 28%),
+    url("../assets/Ball is God/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
+    linear-gradient(180deg, #071530, #050c1d);
+  filter: saturate(0.9) contrast(1.05) brightness(0.72);
+  opacity: 0.84;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-is-god-shell::after {
+  background:
+    linear-gradient(90deg, rgba(7, 21, 48, 0.62), rgba(12, 32, 66, 0.28) 48%, rgba(5, 12, 29, 0.64)),
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(214, 235, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.ball-page-backdrop {
+  position: fixed;
+  inset: 74px 0 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.ball-page-backdrop::before,
+.ball-page-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.ball-page-backdrop::before {
+  z-index: 2;
+  background:
+    linear-gradient(92deg, rgba(234, 246, 255, 0.94) 0 18%, rgba(234, 246, 255, 0.66) 42%, rgba(234, 246, 255, 0.22) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(255, 255, 255, 0.54), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 212, 61, 0.24), transparent 26%);
+}
+
+.ball-page-backdrop::after {
+  z-index: 5;
+  background:
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.32) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.16) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(47, 91, 150, 0.04) 0 1px, transparent 1px 18px),
+    radial-gradient(ellipse at 50% 100%, rgba(255, 212, 61, 0.16), transparent 48%);
+  mix-blend-mode: multiply;
+  opacity: 0.82;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-page-backdrop::before {
+  background:
+    linear-gradient(92deg, rgba(7, 21, 48, 0.9) 0 18%, rgba(7, 21, 48, 0.66) 42%, rgba(16, 37, 77, 0.42) 76%),
+    radial-gradient(ellipse at 26% 36%, rgba(126, 195, 255, 0.12), transparent 30%),
+    radial-gradient(ellipse at 76% 18%, rgba(255, 212, 61, 0.1), transparent 26%);
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-page-backdrop::after {
+  background:
+    linear-gradient(90deg, rgba(7, 21, 48, 0.58), rgba(12, 32, 66, 0.2) 48%, rgba(5, 12, 29, 0.62)),
+    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.08) 0 2px, transparent 3px),
+    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.1) 0 2px, transparent 3px),
+    repeating-linear-gradient(112deg, rgba(214, 235, 255, 0.035) 0 1px, transparent 1px 18px);
+  mix-blend-mode: normal;
+  opacity: 0.9;
+}
+
+.ball-menu-world {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.ball-menu-sun,
+.ball-menu-halo,
+.ball-menu-pillar,
+.ball-menu-beam,
+.ball-menu-rock {
+  position: absolute;
+  pointer-events: none;
+}
+
+.ball-menu-sun {
+  top: 8%;
+  right: 15%;
+  width: clamp(118px, 9vw, 176px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 34% 28%, rgba(255,255,244,0.78), transparent 12%),
+    radial-gradient(circle at 60% 70%, rgba(197, 139, 38, 0.18), transparent 30%),
+    linear-gradient(135deg, #fff28c, #f0b83a 72%);
+  box-shadow:
+    0 0 0 58px rgba(255, 224, 128, 0.14),
+    0 28px 70px rgba(188, 126, 24, 0.24);
+  animation: moonFloat 8s ease-in-out infinite;
+}
+
+.ball-menu-halo {
+  width: 190px;
+  height: 46px;
+  border: 10px solid rgba(255, 212, 61, 0.42);
+  border-radius: 50%;
+  box-shadow: 0 0 28px rgba(255, 212, 61, 0.18);
+  opacity: 0.66;
+  animation: ballHaloFloat 8s ease-in-out infinite;
+}
+
+.ball-menu-halo-one {
+  top: 20%;
+  left: 12%;
+  transform: rotate(-12deg);
+}
+
+.ball-menu-halo-two {
+  right: 8%;
+  bottom: 17%;
+  width: 138px;
+  height: 34px;
+  transform: rotate(18deg);
+  animation-delay: -3.2s;
+}
+
+.ball-menu-pillar {
+  bottom: -10%;
+  width: clamp(150px, 14vw, 260px);
+  height: 58%;
+  border-radius: 999px 999px 0 0;
+  background:
+    radial-gradient(ellipse at 50% 5%, rgba(255, 252, 212, 0.58), transparent 26%),
+    repeating-linear-gradient(90deg, rgba(146, 103, 25, 0.16) 0 2px, transparent 2px 32px),
+    linear-gradient(90deg, rgba(177, 122, 25, 0.34), rgba(255, 224, 108, 0.38), rgba(177, 122, 25, 0.28));
+  box-shadow: 0 26px 46px rgba(47, 91, 150, 0.16);
+  opacity: 0.54;
+}
+
+.ball-menu-pillar-left {
+  left: -8%;
+  transform: rotate(-6deg);
+}
+
+.ball-menu-pillar-right {
+  right: -7%;
+  transform: rotate(6deg);
+}
+
+.ball-menu-beam {
+  width: 54vw;
+  height: 18px;
+  border-radius: 999px;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.62), rgba(255, 212, 61, 0.44), transparent);
+  opacity: 0.68;
+  animation: ballBeamFlow 7s ease-in-out infinite;
+}
+
+.ball-menu-beam-one {
+  top: 31%;
+  left: -9%;
+  transform: rotate(-18deg);
+}
+
+.ball-menu-beam-two {
+  bottom: 18%;
+  right: -10%;
+  transform: rotate(13deg);
+  animation-delay: -2.8s;
+}
+
+.ball-menu-rock {
+  width: 118px;
+  height: 74px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.14), transparent 30%),
+    linear-gradient(180deg, #77736e, #4d4a46 72%, #343333);
+  clip-path: polygon(4% 16%, 46% 0, 96% 14%, 86% 70%, 61% 96%, 22% 88%, 0 54%);
+  box-shadow: 0 18px 28px rgba(47, 91, 150, 0.18);
+  opacity: 0.62;
+  animation: ballRockFloat 8s ease-in-out infinite;
+}
+
+.ball-menu-rock-one {
+  top: 16%;
+  left: 34%;
+  transform: rotate(-16deg);
+}
+
+.ball-menu-rock-two {
+  right: 20%;
+  bottom: 30%;
+  width: 86px;
+  height: 58px;
+  animation-delay: -2.2s;
+  transform: rotate(18deg);
+}
+
+.ball-menu-rock-three {
+  left: 16%;
+  bottom: 14%;
+  width: 92px;
+  height: 62px;
+  animation-delay: -4.2s;
+  transform: rotate(10deg);
+}
+
+.ball-game-hero {
+  position: relative;
+  z-index: 2;
+  min-height: calc(100svh - 74px);
+  display: grid;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  padding: clamp(44px, 6vw, 76px) 0 clamp(48px, 7vw, 92px);
+}
+
+.ball-hero-layout {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.7fr);
+  gap: clamp(30px, 4.6vw, 58px);
+  align-items: center;
+}
+
+.ball-hero-copy {
+  max-width: 850px;
+  padding: clamp(18px, 3vw, 38px) 0;
+}
+
+.ball-hero-copy h1 {
+  max-width: 840px;
+  margin-bottom: clamp(18px, 2.4vw, 28px);
+  color: var(--ball-ink);
+  font-size: clamp(4rem, 5.15vw, 6.2rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.55),
+    0 26px 70px rgba(47, 91, 150, 0.2);
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-hero-copy h1 {
+  text-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+}
+
+.ball-hero-copy .hero-copy {
+  max-width: 720px;
+  color: color-mix(in srgb, var(--text) 82%, var(--game-accent));
+  font-size: clamp(1.08rem, 1.55vw, 1.32rem);
+  line-height: 1.62;
+}
+
+.ball-hero-note {
+  max-width: 700px;
+  margin-bottom: 28px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.ball-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 760px;
+  margin-top: 18px;
+}
+
+.ball-hero-stats span {
+  min-height: 78px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 30%, var(--line));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(255, 255, 255, 0.22), transparent 34%),
+    radial-gradient(ellipse at 88% 20%, rgba(255, 212, 61, 0.14), transparent 36%),
+    repeating-linear-gradient(118deg, rgba(47, 91, 150, 0.045) 0 1px, transparent 1px 14px),
+    color-mix(in srgb, var(--surface-strong) 76%, transparent);
+  box-shadow: 0 18px 42px rgba(47, 91, 150, 0.12);
+  backdrop-filter: blur(14px) saturate(1.04);
+}
+
+.ball-hero-stats strong {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.ball-hero-stats small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.25;
+}
+
+.ball-hero-showcase {
+  position: relative;
+  min-height: clamp(520px, 58vw, 690px);
+  display: grid;
+  place-items: center;
+}
+
+.ball-device-frame {
+  --ball-cycle: 8.8s;
+  position: relative;
+  width: min(100%, 468px);
+  aspect-ratio: 0.72;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  border-radius: 30px;
+  background: rgba(143, 199, 255, 0.38);
+  box-shadow:
+    0 34px 82px rgba(47, 91, 150, 0.26),
+    0 0 0 9px rgba(255, 255, 255, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62);
+  isolation: isolate;
+  transform: none;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-device-frame {
+  border-color: rgba(214, 235, 255, 0.24);
+  background: rgba(7, 21, 48, 0.46);
+  box-shadow:
+    0 34px 82px rgba(0, 0, 0, 0.42),
+    0 0 0 9px rgba(255, 212, 61, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.ball-device-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 9;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 34%, rgba(18, 43, 93, 0.18)),
+    radial-gradient(ellipse at 50% 18%, rgba(255, 212, 61, 0.18), transparent 24%);
+  mix-blend-mode: screen;
+}
+
+.ball-stage-showcase {
+  position: absolute;
+  inset: 0;
+}
+
+.ball-stage-showcase .ball-bg {
+  inset: -10% -8%;
+  width: 116%;
+  height: 124%;
+  object-position: center 45%;
+  filter: saturate(1.08) contrast(1.05) brightness(0.94);
+}
+
+.ball-stage-showcase .ball-tower {
+  top: -34px;
+  width: clamp(132px, 29%, 172px);
+  height: 590px;
+}
+
+.ball-stage-showcase .ball-espa-wrap {
+  width: clamp(168px, 36%, 238px);
+}
+
+.ball-stage-showcase .ball-cloud {
+  filter: drop-shadow(0 10px 14px rgba(55, 101, 160, 0.12));
+}
+
+.ball-showcase-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  width: clamp(88px, 10.8vw, 126px);
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow:
+    0 18px 42px rgba(47, 91, 150, 0.26),
+    0 0 0 7px rgba(255, 255, 255, 0.24);
+  transition: opacity .28s var(--ease), transform .42s var(--ease);
+}
+
+.ball-showcase-icon-primary {
+  transform: rotate(-3deg);
+  animation: ballShowcaseIconPrimary var(--ball-cycle) var(--ease) infinite;
+}
+
+.ball-showcase-icon-alt {
+  opacity: 0;
+  transform: translate3d(18px, -18px, 0) rotate(8deg) scale(0.9);
+  animation: ballShowcaseIconAlt var(--ball-cycle) var(--ease) infinite;
+}
+
+.ball-preview-title {
+  position: absolute;
+  left: 26px;
+  top: 28px;
+  z-index: 10;
+  max-width: min(60%, 286px);
+  display: grid;
+  gap: 8px;
+}
+
+.ball-preview-title small,
+.ball-cycle b {
+  width: max-content;
+  max-width: 100%;
+  padding: 9px 12px;
+  border-radius: 999px;
+  color: #10213a;
+  background: rgba(255, 253, 246, 0.82);
+  box-shadow: 0 12px 26px rgba(47, 91, 150, 0.16);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.ball-preview-title strong {
+  color: #10213a;
+  font-size: clamp(3.15rem, 4.5vw, 4.9rem);
+  line-height: 0.9;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.58),
+    0 18px 44px rgba(47, 91, 150, 0.22);
+}
+
+.ball-cycle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ball-cycle b {
+  color: #725010;
+  font-size: 0.72rem;
+}
+
+.ball-device-frame .magic-hud {
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 22px;
+  z-index: 11;
+  color: #10213a;
+  background: rgba(255, 253, 246, 0.82);
+  border-color: rgba(146, 103, 25, 0.18);
+}
+
+.ball-device-frame .hud-dot {
+  background: #ffd43d;
+  box-shadow: 0 0 18px rgba(255, 212, 61, 0.58);
+  animation: ballHudPulse 1.8s ease-in-out infinite;
+}
+
+.ball-device-frame .hud-dot:nth-child(2) {
+  animation-delay: .25s;
+}
+
+.ball-device-frame .hud-dot:nth-child(3) {
+  animation-delay: .5s;
+}
+
+.ball-is-god-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding-top: clamp(42px, 5vw, 76px);
+  padding-bottom: 108px;
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.ball-is-god-page .game-page-section,
+.ball-is-god-page .game-page-updates {
+  padding-inline: 0;
+  border-color: transparent;
+  border-radius: 0;
+  backdrop-filter: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.ball-is-god-page .game-page-section + .game-page-section,
+.ball-is-god-page .game-page-section + .game-page-updates {
+  border-top: 0;
+  padding-top: clamp(30px, 4vw, 52px);
+}
+
+.ball-is-god-page .game-page-section h2,
+.ball-is-god-page .game-page-updates h2 {
+  max-width: 940px;
+  text-shadow:
+    0 2px 0 rgba(255, 255, 255, 0.5),
+    0 18px 46px rgba(47, 91, 150, 0.14);
+}
+
+.ball-is-god-page[data-theme="dark"] .game-page-section h2,
+.ball-is-god-page[data-theme="dark"] .game-page-updates h2 {
+  text-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+}
+
+@media (min-width: 901px) {
+  .ball-is-god-page .ball-story-section {
+    padding-top: clamp(34px, 4.4vw, 64px);
+    padding-bottom: clamp(34px, 4.4vw, 64px);
+  }
+
+  .ball-is-god-page .ball-story-section + .ball-story-section {
+    padding-top: clamp(20px, 3vw, 38px);
+  }
+
+  .ball-is-god-page .ball-story-section h2 {
+    max-width: 790px;
+    margin-bottom: clamp(18px, 2.2vw, 28px);
+    font-size: clamp(2.25rem, 3.05vw, 3.9rem);
+    line-height: 1.02;
+    text-wrap: balance;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid {
+    grid-template-columns: minmax(0, 0.84fr) minmax(390px, 0.56fr);
+    gap: clamp(36px, 5vw, 76px);
+    align-items: center;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid > div {
+    max-width: 720px;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid > div p {
+    max-width: 680px;
+    font-size: clamp(1.02rem, 1.04vw, 1.13rem);
+    line-height: 1.66;
+  }
+
+  .ball-is-god-page .ball-story-section .info-grid > div p + p {
+    margin-top: 16px;
+  }
+
+  .ball-is-god-page .ball-story-section .game-page-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+    padding: 24px;
+  }
+
+  .ball-is-god-page .ball-story-section .game-page-facts div {
+    gap: 6px;
+    min-height: 74px;
+    padding-bottom: 16px;
+  }
+
+  .ball-is-god-page .ball-story-section .game-page-facts div:nth-last-child(-n+2) {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+}
+
+.ball-is-god-page .detail-card,
+.ball-is-god-page .asset-link,
+.ball-is-god-page .update-list li,
+.ball-is-god-page .game-page-facts {
+  border-color: color-mix(in srgb, var(--game-accent) 25%, rgba(47, 91, 150, 0.16));
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(255, 255, 255, 0.24), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 212, 61, 0.12), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(47, 91, 150, 0.045) 0 1px, transparent 1px 13px),
+    rgba(247, 252, 255, 0.7);
+  box-shadow: 0 18px 42px rgba(47, 91, 150, 0.12);
+  backdrop-filter: blur(12px) saturate(1.04);
+}
+
+.ball-is-god-page[data-theme="dark"] .detail-card,
+.ball-is-god-page[data-theme="dark"] .asset-link,
+.ball-is-god-page[data-theme="dark"] .update-list li,
+.ball-is-god-page[data-theme="dark"] .game-page-facts {
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(126, 195, 255, 0.08), transparent 32%),
+    radial-gradient(ellipse at 84% 22%, rgba(255, 212, 61, 0.08), transparent 32%),
+    repeating-linear-gradient(118deg, rgba(214, 235, 255, 0.04) 0 1px, transparent 1px 13px),
+    rgba(7, 21, 48, 0.72);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+}
+
+.ball-is-god-page .game-page-section .eyebrow,
+.ball-is-god-page .game-page-updates .eyebrow {
+  background: rgba(247, 252, 255, 0.7);
+}
+
+.ball-is-god-page[data-theme="dark"] .game-page-section .eyebrow,
+.ball-is-god-page[data-theme="dark"] .game-page-updates .eyebrow {
+  background: rgba(7, 21, 48, 0.72);
+}
+
+.ball-cursor-mascot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: clamp(86px, 7vw, 132px);
+  height: clamp(48px, 3.9vw, 74px);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(-150px, -150px, 0);
+  transition: opacity .22s var(--ease);
+  will-change: transform, opacity;
+}
+
+.ball-cursor-mascot.is-active {
+  opacity: 0.88;
+}
+
+.ball-cursor-glow,
+.ball-cursor-image {
+  position: absolute;
+  pointer-events: none;
+}
+
+.ball-cursor-glow {
+  inset: -20px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba(255, 212, 61, 0.34), rgba(126, 195, 255, 0.18) 48%, transparent 72%);
+  filter: blur(1px);
+  animation: natureCursorPulse 2.8s ease-in-out infinite;
+}
+
+.ball-cursor-image {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 18px 20px rgba(47, 91, 150, 0.24))
+    drop-shadow(0 0 18px rgba(255, 212, 61, 0.28));
+  animation: natureCursorBreathe 3.35s ease-in-out infinite;
+}
+
+.ball-is-god-page[data-theme="dark"] .ball-cursor-image {
+  filter:
+    drop-shadow(0 20px 22px rgba(0, 0, 0, 0.42))
+    drop-shadow(0 0 22px rgba(255, 212, 61, 0.22));
+}
+
+@media (min-width: 921px) and (max-height: 980px) {
+  .ball-game-hero {
+    align-items: start;
+    padding: clamp(28px, 4vh, 46px) 0 42px;
+  }
+
+  .ball-hero-layout {
+    gap: clamp(24px, 3vw, 42px);
+    align-items: center;
+  }
+
+  .ball-hero-copy {
+    max-width: 760px;
+    padding: 0;
+  }
+
+  .ball-hero-copy h1 {
+    max-width: 720px;
+    margin-bottom: 16px;
+    font-size: clamp(3.7rem, 4.65vw, 5.25rem);
+  }
+
+  .ball-hero-copy .hero-copy {
+    max-width: 660px;
+    font-size: clamp(1rem, 1.14vw, 1.16rem);
+    line-height: 1.52;
+  }
+
+  .ball-hero-note {
+    max-width: 650px;
+    margin-bottom: 18px;
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .ball-hero-stats {
+    max-width: 690px;
+    margin-top: 14px;
+  }
+
+  .ball-hero-stats span {
+    min-height: 66px;
+    padding: 11px 12px;
+  }
+
+  .ball-hero-showcase {
+    min-height: min(650px, calc(100svh - 150px));
+  }
+
+  .ball-device-frame {
+    width: min(100%, 456px);
+  }
+
+  .ball-stage-showcase .ball-tower {
+    top: -40px;
+    height: 555px;
+  }
+
+  .ball-stage-showcase .ball-espa-wrap {
+    width: clamp(154px, 33%, 210px);
+  }
+}
+
+@media (min-width: 1121px) {
+  .hero-panel,
+  .nature-hero-showcase {
+    transform: translate3d(18px, -20px, 0);
+  }
+}
+

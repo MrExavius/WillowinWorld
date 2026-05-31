@@ -5,6 +5,27 @@ import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
+const cssFileNames = [
+  "styles.css",
+  "css/base.css",
+  "css/nature-scene.css",
+  "css/home-card-base.css",
+  "css/home-ball-card.css",
+  "css/home-nature-card.css",
+  "css/home-paint-card.css",
+  "css/home-candy-card.css",
+  "css/game-components.css",
+  "css/game-shell.css",
+  "css/game-content.css",
+  "css/nature-page.css",
+  "css/candy-page.css",
+  "css/paint-page.css",
+  "css/ball-page.css",
+  "css/press-kit.css",
+  "css/site-sections.css",
+  "css/keyframes.css",
+  "css/responsive.css"
+];
 
 async function walkFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -22,7 +43,7 @@ async function walkFiles(directory) {
 
 const files = {
   html: await readFile(new URL("../index.html", import.meta.url), "utf8"),
-  css: await readFile(new URL("../styles.css", import.meta.url), "utf8"),
+  cssFiles: Object.fromEntries(await Promise.all(cssFileNames.map(async file => [file, await readFile(new URL(`../${file}`, import.meta.url), "utf8")]))),
   motionCss: await readFile(new URL("../motion.css", import.meta.url), "utf8"),
   lostStarsCss: await readFile(new URL("../404.css", import.meta.url), "utf8"),
   js: await readFile(new URL("../scripts.js", import.meta.url), "utf8"),
@@ -140,7 +161,7 @@ for (const [name, js] of Object.entries({ "scripts.js": files.js, "game-theme.js
   forbidMatch(name, js, /\b(?:api[_-]?key|private[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._-]+)\b/i);
   forbidMatch(name, js, /\b[A-Z0-9]{3,}-(?:[A-Z0-9]+-){1,}[A-Z0-9]{2,}\b/);
 }
-for (const [name, css] of Object.entries({ "styles.css": files.css, "motion.css": files.motionCss, "404.css": files.lostStarsCss })) {
+for (const [name, css] of Object.entries({ ...files.cssFiles, "motion.css": files.motionCss, "404.css": files.lostStarsCss })) {
   forbidMatch(name, css, /@import\s+url\s*\(/i);
   forbidMatch(name, css, /url\(\s*["']?(?:https?:|\/\/)/i);
 }
