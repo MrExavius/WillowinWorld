@@ -25,6 +25,14 @@
   const closeCareers = document.getElementById("closeCareers");
   const pressModal = document.getElementById("pressModal");
   const closePress = document.getElementById("closePress");
+  const privacyModal = document.getElementById("privacyModal");
+  const closePrivacy = document.getElementById("closePrivacy");
+  const legalModal = document.getElementById("legalModal");
+  const closeLegal = document.getElementById("closeLegal");
+  const assetModal = document.getElementById("assetModal");
+  const closeAsset = document.getElementById("closeAsset");
+  const securityModal = document.getElementById("securityModal");
+  const closeSecurity = document.getElementById("closeSecurity");
   const gameModal = document.getElementById("gameModal");
   const gameDialog = document.getElementById("gameDialog");
   const closeGame = document.getElementById("closeGame");
@@ -1361,7 +1369,11 @@
   let activeContactTrigger = null;
   const infoModals = {
     careers: { modal: careersModal, closeButton: closeCareers },
-    press: { modal: pressModal, closeButton: closePress }
+    press: { modal: pressModal, closeButton: closePress },
+    privacy: { modal: privacyModal, closeButton: closePrivacy },
+    legal: { modal: legalModal, closeButton: closeLegal },
+    asset: { modal: assetModal, closeButton: closeAsset },
+    security: { modal: securityModal, closeButton: closeSecurity }
   };
 
   function renderGameProfile(key) {
@@ -1411,11 +1423,13 @@
   function openInfoModal(key, trigger) {
     const entry = infoModals[key];
     if (!entry || !entry.modal) return;
+    const nextTrigger = trigger || document.activeElement;
+    const triggerInsideOpenModal = nextTrigger instanceof Element && Boolean(nextTrigger.closest(".modal.is-open"));
     closeGameDetails(false);
     closeContactModal(false);
     closeSecretReward();
     closeInfoModals(false);
-    activeInfoTrigger = trigger || document.activeElement;
+    if (!triggerInsideOpenModal) activeInfoTrigger = nextTrigger;
     entry.modal.hidden = false;
     entry.modal.classList.add("is-open");
     syncModalLock();
@@ -1441,7 +1455,10 @@
   }
 
   function getOpenModal() {
-    return [contactModal, careersModal, pressModal, gameModal, secretModal].find(modal => modal.classList.contains("is-open")) || null;
+    const infoModal = Object.values(infoModals)
+      .map(entry => entry.modal)
+      .find(modal => modal && modal.classList.contains("is-open"));
+    return [contactModal, infoModal, gameModal, secretModal].find(modal => modal && modal.classList.contains("is-open")) || null;
   }
 
   function trapModalFocus(event) {
@@ -1469,10 +1486,11 @@
   }
 
   function syncModalLock() {
+    const infoModalOpen = Object.values(infoModals)
+      .some(entry => entry.modal && entry.modal.classList.contains("is-open"));
     const modalOpen =
       contactModal.classList.contains("is-open") ||
-      careersModal.classList.contains("is-open") ||
-      pressModal.classList.contains("is-open") ||
+      infoModalOpen ||
       gameModal.classList.contains("is-open") ||
       secretModal.classList.contains("is-open");
     body.classList.toggle("modal-open", modalOpen);
@@ -1548,10 +1566,6 @@
         active ? `Hidden promo letter ${letter}` : "Hidden promo letter"
       );
     });
-    document.querySelectorAll("[data-enable-secret-hunt]").forEach(button => {
-      button.setAttribute("aria-pressed", active ? "true" : "false");
-      button.textContent = active ? "Promo Hunt On" : "Promo Word Hunt";
-    });
   }
 
   function initSecrets() {
@@ -1580,13 +1594,7 @@
       });
     });
 
-    document.querySelectorAll("[data-enable-secret-hunt]").forEach(button => {
-      button.addEventListener("click", () => {
-        const active = !body.classList.contains("promo-hunt-active");
-        syncSecretHuntMode(active);
-        showToast(active ? "Promo hunt enabled. Find the glowing letters." : "Promo hunt hidden in the magic again.");
-      });
-    });
+    syncSecretHuntMode(true);
   }
 
   function openMenu() {
@@ -1762,7 +1770,7 @@
         });
         if (status) {
           status.textContent = filter === "All"
-            ? "Showing all game worlds."
+            ? ""
             : "Showing " + visibleCount + " " + filter.toLowerCase() + " game" + (visibleCount === 1 ? "." : "s.");
         }
       };
@@ -1848,13 +1856,12 @@
     contactModal.addEventListener("click", event => {
       if (event.target === contactModal) closeContactModal();
     });
-    closeCareers.addEventListener("click", () => closeInfoModal("careers"));
-    careersModal.addEventListener("click", event => {
-      if (event.target === careersModal) closeInfoModal("careers");
-    });
-    closePress.addEventListener("click", () => closeInfoModal("press"));
-    pressModal.addEventListener("click", event => {
-      if (event.target === pressModal) closeInfoModal("press");
+    Object.entries(infoModals).forEach(([key, entry]) => {
+      if (!entry.modal || !entry.closeButton) return;
+      entry.closeButton.addEventListener("click", () => closeInfoModal(key));
+      entry.modal.addEventListener("click", event => {
+        if (event.target === entry.modal) closeInfoModal(key);
+      });
     });
     closeSecret.addEventListener("click", closeSecretReward);
     dismissSecret.addEventListener("click", closeSecretReward);

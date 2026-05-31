@@ -792,7 +792,7 @@ h1 {
 
 .hero-panel {
   position: relative;
-  min-height: clamp(430px, 52svh, 540px);
+  min-height: clamp(500px, 62svh, 650px);
   border: 1px solid color-mix(in srgb, var(--paper) 34%, var(--line));
   border-radius: 26px;
   background:
@@ -1295,6 +1295,22 @@ h1 {
   margin-bottom: 0;
 }
 
+#systems .section-head,
+#process .section-head,
+#faq .section-head {
+  justify-content: center;
+  text-align: center;
+}
+
+#systems .section-head > div,
+#process .section-head > div,
+#faq .section-head > div,
+#systems .section-head .section-title,
+#process .section-head .section-title,
+#faq .section-head .section-title {
+  margin-inline: auto;
+}
+
 @media (min-width: 921px) {
   .section-head {
     display: grid;
@@ -1453,6 +1469,10 @@ h1 {
   margin: -2px 0 18px;
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.filter-status:empty {
+  display: none;
 }
 
 .games-grid {
@@ -3593,7 +3613,7 @@ body.nature-seed-page::after {
 
 .nature-hero-showcase {
   position: relative;
-  min-height: clamp(430px, 52svh, 540px);
+  min-height: clamp(500px, 62svh, 650px);
 }
 
 .nature-device-frame {
@@ -3695,7 +3715,7 @@ body.nature-seed-page::after {
   top: 24px;
   right: 24px;
   z-index: 10;
-  width: clamp(86px, 11vw, 124px);
+  width: clamp(94px, 12vw, 138px);
   height: auto;
   aspect-ratio: 1;
   border: 1px solid rgba(108, 88, 40, 0.24);
@@ -5752,7 +5772,7 @@ body.ball-is-god-page[data-theme="dark"] {
 .ball-device-frame {
   --ball-cycle: 8.8s;
   position: relative;
-  width: min(100%, 456px);
+  width: min(100%, 468px);
   aspect-ratio: 0.72;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.62);
@@ -5763,7 +5783,7 @@ body.ball-is-god-page[data-theme="dark"] {
     0 0 0 9px rgba(255, 255, 255, 0.24),
     inset 0 1px 0 rgba(255, 255, 255, 0.62);
   isolation: isolate;
-  transform: rotate(1.2deg);
+  transform: none;
 }
 
 .ball-is-god-page[data-theme="dark"] .ball-device-frame {
@@ -5799,6 +5819,7 @@ body.ball-is-god-page[data-theme="dark"] {
   width: 116%;
   height: 124%;
   object-position: center 45%;
+  filter: saturate(1.08) contrast(1.05) brightness(0.94);
 }
 
 .ball-stage-showcase .ball-tower {
@@ -5820,7 +5841,7 @@ body.ball-is-god-page[data-theme="dark"] {
   top: 24px;
   right: 24px;
   z-index: 10;
-  width: clamp(82px, 10vw, 118px);
+  width: clamp(88px, 10.8vw, 126px);
   height: auto;
   aspect-ratio: 1;
   border: 1px solid rgba(255, 255, 255, 0.58);
@@ -5868,7 +5889,7 @@ body.ball-is-god-page[data-theme="dark"] {
 
 .ball-preview-title strong {
   color: #10213a;
-  font-size: clamp(3.05rem, 4.35vw, 4.7rem);
+  font-size: clamp(3.15rem, 4.5vw, 4.9rem);
   line-height: 0.9;
   text-shadow:
     0 2px 0 rgba(255, 255, 255, 0.58),
@@ -6138,11 +6159,11 @@ body.ball-is-god-page[data-theme="dark"] {
   }
 
   .ball-hero-showcase {
-    min-height: min(610px, calc(100svh - 170px));
+    min-height: min(650px, calc(100svh - 150px));
   }
 
   .ball-device-frame {
-    width: min(100%, 398px);
+    width: min(100%, 456px);
   }
 
   .ball-stage-showcase .ball-tower {
@@ -6152,6 +6173,13 @@ body.ball-is-god-page[data-theme="dark"] {
 
   .ball-stage-showcase .ball-espa-wrap {
     width: clamp(154px, 33%, 210px);
+  }
+}
+
+@media (min-width: 1121px) {
+  .hero-panel,
+  .nature-hero-showcase {
+    transform: translate3d(18px, -20px, 0);
   }
 }
 
@@ -7727,8 +7755,27 @@ body.ball-is-god-page[data-theme="dark"] {
   font-size: 0.94rem;
 }
 
-.footer-links a:hover {
+.footer-links a,
+.footer-links button {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  transition: color .25s var(--ease);
+}
+
+.footer-links a:hover,
+.footer-links button:hover,
+.footer-links button:focus-visible {
   color: var(--text);
+}
+
+.footer-links button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--cyan) 70%, transparent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .footer-contact {
@@ -9028,7 +9075,7 @@ body.magic-off .secret-glint {
   }
 
   .hero-panel {
-    min-height: clamp(420px, 50svh, 500px);
+    min-height: clamp(470px, 58svh, 600px);
   }
 }
 
@@ -9295,7 +9342,7 @@ body.magic-off .secret-glint {
   }
 
   .nature-hero-showcase {
-    min-height: 480px;
+    min-height: 540px;
   }
 
   .candy-hero-showcase {
@@ -9318,7 +9365,7 @@ body.magic-off .secret-glint {
   }
 
   .hero-panel {
-    min-height: 480px;
+    min-height: 540px;
   }
 
   .section-head {
@@ -9542,7 +9589,7 @@ body.magic-off .secret-glint {
   }
 
   .nature-hero-showcase {
-    min-height: 410px;
+    min-height: 480px;
   }
 
   .candy-hero-showcase {
@@ -9572,7 +9619,7 @@ body.magic-off .secret-glint {
   }
 
   .ball-device-frame {
-    width: min(100%, 340px);
+    width: min(100%, 360px);
     border-radius: 24px;
   }
 
@@ -9820,7 +9867,7 @@ body.magic-off .secret-glint {
   }
 
   .hero-panel {
-    min-height: 420px;
+    min-height: 470px;
     border-radius: 22px;
   }
 
