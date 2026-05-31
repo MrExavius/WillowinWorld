@@ -36,6 +36,10 @@ const cssFiles = [
   "css/press-kit.css",
   "css/site-sections.css",
   "css/keyframes.css",
+  "css/responsive-desktop.css",
+  "css/responsive-tablet.css",
+  "css/responsive-mobile.css",
+  "css/responsive-preferences.css",
   "css/responsive.css",
   "motion.css",
   "404.css"

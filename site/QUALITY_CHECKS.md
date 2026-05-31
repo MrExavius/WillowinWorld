@@ -3,6 +3,8 @@
 Local checks:
 
 - `node site/tools/quality-check.mjs`
+- `node site/tools/link-check.mjs`
+- `node site/tools/visual-check.mjs`
 - `node site/tools/css-coverage-audit.mjs`
 - `node site/tools/build-minified.mjs`
 - `node site/tools/update-sitemap-lastmod.mjs`

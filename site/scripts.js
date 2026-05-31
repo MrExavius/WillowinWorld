@@ -84,6 +84,7 @@
     paused: false,
     disabled: false,
     lowMotion: false,
+    lowData: false,
     playMode: false,
     completed: false,
     inactive: false,
@@ -224,15 +225,22 @@
   const slowNetwork = Boolean(connection && /(^slow-2g$|^2g$|^3g$)/i.test(connection.effectiveType || ""));
   const smallScreen = window.matchMedia("(max-width: 640px)").matches;
 
-  if (prefersReduced || saveData || slowNetwork) {
+  state.lowData = saveData || slowNetwork;
+
+  if (prefersReduced) {
     state.lowMotion = true;
     state.quality = "Low";
     body.classList.add("low-motion");
   }
 
+  if (state.lowData) {
+    state.quality = "Low";
+    body.classList.add("low-data");
+  }
+
   if (smallScreen) {
     state.particleCount = 24;
-  } else if (state.lowMotion) {
+  } else if (state.lowMotion || state.lowData) {
     state.particleCount = 18;
   }
 
@@ -270,9 +278,9 @@
   }
 
   function updateLabels() {
-    if (magicState) magicState.textContent = state.disabled ? "Static" : state.playMode ? "Play" : state.paused ? "Paused" : state.lowMotion ? "Low" : "Ambient";
+    if (magicState) magicState.textContent = state.disabled ? "Static" : state.playMode ? "Play" : state.paused ? "Paused" : state.lowMotion || state.lowData ? "Low" : "Ambient";
     if (qualityState) qualityState.textContent = state.quality;
-    if (modePill) modePill.textContent = state.disabled ? "STATIC" : state.lowMotion ? "LOW" : state.playMode ? "PLAY" : "AUTO";
+    if (modePill) modePill.textContent = state.disabled ? "STATIC" : state.lowMotion || state.lowData ? "LOW" : state.playMode ? "PLAY" : "AUTO";
     if (themeState) themeState.textContent = state.theme === "dark" ? "Night Magic" : "Daylight";
     if (pauseMagic) pauseMagic.textContent = state.paused ? "Resume Magic" : "Pause Magic";
     if (lowMotion) lowMotion.textContent = state.lowMotion ? "Full Magic" : "Low Motion";
@@ -282,7 +290,7 @@
   function resize() {
     state.width = window.innerWidth;
     state.height = window.innerHeight;
-    const maxDpr = state.lowMotion ? 1.2 : state.width < 760 ? 1.15 : state.width > 1760 || state.height > 980 ? 1.45 : 1.65;
+    const maxDpr = state.lowMotion || state.lowData ? 1.2 : state.width < 760 ? 1.15 : state.width > 1760 || state.height > 980 ? 1.45 : 1.65;
     state.dpr = Math.min(window.devicePixelRatio || 1, maxDpr);
     canvas.width = Math.floor(state.width * state.dpr);
     canvas.height = Math.floor(state.height * state.dpr);
@@ -298,7 +306,7 @@
   }
 
   function targetFrameInterval() {
-    if (state.lowMotion) return 1000 / 31;
+    if (state.lowMotion || state.lowData) return 1000 / 31;
     if (state.width < 760 || state.height < 620) return 1000 / 31;
     return 0;
   }
@@ -1824,7 +1832,7 @@
     if (lowMotion) {
       lowMotion.addEventListener("click", () => {
         state.lowMotion = !state.lowMotion;
-        state.quality = state.lowMotion ? "Low" : "Auto";
+        state.quality = state.lowMotion || state.lowData ? "Low" : "Auto";
         body.classList.toggle("low-motion", state.lowMotion);
         state.backgroundCacheKey = "";
         seedScene();

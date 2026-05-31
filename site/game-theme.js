@@ -5,6 +5,12 @@
   const metaThemeColor = document.getElementById("metaThemeColor");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
   const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
+  const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const lowData = Boolean(connection && (connection.saveData || /(^slow-2g$|^2g$|^3g$)/i.test(connection.effectiveType || "")));
+
+  if (lowData) {
+    body.classList.add("low-data");
+  }
 
   function readStoredTheme() {
     try {
@@ -114,7 +120,7 @@
 
         if (status) {
           status.textContent = filter === "All"
-            ? `Showing all ${visibleCount} game worlds.`
+            ? ""
             : `Showing ${visibleCount} ${filter} game ${visibleCount === 1 ? "world" : "worlds"}.`;
         }
       };
@@ -129,7 +135,7 @@
     if (!body.classList.contains(options.pageClass)) return;
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (!finePointer.matches || reducedMotion.matches) return;
+    if (!finePointer.matches || reducedMotion.matches || lowData) return;
 
     const mascot = document.createElement("div");
     mascot.className = options.mascotClass;

@@ -1,0 +1,321 @@
+/* WillowinWorld CSS: tablet navigation, grids and game hero rules. */
+@media (max-width: 1120px) {
+  .main-nav {
+    position: fixed;
+    top: var(--header-h);
+    left: 20px;
+    right: 20px;
+    display: grid;
+    gap: 4px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--surface-strong);
+    box-shadow: var(--shadow);
+    transform: translateY(-16px);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform .25s var(--ease), opacity .25s var(--ease), visibility .25s var(--ease);
+  }
+
+  .main-nav a {
+    opacity: 0;
+    transform: translateY(-8px);
+    animation: none;
+  }
+
+  .menu-open .main-nav {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .menu-open .main-nav a {
+    animation: navLinkEnter .28s var(--ease) both;
+    animation-delay: calc(70ms + (var(--nav-index) * 48ms));
+  }
+
+  .main-nav a {
+    padding: 14px 16px;
+  }
+
+  .menu-toggle {
+    display: inline-grid;
+  }
+
+  .header-actions .contact-header {
+    display: none;
+  }
+
+  .principles-grid,
+  .systems-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .detail-grid,
+  .press-kit-grid,
+  .asset-list,
+  .related-world-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .press-status-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .press-kit-hub,
+  .press-window-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .devlog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .timeline {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .step::after {
+    display: none;
+  }
+}
+
+@media (max-width: 920px) {
+  :root {
+    --header-h: 70px;
+  }
+
+  .container {
+    width: min(var(--max), calc(100% - 28px));
+  }
+
+  .section {
+    padding: 78px 0;
+  }
+
+  .section:first-of-type {
+    padding-top: calc(var(--header-h) + 44px);
+  }
+
+  .hero-grid,
+  .about-grid,
+  .game-page-grid,
+  .info-grid,
+  .update-list,
+  .detail-grid,
+  .press-kit-grid,
+  .asset-list,
+  .related-world-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .press-status-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .game-detail-topbar {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px 14px;
+    padding-inline: 14px;
+  }
+
+  .game-detail-nav {
+    grid-column: 1 / -1;
+    order: 3;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .game-detail-page .game-detail-shell {
+    padding-top: 34px;
+  }
+
+  .game-detail-page .game-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nature-seed-shell {
+    padding-top: 0;
+  }
+
+  .candy-shop-shell {
+    padding-top: 0;
+  }
+
+  .paint-blasters-shell {
+    padding-top: 0;
+  }
+
+  .ball-is-god-shell {
+    padding-top: 0;
+  }
+
+  .section.press-kit-ocean-shell {
+    padding-top: 28px;
+  }
+
+  .press-kit-ocean-page .press-kit-hub h1 {
+    font-size: clamp(2.7rem, 11.6vw, 3.85rem);
+  }
+
+  .press-kit-nav {
+    gap: 8px;
+    margin: 18px 0;
+  }
+
+  .press-kit-nav .filter-btn {
+    min-height: 38px;
+    padding: 9px 12px;
+    font-size: 0.86rem;
+  }
+
+  .press-window-grid,
+  .press-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .press-window {
+    min-height: 180px;
+  }
+
+  .press-contact-grid .hero-actions {
+    justify-content: stretch;
+  }
+
+  .nature-game-hero {
+    min-height: auto;
+    padding: 42px 0 64px;
+  }
+
+  .candy-game-hero {
+    min-height: auto;
+    padding: 42px 0 64px;
+  }
+
+  .paint-game-hero {
+    min-height: auto;
+    padding: 42px 0 64px;
+  }
+
+  .ball-game-hero {
+    min-height: auto;
+    padding: 42px 0 64px;
+  }
+
+  .nature-hero-layout {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .candy-hero-layout {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .paint-hero-layout {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .ball-hero-layout {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .nature-hero-copy {
+    max-width: 760px;
+    padding-top: 0;
+  }
+
+  .candy-hero-copy {
+    max-width: 760px;
+    padding-top: 0;
+  }
+
+  .paint-hero-copy {
+    max-width: 760px;
+    padding-top: 0;
+  }
+
+  .ball-hero-copy {
+    max-width: 760px;
+    padding-top: 0;
+  }
+
+  .nature-hero-copy h1 {
+    font-size: clamp(3.45rem, 10vw, 5rem);
+  }
+
+  .candy-hero-copy h1 {
+    font-size: clamp(3.35rem, 9.8vw, 4.9rem);
+  }
+
+  .paint-hero-copy h1 {
+    font-size: clamp(3.35rem, 9.8vw, 4.9rem);
+  }
+
+  .ball-hero-copy h1 {
+    font-size: clamp(3.35rem, 9.8vw, 4.9rem);
+  }
+
+  .nature-hero-showcase {
+    min-height: 540px;
+  }
+
+  .candy-hero-showcase {
+    min-height: 540px;
+    place-items: start center;
+  }
+
+  .paint-hero-showcase {
+    min-height: 540px;
+    place-items: start center;
+  }
+
+  .ball-hero-showcase {
+    min-height: 540px;
+    place-items: start center;
+  }
+
+  .nature-hero-bg .nature-growth {
+    width: min(92vw, 620px);
+  }
+
+  .hero-panel {
+    min-height: 540px;
+  }
+
+  .section-head {
+    display: block;
+  }
+
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .game-card {
+    min-height: auto;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-contact {
+    justify-content: flex-start;
+  }
+
+  .about-copy,
+  .symbol-card {
+    min-height: auto;
+  }
+
+  .symbol-stage {
+    min-height: 220px;
+  }
+}

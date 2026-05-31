@@ -1,0 +1,67 @@
+/* WillowinWorld CSS: data, contrast and reduced motion preferences. */
+@media (max-width: 760px) {
+  .floating-rune,
+  .secret-glint,
+  .press-ocean-fish,
+  .press-ocean-bubble,
+  .paint-ship-panel {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-data: reduce) {
+  .press-ocean-fish,
+  .press-ocean-bubble,
+  .paint-ship-panel {
+    display: none !important;
+  }
+}
+
+body.low-data .floating-rune,
+body.low-data .press-ocean-fish,
+body.low-data .press-ocean-bubble,
+body.low-data .paint-ship-panel {
+  display: none !important;
+}
+
+@media (prefers-contrast: more) {
+  :root,
+  [data-theme="light"] {
+    --muted: color-mix(in srgb, var(--text) 82%, var(--cyan));
+    --muted-2: color-mix(in srgb, var(--text) 70%, var(--cyan));
+    --line: color-mix(in srgb, var(--text) 34%, var(--cyan));
+  }
+
+  .btn,
+  .filter-btn,
+  .soft-card,
+  .game-card,
+  .detail-card,
+  .asset-link,
+  .press-status-strip {
+    border-color: color-mix(in srgb, var(--text) 44%, var(--cyan));
+  }
+
+  .btn:focus-visible,
+  .icon-btn:focus-visible,
+  .filter-btn:focus-visible,
+  .faq-question:focus-visible {
+    outline-width: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

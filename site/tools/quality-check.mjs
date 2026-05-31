@@ -7,6 +7,9 @@ const commands = [
   ["node", ["--check", "site/tools/update-sitemap-lastmod.mjs"]],
   ["node", ["--check", "site/tools/build-minified.mjs"]],
   ["node", ["--check", "site/tools/css-coverage-audit.mjs"]],
+  ["node", ["--check", "site/tools/link-check.mjs"]],
+  ["node", ["--check", "site/tools/visual-check.mjs"]],
+  ["node", ["site/tools/link-check.mjs"]],
   ["node", ["site/tools/security-check.mjs"]]
 ];
 
@@ -30,7 +33,10 @@ const externalChecks = [
   "Real Android and iOS device pass"
 ];
 
-console.log("\nExternal checks that require deployed URL, browser automation or account access:");
+console.log("\nLocal browser check available:");
+console.log("- node site/tools/visual-check.mjs");
+
+console.log("\nExternal checks that require deployed URL, account access or real devices:");
 externalChecks.forEach(item => console.log(`- ${item}`));
 
 process.exit(failed ? 1 : 0);

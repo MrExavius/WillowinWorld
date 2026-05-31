@@ -133,6 +133,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  scrollbar-width: none;
+}
+
+.game-detail-nav::-webkit-scrollbar {
+  display: none;
 }
 
 .game-detail-nav a,
