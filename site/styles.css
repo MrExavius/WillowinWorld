@@ -10897,7 +10897,7 @@ body.magic-off .secret-glint {
   }
 }
 
-@media (max-width: 760px), (prefers-reduced-data: reduce) {
+@media (max-width: 760px) {
   .floating-rune,
   .secret-glint,
   .press-ocean-fish,
@@ -10905,12 +10905,13 @@ body.magic-off .secret-glint {
   .paint-ship-panel {
     display: none !important;
   }
+}
 
-  .ambient-only,
-  .ambient-only::before,
-  .ambient-only::after {
-    animation: none !important;
-    filter: none !important;
+@media (prefers-reduced-data: reduce) {
+  .press-ocean-fish,
+  .press-ocean-bubble,
+  .paint-ship-panel {
+    display: none !important;
   }
 }
 

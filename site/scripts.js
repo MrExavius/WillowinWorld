@@ -198,13 +198,12 @@
   ];
 
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const prefersReducedData = typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-data: reduce)").matches;
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   const saveData = Boolean(connection && connection.saveData);
   const slowNetwork = Boolean(connection && /(^slow-2g$|^2g$|^3g$)/i.test(connection.effectiveType || ""));
   const smallScreen = window.matchMedia("(max-width: 640px)").matches;
 
-  if (prefersReduced || prefersReducedData || saveData || slowNetwork) {
+  if (prefersReduced || saveData || slowNetwork) {
     state.lowMotion = true;
     state.quality = "Low";
     body.classList.add("low-motion");
