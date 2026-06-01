@@ -48,6 +48,7 @@
   const dismissSecret = document.getElementById("dismissSecret");
   const secretTitle = document.getElementById("secretTitle");
   const secretMessage = document.getElementById("secretMessage");
+  const claimSecret = document.getElementById("claimSecret");
   const metaThemeColor = document.getElementById("metaThemeColor");
   const mascotImage = new Image();
   const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -184,25 +185,25 @@
       key: "ball",
       phrase: "Ball is God?!",
       title: "Ball is God?! promo word found",
-      message: "You found the hidden Ball is God?! word. Use this claim phrase when requesting a promo code from WillowinWorld."
+      message: "You found the hidden Ball is God?! word. Promo codes are issued manually by WillowinWorld after a claim review."
     },
     {
       key: "candy",
       phrase: "Candy Shop",
       title: "Candy Shop promo word found",
-      message: "You found the hidden Candy Shop word. Use this claim phrase when requesting a promo code from WillowinWorld."
+      message: "You found the hidden Candy Shop word. Promo codes are issued manually by WillowinWorld after a claim review."
     },
     {
       key: "paint",
       phrase: "Paint Blasters",
       title: "Paint Blasters promo word found",
-      message: "You found the hidden Paint Blasters word. Use this claim phrase when requesting a promo code from WillowinWorld."
+      message: "You found the hidden Paint Blasters word. Promo codes are issued manually by WillowinWorld after a claim review."
     },
     {
       key: "seed",
       phrase: "Nature Seed",
       title: "Nature Seed promo word found",
-      message: "You found the hidden Nature Seed word. Use this claim phrase when requesting a promo code from WillowinWorld."
+      message: "You found the hidden Nature Seed word. Promo codes are issued manually by WillowinWorld after a claim review."
     }
   ].map(secret => ({
     ...secret,
@@ -1504,13 +1505,36 @@
     body.classList.toggle("modal-open", modalOpen);
   }
 
+  function createPromoClaimId(secret) {
+    const stamp = Date.now().toString(36).toUpperCase();
+    const random = Math.random().toString(36).slice(2, 8).toUpperCase();
+    return `WILLOW-${secret.key.toUpperCase()}-${stamp}-${random}`;
+  }
+
+  function buildPromoClaimHref(secret, claimId) {
+    const subject = encodeURIComponent(`Promo claim - ${secret.phrase}`);
+    const body = encodeURIComponent(
+      "Hi WillowinWorld,\n\n" +
+      "I found the hidden promo word on the WillowinWorld website.\n\n" +
+      `Claim phrase: ${secret.phrase}\n` +
+      `Claim ID: ${claimId}\n\n` +
+      "I understand this does not reveal a real promo code on the website and that the studio reviews claims manually.\n"
+    );
+    return `mailto:contact@willowinworld.com?subject=${subject}&body=${body}`;
+  }
+
   function openSecretReward(secret) {
+    const claimId = createPromoClaimId(secret);
     secretTitle.textContent = secret.title;
-    secretMessage.textContent = `${secret.message} Claim phrase: ${secret.phrase}.`;
+    secretMessage.textContent = `${secret.message} Claim phrase: ${secret.phrase}. Claim ID: ${claimId}.`;
+    if (claimSecret) {
+      claimSecret.href = buildPromoClaimHref(secret, claimId);
+      claimSecret.textContent = "Request Promo Code";
+    }
     secretModal.hidden = false;
     secretModal.classList.add("is-open");
     syncModalLock();
-    window.setTimeout(() => dismissSecret.focus(), 30);
+    window.setTimeout(() => (claimSecret || dismissSecret).focus(), 30);
   }
 
   function closeSecretReward() {

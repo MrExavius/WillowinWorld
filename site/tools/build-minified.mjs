@@ -18,7 +18,6 @@ const staticFiles = [
 ];
 
 const cssFiles = [
-  "styles.css",
   "css/base.css",
   "css/nature-scene.css",
   "css/home-card-base.css",
@@ -40,7 +39,6 @@ const cssFiles = [
   "css/responsive-tablet.css",
   "css/responsive-mobile.css",
   "css/responsive-preferences.css",
-  "css/responsive.css",
   "motion.css",
   "404.css"
 ];

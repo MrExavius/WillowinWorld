@@ -11,6 +11,10 @@ Do not ship any real promo code, private key, admin token, API secret, unpublish
 game build, or access-control rule in this repository. A real reward claim should
 be issued by a server after the secret interaction is verified or redeemed.
 
+The promo word hunt is a claim flow, not a code vault. It may reveal a claim
+phrase and a client-generated claim ID for manual review, but real promo codes
+must be issued privately by email or a server-side redemption system.
+
 ## Current site posture
 
 - No external JavaScript, CSS, fonts, images, embeds, analytics, or CDNs.
@@ -38,6 +42,15 @@ be issued by a server after the secret interaction is verified or redeemed.
 
 `Strict-Transport-Security` currently uses one year without `includeSubDomains`.
 Add `includeSubDomains` or preload only after every subdomain is HTTPS-ready.
+Optional preload snippets live in `deploy/hsts-preload-nginx.conf` and
+`deploy/hsts-preload-apache.htaccess`; keep them disabled until that condition is
+true.
+
+## Asset folder migration
+
+Legacy public asset folders still include spaces for compatibility with current
+URLs. A future slug migration should follow `deploy/asset-folder-migration.md`
+and ship redirects before any legacy folders are removed.
 
 ## Contact form release path
 

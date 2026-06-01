@@ -5,7 +5,6 @@ import { fileURLToPath } from "node:url";
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const reportPath = join(siteRoot, "reports", "css-coverage.json");
 const cssFiles = [
-  "styles.css",
   "css/base.css",
   "css/nature-scene.css",
   "css/home-card-base.css",
@@ -27,7 +26,6 @@ const cssFiles = [
   "css/responsive-tablet.css",
   "css/responsive-mobile.css",
   "css/responsive-preferences.css",
-  "css/responsive.css",
   "motion.css"
 ];
 const css = (await Promise.all(cssFiles.map(file => readFile(join(siteRoot, file), "utf8")))).join("\n");

@@ -1,0 +1,8 @@
+# Optional redirects for a future migration from legacy asset folders with spaces
+# to lowercase slug folders. Enable only after the new target folders exist.
+
+RewriteEngine On
+RewriteRule ^assets/Nature\ Seeds/(.*)$ /assets/nature-seeds/$1 [R=301,L]
+RewriteRule ^assets/Candy\ Shop/(.*)$ /assets/candy-shop/$1 [R=301,L]
+RewriteRule ^assets/Paint\ Blasters/(.*)$ /assets/paint-blasters/$1 [R=301,L]
+RewriteRule ^assets/Ball\ is\ God/(.*)$ /assets/ball-is-god/$1 [R=301,L]

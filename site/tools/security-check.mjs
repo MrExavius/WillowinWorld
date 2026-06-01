@@ -6,7 +6,6 @@ import { fileURLToPath } from "node:url";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const cssFileNames = [
-  "styles.css",
   "css/base.css",
   "css/nature-scene.css",
   "css/home-card-base.css",
@@ -27,8 +26,7 @@ const cssFileNames = [
   "css/responsive-desktop.css",
   "css/responsive-tablet.css",
   "css/responsive-mobile.css",
-  "css/responsive-preferences.css",
-  "css/responsive.css"
+  "css/responsive-preferences.css"
 ];
 
 async function walkFiles(directory) {
