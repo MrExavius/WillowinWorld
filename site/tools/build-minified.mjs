@@ -8,7 +8,7 @@ const outRoot = join(siteRoot, "dist");
 const staticFiles = [
   "assets",
   ".well-known",
-  "deploy",
+  "_headers",
   "favicon.ico",
   "favicon.svg",
   "manifest.webmanifest",
