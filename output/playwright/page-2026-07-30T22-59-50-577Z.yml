@@ -1,0 +1,347 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - status: Magic unlocked - Welcome to WillowinWorld
+  - status
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "WillowinWorld home" [ref=e6] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e8]:
+            - generic [ref=e9]: W
+            - text: illo
+            - generic [ref=e10]: w
+            - text: in
+            - generic [ref=e11]: W
+            - text: orld
+        - navigation "Primary navigation" [ref=e12]:
+          - link "Home" [ref=e13] [cursor=pointer]:
+            - /url: "#home"
+          - link "Games" [ref=e14] [cursor=pointer]:
+            - /url: "#games"
+          - link "Studio" [ref=e15] [cursor=pointer]:
+            - /url: "#studio"
+          - link "Devlog" [ref=e16] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "Press kit" [ref=e17] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "Contact" [ref=e18] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e19]:
+          - button "Contact studio" [ref=e20] [cursor=pointer]
+          - button "Switch theme" [ref=e21] [cursor=pointer]
+    - main [ref=e24]:
+      - generic [ref=e25]:
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e28]: Indie mobile game studio
+            - heading "WillowinWorld Small games. Living worlds." [level=1] [ref=e29]:
+              - generic [ref=e30]: WillowinWorld
+              - generic [ref=e31]: Small games. Living worlds.
+            - paragraph [ref=e32]: Tactile puzzle and arcade games where every draw, drop, shot and fall changes the world.
+            - generic [ref=e33]:
+              - link "Explore games" [ref=e34] [cursor=pointer]:
+                - /url: "#games"
+              - link "Press kit" [ref=e35] [cursor=pointer]:
+                - /url: press-kit.html
+            - navigation "Featured WillowinWorld games" [ref=e36]:
+              - link "Nature Seed draw-to-solve physics" [ref=e37] [cursor=pointer]:
+                - /url: "#nature-card"
+                - strong [ref=e38]: Nature Seed
+                - generic [ref=e39]: draw-to-solve physics
+              - link "Candy Shop cozy merge puzzle" [ref=e40] [cursor=pointer]:
+                - /url: "#candy-card"
+                - strong [ref=e41]: Candy Shop
+                - generic [ref=e42]: cozy merge puzzle
+              - link "Paint Blasters color chain reactions" [ref=e43] [cursor=pointer]:
+                - /url: "#paint-card"
+                - strong [ref=e44]: Paint Blasters
+                - generic [ref=e45]: color chain reactions
+              - link "Ball is God?! vertical arcade descent" [ref=e46] [cursor=pointer]:
+                - /url: "#ball-card"
+                - strong [ref=e47]: Ball is God?!
+                - generic [ref=e48]: vertical arcade descent
+          - img "Nature Seed restoration preview" [ref=e49]:
+            - generic [ref=e50]:
+              - generic [ref=e59]:
+                - generic [ref=e60]: Draw-to-Solve Physics Puzzle
+                - strong [ref=e61]: Nature Seed
+              - generic [ref=e62]:
+                - generic [ref=e63]: Sketch
+                - generic [ref=e64]: Connect
+                - generic [ref=e65]: Bloom
+            - generic [ref=e69]: Four worlds
+            - generic [ref=e71]: Nature Seed playable prototype
+        - button "Hidden promo letter i" [ref=e77] [cursor=pointer]: i
+      - generic [ref=e78]:
+        - generic [ref=e79]:
+          - generic [ref=e80]:
+            - generic [ref=e81]:
+              - generic [ref=e82]: Our Worlds
+              - heading "Four worlds. One touch away." [level=2] [ref=e83]
+            - paragraph [ref=e84]: Draw physical paths, merge candy, build color shots or rotate a divine tower. Each game begins with one readable mobile action.
+          - group "Game filters" [ref=e85]:
+            - button "All" [pressed] [ref=e86] [cursor=pointer]
+            - button "Arcade" [ref=e87] [cursor=pointer]
+            - button "Puzzle" [ref=e88] [cursor=pointer]
+            - button "Physics" [ref=e89] [cursor=pointer]
+            - button "Cozy" [ref=e90] [cursor=pointer]
+          - generic [ref=e91]:
+            - article "Nature Seed draw-to-solve physics puzzle" [ref=e92]:
+              - generic [ref=e93]:
+                - img "Nature Seed draw-to-solve nature physics puzzle game icon" [ref=e101]
+                - generic [ref=e102]:
+                  - generic [ref=e103]: Draw-to-Solve Physics Puzzle
+                  - heading "Nature Seed" [level=3] [ref=e104]
+              - generic [ref=e105]:
+                - generic [ref=e106]: Playable prototype
+                - paragraph [ref=e108]: Nature Seed is a relaxing mobile draw-to-solve physics puzzle about spending a limited line budget to bring Water Drop and Seed together. Ten current levels connect physical strokes, efficiency stars, persistent progress and watercolor restoration.
+                - generic [ref=e109]:
+                  - generic [ref=e110]: Mobile
+                  - generic [ref=e111]: Draw-to-Solve
+                  - generic [ref=e112]: Line Physics
+                - generic [ref=e113]:
+                  - link "Game page" [ref=e114] [cursor=pointer]:
+                    - /url: games/nature-seed.html
+                  - link "Follow Development" [ref=e115] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
+            - article "Candy Shop cozy candy merge puzzle" [ref=e116]:
+              - generic [ref=e117]:
+                - img "Candy Shop cozy candy merge puzzle game icon" [ref=e121]
+                - generic [ref=e122]:
+                  - generic [ref=e123]: Casual Merge Puzzle
+                  - heading "Candy Shop" [level=3] [ref=e124]
+              - generic [ref=e125]:
+                - generic [ref=e126]: Active development
+                - paragraph [ref=e128]: Candy Shop is a cozy mobile physics merge puzzle with a complete 13-candy evolution, ten containers that rewrite the field, eight special effects and a planning layer built around hold, landing preview and the next-three queue.
+                - generic [ref=e129]:
+                  - generic [ref=e130]: Mobile
+                  - generic [ref=e131]: Candy Merge
+                  - generic [ref=e132]: Physics Puzzle
+                - generic [ref=e133]:
+                  - link "Game page" [ref=e134] [cursor=pointer]:
+                    - /url: games/candy-shop.html
+                  - link "Follow Development" [ref=e135] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
+            - article "Paint Blasters color destruction physics puzzle arcade" [ref=e136]:
+              - generic [ref=e137]:
+                - img "Paint Blasters color physics puzzle arcade game icon" [ref=e161]
+                - generic [ref=e162]:
+                  - generic [ref=e163]: Physics Puzzle / Arcade Hybrid
+                  - heading "Paint Blasters" [level=3] [ref=e164]
+              - generic [ref=e165]:
+                - generic [ref=e166]: Production prototype
+                - paragraph [ref=e168]: Paint Blasters is a mobile color destruction physics puzzle where three color inputs resolve into one of 35 authored projectile strategies. Aim at seven block archetypes and turn one exact hit into a tower-wide chain reaction.
+                - generic [ref=e169]:
+                  - generic [ref=e170]: Mobile
+                  - generic [ref=e171]: Color Puzzle
+                  - generic [ref=e172]: Physics Arcade
+                - generic [ref=e173]:
+                  - link "Game page" [ref=e174] [cursor=pointer]:
+                    - /url: games/paint-blasters.html
+                  - link "Follow Development" [ref=e175] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
+            - article "Ball is God hardcore vertical descent arcade game" [ref=e176]:
+              - generic [ref=e177]:
+                - img "Ball is God vertical descent tower arcade game icon" [ref=e200]
+                - generic [ref=e201]:
+                  - generic [ref=e202]: Vertical Descent Arcade
+                  - heading "Ball is God?!" [level=3] [ref=e203]
+              - generic [ref=e204]:
+                - generic [ref=e205]: Active production
+                - paragraph [ref=e207]: Ball is God?! is a hardcore vertical descent arcade where horizontal drag rotates the tower around Espa. Skip three landings to charge a smash, use a cooldown shield against a lethal hit and carry karma through ten mythic locations.
+                - generic [ref=e208]:
+                  - generic [ref=e209]: Mobile
+                  - generic [ref=e210]: Vertical Descent
+                  - generic [ref=e211]: Rotate the Tower
+                - generic [ref=e212]:
+                  - link "Game page" [ref=e213] [cursor=pointer]:
+                    - /url: games/ball-is-god.html
+                  - link "Follow Development" [ref=e214] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Ball%20is%20God%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Ball%20is%20God%20development%20updates.
+        - button "Hidden promo letter a" [ref=e215] [cursor=pointer]: a
+        - button "Hidden promo letter s" [ref=e216] [cursor=pointer]: s
+      - generic [ref=e217]:
+        - generic [ref=e218]:
+          - generic [ref=e219]:
+            - heading "One action. One living world." [level=2] [ref=e221]
+            - paragraph [ref=e222]: Draw, drop, mix, dodge. Every WillowinWorld game begins with a simple mobile gesture, then wraps it in character, readable UI, tuned feedback and a world that makes the touch feel authored from the first second.
+          - generic [ref=e223]:
+            - article [ref=e224]:
+              - heading "Playful Interaction" [level=3] [ref=e228]
+              - paragraph [ref=e229]: Every tap, draw, drop and shot should produce a reaction that feels intentional, readable and a little magical.
+            - article [ref=e230]:
+              - heading "Readable Design" [level=3] [ref=e234]
+              - paragraph [ref=e235]: Systems should explain themselves through motion, contrast, pacing and clean player goals before text has to help.
+            - article [ref=e236]:
+              - heading "Character Identity" [level=3] [ref=e240]
+              - paragraph [ref=e241]: Mascots, objects and UI have personality before they have decoration.
+            - article [ref=e242]:
+              - heading "Mobile-first UX" [level=3] [ref=e246]
+              - paragraph [ref=e247]: Controls, rhythm and layout are built for thumbs, short sessions, readable UI and clear decisions on small screens.
+            - article [ref=e248]:
+              - heading "Satisfying Feedback" [level=3] [ref=e252]
+              - paragraph [ref=e253]: Impact, merge, splash, win and fail moments are tuned until they feel crisp.
+            - article [ref=e254]:
+              - heading "Cozy Depth" [level=3] [ref=e258]
+              - paragraph [ref=e259]: Cute can still be systemic, skillful and rewarding across many sessions.
+        - button "Hidden promo letter t" [ref=e260] [cursor=pointer]: t
+      - generic [ref=e261]:
+        - generic [ref=e262]:
+          - article [ref=e263]:
+            - heading "A small studio for tactile mobile worlds." [level=2] [ref=e264]
+            - paragraph [ref=e265]: WillowinWorld creates cozy but systemic games where every object feels touchable, every mechanic reads clearly and every character carries a little studio soul.
+            - generic [ref=e266]:
+              - generic [ref=e267]: Mobile-first feel
+              - generic [ref=e268]: Cozy fantasy worlds
+              - generic [ref=e269]: Interactive systems
+              - generic [ref=e270]: Premium 2D art
+            - paragraph [ref=e271]: "The magic cat, twin W mark, living menus and playful microinteractions support the same promise: the world should feel alive before a level even begins."
+          - article [ref=e272]:
+            - generic [ref=e281]:
+              - heading "Two W's, one portal." [level=3] [ref=e282]
+              - paragraph [ref=e283]: "Our mark is built like a constellation: two worlds held together by a hidden arc, a cat's spell and the promise that interaction can feel like magic."
+        - button "Hidden promo letter P" [ref=e284] [cursor=pointer]: P
+      - generic [ref=e285]:
+        - generic [ref=e286]:
+          - heading "From first hook to polished mobile release." [level=2] [ref=e289]
+          - generic [ref=e290]:
+            - article [ref=e291]:
+              - heading "Idea" [level=3] [ref=e292]
+              - paragraph [ref=e293]: Define the fantasy, clear genre, player promise and core tactile loop.
+            - article [ref=e294]:
+              - heading "Prototype" [level=3] [ref=e295]
+              - paragraph [ref=e296]: Build the shortest playable proof with real input, feedback and failure states.
+            - article [ref=e297]:
+              - heading "Feel Test" [level=3] [ref=e298]
+              - paragraph [ref=e299]: Tune controls, friction, pacing, readability and whether the loop still feels good after repetition.
+            - article [ref=e300]:
+              - heading "Art Direction" [level=3] [ref=e301]
+              - paragraph [ref=e302]: Shape silhouettes, palette, UI language, icon readability and character identity.
+            - article [ref=e303]:
+              - heading "Production" [level=3] [ref=e304]
+              - paragraph [ref=e305]: Scale content, systems, progression, optimization and technical foundations.
+            - article [ref=e306]:
+              - heading "Polish" [level=3] [ref=e307]
+              - paragraph [ref=e308]: Refine transitions, VFX, audio beats, onboarding, accessibility and user comfort.
+            - article [ref=e309]:
+              - heading "Launch" [level=3] [ref=e310]
+              - paragraph [ref=e311]: Prepare store assets, press materials, analytics, live updates and community loops.
+        - button "Hidden promo letter B" [ref=e312] [cursor=pointer]: B
+        - button "Hidden promo letter s" [ref=e313] [cursor=pointer]: s
+      - generic [ref=e314]:
+        - generic [ref=e315]:
+          - generic [ref=e316]:
+            - generic [ref=e317]:
+              - generic [ref=e318]: Game Devlogs
+              - heading "Latest dev notes, no digging." [level=2] [ref=e319]
+            - paragraph [ref=e320]: A current production snapshot for each project, grounded in the playable systems now inside the Unity builds.
+          - generic [ref=e321]:
+            - article [ref=e322]:
+              - generic [ref=e323]: Nature Seed / July 2026
+              - heading "Playable vertical prototype" [level=3] [ref=e324]
+              - paragraph [ref=e325]: Ten current levels now connect constrained physical drawing, line-efficiency stars, restoration feedback and persistent progress.
+              - link "Open devlog" [ref=e326] [cursor=pointer]:
+                - /url: games/nature-seed.html#devlog
+            - article [ref=e327]:
+              - generic [ref=e328]: Candy Shop / July 2026
+              - heading "Ten containers, one deeper merge loop" [level=3] [ref=e329]
+              - paragraph [ref=e330]: The current build combines 13 candy stages with ten field rulesets, special recipes, planning tools and a daily collection loop.
+              - link "Open devlog" [ref=e331] [cursor=pointer]:
+                - /url: games/candy-shop.html#devlog
+            - article [ref=e332]:
+              - generic [ref=e333]: Paint Blasters / July 2026
+              - heading "All 35 combo strategies implemented" [level=3] [ref=e334]
+              - paragraph [ref=e335]: The production prototype now supports 35 authored projectile recipes; tower readability, impact and final scene scope remain in active refinement.
+              - link "Open devlog" [ref=e336] [cursor=pointer]:
+                - /url: games/paint-blasters.html#devlog
+            - article [ref=e337]:
+              - generic [ref=e338]: Ball is God?! / July 2026
+              - heading "Active world and systems pass" [level=3] [ref=e339]
+              - paragraph [ref=e340]: Ten locations, deterministic tower generation, combo smash, swipe shield and runtime-changing karma systems are in active production.
+              - link "Open devlog" [ref=e341] [cursor=pointer]:
+                - /url: games/ball-is-god.html#devlog
+        - button "Hidden promo letter a" [ref=e342] [cursor=pointer]: a
+        - button "Hidden promo letter l" [ref=e343] [cursor=pointer]: l
+      - generic [ref=e344]:
+        - generic [ref=e345]:
+          - heading "Quick answers for players, press and publishers." [level=2] [ref=e348]
+          - generic [ref=e349]:
+            - article [ref=e350]:
+              - button "What kind of games does WillowinWorld make?" [ref=e351] [cursor=pointer]
+              - paragraph [ref=e353]: We make mobile-first puzzle and arcade games with tactile systems, cozy fantasy identity, physics-driven moments, polished UI and characters that feel alive.
+            - article [ref=e354]:
+              - button "Can I disable animations?" [ref=e355] [cursor=pointer]
+              - paragraph [ref=e357]: Yes. The site respects reduced motion and Save-Data settings, lowers effects for slower connections and pauses its scene when the tab is hidden.
+            - article [ref=e358]:
+              - button "Does the site follow my day or night theme?" [ref=e359] [cursor=pointer]
+              - paragraph [ref=e361]: Yes. On a first visit it uses the saved theme if one exists, then the system color preference, then local time. If none of those can be read, WillowinWorld starts in dark mode.
+            - article [ref=e362]:
+              - button "Do you work with publishers?" [ref=e363] [cursor=pointer]
+              - paragraph [ref=e365]: Yes. We are open to focused publisher conversations around production, platform strategy, UA, live operations and long-term game growth. The press kit has the cleanest facts and asset links.
+            - article [ref=e366]:
+              - button "Are your games mobile-first?" [ref=e367] [cursor=pointer]
+              - paragraph [ref=e369]: Yes. We design around mobile input, session length, screen clarity and performance from the first prototype.
+            - article [ref=e370]:
+              - button "Can I send a portfolio?" [ref=e371] [cursor=pointer]
+              - paragraph [ref=e373]: Yes. Artists, Unity developers, designers, animators and audio collaborators can contact us at contact@willowinworld.com with a focused portfolio link and role context.
+            - article [ref=e374]:
+              - button "Can I collaborate with the studio?" [ref=e375] [cursor=pointer]
+              - paragraph [ref=e377]: "We are open to focused collaborations that match the studio tone: premium, tactile, magical and production-minded."
+        - button "Hidden promo letter e" [ref=e378] [cursor=pointer]: e
+      - generic [ref=e379]:
+        - generic [ref=e380]:
+          - heading "A world worth opening?" [level=2] [ref=e381]
+          - paragraph [ref=e382]: We welcome player feedback, press requests, publisher conversations and production-minded collaborations.
+          - generic [ref=e383]:
+            - button "Contact studio" [ref=e384] [cursor=pointer]
+            - link "Press kit" [ref=e385] [cursor=pointer]:
+              - /url: press-kit.html
+        - button "Hidden promo letter t" [ref=e386] [cursor=pointer]: t
+        - button "Hidden promo letter n" [ref=e387] [cursor=pointer]: "n"
+    - contentinfo [ref=e388]:
+      - generic [ref=e389]:
+        - link "WillowinWorld home" [ref=e391] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e393]:
+            - generic [ref=e394]: W
+            - text: illo
+            - generic [ref=e395]: w
+            - text: in
+            - generic [ref=e396]: W
+            - text: orld
+        - navigation "Footer navigation" [ref=e397]:
+          - link "Games" [ref=e398] [cursor=pointer]:
+            - /url: "#games"
+          - link "Studio" [ref=e399] [cursor=pointer]:
+            - /url: "#studio"
+          - link "Devlog" [ref=e400] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "RSS" [ref=e401] [cursor=pointer]:
+            - /url: rss.xml
+          - link "Press kit" [ref=e402] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "Contact" [ref=e403] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Lost Stars" [ref=e404] [cursor=pointer]:
+            - /url: 404.html
+          - button "Privacy" [ref=e405] [cursor=pointer]
+          - button "Legal" [ref=e406] [cursor=pointer]
+          - button "Asset Usage" [ref=e407] [cursor=pointer]
+        - generic [ref=e408]:
+          - link "contact@willowinworld.com" [ref=e409] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com
+          - link "Nature Seed playtest" [ref=e410] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Nature%20Seed%20Playtest%20Access
+          - link "Press kit" [ref=e411] [cursor=pointer]:
+            - /url: press-kit.html
+          - button "Asset usage" [ref=e412] [cursor=pointer]
+          - button "Privacy" [ref=e413] [cursor=pointer]
+          - button "Legal" [ref=e414] [cursor=pointer]
+          - button "Security" [ref=e415] [cursor=pointer]
+          - link "Publisher contact" [ref=e416] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Publisher%20inquiry
+          - button "Careers / Collaboration" [ref=e417] [cursor=pointer]
+          - button "Press / Publishers" [ref=e418] [cursor=pointer]
+        - generic [ref=e419]: © 2026 WillowinWorld. All rights reserved.

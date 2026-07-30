@@ -1,0 +1,10 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "launchOptions": {
+      "executablePath": "/home/mrexavius/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome",
+      "headless": true
+    }
+  },
+  "outputDir": "/home/mrexavius/Documents/GitHub/WillowinWorld/output/playwright"
+}
