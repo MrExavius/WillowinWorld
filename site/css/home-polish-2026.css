@@ -161,6 +161,23 @@ body.home-polish-2026 .section-head .section-copy {
   line-height: 1.6;
 }
 
+body.home-polish-2026 :is(#process, #devlog) .section-title {
+  font-kerning: normal;
+  font-optical-sizing: auto;
+  text-wrap: balance;
+  text-shadow:
+    0 2px 2px color-mix(in srgb, var(--bg) 68%, transparent),
+    0 0 26px color-mix(in srgb, var(--bg) 62%, transparent);
+}
+
+body.home-polish-2026 #devlog .section-copy {
+  max-width: 62ch;
+  color: color-mix(in srgb, var(--text) 78%, var(--cyan));
+  font-weight: 540;
+  letter-spacing: 0.005em;
+  text-wrap: pretty;
+}
+
 @media (min-width: 921px) {
   body.home-polish-2026 :is(#games, #studio, #devlog) .section-head {
     display: grid;
@@ -207,6 +224,24 @@ body.home-polish-2026 .section-head .section-copy {
   body.home-polish-2026 #faq .faq-list {
     width: min(100%, 860px);
     margin-inline: auto;
+  }
+
+  body.home-polish-2026 :is(#process, #devlog) .title-line {
+    display: block;
+  }
+
+  body.home-polish-2026 #process .section-head .section-title {
+    max-width: 900px;
+    font-size: clamp(3.15rem, 4vw, 4.25rem);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+  }
+
+  body.home-polish-2026 #devlog .section-head .section-title {
+    max-width: 640px;
+    font-size: clamp(3.1rem, 4vw, 4.25rem);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
   }
 }
 
@@ -363,6 +398,21 @@ body.home-polish-2026 .timeline {
 body.home-polish-2026 .step {
   min-height: 220px;
   scroll-snap-align: start;
+}
+
+body.home-polish-2026 :is(.step, .devlog-card) h3 {
+  font-kerning: normal;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+body.home-polish-2026 :is(.step, .devlog-card) p {
+  line-height: 1.62;
+  text-wrap: pretty;
+}
+
+body.home-polish-2026 .step p {
+  font-size: 0.94rem;
 }
 
 body.home-polish-2026 .step::after {
