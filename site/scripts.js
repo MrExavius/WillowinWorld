@@ -133,8 +133,8 @@
     nature: {
       title: "Nature Seed",
       genre: "Draw-to-Solve Physics Puzzle",
-      status: "Beta Polish - Public Beta Planned for July 2026",
-      copy: "A meditative mobile puzzle game about drawing magical lines, guiding water to seeds and restoring a dying forest into a living watercolor world. Nature Seed turns every solved puzzle into a small act of growth.",
+      status: "Beta polish",
+      copy: "A meditative mobile puzzle game about drawing magical lines, guiding water to seeds and restoring a quiet forest into a living watercolor world. Nature Seed turns every solved puzzle into a small act of growth.",
       tags: ["Mobile", "Draw-to-Solve", "Water Physics", "Nature Restoration", "Relaxing Puzzle"],
       pillars: [
         "Draw simple magical lines with your finger and shape the route water will follow.",
