@@ -133,49 +133,49 @@
     nature: {
       title: "Nature Seed",
       genre: "Draw-to-Solve Physics Puzzle",
-      status: "Beta polish",
-      copy: "A meditative mobile puzzle game about drawing magical lines, guiding water to seeds and restoring a quiet forest into a living watercolor world. Nature Seed turns every solved puzzle into a small act of growth.",
-      tags: ["Mobile", "Draw-to-Solve", "Water Physics", "Nature Restoration", "Relaxing Puzzle"],
+      status: "Playable Vertical Prototype",
+      copy: "A meditative mobile physics puzzle about drawing limited lines that become solid objects. Shape a safe route, bring the Water Drop and Seed together, and solve ten handcrafted vertical levels with as little ink as possible.",
+      tags: ["Mobile", "Draw-to-Solve", "Line Physics", "10 Levels", "Relaxing Puzzle"],
       pillars: [
-        "Draw simple magical lines with your finger and shape the route water will follow.",
-        "Guide water toward seeds through readable cause and effect.",
-        "Transform gray scenes into green, blooming nature through restoration feedback."
+        "Draw a constrained physical route with a strict ink and line budget.",
+        "Bring the Water Drop and Seed characters together through readable cause and effect.",
+        "Replay compact levels to earn the best efficiency rating with fewer lines."
       ]
     },
     candy: {
       title: "Candy Shop",
       genre: "Casual Merge Puzzle",
-      status: "Internal Beta - Optimization and Polish",
-      copy: "A cozy physics-based candy merge puzzle about dropping sweets, merging matching candies and building bigger treats through soft, satisfying physics. Current work focuses on optimization, UI polish, balance and combo readability.",
-      tags: ["Mobile", "Candy Merge", "Physics Puzzle", "Cozy Game", "Combo Puzzle"],
+      status: "Active Development",
+      copy: "A cozy physics-based merge puzzle with a 13-stage candy chain, ten gameplay containers and eight special candy effects. Plan the next three drops, hold a piece and manage the shape of each container before the stack reaches the top.",
+      tags: ["Mobile", "Candy Merge", "10 Containers", "8 Effects", "Cozy Game"],
       pillars: [
-        "Drop sweets carefully and let soft physics shape the result.",
-        "Merge matching candies through a 13-candy chain toward bigger treats.",
-        "Use containers, special sweets and combos to create satisfying replay value."
+        "Read the landing preview and next-three queue before every drop.",
+        "Merge matching pieces through a 13-stage chain toward the largest candy.",
+        "Adapt to ten container rulesets and eight special effect families."
       ]
     },
     paint: {
       title: "Paint Blasters",
       genre: "Physics Puzzle / Arcade Hybrid",
-      status: "Production Draft - Core Mechanics Complete",
-      copy: "A vibrant mobile puzzle arcade where players build color-powered projectiles before every shot, aim at readable towers and trigger chain reactions through physics-based destruction. The current GDD-based prototype is implemented in draft form.",
-      tags: ["Mobile", "Color Puzzle", "Physics Arcade", "Aim & Shoot", "Chain Reactions"],
+      status: "Production Prototype",
+      copy: "A color-destruction physics prototype where players assemble one of 35 projectile recipes, read seven block archetypes and dismantle a five-floor active tower through precise chain reactions.",
+      tags: ["Mobile", "35 Recipes", "7 Block Types", "Physics Arcade", "Chain Reactions"],
       pillars: [
-        "Mix colors and charge types before each shot to create tactical effects.",
-        "Read block colors, weak points, supports and chain reaction opportunities.",
-        "Turn one smart impact into colorful physics collapse."
+        "Combine three color ingredients into one of 35 defined projectile behaviors.",
+        "Read seven block archetypes, structural weak points and reaction opportunities.",
+        "Turn one deliberate shot into a colorful physics collapse across the active tower."
       ]
     },
     ball: {
       title: "Ball is God?!",
       genre: "Hardcore Arcade",
-      status: "Longterm Project - Planned After Current Releases",
-      copy: "A hardcore vertical descent arcade where Espa drops through broken stone gaps inside a divine tower. Ball is God?! combines one-touch timing, one-hit-kill tension, boss-like pressure and moral choices inside a larger mythic story world.",
-      tags: ["Mobile", "Vertical Descent", "One-Touch Arcade", "One-Hit-Kill", "Moral Choices"],
+      status: "Active Production",
+      copy: "A hardcore vertical tower arcade where horizontal drag rotates the world around the auto-falling Espa. Thread three platform gaps to trigger a combo smash, deploy a cooldown shield against lethal hits and let Karma reshape ten distinct locations.",
+      tags: ["Mobile", "Tower Rotation", "Combo Smash", "Karma System", "10 Locations"],
       pillars: [
-        "Read moving stone gaps, cloud depth and platform timing before each drop.",
-        "Survive short, tense runs where one mistake can end everything.",
-        "Let major choices reshape world mood, character fates and endings."
+        "Rotate each tower with horizontal drag while Espa keeps falling and jumping.",
+        "Skip three platforms to earn a smash, or spend the shield to survive a lethal mistake.",
+        "Let Light, Neutral or Dark Karma alter telegraphs, aggression, bosses and story choices."
       ]
     }
   };

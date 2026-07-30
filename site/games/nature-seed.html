@@ -3,26 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nature Seed is a relaxing mobile draw-to-solve water physics puzzle. Draw lines, guide water to seeds, restore forests and follow WillowinWorld's July 2026 public beta.">
+  <meta name="description" content="Nature Seed is a relaxing mobile draw-to-solve physics puzzle. Draw an ink-limited path, bring Water Drop and Seed together, and restore a watercolor forest.">
   <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#07162d" id="metaThemeColor">
   <meta property="og:title" content="Nature Seed - Draw-to-Solve Physics Puzzle Game">
-  <meta property="og:description" content="Draw magical lines, guide water and restore nature in WillowinWorld's relaxing mobile physics puzzle.">
+  <meta property="og:description" content="Draw an ink-limited physical path, reunite Water Drop and Seed, and restore nature in WillowinWorld's relaxing mobile puzzle.">
   <meta property="og:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Nature Seed draw-to-solve water physics puzzle by WillowinWorld">
+  <meta property="og:image:alt" content="Nature Seed draw-to-solve line physics puzzle by WillowinWorld">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://willowinworld.com/games/nature-seed.html">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Nature Seed - Relaxing Draw-to-Solve Physics Puzzle Game">
   <meta name="twitter:description" content="Draw magical lines, guide water to seeds and restore a dying forest in WillowinWorld's mobile physics puzzle.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Nature Seed draw-to-solve physics puzzle in a restored watercolor forest">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Nature Seed | Relaxing Draw-to-Solve Water Physics Puzzle Game</title>
+  <title>Nature Seed | Relaxing Draw-to-Solve Nature Physics Puzzle</title>
   <link rel="canonical" href="https://willowinworld.com/games/nature-seed.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
-  <link rel="icon" href="../assets/willowinworld-logo.webp" type="image/webp">
+  <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <script type="application/ld+json">
 {
@@ -41,20 +43,16 @@
       "name": "Nature Seed",
       "url": "https://willowinworld.com/games/nature-seed.html",
       "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
-      "description": "A relaxing draw-to-solve physics puzzle where players draw magical lines, guide water to seeds and restore a dying forest.",
-      "genre": ["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Water puzzle"],
+      "description": "A relaxing draw-to-solve physics puzzle where an ink-limited line brings Water Drop and Seed together and restores a watercolor forest.",
+      "genre": ["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Line drawing puzzle"],
       "gamePlatform": ["Mobile", "iOS", "Android"],
       "operatingSystem": "iOS, Android",
       "applicationCategory": "Game",
+      "creativeWorkStatus": "Active development - playable vertical prototype",
+      "dateModified": "2026-07-30",
+      "mainEntityOfPage": "https://willowinworld.com/games/nature-seed.html",
       "author": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" },
-      "publisher": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://willowinworld.com/games/nature-seed.html",
-        "availability": "https://schema.org/PreOrder",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "publisher": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" }
     },
     {
       "@type": "FAQPage",
@@ -63,12 +61,12 @@
         {
           "@type": "Question",
           "name": "What kind of puzzle game is Nature Seed?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Nature Seed is a relaxing mobile draw-to-solve physics puzzle where players draw lines to guide water toward seeds and restore each forest scene." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Nature Seed is a relaxing mobile draw-to-solve physics puzzle where an ink-limited line becomes part of the level and brings Water Drop and Seed together." }
         },
         {
           "@type": "Question",
           "name": "How does the Nature Seed gameplay loop work?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Players read the terrain, draw a route, release water, watch the physics response, restore the seed and refine the line if the water misses its path." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Players read the terrain, draw a limited physical route, commit the line, watch the characters respond, and refine the path until Water Drop reaches Seed." }
         },
         {
           "@type": "Question",
@@ -78,7 +76,7 @@
         {
           "@type": "Question",
           "name": "What is the current production status?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Nature Seed is in beta polish, with current work focused on onboarding, level readability, restoration feedback and mobile performance." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Nature Seed is in active development as a playable vertical prototype with 10 current levels. The current pass focuses on drawing feel, level readability, progression and mobile stability." }
         },
         {
           "@type": "Question",
@@ -113,8 +111,9 @@
   <link rel="stylesheet" href="../motion.css">
 </head>
 <body class="game-detail-page game-theme-nature nature-seed-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Skip to Nature Seed</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Back to WillowinWorld main menu">
+    <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — back to WillowinWorld">
       <img src="../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed mobile draw-to-solve puzzle game icon" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>WillowinWorld game page</small></span>
     </a>
@@ -130,7 +129,7 @@
       </svg>
     </button>
   </header>
-  <main class="game-page game-detail-shell nature-seed-shell">
+  <main class="game-page game-detail-shell nature-seed-shell" id="game-main">
     <div class="nature-page-backdrop ambient-only" aria-hidden="true">
       <div class="nature-menu-world">
         <span class="nature-menu-sun"></span>
@@ -184,17 +183,17 @@
       <div class="container nature-hero-layout">
         <div class="nature-hero-copy">
           <div class="eyebrow">Nature Seed</div>
-          <h1 id="natureHeroTitle">Draw water paths. Wake the forest.</h1>
-          <p class="hero-copy">A meditative mobile physics puzzle where every drawn line becomes a route for water, and every solved level restores a fragile watercolor world.</p>
-          <p class="nature-hero-note">Now in beta polish, with the first public beta planned for July 2026. Current work focuses on onboarding, touch feel, level readability and restoration feedback.</p>
+          <h1 id="natureHeroTitle">Draw a path. Bring them together.</h1>
+          <p class="hero-copy">A meditative mobile physics puzzle where an ink-limited stroke becomes part of the level, bringing Water Drop and Seed together to wake a watercolor forest.</p>
+          <p class="nature-hero-note">Active development · playable vertical prototype. The current build contains 10 levels, line-efficiency stars, persistent progress and stable physical line generation.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Nature%20Seed%20Beta%20Access">Join Beta Waitlist</a>
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Nature%20Seed%20Playtest%20Access">Request Playtest Access</a>
             <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Nature Seed highlights">
-            <span><strong>Draw</strong><small>shape magical line routes</small></span>
-            <span><strong>Guide</strong><small>move water through physics</small></span>
-            <span><strong>Bloom</strong><small>restore each puzzle scene</small></span>
+            <span><strong>Draw</strong><small>spend a limited line budget</small></span>
+            <span><strong>Connect</strong><small>bring Water Drop to Seed</small></span>
+            <span><strong>Bloom</strong><small>earn the restored scene</small></span>
           </div>
         </div>
 
@@ -221,7 +220,7 @@
             </span>
             <span class="nature-cycle"><b>Sketch</b><b>Guide water</b><b>Bloom</b></span>
             <div class="magic-hud">
-              <span>Beta Polish · July 2026</span>
+              <span>Playable Prototype · Active Development</span>
               <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
             </div>
           </div>
@@ -230,34 +229,62 @@
     </section>
 
     <div class="container game-page-grid nature-seed-content">
+      <section class="game-proof-section" aria-labelledby="natureProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Inside the current build</span>
+            <h2 id="natureProofTitle">The line is not decoration. It becomes the puzzle.</h2>
+            <p>Every committed stroke creates physical collision geometry. The player balances ink, line count and shape, then watches Water Drop and Seed respond to the route. A one-line solution earns the cleanest three-star result.</p>
+            <span class="proof-status"><b>Build status</b> Playable vertical prototype</span>
+          </div>
+          <div class="proof-visual">
+            <div class="nature-proof-frames" aria-label="Nature Seed sketch and restored level comparison">
+              <figure class="nature-proof-frame">
+                <img src="../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 560px) 44vw, 28vw" width="1600" height="900" alt="Nature Seed level shown as a quiet pencil sketch before the puzzle is solved" loading="lazy" decoding="async">
+                <figcaption><strong>Read the sketch</strong><span>Before the solve</span></figcaption>
+              </figure>
+              <figure class="nature-proof-frame">
+                <img src="../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 560px) 44vw, 28vw" width="1280" height="714" alt="The same Nature Seed scene restored with watercolor trees and characters after the solve" loading="lazy" decoding="async">
+                <figcaption><strong>Earn the bloom</strong><span>After the solve</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Verified Nature Seed build facts">
+          <article><strong>10 current levels</strong><span>Data-driven prototype progression.</span></article>
+          <article><strong>Ink and line limits</strong><span>Every stroke has a real cost.</span></article>
+          <article><strong>One-line mastery</strong><span>The default route to three stars.</span></article>
+          <article><strong>Persistent progress</strong><span>Unlocked levels and results survive between sessions.</span></article>
+        </div>
+      </section>
       <section class="soft-card game-page-section">
         <div class="eyebrow">Game overview</div>
-        <h2>A relaxing water physics puzzle about drawing life back into the forest.</h2>
+        <h2>A relaxing line-physics puzzle about bringing two small characters together.</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Player promise</h3><p>Draw a clean path, guide water through the level and watch each seed turn a quiet sketch into a restored forest scene.</p></article>
-          <article class="detail-card"><h3>Search fit</h3><p>Built for players looking for a relaxing mobile puzzle game, a draw-to-solve physics puzzle, a water routing puzzle or a nature restoration game.</p></article>
+          <article class="detail-card"><h3>Player promise</h3><p>Draw a clean physical path, bring Water Drop and Seed together and watch the quiet sketch return to life.</p></article>
+          <article class="detail-card"><h3>Current build</h3><p>Ten playable levels combine touch drawing, physical line geometry, line-efficiency stars, persistent progress and restoration feedback.</p></article>
           <article class="detail-card"><h3>Audience</h3><p>Players who enjoy calm puzzle games, eco themes, light physics, cozy restoration, beautiful 2D art and mobile sessions without stress.</p></article>
-          <article class="detail-card"><h3>Status</h3><p>Beta Polish - Public Beta Planned for July 2026. Current work focuses on onboarding, level readability, restoration feedback and mobile performance.</p></article>
+          <article class="detail-card"><h3>Status</h3><p>Active development - playable vertical prototype. Current work focuses on drawing feel, level readability, progression and mobile stability.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="features">
         <div class="eyebrow">Features</div>
         <h2>What players do in Nature Seed.</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Draw-to-solve water paths</h3><p>Each puzzle starts with terrain, a seed and water. The player draws a route that becomes the bridge between intention and physics.</p></article>
-          <article class="detail-card"><h3>Readable physics feedback</h3><p>Water movement is designed to be understandable at a glance, so failed attempts feel like information instead of random punishment.</p></article>
+          <article class="detail-card"><h3>Draw-to-solve physical paths</h3><p>Each puzzle starts with terrain, Seed and Water Drop. The player's stroke becomes the bridge between intention and physics.</p></article>
+          <article class="detail-card"><h3>Readable physics feedback</h3><p>Character movement is designed to be understandable at a glance, so failed attempts feel like information instead of random punishment.</p></article>
           <article class="detail-card"><h3>Forest restoration rewards</h3><p>Solving a level brings the scene back to life with growth, color and small emotional feedback instead of only a score screen.</p></article>
           <article class="detail-card"><h3>Mobile-first puzzle pacing</h3><p>Short handcrafted levels, touch drawing and clear silhouettes keep the game comfortable for quick iOS and Android sessions.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
         <div class="eyebrow">Gameplay loop</div>
-        <h2>Read the level, draw the route, let the water teach the next attempt.</h2>
+        <h2>Read the level, draw the route, let the characters teach the next attempt.</h2>
         <ul class="update-list">
-          <li><span>Step 01</span><strong>Read the sketch</strong><p>Players look for slopes, gaps, blockers and the safest route from water source to seed.</p></li>
-          <li><span>Step 02</span><strong>Draw the line</strong><p>A finger stroke becomes a physical guide, ramp or catch point for the water path.</p></li>
-          <li><span>Step 03</span><strong>Release and observe</strong><p>The water moves through the drawn route, making success and mistakes visible without heavy UI explanation.</p></li>
-          <li><span>Step 04</span><strong>Bloom or refine</strong><p>If the water reaches the seed, the forest restores. If it misses, the player redraws with clearer information.</p></li>
+          <li><span>Step 01</span><strong>Read the sketch</strong><p>Players look for slopes, gaps, blockers and the safest way to connect both characters.</p></li>
+          <li><span>Step 02</span><strong>Draw the line</strong><p>A finger stroke becomes a physical guide, ramp or catch point for the characters.</p></li>
+          <li><span>Step 03</span><strong>Commit and observe</strong><p>The characters move against the physical route, making success and mistakes visible without heavy UI explanation.</p></li>
+          <li><span>Step 04</span><strong>Bloom or refine</strong><p>If Water Drop reaches Seed, the forest restores. If they miss, the player redraws with clearer information.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section nature-story-section">
@@ -272,7 +299,7 @@
             <div><dt>Design direction</dt><dd>Calm physics and visible restoration</dd></div>
             <div><dt>Emotional core</dt><dd>Seed, water and recovery</dd></div>
             <div><dt>Interaction</dt><dd>Touch drawing with readable cause and effect</dd></div>
-            <div><dt>Public wording</dt><dd>Inspired by the genre, not positioned as a clone</dd></div>
+            <div><dt>Mastery reward</dt><dd>A one-line solve earns three stars</dd></div>
           </dl>
         </div>
       </section>
@@ -281,28 +308,28 @@
         <h2>A cozy puzzle with a clear mobile hook.</h2>
         <div class="info-grid">
           <div>
-            <p>Nature Seed has a simple, instantly readable mobile hook: draw a line, move water, revive nature. The game combines accessible physics puzzle design with a soft restoration fantasy, giving it a stronger emotional identity than a generic draw-to-solve puzzle.</p>
+            <p>Nature Seed has a simple, instantly readable mobile hook: draw a line, connect two characters, revive nature. The game combines accessible physics puzzle design with a soft restoration fantasy, giving it a stronger emotional identity than a generic draw-to-solve puzzle.</p>
           </div>
           <dl class="game-page-facts">
             <div><dt>Genre</dt><dd>Draw-to-solve physics puzzle</dd></div>
             <div><dt>Platform target</dt><dd>iOS / Android</dd></div>
             <div><dt>Session shape</dt><dd>Short calm levels</dd></div>
-            <div><dt>Primary CTA</dt><dd>Public beta planned for July 2026</dd></div>
+            <div><dt>Primary CTA</dt><dd>Request playtest access</dd></div>
           </dl>
         </div>
       </section>
       <section class="soft-card game-page-section" id="download-assets">
         <div class="eyebrow">Download assets</div>
-        <h2>SEO-ready Nature Seed WebP asset kit</h2>
-        <p class="asset-kit-copy">Optimized public files for press, publisher review, store references and image search. Every download uses descriptive genre naming for the draw-to-solve water physics puzzle page.</p>
+        <h2>Nature Seed press and creator assets</h2>
+        <p class="asset-kit-copy">Curated WebP previews for editorial coverage, publisher review and store-layout references. Full-resolution source files are available from the studio on request.</p>
         <h3 class="asset-group-title">Brand and characters</h3>
         <div class="asset-list">
-          <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed draw-to-solve water physics puzzle game icon" loading="lazy" decoding="async"><strong>Game icon</strong><span>Draw-to-solve water physics puzzle icon.</span></a>
+          <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed draw-to-solve line physics puzzle game icon" loading="lazy" decoding="async"><strong>Game icon</strong><span>Draw-to-solve line physics puzzle icon.</span></a>
           <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed water drop character for a mobile physics puzzle game" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Character asset for the restoration puzzle fantasy.</span></a>
           <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed seed character for a cozy puzzle game" loading="lazy" decoding="async"><strong>Seed character</strong><span>Core character asset for Nature Seed.</span></a>
           <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed tree growth restoration asset" loading="lazy" decoding="async"><strong>Tree growth</strong><span>Nature restoration reward asset.</span></a>
           <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed relaxing puzzle forest menu background" loading="lazy" decoding="async"><strong>Forest menu</strong><span>Relaxing mobile puzzle menu background.</span></a>
-          <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed water physics in-game background" loading="lazy" decoding="async"><strong>Gameplay background</strong><span>In-game water physics background.</span></a>
+          <a class="asset-link" href="../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed hand-drawn physics level background" loading="lazy" decoding="async"><strong>Gameplay background</strong><span>Hand-drawn physics level background.</span></a>
         </div>
         <h3 class="asset-group-title">Draw-to-solve sketch levels</h3>
         <div class="asset-list">
@@ -340,13 +367,13 @@
           <li><span>December 2025</span><strong>Development begins</strong><p>After the first paper levels were planned, active development started and the core systems moved into playable form.</p></li>
           <li><span>February 2026</span><strong>Large draft level pass</strong><p>The game reached a large rough content pass, creating the foundation for later polish, balance and beta preparation.</p></li>
           <li><span>March-April 2026</span><strong>Mechanics and level review</strong><p>Extra mechanics and draft levels were reviewed, simplified and reworked to keep the game calmer, clearer and more focused.</p></li>
-          <li><span>May-July 2026</span><strong>Public beta preparation</strong><p>The team is preparing the first public beta with focus on onboarding, restoration feedback, level clarity and mobile performance.</p></li>
+          <li><span>July 2026</span><strong>Vertical prototype pass</strong><p>The current build brings 10 levels, constrained line drawing, efficiency stars, persistent progress and stable line generation into one playable loop.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
         <div class="eyebrow">Related Worlds</div>
-        <h2>Go from calm water physics to the next WillowinWorld hook.</h2>
-        <p class="related-worlds-copy">Nature Seed is the relaxing draw-to-solve side of the portfolio. Compare it with the studio's cozy candy merge puzzle, color destruction physics arcade and hardcore one-touch vertical descent project.</p>
+        <h2>Go from calm line physics to the next WillowinWorld hook.</h2>
+        <p class="related-worlds-copy">Nature Seed is the relaxing draw-to-solve side of the portfolio. Compare it with the studio's cozy candy merge puzzle, color-destruction physics arcade and hardcore rotating-tower descent.</p>
         <div class="related-world-grid" aria-label="Related WillowinWorld game pages">
           <a class="related-world-link is-primary" href="candy-shop.html">
             <span class="related-world-kicker">Cozy merge puzzle</span>
@@ -363,7 +390,7 @@
           <a class="related-world-link" href="ball-is-god.html">
             <span class="related-world-kicker">Hardcore arcade</span>
             <strong>Ball is God?!</strong>
-            <p>Survive a one-touch vertical descent through broken gaps, boss pressure and mythic story stakes.</p>
+            <p>Rotate a hostile tower around Espa, build a combo smash and survive boss pressure across mythic worlds.</p>
             <span class="related-world-meta">Vertical descent arcade</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
@@ -376,12 +403,12 @@
       </section>
       <section class="soft-card game-page-section" id="faq">
         <div class="eyebrow">Nature Seed FAQ</div>
-        <h2>Quick answers for players, press, publishers and search.</h2>
+        <h2>Answers for players, press and publishing partners.</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>What kind of puzzle is Nature Seed?</h3><p>A relaxing draw-to-solve water physics puzzle where drawn lines shape how water reaches each seed.</p></article>
-          <article class="detail-card"><h3>How does the gameplay work?</h3><p>Read the terrain, draw a route, release water, watch the physics response and redraw when the path needs a cleaner angle.</p></article>
-          <article class="detail-card"><h3>What makes it different?</h3><p>The focus is calm restoration, readable water routing and visible forest growth rather than high-pressure timers or noisy failure.</p></article>
-          <article class="detail-card"><h3>What is the current status?</h3><p>Beta polish. The focus is onboarding, level readability, restoration feedback and mobile performance.</p></article>
+          <article class="detail-card"><h3>What kind of puzzle is Nature Seed?</h3><p>A relaxing draw-to-solve physics puzzle where limited lines become physical objects that help two characters meet.</p></article>
+          <article class="detail-card"><h3>How does the gameplay work?</h3><p>Read the terrain, draw a constrained route, watch both characters react to it and redraw when the path needs a cleaner angle.</p></article>
+          <article class="detail-card"><h3>What makes it different?</h3><p>The focus is calm restoration, readable line physics and efficient one-line solutions rather than high-pressure timers or noisy failure.</p></article>
+          <article class="detail-card"><h3>What is the current status?</h3><p>Active development as a playable vertical prototype with 10 current levels. The focus is drawing feel, progression, readability and mobile stability.</p></article>
           <article class="detail-card"><h3>Can public assets be used?</h3><p>Yes, for press, publisher review and store references. Source assets stay private unless requested directly.</p></article>
         </div>
       </section>
@@ -389,7 +416,7 @@
         <div class="eyebrow">Nature Seed Devlog</div>
         <h2>What changed and when</h2>
         <ul class="update-list">
-          <li><span>May 2026</span><strong>Public beta preparation</strong><p>Nature Seed moved into beta preparation. The current focus is mobile optimization, onboarding, level readability and satisfying restoration feedback.</p></li>
+          <li><span>July 2026</span><strong>Ten-level vertical prototype</strong><p>The current build joins constrained physical line drawing, efficiency stars, persistent progress and restoration feedback across ten levels.</p></li>
           <li><span>April 2026</span><strong>Level rework pass</strong><p>Several draft levels were reworked after internal review to remove unnecessary complexity and improve mobile readability.</p></li>
           <li><span>March 2026</span><strong>Mechanics review</strong><p>The team tested additional mechanics, then removed the ones that made the experience feel overloaded.</p></li>
           <li><span>February 2026</span><strong>Large draft level pass</strong><p>A large rough content pass became the foundation for later polish, balance and beta preparation.</p></li>
@@ -399,6 +426,21 @@
       </section>
     </div>
   </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Nature Seed is a WillowinWorld game.</strong>
+        <span>Draw-to-solve physics, watercolor restoration and a small path worth perfecting.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Nature Seed footer navigation">
+        <a href="../index.html#games">All games</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../legal.html">Legal</a>
+        <a href="mailto:contact@willowinworld.com?subject=Nature%20Seed">Contact</a>
+      </nav>
+    </div>
+  </footer>
   <script src="../game-theme.js"></script>
 </body>
 </html>

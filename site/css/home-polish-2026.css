@@ -62,7 +62,7 @@ body.home-polish-2026 .hero h1 {
   margin-bottom: 22px;
   font-size: clamp(4rem, 5.55vw, 6.1rem);
   line-height: 0.88;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
   text-wrap: balance;
 }
 
@@ -150,7 +150,7 @@ body.home-polish-2026 #faq .section-head .section-title {
   margin: 0;
   font-size: clamp(2.55rem, 4.4vw, 4.75rem);
   line-height: 0.94;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
   text-align: left;
 }
 
@@ -242,39 +242,24 @@ body.home-polish-2026 .game-actions .btn {
 }
 
 body.home-polish-2026 .principles-grid {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
 body.home-polish-2026 .principle {
-  grid-column: span 3;
-  min-height: 220px;
+  grid-column: auto;
+  min-height: 230px;
   padding: 24px;
   box-shadow: 0 20px 58px rgba(0, 11, 38, 0.18);
 }
 
 body.home-polish-2026 .principle:nth-child(1),
-body.home-polish-2026 .principle:nth-child(6) {
-  grid-column: span 5;
-}
-
-body.home-polish-2026 .principle:nth-child(2),
-body.home-polish-2026 .principle:nth-child(5) {
-  grid-column: span 7;
-}
-
-body.home-polish-2026 .principle:nth-child(3),
-body.home-polish-2026 .principle:nth-child(4) {
-  grid-column: span 6;
+body.home-polish-2026 .principle:nth-child(2) {
+  min-height: 230px;
 }
 
 body.home-polish-2026 .principle:nth-child(n + 7) {
   display: none;
-}
-
-body.home-polish-2026 .principle:nth-child(1),
-body.home-polish-2026 .principle:nth-child(2) {
-  min-height: 260px;
 }
 
 body.home-polish-2026 .principle h3 {
@@ -304,7 +289,7 @@ body.home-polish-2026 .about-copy .section-title {
   max-width: 660px;
   font-size: clamp(2.65rem, 4.5vw, 5rem);
   line-height: 0.92;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.035em;
 }
 
 body.home-polish-2026 .about-copy p {
@@ -340,18 +325,18 @@ body.home-polish-2026 .step:last-child::after {
 }
 
 body.home-polish-2026 .devlog-grid {
-  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
 }
 
 body.home-polish-2026 .devlog-card {
-  grid-column: span 5;
+  grid-column: auto;
   min-height: 270px;
 }
 
 body.home-polish-2026 .devlog-card:first-child,
 body.home-polish-2026 .devlog-card:last-child {
-  grid-column: span 7;
+  grid-column: auto;
 }
 
 body.home-polish-2026 .devlog-card h3 {
@@ -390,7 +375,7 @@ body.home-polish-2026 .final-cta .container {
 body.home-polish-2026 .final-cta .section-title {
   max-width: 760px;
   font-size: clamp(2.7rem, 5.5vw, 5.6rem);
-  letter-spacing: -0.055em;
+  letter-spacing: -0.035em;
 }
 
 body.home-polish-2026 .final-cta .section-copy {
@@ -518,7 +503,7 @@ body.home-polish-2026 .footer-grid {
     margin-bottom: 18px;
     font-size: clamp(2.85rem, 12vw, 3.7rem);
     line-height: 0.9;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.035em;
     overflow-wrap: normal;
   }
 

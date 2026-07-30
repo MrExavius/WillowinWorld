@@ -3,18 +3,18 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://willowinworld.com/</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp</image:loc>
-      <image:title>Nature Seed draw-to-solve water physics puzzle</image:title>
+      <image:title>Nature Seed draw-to-solve line physics puzzle</image:title>
       <image:caption>WillowinWorld flagship mobile puzzle game Nature Seed</image:caption>
     </image:image>
   </url>
   <url>
     <loc>https://willowinworld.com/games/nature-seed.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -27,8 +27,8 @@
     </image:image>
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp</image:loc>
-      <image:title>Nature Seed draw-to-solve water physics puzzle game icon</image:title>
-      <image:caption>SEO-ready public download asset for Nature Seed</image:caption>
+      <image:title>Nature Seed draw-to-solve line physics puzzle game icon</image:title>
+      <image:caption>Public press asset for Nature Seed</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp</image:loc>
@@ -37,13 +37,13 @@
   </url>
   <url>
     <loc>https://willowinworld.com/press-kit.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://willowinworld.com/games/candy-shop.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -53,7 +53,7 @@
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp</image:loc>
       <image:title>Candy Shop cozy candy merge puzzle game icon</image:title>
-      <image:caption>SEO-ready public download asset for Candy Shop</image:caption>
+      <image:caption>Public press asset for Candy Shop</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp</image:loc>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://willowinworld.com/games/paint-blasters.html</loc>
-    <lastmod>2026-05-31</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <image:image>
@@ -72,7 +72,7 @@
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp</image:loc>
       <image:title>Paint Blasters color destruction physics puzzle game icon</image:title>
-      <image:caption>SEO-ready public download asset for Paint Blasters</image:caption>
+      <image:caption>Public press asset for Paint Blasters</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp</image:loc>
@@ -81,21 +81,46 @@
   </url>
   <url>
     <loc>https://willowinworld.com/games/ball-is-god.html</loc>
-    <lastmod>2026-05-31</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
     <image:image>
       <image:loc>https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp</image:loc>
       <image:title>Ball is God vertical arcade game icon</image:title>
     </image:image>
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp</image:loc>
-      <image:title>Ball is God one-touch vertical descent arcade game icon</image:title>
-      <image:caption>SEO-ready public download asset for Ball is God</image:caption>
+      <image:title>Ball is God rotating tower vertical arcade game icon</image:title>
+      <image:caption>Public press asset for Ball is God</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-espa-main-character.webp</image:loc>
       <image:title>Ball is God Espa main character</image:title>
     </image:image>
+    <image:image>
+      <image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp</image:loc>
+      <image:title>Ball is God celestial level selection menu background</image:title>
+    </image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp</image:loc><image:title>Ball is God Ena sky world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp</image:loc><image:title>Ball is God Dyo space world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp</image:loc><image:title>Ball is God Tria storm world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp</image:loc><image:title>Ball is God Tessera snow world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp</image:loc><image:title>Ball is God Pente volcano world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp</image:loc><image:title>Ball is God Eksi ocean world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp</image:loc><image:title>Ball is God Epta desert world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp</image:loc><image:title>Ball is God Ohto forest world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp</image:loc><image:title>Ball is God Ennea cave world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp</image:loc><image:title>Ball is God Deka infernal world background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp</image:loc><image:title>Ball is God Hall of Light dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp</image:loc><image:title>Ball is God Ena dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp</image:loc><image:title>Ball is God Dyo dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp</image:loc><image:title>Ball is God Tria dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp</image:loc><image:title>Ball is God Tessera dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp</image:loc><image:title>Ball is God Pente dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp</image:loc><image:title>Ball is God Eksi dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp</image:loc><image:title>Ball is God Epta dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp</image:loc><image:title>Ball is God Ohto dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp</image:loc><image:title>Ball is God Ennea dialogue background</image:title></image:image>
+    <image:image><image:loc>https://willowinworld.com/assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp</image:loc><image:title>Ball is God Deka dialogue background</image:title></image:image>
   </url>
 </urlset>

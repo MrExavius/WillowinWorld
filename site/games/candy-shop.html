@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Candy Shop is a cozy mobile candy merge puzzle with soft physics drops, combos, special sweets, containers and long-term progression from WillowinWorld.">
   <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#211027" id="metaThemeColor">
   <meta property="og:title" content="Candy Shop - Cozy Candy Merge Puzzle Game">
   <meta property="og:description" content="Drop, combine and evolve candies in a cozy mobile merge puzzle by WillowinWorld.">
@@ -18,11 +19,12 @@
   <meta name="twitter:title" content="Candy Shop - Cozy Candy Merge Puzzle Game">
   <meta name="twitter:description" content="Drop, combine and evolve candies in a cozy mobile merge puzzle by WillowinWorld.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Candy Shop cozy physics merge puzzle with colorful sweets">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>Candy Shop | Cozy Candy Merge Puzzle Game for Mobile</title>
   <link rel="canonical" href="https://willowinworld.com/games/candy-shop.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
-  <link rel="icon" href="../assets/willowinworld-logo.webp" type="image/webp">
+  <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <script type="application/ld+json">
 {
@@ -46,15 +48,11 @@
       "gamePlatform": ["Mobile", "iOS", "Android"],
       "operatingSystem": "iOS, Android",
       "applicationCategory": "Game",
+      "creativeWorkStatus": "Active development - playable production build",
+      "dateModified": "2026-07-30",
+      "mainEntityOfPage": "https://willowinworld.com/games/candy-shop.html",
       "author": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" },
-      "publisher": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://willowinworld.com/games/candy-shop.html",
-        "availability": "https://schema.org/PreOrder",
-        "price": "0",
-        "priceCurrency": "USD"
-      }
+      "publisher": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" }
     },
     {
       "@type": "FAQPage",
@@ -73,12 +71,12 @@
         {
           "@type": "Question",
           "name": "What makes Candy Shop different from other merge puzzle games?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Candy Shop focuses on cozy candy identity, soft physics, readable combo feedback, special sweets, container pressure and long-term progression for mobile sessions." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Candy Shop combines a 13-candy evolution chain with 10 container rulesets, eight special-candy effects, hold, landing preview and a next-three queue." }
         },
         {
           "@type": "Question",
           "name": "What is the current production status?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Candy Shop is in internal beta, with current work focused on optimization, UI polish, candy balance, container pressure and combo readability." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Candy Shop is in active development with its merge chain, 10 container rulesets, special-candy recipes, daily challenge, Candy Book and local score tables implemented in the current project." }
         },
         {
           "@type": "Question",
@@ -113,8 +111,9 @@
   <link rel="stylesheet" href="../motion.css">
 </head>
 <body class="game-detail-page game-theme-candy candy-shop-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Skip to Candy Shop</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Back to WillowinWorld main menu">
+    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — back to WillowinWorld">
       <img src="../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop cozy candy merge puzzle game icon" fetchpriority="high" decoding="async">
       <span><strong>Candy Shop</strong><small>WillowinWorld game page</small></span>
     </a>
@@ -130,7 +129,7 @@
       </svg>
     </button>
   </header>
-  <main class="game-page game-detail-shell candy-shop-shell">
+  <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
     <div class="candy-page-backdrop ambient-only" aria-hidden="true">
       <div class="candy-menu-world">
         <span class="candy-menu-shelf candy-menu-shelf-top"></span>
@@ -150,15 +149,15 @@
           <div class="eyebrow">Candy Shop</div>
           <h1 id="candyHeroTitle">Drop sweets. Build bigger treats.</h1>
           <p class="hero-copy">A cozy mobile merge puzzle about placing candy, triggering soft physics combos and chasing one more satisfying evolution.</p>
-          <p class="candy-hero-note">Now in internal beta, with current work focused on mobile performance, UI polish, candy size balance, container pressure and readable combo feedback.</p>
+          <p class="candy-hero-note">Active development with 13 candy stages, 10 container rulesets, eight special-candy effects and a planning layer built around hold, landing preview and the next-three queue.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Candy%20Shop%20updates">Follow Development</a>
             <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
           </div>
           <div class="candy-hero-stats" role="group" aria-label="Candy Shop highlights">
-            <span><strong>Drop</strong><small>place candy with soft physics</small></span>
-            <span><strong>Merge</strong><small>grow through 13 stages</small></span>
-            <span><strong>Combo</strong><small>chain sweets and rewards</small></span>
+            <span><strong>13 candies</strong><small>one readable evolution chain</small></span>
+            <span><strong>10 fields</strong><small>new geometry and rules</small></span>
+            <span><strong>8 specials</strong><small>paired effects and recipes</small></span>
           </div>
         </div>
 
@@ -192,7 +191,7 @@
               <span class="candy-cycle"><b>Drop</b><b>Merge</b><b>Combo</b></span>
             </span>
             <div class="magic-hud">
-              <span>Internal Beta · Optimization</span>
+              <span>Playable Build · Active Development</span>
               <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
             </div>
           </div>
@@ -201,14 +200,46 @@
     </section>
 
     <div class="container game-page-grid candy-shop-content">
+      <section class="game-proof-section" aria-labelledby="candyProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Inside the current build</span>
+            <h2 id="candyProofTitle">Every container rewrites the puzzle.</h2>
+            <p>The merge chain stays instantly readable, but the field does not. A flask changes the usable space, the hourglass creates a choke point, triple portals split the plan, rotating gravity upends settled candy, and obstacle walls turn the finale into controlled chaos.</p>
+            <span class="proof-status"><b>Build status</b> Active development</span>
+          </div>
+          <div class="proof-visual">
+            <div class="candy-container-section">
+              <h3>Eight visible rule changes</h3>
+              <p>Real container art from the current Unity project.</p>
+              <div class="container-showcase" aria-label="Candy Shop container gallery">
+                <figure><img src="../assets/game-proof/candy-containers/container_pot.webp" width="400" height="500" alt="Candy Shop pot-shaped merge container" loading="lazy" decoding="async"><figcaption>Pot</figcaption></figure>
+                <figure><img src="../assets/game-proof/candy-containers/container_hourglass.webp" width="400" height="500" alt="Candy Shop hourglass merge container with a narrow center" loading="lazy" decoding="async"><figcaption>Hourglass</figcaption></figure>
+                <figure><img src="../assets/game-proof/candy-containers/container_flask.webp" width="400" height="500" alt="Candy Shop flask-shaped merge container" loading="lazy" decoding="async"><figcaption>Flask</figcaption></figure>
+                <figure><img src="../assets/game-proof/candy-containers/container_tilted.webp" width="400" height="500" alt="Candy Shop tilted-floor merge container" loading="lazy" decoding="async"><figcaption>Tilted</figcaption></figure>
+                <figure><img src="../assets/game-proof/candy-containers/container_stepped.webp" width="400" height="500" alt="Candy Shop stepped merge container" loading="lazy" decoding="async"><figcaption>Stepped</figcaption></figure>
+                <figure><img src="../assets/game-proof/candy-containers/container_triple.webp" width="400" height="500" alt="Candy Shop triple-portal merge container" loading="lazy" decoding="async"><figcaption>Triple portal</figcaption></figure>
+                <figure><img src="../assets/game-proof/candy-containers/container_rotating.webp" width="400" height="500" alt="Candy Shop rotating-gravity container" loading="lazy" decoding="async"><figcaption>Rotating gravity</figcaption></figure>
+                <figure><img src="../assets/game-proof/candy-containers/container_obstacles.webp" width="400" height="500" alt="Candy Shop merge container with obstacle walls" loading="lazy" decoding="async"><figcaption>Obstacle walls</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Verified Candy Shop build facts">
+          <article><strong>13-stage evolution</strong><span>A complete candy ladder.</span></article>
+          <article><strong>Hold + next three</strong><span>Planning before every drop.</span></article>
+          <article><strong>Special recipes</strong><span>Fire, Ice, Magnet, Jelly and more.</span></article>
+          <article><strong>Daily and collection loop</strong><span>Seeded challenge, Candy Book and local top five.</span></article>
+        </div>
+      </section>
       <section class="soft-card game-page-section">
         <div class="eyebrow">Game overview</div>
         <h2>A cozy mobile merge puzzle built around soft physics and one-more-drop decisions.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Player promise</h3><p>Drop sweets, create bigger treats and turn every run into a cheerful chain of soft physics, sweet surprises and satisfying merges.</p></article>
-          <article class="detail-card"><h3>Search fit</h3><p>Built for players looking for a cozy merge game, candy puzzle game, casual drop puzzle, physics merge puzzle or satisfying mobile puzzle.</p></article>
+          <article class="detail-card"><h3>Current build</h3><p>Ten container rulesets, a complete 13-candy chain, eight special effects, landing preview, hold and a next-three queue are implemented.</p></article>
           <article class="detail-card"><h3>Audience</h3><p>Casual puzzle players who enjoy drop-and-merge games, cozy candy visuals, low-pressure strategy and quick mobile sessions.</p></article>
-          <article class="detail-card"><h3>Status</h3><p>Internal Beta - Optimization and Polish. Current work focuses on mobile performance, UI polish, candy size balance, container pressure and combo readability.</p></article>
+          <article class="detail-card"><h3>Status</h3><p>Active development. Current work focuses on mobile performance, UI polish, candy balance, container pressure and readable combo feedback.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="features">
@@ -217,7 +248,7 @@
         <div class="detail-grid">
           <article class="detail-card"><h3>Drop-and-merge candy play</h3><p>Players place sweets into the container, use gravity and timing, then merge matching candies into larger treats.</p></article>
           <article class="detail-card"><h3>13-stage candy chain</h3><p>The merge ladder gives every run a visible goal, from tiny sweets to bigger reward pieces with stronger screen presence.</p></article>
-          <article class="detail-card"><h3>Combos and special sweets</h3><p>Combo feedback, special candy ideas and container pressure give the cozy format more tactical texture over repeated sessions.</p></article>
+          <article class="detail-card"><h3>Combos and special sweets</h3><p>Eight implemented special-candy effects form paired recipes and side effects, giving repeated sessions more tactical texture.</p></article>
           <article class="detail-card"><h3>Cozy mobile presentation</h3><p>Soft colors, candy-shop backgrounds and touch-friendly UI make the game readable for short iOS and Android sessions.</p></article>
         </div>
       </section>
@@ -238,13 +269,13 @@
           <div>
             <p>Candy Shop began in 2025 as WillowinWorld's second game idea: a bright, cozy candy merge puzzle built around simple joy and satisfying physics.</p>
             <p>The world is intentionally warm and readable: shelves, sweets, soft mascots and shop-like containers support the fantasy that every tiny candy has a path toward becoming a bigger treat.</p>
-            <p>After the first prototype, the team expanded the GDD, rebuilt the direction, implemented the core candy mechanics, completed the 13-candy merge chain, started container systems and created the first UI pass.</p>
+            <p>After the first prototype, the team expanded the GDD, rebuilt the direction, completed the 13-candy merge chain and implemented ten container rulesets, special recipes, planning tools and the first meta-progression systems.</p>
           </div>
           <dl class="game-page-facts">
             <div><dt>Merge chain</dt><dd>13 candy stages</dd></div>
             <div><dt>Design focus</dt><dd>Soft physics and readable combos</dd></div>
-            <div><dt>Content direction</dt><dd>Special sweets, containers and progression</dd></div>
-            <div><dt>Current stage</dt><dd>Internal beta and optimization</dd></div>
+            <div><dt>Container tour</dt><dd>10 geometry and rule variants</dd></div>
+            <div><dt>Current stage</dt><dd>Active development and optimization</dd></div>
           </dl>
         </div>
       </section>
@@ -260,14 +291,14 @@
             <div><dt>Genre</dt><dd>Casual candy merge puzzle</dd></div>
             <div><dt>Platform target</dt><dd>iOS / Android</dd></div>
             <div><dt>Session shape</dt><dd>Short repeatable runs</dd></div>
-            <div><dt>Primary CTA</dt><dd>Internal beta updates</dd></div>
+            <div><dt>Primary CTA</dt><dd>Follow active development</dd></div>
           </dl>
         </div>
       </section>
       <section class="soft-card game-page-section" id="download-assets">
         <div class="eyebrow">Download assets</div>
-        <h2>SEO-ready Candy Shop WebP asset kit</h2>
-        <p class="asset-kit-copy">Optimized public files for press, publisher review, store references and image search. Every download uses descriptive genre naming for the cozy candy merge puzzle page.</p>
+        <h2>Candy Shop press and creator assets</h2>
+        <p class="asset-kit-copy">Curated WebP previews for editorial coverage, publisher review and store-layout references. Full-resolution source files are available from the studio on request.</p>
         <h3 class="asset-group-title">Brand and shop scenes</h3>
         <div class="asset-list">
           <a class="asset-link" href="../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" download><img src="../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" srcset="../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 360w, ../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop cozy candy merge puzzle game icon" loading="lazy" decoding="async"><strong>Game icon</strong><span>Cozy candy merge puzzle icon.</span></a>
@@ -309,26 +340,26 @@
       </section>
       <section class="soft-card game-page-section">
         <div class="eyebrow">Development journey</div>
-        <h2>From first prototype to internal beta.</h2>
+        <h2>From first prototype to a deeper production build.</h2>
         <ul class="update-list">
           <li><span>Late June 2025</span><strong>Second game idea</strong><p>WillowinWorld started exploring a bright candy project built around something simple, joyful and widely appealing.</p></li>
           <li><span>August 2025</span><strong>First candy characters</strong><p>The first candy characters were created, and the merge chain later expanded from 11 candies to 13 for stronger progression.</p></li>
           <li><span>September 2025</span><strong>First prototype</strong><p>The first prototype was built and tested. The result showed that the idea needed more identity, progression and a clearer hook.</p></li>
           <li><span>October 2025</span><strong>GDD expansion</strong><p>The design document was expanded with new mechanics, special sweets, progression ideas and container direction.</p></li>
           <li><span>December 2025-February 2026</span><strong>Core candy systems</strong><p>The main candy mechanics were implemented, the candy set was completed and early container systems began.</p></li>
-          <li><span>April 2026-current</span><strong>UI pass and internal beta</strong><p>The first major UI elements were created, and the game moved into internal testing, optimization, balance and polish.</p></li>
+          <li><span>April-July 2026</span><strong>Systems and polish pass</strong><p>The build expanded with ten container rulesets, special-candy interactions, planning tools, daily challenges and collection systems alongside optimization and UI polish.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
         <div class="eyebrow">Related Worlds</div>
         <h2>Follow the merge puzzle audience into the wider WillowinWorld catalog.</h2>
-        <p class="related-worlds-copy">Candy Shop covers the cozy drop-and-merge puzzle lane. Continue to a relaxing water physics puzzle, a color chain reaction arcade or the studio's longterm hardcore vertical descent project.</p>
+        <p class="related-worlds-copy">Candy Shop covers the cozy drop-and-merge puzzle lane. Continue to a relaxing line-physics puzzle, a color chain-reaction arcade or the studio's hardcore rotating-tower descent.</p>
         <div class="related-world-grid" aria-label="Related WillowinWorld game pages">
           <a class="related-world-link is-primary" href="nature-seed.html">
             <span class="related-world-kicker">Relaxing physics puzzle</span>
             <strong>Nature Seed</strong>
-            <p>Draw clean routes, guide water to seeds and restore forest levels through calm mobile physics.</p>
-            <span class="related-world-meta">Draw-to-solve water puzzle</span>
+            <p>Draw limited physical routes, bring two characters together and restore forest levels through calm mobile physics.</p>
+            <span class="related-world-meta">Draw-to-solve line puzzle</span>
           </a>
           <a class="related-world-link" href="paint-blasters.html">
             <span class="related-world-kicker">Color destruction arcade</span>
@@ -339,8 +370,8 @@
           <a class="related-world-link" href="ball-is-god.html">
             <span class="related-world-kicker">Story arcade</span>
             <strong>Ball is God?!</strong>
-            <p>Move from cozy sessions to a tense one-touch vertical descent with mythic worlds and boss pressure.</p>
-            <span class="related-world-meta">Hardcore one-touch arcade</span>
+            <p>Move from cozy sessions to a tense rotating-tower descent with combo smash, mythic worlds and boss pressure.</p>
+            <span class="related-world-meta">Hardcore tower arcade</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
             <span class="related-world-kicker">Press / publishers</span>
@@ -352,12 +383,12 @@
       </section>
       <section class="soft-card game-page-section" id="faq">
         <div class="eyebrow">Candy Shop FAQ</div>
-        <h2>Quick answers for players, press, publishers and search.</h2>
+        <h2>Answers for players, press and publishing partners.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>What kind of game is Candy Shop?</h3><p>A cozy candy merge puzzle with soft physics drops, special sweets, combos and progression.</p></article>
           <article class="detail-card"><h3>How does the gameplay work?</h3><p>Choose a candy, drop it into the container, merge matching sweets, manage space and chase larger candy stages.</p></article>
           <article class="detail-card"><h3>What makes it different?</h3><p>It combines a familiar merge puzzle loop with cozy candy identity, special sweets, readable combos and container pressure.</p></article>
-          <article class="detail-card"><h3>What is the current status?</h3><p>Internal beta. The focus is mobile optimization, UI polish, candy balance and readable combo feedback.</p></article>
+          <article class="detail-card"><h3>What is the current status?</h3><p>Active development. The merge chain, ten container rulesets, special recipes, daily challenge, Candy Book and local score tables exist in the current project.</p></article>
           <article class="detail-card"><h3>Can public assets be used?</h3><p>Yes, for press, publisher review and store references. Source assets stay private unless requested directly.</p></article>
         </div>
       </section>
@@ -365,9 +396,9 @@
         <div class="eyebrow">Candy Shop Devlog</div>
         <h2>What changed and when</h2>
         <ul class="update-list">
-          <li><span>Current stage</span><strong>Internal beta and optimization</strong><p>Candy Shop is being tested internally, with focus on mobile performance, UI polish, candy balance, container pressure and clear combo feedback.</p></li>
+          <li><span>July 2026</span><strong>Deeper production build</strong><p>The current project combines the full merge chain with ten container rulesets, special recipes, planning tools, daily challenges, Candy Book discoveries and local score tables.</p></li>
           <li><span>April 2026</span><strong>UI elements pass</strong><p>The first major UI elements were created, giving Candy Shop a clearer mobile identity and stronger casual presentation.</p></li>
-          <li><span>February 2026</span><strong>Candy chain and containers</strong><p>The full candy set was completed, and early work began on bags and containers that change puzzle pressure.</p></li>
+          <li><span>February 2026</span><strong>Candy chain and containers</strong><p>The full candy set was completed, and container systems began changing geometry, gravity and puzzle pressure.</p></li>
           <li><span>December 2025</span><strong>Core candy mechanics</strong><p>The main candy mechanics were implemented in rough form, turning the expanded GDD into a playable system.</p></li>
           <li><span>October 2025</span><strong>GDD expansion</strong><p>After the first prototype did not feel strong enough, the design was expanded with special sweets and progression ideas.</p></li>
           <li><span>August 2025</span><strong>First candy characters</strong><p>The first candy characters were created, establishing the soft, friendly direction of the merge chain.</p></li>
@@ -375,6 +406,21 @@
       </section>
     </div>
   </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Candy Shop is a WillowinWorld game.</strong>
+        <span>A cozy merge puzzle where the next drop is simple and the container never is.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Candy Shop footer navigation">
+        <a href="../index.html#games">All games</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../legal.html">Legal</a>
+        <a href="mailto:contact@willowinworld.com?subject=Candy%20Shop">Contact</a>
+      </nav>
+    </div>
+  </footer>
   <script src="../game-theme.js"></script>
 </body>
 </html>
