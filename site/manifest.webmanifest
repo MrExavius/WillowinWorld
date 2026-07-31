@@ -1,7 +1,7 @@
 {
   "name": "WillowinWorld",
   "short_name": "WillowinWorld",
-  "description": "Indie mobile game studio creating tactile magical games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?!",
+  "description": "Indie mobile game studio developing Nature Seed, Candy Shop, Paint Blasters and Ball is God?!",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
@@ -36,9 +36,9 @@
       "icons": [{ "src": "/assets/willowinworld-logo-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
-      "name": "Nature Seed Beta",
+      "name": "Nature Seed",
       "short_name": "Nature Seed",
-      "description": "Open the Nature Seed beta and devlog page.",
+      "description": "Open the Nature Seed game page and development notes.",
       "url": "/games/nature-seed.html",
       "icons": [{ "src": "/assets/willowinworld-logo-192.png", "sizes": "192x192", "type": "image/png" }]
     },

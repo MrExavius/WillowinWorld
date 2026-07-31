@@ -2032,7 +2032,10 @@
       openContact(button);
     }));
     document.querySelectorAll("[data-open-info]").forEach(button => {
-      button.addEventListener("click", () => openInfoModal(button.dataset.openInfo, button));
+      button.addEventListener("click", event => {
+        event.preventDefault();
+        openInfoModal(button.dataset.openInfo, button);
+      });
     });
 
     themeToggle.addEventListener("click", () => {

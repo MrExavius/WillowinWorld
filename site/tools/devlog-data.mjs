@@ -135,7 +135,7 @@ export function renderHomepageDevlogs(updates) {
     `              <span><b data-devlog-name>${escapeHtml(update.name)}</b><time datetime="${update.published}" data-devlog-date>${escapeHtml(update.dateLabel)}</time></span>`,
     `              <h3 data-devlog-title>${escapeHtml(update.title)}</h3>`,
     `              <p data-devlog-summary>${escapeHtml(update.summary)}</p>`,
-    `              <a class="btn btn-ghost" href="${escapeHtml(update.href)}">Open devlog</a>`,
+    `              <a class="btn btn-ghost" href="${escapeHtml(update.href)}" aria-label="Open ${escapeHtml(update.name)} devlog">Open ${escapeHtml(update.name)} devlog</a>`,
     "            </article>"
   ].join("\n")).join("\n");
 }
@@ -152,6 +152,34 @@ export function injectHomepageDevlogs(html, updates) {
   const before = html.slice(0, startIndex + start.length);
   const after = html.slice(endIndex);
   return `${before}\n${renderHomepageDevlogs(updates)}\n${after}`;
+}
+
+export function injectGameDateModified(html, update) {
+  const pattern = /(\"dateModified\"\s*:\s*\")[^\"]+(\")/;
+  if (!pattern.test(html)) {
+    throw new Error(`${update.file}: missing dateModified in JSON-LD`);
+  }
+  return html.replace(pattern, `$1${update.published}$2`);
+}
+
+function replaceSitemapLastmod(xml, loc, date) {
+  const blocks = xml.match(/<url>[\s\S]*?<\/url>/g) || [];
+  const block = blocks.find(candidate => candidate.includes(`<loc>${loc}</loc>`));
+  if (!block) throw new Error(`sitemap.xml: missing ${loc}`);
+  if (!/<lastmod>[^<]+<\/lastmod>/.test(block)) {
+    throw new Error(`sitemap.xml: missing lastmod for ${loc}`);
+  }
+  return xml.replace(block, block.replace(/<lastmod>[^<]+<\/lastmod>/, `<lastmod>${date}</lastmod>`));
+}
+
+export function injectSitemapDevlogDates(xml, updates) {
+  const newest = [...updates].sort((left, right) => right.timestamp - left.timestamp)[0];
+  let next = replaceSitemapLastmod(xml, "https://willowinworld.com/", newest.published);
+  for (const update of updates) {
+    const gameUrl = update.canonical.replace(/#devlog$/, "");
+    next = replaceSitemapLastmod(next, gameUrl, update.published);
+  }
+  return next;
 }
 
 function formatRssDate(published) {

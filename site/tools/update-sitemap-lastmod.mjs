@@ -1,37 +1,21 @@
-import { readFile, stat, writeFile } from "node:fs/promises";
-import { fileURLToPath } from "node:url";
-import path from "node:path";
+import { readFile, writeFile } from "node:fs/promises";
+import { join } from "node:path";
+import { injectSitemapDevlogDates, loadLatestDevlogs, siteRoot } from "./devlog-data.mjs";
 
-const siteDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const sitemapPath = path.join(siteDir, "sitemap.xml");
-const origin = "https://willowinworld.com/";
+const checkOnly = process.argv.includes("--check");
+const sitemapPath = join(siteRoot, "sitemap.xml");
+const current = await readFile(sitemapPath, "utf8");
+const next = injectSitemapDevlogDates(current, await loadLatestDevlogs());
 
-function localPathForUrl(url) {
-  if (!url.startsWith(origin)) return null;
-  const pathname = new URL(url).pathname;
-  if (pathname === "/") return path.join(siteDir, "index.html");
-  return path.join(siteDir, decodeURIComponent(pathname.replace(/^\//, "")));
+if (current === next) {
+  console.log("Sitemap devlog dates are current.");
+  process.exit(0);
 }
 
-function toDateStamp(date) {
-  return date.toISOString().slice(0, 10);
+if (checkOnly) {
+  console.error("Sitemap devlog dates are stale. Run: node site/tools/update-sitemap-lastmod.mjs");
+  process.exit(1);
 }
 
-let sitemap = await readFile(sitemapPath, "utf8");
-const blocks = sitemap.match(/<url>[\s\S]*?<\/url>/g) || [];
-
-for (const block of blocks) {
-  const loc = block.match(/<loc>([^<]+)<\/loc>/)?.[1];
-  const file = loc ? localPathForUrl(loc) : null;
-  if (!file) continue;
-
-  try {
-    const fileStat = await stat(file);
-    const next = block.replace(/<lastmod>[^<]+<\/lastmod>/, `<lastmod>${toDateStamp(fileStat.mtime)}</lastmod>`);
-    sitemap = sitemap.replace(block, next);
-  } catch {
-    process.stderr.write(`Skipping missing sitemap target: ${loc}\n`);
-  }
-}
-
-await writeFile(sitemapPath, sitemap);
+await writeFile(sitemapPath, next);
+console.log("Updated sitemap dates from the newest dated game devlogs.");

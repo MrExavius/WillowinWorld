@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Paint Blasters is a mobile color destruction physics puzzle arcade. Mix color-powered shots, aim at tower weak points and trigger chain reactions.">
+  <meta name="description" content="Paint Blasters is a mobile color-destruction physics puzzle in active development. Mix 35 projectile recipes, target weak points and trigger chain reactions.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#071225" id="metaThemeColor">
@@ -15,13 +15,15 @@
   <meta property="og:image:alt" content="Paint Blasters color destruction physics puzzle arcade by WillowinWorld">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://willowinworld.com/games/paint-blasters.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Paint Blasters - Color Destruction Physics Puzzle Game">
   <meta name="twitter:description" content="Mix color shots, smash towers and trigger chain reactions in WillowinWorld's mobile physics arcade puzzle.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
   <meta name="twitter:image:alt" content="Paint Blasters color mixing and tower destruction physics puzzle">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Paint Blasters | Color Destruction Physics Puzzle Arcade</title>
+  <title>Paint Blasters | Color-Mixing Physics Puzzle Arcade</title>
   <link rel="canonical" href="https://willowinworld.com/games/paint-blasters.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -39,56 +41,19 @@
       ]
     },
     {
-      "@type": ["VideoGame", "SoftwareApplication"],
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/games/paint-blasters.html#game",
       "name": "Paint Blasters",
       "url": "https://willowinworld.com/games/paint-blasters.html",
       "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
       "description": "A vibrant physics puzzle arcade about mixing color-powered shots, smashing towers and triggering chain reactions.",
       "genre": ["Color puzzle", "Physics arcade", "Destruction puzzle", "Chain reaction"],
-      "gamePlatform": ["Mobile", "iOS", "Android"],
-      "operatingSystem": "iOS, Android",
-      "applicationCategory": "Game",
+      "gamePlatform": "Mobile",
       "creativeWorkStatus": "Active development - production prototype",
-      "dateModified": "2026-07-30",
+      "dateModified": "2026-07-31",
       "mainEntityOfPage": "https://willowinworld.com/games/paint-blasters.html",
-      "author": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" },
-      "publisher": { "@type": "Organization", "name": "WillowinWorld", "url": "https://willowinworld.com/" }
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://willowinworld.com/games/paint-blasters.html#faq",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What kind of game is Paint Blasters?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Paint Blasters is a mobile color destruction physics puzzle arcade about mixing shots, smashing towers and triggering chain reactions." }
-        },
-        {
-          "@type": "Question",
-          "name": "How does the Paint Blasters gameplay loop work?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Players read a tower, mix three color inputs into one of 35 authored projectile recipes, aim at a weak point, fire and use the result to plan the next shot." }
-        },
-        {
-          "@type": "Question",
-          "name": "What makes Paint Blasters different from other physics destruction games?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Paint Blasters puts the decision before the shot: players mix color logic and projectile behavior before creating a physics-driven tower collapse." }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the current production status?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Paint Blasters is in active development as a production prototype. All 35 combo strategies are implemented; current work focuses on projectile readability, tower clarity and destruction feedback." }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Paint Blasters designed for mobile?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Paint Blasters is designed for iOS and Android with short level-based physics puzzles, readable towers and touch-friendly aiming." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can press or publishers download Paint Blasters assets?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The public files are optimized preview assets for articles, publisher review and store references. Source files are available by request." }
-        }
-      ]
+      "author": { "@id": "https://willowinworld.com/#studio" },
+      "publisher": { "@id": "https://willowinworld.com/#studio" }
     }
   ]
 }
@@ -118,7 +83,7 @@
       <span><strong>Paint Blasters</strong><small>WillowinWorld game page</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
-      <a href="../index.html">Menu</a>
+      <a href="../index.html">Studio home</a>
       <a href="#devlog">Devlog</a>
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
@@ -155,9 +120,9 @@
           <div class="eyebrow">Paint Blasters</div>
           <h1 id="paintHeroTitle">Mix three colors. Break the tower.</h1>
           <p class="hero-copy">A mobile physics arcade puzzle where three color inputs resolve into one of 35 authored projectile recipes. Read the tower, build the effect and turn one exact impact into a bright chain reaction.</p>
-          <p class="paint-hero-note">Active development · production prototype. All 35 combo strategies are implemented; the current pass focuses on projectile readability, tower clarity and punchier destruction feedback.</p>
+          <p class="paint-hero-note">Active development · production prototype. All 35 projectile recipes are implemented; the current pass focuses on projectile readability, tower clarity and punchier destruction feedback.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Paint%20Blasters%20updates">Follow Development</a>
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Paint%20Blasters%20updates">Request Paint Blasters updates</a>
             <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
           </div>
           <div class="paint-hero-stats" role="group" aria-label="Paint Blasters highlights">
@@ -260,7 +225,7 @@
         <h2>A color destruction physics puzzle where the smartest decision happens before the shot.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Player promise</h3><p>Build the shot, hit the weak point and watch one smart color-powered impact become a satisfying chain reaction.</p></article>
-          <article class="detail-card"><h3>Current build</h3><p>All 35 combo strategies, seven structural block archetypes and progressive five-floor tower pressure are implemented in the production prototype.</p></article>
+          <article class="detail-card"><h3>Current build</h3><p>All 35 projectile recipes, seven structural block archetypes and progressive five-floor tower pressure are implemented in the production prototype.</p></article>
           <article class="detail-card"><h3>Audience</h3><p>Players who enjoy physics puzzles, aim-and-shoot gameplay, color strategy, tower destruction and short arcade levels with tactical depth.</p></article>
           <article class="detail-card"><h3>Status</h3><p>Active development - production prototype. The combo system is implemented; presentation, tower readability and final scene scope remain in refinement.</p></article>
         </div>
@@ -296,7 +261,7 @@
           </div>
           <dl class="game-page-facts">
             <div><dt>Core hook</dt><dd>Build color-powered shots before firing</dd></div>
-            <div><dt>Current scope</dt><dd>35 implemented combo strategies</dd></div>
+            <div><dt>Current scope</dt><dd>35 implemented projectile recipes</dd></div>
             <div><dt>Design focus</dt><dd>Projectile readability and tower clarity</dd></div>
             <div><dt>Tower language</dt><dd>Seven readable block archetypes</dd></div>
           </dl>
@@ -308,7 +273,7 @@
         <div class="info-grid">
           <div>
             <p>Paint Blasters combines the immediate appeal of aim-and-shoot physics gameplay with a deeper pre-shot decision system. The result is a mobile-friendly destruction puzzle that is easy to understand in a short clip, but has room for tactical mastery.</p>
-            <p>The current GDD-based prototype is largely implemented in draft form, while final production scope is still being refined.</p>
+            <p>The production prototype includes all 35 projectile recipes and seven block archetypes; presentation and final scene scope remain in refinement.</p>
           </div>
           <dl class="game-page-facts">
             <div><dt>Genre</dt><dd>Color destruction physics puzzle</dd></div>
@@ -339,7 +304,7 @@
           <li><span>Late March 2026</span><strong>Latest GDD direction</strong><p>The current GDD shaped the project around three-color recipes, readable towers and level-based progression.</p></li>
           <li><span>Late April 2026</span><strong>Core mechanics draft</strong><p>The main mechanics from the current GDD were implemented in rough form, giving the team a playable draft of the destruction loop.</p></li>
           <li><span>July 2026</span><strong>35-combo system complete</strong><p>Five pure, twenty mixed and ten rainbow strategies now resolve from the recipe registry, while presentation and tower readability continue to improve.</p></li>
-          <li><span>Production focus</span><strong>Secondary active project</strong><p>WillowinWorld's main release focus is Nature Seed and Candy Shop, while Paint Blasters continues through design and prototype refinement.</p></li>
+          <li><span>Current refinement</span><strong>Presentation and scene scope</strong><p>Projectile readability, tower clarity, destruction feedback and final scene scope remain in active refinement.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
@@ -380,7 +345,7 @@
           <article class="detail-card"><h3>What kind of game is Paint Blasters?</h3><p>A mobile color destruction physics puzzle arcade about mixing shots and turning impacts into chain reactions.</p></article>
           <article class="detail-card"><h3>How does the gameplay work?</h3><p>Read the tower, build a color-powered projectile, aim at a weak point, fire and use the collapse to plan the next shot.</p></article>
           <article class="detail-card"><h3>What makes it different?</h3><p>The player does not only shoot. They build the projectile first, mixing color strategy with physics destruction.</p></article>
-          <article class="detail-card"><h3>What is the current status?</h3><p>Active development as a production prototype. All 35 combo strategies are implemented; presentation, tower readability and scene scope remain in refinement.</p></article>
+          <article class="detail-card"><h3>What is the current status?</h3><p>Active development as a production prototype. All 35 projectile recipes are implemented; presentation, tower readability and scene scope remain in refinement.</p></article>
           <article class="detail-card"><h3>Can public assets be used?</h3><p>Yes, for press, publisher review and store references. Source assets stay private unless requested directly.</p></article>
         </div>
       </section>
@@ -388,11 +353,11 @@
         <div class="eyebrow">Paint Blasters Devlog</div>
         <h2>What changed and when</h2>
         <ul class="update-list">
-          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 July 2026</time><strong>Physics and effect stability pass</strong><p>Projectile, Match-3, VFX, physics queries and pooled hit buffers were tightened under the production validator for more predictable combo resolution.</p></li>
-          <li><span>July 2026</span><strong>All 35 combo strategies implemented</strong><p>The current recipe registry contains five pure, twenty mixed and ten rainbow projectile behaviors with authored roles, targets and payoffs.</p></li>
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 July 2026</time><strong>Physics and effect stability pass</strong><p>Projectile behavior, Match-3 resolution and hit effects were tested and tightened for more consistent combo outcomes.</p></li>
+          <li><span>July 2026</span><strong>All 35 projectile recipes implemented</strong><p>The current recipe registry contains five pure, twenty mixed and ten rainbow projectile behaviors with authored roles, targets and payoffs.</p></li>
           <li><span>April 2026</span><strong>Core mechanics draft</strong><p>The main mechanics from the current GDD were implemented in rough form, creating a playable color-powered destruction loop.</p></li>
-          <li><span>March 2026</span><strong>Internal test and visual pass</strong><p>The team improved color contrast, tower readability and stronger arcade impact after internal testing.</p></li>
           <li><span>Late March 2026</span><strong>GDD direction</strong><p>The latest GDD shaped Paint Blasters around projectile-building: players combine three color inputs into a defined behavior before each shot.</p></li>
+          <li><span>March 2026</span><strong>Internal test and visual pass</strong><p>The team improved color contrast, tower readability and stronger arcade impact after internal testing.</p></li>
           <li><span>February 2026</span><strong>Development begins</strong><p>The game entered development as a mobile physics puzzle built around color destruction and satisfying chain reactions.</p></li>
           <li><span>Scope note</span><strong>Final scope is still being refined</strong><p>The current prototype covers the latest GDD in draft form, but the final production scope may grow as the design track continues.</p></li>
         </ul>
