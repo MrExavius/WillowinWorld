@@ -1,7 +1,7 @@
 /* WillowinWorld CSS: data, contrast and reduced motion preferences. */
 @media (max-width: 760px) {
   .floating-rune,
-  .secret-glint,
+  body:not(.promo-hunt-active) .secret-glint,
   .press-ocean-fish,
   .press-ocean-bubble,
   .paint-ship-panel {

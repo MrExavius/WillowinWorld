@@ -713,6 +713,11 @@
   62% { opacity: 0.12; transform: translate(-50%, -50%) scale(0.94); }
 }
 
+@keyframes secretHuntPulse {
+  0%, 100% { opacity: 0.58; transform: translate(-50%, -50%) scale(0.94); }
+  50% { opacity: 0.92; transform: translate(-50%, -50%) scale(1.08); }
+}
+
 @keyframes navLinkEnter {
   from {
     opacity: 0;
@@ -723,4 +728,3 @@
     transform: translateY(0);
   }
 }
-

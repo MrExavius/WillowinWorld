@@ -21,6 +21,8 @@
   const contactModal = document.getElementById("contactModal");
   const closeContact = document.getElementById("closeContact");
   const contactForm = document.getElementById("contactForm");
+  const copyContactMessage = document.getElementById("copyContactMessage");
+  const promoHuntToggle = document.getElementById("promoHuntToggle");
   const careersModal = document.getElementById("careersModal");
   const closeCareers = document.getElementById("closeCareers");
   const pressModal = document.getElementById("pressModal");
@@ -276,6 +278,42 @@
     toast.classList.add("is-visible");
     window.clearTimeout(showToast.timer);
     showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 2600);
+  }
+
+  function getContactDraft() {
+    const formData = new FormData(contactForm);
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const type = String(formData.get("type") || "General").trim();
+    const message = String(formData.get("message") || "").trim();
+    const subject = type + " inquiry from " + (name || "WillowinWorld visitor");
+    const body =
+      "Name: " + name + "\n" +
+      "Email: " + email + "\n" +
+      "Inquiry type: " + type + "\n\n" +
+      message;
+    return {
+      href: "mailto:contact@willowinworld.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body),
+      plainText: "To: contact@willowinworld.com\nSubject: " + subject + "\n\n" + body
+    };
+  }
+
+  async function copyText(text) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      await navigator.clipboard.writeText(text);
+      return;
+    }
+    const fallback = document.createElement("textarea");
+    fallback.value = text;
+    fallback.setAttribute("aria-hidden", "true");
+    fallback.style.position = "fixed";
+    fallback.style.opacity = "0";
+    fallback.style.pointerEvents = "none";
+    document.body.append(fallback);
+    fallback.select();
+    const copied = document.execCommand("copy");
+    fallback.remove();
+    if (!copied) throw new Error("Clipboard copy was rejected.");
   }
 
   function updateLabels() {
@@ -1218,6 +1256,11 @@
     drawCat(now);
     drawBursts(now);
 
+    if (state.lowMotion) {
+      state.rafId = null;
+      return;
+    }
+
     if (state.running && !state.inactive && !state.paused && !state.disabled) {
       state.rafId = requestAnimationFrame(render);
     } else {
@@ -1302,7 +1345,7 @@
     state.pointer.y = point.y;
     state.pointer.active = true;
     state.pointer.lastMove = performance.now();
-    startLoop();
+    if (!state.lowMotion) startLoop();
     if (!state.lowMotion && !state.disabled && state.pointer.lastMove - state.pointer.lastTrail > 34) {
       state.pointer.lastTrail = state.pointer.lastMove;
       state.trails.push({ x: point.x, y: point.y, t: state.pointer.lastMove });
@@ -1589,6 +1632,10 @@
 
   function syncSecretHuntMode(active) {
     body.classList.toggle("promo-hunt-active", active);
+    if (promoHuntToggle) {
+      promoHuntToggle.setAttribute("aria-pressed", String(active));
+      promoHuntToggle.textContent = active ? "End magic hunt" : "Magic hunt";
+    }
     document.querySelectorAll(".secret-glint").forEach(glint => {
       const letter = glint.dataset.letter || glint.textContent.trim();
       glint.tabIndex = active ? 0 : -1;
@@ -1601,7 +1648,12 @@
   }
 
   function initSecrets() {
-    const surfaces = shuffled(document.querySelectorAll("main .section"));
+    const surfaces = shuffled(
+      [...document.querySelectorAll("main .section")].filter(surface => (
+        surface.offsetParent !== null &&
+        window.getComputedStyle(surface).display !== "none"
+      ))
+    );
     const spots = shuffled(sectionSecretSpots);
     if (!surfaces.length || !spots.length) return;
 
@@ -1612,7 +1664,7 @@
         const spot = spots[(order * 5 + secretIndex) % spots.length];
         const glint = document.createElement("button");
         glint.type = "button";
-        glint.className = "secret-glint ambient-only";
+        glint.className = "secret-glint";
         glint.textContent = letter;
         glint.tabIndex = -1;
         glint.dataset.letter = letter;
@@ -1626,17 +1678,19 @@
       });
     });
 
-    syncSecretHuntMode(true);
+    syncSecretHuntMode(false);
   }
 
   function openMenu() {
     body.classList.add("menu-open");
     menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "Close menu");
   }
 
   function closeMenu() {
     body.classList.remove("menu-open");
     menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
   }
 
   function openContact(trigger) {
@@ -1645,6 +1699,14 @@
     activeContactTrigger = trigger || document.activeElement;
     contactModal.hidden = false;
     contactModal.classList.add("is-open");
+    const requestedType = trigger && trigger.dataset ? trigger.dataset.contactType : "";
+    const typeField = contactForm.elements.namedItem("type");
+    const messageField = contactForm.elements.namedItem("message");
+    if (typeField && requestedType) {
+      typeField.value = requestedType;
+    } else if (typeField && messageField && !String(messageField.value || "").trim()) {
+      typeField.value = "General";
+    }
     syncModalLock();
     window.setTimeout(() => document.getElementById("name").focus(), 30);
   }
@@ -1814,10 +1876,38 @@
   }
 
   function initFaq() {
-    document.querySelectorAll(".faq-item").forEach(item => {
+    document.querySelectorAll(".faq-item").forEach((item, index) => {
       const button = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+      if (!button || !answer) return;
+      const buttonId = `faq-question-${index + 1}`;
+      const answerId = `faq-answer-${index + 1}`;
+      button.id = buttonId;
+      button.setAttribute("aria-controls", answerId);
+      answer.id = answerId;
+      answer.setAttribute("role", "region");
+      answer.setAttribute("aria-labelledby", buttonId);
+      answer.hidden = true;
+      answer.inert = true;
+
       button.addEventListener("click", () => {
-        const open = item.classList.toggle("is-open");
+        const open = !item.classList.contains("is-open");
+        window.clearTimeout(item.faqCloseTimer);
+        window.cancelAnimationFrame(item.faqOpenFrame);
+        if (open) {
+          answer.hidden = false;
+          answer.inert = false;
+          item.faqOpenFrame = window.requestAnimationFrame(() => {
+            item.classList.add("is-open");
+            item.faqOpenFrame = 0;
+          });
+        } else {
+          item.classList.remove("is-open");
+          answer.inert = true;
+          item.faqCloseTimer = window.setTimeout(() => {
+            if (!item.classList.contains("is-open")) answer.hidden = true;
+          }, 320);
+        }
         button.setAttribute("aria-expanded", String(open));
       });
     });
@@ -1843,7 +1933,17 @@
       button.addEventListener("click", () => openInfoModal(button.dataset.openInfo, button));
     });
 
-    themeToggle.addEventListener("click", () => setTheme(state.theme === "dark" ? "light" : "dark"));
+    themeToggle.addEventListener("click", () => {
+      setTheme(state.theme === "dark" ? "light" : "dark");
+      startLoop();
+    });
+    if (promoHuntToggle) {
+      promoHuntToggle.addEventListener("click", () => {
+        const active = !body.classList.contains("promo-hunt-active");
+        syncSecretHuntMode(active);
+        showToast(active ? "Hidden letters are awake." : "Magic hunt paused.");
+      });
+    }
     if (pauseMagic) {
       pauseMagic.addEventListener("click", () => {
         state.paused = !state.paused;
@@ -1902,23 +2002,23 @@
     });
     contactForm.addEventListener("submit", event => {
       event.preventDefault();
-      const formData = new FormData(contactForm);
-      const name = String(formData.get("name") || "").trim();
-      const email = String(formData.get("email") || "").trim();
-      const type = String(formData.get("type") || "General").trim();
-      const message = String(formData.get("message") || "").trim();
-      const subject = encodeURIComponent(type + " inquiry from " + (name || "WillowinWorld visitor"));
-      const body = encodeURIComponent(
-        "Name: " + name + "\n" +
-        "Email: " + email + "\n" +
-        "Inquiry type: " + type + "\n\n" +
-        message
-      );
-      window.location.href = "mailto:contact@willowinworld.com?subject=" + subject + "&body=" + body;
-      showToast("Opening your email app with the message prepared.");
+      if (!contactForm.reportValidity()) return;
+      const draft = getContactDraft();
+      window.location.href = draft.href;
+      showToast("Email draft requested. If it did not open, use Copy message.");
       closeContactModal();
-      contactForm.reset();
     });
+    if (copyContactMessage) {
+      copyContactMessage.addEventListener("click", async () => {
+        if (!contactForm.reportValidity()) return;
+        try {
+          await copyText(getContactDraft().plainText);
+          showToast("Contact message copied.");
+        } catch (error) {
+          showToast("Copy was blocked. Use contact@willowinworld.com.");
+        }
+      });
+    }
     window.addEventListener("keydown", event => {
       trapModalFocus(event);
       if (event.key === "Escape") {
@@ -1950,6 +2050,7 @@
     window.requestAnimationFrame(() => {
       resizeScheduled = false;
       resize();
+      if (state.lowMotion) startLoop();
     });
   }
 

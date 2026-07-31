@@ -34,7 +34,7 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="rss.xml">
   <link rel="preload" href="assets/responsive/willowinworld-logo-256.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="preload" href="assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/base.css?v=20260731-1">
   <link rel="stylesheet" href="css/nature-scene.css">
   <link rel="stylesheet" href="css/home-card-base.css">
   <link rel="stylesheet" href="css/home-ball-card.css">
@@ -43,14 +43,14 @@
   <link rel="stylesheet" href="css/home-candy-card.css">
   <link rel="stylesheet" href="css/game-components.css">
   <link rel="stylesheet" href="css/game-content.css">
-  <link rel="stylesheet" href="css/site-sections.css">
-  <link rel="stylesheet" href="css/keyframes.css">
+  <link rel="stylesheet" href="css/site-sections.css?v=20260731-1">
+  <link rel="stylesheet" href="css/keyframes.css?v=20260731-1">
   <link rel="stylesheet" href="css/responsive-desktop.css">
   <link rel="stylesheet" href="css/responsive-tablet.css">
   <link rel="stylesheet" href="css/responsive-mobile.css">
-  <link rel="stylesheet" href="css/responsive-preferences.css">
+  <link rel="stylesheet" href="css/responsive-preferences.css?v=20260731-1">
   <link rel="stylesheet" href="motion.css">
-  <link rel="stylesheet" href="css/home-polish-2026.css?v=20260730-2">
+  <link rel="stylesheet" href="css/home-polish-2026.css?v=20260731-1">
   <script type="application/ld+json" id="structuredData">
 {
   "@context": "https://schema.org",
@@ -237,7 +237,7 @@
             </nav>
           </div>
 
-          <div class="hero-panel" role="img" aria-label="Nature Seed restoration preview">
+          <div class="hero-panel" role="img" aria-label="Current spotlight: Nature Seed restoration preview">
             <div class="nature-preview ambient-only" aria-hidden="true">
               <div class="nature-stage nature-stage-hero">
                 <img class="nature-level nature-level-sketch" src="assets/responsive/nature-seed-sketch-720.webp" width="720" height="405" alt="" fetchpriority="high" decoding="async">
@@ -259,7 +259,7 @@
               </div>
               <img loading="lazy" class="nature-preview-icon" src="assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
               <span class="nature-preview-title">
-                <small>Draw-to-Solve Physics Puzzle</small>
+                <small>Current spotlight · Draw-to-Solve</small>
                 <strong>Nature Seed</strong>
               </span>
               <span class="nature-cycle"><b>Sketch</b><b>Connect</b><b>Bloom</b></span>
@@ -272,7 +272,7 @@
               <span>Four worlds</span>
             </div>
             <div class="magic-hud">
-              <span>Nature Seed playable prototype</span>
+              <span>Spotlight · Nature Seed prototype</span>
               <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
             </div>
           </div>
@@ -748,25 +748,20 @@
           <a href="#games">Games</a>
           <a href="#studio">Studio</a>
           <a href="#devlog">Devlog</a>
-          <a href="rss.xml">RSS</a>
           <a href="press-kit.html">Press kit</a>
           <a href="#contact">Contact</a>
           <a href="404.html">Lost Stars</a>
-          <button type="button" data-open-info="privacy">Privacy</button>
-          <button type="button" data-open-info="legal">Legal</button>
-          <button type="button" data-open-info="asset">Asset Usage</button>
+          <button id="promoHuntToggle" type="button" aria-pressed="false">Magic hunt</button>
         </nav>
         <div class="footer-contact">
           <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a>
           <a href="mailto:contact@willowinworld.com?subject=Nature%20Seed%20Playtest%20Access">Nature Seed playtest</a>
-          <a href="press-kit.html">Press kit</a>
           <button class="footer-action" type="button" data-open-info="asset">Asset usage</button>
           <button class="footer-action" type="button" data-open-info="privacy">Privacy</button>
           <button class="footer-action" type="button" data-open-info="legal">Legal</button>
           <button class="footer-action" type="button" data-open-info="security">Security</button>
           <a href="mailto:contact@willowinworld.com?subject=Publisher%20inquiry">Publisher contact</a>
           <button class="footer-action" type="button" data-open-info="careers">Careers / Collaboration</button>
-          <button class="footer-action" type="button" data-open-info="press">Press / Publishers</button>
         </div>
         <div class="copyright">© 2026 WillowinWorld. All rights reserved.</div>
       </div>
@@ -796,18 +791,22 @@
         <div class="field">
           <label for="type">Inquiry type</label>
           <select id="type" name="type">
-            <option value="Portfolio">Portfolio</option>
+            <option value="General">General</option>
             <option value="Publishing">Publishing</option>
             <option value="Partnership">Partnership</option>
             <option value="Press">Press</option>
-            <option value="General">General</option>
+            <option value="Portfolio">Portfolio</option>
           </select>
         </div>
         <div class="field">
           <label for="message">Message</label>
           <textarea id="message" name="message" maxlength="1200" required placeholder="Tell us what you want to discuss."></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Send Message</button>
+        <p class="contact-handoff-note">This opens a prepared draft in your email app. Nothing is sent until you confirm it there. You can also email <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a> directly.</p>
+        <div class="contact-form-actions">
+          <button class="btn btn-primary" type="submit">Prepare email</button>
+          <button class="btn btn-ghost" id="copyContactMessage" type="button">Copy message</button>
+        </div>
       </form>
     </div>
   </div>
@@ -838,7 +837,7 @@
         <p>Send a focused portfolio link, role, availability and the WillowinWorld game or style area you feel closest to.</p>
       </div>
       <div class="info-actions">
-        <button class="btn btn-primary" data-open-contact type="button">Open Contact Form</button>
+        <button class="btn btn-primary" data-open-contact data-contact-type="Portfolio" type="button">Open Contact Form</button>
         <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Portfolio%20or%20collaboration%20for%20WillowinWorld">Send Portfolio</a>
       </div>
     </div>
@@ -1064,6 +1063,6 @@
     </div>
   </div>
 
-  <script src="scripts.js"></script>
+  <script src="scripts.js?v=20260731-1"></script>
 </body>
 </html>

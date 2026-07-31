@@ -376,6 +376,10 @@
   transition: grid-template-rows .3s var(--ease);
 }
 
+.faq-answer[hidden] {
+  display: none;
+}
+
 .faq-item.is-open .faq-answer {
   grid-template-rows: 1fr;
 }
@@ -462,7 +466,11 @@
 
 .footer-links a,
 .footer-links button {
-  padding: 0;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 2px;
   border: 0;
   color: inherit;
   background: none;
@@ -486,7 +494,7 @@
 .footer-contact {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 18px;
+  gap: 2px 18px;
   justify-content: flex-end;
   justify-self: end;
   max-width: 520px;
@@ -498,6 +506,15 @@
   flex-basis: 100%;
   color: var(--text);
   font-weight: 850;
+}
+
+.footer-contact a,
+.footer-contact button {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding-block: 9px;
 }
 
 .copyright {
@@ -817,6 +834,32 @@
   gap: 14px;
 }
 
+.contact-handoff-note {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+
+.contact-handoff-note a {
+  color: var(--text);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--cyan) 48%, transparent);
+  text-underline-offset: 3px;
+}
+
+.contact-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact-form-actions .btn {
+  flex: 1 1 180px;
+}
+
 .field {
   display: grid;
   gap: 8px;
@@ -925,7 +968,7 @@
   opacity: 0;
   transform: translate(-50%, -50%);
   transition: opacity .34s var(--ease), transform .34s var(--ease), filter .34s var(--ease), text-shadow .34s var(--ease);
-  animation: secretPulse 8.4s var(--ease) var(--glint-delay) infinite;
+  animation: none;
 }
 
 .secret-glint::before,
@@ -974,7 +1017,7 @@
 
 body.promo-hunt-active .secret-glint {
   opacity: 0.72;
-  animation-duration: 4.8s;
+  animation: secretHuntPulse 4.8s var(--ease) var(--glint-delay) infinite;
 }
 
 body.promo-hunt-active .secret-glint:focus-visible {
@@ -985,8 +1028,8 @@ body.promo-hunt-active .secret-glint:focus-visible {
   z-index: 3;
 }
 
-body.low-motion .secret-glint,
-body.magic-off .secret-glint {
+body.promo-hunt-active.low-motion .secret-glint,
+body.promo-hunt-active.magic-off .secret-glint {
   opacity: 0.34;
   transform: translate(-50%, -50%) scale(0.96);
 }
