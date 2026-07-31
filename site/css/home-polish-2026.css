@@ -45,6 +45,7 @@ body.home-polish-2026 .filter-btn:active {
 
 body.home-polish-2026 .section {
   padding-block: clamp(76px, 8vw, 112px);
+  scroll-margin-top: 0;
 }
 
 body.home-polish-2026 .hero {
@@ -363,7 +364,7 @@ body.home-polish-2026 .principle {
   flex-direction: column;
 }
 
-body.home-polish-2026 :is(.principle, .step, .devlog-card) {
+body.home-polish-2026 :is(.principle, .step) {
   border-radius: 16px;
   background:
     linear-gradient(148deg, color-mix(in srgb, var(--paper) 8%, transparent), transparent 46%),
@@ -409,6 +410,8 @@ body.home-polish-2026 .timeline {
   gap: 12px;
   overflow: visible;
   padding: 2px;
+  content-visibility: visible;
+  contain-intrinsic-size: none;
 }
 
 body.home-polish-2026 .step {
@@ -448,13 +451,66 @@ body.home-polish-2026 .step:last-child::after {
 }
 
 body.home-polish-2026 .devlog-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  counter-reset: devlog;
+  border-top: 1px solid color-mix(in srgb, var(--paper) 24%, var(--line));
+  content-visibility: visible;
+  contain-intrinsic-size: none;
 }
 
 body.home-polish-2026 .devlog-card {
+  --devlog-accent: var(--green);
   grid-column: auto;
-  min-height: 270px;
+  display: grid;
+  grid-template-columns: 68px minmax(185px, 0.55fr) minmax(300px, 1fr) auto;
+  grid-template-areas:
+    "index meta title action"
+    "index meta copy action";
+  gap: 8px clamp(18px, 3vw, 42px);
+  align-items: center;
+  min-height: 158px;
+  padding: 24px 8px;
+  border: 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--paper) 20%, var(--line));
+  border-radius: 0;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--surface) 38%, transparent), color-mix(in srgb, var(--surface) 18%, transparent) 72%, transparent);
+  box-shadow: none;
+  counter-increment: devlog;
+  transition: background .25s var(--ease), padding .25s var(--ease);
+}
+
+body.home-polish-2026 .devlog-card:nth-child(2) { --devlog-accent: var(--rose); }
+body.home-polish-2026 .devlog-card:nth-child(3) { --devlog-accent: var(--gold); }
+body.home-polish-2026 .devlog-card:nth-child(4) { --devlog-accent: #ffdf48; }
+
+body.home-polish-2026 .devlog-card::before {
+  content: "0" counter(devlog);
+  grid-area: index;
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  border-right: 1px solid color-mix(in srgb, var(--devlog-accent) 42%, var(--line));
+  color: var(--devlog-accent);
+  font-size: 0.8rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+}
+
+body.home-polish-2026 .devlog-card:hover {
+  padding-inline: 16px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--devlog-accent) 8%, transparent), transparent 72%);
+}
+
+body.home-polish-2026 .devlog-card > span {
+  grid-area: meta;
+  max-width: 22ch;
+  color: color-mix(in srgb, var(--devlog-accent) 75%, var(--text));
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.45;
+  text-transform: uppercase;
 }
 
 body.home-polish-2026 .devlog-card:first-child,
@@ -463,9 +519,63 @@ body.home-polish-2026 .devlog-card:last-child {
 }
 
 body.home-polish-2026 .devlog-card h3 {
-  max-width: 24ch;
-  font-size: clamp(1.28rem, 2vw, 1.7rem);
+  grid-area: title;
+  max-width: 32ch;
+  margin: 0;
+  font-size: clamp(1.25rem, 1.7vw, 1.62rem);
   line-height: 1.1;
+}
+
+body.home-polish-2026 .devlog-card p {
+  grid-area: copy;
+  max-width: 68ch;
+  margin: 0;
+  color: color-mix(in srgb, var(--text) 76%, var(--muted));
+  font-weight: 520;
+}
+
+body.home-polish-2026 .devlog-card .btn {
+  grid-area: action;
+  min-width: 124px;
+  border-color: color-mix(in srgb, var(--devlog-accent) 34%, var(--line));
+}
+
+body.home-polish-2026 .contact-draft-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 40px;
+  padding: 9px 12px;
+  border: 1px solid color-mix(in srgb, var(--cyan) 20%, var(--line));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--cyan) 7%, var(--surface-soft));
+}
+
+body.home-polish-2026 .contact-draft-row p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+body.home-polish-2026 .contact-draft-row button {
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--text);
+  background: transparent;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 850;
+  cursor: pointer;
+}
+
+body.home-polish-2026 .contact-draft-row button:hover,
+body.home-polish-2026 .contact-draft-row button:focus-visible {
+  background: color-mix(in srgb, var(--cyan) 14%, transparent);
+  outline: none;
 }
 
 body.home-polish-2026 .faq-list {
@@ -585,13 +695,15 @@ body.home-polish-2026 .footer-grid {
   }
 
   body.home-polish-2026 .devlog-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   body.home-polish-2026 .devlog-card,
   body.home-polish-2026 .devlog-card:first-child,
   body.home-polish-2026 .devlog-card:last-child {
     grid-column: auto;
+    grid-template-columns: 52px minmax(155px, 0.44fr) minmax(0, 1fr) auto;
+    gap-inline: 20px;
   }
 
   body.home-polish-2026 .timeline {
@@ -788,8 +900,32 @@ body.home-polish-2026 .footer-grid {
     min-height: 210px;
   }
 
-  body.home-polish-2026 .devlog-card {
-    min-height: 250px;
+  body.home-polish-2026 :is(.devlog-card, .devlog-card:first-child, .devlog-card:last-child) {
+    grid-template-columns: 38px minmax(0, 1fr);
+    grid-template-areas:
+      "index meta"
+      "index title"
+      "index copy"
+      "index action";
+    gap: 9px 15px;
+    min-height: 0;
+    padding: 24px 2px;
+  }
+
+  body.home-polish-2026 .devlog-card::before {
+    place-items: start center;
+    padding-top: 4px;
+  }
+
+  body.home-polish-2026 .devlog-card:hover {
+    padding-inline: 8px;
+  }
+
+  body.home-polish-2026 .devlog-card .btn {
+    justify-self: start;
+    width: auto;
+    min-width: 124px;
+    margin-top: 8px;
   }
 
   body.home-polish-2026 .faq-question {

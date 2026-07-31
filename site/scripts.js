@@ -1,6 +1,8 @@
 (() => {
   const root = document.documentElement;
   const body = document.body;
+  const pageShell = document.querySelector(".page");
+  const skipLink = document.querySelector(".skip-link");
   const canvas = document.getElementById("magicCanvas");
   const screenCtx = canvas.getContext("2d", { alpha: true });
   let ctx = screenCtx;
@@ -22,6 +24,8 @@
   const closeContact = document.getElementById("closeContact");
   const contactForm = document.getElementById("contactForm");
   const copyContactMessage = document.getElementById("copyContactMessage");
+  const contactDraftStatus = document.getElementById("contactDraftStatus");
+  const clearContactDraft = document.getElementById("clearContactDraft");
   const promoHuntToggle = document.getElementById("promoHuntToggle");
   const careersModal = document.getElementById("careersModal");
   const closeCareers = document.getElementById("closeCareers");
@@ -52,6 +56,8 @@
   const secretMessage = document.getElementById("secretMessage");
   const claimSecret = document.getElementById("claimSecret");
   const metaThemeColor = document.getElementById("metaThemeColor");
+  const contactDraftKey = "willow-contact-draft";
+  let contactDraftTimer = 0;
   const mascotImage = new Image();
   const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
   const colorSchemeLightQuery = window.matchMedia("(prefers-color-scheme: light)");
@@ -296,6 +302,74 @@
       href: "mailto:contact@willowinworld.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body),
       plainText: "To: contact@willowinworld.com\nSubject: " + subject + "\n\n" + body
     };
+  }
+
+  function setContactDraftStatus(message) {
+    if (contactDraftStatus) contactDraftStatus.textContent = message;
+  }
+
+  function readContactDraft() {
+    try {
+      const saved = sessionStorage.getItem(contactDraftKey);
+      if (!saved) return null;
+      const draft = JSON.parse(saved);
+      return draft && typeof draft === "object" ? draft : null;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function persistContactDraft() {
+    window.clearTimeout(contactDraftTimer);
+    const formData = new FormData(contactForm);
+    const draft = {
+      name: String(formData.get("name") || "").slice(0, 80),
+      email: String(formData.get("email") || "").slice(0, 120),
+      type: String(formData.get("type") || "General"),
+      message: String(formData.get("message") || "").slice(0, 1200)
+    };
+    const hasContent = Boolean(draft.name.trim() || draft.email.trim() || draft.message.trim() || draft.type !== "General");
+    try {
+      if (hasContent) {
+        sessionStorage.setItem(contactDraftKey, JSON.stringify(draft));
+        setContactDraftStatus("Draft saved in this browser tab.");
+      } else {
+        sessionStorage.removeItem(contactDraftKey);
+        setContactDraftStatus("Draft stays in this browser tab while you work.");
+      }
+    } catch (error) {
+      setContactDraftStatus("Draft is available until this page closes.");
+    }
+  }
+
+  function scheduleContactDraft() {
+    window.clearTimeout(contactDraftTimer);
+    contactDraftTimer = window.setTimeout(persistContactDraft, 220);
+  }
+
+  function restoreContactDraft() {
+    const draft = readContactDraft();
+    if (!draft) return;
+    ["name", "email", "type", "message"].forEach(fieldName => {
+      const field = contactForm.elements.namedItem(fieldName);
+      if (!field || typeof draft[fieldName] !== "string") return;
+      if (fieldName === "type" && ![...field.options].some(option => option.value === draft[fieldName])) return;
+      field.value = draft[fieldName];
+    });
+    setContactDraftStatus("Draft restored from this browser tab.");
+  }
+
+  function resetContactDraft() {
+    window.clearTimeout(contactDraftTimer);
+    contactForm.reset();
+    try {
+      sessionStorage.removeItem(contactDraftKey);
+    } catch (error) {
+      // The form still clears when storage is unavailable.
+    }
+    setContactDraftStatus("Draft cleared. New text will save in this tab.");
+    const nameField = contactForm.elements.namedItem("name");
+    if (nameField) nameField.focus();
   }
 
   async function copyText(text) {
@@ -1551,6 +1625,15 @@
       gameModal.classList.contains("is-open") ||
       secretModal.classList.contains("is-open");
     body.classList.toggle("modal-open", modalOpen);
+    [pageShell, skipLink].forEach(layer => {
+      if (!layer) return;
+      layer.inert = modalOpen;
+      if (modalOpen) {
+        layer.setAttribute("aria-hidden", "true");
+      } else {
+        layer.removeAttribute("aria-hidden");
+      }
+    });
   }
 
   function createPromoClaimId(secret) {
@@ -1701,16 +1784,15 @@
   function openContact(trigger) {
     closeGameDetails(false);
     closeInfoModals(false);
+    closeMenu();
     activeContactTrigger = trigger || document.activeElement;
     contactModal.hidden = false;
     contactModal.classList.add("is-open");
     const requestedType = trigger && trigger.dataset ? trigger.dataset.contactType : "";
     const typeField = contactForm.elements.namedItem("type");
-    const messageField = contactForm.elements.namedItem("message");
     if (typeField && requestedType) {
       typeField.value = requestedType;
-    } else if (typeField && messageField && !String(messageField.value || "").trim()) {
-      typeField.value = "General";
+      scheduleContactDraft();
     }
     syncModalLock();
     window.setTimeout(() => document.getElementById("name").focus(), 30);
@@ -1921,6 +2003,7 @@
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener("click", event => {
+        if (link.hasAttribute("data-open-contact")) return;
         const id = link.getAttribute("href");
         const target = document.querySelector(id);
         if (!target) return;
@@ -1931,9 +2014,23 @@
     });
   }
 
+  function initDeepLinkStability() {
+    if (!window.location.hash) return;
+    const target = document.querySelector(window.location.hash);
+    if (!target) return;
+    window.addEventListener("load", () => {
+      window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => target.scrollIntoView({ behavior: "auto", block: "start" }));
+      });
+    }, { once: true });
+  }
+
   function initControls() {
     document.querySelectorAll("[data-play]").forEach(button => button.addEventListener("click", startPlayMode));
-    document.querySelectorAll("[data-open-contact]").forEach(button => button.addEventListener("click", () => openContact(button)));
+    document.querySelectorAll("[data-open-contact]").forEach(button => button.addEventListener("click", event => {
+      event.preventDefault();
+      openContact(button);
+    }));
     document.querySelectorAll("[data-open-info]").forEach(button => {
       button.addEventListener("click", () => openInfoModal(button.dataset.openInfo, button));
     });
@@ -2008,6 +2105,7 @@
     contactForm.addEventListener("submit", event => {
       event.preventDefault();
       if (!contactForm.reportValidity()) return;
+      persistContactDraft();
       const draft = getContactDraft();
       window.location.href = draft.href;
       showToast("Email draft requested. If it did not open, use Copy message.");
@@ -2024,6 +2122,9 @@
         }
       });
     }
+    contactForm.addEventListener("input", scheduleContactDraft);
+    contactForm.addEventListener("change", scheduleContactDraft);
+    if (clearContactDraft) clearContactDraft.addEventListener("click", resetContactDraft);
     window.addEventListener("keydown", event => {
       trapModalFocus(event);
       if (event.key === "Escape") {
@@ -2074,12 +2175,14 @@
   mascotImage.src = "assets/magic-cat-mascot.webp";
 
   refreshCssCache();
+  restoreContactDraft();
   initControls();
   initGameDetails();
   initSecrets();
   initFilters();
   initFaq();
   initSmoothAnchors();
+  initDeepLinkStability();
   initCardShine();
   initReveals();
   initActiveNavigation();
