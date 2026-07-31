@@ -1360,6 +1360,11 @@
     state.trails.length = 0;
   }
 
+  function setCircleBurst(burst) {
+    state.clickBursts[0] = burst;
+    state.clickBursts.length = 1;
+  }
+
   function handlePointerDown(event) {
     const target = event.target;
     if (target instanceof Element && target.closest("button, a, input, textarea, select, .modal-dialog")) return;
@@ -1371,7 +1376,7 @@
     state.cat.cast = state.playMode ? 62 : 38;
     startLoop();
     if (!state.disabled && !state.lowMotion) {
-      state.clickBursts.push({
+      setCircleBurst({
         x: point.x,
         y: point.y,
         t: performance.now(),
@@ -1390,10 +1395,10 @@
       state.connected.push(state.nextStar);
       state.nextStar += 1;
       state.cat.cast = 70;
-      state.clickBursts.push({ x: expected.x, y: expected.y, t: performance.now(), color: css("--cyan"), wave: "rgba(113,231,255,0.18)", sparks: 22, radius: 118, seed: Math.random() * Math.PI * 2 });
+      setCircleBurst({ x: expected.x, y: expected.y, t: performance.now(), color: css("--cyan"), wave: "rgba(113,231,255,0.18)", sparks: 22, radius: 118, seed: Math.random() * Math.PI * 2 });
       if (state.nextStar >= constellation.length) completeConstellation();
     } else {
-      state.clickBursts.push({ x: point.x, y: point.y, t: performance.now(), color: css("--rose"), wave: "rgba(255,79,115,0.15)", sparks: 14, radius: 76, seed: Math.random() * Math.PI * 2 });
+      setCircleBurst({ x: point.x, y: point.y, t: performance.now(), color: css("--rose"), wave: "rgba(255,79,115,0.15)", sparks: 14, radius: 76, seed: Math.random() * Math.PI * 2 });
     }
   }
 
@@ -1404,7 +1409,7 @@
 
   function addSecretBurst(point) {
     if (state.lowMotion || state.disabled) return;
-    state.clickBursts.push({
+    setCircleBurst({
       x: point.x,
       y: point.y,
       t: performance.now(),
