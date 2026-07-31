@@ -1,6 +1,7 @@
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, extname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { injectHomepageDevlogs, loadLatestDevlogs, renderDevlogRss } from "./devlog-data.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const outRoot = join(siteRoot, "dist");
@@ -10,11 +11,9 @@ const staticFiles = [
   ".well-known",
   "_headers",
   "favicon.ico",
-  "favicon.svg",
   "manifest.webmanifest",
   "robots.txt",
-  "sitemap.xml",
-  "rss.xml"
+  "sitemap.xml"
 ];
 
 const cssFiles = [
@@ -50,6 +49,7 @@ const sourceFiles = [
   "legal.html",
   "asset-usage.html",
   "404.html",
+  "rss.xml",
   ...cssFiles,
   "scripts.js",
   "game-theme.js",
@@ -95,6 +95,7 @@ function minifyByExtension(file, input) {
 
 await rm(outRoot, { recursive: true, force: true });
 await mkdir(outRoot, { recursive: true });
+const latestDevlogs = await loadLatestDevlogs();
 
 for (const file of staticFiles) {
   await cp(join(siteRoot, file), join(outRoot, file), { recursive: true });
@@ -103,7 +104,9 @@ for (const file of staticFiles) {
 for (const file of sourceFiles) {
   const sourcePath = join(siteRoot, file);
   const outPath = join(outRoot, file);
-  const source = await readFile(sourcePath, "utf8");
+  let source = await readFile(sourcePath, "utf8");
+  if (file === "index.html") source = injectHomepageDevlogs(source, latestDevlogs);
+  if (file === "rss.xml") source = renderDevlogRss(latestDevlogs);
   await mkdir(dirname(outPath), { recursive: true });
   await writeFile(outPath, minifyByExtension(file, source));
 }

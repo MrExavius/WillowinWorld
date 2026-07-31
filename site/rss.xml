@@ -5,34 +5,34 @@
     <link>https://willowinworld.com/#devlog</link>
     <description>Latest production notes for WillowinWorld mobile games.</description>
     <language>en-us</language>
-    <lastBuildDate>Thu, 30 Jul 2026 00:00:00 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 31 Jul 2026 00:00:00 +0300</lastBuildDate>
     <item>
-      <title>Nature Seed: Ten-level vertical prototype</title>
+      <title>Nature Seed: Level 2 restoration and stability pass</title>
       <link>https://willowinworld.com/games/nature-seed.html#devlog</link>
-      <guid>https://willowinworld.com/games/nature-seed.html#devlog-july-2026</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 +0300</pubDate>
-      <description>The playable vertical prototype now joins ten levels, constrained physical line drawing, efficiency stars and persistent progress.</description>
+      <guid>https://willowinworld.com/games/nature-seed.html#devlog-2026-07-31</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
+      <description>Level 2 now uses its production background pair while level construction and win-collision handling were tightened for a more predictable restore-and-complete flow.</description>
     </item>
     <item>
-      <title>Candy Shop: Containers, planning tools and special effects</title>
+      <title>Candy Shop: Production menu and HUD pass</title>
       <link>https://willowinworld.com/games/candy-shop.html#devlog</link>
-      <guid>https://willowinworld.com/games/candy-shop.html#devlog-july-2026</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 +0300</pubDate>
-      <description>The active build combines a 13-stage candy chain with ten container rulesets, eight effect families, next-three planning, hold and daily challenges.</description>
+      <guid>https://willowinworld.com/games/candy-shop.html#devlog-2026-07-31</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
+      <description>Main menu, level selection, HUD controls and command icons now share one clearer visual language, backed by expanded play-mode stress coverage.</description>
     </item>
     <item>
-      <title>Paint Blasters: 35 projectile recipes implemented</title>
+      <title>Paint Blasters: Physics and effect stability pass</title>
       <link>https://willowinworld.com/games/paint-blasters.html#devlog</link>
-      <guid>https://willowinworld.com/games/paint-blasters.html#devlog-july-2026</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 +0300</pubDate>
-      <description>Five pure, twenty mixed and ten rainbow projectile strategies now resolve in the production prototype.</description>
+      <guid>https://willowinworld.com/games/paint-blasters.html#devlog-2026-07-31</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
+      <description>Projectile, Match-3, VFX, physics queries and pooled hit buffers were tightened under the production validator for more predictable combo resolution.</description>
     </item>
     <item>
-      <title>Ball is God?!: Active systems and world pass</title>
+      <title>Ball is God?!: World surfaces and hazard validation</title>
       <link>https://willowinworld.com/games/ball-is-god.html#devlog</link>
-      <guid>https://willowinworld.com/games/ball-is-god.html#devlog-july-2026</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 +0300</pubDate>
-      <description>Active production spans ten locations, deterministic tower generation, combo smash, shield, Karma rules and validation coverage.</description>
+      <guid>https://willowinworld.com/games/ball-is-god.html#devlog-2026-07-31</guid>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 +0300</pubDate>
+      <description>Character surfaces across the ten-location build, deterministic generation and thorn hazards received a coordinated art-and-production test pass.</description>
     </item>
   </channel>
 </rss>

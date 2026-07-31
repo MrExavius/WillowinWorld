@@ -25,6 +25,8 @@ jobs:
           node --check site/game-theme.js
           node --check site/404.js
           node --check site/tools/update-sitemap-lastmod.mjs
+          node --check site/tools/devlog-data.mjs
+          node --check site/tools/sync-devlogs.mjs
           node --check site/tools/build-minified.mjs
           node --check site/tools/css-coverage-audit.mjs
           node --check site/tools/quality-check.mjs
@@ -35,6 +37,9 @@ jobs:
 
       - name: Run CSS coverage audit
         run: node site/tools/css-coverage-audit.mjs
+
+      - name: Verify devlog synchronization
+        run: node site/tools/sync-devlogs.mjs --check
 
       - name: Build minified static output
         run: node site/tools/build-minified.mjs

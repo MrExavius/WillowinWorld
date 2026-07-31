@@ -5,11 +5,14 @@ const commands = [
   ["node", ["--check", "site/game-theme.js"]],
   ["node", ["--check", "site/404.js"]],
   ["node", ["--check", "site/tools/update-sitemap-lastmod.mjs"]],
+  ["node", ["--check", "site/tools/devlog-data.mjs"]],
+  ["node", ["--check", "site/tools/sync-devlogs.mjs"]],
   ["node", ["--check", "site/tools/build-minified.mjs"]],
   ["node", ["--check", "site/tools/css-coverage-audit.mjs"]],
   ["node", ["--check", "site/tools/link-check.mjs"]],
   ["node", ["--check", "site/tools/visual-check.mjs"]],
   ["node", ["site/tools/link-check.mjs"]],
+  ["node", ["site/tools/sync-devlogs.mjs", "--check"]],
   ["node", ["site/tools/security-check.mjs"]]
 ];
 

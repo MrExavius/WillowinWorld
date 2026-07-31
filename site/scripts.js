@@ -1373,7 +1373,7 @@
       const lightSrcset = "assets/responsive/willowinworld-logo-day-256.webp 256w, assets/responsive/willowinworld-logo-day-512.webp 512w, assets/willowinworld-logo-day.webp 1024w";
       logo.src = theme === "dark" ? darkLogo : lightLogo;
       logo.srcset = theme === "dark" ? darkSrcset : lightSrcset;
-      logo.sizes = "(max-width: 760px) 44px, 52px";
+      logo.sizes = logo.getAttribute("data-logo-sizes") || "(max-width: 760px) 44px, 52px";
     });
     if (metaThemeColor) metaThemeColor.content = theme === "dark" ? "#031735" : "#fcfff2";
     if (persist) {

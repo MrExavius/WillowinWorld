@@ -40,7 +40,7 @@
     var(--surface);
 }
 
-.update-list span {
+.update-list :is(span, time) {
   display: inline-flex;
   margin-bottom: 16px;
   color: var(--cyan);

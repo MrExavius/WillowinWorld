@@ -32,7 +32,6 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="rss.xml">
-  <link rel="preload" href="assets/responsive/willowinworld-logo-256.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="preload" href="assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/base.css?v=20260731-1">
   <link rel="stylesheet" href="css/nature-scene.css">
@@ -43,14 +42,14 @@
   <link rel="stylesheet" href="css/home-candy-card.css">
   <link rel="stylesheet" href="css/game-components.css">
   <link rel="stylesheet" href="css/game-content.css">
-  <link rel="stylesheet" href="css/site-sections.css?v=20260731-1">
+  <link rel="stylesheet" href="css/site-sections.css?v=20260731-2">
   <link rel="stylesheet" href="css/keyframes.css?v=20260731-1">
   <link rel="stylesheet" href="css/responsive-desktop.css">
   <link rel="stylesheet" href="css/responsive-tablet.css">
   <link rel="stylesheet" href="css/responsive-mobile.css">
   <link rel="stylesheet" href="css/responsive-preferences.css?v=20260731-1">
   <link rel="stylesheet" href="motion.css">
-  <link rel="stylesheet" href="css/home-polish-2026.css?v=20260731-8">
+  <link rel="stylesheet" href="css/home-polish-2026.css?v=20260731-10">
   <script type="application/ld+json" id="structuredData">
 {
   "@context": "https://schema.org",
@@ -602,19 +601,11 @@
           </article>
           <article class="soft-card symbol-card">
             <div class="symbol-stage">
-              <div class="ww-symbol" aria-hidden="true">
-                <svg viewBox="0 0 640 320" fill="none">
-                  <polyline points="38,64 88,254 160,112 232,254 282,64" stroke="#71e7ff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-                  <polyline points="356,64 406,254 478,112 550,254 600,64" stroke="#bfa4ff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M166 274C242 312 396 312 474 274" stroke="#ff4f73" stroke-width="10" stroke-linecap="round"/>
-                  <circle cx="320" cy="78" r="32" fill="rgba(255,255,255,0.85)"/>
-                  <path d="M330 54a30 30 0 11-28 48 36 36 0 1028-48z" fill="#07111f" opacity=".32"/>
-                </svg>
-              </div>
+              <img class="studio-brand-logo" src="assets/willowinworld-logo.webp" srcset="assets/responsive/willowinworld-logo-256.webp 256w, assets/responsive/willowinworld-logo-512.webp 512w, assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 280px, 315px" data-logo-theme data-logo-sizes="(max-width: 760px) 280px, 315px" width="1024" height="1024" alt="WillowinWorld logo with the magic cat, twin W mark and castle world" loading="lazy" decoding="async">
             </div>
             <div class="symbol-copy">
-              <h3>Two W's, one portal.</h3>
-              <p>Our mark is built like a constellation: two worlds held together by a hidden arc, a cat's spell and the promise that interaction can feel like magic.</p>
+              <h3>Different hooks. The same standard.</h3>
+              <p>Draw a path, drop a candy, assemble a color shot or rotate a tower. Each project begins with one readable gesture, then earns depth through physics, consequence and character.</p>
             </div>
           </article>
         </div>
@@ -649,34 +640,36 @@
               <div class="eyebrow">Game Devlogs</div>
               <h2 class="section-title"><span class="title-line">Latest dev notes,</span> <span class="title-line">no digging.</span></h2>
             </div>
-            <p class="section-copy">A current production snapshot for each project, grounded in the playable systems now inside the Unity builds.</p>
+            <p class="section-copy">The newest dated note from each game page, grounded in the playable systems now inside the Unity builds.</p>
           </div>
 
-          <div class="devlog-grid">
-            <article class="devlog-card">
-              <span>Nature Seed / July 2026</span>
-              <h3>Playable vertical prototype</h3>
-              <p>Ten current levels now connect constrained physical drawing, line-efficiency stars, restoration feedback and persistent progress.</p>
+          <div class="devlog-grid" data-latest-devlogs>
+            <!-- latest-devlogs:start -->
+            <article class="devlog-card" data-devlog-card data-devlog-game="nature-seed" data-devlog-source="games/nature-seed.html">
+              <span><b data-devlog-name>Nature Seed</b><time datetime="2026-07-31" data-devlog-date>31 July 2026</time></span>
+              <h3 data-devlog-title>Level 2 restoration and stability pass</h3>
+              <p data-devlog-summary>Level 2 now uses its production background pair while level construction and win-collision handling were tightened for a more predictable restore-and-complete flow.</p>
               <a class="btn btn-ghost" href="games/nature-seed.html#devlog">Open devlog</a>
             </article>
-            <article class="devlog-card">
-              <span>Candy Shop / July 2026</span>
-              <h3>Ten containers, one deeper merge loop</h3>
-              <p>The current build combines 13 candy stages with ten field rulesets, special recipes, planning tools and a daily collection loop.</p>
+            <article class="devlog-card" data-devlog-card data-devlog-game="candy-shop" data-devlog-source="games/candy-shop.html">
+              <span><b data-devlog-name>Candy Shop</b><time datetime="2026-07-31" data-devlog-date>31 July 2026</time></span>
+              <h3 data-devlog-title>Production menu and HUD pass</h3>
+              <p data-devlog-summary>Main menu, level selection, HUD controls and command icons now share one clearer visual language, backed by expanded play-mode stress coverage.</p>
               <a class="btn btn-ghost" href="games/candy-shop.html#devlog">Open devlog</a>
             </article>
-            <article class="devlog-card">
-              <span>Paint Blasters / July 2026</span>
-              <h3>All 35 combo strategies implemented</h3>
-              <p>The production prototype now supports 35 authored projectile recipes; tower readability, impact and final scene scope remain in active refinement.</p>
+            <article class="devlog-card" data-devlog-card data-devlog-game="paint-blasters" data-devlog-source="games/paint-blasters.html">
+              <span><b data-devlog-name>Paint Blasters</b><time datetime="2026-07-31" data-devlog-date>31 July 2026</time></span>
+              <h3 data-devlog-title>Physics and effect stability pass</h3>
+              <p data-devlog-summary>Projectile, Match-3, VFX, physics queries and pooled hit buffers were tightened under the production validator for more predictable combo resolution.</p>
               <a class="btn btn-ghost" href="games/paint-blasters.html#devlog">Open devlog</a>
             </article>
-            <article class="devlog-card">
-              <span>Ball is God?! / July 2026</span>
-              <h3>Karma now changes the descent</h3>
-              <p>Ten locations, deterministic tower generation, combo smash, swipe shield and runtime-changing karma systems are in active production.</p>
+            <article class="devlog-card" data-devlog-card data-devlog-game="ball-is-god" data-devlog-source="games/ball-is-god.html">
+              <span><b data-devlog-name>Ball is God?!</b><time datetime="2026-07-31" data-devlog-date>31 July 2026</time></span>
+              <h3 data-devlog-title>World surfaces and hazard validation</h3>
+              <p data-devlog-summary>Character surfaces across the ten-location build, deterministic generation and thorn hazards received a coordinated art-and-production test pass.</p>
               <a class="btn btn-ghost" href="games/ball-is-god.html#devlog">Open devlog</a>
             </article>
+            <!-- latest-devlogs:end -->
           </div>
         </div>
       </section>
@@ -1070,6 +1063,6 @@
     </div>
   </div>
 
-  <script src="scripts.js?v=20260731-8"></script>
+  <script src="scripts.js?v=20260731-9"></script>
 </body>
 </html>

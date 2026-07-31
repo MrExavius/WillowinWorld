@@ -9,6 +9,12 @@ Local checks:
 - `node site/tools/build-minified.mjs`
 - `node site/tools/update-sitemap-lastmod.mjs`
 
+Devlog publishing:
+
+- Add the newest item inside the game's `#devlog .update-list` with `data-devlog-entry`, `data-published="YYYY-MM-DD"`, and a matching `<time datetime="YYYY-MM-DD">`.
+- Run `node site/tools/sync-devlogs.mjs` to refresh the homepage fallback and `rss.xml` for local previews.
+- Production builds also derive the homepage and RSS directly from the newest dated game-page entries. `node site/tools/sync-devlogs.mjs --check` fails CI when the checked-in fallback is stale.
+
 External checks after deployment:
 
 - Lighthouse desktop and mobile.

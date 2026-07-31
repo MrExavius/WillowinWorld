@@ -505,12 +505,20 @@ body.home-polish-2026 .devlog-card:hover {
 
 body.home-polish-2026 .devlog-card > span {
   grid-area: meta;
+  display: grid;
+  gap: 4px;
   max-width: 22ch;
   color: color-mix(in srgb, var(--devlog-accent) 75%, var(--text));
   font-size: 0.78rem;
   font-weight: 900;
   line-height: 1.45;
   text-transform: uppercase;
+}
+
+body.home-polish-2026 .devlog-card > span :is(b, time) {
+  display: block;
+  color: inherit;
+  font: inherit;
 }
 
 body.home-polish-2026 .devlog-card:first-child,
