@@ -1,6 +1,11 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
-import { loadLatestDevlogs, siteRoot } from "./devlog-data.mjs";
+import {
+  gameDevlogSources,
+  loadLatestDevlogs,
+  renderLlmsTxt,
+  siteRoot
+} from "./devlog-data.mjs";
 
 const pages = Object.freeze([
   { file: "index.html", canonical: "https://willowinworld.com/" },
@@ -18,7 +23,8 @@ const pages = Object.freeze([
 const errors = [];
 const titles = new Map();
 const descriptions = new Map();
-const latestByFile = new Map((await loadLatestDevlogs()).map(update => [update.file, update]));
+const latestDevlogs = await loadLatestDevlogs();
+const latestByFile = new Map(latestDevlogs.map(update => [update.file, update]));
 
 function fail(file, message) {
   errors.push(`${file}: ${message}`);
@@ -108,12 +114,16 @@ for (const page of pages) {
   const objects = structuredObjects(html, page.file);
   if (page.game) {
     const game = objects.find(object => hasType(object, "VideoGame"));
+    const source = gameDevlogSources.find(candidate => candidate.file === page.file);
     if (!game) fail(page.file, "missing VideoGame JSON-LD");
     if (objects.some(object => hasType(object, "SoftwareApplication"))) fail(page.file, "unreleased game must not claim SoftwareApplication rich-result data");
     if (objects.some(object => hasType(object, "FAQPage"))) fail(page.file, "game FAQ schema must not diverge from visible FAQ content");
     if (game?.["@id"] !== `${page.canonical}#game`) fail(page.file, "VideoGame @id must be canonical#game");
     if (game?.author?.["@id"] !== "https://willowinworld.com/#studio") fail(page.file, "VideoGame author must reference #studio");
     if (game?.publisher?.["@id"] !== "https://willowinworld.com/#studio") fail(page.file, "VideoGame publisher must reference #studio");
+    if (source?.pageCanonical !== page.canonical) fail(page.file, "AI profile canonical must match the page canonical");
+    if (game?.creativeWorkStatus !== source?.status) fail(page.file, "AI profile status must match VideoGame creativeWorkStatus");
+    if (JSON.stringify(game?.genre) !== JSON.stringify(source?.genres)) fail(page.file, "AI profile genres must match VideoGame genres");
     const latest = latestByFile.get(page.file);
     if (game?.dateModified !== latest?.published) fail(page.file, "dateModified must match the newest dated devlog");
   }
@@ -138,10 +148,62 @@ for (const update of latestByFile.values()) {
   if (lastmod !== update.published) fail("sitemap.xml", `${loc} lastmod must match its newest devlog`);
 }
 
+const llms = await readFile(join(siteRoot, "llms.txt"), "utf8");
+if (llms !== renderLlmsTxt(latestDevlogs)) fail("llms.txt", "must be regenerated from the canonical game devlogs");
+if ((llms.match(/^# /gm) || []).length !== 1 || !llms.startsWith("# WillowinWorld\n")) {
+  fail("llms.txt", "must begin with one H1 naming WillowinWorld");
+}
+if (!/^> WillowinWorld is an independent mobile game studio/m.test(llms)) {
+  fail("llms.txt", "must include a concise studio summary blockquote");
+}
+for (const game of gameDevlogSources) {
+  if (!llms.includes(`[${game.name}](${game.pageCanonical})`)) fail("llms.txt", `missing canonical ${game.name} game link`);
+  if (!llms.includes(`Genres: ${game.genres.join(", ")}.`)) fail("llms.txt", `missing factual ${game.name} genres`);
+  if (!llms.includes(`Current status: ${game.status}.`)) fail("llms.txt", `missing factual ${game.name} status`);
+}
+for (const update of latestDevlogs) {
+  if (!llms.includes(`](${update.canonical}): Published ${update.published}.`)) {
+    fail("llms.txt", `missing current dated ${update.name} devlog link`);
+  }
+}
+for (const requiredUrl of [
+  "https://willowinworld.com/press-kit.html",
+  "https://willowinworld.com/asset-usage.html",
+  "https://willowinworld.com/rss.xml",
+  "https://willowinworld.com/sitemap.xml",
+  "mailto:contact@willowinworld.com"
+]) {
+  if (!llms.includes(`](${requiredUrl})`)) fail("llms.txt", `missing official resource ${requiredUrl}`);
+}
+
+const robotsTxt = await readFile(join(siteRoot, "robots.txt"), "utf8");
+for (const crawler of ["OAI-SearchBot", "PerplexityBot", "Claude-SearchBot", "ChatGPT-User", "Perplexity-User", "Claude-User"]) {
+  const group = robotsTxt
+    .split(/\n\s*\n/)
+    .find(candidate => new RegExp(`^User-agent:\\s*${crawler}$`, "mi").test(candidate));
+  if (!group) {
+    fail("robots.txt", `missing explicit public access group for ${crawler}`);
+    continue;
+  }
+  if (!/^Allow:\s*\/$/mi.test(group)) fail("robots.txt", `${crawler} must be allowed on public pages`);
+  if (/^Disallow:\s*\/$/mi.test(group)) fail("robots.txt", `${crawler} must not be blocked site-wide`);
+  for (const protectedPath of ["/private/", "/admin/", "/api/"]) {
+    if (!new RegExp(`^Disallow:\\s*${protectedPath.replaceAll("/", "\\/")}$`, "mi").test(group)) {
+      fail("robots.txt", `${crawler} must preserve the ${protectedPath} restriction`);
+    }
+  }
+}
+if (!/^Sitemap:\s*https:\/\/willowinworld\.com\/sitemap\.xml$/mi.test(robotsTxt)) {
+  fail("robots.txt", "missing canonical sitemap declaration");
+}
+if (!robotsTxt.includes("https://willowinworld.com/llms.txt")) {
+  fail("robots.txt", "missing llms.txt discovery comment");
+}
+
 if (errors.length) {
   console.error(`SEO contract failed with ${errors.length} issue(s):`);
   errors.forEach(error => console.error(`- ${error}`));
   process.exit(1);
 }
 
-console.log(`SEO contract passed for ${pages.length} public HTML pages and sitemap.xml.`);
+console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages, sitemap.xml, robots.txt and llms.txt.`);

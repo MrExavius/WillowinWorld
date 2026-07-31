@@ -1,3 +1,41 @@
+# AI search indexing. These groups deliberately mirror the public-site rules below.
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+# User-requested retrieval by AI assistants.
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Perplexity-User
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
+
 User-agent: *
 Allow: /
 
@@ -6,3 +44,6 @@ Disallow: /admin/
 Disallow: /api/
 
 Sitemap: https://willowinworld.com/sitemap.xml
+
+# Curated machine-readable studio and game guide (an emerging LLM convention):
+# https://willowinworld.com/llms.txt

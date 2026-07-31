@@ -9,28 +9,44 @@ export const gameDevlogSources = Object.freeze([
     name: "Nature Seed",
     file: "games/nature-seed.html",
     href: "games/nature-seed.html#devlog",
-    canonical: "https://willowinworld.com/games/nature-seed.html#devlog"
+    canonical: "https://willowinworld.com/games/nature-seed.html#devlog",
+    pageCanonical: "https://willowinworld.com/games/nature-seed.html",
+    status: "Active development - playable prototype",
+    genres: Object.freeze(["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Line drawing puzzle"]),
+    machineSummary: "A relaxing mobile draw-to-solve physics puzzle. Draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 current levels."
   }),
   Object.freeze({
     id: "candy-shop",
     name: "Candy Shop",
     file: "games/candy-shop.html",
     href: "games/candy-shop.html#devlog",
-    canonical: "https://willowinworld.com/games/candy-shop.html#devlog"
+    canonical: "https://willowinworld.com/games/candy-shop.html#devlog",
+    pageCanonical: "https://willowinworld.com/games/candy-shop.html",
+    status: "Active development - playable production build",
+    genres: Object.freeze(["Merge puzzle", "Candy puzzle", "Casual puzzle", "Physics puzzle"]),
+    machineSummary: "A cozy mobile merge puzzle with a 13-stage candy chain, 10 container rulesets, eight special-candy effects and planning tools for the next drop."
   }),
   Object.freeze({
     id: "paint-blasters",
     name: "Paint Blasters",
     file: "games/paint-blasters.html",
     href: "games/paint-blasters.html#devlog",
-    canonical: "https://willowinworld.com/games/paint-blasters.html#devlog"
+    canonical: "https://willowinworld.com/games/paint-blasters.html#devlog",
+    pageCanonical: "https://willowinworld.com/games/paint-blasters.html",
+    status: "Active development - production prototype",
+    genres: Object.freeze(["Color puzzle", "Physics arcade", "Destruction puzzle", "Chain reaction"]),
+    machineSummary: "A mobile color-destruction physics puzzle arcade. Combine three color inputs into 35 authored projectile recipes, target tower weak points and trigger chain reactions."
   }),
   Object.freeze({
     id: "ball-is-god",
     name: "Ball is God?!",
     file: "games/ball-is-god.html",
     href: "games/ball-is-god.html#devlog",
-    canonical: "https://willowinworld.com/games/ball-is-god.html#devlog"
+    canonical: "https://willowinworld.com/games/ball-is-god.html#devlog",
+    pageCanonical: "https://willowinworld.com/games/ball-is-god.html",
+    status: "Active production",
+    genres: Object.freeze(["Vertical descent arcade", "Hardcore arcade", "Story-driven arcade", "Boss action"]),
+    machineSummary: "A story-driven hardcore vertical-descent mobile arcade. Rotate the tower around Espa, build combo smashes, survive bosses and carry karma choices through 10 mythic locations."
   })
 ]);
 
@@ -214,6 +230,59 @@ export function renderDevlogRss(updates) {
 ${items}
   </channel>
 </rss>
+`;
+}
+
+function escapeMarkdown(value) {
+  return value
+    .replaceAll("\\", "\\\\")
+    .replaceAll("[", "\\[")
+    .replaceAll("]", "\\]");
+}
+
+export function renderLlmsTxt(updates) {
+  const ordered = [...updates].sort((left, right) => right.timestamp - left.timestamp);
+  const latestDate = ordered[0]?.published;
+  if (!latestDate) throw new Error("llms.txt: at least one current devlog is required");
+
+  const games = gameDevlogSources.map(game =>
+    `- [${escapeMarkdown(game.name)}](${game.pageCanonical}): ${escapeMarkdown(game.machineSummary)} Genres: ${game.genres.map(escapeMarkdown).join(", ")}. Current status: ${escapeMarkdown(game.status)}.`
+  ).join("\n");
+
+  const devlogs = ordered.map(update =>
+    `- [${escapeMarkdown(update.name)} - ${escapeMarkdown(update.title)}](${update.canonical}): Published ${update.published}. ${escapeMarkdown(update.summary)}`
+  ).join("\n");
+
+  return `# WillowinWorld
+
+> WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.
+
+All four games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. No public release date, price, store availability, rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
+
+## Games
+
+${games}
+
+## Latest development notes
+
+${devlogs}
+
+## Studio and press
+
+- [Official WillowinWorld website](https://willowinworld.com/): Studio overview, complete game portfolio and current production notes.
+- [Press and creator kit](https://willowinworld.com/press-kit.html): Factual studio and game summaries, production statuses and downloadable editorial assets.
+- [Media asset usage](https://willowinworld.com/asset-usage.html): Rules for using WillowinWorld screenshots, logos and character artwork.
+
+## Feeds and policies
+
+- [Devlog RSS feed](https://willowinworld.com/rss.xml): Latest dated production notes for all four games.
+- [XML sitemap](https://willowinworld.com/sitemap.xml): Canonical indexable pages and their current modification dates.
+- [Privacy policy](https://willowinworld.com/privacy.html): Website privacy information.
+- [Legal notice](https://willowinworld.com/legal.html): Ownership, trademarks and website terms.
+
+## Contact
+
+- [Email WillowinWorld](mailto:contact@willowinworld.com): Press, publishing, development-build and business enquiries.
 `;
 }
 

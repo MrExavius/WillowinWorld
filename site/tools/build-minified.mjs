@@ -6,7 +6,8 @@ import {
   injectHomepageDevlogs,
   injectSitemapDevlogDates,
   loadLatestDevlogs,
-  renderDevlogRss
+  renderDevlogRss,
+  renderLlmsTxt
 } from "./devlog-data.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
@@ -54,6 +55,7 @@ const sourceFiles = [
   "legal.html",
   "asset-usage.html",
   "404.html",
+  "llms.txt",
   "rss.xml",
   "sitemap.xml",
   ...cssFiles,
@@ -114,6 +116,7 @@ for (const file of sourceFiles) {
   let source = await readFile(sourcePath, "utf8");
   if (file === "index.html") source = injectHomepageDevlogs(source, latestDevlogs);
   if (file === "rss.xml") source = renderDevlogRss(latestDevlogs);
+  if (file === "llms.txt") source = renderLlmsTxt(latestDevlogs);
   if (file === "sitemap.xml") source = injectSitemapDevlogDates(source, latestDevlogs);
   if (devlogByFile.has(file)) source = injectGameDateModified(source, devlogByFile.get(file));
   await mkdir(dirname(outPath), { recursive: true });
