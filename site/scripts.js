@@ -1,6 +1,8 @@
 (() => {
   const root = document.documentElement;
   const body = document.body;
+  const scriptBaseUrl = document.currentScript?.src || document.baseURI;
+  const assetUrl = path => new URL(path, scriptBaseUrl).href;
   const pageShell = document.querySelector(".page");
   const skipLink = document.querySelector(".skip-link");
   const canvas = document.getElementById("magicCanvas");
@@ -1367,10 +1369,10 @@
     state.backgroundCacheKey = "";
     refreshCssCache();
     document.querySelectorAll("[data-logo-theme]").forEach(logo => {
-      const darkLogo = "assets/willowinworld-logo.webp";
-      const lightLogo = "assets/willowinworld-logo-day.webp";
-      const darkSrcset = "assets/responsive/willowinworld-logo-256.webp 256w, assets/responsive/willowinworld-logo-512.webp 512w, assets/willowinworld-logo.webp 1024w";
-      const lightSrcset = "assets/responsive/willowinworld-logo-day-256.webp 256w, assets/responsive/willowinworld-logo-day-512.webp 512w, assets/willowinworld-logo-day.webp 1024w";
+      const darkLogo = assetUrl("assets/willowinworld-logo.webp");
+      const lightLogo = assetUrl("assets/willowinworld-logo-day.webp");
+      const darkSrcset = `${assetUrl("assets/responsive/willowinworld-logo-256.webp")} 256w, ${assetUrl("assets/responsive/willowinworld-logo-512.webp")} 512w, ${assetUrl("assets/willowinworld-logo.webp")} 1024w`;
+      const lightSrcset = `${assetUrl("assets/responsive/willowinworld-logo-day-256.webp")} 256w, ${assetUrl("assets/responsive/willowinworld-logo-day-512.webp")} 512w, ${assetUrl("assets/willowinworld-logo-day.webp")} 1024w`;
       logo.src = theme === "dark" ? darkLogo : lightLogo;
       logo.srcset = theme === "dark" ? darkSrcset : lightSrcset;
       logo.sizes = logo.getAttribute("data-logo-sizes") || "(max-width: 760px) 44px, 52px";
@@ -2175,7 +2177,7 @@
   window.addEventListener("touchend", handlePointerDown, { passive: true });
   mascotImage.addEventListener("load", startLoop, { once: true });
   mascotImage.addEventListener("error", () => body.classList.add("mascot-image-missing"), { once: true });
-  mascotImage.src = "assets/magic-cat-mascot.webp";
+  mascotImage.src = assetUrl("assets/magic-cat-mascot.webp");
 
   refreshCssCache();
   restoreContactDraft();

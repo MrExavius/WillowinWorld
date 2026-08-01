@@ -1,6 +1,8 @@
 (() => {
   const body = document.body;
   const root = document.documentElement;
+  const scriptBaseUrl = document.currentScript?.src || document.baseURI;
+  const assetUrl = path => new URL(path, scriptBaseUrl).href;
   const themeToggle = document.getElementById("themeToggle");
   const metaThemeColor = document.getElementById("metaThemeColor");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
@@ -207,7 +209,7 @@
     mascotClass: "nature-cursor-mascot",
     glowClass: "nature-cursor-glow",
     imageClass: "nature-cursor-image",
-    src: "../assets/Nature%20Seeds/Galvnie2.webp",
+    src: assetUrl("assets/Nature%20Seeds/Galvnie2.webp"),
     imageWidth: 500,
     imageHeight: 500,
     startX: 0.58,
@@ -224,7 +226,7 @@
     mascotClass: "candy-cursor-mascot",
     glowClass: "candy-cursor-glow",
     imageClass: "candy-cursor-image",
-    src: "../assets/Candy%20Shop/site/mascot-cursor.webp",
+    src: assetUrl("assets/Candy%20Shop/site/mascot-cursor.webp"),
     imageWidth: 640,
     imageHeight: 640,
     startX: 0.62,
@@ -241,7 +243,7 @@
     mascotClass: "paint-cursor-mascot",
     glowClass: "paint-cursor-glow",
     imageClass: "paint-cursor-image",
-    src: "../assets/Paint%20Blasters/site/hero.webp",
+    src: assetUrl("assets/Paint%20Blasters/site/hero.webp"),
     imageWidth: 430,
     imageHeight: 579,
     startX: 0.64,
@@ -258,7 +260,7 @@
     mascotClass: "ball-cursor-mascot",
     glowClass: "ball-cursor-glow",
     imageClass: "ball-cursor-image",
-    src: "../assets/Ball%20is%20God/site/espa.webp",
+    src: assetUrl("assets/Ball%20is%20God/site/espa.webp"),
     imageWidth: 520,
     imageHeight: 285,
     startX: 0.62,
@@ -275,7 +277,7 @@
     mascotClass: "press-cursor-mascot",
     glowClass: "press-cursor-glow",
     imageClass: "press-cursor-image",
-    src: "assets/Nature%20Seeds/Galvnie1.webp",
+    src: assetUrl("assets/Nature%20Seeds/Galvnie1.webp"),
     imageWidth: 500,
     imageHeight: 500,
     startX: 0.6,

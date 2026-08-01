@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,16 +24,23 @@
   <meta name="twitter:description" content="Cozy physics puzzles, candy merge games, color arcade action and vertical descent worlds with mobile-first polish.">
   <meta name="twitter:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
   <meta name="twitter:image:alt" content="WillowinWorld mobile game studio and its four playable worlds">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-IGHsIYlkpHiCLTYANsP7pUAW46EKHa/kLv6xKAJBSoM='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-jqIjHAcrf1EK0LpdfWKKtXnjFgupkcVxLtUgppHLbHU='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>WillowinWorld | Indie Mobile Puzzle &amp; Arcade Game Studio</title>
   <link rel="canonical" href="https://willowinworld.com/">
+  <!-- locale-alternates:start -->
+  <link rel="alternate" hreflang="en" href="https://willowinworld.com/">
+  <link rel="alternate" hreflang="ru" href="https://willowinworld.com/ru/">
+  <link rel="alternate" hreflang="es" href="https://willowinworld.com/es/">
+  <link rel="alternate" hreflang="pt" href="https://willowinworld.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://willowinworld.com/">
+  <!-- locale-alternates:end -->
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="rss.xml">
   <link rel="preload" href="assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="css/base.css?v=20260731-1">
+  <link rel="stylesheet" href="css/base.css?v=20260801-2">
   <link rel="stylesheet" href="css/nature-scene.css">
   <link rel="stylesheet" href="css/home-card-base.css">
   <link rel="stylesheet" href="css/home-ball-card.css">
@@ -62,7 +69,15 @@
       "logo": "https://willowinworld.com/assets/willowinworld-logo.webp",
       "email": "contact@willowinworld.com",
       "description": "WillowinWorld is an indie mobile game studio developing four puzzle and arcade games with physics-based mechanics and distinct 2D art direction.",
-      "knowsAbout": ["Mobile game development", "Physics puzzle games", "Merge puzzle games", "Cozy games", "Arcade games", "2D art direction", "Mobile UI/UX"]
+      "knowsAbout": [
+        "Mobile game development",
+        "Physics puzzle games",
+        "Merge puzzle games",
+        "Cozy games",
+        "Arcade games",
+        "2D art direction",
+        "Mobile UI/UX"
+      ]
     },
     {
       "@type": "WebSite",
@@ -71,7 +86,9 @@
       "url": "https://willowinworld.com/",
       "inLanguage": "en",
       "description": "Official site for WillowinWorld mobile puzzle and arcade games including Nature Seed, Candy Shop, Paint Blasters and Ball is God?!",
-      "publisher": { "@id": "https://willowinworld.com/#studio" }
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      }
     },
     {
       "@type": "ItemList",
@@ -80,10 +97,30 @@
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "numberOfItems": 4,
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Nature Seed", "url": "https://willowinworld.com/games/nature-seed.html" },
-        { "@type": "ListItem", "position": 2, "name": "Candy Shop", "url": "https://willowinworld.com/games/candy-shop.html" },
-        { "@type": "ListItem", "position": 3, "name": "Paint Blasters", "url": "https://willowinworld.com/games/paint-blasters.html" },
-        { "@type": "ListItem", "position": 4, "name": "Ball is God?!", "url": "https://willowinworld.com/games/ball-is-god.html" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Nature Seed",
+          "url": "https://willowinworld.com/games/nature-seed.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Candy Shop",
+          "url": "https://willowinworld.com/games/candy-shop.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paint Blasters",
+          "url": "https://willowinworld.com/games/paint-blasters.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ball is God?!",
+          "url": "https://willowinworld.com/games/ball-is-god.html"
+        }
       ]
     },
     {
@@ -92,12 +129,22 @@
       "name": "Nature Seed",
       "url": "https://willowinworld.com/games/nature-seed.html",
       "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
-      "genre": ["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Water puzzle"],
+      "genre": [
+        "Draw-to-solve puzzle",
+        "Physics puzzle",
+        "Relaxing puzzle",
+        "Water puzzle"
+      ],
       "gamePlatform": "Mobile",
       "description": "A relaxing draw-to-solve physics puzzle where an ink-limited line brings Water Drop and Seed together and restores a watercolor forest.",
       "creativeWorkStatus": "Active development - playable prototype",
-      "author": { "@id": "https://willowinworld.com/#studio" },
-      "publisher": { "@id": "https://willowinworld.com/#studio" }
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "en"
     },
     {
       "@type": "VideoGame",
@@ -105,12 +152,22 @@
       "name": "Candy Shop",
       "url": "https://willowinworld.com/games/candy-shop.html",
       "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
-      "genre": ["Merge puzzle", "Candy puzzle", "Casual puzzle", "Physics puzzle"],
+      "genre": [
+        "Merge puzzle",
+        "Candy puzzle",
+        "Casual puzzle",
+        "Physics puzzle"
+      ],
       "gamePlatform": "Mobile",
       "description": "A cozy candy merge puzzle with 13 candy stages, ten container rulesets, special recipes and planning tools.",
       "creativeWorkStatus": "Active development - playable production build",
-      "author": { "@id": "https://willowinworld.com/#studio" },
-      "publisher": { "@id": "https://willowinworld.com/#studio" }
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "en"
     },
     {
       "@type": "VideoGame",
@@ -118,12 +175,22 @@
       "name": "Paint Blasters",
       "url": "https://willowinworld.com/games/paint-blasters.html",
       "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
-      "genre": ["Color puzzle", "Physics arcade", "Destruction puzzle", "Chain reaction"],
+      "genre": [
+        "Color puzzle",
+        "Physics arcade",
+        "Destruction puzzle",
+        "Chain reaction"
+      ],
       "gamePlatform": "Mobile",
       "description": "A vibrant physics puzzle arcade where three color inputs resolve into one of 35 authored projectile recipes.",
       "creativeWorkStatus": "Active development - production prototype",
-      "author": { "@id": "https://willowinworld.com/#studio" },
-      "publisher": { "@id": "https://willowinworld.com/#studio" }
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "en"
     },
     {
       "@type": "VideoGame",
@@ -131,16 +198,26 @@
       "name": "Ball is God?!",
       "url": "https://willowinworld.com/games/ball-is-god.html",
       "image": "https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp",
-      "genre": ["Vertical descent arcade", "Hardcore arcade", "Story-driven arcade", "Boss action"],
+      "genre": [
+        "Vertical descent arcade",
+        "Hardcore arcade",
+        "Story-driven arcade",
+        "Boss action"
+      ],
       "gamePlatform": "Mobile",
       "description": "A hardcore vertical descent arcade where players rotate the tower, build combo smashes and carry karma through ten locations.",
       "creativeWorkStatus": "Active production",
-      "author": { "@id": "https://willowinworld.com/#studio" },
-      "publisher": { "@id": "https://willowinworld.com/#studio" }
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "en"
     }
   ]
 }
-  </script>
+</script>
 </head>
 <body class="home-polish-2026" data-theme="dark">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -174,6 +251,9 @@
               <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Language"><details><summary aria-label="Choose language"><span aria-hidden="true">EN</span></summary><div class="language-options"><a href="index.html" lang="en" hreflang="en" aria-current="page">EN</a><a href="ru/index.html" lang="ru" hreflang="ru">RU</a><a href="es/index.html" lang="es" hreflang="es">ES</a><a href="pt/index.html" lang="pt-BR" hreflang="pt">PT</a></div></details></nav>
+  <!-- locale-switcher:end -->
           <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span></button>
         </div>
       </div>
@@ -1025,6 +1105,6 @@
     </div>
   </div>
 
-  <script src="scripts.js?v=20260731-9"></script>
+  <script src="scripts.js?v=20260801-1"></script>
 </body>
 </html>

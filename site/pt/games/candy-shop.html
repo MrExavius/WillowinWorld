@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Candy Shop é um aconchegante quebra-cabeça de mesclagem móvel em desenvolvimento ativo. Passe por uma cadeia de doces de 13 estágios, domine dez recipientes e ative doces especiais.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#211027" id="metaThemeColor">
+  <meta property="og:title" content="Candy Shop - Jogo de quebra-cabeça aconchegante com combinação de doces">
+  <meta property="og:description" content="Solte, combine e evolua doces em um aconchegante quebra-cabeça móvel de WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Candy Shop jogo de quebra-cabeça de fusão de doces aconchegante por WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/pt/games/candy-shop.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Candy Shop - Jogo de quebra-cabeça aconchegante com combinação de doces">
+  <meta name="twitter:description" content="Solte, combine e evolua doces em um aconchegante quebra-cabeça móvel de WillowinWorld.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Candy Shop física aconchegante mescla quebra-cabeça com doces coloridos">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Candy Shop | Quebra-cabeça mobile de combinar doces</title>
+  <link rel="canonical" href="https://willowinworld.com/pt/games/candy-shop.html">
+  <!-- locale-alternates:start -->
+  <link rel="alternate" hreflang="en" href="https://willowinworld.com/games/candy-shop.html">
+  <link rel="alternate" hreflang="ru" href="https://willowinworld.com/ru/games/candy-shop.html">
+  <link rel="alternate" hreflang="es" href="https://willowinworld.com/es/games/candy-shop.html">
+  <link rel="alternate" hreflang="pt" href="https://willowinworld.com/pt/games/candy-shop.html">
+  <link rel="alternate" hreflang="x-default" href="https://willowinworld.com/games/candy-shop.html">
+  <!-- locale-alternates:end -->
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Jogos",
+          "item": "https://willowinworld.com/pt/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Candy Shop",
+          "item": "https://willowinworld.com/pt/games/candy-shop.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/pt/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/pt/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "description": "Um quebra-cabeça aconchegante de mesclagem de doces com uma cadeia de mesclagem de 13 estágios, dez conjuntos de regras de contêineres, doces especiais e ferramentas de planejamento.",
+      "genre": [
+        "Merge puzzle",
+        "Candy puzzle",
+        "Casual puzzle",
+        "Physics puzzle"
+      ],
+      "gamePlatform": "Celular",
+      "creativeWorkStatus": "Desenvolvimento ativo – construção de produção jogável",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/pt/games/candy-shop.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "pt-BR"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
+  <link rel="preload" href="../../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-candy-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/candy-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-candy candy-shop-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Pular para Candy Shop</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — voltar para WillowinWorld">
+      <img src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop ícone do jogo de quebra-cabeça de fusão de doces aconchegantes" fetchpriority="high" decoding="async">
+      <span><strong>Candy Shop</strong><small>Página do jogo WillowinWorld</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navegação na página do jogo">
+      <a href="../index.html">Início do estúdio</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Kit de imprensa</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Mudar tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Idioma"><details><summary aria-label="Escolher idioma"><span aria-hidden="true">PT</span></summary><div class="language-options"><a href="../../games/candy-shop.html" lang="en" hreflang="en">EN</a><a href="../../ru/games/candy-shop.html" lang="ru" hreflang="ru">RU</a><a href="../../es/games/candy-shop.html" lang="es" hreflang="es">ES</a><a href="candy-shop.html" lang="pt-BR" hreflang="pt" aria-current="page">PT</a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
+    <div class="candy-page-backdrop ambient-only" aria-hidden="true">
+      <div class="candy-menu-world">
+        <span class="candy-menu-shelf candy-menu-shelf-top"></span>
+        <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-one"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-one"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-three"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-four"></span>
+      </div>
+    </div>
+
+    <section class="candy-game-hero" aria-labelledby="candyHeroTitle">
+      <div class="container candy-hero-layout">
+        <div class="candy-hero-copy">
+          <div class="eyebrow">Candy Shop</div>
+          <h1 id="candyHeroTitle">Solte doces. Crie delícias maiores.</h1>
+          <p class="hero-copy">Um aconchegante quebra-cabeça móvel sobre como colocar doces, ativar combos de física suave e perseguir mais uma evolução satisfatória.</p>
+          <p class="candy-hero-note">Desenvolvimento ativo com 13 estágios de doces, 10 conjuntos de regras de contêiner, oito efeitos de doces especiais e uma camada de planejamento construída em torno de espera, visualização de pouso e as próximas três filas.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Candy%20Shop%20updates">Solicitar atualizações do Candy Shop</a>
+            <a class="btn btn-ghost" href="#devlog">Abra o Devlog</a>
+          </div>
+          <div class="candy-hero-stats" role="group" aria-label="Destaques Candy Shop">
+            <span><strong>13 doces</strong><small>uma cadeia de evolução legível</small></span>
+            <span><strong>10 campos</strong><small>nova geometria e regras</small></span>
+            <span><strong>8 especiais</strong><small>efeitos e receitas emparelhados</small></span>
+          </div>
+        </div>
+
+        <aside class="candy-hero-showcase" aria-label="Prévia do jogo Candy Shop">
+          <div class="candy-device-frame">
+            <div class="candy-stage candy-stage-showcase" aria-hidden="true">
+              <div class="candy-bg-stack">
+                <img loading="lazy" class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-2" src="../../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-3" src="../../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-4" src="../../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-5" src="../../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-6" src="../../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-7" src="../../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-8" src="../../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-9" src="../../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
+                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                </picture>
+              </div>
+              <img loading="lazy" class="candy-piece candy-piece-left" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-right" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-result" src="../../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
+              <span class="candy-impact"></span>
+            </div>
+            <img loading="lazy" class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Ícone do jogo Candy Shop com doces brilhantes" decoding="async">
+            <span class="candy-preview-title">
+              <small>Quebra-cabeça aconchegante de fusão de física</small>
+              <strong>Candy Shop</strong>
+              <span class="candy-cycle"><b>Cair</b><b>Mesclar</b><b>Combo</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>Construção jogável · Desenvolvimento ativo</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid candy-shop-content">
+      <section class="game-proof-section" aria-labelledby="candyProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Dentro da versão atual</span>
+            <h2 id="candyProofTitle">Cada recipiente muda as regras do quebra-cabeça.</h2>
+            <p>A regra de mesclagem permanece constante; o campo não. Um frasco altera o espaço utilizável, a ampulheta cria um ponto de estrangulamento, portais triplos dividem o plano, a gravidade giratória vira os doces assentados e as paredes de obstáculos transformam o final em um caos controlado.</p>
+            <span class="proof-status"><b>Estado da versão</b> Desenvolvimento ativo</span>
+          </div>
+          <div class="proof-visual">
+            <div class="candy-container-section">
+              <h3>Oito mudanças de regras visíveis</h3>
+              <p>Arte de contêiner real do projeto Unity atual.</p>
+              <div class="container-showcase" aria-label="Galeria de contêineres Candy Shop">
+                <figure><img src="../../assets/game-proof/candy-containers/container_pot.webp" width="400" height="500" alt="Recipiente de mesclagem em forma de pote Candy Shop" loading="lazy" decoding="async"><figcaption>Pote</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_hourglass.webp" width="400" height="500" alt="Recipiente de mesclagem de ampulheta Candy Shop com centro estreito" loading="lazy" decoding="async"><figcaption>Ampulheta</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_flask.webp" width="400" height="500" alt="Recipiente de mesclagem em forma de frasco Candy Shop" loading="lazy" decoding="async"><figcaption>Frasco</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_tilted.webp" width="400" height="500" alt="Candy Shop contêiner de mesclagem de piso inclinado" loading="lazy" decoding="async"><figcaption>Inclinado</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_stepped.webp" width="400" height="500" alt="Candy Shop contêiner de mesclagem escalonado" loading="lazy" decoding="async"><figcaption>Escalonado</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_triple.webp" width="400" height="500" alt="contêiner de mesclagem de portal triplo Candy Shop" loading="lazy" decoding="async"><figcaption>Portal triplo</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_rotating.webp" width="400" height="500" alt="Recipiente de gravidade rotativa Candy Shop" loading="lazy" decoding="async"><figcaption>Gravidade giratória</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_obstacles.webp" width="400" height="500" alt="Candy Shop mescla contêiner com paredes de obstáculo" loading="lazy" decoding="async"><figcaption>Paredes de obstáculos</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Fatos de construção verificados do Candy Shop">
+          <article><strong>Evolução de 13 estágios</strong><span>Uma escada de doces completa.</span></article>
+          <article><strong>Segure + próximos três</strong><span>Planejamento antes de cada lançamento.</span></article>
+          <article><strong>Receitas especiais</strong><span>Fogo, Gelo, Ímã, Geléia e muito mais.</span></article>
+          <article><strong>Ciclo diário e de coleta</strong><span>Desafio Seeded, Candy Book e os cinco primeiros locais.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Visão geral do jogo</div>
+        <h2>Um aconchegante quebra-cabeça de mesclagem móvel construído em torno de física suave e decisões de mais uma queda.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Promessa do jogador</h3><p>Solte doces, crie guloseimas maiores e transforme cada corrida em uma alegre cadeia de física suave, doces surpresas e fusões satisfatórias.</p></article>
+          <article class="detail-card"><h3>Versão atual</h3><p>Dez conjuntos de regras de contêiner, uma cadeia completa de 13 doces, oito efeitos especiais, visualização de pouso, espera e uma próxima fila de três são implementados.</p></article>
+          <article class="detail-card"><h3>Público</h3><p>Jogadores casuais de quebra-cabeças que gostam de jogos de soltar e mesclar, visuais aconchegantes de doces, estratégia de baixa pressão e sessões rápidas em dispositivos móveis.</p></article>
+          <article class="detail-card"><h3>Status</h3><p>Desenvolvimento ativo. O trabalho atual se concentra no desempenho móvel, no aprimoramento da interface do usuário, no equilíbrio dos doces, na pressão do contêiner e no feedback legível do combo.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Recursos</div>
+        <h2>O que os jogadores fazem em Candy Shop.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Jogo de soltar e mesclar doces</h3><p>Os jogadores colocam os doces no recipiente, usam a gravidade e o tempo e, em seguida, fundem os doces correspondentes em guloseimas maiores.</p></article>
+          <article class="detail-card"><h3>Corrente de doces de 13 estágios</h3><p>A escada de fusão dá a cada corrida um objetivo visível, desde pequenos doces até recompensas maiores com presença mais forte na tela.</p></article>
+          <article class="detail-card"><h3>Combos e doces especiais</h3><p>Oito efeitos de doces especiais implementados formam receitas e efeitos colaterais emparelhados, dando às sessões repetidas uma textura mais tática.</p></article>
+          <article class="detail-card"><h3>Apresentação móvel aconchegante</h3><p>Cores suaves, planos de fundo de lojas de doces e interface de usuário amigável ao toque tornam o jogo legível para sessões curtas de iOS e Android.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Ciclo de jogo</div>
+        <h2>Escolha o drop, controle o contêiner e mantenha a cadeia de mesclagem viva.</h2>
+        <ul class="update-list">
+          <li><span>Passo 01</span><strong>Leia o próximo doce</strong><p>O jogador verifica o próximo doce, a pilha atual e o espaço disponível dentro do contêiner.</p></li>
+          <li><span>Etapa 02</span><strong>Coloque com intenção</strong><p>Uma queda pode configurar uma fusão limpa, bloquear um movimento futuro ou criar pressão que altere a próxima decisão.</p></li>
+          <li><span>Etapa 03</span><strong>Mesclar e combinar</strong><p>Os doces correspondentes evoluem para guloseimas maiores e as reações em cadeia recompensam a colocação inteligente.</p></li>
+          <li><span>Etapa 04</span><strong>Progresso e repetição</strong><p>Os jogadores perseguem níveis de doces mais altos, corridas melhores, combos mais limpos e recompensas de progressão futuras.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">História / mundo</div>
+        <h2>Uma confeitaria alegre onde cada doce pode se tornar algo maior.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop começou em 2025 como a segunda ideia de jogo de WillowinWorld: um quebra-cabeça de combinação de doces brilhante e aconchegante construído em torno de alegria simples e física satisfatória.</p>
+            <p>O mundo é intencionalmente quente e legível: prateleiras, doces, mascotes macios e recipientes semelhantes a lojas sustentam a fantasia de que cada pequeno doce tem um caminho para se tornar um deleite maior.</p>
+            <p>Após o primeiro protótipo, a equipe expandiu o GDD, reconstruiu a direção, completou a cadeia de fusão de 13 doces e implementou dez conjuntos de regras de contêineres, receitas especiais, ferramentas de planejamento e os primeiros sistemas de metaprogressão.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Cadeia de mesclagem</dt><dd>13 estágios de doces</dd></div>
+            <div><dt>Foco no design</dt><dd>Física suave e combos legíveis</dd></div>
+            <div><dt>Passeio pelo contêiner</dt><dd>10 variantes de geometria e regras</dd></div>
+            <div><dt>Estágio atual</dt><dd>Desenvolvimento e otimização ativos</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">Ângulo do editor</div>
+        <h2>Uma regra de mesclagem familiar em dez contêineres diferentes.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop mantém a regra de soltar e mesclar legível enquanto cada contêiner altera o espaço utilizável, a gravidade, os obstáculos ou a rota para a pilha.</p>
+            <p>A versão atual estende tiragens curtas com desafios diários, descobertas Candy Book e tabelas de pontuação locais.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Gênero</dt><dd>Quebra-cabeça casual de mesclagem de doces</dd></div>
+            <div><dt>Alvo da plataforma</dt><dd>iOS/Android</dd></div>
+            <div><dt>Formato da sessão</dt><dd>Corridas curtas e repetíveis</dd></div>
+            <div><dt>CTA principal</dt><dd>Solicitar atualizações de desenvolvimento</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Baixar ativos</div>
+        <h2>Materiais de Candy Shop para imprensa e criadores</h2>
+        <p class="asset-kit-copy">Prévias selecionadas de WebP para cobertura editorial, revisão de editores e referências de layout de loja. Arquivos de origem em resolução total estão disponíveis no estúdio mediante solicitação.</p>
+        <h3 class="asset-group-title">Cenas de marca e loja</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop ícone do jogo de quebra-cabeça de fusão de doces aconchegantes" loading="lazy" decoding="async"><strong>Ícone do jogo</strong><span>Ícone de quebra-cabeça de fusão de doces aconchegante.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop ícone de jogo alternativo de quebra-cabeça de mesclagem aconchegante" loading="lazy" decoding="async"><strong>Ícone alternativo</strong><span>Ícone estilo loja secundária.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop mascote do logotipo do quebra-cabeça de fusão de doces aconchegantes" loading="lazy" decoding="async"><strong>Mascote do logotipo</strong><span>Mascote da marca com título Candy Shop.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp" download><img src="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp" srcset="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp 360w, ../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop personagem mascote urso" loading="lazy" decoding="async"><strong>Mascote urso</strong><span>Recurso de personagem mascote amigável.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 781w" sizes="(max-width: 760px) 34vw, 76px" width="781" height="1400" alt="Candy Shop aconchegante mesclar fundo do menu da loja de quebra-cabeças" loading="lazy" decoding="async"><strong>Cardápio da loja</strong><span>Fundo aconchegante do menu da loja de doces.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de pausa de quebra-cabeça de mesclagem casual" loading="lazy" decoding="async"><strong>Pausar fundo</strong><span>Cena casual de pausa no quebra-cabeça de mesclagem.</span></a>
+        </div>
+        <h3 class="asset-group-title">Fundos de quebra-cabeça de mesclagem aconchegantes</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 01" loading="lazy" decoding="async"><strong>Plano de fundo 01</strong><span>Cena aconchegante de quebra-cabeça de fusão de doces.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 02" loading="lazy" decoding="async"><strong>Plano de fundo 02</strong><span>Cena de quebra-cabeça de mesclagem de loja de doces.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 03" loading="lazy" decoding="async"><strong>Plano de fundo 03</strong><span>Cena de quebra-cabeça de fusão de doces móveis.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 04" loading="lazy" decoding="async"><strong>Plano de fundo 04</strong><span>Doce cena de loja de quebra-cabeças de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 05" loading="lazy" decoding="async"><strong>Plano de fundo 05</strong><span>Fundo de quebra-cabeça casual aconchegante.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 06" loading="lazy" decoding="async"><strong>Plano de fundo 06</strong><span>Cenário de quebra-cabeça de mesclagem de doces.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 07" loading="lazy" decoding="async"><strong>Plano de fundo 07</strong><span>Cena aconchegante de doces móveis.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 08" loading="lazy" decoding="async"><strong>Plano de fundo 08</strong><span>Fundo casual de quebra-cabeça de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 09" loading="lazy" decoding="async"><strong>Plano de fundo 09</strong><span>Fundo de quebra-cabeça da loja de doces.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop fundo de quebra-cabeça de mesclagem de doces aconchegantes 10" loading="lazy" decoding="async"><strong>Plano de fundo 10</strong><span>Fundo aconchegante do mundo dos doces.</span></a>
+        </div>
+        <h3 class="asset-group-title">Física mescla corrente de doces</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 01" loading="lazy" decoding="async"><strong>Doce 01</strong><span>Primeiro doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 02" loading="lazy" decoding="async"><strong>Doce 02</strong><span>Segundo doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 03" loading="lazy" decoding="async"><strong>Doce 03</strong><span>Terceiro doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 04" loading="lazy" decoding="async"><strong>Doce 04</strong><span>Quarto doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 05" loading="lazy" decoding="async"><strong>Doce 05</strong><span>Quinto doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 06" loading="lazy" decoding="async"><strong>Doce 06</strong><span>Sexto doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 07" loading="lazy" decoding="async"><strong>Doce 07</strong><span>Sétimo doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 08" loading="lazy" decoding="async"><strong>Doce 08</strong><span>Oitavo doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 09" loading="lazy" decoding="async"><strong>Doce 09</strong><span>Nono doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 10" loading="lazy" decoding="async"><strong>Doces 10</strong><span>Décimo doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 11" loading="lazy" decoding="async"><strong>Doce 11</strong><span>Décimo primeiro doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 12" loading="lazy" decoding="async"><strong>Doce 12</strong><span>Décimo segundo doce na cadeia de mesclagem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Física Candy Shop mesclar doces 13" loading="lazy" decoding="async"><strong>Doce 13</strong><span>Doce final na cadeia de mesclagem.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Jornada de desenvolvimento</div>
+        <h2>Do primeiro protótipo a uma construção de produção mais profunda.</h2>
+        <ul class="update-list">
+          <li><span>Final de junho de 2025</span><strong>Segunda ideia de jogo</strong><p>WillowinWorld começou a explorar um projeto de doces brilhantes construído em torno de algo simples, alegre e amplamente atraente.</p></li>
+          <li><span>agosto de 2025</span><strong>Primeiros personagens doces</strong><p>Os primeiros personagens doces foram criados, e a cadeia de fusão posteriormente foi expandida de 11 para 13 doces para uma progressão mais forte.</p></li>
+          <li><span>Setembro de 2025</span><strong>Primeiro protótipo</strong><p>O primeiro protótipo foi construído e testado. O resultado mostrou que a ideia precisava de mais identidade, progressão e um gancho mais claro.</p></li>
+          <li><span>Outubro de 2025</span><strong>Expansão GDD</strong><p>O documento de design foi expandido com novas mecânicas, doces especiais, ideias de progressão e direção de contêineres.</p></li>
+          <li><span>Dezembro de 2025 a fevereiro de 2026</span><strong>Sistemas centrais de doces</strong><p>A mecânica principal dos doces foi implementada, o conjunto de doces foi concluído e os primeiros sistemas de contêineres começaram.</p></li>
+          <li><span>Abril a julho de 2026</span><strong>Sistemas e passe de polimento</strong><p>A compilação foi expandida com dez conjuntos de regras de contêineres, interações com doces especiais, ferramentas de planejamento, desafios diários e sistemas de coleta, além de otimização e aprimoramento da interface do usuário.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Mundos Relacionados</div>
+        <h2>Acompanhe o público do quebra-cabeça de mesclagem no catálogo mais amplo WillowinWorld.</h2>
+        <p class="related-worlds-copy">Candy Shop cobre a aconchegante pista de quebra-cabeças de soltar e mesclar. Continue para um relaxante quebra-cabeça de física de linha, um fliperama colorido de reação em cadeia ou a descida radical da torre giratória do estúdio.</p>
+        <div class="related-world-grid" aria-label="Páginas relacionadas do jogo WillowinWorld">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">Quebra-cabeça de física relaxante</span>
+            <strong>Nature Seed</strong>
+            <p>Desenhe rotas físicas limitadas, reúna dois personagens e restaure os níveis da floresta por meio de uma física móvel calma.</p>
+            <span class="related-world-meta">Quebra-cabeça de linhas para desenhar para resolver</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">Arcada de destruição de cores</span>
+            <strong>Paint Blasters</strong>
+            <p>Construa um projétil antes de cada tiro, leia os pontos fracos da torre e desencadeie reações físicas em cadeia.</p>
+            <span class="related-world-meta">Mire e atire no quebra-cabeça de física</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Arcada de história</span>
+            <strong>Ball is God?!</strong>
+            <p>Passe de sessões aconchegantes para uma tensa descida de torre giratória com combo smash, mundos míticos e pressão de chefe.</p>
+            <span class="related-world-meta">Arcada de torre hardcore</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Imprensa / editores</span>
+            <strong>Fatos do portfólio</strong>
+            <p>Abra uma visão geral compacta de gêneros, status de produção, bens públicos e ganchos de jogos voltados para editores.</p>
+            <span class="related-world-meta">Portfólio WillowinWorld</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Perguntas frequentes sobre Candy Shop</div>
+        <h2>Respostas para jogadores, imprensa e parceiros editoriais.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Que tipo de jogo é Candy Shop?</h3><p>Um quebra-cabeça aconchegante de fusão de doces com efeitos físicos suaves, doces especiais, combos e progressão.</p></article>
+          <article class="detail-card"><h3>Como funciona a jogabilidade?</h3><p>Escolha um doce, coloque-o no recipiente, mescle os doces correspondentes, administre o espaço e persiga estágios maiores de doces.</p></article>
+          <article class="detail-card"><h3>O que o torna diferente?</h3><p>Ele combina um loop de quebra-cabeça familiar com identidade de doces aconchegantes, doces especiais, combos legíveis e pressão de recipiente.</p></article>
+          <article class="detail-card"><h3>Qual é o status atual?</h3><p>Desenvolvimento ativo. A cadeia de mesclagem, dez conjuntos de regras de contêiner, receitas especiais, desafio diário, Candy Book e tabelas de pontuação locais existem no projeto atual.</p></article>
+          <article class="detail-card"><h3>Os bens públicos podem ser usados?</h3><p>Sim, para imprensa, revisão de editores e referências de lojas. Os ativos de origem permanecem privados, a menos que sejam solicitados diretamente.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Devlog Candy Shop</div>
+        <h2>O que mudou e quando</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 de julho de 2026</time><strong>Atualização do menu e do HUD</strong><p>Menu principal, seleção de nível, controles HUD e ícones de comando agora compartilham uma linguagem visual; testes de estresse adicionais no motor cobrem o fluxo atualizado.</p></li>
+          <li><span>julho de 2026</span><strong>Desenvolvimento de produção mais profundo</strong><p>O projeto atual combina a cadeia de mesclagem completa com dez conjuntos de regras de contêineres, receitas especiais, ferramentas de planejamento, desafios diários, descobertas Candy Book e tabelas de pontuação locais.</p></li>
+          <li><span>Abril de 2026</span><strong>Elementos da UI passam</strong><p>Os primeiros elementos principais da UI foram criados, dando ao Candy Shop uma identidade móvel mais clara e uma apresentação casual mais forte.</p></li>
+          <li><span>fevereiro de 2026</span><strong>Corrente e recipientes para doces</strong><p>O conjunto completo de doces foi concluído e os sistemas de contêineres começaram a alterar a geometria, a gravidade e a pressão do quebra-cabeça.</p></li>
+          <li><span>dezembro de 2025</span><strong>Mecânica central dos doces</strong><p>A mecânica principal dos doces foi implementada de forma grosseira, transformando o GDD expandido em um sistema jogável.</p></li>
+          <li><span>Outubro de 2025</span><strong>Expansão GDD</strong><p>Depois que o primeiro protótipo não parecia forte o suficiente, o design foi expandido com doces especiais e ideias de progressão.</p></li>
+          <li><span>agosto de 2025</span><strong>Primeiros personagens doces</strong><p>Os primeiros personagens doces foram criados, estabelecendo a direção suave e amigável da cadeia de fusão.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Candy Shop é um jogo WillowinWorld.</strong>
+        <span>Um quebra-cabeça de mesclagem aconchegante onde a próxima gota é simples e o contêiner nunca é.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navegação de rodapé Candy Shop">
+        <a href="../index.html#games">Todos os jogos</a>
+        <a href="../press-kit.html">Kit de imprensa</a>
+        <a href="../privacy.html">Privacidade</a>
+        <a href="../legal.html">Jurídico</a>
+        <a href="mailto:contact@willowinworld.com?subject=Candy%20Shop">Contato</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260801"></script>
+</body>
+</html>

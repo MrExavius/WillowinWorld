@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,6 +25,13 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>Candy Shop | Cozy Candy Merge Puzzle Game for Mobile</title>
   <link rel="canonical" href="https://willowinworld.com/games/candy-shop.html">
+  <!-- locale-alternates:start -->
+  <link rel="alternate" hreflang="en" href="https://willowinworld.com/games/candy-shop.html">
+  <link rel="alternate" hreflang="ru" href="https://willowinworld.com/ru/games/candy-shop.html">
+  <link rel="alternate" hreflang="es" href="https://willowinworld.com/es/games/candy-shop.html">
+  <link rel="alternate" hreflang="pt" href="https://willowinworld.com/pt/games/candy-shop.html">
+  <link rel="alternate" hreflang="x-default" href="https://willowinworld.com/games/candy-shop.html">
+  <!-- locale-alternates:end -->
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
@@ -35,9 +42,24 @@
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "WillowinWorld", "item": "https://willowinworld.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Games", "item": "https://willowinworld.com/#games" },
-        { "@type": "ListItem", "position": 3, "name": "Candy Shop", "item": "https://willowinworld.com/games/candy-shop.html" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Games",
+          "item": "https://willowinworld.com/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Candy Shop",
+          "item": "https://willowinworld.com/games/candy-shop.html"
+        }
       ]
     },
     {
@@ -47,22 +69,32 @@
       "url": "https://willowinworld.com/games/candy-shop.html",
       "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
       "description": "A cozy candy merge puzzle with a 13-stage merge chain, ten container rulesets, special sweets and planning tools.",
-      "genre": ["Merge puzzle", "Candy puzzle", "Casual puzzle", "Physics puzzle"],
+      "genre": [
+        "Merge puzzle",
+        "Candy puzzle",
+        "Casual puzzle",
+        "Physics puzzle"
+      ],
       "gamePlatform": "Mobile",
       "creativeWorkStatus": "Active development - playable production build",
       "dateModified": "2026-07-31",
       "mainEntityOfPage": "https://willowinworld.com/games/candy-shop.html",
-      "author": { "@id": "https://willowinworld.com/#studio" },
-      "publisher": { "@id": "https://willowinworld.com/#studio" }
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "en"
     }
   ]
 }
-  </script>
+</script>
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
   <link rel="preload" href="../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../assets/responsive/candy-shop-hero-480.avif 480w, ../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
   <link rel="preload" href="../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/base.css?v=20260801-2">
   <link rel="stylesheet" href="../css/home-candy-card.css">
   <link rel="stylesheet" href="../css/game-shell.css">
   <link rel="stylesheet" href="../css/candy-page.css">
@@ -93,6 +125,9 @@
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Language"><details><summary aria-label="Choose language"><span aria-hidden="true">EN</span></summary><div class="language-options"><a href="candy-shop.html" lang="en" hreflang="en" aria-current="page">EN</a><a href="../ru/games/candy-shop.html" lang="ru" hreflang="ru">RU</a><a href="../es/games/candy-shop.html" lang="es" hreflang="es">ES</a><a href="../pt/games/candy-shop.html" lang="pt-BR" hreflang="pt">PT</a></div></details></nav>
+  <!-- locale-switcher:end -->
   </header>
   <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
     <div class="candy-page-backdrop ambient-only" aria-hidden="true">
@@ -387,6 +422,6 @@
       </nav>
     </div>
   </footer>
-  <script src="../game-theme.js"></script>
+  <script src="../game-theme.js?v=20260801-1"></script>
 </body>
 </html>

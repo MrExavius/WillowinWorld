@@ -83,7 +83,7 @@
   z-index: 60;
   min-height: 74px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
   align-items: center;
   gap: 18px;
   padding: 12px max(20px, calc((100vw - var(--max)) / 2));
@@ -145,6 +145,14 @@
   min-height: 42px;
   border: 1px solid color-mix(in srgb, var(--paper) 22%, var(--line));
   background: color-mix(in srgb, var(--surface) 78%, transparent);
+}
+
+.game-detail-topbar .language-switcher summary {
+  width: 42px;
+  height: 42px;
+  border-color: color-mix(in srgb, var(--paper) 22%, var(--line));
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  box-shadow: none;
 }
 
 .game-detail-nav a {

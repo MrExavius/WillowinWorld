@@ -9,6 +9,7 @@ import {
   renderDevlogRss,
   renderLlmsTxt
 } from "./devlog-data.mjs";
+import { localizedPages, outputFile, translatedLocales } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const outRoot = join(siteRoot, "dist");
@@ -65,7 +66,9 @@ const sourceFiles = [
   "games/nature-seed.html",
   "games/candy-shop.html",
   "games/paint-blasters.html",
-  "games/ball-is-god.html"
+  "games/ball-is-god.html",
+  ...translatedLocales.flatMap(locale => localizedPages.map(page => outputFile(locale, page))),
+  ...translatedLocales.map(locale => `${locale.code}/i18n-runtime.js`)
 ];
 
 function minifyHtml(input) {

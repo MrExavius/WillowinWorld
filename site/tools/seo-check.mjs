@@ -6,18 +6,26 @@ import {
   renderLlmsTxt,
   siteRoot
 } from "./devlog-data.mjs";
+import {
+  alternateLinks,
+  localizedPages,
+  locales,
+  outputFile,
+  pageUrl,
+  sourceLocale
+} from "./localization-config.mjs";
 
 const pages = Object.freeze([
-  { file: "index.html", canonical: "https://willowinworld.com/" },
-  { file: "games/nature-seed.html", canonical: "https://willowinworld.com/games/nature-seed.html", game: true },
-  { file: "games/candy-shop.html", canonical: "https://willowinworld.com/games/candy-shop.html", game: true },
-  { file: "games/paint-blasters.html", canonical: "https://willowinworld.com/games/paint-blasters.html", game: true },
-  { file: "games/ball-is-god.html", canonical: "https://willowinworld.com/games/ball-is-god.html", game: true },
-  { file: "press-kit.html", canonical: "https://willowinworld.com/press-kit.html" },
-  { file: "privacy.html", canonical: "https://willowinworld.com/privacy.html", policy: true },
-  { file: "legal.html", canonical: "https://willowinworld.com/legal.html", policy: true },
-  { file: "asset-usage.html", canonical: "https://willowinworld.com/asset-usage.html", policy: true },
-  { file: "404.html", indexable: false }
+  ...locales.flatMap(locale => localizedPages.map(source => ({
+    file: outputFile(locale, source),
+    sourceFile: source.file,
+    canonical: pageUrl(locale, source),
+    locale,
+    source,
+    game: source.kind === "game",
+    policy: source.kind === "policy"
+  }))),
+  { file: "404.html", locale: sourceLocale, indexable: false }
 ]);
 
 const errors = [];
@@ -79,7 +87,9 @@ for (const page of pages) {
   const canonicalTags = (html.match(/<link\b[^>]*rel=["']canonical["'][^>]*>/gi) || []);
   const h1Count = (html.match(/<h1\b/gi) || []).length;
 
-  if (attr(html.match(/<html\b[^>]*>/i)?.[0] || "", "lang") !== "en") fail(page.file, "html lang must be en");
+  if (attr(html.match(/<html\b[^>]*>/i)?.[0] || "", "lang") !== page.locale.htmlLang) {
+    fail(page.file, `html lang must be ${page.locale.htmlLang}`);
+  }
   if (!title) fail(page.file, "missing title");
   if (h1Count !== 1) fail(page.file, `expected exactly one h1, found ${h1Count}`);
   if (meta(html, "name", "keywords")) fail(page.file, "meta keywords must not be used");
@@ -91,8 +101,10 @@ for (const page of pages) {
   }
 
   if (!description) fail(page.file, "missing meta description");
-  if (title.length < 20 || title.length > 75) fail(page.file, `title length ${title.length} is outside 20-75`);
-  if (description.length < 80 || description.length > 180) fail(page.file, `description length ${description.length} is outside 80-180`);
+  const maximumTitleLength = page.locale.code === sourceLocale.code ? 75 : 90;
+  const maximumDescriptionLength = page.locale.code === sourceLocale.code ? 180 : 210;
+  if (title.length < 20 || title.length > maximumTitleLength) fail(page.file, `title length ${title.length} is outside 20-${maximumTitleLength}`);
+  if (description.length < 70 || description.length > maximumDescriptionLength) fail(page.file, `description length ${description.length} is outside 70-${maximumDescriptionLength}`);
   if (titles.has(title)) fail(page.file, `duplicates title from ${titles.get(title)}`);
   if (descriptions.has(description)) fail(page.file, `duplicates description from ${descriptions.get(description)}`);
   titles.set(title, page.file);
@@ -103,10 +115,21 @@ for (const page of pages) {
     fail(page.file, "canonical must be unique and self-referencing");
   }
 
+  const alternateTags = (html.match(/<link\b[^>]*rel=["']alternate["'][^>]*hreflang=["'][^"']+["'][^>]*>/gi) || []);
+  const expectedAlternates = alternateLinks(page.source);
+  for (const expected of expectedAlternates) {
+    const match = alternateTags.find(tag => attr(tag, "hreflang") === expected.hreflang);
+    if (!match || attr(match, "href") !== expected.href) {
+      fail(page.file, `missing reciprocal hreflang ${expected.hreflang}`);
+    }
+  }
+  if (alternateTags.length !== expectedAlternates.length) fail(page.file, `expected ${expectedAlternates.length} hreflang links, found ${alternateTags.length}`);
+
   for (const property of ["og:type", "og:site_name", "og:locale", "og:title", "og:description", "og:image", "og:image:alt", "og:url"]) {
     if (!attr(meta(html, "property", property) || "", "content")) fail(page.file, `missing ${property}`);
   }
   if (attr(meta(html, "property", "og:url") || "", "content") !== page.canonical) fail(page.file, "og:url must match canonical");
+  if (attr(meta(html, "property", "og:locale") || "", "content") !== page.locale.ogLocale) fail(page.file, `og:locale must be ${page.locale.ogLocale}`);
   for (const name of ["twitter:card", "twitter:title", "twitter:description", "twitter:image", "twitter:image:alt"]) {
     if (!attr(meta(html, "name", name) || "", "content")) fail(page.file, `missing ${name}`);
   }
@@ -114,17 +137,20 @@ for (const page of pages) {
   const objects = structuredObjects(html, page.file);
   if (page.game) {
     const game = objects.find(object => hasType(object, "VideoGame"));
-    const source = gameDevlogSources.find(candidate => candidate.file === page.file);
+    const source = gameDevlogSources.find(candidate => candidate.file === page.sourceFile);
     if (!game) fail(page.file, "missing VideoGame JSON-LD");
     if (objects.some(object => hasType(object, "SoftwareApplication"))) fail(page.file, "unreleased game must not claim SoftwareApplication rich-result data");
     if (objects.some(object => hasType(object, "FAQPage"))) fail(page.file, "game FAQ schema must not diverge from visible FAQ content");
     if (game?.["@id"] !== `${page.canonical}#game`) fail(page.file, "VideoGame @id must be canonical#game");
     if (game?.author?.["@id"] !== "https://willowinworld.com/#studio") fail(page.file, "VideoGame author must reference #studio");
     if (game?.publisher?.["@id"] !== "https://willowinworld.com/#studio") fail(page.file, "VideoGame publisher must reference #studio");
-    if (source?.pageCanonical !== page.canonical) fail(page.file, "AI profile canonical must match the page canonical");
-    if (game?.creativeWorkStatus !== source?.status) fail(page.file, "AI profile status must match VideoGame creativeWorkStatus");
-    if (JSON.stringify(game?.genre) !== JSON.stringify(source?.genres)) fail(page.file, "AI profile genres must match VideoGame genres");
-    const latest = latestByFile.get(page.file);
+    if (game?.inLanguage !== page.locale.htmlLang) fail(page.file, `VideoGame inLanguage must be ${page.locale.htmlLang}`);
+    if (page.locale.code === sourceLocale.code) {
+      if (source?.pageCanonical !== page.canonical) fail(page.file, "AI profile canonical must match the page canonical");
+      if (game?.creativeWorkStatus !== source?.status) fail(page.file, "AI profile status must match VideoGame creativeWorkStatus");
+      if (JSON.stringify(game?.genre) !== JSON.stringify(source?.genres)) fail(page.file, "AI profile genres must match VideoGame genres");
+    }
+    const latest = latestByFile.get(page.sourceFile);
     if (game?.dateModified !== latest?.published) fail(page.file, "dateModified must match the newest dated devlog");
   }
 
@@ -206,4 +232,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages, sitemap.xml, robots.txt and llms.txt.`);
+console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages across ${locales.length} languages, sitemap.xml, robots.txt and llms.txt.`);

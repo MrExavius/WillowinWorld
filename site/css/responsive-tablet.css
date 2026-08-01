@@ -115,7 +115,7 @@
   }
 
   .game-detail-topbar {
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) auto auto;
     gap: 10px 14px;
     padding-inline: 14px;
   }

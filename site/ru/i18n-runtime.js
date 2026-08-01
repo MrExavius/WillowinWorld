@@ -1,0 +1,60 @@
+(() => {
+  const dictionary = Object.freeze({"10 Containers":"10 контейнеров","10 Levels":"10 уровней","10 Locations":"10 локаций","35 Recipes":"35 рецептов","7 Block Types":"7 типов блоков","8 Effects":"8 эффектов","A color-destruction physics prototype where players assemble one of 35 projectile recipes, read seven block archetypes and dismantle a five-floor active tower through precise chain reactions.":"Прототип физики разрушения цвета, в котором игроки собирают один из 35 рецептов снарядов, читают семь архетипов блоков и разбирают пятиэтажную активную башню с помощью точных цепных реакций.","A cozy physics-based merge puzzle with a 13-stage candy chain, ten gameplay containers and eight special candy effects. Plan the next three drops, hold a piece and manage the shape of each container before the stack reaches the top.":"Уютная головоломка, основанная на физике, с 13-ступенчатой ​​цепочкой конфет, десятью контейнерами игрового процесса и восемью специальными эффектами конфет. Спланируйте следующие три капли, держите кусок и управляйте формой каждого контейнера, прежде чем стопка достигнет вершины.","A hardcore vertical tower arcade where horizontal drag rotates the world around the auto-falling Espa. Thread three platform gaps to trigger a combo smash, deploy a cooldown shield against lethal hits and let Karma reshape ten distinct locations.":"Хардкорная аркада с вертикальной башней, в которой горизонтальное сопротивление вращает мир вокруг автоматически падающего Espa. Пройдите через три бреши в платформе, чтобы вызвать комбо-удар, разверните щит с перезарядкой от смертельных ударов и позвольте Карме изменить десять различных локаций.","A hidden portal answered.":"Ответил скрытый портал.","A meditative mobile physics puzzle about drawing limited lines that become solid objects. Shape a safe route, bring the Water Drop and Seed together, and solve ten handcrafted vertical levels with as little ink as possible.":"Медитативная мобильная физическая головоломка о рисовании ограниченных линий, которые превращаются в твердые объекты. Проложите безопасный маршрут, соберите Water Drop и Seed вместе и пройдите десять созданных вручную вертикальных уровней, используя как можно меньше чернил.","A star path awakened.":"Пробудился звездный путь.","Active Development":"Активное развитие","Active Production":"Активное производство","Adapt to ten container rulesets and eight special effect families.":"Адаптируйтесь к десяти наборам правил контейнеров и восьми семействам спецэффектов.","Ambient":"Эмбиент","Auto":"Авто","ball":"мяч","Ball is God?! promo word found":"Найдено промо-слово Ball is God?!","Bring the Water Drop and Seed characters together through readable cause and effect.":"Объедините символы Water Drop и Seed вместе, указав читаемую причину и следствие.","candy":"конфеты","Candy Merge":"Конфетное слияние","Candy Shop promo word found":"Найдено промо-слово Candy Shop","Casual Merge Puzzle":"Казуальная головоломка со слиянием","Chain Reactions":"Цепные реакции","Close menu":"Закрыть меню","Combine three color ingredients into one of 35 defined projectile behaviors.":"Объедините три цветовых ингредиента в один из 35 определенных вариантов поведения снаряда.","Combo Smash":"Комбо-удар","Contact message copied.":"Контактное сообщение скопировано.","Copy was blocked. Use contact@willowinworld.com.":"Копия заблокирована. Используйте contact@willowinworld.com.","Cozy Game":"Уютная игра","Daylight":"Дневной свет","Disable Magic":"Отключить магию","Draft cleared. New text will save in this tab.":"Черновик удален. Новый текст сохранится в этой вкладке.","Draft is available until this page closes.":"Черновик доступен до закрытия этой страницы.","Draft restored from this browser tab.":"Черновик восстановлен с этой вкладки браузера.","Draft saved in this browser tab.":"Черновик сохранен в этой вкладке браузера.","Draft stays in this browser tab while you work.":"Черновик остается на этой вкладке браузера, пока вы работаете.","Draw a constrained physical route with a strict ink and line budget.":"Нарисуйте ограниченный физический маршрут со строгим бюджетом чернил и линий.","Draw-to-Solve":"«Нарисуй для решения»","Draw-to-Solve Physics Puzzle":"Физическая головоломка «Нарисуй, чтобы решить»","Email draft requested. If it did not open, use Copy message.":"Запрошен черновик электронного письма. Если оно не открылось, используйте «Копировать сообщение».","End magic hunt":"Конец магической охоты","Full Magic":"Полная магия","Hardcore Arcade":"Хардкорная аркада","Hidden letters are awake.":"Скрытые буквы проснулись.","Hidden promo letter":"Скрытое промо-письмо","Karma System":"Система Кармы","Let Light, Neutral or Dark Karma alter telegraphs, aggression, bosses and story choices.":"Пусть Светлая, Нейтральная или Темная Карма меняет телеграфы, агрессию, боссов и выбор сюжета.","Line Physics":"Физика линий","Low":"Низкий","Low Motion":"Низкая съемка","Magic hunt":"Магическая охота","Magic hunt paused.":"Магическая охота приостановлена.","Magic unlocked":"Магия разблокирована.","Merge matching pieces through a 13-stage chain toward the largest candy.":"Соединяйте одинаковые кусочки по 13-ступенчатой ​​цепочке к самой большой конфете.","Mobile":"Мобильный","Nature Seed promo word found":"Найдено промо-слово Nature Seed","Night Magic":"Ночная магия","Open menu":"Открыть меню","paint":"краска","Paint Blasters promo word found":"Найдено промо-слово Paint Blasters","Pause Magic":"Магия паузы","Paused":"Приостановлено","Physics Arcade":"Физика Аркады","Physics Puzzle / Arcade Hybrid":"Гибрид физической головоломки и аркады","Play":"Играть","Playable Vertical Prototype":"Игровой вертикальный прототип","Production Prototype":"Производственный прототип","Read seven block archetypes, structural weak points and reaction opportunities.":"Прочитайте семь блоков архетипов, структурные слабые места и возможности реагирования.","Read the landing preview and next-three queue before every drop.":"Перед каждым выпуском читайте предварительный просмотр приземления и очередь следующих трех.","Relaxing Puzzle":"Расслабляющая головоломка","Replay compact levels to earn the best efficiency rating with fewer lines.":"Переигрывайте компактные уровни, чтобы получить лучший рейтинг эффективности с меньшим количеством линий.","Request Promo Code":"Запросить промокод","Resume Magic":"Возобновить магию","Rotate each tower with horizontal drag while Espa keeps falling and jumping.":"Вращайте каждую башню с помощью горизонтального сопротивления, в то время как Espa продолжает падать и прыгать.","seed":"семя","Skip three platforms to earn a smash, or spend the shield to survive a lethal mistake.":"Пропустите три платформы, чтобы нанести удар, или потратьте щит, чтобы пережить смертельную ошибку.","Static":"Статический","Switch to dark theme":"Переключиться на темную тему.","Switch to light theme":"Переключиться на светлую тему.","Tower Rotation":"Вращение башни","Turn one deliberate shot into a colorful physics collapse across the active tower.":"Превратите один преднамеренный выстрел в красочный физический коллапс на активной башне.","You found the hidden Ball is God?! word. Promo codes are issued manually by WillowinWorld after a claim review.":"Вы нашли скрытое слово Ball is God?!. Промокоды выдаются WillowinWorld вручную после рассмотрения претензии.","You found the hidden Candy Shop word. Promo codes are issued manually by WillowinWorld after a claim review.":"Вы нашли скрытое слово Candy Shop. Промокоды выдаются WillowinWorld вручную после рассмотрения претензии.","You found the hidden Nature Seed word. Promo codes are issued manually by WillowinWorld after a claim review.":"Вы нашли скрытое слово Nature Seed. Промокоды выдаются WillowinWorld вручную после рассмотрения претензии.","You found the hidden Paint Blasters word. Promo codes are issued manually by WillowinWorld after a claim review.":"Вы нашли скрытое слово Paint Blasters. Промокоды выдаются WillowinWorld вручную после рассмотрения претензии."});
+  const filterTranslations = Object.freeze({"Arcade":"Аркады","Puzzle":"Головоломка","Physics":"Физика","Cozy":"Уютно"});
+  const attributes = ["aria-label", "aria-description", "title", "placeholder"];
+  const normalize = value => String(value || "").replace(/\s+/g, " ").trim();
+  function translate(value) {
+    const normalized = normalize(value);
+    if (dictionary[normalized]) return dictionary[normalized];
+    let match = normalized.match(/^Hidden letters:\s*(\d+)\/(\d+)$/i);
+    if (match) return "Скрытые буквы: {found}/{total}".replace("{found}", match[1]).replace("{total}", match[2]);
+    match = normalized.match(/^Showing\s+(\d+)\s+(.+?)\s+games?\.?$/i);
+    if (match) {
+      const filterKey = match[2].charAt(0).toUpperCase() + match[2].slice(1);
+      const localizedFilter = filterTranslations[filterKey] || match[2];
+      return "Показано: {count} — {filter}".replace("{count}", match[1]).replace("{filter}", localizedFilter);
+    }
+    return value;
+  }
+  function translateTextNode(node) {
+    const translated = translate(node.nodeValue);
+    if (translated === node.nodeValue) return;
+    const leading = node.nodeValue.match(/^\s*/)?.[0] || "";
+    const trailing = node.nodeValue.match(/\s*$/)?.[0] || "";
+    node.nodeValue = leading + translated + trailing;
+  }
+  function translateElement(element) {
+    attributes.forEach(attribute => {
+      if (!element.hasAttribute(attribute)) return;
+      const current = element.getAttribute(attribute);
+      const translated = translate(current);
+      if (translated !== current) element.setAttribute(attribute, translated);
+    });
+  }
+  function translateTree(root) {
+    if (!root) return;
+    if (root.nodeType === Node.TEXT_NODE) {
+      translateTextNode(root);
+      return;
+    }
+    if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) return;
+    if (root.nodeType === Node.ELEMENT_NODE) translateElement(root);
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    let node = walker.nextNode();
+    while (node) {
+      if (node.nodeType === Node.TEXT_NODE) translateTextNode(node);
+      else translateElement(node);
+      node = walker.nextNode();
+    }
+  }
+  window.WillowI18n = Object.freeze({ locale: "ru", t: translate });
+  translateTree(document.body);
+  const observer = new MutationObserver(records => {
+    records.forEach(record => {
+      if (record.type === "characterData") translateTextNode(record.target);
+      if (record.type === "attributes") translateElement(record.target);
+      record.addedNodes.forEach(translateTree);
+    });
+  });
+  observer.observe(document.body, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: attributes });
+})();
