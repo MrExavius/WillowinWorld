@@ -1,0 +1,809 @@
+- generic [active] [ref=f3e1]:
+  - link "انتقل إلى Ball is God?!" [ref=f3e2] [cursor=pointer]:
+    - /url: "#game-main"
+  - banner [ref=f3e3]:
+    - link "Ball is God?! — العودة إلى WillowinWorld" [ref=f3e4] [cursor=pointer]:
+      - /url: ../index.html
+      - img "Ball is God أيقونة لعبة الآركيد ذات المنحدر العمودي" [ref=f3e5]
+      - generic [ref=f3e6]:
+        - strong [ref=f3e7]: Ball is God?!
+        - generic [ref=f3e8]: صفحة اللعبة WillowinWorld
+    - navigation "التنقل في صفحة اللعبة" [ref=f3e9]:
+      - link "ستوديو هوم" [ref=f3e10] [cursor=pointer]:
+        - /url: ../index.html
+      - link "واجهة المستخدم + فريق التمثيل" [ref=f3e11] [cursor=pointer]:
+        - /url: "#production-ui"
+      - link "مدونة التطوير" [ref=f3e12] [cursor=pointer]:
+        - /url: "#devlog"
+      - link "FAQ" [ref=f3e13] [cursor=pointer]:
+        - /url: "#faq"
+      - link "عدة صحفية" [ref=f3e14] [cursor=pointer]:
+        - /url: ../press-kit.html
+    - button "قم بالتبديل إلى المظهر الداكن" [ref=f3e15] [cursor=pointer]
+    - navigation "اللغة" [ref=f3e18]:
+      - group [ref=f3e19]:
+        - generic "اختر اللغة" [ref=f3e20] [cursor=pointer]: AR
+  - main [ref=f3e22]:
+    - region [ref=f3e23]:
+      - generic [ref=f3e24]:
+        - generic [ref=f3e25]:
+          - generic [ref=f3e26]: Ball is God?!
+          - heading "تدوير البرج. أصبح التأثير." [level=1] [ref=f3e27]
+          - paragraph [ref=f3e28]: ممر هبوط عمودي قوي حيث يقوم السحب الأفقي بتدوير البرج حول Espa المتساقط. تخطي عمليات الهبوط الآمن، واشحن مجموعة من الضربات الساحقة واخترق عالمًا أسطوريًا حيث تؤدي ضربة واحدة بدون حراسة إلى إنهاء الرحلة.
+          - paragraph [ref=f3e29]: إنتاج نشط عبر عشرة مشاهد للمواقع، وتوليد برج حتمي، وتكوينات الزعيم، والحوار المتفرع، ومسارات الكارما التي تغير قواعد اللعب.
+          - generic [ref=f3e30]:
+            - link "طلب بناء تطوير" [ref=f3e31] [cursor=pointer]:
+              - /url: mailto:contact@willowinworld.com?subject=Ball%20is%20God%20Development%20Build
+            - link "افتح مدونة التطوير" [ref=f3e32] [cursor=pointer]:
+              - /url: "#devlog"
+          - group "يسلط الضوء على Ball is God" [ref=f3e33]:
+            - generic [ref=f3e34]:
+              - strong [ref=f3e35]: تدوير
+              - generic [ref=f3e36]: اسحب البرج حول Espa
+            - generic [ref=f3e37]:
+              - strong [ref=f3e38]: خطر
+              - generic [ref=f3e39]: تخطي ثلاث عمليات هبوط آمنة
+            - generic [ref=f3e40]:
+              - strong [ref=f3e41]: تحطيم
+              - generic [ref=f3e42]: اختراق المنصة
+        - complementary "معاينة طريقة اللعب Ball is God" [ref=f3e43]:
+          - generic [ref=f3e44]:
+            - img "أيقونة اللعبة Ball is God مع عالم الممرات الإلهي الذهبي" [ref=f3e68]
+            - generic [ref=f3e69]:
+              - generic [ref=f3e70]: ممر الهبوط العمودي المتشددين
+              - strong [ref=f3e71]: Ball is God?!
+              - generic [ref=f3e72]:
+                - generic [ref=f3e73]: قطرة
+                - generic [ref=f3e74]: دودج
+                - generic [ref=f3e75]: قرر
+            - generic [ref=f3e76]: الإنتاج النشط · عشرة مواقع
+    - generic [ref=f3e82]:
+      - region [ref=f3e83]:
+        - generic [ref=f3e84]:
+          - generic [ref=f3e85]:
+            - generic [ref=f3e86]: داخل البناء الحالي
+            - heading "الكارما تتغير أكثر من الحوار." [level=2] [ref=f3e87]
+            - paragraph [ref=f3e88]: تؤثر المسارات المضيئة والمحايدة والمظلمة على سلوك الدرع والبرقيات التحذيرية وعدوانية العدو ومراحل الزعيم. القصة ليست طبقة موضوعة فوق حلقة الممرات؛ النتيجة تعود إلى وقت التشغيل.
+            - generic [ref=f3e89]:
+              - generic [ref=f3e90]: حالة البناء
+              - text: الإنتاج النشط
+          - generic [ref=f3e92]:
+            - heading "عوالم الحوار العشرة كلها" [level=3] [ref=f3e93]
+            - paragraph [ref=f3e94]: مجموعة خلفية الحوار الحالية الكاملة، تم ترتيبها تمامًا أثناء انتقال النسب من Ena إلى Deka.
+            - generic "جميع الخلفيات العشر لموقع حوار Ball is God" [ref=f3e95]:
+              - figure "01 · Ena - السماء" [ref=f3e96]:
+                - img "Ball is God Ena خلفية حوار السماء" [ref=f3e97]
+              - figure "02 · Dyo — الفضاء" [ref=f3e99]:
+                - img "Ball is God Dyo خلفية حوار الفضاء" [ref=f3e100]
+              - figure "03 · Tria — العاصفة" [ref=f3e102]:
+                - img "Ball is God Tria خلفية حوار العاصفة" [ref=f3e103]
+              - figure "04 · Tessera — ثلج" [ref=f3e105]:
+                - img "Ball is God Tessera خلفية حوار الثلج" [ref=f3e106]
+              - figure "05 · Pente — بركان" [ref=f3e108]:
+                - img "Ball is God Pente خلفية حوار البركان" [ref=f3e109]
+              - figure "06 · Eksi — المحيط" [ref=f3e111]:
+                - img "Ball is God Eksi خلفية حوار المحيط" [ref=f3e112]
+              - figure "07 · Epta — الصحراء" [ref=f3e114]:
+                - img "Ball is God Epta خلفية حوار الصحراء" [ref=f3e115]
+              - figure "08 · Ohto - الغابة" [ref=f3e117]:
+                - img "Ball is God Ohto خلفية حوار الغابة" [ref=f3e118]
+              - figure "09 · Ennea — الكهف" [ref=f3e120]:
+                - img "Ball is God Ennea خلفية حوار الكهف" [ref=f3e121]
+              - figure "10 · Deka - الجحيم" [ref=f3e123]:
+                - img "Ball is God Deka خلفية حوار الجحيم" [ref=f3e124]
+        - generic "حقائق بناء Ball is God التي تم التحقق منها" [ref=f3e126]:
+          - article [ref=f3e127]:
+            - strong [ref=f3e128]: عشرة مواقع في البناء
+            - generic [ref=f3e129]: الرؤساء والمخاطر والأجواء الخاصة بالموقع.
+          - article [ref=f3e130]:
+            - strong [ref=f3e131]: ثلاث تخطيات → سحق
+            - generic [ref=f3e132]: خطر الهبوط الآمن ليصبح التأثير.
+          - article [ref=f3e133]:
+            - strong [ref=f3e134]: درع التمرير
+            - generic [ref=f3e135]: دفاع تهدئة ضد الضربة القاتلة.
+          - article [ref=f3e136]:
+            - strong [ref=f3e137]: النسب التكيفي
+            - generic [ref=f3e138]: مستويات النظام الأساسي الحتمية مع سرعة التعافي.
+      - region [ref=f3e139]:
+        - generic [ref=f3e140]:
+          - generic [ref=f3e141]:
+            - generic [ref=f3e142]: واجهة المستخدم الحالية للإنتاج
+            - heading "أصبح للنزول وجه قبل القطرة الأولى." [level=2] [ref=f3e143]
+          - paragraph [ref=f3e144]: "يظهر التدفق الكامل لوقت التشغيل الحالي بالترتيب الذي يلبيه اللاعبون: اختيار المستوى، والحوار، واختيار المعلم، ثم النصر أو فرع الهزيمة المنفصل. كل العناصر المرئية أدناه تأتي من مشروع الإنتاج Unity."
+        - list "ترتيب القائمة الحالي Ball is God" [ref=f3e145]:
+          - listitem [ref=f3e146]:
+            - generic [ref=f3e147]: "01"
+            - generic [ref=f3e148]:
+              - strong [ref=f3e149]: اختيار المستوى
+              - generic [ref=f3e150]: اختر من بين المستويات 1-1000
+          - listitem [ref=f3e151]:
+            - generic [ref=f3e152]: "02"
+            - generic [ref=f3e153]:
+              - strong [ref=f3e154]: اللعب
+              - generic [ref=f3e155]: قم بالتدوير والمراوغة والنزول
+          - listitem [ref=f3e156]:
+            - generic [ref=f3e157]: "03"
+            - generic [ref=f3e158]:
+              - strong [ref=f3e159]: حوار/إختبار
+              - generic [ref=f3e160]: كل المستوى العاشر عند تفعيله
+          - listitem [ref=f3e161]:
+            - generic [ref=f3e162]: "04"
+            - generic [ref=f3e163]:
+              - strong [ref=f3e164]: قطع الغيار/القتل
+              - generic [ref=f3e165]: اختيار المعلم عند 90 و100
+          - listitem [ref=f3e166]:
+            - generic [ref=f3e167]: "05"
+            - generic [ref=f3e168]:
+              - strong [ref=f3e169]: النتيجة
+              - generic [ref=f3e170]: تابع أو أعد التشغيل أو أعد المحاولة
+        - generic [ref=f3e171]:
+          - article [ref=f3e172]:
+            - generic [ref=f3e173]:
+              - generic [ref=f3e174]: 01/ اختيار المستوى الحالي
+              - heading "يختار المسار السماوي المستويات التي تم إنشاؤها عبر عشرة فصول مكونة من 100 مستوى." [level=3] [ref=f3e175]
+              - paragraph [ref=f3e176]: تحدد قائمة الإنتاج عشرة مواقع في فصول مكونة من 100 مستوى وتفتح مباشرة في التشغيل المحدد.
+            - figure "دخول الإنتاج المباشر المستويات 201-210 داخل المسار 1-1000" [ref=f3e177]:
+              - img "Ball is God خلفية اختيار مستوى الغواش السماوية" [ref=f3e178]
+              - generic [ref=f3e179]:
+                - generic [ref=f3e180]: اختيار المستوى
+                - strong [ref=f3e181]: اختر النسب
+                - generic [ref=f3e182]:
+                  - generic [ref=f3e183]: "201"
+                  - generic [ref=f3e185]: "202"
+                  - generic [ref=f3e187]: "203"
+                  - generic [ref=f3e189]: "204"
+                  - generic [ref=f3e191]: "205"
+                  - generic [ref=f3e193]: "206"
+                  - generic [ref=f3e195]: "207"
+                  - generic [ref=f3e197]: "208"
+                  - generic [ref=f3e199]: "209"
+                  - generic [ref=f3e201]: "210"
+                - generic [ref=f3e203]: الموقع 03 · Tria
+              - generic [ref=f3e204]:
+                - generic [ref=f3e205]: دخول الإنتاج المباشر
+                - strong [ref=f3e206]: المستويات 201-210 داخل المسار 1-1000
+          - article [ref=f3e207]:
+            - generic [ref=f3e208]:
+              - generic [ref=f3e209]: 03/ حوار
+              - heading "تصل الشخصيات إلى داخل العالم وليس فوقه." [level=3] [ref=f3e210]
+              - paragraph [ref=f3e211]: تشترك الصورة الشخصية وفن الموقع ولوحة السماعة والحالة المتفرعة في تكوين رأسي واحد.
+            - figure "حوار وقت التشغيل صورة ومكبر صوت وموقع في إطار واحد" [ref=f3e212]:
+              - img "موقع الحوار السماوي Ball is God مع ضوء معلق متوهج" [ref=f3e213]
+              - generic [ref=f3e214]: إينا · الهبوط 03
+              - img "Shash، حارس مثلث أرجواني من Ball is God" [ref=f3e215]
+              - generic [ref=f3e217]:
+                - strong [ref=f3e218]: Shash
+                - paragraph [ref=f3e219]: تابع إذن، لكن لا تعتقد أن الأمر سيكون سهلاً. Tria في انتظارك مما سيجعل كل شيء سابقًا يبدو وكأنه مجرد تافه.
+                - generic [ref=f3e220]:
+                  - text: اضغط للمتابعة
+                  - generic [ref=f3e221]: ›
+              - generic [ref=f3e222]:
+                - generic [ref=f3e223]: حوار وقت التشغيل
+                - strong [ref=f3e224]: صورة ومكبر صوت وموقع في إطار واحد
+        - generic [ref=f3e225]:
+          - generic [ref=f3e226]:
+            - generic [ref=f3e227]: 04/ اختيار المعلم
+            - heading "الجواب يصبح جزء من النزول." [level=3] [ref=f3e228]
+            - paragraph [ref=f3e229]: على المستويين المحلي 90 و100، تطلب اللجنة المخصصة اتخاذ قرار بالقطع الاحتياطي أو القتل قبل أن يحسم الحوار السباق.
+          - generic "مثال على خيارات الحوار Ball is God" [ref=f3e230]:
+            - generic [ref=f3e231]:
+              - generic [ref=f3e232]: غيار
+              - generic [ref=f3e233]: اقتل
+        - generic [ref=f3e234]:
+          - generic [ref=f3e235]:
+            - generic [ref=f3e236]: 05/قوائم النتائج
+            - heading "النصر مستمر. الهزيمة تعود لنفس التحدي." [level=3] [ref=f3e237]
+            - paragraph [ref=f3e238]: "يحتوي الإصدار الحالي على حالتين منفصلتين للنتائج: يوفر PanelWin إعادة التشغيل والمستوى التالي، بينما يحتفظ PanelOver بإجراء إعادة تشغيل واحد لا لبس فيه."
+          - generic "Ball is God قوائم النتائج الحالية" [ref=f3e239]:
+            - generic [ref=f3e240]:
+              - generic [ref=f3e241]: النصر · PanelWin
+              - strong [ref=f3e242]: النزول صافي
+              - generic [ref=f3e243]:
+                - generic [ref=f3e244]: إعادة
+                - generic [ref=f3e246]: التالي
+            - generic [ref=f3e248]:
+              - generic [ref=f3e249]: هزيمة · PanelOver
+              - strong [ref=f3e250]: مستوى الإعادة
+        - generic [ref=f3e251]:
+          - generic [ref=f3e252]:
+            - generic [ref=f3e253]: طاقم الحوار
+            - heading "الوجوه التقت في طريق النزول." [level=3] [ref=f3e254]
+          - paragraph [ref=f3e255]: تم تضمين جميع الأحرف الـ 25 مع أزواج صور مفتوحة ومغلقة صالحة للإنتاج أدناه. قم بتحريك البطاقة أو التركيز عليها لتبديل التعبير.
+        - generic "Ball is God أحرف حوار الإنتاج" [ref=f3e256]:
+          - article [ref=f3e257]:
+            - img "صورة الحوار Espa" [ref=f3e259]
+            - generic [ref=f3e260]: شخصية اللاعب
+            - strong [ref=f3e261]: Espa
+            - generic [ref=f3e262]: تعبير مفتوح/مغلق
+          - article [ref=f3e263]:
+            - img "صورة الحوار Revla" [ref=f3e265]
+            - generic [ref=f3e266]: زوج الحوار
+            - strong [ref=f3e267]: Revla
+            - generic [ref=f3e268]: تعبير مفتوح/مغلق
+          - article [ref=f3e269]:
+            - img "صورة الحوار Shash" [ref=f3e271]
+            - generic [ref=f3e272]: زوج الحوار
+            - strong [ref=f3e273]: Shash
+            - generic [ref=f3e274]: تعبير مفتوح/مغلق
+          - article [ref=f3e275]:
+            - img "صورة الحوار Shush" [ref=f3e277]
+            - generic [ref=f3e278]: زوج الحوار
+            - strong [ref=f3e279]: Shush
+            - generic [ref=f3e280]: تعبير مفتوح/مغلق
+          - article [ref=f3e281]:
+            - img "صورة الحوار Shish" [ref=f3e283]
+            - generic [ref=f3e284]: زوج الحوار
+            - strong [ref=f3e285]: Shish
+            - generic [ref=f3e286]: تعبير مفتوح/مغلق
+          - article [ref=f3e287]:
+            - img "صورة الحوار Gigo" [ref=f3e289]
+            - generic [ref=f3e290]: زوج الحوار
+            - strong [ref=f3e291]: Gigo
+            - generic [ref=f3e292]: تعبير مفتوح/مغلق
+          - article [ref=f3e293]:
+            - img "صورة الحوار Goga" [ref=f3e295]
+            - generic [ref=f3e296]: زوج الحوار
+            - strong [ref=f3e297]: Goga
+            - generic [ref=f3e298]: تعبير مفتوح/مغلق
+          - article [ref=f3e299]:
+            - img "صورة الحوار Giga" [ref=f3e301]
+            - generic [ref=f3e302]: زوج الحوار
+            - strong [ref=f3e303]: Giga
+            - generic [ref=f3e304]: تعبير مفتوح/مغلق
+          - article [ref=f3e305]:
+            - img "صورة الحوار Askold" [ref=f3e307]
+            - generic [ref=f3e308]: زوج الحوار
+            - strong [ref=f3e309]: Askold
+            - generic [ref=f3e310]: تعبير مفتوح/مغلق
+          - article [ref=f3e311]:
+            - img "صورة الحوار Miras" [ref=f3e313]
+            - generic [ref=f3e314]: زوج الحوار
+            - strong [ref=f3e315]: Miras
+            - generic [ref=f3e316]: تعبير مفتوح/مغلق
+          - article [ref=f3e317]:
+            - img "صورة الحوار Hih" [ref=f3e319]
+            - generic [ref=f3e320]: زوج الحوار
+            - strong [ref=f3e321]: Hih
+            - generic [ref=f3e322]: تعبير مفتوح/مغلق
+          - article [ref=f3e323]:
+            - img "صورة الحوار Heh" [ref=f3e325]
+            - generic [ref=f3e326]: زوج الحوار
+            - strong [ref=f3e327]: Heh
+            - generic [ref=f3e328]: تعبير مفتوح/مغلق
+          - article [ref=f3e329]:
+            - img "صورة الحوار Hah" [ref=f3e331]
+            - generic [ref=f3e332]: زوج الحوار
+            - strong [ref=f3e333]: Hah
+            - generic [ref=f3e334]: تعبير مفتوح/مغلق
+          - article [ref=f3e335]:
+            - img "صورة الحوار Musya" [ref=f3e337]
+            - generic [ref=f3e338]: زوج الحوار
+            - strong [ref=f3e339]: Musya
+            - generic [ref=f3e340]: تعبير مفتوح/مغلق
+          - article [ref=f3e341]:
+            - img "صورة الحوار Dusya" [ref=f3e343]
+            - generic [ref=f3e344]: زوج الحوار
+            - strong [ref=f3e345]: Dusya
+            - generic [ref=f3e346]: تعبير مفتوح/مغلق
+          - article [ref=f3e347]:
+            - img "صورة الحوار Susya" [ref=f3e349]
+            - generic [ref=f3e350]: زوج الحوار
+            - strong [ref=f3e351]: Susya
+            - generic [ref=f3e352]: تعبير مفتوح/مغلق
+          - article [ref=f3e353]:
+            - img "صورة الحوار Vladus" [ref=f3e355]
+            - generic [ref=f3e356]: زوج الحوار
+            - strong [ref=f3e357]: Vladus
+            - generic [ref=f3e358]: تعبير مفتوح/مغلق
+          - article [ref=f3e359]:
+            - img "صورة الحوار Frisha" [ref=f3e361]
+            - generic [ref=f3e362]: زوج الحوار
+            - strong [ref=f3e363]: Frisha
+            - generic [ref=f3e364]: تعبير مفتوح/مغلق
+          - article [ref=f3e365]:
+            - img "صورة الحوار Luren" [ref=f3e367]
+            - generic [ref=f3e368]: زوج الحوار
+            - strong [ref=f3e369]: Luren
+            - generic [ref=f3e370]: تعبير مفتوح/مغلق
+          - article [ref=f3e371]:
+            - img "صورة الحوار Kuren" [ref=f3e373]
+            - generic [ref=f3e374]: زوج الحوار
+            - strong [ref=f3e375]: Kuren
+            - generic [ref=f3e376]: تعبير مفتوح/مغلق
+          - article [ref=f3e377]:
+            - img "صورة الحوار Don Yagon" [ref=f3e379]
+            - generic [ref=f3e380]: زوج الحوار
+            - strong [ref=f3e381]: Don Yagon
+            - generic [ref=f3e382]: تعبير مفتوح/مغلق
+          - article [ref=f3e383]:
+            - img "صورة الحوار Lurya" [ref=f3e385]
+            - generic [ref=f3e386]: زوج الحوار
+            - strong [ref=f3e387]: Lurya
+            - generic [ref=f3e388]: تعبير مفتوح/مغلق
+          - article [ref=f3e389]:
+            - img "صورة الحوار Khleya" [ref=f3e391]
+            - generic [ref=f3e392]: زوج الحوار
+            - strong [ref=f3e393]: Khleya
+            - generic [ref=f3e394]: تعبير مفتوح/مغلق
+          - article [ref=f3e395]:
+            - img "صورة الحوار Varon" [ref=f3e397]
+            - generic [ref=f3e398]: زوج الحوار
+            - strong [ref=f3e399]: Varon
+            - generic [ref=f3e400]: تعبير مفتوح/مغلق
+          - article [ref=f3e401]:
+            - img "صورة الحوار White" [ref=f3e403]
+            - generic [ref=f3e404]: زوج الحوار
+            - strong [ref=f3e405]: White
+            - generic [ref=f3e406]: تعبير مفتوح/مغلق
+      - generic [ref=f3e407]:
+        - generic [ref=f3e408]: نظرة عامة على اللعبة
+        - heading "ممر هبوط عمودي قوي حيث يمكن لسحب واحد أن يحول الأمان إلى تأثير." [level=2] [ref=f3e409]
+        - generic [ref=f3e410]:
+          - article [ref=f3e411]:
+            - heading "وعد اللاعب" [level=3] [ref=f3e412]
+            - paragraph [ref=f3e413]: قم بتوجيه Espa عبر عالم عمودي إلهي حيث كل قطرة مهمة، وكل خطأ يمكن أن ينهي السباق، وكل خيار رئيسي يغير ما سيصبح عليه العالم.
+          - article [ref=f3e414]:
+            - heading "البناء الحالي" [level=3] [ref=f3e415]
+            - paragraph [ref=f3e416]: تم تنفيذ عشرة مشاهد للموقع، وإنشاء برج إجرائي، وتحطيم التحرير والسرد، ودرع التمرير، وتكوينات الرئيس، والحوار المتفرع، وقوائم الإنتاج، والصور الشخصية الجاهزة للتعبير.
+          - article [ref=f3e417]:
+            - heading "الجمهور" [level=3] [ref=f3e418]
+            - paragraph [ref=f3e419]: اللاعبون الذين يستمتعون بألعاب الآركيد الصعبة على الأجهزة المحمولة، وتوقيت المخاطرة والمكافأة، وضغط الزعماء، والعوالم الأسطورية، والتحدي القائم على القصة.
+          - article [ref=f3e420]:
+            - heading "الحالة" [level=3] [ref=f3e421]
+            - paragraph [ref=f3e422]: الإنتاج النشط. يستمر العمل الأخير عبر أنظمة وقت التشغيل والفن العالمي والتحقق من الجودة وإحساس اللعب على الهاتف المحمول.
+      - generic [ref=f3e423]:
+        - generic [ref=f3e424]: المميزات
+        - heading "ما يفعله اللاعبون في Ball is God?!" [level=2] [ref=f3e425]
+        - generic [ref=f3e426]:
+          - article [ref=f3e427]:
+            - heading "نزول السحب للتدوير" [level=3] [ref=f3e428]
+            - paragraph [ref=f3e429]: يقوم السحب الأفقي بتدوير البرج حول Espa الذي يسقط تلقائيًا، مما يصطف الفجوات والمخاطر والمنصات الآمنة.
+          - article [ref=f3e430]:
+            - heading "ضغط الممرات المتشددين" [level=3] [ref=f3e431]
+            - paragraph [ref=f3e432]: كل خطأ مهم، لذلك يتمحور كل جري حول التركيز والإيقاع والدقة والتعافي تحت الضغط.
+          - article [ref=f3e433]:
+            - heading "الزعماء والعوالم الأسطورية" [level=3] [ref=f3e434]
+            - paragraph [ref=f3e435]: عشرة مشاهد للمواقع وتكوينات رئيسها تربط الضغط الإلهي بالتقدم القائم على القصة.
+          - article [ref=f3e436]:
+            - heading "العواقب الميكانيكية" [level=3] [ref=f3e437]
+            - paragraph [ref=f3e438]: حوار تغيير الرحمة والقوة والكارما وقواعد الدرع وعدوان العدو والبرقيات ومراحل الزعيم.
+      - generic [ref=f3e439]:
+        - generic [ref=f3e440]: حلقة اللعب
+        - heading "إقرأ السقوط وزمن الفجوة ونجو من البرج الإلهي." [level=2] [ref=f3e441]
+        - list [ref=f3e442]:
+          - listitem [ref=f3e443]:
+            - generic [ref=f3e444]: الخطوة 01
+            - strong [ref=f3e445]: إقرأ النسب
+            - paragraph [ref=f3e446]: يقوم اللاعب بمسح المنصات التالية والثغرات والمخاطر ونوافذ التوقيت الآمن بينما يندفع العالم نحو الأسفل.
+          - listitem [ref=f3e447]:
+            - generic [ref=f3e448]: الخطوة 02
+            - strong [ref=f3e449]: تدوير البرج
+            - paragraph [ref=f3e450]: يعمل السحب الأفقي على تحويل العالم حول Espa، مما يؤدي إلى محاذاة منصة آمنة أو فجوة متعمدة.
+          - listitem [ref=f3e451]:
+            - generic [ref=f3e452]: الخطوة 03
+            - strong [ref=f3e453]: خاطرة وتحطيم
+            - paragraph [ref=f3e454]: تخطي ثلاث منصات لشحن مجموعة من التحطيم، ثم اخترق الهياكل بينما يغطي الدرع خطأً مميتًا واحدًا.
+          - listitem [ref=f3e455]:
+            - generic [ref=f3e456]: الخطوة 04
+            - strong [ref=f3e457]: اختر العاقبة
+            - paragraph [ref=f3e458]: الرحمة والقوة تشكلان الكارما والحوار وقواعد اللعب التي يتم تطبيقها على الأعداء والرؤساء.
+      - generic [ref=f3e459]:
+        - generic [ref=f3e460]: قصة/عالم
+        - heading "برج إلهي وبطل ساقط وعالم أسطوري مبني للعواقب." [level=2] [ref=f3e461]
+        - generic [ref=f3e462]:
+          - generic [ref=f3e463]:
+            - paragraph [ref=f3e464]: "بدأت Ball is God?! من شغف الطفولة بأروقة الهبوط العمودي المتنقلة: قراءة الفجوات، والتفاعل بسرعة، والبقاء على قيد الحياة بالفطرة."
+            - paragraph [ref=f3e465]: لكن الشكل أيضًا بدا وكأنه يمكن أن يحمل الكثير - الرؤساء، والشخصية، والقصة، والتوتر الأخلاقي، وعالم يبدو أنه مؤلف وليس قابل للتصرف. يتبع المشروع الحالي Espa من خلال عشرة مشاهد للمواقع وشخصيات غريبة واختيارات تغير القصة واللعب.
+            - paragraph [ref=f3e466]: "أصبح هذا هو السؤال وراء Ball is God?!: ماذا لو كانت لعبة آركيد هبوط عمودي بسيطة تعاني من ضغط لعبة الزعيم والعواقب العاطفية للعبة تقمص الأدوار التي تعتمد على القصة؟"
+          - generic [ref=f3e467]:
+            - generic [ref=f3e468]:
+              - term [ref=f3e469]: رؤية
+              - definition [ref=f3e470]: ممر برج دوار بوزن سردي أسطوري
+            - generic [ref=f3e471]:
+              - term [ref=f3e472]: نطاق العالم الحالي
+              - definition [ref=f3e473]: عشرة مواقع وتكوينات رئيسه
+            - generic [ref=f3e474]:
+              - term [ref=f3e475]: مرحلة القصة
+              - definition [ref=f3e476]: مسودة كاملة للقصة الطويلة
+            - generic [ref=f3e477]:
+              - term [ref=f3e478]: حالة الإنتاج
+              - definition [ref=f3e479]: الإنتاج النشط
+      - generic [ref=f3e480]:
+        - generic [ref=f3e481]: زاوية الناشر
+        - heading "خطاف أركيد ذو برج دوار مع طبقة تقدم تعتمد على القصة." [level=2] [ref=f3e482]
+        - generic [ref=f3e483]:
+          - generic [ref=f3e484]:
+            - paragraph [ref=f3e485]: Ball is God?! يجمع بين عناصر تحكم السحب والتدوير الفورية مع عوالم أسطورية وضغط الزعيم والخيارات التي تغير اللعب.
+            - paragraph [ref=f3e486]: يربط أساس الإنتاج الحالي بالفعل بين توليد الأبراج الحتمية، وتحطيم المخاطر والمكافآت، وتوتر الضربة الواحدة، والزعماء، والحوار المتفرع، وتغييرات اللعب التي تعتمد على الكارما.
+          - generic [ref=f3e487]:
+            - generic [ref=f3e488]:
+              - term [ref=f3e489]: النوع
+              - definition [ref=f3e490]: ممر النسب العمودي المبني على القصة
+            - generic [ref=f3e491]:
+              - term [ref=f3e492]: هدف المنصة
+              - definition [ref=f3e493]: iOS/أندرويد
+            - generic [ref=f3e494]:
+              - term [ref=f3e495]: شكل الجلسة
+              - definition [ref=f3e496]: جولات سريعة تعتمد على المهارات
+            - generic [ref=f3e497]:
+              - term [ref=f3e498]: CTA الأساسي
+              - definition [ref=f3e499]: طلب بناء تطويري
+      - generic [ref=f3e500]:
+        - generic [ref=f3e501]: تحميل الأصول
+        - heading "Ball is God?! أصول الصحافة والمبدعين" [level=2] [ref=f3e502]
+        - paragraph [ref=f3e503]: معاينات WebP المنسقة للتغطية التحريرية ومراجعة الناشر ومراجع تخطيط المتجر. تتوفر ملفات المصدر كاملة الدقة من الاستوديو عند الطلب.
+        - heading "العلامة التجارية والشخصيات" [level=3] [ref=f3e504]
+        - paragraph [ref=f3e505]: أيقونة اللعبة بالإضافة إلى جميع الشخصيات الـ 25 الحالية التي لديها صور حوار إنتاج كاملة. تتطابق الأسماء مع مفاتيح الترجمة Unity.
+        - generic [ref=f3e506]:
+          - link "Ball is God رمز لعبة الأركيد في برج الهبوط العمودي أيقونة اللعبة أيقونة ممر برج الهبوط العمودي." [ref=f3e507] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp
+            - img "Ball is God رمز لعبة الأركيد في برج الهبوط العمودي" [ref=f3e508]
+            - strong [ref=f3e509]: أيقونة اللعبة
+            - generic [ref=f3e510]: أيقونة ممر برج الهبوط العمودي.
+          - link "صورة حوار الإنتاج Espa Espa صورة شخصية اللاعب." [ref=f3e511] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/espa-open.webp
+            - img "صورة حوار الإنتاج Espa" [ref=f3e512]
+            - strong [ref=f3e513]: Espa
+            - generic [ref=f3e514]: صورة شخصية اللاعب.
+          - link "صورة حوار الإنتاج Revla Revla بورتريه حوار الإنتاج." [ref=f3e515] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/revla-open.webp
+            - img "صورة حوار الإنتاج Revla" [ref=f3e516]
+            - strong [ref=f3e517]: Revla
+            - generic [ref=f3e518]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Shash Shash بورتريه حوار الإنتاج." [ref=f3e519] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/shash-open.webp
+            - img "صورة حوار الإنتاج Shash" [ref=f3e520]
+            - strong [ref=f3e521]: Shash
+            - generic [ref=f3e522]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Shush Shush بورتريه حوار الإنتاج." [ref=f3e523] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/shush-open.webp
+            - img "صورة حوار الإنتاج Shush" [ref=f3e524]
+            - strong [ref=f3e525]: Shush
+            - generic [ref=f3e526]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Shish Shish بورتريه حوار الإنتاج." [ref=f3e527] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/shish-open.webp
+            - img "صورة حوار الإنتاج Shish" [ref=f3e528]
+            - strong [ref=f3e529]: Shish
+            - generic [ref=f3e530]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Gigo Gigo بورتريه حوار الإنتاج." [ref=f3e531] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/gigo-open.webp
+            - img "صورة حوار الإنتاج Gigo" [ref=f3e532]
+            - strong [ref=f3e533]: Gigo
+            - generic [ref=f3e534]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Goga Goga بورتريه حوار الإنتاج." [ref=f3e535] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/goga-open.webp
+            - img "صورة حوار الإنتاج Goga" [ref=f3e536]
+            - strong [ref=f3e537]: Goga
+            - generic [ref=f3e538]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Giga Giga بورتريه حوار الإنتاج." [ref=f3e539] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/giga-open.webp
+            - img "صورة حوار الإنتاج Giga" [ref=f3e540]
+            - strong [ref=f3e541]: Giga
+            - generic [ref=f3e542]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Askold Askold بورتريه حوار الإنتاج." [ref=f3e543] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/askold-open.webp
+            - img "صورة حوار الإنتاج Askold" [ref=f3e544]
+            - strong [ref=f3e545]: Askold
+            - generic [ref=f3e546]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Miras Miras بورتريه حوار الإنتاج." [ref=f3e547] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/miras-open.webp
+            - img "صورة حوار الإنتاج Miras" [ref=f3e548]
+            - strong [ref=f3e549]: Miras
+            - generic [ref=f3e550]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Hih Hih بورتريه حوار الإنتاج." [ref=f3e551] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/hih-open.webp
+            - img "صورة حوار الإنتاج Hih" [ref=f3e552]
+            - strong [ref=f3e553]: Hih
+            - generic [ref=f3e554]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Heh Heh بورتريه حوار الإنتاج." [ref=f3e555] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/heh-open.webp
+            - img "صورة حوار الإنتاج Heh" [ref=f3e556]
+            - strong [ref=f3e557]: Heh
+            - generic [ref=f3e558]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Hah Hah بورتريه حوار الإنتاج." [ref=f3e559] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/hah-open.webp
+            - img "صورة حوار الإنتاج Hah" [ref=f3e560]
+            - strong [ref=f3e561]: Hah
+            - generic [ref=f3e562]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Musya Musya بورتريه حوار الإنتاج." [ref=f3e563] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/musya-open.webp
+            - img "صورة حوار الإنتاج Musya" [ref=f3e564]
+            - strong [ref=f3e565]: Musya
+            - generic [ref=f3e566]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Dusya Dusya بورتريه حوار الإنتاج." [ref=f3e567] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/dusya-open.webp
+            - img "صورة حوار الإنتاج Dusya" [ref=f3e568]
+            - strong [ref=f3e569]: Dusya
+            - generic [ref=f3e570]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Susya Susya بورتريه حوار الإنتاج." [ref=f3e571] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/susya-open.webp
+            - img "صورة حوار الإنتاج Susya" [ref=f3e572]
+            - strong [ref=f3e573]: Susya
+            - generic [ref=f3e574]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Vladus Vladus بورتريه حوار الإنتاج." [ref=f3e575] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/vladus-open.webp
+            - img "صورة حوار الإنتاج Vladus" [ref=f3e576]
+            - strong [ref=f3e577]: Vladus
+            - generic [ref=f3e578]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Frisha Frisha بورتريه حوار الإنتاج." [ref=f3e579] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/frisha-open.webp
+            - img "صورة حوار الإنتاج Frisha" [ref=f3e580]
+            - strong [ref=f3e581]: Frisha
+            - generic [ref=f3e582]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Luren Luren بورتريه حوار الإنتاج." [ref=f3e583] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/luren-open.webp
+            - img "صورة حوار الإنتاج Luren" [ref=f3e584]
+            - strong [ref=f3e585]: Luren
+            - generic [ref=f3e586]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Kuren Kuren بورتريه حوار الإنتاج." [ref=f3e587] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/kuren-open.webp
+            - img "صورة حوار الإنتاج Kuren" [ref=f3e588]
+            - strong [ref=f3e589]: Kuren
+            - generic [ref=f3e590]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Don Yagon Don Yagon بورتريه حوار الإنتاج." [ref=f3e591] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/don-yagon-open.webp
+            - img "صورة حوار الإنتاج Don Yagon" [ref=f3e592]
+            - strong [ref=f3e593]: Don Yagon
+            - generic [ref=f3e594]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Lurya Lurya بورتريه حوار الإنتاج." [ref=f3e595] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/lurya-open.webp
+            - img "صورة حوار الإنتاج Lurya" [ref=f3e596]
+            - strong [ref=f3e597]: Lurya
+            - generic [ref=f3e598]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Khleya Khleya بورتريه حوار الإنتاج." [ref=f3e599] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/khleya-open.webp
+            - img "صورة حوار الإنتاج Khleya" [ref=f3e600]
+            - strong [ref=f3e601]: Khleya
+            - generic [ref=f3e602]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج Varon Varon بورتريه حوار الإنتاج." [ref=f3e603] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/varon-open.webp
+            - img "صورة حوار الإنتاج Varon" [ref=f3e604]
+            - strong [ref=f3e605]: Varon
+            - generic [ref=f3e606]: بورتريه حوار الإنتاج.
+          - link "صورة حوار الإنتاج White White بورتريه حوار الإنتاج." [ref=f3e607] [cursor=pointer]:
+            - /url: ../../assets/game-proof/ball-is-god-ui/white-open.webp
+            - img "صورة حوار الإنتاج White" [ref=f3e608]
+            - strong [ref=f3e609]: White
+            - generic [ref=f3e610]: بورتريه حوار الإنتاج.
+        - heading "خلفيات القائمة" [level=3] [ref=f3e611]
+        - paragraph [ref=f3e612]: العمل الفني الإنتاجي الحالي الذي يستخدمه نظام اختيار المستوى السماوي.
+        - link "Ball is God خلفية قائمة اختيار المستوى السماوي القائمة السماوية خلفية إنتاج اختيار المستوى." [ref=f3e614] [cursor=pointer]:
+          - /url: ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp
+          - img "Ball is God خلفية قائمة اختيار المستوى السماوي" [ref=f3e615]
+          - strong [ref=f3e616]: القائمة السماوية
+          - generic [ref=f3e617]: خلفية إنتاج اختيار المستوى.
+        - heading "عوالم النسب العمودي" [level=3] [ref=f3e618]
+        - paragraph [ref=f3e619]: مجموعة كاملة من عشر خلفيات للموقع الحالي، مرتبة من Ena إلى Deka.
+        - generic [ref=f3e620]:
+          - link "Ball is God خلفية السماء النسبية العمودية 01 · عالم السماء Ena خلفية النسب العمودي." [ref=f3e621] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp
+            - img "Ball is God خلفية السماء النسبية العمودية" [ref=f3e622]
+            - strong [ref=f3e623]: 01 · عالم السماء
+            - generic [ref=f3e624]: Ena خلفية النسب العمودي.
+          - link "Ball is God خلفية مساحة الهبوط العمودي 02 · عالم الفضاء Dyo خلفية النسب العمودي." [ref=f3e625] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp
+            - img "Ball is God خلفية مساحة الهبوط العمودي" [ref=f3e626]
+            - strong [ref=f3e627]: 02 · عالم الفضاء
+            - generic [ref=f3e628]: Dyo خلفية النسب العمودي.
+          - link "Ball is God خلفية عاصفة النسب العمودي 03 · عالم العاصفة Tria خلفية النسب العمودي." [ref=f3e629] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp
+            - img "Ball is God خلفية عاصفة النسب العمودي" [ref=f3e630]
+            - strong [ref=f3e631]: 03 · عالم العاصفة
+            - generic [ref=f3e632]: Tria خلفية النسب العمودي.
+          - link "Ball is God خلفية جبل الثلج المنحدر العمودي 04 · عالم الثلج Tessera خلفية النسب العمودي." [ref=f3e633] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp
+            - img "Ball is God خلفية جبل الثلج المنحدر العمودي" [ref=f3e634]
+            - strong [ref=f3e635]: 04 · عالم الثلج
+            - generic [ref=f3e636]: Tessera خلفية النسب العمودي.
+          - link "Ball is God خلفية بركان النسب العمودي 05 · عالم البركان خلفية Pente؛ الرسوم المتحركة في اللعبة." [ref=f3e637] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp
+            - img "Ball is God خلفية بركان النسب العمودي" [ref=f3e638]
+            - strong [ref=f3e639]: 05 · عالم البركان
+            - generic [ref=f3e640]: خلفية Pente؛ الرسوم المتحركة في اللعبة.
+          - link "Ball is God خلفية المحيط النسبية العمودية 06 · عالم المحيطات Eksi خلفية النسب العمودي." [ref=f3e641] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp
+            - img "Ball is God خلفية المحيط النسبية العمودية" [ref=f3e642]
+            - strong [ref=f3e643]: 06 · عالم المحيطات
+            - generic [ref=f3e644]: Eksi خلفية النسب العمودي.
+          - link "Ball is God خلفية شجيرات الصحراء ذات المنحدر العمودي 07 · عالم الصحراء Epta خلفية النسب العمودي." [ref=f3e645] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp
+            - img "Ball is God خلفية شجيرات الصحراء ذات المنحدر العمودي" [ref=f3e646]
+            - strong [ref=f3e647]: 07 · عالم الصحراء
+            - generic [ref=f3e648]: Epta خلفية النسب العمودي.
+          - link "Ball is God خلفية غابة النسب العمودي 08 · عالم الغابات Ohto خلفية النسب العمودي." [ref=f3e649] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp
+            - img "Ball is God خلفية غابة النسب العمودي" [ref=f3e650]
+            - strong [ref=f3e651]: 08 · عالم الغابات
+            - generic [ref=f3e652]: Ohto خلفية النسب العمودي.
+          - link "Ball is God خلفية كهف النسب العمودي 09 · عالم الكهف Ennea خلفية النسب العمودي." [ref=f3e653] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp
+            - img "Ball is God خلفية كهف النسب العمودي" [ref=f3e654]
+            - strong [ref=f3e655]: 09 · عالم الكهف
+            - generic [ref=f3e656]: Ennea خلفية النسب العمودي.
+          - link "Ball is God خلفية الجحيم النسبية العمودية 10 · جحيم الدنيا Deka خلفية النسب العمودي." [ref=f3e657] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp
+            - img "Ball is God خلفية الجحيم النسبية العمودية" [ref=f3e658]
+            - strong [ref=f3e659]: 10 · جحيم الدنيا
+            - generic [ref=f3e660]: Deka خلفية النسب العمودي.
+        - heading "خلفيات ممر القصة" [level=3] [ref=f3e661]
+        - paragraph [ref=f3e662]: "مجموعة الحوار والموقع الكاملة: قاعة النور بالإضافة إلى الخلفيات لجميع العوالم العشرة."
+        - generic [ref=f3e663]:
+          - link "Ball is God خلفية حوار قاعة النور 00 · قاعة النور فتح خلفية الحوار." [ref=f3e664] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp
+            - img "Ball is God خلفية حوار قاعة النور" [ref=f3e665]
+            - strong [ref=f3e666]: 00 · قاعة النور
+            - generic [ref=f3e667]: فتح خلفية الحوار.
+          - link "Ball is God قصة خلفية حوار السماء 01· حوار السماء خلفية قصة Ena." [ref=f3e668] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp
+            - img "Ball is God قصة خلفية حوار السماء" [ref=f3e669]
+            - strong [ref=f3e670]: 01· حوار السماء
+            - generic [ref=f3e671]: خلفية قصة Ena.
+          - link "Ball is God خلفية حوار مساحة الممرات 02· حوار الفضاء خلفية قصة Dyo." [ref=f3e672] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp
+            - img "Ball is God خلفية حوار مساحة الممرات" [ref=f3e673]
+            - strong [ref=f3e674]: 02· حوار الفضاء
+            - generic [ref=f3e675]: خلفية قصة Dyo.
+          - link "Ball is God خلفية حوار سحابة العاصفة 03 · حوار العاصفة خلفية قصة Tria." [ref=f3e676] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp
+            - img "Ball is God خلفية حوار سحابة العاصفة" [ref=f3e677]
+            - strong [ref=f3e678]: 03 · حوار العاصفة
+            - generic [ref=f3e679]: خلفية قصة Tria.
+          - link "Ball is God خلفية حوار جبل الثلج 04 · حوار الثلج خلفية قصة Tessera." [ref=f3e680] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp
+            - img "Ball is God خلفية حوار جبل الثلج" [ref=f3e681]
+            - strong [ref=f3e682]: 04 · حوار الثلج
+            - generic [ref=f3e683]: خلفية قصة Tessera.
+          - link "Ball is God قصة خلفية حوار بركان الممرات 05 · حوار بركان خلفية قصة Pente." [ref=f3e684] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp
+            - img "Ball is God قصة خلفية حوار بركان الممرات" [ref=f3e685]
+            - strong [ref=f3e686]: 05 · حوار بركان
+            - generic [ref=f3e687]: خلفية قصة Pente.
+          - link "Ball is God قصة ممر خلفية حوار المحيط 06 · حوار المحيط خلفية قصة Eksi." [ref=f3e688] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp
+            - img "Ball is God قصة ممر خلفية حوار المحيط" [ref=f3e689]
+            - strong [ref=f3e690]: 06 · حوار المحيط
+            - generic [ref=f3e691]: خلفية قصة Eksi.
+          - link "Ball is God قصة ممر خلفية حوار الصحراء 07· حوار الصحراء خلفية قصة Epta." [ref=f3e692] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp
+            - img "Ball is God قصة ممر خلفية حوار الصحراء" [ref=f3e693]
+            - strong [ref=f3e694]: 07· حوار الصحراء
+            - generic [ref=f3e695]: خلفية قصة Epta.
+          - link "Ball is God قصة خلفية حوار الغابة 08· حوار الغابة خلفية قصة Ohto." [ref=f3e696] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp
+            - img "Ball is God قصة خلفية حوار الغابة" [ref=f3e697]
+            - strong [ref=f3e698]: 08· حوار الغابة
+            - generic [ref=f3e699]: خلفية قصة Ohto.
+          - link "Ball is God خلفية حوار كهف الممرات 09· حوار الكهف خلفية قصة Ennea." [ref=f3e700] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp
+            - img "Ball is God خلفية حوار كهف الممرات" [ref=f3e701]
+            - strong [ref=f3e702]: 09· حوار الكهف
+            - generic [ref=f3e703]: خلفية قصة Ennea.
+          - link "Ball is God قصة خلفية حوار الجحيم 10 · حوار الجحيم خلفية قصة Deka." [ref=f3e704] [cursor=pointer]:
+            - /url: ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp
+            - img "Ball is God قصة خلفية حوار الجحيم" [ref=f3e705]
+            - strong [ref=f3e706]: 10 · حوار الجحيم
+            - generic [ref=f3e707]: خلفية قصة Deka.
+      - generic [ref=f3e708]:
+        - generic [ref=f3e709]: رحلة التطوير
+        - heading "من فكرة الاستوديو الأولى إلى مشروع رواق سردي أكبر." [level=2] [ref=f3e710]
+        - list [ref=f3e711]:
+          - listitem [ref=f3e712]:
+            - generic [ref=f3e713]: يوليو 2024
+            - strong [ref=f3e714]: المفهوم الأصلي
+            - paragraph [ref=f3e715]: "بدأت Ball is God?! كأول فكرة للعبة WillowinWorld: لعبة أركيد عمودية سريعة تدور حول السقوط عبر برج إلهي والنجاة من الفجوات الحجرية."
+          - listitem [ref=f3e716]:
+            - generic [ref=f3e717]: أغسطس 2024
+            - strong [ref=f3e718]: يبدأ اتجاه القصة
+            - paragraph [ref=f3e719]: بعد القطع الداخلي الأول، قرر الفريق أن اللعبة يجب أن تصبح أكثر من مجرد لعبة آركيد بسيطة.
+          - listitem [ref=f3e720]:
+            - generic [ref=f3e721]: الأشهر التالية
+            - strong [ref=f3e722]: توسيع العالم والرئيس
+            - paragraph [ref=f3e723]: نما المشروع إلى عشرة مشاهد للموقع، ولقاءات مع الرؤساء، وخيارات أخلاقية، وبنية أسطورية أكثر تأليفًا.
+          - listitem [ref=f3e724]:
+            - generic [ref=f3e725]: أبريل-مايو 2025
+            - strong [ref=f3e726]: إعادة كتابة القصة
+            - paragraph [ref=f3e727]: تمت إعادة كتابة القصة وتوسيعها بعد أشهر من الصياغة وتحسين قدرات الشخصية والمنطق العالمي والعواقب الأخلاقية.
+          - listitem [ref=f3e728]:
+            - generic [ref=f3e729]: فبراير 2026
+            - strong [ref=f3e730]: مراجعة نطاق المشروع
+            - paragraph [ref=f3e731]: قام الفريق بمراجعة النطاق الكامل للمشروع بعد تكامل القصة وأدركوا أنها أصبحت لعبة أركيد سردية أكبر.
+          - listitem [ref=f3e732]:
+            - generic [ref=f3e733]: يوليو 2026
+            - strong [ref=f3e734]: الأنظمة النشطة وواجهة المستخدم والعالم
+            - paragraph [ref=f3e735]: يمتد الإنتاج الآن إلى عشرة مشاهد للمواقع، وتوليد برج حتمي، وتحطيم التحرير والسرد، والدرع، والقواعد المستندة إلى الكارما، وواجهة مستخدم لاختيار المستوى، وصور حوارية جاهزة للتعبير.
+      - generic [ref=f3e736]:
+        - generic [ref=f3e737]: عوالم ذات صلة
+        - heading "انتقل من ضغط الممرات الأسطوري إلى أنظمة WillowinWorld الأخرى." [level=2] [ref=f3e738]
+        - paragraph [ref=f3e739]: Ball is God?! هي حافة الممرات التي تعتمد على القصة في المحفظة. استكشف لغزًا هادئًا يمكن حله، أو لعبة دمج حلوى تكتيكية، أو نموذجًا أوليًا للتدمير الذي يعمل بالألوان.
+        - generic "صفحات لعبة WillowinWorld ذات الصلة" [ref=f3e740]:
+          - link "نموذج أولي قابل للتشغيل Nature Seed ارسم طرقًا مادية محدودة واجمع شخصيتين معًا واستعيد الغابة الهادئة المرسومة يدويًا. لغز الرسم لحله" [ref=f3e741] [cursor=pointer]:
+            - /url: nature-seed.html
+            - generic [ref=f3e742]: نموذج أولي قابل للتشغيل
+            - strong [ref=f3e743]: Nature Seed
+            - paragraph [ref=f3e744]: ارسم طرقًا مادية محدودة واجمع شخصيتين معًا واستعيد الغابة الهادئة المرسومة يدويًا.
+            - generic [ref=f3e745]: لغز الرسم لحله
+          - link "التطوير النشط Candy Shop استكشف لغز دمج الحلوى المريح مع الفيزياء الناعمة والحلويات الخاصة والمجموعات والتقدم. لعبة الدمج المريحة" [ref=f3e746] [cursor=pointer]:
+            - /url: candy-shop.html
+            - generic [ref=f3e747]: التطوير النشط
+            - strong [ref=f3e748]: Candy Shop
+            - paragraph [ref=f3e749]: استكشف لغز دمج الحلوى المريح مع الفيزياء الناعمة والحلويات الخاصة والمجموعات والتقدم.
+            - generic [ref=f3e750]: لعبة الدمج المريحة
+          - link "نموذج الإنتاج Paint Blasters أنشئ لقطات مدعومة بالألوان، واستهدف نقاط الضعف وحوّل تدمير البرج إلى سلسلة من ردود الفعل. ممر فيزياء الألوان" [ref=f3e751] [cursor=pointer]:
+            - /url: paint-blasters.html
+            - generic [ref=f3e752]: نموذج الإنتاج
+            - strong [ref=f3e753]: Paint Blasters
+            - paragraph [ref=f3e754]: أنشئ لقطات مدعومة بالألوان، واستهدف نقاط الضعف وحوّل تدمير البرج إلى سلسلة من ردود الفعل.
+            - generic [ref=f3e755]: ممر فيزياء الألوان
+          - link "الصحافة/ الناشرون حقائق المحفظة مراجعة الحالة وأهداف النظام الأساسي والأصول العامة والسياق الذي يواجه الناشر لكل لعبة WillowinWorld. محفظة الناشر" [ref=f3e756] [cursor=pointer]:
+            - /url: ../press-kit.html#press-games
+            - generic [ref=f3e757]: الصحافة/ الناشرون
+            - strong [ref=f3e758]: حقائق المحفظة
+            - paragraph [ref=f3e759]: مراجعة الحالة وأهداف النظام الأساسي والأصول العامة والسياق الذي يواجه الناشر لكل لعبة WillowinWorld.
+            - generic [ref=f3e760]: محفظة الناشر
+      - generic [ref=f3e761]:
+        - generic [ref=f3e762]: Ball is God?! الأسئلة الشائعة
+        - heading "أجوبة للاعبين وشركاء الصحافة والنشر." [level=2] [ref=f3e763]
+        - generic [ref=f3e764]:
+          - article [ref=f3e765]:
+            - heading "أي نوع من الألعاب هو Ball is God?!" [level=3] [ref=f3e766]
+            - paragraph [ref=f3e767]: ممر هبوط عمودي قوي يدور حول تدوير برج حول Espa، والمخاطرة بالهبوط الآمن واختراق العوالم الأسطورية.
+          - article [ref=f3e768]:
+            - heading "كيف تعمل طريقة اللعب؟" [level=3] [ref=f3e769]
+            - paragraph [ref=f3e770]: اسحب أفقيًا لتدوير البرج، وتخطي ثلاث منصات لشحن تحطيم، واسحب عموديًا عندما يجب أن يمتص درع التهدئة ضربة مميتة.
+          - article [ref=f3e771]:
+            - heading "ما الذي يجعلها مختلفة؟" [level=3] [ref=f3e772]
+            - paragraph [ref=f3e773]: يربط بين ضغط الممرات العمودي للمخاطرة والمكافأة مع عشرة مواقع وكارما تغير الحوار والأعداء والتلغراف والدروع والزعماء.
+          - article [ref=f3e774]:
+            - heading "ما هو الوضع الحالي؟" [level=3] [ref=f3e775]
+            - paragraph [ref=f3e776]: الإنتاج النشط عبر أنظمة وقت التشغيل والفن العالمي والمحتوى السردي والشعور بالهاتف المحمول والتحقق من صحة الإنتاج.
+          - article [ref=f3e777]:
+            - heading "هل يمكن الاستفادة من الأصول العامة؟" [level=3] [ref=f3e778]
+            - paragraph [ref=f3e779]: نعم للصحافة ومراجعة الناشرين ومراجع المتجر. تظل أصول المصدر خاصة ما لم يتم طلبها مباشرة.
+      - generic [ref=f3e780]:
+        - generic [ref=f3e781]: Ball is God?! Devlog
+        - heading "ماذا تغير ومتى" [level=2] [ref=f3e782]
+        - list [ref=f3e783]:
+          - listitem [ref=f3e784]:
+            - time [ref=f3e785]: 31 يوليو 2026
+            - strong [ref=f3e786]: الأسطح العالمية والتحقق من المخاطر
+            - paragraph [ref=f3e787]: تلقى عرض الشخصية والتوليد الحتمي والمخاطر الشائكة تصريحًا بصريًا منسقًا والتحقق من صحة الإنتاج.
+          - listitem [ref=f3e788]:
+            - generic [ref=f3e789]: يوليو 2026
+            - strong [ref=f3e790]: واجهة مستخدم الإنتاج وتمريرة الشخصية
+            - paragraph [ref=f3e791]: يشكل الآن تحديد المستوى وعناصر التحكم في الإجراء المشترك وتأطير الحوار العمودي وتعبيرات الأحرف المقترنة عرضًا تقديميًا أكثر وضوحًا للإنتاج.
+          - listitem [ref=f3e792]:
+            - generic [ref=f3e793]: فبراير 2026
+            - strong [ref=f3e794]: مراجعة نطاق المشروع
+            - paragraph [ref=f3e795]: "أكمل الفريق بطاقة تكامل القصة الرئيسية واستعرض النطاق الكامل للمشروع: عشرة عوالم وخيارات أخلاقية ورؤساء ونهايات متعددة."
+          - listitem [ref=f3e796]:
+            - generic [ref=f3e797]: أبريل-مايو 2025
+            - strong [ref=f3e798]: إعادة كتابة القصة وقدراتها
+            - paragraph [ref=f3e799]: تمت إعادة كتابة القصة كاملة، وتم تحسين قدرات الشخصية وأصبحت العواقب الأخلاقية أكثر وضوحًا.
+          - listitem [ref=f3e800]:
+            - generic [ref=f3e801]: أغسطس 2024
+            - strong [ref=f3e802]: يبدأ اتجاه القصة
+            - paragraph [ref=f3e803]: قرر الفريق ألا تكون Ball is God?! مجرد لعبة آركيد بسيطة، بل تضيف قصة أسطورية ورؤية اختيار أخلاقي.
+          - listitem [ref=f3e804]:
+            - generic [ref=f3e805]: يوليو 2024
+            - strong [ref=f3e806]: المفهوم الأصلي
+            - paragraph [ref=f3e807]: "بدأ المشروع كأول فكرة للعبة WillowinWorld: لعبة أركيد عمودية سريعة تدور حول السقوط عبر برج إلهي."
+          - listitem [ref=f3e808]:
+            - generic [ref=f3e809]: البناء الحالي
+            - strong [ref=f3e810]: أنظمة الآركيد والقصة تتلاقى
+            - paragraph [ref=f3e811]: نزول البرج الدوار، وتحطيم السرد، ودرع التمرير، والزعماء، والحوار، والكارما يتشاركون الآن في أساس إنتاج واحد.
+  - contentinfo [ref=f3e812]:
+    - generic [ref=f3e813]:
+      - generic [ref=f3e814]:
+        - strong [ref=f3e815]: Ball is God?! هي لعبة WillowinWorld.
+        - generic [ref=f3e816]: قم بتدوير العالم وخاطر بالهبوط ودع الكارما تعود إلى الركض.
+      - navigation "Ball is God التنقل في التذييل" [ref=f3e817]:
+        - link "جميع الألعاب" [ref=f3e818] [cursor=pointer]:
+          - /url: ../index.html#games
+        - link "عدة صحفية" [ref=f3e819] [cursor=pointer]:
+          - /url: ../press-kit.html
+        - link "الخصوصية" [ref=f3e820] [cursor=pointer]:
+          - /url: ../privacy.html
+        - link "قانوني" [ref=f3e821] [cursor=pointer]:
+          - /url: ../legal.html
+        - link "إتصل" [ref=f3e822] [cursor=pointer]:
+          - /url: mailto:contact@willowinworld.com?subject=Ball%20is%20God

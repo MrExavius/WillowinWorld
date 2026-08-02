@@ -277,6 +277,7 @@ ${devlogs}
 
 - [Devlog RSS feed](https://willowinworld.com/rss.xml): Latest dated production notes for all four games.
 - [XML sitemap](https://willowinworld.com/sitemap.xml): Canonical indexable pages and their current modification dates.
+- [Language index](https://willowinworld.com/languages.json): Machine-readable map of every localized site and AI guide.
 - [Privacy policy](https://willowinworld.com/privacy.html): Website privacy information.
 - [Legal notice](https://willowinworld.com/legal.html): Ownership, trademarks and website terms.
 

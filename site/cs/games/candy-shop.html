@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="cs">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Candy Shop je útulný mobilní slučovací puzzle v aktivním vývoji. Projděte 13stupňovým řetězem cukroví, ovládněte deset nádob a spusťte speciální sladkosti.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#211027" id="metaThemeColor">
+  <meta property="og:title" content="Candy Shop – Cozy Candy Merge Logická hra">
+  <meta property="og:description" content="Skládejte, kombinujte a vyvíjejte bonbóny v útulném mobilním slučovacím puzzle od WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Candy Shop útulná logická hra pro sloučení sladkostí od WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/cs/games/candy-shop.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Candy Shop – Cozy Candy Merge Logická hra">
+  <meta name="twitter:description" content="Skládejte, kombinujte a vyvíjejte bonbóny v útulném mobilním slučovacím puzzle od WillowinWorld.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Candy Shop útulné puzzle sloučení fyziky s barevnými sladkostmi">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Candy Shop | Útulná logická hra Candy Merge pro mobil</title>
+  <link rel="canonical" href="https://willowinworld.com/cs/games/candy-shop.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/cs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hry",
+          "item": "https://willowinworld.com/cs/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Candy Shop",
+          "item": "https://willowinworld.com/cs/games/candy-shop.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/cs/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/cs/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "description": "Útulné puzzle sloučení sladkostí s 13fázovým slučovacím řetězcem, deseti sadami pravidel pro kontejnery, speciálními sladkostmi a plánovacími nástroji.",
+      "genre": [
+        "Sloučit puzzle",
+        "Bonbónové puzzle",
+        "Neformální hádanka",
+        "Fyzikální puzzle"
+      ],
+      "gamePlatform": "Mobil",
+      "creativeWorkStatus": "Aktivní vývoj – hratelné produkční sestavení",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/cs/games/candy-shop.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "cs"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
+  <link rel="preload" href="../../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-candy-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/candy-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-candy candy-shop-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Přejít na Candy Shop</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — zpět na WillowinWorld">
+      <img src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="ikona logické hry Candy Shop" fetchpriority="high" decoding="async">
+      <span><strong>Candy Shop</strong><small>herní stránka WillowinWorld</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigace na stránce hry">
+      <a href="../index.html">Studio domů</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Přepnout téma">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Jazyk"><details><summary aria-label="Vyberte jazyk"><span aria-hidden="true">CS</span></summary><div class="language-options"><a href="../../games/candy-shop.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/candy-shop.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/candy-shop.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/candy-shop.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/candy-shop.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/candy-shop.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/candy-shop.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="candy-shop.html" lang="cs" hreflang="cs" aria-current="page"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/candy-shop.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/candy-shop.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/candy-shop.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/candy-shop.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/candy-shop.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/candy-shop.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/candy-shop.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/candy-shop.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/candy-shop.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/candy-shop.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/candy-shop.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/candy-shop.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/candy-shop.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/candy-shop.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/candy-shop.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/candy-shop.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/candy-shop.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/candy-shop.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/candy-shop.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/candy-shop.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/candy-shop.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/candy-shop.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/candy-shop.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/candy-shop.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/candy-shop.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/candy-shop.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/candy-shop.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/candy-shop.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/candy-shop.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/candy-shop.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/candy-shop.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/candy-shop.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/candy-shop.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/candy-shop.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
+    <div class="candy-page-backdrop ambient-only" aria-hidden="true">
+      <div class="candy-menu-world">
+        <span class="candy-menu-shelf candy-menu-shelf-top"></span>
+        <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-one"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-one"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-three"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-four"></span>
+      </div>
+    </div>
+
+    <section class="candy-game-hero" aria-labelledby="candyHeroTitle">
+      <div class="container candy-hero-layout">
+        <div class="candy-hero-copy">
+          <div class="eyebrow">Candy Shop</div>
+          <h1 id="candyHeroTitle">Vypusťte sladkosti. Vytvářejte větší lahůdky.</h1>
+          <p class="hero-copy">Útulná mobilní slučovací hádanka o umístění bonbonů, spouštění měkkých fyzikálních komb a honbě za dalším uspokojivým vývojem.</p>
+          <p class="candy-hero-note">Aktivní vývoj s 13 fázemi cukroví, 10 sadami pravidel kontejneru, osmi efekty speciálních cukrovinek a plánovací vrstvou postavenou na držení, náhledu přistání a frontě na další tři.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Candy+Shop+aktualizace">Vyžádejte si aktualizace Candy Shop</a>
+            <a class="btn btn-ghost" href="#devlog">Otevřete Devlog</a>
+          </div>
+          <div class="candy-hero-stats" role="group" aria-label="Candy Shop zvýraznění">
+            <span><strong>13 bonbónů</strong><small>jeden čitelný evoluční řetězec</small></span>
+            <span><strong>10 polí</strong><small>nová geometrie a pravidla</small></span>
+            <span><strong>8 speciálů</strong><small>spárované efekty a recepty</small></span>
+          </div>
+        </div>
+
+        <aside class="candy-hero-showcase" aria-label="Candy Shop náhled hry">
+          <div class="candy-device-frame">
+            <div class="candy-stage candy-stage-showcase" aria-hidden="true">
+              <div class="candy-bg-stack">
+                <img loading="lazy" class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-2" src="../../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-3" src="../../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-4" src="../../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-5" src="../../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-6" src="../../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-7" src="../../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-8" src="../../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-9" src="../../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
+                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                </picture>
+              </div>
+              <img loading="lazy" class="candy-piece candy-piece-left" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-right" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-result" src="../../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
+              <span class="candy-impact"></span>
+            </div>
+            <img loading="lazy" class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop s jasnými sladkostmi" decoding="async">
+            <span class="candy-preview-title">
+              <small>Útulné puzzle sloučení fyziky</small>
+              <strong>Candy Shop</strong>
+              <span class="candy-cycle"><b>Drop</b><b>Sloučit</b><b>Kombinace</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>Hratelné sestavení · Aktivní vývoj</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid candy-shop-content">
+      <section class="game-proof-section" aria-labelledby="candyProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Uvnitř aktuálního sestavení</span>
+            <h2 id="candyProofTitle">Každý kontejner přepíše hádanku.</h2>
+            <p>Pravidlo sloučení zůstává konstantní; pole ne. Baňka mění využitelný prostor, přesýpací hodiny vytvářejí škrtící bod, trojité portály rozdělují plán, rotující gravitace převrací usazené sladkosti a překážkové stěny proměňují finále v řízený chaos.</p>
+            <span class="proof-status"><b>Stav sestavení</b> Aktivní rozvoj</span>
+          </div>
+          <div class="proof-visual">
+            <div class="candy-container-section">
+              <h3>Osm viditelných změn pravidel</h3>
+              <p>Skutečné kontejnerové umění z aktuálního projektu Unity.</p>
+              <div class="container-showcase" aria-label="galerie kontejnerů Candy Shop">
+                <figure><img src="../../assets/game-proof/candy-containers/container_pot.webp" width="400" height="500" alt="Candy Shop slučovací nádoba ve tvaru hrnce" loading="lazy" decoding="async"><figcaption>Hrnec</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_hourglass.webp" width="400" height="500" alt="Candy Shop slučovací kontejner přesýpacích hodin s úzkým středem" loading="lazy" decoding="async"><figcaption>Přesýpací hodiny</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_flask.webp" width="400" height="500" alt="Candy Shop baňková slučovací nádoba" loading="lazy" decoding="async"><figcaption>Baňka</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_tilted.webp" width="400" height="500" alt="Candy Shop slučovací kontejner se sklopnou podlahou" loading="lazy" decoding="async"><figcaption>Nakloněno</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_stepped.webp" width="400" height="500" alt="Candy Shop stupňovitý slučovací kontejner" loading="lazy" decoding="async"><figcaption>Stupňovaný</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_triple.webp" width="400" height="500" alt="Candy Shop trojitý portálový slučovací kontejner" loading="lazy" decoding="async"><figcaption>Trojitý portál</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_rotating.webp" width="400" height="500" alt="Candy Shop rotační gravitační kontejner" loading="lazy" decoding="async"><figcaption>Rotující gravitace</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_obstacles.webp" width="400" height="500" alt="Candy Shop slučovací kontejner s překážkovými stěnami" loading="lazy" decoding="async"><figcaption>Překážkové stěny</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Ověřená fakta o sestavení Candy Shop">
+          <article><strong>13-stupňová evoluce</strong><span>Kompletní cukrářský žebřík.</span></article>
+          <article><strong>Podržet + další tři</strong><span>Plánování před každou kapkou.</span></article>
+          <article><strong>Speciální receptury</strong><span>Oheň, led, magnet, želé a další.</span></article>
+          <article><strong>Denní a sběrná smyčka</strong><span>Výzva Seed, Candy Book a místní pětice nejlepších.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Přehled hry</div>
+        <h2>Útulná mobilní slučovací hádanka postavená na měkké fyzice a rozhodnutích s jednou kapkou.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Slib hráče</h3><p>Odhoďte sladkosti, vytvářejte větší lahůdky a proměňte každý běh ve veselý řetězec měkké fyziky, sladkých překvapení a uspokojivých spojení.</p></article>
+          <article class="detail-card"><h3>Aktuální sestavení</h3><p>Je implementováno deset sad pravidel kontejneru, kompletní řetězec 13 sladkostí, osm speciálních efektů, náhled přistání, pozastavení a fronta na další tři.</p></article>
+          <article class="detail-card"><h3>publikum</h3><p>Neformální hráči hlavolamů, kteří mají rádi hry typu drop-and-merge, útulné bonbóny, nízkotlakou strategii a rychlé mobilní relace.</p></article>
+          <article class="detail-card"><h3>Stav</h3><p>Aktivní vývoj. Současná práce se zaměřuje na mobilní výkon, lesk uživatelského rozhraní, vyvážení sladkostí, tlak v nádobě a čitelnou zpětnou vazbu.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Vlastnosti</div>
+        <h2>Co hráči dělají ve Candy Shop.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Hra s bonbóny v podobě vypuštění a sloučení</h3><p>Hráči umístí sladkosti do nádoby, použijí gravitaci a načasování a poté sloučí odpovídající bonbóny do větších pamlsků.</p></article>
+          <article class="detail-card"><h3>13stupňový bonbónový řetěz</h3><p>Slučovací žebřík dává každému běhu viditelný cíl, od malých sladkostí až po větší odměny se silnější přítomností na obrazovce.</p></article>
+          <article class="detail-card"><h3>Kombinace a speciální sladkosti</h3><p>Osm implementovaných speciálních bonbónových efektů tvoří párové recepty a vedlejší efekty, díky nimž jsou opakované sezení taktičtější.</p></article>
+          <article class="detail-card"><h3>Útulná mobilní prezentace</h3><p>Jemné barvy, pozadí cukráren a uživatelsky přívětivé uživatelské rozhraní činí hru čitelnou pro krátké relace iOS a Android.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Herní smyčka</div>
+        <h2>Vyberte drop, ovládejte kontejner a udržujte slučovací řetězec naživu.</h2>
+        <ul class="update-list">
+          <li><span>Krok 01</span><strong>Přečtěte si další cukroví</strong><p>Hráč zkontroluje další sladkost, aktuální hromádku a volné místo uvnitř kontejneru.</p></li>
+          <li><span>Krok 02</span><strong>Místo se záměrem</strong><p>Pokles může vytvořit čisté sloučení, zablokovat budoucí pohyb nebo vytvořit tlak, který změní další rozhodnutí.</p></li>
+          <li><span>Krok 03</span><strong>Sloučit a kombinovat</strong><p>Odpovídající bonbóny se vyvíjejí ve větší lahůdky a řetězové reakce odměňují chytré umístění.</p></li>
+          <li><span>Krok 04</span><strong>Postupovat a opakovat</strong><p>Hráči honí vyšší úrovně cukroví, lepší běhy, čistší komba a odměny za budoucí postup.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">Příběh / svět</div>
+        <h2>Veselá cukrárna, kde se každá sladkost může stát něčím větším.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop začal v roce 2025 jako druhý herní nápad WillowinWorld: jasná, útulná puzzle sloučená sladkostí postavená na jednoduché radosti a uspokojivé fyzice.</p>
+            <p>Svět je záměrně teplý a čitelný: police, sladkosti, měkcí maskoti a obaly jako z obchodu podporují fantazii, že každý malý bonbón má cestu k tomu, aby se stal větší lahůdkou.</p>
+            <p>Po prvním prototypu tým rozšířil GDD, přestavěl směr, dokončil řetězec sloučení 13 sladkostí a implementoval deset sad pravidel kontejnerů, speciální receptury, plánovací nástroje a první systémy metaprogrese.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Slučovací řetězec</dt><dd>13 fází cukroví</dd></div>
+            <div><dt>Zaměření designu</dt><dd>Měkká fyzika a čitelné kombinace</dd></div>
+            <div><dt>Prohlídka kontejneru</dt><dd>10 variant geometrie a pravidel</dd></div>
+            <div><dt>Aktuální fáze</dt><dd>Aktivní vývoj a optimalizace</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">Úhel vydavatele</div>
+        <h2>Známé slučovací pravidlo pro deset různých kontejnerů.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop udržuje pravidlo rozpouštění a slučování čitelné, zatímco každý kontejner mění využitelný prostor, gravitaci, překážky nebo cestu do stohu.</p>
+            <p>Aktuální sestavení rozšiřuje krátké běhy o každodenní výzvy, objevy Candy Book a místní tabulky skóre.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Žánr</dt><dd>Neformální puzzle sloučení sladkostí</dd></div>
+            <div><dt>Cíl platformy</dt><dd>iOS / Android</dd></div>
+            <div><dt>Tvar relace</dt><dd>Krátké opakovatelné běhy</dd></div>
+            <div><dt>Primární CTA</dt><dd>Vyžádejte si aktualizace vývoje</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Stáhnout aktiva</div>
+        <h2>Tisková a tvůrčí díla Candy Shop</h2>
+        <p class="asset-kit-copy">Vybrané náhledy WebP pro redakční pokrytí, recenze vydavatele a odkazy na uspořádání prodejen. Zdrojové soubory v plném rozlišení jsou k dispozici ve studiu na vyžádání.</p>
+        <h3 class="asset-group-title">Značkové a obchodní scény</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="ikona logické hry Candy Shop" loading="lazy" decoding="async"><strong>Ikona hry</strong><span>Útulná ikona sloučení sladkostí.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="ikona alternativní hry Candy Shop" loading="lazy" decoding="async"><strong>Alternativní ikona</strong><span>Ikona ve stylu sekundárního obchodu.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop maskot loga slučování útulných cukrovinek" loading="lazy" decoding="async"><strong>Logo maskot</strong><span>Maskot značky s názvem Candy Shop.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp" download><img src="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp" srcset="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp 360w, ../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Postava maskota medvěda Candy Shop" loading="lazy" decoding="async"><strong>Medvědí maskot</strong><span>Postava přátelského maskota.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 781w" sizes="(max-width: 760px) 34vw, 76px" width="781" height="1400" alt="Candy Shop útulné pozadí nabídky puzzle obchodu" loading="lazy" decoding="async"><strong>Nabídka obchodu</strong><span>Pozadí nabídky útulné cukrárny.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop příležitostné sloučení pozadí pauzy puzzle" loading="lazy" decoding="async"><strong>Pozastavit pozadí</strong><span>Neformální sloučení puzzle pauza.</span></a>
+        </div>
+        <h3 class="asset-group-title">Útulné sloučení puzzle pozadí</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop pozadí puzzle sloučení útulných cukrovinek 01" loading="lazy" decoding="async"><strong>Pozadí 01</strong><span>Útulná puzzle scéna sloučení sladkostí.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop útulné pozadí puzzle sloučení sladkostí 02" loading="lazy" decoding="async"><strong>Pozadí 02</strong><span>Sloučit puzzle scénu v cukrárně.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop útulné pozadí puzzle sloučení sladkostí 03" loading="lazy" decoding="async"><strong>Pozadí 03</strong><span>Puzzle scéna sloučení mobilních bonbónů.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop útulné pozadí puzzle sloučení sladkostí 04" loading="lazy" decoding="async"><strong>Pozadí 04</strong><span>Sladká scéna sloučení puzzle obchodu.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop pozadí puzzle sloučení útulných cukrovinek 05" loading="lazy" decoding="async"><strong>Pozadí 05</strong><span>Útulné ležérní puzzle pozadí.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop útulné pozadí puzzle sloučení sladkostí 06" loading="lazy" decoding="async"><strong>Pozadí 06</strong><span>pozadí puzzle sloučení sladkostí.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop útulné pozadí puzzle sloučení sladkostí 07" loading="lazy" decoding="async"><strong>Pozadí 07</strong><span>Útulná scéna s mobilním cukrovím.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop útulné pozadí puzzle sloučení sladkostí 08" loading="lazy" decoding="async"><strong>Pozadí 08</strong><span>Neformální sloučení puzzle pozadí.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop pozadí puzzle sloučení útulných cukrovinek 09" loading="lazy" decoding="async"><strong>Pozadí 09</strong><span>pozadí puzzle cukrárna.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop útulné pozadí puzzle sloučení sladkostí 10" loading="lazy" decoding="async"><strong>Pozadí 10</strong><span>Pozadí útulného světa cukroví.</span></a>
+        </div>
+        <h3 class="asset-group-title">Fyzika spojuje bonbónový řetěz</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací bonbón 01" loading="lazy" decoding="async"><strong>Candy 01</strong><span>První bonbón v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací cukroví 02" loading="lazy" decoding="async"><strong>Candy 02</strong><span>Druhý bonbón v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací cukroví 03" loading="lazy" decoding="async"><strong>Candy 03</strong><span>Třetí bonbón v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací cukroví 04" loading="lazy" decoding="async"><strong>Candy 04</strong><span>Čtvrtý bonbón v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací bonbón 05" loading="lazy" decoding="async"><strong>Candy 05</strong><span>Pátý bonbón v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací cukroví 06" loading="lazy" decoding="async"><strong>Candy 06</strong><span>Šestý bonbón v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací cukroví 07" loading="lazy" decoding="async"><strong>Candy 07</strong><span>Sedmá sladkost v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací cukroví 08" loading="lazy" decoding="async"><strong>Candy 08</strong><span>Osmé cukroví v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací bonbón 09" loading="lazy" decoding="async"><strong>Candy 09</strong><span>Deváté cukroví v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop sloučení fyziky cukroví 10" loading="lazy" decoding="async"><strong>Cukroví 10</strong><span>Desáté cukroví v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální sloučení cukroví 11" loading="lazy" decoding="async"><strong>Cukroví 11</strong><span>Jedenácté cukroví v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální sloučení cukroví 12" loading="lazy" decoding="async"><strong>Cukroví 12</strong><span>Dvanácté cukroví v řetězci sloučení.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fyzikální slučovací cukroví 13" loading="lazy" decoding="async"><strong>Cukroví 13</strong><span>Poslední bonbón v řetězci sloučení.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Vývojová cesta</div>
+        <h2>Od prvního prototypu až po hlubší produkční sestavení.</h2>
+        <ul class="update-list">
+          <li><span>Konec června 2025</span><strong>Myšlenka druhé hry</strong><p>WillowinWorld začala zkoumat projekt jasných bonbónů postavený na něčem jednoduchém, radostném a široce přitažlivém.</p></li>
+          <li><span>srpen 2025</span><strong>První cukroví postavičky</strong><p>Byly vytvořeny první bonbónové postavy a slučovací řetězec se později rozšířil z 11 bonbonů na 13 pro silnější postup.</p></li>
+          <li><span>září 2025</span><strong>První prototyp</strong><p>První prototyp byl postaven a testován. Výsledek ukázal, že myšlenka potřebuje více identity, progrese a jasnějšího háku.</p></li>
+          <li><span>říjen 2025</span><strong>GDD rozšíření</strong><p>Designový dokument byl rozšířen o novou mechaniku, speciální sladkosti, nápady progrese a směrování kontejnerů.</p></li>
+          <li><span>prosinec 2025–únor 2026</span><strong>Core candy systémy</strong><p>Byla implementována hlavní mechanika cukrovinek, byla dokončena sada cukrovinek a začaly se rané systémy kontejnerů.</p></li>
+          <li><span>duben-červenec 2026</span><strong>Systémy a polský průkaz</strong><p>Sestavení se rozšířilo o deset sad pravidel pro kontejnery, interakce se speciálními bonbóny, plánovací nástroje, každodenní výzvy a sběrné systémy spolu s optimalizací a vylepšením uživatelského rozhraní.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Související světy</div>
+        <h2>Sledujte publikum pro sloučení puzzle do širšího katalogu WillowinWorld.</h2>
+        <p class="related-worlds-copy">Candy Shop pokrývá útulnou cestu pro skládanky. Pokračujte v relaxační linii-fyzikální puzzle, arkádové barevné řetězové reakce nebo hardcore rotující věž ve studiu.</p>
+        <div class="related-world-grid" aria-label="Související herní stránky WillowinWorld">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">Relaxační fyzikální puzzle</span>
+            <strong>Nature Seed</strong>
+            <p>Nakreslete omezené fyzické cesty, spojte dvě postavy a obnovte úrovně lesa pomocí klidné mobilní fyziky.</p>
+            <span class="related-world-meta">Nakreslete a vyřešte liniovou hádanku</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">Arkáda pro ničení barev</span>
+            <strong>Paint Blasters</strong>
+            <p>Před každým výstřelem postavte projektil, přečtěte slabá místa věže a spusťte fyzikální řetězové reakce.</p>
+            <span class="related-world-meta">Zamiřte a vystřelte fyzikální puzzle</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Příběhová pasáž</span>
+            <strong>Ball is God?!</strong>
+            <p>Přejděte z útulných sezení k napjatému sestupu z rotující věže s kombinovanou smečkou, mýtickými světy a tlakem šéfů.</p>
+            <span class="related-world-meta">Hardcore věžová arkáda</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Tisk / vydavatelství</span>
+            <strong>Fakta o portfoliu</strong>
+            <p>Otevřete kompaktní přehled žánrů, stavu produkce, veřejných aktiv a herních háčků pro vydavatele.</p>
+            <span class="related-world-meta">WillowinWorld</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Candy Shop FAQ</div>
+        <h2>Odpovědi pro hráče, tisk a vydavatelské partnery.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Jaký druh hry je Candy Shop?</h3><p>Útulné puzzle složené ze sladkostí s měkkými fyzikálními kapkami, speciálními sladkostmi, komby a progresí.</p></article>
+          <article class="detail-card"><h3>Jak funguje hra?</h3><p>Vyberte si cukroví, vhoďte je do nádoby, spojte odpovídající sladkosti, spravujte prostor a pronásledujte větší fáze cukroví.</p></article>
+          <article class="detail-card"><h3>Čím se liší?</h3><p>Kombinuje známou smyčku slučovacích hlavolamů s útulnou bonbónovou identitou, speciálními sladkostmi, čitelnými komby a tlakem v nádobě.</p></article>
+          <article class="detail-card"><h3>Jaký je současný stav?</h3><p>Aktivní vývoj. V aktuálním projektu existuje slučovací řetězec, deset sad pravidel pro kontejnery, speciální recepty, denní výzva, Candy Book a místní tabulky skóre.</p></article>
+          <article class="detail-card"><h3>Lze použít veřejný majetek?</h3><p>Ano, pro tisk, recenze vydavatelů a reference obchodů. Zdrojová aktiva zůstávají soukromá, pokud nejsou přímo požadována.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Vývojář Candy Shop</div>
+        <h2>Co se změnilo a kdy</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31. července 2026</time><strong>Nabídka výroby a průchod HUD</strong><p>Hlavní nabídka, výběr úrovní, ovládací prvky HUD a příkazové ikony nyní sdílejí jeden vizuální jazyk; dodatečné zátěžové testy motoru pokrývají aktualizovaný tok.</p></li>
+          <li><span>červenec 2026</span><strong>Hlubší výrobní budova</strong><p>Současný projekt kombinuje úplný slučovací řetězec s deseti sadami pravidel kontejnerů, speciálními recepty, plánovacími nástroji, každodenními výzvami, objevy Candy Book a místními tabulkami skóre.</p></li>
+          <li><span>duben 2026</span><strong>Prvky uživatelského rozhraní projdou</strong><p>Byly vytvořeny první hlavní prvky uživatelského rozhraní, které Candy Shop poskytly jasnější mobilní identitu a silnější neformální prezentaci.</p></li>
+          <li><span>února 2026</span><strong>Řetízek na cukroví a nádoby</strong><p>Kompletní sada cukrovinek byla dokončena a systémy nádob začaly měnit geometrii, gravitaci a tlak hlavolamu.</p></li>
+          <li><span>prosinec 2025</span><strong>Základní mechanika cukroví</strong><p>Hlavní mechanika bonbónů byla implementována v hrubé podobě, čímž se z rozšířeného GDD stal hratelný systém.</p></li>
+          <li><span>říjen 2025</span><strong>GDD rozšíření</strong><p>Poté, co se první prototyp necítil dostatečně silný, byl design rozšířen o speciální sladkosti a progresivní nápady.</p></li>
+          <li><span>srpen 2025</span><strong>První cukroví postavičky</strong><p>Byly vytvořeny první cukroví postavičky, které ustanovily měkký, přátelský směr slučovacího řetězce.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Candy Shop je hra WillowinWorld.</strong>
+        <span>Útulné slučovací puzzle, kde je další kapka jednoduchá a nádoba nikdy není.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navigace v zápatí Candy Shop">
+        <a href="../index.html#games">Všechny hry</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Ochrana osobních údajů</a>
+        <a href="../legal.html">Právní</a>
+        <a href="mailto:contact@willowinworld.com?subject=Candy%20Shop">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="ko">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paint Blasters은 활발히 개발 중인 모바일 색상 파괴 물리 퍼즐입니다. 35가지 발사체 레시피를 혼합하고 약점을 겨냥하고 연쇄 반응을 유발하세요.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#071225" id="metaThemeColor">
+  <meta property="og:title" content="Paint Blasters - 색상 파괴 물리학 퍼즐">
+  <meta property="og:description" content="WillowinWorld의 모바일 물리 아케이드 퍼즐에서 컬러 샷을 혼합하고, 블록을 부수고, 연쇄 반응을 일으키세요.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Paint Blasters WillowinWorld의 색상 파괴 물리 퍼즐 아케이드">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/ko/games/paint-blasters.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paint Blasters - 색상 파괴 물리학 퍼즐 게임">
+  <meta name="twitter:description" content="WillowinWorld의 모바일 물리 아케이드 퍼즐에서 컬러 샷을 혼합하고, 타워를 부수고, 연쇄 반응을 일으키세요.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Paint Blasters 색상 혼합 및 타워 파괴 물리 퍼즐">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Paint Blasters | 색상 혼합 물리 퍼즐 아케이드</title>
+  <link rel="canonical" href="https://willowinworld.com/ko/games/paint-blasters.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/ko/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "게임",
+          "item": "https://willowinworld.com/ko/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paint Blasters",
+          "item": "https://willowinworld.com/ko/games/paint-blasters.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/ko/games/paint-blasters.html#game",
+      "name": "Paint Blasters",
+      "url": "https://willowinworld.com/ko/games/paint-blasters.html",
+      "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
+      "description": "다양한 색상의 샷을 혼합하고, 타워를 부수고, 연쇄 반응을 일으키는 생생한 물리 퍼즐 아케이드입니다.",
+      "genre": [
+        "컬러 퍼즐",
+        "물리 아케이드",
+        "파괴 퍼즐",
+        "연쇄반응"
+      ],
+      "gamePlatform": "모바일",
+      "creativeWorkStatus": "활발한 개발 - 프로토타입 생산",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/ko/games/paint-blasters.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "ko"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/paint-blasters-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/paint-blasters-hero-480.avif 480w, ../../assets/responsive/paint-blasters-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
+  <link rel="preload" href="../../assets/Paint%20Blasters/site/picon1.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-paint-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/paint-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-paint paint-blasters-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Paint Blasters으로 건너뛰기</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Paint Blasters — WillowinWorld으로 돌아가기">
+      <img src="../../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters 색상 파괴 퍼즐 게임 아이콘" fetchpriority="high" decoding="async">
+      <span><strong>Paint Blasters</strong><small>WillowinWorld 게임 페이지</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="게임 페이지 탐색">
+      <a href="../index.html">스튜디오 홈</a>
+      <a href="#devlog">개발로그</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">보도자료</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="테마 전환">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="언어"><details><summary aria-label="언어 선택"><span aria-hidden="true">KO</span></summary><div class="language-options"><a href="../../games/paint-blasters.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/paint-blasters.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/paint-blasters.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/paint-blasters.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/paint-blasters.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/paint-blasters.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/paint-blasters.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/paint-blasters.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/paint-blasters.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/paint-blasters.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/paint-blasters.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/paint-blasters.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/paint-blasters.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/paint-blasters.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/paint-blasters.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/paint-blasters.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/paint-blasters.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/paint-blasters.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/paint-blasters.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/paint-blasters.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/paint-blasters.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="paint-blasters.html" lang="ko" hreflang="ko" aria-current="page"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/paint-blasters.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/paint-blasters.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/paint-blasters.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/paint-blasters.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/paint-blasters.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/paint-blasters.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/paint-blasters.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/paint-blasters.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/paint-blasters.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/paint-blasters.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/paint-blasters.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/paint-blasters.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/paint-blasters.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/paint-blasters.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/paint-blasters.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/paint-blasters.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/paint-blasters.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/paint-blasters.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/paint-blasters.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/paint-blasters.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell paint-blasters-shell" id="game-main">
+    <div class="paint-page-backdrop ambient-only" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="../../assets/responsive/paint-blasters-ship-840.avif 840w" sizes="(max-width: 760px) 64vw, 38vw">
+        <img class="paint-ship-panel" src="../../assets/responsive/paint-blasters-ship-840.webp" srcset="../../assets/responsive/paint-blasters-ship-480.webp 480w, ../../assets/responsive/paint-blasters-ship-840.webp 840w, ../../assets/Paint%20Blasters/site/ship.webp 1672w" sizes="(max-width: 760px) 64vw, 38vw" width="1672" height="941" alt="" loading="lazy" decoding="async">
+      </picture>
+      <div class="paint-menu-world">
+        <span class="paint-menu-pipe paint-menu-pipe-one"></span>
+        <span class="paint-menu-pipe paint-menu-pipe-two"></span>
+        <span class="paint-menu-pipe paint-menu-pipe-three"></span>
+        <span class="paint-menu-beam paint-menu-beam-one"></span>
+        <span class="paint-menu-beam paint-menu-beam-two"></span>
+        <span class="paint-menu-splash paint-menu-splash-one"></span>
+        <span class="paint-menu-splash paint-menu-splash-two"></span>
+        <span class="paint-menu-splash paint-menu-splash-three"></span>
+        <span class="paint-menu-gauge paint-menu-gauge-one"></span>
+        <span class="paint-menu-gauge paint-menu-gauge-two"></span>
+      </div>
+    </div>
+
+    <section class="paint-game-hero" aria-labelledby="paintHeroTitle">
+      <div class="container paint-hero-layout">
+        <div class="paint-hero-copy">
+          <div class="eyebrow">Paint Blasters</div>
+          <h1 id="paintHeroTitle">세 가지 색상을 섞으세요. 탑을 부수세요.</h1>
+          <p class="hero-copy">세 가지 색상 입력이 35개의 발사체 레시피 중 하나로 해석되는 모바일 물리 아케이드 퍼즐입니다. 타워를 읽고 효과를 구축하고 정확한 충격을 밝은 연쇄 반응으로 바꾸십시오.</p>
+          <p class="paint-hero-note">활발한 개발·생산 프로토타입. 35개의 발사체 레시피가 모두 구현되었습니다. 현재 패스는 발사체 가독성, 타워 선명도 및 강력한 파괴 피드백에 중점을 둡니다.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Paint+Blasters+%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8">Paint Blasters 업데이트 요청</a>
+            <a class="btn btn-ghost" href="#devlog">개발로그 열기</a>
+          </div>
+          <div class="paint-hero-stats" role="group" aria-label="Paint Blasters 하이라이트">
+            <span><strong>35가지 레시피</strong><small>제작된 발사체 동작</small></span>
+            <span><strong>7블록</strong><small>다양한 구조적 역할</small></span>
+            <span><strong>5층</strong><small>활성탑 압력</small></span>
+          </div>
+        </div>
+
+        <aside class="paint-hero-showcase" aria-label="Paint Blasters 게임플레이 미리보기">
+          <div class="paint-device-frame">
+            <div class="paint-stage paint-stage-showcase" aria-hidden="true">
+              <picture>
+                <source type="image/avif" srcset="../../assets/responsive/paint-blasters-hero-480.avif 480w, ../../assets/responsive/paint-blasters-hero-760.avif 760w" sizes="(max-width: 760px) 82vw, 360px">
+                <img class="paint-bg" src="../../assets/responsive/paint-blasters-hero-760.webp" srcset="../../assets/responsive/paint-blasters-hero-480.webp 480w, ../../assets/responsive/paint-blasters-hero-760.webp 760w" sizes="(max-width: 760px) 82vw, 360px" width="760" height="1361" alt="" fetchpriority="high" decoding="async">
+              </picture>
+              <div class="paint-arena">
+                <div class="paint-cube-stack">
+                  <span class="paint-cube paint-cube-a"></span>
+                  <span class="paint-cube paint-cube-b"></span>
+                  <span class="paint-cube paint-cube-c"></span>
+                  <span class="paint-cube paint-cube-d"></span>
+                  <span class="paint-cube paint-cube-e"></span>
+                  <span class="paint-cube paint-cube-f"></span>
+                  <span class="paint-cube paint-cube-g"></span>
+                  <span class="paint-cube paint-cube-h"></span>
+                  <span class="paint-cube paint-cube-i"></span>
+                  <span class="paint-cube paint-cube-j"></span>
+                </div>
+                <span class="paint-platform"></span>
+                <span class="paint-aim-line"></span>
+                <span class="paint-projectile paint-projectile-one"></span>
+                <span class="paint-projectile paint-projectile-two"></span>
+                <span class="paint-projectile paint-projectile-three"></span>
+                <span class="paint-impact"></span>
+                <span class="paint-shard paint-shard-one"></span>
+                <span class="paint-shard paint-shard-two"></span>
+                <span class="paint-shard paint-shard-three"></span>
+                <span class="paint-shard paint-shard-four"></span>
+                <img loading="lazy" class="paint-blaster" src="../../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" decoding="async">
+              </div>
+              <img loading="lazy" class="paint-module" src="../../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" decoding="async">
+              <img loading="lazy" class="paint-hero" src="../../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" decoding="async">
+            </div>
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-primary" src="../../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="다채로운 아케이드 액션이 포함된 Paint Blasters 게임 아이콘" decoding="async">
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-alt" src="../../assets/Paint%20Blasters/site/picon2.webp" width="520" height="520" alt="" decoding="async">
+            <span class="paint-preview-title">
+              <small>색상 파괴 물리학 퍼즐</small>
+              <strong>Paint Blasters</strong>
+              <span class="paint-cycle"><b>믹스</b><b>조준</b><b>폭발</b></span>
+            </span>
+            <span class="paint-control-lights" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <div class="magic-hud">
+              <span>생산 프로토타입 · 35 콤보</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid paint-blasters-content">
+      <section class="game-proof-section" aria-labelledby="paintProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">현재 빌드 내부</span>
+            <h2 id="paintProofTitle">레시피가 샷을 결정합니다.</h2>
+            <p>Paint Blasters은 별도의 충전 선택을 요구하지 않습니다. 3색 레시피는 순수 색상 도구부터 혼합 효과 및 10가지 무지개 전략에 이르기까지 고유한 역할, 목표 및 보상이 있는 명명된 동작으로 해결됩니다.</p>
+            <span class="proof-status"><b>빌드 상태</b> 프로토타입 제작</span>
+          </div>
+          <div class="proof-visual">
+            <div class="paint-recipe-board">
+              <h3>콤보 랩 샘플</h3>
+              <p>플레이어가 조준하기 전에 세 가지 입력이 하나의 저작된 물리적 능력이 됩니다.</p>
+              <div class="paint-recipe-slots" aria-label="빨간색, 파란색, 노란색 색상 입력">
+                <span class="paint-recipe-slot is-red"></span>
+                <span class="paint-recipe-slot is-blue"></span>
+                <span class="paint-recipe-slot is-yellow"></span>
+              </div>
+              <div class="paint-recipe-output">
+                <small>레시피 가족</small>
+                <strong>레인보우 전략</strong>
+                <span>행동, 이상적인 목표, 영향력 보상이 함께 정의됩니다.</span>
+              </div>
+              <img src="../../assets/responsive/paint-blasters-ship-840.webp" srcset="../../assets/responsive/paint-blasters-ship-480.webp 480w, ../../assets/responsive/paint-blasters-ship-840.webp 840w" sizes="(max-width: 560px) 82vw, 34vw" width="840" height="473" alt="Paint Blasters 기계식 컬러 선박 및 발사체 작업장" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="확인된 Paint Blasters 빌드 사실">
+          <article><strong>35가지 구현 전략</strong><span>순수 5개, 혼합 20개, 무지개 10개입니다.</span></article>
+          <article><strong>7가지 블록 유형</strong><span>취약하고 강화된 것부터 폭발성과 카멜레온까지.</span></article>
+          <article><strong>5개 활성층</strong><span>타워는 달리기가 진행됨에 따라 압력을 드러냅니다.</span></article>
+          <article><strong>레시피 우선 전투</strong><span>혼합하고, 조준하고, 충격을 가한 후 적용하세요.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">게임 개요</div>
+        <h2>촬영 전에 가장 현명한 결정이 이루어지는 색상 파괴 물리 퍼즐입니다.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>선수 약속</h3><p>샷을 만들고, 약점을 치고, 스마트한 색상의 충격이 만족스러운 연쇄 반응으로 이어지는 것을 지켜보세요.</p></article>
+          <article class="detail-card"><h3>현재 빌드</h3><p>35개의 발사체 레시피, 7개의 구조 블록 원형 및 점진적인 5층 타워 압력이 모두 생산 프로토타입에 구현되었습니다.</p></article>
+          <article class="detail-card"><h3>관객</h3><p>물리 퍼즐, 조준 사격 게임플레이, 색상 전략, 타워 파괴, 전술적 깊이가 있는 짧은 아케이드 레벨을 즐기는 플레이어입니다.</p></article>
+          <article class="detail-card"><h3>상태</h3><p>활발한 개발 - 프로토타입 생산. 콤보 시스템이 구현되었습니다. 프리젠테이션, 타워 가독성 및 최종 장면 범위는 여전히 개선되었습니다.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">특징</div>
+        <h2>Paint Blasters에서 플레이어가 하는 일.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>색상을 활용한 사진 만들기</h3><p>플레이어는 발사하기 전에 세 가지 색상 입력을 결합합니다. 해결된 레시피는 발사체의 행동과 전술적 역할을 할당합니다.</p></article>
+          <article class="detail-card"><h3>타워의 약점 읽기</h3><p>블록 모양, 색상 및 타워 구조는 스마트한 영향과 더 나은 연쇄 반응을 위한 명확한 목표를 만듭니다.</p></article>
+          <article class="detail-card"><h3>트리거 물리 붕괴</h3><p>샷은 모션을 생성하고 구조를 깨뜨리며 경기장을 다채로운 타워 파괴 보상으로 밀어넣습니다.</p></article>
+          <article class="detail-card"><h3>아케이드 퍼즐 속도</h3><p>짧은 모바일 레벨은 숙달, 재생 및 향후 챌린지 모드를 위한 공간을 남겨두는 동시에 액션을 읽기 쉽게 유지합니다.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">게임플레이 루프</div>
+        <h2>발사체를 혼합하고 약점을 겨냥하고 붕괴로부터 배웁니다.</h2>
+        <ul class="update-list">
+          <li><span>01단계</span><strong>탑 읽기</strong><p>플레이어는 샷을 시작하기 전에 블록 색상, 구조, 균형 및 예상되는 약점을 연구합니다.</p></li>
+          <li><span>02단계</span><strong>샷을 섞으세요</strong><p>세 가지 색상 입력은 발사체가 충격 시 어떻게 작동하는지 정의하는 명명된 레시피로 해석됩니다.</p></li>
+          <li><span>03단계</span><strong>조준하고 폭발시키세요</strong><p>터치 친화적인 조준은 계획을 발사체, 충격 및 물리적 반응으로 바꿉니다.</p></li>
+          <li><span>04단계</span><strong>연결 또는 조정</strong><p>강한 타격을 받으면 붕괴됩니다. 부분 히트는 다음 색상 선택, 각도 또는 약점을 알려줍니다.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section paint-story-section">
+        <div class="eyebrow">스토리/세계</div>
+        <h2>색상이 탄약이자 전략인 밝은 기계 경기장입니다.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Paint Blasters은 모바일 물리 퍼즐의 독창적인 변형을 탐구합니다. 플레이어는 발사하기 전에 각 발사체를 만들고 색상 논리와 타워 파괴 및 아케이드 충격을 혼합합니다.</p>
+            <p>세상은 시끄러운 작업장 환상에 빠져 있습니다. 파이프, 모듈, 컬러 탱크 및 기계식 블래스터가 각 레벨을 폭발 직전의 실험처럼 구성합니다.</p>
+            <p>독특한 강점은 파괴뿐만 아니라, 사격 전 결단력입니다. 플레이어는 단지 발사체를 발사하는 것이 아니라 발사체를 만드는 것입니다.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>코어훅</dt><dd>발사하기 전에 컬러 파워 샷을 만드세요</dd></div>
+            <div><dt>현재 범위</dt><dd>35가지 발사체 제조법 구현</dd></div>
+            <div><dt>디자인 중점</dt><dd>발사체 가독성 및 타워 선명도</dd></div>
+            <div><dt>타워언어</dt><dd>7개의 판독 가능한 블록 원형</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section paint-story-section">
+        <div class="eyebrow">출판사 각도</div>
+        <h2>전술적인 색상 결정으로 명확한 아케이드 효과를 선사합니다.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Paint Blasters은 조준 및 사격 물리 게임플레이의 즉각적인 매력과 더 깊은 사전 사격 결정 시스템을 결합합니다. 그 결과 짧은 클립으로 이해하기 쉽지만 전술적 숙달의 여지가 있는 모바일 친화적인 파괴 퍼즐이 탄생했습니다.</p>
+            <p>생산 프로토타입에는 35개의 발사체 제조법과 7개의 블록 원형이 모두 포함되어 있습니다. 프리젠테이션 및 최종 장면 범위는 여전히 개선 중입니다.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>장르</dt><dd>색상 파괴 물리 퍼즐</dd></div>
+            <div><dt>플랫폼 대상</dt><dd>iOS / 안드로이드</dd></div>
+            <div><dt>세션 형태</dt><dd>레벨 기반 아케이드 퍼즐</dd></div>
+            <div><dt>기본 CTA</dt><dd>디자인 확장 및 다듬기</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">자산 다운로드</div>
+        <h2>Paint Blasters 언론 및 창작자 자산</h2>
+        <p class="asset-kit-copy">편집 범위, 게시자 리뷰 및 매장 레이아웃 참조를 위해 엄선된 WebP 미리보기입니다. 전체 해상도 소스 파일은 요청 시 스튜디오에서 제공됩니다.</p>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters 색상 파괴 물리 퍼즐 게임 아이콘" loading="lazy" decoding="async"><strong>게임 아이콘</strong><span>색상 파괴 물리 퍼즐 아이콘.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters 컬러 연쇄 반응 아케이드 로고" loading="lazy" decoding="async"><strong>아케이드 로고</strong><span>컬러체인리액션 브랜드 자산.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters Zetun 로봇 캐릭터" loading="lazy" decoding="async"><strong>Zetun 문자</strong><span>아케이드 퍼즐용 로봇 캐릭터 자산입니다.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 387w" sizes="(max-width: 760px) 34vw, 76px" width="387" height="645" alt="Paint Blasters 색상 파괴 퍼즐 게임 배경" loading="lazy" decoding="async"><strong>게임플레이 배경</strong><span>색상 파괴 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 782w" sizes="(max-width: 760px) 34vw, 76px" width="782" height="1400" alt="Paint Blasters 컬러 아케이드 퍼즐 메뉴 배경" loading="lazy" decoding="async"><strong>메뉴 배경</strong><span>아케이드 퍼즐 메뉴 장면.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">개발 여정</div>
+        <h2>컬러 아이디어부터 플레이 가능한 제작 초안까지.</h2>
+        <ul class="update-list">
+          <li><span>2026년 2월</span><strong>개발 시작</strong><p>Paint Blasters은 색상 파괴, 타워 붕괴 및 연쇄 반응을 중심으로 제작된 새로운 모바일 물리 퍼즐로 개발에 들어갔습니다.</p></li>
+          <li><span>2026년 3월 초</span><strong>내부 테스트 및 비주얼 합격</strong><p>팀은 전체 내부 테스트를 실시하고 가독성, 색상 선명도 및 아케이드 피드백에 대한 시각적 방향을 개선했습니다.</p></li>
+          <li><span>2026년 3월 말</span><strong>최신 GDD 방향</strong><p>현재 GDD는 3가지 색상 레시피, 판독 가능한 타워 및 레벨 기반 진행을 중심으로 프로젝트를 형성했습니다.</p></li>
+          <li><span>2026년 4월 하순</span><strong>핵심 역학 초안</strong><p>현재 GDD의 주요 메커니즘은 대략적인 형태로 구현되어 팀에게 플레이 가능한 파괴 루프 초안을 제공했습니다.</p></li>
+          <li><span>2026년 7월</span><strong>35콤보 시스템 완성</strong><p>이제 5가지 순수 전략, 20가지 혼합 전략, 10가지 무지개 전략이 레시피 레지스트리에서 해결되고 프리젠테이션 및 타워 가독성이 계속해서 향상됩니다.</p></li>
+          <li><span>현재 개선</span><strong>프레젠테이션 및 장면 범위</strong><p>발사체 가독성, 타워 선명도, 파괴 피드백 및 최종 장면 범위는 계속 개선되고 있습니다.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">관련 세계</div>
+        <h2>색상 파괴에서 다른 WillowinWorld 시스템으로 이동하세요.</h2>
+        <p class="related-worlds-copy">Paint Blasters은 조준하고 혼합하고 파괴하는 전술 아케이드 포트폴리오입니다. 더 부드러운 물리 퍼즐, 아늑한 캔디 병합 루프 또는 더 큰 스토리 중심의 수직 아케이드 세계를 탐험해보세요.</p>
+        <div class="related-world-grid" aria-label="관련 WillowinWorld 게임 페이지">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">선 물리학 퍼즐</span>
+            <strong>Nature Seed</strong>
+            <p>제한된 물리적 경로를 그리고, 두 캐릭터를 연결하고, 편안한 모바일 퍼즐 루프를 통해 자연을 복원하세요.</p>
+            <span class="related-world-meta">편안한 물리 퍼즐</span>
+          </a>
+          <a class="related-world-link" href="candy-shop.html">
+            <span class="related-world-kicker">아늑한 병합 게임</span>
+            <strong>Candy Shop</strong>
+            <p>사탕을 떨어뜨리고, 어울리는 과자를 합치고, 컨테이너 공간을 관리하고, 더 큰 콤보 보상을 쫓으세요.</p>
+            <span class="related-world-meta">캔디 병합 퍼즐</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">하드코어 수직 아케이드</span>
+            <strong>Ball is God?!</strong>
+            <p>타워 회전, 콤보 스매시 타이밍, 빠른 하강 및 신화적인 압력을 위한 발사체 계획을 교환하세요.</p>
+            <span class="related-world-meta">수직형 아케이드 게임</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">언론/출판사</span>
+            <strong>포트폴리오 정보</strong>
+            <p>모든 프로젝트의 제작 단계, 플레이어 후크, 자산 정책 및 공개 영상을 비교하세요.</p>
+            <span class="related-world-meta">게임 스튜디오 프레스 키트</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Paint Blasters FAQ</div>
+        <h2>플레이어, 언론, 출판 파트너를 위한 답변입니다.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Paint Blasters은 어떤 게임인가요?</h3><p>샷을 혼합하고 충격을 연쇄 반응으로 바꾸는 모바일 색상 파괴 물리학 퍼즐 아케이드입니다.</p></article>
+          <article class="detail-card"><h3>게임플레이는 어떻게 진행되나요?</h3><p>탑을 읽고, 색상 발사체를 만들고, 약점을 겨냥하고, 발사하고, 붕괴된 부분을 이용해 다음 사격을 계획하세요.</p></article>
+          <article class="detail-card"><h3>무엇이 다른가요?</h3><p>플레이어는 슈팅만 하는 것이 아닙니다. 그들은 색상 전략과 물리 파괴를 혼합하여 발사체를 먼저 만듭니다.</p></article>
+          <article class="detail-card"><h3>현재 상황은 어떤가요?</h3><p>양산 프로토타입으로 활발하게 개발 중입니다. 35개의 발사체 레시피가 모두 구현되었습니다. 프리젠테이션, 타워 가독성 및 장면 범위는 여전히 개선되었습니다.</p></article>
+          <article class="detail-card"><h3>공공자산을 사용할 수 있나요?</h3><p>예, 언론, 출판사 리뷰 및 매장 참조용입니다. 소스 자산은 직접 요청하지 않는 한 비공개로 유지됩니다.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Paint Blasters 개발 로그</div>
+        <h2>변경된 내용과 시기</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">2026년 7월 31일</time><strong>물리 및 효과 안정성 통과</strong><p>발사체 동작, Match-3 해상도 및 적중 효과를 테스트하고 더욱 일관된 콤보 결과를 위해 강화했습니다.</p></li>
+          <li><span>2026년 7월</span><strong>발사체 레시피 35개 모두 구현됨</strong><p>현재 레시피 레지스트리에는 역할, 목표 및 보상이 작성된 5개의 순수, 20개의 혼합 및 10개의 무지개 발사체 동작이 포함되어 있습니다.</p></li>
+          <li><span>2026년 4월</span><strong>핵심 역학 초안</strong><p>현재 GDD의 주요 메커니즘을 대략적인 형태로 구현하여 플레이 가능한 색상 기반 파괴 루프를 만들었습니다.</p></li>
+          <li><span>2026년 3월 말</span><strong>GDD 방향</strong><p>발사체 제작에 관한 최신 GDD 형태의 Paint Blasters: 플레이어는 각 발사 전에 세 가지 색상 입력을 정의된 동작으로 결합합니다.</p></li>
+          <li><span>2026년 3월</span><strong>내부 테스트 및 비주얼 합격</strong><p>팀은 내부 테스트를 거쳐 색상 대비, 타워 가독성 및 아케이드 임팩트를 더욱 강화했습니다.</p></li>
+          <li><span>2026년 2월</span><strong>개발 시작</strong><p>이 게임은 색상 파괴와 만족스러운 연쇄 반응을 기반으로 하는 모바일 물리 퍼즐로 개발에 들어갔습니다.</p></li>
+          <li><span>범위 참고 사항</span><strong>최종 범위는 아직 개선 중입니다.</strong><p>현재 프로토타입은 초안 형태의 최신 GDD를 다루고 있지만, 설계 트랙이 계속됨에 따라 최종 생산 범위가 커질 수 있습니다.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Paint Blasters은 WillowinWorld 게임입니다.</strong>
+        <span>세 가지 색상 입력, 35가지 저작 효과 및 적절한 효과를 기다리는 하나의 타워.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Paint Blasters 바닥글 탐색">
+        <a href="../index.html#games">모든 게임</a>
+        <a href="../press-kit.html">보도자료</a>
+        <a href="../privacy.html">개인정보 보호</a>
+        <a href="../legal.html">법적</a>
+        <a href="mailto:contact@willowinworld.com?subject=Paint%20Blasters">연락처</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

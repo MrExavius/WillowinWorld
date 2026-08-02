@@ -1,0 +1,472 @@
+- generic [active] [ref=f5e1]:
+  - link "Candy Shop にスキップ" [ref=f5e2] [cursor=pointer]:
+    - /url: "#game-main"
+  - banner [ref=f5e3]:
+    - link "Candy Shop — WillowinWorld に戻る" [ref=f5e4] [cursor=pointer]:
+      - /url: ../index.html
+      - img "Candy Shop 居心地の良いキャンディーマージパズルゲームアイコン" [ref=f5e5]
+      - generic [ref=f5e6]:
+        - strong [ref=f5e7]: Candy Shop
+        - generic [ref=f5e8]: WillowinWorld ゲームページ
+    - navigation "ゲームページのナビゲーション" [ref=f5e9]:
+      - link "スタジオホーム" [ref=f5e10] [cursor=pointer]:
+        - /url: ../index.html
+      - link "開発ブログ" [ref=f5e11] [cursor=pointer]:
+        - /url: "#devlog"
+      - link "FAQ" [ref=f5e12] [cursor=pointer]:
+        - /url: "#faq"
+      - link "プレスキット" [ref=f5e13] [cursor=pointer]:
+        - /url: ../press-kit.html
+    - button "ダークテーマに切り替える" [ref=f5e14] [cursor=pointer]
+    - navigation "言語" [ref=f5e17]:
+      - group [ref=f5e18]:
+        - generic "言語を選択してください" [ref=f5e19] [cursor=pointer]: JA
+  - main [ref=f5e21]:
+    - region [ref=f5e22]:
+      - generic [ref=f5e23]:
+        - generic [ref=f5e24]:
+          - generic [ref=f5e25]: Candy Shop
+          - heading "お菓子を落とします。より大きなおやつを作りましょう。" [level=1] [ref=f5e26]
+          - paragraph [ref=f5e27]: キャンディーを配置し、ソフトな物理コンボをトリガーし、さらに満足のいく進化を追求する、居心地の良いモバイル マージ パズル。
+          - paragraph [ref=f5e28]: 13 のキャンディ ステージ、10 のコンテナ ルールセット、8 つの特別なキャンディ エフェクト、およびホールド、着陸プレビュー、および次の 3 つのキューを中心に構築された計画レイヤーを備えたアクティブな開発。
+          - generic [ref=f5e29]:
+            - link "Candy Shop 更新をリクエスト" [ref=f5e30] [cursor=pointer]:
+              - /url: mailto:contact@willowinworld.com?subject=Candy+Shop+%E6%9B%B4%E6%96%B0%E6%83%85%E5%A0%B1
+            - link "開発ブログを開く" [ref=f5e31] [cursor=pointer]:
+              - /url: "#devlog"
+          - group "Candy Shop highlights" [ref=f5e32]:
+            - generic [ref=f5e33]:
+              - strong [ref=f5e34]: キャンディー 13個
+              - generic [ref=f5e35]: 1 つの読み取り可能な進化チェーン
+            - generic [ref=f5e36]:
+              - strong [ref=f5e37]: 10 フィールド
+              - generic [ref=f5e38]: 新しいジオメトリとルール
+            - generic [ref=f5e39]:
+              - strong [ref=f5e40]: 8 スペシャル
+              - generic [ref=f5e41]: ペア効果とレシピ
+        - complementary "Candy Shop のゲームプレイプレビュー" [ref=f5e42]:
+          - generic [ref=f5e43]:
+            - img "鮮やかなお菓子を描いた Candy Shop のゲームアイコン" [ref=f5e47]
+            - generic [ref=f5e48]:
+              - generic [ref=f5e49]: 居心地の良い物理結合パズル
+              - strong [ref=f5e50]: Candy Shop
+              - generic [ref=f5e51]:
+                - generic [ref=f5e52]: ドロップ
+                - generic [ref=f5e53]: マージ
+                - generic [ref=f5e54]: コンボ
+            - generic [ref=f5e55]: プレイ可能なビルド · アクティブな開発
+    - generic [ref=f5e61]:
+      - region [ref=f5e62]:
+        - generic [ref=f5e63]:
+          - generic [ref=f5e64]:
+            - generic [ref=f5e65]: 現在のビルドの内部
+            - heading "すべてのコンテナがパズルを書き換えます。" [level=2] [ref=f5e66]
+            - paragraph [ref=f5e67]: 結合ルールは一定のままです。フィールドはそうではありません。フラスコは使用可能なスペースを変更し、砂時計はチョーク ポイントを作成し、3 つのポータルが計画を分割し、重力の回転が落ち着いたキャンディーをひっくり返し、障害物の壁がフィナーレを制御されたカオスに変えます。
+            - generic [ref=f5e68]:
+              - generic [ref=f5e69]: ビルドステータス
+              - text: 積極的な開発
+          - generic [ref=f5e71]:
+            - heading "目に見える 8 つのルール変更" [level=3] [ref=f5e72]
+            - paragraph [ref=f5e73]: 現在の Unity プロジェクトからの本物のコンテナアート。
+            - generic "Candy Shop の容器ギャラリー" [ref=f5e74]:
+              - figure "ポット" [ref=f5e75]:
+                - img "Candy Shop の壺型マージ容器" [ref=f5e76]
+              - figure "砂時計" [ref=f5e78]:
+                - img "中央が細い Candy Shop の砂時計型マージ容器" [ref=f5e79]
+              - figure "フラスコ" [ref=f5e81]:
+                - img "Candy Shop のフラスコ型マージ容器" [ref=f5e82]
+              - figure "傾いた" [ref=f5e84]:
+                - img "Candy Shop の傾斜床マージ容器" [ref=f5e85]
+              - figure "段付き" [ref=f5e87]:
+                - img "Candy Shop ステップ型マージコンテナ" [ref=f5e88]
+              - figure "トリプルポータル" [ref=f5e90]:
+                - img "Candy Shop トリプルポータルマージコンテナ" [ref=f5e91]
+              - figure "回転重力" [ref=f5e93]:
+                - img "Candy Shop 回転重力コンテナ" [ref=f5e94]
+              - figure "障害物の壁" [ref=f5e96]:
+                - img "Candy Shop コンテナを障害物の壁と結合します" [ref=f5e97]
+        - generic "Candy Shop ビルド事実を確認" [ref=f5e99]:
+          - article [ref=f5e100]:
+            - strong [ref=f5e101]: 13段階進化
+            - generic [ref=f5e102]: 完成したキャンディーのはしご。
+          - article [ref=f5e103]:
+            - strong [ref=f5e104]: 長押し + 次の 3 つ
+            - generic [ref=f5e105]: ドロップする前に計画を立てる。
+          - article [ref=f5e106]:
+            - strong [ref=f5e107]: 特別レシピ
+            - generic [ref=f5e108]: 火、氷、磁石、ゼリーなど。
+          - article [ref=f5e109]:
+            - strong [ref=f5e110]: デイリーとコレクションループ
+            - generic [ref=f5e111]: Seed チャレンジ、Candy Book、ローカル トップ 5。
+      - generic [ref=f5e112]:
+        - generic [ref=f5e113]: ゲーム概要
+        - heading "ソフトな物理学とあと 1 ドロップの決定を中心に構築された、居心地の良いモバイル マージ パズル。" [level=2] [ref=f5e114]
+        - generic [ref=f5e115]:
+          - article [ref=f5e116]:
+            - heading "選手の約束" [level=3] [ref=f5e117]
+            - paragraph [ref=f5e118]: お菓子を落としたり、大きなおやつを作ったり、すべての実行をソフトな物理現象、甘い驚き、そして満足のいくマージの陽気な連鎖に変えましょう。
+          - article [ref=f5e119]:
+            - heading "現在のビルド" [level=3] [ref=f5e120]
+            - paragraph [ref=f5e121]: 10 個のコンテナ ルールセット、完全な 13 個のキャンディ チェーン、8 個の特殊効果、着陸プレビュー、ホールド、次の 3 つのキューが実装されています。
+          - article [ref=f5e122]:
+            - heading "観客" [level=3] [ref=f5e123]
+            - paragraph [ref=f5e124]: ドロップアンドマージ ゲーム、居心地の良いキャンディーのビジュアル、低プレッシャーな戦略、素早いモバイル セッションを楽しむカジュアルなパズル プレーヤー。
+          - article [ref=f5e125]:
+            - heading "ステータス" [level=3] [ref=f5e126]
+            - paragraph [ref=f5e127]: 積極的な開発。現在の作業は、モバイルのパフォーマンス、UI の洗練、キャンディーのバランス、コンテナーの圧力、読みやすいコンボ フィードバックに重点を置いています。
+      - generic [ref=f5e128]:
+        - generic [ref=f5e129]: 特徴
+        - heading "Candy Shop でプレイヤーが行うこと。" [level=2] [ref=f5e130]
+        - generic [ref=f5e131]:
+          - article [ref=f5e132]:
+            - heading "ドロップアンドマージキャンディープレイ" [level=3] [ref=f5e133]
+            - paragraph [ref=f5e134]: プレイヤーはお菓子を容器に入れ、重力とタイミングを利用して、一致するキャンディーを合体させて大きなお菓子にします。
+          - article [ref=f5e135]:
+            - heading "13段キャンディーチェーン" [level=3] [ref=f5e136]
+            - paragraph [ref=f5e137]: マージラダーは、小さなお菓子から画面上の存在感が強い大きな報酬まで、すべてのランに目に見えるゴールを与えます。
+          - article [ref=f5e138]:
+            - heading "コンボとスペシャルスイーツ" [level=3] [ref=f5e139]
+            - paragraph [ref=f5e140]: 実装された 8 つの特別なキャンディー効果は、ペアのレシピと副作用を形成し、繰り返しのセッションにより戦術的なテクスチャーを与えます。
+          - article [ref=f5e141]:
+            - heading "居心地の良いモバイルプレゼンテーション" [level=3] [ref=f5e142]
+            - paragraph [ref=f5e143]: 柔らかい色、キャンディーショップの背景、タッチフレンドリーな UI により、このゲームは iOS および Android の短いセッションでも読みやすくなっています。
+      - generic [ref=f5e144]:
+        - generic [ref=f5e145]: ゲームプレイループ
+        - heading "ドロップを選択し、コンテナを制御し、マージ チェーンを維持します。" [level=2] [ref=f5e146]
+        - list [ref=f5e147]:
+          - listitem [ref=f5e148]:
+            - generic [ref=f5e149]: ステップ01
+            - strong [ref=f5e150]: 次のキャンディーを読む
+            - paragraph [ref=f5e151]: プレイヤーは次のお菓子、現在のスタック、コンテナ内の利用可能なスペースを確認します。
+          - listitem [ref=f5e152]:
+            - generic [ref=f5e153]: ステップ02
+            - strong [ref=f5e154]: 意図を持って配置する
+            - paragraph [ref=f5e155]: ドロップは、クリーンなマージを設定したり、将来の動きをブロックしたり、次の決定を変えるプレッシャーを生み出したりする可能性があります。
+          - listitem [ref=f5e156]:
+            - generic [ref=f5e157]: ステップ03
+            - strong [ref=f5e158]: 合体とコンボ
+            - paragraph [ref=f5e159]: マッチするキャンディーはより大きなおやつに進化し、連鎖反応によって賢く配置されます。
+          - listitem [ref=f5e160]:
+            - generic [ref=f5e161]: ステップ04
+            - strong [ref=f5e162]: 進歩と繰り返し
+            - paragraph [ref=f5e163]: プレイヤーは、より高いキャンディーステージ、より良いラン、よりクリーンなコンボ、そして将来の進行報酬を追い求めます。
+      - generic [ref=f5e164]:
+        - generic [ref=f5e165]: ストーリー・世界観
+        - heading "あらゆるお菓子が大きなものになる、陽気なお菓子屋さん。" [level=2] [ref=f5e166]
+        - generic [ref=f5e167]:
+          - generic [ref=f5e168]:
+            - paragraph [ref=f5e169]: Candy Shop は、WillowinWorld の 2 番目のゲーム アイデアとして 2025 年に始まりました。それは、シンプルな喜びと満足のいく物理学を中心に構築された、明るく居心地の良いキャンディー マージ パズルです。
+            - paragraph [ref=f5e170]: 世界は意図的に温かく、読みやすいものになっています。棚、お菓子、柔らかいマスコット、お店のような容器は、どんな小さなお菓子にも大きなお菓子になる道があるという幻想を裏付けています。
+            - paragraph [ref=f5e171]: 最初のプロトタイプの後、チームは GDD を拡張し、方向性を再構築し、13 個のキャンディーのマージ チェーンを完成させ、10 個のコンテナ ルールセット、特別なレシピ、計画ツール、最初のメタ進行システムを実装しました。
+          - generic [ref=f5e172]:
+            - generic [ref=f5e173]:
+              - term [ref=f5e174]: マージチェーン
+              - definition [ref=f5e175]: 13のキャンディーステージ
+            - generic [ref=f5e176]:
+              - term [ref=f5e177]: デザインの焦点
+              - definition [ref=f5e178]: ソフトな物理演算と読みやすいコンボ
+            - generic [ref=f5e179]:
+              - term [ref=f5e180]: コンテナツアー
+              - definition [ref=f5e181]: 10 のジオメトリとルールのバリエーション
+            - generic [ref=f5e182]:
+              - term [ref=f5e183]: 現段階
+              - definition [ref=f5e184]: 積極的な開発と最適化
+      - generic [ref=f5e185]:
+        - generic [ref=f5e186]: 発行者の角度
+        - heading "10 個の異なるコンテナにわたるおなじみのマージ ルール。" [level=2] [ref=f5e187]
+        - generic [ref=f5e188]:
+          - generic [ref=f5e189]:
+            - paragraph [ref=f5e190]: Candy Shop は、各コンテナーが使用可能なスペース、重力、障害物、またはスタックへのルートを変更する間、ドロップ アンド マージ ルールを読み取り可能な状態に保ちます。
+            - paragraph [ref=f5e191]: 現在のビルドは、毎日のチャレンジ、Candy Book の発見、ローカル スコア テーブルを備えた短期実行を拡張しています。
+          - generic [ref=f5e192]:
+            - generic [ref=f5e193]:
+              - term [ref=f5e194]: ジャンル
+              - definition [ref=f5e195]: カジュアルキャンディマージパズル
+            - generic [ref=f5e196]:
+              - term [ref=f5e197]: プラットフォームターゲット
+              - definition [ref=f5e198]: iOS / Android
+            - generic [ref=f5e199]:
+              - term [ref=f5e200]: セッションの形状
+              - definition [ref=f5e201]: 短い反復可能な実行
+            - generic [ref=f5e202]:
+              - term [ref=f5e203]: プライマリCTA
+              - definition [ref=f5e204]: 開発の最新情報をリクエストする
+      - generic [ref=f5e205]:
+        - generic [ref=f5e206]: アセットをダウンロード
+        - heading "Candy Shop プレスおよびクリエイターのアセット" [level=2] [ref=f5e207]
+        - paragraph [ref=f5e208]: 編集報道、出版社のレビュー、店舗レイアウトの参考のために厳選された WebP のプレビュー。フル解像度のソース ファイルは、リクエストに応じてスタジオから入手できます。
+        - heading "ブランドとショップの風景" [level=3] [ref=f5e209]
+        - generic [ref=f5e210]:
+          - link "Candy Shop 居心地の良いキャンディーマージパズルゲームアイコン ゲームアイコン 居心地の良いキャンディーのマージパズルアイコン。" [ref=f5e211] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルゲームアイコン" [ref=f5e212]
+            - strong [ref=f5e213]: ゲームアイコン
+            - generic [ref=f5e214]: 居心地の良いキャンディーのマージパズルアイコン。
+          - link "Candy Shop 居心地の良いマージ パズルの代替ゲーム アイコン 代替アイコン セカンドストア風のアイコン。" [ref=f5e215] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp
+            - img "Candy Shop 居心地の良いマージ パズルの代替ゲーム アイコン" [ref=f5e216]
+            - strong [ref=f5e217]: 代替アイコン
+            - generic [ref=f5e218]: セカンドストア風のアイコン。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルロゴマスコット ロゴマスコット Candy Shopのタイトルを持つブランドマスコット。" [ref=f5e219] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルロゴマスコット" [ref=f5e220]
+            - strong [ref=f5e221]: ロゴマスコット
+            - generic [ref=f5e222]: Candy Shopのタイトルを持つブランドマスコット。
+          - link "Candy Shop クマのマスコットキャラクター クマのマスコット 優しいマスコットキャラクターのアセット。" [ref=f5e223] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp
+            - img "Candy Shop クマのマスコットキャラクター" [ref=f5e224]
+            - strong [ref=f5e225]: クマのマスコット
+            - generic [ref=f5e226]: 優しいマスコットキャラクターのアセット。
+          - link "Candy Shop 居心地の良いマージパズルショップメニューの背景 ショップメニュー 居心地の良いキャンディ ショップのメニューの背景。" [ref=f5e227] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp
+            - img "Candy Shop 居心地の良いマージパズルショップメニューの背景" [ref=f5e228]
+            - strong [ref=f5e229]: ショップメニュー
+            - generic [ref=f5e230]: 居心地の良いキャンディ ショップのメニューの背景。
+          - link "Candy Shop カジュアルマージパズルポーズ背景 背景を一時停止します カジュアルなマージパズルの一時停止シーン。" [ref=f5e231] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp
+            - img "Candy Shop カジュアルマージパズルポーズ背景" [ref=f5e232]
+            - strong [ref=f5e233]: 背景を一時停止します
+            - generic [ref=f5e234]: カジュアルなマージパズルの一時停止シーン。
+        - heading "居心地の良いマージパズルの背景" [level=3] [ref=f5e235]
+        - generic [ref=f5e236]:
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 01 背景01 居心地の良いキャンディーマージパズルシーン。" [ref=f5e237] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 01" [ref=f5e238]
+            - strong [ref=f5e239]: 背景01
+            - generic [ref=f5e240]: 居心地の良いキャンディーマージパズルシーン。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 02 背景02 キャンディーショップのマージパズルシーン。" [ref=f5e241] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 02" [ref=f5e242]
+            - strong [ref=f5e243]: 背景02
+            - generic [ref=f5e244]: キャンディーショップのマージパズルシーン。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 03 背景03 モバイルキャンディマージパズルシーン。" [ref=f5e245] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 03" [ref=f5e246]
+            - strong [ref=f5e247]: 背景03
+            - generic [ref=f5e248]: モバイルキャンディマージパズルシーン。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 04 背景04 甘いマージパズルショップのシーン。" [ref=f5e249] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 04" [ref=f5e250]
+            - strong [ref=f5e251]: 背景04
+            - generic [ref=f5e252]: 甘いマージパズルショップのシーン。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 05 背景05 居心地の良いカジュアルなパズルの背景。" [ref=f5e253] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 05" [ref=f5e254]
+            - strong [ref=f5e255]: 背景05
+            - generic [ref=f5e256]: 居心地の良いカジュアルなパズルの背景。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 06 背景06 キャンディーマージパズルの背景。" [ref=f5e257] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 06" [ref=f5e258]
+            - strong [ref=f5e259]: 背景06
+            - generic [ref=f5e260]: キャンディーマージパズルの背景。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 07 背景07 居心地の良いモバイルキャンディシーン。" [ref=f5e261] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 07" [ref=f5e262]
+            - strong [ref=f5e263]: 背景07
+            - generic [ref=f5e264]: 居心地の良いモバイルキャンディシーン。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 08 背景08 カジュアルなマージパズルの背景。" [ref=f5e265] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 08" [ref=f5e266]
+            - strong [ref=f5e267]: 背景08
+            - generic [ref=f5e268]: カジュアルなマージパズルの背景。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 09 背景09 お菓子屋のパズルの背景。" [ref=f5e269] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 09" [ref=f5e270]
+            - strong [ref=f5e271]: 背景09
+            - generic [ref=f5e272]: お菓子屋のパズルの背景。
+          - link "Candy Shop 居心地の良いキャンディーマージパズルの背景 10 背景10 居心地の良いキャンディーの世界の背景。" [ref=f5e273] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp
+            - img "Candy Shop 居心地の良いキャンディーマージパズルの背景 10" [ref=f5e274]
+            - strong [ref=f5e275]: 背景10
+            - generic [ref=f5e276]: 居心地の良いキャンディーの世界の背景。
+        - heading "物理学マージキャンディチェーン" [level=3] [ref=f5e277]
+        - generic [ref=f5e278]:
+          - link "Candy Shop の物理マージキャンディ 01 キャンディ 01 マージチェーンの最初のキャンディー。" [ref=f5e279] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp
+            - img "Candy Shop の物理マージキャンディ 01" [ref=f5e280]
+            - strong [ref=f5e281]: キャンディ 01
+            - generic [ref=f5e282]: マージチェーンの最初のキャンディー。
+          - link "Candy Shop の物理マージキャンディ 02 キャンディ 02 マージ チェーンの 2 番目のキャンディー。" [ref=f5e283] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp
+            - img "Candy Shop の物理マージキャンディ 02" [ref=f5e284]
+            - strong [ref=f5e285]: キャンディ 02
+            - generic [ref=f5e286]: マージ チェーンの 2 番目のキャンディー。
+          - link "Candy Shop の物理マージキャンディ 03 キャンディ 03 マージチェーンの 3 番目のキャンディー。" [ref=f5e287] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp
+            - img "Candy Shop の物理マージキャンディ 03" [ref=f5e288]
+            - strong [ref=f5e289]: キャンディ 03
+            - generic [ref=f5e290]: マージチェーンの 3 番目のキャンディー。
+          - link "Candy Shop の物理マージキャンディ 04 キャンディ 04 マージチェーンの 4 番目のキャンディー。" [ref=f5e291] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp
+            - img "Candy Shop の物理マージキャンディ 04" [ref=f5e292]
+            - strong [ref=f5e293]: キャンディ 04
+            - generic [ref=f5e294]: マージチェーンの 4 番目のキャンディー。
+          - link "Candy Shop の物理マージキャンディ 05 キャンディ 05 マージチェーンの 5 番目のキャンディー。" [ref=f5e295] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp
+            - img "Candy Shop の物理マージキャンディ 05" [ref=f5e296]
+            - strong [ref=f5e297]: キャンディ 05
+            - generic [ref=f5e298]: マージチェーンの 5 番目のキャンディー。
+          - link "Candy Shop の物理マージキャンディ 06 キャンディ 06 マージチェーンの 6 番目のキャンディー。" [ref=f5e299] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp
+            - img "Candy Shop の物理マージキャンディ 06" [ref=f5e300]
+            - strong [ref=f5e301]: キャンディ 06
+            - generic [ref=f5e302]: マージチェーンの 6 番目のキャンディー。
+          - link "Candy Shop 物理マージキャンディ 07 キャンディ 07 マージ チェーンの 7 番目のキャンディー。" [ref=f5e303] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp
+            - img "Candy Shop 物理マージキャンディ 07" [ref=f5e304]
+            - strong [ref=f5e305]: キャンディ 07
+            - generic [ref=f5e306]: マージ チェーンの 7 番目のキャンディー。
+          - link "Candy Shop 物理マージキャンディ 08 キャンディ 08 マージチェーンの 8 番目のキャンディー。" [ref=f5e307] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp
+            - img "Candy Shop 物理マージキャンディ 08" [ref=f5e308]
+            - strong [ref=f5e309]: キャンディ 08
+            - generic [ref=f5e310]: マージチェーンの 8 番目のキャンディー。
+          - link "Candy Shop 物理マージキャンディ 09 キャンディ 09 マージ チェーンの 9 番目のキャンディー。" [ref=f5e311] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp
+            - img "Candy Shop 物理マージキャンディ 09" [ref=f5e312]
+            - strong [ref=f5e313]: キャンディ 09
+            - generic [ref=f5e314]: マージ チェーンの 9 番目のキャンディー。
+          - link "Candy Shop の物理マージキャンディ 10 キャンディ 10 マージチェーンの 10 番目のキャンディー。" [ref=f5e315] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp
+            - img "Candy Shop の物理マージキャンディ 10" [ref=f5e316]
+            - strong [ref=f5e317]: キャンディ 10
+            - generic [ref=f5e318]: マージチェーンの 10 番目のキャンディー。
+          - link "Candy Shop 物理マージキャンディ 11 キャンディ11 マージ チェーンの 11 番目のキャンディー。" [ref=f5e319] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp
+            - img "Candy Shop 物理マージキャンディ 11" [ref=f5e320]
+            - strong [ref=f5e321]: キャンディ11
+            - generic [ref=f5e322]: マージ チェーンの 11 番目のキャンディー。
+          - link "Candy Shop の物理マージキャンディ 12 キャンディ 12 マージ チェーンの 12 番目のキャンディー。" [ref=f5e323] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp
+            - img "Candy Shop の物理マージキャンディ 12" [ref=f5e324]
+            - strong [ref=f5e325]: キャンディ 12
+            - generic [ref=f5e326]: マージ チェーンの 12 番目のキャンディー。
+          - link "Candy Shop 物理マージキャンディ 13 キャンディ13 マージチェーンの最後のキャンディー。" [ref=f5e327] [cursor=pointer]:
+            - /url: ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp
+            - img "Candy Shop 物理マージキャンディ 13" [ref=f5e328]
+            - strong [ref=f5e329]: キャンディ13
+            - generic [ref=f5e330]: マージチェーンの最後のキャンディー。
+      - generic [ref=f5e331]:
+        - generic [ref=f5e332]: 開発の旅
+        - heading "最初のプロトタイプから、より奥深い製品版ビルドへ。" [level=2] [ref=f5e333]
+        - list [ref=f5e334]:
+          - listitem [ref=f5e335]:
+            - generic [ref=f5e336]: 2025年6月下旬
+            - strong [ref=f5e337]: 2番目のゲームアイデア
+            - paragraph [ref=f5e338]: WillowinWorld は、シンプルで楽しく、幅広い人に親しまれる遊びを軸に、明るいキャンディゲームの企画を模索し始めました。
+          - listitem [ref=f5e339]:
+            - generic [ref=f5e340]: 2025 年 8 月
+            - strong [ref=f5e341]: 最初のキャンディキャラクター
+            - paragraph [ref=f5e342]: 最初のキャンディキャラクターを制作し、その後、進行の手応えを高めるためマージチェーンを11種類から13種類へ拡張しました。
+          - listitem [ref=f5e343]:
+            - generic [ref=f5e344]: 2025 年 9 月
+            - strong [ref=f5e345]: 最初のプロトタイプ
+            - paragraph [ref=f5e346]: 最初のプロトタイプを制作してテストした結果、より明確な個性、進行要素、そして一目で伝わる魅力が必要だと分かりました。
+          - listitem [ref=f5e347]:
+            - generic [ref=f5e348]: 2025 年 10 月
+            - strong [ref=f5e349]: GDD拡張
+            - paragraph [ref=f5e350]: 新しいメカニクス、スペシャルスイーツ、進行要素のアイデア、容器の方向性を加えて、ゲームデザイン文書を拡充しました。
+          - listitem [ref=f5e351]:
+            - generic [ref=f5e352]: 2025年12月～2026年2月
+            - strong [ref=f5e353]: キャンディの基本システム
+            - paragraph [ref=f5e354]: 主要なキャンディメカニクスを実装し、キャンディセットを完成させ、初期の容器システムの開発を開始しました。
+          - listitem [ref=f5e355]:
+            - generic [ref=f5e356]: 2026年4月～7月
+            - strong [ref=f5e357]: システム実装と仕上げ工程
+            - paragraph [ref=f5e358]: 最適化とUIの磨き込みを進めながら、10種類の容器ルール、スペシャルキャンディの相互作用、計画ツール、デイリーチャレンジ、コレクションシステムをビルドに追加しました。
+      - generic [ref=f5e359]:
+        - generic [ref=f5e360]: 関連ワールド
+        - heading "マージパズルを楽しんだ方に向けて、WillowinWorld の多彩な作品をご案内します。" [level=2] [ref=f5e361]
+        - paragraph [ref=f5e362]: Candy Shop は、心地よいドロップ＆マージパズルを楽しめる作品です。続いて、穏やかなライン物理パズル、色彩豊かな連鎖反応アーケード、あるいはスタジオの高難度な回転タワー降下ゲームもご覧ください。
+        - generic "WillowinWorld ゲーム関連ページ" [ref=f5e363]:
+          - link "リラックスできる物理パズル Nature Seed 限られた長さの物理ルートを描いて2人のキャラクターを出会わせ、穏やかなモバイル物理パズルで森のステージをよみがえらせます。 描いて解くラインパズル" [ref=f5e364] [cursor=pointer]:
+            - /url: nature-seed.html
+            - generic [ref=f5e365]: リラックスできる物理パズル
+            - strong [ref=f5e366]: Nature Seed
+            - paragraph [ref=f5e367]: 限られた長さの物理ルートを描いて2人のキャラクターを出会わせ、穏やかなモバイル物理パズルで森のステージをよみがえらせます。
+            - generic [ref=f5e368]: 描いて解くラインパズル
+          - link "カラー破壊アーケード Paint Blasters 射撃のたびに弾を組み立て、タワーの弱点を見抜き、物理演算による連鎖反応を引き起こします。 狙って撃つ物理パズル" [ref=f5e369] [cursor=pointer]:
+            - /url: paint-blasters.html
+            - generic [ref=f5e370]: カラー破壊アーケード
+            - strong [ref=f5e371]: Paint Blasters
+            - paragraph [ref=f5e372]: 射撃のたびに弾を組み立て、タワーの弱点を見抜き、物理演算による連鎖反応を引き起こします。
+            - generic [ref=f5e373]: 狙って撃つ物理パズル
+          - link "ストーリーアーケード Ball is God?! 心地よいプレイ体験の次は、コンボスマッシュ、神話世界、手強いボスが待つ緊張感あふれる回転タワー降下へ。 Hardcore tower arcade" [ref=f5e374] [cursor=pointer]:
+            - /url: ball-is-god.html
+            - generic [ref=f5e375]: ストーリーアーケード
+            - strong [ref=f5e376]: Ball is God?!
+            - paragraph [ref=f5e377]: 心地よいプレイ体験の次は、コンボスマッシュ、神話世界、手強いボスが待つ緊張感あふれる回転タワー降下へ。
+            - generic [ref=f5e378]: Hardcore tower arcade
+          - link "プレス/出版社 ポートフォリオの事実 ジャンル、制作状況、公開素材、パブリッシャー向けのゲームの訴求点を簡潔にまとめた概要を開きます。 WillowinWorld portfolio" [ref=f5e379] [cursor=pointer]:
+            - /url: ../press-kit.html#press-games
+            - generic [ref=f5e380]: プレス/出版社
+            - strong [ref=f5e381]: ポートフォリオの事実
+            - paragraph [ref=f5e382]: ジャンル、制作状況、公開素材、パブリッシャー向けのゲームの訴求点を簡潔にまとめた概要を開きます。
+            - generic [ref=f5e383]: WillowinWorld portfolio
+      - generic [ref=f5e384]:
+        - generic [ref=f5e385]: Candy Shop FAQ
+        - heading "プレーヤー、プレス、出版パートナー向けの回答。" [level=2] [ref=f5e386]
+        - generic [ref=f5e387]:
+          - article [ref=f5e388]:
+            - heading "Candy Shop はどんなゲームですか？" [level=3] [ref=f5e389]
+            - paragraph [ref=f5e390]: 柔らかな物理挙動のドロップ、スペシャルスイーツ、コンボ、進行要素を楽しめる、心地よいキャンディマージパズル。
+          - article [ref=f5e391]:
+            - heading "ゲームプレイはどのように機能しますか?" [level=3] [ref=f5e392]
+            - paragraph [ref=f5e393]: キャンディを選んで容器に落とし、同じお菓子を合体させ、空間を管理しながら、より大きなキャンディへの進化を目指します。
+          - article [ref=f5e394]:
+            - heading "何が違うのですか？" [level=3] [ref=f5e395]
+            - paragraph [ref=f5e396]: 親しみやすいマージパズルのループに、心地よいキャンディの世界観、スペシャルスイーツ、分かりやすいコンボ、容器内の空間管理を組み合わせています。
+          - article [ref=f5e397]:
+            - heading "現在の状況はどうですか？" [level=3] [ref=f5e398]
+            - paragraph [ref=f5e399]: 現在開発中。現行プロジェクトには、マージチェーン、10種類の容器ルール、スペシャルレシピ、デイリーチャレンジ、Candy Book、ローカルスコアランキングが実装されています。
+          - article [ref=f5e400]:
+            - heading "公開素材は使用できますか？" [level=3] [ref=f5e401]
+            - paragraph [ref=f5e402]: はい、プレス、出版社のレビュー、ストアの参照用です。ソース資産は、直接要求されない限り非公開のままです。
+      - generic [ref=f5e403]:
+        - generic [ref=f5e404]: Candy Shop Devlog
+        - heading "いつ何が変わったのか" [level=2] [ref=f5e405]
+        - list [ref=f5e406]:
+          - listitem [ref=f5e407]:
+            - time [ref=f5e408]: 2026 年 7 月 31 日
+            - strong [ref=f5e409]: 制作メニューとHUDパス
+            - paragraph [ref=f5e410]: メイン メニュー、レベル選択、HUD コントロール、およびコマンド アイコンが 1 つの視覚言語を共有するようになりました。追加のエンジン内ストレス テストでは、更新されたフローがカバーされます。
+          - listitem [ref=f5e411]:
+            - generic [ref=f5e412]: 2026 年 7 月
+            - strong [ref=f5e413]: より充実した製品版ビルド
+            - paragraph [ref=f5e414]: 現行プロジェクトでは、完全なマージチェーンに、10種類の容器ルール、スペシャルレシピ、計画ツール、デイリーチャレンジ、Candy Book の発見要素、ローカルスコアランキングを組み合わせています。
+          - listitem [ref=f5e415]:
+            - generic [ref=f5e416]: 2026 年 4 月
+            - strong [ref=f5e417]: UI elements pass
+            - paragraph [ref=f5e418]: 主要なUI要素を初めて制作し、Candy Shop らしいモバイル向けの個性と、より魅力的なカジュアル表現を確立しました。
+          - listitem [ref=f5e419]:
+            - generic [ref=f5e420]: 2026 年 2 月
+            - strong [ref=f5e421]: キャンディチェーンと容器
+            - paragraph [ref=f5e422]: キャンディの全セットが完成し、容器システムによって形状、重力、パズルの緊張感が変化するようになりました。
+          - listitem [ref=f5e423]:
+            - generic [ref=f5e424]: 2025 年 12 月
+            - strong [ref=f5e425]: キャンディの基本メカニクス
+            - paragraph [ref=f5e426]: 主要なキャンディメカニクスをラフ実装し、拡張したGDDを実際に遊べるシステムへ落とし込みました。
+          - listitem [ref=f5e427]:
+            - generic [ref=f5e428]: 2025 年 10 月
+            - strong [ref=f5e429]: GDD拡張
+            - paragraph [ref=f5e430]: 最初のプロトタイプでは魅力が十分でないと判断し、スペシャルスイーツや進行要素のアイデアを加えてゲームデザインを拡張しました。
+          - listitem [ref=f5e431]:
+            - generic [ref=f5e432]: 2025 年 8 月
+            - strong [ref=f5e433]: 最初のキャンディキャラクター
+            - paragraph [ref=f5e434]: 最初のキャンディー キャラクターが作成され、マージ チェーンの柔らかくフレンドリーな方向性が確立されました。
+  - contentinfo [ref=f5e435]:
+    - generic [ref=f5e436]:
+      - generic [ref=f5e437]:
+        - strong [ref=f5e438]: Candy Shop は WillowinWorld のゲームです。
+        - generic [ref=f5e439]: 次のキャンディを落とす操作はシンプル。でも、容器の攻略は一筋縄ではいかない、心地よいマージパズル。
+      - navigation "Candy Shop フッター ナビゲーション" [ref=f5e440]:
+        - link "すべてのゲーム" [ref=f5e441] [cursor=pointer]:
+          - /url: ../index.html#games
+        - link "プレスキット" [ref=f5e442] [cursor=pointer]:
+          - /url: ../press-kit.html
+        - link "プライバシー" [ref=f5e443] [cursor=pointer]:
+          - /url: ../privacy.html
+        - link "法的" [ref=f5e444] [cursor=pointer]:
+          - /url: ../legal.html
+        - link "お問い合わせ" [ref=f5e445] [cursor=pointer]:
+          - /url: mailto:contact@willowinworld.com?subject=Candy%20Shop

@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="ja">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nature Seed は、現在開発中の描画して解く物理パズルです。インク制限されたパスを描き、Water Drop と Seed を再結合し、水彩の森を復元します。">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#07162d" id="metaThemeColor">
+  <meta property="og:title" content="Nature Seed - 描いて解く物理パズル ゲーム">
+  <meta property="og:description" content="WillowinWorld のリラックスできるモバイル パズルで、インク制限のある物理的なパスを描き、Water Drop と Seed を再会させ、自然を復元します。">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nature Seed WillowinWorld による、描いて解くライン物理パズル">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/ja/games/nature-seed.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nature Seed - リラックスできる描画して解く物理パズル ゲーム">
+  <meta name="twitter:description" content="このモバイル物理パズルでインク制限されたパスを描き、Water Drop と Seed を再結合し、水彩の森を復元します。">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Nature Seed 復元された水彩の森の描画して解く物理パズル">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Nature Seed |リラックスできる描画して解く物理パズル ゲーム</title>
+  <link rel="canonical" href="https://willowinworld.com/ja/games/nature-seed.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ゲーム",
+          "item": "https://willowinworld.com/ja/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nature Seed",
+          "item": "https://willowinworld.com/ja/games/nature-seed.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/ja/games/nature-seed.html#game",
+      "name": "Nature Seed",
+      "url": "https://willowinworld.com/ja/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "description": "インク制限された線が Water Drop と Seed を結び付け、水彩の森を復元する、リラックスできる描いて解く物理パズルです。",
+      "genre": [
+        "描いて解くパズル",
+        "物理パズル",
+        "リラックスパズル",
+        "線画パズル"
+      ],
+      "gamePlatform": "モバイル",
+      "creativeWorkStatus": "活発な開発 - プレイアブルプロトタイプ",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/ja/games/nature-seed.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "ja"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld 開発ブログ RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
+  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/nature-scene.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/nature-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-nature nature-seed-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Nature Seed にスキップ</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — WillowinWorld に戻る">
+      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed モバイル描画パズル ゲーム アイコン" fetchpriority="high" decoding="async">
+      <span><strong>Nature Seed</strong><small>WillowinWorld ゲームページ</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="ゲームページのナビゲーション">
+      <a href="../index.html">スタジオホーム</a>
+      <a href="#devlog">開発ブログ</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">プレスキット</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="テーマを切り替える">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="言語"><details><summary aria-label="言語を選択してください"><span aria-hidden="true">JA</span></summary><div class="language-options"><a href="../../games/nature-seed.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/nature-seed.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/nature-seed.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/nature-seed.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/nature-seed.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/nature-seed.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/nature-seed.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/nature-seed.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/nature-seed.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/nature-seed.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/nature-seed.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/nature-seed.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/nature-seed.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/nature-seed.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/nature-seed.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/nature-seed.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/nature-seed.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/nature-seed.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/nature-seed.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/nature-seed.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="nature-seed.html" lang="ja" hreflang="ja" aria-current="page"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/nature-seed.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/nature-seed.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/nature-seed.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/nature-seed.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/nature-seed.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/nature-seed.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/nature-seed.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/nature-seed.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/nature-seed.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/nature-seed.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/nature-seed.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/nature-seed.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/nature-seed.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/nature-seed.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/nature-seed.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/nature-seed.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/nature-seed.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/nature-seed.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/nature-seed.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/nature-seed.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/nature-seed.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell nature-seed-shell" id="game-main">
+    <div class="nature-page-backdrop ambient-only" aria-hidden="true">
+      <div class="nature-menu-world">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+    </div>
+    <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
+      <div class="nature-hero-bg ambient-only" aria-hidden="true">
+        <div class="nature-stage nature-stage-backdrop">
+          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <picture>
+            <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
+            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+          </picture>
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+            <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
+            <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
+          </svg>
+          <span class="nature-water-drop is-first"></span>
+          <span class="nature-water-drop is-second"></span>
+          <span class="nature-water-drop is-third"></span>
+          <span class="nature-bloom"></span>
+          <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+        </div>
+      </div>
+      <div class="nature-menu-world ambient-only" aria-hidden="true">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+
+      <div class="container nature-hero-layout">
+        <div class="nature-hero-copy">
+          <div class="eyebrow">Nature Seed</div>
+          <h1 id="natureHeroTitle">パスを描きます。それらをまとめてください。</h1>
+          <p class="hero-copy">インク制限のあるストロークがレベルの一部となり、Water Drop と Seed を組み合わせて水彩の森を目覚めさせる瞑想的なモバイル物理パズル。</p>
+          <p class="nature-hero-note">積極的に開発中・プレイアブルプロトタイプ。現在のビルドには 10 のレベル、ライン効率のスター、持続的な進歩、安定した物理ライン生成が含まれています。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Nature+Seed+%E3%83%97%E3%83%AC%E3%82%A4%E3%83%86%E3%82%B9%E3%83%88%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%82%92%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B">プレイテストへのアクセスをリクエスト</a>
+            <a class="btn btn-ghost" href="#devlog">開発ブログを開く</a>
+          </div>
+          <div class="nature-hero-stats" role="group" aria-label="Nature Seed ハイライト">
+            <span><strong>描く</strong><small>限られた回線予算を費やす</small></span>
+            <span><strong>接続する</strong><small>Water Drop を Seed に持ち込む</small></span>
+            <span><strong>ブルーム</strong><small>復元されたシーンを獲得</small></span>
+          </div>
+        </div>
+
+        <aside class="nature-hero-showcase" aria-label="Nature Seed ゲームプレイ プレビュー">
+          <div class="nature-device-frame">
+            <div class="nature-stage nature-stage-showcase" aria-hidden="true">
+              <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
+              <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+              </svg>
+              <span class="nature-water-drop is-first"></span>
+              <span class="nature-water-drop is-second"></span>
+              <span class="nature-bloom"></span>
+              <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+            </div>
+            <img loading="lazy" class="nature-showcase-icon" src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed 水と種の文字が入ったゲーム アイコン" decoding="async">
+            <span class="nature-preview-title">
+              <small>描いて解く物理パズル</small>
+              <strong>Nature Seed</strong>
+            </span>
+            <span class="nature-cycle"><b>スケッチ</b><b>ガイドウォーター</b><b>ブルーム</b></span>
+            <div class="magic-hud">
+              <span>プレイ可能なプロトタイプ · 積極的な開発</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid nature-seed-content">
+      <section class="game-proof-section" aria-labelledby="natureProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">現在のビルドの内部</span>
+            <h2 id="natureProofTitle">ラインは飾りではありません。それはパズルになります。</h2>
+            <p>コミットされたストロークごとに物理的な衝突ジオメトリが作成されます。プレーヤーはインク、ライン数、形状のバランスをとり、Water Drop と Seed がルートに反応するのを観察します。 1 行のソリューションは、最もクリーンな 3 つ星の結果を獲得します。</p>
+            <span class="proof-status"><b>ビルドステータス</b> プレイアブルプロトタイプ</span>
+          </div>
+          <div class="proof-visual">
+            <div class="nature-proof-frames" aria-label="Nature Seed スケッチと復元レベルの比較">
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 560px) 44vw, 28vw" width="1600" height="900" alt="Nature Seed レベルは、パズルを解く前に静かな鉛筆スケッチとして表示されます" loading="lazy" decoding="async">
+                <figcaption><strong>スケッチを読む</strong><span>解決前</span></figcaption>
+              </figure>
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 560px) 44vw, 28vw" width="1280" height="714" alt="ソルブ後に水彩の木とキャラクターで復元された同じ Nature Seed シーン" loading="lazy" decoding="async">
+                <figcaption><strong>花を咲かせよう</strong><span>解決後</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Nature Seed のビルド事実を確認">
+          <article><strong>10 の電流レベル</strong><span>データ駆動型のプロトタイプの進行。</span></article>
+          <article><strong>インクと線の制限</strong><span>すべてのストロークには実際のコストがかかります。</span></article>
+          <article><strong>一行マスタリー</strong><span>三つ星への既定路線。</span></article>
+          <article><strong>持続的な進歩</strong><span>ロック解除されたレベルと結果はセッション間で存続します。</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">ゲーム概要</div>
+        <h2>2 人の小さなキャラクターを組み合わせる、リラックスできるライン物理パズル。</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>選手の約束</h3><p>きれいな物理的なパスを描き、Water Drop と Seed を一緒に持ってきて、静かなスケッチが生き返るのを見てください。</p></article>
+          <article class="detail-card"><h3>現在のビルド</h3><p>10 のプレイ可能なレベルは、タッチ描画、物理的なライン ジオメトリ、ライン効率スター、永続的な進行と復元フィードバックを組み合わせています。</p></article>
+          <article class="detail-card"><h3>観客</h3><p>落ち着いたパズル ゲーム、エコ テーマ、光の物理学、居心地の良い修復、美しい 2D アート、モバイル セッションをストレスなく楽しむプレイヤー。</p></article>
+          <article class="detail-card"><h3>ステータス</h3><p>活発な開発 - プレイ可能なプロトタイプ。現在の作業は、描画の感触、レベルの読みやすさ、進行状況、モバイルの安定性に重点を置いています。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">特徴</div>
+        <h2>Nature Seed でプレイヤーが行うこと。</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>描画から解決までの物理パス</h3><p>各パズルは地形、Seed と Water Drop から始まります。プレイヤーのストロークは意図と物理の架け橋となります。</p></article>
+          <article class="detail-card"><h3>読みやすい物理フィードバック</h3><p>キャラクターの動きは一目で理解できるように設計されているため、失敗した試みはランダムな罰ではなく情報のように感じられます。</p></article>
+          <article class="detail-card"><h3>森林回復報酬</h3><p>レベルを解決すると、スコア画面だけでなく、成長、色、小さな感情的なフィードバックとともにシーンが生き返ります。</p></article>
+          <article class="detail-card"><h3>モバイルファーストのパズルペース</h3><p>手作りの短いレベル、タッチ描画、明確なシルエットにより、iOS および Android の素早いセッションでもゲームが快適に保たれます。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">ゲームプレイループ</div>
+        <h2>レベルを読み、ルートを描き、キャラクターに次の挑戦を教えてもらいます。</h2>
+        <ul class="update-list">
+          <li><span>ステップ01</span><strong>スケッチを読む</strong><p>プレイヤーは、坂道、ギャップ、障害物、そして両方のキャラクターを接続する最も安全な方法を探します。</p></li>
+          <li><span>ステップ02</span><strong>線を引く</strong><p>指のストロークは、キャラクターの物理的なガイド、ランプ、またはキャッチ ポイントになります。</p></li>
+          <li><span>ステップ03</span><strong>コミットして観察する</strong><p>キャラクターは物理的なルートに反して動き、UI の重い説明なしで成功と失敗が目に見えるようになります。</p></li>
+          <li><span>ステップ04</span><strong>開花または洗練</strong><p>Water Drop が Seed に達すると、森が復元されます。ミスした場合、プレーヤーはより明確な情報を使用して再描画します。</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">ストーリー・世界観</div>
+        <h2>静かな森、渇いた種、そしてケアを中心に構築されたパズル言語。</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed は、単純な質問から始まりました。描画して解く物理パズルが、物体を押し合わせることではなく、壊れやすいものを復元することだったらどうなるでしょうか?</p>
+            <p>世界は Seed、Water Drop、そしてスケッチからゆっくりと現実に戻る森を中心に構築されています。すべてのパズルは、小さな気遣いの行為のように感じられるように意図されています。プレイヤーは土地を調査し、道を描き、成長できるものに水が到達するのを助けます。</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>デザインディレクション</dt><dd>穏やかな物理学と目に見える修復</dd></div>
+            <div><dt>感情の核</dt><dd>Seed、水と回復</dd></div>
+            <div><dt>インタラクション</dt><dd>原因と結果が読み取れるタッチ描画</dd></div>
+            <div><dt>マスタリー報酬</dt><dd>一行解決で 3 つ星を獲得</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">発行者の角度</div>
+        <h2>透明なモバイルフックが付いた居心地の良いパズル。</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed は、1 つの限られたストロークをレベル ジオメトリに変換します。物理的なルートを描画し、Water Drop と Seed を再結合し、同じソリューションを改良して 1 行の 3 つ星の結果を実現します。</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>ジャンル</dt><dd>描いて解く物理パズル</dd></div>
+            <div><dt>プラットフォームターゲット</dt><dd>iOS / Android</dd></div>
+            <div><dt>セッションの形状</dt><dd>短い穏やかなレベル</dd></div>
+            <div><dt>プライマリCTA</dt><dd>プレイテストへのアクセスをリクエスト</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">アセットをダウンロード</div>
+        <h2>Nature Seed プレスおよびクリエイターのアセット</h2>
+        <p class="asset-kit-copy">編集報道、出版社のレビュー、店舗レイアウトの参考のために厳選された WebP のプレビュー。フル解像度のソース ファイルは、リクエストに応じてスタジオから入手できます。</p>
+        <h3 class="asset-group-title">ブランドとキャラクター</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed 描画して解くラインの物理パズル ゲーム アイコン" loading="lazy" decoding="async"><strong>ゲームアイコン</strong><span>描いて解くラインの物理パズルアイコン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed モバイル物理パズル ゲーム用ウォーター ドロップ キャラクター" loading="lazy" decoding="async"><strong>Water Drop</strong><span>復興パズルファンタジーのキャラクターアセット。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed 居心地の良いパズル ゲームのシード キャラクター" loading="lazy" decoding="async"><strong>Seed 文字</strong><span>Nature Seed のコアキャラクターアセット。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed 木の成長回復アセット" loading="lazy" decoding="async"><strong>木の成長</strong><span>自然回復報酬資産。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed リラックスパズルフォレストメニュー背景" loading="lazy" decoding="async"><strong>森のメニュー</strong><span>リラックスできるモバイルパズルメニューの背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed 手描きの物理レベルの背景" loading="lazy" decoding="async"><strong>ゲームプレイの背景</strong><span>手描きの物理レベルの背景。</span></a>
+        </div>
+        <h3 class="asset-group-title">描いて解決するスケッチ レベル</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 01" loading="lazy" decoding="async"><strong>スケッチレベル01</strong><span>水物理パズルのドラフトシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 1536w" sizes="(max-width: 760px) 34vw, 76px" width="1536" height="764" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 02" loading="lazy" decoding="async"><strong>スケッチレベル02</strong><span>水のルーティングパズルのドラフトシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 03" loading="lazy" decoding="async"><strong>スケッチレベル03</strong><span>線画パズルの下書きシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 04" loading="lazy" decoding="async"><strong>スケッチレベル04</strong><span>モバイル物理パズルのドラフトシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 05" loading="lazy" decoding="async"><strong>スケッチレベル05</strong><span>水路パズルの下書きシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 06" loading="lazy" decoding="async"><strong>スケッチレベル06</strong><span>物理ルートパズルのドラフトシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 07" loading="lazy" decoding="async"><strong>スケッチレベル07</strong><span>描かれたラインパズルの下書きシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 08" loading="lazy" decoding="async"><strong>スケッチレベル08</strong><span>水流パズルの下書きシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 09" loading="lazy" decoding="async"><strong>スケッチレベル09</strong><span>復元パズルのドラフトシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 描画から解決までの水物理学スケッチ レベル 10" loading="lazy" decoding="async"><strong>スケッチ レベル 10</strong><span>ネイチャーパズルのドラフトシーン。</span></a>
+        </div>
+        <h3 class="asset-group-title">パズルシーンの復元</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="714" alt="Nature Seed 自然復元パズル復元レベル 01" loading="lazy" decoding="async"><strong>レベル01を復元</strong><span>自然回復パズルシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 自然回復パズル復元レベル 02" loading="lazy" decoding="async"><strong>レベル02を復元</strong><span>森のパズルシーンを復元しました。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 自然回復パズル復元レベル 03" loading="lazy" decoding="async"><strong>レベル03を復元</strong><span>水と森のパズルシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 自然回復パズル復元レベル 04" loading="lazy" decoding="async"><strong>レベル04を復元</strong><span>自然パズルシーンを回収しました。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 自然回復パズル復元レベル 05" loading="lazy" decoding="async"><strong>レベル05を復元</strong><span>穏やかな復元パズルシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 自然復元パズル復元レベル 06" loading="lazy" decoding="async"><strong>レベル06を復元</strong><span>自然回復パズルシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 自然復元パズル復元レベル 07" loading="lazy" decoding="async"><strong>レベル07を復元</strong><span>風景パズルのシーンを復元しました。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 自然回復パズル復元レベル 08" loading="lazy" decoding="async"><strong>レベル08を復元</strong><span>緑の復元パズルシーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 自然復元パズル復元レベル 09" loading="lazy" decoding="async"><strong>レベル09を復元</strong><span>水パズル回収シーン。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 自然回復パズル復元レベル 10" loading="lazy" decoding="async"><strong>レベル10を回復しました</strong><span>復元パズルシーンが完成しました。</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">開発の旅</div>
+        <h2>小さな修復アイデアから 10 レベルのプレイ可能なプロトタイプまで。</h2>
+        <ul class="update-list">
+          <li><span>2025年夏</span><strong>オリジナルコンセプト</strong><p>Nature Seed は、つながり、自然、修復に関する穏やかなモバイル パズルのアイデアとして始まりました。</p></li>
+          <li><span>2025 年 10 月</span><strong>Seed と Water Drop のアイデンティティ</strong><p>GDD が完成し、Seed と Water Drop がゲームのビジュアル アイデンティティの感情的な中心となりました。</p></li>
+          <li><span>2025 年 12 月</span><strong>開発開始</strong><p>最初のペーパーレベルが計画された後、積極的な開発が始まり、コアシステムがプレイ可能な形に移行しました。</p></li>
+          <li><span>2026 年 2 月</span><strong>ラージドラフトレベルパス</strong><p>ゲームは大まかなコンテンツの段階に達し、その後の磨き、バランス、制作の改善のための基礎を築きました。</p></li>
+          <li><span>2026年3月～4月</span><strong>メカニクスとレベルのレビュー</strong><p>追加の仕組みとドラフト レベルが見直され、簡素化され、再加工され、ゲームをより穏やかに、より明確に、より集中できるようになりました。</p></li>
+          <li><span>2026 年 7 月</span><strong>垂直プロトタイプパス</strong><p>現在のビルドでは、10 レベル、制約されたライン描画、効率スター、持続的な進行、安定したライン生成が 1 つのプレイ可能なループに組み込まれています。</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">関連ワールド</div>
+        <h2>穏やかなラインの物理学から次の WillowinWorld フックに進みます。</h2>
+        <p class="related-worlds-copy">Nature Seed は、ポートフォリオのリラックスしたドロー・トゥ・ソルブ側です。スタジオの居心地の良いキャンディー マージ パズル、カラー破壊の物理アーケード、ハードコアな回転塔降下と比較してください。</p>
+        <div class="related-world-grid" aria-label="WillowinWorld ゲーム関連ページ">
+          <a class="related-world-link is-primary" href="candy-shop.html">
+            <span class="related-world-kicker">居心地の良いマージパズル</span>
+            <strong>Candy Shop</strong>
+            <p>お菓子を落としたり、一致するキャンディーを結合したり、コンテナーの圧力を管理したり、ソフトな物理学を中心に長時間のセッションの進行を構築したりします。</p>
+            <span class="related-world-meta">キャンディーマージゲーム</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">カラー物理アーケード</span>
+            <strong>Paint Blasters</strong>
+            <p>色で動く発射体を混ぜ、タワーの弱点を狙い、一撃を連鎖反応に変えます。</p>
+            <span class="related-world-meta">カラー破壊パズル</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">ハードコアアーケード</span>
+            <strong>Ball is God?!</strong>
+            <p>Espa を中心に敵対的なタワーを回転させ、コンボスマッシュを構築し、神話の世界全体でボスのプレッシャーを乗り越えましょう。</p>
+            <span class="related-world-meta">垂直降下アーケード</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">プレス/出版社</span>
+            <strong>ポートフォリオの事実</strong>
+            <p>ゲームのステータス、公開アセット、ジャンル、フック、パブリッシャーのコンテキストを 1 つのコンパクトなプレスキット セクションで確認します。</p>
+            <span class="related-world-meta">WillowinWorld プレスキット</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Nature Seed FAQ</div>
+        <h2>プレーヤー、プレス、出版パートナー向けの回答。</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Nature Seedってどんなパズル？</h3><p>限られた線が 2 人のキャラクターの出会いを助ける物理的なオブジェクトになる、リラックスできる描画して解く物理パズルです。</p></article>
+          <article class="detail-card"><h3>ゲームプレイはどのように機能しますか?</h3><p>地形を読み、制約のあるルートを描き、両方のキャラクターがそれに反応するのを観察し、パスにもっときれいな角度が必要なときに再描画します。</p></article>
+          <article class="detail-card"><h3>何が違うのですか？</h3><p>高圧タイマーや騒々しい障害ではなく、穏やかな復元、読みやすいライン物理学、効率的な 1 ラインのソリューションに重点を置いています。</p></article>
+          <article class="detail-card"><h3>現在の状況はどうですか？</h3><p>現在 10 レベルのプレイアブル プロトタイプとして積極的に開発中。描画感、進行性、読みやすさ、モバイルの安定性に重点を置いています。</p></article>
+          <article class="detail-card"><h3>公開素材は使用できますか？</h3><p>はい、プレス、出版社のレビュー、ストアの参照用です。ソース資産は、直接要求されない限り非公開のままです。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Nature Seed 開発ブログ</div>
+        <h2>いつ何が変わったのか</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">2026 年 7 月 31 日</time><strong>レベル2の復元と安定性改善</strong><p>レベル 2 は、より信頼性の高いレベル設定、衝突チェック、完了フィードバックを備えたプロダクション バックグラウンド ペアを使用するようになりました。</p></li>
+          <li><span>2026 年 7 月</span><strong>10レベルのプレイアブルプロトタイプ</strong><p>現在のビルドでは、制約のある物理的な線画、効率の星、持続的な進行状況、および 10 レベルにわたる修復フィードバックが結合されています。</p></li>
+          <li><span>2026 年 4 月</span><strong>レベルリワークパス</strong><p>不必要な複雑さを取り除き、モバイルでの読みやすさを向上させるために、内部レビューの後、いくつかのドラフトレベルが再加工されました。</p></li>
+          <li><span>2026 年 3 月</span><strong>メカニックレビュー</strong><p>チームは追加のメカニズムをテストし、エクスペリエンスに過負荷を感じさせるメカニズムを削除しました。</p></li>
+          <li><span>2026 年 2 月</span><strong>ラージドラフトレベルパス</strong><p>大規模な大まかなコンテンツ パスが、後の磨き、バランス、制作上の改良の基礎となりました。</p></li>
+          <li><span>2025 年 12 月</span><strong>開発開始</strong><p>コア システムはコンセプトと GDD からプレイ可能な形式に移行し始めました。</p></li>
+          <li><span>2025年夏</span><strong>オリジナルコンセプト</strong><p>Nature Seed の最初のバージョンは、つながり、自然、修復に関する穏やかなパズルのアイデアとして始まりました。</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Nature Seed は WillowinWorld ゲームです。</strong>
+        <span>描画して解決する物理学、水彩画の修復、そして完成させる価値のある小さなパス。</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Nature Seed フッター ナビゲーション">
+        <a href="../index.html#games">すべてのゲーム</a>
+        <a href="../press-kit.html">プレスキット</a>
+        <a href="../privacy.html">プライバシー</a>
+        <a href="../legal.html">法的</a>
+        <a href="mailto:contact@willowinworld.com?subject=Nature%20Seed">お問い合わせ</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

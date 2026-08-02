@@ -13,6 +13,7 @@ import {
   sourceLocale,
   translatedLocales
 } from "./localization-config.mjs";
+import { gameDevlogSources, loadLatestDevlogs } from "./devlog-data.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const translationRoot = join(siteRoot, "tools", "locales");
@@ -21,6 +22,10 @@ const checkOnly = process.argv.includes("--check");
 const refreshLocales = new Set((process.argv.find(argument => argument.startsWith("--refresh="))?.split("=")[1] || "").split(",").filter(Boolean));
 const batchSize = 20;
 const translationConcurrency = 4;
+const translationRetries = 4;
+const nonLatinLocaleCodes = new Set([
+  "ar", "hy", "bn", "bg", "zh-hans", "zh-hant", "el", "he", "hi", "ja", "ko", "fa", "kk", "ru", "th", "tt", "uk", "ur"
+]);
 
 const alternateStart = "<!-- locale-alternates:start -->";
 const alternateEnd = "<!-- locale-alternates:end -->";
@@ -122,6 +127,88 @@ const protectedExactText = new Set([
 ]);
 
 const manualTranslationOverrides = Object.freeze({
+  hy: Object.freeze({
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Ինդի շարժական գլուխկոտրուկների և արկադային խաղերի ստուդիա",
+    "Physics Puzzle / Arcade Hybrid": "Ֆիզիկական գլուխկոտրուկ / արկադային հիբրիդ"
+  }),
+  cs: Object.freeze({
+    "Hardcore Vertical Descent Arcade": "Hardcore arkáda s vertikálním sestupem"
+  }),
+  da: Object.freeze({
+    "Hardcore Vertical Descent Arcade": "Hardcore arkadespil med lodret nedstigning",
+    "Spotlight · Nature Seed prototype": "Fokus · Nature Seed-prototype",
+    "WillowinWorld - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld - Uafhængigt studie for mobile puzzle- og arkadespil",
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Uafhængigt studie for mobile puzzle- og arkadespil"
+  }),
+  nl: Object.freeze({
+    "Open Nature Seed devlog": "Open het devlog van Nature Seed",
+    "Open Candy Shop devlog": "Open het devlog van Candy Shop",
+    "Open Paint Blasters devlog": "Open het devlog van Paint Blasters",
+    "Open Ball is God?! devlog": "Open het devlog van Ball is God?!"
+  }),
+  fil: Object.freeze({
+    "Ball is God Development Build": "Bersiyon para sa pagbuo ng Ball is God",
+    "Night Magic / Daylight": "Mahikang Gabi / Liwanag ng Araw",
+    "Prototype": "Prototipo",
+    "First prototype": "Unang prototipo",
+    "Playable prototype": "Nalalarong prototipo",
+    "Playable Prototype": "Nalalarong Prototipo",
+    "Playable Vertical Prototype": "Nalalarong Prototipo ng Patayong Pagbaba",
+    "Ten-level playable prototype": "Nalalarong prototipo na may sampung antas",
+    "Active development - playable prototype": "Aktibong pagbuo - nalalarong prototipo",
+    "Polish": "Pagpapakinis",
+    "Live Care": "Patuloy na suporta",
+    "Latest dev notes,": "Pinakabagong tala sa pagbuo,",
+    "no digging.": "nang hindi na naghahanap.",
+    "Level 2 restoration and stability pass": "Pagpapanumbalik ng Level 2 at pagpapahusay ng katatagan",
+    "Production menu and HUD pass": "Pagpapahusay sa production menu at HUD",
+    "Physics and effect stability pass": "Pagpapahusay sa katatagan ng pisika at mga epekto",
+    "Clear draft": "Burahin ang draft",
+    "Descent cleared": "Nakumpleto ang pagbaba",
+    "Production state": "Kalagayan ng produksyon"
+  }),
+  fi: Object.freeze({
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Riippumaton mobiilipulma- ja arcadepelistudio",
+    "Color Destruction Physics Puzzle": "Värintuhoon perustuva fysiikkapulma",
+    "Hardcore Vertical Descent Arcade": "Haastava pystysuoran laskeutumisen arcadepeli",
+    "Night Magic / Daylight": "Yön taika / Päivänvalo"
+  }),
+  hu: Object.freeze({
+    "Hardcore Vertical Descent Arcade": "Nehéz függőleges ereszkedésű arcade",
+    "Night Magic / Daylight": "Éjszakai varázs / Nappali fény"
+  }),
+  hi: Object.freeze({
+    "Showing {count}: {filter}": "{filter} श्रेणी में {count} गेम दिखाए जा रहे हैं"
+  }),
+  ja: Object.freeze({
+    "Polish": "仕上げ",
+    "Live Care": "継続運用",
+    "Latest dev notes,": "最新の開発情報を、",
+    "no digging.": "探す手間なく。",
+    "Level 2 restoration and stability pass": "レベル2の復元と安定性改善",
+    "Production menu and HUD pass": "本番用メニューとHUDの改善",
+    "Physics and effect stability pass": "物理挙動とエフェクトの安定性改善",
+    "Clear draft": "下書きを消去",
+    "Descent cleared": "降下クリア",
+    "Player character": "プレイヤーキャラクター",
+    "Production state": "制作状況"
+  }),
+  no: Object.freeze({
+    "Ball is God?! - Hardcore Vertical Descent Arcade Game": "Ball is God?! - Hardcore arkadespill med vertikal nedstigning",
+    "Ball is God?! | Vertical Descent Tower Arcade Game": "Ball is God?! | Arkadespill med roterende tårn og vertikal nedstigning",
+    "Candy Shop - Cozy Candy Merge Puzzle Game": "Candy Shop - Koselig puslespill med sammenslåing av godteri",
+    "Hardcore Vertical Descent Arcade": "Hardcore arkadespill med vertikal nedstigning",
+    "Paint Blasters - Color Destruction Physics Puzzle Game": "Paint Blasters - Fysikkpuslespill med fargeødeleggelse",
+    "Spotlight · Nature Seed prototype": "I fokus · Nature Seed-prototype",
+    "WillowinWorld - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld - Uavhengig studio for mobile pusle- og arkadespill",
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Uavhengig studio for mobile pusle- og arkadespill"
+  }),
+  ro: Object.freeze({
+    "Ball is God?! - Hardcore Vertical Descent Arcade Game": "Ball is God?! - Joc arcade hardcore cu coborâre verticală",
+    "Cozy Physics Merge Puzzle": "Puzzle relaxant de fizică și combinare",
+    "Hardcore Vertical Descent Arcade": "Arcade hardcore cu coborâre verticală",
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Studio indie de jocuri mobile puzzle și arcade"
+  }),
   ru: Object.freeze({
     "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Инди-студия мобильных головоломок и аркад",
     "Nature Seed | Relaxing Draw-to-Solve Physics Puzzle Game": "Nature Seed | Уютная физическая головоломка с рисованием",
@@ -183,6 +270,11 @@ const manualTranslationOverrides = Object.freeze({
     "Active Production · Ten Locations": "В активной разработке · Десять локаций",
     "Build status": "Статус версии",
     "Active production": "В активной разработке",
+    "Magic hunt": "Охота за магией",
+    "End magic hunt": "Завершить охоту за магией",
+    "Enable Magic": "Включить магию",
+    "Hidden promo letter": "Скрытая промо-буква",
+    "Hidden promo letter {letter}": "Скрытая промо-буква {letter}",
     "Karma changes more than the dialogue.": "Карма меняет не только диалоги.",
     "The descent now has a face before the first drop.": "У спуска появилось лицо ещё до первого падения.",
     "Nature Seed press and creator assets": "Материалы Nature Seed для прессы и авторов",
@@ -315,10 +407,35 @@ const manualTranslationOverrides = Object.freeze({
     "Candy Shop press and creator assets": "Materiais de Candy Shop para imprensa e criadores",
     "Paint Blasters press and creator assets": "Materiais de Paint Blasters para imprensa e criadores",
     "Ball is God?! press and creator assets": "Materiais de Ball is God?! para imprensa e criadores"
+  }),
+  de: Object.freeze({
+    "Nature Seed is a draw-to-solve physics puzzle in active development. Draw an ink-limited path, reunite Water Drop and Seed, and restore a watercolor forest.": "Nature Seed ist ein Physikrätsel in aktiver Entwicklung. Zeichne einen Weg mit begrenzter Tinte, vereine Water Drop und Seed und erwecke einen Aquarellwald zu neuem Leben.",
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Indie-Studio für mobile Puzzle- und Arcade-Spiele",
+    "Hardcore Vertical Descent Arcade": "Hardcore-Arcade mit vertikalem Abstieg"
+  }),
+  ar: Object.freeze({
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | استوديو مستقل لألعاب الألغاز والأركيد على الهاتف",
+    "Canonical English source": "المصدر الإنجليزي الأساسي"
+  }),
+  fa: Object.freeze({
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | استودیوی مستقل بازی‌های پازل و آرکید موبایل"
+  }),
+  kk: Object.freeze({
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Мобильді басқатырғыштар мен аркада ойындарының тәуелсіз студиясы"
+  }),
+  ms: Object.freeze({
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Studio Bebas Permainan Teka-teki dan Arked Mudah Alih"
+  }),
+  sw: Object.freeze({
+    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Studio Huru ya Michezo ya Simu ya Mafumbo na Arcade"
   })
 });
 
 const explicitRuntimeStrings = Object.freeze([
+  "Language",
+  "Choose language",
+  "Showing {count}: {filter}",
+  "Hidden letters: {found}/{total}",
   "Static",
   "Play",
   "Paused",
@@ -340,6 +457,7 @@ const explicitRuntimeStrings = Object.freeze([
   "End magic hunt",
   "Magic hunt",
   "Hidden promo letter",
+  "Hidden promo letter {letter}",
   "Close menu",
   "Open menu",
   "Hidden letters are awake.",
@@ -353,7 +471,28 @@ const explicitRuntimeStrings = Object.freeze([
   "Draft restored from this browser tab.",
   "Draft cleared. New text will save in this tab.",
   "Switch to light theme",
-  "Switch to dark theme"
+  "Switch to dark theme",
+  "WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.",
+  "Site language",
+  "Canonical English source",
+  "Games",
+  "Genres",
+  "Current status",
+  "Latest development notes",
+  "Published",
+  "Studio and press",
+  "Studio home",
+  "Press kit",
+  "Media asset usage",
+  "Feeds and policies",
+  "Devlog RSS feed",
+  "XML sitemap",
+  "Language index",
+  "Privacy policy",
+  "Legal notice",
+  "Contact",
+  "Email WillowinWorld",
+  ...gameDevlogSources.flatMap(game => [game.status, game.machineSummary, ...game.genres])
 ]);
 
 function decodeHtml(value) {
@@ -382,6 +521,34 @@ function normalizedText(value) {
   return decodeHtml(value).replace(/\s+/g, " ").trim();
 }
 
+function mailtoTextFields(value) {
+  if (!/^mailto:/i.test(value || "")) return [];
+  try {
+    const url = new URL(decodeHtml(value));
+    return ["subject", "body"]
+      .map(key => url.searchParams.get(key))
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+function localizeMailto(value, translations) {
+  if (!/^mailto:/i.test(value || "")) return value;
+  try {
+    const url = new URL(decodeHtml(value));
+    for (const key of ["subject", "body"]) {
+      const current = url.searchParams.get(key);
+      if (!current) continue;
+      const translated = translations[normalizedText(current)];
+      if (translated) url.searchParams.set(key, translated);
+    }
+    return encodeHtml(url.href, true);
+  } catch {
+    return value;
+  }
+}
+
 function shouldTranslate(value) {
   const text = normalizedText(value);
   if (!text || protectedExactText.has(text)) return false;
@@ -396,7 +563,8 @@ function shouldTranslate(value) {
 function stripGeneratedBlocks(html) {
   return html
     .replace(new RegExp(`\\s*${alternateStart}[\\s\\S]*?${alternateEnd}`, "g"), "")
-    .replace(new RegExp(`\\s*${switcherStart}[\\s\\S]*?${switcherEnd}`, "g"), "");
+    .replace(new RegExp(`\\s*${switcherStart}[\\s\\S]*?${switcherEnd}`, "g"), "")
+    .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "");
 }
 
 function pageSourceHash(pageSources) {
@@ -444,13 +612,18 @@ function collectStrings(html) {
 
   for (const tag of visible.match(/<[^>]+>/g) || []) {
     if (/^<meta\b/i.test(tag)) {
-      const key = tag.match(/\b(?:name|property)=["']([^"']+)["']/i)?.[1]?.toLowerCase();
-      const content = tag.match(/\bcontent=["']([^"']*)["']/i)?.[1];
+      const key = tag.match(/\b(?:name|property)=(["'])([\s\S]*?)\1/i)?.[2]?.toLowerCase();
+      const content = tag.match(/\bcontent=(["'])([\s\S]*?)\1/i)?.[2];
       if (key && metaTranslationKeys.has(key) && content && shouldTranslate(content)) {
         result.add(normalizedText(content));
       }
     }
-    for (const [, name, value] of tag.matchAll(/\b([\w-]+)=["']([^"']*)["']/g)) {
+    for (const [, name, , value] of tag.matchAll(/\b([\w-]+)=(["'])([\s\S]*?)\2/g)) {
+      if (name.toLowerCase() === "href") {
+        mailtoTextFields(value).forEach(field => {
+          if (shouldTranslate(field)) result.add(normalizedText(field));
+        });
+      }
       if (translatableAttributes.has(name.toLowerCase()) && shouldTranslate(value)) {
         result.add(normalizedText(value));
       }
@@ -489,17 +662,29 @@ async function readTranslationMemory(locale, sourceHash) {
   }
 }
 
+function protectedTermPattern(term, flags = "u") {
+  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(^|[^\\p{L}\\p{N}])${escaped}(?=$|[^\\p{L}\\p{N}])`, flags);
+}
+
 function protectTerms(value) {
   const replacements = [];
   let protectedValue = value;
+  for (const placeholder of new Set(value.match(/\{[^{}]+\}/g) || [])) {
+    const token = `__W${replacements.length}__`;
+    protectedValue = protectedValue.replaceAll(placeholder, token);
+    replacements.push({ token, term: placeholder });
+  }
   const exactOnlyFragments = new Set(["illo", "w", "in", "orld"]);
   [...protectedExactText]
     .sort((left, right) => right.length - left.length)
     .forEach(term => {
       if (exactOnlyFragments.has(term) && value !== term) return;
-      if (!protectedValue.includes(term)) return;
-      const token = `WILLOWPROTECTED${replacements.length}TOKEN`;
-      protectedValue = protectedValue.replaceAll(term, token);
+      const pattern = protectedTermPattern(term, "gu");
+      if (!pattern.test(protectedValue)) return;
+      pattern.lastIndex = 0;
+      const token = `__W${replacements.length}__`;
+      protectedValue = protectedValue.replace(pattern, (match, prefix) => `${prefix}${token}`);
       replacements.push({ token, term });
     });
   return { protectedValue, replacements };
@@ -508,27 +693,56 @@ function protectTerms(value) {
 function restoreTerms(value, replacements) {
   let restored = value;
   replacements.forEach(({ token, term }) => {
-    restored = restored.replaceAll(token, term).replaceAll(token.toLowerCase(), term);
+    const tokenIndex = token.match(/\d+/)?.[0];
+    const tolerantToken = tokenIndex ? new RegExp(`__\\s*W\\s*${tokenIndex}\\s*__`, "gi") : null;
+    restored = tolerantToken
+      ? restored.replace(tolerantToken, term)
+      : restored.replaceAll(token, term).replaceAll(token.toLowerCase(), term);
   });
   return restored;
+}
+
+function wait(delay) {
+  return new Promise(resolve => setTimeout(resolve, delay));
+}
+
+async function fetchTranslation(url, attempt = 0) {
+  try {
+    const response = await fetch(url, { signal: AbortSignal.timeout(45_000) });
+    if (response.ok) return response;
+    if (attempt >= translationRetries || ![429, 500, 502, 503, 504].includes(response.status)) {
+      throw new Error(`Translation endpoint returned ${response.status} ${response.statusText}`);
+    }
+  } catch (error) {
+    if (attempt >= translationRetries) throw error;
+  }
+  await wait(500 * (2 ** attempt));
+  return fetchTranslation(url, attempt + 1);
 }
 
 async function requestTranslations(locale, entries) {
   const protectedEntries = entries.map(entry => ({ ...entry, ...protectTerms(entry.text) }));
   const markerFor = index => `⟦${String(index).padStart(3, "0")}⟧`;
-  const query = protectedEntries.map((entry, index) => `${markerFor(index)} ${entry.protectedValue}`).join("\n");
+  const singleEntry = protectedEntries.length === 1;
+  const query = singleEntry
+    ? protectedEntries[0].protectedValue
+    : protectedEntries.map((entry, index) => `${markerFor(index)} ${entry.protectedValue}`).join("\n");
   const url = new URL("https://translate.googleapis.com/translate_a/single");
   url.searchParams.set("client", "gtx");
   url.searchParams.set("sl", "en");
-  url.searchParams.set("tl", locale.code);
+  url.searchParams.set("tl", locale.translateCode || locale.htmlLang || locale.code);
   url.searchParams.set("dt", "t");
   url.searchParams.set("q", query);
 
-  const response = await fetch(url, { signal: AbortSignal.timeout(45_000) });
-  if (!response.ok) throw new Error(`Translation endpoint returned ${response.status} ${response.statusText}`);
+  const response = await fetchTranslation(url);
   const body = await response.json();
   const combined = Array.isArray(body?.[0]) ? body[0].map(segment => segment?.[0] || "").join("") : "";
   const byId = new Map();
+  if (singleEntry && combined.trim()) {
+    const entry = protectedEntries[0];
+    byId.set(entry.id, restoreTerms(combined.trim(), entry.replacements));
+    return byId;
+  }
   for (const [entryIndex, entry] of protectedEntries.entries()) {
     const marker = markerFor(entryIndex);
     const start = combined.indexOf(marker);
@@ -540,11 +754,6 @@ async function requestTranslations(locale, entries) {
     const end = laterMarkers.length ? Math.min(...laterMarkers) : combined.length;
     const translated = restoreTerms(combined.slice(valueStart, end).trim(), entry.replacements);
     if (translated) byId.set(entry.id, translated);
-  }
-
-  if (protectedEntries.length === 1 && !byId.size && combined.trim()) {
-    const entry = protectedEntries[0];
-    byId.set(entry.id, restoreTerms(combined.trim(), entry.replacements));
   }
 
   const missing = entries.filter(entry => !byId.get(entry.id));
@@ -559,32 +768,108 @@ async function requestTranslations(locale, entries) {
   return byId;
 }
 
+function protectedTermsIn(value) {
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld"]);
+  return [...protectedExactText].filter(term => {
+    if (exactOnlyFragments.has(term)) return value === term;
+    return protectedTermPattern(term).test(value);
+  });
+}
+
+function containsUnexpectedEnglishRun(locale, translation) {
+  if (!nonLatinLocaleCodes.has(locale.code)) return false;
+  let candidate = translation;
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld"]);
+  for (const term of protectedExactText) {
+    if (!exactOnlyFragments.has(term)) candidate = candidate.replace(protectedTermPattern(term, "gu"), "$1 ");
+  }
+  return /\b[A-Za-z][A-Za-z'-]*(?:\s+[A-Za-z][A-Za-z'-]*){3,}\b/.test(candidate);
+}
+
+function translationNeedsRepair(locale, source, translation) {
+  if (!translation || typeof translation !== "string") return true;
+  if (/WILLOW(?:PROTECTED|PLACEHOLDER)|__W\d+__|⟦|⟧/iu.test(translation)) return true;
+  const placeholders = source.match(/\{[^{}]+\}/g) || [];
+  if (placeholders.some(placeholder => !translation.includes(placeholder))) return true;
+  if (!source.includes("\n") && translation.includes("\n")) return true;
+  if (translation === source && source.length >= 24 && source.trim().split(/\s+/).length >= 4) return true;
+  if (translation.length > Math.max(160, source.length * 4.5)) return true;
+  if (source.length > 24 && translation.length < Math.max(4, source.length * 0.08)) return true;
+  if (containsUnexpectedEnglishRun(locale, translation)) return true;
+  return protectedTermsIn(source).some(term => !translation.includes(term));
+}
+
+async function repairTranslations(locale, memory, requiredStrings) {
+  const suspect = [...requiredStrings].filter(source => translationNeedsRepair(locale, source, memory.translations[source]));
+  if (!suspect.length) return 0;
+  if (!translateMissing) {
+    const examples = suspect.slice(0, 3)
+      .map(source => `${JSON.stringify(source)} => ${JSON.stringify(memory.translations[source])}`)
+      .join("; ");
+    throw new Error(`${locale.code}: ${suspect.length} translations need repair (${examples}); run node site/tools/localize-site.mjs --translate`);
+  }
+
+  console.log(`${locale.code}: repairing ${suspect.length} translations individually`);
+  let completed = 0;
+  for (let start = 0; start < suspect.length; start += translationConcurrency) {
+    const wave = suspect.slice(start, start + translationConcurrency);
+    const translated = await Promise.all(wave.map((source, index) => {
+      const entry = { id: `repair_${start + index}`, text: source };
+      return requestTranslations(locale, [entry]).then(result => [source, result.get(entry.id)]);
+    }));
+    translated.forEach(([source, value]) => {
+      memory.translations[source] = value;
+    });
+    completed += translated.length;
+    await writeFile(memory.path, `${JSON.stringify({
+      locale: locale.code,
+      sourceHash: memory.sourceHash,
+      translations: memory.translations
+    }, null, 2)}\n`);
+    if (completed % 40 === 0 || completed === suspect.length) console.log(`${locale.code}: repaired ${completed}/${suspect.length}`);
+  }
+
+  const remaining = suspect.filter(source => translationNeedsRepair(locale, source, memory.translations[source]));
+  if (remaining.length) {
+    const examples = remaining.slice(0, 3).map(source => `${JSON.stringify(source)} => ${JSON.stringify(memory.translations[source])}`).join("; ");
+    throw new Error(`${locale.code}: ${remaining.length} translations remain invalid after repair (${examples})`);
+  }
+  return suspect.length;
+}
+
 async function fillMissingTranslations(locale, memory, requiredStrings) {
   const missing = [...requiredStrings].filter(key => !memory.translations[key]);
-  if (!missing.length) return false;
-  if (!translateMissing) {
+  if (missing.length && !translateMissing) {
     throw new Error(`${locale.code}: ${missing.length} translations are missing; run node site/tools/localize-site.mjs --translate`);
   }
 
-  console.log(`${locale.code}: translating ${missing.length} new strings`);
-  const batches = [];
-  for (let start = 0; start < missing.length; start += batchSize) batches.push(missing.slice(start, start + batchSize));
-  let completed = 0;
-  for (let start = 0; start < batches.length; start += translationConcurrency) {
-    const wave = batches.slice(start, start + translationConcurrency);
-    const translatedWaves = await Promise.all(wave.map((batch, waveIndex) => {
-      const entries = batch.map((text, index) => ({ id: `s${waveIndex}_${index}`, text }));
-      return requestTranslations(locale, entries).then(translated => ({ entries, translated }));
-    }));
-    translatedWaves.forEach(({ entries, translated }) => {
-      entries.forEach(entry => {
-        memory.translations[entry.text] = translated.get(entry.id);
+  if (missing.length) {
+    console.log(`${locale.code}: translating ${missing.length} new strings`);
+    const batches = [];
+    for (let start = 0; start < missing.length; start += batchSize) batches.push(missing.slice(start, start + batchSize));
+    let completed = 0;
+    for (let start = 0; start < batches.length; start += translationConcurrency) {
+      const wave = batches.slice(start, start + translationConcurrency);
+      const translatedWaves = await Promise.all(wave.map((batch, waveIndex) => {
+        const entries = batch.map((text, index) => ({ id: `s${waveIndex}_${index}`, text }));
+        return requestTranslations(locale, entries).then(translated => ({ entries, translated }));
+      }));
+      translatedWaves.forEach(({ entries, translated }) => {
+        entries.forEach(entry => {
+          memory.translations[entry.text] = translated.get(entry.id);
+        });
+        completed += entries.length;
       });
-      completed += entries.length;
-    });
-    console.log(`${locale.code}: ${completed}/${missing.length}`);
+      console.log(`${locale.code}: ${completed}/${missing.length}`);
+      await writeFile(memory.path, `${JSON.stringify({
+        locale: locale.code,
+        sourceHash: memory.sourceHash,
+        translations: memory.translations
+      }, null, 2)}\n`);
+    }
   }
-  return true;
+  const repaired = await repairTranslations(locale, memory, requiredStrings);
+  return missing.length > 0 || repaired > 0;
 }
 
 function translateValue(value, translations, attribute = false) {
@@ -613,7 +898,12 @@ function translateStructuredValue(value, key, translations) {
 function localizeStructuredUrls(value, locale, key = "") {
   if (Array.isArray(value)) return value.map(item => localizeStructuredUrls(item, locale, key));
   if (value && typeof value === "object") {
-    return Object.fromEntries(Object.entries(value).map(([childKey, child]) => [childKey, localizeStructuredUrls(child, locale, childKey)]));
+    const types = Array.isArray(value["@type"]) ? value["@type"] : [value["@type"]];
+    const isOrganization = types.includes("Organization");
+    return Object.fromEntries(Object.entries(value).map(([childKey, child]) => [
+      childKey,
+      isOrganization && childKey === "url" ? child : localizeStructuredUrls(child, locale, childKey)
+    ]));
   }
   if (typeof value !== "string" || !value.startsWith(`${siteOrigin}/`)) return value;
   if (value.startsWith(`${siteOrigin}/assets/`) || value === `${siteOrigin}/#studio`) return value;
@@ -658,12 +948,15 @@ function translateHtml(html, locale, translations) {
 
   output = output.replace(/<[^>]+>/g, tag => {
     if (/^<meta\b/i.test(tag)) {
-      const key = tag.match(/\b(?:name|property)=["']([^"']+)["']/i)?.[1]?.toLowerCase();
+      const key = tag.match(/\b(?:name|property)=(["'])([\s\S]*?)\1/i)?.[2]?.toLowerCase();
       if (key && metaTranslationKeys.has(key)) {
-        tag = tag.replace(/\bcontent=(["'])([^"']*)\1/i, (match, quote, value) => `content=${quote}${translateValue(value, translations, true)}${quote}`);
+        tag = tag.replace(/\bcontent=(["'])([\s\S]*?)\1/i, (match, quote, value) => `content=${quote}${translateValue(value, translations, true)}${quote}`);
       }
     }
-    return tag.replace(/\b([\w-]+)=(["'])([^"']*)\2/g, (match, name, quote, value) => {
+    return tag.replace(/\b([\w-]+)=(["'])([\s\S]*?)\2/g, (match, name, quote, value) => {
+      if (name.toLowerCase() === "href" && /^mailto:/i.test(value)) {
+        return `${name}=${quote}${localizeMailto(value, translations)}${quote}`;
+      }
       if (!translatableAttributes.has(name.toLowerCase())) return match;
       return `${name}=${quote}${translateValue(value, translations, true)}${quote}`;
     });
@@ -675,46 +968,34 @@ function translateHtml(html, locale, translations) {
   return output;
 }
 
-function renderAlternateBlock(page) {
-  const links = alternateLinks(page)
-    .map(link => `  <link rel="alternate" hreflang="${link.hreflang}" href="${link.href}">`)
-    .join("\n");
-  return `${alternateStart}\n${links}\n  ${alternateEnd}`;
-}
-
-function renderLanguageSwitcher(locale, page, standalone = false) {
-  const labels = {
-    en: { navigation: "Language", choose: "Choose language" },
-    ru: { navigation: "Язык", choose: "Выбрать язык" },
-    es: { navigation: "Idioma", choose: "Elegir idioma" },
-    pt: { navigation: "Idioma", choose: "Escolher idioma" }
-  };
+function renderLanguageSwitcher(locale, page, translations = {}, standalone = false) {
   const links = locales.map(target => {
     const current = target.code === locale.code ? ' aria-current="page"' : "";
     const currentFile = outputFile(locale, page);
     const targetFile = outputFile(target, page);
     const href = relative(dirname(currentFile), targetFile).replaceAll("\\", "/");
-    return `<a href="${href}" lang="${target.htmlLang}" hreflang="${target.hreflang}"${current}>${target.shortLabel}</a>`;
+    return `<a href="${href}" lang="${target.htmlLang}" hreflang="${target.hreflang}"${current}><span class="language-option-label" dir="auto">${target.label}</span><span class="language-option-code" aria-hidden="true">${target.hreflang}</span></a>`;
   }).join("");
-  const label = labels[locale.code];
+  const navigationLabel = translations.Language || "Language";
+  const chooseLabel = translations["Choose language"] || "Choose language";
   const className = standalone ? "language-switcher language-switcher--standalone" : "language-switcher";
-  return `${switcherStart}\n  <nav class="${className}" aria-label="${label.navigation}"><details><summary aria-label="${label.choose}"><span aria-hidden="true">${locale.shortLabel}</span></summary><div class="language-options">${links}</div></details></nav>\n  ${switcherEnd}`;
+  return `${switcherStart}\n  <nav class="${className}" aria-label="${encodeHtml(navigationLabel, true)}"><details><summary aria-label="${encodeHtml(chooseLabel, true)}"><span aria-hidden="true">${locale.shortLabel}</span></summary><div class="language-options">${links}</div></details></nav>\n  ${switcherEnd}`;
 }
 
-function addLocaleMetadata(html, locale, page) {
+function addLocaleMetadata(html, locale, page, translations = {}) {
   let output = html
+    .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "")
     .replace(/<html\b[^>]*>/i, `<html lang="${locale.htmlLang}" dir="${locale.direction}">`)
     .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${pageUrl(locale, page)}">`)
     .replace(/<meta\b[^>]*property=["']og:url["'][^>]*>/i, `<meta property="og:url" content="${pageUrl(locale, page)}">`)
     .replace(/<meta\b[^>]*property=["']og:locale["'][^>]*>/i, `<meta property="og:locale" content="${locale.ogLocale}">`);
 
-  const alternateBlock = renderAlternateBlock(page);
-  output = output.replace(/(<link\b[^>]*rel=["']canonical["'][^>]*>)/i, `$1\n  ${alternateBlock}`);
+  output = output.replace(/(<meta\b[^>]*charset=["'][^"']+["'][^>]*>)/i, `$1\n  <meta http-equiv="content-language" content="${locale.htmlLang}">`);
   const themeTogglePattern = /(<button\b[^>]*\bid=["']themeToggle["'][^>]*>[\s\S]*?<\/button>)/i;
   if (themeTogglePattern.test(output)) {
-    output = output.replace(themeTogglePattern, `$1\n          ${renderLanguageSwitcher(locale, page)}`);
+    output = output.replace(themeTogglePattern, `$1\n          ${renderLanguageSwitcher(locale, page, translations)}`);
   } else {
-    output = output.replace(/(<body\b[^>]*>)/i, `$1\n  ${renderLanguageSwitcher(locale, page, true)}`);
+    output = output.replace(/(<body\b[^>]*>)/i, `$1\n  ${renderLanguageSwitcher(locale, page, translations, true)}`);
   }
   return output;
 }
@@ -738,7 +1019,7 @@ function rewriteSharedResourceUrls(html, page) {
     return value;
   }
 
-  return html.replace(/\b(href|src|poster|action|data-logo-light|data-logo-dark|srcset|imagesrcset|data-logo-light-srcset|data-logo-dark-srcset)=(["'])([^"']*)\2/gi, (match, name, quote, value) => {
+  return html.replace(/\b(href|src|poster|action|data-logo-light|data-logo-dark|srcset|imagesrcset|data-logo-light-srcset|data-logo-dark-srcset)=(["'])([\s\S]*?)\2/gi, (match, name, quote, value) => {
     const localized = /srcset/i.test(name)
       ? value.split(",").map(candidate => {
         const parts = candidate.trim().split(/\s+/);
@@ -752,7 +1033,7 @@ function rewriteSharedResourceUrls(html, page) {
 
 function renderLocalizedPage(source, locale, page, translations) {
   let output = translateHtml(source, locale, translations);
-  output = addLocaleMetadata(output, locale, page);
+  output = addLocaleMetadata(output, locale, page, translations);
   output = rewriteSharedResourceUrls(output, page);
   const runtimePath = `${page.kind === "game" ? "../i18n-runtime.js" : "i18n-runtime.js"}?v=${localizationLastModified.replaceAll("-", "")}`;
   output = output.replace(/(<\/body>)/i, `  <script src="${runtimePath}"></script>\n$1`);
@@ -771,17 +1052,117 @@ function renderEnglishPage(source, page) {
   return `${addLocaleMetadata(addStructuredLanguage(source, sourceLocale), sourceLocale, page).trim()}\n`;
 }
 
+function renderSitemapAlternates(page) {
+  return alternateLinks(page)
+    .map(link => `    <xhtml:link rel="alternate" hreflang="${link.hreflang}" href="${link.href}" />`)
+    .join("\n");
+}
+
 function renderLocalizedSitemap(existing) {
-  const clean = existing.replace(new RegExp(`\\s*${sitemapStart}[\\s\\S]*?${sitemapEnd}`, "g"), "");
+  let clean = existing
+    .replace(new RegExp(`\\s*${sitemapStart}[\\s\\S]*?${sitemapEnd}`, "g"), "")
+    .replace(/\s*<xhtml:link\b[^>]*\/>/g, "");
+
+  if (!/xmlns:xhtml=/.test(clean)) {
+    clean = clean.replace(/(<urlset\b[^>]*)(>)/, `$1\n        xmlns:xhtml="http://www.w3.org/1999/xhtml"$2`);
+  }
+
+  for (const page of localizedPages) {
+    const canonical = pageUrl(sourceLocale, page);
+    const block = (clean.match(/<url>[\s\S]*?<\/url>/g) || [])
+      .find(candidate => candidate.includes(`<loc>${canonical}</loc>`));
+    if (!block) throw new Error(`sitemap.xml: missing English canonical block for ${canonical}`);
+    const enriched = block.replace(/(<loc>[^<]+<\/loc>)/, `$1\n${renderSitemapAlternates(page)}`);
+    clean = clean.replace(block, enriched);
+  }
+
   const entries = translatedLocales.flatMap(locale => localizedPages.map(page => [
     "  <url>",
     `    <loc>${pageUrl(locale, page)}</loc>`,
+    renderSitemapAlternates(page),
     `    <lastmod>${localizationLastModified}</lastmod>`,
     `    <changefreq>${page.changefreq}</changefreq>`,
     `    <priority>${page.priority}</priority>`,
     "  </url>"
   ].join("\n"))).join("\n");
   return clean.replace(/\s*<\/urlset>\s*$/, `\n  ${sitemapStart}\n${entries}\n  ${sitemapEnd}\n</urlset>\n`);
+}
+
+function escapeMarkdown(value) {
+  return String(value)
+    .replaceAll("\\", "\\\\")
+    .replaceAll("[", "\\[")
+    .replaceAll("]", "\\]");
+}
+
+function localizedPage(locale, file) {
+  const page = localizedPages.find(candidate => candidate.file === file);
+  if (!page) throw new Error(`Unable to resolve localized page ${file}`);
+  return pageUrl(locale, page);
+}
+
+function renderLocalizedLlms(locale, translations, updates) {
+  const t = source => translations[source] || source;
+  const sentence = value => /[.!?。！？]$/.test(value.trim()) ? value.trim() : `${value.trim()}.`;
+  const games = gameDevlogSources.map(game => {
+    const genres = game.genres.map(genre => escapeMarkdown(t(genre))).join(", ");
+    return `- [${escapeMarkdown(game.name)}](${localizedPage(locale, game.file)}): ${escapeMarkdown(t(game.machineSummary))} ${escapeMarkdown(t("Genres"))}: ${genres}. ${escapeMarkdown(t("Current status"))}: ${escapeMarkdown(sentence(t(game.status)))}`;
+  }).join("\n");
+  const devlogs = [...updates]
+    .sort((left, right) => right.timestamp - left.timestamp)
+    .map(update => `- [${escapeMarkdown(update.name)} — ${escapeMarkdown(t(update.title))}](${localizedPage(locale, update.file)}#devlog): ${escapeMarkdown(t("Published"))} ${update.published}. ${escapeMarkdown(t(update.summary))}`)
+    .join("\n");
+
+  return `# WillowinWorld — ${locale.label}
+
+> ${escapeMarkdown(t("WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds."))}
+
+${escapeMarkdown(t("Site language"))}: ${locale.label}. ${escapeMarkdown(t("Canonical English source"))}: https://willowinworld.com/llms.txt
+
+## ${escapeMarkdown(t("Games"))}
+
+${games}
+
+## ${escapeMarkdown(t("Latest development notes"))}
+
+${devlogs}
+
+## ${escapeMarkdown(t("Studio and press"))}
+
+- [${escapeMarkdown(t("Studio home"))}](${localizedPage(locale, "index.html")})
+- [${escapeMarkdown(t("Press kit"))}](${localizedPage(locale, "press-kit.html")})
+- [${escapeMarkdown(t("Media asset usage"))}](${localizedPage(locale, "asset-usage.html")})
+
+## ${escapeMarkdown(t("Feeds and policies"))}
+
+- [${escapeMarkdown(t("Devlog RSS feed"))}](${siteOrigin}/rss.xml)
+- [${escapeMarkdown(t("XML sitemap"))}](${siteOrigin}/sitemap.xml)
+- [${escapeMarkdown(t("Language index"))}](${siteOrigin}/languages.json)
+- [${escapeMarkdown(t("Privacy policy"))}](${localizedPage(locale, "privacy.html")})
+- [${escapeMarkdown(t("Legal notice"))}](${localizedPage(locale, "legal.html")})
+
+## ${escapeMarkdown(t("Contact"))}
+
+- [${escapeMarkdown(t("Email WillowinWorld"))}](mailto:contact@willowinworld.com)
+`;
+}
+
+function renderLanguageIndex() {
+  return `${JSON.stringify({
+    schemaVersion: 1,
+    defaultLanguage: sourceLocale.htmlLang,
+    lastModified: localizationLastModified,
+    languages: locales.map(locale => ({
+      code: locale.htmlLang,
+      hreflang: locale.hreflang,
+      name: locale.label,
+      direction: locale.direction,
+      home: pageUrl(locale, localizedPages[0]),
+      llms: locale.code === sourceLocale.code
+        ? `${siteOrigin}/llms.txt`
+        : `${siteOrigin}/${locale.code}/llms.txt`
+    }))
+  }, null, 2)}\n`;
 }
 
 function renderRuntimeScript(locale, translations, runtimeStrings) {
@@ -792,10 +1173,10 @@ function renderRuntimeScript(locale, translations, runtimeStrings) {
   const filterTranslations = Object.fromEntries(["Arcade", "Puzzle", "Physics", "Cozy"]
     .map(source => [source, translations[source] || source]));
   const labels = {
-    ru: { showing: "Показано: {count} — {filter}", hidden: "Скрытые буквы: {found}/{total}" },
-    es: { showing: "Se muestran {count}: {filter}", hidden: "Letras ocultas: {found}/{total}" },
-    pt: { showing: "Exibindo {count}: {filter}", hidden: "Letras ocultas: {found}/{total}" }
-  }[locale.code];
+    showing: translations["Showing {count}: {filter}"] || "Showing {count}: {filter}",
+    hidden: translations["Hidden letters: {found}/{total}"] || "Hidden letters: {found}/{total}",
+    promoLetter: translations["Hidden promo letter {letter}"] || "Hidden promo letter {letter}"
+  };
   return `(() => {
   const dictionary = Object.freeze(${JSON.stringify(dictionary)});
   const filterTranslations = Object.freeze(${JSON.stringify(filterTranslations)});
@@ -806,6 +1187,8 @@ function renderRuntimeScript(locale, translations, runtimeStrings) {
     if (dictionary[normalized]) return dictionary[normalized];
     let match = normalized.match(/^Hidden letters:\\s*(\\d+)\\/(\\d+)$/i);
     if (match) return ${JSON.stringify(labels.hidden)}.replace("{found}", match[1]).replace("{total}", match[2]);
+    match = normalized.match(/^Hidden promo letter\\s+(.+)$/i);
+    if (match) return ${JSON.stringify(labels.promoLetter)}.replace("{letter}", match[1]);
     match = normalized.match(/^Showing\\s+(\\d+)\\s+(.+?)\\s+games?\\.?$/i);
     if (match) {
       const filterKey = match[2].charAt(0).toUpperCase() + match[2].slice(1);
@@ -878,7 +1261,8 @@ const requiredStrings = new Set();
 for (const page of localizedPages) {
   const source = stripGeneratedBlocks(await readFile(join(siteRoot, page.file), "utf8"));
   pageSources.set(page.file, source);
-  collectStrings(source).forEach(value => requiredStrings.add(value));
+  const pageStrings = collectStrings(source);
+  pageStrings.forEach(value => requiredStrings.add(value));
 }
 const runtimeStrings = await collectRuntimeStrings();
 runtimeStrings.forEach(value => requiredStrings.add(value));
@@ -889,6 +1273,10 @@ const memories = new Map();
 for (const locale of translatedLocales) {
   const memory = await readTranslationMemory(locale, sourceHash);
   if (refreshLocales.has(locale.code)) memory.translations = {};
+  for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
+    if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
+    memory.translations[source] = translation;
+  }
   await fillMissingTranslations(locale, memory, requiredStrings);
   for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
     if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
@@ -899,6 +1287,8 @@ for (const locale of translatedLocales) {
   await writeIfChanged(memory.path, serialized);
   memories.set(locale.code, memory.translations);
 }
+
+const latestDevlogs = await loadLatestDevlogs();
 
 for (const page of localizedPages) {
   const source = pageSources.get(page.file);
@@ -914,7 +1304,13 @@ for (const locale of translatedLocales) {
     join(siteRoot, locale.code, "i18n-runtime.js"),
     renderRuntimeScript(locale, memories.get(locale.code), runtimeStrings)
   );
+  await writeIfChanged(
+    join(siteRoot, locale.code, "llms.txt"),
+    renderLocalizedLlms(locale, memories.get(locale.code), latestDevlogs)
+  );
 }
+
+await writeIfChanged(join(siteRoot, "languages.json"), renderLanguageIndex());
 
 const sitemapPath = join(siteRoot, "sitemap.xml");
 await writeIfChanged(sitemapPath, renderLocalizedSitemap(await readFile(sitemapPath, "utf8")));

@@ -1,0 +1,37 @@
+# WillowinWorld — Magyar
+
+> A WillowinWorld egy független mobil játékstúdió, amely négy fizikavezérelt puzzle- és arcade játékot hoz létre tapintható vezérlőkkel, olvasható rendszerekkel és kifejező 2D-s világokkal.
+
+A webhely nyelve: Magyar. Kanonikus angol forrás: https://willowinworld.com/llms.txt
+
+## játékok
+
+- [Nature Seed](https://willowinworld.com/hu/games/nature-seed.html): Egy pihentető, mobil, lerajzolható fizika rejtvény. Rajzoljon egy tintával korlátozott fizikai útvonalat, egyesítse újra a Water Drop és Seed, és állítson vissza egy akvarell erdőt 10 jelenlegi szinten. Műfajok: Rajzolással megoldható rejtvény, Fizika puzzle, Pihentető puzzle, Vonalrajzos puzzle. Jelenlegi állapot: Aktív fejlesztés – játszható prototípus.
+- [Candy Shop](https://willowinworld.com/hu/games/candy-shop.html): Hangulatos mobil összevonó puzzle 13 szakaszból álló cukorkalánccal, 10 konténerszabályzattal, nyolc különleges cukorka effektussal és a következő csepp tervezési eszközeivel. Műfajok: Egyesítés puzzle, Cukorka puzzle, Alkalmi rejtvény, Fizika puzzle. Jelenlegi állapot: Aktív fejlesztés – játszható gyártási build.
+- [Paint Blasters](https://willowinworld.com/hu/games/paint-blasters.html): Mobil színpusztító fizika puzzle arcade. Kombináljon három színbevitelt 35 szerzői lövedékreceptben, célozza meg a torony gyenge pontjait, és indítsa el a láncreakciókat. Műfajok: Színes puzzle, Fizika arcade, Pusztítási puzzle, Láncreakció. Jelenlegi állapot: Aktív fejlesztés - gyártási prototípus.
+- [Ball is God?!](https://willowinworld.com/hu/games/ball-is-god.html): Történetvezérelt kemény, függőlegesen süllyedő mobil játékterem. Forgasd el a tornyot Espa körül, építs kombi összetöréseket, éld túl a főnököket, és vigyél karmaválasztásokat 10 mitikus helyszínen. Műfajok: Függőleges ereszkedő árkád, Hardcore arcade, Történetvezérelt játékterem, Főnök akció. Jelenlegi állapot: Aktív gyártás.
+
+## Legújabb fejlesztési megjegyzések
+
+- [Nature Seed — 2. szintű helyreállítási és stabilitási igazolvány](https://willowinworld.com/hu/games/nature-seed.html#devlog): Megjelent 2026-07-31. A 2. szint mostantól az éles háttérpárt használja, megbízhatóbb szintbeállítással, ütközésellenőrzéssel és a befejezés visszajelzésével.
+- [Candy Shop — Gyártási menü és HUD bérlet](https://willowinworld.com/hu/games/candy-shop.html#devlog): Megjelent 2026-07-31. A főmenü, a szintválasztás, a HUD vezérlők és a parancsikonok mostantól egy vizuális nyelvet használnak; további motoron belüli stressztesztek fedik le a frissített áramlást.
+- [Paint Blasters — Fizika és hatásstabilitás átadás](https://willowinworld.com/hu/games/paint-blasters.html#devlog): Megjelent 2026-07-31. A lövedékek viselkedését, a Match-3 felbontást és a találati hatásokat tesztelték és szigorították a következetesebb kombinációs eredmények érdekében.
+- [Ball is God?! — Világfelületek és veszélyellenőrzés](https://willowinworld.com/hu/games/ball-is-god.html#devlog): Megjelent 2026-07-31. A karakterbemutató, a determinisztikus képződés és a tövisveszély összehangolt vizuális és gyártási-validációs igazolványt kapott.
+
+## Stúdió és nyomja meg
+
+- [Stúdióház](https://willowinworld.com/hu/)
+- [Sajtókészlet](https://willowinworld.com/hu/press-kit.html)
+- [Médiaeszköz-használat](https://willowinworld.com/hu/asset-usage.html)
+
+## Feedek és szabályzatok
+
+- [Devlog RSS feed](https://willowinworld.com/rss.xml)
+- [XML oldaltérkép](https://willowinworld.com/sitemap.xml)
+- [Nyelvi index](https://willowinworld.com/languages.json)
+- [Adatvédelmi szabályzat](https://willowinworld.com/hu/privacy.html)
+- [Jogi nyilatkozat](https://willowinworld.com/hu/legal.html)
+
+## Kapcsolat
+
+- [E-mail WillowinWorld](mailto:contact@willowinworld.com)

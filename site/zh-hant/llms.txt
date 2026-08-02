@@ -1,0 +1,37 @@
+# WillowinWorld — 繁體中文
+
+> WillowinWorld 是一家獨立的行動遊戲工作室，創建了四款以物理為主導的益智和街機遊戲，具有觸覺控制、可讀系統和富有表現力的 2D 世界。
+
+網站語言: 繁體中文. 規範英文源碼: https://willowinworld.com/llms.txt
+
+## 遊戲
+
+- [Nature Seed](https://willowinworld.com/zh-hant/games/nature-seed.html): 一款輕鬆的移動繪畫解決物理謎題。繪製一條墨水有限的物理路徑，重新組合 Water Drop 和 Seed，並在 10 個當前關卡中恢復水彩森林。 流派: 抽獎解謎, 物理謎題, 放鬆益智, 畫線拼圖. 現狀: 積極開發-可玩原型.
+- [Candy Shop](https://willowinworld.com/zh-hant/games/candy-shop.html): 一款舒適的移動合併拼圖，包含 13 級糖果鏈、10 個容器規則集、八種特殊糖果效果以及下一滴糖果的規劃工具。 流派: 合併拼圖, 糖果拼圖, 休閒益智, 物理謎題. 現狀: 積極開發 - 可玩的製作版本.
+- [Paint Blasters](https://willowinworld.com/zh-hant/games/paint-blasters.html): 移動色彩破壞物理益智街機。將三種顏色輸入組合成 35 個編寫的彈體配方，瞄準塔的弱點並觸發連鎖反應。 流派: 彩色拼圖, 實體街機, 毀滅謎題, 連鎖反應. 現狀: 積極開發-生產原型.
+- [Ball is God?!](https://willowinworld.com/zh-hant/games/ball-is-god.html): 一款故事驅動的硬派垂直下降行動街機遊戲。圍繞 Espa 旋轉塔，進行組合粉碎，在 Boss 中倖存，並在 10 個神話地點進行業力選擇。 流派: 垂直下降街機, 硬核街機, 故事驅動的街機, Boss行動. 現狀: 積極生產.
+
+## 最新開發筆記
+
+- [Nature Seed — 2 級恢復與穩定通行證](https://willowinworld.com/zh-hant/games/nature-seed.html#devlog): 已發布 2026-07-31. Level 2 現在使用其生產背景對，具有更可靠的關卡設定、碰撞檢查和完成回饋。
+- [Candy Shop — 製作菜單和 HUD 通證](https://willowinworld.com/zh-hant/games/candy-shop.html#devlog): 已發布 2026-07-31. 主選單、關卡選擇、HUD 控制和命令圖示現在共享視覺語言；額外的引擎內壓力測試涵蓋了更新的流程。
+- [Paint Blasters — 物理和效果穩定通過](https://willowinworld.com/zh-hant/games/paint-blasters.html#devlog): 已發布 2026-07-31. 投射物行為、Match-3 解析度和命中效果經過測試和加強，以獲得更一致的組合結果。
+- [Ball is God?! — 世界表面與危險驗證](https://willowinworld.com/zh-hant/games/ball-is-god.html#devlog): 已發布 2026-07-31. 角色呈現、確定性生成和荊棘危害得到了協調的視覺和生產驗證通過。
+
+## 工作室與媒體
+
+- [工作室之家](https://willowinworld.com/zh-hant/)
+- [新聞資料](https://willowinworld.com/zh-hant/press-kit.html)
+- [媒體資產使用](https://willowinworld.com/zh-hant/asset-usage.html)
+
+## 動態與政策
+
+- [開發日誌 RSS 提要](https://willowinworld.com/rss.xml)
+- [XML 網站地圖](https://willowinworld.com/sitemap.xml)
+- [語言索引](https://willowinworld.com/languages.json)
+- [隱私權政策](https://willowinworld.com/zh-hant/privacy.html)
+- [法律聲明](https://willowinworld.com/zh-hant/legal.html)
+
+## 聯絡方式
+
+- [電子郵件 WillowinWorld](mailto:contact@willowinworld.com)

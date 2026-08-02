@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-PT" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="pt-PT">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nature Seed é um puzzle de física de desenho para resolver em desenvolvimento ativo. Desenhe um caminho com tinta limitada, reúna Water Drop e Seed e restaure uma floresta em aguarela.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#07162d" id="metaThemeColor">
+  <meta property="og:title" content="Nature Seed - Jogo de puzzle de física para desenhar e resolver">
+  <meta property="og:description" content="Desenhe um caminho físico limitado por tinta, reúna Water Drop e Seed e restaure a natureza no relaxante puzzle móvel de WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nature Seed puzzle de física de linhas de desenho para resolver por WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/pt-pt/games/nature-seed.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nature Seed - Jogo relaxante de quebra-cabeças de física, desenhar para resolver">
+  <meta name="twitter:description" content="Desenhe um caminho com tinta limitada, reúna Water Drop e Seed e restaure uma floresta em aguarela neste puzzle de física móvel.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Nature Seed desenhar para resolver puzzle de física numa floresta restaurada em aguarela">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Nature Seed | Relaxante jogo de quebra-cabeças de física do tipo desenhar para resolver</title>
+  <link rel="canonical" href="https://willowinworld.com/pt-pt/games/nature-seed.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/pt-pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Jogos",
+          "item": "https://willowinworld.com/pt-pt/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nature Seed",
+          "item": "https://willowinworld.com/pt-pt/games/nature-seed.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/pt-pt/games/nature-seed.html#game",
+      "name": "Nature Seed",
+      "url": "https://willowinworld.com/pt-pt/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "description": "Um relaxante puzzle de física de desenho para resolver, onde uma linha limitada por tinta une Water Drop e Seed e restaura uma floresta em aguarela.",
+      "genre": [
+        "Puzzle de desenhar para resolver",
+        "Puzzle de física",
+        "Puzzle relaxante",
+        "Puzzle de desenho de linhas"
+      ],
+      "gamePlatform": "Telemóvel",
+      "creativeWorkStatus": "Desenvolvimento ativo – protótipo jogável",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/pt-pt/games/nature-seed.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "pt-PT"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
+  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/nature-scene.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/nature-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-nature nature-seed-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Saltar para Nature Seed</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — voltar para WillowinWorld">
+      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Ícone do jogo de puzzle de desenhar para resolver Nature Seed para dispositivos móveis" fetchpriority="high" decoding="async">
+      <span><strong>Nature Seed</strong><small>Página do jogo WillowinWorld</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navegação na página do jogo">
+      <a href="../index.html">Casa estúdio</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Kit de imprensa</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Alterar tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Idioma"><details><summary aria-label="Escolha o idioma"><span aria-hidden="true">PT</span></summary><div class="language-options"><a href="../../games/nature-seed.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/nature-seed.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/nature-seed.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/nature-seed.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/nature-seed.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/nature-seed.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/nature-seed.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/nature-seed.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/nature-seed.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/nature-seed.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/nature-seed.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/nature-seed.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/nature-seed.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/nature-seed.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/nature-seed.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/nature-seed.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/nature-seed.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/nature-seed.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/nature-seed.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/nature-seed.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/nature-seed.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/nature-seed.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/nature-seed.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/nature-seed.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/nature-seed.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/nature-seed.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/nature-seed.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="nature-seed.html" lang="pt-PT" hreflang="pt-PT" aria-current="page"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/nature-seed.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/nature-seed.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/nature-seed.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/nature-seed.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/nature-seed.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/nature-seed.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/nature-seed.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/nature-seed.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/nature-seed.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/nature-seed.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/nature-seed.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/nature-seed.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/nature-seed.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/nature-seed.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell nature-seed-shell" id="game-main">
+    <div class="nature-page-backdrop ambient-only" aria-hidden="true">
+      <div class="nature-menu-world">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+    </div>
+    <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
+      <div class="nature-hero-bg ambient-only" aria-hidden="true">
+        <div class="nature-stage nature-stage-backdrop">
+          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <picture>
+            <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
+            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+          </picture>
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+            <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
+            <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
+          </svg>
+          <span class="nature-water-drop is-first"></span>
+          <span class="nature-water-drop is-second"></span>
+          <span class="nature-water-drop is-third"></span>
+          <span class="nature-bloom"></span>
+          <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+        </div>
+      </div>
+      <div class="nature-menu-world ambient-only" aria-hidden="true">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+
+      <div class="container nature-hero-layout">
+        <div class="nature-hero-copy">
+          <div class="eyebrow">Nature Seed</div>
+          <h1 id="natureHeroTitle">Desenhe um percurso. Junte-os.</h1>
+          <p class="hero-copy">Um puzzle meditativo de física móvel onde um traço com tinta limitada se torna parte do nível, juntando Water Drop e Seed para despertar uma floresta em aguarela.</p>
+          <p class="nature-hero-note">Desenvolvimento ativo · protótipo jogável. A versão atual contém 10 níveis, estrelas de eficiência de linha, progresso persistente e geração de linha física estável.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Solicitar+acesso+ao+playtest+Nature+Seed">Solicitar acesso ao teste de jogo</a>
+            <a class="btn btn-ghost" href="#devlog">Abra o Devlog</a>
+          </div>
+          <div class="nature-hero-stats" role="group" aria-label="Destaques Nature Seed">
+            <span><strong>Sorteio</strong><small>gastar um orçamento de linha limitado</small></span>
+            <span><strong>Ligar</strong><small>traga Water Drop para Seed</small></span>
+            <span><strong>Florescer</strong><small>ganhe a cena restaurada</small></span>
+          </div>
+        </div>
+
+        <aside class="nature-hero-showcase" aria-label="Antevisão do jogo Nature Seed">
+          <div class="nature-device-frame">
+            <div class="nature-stage nature-stage-showcase" aria-hidden="true">
+              <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
+              <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+              </svg>
+              <span class="nature-water-drop is-first"></span>
+              <span class="nature-water-drop is-second"></span>
+              <span class="nature-bloom"></span>
+              <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+            </div>
+            <img loading="lazy" class="nature-showcase-icon" src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Ícone do jogo Nature Seed com personagens de água e sementes" decoding="async">
+            <span class="nature-preview-title">
+              <small>Puzzle de Física Desenhar para Resolver</small>
+              <strong>Nature Seed</strong>
+            </span>
+            <span class="nature-cycle"><b>Esboço</b><b>Guia de água</b><b>Florescer</b></span>
+            <div class="magic-hud">
+              <span>Protótipo Jogável · Desenvolvimento Ativo</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid nature-seed-content">
+      <section class="game-proof-section" aria-labelledby="natureProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Dentro da versão atual</span>
+            <h2 id="natureProofTitle">A linha não é decoração. Torna-se o puzzle.</h2>
+            <p>Cada golpe confirmado cria uma geometria de colisão física. O jogador equilibra a tinta, a contagem de linhas e a forma e observa Water Drop e Seed a responderem à rota. Uma solução de uma linha obtém o resultado de três estrelas mais limpo.</p>
+            <span class="proof-status"><b>Estado da construção</b> Protótipo jogável</span>
+          </div>
+          <div class="proof-visual">
+            <div class="nature-proof-frames" aria-label="Esboço Nature Seed e comparação de nível restaurado">
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 560px) 44vw, 28vw" width="1600" height="900" alt="Nível Nature Seed mostrado como um esboço silencioso a lápis antes de o puzzle ser resolvido" loading="lazy" decoding="async">
+                <figcaption><strong>Leia o esboço</strong><span>Antes da resolução</span></figcaption>
+              </figure>
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 560px) 44vw, 28vw" width="1280" height="714" alt="A mesma cena Nature Seed restaurada com árvores e personagens em aguarela após resolução" loading="lazy" decoding="async">
+                <figcaption><strong>Ganhe a flor</strong><span>Após a resolução</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Factos de construção verificados do Nature Seed">
+          <article><strong>10 níveis atuais</strong><span>Progressão de protótipo baseada em dados.</span></article>
+          <article><strong>Limites de tinta e de linha</strong><span>Cada AVC tem um custo real.</span></article>
+          <article><strong>Domínio de uma linha</strong><span>A rota padrão para três estrelas.</span></article>
+          <article><strong>Progresso persistente</strong><span>Os níveis e resultados desbloqueados sobrevivem entre sessões.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Visão geral do jogo</div>
+        <h2>Um puzzle relaxante de física de linhas sobre como unir duas pequenas personagens.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Promessa do jogador</h3><p>Desenhe um caminho físico limpo, reúna Water Drop e Seed e observe o esboço silencioso a regressar à vida.</p></article>
+          <article class="detail-card"><h3>Versão atual</h3><p>Dez níveis jogáveis combinam desenho de toque, geometria de linha física, estrelas de eficiência de linha, progresso persistente e feedback de restauração.</p></article>
+          <article class="detail-card"><h3>Público</h3><p>Jogadores que gostam de jogos de puzzles calmos, temas ecológicos, física leve, restauração aconchegante, bela arte 2D e sessões móveis sem stress.</p></article>
+          <article class="detail-card"><h3>Estado</h3><p>Desenvolvimento ativo – protótipo jogável. O trabalho atual centra-se na sensação de desenho, legibilidade de nível, progressão e estabilidade móvel.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Recursos</div>
+        <h2>O que os jogadores fazem em Nature Seed.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Desenhar para resolver caminhos físicos</h3><p>Cada puzzle começa com terreno, Seed e Water Drop. A pancada do jogador torna-se a ponte entre a intenção e a física.</p></article>
+          <article class="detail-card"><h3>Feedback de física legível</h3><p>O movimento da personagem foi concebido para ser compreensível à primeira vista, de modo a que as tentativas falhadas pareçam uma informação em vez de uma punição aleatória.</p></article>
+          <article class="detail-card"><h3>Recompensas de restauro florestal</h3><p>Resolver um nível traz a cena de volta à vida com crescimento, cor e pequeno feedback emocional em vez de apenas um ecrã de pontuação.</p></article>
+          <article class="detail-card"><h3>Ritmo de puzzle que prioriza os dispositivos móveis</h3><p>Níveis curtos feitos à mão, desenho por toque e silhuetas nítidas mantêm o jogo confortável para sessões rápidas de iOS e Android.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Ciclo de jogo</div>
+        <h2>Leia o nível, desenhe o percurso, deixe as personagens ensinarem a próxima tentativa.</h2>
+        <ul class="update-list">
+          <li><span>Passo 01</span><strong>Leia o esboço</strong><p>Os jogadores procuram declives, lacunas, bloqueadores e a forma mais segura de ligar as duas personagens.</p></li>
+          <li><span>Etapa 02</span><strong>Desenhe a linha</strong><p>Um toque de dedo torna-se um guia físico, rampa ou ponto de encontro para as personagens.</p></li>
+          <li><span>Etapa 03</span><strong>Comprometa-se e observe</strong><p>As personagens movem-se contra a rota física, tornando os sucessos e erros visíveis sem grandes explicações na interface do utilizador.</p></li>
+          <li><span>Etapa 04</span><strong>Florescer ou refinar</strong><p>Se Water Drop atingir Seed, a floresta será restaurada. Se errar, o jogador redesenha com informação mais clara.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">História / mundo</div>
+        <h2>Uma floresta tranquila, uma semente sedenta e uma linguagem de puzzle construída em torno do cuidado.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed começou com uma pergunta simples: e se um puzzle de física de desenhar para resolver não fosse sobre juntar objetos, mas sobre restaurar algo frágil?</p>
+            <p>O mundo é construído em torno de Seed, Water Drop e uma floresta que regressa lentamente do esboço à vida. Cada puzzle pretende ser um pequeno ato de cuidado: o jogador estuda a terra, traça um caminho e ajuda a água a chegar a algo que pode crescer.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Direção do projeto</dt><dd>Física calma e restauração visível</dd></div>
+            <div><dt>Núcleo emocional</dt><dd>Seed, água e recuperação</dd></div>
+            <div><dt>Interação</dt><dd>Desenho por toque com causa e efeito legíveis</dd></div>
+            <div><dt>Recompensa de mestria</dt><dd>Uma solução de uma linha ganha três estrelas</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">Ângulo do editor</div>
+        <h2>Um puzzle aconchegante com um gancho móvel transparente.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed transforma um traço limitado em geometria de nível: desenhe uma rota física, reúna Water Drop e Seed e, em seguida, melhore a mesma solução para obter um resultado de três estrelas numa linha.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Género</dt><dd>Desenhar para resolver puzzle de física</dd></div>
+            <div><dt>Alvo da plataforma</dt><dd>iOS/Android</dd></div>
+            <div><dt>Formato da sessão</dt><dd>Níveis curtos de calma</dd></div>
+            <div><dt>CTA principal</dt><dd>Solicite o acesso ao teste</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Baixar ativos</div>
+        <h2>Nature Seed ativos de imprensa e criadores</h2>
+        <p class="asset-kit-copy">Pré-visualizações selecionadas de WebP para cobertura editorial, revisão de editores e referências de layout de loja. Os ficheiros de origem em resolução total estão disponíveis no estúdio mediante pedido.</p>
+        <h3 class="asset-group-title">Marca e personagens</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ícone do jogo de puzzle de física de linhas de desenho para resolver Nature Seed" loading="lazy" decoding="async"><strong>Ícone do jogo</strong><span>Ícone de puzzle de física de linhas desenhado para resolver.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Personagem de gota de água Nature Seed para um jogo de puzzle de física móvel" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Característica para a fantasia de puzzle de restauração.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Personagem inicial Nature Seed para um jogo de puzzle aconchegante" loading="lazy" decoding="async"><strong>Personagem Seed</strong><span>Recurso de personagem principal para Nature Seed.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Ativo de restauração do crescimento das árvores Nature Seed" loading="lazy" decoding="async"><strong>Crescimento da árvore</strong><span>Ativo de recompensa de restauração da natureza.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed quebra-cabeça relaxante fundo do menu da floresta" loading="lazy" decoding="async"><strong>Menu Floresta</strong><span>Fundo relaxante do menu de puzzle móvel.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="fundo de nível de física desenhado à mão Nature Seed" loading="lazy" decoding="async"><strong>Fundo do jogo</strong><span>Fundo de nível de física desenhado à mão.</span></a>
+        </div>
+        <h3 class="asset-group-title">Níveis de esboço de desenho para resolver</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 01" loading="lazy" decoding="async"><strong>Esboço nível 01</strong><span>Cena de rascunho de puzzle de física da água.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 1536w" sizes="(max-width: 760px) 34vw, 76px" width="1536" height="764" alt="Nature Seed desenho para resolver esboço de física da água nível 02" loading="lazy" decoding="async"><strong>Esboço nível 02</strong><span>Cena de projeto de puzzle de encaminhamento de água.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 03" loading="lazy" decoding="async"><strong>Esboço nível 03</strong><span>Cena de rascunho de puzzle de desenho de linha.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 04" loading="lazy" decoding="async"><strong>Esboço nível 04</strong><span>Cena de rascunho de puzzle de física móvel.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 05" loading="lazy" decoding="async"><strong>Esboço nível 05</strong><span>Cena de rascunho de puzzle de caminho de água.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 06" loading="lazy" decoding="async"><strong>Esboço nível 06</strong><span>Cena de rascunho de puzzle de rota de física.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 07" loading="lazy" decoding="async"><strong>Esboço nível 07</strong><span>Cena de rascunho de puzzle de linhas desenhadas.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 08" loading="lazy" decoding="async"><strong>Esboço nível 08</strong><span>Cena de rascunho do puzzle do fluxo de água.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 09" loading="lazy" decoding="async"><strong>Esboço nível 09</strong><span>Cena de rascunho de puzzle de restauro.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed desenho para resolver esboço de física da água nível 10" loading="lazy" decoding="async"><strong>Esboço nível 10</strong><span>Cena de rascunho de puzzle da natureza.</span></a>
+        </div>
+        <h3 class="asset-group-title">Cenas de puzzle restauradas</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="714" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 01" loading="lazy" decoding="async"><strong>Nível 01 restaurado</strong><span>Cena de puzzle de restauração da natureza.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 02" loading="lazy" decoding="async"><strong>Nível 02 restaurado</strong><span>Cena de puzzle de floresta restaurada.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 03" loading="lazy" decoding="async"><strong>Nível 03 restaurado</strong><span>Cena de puzzle de água e floresta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 04" loading="lazy" decoding="async"><strong>Nível 04 restaurado</strong><span>Cena de puzzle da natureza recuperada.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 05" loading="lazy" decoding="async"><strong>Nível 05 restaurado</strong><span>Cena calma de puzzle de restauração.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 06" loading="lazy" decoding="async"><strong>Nível 06 restaurado</strong><span>Cena de puzzle de recuperação da natureza.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 07" loading="lazy" decoding="async"><strong>Nível 07 restaurado</strong><span>Cena de puzzle de paisagem restaurada.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 08" loading="lazy" decoding="async"><strong>Nível 08 restaurado</strong><span>Cena de puzzle de restauração verde.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 09" loading="lazy" decoding="async"><strong>Nível 09 restaurado</strong><span>Cena de recuperação de puzzle de água.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Puzzle de restauração da natureza Nature Seed restaurado nível 10" loading="lazy" decoding="async"><strong>Nível 10 restaurado</strong><span>Cena de puzzle de restauro concluída.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Jornada de desenvolvimento</div>
+        <h2>Desde uma pequena ideia de restauro a um protótipo jogável de dez níveis.</h2>
+        <ul class="update-list">
+          <li><span>Verão 2025</span><strong>Conceito original</strong><p>Nature Seed começou como uma ideia para um puzzle móvel tranquilo sobre conexão, natureza e restauração.</p></li>
+          <li><span>Outubro de 2025</span><strong>Identidade Seed e Water Drop</strong><p>O GDD foi concluído e o Seed e o Water Drop tornaram-se o centro emocional da identidade visual do jogo.</p></li>
+          <li><span>dezembro de 2025</span><strong>O desenvolvimento começa</strong><p>Depois de os primeiros níveis de papel terem sido planeados, o desenvolvimento ativo começou e os sistemas principais passaram para uma forma jogável.</p></li>
+          <li><span>fevereiro de 2026</span><strong>Passe de nível de draft grande</strong><p>O jogo atingiu uma grande passagem de conteúdo bruto, criando a base para o posterior polimento, equilíbrio e refinamento da produção.</p></li>
+          <li><span>Março a abril de 2026</span><strong>Mecânica e revisão de nível</strong><p>Os mecânicos extra e os níveis de draft foram revistos, simplificados e reformulados para manter o jogo mais calmo, claro e focado.</p></li>
+          <li><span>julho de 2026</span><strong>Passagem vertical do protótipo</strong><p>A versão atual traz 10 níveis, desenho de linha restrito, estrelas de eficiência, progresso persistente e geração de linha estável num loop jogável.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Mundos Relacionados</div>
+        <h2>Passe da física da linha calma para o próximo gancho WillowinWorld.</h2>
+        <p class="related-worlds-copy">Nature Seed é o lado relaxante de desenhar para resolver do portefólio. Compare-o com o aconchegante puzzle de fusão de doces do estúdio, o salão de jogos de física com destruição de cores e a descida radical da torre giratória.</p>
+        <div class="related-world-grid" aria-label="Páginas relacionadas do jogo WillowinWorld">
+          <a class="related-world-link is-primary" href="candy-shop.html">
+            <span class="related-world-kicker">Puzzle de mesclagem aconchegante</span>
+            <strong>Candy Shop</strong>
+            <p>Solte rebuçados, mescle rebuçados correspondentes, gerencie a pressão do recipiente e crie uma progressão de sessão longa em torno da física suave.</p>
+            <span class="related-world-meta">Jogo de mistura de doces</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">Arcada de física colorida</span>
+            <strong>Paint Blasters</strong>
+            <p>Misture projéteis coloridos, aponte aos pontos fracos da torre e transforme um tiro numa reação em cadeia.</p>
+            <span class="related-world-meta">Puzzle de destruição de cores</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Arcade hardcore</span>
+            <strong>Ball is God?!</strong>
+            <p>Roda uma torre hostil em torno de Espa, constrói um combo e sobrevive à pressão dos bosses em mundos míticos.</p>
+            <span class="related-world-meta">Arcada de descida vertical</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Imprensa / editores</span>
+            <strong>Factos do portfólio</strong>
+            <p>Reveja o estado dos jogos, ativos públicos, géneros, ganchos e contexto do editor numa secção compacta de kit de imprensa.</p>
+            <span class="related-world-meta">Kit de imprensa WillowinWorld</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Perguntas frequentes sobre Nature Seed</div>
+        <h2>Respostas aos jogadores, imprensa e parceiros editoriais.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Que tipo de puzzle é o Nature Seed?</h3><p>Um puzzle de física relaxante, onde linhas limitadas se transformam em objetos físicos que ajudam duas personagens a encontrarem-se.</p></article>
+          <article class="detail-card"><h3>Como funciona a jogabilidade?</h3><p>Leia o terreno, desenhe um percurso restrito, observe a reação de ambas as personagens e redesenhe quando o caminho necessita de um ângulo mais limpo.</p></article>
+          <article class="detail-card"><h3>O que o torna diferente?</h3><p>O foco é a restauração calma, a física de linha legível e as soluções eficientes de uma linha, em vez de temporizadores de alta pressão ou falhas ruidosas.</p></article>
+          <article class="detail-card"><h3>Qual é o estado atual?</h3><p>Desenvolvimento ativo como protótipo jogável com 10 níveis atuais. O foco é a sensação de desenho, progressão, legibilidade e estabilidade móvel.</p></article>
+          <article class="detail-card"><h3>Os bens públicos podem ser utilizados?</h3><p>Sim, para imprensa, revisão de editores e referências de lojas. Os ativos de origem permanecem privados, a menos que sejam solicitados diretamente.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Devlog Nature Seed</div>
+        <h2>O que mudou e quando</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 de julho de 2026</time><strong>Restauração do nível 2 e aprovação de estabilidade</strong><p>O nível 2 utiliza agora o seu par de fundo de produção, com uma configuração de nível mais fiável, verificações de colisão e feedback de conclusão.</p></li>
+          <li><span>julho de 2026</span><strong>Protótipo jogável de dez níveis</strong><p>A versão atual combina o desenho de linhas físicas restrito, estrelas de eficiência, progresso persistente e feedback de restauração em dez níveis.</p></li>
+          <li><span>Abril de 2026</span><strong>Aprovação de retrabalho de nível</strong><p>Vários níveis de rascunho foram reformulados após revisão interna para remover a complexidade desnecessária e melhorar a legibilidade móvel.</p></li>
+          <li><span>Março de 2026</span><strong>Revisão mecânica</strong><p>A equipa testou mecânicas adicionais e depois removeu aquelas que faziam a experiência parecer sobrecarregada.</p></li>
+          <li><span>fevereiro de 2026</span><strong>Passe de nível de draft grande</strong><p>Uma grande passagem de conteúdo bruto tornou-se a base para o posterior polimento, equilíbrio e refinamento da produção.</p></li>
+          <li><span>dezembro de 2025</span><strong>O desenvolvimento começa</strong><p>Os sistemas core começaram a passar do conceito e do GDD para a forma jogável.</p></li>
+          <li><span>Verão 2025</span><strong>Conceito original</strong><p>A primeira versão do Nature Seed começou como uma ideia calma de puzzle sobre conexão, natureza e restauração.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Nature Seed é um jogo WillowinWorld.</strong>
+        <span>Física de desenho para resolver, restauro de aguarela e um pequeno caminho que vale a pena aperfeiçoar.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navegação de rodapé Nature Seed">
+        <a href="../index.html#games">Todos os jogos</a>
+        <a href="../press-kit.html">Kit de imprensa</a>
+        <a href="../privacy.html">Privacidade</a>
+        <a href="../legal.html">Jurídico</a>
+        <a href="mailto:contact@willowinworld.com?subject=Nature%20Seed">Contacto</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

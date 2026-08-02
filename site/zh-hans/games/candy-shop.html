@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="zh-Hans">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Candy Shop 是一款正在积极开发中的舒适移动合并谜题。穿过 13 层糖果链，掌握 10 个容器并触发特殊糖果。">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#211027" id="metaThemeColor">
+  <meta property="og:title" content="Candy Shop - 温馨糖果合并益智游戏">
+  <meta property="og:description" content="在 WillowinWorld 制作的舒适移动合并拼图中掉落、组合和进化糖果。">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Candy Shop WillowinWorld 制作的舒适糖果合并益智游戏">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/zh-hans/games/candy-shop.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Candy Shop - 温馨糖果合并益智游戏">
+  <meta name="twitter:description" content="在 WillowinWorld 制作的舒适移动合并拼图中掉落、组合和进化糖果。">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Candy Shop 舒适的物理融合拼图与彩色糖果">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Candy Shop |舒适糖果合并益智手机游戏</title>
+  <link rel="canonical" href="https://willowinworld.com/zh-hans/games/candy-shop.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/zh-hans/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "游戏",
+          "item": "https://willowinworld.com/zh-hans/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Candy Shop",
+          "item": "https://willowinworld.com/zh-hans/games/candy-shop.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/zh-hans/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/zh-hans/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "description": "一款舒适的糖果合并拼图，具有 13 级合并链、十个容器规则集、特殊糖果和规划工具。",
+      "genre": [
+        "合并拼图",
+        "糖果拼图",
+        "休闲益智",
+        "物理谜题"
+      ],
+      "gamePlatform": "手机",
+      "creativeWorkStatus": "积极开发 - 可玩的制作版本",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/zh-hans/games/candy-shop.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "zh-Hans"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld 开发日志 RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
+  <link rel="preload" href="../../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-candy-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/candy-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-candy candy-shop-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">跳至 Candy Shop</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — 返回 WillowinWorld">
+      <img src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop 舒适的糖果合并益智游戏图标" fetchpriority="high" decoding="async">
+      <span><strong>Candy Shop</strong><small>WillowinWorld 游戏页面</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Game page navigation">
+      <a href="../index.html">工作室之家</a>
+      <a href="#devlog">开发日志</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">新闻资料</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="语言"><details><summary aria-label="选择语言"><span aria-hidden="true">简</span></summary><div class="language-options"><a href="../../games/candy-shop.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/candy-shop.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/candy-shop.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/candy-shop.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/candy-shop.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="candy-shop.html" lang="zh-Hans" hreflang="zh-Hans" aria-current="page"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/candy-shop.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/candy-shop.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/candy-shop.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/candy-shop.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/candy-shop.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/candy-shop.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/candy-shop.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/candy-shop.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/candy-shop.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/candy-shop.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/candy-shop.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/candy-shop.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/candy-shop.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/candy-shop.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/candy-shop.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/candy-shop.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/candy-shop.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/candy-shop.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/candy-shop.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/candy-shop.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/candy-shop.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/candy-shop.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/candy-shop.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/candy-shop.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/candy-shop.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/candy-shop.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/candy-shop.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/candy-shop.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/candy-shop.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/candy-shop.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/candy-shop.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/candy-shop.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/candy-shop.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/candy-shop.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/candy-shop.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/candy-shop.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
+    <div class="candy-page-backdrop ambient-only" aria-hidden="true">
+      <div class="candy-menu-world">
+        <span class="candy-menu-shelf candy-menu-shelf-top"></span>
+        <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-one"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-one"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-three"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-four"></span>
+      </div>
+    </div>
+
+    <section class="candy-game-hero" aria-labelledby="candyHeroTitle">
+      <div class="container candy-hero-layout">
+        <div class="candy-hero-copy">
+          <div class="eyebrow">Candy Shop</div>
+          <h1 id="candyHeroTitle">掉落糖果。打造更大的美食。</h1>
+          <p class="hero-copy">一款舒适的移动合并谜题，关于放置糖果、触发软物理组合以及追逐更令人满意的进化。</p>
+          <p class="candy-hero-note">积极开发 13 个糖果阶段、10 个容器规则集、8 个特殊糖果效果以及围绕等待、着陆预览和下三个队列构建的规划层。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Candy+Shop+%E6%9B%B4%E6%96%B0">请求 Candy Shop 更新</a>
+            <a class="btn btn-ghost" href="#devlog">打开开发日志</a>
+          </div>
+          <div class="candy-hero-stats" role="group" aria-label="Candy Shop 亮点">
+            <span><strong>13颗糖果</strong><small>一条可读的进化链</small></span>
+            <span><strong>10 个字段</strong><small>新的几何形状和规则</small></span>
+            <span><strong>8 特价</strong><small>配对效果和配方</small></span>
+          </div>
+        </div>
+
+        <aside class="candy-hero-showcase" aria-label="Candy Shop 游戏预览">
+          <div class="candy-device-frame">
+            <div class="candy-stage candy-stage-showcase" aria-hidden="true">
+              <div class="candy-bg-stack">
+                <img loading="lazy" class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-2" src="../../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-3" src="../../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-4" src="../../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-5" src="../../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-6" src="../../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-7" src="../../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-8" src="../../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-9" src="../../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
+                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                </picture>
+              </div>
+              <img loading="lazy" class="candy-piece candy-piece-left" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-right" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-result" src="../../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
+              <span class="candy-impact"></span>
+            </div>
+            <img loading="lazy" class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop 游戏图标与明亮的糖果" decoding="async">
+            <span class="candy-preview-title">
+              <small>舒适的物理合并拼图</small>
+              <strong>Candy Shop</strong>
+              <span class="candy-cycle"><b>掉落</b><b>合并</b><b>组合</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>可玩构建·积极开发</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid candy-shop-content">
+      <section class="game-proof-section" aria-labelledby="candyProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">在当前版本中</span>
+            <h2 id="candyProofTitle">每个容器都重写了谜题。</h2>
+            <p>合并规则保持不变；该领域没有。烧瓶改变了可用空间，沙漏创造了一个阻塞点，三重门户分割了计划，旋转的重力颠覆了固定的糖果，障碍墙将结局变成了受控的混乱。</p>
+            <span class="proof-status"><b>构建状态</b> 积极开发</span>
+          </div>
+          <div class="proof-visual">
+            <div class="candy-container-section">
+              <h3>八个可见的规则变化</h3>
+              <p>来自当前 Unity 项目的真实容器艺术。</p>
+              <div class="container-showcase" aria-label="Candy Shop 容器画廊">
+                <figure><img src="../../assets/game-proof/candy-containers/container_pot.webp" width="400" height="500" alt="Candy Shop 罐形合并容器" loading="lazy" decoding="async"><figcaption>锅</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_hourglass.webp" width="400" height="500" alt="Candy Shop 中心狭窄的沙漏合并容器" loading="lazy" decoding="async"><figcaption>沙漏</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_flask.webp" width="400" height="500" alt="Candy Shop 瓶形合并容器" loading="lazy" decoding="async"><figcaption>烧瓶</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_tilted.webp" width="400" height="500" alt="Candy Shop 倾斜地板合并集装箱" loading="lazy" decoding="async"><figcaption>倾斜</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_stepped.webp" width="400" height="500" alt="Candy Shop 阶梯式合并容器" loading="lazy" decoding="async"><figcaption>阶梯式</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_triple.webp" width="400" height="500" alt="Candy Shop 三重门户合并容器" loading="lazy" decoding="async"><figcaption>三重传送门</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_rotating.webp" width="400" height="500" alt="Candy Shop 旋转重力容器" loading="lazy" decoding="async"><figcaption>旋转重力</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_obstacles.webp" width="400" height="500" alt="Candy Shop 合并带有障碍墙的容器" loading="lazy" decoding="async"><figcaption>障碍墙</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="已验证 Candy Shop 构建事实">
+          <article><strong>13阶段进化</strong><span>一个完整的糖果梯子。</span></article>
+          <article><strong>按住 + 接下来三个</strong><span>每次下降前都要做好计划。</span></article>
+          <article><strong>特别食谱</strong><span>火、冰、磁铁、果冻等等。</span></article>
+          <article><strong>每日与收集循环</strong><span>Seed 挑战，Candy Book 及本地前五名。</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">游戏概述</div>
+        <h2>一款舒适的移动合并谜题，围绕软物理和一次性决策而构建。</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>玩家承诺</h3><p>扔下糖果，创造更大的美食，将每次跑步变成一连串令人愉悦的软物理、甜蜜惊喜和令人满意的融合。</p></article>
+          <article class="detail-card"><h3>当前版本</h3><p>实现了十个容器规则集、完整的 13 糖果链、八个特效、着陆预览、保持和下三个队列。</p></article>
+          <article class="detail-card"><h3>观众</h3><p>休闲益智玩家，喜欢放置和合并游戏、舒适的糖果视觉效果、低压策略和快速的移动会话。</p></article>
+          <article class="detail-card"><h3>状态</h3><p>积极开发。目前的工作重点是移动性能、UI 优化、糖果平衡、容器压力和可读的组合反馈。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">特点</div>
+        <h2>玩家在 Candy Shop 中做什么。</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>放置并合并糖果游戏</h3><p>玩家将糖果放入容器中，利用重力和时机，然后将匹配的糖果合并成更大的糖果。</p></article>
+          <article class="detail-card"><h3>13段糖果链</h3><p>合并阶梯为每次运行提供了一个可见的目标，从小糖果到具有更强屏幕存在的更大奖励块。</p></article>
+          <article class="detail-card"><h3>组合和特殊糖果</h3><p>八种实施的特殊糖果效果形成配对的配方和副作用，使重复的会话更具战术质感。</p></article>
+          <article class="detail-card"><h3>舒适的移动演示</h3><p>柔和的色彩、糖果店背景和触摸友好的 UI 使游戏在 iOS 和 Android 的短暂会话中可读。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">游戏循环</div>
+        <h2>选择掉落物，控制容器并保持合并链处于活动状态。</h2>
+        <ul class="update-list">
+          <li><span>步骤01</span><strong>阅读下一颗糖果</strong><p>玩家检查下一个糖果、当前堆栈以及容器内的可用空间。</p></li>
+          <li><span>步骤02</span><strong>有意图的地方</strong><p>一次放弃可以建立一个干净的合并，阻止未来的行动或产生改变下一个决定的压力。</p></li>
+          <li><span>步骤03</span><strong>合并组合</strong><p>匹配的糖果会演变成更大的零食，连锁反应会奖励巧妙的放置。</p></li>
+          <li><span>步骤04</span><strong>进步与重复</strong><p>玩家追求更高的糖果关卡、更好的跑动、更干净的连击和未来的进度奖励。</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">故事/世界</div>
+        <h2>一家欢乐的糖果店，每颗糖果都可以变得更大。</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop 于 2025 年开始，是 WillowinWorld 的第二个游戏理念：围绕简单的快乐和令人满意的物理原理构建的明亮、舒适的糖果合并谜题。</p>
+            <p>这个世界故意变得温暖且可读：架子、糖果、柔软的吉祥物和商店般的容器支持着这样的幻想：每一颗小糖果都有可能成为更大的美食。</p>
+            <p>在第一个原型之后，团队扩展了 GDD，重建了方向，完成了 13 种糖果合并链，并实施了 10 个容器规则集、特殊配方、规划工具和第一个元进展系统。</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>合并链</dt><dd>13 个糖果阶段</dd></div>
+            <div><dt>设计重点</dt><dd>软物理和可读的组合</dd></div>
+            <div><dt>集装箱之旅</dt><dd>10 种几何形状和规则变体</dd></div>
+            <div><dt>当前阶段</dt><dd>积极开发和优化</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">出版商角度</div>
+        <h2>跨越十个不同容器的熟悉的合并规则。</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop 保持放置和合并规则的可读性。</p>
+            <p>当前版本通过每日挑战、Candy Book 发现和本地得分表扩展了短期运行。</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>类型</dt><dd>休闲糖果合并益智游戏</dd></div>
+            <div><dt>平台目标</dt><dd>iOS / 安卓</dd></div>
+            <div><dt>会话形状</dt><dd>短时间可重复运行</dd></div>
+            <div><dt>主要 CTA</dt><dd>请求开发更新</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">下载资源</div>
+        <h2>Candy Shop 媒体和创作者资产</h2>
+        <p class="asset-kit-copy">精心策划的 WebP 预览，用于编辑报道、出版商评论和商店布局参考。工作室可根据要求提供全分辨率源文件。</p>
+        <h3 class="asset-group-title">品牌及店铺场景</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop 舒适的糖果合并益智游戏图标" loading="lazy" decoding="async"><strong>游戏图标</strong><span>舒适的糖果合并拼图图标。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop 舒适合并益智替代游戏图标" loading="lazy" decoding="async"><strong>替代图标</strong><span>二级商店风格的图标。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop 舒适糖果合并拼图徽标吉祥物" loading="lazy" decoding="async"><strong>标志吉祥物</strong><span>品牌吉祥物，标题为 Candy Shop。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp" download><img src="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp" srcset="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp 360w, ../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop 熊吉祥物角色" loading="lazy" decoding="async"><strong>熊吉祥物</strong><span>友好的吉祥物角色资产。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 781w" sizes="(max-width: 760px) 34vw, 76px" width="781" height="1400" alt="Candy Shop 舒适合并拼图商店菜单背景" loading="lazy" decoding="async"><strong>商店菜单</strong><span>舒适的糖果店菜单背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 休闲合并拼图暂停背景" loading="lazy" decoding="async"><strong>暂停背景</strong><span>休闲合并谜题暂停场景。</span></a>
+        </div>
+        <h3 class="asset-group-title">舒适的合并拼图背景</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 01" loading="lazy" decoding="async"><strong>背景01</strong><span>舒适的糖果合并拼图场景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 02" loading="lazy" decoding="async"><strong>背景02</strong><span>糖果店合并拼图场景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 03" loading="lazy" decoding="async"><strong>背景03</strong><span>移动糖果合并拼图场景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 04" loading="lazy" decoding="async"><strong>背景 04</strong><span>甜蜜的合并拼图商店场景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 05" loading="lazy" decoding="async"><strong>背景05</strong><span>舒适休闲的拼图背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 06" loading="lazy" decoding="async"><strong>背景 06</strong><span>糖果合并拼图背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 07" loading="lazy" decoding="async"><strong>背景07</strong><span>舒适的移动糖果场景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 08" loading="lazy" decoding="async"><strong>背景08</strong><span>休闲合并拼图背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 09" loading="lazy" decoding="async"><strong>背景 09</strong><span>甜品店拼图背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop 舒适糖果合并拼图背景 10" loading="lazy" decoding="async"><strong>背景10</strong><span>舒适的糖果世界背景。</span></a>
+        </div>
+        <h3 class="asset-group-title">物理合并糖果链</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 01" loading="lazy" decoding="async"><strong>糖果01</strong><span>合并链中的第一颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 02" loading="lazy" decoding="async"><strong>糖果02</strong><span>合并链中的第二颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 03" loading="lazy" decoding="async"><strong>糖果03</strong><span>合并链中的第三颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 04" loading="lazy" decoding="async"><strong>糖果04</strong><span>合并链中的第四颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 05" loading="lazy" decoding="async"><strong>糖果05</strong><span>合并链中的第五颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 06" loading="lazy" decoding="async"><strong>糖果06</strong><span>合并链中的第六颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 07" loading="lazy" decoding="async"><strong>糖果07</strong><span>合并链中的第七颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 08" loading="lazy" decoding="async"><strong>糖果08</strong><span>合并链中的第八颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 09" loading="lazy" decoding="async"><strong>糖果09</strong><span>合并链中的第九颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 10" loading="lazy" decoding="async"><strong>糖果10</strong><span>合并链中的第十颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 11" loading="lazy" decoding="async"><strong>糖果11</strong><span>合并链中的第十一个糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 12" loading="lazy" decoding="async"><strong>糖果12</strong><span>合并链中的第十二颗糖果。</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop 物理合并糖果 13" loading="lazy" decoding="async"><strong>糖果13</strong><span>合并链中的最后糖果。</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">发展历程</div>
+        <h2>从第一个原型到更深层次的生产构建。</h2>
+        <ul class="update-list">
+          <li><span>2025 年 6 月下旬</span><strong>第二个游戏创意</strong><p>WillowinWorld 开始探索一个明亮的糖果项目，该项目围绕简单、快乐且广泛吸引人的事物而构建。</p></li>
+          <li><span>2025 年 8 月</span><strong>第一个糖果角色</strong><p>第一个糖果角色被创建，合并链后来从 11 颗糖果扩展到 13 颗，以获得更强的进展。</p></li>
+          <li><span>2025 年 9 月</span><strong>第一个原型</strong><p>第一个原型已构建并测试。结果表明，这个想法需要更多的认同、进步和更清晰的钩子。</p></li>
+          <li><span>2025 年 10 月</span><strong>广州开发区扩建</strong><p>设计文件得到了扩展，加入了新的机制、特殊的糖果、进展理念和容器方向。</p></li>
+          <li><span>2025年12月-2026年2月</span><strong>核心糖果系统</strong><p>主要糖果机制已实施，糖果套装已完成，早期容器系统已开始。</p></li>
+          <li><span>2026年4月-7月</span><strong>系统和抛光过程</strong><p>构建扩展了十个容器规则集、特殊糖果交互、规划工具、日常挑战和收集系统以及优化和 UI 完善。</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">相关世界</div>
+        <h2>跟随合并谜题观众进入更广泛的 WillowinWorld 目录。</h2>
+        <p class="related-worlds-copy">Candy Shop 覆盖了舒适的放置和合并拼图通道。继续玩轻松的线条物理谜题、彩色连锁反应街机或工作室的硬核旋转塔下降。</p>
+        <div class="related-world-grid" aria-label="相关 WillowinWorld 游戏页面">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">轻松的物理谜题</span>
+            <strong>Nature Seed</strong>
+            <p>绘制有限的物理路线，将两个角色聚集在一起，并通过平静的移动物理恢复森林水平。</p>
+            <span class="related-world-meta">画线拼图</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">色彩破坏街机</span>
+            <strong>Paint Blasters</strong>
+            <p>在每次射击前构建射弹，读取塔的弱点并触发物理连锁反应。</p>
+            <span class="related-world-meta">瞄准并射击物理谜题</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">故事街机</span>
+            <strong>Ball is God?!</strong>
+            <p>从舒适的游戏转向紧张的旋转塔下降，其中包括连击粉碎、神话世界和 Boss 压力。</p>
+            <span class="related-world-meta">硬核塔楼街机</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">媒体/出版商</span>
+            <strong>投资组合事实</strong>
+            <p>打开类型、制作状态、公共资产和面向发行商的游戏挂钩的紧凑概述。</p>
+            <span class="related-world-meta">WillowinWorld 投资组合</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Candy Shop 常见问题解答</div>
+        <h2>为玩家、媒体和出版合作伙伴提供的答案。</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Candy Shop 是一款什么样的游戏？</h3><p>舒适的糖果融合拼图，包含柔软的物理掉落、特殊糖果、连击和进度。</p></article>
+          <article class="detail-card"><h3>游戏玩法如何？</h3><p>选择一颗糖果，将其放入容器中，合并匹配的糖果，管理空间并追逐更大的糖果阶段。</p></article>
+          <article class="detail-card"><h3>有何不同？</h3><p>它将熟悉的合并拼图循环与舒适的糖果标识、特殊糖果、可读的组合和容器压力结合在一起。</p></article>
+          <article class="detail-card"><h3>目前状况如何？</h3><p>积极开发。当前项目中存在合并链、十个容器规则集、特殊配方、每日挑战、Candy Book 和本地分数表。</p></article>
+          <article class="detail-card"><h3>公共资产可以使用吗？</h3><p>是的，供媒体、出版商评论和商店参考。除非直接请求，否则源资产将保持私有。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Candy Shop 开发日志</div>
+        <h2>发生了什么变化以及何时发生变化</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">2026 年 7 月 31 日</time><strong>制作菜单和 HUD 通证</strong><p>主菜单、关卡选择、HUD 控件和命令图标现在共享一种视觉语言；额外的发动机内压力测试涵盖了更新的流程。</p></li>
+          <li><span>2026 年 7 月</span><strong>更深层次的生产构建</strong><p>当前项目将完整的合并链与十个容器规则集、特殊配方、规划工具、日常挑战、Candy Book 发现和本地评分表相结合。</p></li>
+          <li><span>2026 年 4 月</span><strong>UI元素传递</strong><p>创建了第一个主要 UI 元素，为 Candy Shop 提供了更清晰的移动标识和更强的休闲呈现。</p></li>
+          <li><span>2026 年 2 月</span><strong>糖果链和容器</strong><p>全套糖果已完成，容器系统开始改变几何形状、重力和拼图压力。</p></li>
+          <li><span>2025 年 12 月</span><strong>核心糖果机制</strong><p>主要糖果机制以粗略的形式实现，将扩展的 GDD 变成了可玩的系统。</p></li>
+          <li><span>2025 年 10 月</span><strong>广州开发区扩建</strong><p>在第一个原型感觉不够强大后，设计通过特殊的糖果和进展想法进行了扩展。</p></li>
+          <li><span>2025 年 8 月</span><strong>第一个糖果角色</strong><p>创建了第一个糖果角色，建立了合并链的柔软、友好的方向。</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Candy Shop 是一款 WillowinWorld 游戏。</strong>
+        <span>一个舒适的合并谜题，下一滴很简单，而容器从来都不是。</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Candy Shop 页脚导航">
+        <a href="../index.html#games">所有游戏</a>
+        <a href="../press-kit.html">新闻资料</a>
+        <a href="../privacy.html">隐私</a>
+        <a href="../legal.html">法律</a>
+        <a href="mailto:contact@willowinworld.com?subject=Candy%20Shop">联系方式</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

@@ -18,6 +18,7 @@ const staticFiles = [
   "assets",
   ".well-known",
   "_headers",
+  "_redirects",
   "favicon.ico",
   "manifest.webmanifest",
   "robots.txt"
@@ -57,6 +58,7 @@ const sourceFiles = [
   "asset-usage.html",
   "404.html",
   "llms.txt",
+  "languages.json",
   "rss.xml",
   "sitemap.xml",
   ...cssFiles,
@@ -68,7 +70,8 @@ const sourceFiles = [
   "games/paint-blasters.html",
   "games/ball-is-god.html",
   ...translatedLocales.flatMap(locale => localizedPages.map(page => outputFile(locale, page))),
-  ...translatedLocales.map(locale => `${locale.code}/i18n-runtime.js`)
+  ...translatedLocales.map(locale => `${locale.code}/i18n-runtime.js`),
+  ...translatedLocales.map(locale => `${locale.code}/llms.txt`)
 ];
 
 function minifyHtml(input) {

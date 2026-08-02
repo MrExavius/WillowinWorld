@@ -1,0 +1,37 @@
+# WillowinWorld — Suomi
+
+> WillowinWorld on itsenäinen mobiilipelistudio, joka luo neljä fysiikkapohjaista pulma- ja pelihallipeliä, joissa on kosketussäätimet, luettavat järjestelmät ja ilmeikkäät 2D-maailmat.
+
+Sivuston kieli: Suomi. Kanoninen englanninkielinen lähde: https://willowinworld.com/llms.txt
+
+## Pelit
+
+- [Nature Seed](https://willowinworld.com/fi/games/nature-seed.html): Rentouttava fysiikan pulmapeli. Piirrä musterajoitettu fyysinen polku, yhdistä Water Drop ja Seed ja palauta akvarellimetsä 10 nykyisellä tasolla. Genret: Ratkaisemaan tehtävä arvoitus, Fysiikan palapeli, Rentouttava palapeli, Viivapiirrospalapeli. Nykyinen tila: Aktiivinen kehitys – pelattava prototyyppi.
+- [Candy Shop](https://willowinworld.com/fi/games/candy-shop.html): Viihtyisä mobiiliyhdistelmäpalapeli, jossa on 13-vaiheinen karkkiketju, 10 säilytyssääntösarjaa, kahdeksan erikoiskaramellitehostetta ja suunnittelutyökalut seuraavaa pisaraa varten. Genret: Yhdistä palapeli, Karkkipalapeli, Rento palapeli, Fysiikan palapeli. Nykyinen tila: Aktiivinen kehitys – pelattava tuotantorakenne.
+- [Paint Blasters](https://willowinworld.com/fi/games/paint-blasters.html): Mobiili väriä tuhoava fysiikan pulmapeli. Yhdistä kolme värisyöttöä 35 luotuun ammusreseptiin, kohdista tornin heikkoihin kohtiin ja laukaise ketjureaktioita. Genret: Väripalapeli, Fysiikan pelihalli, Tuhotehtävä, Ketjureaktio. Nykyinen tila: Aktiivinen kehitys – tuotannon prototyyppi.
+- [Ball is God?!](https://willowinworld.com/fi/games/ball-is-god.html): Tarinavetoinen hardcore pystysuoraan laskeutuva mobiilipelihalli. Pyöritä tornia Espa:n ympäri, rakenna yhdistelmäiskuja, selviä pomoista ja tee karmavalintoja 10 myyttisen sijainnin läpi. Genret: Pystysuora laskuhalli, Hardcore-pelihalli, Tarinavetoinen pelihalli, Pomon toiminta. Nykyinen tila: Aktiivinen tuotanto.
+
+## Viimeisimmät kehityshuomautukset
+
+- [Nature Seed — Tason 2 palautus- ja vakauspassi](https://willowinworld.com/fi/games/nature-seed.html#devlog): Julkaistu 2026-07-31. Taso 2 käyttää nyt tuotantotaustapariaan, jossa on luotettavampi tason asetus, törmäystarkistukset ja valmistumispalaute.
+- [Candy Shop — Tuotantovalikko ja HUD-passi](https://willowinworld.com/fi/games/candy-shop.html#devlog): Julkaistu 2026-07-31. Päävalikko, tason valinta, HUD-säätimet ja komentokuvakkeet jakavat nyt yhden visuaalisen kielen; lisämoottorin sisäiset stressitestit kattavat päivitetyn virtauksen.
+- [Paint Blasters — Fysiikka ja tehostevakauspassi](https://willowinworld.com/fi/games/paint-blasters.html#devlog): Julkaistu 2026-07-31. Ammuskäyttäytyminen, Match-3-resoluutio ja osumatehosteet testattiin ja kiristettiin johdonmukaisempien yhdistelmätulosten saavuttamiseksi.
+- [Ball is God?! — Maailman pinnat ja vaarojen validointi](https://willowinworld.com/fi/games/ball-is-god.html#devlog): Julkaistu 2026-07-31. Hahmonesitys, deterministinen synty ja piikkivaarat saivat koordinoidun visuaalisen ja tuotanto-validointipassin.
+
+## Studio ja paina
+
+- [Yksiö](https://willowinworld.com/fi/)
+- [Lehdistöpakkaus](https://willowinworld.com/fi/press-kit.html)
+- [Mediaresurssien käyttö](https://willowinworld.com/fi/asset-usage.html)
+
+## Syötteet ja käytännöt
+
+- [Devlogin RSS-syöte](https://willowinworld.com/rss.xml)
+- [XML-sivustokartta](https://willowinworld.com/sitemap.xml)
+- [Kielihakemisto](https://willowinworld.com/languages.json)
+- [Tietosuojakäytäntö](https://willowinworld.com/fi/privacy.html)
+- [Oikeudellinen huomautus](https://willowinworld.com/fi/legal.html)
+
+## Ota yhteyttä
+
+- [Sähköposti WillowinWorld](mailto:contact@willowinworld.com)

@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="uk">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Відкрийте для себе Nature Seed, Candy Shop, Paint Blasters і Ball is God?! — головоломки та аркадні ігри з тактильною фізикою та виразними 2D-світами, першими на мобільних пристроях.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="author" content="WillowinWorld">
+  <meta name="theme-color" content="#031735" id="metaThemeColor">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:title" content="WillowinWorld - студія інді-мобільних головоломок та аркадних ігор">
+  <meta property="og:description" content="Nature Seed, Candy Shop, Paint Blasters і Ball is God?! Чарівні мобільні головоломки та аркадні світи від WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WillowinWorld Інді студія мобільних ігор: Nature Seed, Candy Shop, Paint Blasters і Ball is God">
+  <meta property="og:url" content="https://willowinworld.com/uk/">
+  <meta property="og:locale" content="uk_UA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WillowinWorld - Чарівні мобільні головоломки та аркадні ігри">
+  <meta name="twitter:description" content="Затишні головоломки з фізики, ігри зі злиттям цукерок, кольорові аркадні екшни та світи з вертикальним спуском із відтінком для мобільних пристроїв.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Студія мобільних ігор WillowinWorld і її чотири ігрові світи">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-jqIjHAcrf1EK0LpdfWKKtXnjFgupkcVxLtUgppHLbHU='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>WillowinWorld | Студія інді мобільних головоломок і аркадних ігор</title>
+  <link rel="canonical" href="https://willowinworld.com/uk/">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
+  <link rel="preload" href="../assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../css/nature-scene.css">
+  <link rel="stylesheet" href="../css/home-card-base.css">
+  <link rel="stylesheet" href="../css/home-ball-card.css">
+  <link rel="stylesheet" href="../css/home-nature-card.css">
+  <link rel="stylesheet" href="../css/home-paint-card.css">
+  <link rel="stylesheet" href="../css/home-candy-card.css">
+  <link rel="stylesheet" href="../css/game-components.css">
+  <link rel="stylesheet" href="../css/game-content.css">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20260731-2">
+  <link rel="stylesheet" href="../css/keyframes.css?v=20260731-1">
+  <link rel="stylesheet" href="../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../css/responsive-preferences.css?v=20260731-1">
+  <link rel="stylesheet" href="../motion.css">
+  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20260731-10">
+  <script type="application/ld+json" id="structuredData">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://willowinworld.com/#studio",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/",
+      "logo": "https://willowinworld.com/assets/willowinworld-logo.webp",
+      "email": "contact@willowinworld.com",
+      "description": "WillowinWorld — це інді-студія для мобільних ігор, яка розробляє чотири головоломки та аркадні ігри з фізичною механікою та яскравим двовимірним мистецтвом.",
+      "knowsAbout": [
+        "Mobile game development",
+        "Physics puzzle games",
+        "Merge puzzle games",
+        "Cozy games",
+        "Arcade games",
+        "2D art direction",
+        "Mobile UI/UX"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://willowinworld.com/uk/#website",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/uk/",
+      "inLanguage": "uk",
+      "description": "Офіційний сайт мобільних головоломок і аркадних ігор WillowinWorld, включаючи Nature Seed, Candy Shop, Paint Blasters і Ball is God?!",
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://willowinworld.com/uk/#games-list",
+      "name": "Мобільні ігри WillowinWorld",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Nature Seed",
+          "url": "https://willowinworld.com/uk/games/nature-seed.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Candy Shop",
+          "url": "https://willowinworld.com/uk/games/candy-shop.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paint Blasters",
+          "url": "https://willowinworld.com/uk/games/paint-blasters.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ball is God?!",
+          "url": "https://willowinworld.com/uk/games/ball-is-god.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/uk/games/nature-seed.html#game",
+      "name": "Nature Seed",
+      "url": "https://willowinworld.com/uk/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "genre": [
+        "Головоломка «Малюй, щоб розгадати».",
+        "Головоломка з фізики",
+        "Розслабляюча головоломка",
+        "Water puzzle"
+      ],
+      "gamePlatform": "Мобільний",
+      "description": "Розслаблююча фізична головоломка, де обмежена чорнилом лінія об’єднує Water Drop і Seed і відновлює акварельний ліс.",
+      "creativeWorkStatus": "Активна розробка - ігровий прототип",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "uk"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/uk/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/uk/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "genre": [
+        "Головоломка злиття",
+        "Цукерковий пазл",
+        "Казуальна головоломка",
+        "Головоломка з фізики"
+      ],
+      "gamePlatform": "Мобільний",
+      "description": "Зручна головоломка зі злиттям цукерок із 13 етапами цукерок, десятьма наборами правил контейнерів, спеціальними рецептами та інструментами планування.",
+      "creativeWorkStatus": "Активна розробка - продуктивна збірка для гри",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "uk"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/uk/games/paint-blasters.html#game",
+      "name": "Paint Blasters",
+      "url": "https://willowinworld.com/uk/games/paint-blasters.html",
+      "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
+      "genre": [
+        "Кольоровий пазл",
+        "Фізична аркада",
+        "Головоломка руйнування",
+        "Ланцюгова реакція"
+      ],
+      "gamePlatform": "Мобільний",
+      "description": "Яскрава аркада з фізичними головоломками, де три кольори перетворюються на один із 35 авторських рецептів снарядів.",
+      "creativeWorkStatus": "Активна розробка - виробництво прототипу",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "uk"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/uk/games/ball-is-god.html#game",
+      "name": "Ball is God?!",
+      "url": "https://willowinworld.com/uk/games/ball-is-god.html",
+      "image": "https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp",
+      "genre": [
+        "Аркада з вертикальним спуском",
+        "Хардкорна аркада",
+        "Сюжетна аркада",
+        "Дія боса"
+      ],
+      "gamePlatform": "Мобільний",
+      "description": "Хардкорна аркада з вертикальним спуском, де гравці повертають вежу, будують комбо-розбивачі та переносять карму через десять локацій.",
+      "creativeWorkStatus": "Активне виробництво",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "uk"
+    }
+  ]
+}
+</script>
+</head>
+<body class="home-polish-2026" data-theme="dark">
+  <a class="skip-link" href="#main-content">Перейти до основного вмісту</a>
+  <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
+  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magic unlocked - Ласкаво просимо до WillowinWorld</div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="додому WillowinWorld">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" fetchpriority="high" decoding="async">
+          </span>
+          <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="Основна навігація">
+          <a href="#home">Дім</a>
+          <a href="#games">Ігри</a>
+          <a href="#studio">Студія</a>
+          <a href="#devlog">Розробник</a>
+          <a href="press-kit.html">Прес-кіт</a>
+          <a href="#contact" data-open-contact>Контакт</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-small btn-ghost contact-header" data-open-contact type="button">Звертайтеся в студію</button>
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Змінити тему" title="Нічна магія / Денне світло">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Мова"><details><summary aria-label="Виберіть мову"><span aria-hidden="true">UK</span></summary><div class="language-options"><a href="../index.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../ar/index.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../hy/index.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../bn/index.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../bg/index.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../zh-hans/index.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../zh-hant/index.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../cs/index.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../da/index.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../nl/index.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../fil/index.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../fi/index.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../fr/index.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../de/index.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../el/index.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../he/index.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../hi/index.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../hu/index.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../id/index.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../it/index.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../ja/index.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../ko/index.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../ms/index.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../no/index.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../fa/index.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../pl/index.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../pt/index.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../pt-pt/index.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../kk/index.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../ro/index.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../ru/index.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../es/index.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../es-419/index.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../sw/index.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../sv/index.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../tt/index.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../th/index.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../tr/index.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="index.html" lang="uk" hreflang="uk" aria-current="page"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../ur/index.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../uz/index.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../vi/index.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow hero-eyebrow">Інді студія мобільних ігор</div>
+            <h1><span class="hero-brand-title">WillowinWorld</span><span class="hero-title-line">Маленькі ігри. Живі світи.</span></h1>
+            <p class="hero-copy">Тактильні головоломки та аркадні ігри, де кожен розіграш, падіння, постріл і падіння змінюють світ.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#games">Досліджуйте ігри</a>
+              <a class="btn btn-ghost" href="press-kit.html">Прес-кіт</a>
+            </div>
+            <nav class="hero-worlds" aria-label="Рекомендовані ігри WillowinWorld">
+              <a href="#nature-card"><strong>Nature Seed</strong><span>фізика малювання для вирішення</span></a>
+              <a href="#candy-card"><strong>Candy Shop</strong><span>затишна головоломка злиття</span></a>
+              <a href="#paint-card"><strong>Paint Blasters</strong><span>кольорові ланцюгові реакції</span></a>
+              <a href="#ball-card"><strong>Ball is God?!</strong><span>вертикальний аркадний спуск</span></a>
+            </nav>
+          </div>
+
+          <div class="hero-panel" role="img" aria-label="Поточний центр уваги: попередній перегляд відновлення Nature Seed">
+            <div class="nature-preview ambient-only" aria-hidden="true">
+              <div class="nature-stage nature-stage-hero">
+                <img class="nature-level nature-level-sketch" src="../assets/responsive/nature-seed-sketch-720.webp" width="720" height="405" alt="" fetchpriority="high" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../assets/responsive/nature-seed-hero-720.avif 720w, ../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 50vw">
+                  <img class="nature-level nature-level-painted" src="../assets/responsive/nature-seed-hero-1376.webp" srcset="../assets/responsive/nature-seed-hero-720.webp 720w, ../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 50vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+                </picture>
+                <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+                  <path d="M46 194C142 196 147 260 237 262C320 263 318 195 404 195C484 195 482 313 566 316" />
+                  <path d="M76 336C164 336 178 420 278 420C365 420 384 368 506 380" />
+                </svg>
+                <span class="nature-water-drop is-first"></span>
+                <span class="nature-water-drop is-second"></span>
+                <span class="nature-water-drop is-third"></span>
+                <span class="nature-bloom"></span>
+                <img loading="lazy" class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+              </div>
+              <img loading="lazy" class="nature-preview-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
+              <span class="nature-preview-title">
+                <small>У центрі уваги · Малюй, щоб розв’язати</small>
+                <strong>Nature Seed</strong>
+              </span>
+              <span class="nature-cycle"><b>Скетч</b><b>Підключись</b><b>Блум</b></span>
+            </div>
+            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only"></span>
+            <div class="hero-portal-badge ambient-only" aria-hidden="true">
+              <img loading="lazy" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
+              <span>Чотири світи</span>
+            </div>
+            <div class="magic-hud">
+              <span>Spotlight · Прототип Nature Seed</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="games">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Наші світи</div>
+              <h2 class="section-title">Чотири світи. Один дотик.</h2>
+            </div>
+            <p class="section-copy">Малюйте фізичні шляхи, об’єднуйте цукерки, створюйте кольорові знімки або обертайте божественну вежу. Кожна гра починається з однієї зрозумілої мобільної дії.</p>
+          </div>
+
+          <div class="game-filters" role="group" aria-label="Ігрові фільтри">
+            <button class="filter-btn is-active" data-filter="All" type="button" aria-pressed="true" aria-controls="gamesGrid">Все</button>
+            <button class="filter-btn" data-filter="Arcade" type="button" aria-pressed="false" aria-controls="gamesGrid">Аркада</button>
+            <button class="filter-btn" data-filter="Puzzle" type="button" aria-pressed="false" aria-controls="gamesGrid">Пазл</button>
+            <button class="filter-btn" data-filter="Physics" type="button" aria-pressed="false" aria-controls="gamesGrid">Фізика</button>
+            <button class="filter-btn" data-filter="Cozy" type="button" aria-pressed="false" aria-controls="gamesGrid">Затишно</button>
+          </div>
+          <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
+
+          <div class="games-grid" id="gamesGrid">
+            <article class="game-card nature-card" id="nature-card" aria-label="Фізична головоломка Nature Seed малюй, щоб розгадати" data-tags="Puzzle Physics Cozy Ecology Nature Draw-to-solve Magic Mobile Meditative Relaxing Zen Atmospheric Restoration Prototype">
+              <div class="game-cover nature-game-cover">
+                <div class="nature-stage nature-stage-card" aria-hidden="true">
+                  <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" loading="lazy" decoding="async">
+                  <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" loading="lazy" decoding="async">
+                  <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                    <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                    <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+                  </svg>
+                  <span class="nature-water-drop is-first"></span>
+                  <span class="nature-water-drop is-second"></span>
+                  <span class="nature-bloom"></span>
+                  <img class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" loading="lazy" decoding="async">
+                  <img class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
+                  <img class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
+                </div>
+                <img class="nature-cover-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed малюнок, щоб розв’язати, гра-головоломка, природа, фізика, значок" loading="lazy" decoding="async">
+                <img class="nature-hover-icon" src="../assets/responsive/nature-seed-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Головоломка з фізики</span>
+                  <h3>Nature Seed</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Ігровий прототип</span>
+                  <span class="game-genre">Основний жанр: фізична головоломка «Малюй, щоб розгадати»</span>
+                </div>
+                <p>Nature Seed — це заспокійлива фізична головоломка для мобільних пристроїв, яка малює та розгадує про витрати обмеженого бюджету, щоб поєднати Water Drop і Seed. Десять поточних рівнів поєднують фізичні штрихи, зірки ефективності, постійний прогрес і відновлення акварелі.</p>
+                <div class="feature-callout">Ігровий гачок: кожен скоєний удар стає частиною фізичного рівня, а розв’язання в одну лінію отримує три зірки.</div>
+                <div class="game-tags">
+                  <span class="tag">Мобільний</span><span class="tag">Малюй, щоб розв’язати</span><span class="tag">Лінія фізики</span><span class="tag">Відновлення природи</span><span class="tag">Розслаблююча головоломка</span><span class="tag">Затишна екологічна гра</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/nature-seed.html">Дослідіть Nature Seed</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D1%96%D0%B4%D0%BA%D1%83%D0%B9%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%BE%D1%8E+Nature+Seed&amp;body=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D1%82%D0%B5%D0%B6%D0%B8%D1%82%D0%B8+%D0%B7%D0%B0+%D0%BE%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC%D0%B8+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%B8+Nature+Seed." aria-label="Надішліть запит на оновлення розробки Nature Seed">Запит на оновлення</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="game-card candy-card" id="candy-card" aria-label="Candy Shop затишна головоломка з цукерками" data-tags="Merge Physics Casual Candy Cozy Mobile Puzzle Combo Relaxing Suika-like Concept Prototype">
+              <div class="game-cover candy-game-cover">
+                <div class="candy-stage" aria-hidden="true">
+                  <div class="candy-bg-stack">
+                    <img class="candy-bg candy-bg-1" src="../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-2" src="../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-3" src="../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-4" src="../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-5" src="../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-6" src="../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-7" src="../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-8" src="../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-9" src="../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-10" src="../assets/Candy%20Shop/site/back_glavnie_10.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <img class="candy-piece candy-piece-left" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <img class="candy-piece candy-piece-right" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <img class="candy-piece candy-piece-result" src="../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <span class="candy-impact"></span>
+                </div>
+                <img class="candy-cover-icon" src="../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="Candy Shop затишна гра-головоломка з цукерками" loading="lazy" decoding="async">
+                <img class="candy-hover-icon" src="../assets/responsive/candy-shop-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Казуальна головоломка зі злиттям</span>
+                  <h3>Candy Shop</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Активний розвиток</span>
+                  <span class="game-genre">Основний жанр: казуальна головоломка зі злиттям</span>
+                </div>
+                <p>Candy Shop — це затишна мобільна фізична головоломка злиття з повною еволюцією 13 цукерок, десятьма контейнерами, які переписують поле, вісьмома спецефектами та шаром планування, побудованим навколо утримання, попереднього перегляду посадки та черги наступних трьох.</p>
+                <div class="feature-callout">Ігровий гачок: знайома крапля стає новою головоломкою, коли контейнер змінює силу тяжіння, геометрію або маршрут до купи.</div>
+                <div class="game-tags">
+                  <span class="tag">Мобільний</span><span class="tag">Candy Merge</span><span class="tag">Фізична головоломка</span><span class="tag">Затишна гра</span><span class="tag">Комбінована головоломка</span><span class="tag">Особливі солодощі</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/candy-shop.html">Дослідіть Candy Shop</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D1%96%D0%B4%D0%BA%D1%83%D0%B9%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%BE%D1%8E+Candy+Shop&amp;body=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D1%82%D0%B5%D0%B6%D0%B8%D1%82%D0%B8+%D0%B7%D0%B0+%D0%BE%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC%D0%B8+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%B8+Candy+Shop." aria-label="Надішліть запит на оновлення розробки Candy Shop">Запит на оновлення</a>
+                </div>
+              </div>
+            </article>
+
+            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters знищення кольорів фізична аркадна головоломка" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
+              <div class="game-cover paint-game-cover">
+                <div class="paint-stage" aria-hidden="true">
+                  <img class="paint-bg" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" loading="lazy" decoding="async">
+                  <div class="paint-arena">
+                    <div class="paint-cube-stack">
+                      <span class="paint-cube paint-cube-a"></span>
+                      <span class="paint-cube paint-cube-b"></span>
+                      <span class="paint-cube paint-cube-c"></span>
+                      <span class="paint-cube paint-cube-d"></span>
+                      <span class="paint-cube paint-cube-e"></span>
+                      <span class="paint-cube paint-cube-f"></span>
+                      <span class="paint-cube paint-cube-g"></span>
+                      <span class="paint-cube paint-cube-h"></span>
+                      <span class="paint-cube paint-cube-i"></span>
+                      <span class="paint-cube paint-cube-j"></span>
+                    </div>
+                    <span class="paint-platform"></span>
+                    <span class="paint-aim-line"></span>
+                    <span class="paint-projectile paint-projectile-one"></span>
+                    <span class="paint-projectile paint-projectile-two"></span>
+                    <span class="paint-projectile paint-projectile-three"></span>
+                    <span class="paint-impact"></span>
+                    <span class="paint-shard paint-shard-one"></span>
+                    <span class="paint-shard paint-shard-two"></span>
+                    <span class="paint-shard paint-shard-three"></span>
+                    <span class="paint-shard paint-shard-four"></span>
+                    <img class="paint-blaster" src="../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <img class="paint-module" src="../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" loading="lazy" decoding="async">
+                  <img class="paint-hero" src="../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" loading="lazy" decoding="async">
+                </div>
+                <img class="paint-cover-icon" src="../assets/responsive/paint-blasters-icon-192.webp" width="192" height="192" alt="Paint Blasters кольорова аркадна гра головоломка з фізикою" loading="lazy" decoding="async">
+                <img class="paint-hover-icon" src="../assets/responsive/paint-blasters-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Фізична головоломка / Гібридна аркада</span>
+                  <h3>Paint Blasters</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Виробничий прототип</span>
+                  <span class="game-genre">Основний жанр: головоломка з фізики / гібридна аркада</span>
+                </div>
+                <p>Paint Blasters — це мобільна фізична головоломка знищення кольорів, у якій три введені кольори перетворюються на один із 35 авторських рецептів снарядів. Ціліться в сім архетипів блоків і перетворюйте один точний удар у ланцюгову реакцію по всій вежі.</p>
+                <div class="feature-callout">Геймплейний гачок: рецепт визначає снаряд перед пострілом, тому змішування є таким же тактичним, як і прицілювання.</div>
+                <div class="game-tags">
+                  <span class="tag">Мобільний</span><span class="tag">Кольоровий пазл</span><span class="tag">Аркада з фізики</span><span class="tag">Цілься та стріляй</span><span class="tag">Ланцюгові реакції</span><span class="tag">Тактичні постріли</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/paint-blasters.html">Дослідіть Paint Blasters</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D1%96%D0%B4%D0%BA%D1%83%D0%B9%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%BE%D1%8E+Paint+Blasters&amp;body=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D1%82%D0%B5%D0%B6%D0%B8%D1%82%D0%B8+%D0%B7%D0%B0+%D0%BE%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC%D0%B8+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%B8+Paint+Blasters." aria-label="Надішліть запит на оновлення розробки Paint Blasters">Запит на оновлення</a>
+                </div>
+              </div>
+            </article>
+
+            <article id="ball-card" class="game-card ball-card" aria-label="Ball is God хардкорна аркадна гра з вертикальним спуском" data-tags="Arcade Hardcore Narrative Story Vertical Action Boss Dark Fantasy Mobile Skill-based One-Hit-Kill In Development Prototype">
+              <div class="game-cover ball-game-cover">
+                <div class="ball-stage" aria-hidden="true">
+                  <img class="ball-bg" src="../assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" loading="lazy" decoding="async">
+                  <div class="ball-cloud-field">
+                    <img class="ball-cloud ball-cloud-1" src="../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-2" src="../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-3" src="../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="162" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-4" src="../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-5" src="../assets/Ball%20is%20God/site/cloud-5.webp" width="460" height="184" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-6" src="../assets/Ball%20is%20God/site/cloud-6.webp" width="460" height="167" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-7" src="../assets/Ball%20is%20God/site/cloud-7.webp" width="460" height="168" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-8" src="../assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-9 is-reverse" src="../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-10 is-reverse" src="../assets/Ball%20is%20God/site/cloud-10.webp" width="460" height="179" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-11 is-reverse" src="../assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-12 is-reverse" src="../assets/Ball%20is%20God/site/cloud-12.webp" width="460" height="159" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-13 is-reverse" src="../assets/Ball%20is%20God/site/cloud-13.webp" width="460" height="155" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-14 is-reverse" src="../assets/Ball%20is%20God/site/cloud-14.webp" width="460" height="153" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-15 is-reverse" src="../assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-16 is-reverse" src="../assets/Ball%20is%20God/site/cloud-16.webp" width="460" height="156" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <div class="ball-tower">
+                    <span class="ball-vine ball-vine-one"></span>
+                    <span class="ball-vine ball-vine-two"></span>
+                    <span class="ball-leaf ball-leaf-one"></span>
+                    <span class="ball-leaf ball-leaf-two"></span>
+                    <span class="ball-leaf ball-leaf-three"></span>
+                    <span class="ball-leaf ball-leaf-four"></span>
+                  </div>
+                  <div class="ball-platforms">
+                    <span class="ball-platform ball-platform-a"><i></i></span>
+                    <span class="ball-platform ball-platform-b"><i></i></span>
+                    <span class="ball-platform ball-platform-c"><i></i></span>
+                    <span class="ball-platform ball-platform-d"><i></i></span>
+                    <span class="ball-platform ball-platform-e"><i></i></span>
+                    <span class="ball-platform ball-platform-f"><i></i></span>
+                  </div>
+                  <div class="ball-espa-wrap">
+                    <img class="ball-espa ball-espa-base" src="../assets/Ball%20is%20God/site/espa.webp" width="520" height="285" alt="" loading="lazy" decoding="async">
+                    <img class="ball-espa ball-espa-alt" src="../assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <img class="ball-cover-icon" src="../assets/responsive/ball-is-god-icon-192.webp" width="192" height="192" alt="Значок аркадної гри Ball is God вертикальний спуск вежа" loading="lazy" decoding="async">
+                <img class="ball-hover-icon" src="../assets/responsive/ball-is-god-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Аркада з вертикальним спуском</span>
+                  <h3>Ball is God?!</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Активне виробництво</span>
+                  <span class="game-genre">Основний жанр: Hardcore Arcade</span>
+                </div>
+                <p>Ball is God?! — це жорстка аркада з вертикальним спуском, де горизонтальне перетягування обертає вежу навколо Espa. Пропустіть три приземлення, щоб завдати удару, використайте щит для перезарядки проти смертельного удару та пронесіть карму через десять міфічних місць.</p>
+                <div class="feature-callout">Ігровий гачок: ризикуйте безпечними платформами, щоб стати впливом, поки карма змінює ворогів, телеграфує та фази босів.</div>
+                <div class="game-tags">
+                  <span class="tag">Мобільний</span><span class="tag">Вертикальний спуск</span><span class="tag">Поверніть вежу</span><span class="tag">Напруга одним ударом</span><span class="tag">Тиск начальника</span><span class="tag">Шляхи карми</span><span class="tag">Історія</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/ball-is-god.html">Дослідіть Ball is God?!</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D1%96%D0%B4%D0%BA%D1%83%D0%B9%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%BE%D1%8E+Ball+is+God&amp;body=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D1%82%D0%B5%D0%B6%D0%B8%D1%82%D0%B8+%D0%B7%D0%B0+%D0%BE%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%BD%D1%8F%D0%BC%D0%B8+%D1%80%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%B8+Ball+is+God." aria-label="Надішліть запит на оновлення розробки Ball is God">Запит на оновлення</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="studio">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Філософія студії</div>
+              <h2 class="section-title">Одна дія. Один живий світ.</h2>
+            </div>
+            <p class="section-copy">Кожна гра починається з правила одного дотику — малювання, скидання, змішування або ухилення — потім додається персонаж, чіткий відгук і наслідки, які гравці можуть прочитати без посібника.</p>
+          </div>
+
+          <div class="principles-grid">
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Грайлива взаємодія</h3>
+              <p>Кожне натискання, лінія, падіння та постріл отримує миттєву візуальну реакцію, тому причина та наслідок залишаються чіткими.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h12M4 18h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Зрозумілий дизайн</h3>
+              <p>Рух, контраст і темп показують мету та наслідки до того, як знадобиться пояснювальний текст.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3 6 6 .9-4.5 4.4 1.1 6.2L12 17.4l-5.6 3.1 1.1-6.2L3 9.9 9 9l3-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <h3>Ідентичність персонажа</h3>
+              <p>Талісмани, об’єкти та користувальницький інтерфейс мають індивідуальність, перш ніж вони мають прикраси.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 2h8a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2zM10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Мобільний UX</h3>
+              <p>Елементи керування, ритм і макет створені для пальців, коротких сеансів, читабельного інтерфейсу користувача та чітких рішень на маленьких екранах.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Задовільний відгук</h3>
+              <p>Моменти впливу, злиття, сплеску, перемоги та невдачі налаштовуються, поки вони не почуваються чіткими.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19c6-1 9-4 10-10 4 2 6 5 6 10H4zM14 9c0-3-2-5-5-6 0 4 2 6 5 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Затишна глибина</h3>
+              <p>М’яка презентація залишає простір для планування, майстерності та повторення.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 16l3-8 3 8M13 16l2-5 3 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>2D Art Direction</h3>
+              <p>Прості форми, чіткі силуети та узгоджене мистецтво інтерфейсу роблять кожен світ впізнаваним.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3.5 3.5M15.5 15.5L19 19M19 5l-3.5 3.5M8.5 15.5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Живі світи</h3>
+              <p>Фон, інтерфейс користувача та символи мають тихо реагувати навіть поза основним циклом.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="systems">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Що ми будуємо</div>
+              <h2 class="section-title">Системи з чарівністю, вагою та можливістю відтворення.</h2>
+            </div>
+          </div>
+
+          <div class="systems-grid">
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 16c2 3 7 4 10 1 3-2 4-7 1-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/></svg></div><h3>Головоломки на основі фізики</h3><p>Тактильні правила, зрозумілі результати та стабільна поведінка об’єктів для мобільної гри.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 20c8-2 12-7 12-16C10 4 5 9 4 18c2-1 4-1 6 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Затишні мобільні ігри</h3><p>М’які світи, у які спокійно входити та приємно опанувати.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 11V8a5 5 0 0110 0v3M5 11h14v10H5V11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Інтерактивні персонажі</h3><p>Талісмани бездіяльного життя, реакції та емоційної ясності.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 14a4 4 0 100-8 4 4 0 000 8zM17 18a4 4 0 100-8 4 4 0 000 8zM9.8 12.2l4.4 1.6" stroke="currentColor" stroke-width="2"/></svg></div><h3>Механіка поєднання кольорів</h3><p>Прості правила кольору, які відкривають тактичні варіанти у форматі, зрозумілому гравцям із короткого кліпу.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0zM12 9a3 3 0 100 6 3 3 0 000-6z" stroke="currentColor" stroke-width="2"/></svg></div><h3>Живі фони</h3><p>Сцени залишаються впізнаваними, не конкуруючи з процесом гри, текстом або елементами керування.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16L18 9l-6-5-6 5-2 11zM9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Милі фантастичні світи</h3><p>Місяці, портали, ліси, замки та персонажі зі стриманістю.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6M4 18h16M8 15l3-4 3 2 5-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Мета прогрес</h3><p>Розблокуйте шляхи, які відповідають тривалості сесії та мотивації гравця.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5zM8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Гра UI/UX</h3><p>Інтерфейси використовують чітку ієрархію, миттєвий зворотній зв’язок і візуальну мову гри.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <article class="soft-card about-copy">
+            <div class="eyebrow">Про WillowinWorld</div>
+            <h2 class="section-title">Маленька студія тактильних мобільних світів.</h2>
+            <p>WillowinWorld розробляє чотири мобільні головоломки та аркадні ігри: Nature Seed, Candy Shop, Paint Blasters і Ball is God?!. Кожен проект має загальнодоступну сторінку гри, поточний статус збірки, датований журнал розробки та прес-ресурси.</p>
+            <div class="about-points">
+              <span>Відчуття мобільності</span>
+              <span>Затишні фантастичні світи</span>
+              <span>Інтерактивні системи</span>
+              <span>Виразне 2D мистецтво</span>
+            </div>
+            <p>Поточна робота охоплює фізику малювання для вирішення, поєднання цукерок у десяти контейнерах, 35 рецептів кольорових снарядів і спуск із обертової вежі через десять місць.</p>
+          </article>
+          <article class="soft-card symbol-card">
+            <div class="symbol-stage">
+              <img class="studio-brand-logo" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 280px, 315px" data-logo-theme data-logo-sizes="(max-width: 760px) 280px, 315px" width="1024" height="1024" alt="Логотип WillowinWorld із чарівним котом, подвійним знаком W і світом замку" loading="lazy" decoding="async">
+            </div>
+            <div class="symbol-copy">
+              <h3>Чотири гри. Чотири різні ігрові системи.</h3>
+              <p>Намалюйте обмежений фізичний шлях, керуйте змінним контейнером для цукерок, зробіть кольоровий знімок або поверніть вежу, що спускається. Відкрийте сторінку кожної гри, щоб дізнатися про її поточний обсяг, статус виробництва та дату останнього оновлення.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Процес</div>
+              <h2 class="section-title"><span class="title-line">З першого гачка</span> <span class="title-line">до полірованого мобільного випуску.</span></h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <article class="step"><h3>Ідея</h3><p>Визначте фентезі, чіткий жанр, обіцянку гравця та основну тактильну петлю.</p></article>
+            <article class="step"><h3>Прототип</h3><p>Створіть найкоротший придатний для гри доказ із реальними вхідними даними, відгуками та станами помилок.</p></article>
+            <article class="step"><h3>Тест на відчуття</h3><p>Налаштуйте елементи керування, тертя, темп, читабельність і чи залишається петля добре відчувати себе після повторення.</p></article>
+            <article class="step"><h3>Art Direction</h3><p>Силуети фігур, палітра, мова інтерфейсу користувача, читабельність значків і ідентифікація символів.</p></article>
+            <article class="step"><h3>Виробництво</h3><p>Масштабування вмісту, систем, розвитку, оптимізації та технічних основ.</p></article>
+            <article class="step"><h3>Польська</h3><p>Уточніть переходи, VFX, аудіо ритми, адаптацію, доступність і комфорт користувача.</p></article>
+            <article class="step"><h3>Запуск</h3><p>Підготуйте активи магазину, прес-матеріали, аналітику, живі оновлення та новини спільноти.</p></article>
+            <article class="step"><h3>Живий догляд</h3><p>Вимірюйте випуски, слухайте гравців і підтримуйте здоров'я кожного світу за допомогою цілеспрямованих оновлень.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="devlog">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Ігри Devlogs</div>
+              <h2 class="section-title"><span class="title-line">Останні примітки розробників,</span> <span class="title-line">без копання.</span></h2>
+            </div>
+            <p class="section-copy">Найновіша датована примітка з кожної сторінки гри, заснована на ігрових системах, які зараз є в збірках Unity.</p>
+          </div>
+
+          <div class="devlog-grid" data-latest-devlogs>
+            <!-- latest-devlogs:start -->
+            <article class="devlog-card" data-devlog-card data-devlog-game="nature-seed" data-devlog-source="games/nature-seed.html">
+              <span><b data-devlog-name>Nature Seed</b><time datetime="2026-07-31" data-devlog-date>31 липня 2026 р</time></span>
+              <h3 data-devlog-title>Перепустка 2 рівня відновлення та стабільності</h3>
+              <p data-devlog-summary>Рівень 2 тепер використовує вихідну фонову пару з надійнішим налаштуванням рівня, перевіркою зіткнень і відгуками про завершення.</p>
+              <a class="btn btn-ghost" href="games/nature-seed.html#devlog" aria-label="Відкрийте журнал розробки Nature Seed">Відкрийте журнал розробки Nature Seed</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="candy-shop" data-devlog-source="games/candy-shop.html">
+              <span><b data-devlog-name>Candy Shop</b><time datetime="2026-07-31" data-devlog-date>31 липня 2026 р</time></span>
+              <h3 data-devlog-title>Меню виробництва та пропуск HUD</h3>
+              <p data-devlog-summary>Головне меню, вибір рівня, елементи керування HUD і піктограми команд тепер мають одну візуальну мову; додаткові стрес-тести двигуна охоплюють оновлений потік.</p>
+              <a class="btn btn-ghost" href="games/candy-shop.html#devlog" aria-label="Відкрийте журнал розробки Candy Shop">Відкрийте журнал розробки Candy Shop</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="paint-blasters" data-devlog-source="games/paint-blasters.html">
+              <span><b data-devlog-name>Paint Blasters</b><time datetime="2026-07-31" data-devlog-date>31 липня 2026 р</time></span>
+              <h3 data-devlog-title>Фізика та стабільність ефектів проходять</h3>
+              <p data-devlog-summary>Поведінка снарядів, роздільна здатність Match-3 і ефекти влучень були протестовані та посилені для отримання стабільніших результатів комбо.</p>
+              <a class="btn btn-ghost" href="games/paint-blasters.html#devlog" aria-label="Відкрийте журнал розробки Paint Blasters">Відкрийте журнал розробки Paint Blasters</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="ball-is-god" data-devlog-source="games/ball-is-god.html">
+              <span><b data-devlog-name>Ball is God?!</b><time datetime="2026-07-31" data-devlog-date>31 липня 2026 р</time></span>
+              <h3 data-devlog-title>Світові поверхні та перевірка небезпеки</h3>
+              <p data-devlog-summary>Презентація персонажа, детермінована генерація та небезпека шипів отримали узгоджену візуальну та виробничу перевірку.</p>
+              <a class="btn btn-ghost" href="games/ball-is-god.html#devlog" aria-label="Відкрийте журнал розробки Ball is God?!">Відкрийте журнал розробки Ball is God?!</a>
+            </article>
+            <!-- latest-devlogs:end -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">FAQ</div>
+              <h2 class="section-title">Швидкі відповіді для гравців, преси та видавців.</h2>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Які ігри створює WillowinWorld?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Ми розробляємо чотири ігри для мобільних пристроїв: фізичну головоломку «малюй, щоб розгадати», головоломку зі злиттям цукерок, фізичну аркаду зі змішуванням кольорів і сюжетну аркаду з вертикальним спуском.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Чи дотримується на сайті налаштування обмеженого руху?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Так. Він дотримується параметрів зменшення руху вашого пристрою, зменшує ефекти, коли ввімкнено Save-Data, і призупиняє анімацію, коли вкладка прихована.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Сайт дотримується моєї денної чи нічної теми?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Так. Під час першого відвідування він використовує збережену тему, якщо така існує, потім системні налаштування кольору, а потім місцевий час. Якщо жоден із них неможливо прочитати, WillowinWorld запускається в темному режимі.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Ви працюєте з видавцями?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Ми відкриті для перегляду видавцями чотирьох зображених тут проектів. У набір для преси вказано статус збірки кожної гри, загальнодоступні активи та напрямок прямого контакту.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Ваші ігри насамперед мобільні?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Так. Ми розробляємо з урахуванням мобільного введення, тривалості сеансу, чіткості екрана та продуктивності з першого прототипу.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Чи можна надіслати портфоліо?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Так. Художники, розробники Unity, дизайнери, аніматори та співавтори з аудіофайлами можуть зв’язатися з нами за адресою contact@willowinworld.com із посиланням на цілеспрямоване портфоліо та контекстом ролі.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Чи можу я співпрацювати зі студією?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Ми відкриті для співпраці у сфері мистецтва, Unity, дизайну, анімації, аудіо та видавництва, які відповідають одному з чотирьох поточних проектів.</p></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta" id="contact">
+        <div class="container">
+          <h2 class="section-title">Поговоріть з WillowinWorld.</h2>
+          <p class="section-copy">Ми вітаємо відгуки гравців, запити преси, розмови з видавцями та співпрацю, орієнтовану на виробництво.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary" data-open-contact type="button">Звертайтеся в студію</button>
+            <a class="btn btn-ghost" href="press-kit.html">Прес-кіт</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#home" aria-label="додому WillowinWorld">
+            <span class="brand-mark" aria-hidden="true">
+              <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" loading="lazy" decoding="async">
+            </span>
+            <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
+          </a>
+        </div>
+        <nav class="footer-links" aria-label="Навігація в нижньому колонтитулі">
+          <a href="#games">Ігри</a>
+          <a href="#studio">Студія</a>
+          <a href="#devlog">Розробник</a>
+          <a href="press-kit.html">Прес-кіт</a>
+          <a href="#contact" data-open-contact>Контакт</a>
+          <a href="/404.html">Загублені зірки</a>
+          <button id="promoHuntToggle" type="button" aria-pressed="false">Чарівне полювання</button>
+        </nav>
+        <div class="footer-contact">
+          <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a>
+          <a href="mailto:contact@willowinworld.com?subject=%D0%9D%D0%B0%D0%B4%D1%96%D1%81%D0%BB%D0%B0%D1%82%D0%B8+%D0%B7%D0%B0%D0%BF%D0%B8%D1%82+%D0%BD%D0%B0+%D0%B4%D0%BE%D1%81%D1%82%D1%83%D0%BF+%D0%B4%D0%BE+%D1%96%D0%B3%D1%80%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE+%D1%82%D0%B5%D1%81%D1%82%D1%83+Nature+Seed">Ігровий тест Nature Seed</a>
+          <a class="footer-action" href="asset-usage.html" data-open-info="asset">Використання активів</a>
+          <a class="footer-action" href="privacy.html" data-open-info="privacy">Конфіденційність</a>
+          <a class="footer-action" href="legal.html" data-open-info="legal">Правовий</a>
+          <button class="footer-action" type="button" data-open-info="security">Безпека</button>
+          <a href="mailto:contact@willowinworld.com?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%82+%D0%B2%D0%B8%D0%B4%D0%B0%D0%B2%D1%86%D1%8F">Контакт видавця</a>
+          <button class="footer-action" type="button" data-open-info="careers">Кар'єра / Співпраця</button>
+        </div>
+        <div class="copyright">© 2026 WillowinWorld. Всі права захищені.</div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal" id="contactModal" hidden role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div>
+          <h2 id="contactTitle">Зверніться до WillowinWorld</h2>
+          <p>Це готує електронний лист на contact@willowinworld.com, тож преса, видавці та запити на співпрацю проходять чітким прямим маршрутом.</p>
+        </div>
+        <button class="icon-btn" id="closeContact" type="button" aria-label="Закрити контактну форму">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="contact-draft-row">
+          <p id="contactDraftStatus" role="status" aria-live="polite">Чернетка залишається на цій вкладці браузера, поки ви працюєте.</p>
+          <button id="clearContactDraft" type="button">Чіткий проект</button>
+        </div>
+        <div class="field">
+          <label for="name">Ім'я</label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Ваше ім'я" aria-describedby="contactHandoff">
+        </div>
+        <div class="field">
+          <label for="email">Електронна пошта</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="type">Тип запиту</label>
+          <select id="type" name="type">
+            <option value="General">Загальне</option>
+            <option value="Publishing">Видавництво</option>
+            <option value="Partnership">Партнерство</option>
+            <option value="Press">Натисніть</option>
+            <option value="Portfolio">Портфоліо</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Повідомлення</label>
+          <textarea id="message" name="message" maxlength="1200" required placeholder="Скажіть нам, що ви хочете обговорити."></textarea>
+        </div>
+        <p class="contact-handoff-note" id="contactHandoff">У вашій програмі електронної пошти відкриється підготовлена чернетка. Нічого не буде надіслано, доки ви не підтвердите це там. Ви також можете електронною поштою <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a> безпосередньо.</p>
+        <div class="contact-form-actions">
+          <button class="btn btn-primary" type="submit">Підготуйте електронний лист</button>
+          <button class="btn btn-ghost" id="copyContactMessage" type="button">Копіювати повідомлення</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="careersModal" hidden role="dialog" aria-modal="true" aria-labelledby="careersTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Кар'єра / Співпраця</div>
+          <h2 id="careersTitle">Хочете створювати чарівні ігри разом з нами?</h2>
+          <p>Ми відкриті для вдумливих співробітників, які піклуються про почуття, ідентичність і продуктивність для гравців.</p>
+        </div>
+        <button class="icon-btn" id="closeCareers" type="button" aria-label="Деталі близької кар'єри та співпраці">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-card">
+        <h3>Відкриті ролі та шляхи співпраці</h3>
+        <div class="roles">
+          <span class="tag">2D художники</span>
+          <span class="tag">Розробники Unity</span>
+          <span class="tag">Дизайнери ігор</span>
+          <span class="tag">Аніматори</span>
+          <span class="tag">Звукорежисери</span>
+          <span class="tag">Видавництво</span>
+          <span class="tag">Партнери</span>
+        </div>
+        <p>Надішліть цілеспрямоване посилання на портфоліо, роль, доступність і гру WillowinWorld або область стилю, яка вам найбільше близька.</p>
+      </div>
+      <div class="info-actions">
+        <button class="btn btn-primary" data-open-contact data-contact-type="Portfolio" type="button">Відкрийте контактну форму</button>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%9F%D0%BE%D1%80%D1%82%D1%84%D0%BE%D0%BB%D1%96%D0%BE+%D0%B0%D0%B1%D0%BE+%D1%81%D0%BF%D1%96%D0%B2%D0%BF%D1%80%D0%B0%D1%86%D1%8F+%D0%B4%D0%BB%D1%8F+WillowinWorld">Надіслати портфоліо</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="pressModal" hidden role="dialog" aria-modal="true" aria-labelledby="pressTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Преса / Видавництво</div>
+          <h2 id="pressTitle">Компактні студійні факти для преси та партнерів.</h2>
+          <p>WillowinWorld створює тактильні мобільні головоломки та аркадні ігри із затишним фентезі-артом, зрозумілими системами та сильним відчуттям.</p>
+        </div>
+        <button class="icon-btn" id="closePress" type="button" aria-label="Закрийте інформацію про пресу та видавця">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Сфера студії</h3>
+          <p>Поточне портфоліо охоплює фізику «малюй для вирішення», головоломки зі злиттям цукерок, знищення кольорів і вертикальну аркаду.</p>
+          <p>Студія зосереджена на введенні в першу чергу з мобільних пристроїв, чітких силуетах, специфічному для гри 2D-мистецтві та механіці, яку гравці можуть зрозуміти через рух.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Інформаційна довідка</h3>
+          <dl>
+            <div><dt>Студія</dt><dd>WillowinWorld</dd></div>
+            <div><dt>Фокус</dt><dd>Мобільні головоломки та аркадні ігри</dd></div>
+            <div><dt>Контакт</dt><dd><a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="press-kit.html">Відкритий прес-кіт</a>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%82+%D0%B2%D0%B8%D0%B4%D0%B0%D0%B2%D1%86%D1%8F">Контакт видавця</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="privacyModal" hidden role="dialog" aria-modal="true" aria-labelledby="privacyTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Конфіденційність</div>
+          <h2 id="privacyTitle">Примітка про конфіденційність WillowinWorld.</h2>
+          <p>Загальнодоступний сайт навмисно простий: без аналітичних сценаріїв, рекламних пікселів, файлів cookie для відстеження, сторонніх вставок або систем облікових записів.</p>
+        </div>
+        <button class="icon-btn" id="closePrivacy" type="button" aria-label="Закрити інформацію про конфіденційність">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Що зберігається</h3>
+          <p>Сайт може зберегти невеликі локальні налаштування теми у вашому браузері, щоб перемикач день/ніч залишався послідовним. Він не створює обліковий запис гравця чи профіль поведінки.</p>
+          <p>Контактна форма домашньої сторінки зберігає ім’я, електронну адресу, тип запиту та поля повідомлень у сховищі сеансу на тій же вкладці, тому перезавантаження не видаляє чернетку. Ви можете очистити його у формі, і браузер видалить його після завершення сеансу вкладки.</p>
+          <p>Якщо ви надсилаєте електронний лист WillowinWorld, ваше повідомлення, адреса електронної пошти та посилання використовуються лише для відповіді на ваш запит.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Факти конфіденційності</h3>
+          <dl>
+            <div><dt>Аналітика</dt><dd>Жодного</dd></div>
+            <div><dt>Печиво</dt><dd>Немає файлів cookie для відстеження</dd></div>
+            <div><dt>Чернетка контакту</dt><dd>Лише та сама вкладка</dd></div>
+            <div><dt>Контакт</dt><dd><a href="mailto:contact@willowinworld.com?subject=%D0%9F%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F+%D0%BA%D0%BE%D0%BD%D1%84%D1%96%D0%B4%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%96">Конфіденційність електронної пошти</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=%D0%9F%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F+%D0%BA%D0%BE%D0%BD%D1%84%D1%96%D0%B4%D0%B5%D0%BD%D1%86%D1%96%D0%B9%D0%BD%D0%BE%D1%81%D1%82%D1%96">Контакт із питань конфіденційності</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="legalModal" hidden role="dialog" aria-modal="true" aria-labelledby="legalTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Правовий</div>
+          <h2 id="legalTitle">Офіційне повідомлення WillowinWorld.</h2>
+          <p>WillowinWorld, логотип студії, назви ігор, персонажі, знімки екрана, візуальні ресурси та копія веб-сайту належать WillowinWorld, якщо не зазначено інше.</p>
+        </div>
+        <button class="icon-btn" id="closeLegal" type="button" aria-label="Закрити юридичну інформацію">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Дозволене публічне посилання</h3>
+          <p>Преса, видавці та автори можуть посилатися на загальнодоступні сторінки ігор і використовувати матеріали рівня попереднього перегляду для висвітлення, рецензії видавців і макети довідок у магазині з кредитом WillowinWorld.</p>
+          <p>Загальнодоступний доступ до активу не дає дозволу на перепродаж, розповсюдження, карбування, використання його для навчання штучного інтелекту або наборів даних машинного навчання, видавання студії або створення з нього непов’язаних комерційних продуктів.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Шлях ліцензування</h3>
+          <dl>
+            <div><dt>Власник</dt><dd>WillowinWorld</dd></div>
+            <div><dt>Спеціальне використання</dt><dd>Спершу запитайте</dd></div>
+            <div><dt>Контакт</dt><dd><a href="mailto:contact@willowinworld.com?subject=%D0%9F%D1%80%D0%B0%D0%B2%D0%BE%D0%B2%D0%B5+%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F">Юридична електронна адреса</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <button class="btn btn-primary" data-open-info="asset" type="button">Використання активів</button>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%9F%D1%80%D0%B0%D0%B2%D0%BE%D0%B2%D0%B5+%D0%BF%D0%B8%D1%82%D0%B0%D0%BD%D0%BD%D1%8F">Юридичний контакт</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="assetModal" hidden role="dialog" aria-modal="true" aria-labelledby="assetTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Використання активів</div>
+          <h2 id="assetTitle">Політика загальнодоступних активів попереднього рівня.</h2>
+          <p>Загальнодоступні файли на сторінках ігор WillowinWorld є оптимізованими матеріалами для попереднього перегляду статей у пресі, колод оглядів видавців, довідкових макетів магазинів і висвітлення ігор WillowinWorld.</p>
+        </div>
+        <button class="icon-btn" id="closeAsset" type="button" aria-label="Закрийте деталі використання ресурсу">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Дозволено</h3>
+          <p>Використовуйте загальнодоступний попередній перегляд у статтях, публікаціях, посиланнях на презентації, висвітленнях, списках побажань, макетах магазинів і примітках до відгуків видавців із кредитом WillowinWorld.</p>
+          <p>Запитайте, перш ніж обрізати фірмовий знак, змінювати колір, використовувати ресурси в платних оголошеннях, запитувати багатошарові вихідні файли або показувати неопубліковані збірки.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Заборонено</h3>
+          <dl>
+            <div><dt>Перепродаж</dt><dd>Без пакетів активів</dd></div>
+            <div><dt>Набори даних ШІ</dt><dd>Без навчання</dd></div>
+            <div><dt>Ідентичність</dt><dd>Без видавання себе за іншу особу</dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="press-kit.html#press-assets">Відкрити матеріали для преси</a>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=%D0%97%D0%B0%D0%BF%D0%B8%D1%82+%D0%BD%D0%B0+%D0%B2%D0%B8%D0%BA%D0%BE%D1%80%D0%B8%D1%81%D1%82%D0%B0%D0%BD%D0%BD%D1%8F+%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D1%83">Запитати дозвіл</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="securityModal" hidden role="dialog" aria-modal="true" aria-labelledby="securityTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Безпека</div>
+          <h2 id="securityTitle">Безпека на статичному сайті.</h2>
+          <p>WillowinWorld зберігає загальнодоступний сайт невеликим, статичним і незалежним, щоб зменшити поверхню атаки, зберігаючи при цьому відточений інтерактивний досвід.</p>
+        </div>
+        <button class="icon-btn" id="closeSecurity" type="button" aria-label="Закрийте деталі безпеки">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Поточна базова лінія</h3>
+          <p>Сайт уникає сторонніх скриптів, вставок, облікових записів і зовнішніх процесорів форм. Він використовує сувору політику безпеки вмісту, відсутність вбудованих обробників подій і прямі маршрути електронної пошти для контакту.</p>
+          <p>Звіти про безпеку вітаються, якщо вони опубліковані на загальнодоступному сайті WillowinWorld і надані відповідально.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Відповідальне розголошення</h3>
+          <dl>
+            <div><dt>Контакт</dt><dd><a href="mailto:contact@willowinworld.com?subject=%D0%97%D0%B2%D1%96%D1%82+%D0%BF%D1%80%D0%BE+%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D0%BA%D1%83">Безпека електронної пошти</a></dd></div>
+            <div><dt>Мова</dt><dd>Бажано англійську</dd></div>
+            <div><dt>Стандарт</dt><dd><a href="../.well-known/security.txt">security.txt</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=%D0%97%D0%B2%D1%96%D1%82+%D0%BF%D1%80%D0%BE+%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D0%BA%D1%83">Повідомити про проблему безпеки</a>
+        <a class="btn btn-ghost" href="../.well-known/security.txt">Відкрийте security.txt</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="gameModal" hidden role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
+    <div class="modal-dialog game-dialog" id="gameDialog">
+      <div class="game-dialog-cover" id="gameDialogCover" aria-hidden="true">
+        <span class="game-dialog-status status-pill" id="gameModalStatus"></span>
+        <span class="game-dialog-spark"></span>
+      </div>
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="gameModalGenre">Ігровий світ</div>
+          <h2 id="gameModalTitle">Гра WillowinWorld</h2>
+        </div>
+        <button class="icon-btn" id="closeGame" type="button" aria-label="Закрити деталі гри">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="game-dialog-grid">
+        <div>
+          <p class="game-dialog-copy" id="gameModalCopy"></p>
+          <ul class="game-detail-tags" id="gameModalTags"></ul>
+        </div>
+        <div class="game-pillar-panel">
+          <h3>Стовпи ігрового процесу</h3>
+          <ul id="gameModalPillars"></ul>
+        </div>
+      </div>
+      <div class="secret-actions">
+        <button class="btn btn-primary" data-open-contact type="button">Звертайтеся в студію</button>
+        <button class="btn btn-ghost" id="dismissGame" type="button">Назад до Світів</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="secretModal" hidden role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+    <div class="modal-dialog secret-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Відкрито прихований портал</div>
+          <h2 id="secretTitle">Секрет знайдено</h2>
+        </div>
+        <button class="icon-btn" id="closeSecret" type="button" aria-label="Закрийте таємну винагороду">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <p id="secretMessage"></p>
+      <div class="secret-actions">
+        <a class="btn btn-primary" id="claimSecret" href="mailto:contact@willowinworld.com?subject=%D0%A0%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BD%D0%B0+%D0%B7%D0%B0%D1%8F%D0%B2%D0%BA%D0%B0">Надіслати запит на промокод</a>
+        <button class="btn btn-ghost" id="dismissSecret" type="button">Закрити портал</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts.js?v=20260801-1"></script>
+  <script src="i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

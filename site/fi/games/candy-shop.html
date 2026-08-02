@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="fi">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Candy Shop on aktiivisessa kehitystyössä oleva viihtyisä mobiiliyhdistelmäpalapeli. Pudota 13-vaiheisen karkkiketjun läpi, hallitse kymmenen astiaa ja laukaise erikoismakeisia.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#211027" id="metaThemeColor">
+  <meta property="og:title" content="Candy Shop - Cozy Candy Merge -pulmapeli">
+  <meta property="og:description" content="Pudota, yhdistä ja kehitä makeisia WillowinWorldin kodikkaassa mobiiliyhdistelmäpulmapelissä.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Candy Shop kodikas karkkien yhdistämispulmapeli valmistajalta WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/fi/games/candy-shop.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="fi_FI">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Candy Shop - Cozy Candy Merge -pulmapeli">
+  <meta name="twitter:description" content="Pudota, yhdistä ja kehitä makeisia WillowinWorldin kodikkaassa mobiiliyhdistelmäpulmapelissä.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Candy Shop kodikas fysiikan sulautuspalapeli värikkäillä makeisilla">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Candy Shop | Viihtyisä Candy Merge -pulmapeli mobiililaitteille</title>
+  <link rel="canonical" href="https://willowinworld.com/fi/games/candy-shop.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/fi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Pelit",
+          "item": "https://willowinworld.com/fi/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Candy Shop",
+          "item": "https://willowinworld.com/fi/games/candy-shop.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/fi/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/fi/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "description": "Viihtyisä makeisten yhdistämispalapeli, jossa on 13-vaiheinen yhdistämisketju, kymmenen pakkaussääntösarjaa, erikoismakeisia ja suunnittelutyökaluja.",
+      "genre": [
+        "Yhdistä palapeli",
+        "Karkkipalapeli",
+        "Rento palapeli",
+        "Fysiikan palapeli"
+      ],
+      "gamePlatform": "Matkapuhelin",
+      "creativeWorkStatus": "Aktiivinen kehitys – pelattava tuotantorakenne",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/fi/games/candy-shop.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "fi"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
+  <link rel="preload" href="../../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-candy-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/candy-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-candy candy-shop-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Siirry kohtaan Candy Shop</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — takaisin kohtaan WillowinWorld">
+      <img src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop kodikas karkkiyhdistelmäpulmapelikuvake" fetchpriority="high" decoding="async">
+      <span><strong>Candy Shop</strong><small>WillowinWorld-pelisivu</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Pelisivun navigointi">
+      <a href="../index.html">Yksiö</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Lehdistöpakkaus</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Vaihda teemaa">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Kieli"><details><summary aria-label="Valitse kieli"><span aria-hidden="true">FI</span></summary><div class="language-options"><a href="../../games/candy-shop.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/candy-shop.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/candy-shop.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/candy-shop.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/candy-shop.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/candy-shop.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/candy-shop.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/candy-shop.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/candy-shop.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/candy-shop.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/candy-shop.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="candy-shop.html" lang="fi" hreflang="fi" aria-current="page"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/candy-shop.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/candy-shop.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/candy-shop.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/candy-shop.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/candy-shop.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/candy-shop.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/candy-shop.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/candy-shop.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/candy-shop.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/candy-shop.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/candy-shop.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/candy-shop.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/candy-shop.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/candy-shop.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/candy-shop.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/candy-shop.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/candy-shop.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/candy-shop.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/candy-shop.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/candy-shop.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/candy-shop.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/candy-shop.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/candy-shop.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/candy-shop.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/candy-shop.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/candy-shop.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/candy-shop.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/candy-shop.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/candy-shop.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/candy-shop.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
+    <div class="candy-page-backdrop ambient-only" aria-hidden="true">
+      <div class="candy-menu-world">
+        <span class="candy-menu-shelf candy-menu-shelf-top"></span>
+        <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-one"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-one"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-three"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-four"></span>
+      </div>
+    </div>
+
+    <section class="candy-game-hero" aria-labelledby="candyHeroTitle">
+      <div class="container candy-hero-layout">
+        <div class="candy-hero-copy">
+          <div class="eyebrow">Candy Shop</div>
+          <h1 id="candyHeroTitle">Pudota makeisia. Rakenna suurempia herkkuja.</h1>
+          <p class="hero-copy">Viihtyisä mobiiliyhdistelmäpulma karamellien asettamisesta, pehmeiden fysiikan kombojen käynnistämisestä ja yhden tyydyttävämmän kehityksen jahtaamisesta.</p>
+          <p class="candy-hero-note">Aktiivinen kehitys, jossa on 13 makeisvaihetta, 10 säilytyssääntösarjaa, kahdeksan erikoiskaramellitehostetta ja suunnittelukerros, joka on rakennettu pito-, laskeutumisesikatselun ja kolmen seuraavan jonon ympärille.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Candy+Shop+p%C3%A4ivitykset">Pyydä Candy Shop-päivityksiä</a>
+            <a class="btn btn-ghost" href="#devlog">Avaa Devlog</a>
+          </div>
+          <div class="candy-hero-stats" role="group" aria-label="Candy Shop kohokohdat">
+            <span><strong>13 karkkia</strong><small>yksi luettava kehitysketju</small></span>
+            <span><strong>10 kenttää</strong><small>uusi geometria ja säännöt</small></span>
+            <span><strong>8 erikoistarjousta</strong><small>paritehosteet ja reseptit</small></span>
+          </div>
+        </div>
+
+        <aside class="candy-hero-showcase" aria-label="Candy Shop-pelin esikatselu">
+          <div class="candy-device-frame">
+            <div class="candy-stage candy-stage-showcase" aria-hidden="true">
+              <div class="candy-bg-stack">
+                <img loading="lazy" class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-2" src="../../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-3" src="../../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-4" src="../../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-5" src="../../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-6" src="../../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-7" src="../../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-8" src="../../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-9" src="../../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
+                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                </picture>
+              </div>
+              <img loading="lazy" class="candy-piece candy-piece-left" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-right" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-result" src="../../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
+              <span class="candy-impact"></span>
+            </div>
+            <img loading="lazy" class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop-pelikuvake kirkkailla makeisilla" decoding="async">
+            <span class="candy-preview-title">
+              <small>Viihtyisä fysiikan yhdistämispalapeli</small>
+              <strong>Candy Shop</strong>
+              <span class="candy-cycle"><b>Pudota</b><b>Yhdistä</b><b>Yhdistelmä</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>Pelattava rakenne · Aktiivinen kehitys</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid candy-shop-content">
+      <section class="game-proof-section" aria-labelledby="candyProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Nykyisen koontiversion sisällä</span>
+            <h2 id="candyProofTitle">Jokainen kontti kirjoittaa palapelin uudelleen.</h2>
+            <p>Yhdistämissääntö pysyy vakiona; kenttä ei. Pullo muuttaa käyttökelpoista tilaa, tiimalasi luo kuristuspisteen, kolminkertaiset portaalit jakavat suunnitelman, pyörivä painovoima nostaa laskeutuneita karkkeja ja esteseinät muuttavat finaalin hallituksi kaaokseksi.</p>
+            <span class="proof-status"><b>Rakennuksen tila</b> Aktiivinen kehitys</span>
+          </div>
+          <div class="proof-visual">
+            <div class="candy-container-section">
+              <h3>Kahdeksan näkyvää sääntömuutosta</h3>
+              <p>Aitoa konttitaidetta nykyisestä Unity-projektista.</p>
+              <div class="container-showcase" aria-label="Candy Shop-konttigalleria">
+                <figure><img src="../../assets/game-proof/candy-containers/container_pot.webp" width="400" height="500" alt="Candy Shop ruukun muotoinen sulatussäiliö" loading="lazy" decoding="async"><figcaption>Pot</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_hourglass.webp" width="400" height="500" alt="Candy Shop tiimalasisulatussäiliö kapealla keskellä" loading="lazy" decoding="async"><figcaption>Tiimalasi</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_flask.webp" width="400" height="500" alt="Candy Shop pullon muotoinen sulatussäiliö" loading="lazy" decoding="async"><figcaption>Pullo</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_tilted.webp" width="400" height="500" alt="Candy Shop kallistettu lattia sulatussäiliö" loading="lazy" decoding="async"><figcaption>kallistettu</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_stepped.webp" width="400" height="500" alt="Candy Shop porrastettu yhdistämissäilö" loading="lazy" decoding="async"><figcaption>porrastettu</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_triple.webp" width="400" height="500" alt="Candy Shop kolmen portaalin yhdistämissäilö" loading="lazy" decoding="async"><figcaption>Kolminkertainen portaali</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_rotating.webp" width="400" height="500" alt="Candy Shop pyörivä painovoimasäiliö" loading="lazy" decoding="async"><figcaption>Pyörivä painovoima</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_obstacles.webp" width="400" height="500" alt="Candy Shop yhdistämiskontti esteseinillä" loading="lazy" decoding="async"><figcaption>Esteseinät</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Vahvistetut Candy Shop-rakennustiedot">
+          <article><strong>13-vaiheinen evoluutio</strong><span>Täydelliset karkkitikkaat.</span></article>
+          <article><strong>Pidä + kolme seuraavaa</strong><span>Suunnittelu ennen jokaista pudotusta.</span></article>
+          <article><strong>Erikoisreseptit</strong><span>Tuli, jää, magneetti, hyytelö ja paljon muuta.</span></article>
+          <article><strong>Päivittäinen ja keräilylenkki</strong><span>Seeded-haaste, Candy Book ja paikallinen viisi parasta.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Pelin yleiskatsaus</div>
+        <h2>Viihtyisä mobiiliyhdistelmäpulma, joka on rakennettu pehmeän fysiikan ja yhden pisaran päätösten ympärille.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Pelaajalupaus</h3><p>Pudota makeisia, luo isompia herkkuja ja muuta jokainen juoksu iloiseksi ketjuksi pehmeää fysiikkaa, makeita yllätyksiä ja tyydyttäviä yhdistelmää.</p></article>
+          <article class="detail-card"><h3>Nykyinen versio</h3><p>Kymmenen konttisääntöä, täydellinen 13 karkkiketju, kahdeksan erikoistehostetta, laskeutumisesikatselu, pito ja seuraavan kolmen jono on toteutettu.</p></article>
+          <article class="detail-card"><h3>Yleisöä</h3><p>Rennot pulmapelit, jotka nauttivat pudota ja yhdistä -peleistä, kodikkaista makeisvisuaaleista, matalapainestrategiasta ja nopeista mobiilisessioista.</p></article>
+          <article class="detail-card"><h3>Tila</h3><p>Aktiivinen kehitys. Nykyinen työ keskittyy mobiilisuorituskykyyn, käyttöliittymän kiillotukseen, karkkitasapainoon, säiliön paineeseen ja luettavaan yhdistelmäpalautteeseen.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Ominaisuudet</div>
+        <h2>Mitä pelaajat tekevät Candy Shopissa.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Pudota ja yhdistä karkkileikki</h3><p>Pelaajat laittavat makeisia astiaan, käyttävät painovoimaa ja ajoitusta ja yhdistävät sitten yhteensopivia karkkeja suurempiin herkkuihin.</p></article>
+          <article class="detail-card"><h3>13-vaiheinen karkkiketju</h3><p>Yhdistelmäportaat antavat jokaiselle juoksulle näkyvän tavoitteen pienistä makeisista suurempiin palkintopaloihin, joissa on vahvempi näyttö.</p></article>
+          <article class="detail-card"><h3>Yhdistelmät ja erikoismakeiset</h3><p>Kahdeksan toteutettua erikoiskaramellitehostetta muodostavat parillisia reseptejä ja sivuvaikutuksia, jotka antavat toistuville istunnoille taktisempaa rakennetta.</p></article>
+          <article class="detail-card"><h3>Viihtyisä mobiiliesitys</h3><p>Pehmeät värit, karkkikaupan taustat ja kosketusystävällinen käyttöliittymä tekevät pelistä luettavan lyhyillä iOS- ja Android-istunnoilla.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Pelisilmukka</div>
+        <h2>Valitse pudotus, hallitse konttia ja pidä yhdistämisketju hengissä.</h2>
+        <ul class="update-list">
+          <li><span>Vaihe 01</span><strong>Lue seuraava karkki</strong><p>Pelaaja tarkistaa seuraavan makeisen, nykyisen pinon ja säiliön sisällä olevan vapaan tilan.</p></li>
+          <li><span>Vaihe 02</span><strong>Paikka tarkoituksella</strong><p>Pudotus voi muodostaa puhtaan yhdistämisen, estää tulevan siirron tai luoda painetta, joka muuttaa seuraavaa päätöstä.</p></li>
+          <li><span>Vaihe 03</span><strong>Yhdistä ja yhdistä</strong><p>Yhteensopivista makeisista kehittyy suurempia herkkuja, ja ketjureaktiot palkitsevat älykkään sijoittelun.</p></li>
+          <li><span>Vaihe 04</span><strong>Edistä ja toista</strong><p>Pelaajat jahtaavat korkeampia karkkivaiheita, parempia juoksuja, puhtaampia komboja ja tulevaisuuden etenemispalkintoja.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">Tarina / maailma</div>
+        <h2>Iloinen karkkikauppa, jossa jokaisesta makeasta voi tulla jotain isompaa.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop sai alkunsa vuonna 2025 WillowinWorldin toiseksi peliideaksi: kirkkaaksi, viihtyisäksi makeisyhdistelmäpulmapeliksi, joka on rakennettu yksinkertaisen ilon ja tyydyttävän fysiikan ympärille.</p>
+            <p>Maailma on tarkoituksella lämmin ja luettava: hyllyt, makeiset, pehmeät maskotit ja myymälämäiset astiat tukevat fantasiaa, että jokaisella pienellä karamellilla on tie kohti isompaa herkkua.</p>
+            <p>Ensimmäisen prototyypin jälkeen tiimi laajensi GDD:tä, rakensi suunnan uudelleen, sai päätökseen 13 makeisen yhdistämisketjun ja otti käyttöön kymmenen säiliösääntöä, erikoisreseptejä, suunnittelutyökaluja ja ensimmäiset meta-etenemisjärjestelmät.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Yhdistä ketju</dt><dd>13 karkkivaihetta</dd></div>
+            <div><dt>Suunnittelun painopiste</dt><dd>Pehmeä fysiikka ja luettavat yhdistelmät</dd></div>
+            <div><dt>Konttikierros</dt><dd>10 geometria- ja sääntövarianttia</dd></div>
+            <div><dt>Nykyinen vaihe</dt><dd>Aktiivinen kehitys ja optimointi</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">Julkaisijakulma</div>
+        <h2>Tuttu yhdistämissääntö kymmenessä eri säilössä.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop pitää pudota ja yhdistä -säännön luettavana, kun jokainen kontti muuttaa käyttökelpoista tilaa, painovoimaa, esteitä tai reittiä pinoon.</p>
+            <p>Nykyinen versio laajentaa lyhyet matkat päivittäisillä haasteilla, Candy Book-löydöillä ja paikallisilla tulostaulukoilla.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Genre</dt><dd>Rento karamellipalapeli</dd></div>
+            <div><dt>Alustan kohde</dt><dd>iOS / Android</dd></div>
+            <div><dt>Istunnon muoto</dt><dd>Lyhyet toistettavat juoksut</dd></div>
+            <div><dt>Ensisijainen toimintakehotus</dt><dd>Pyydä kehityspäivityksiä</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Lataa omaisuutta</div>
+        <h2>Candy Shop lehdistö- ja sisällöntuottajat</h2>
+        <p class="asset-kit-copy">Kuroidut WebP-esikatselut toimituksellista kattavuutta, julkaisijoiden arvosteluja ja myymälän ulkoasuviittauksia varten. Täyden resoluution lähdetiedostoja on saatavilla studiolta pyynnöstä.</p>
+        <h3 class="asset-group-title">Brändi- ja kauppakohtaukset</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop kodikas karkkiyhdistelmäpulmapelikuvake" loading="lazy" decoding="async"><strong>Pelikuvake</strong><span>Viihtyisä karkkien yhdistämispulmakuvake.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop kodikas yhdistämispulma vaihtoehtoinen pelikuvake" loading="lazy" decoding="async"><strong>Vaihtoehtoinen kuvake</strong><span>Toissijainen kauppatyylinen kuvake.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop kodikas karamellipalapeli logo maskotti" loading="lazy" decoding="async"><strong>Logo-maskotti</strong><span>Brändin maskotti Candy Shop-nimikkeellä.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp" download><img src="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp" srcset="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp 360w, ../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop karhun maskottihahmo" loading="lazy" decoding="async"><strong>Karhun maskotti</strong><span>Ystävällinen maskottihahmo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 781w" sizes="(max-width: 760px) 34vw, 76px" width="781" height="1400" alt="Candy Shop kodikas yhdistämispalapelikaupan menun tausta" loading="lazy" decoding="async"><strong>Kauppavalikko</strong><span>Viihtyisä karkkikaupan menun tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop rento yhdistämispalapeli tauon tausta" loading="lazy" decoding="async"><strong>Keskeytä tausta</strong><span>Rento yhdistämispalapelin taukokohtaus.</span></a>
+        </div>
+        <h3 class="asset-group-title">Viihtyisät yhdistämispalapelitaustat</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 01" loading="lazy" decoding="async"><strong>Tausta 01</strong><span>Viihtyisä karkkiyhdistelmäpalapelikohtaus.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 02" loading="lazy" decoding="async"><strong>Tausta 02</strong><span>Karkkikaupan yhdistämispalapelikohtaus.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 03" loading="lazy" decoding="async"><strong>Tausta 03</strong><span>Mobiilikarkkien yhdistämispalapeli.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 04" loading="lazy" decoding="async"><strong>Tausta 04</strong><span>Suloinen palapelikauppakohtaus.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 05" loading="lazy" decoding="async"><strong>Tausta 05</strong><span>Viihtyisä rento palapelin tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 06" loading="lazy" decoding="async"><strong>Tausta 06</strong><span>Karkkiyhdistelmän palapelin tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 07" loading="lazy" decoding="async"><strong>Tausta 07</strong><span>Viihtyisä mobiilikarkkikohtaus.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 08" loading="lazy" decoding="async"><strong>Tausta 08</strong><span>Rento yhdistämispalapelin tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 09" loading="lazy" decoding="async"><strong>Tausta 09</strong><span>Sweet shop palapelin tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop kodikas karamellipalapeli tausta 10" loading="lazy" decoding="async"><strong>Tausta 10</strong><span>Viihtyisä karkkimaailman tausta.</span></a>
+        </div>
+        <h3 class="asset-group-title">Fysiikka yhdistää karkkiketjun</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 01" loading="lazy" decoding="async"><strong>karkkia 01</strong><span>Ensimmäinen karamelli yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 02" loading="lazy" decoding="async"><strong>karkkia 02</strong><span>Toinen karkki yhdistymisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 03" loading="lazy" decoding="async"><strong>karkkia 03</strong><span>Kolmas karamelli yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 04" loading="lazy" decoding="async"><strong>Karkki 04</strong><span>Neljäs karkki yhdistymisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 05" loading="lazy" decoding="async"><strong>Karkki 05</strong><span>Viides karamelli yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 06" loading="lazy" decoding="async"><strong>karkkia 06</strong><span>Kuudes karamelli yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistäminen karkkia 07" loading="lazy" decoding="async"><strong>karkkia 07</strong><span>Seitsemäs karamelli yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 08" loading="lazy" decoding="async"><strong>Karkki 08</strong><span>Yhdistelmäketjun kahdeksas karkki.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 09" loading="lazy" decoding="async"><strong>Karkki 09</strong><span>Yhdeksäs karamelli yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistämiskaramelli 10" loading="lazy" decoding="async"><strong>Karkki 10</strong><span>Kymmenes karkki yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistäminen karkkia 11" loading="lazy" decoding="async"><strong>Karkki 11</strong><span>Yhdistetyn ketjun yhdestoista karkki.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistäminen karkkia 12" loading="lazy" decoding="async"><strong>Karkki 12</strong><span>Kahdestoista karamelli yhdistämisketjussa.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop fysiikan yhdistäminen karkkia 13" loading="lazy" decoding="async"><strong>Karkki 13</strong><span>Viimeinen karkki yhdistämisketjussa.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Kehitysmatka</div>
+        <h2>Ensimmäisestä prototyypistä syvempään tuotantorakenteeseen.</h2>
+        <ul class="update-list">
+          <li><span>Kesäkuun loppu 2025</span><strong>Toinen peliidea</strong><p>WillowinWorld alkoi tutkia kirkasta karkkiprojektia, joka on rakennettu yksinkertaisen, iloisen ja laajasti houkuttelevan ympärille.</p></li>
+          <li><span>elokuu 2025</span><strong>Ensimmäiset karkkihahmot</strong><p>Ensimmäiset karkkihahmot luotiin, ja yhdistämisketju laajeni myöhemmin 11 karkista 13:een, jotta eteneminen olisi vahvempaa.</p></li>
+          <li><span>syyskuu 2025</span><strong>Ensimmäinen prototyyppi</strong><p>Ensimmäinen prototyyppi rakennettiin ja testattiin. Tulos osoitti, että idea tarvitsi lisää identiteettiä, etenemistä ja selkeämpää koukkua.</p></li>
+          <li><span>lokakuu 2025</span><strong>GDD-laajennus</strong><p>Suunnitteludokumenttia laajennettiin uudella mekaniikalla, erikoismakeisilla, etenemisideoilla ja kontin suunnalla.</p></li>
+          <li><span>Joulukuu 2025 – helmikuu 2026</span><strong>Peruskaramellijärjestelmät</strong><p>Karkkien päämekaniikka toteutettiin, karkkisetti valmistui ja varhaiset pakkausjärjestelmät aloitettiin.</p></li>
+          <li><span>huhti-heinäkuu 2026</span><strong>Järjestelmät ja kiillotuspassi</strong><p>Rakenne laajeni kymmenellä säilytyssääntösarjalla, erikoiskarkkien vuorovaikutuksella, suunnittelutyökaluilla, päivittäisillä haasteilla ja keräysjärjestelmillä sekä optimoinnilla ja käyttöliittymän viimeistelyllä.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Aiheeseen liittyvät maailmat</div>
+        <h2>Seuraa palapeliyleisön yhdistämistä laajempaan WillowinWorld-luetteloon.</h2>
+        <p class="related-worlds-copy">Candy Shop kattaa viihtyisän pudota ja yhdistä pulmakaistan. Jatka rentouttavaan linjafysiikan pulmapeliin, väriketjureaktiopelihalliin tai studion kovaan pyörivään tornilaskuun.</p>
+        <div class="related-world-grid" aria-label="Aiheeseen liittyvät WillowinWorld-pelisivut">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">Rentouttava fysiikan palapeli</span>
+            <strong>Nature Seed</strong>
+            <p>Piirrä rajoitettuja fyysisiä reittejä, tuo kaksi hahmoa yhteen ja palauta metsän tasot rauhallisen mobiilifysiikan avulla.</p>
+            <span class="related-world-meta">Ratkaise viivapulma piirtämällä</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">Värien tuhoamispeli</span>
+            <strong>Paint Blasters</strong>
+            <p>Rakenna ammus ennen jokaista laukausta, lue tornin heikkoudet ja käynnistä fysiikan ketjureaktioita.</p>
+            <span class="related-world-meta">Tähtää ja ammu fysiikan palapeli</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Tarinapelihalli</span>
+            <strong>Ball is God?!</strong>
+            <p>Siirry viihtyisistä sessioista jännittävään pyörivään tornilaskuun yhdistelmämurskauksen, myyttisten maailmojen ja pomopaineen kera.</p>
+            <span class="related-world-meta">Hardcore-tornipelihalli</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Lehdistö / kustantajat</span>
+            <strong>Portfolion faktoja</strong>
+            <p>Avaa kompakti yleiskatsaus genreistä, tuotannon tilasta, julkisista varoista ja julkaisijalle suunnatuista pelikoukuista.</p>
+            <span class="related-world-meta">WillowinWorld-salkku</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Candy Shop UKK</div>
+        <h2>Vastauksia pelaajille, lehdistölle ja julkaisukumppaneille.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Millainen peli on Candy Shop?</h3><p>Viihtyisä karamellipalapeli, jossa on pehmeitä fysiikkapisaroita, erikoismakeisia, komboja ja edistymistä.</p></article>
+          <article class="detail-card"><h3>Miten peli toimii?</h3><p>Valitse karamelli, pudota se säiliöön, yhdistä yhteensopivia makeisia, hallitse tilaa ja jahda suurempia karkkivaiheita.</p></article>
+          <article class="detail-card"><h3>Mikä tekee siitä erilaisen?</h3><p>Se yhdistää tutun sulautuvan palapelisilmukan viihtyisään karkkiidentiteettiin, erikoismakeisiin, luettavissa oleviin komboihin ja astian paineeseen.</p></article>
+          <article class="detail-card"><h3>Mikä on tämänhetkinen tila?</h3><p>Aktiivinen kehitys. Nykyisessä projektissa on yhdistämisketju, kymmenen konttisääntöä, erikoisreseptejä, päivittäinen haaste, Candy Book ja paikalliset pistetaulukot.</p></article>
+          <article class="detail-card"><h3>Voidaanko julkista omaisuutta käyttää?</h3><p>Kyllä, lehdistölle, kustantajien arvosteluille ja myymäläviittauksille. Lähdevarat pysyvät yksityisinä, ellei sitä pyydetä suoraan.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Candy Shop Devlog</div>
+        <h2>Mikä muuttui ja milloin</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31. heinäkuuta 2026</time><strong>Tuotantovalikko ja HUD-passi</strong><p>Päävalikko, tason valinta, HUD-säätimet ja komentokuvakkeet jakavat nyt yhden visuaalisen kielen; lisämoottorin sisäiset stressitestit kattavat päivitetyn virtauksen.</p></li>
+          <li><span>heinäkuu 2026</span><strong>Syvällisempi tuotantorakenne</strong><p>Nykyinen projekti yhdistää koko yhdistämisketjun kymmeneen säiliösääntöön, erikoisresepteihin, suunnittelutyökaluihin, päivittäisiin haasteisiin, Candy Book-löytöihin ja paikallisiin pistetaulukkoihin.</p></li>
+          <li><span>huhtikuu 2026</span><strong>Käyttöliittymäelementit ohitetaan</strong><p>Ensimmäiset suuret käyttöliittymäelementit luotiin, mikä antoi Candy Shopille selkeämmän mobiiliidentiteetin ja vahvemman rento esityksen.</p></li>
+          <li><span>helmikuu 2026</span><strong>Karkkiketju ja -astiat</strong><p>Täysi karamellisarja valmistui, ja säiliöjärjestelmät alkoivat muuttaa geometriaa, painovoimaa ja palapelin painetta.</p></li>
+          <li><span>joulukuu 2025</span><strong>Karkkimekaniikka</strong><p>Tärkeimmät karkkimekaniikat toteutettiin karkeassa muodossa, jolloin laajennetusta GDD:stä tuli pelattava järjestelmä.</p></li>
+          <li><span>lokakuu 2025</span><strong>GDD-laajennus</strong><p>Kun ensimmäinen prototyyppi ei tuntunut riittävän vahvalta, muotoilua laajennettiin erityisillä makeisilla ja kehitysideoilla.</p></li>
+          <li><span>elokuu 2025</span><strong>Ensimmäiset karkkihahmot</strong><p>Ensimmäiset karkkihahmot luotiin, mikä vahvisti sulautumisketjun pehmeän, ystävällisen suunnan.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Candy Shop on WillowinWorld-peli.</strong>
+        <span>Viihtyisä yhdistämispalapeli, jossa seuraava pisara on yksinkertainen ja astia ei koskaan.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Candy Shop alatunnisteen navigointi">
+        <a href="../index.html#games">Kaikki pelit</a>
+        <a href="../press-kit.html">Lehdistöpakkaus</a>
+        <a href="../privacy.html">Yksityisyys</a>
+        <a href="../legal.html">Lakiasiat</a>
+        <a href="mailto:contact@willowinworld.com?subject=Candy%20Shop">Ota yhteyttä</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

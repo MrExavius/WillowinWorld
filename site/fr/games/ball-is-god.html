@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="fr">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ball is God?! est une arcade hardcore à descente verticale en production active. Faites pivoter la tour autour de Espa, chargez des combos et traversez dix lieux mythiques.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#071530" id="metaThemeColor">
+  <meta property="og:title" content="Ball is God?! - Jeu d'arcade à descente verticale hardcore">
+  <meta property="og:description" content="Faites pivoter la tour autour de Espa, construisez un combo à trois plateformes et survivez à des lieux mythiques où le karma change les règles.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/ball-is-god-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ball is God tour d'arcade à descente verticale par WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/fr/games/ball-is-god.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ball is God?! - Jeu d'arcade à descente verticale hardcore">
+  <meta name="twitter:description" content="Faites pivoter la tour autour de Espa, construisez un combo à trois plateformes et survivez à des lieux mythiques où le karma change les règles.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/ball-is-god-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Ball is God tour d'arcade à descente verticale avec Espa">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Ball is God?! | Jeu d'arcade de tour de descente verticale</title>
+  <link rel="canonical" href="https://willowinworld.com/fr/games/ball-is-god.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Jeux",
+          "item": "https://willowinworld.com/fr/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Ball is God?!",
+          "item": "https://willowinworld.com/fr/games/ball-is-god.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/fr/games/ball-is-god.html#game",
+      "name": "Ball is God?!",
+      "url": "https://willowinworld.com/fr/games/ball-is-god.html",
+      "image": "https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp",
+      "description": "Un jeu d'arcade hardcore à descente verticale dans lequel les joueurs font glisser pour faire pivoter la tour autour de Espa, créer des combos smashs et faire des choix de karma dans dix lieux mythiques.",
+      "genre": [
+        "Arcade de descente verticale",
+        "Arcade hardcore",
+        "Arcade basée sur une histoire",
+        "Action du patron"
+      ],
+      "gamePlatform": "Mobile",
+      "creativeWorkStatus": "Production active",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/fr/games/ball-is-god.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "fr"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
+  <link rel="preload" href="../../assets/Ball%20is%20God/site/icon1.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-ball-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/ball-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-ball ball-is-god-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Passer à Ball is God?!</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Ball is God?! — retour à WillowinWorld">
+      <img src="../../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God icône de jeu d'arcade à descente verticale" fetchpriority="high" decoding="async">
+      <span><strong>Ball is God?!</strong><small>Page de jeu WillowinWorld</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigation dans la page du jeu">
+      <a href="../index.html">Accueil Studio</a>
+      <a href="#production-ui">Interface utilisateur + Cast</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Dossier de presse</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Langue"><details><summary aria-label="Choisissez la langue"><span aria-hidden="true">FR</span></summary><div class="language-options"><a href="../../games/ball-is-god.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/ball-is-god.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/ball-is-god.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/ball-is-god.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/ball-is-god.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/ball-is-god.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/ball-is-god.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/ball-is-god.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/ball-is-god.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/ball-is-god.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/ball-is-god.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/ball-is-god.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="ball-is-god.html" lang="fr" hreflang="fr" aria-current="page"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/ball-is-god.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/ball-is-god.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/ball-is-god.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/ball-is-god.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/ball-is-god.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/ball-is-god.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/ball-is-god.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/ball-is-god.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/ball-is-god.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/ball-is-god.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/ball-is-god.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/ball-is-god.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/ball-is-god.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/ball-is-god.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/ball-is-god.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/ball-is-god.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/ball-is-god.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/ball-is-god.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/ball-is-god.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/ball-is-god.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/ball-is-god.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/ball-is-god.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/ball-is-god.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/ball-is-god.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/ball-is-god.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/ball-is-god.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/ball-is-god.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/ball-is-god.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/ball-is-god.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell ball-is-god-shell" id="game-main">
+    <div class="ball-page-backdrop ambient-only" aria-hidden="true">
+      <div class="ball-menu-world">
+        <span class="ball-menu-sun"></span>
+        <span class="ball-menu-halo ball-menu-halo-one"></span>
+        <span class="ball-menu-halo ball-menu-halo-two"></span>
+        <span class="ball-menu-pillar ball-menu-pillar-left"></span>
+        <span class="ball-menu-pillar ball-menu-pillar-right"></span>
+        <span class="ball-menu-beam ball-menu-beam-one"></span>
+        <span class="ball-menu-beam ball-menu-beam-two"></span>
+        <span class="ball-menu-rock ball-menu-rock-one"></span>
+        <span class="ball-menu-rock ball-menu-rock-two"></span>
+        <span class="ball-menu-rock ball-menu-rock-three"></span>
+      </div>
+    </div>
+
+    <section class="ball-game-hero" aria-labelledby="ballHeroTitle">
+      <div class="container ball-hero-layout">
+        <div class="ball-hero-copy">
+          <div class="eyebrow">Ball is God?!</div>
+          <h1 id="ballHeroTitle">Faites pivoter la tour. Devenez l’impact.</h1>
+          <p class="hero-copy">Une arcade de descente verticale hardcore où la traînée horizontale fait tourner la tour autour du Espa qui tombe. Évitez les atterrissages en toute sécurité, chargez un combo smash et percez un monde mythique où un seul coup non gardé met fin à la course.</p>
+          <p class="ball-hero-note">Production active à travers dix scènes de tournage, génération de tours déterministes, configurations de boss, dialogues à embranchements et chemins de karma qui changent les règles du jeu.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Ball+is+God+Construction+de+d%C3%A9veloppement">Demander une version de développement</a>
+            <a class="btn btn-ghost" href="#devlog">Ouvrir le journal du développement</a>
+          </div>
+          <div class="ball-hero-stats" role="group" aria-label="Points forts de Ball is God">
+            <span><strong>Rotation</strong><small>faites glisser la tour autour de Espa</small></span>
+            <span><strong>Risque</strong><small>sauter trois atterrissages en toute sécurité</small></span>
+            <span><strong>Écraser</strong><small>percer la plateforme</small></span>
+          </div>
+        </div>
+
+        <aside class="ball-hero-showcase" aria-label="Aperçu du gameplay de Ball is God">
+          <div class="ball-device-frame">
+            <div class="ball-stage ball-stage-showcase" aria-hidden="true">
+              <picture>
+                <source type="image/avif" srcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" sizes="(max-width: 760px) 82vw, 360px">
+                <img class="ball-bg" src="../../assets/responsive/ball-is-god-hero-760.webp" srcset="../../assets/responsive/ball-is-god-hero-480.webp 480w, ../../assets/responsive/ball-is-god-hero-760.webp 760w" sizes="(max-width: 760px) 82vw, 360px" width="760" height="1340" alt="" fetchpriority="high" decoding="async">
+              </picture>
+              <div class="ball-cloud-field">
+                <img loading="lazy" class="ball-cloud ball-cloud-1" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-2" src="../../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-3" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="162" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-4" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-5" src="../../assets/Ball%20is%20God/site/cloud-5.webp" width="460" height="184" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-6" src="../../assets/Ball%20is%20God/site/cloud-6.webp" width="460" height="167" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-7" src="../../assets/Ball%20is%20God/site/cloud-7.webp" width="460" height="168" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-8" src="../../assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-9 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-10 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-10.webp" width="460" height="179" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-11 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-12 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-12.webp" width="460" height="159" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-13 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-13.webp" width="460" height="155" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-14 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-14.webp" width="460" height="153" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-15 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" decoding="async">
+                <img loading="lazy" class="ball-cloud ball-cloud-16 is-reverse" src="../../assets/Ball%20is%20God/site/cloud-16.webp" width="460" height="156" alt="" decoding="async">
+              </div>
+              <div class="ball-tower">
+                <span class="ball-vine ball-vine-one"></span>
+                <span class="ball-vine ball-vine-two"></span>
+                <span class="ball-leaf ball-leaf-one"></span>
+                <span class="ball-leaf ball-leaf-two"></span>
+                <span class="ball-leaf ball-leaf-three"></span>
+                <span class="ball-leaf ball-leaf-four"></span>
+              </div>
+              <div class="ball-platforms">
+                <span class="ball-platform ball-platform-a"><i></i></span>
+                <span class="ball-platform ball-platform-b"><i></i></span>
+                <span class="ball-platform ball-platform-c"><i></i></span>
+                <span class="ball-platform ball-platform-d"><i></i></span>
+                <span class="ball-platform ball-platform-e"><i></i></span>
+                <span class="ball-platform ball-platform-f"><i></i></span>
+              </div>
+              <div class="ball-espa-wrap">
+                <img loading="lazy" class="ball-espa ball-espa-base" src="../../assets/Ball%20is%20God/site/espa.webp" width="520" height="285" alt="" decoding="async">
+                <img loading="lazy" class="ball-espa ball-espa-alt" src="../../assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" decoding="async">
+              </div>
+            </div>
+            <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-primary" src="../../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Icône de jeu Ball is God avec un monde d'arcade divin doré" decoding="async">
+            <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-alt" src="../../assets/Ball%20is%20God/site/icon2.webp" width="520" height="520" alt="" decoding="async">
+            <span class="ball-preview-title">
+              <small>Arcade de descente verticale hardcore</small>
+              <strong>Ball is God?!</strong>
+              <span class="ball-cycle"><b>Déposer</b><b>Esquive</b><b>Décidez</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>Production active · Dix sites</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid ball-is-god-content">
+      <section class="game-proof-section" aria-labelledby="ballProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Dans la version actuelle</span>
+            <h2 id="ballProofTitle">Le karma change plus que le dialogue.</h2>
+            <p>Les chemins clairs, neutres et sombres affectent le comportement du bouclier, les télégraphes d'avertissement, l'agression ennemie et les phases de boss. L'histoire n'est pas une couche placée sur la boucle d'arcade ; la conséquence se répercute sur le runtime.</p>
+            <span class="proof-status"><b>Statut de construction</b> Production active</span>
+          </div>
+          <div class="proof-visual">
+            <div class="ball-world-section">
+              <h3>Les dix mondes de dialogue</h3>
+              <p>L'ensemble complet d'arrière-plan de dialogue actuel, ordonné exactement au fur et à mesure que la descente se déplace de Ena à Deka.</p>
+              <div class="world-filmstrip" aria-label="Les dix arrière-plans d'emplacement de dialogue Ball is God">
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena fond de dialogue ciel" loading="lazy" decoding="async"><figcaption>01 · Ena — Ciel</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo arrière-plan du dialogue spatial" loading="lazy" decoding="async"><figcaption>02 · Dyo — Espace</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria fond de dialogue tempête" loading="lazy" decoding="async"><figcaption>03 · Tria — Tempête</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera fond de dialogue sur la neige" loading="lazy" decoding="async"><figcaption>04 · Tessera — Neige</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente fond de dialogue sur le volcan" loading="lazy" decoding="async"><figcaption>05 · Pente — Volcan</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi fond de dialogue océanique" loading="lazy" decoding="async"><figcaption>06 · Eksi — Océan</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta fond de dialogue dans le désert" loading="lazy" decoding="async"><figcaption>07 · Epta — Désert</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God Ohto fond de dialogue forestier" loading="lazy" decoding="async"><figcaption>08 · Ohto — Forêt</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God Ennea fond de dialogue de grotte" loading="lazy" decoding="async"><figcaption>09 · Ennea — Grotte</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God Deka fond de dialogue enfer" loading="lazy" decoding="async"><figcaption>10 · Deka — Enfer</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Faits de construction Ball is God vérifiés">
+          <article><strong>Dix emplacements en construction</strong><span>Patrons, dangers et atmosphère spécifiques à l'emplacement.</span></article>
+          <article><strong>Trois sauts → smash</strong><span>Risquez des atterrissages en toute sécurité pour devenir l'impact.</span></article>
+          <article><strong>Bouclier de balayage</strong><span>Une défense en temps de recharge contre un coup mortel.</span></article>
+          <article><strong>Descente adaptative</strong><span>Niveaux de plate-forme déterministes avec rythme de récupération.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ball-production-ui" id="production-ui" aria-labelledby="ballProductionUiTitle">
+        <div class="ball-production-heading">
+          <div>
+            <div class="eyebrow">Interface utilisateur de production actuelle</div>
+            <h2 id="ballProductionUiTitle">La descente a désormais un visage avant le premier drop.</h2>
+          </div>
+          <p>Le flux d'exécution actuel complet est affiché dans l'ordre dans lequel les joueurs le rencontrent : sélection de niveau, dialogue, choix d'un jalon, puis victoire ou branche de défaite séparée. Chaque visuel ci-dessous est issu du projet de production Unity.</p>
+        </div>
+
+        <ol class="ball-menu-flow" aria-label="Ordre actuel du menu Ball is God">
+          <li><b>01</b><span><strong>Sélection du niveau</strong><small>Choisissez parmi les niveaux 1 à 1000</small></span></li>
+          <li><b>02</b><span><strong>Gameplay</strong><small>Rotation, esquive et descente</small></span></li>
+          <li><b>03</b><span><strong>Dialogue/quiz</strong><small>Tous les dix niveaux lorsqu'il est déclenché</small></span></li>
+          <li><b>04</b><span><strong>Épargner / tuer</strong><small>Choix de jalons à 90 et 100</small></span></li>
+          <li><b>05</b><span><strong>Résultat</strong><small>Continuer, rejouer ou réessayer</small></span></li>
+        </ol>
+
+        <div class="ball-production-ui-grid">
+          <article class="ball-ui-feature">
+            <header>
+              <span class="ball-ui-label">01 / Sélection du niveau actuel</span>
+              <h3>La route céleste sélectionne les niveaux générés à travers dix chapitres de 100 niveaux.</h3>
+              <p>Le menu de production mappe dix emplacements dans des chapitres de 100 niveaux et s'ouvre directement dans l'exécution sélectionnée.</p>
+            </header>
+            <figure class="ball-ui-device ball-level-select-preview">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Ball is God fond de sélection du niveau de gouache céleste" loading="lazy" decoding="async">
+              <div class="ball-level-select-content" aria-hidden="true">
+                <span class="ball-menu-overline">Sélection du niveau</span>
+                <strong>Choisissez la descente</strong>
+                <div class="ball-level-medallions">
+                  <span><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>201</b></span>
+                  <span class="is-current"><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>202</b></span>
+                  <span><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>203</b></span>
+                  <span><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>204</b></span>
+                  <span><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>205</b></span>
+                  <span class="is-locked"><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>206</b></span>
+                  <span class="is-locked"><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>207</b></span>
+                  <span class="is-locked"><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>208</b></span>
+                  <span class="is-locked"><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>209</b></span>
+                  <span class="is-locked"><img src="../../assets/game-proof/ball-is-god-ui/level-medallion-256.webp" width="256" height="256" alt=""><b>210</b></span>
+                </div>
+                <span class="ball-menu-progress">Emplacement 03 · Tria</span>
+              </div>
+              <figcaption><span>Entrée de production en direct</span><strong>Niveaux 201 à 210 à l'intérieur de la route 1 à 1000</strong></figcaption>
+            </figure>
+          </article>
+
+          <article class="ball-ui-feature">
+            <header>
+              <span class="ball-ui-label">03/Dialogues</span>
+              <h3>Les personnages arrivent à l'intérieur du monde, pas au-dessus.</h3>
+              <p>Le portrait, l'art de localisation, la plaque de haut-parleur et l'état de branchement partagent une composition verticale.</p>
+            </header>
+            <figure class="ball-ui-device ball-dialogue-preview">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God lieu de dialogue céleste avec une lumière suspendue lumineuse" loading="lazy" decoding="async">
+              <span class="ball-dialogue-location" aria-hidden="true">ENA · ATTERRISSAGE 03</span>
+              <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, une sentinelle triangulaire violette de Ball is God" loading="lazy" decoding="async">
+              <div class="ball-dialogue-panel">
+                <img src="../../assets/game-proof/ball-is-god-ui/dialogue-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
+                <div class="ball-dialogue-copy">
+                  <strong>Shash</strong>
+                  <p>Continuez alors, mais ne pensez pas que ce sera facile. Tria vous attend pour que tout ce qui précède semble être une simple bagatelle.</p>
+                  <span aria-hidden="true">Appuyez pour continuer <b>›</b></span>
+                </div>
+              </div>
+              <figcaption><span>Dialogue d'exécution</span><strong>Portrait, orateur et emplacement dans un seul cadre</strong></figcaption>
+            </figure>
+          </article>
+        </div>
+
+        <div class="ball-choice-showcase">
+          <div>
+            <span class="ball-ui-label">04 / Choix du jalon</span>
+            <h3>La réponse fait partie de la descente.</h3>
+            <p>Aux niveaux locaux 90 et 100, le panel dédié demande une décision de rechange ou de mise à mort avant que le dialogue ne résolve la fuite.</p>
+          </div>
+          <div class="ball-choice-panel" aria-label="Exemple de choix de dialogue Ball is God">
+            <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
+            <div>
+              <span>Rechange</span>
+              <span>Tuer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ball-ui-system-strip">
+          <div>
+            <span class="ball-ui-label">05 / Menus de résultats</span>
+            <h3>La victoire continue. La défaite revient au même défi.</h3>
+            <p>La version actuelle a deux états de résultat distincts : PanelWin propose la relecture et le niveau suivant, tandis que PanelOver conserve une action de relecture indubitable.</p>
+          </div>
+          <div class="ball-result-menus" aria-label="Ball is God menus de résultats actuels">
+            <div class="ball-result-menu is-victory">
+              <span>Victoire · PanelWin</span>
+              <strong>Descente autorisée</strong>
+              <div class="ball-action-buttons">
+                <span class="ball-action-button">
+                  <img src="../../assets/game-proof/ball-is-god-ui/action-button-512.webp" width="512" height="192" alt="" loading="lazy" decoding="async">
+                  <b>Rejouer</b>
+                </span>
+                <span class="ball-action-button is-primary">
+                  <img src="../../assets/game-proof/ball-is-god-ui/action-button-512.webp" width="512" height="192" alt="" loading="lazy" decoding="async">
+                  <b>Suivant</b>
+                </span>
+              </div>
+            </div>
+            <div class="ball-result-menu is-defeat">
+              <img src="../../assets/game-proof/ball-is-god-ui/replay-icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+              <span>Défaite · PanelOver</span>
+              <strong>Niveau de relecture</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="ball-cast-heading">
+          <div>
+            <span class="ball-ui-label">Casting des dialogues</span>
+            <h3>Visages rencontrés en descendant.</h3>
+          </div>
+          <p>Les 25 caractères avec des paires de portraits ouverts et fermés de production valides sont inclus ci-dessous. Survolez ou concentrez une carte pour changer d'expression.</p>
+        </div>
+        <div class="ball-character-roster" aria-label="Ball is God personnages de dialogue de production">
+          <article class="ball-character-card is-espa">
+            <div class="ball-character-art">
+              <img class="is-open" src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa portrait de dialogue" loading="lazy" decoding="async">
+              <img class="is-close" src="../../assets/game-proof/ball-is-god-ui/espa-close.webp" width="640" height="353" alt="" loading="lazy" decoding="async">
+            </div>
+            <span>Personnage du joueur</span><strong>Espa</strong><small>Expression ouverte/fermée</small>
+          </article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/revla-open.webp" width="640" height="517" alt="Revla portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/revla-close.webp" width="640" height="517" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Revla</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card is-shash"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/shash-close.webp" width="572" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Shash</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card is-shash"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/shush-open.webp" width="572" height="640" alt="Shush portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/shush-close.webp" width="572" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Shush</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card is-shash"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/shish-open.webp" width="572" height="640" alt="Shish portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/shish-close.webp" width="572" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Shish</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/gigo-open.webp" width="640" height="640" alt="Gigo portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/gigo-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Gigo</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/goga-open.webp" width="640" height="640" alt="Goga portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/goga-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Goga</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/giga-open.webp" width="640" height="640" alt="Giga portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/giga-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Giga</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/askold-open.webp" width="640" height="566" alt="Askold portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/askold-close.webp" width="640" height="566" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Askold</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card is-miras"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/miras-open.webp" width="640" height="429" alt="Miras portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/miras-close.webp" width="640" height="429" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Miras</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/hih-open.webp" width="640" height="578" alt="Hih portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/hih-close.webp" width="640" height="578" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Hih</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/heh-open.webp" width="640" height="635" alt="Heh portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/heh-close.webp" width="640" height="635" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Heh</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/hah-open.webp" width="640" height="638" alt="Hah portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/hah-close.webp" width="640" height="638" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Hah</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/musya-open.webp" width="380" height="640" alt="Musya portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/musya-close.webp" width="380" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Musya</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/dusya-open.webp" width="515" height="640" alt="Dusya portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/dusya-close.webp" width="515" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Dusya</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/susya-open.webp" width="406" height="640" alt="Susya portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/susya-close.webp" width="406" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Susya</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/vladus-open.webp" width="452" height="640" alt="Vladus portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/vladus-close.webp" width="452" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Vladus</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/frisha-open.webp" width="640" height="640" alt="Frisha portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/frisha-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Frisha</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/luren-open.webp" width="640" height="640" alt="Luren portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/luren-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Luren</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/kuren-open.webp" width="640" height="640" alt="Kuren portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/kuren-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Kuren</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/don-yagon-open.webp" width="640" height="640" alt="Don Yagon portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/don-yagon-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Don Yagon</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/lurya-open.webp" width="640" height="640" alt="Lurya portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/lurya-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Lurya</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card is-khleya"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/khleya-open.webp" width="640" height="640" alt="Khleya portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/khleya-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Khleya</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card is-varon"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/varon-open.webp" width="640" height="640" alt="Varon portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/varon-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>Varon</strong><small>Expression ouverte/fermée</small></article>
+          <article class="ball-character-card"><div class="ball-character-art"><img class="is-open" src="../../assets/game-proof/ball-is-god-ui/white-open.webp" width="640" height="640" alt="White portrait de dialogue" loading="lazy" decoding="async"><img class="is-close" src="../../assets/game-proof/ball-is-god-ui/white-close.webp" width="640" height="640" alt="" loading="lazy" decoding="async"></div><span>Paire de dialogues</span><strong>White</strong><small>Expression ouverte/fermée</small></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Aperçu du jeu</div>
+        <h2>Une arcade de descente verticale hardcore où une seule traînée peut transformer la sécurité en impact.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Promesse du joueur</h3><p>Guidez Espa à travers un monde vertical divin où chaque goutte compte, chaque erreur peut mettre fin à la course et chaque choix majeur change ce que devient le monde.</p></article>
+          <article class="detail-card"><h3>Version actuelle</h3><p>Dix scènes de localisation, génération de tour procédurale, combo smash, bouclier de balayage, configurations de boss, dialogues de branchement, menus de production et portraits prêts à l'expression sont implémentés.</p></article>
+          <article class="detail-card"><h3>Public</h3><p>Les joueurs qui aiment les jeux d'arcade mobiles difficiles, le timing risque-récompense, la pression des boss, les mondes mythiques et les défis basés sur une histoire.</p></article>
+          <article class="detail-card"><h3>Statut</h3><p>Production active. Les travaux récents se poursuivent sur les systèmes d'exécution, l'art mondial, la validation de la qualité et l'ambiance du gameplay mobile.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Caractéristiques</div>
+        <h2>Ce que font les joueurs dans Ball is God?!</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Descente par glisser-rotation</h3><p>La traînée horizontale fait tourner la tour autour du Espa qui tombe automatiquement, alignant les espaces, les dangers et les plates-formes sûres.</p></article>
+          <article class="detail-card"><h3>Pression d'arcade hardcore</h3><p>Chaque erreur compte, c'est pourquoi chaque run est construit autour de la concentration, du rythme, de la précision et de la récupération sous pression.</p></article>
+          <article class="detail-card"><h3>Boss et mondes mythiques</h3><p>Dix scènes de lieux et leurs configurations de boss associent la pression divine à une progression basée sur l'histoire.</p></article>
+          <article class="detail-card"><h3>Conséquences mécaniques</h3><p>Dialogue de changement de miséricorde, de force et de karma, règles de bouclier, agression ennemie, télégraphes et phases de boss.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Boucle de gameplay</div>
+        <h2>Lisez la chute, chronométrez l'écart et survivez à la tour divine.</h2>
+        <ul class="update-list">
+          <li><span>Étape 01</span><strong>Lire la descente</strong><p>Le joueur scanne les prochaines plates-formes, les lacunes, les dangers et les fenêtres de synchronisation sécurisées pendant que le monde pousse vers le bas.</p></li>
+          <li><span>Étape 02</span><strong>Faites pivoter la tour</strong><p>La traînée horizontale fait tourner le monde autour de Espa, en alignant une plate-forme sûre ou un espace délibéré.</p></li>
+          <li><span>Étape 03</span><strong>Risque et smash</strong><p>Sautez trois plates-formes pour charger un combo smash, puis percez les structures pendant que le bouclier couvre une erreur mortelle.</p></li>
+          <li><span>Étape 04</span><strong>Choisissez la conséquence</strong><p>La miséricorde et la force façonnent le karma, le dialogue et les règles de jeu appliquées aux ennemis et aux boss.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section ball-story-section">
+        <div class="eyebrow">Histoire / monde</div>
+        <h2>Une tour divine, un héros déchu et un monde mythique construit pour les conséquences.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Ball is God?! est né d'une fascination d'enfance pour les arcades mobiles à descente verticale : lire les lacunes, réagir rapidement et survivre par instinct.</p>
+            <p>Mais le format semblait également pouvoir contenir bien plus : des patrons, de la personnalité, une histoire, une tension morale et un monde qui semble écrit plutôt que jetable. Le projet actuel suit Espa à travers dix scènes de tournage, des personnages étranges et des choix qui changent à la fois l'histoire et le jeu.</p>
+            <p>C'est devenue la question derrière Ball is God?! : et si une simple arcade à descente verticale avait la pression d'un jeu de boss et les conséquences émotionnelles d'un RPG basé sur une histoire ?</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Vision</dt><dd>Arcade à tour tournante au poids narratif mythique</dd></div>
+            <div><dt>Portée mondiale actuelle</dt><dd>Dix emplacements et configurations de boss</dd></div>
+            <div><dt>Étape de l'histoire</dt><dd>Brouillon complet de l'histoire longue</dd></div>
+            <div><dt>État de production</dt><dd>Production active</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ball-story-section">
+        <div class="eyebrow">Angle éditeur</div>
+        <h2>Un crochet d'arcade à tour rotative avec une couche de progression basée sur l'histoire.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Ball is God?! associe des commandes de glisser-rotation immédiates à des mondes mythiques, à la pression des boss et à des choix qui modifient le jeu.</p>
+            <p>La base de production actuelle connecte déjà la génération de tours déterministes, l'écrasement risque-récompense, la tension à un coup, les boss, les dialogues à embranchements et les changements de gameplay basés sur le karma.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Genre</dt><dd>Arcade de descente verticale basée sur une histoire</dd></div>
+            <div><dt>Cible de la plateforme</dt><dd>iOS / Android</dd></div>
+            <div><dt>Forme de session</dt><dd>Courses rapides basées sur les compétences</dd></div>
+            <div><dt>CTA principal</dt><dd>Demander une version de développement</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Télécharger les ressources</div>
+        <h2>Ball is God?! ressources de presse et de créateur</h2>
+        <p class="asset-kit-copy">Aperçus WebP organisés pour la couverture éditoriale, la révision des éditeurs et les références à l'aménagement du magasin. Les fichiers sources en pleine résolution sont disponibles auprès du studio sur demande.</p>
+        <h3 class="asset-group-title">Marque et personnages</h3>
+        <p class="asset-group-note">L'icône du jeu ainsi que les 25 personnages actuels qui ont des portraits complets de dialogue de production. Les noms correspondent aux clés de localisation Unity.</p>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God icône de jeu d'arcade de tour de descente verticale" loading="lazy" decoding="async"><strong>Icône de jeu</strong><span>Icône d'arcade de la tour de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa portrait de dialogue de production" loading="lazy" decoding="async"><strong>Espa</strong><span>Portrait du personnage du joueur.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/revla-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/revla-open.webp" width="640" height="517" alt="Revla portrait de dialogue de production" loading="lazy" decoding="async"><strong>Revla</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shash-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash portrait de dialogue de production" loading="lazy" decoding="async"><strong>Shash</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shush-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shush-open.webp" width="572" height="640" alt="Shush portrait de dialogue de production" loading="lazy" decoding="async"><strong>Shush</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shish-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shish-open.webp" width="572" height="640" alt="Shish portrait de dialogue de production" loading="lazy" decoding="async"><strong>Shish</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/gigo-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/gigo-open.webp" width="640" height="640" alt="Gigo portrait de dialogue de production" loading="lazy" decoding="async"><strong>Gigo</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/goga-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/goga-open.webp" width="640" height="640" alt="Goga portrait de dialogue de production" loading="lazy" decoding="async"><strong>Goga</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/giga-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/giga-open.webp" width="640" height="640" alt="Giga portrait de dialogue de production" loading="lazy" decoding="async"><strong>Giga</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/askold-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/askold-open.webp" width="640" height="566" alt="Askold portrait de dialogue de production" loading="lazy" decoding="async"><strong>Askold</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/miras-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/miras-open.webp" width="640" height="429" alt="Miras portrait de dialogue de production" loading="lazy" decoding="async"><strong>Miras</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/hih-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/hih-open.webp" width="640" height="578" alt="Hih portrait de dialogue de production" loading="lazy" decoding="async"><strong>Hih</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/heh-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/heh-open.webp" width="640" height="635" alt="Heh portrait de dialogue de production" loading="lazy" decoding="async"><strong>Heh</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/hah-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/hah-open.webp" width="640" height="638" alt="Hah portrait de dialogue de production" loading="lazy" decoding="async"><strong>Hah</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/musya-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/musya-open.webp" width="380" height="640" alt="Musya portrait de dialogue de production" loading="lazy" decoding="async"><strong>Musya</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/dusya-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/dusya-open.webp" width="515" height="640" alt="Dusya portrait de dialogue de production" loading="lazy" decoding="async"><strong>Dusya</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/susya-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/susya-open.webp" width="406" height="640" alt="Susya portrait de dialogue de production" loading="lazy" decoding="async"><strong>Susya</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/vladus-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/vladus-open.webp" width="452" height="640" alt="Vladus portrait de dialogue de production" loading="lazy" decoding="async"><strong>Vladus</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/frisha-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/frisha-open.webp" width="640" height="640" alt="Frisha portrait du dialogue de production" loading="lazy" decoding="async"><strong>Frisha</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/luren-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/luren-open.webp" width="640" height="640" alt="Luren portrait de dialogue de production" loading="lazy" decoding="async"><strong>Luren</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/kuren-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/kuren-open.webp" width="640" height="640" alt="Kuren portrait de dialogue de production" loading="lazy" decoding="async"><strong>Kuren</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/don-yagon-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/don-yagon-open.webp" width="640" height="640" alt="Don Yagon portrait de dialogue de production" loading="lazy" decoding="async"><strong>Don Yagon</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/lurya-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/lurya-open.webp" width="640" height="640" alt="Lurya portrait de dialogue de production" loading="lazy" decoding="async"><strong>Lurya</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/khleya-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/khleya-open.webp" width="640" height="640" alt="Khleya portrait de dialogue de production" loading="lazy" decoding="async"><strong>Khleya</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/varon-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/varon-open.webp" width="640" height="640" alt="Varon portrait de dialogue de production" loading="lazy" decoding="async"><strong>Varon</strong><span>Portrait de dialogue de production.</span></a>
+          <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/white-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/white-open.webp" width="640" height="640" alt="White portrait de dialogue de production" loading="lazy" decoding="async"><strong>White</strong><span>Portrait de dialogue de production.</span></a>
+        </div>
+        <h3 class="asset-group-title">Arrière-plans de menu</h3>
+        <p class="asset-group-note">Illustration de production actuelle utilisée par le système de sélection de niveau céleste.</p>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God arrière-plan du menu de sélection du niveau céleste" loading="lazy" decoding="async"><strong>Menu Céleste</strong><span>Contexte de production de sélection de niveau.</span></a>
+        </div>
+        <h3 class="asset-group-title">Mondes de descente verticale</h3>
+        <p class="asset-group-note">Ensemble complet de dix arrière-plans de localisation actuels, commandés de Ena à Deka.</p>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de ciel de descente verticale" loading="lazy" decoding="async"><strong>01 · Monde céleste</strong><span>Ena fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond d'espace de descente verticale" loading="lazy" decoding="async"><strong>02 · Monde spatial</strong><span>Dyo fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de tempête de descente verticale" loading="lazy" decoding="async"><strong>03 · Monde des tempêtes</strong><span>Tria fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God descente verticale fond de montagne enneigée" loading="lazy" decoding="async"><strong>04 · Monde de neige</strong><span>Tessera fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de volcan à descente verticale" loading="lazy" decoding="async"><strong>05 · Monde volcanique</strong><span>Arrière-plan Pente ; animé dans le jeu.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond océan de descente verticale" loading="lazy" decoding="async"><strong>06 · Monde océanique</strong><span>Eksi fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God descente verticale fond de buissons du désert" loading="lazy" decoding="async"><strong>07 · Monde désertique</strong><span>Epta fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de forêt de descente verticale" loading="lazy" decoding="async"><strong>08 · Monde forestier</strong><span>Ohto fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de grotte de descente verticale" loading="lazy" decoding="async"><strong>09 · Monde des grottes</strong><span>Ennea fond de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond d'enfer de descente verticale" loading="lazy" decoding="async"><strong>10 · Monde de l'enfer</strong><span>Deka fond de descente verticale.</span></a>
+        </div>
+        <h3 class="asset-group-title">Arrière-plans d'arcade d'histoire</h3>
+        <p class="asset-group-note">Ensemble complet de dialogue et de localisation : le Hall de Lumière ainsi que des arrière-plans pour les dix mondes.</p>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Fond de dialogue de la Salle de Lumière" loading="lazy" decoding="async"><strong>00 · Salle de Lumière</strong><span>Fond de dialogue d'ouverture.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade ciel fond de dialogue" loading="lazy" decoding="async"><strong>01 · Dialogue ciel</strong><span>Contexte de l'histoire Ena.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire fond de dialogue espace arcade" loading="lazy" decoding="async"><strong>02 · Dialogue spatial</strong><span>Contexte de l'histoire Dyo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de dialogue nuage d'orage" loading="lazy" decoding="async"><strong>03 · Dialogue tempête</strong><span>Contexte de l'histoire Tria.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de dialogue sur la montagne enneigée" loading="lazy" decoding="async"><strong>04 · Dialogue sur la neige</strong><span>Contexte de l'histoire Tessera.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade fond de dialogue sur le volcan" loading="lazy" decoding="async"><strong>05 · Dialogue sur les volcans</strong><span>Contexte de l'histoire Pente.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade fond de dialogue océanique" loading="lazy" decoding="async"><strong>06 · Dialogue océanique</strong><span>Contexte de l'histoire Eksi.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade fond de dialogue dans le désert" loading="lazy" decoding="async"><strong>07 · Dialogue du désert</strong><span>Contexte de l'histoire Epta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade forêt fond de dialogue" loading="lazy" decoding="async"><strong>08 · Dialogue forêt</strong><span>Contexte de l'histoire Ohto.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire fond de dialogue de grotte d'arcade" loading="lazy" decoding="async"><strong>09 · Dialogue dans la grotte</strong><span>Contexte de l'histoire Ennea.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade enfer fond de dialogue" loading="lazy" decoding="async"><strong>10 · Dialogue de l'enfer</strong><span>Contexte de l'histoire Deka.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Parcours de développement</div>
+        <h2>De la première idée de studio au plus grand projet d'arcade narratif.</h2>
+        <ul class="update-list">
+          <li><span>juillet 2024</span><strong>Concept original</strong><p>Ball is God?! a commencé comme la première idée de jeu de WillowinWorld : un jeu d'arcade vertical rapide dans lequel il s'agissait de tomber à travers une tour divine et de survivre à des trous de pierre.</p></li>
+          <li><span>août 2024</span><strong>Début de la direction de l'histoire</strong><p>Après le premier montage interne, l'équipe a décidé que le jeu devait devenir plus qu'une simple descente en arcade.</p></li>
+          <li><span>Mois suivants</span><strong>Extension du monde et des boss</strong><p>Le projet s'est développé en dix scènes de lieux, des rencontres de boss, des choix moraux et une structure mythique plus écrite.</p></li>
+          <li><span>avril-mai 2025</span><strong>Réécriture de l'histoire</strong><p>L'histoire a été réécrite et élargie après des mois de rédaction, améliorant les capacités des personnages, la logique du monde et les conséquences morales.</p></li>
+          <li><span>Février 2026</span><strong>Revue de la portée du projet</strong><p>L'équipe a examiné l'ampleur du projet après l'intégration de l'histoire et a reconnu qu'il était devenu un jeu d'arcade narratif plus vaste.</p></li>
+          <li><span>juillet 2026</span><strong>Systèmes actifs, interface utilisateur et pass mondial</strong><p>La production couvre désormais dix scènes de tournage, la génération de tours déterministes, le combo smash, le bouclier, les règles basées sur le karma, l'interface utilisateur de sélection de niveau et les portraits de dialogue prêts à l'expression.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Mondes associés</div>
+        <h2>Passez de la pression d'arcade mythique aux autres systèmes WillowinWorld.</h2>
+        <p class="related-worlds-copy">Ball is God?! est le côté arcade du portefeuille, axé sur l'histoire. Explorez un puzzle silencieux à dessiner pour résoudre, un jeu tactique de fusion de bonbons ou un prototype de destruction alimenté par la couleur.</p>
+        <div class="related-world-grid" aria-label="Pages du jeu WillowinWorld associées">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">Prototype jouable</span>
+            <strong>Nature Seed</strong>
+            <p>Dessinez des itinéraires physiques limités, réunissez deux personnages et restaurez une forêt tranquille dessinée à la main.</p>
+            <span class="related-world-meta">Puzzle dessiner pour résoudre</span>
+          </a>
+          <a class="related-world-link" href="candy-shop.html">
+            <span class="related-world-kicker">Développement actif</span>
+            <strong>Candy Shop</strong>
+            <p>Explorez un puzzle de fusion de bonbons confortable avec une physique douce, des bonbons spéciaux, des combos et une progression.</p>
+            <span class="related-world-meta">Jeu de fusion confortable</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">Prototype de production</span>
+            <strong>Paint Blasters</strong>
+            <p>Construisez des tirs colorés, visez les points faibles et transformez la destruction de la tour en réactions en chaîne.</p>
+            <span class="related-world-meta">Arcade de physique des couleurs</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Presse / éditeurs</span>
+            <strong>Faits sur le portefeuille</strong>
+            <p>Examinez le statut, les cibles de la plate-forme, les actifs publics et le contexte destiné aux éditeurs pour chaque jeu WillowinWorld.</p>
+            <span class="related-world-meta">Portefeuille éditeur</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">FAQ Ball is God?!</div>
+        <h2>Réponses pour les acteurs, la presse et les éditeurs partenaires.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Quel genre de jeu est Ball is God?!</h3><p>Une arcade de descente verticale hardcore dans laquelle vous faites tourner une tour autour de Espa, risquant d'atterrir en toute sécurité et de percer des mondes mythiques.</p></article>
+          <article class="detail-card"><h3>Comment fonctionne le gameplay ?</h3><p>Faites glisser horizontalement pour faire pivoter la tour, sautez trois plates-formes pour charger un smash et glissez verticalement lorsque le bouclier de temps de recharge doit absorber un coup mortel.</p></article>
+          <article class="detail-card"><h3>Qu'est-ce qui le rend différent ?</h3><p>Il relie la pression d'arcade verticale risque-récompense avec dix emplacements et un karma qui change les dialogues, les ennemis, les télégraphes, les boucliers et les boss.</p></article>
+          <article class="detail-card"><h3>Quel est la situation actuelle ?</h3><p>Production active sur les systèmes d'exécution, l'art mondial, le contenu narratif, l'ambiance mobile et la validation de la production.</p></article>
+          <article class="detail-card"><h3>Les biens publics peuvent-ils être utilisés ?</h3><p>Oui, pour la presse, les critiques d'éditeurs et les références de magasins. Les actifs sources restent privés, sauf demande directe.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Ball is God?! Devlog</div>
+        <h2>Qu'est-ce qui a changé et quand</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 juillet 2026</time><strong>Surfaces mondiales et validation des dangers</strong><p>La présentation des personnages, la génération déterministe et les risques d'épines ont reçu une passe de validation visuelle et de production coordonnée.</p></li>
+          <li><span>juillet 2026</span><strong>Interface utilisateur de production et passe de personnage</strong><p>La sélection de niveau, les commandes d'action partagées, le cadrage vertical des dialogues et les expressions de personnages appariées forment désormais une présentation de production plus claire.</p></li>
+          <li><span>Février 2026</span><strong>Revue de la portée du projet</strong><p>L'équipe a réalisé une étape majeure d'intégration de l'histoire et a examiné l'intégralité du projet : dix mondes, des choix moraux, des boss et des fins multiples.</p></li>
+          <li><span>avril-mai 2025</span><strong>Réécriture de l'histoire et capacités</strong><p>L'histoire complète a été réécrite, les capacités des personnages ont été améliorées et les conséquences morales sont devenues plus claires.</p></li>
+          <li><span>août 2024</span><strong>Début de la direction de l'histoire</strong><p>L'équipe a décidé que Ball is God?! ne devait pas être seulement une simple descente en arcade, ajoutant une histoire mythique et une vision de choix moral.</p></li>
+          <li><span>juillet 2024</span><strong>Concept original</strong><p>Le projet a commencé avec la première idée de jeu de WillowinWorld : un jeu d'arcade vertical rapide sur la chute à travers une tour divine.</p></li>
+          <li><span>Version actuelle</span><strong>Les systèmes d'arcade et d'histoire convergent</strong><p>Descente de la tour rotative, combo smash, swipe Shield, boss, dialogue et karma partagent désormais une seule base de production.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Ball is God?! est un jeu WillowinWorld.</strong>
+        <span>Faites pivoter le monde, risquez l'atterrissage et laissez le karma revenir dans la course.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Ball is God navigation en bas de page">
+        <a href="../index.html#games">Tous les jeux</a>
+        <a href="../press-kit.html">Dossier de presse</a>
+        <a href="../privacy.html">Confidentialité</a>
+        <a href="../legal.html">Mentions légales</a>
+        <a href="mailto:contact@willowinworld.com?subject=Ball%20is%20God">Contact</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

@@ -1,0 +1,343 @@
+{
+  "schemaVersion": 1,
+  "defaultLanguage": "en",
+  "lastModified": "2026-08-02",
+  "languages": [
+    {
+      "code": "en",
+      "hreflang": "en",
+      "name": "English",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/",
+      "llms": "https://willowinworld.com/llms.txt"
+    },
+    {
+      "code": "ar",
+      "hreflang": "ar",
+      "name": "العربية",
+      "direction": "rtl",
+      "home": "https://willowinworld.com/ar/",
+      "llms": "https://willowinworld.com/ar/llms.txt"
+    },
+    {
+      "code": "hy",
+      "hreflang": "hy",
+      "name": "Հայերեն",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/hy/",
+      "llms": "https://willowinworld.com/hy/llms.txt"
+    },
+    {
+      "code": "bn",
+      "hreflang": "bn",
+      "name": "বাংলা",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/bn/",
+      "llms": "https://willowinworld.com/bn/llms.txt"
+    },
+    {
+      "code": "bg",
+      "hreflang": "bg",
+      "name": "Български",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/bg/",
+      "llms": "https://willowinworld.com/bg/llms.txt"
+    },
+    {
+      "code": "zh-Hans",
+      "hreflang": "zh-Hans",
+      "name": "简体中文",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/zh-hans/",
+      "llms": "https://willowinworld.com/zh-hans/llms.txt"
+    },
+    {
+      "code": "zh-Hant",
+      "hreflang": "zh-Hant",
+      "name": "繁體中文",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/zh-hant/",
+      "llms": "https://willowinworld.com/zh-hant/llms.txt"
+    },
+    {
+      "code": "cs",
+      "hreflang": "cs",
+      "name": "Čeština",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/cs/",
+      "llms": "https://willowinworld.com/cs/llms.txt"
+    },
+    {
+      "code": "da",
+      "hreflang": "da",
+      "name": "Dansk",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/da/",
+      "llms": "https://willowinworld.com/da/llms.txt"
+    },
+    {
+      "code": "nl",
+      "hreflang": "nl",
+      "name": "Nederlands",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/nl/",
+      "llms": "https://willowinworld.com/nl/llms.txt"
+    },
+    {
+      "code": "fil",
+      "hreflang": "tl",
+      "name": "Filipino",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/fil/",
+      "llms": "https://willowinworld.com/fil/llms.txt"
+    },
+    {
+      "code": "fi",
+      "hreflang": "fi",
+      "name": "Suomi",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/fi/",
+      "llms": "https://willowinworld.com/fi/llms.txt"
+    },
+    {
+      "code": "fr",
+      "hreflang": "fr",
+      "name": "Français",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/fr/",
+      "llms": "https://willowinworld.com/fr/llms.txt"
+    },
+    {
+      "code": "de",
+      "hreflang": "de",
+      "name": "Deutsch",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/de/",
+      "llms": "https://willowinworld.com/de/llms.txt"
+    },
+    {
+      "code": "el",
+      "hreflang": "el",
+      "name": "Ελληνικά",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/el/",
+      "llms": "https://willowinworld.com/el/llms.txt"
+    },
+    {
+      "code": "he",
+      "hreflang": "he",
+      "name": "עברית",
+      "direction": "rtl",
+      "home": "https://willowinworld.com/he/",
+      "llms": "https://willowinworld.com/he/llms.txt"
+    },
+    {
+      "code": "hi",
+      "hreflang": "hi",
+      "name": "हिन्दी",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/hi/",
+      "llms": "https://willowinworld.com/hi/llms.txt"
+    },
+    {
+      "code": "hu",
+      "hreflang": "hu",
+      "name": "Magyar",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/hu/",
+      "llms": "https://willowinworld.com/hu/llms.txt"
+    },
+    {
+      "code": "id",
+      "hreflang": "id",
+      "name": "Bahasa Indonesia",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/id/",
+      "llms": "https://willowinworld.com/id/llms.txt"
+    },
+    {
+      "code": "it",
+      "hreflang": "it",
+      "name": "Italiano",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/it/",
+      "llms": "https://willowinworld.com/it/llms.txt"
+    },
+    {
+      "code": "ja",
+      "hreflang": "ja",
+      "name": "日本語",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/ja/",
+      "llms": "https://willowinworld.com/ja/llms.txt"
+    },
+    {
+      "code": "ko",
+      "hreflang": "ko",
+      "name": "한국어",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/ko/",
+      "llms": "https://willowinworld.com/ko/llms.txt"
+    },
+    {
+      "code": "ms",
+      "hreflang": "ms",
+      "name": "Bahasa Melayu",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/ms/",
+      "llms": "https://willowinworld.com/ms/llms.txt"
+    },
+    {
+      "code": "no",
+      "hreflang": "no",
+      "name": "Norsk",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/no/",
+      "llms": "https://willowinworld.com/no/llms.txt"
+    },
+    {
+      "code": "fa",
+      "hreflang": "fa",
+      "name": "فارسی",
+      "direction": "rtl",
+      "home": "https://willowinworld.com/fa/",
+      "llms": "https://willowinworld.com/fa/llms.txt"
+    },
+    {
+      "code": "pl",
+      "hreflang": "pl",
+      "name": "Polski",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/pl/",
+      "llms": "https://willowinworld.com/pl/llms.txt"
+    },
+    {
+      "code": "pt-BR",
+      "hreflang": "pt-BR",
+      "name": "Português (Brasil)",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/pt/",
+      "llms": "https://willowinworld.com/pt/llms.txt"
+    },
+    {
+      "code": "pt-PT",
+      "hreflang": "pt-PT",
+      "name": "Português (Portugal)",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/pt-pt/",
+      "llms": "https://willowinworld.com/pt-pt/llms.txt"
+    },
+    {
+      "code": "kk",
+      "hreflang": "kk",
+      "name": "Қазақша",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/kk/",
+      "llms": "https://willowinworld.com/kk/llms.txt"
+    },
+    {
+      "code": "ro",
+      "hreflang": "ro",
+      "name": "Română",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/ro/",
+      "llms": "https://willowinworld.com/ro/llms.txt"
+    },
+    {
+      "code": "ru",
+      "hreflang": "ru",
+      "name": "Русский",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/ru/",
+      "llms": "https://willowinworld.com/ru/llms.txt"
+    },
+    {
+      "code": "es-ES",
+      "hreflang": "es-ES",
+      "name": "Español (España)",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/es/",
+      "llms": "https://willowinworld.com/es/llms.txt"
+    },
+    {
+      "code": "es-419",
+      "hreflang": "es",
+      "name": "Español (Latinoamérica)",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/es-419/",
+      "llms": "https://willowinworld.com/es-419/llms.txt"
+    },
+    {
+      "code": "sw",
+      "hreflang": "sw",
+      "name": "Kiswahili",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/sw/",
+      "llms": "https://willowinworld.com/sw/llms.txt"
+    },
+    {
+      "code": "sv",
+      "hreflang": "sv",
+      "name": "Svenska",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/sv/",
+      "llms": "https://willowinworld.com/sv/llms.txt"
+    },
+    {
+      "code": "tt",
+      "hreflang": "tt",
+      "name": "Татарча",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/tt/",
+      "llms": "https://willowinworld.com/tt/llms.txt"
+    },
+    {
+      "code": "th",
+      "hreflang": "th",
+      "name": "ไทย",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/th/",
+      "llms": "https://willowinworld.com/th/llms.txt"
+    },
+    {
+      "code": "tr",
+      "hreflang": "tr",
+      "name": "Türkçe",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/tr/",
+      "llms": "https://willowinworld.com/tr/llms.txt"
+    },
+    {
+      "code": "uk",
+      "hreflang": "uk",
+      "name": "Українська",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/uk/",
+      "llms": "https://willowinworld.com/uk/llms.txt"
+    },
+    {
+      "code": "ur",
+      "hreflang": "ur",
+      "name": "اردو",
+      "direction": "rtl",
+      "home": "https://willowinworld.com/ur/",
+      "llms": "https://willowinworld.com/ur/llms.txt"
+    },
+    {
+      "code": "uz",
+      "hreflang": "uz",
+      "name": "O‘zbekcha",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/uz/",
+      "llms": "https://willowinworld.com/uz/llms.txt"
+    },
+    {
+      "code": "vi",
+      "hreflang": "vi",
+      "name": "Tiếng Việt",
+      "direction": "ltr",
+      "home": "https://willowinworld.com/vi/",
+      "llms": "https://willowinworld.com/vi/llms.txt"
+    }
+  ]
+}

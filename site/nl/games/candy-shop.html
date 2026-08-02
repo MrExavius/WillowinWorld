@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="nl">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Candy Shop is een gezellige mobiele samenvoegpuzzel in actieve ontwikkeling. Ga door een snoepketen van 13 fasen, beheers tien containers en activeer speciale snoepjes.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#211027" id="metaThemeColor">
+  <meta property="og:title" content="Candy Shop - Gezellig samenvoegpuzzelspel met snoepjes">
+  <meta property="og:description" content="Laat snoepjes vallen, combineer en ontwikkel ze in een gezellige mobiele samenvoegpuzzel van WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Candy Shop gezellig puzzelspel voor het samenvoegen van snoepjes van WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/nl/games/candy-shop.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="nl_NL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Candy Shop - Gezellig samenvoegpuzzelspel met snoepjes">
+  <meta name="twitter:description" content="Laat snoepjes vallen, combineer en ontwikkel ze in een gezellige mobiele samenvoegpuzzel van WillowinWorld.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Candy Shop gezellige natuurkunde-samenvoegpuzzel met kleurrijke snoepjes">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Candy Shop | Gezellig Candy Merge-puzzelspel voor mobiel</title>
+  <link rel="canonical" href="https://willowinworld.com/nl/games/candy-shop.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Spelletjes",
+          "item": "https://willowinworld.com/nl/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Candy Shop",
+          "item": "https://willowinworld.com/nl/games/candy-shop.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/nl/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/nl/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "description": "Een gezellige samenvoegpuzzel voor snoepjes met een samenvoegketen van 13 fasen, tien containerregelsets, speciale snoepjes en planningstools.",
+      "genre": [
+        "Puzzel samenvoegen",
+        "Snoeppuzzel",
+        "Casual puzzel",
+        "Natuurkundepuzzel"
+      ],
+      "gamePlatform": "Mobiel",
+      "creativeWorkStatus": "Actieve ontwikkeling - speelbare productiebuild",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/nl/games/candy-shop.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "nl"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
+  <link rel="preload" href="../../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-candy-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/candy-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-candy candy-shop-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Ga naar Candy Shop</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — terug naar WillowinWorld">
+      <img src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop gezellig snoep-samenvoeg-puzzelspelpictogram" fetchpriority="high" decoding="async">
+      <span><strong>Candy Shop</strong><small>WillowinWorld-spelpagina</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigatie op de spelpagina">
+      <a href="../index.html">Studiowoning</a>
+      <a href="#devlog">Ontwikkelaar</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Persmap</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Van thema wisselen">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Taal"><details><summary aria-label="Kies taal"><span aria-hidden="true">NL</span></summary><div class="language-options"><a href="../../games/candy-shop.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/candy-shop.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/candy-shop.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/candy-shop.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/candy-shop.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/candy-shop.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/candy-shop.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/candy-shop.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/candy-shop.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="candy-shop.html" lang="nl" hreflang="nl" aria-current="page"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/candy-shop.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/candy-shop.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/candy-shop.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/candy-shop.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/candy-shop.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/candy-shop.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/candy-shop.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/candy-shop.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/candy-shop.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/candy-shop.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/candy-shop.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/candy-shop.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/candy-shop.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/candy-shop.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/candy-shop.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/candy-shop.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/candy-shop.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/candy-shop.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/candy-shop.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/candy-shop.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/candy-shop.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/candy-shop.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/candy-shop.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/candy-shop.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/candy-shop.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/candy-shop.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/candy-shop.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/candy-shop.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/candy-shop.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/candy-shop.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/candy-shop.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/candy-shop.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
+    <div class="candy-page-backdrop ambient-only" aria-hidden="true">
+      <div class="candy-menu-world">
+        <span class="candy-menu-shelf candy-menu-shelf-top"></span>
+        <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-one"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-one"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-three"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-four"></span>
+      </div>
+    </div>
+
+    <section class="candy-game-hero" aria-labelledby="candyHeroTitle">
+      <div class="container candy-hero-layout">
+        <div class="candy-hero-copy">
+          <div class="eyebrow">Candy Shop</div>
+          <h1 id="candyHeroTitle">Drop snoepjes. Bouw grotere lekkernijen.</h1>
+          <p class="hero-copy">Een gezellige mobiele samenvoegpuzzel over het plaatsen van snoep, het activeren van zachte natuurkundige combo's en het najagen van nog een bevredigende evolutie.</p>
+          <p class="candy-hero-note">Actieve ontwikkeling met 13 snoepfasen, 10 containerregelsets, acht speciale snoepeffecten en een planningslaag opgebouwd rond wachtruimte, landingsvoorbeeld en de volgende drie wachtrijen.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Candy+Shop-updates">Verzoek Candy Shop-updates</a>
+            <a class="btn btn-ghost" href="#devlog">Open devlog</a>
+          </div>
+          <div class="candy-hero-stats" role="group" aria-label="Candy Shop hoogtepunten">
+            <span><strong>13 snoepjes</strong><small>één leesbare evolutieketen</small></span>
+            <span><strong>10 velden</strong><small>nieuwe geometrie en regels</small></span>
+            <span><strong>8 speciale aanbiedingen</strong><small>gepaarde effecten en recepten</small></span>
+          </div>
+        </div>
+
+        <aside class="candy-hero-showcase" aria-label="Candy Shop gameplay-voorbeeld">
+          <div class="candy-device-frame">
+            <div class="candy-stage candy-stage-showcase" aria-hidden="true">
+              <div class="candy-bg-stack">
+                <img loading="lazy" class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-2" src="../../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-3" src="../../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-4" src="../../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-5" src="../../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-6" src="../../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-7" src="../../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-8" src="../../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-9" src="../../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
+                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                </picture>
+              </div>
+              <img loading="lazy" class="candy-piece candy-piece-left" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-right" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-result" src="../../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
+              <span class="candy-impact"></span>
+            </div>
+            <img loading="lazy" class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop spelpictogram met heldere snoepjes" decoding="async">
+            <span class="candy-preview-title">
+              <small>Gezellige natuurkunde-samenvoegpuzzel</small>
+              <strong>Candy Shop</strong>
+              <span class="candy-cycle"><b>Dalen</b><b>Samenvoegen</b><b>Combinatie</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>Speelbare constructie · Actieve ontwikkeling</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid candy-shop-content">
+      <section class="game-proof-section" aria-labelledby="candyProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Binnen de huidige build</span>
+            <h2 id="candyProofTitle">Elke container herschrijft de puzzel.</h2>
+            <p>De samenvoegregel blijft constant; het veld niet. Een fles verandert de bruikbare ruimte, de zandloper creëert een knelpunt, drievoudige portalen verdelen het plan, draaiende zwaartekracht zet neergeslagen snoepjes op zijn kop en obstakelmuren veranderen de finale in een gecontroleerde chaos.</p>
+            <span class="proof-status"><b>Bouwstatus</b> Actieve ontwikkeling</span>
+          </div>
+          <div class="proof-visual">
+            <div class="candy-container-section">
+              <h3>Acht zichtbare regelwijzigingen</h3>
+              <p>Echte containerkunst uit het huidige Unity-project.</p>
+              <div class="container-showcase" aria-label="Candy Shop containergalerij">
+                <figure><img src="../../assets/game-proof/candy-containers/container_pot.webp" width="400" height="500" alt="Candy Shop potvormige samenvoegcontainer" loading="lazy" decoding="async"><figcaption>Pot</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_hourglass.webp" width="400" height="500" alt="Candy Shop zandloper-samenvoegcontainer met een smal midden" loading="lazy" decoding="async"><figcaption>Zandloper</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_flask.webp" width="400" height="500" alt="Candy Shop flesvormige samenvoegcontainer" loading="lazy" decoding="async"><figcaption>Kolf</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_tilted.webp" width="400" height="500" alt="Candy Shop samenvoegcontainer met gekantelde vloer" loading="lazy" decoding="async"><figcaption>Gekanteld</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_stepped.webp" width="400" height="500" alt="Candy Shop getrapte samenvoegcontainer" loading="lazy" decoding="async"><figcaption>Stapte</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_triple.webp" width="400" height="500" alt="Candy Shop samenvoegcontainer met drie portalen" loading="lazy" decoding="async"><figcaption>Drievoudig portaal</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_rotating.webp" width="400" height="500" alt="Candy Shop container met roterende zwaartekracht" loading="lazy" decoding="async"><figcaption>Roterende zwaartekracht</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_obstacles.webp" width="400" height="500" alt="Candy Shop container samenvoegen met obstakelmuren" loading="lazy" decoding="async"><figcaption>Obstakelmuren</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Geverifieerde Candy Shop bouwfeiten">
+          <article><strong>Evolutie in 13 fasen</strong><span>Een complete snoepladder.</span></article>
+          <article><strong>Vasthouden + volgende drie</strong><span>Planning vóór elke val.</span></article>
+          <article><strong>Speciale recepten</strong><span>Vuur, ijs, magneet, gelei en meer.</span></article>
+          <article><strong>Dagelijkse en verzamellus</strong><span>Seeded-uitdaging, Candy Book en lokale top vijf.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Speloverzicht</div>
+        <h2>Een gezellige mobiele samenvoegpuzzel opgebouwd rond zachte fysica en beslissingen waarbij je nog één keer hoeft te vallen.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Spelerbelofte</h3><p>Laat snoepjes vallen, creëer grotere lekkernijen en verander elke run in een vrolijke aaneenschakeling van zachte fysica, zoete verrassingen en bevredigende samensmeltingen.</p></article>
+          <article class="detail-card"><h3>Huidige build</h3><p>Tien containerregelsets, een complete keten van 13 snoepjes, acht speciale effecten, een landingspreview, een wachtstand en een wachtrij voor de volgende drie zijn geïmplementeerd.</p></article>
+          <article class="detail-card"><h3>Publiek</h3><p>Casual puzzelspelers die houden van drop-and-merge-games, gezellige snoepbeelden, lagedrukstrategie en snelle mobiele sessies.</p></article>
+          <article class="detail-card"><h3>Status</h3><p>Actieve ontwikkeling. Het huidige werk richt zich op mobiele prestaties, UI-verfijning, snoepbalans, containerdruk en leesbare combo-feedback.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Functies</div>
+        <h2>Wat spelers doen in Candy Shop.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Snoepjes laten vallen en samenvoegen</h3><p>Spelers plaatsen snoepjes in de container, gebruiken de zwaartekracht en timing en voegen vervolgens bijpassende snoepjes samen tot grotere lekkernijen.</p></article>
+          <article class="detail-card"><h3>Snoepketting met 13 fasen</h3><p>De samenvoegladder geeft elke run een zichtbaar doel, van kleine snoepjes tot grotere beloningsstukken met een sterkere aanwezigheid op het scherm.</p></article>
+          <article class="detail-card"><h3>Combo's en speciale zoetigheden</h3><p>Acht geïmplementeerde speciale snoepeffecten vormen gepaarde recepten en bijwerkingen, waardoor herhaalde sessies meer tactische textuur krijgen.</p></article>
+          <article class="detail-card"><h3>Gezellige mobiele presentatie</h3><p>Zachte kleuren, snoepwinkelachtergronden en aanraakvriendelijke gebruikersinterface maken het spel leesbaar voor korte iOS- en Android-sessies.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Gameplay-loop</div>
+        <h2>Kies de drop, bestuur de container en houd de samenvoegketen levend.</h2>
+        <ul class="update-list">
+          <li><span>Stap 01</span><strong>Lees het volgende snoepje</strong><p>De speler controleert het volgende snoepje, de huidige stapel en de beschikbare ruimte in de container.</p></li>
+          <li><span>Stap 02</span><strong>Plaats met intentie</strong><p>Een drop kan een zuivere samenvoeging tot stand brengen, een toekomstige zet blokkeren of druk creëren die de volgende beslissing verandert.</p></li>
+          <li><span>Stap 03</span><strong>Samenvoegen en combineren</strong><p>Bijpassende snoepjes evolueren naar grotere lekkernijen, en kettingreacties belonen een slimme plaatsing.</p></li>
+          <li><span>Stap 04</span><strong>Vooruitgang en herhaling</strong><p>Spelers jagen op hogere snoepfasen, betere runs, schonere combo's en toekomstige voortgangsbeloningen.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">Verhaal / wereld</div>
+        <h2>Een vrolijke snoepwinkel waar elk snoepje iets groters kan worden.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop begon in 2025 als het tweede spelidee van WillowinWorld: een heldere, gezellige samenvoegpuzzel van snoep, opgebouwd rond eenvoudig plezier en bevredigende natuurkunde.</p>
+            <p>De wereld is opzettelijk warm en leesbaar: planken, snoepjes, zachte mascottes en winkelachtige containers ondersteunen de fantasie dat elk klein snoepje een pad heeft om een ​​grotere traktatie te worden.</p>
+            <p>Na het eerste prototype breidde het team de GDD uit, herbouwde de richting, voltooide de samenvoegketen van 13 snoepjes en implementeerde tien containerregelsets, speciale recepten, planningstools en de eerste meta-voortgangssystemen.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Keten samenvoegen</dt><dd>13 snoepfasen</dd></div>
+            <div><dt>Ontwerpfocus</dt><dd>Zachte fysica en leesbare combo's</dd></div>
+            <div><dt>Containerrondleiding</dt><dd>10 geometrie- en regelvarianten</dd></div>
+            <div><dt>Huidige fase</dt><dd>Actieve ontwikkeling en optimalisatie</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">Uitgevershoek</div>
+        <h2>Een bekende samenvoegregel voor tien verschillende containers.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop houdt de drop-and-merge-regel leesbaar terwijl elke container de bruikbare ruimte, zwaartekracht, obstakels of de route naar de stapel verandert.</p>
+            <p>De huidige build breidt korte runs uit met dagelijkse uitdagingen, Candy Book-ontdekkingen en lokale scoretabellen.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Genre</dt><dd>Casual puzzel voor het samenvoegen van snoepjes</dd></div>
+            <div><dt>Platformdoel</dt><dd>iOS/Android</dd></div>
+            <div><dt>Sessievorm</dt><dd>Korte herhaalbare runs</dd></div>
+            <div><dt>Primaire CTA</dt><dd>Ontwikkelingsupdates aanvragen</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Middelen downloaden</div>
+        <h2>Candy Shop pers- en makermiddelen</h2>
+        <p class="asset-kit-copy">Samengestelde WebP-previews voor redactionele berichtgeving, uitgeversrecensie en verwijzingen naar winkelindeling. Bronbestanden in volledige resolutie zijn op verzoek verkrijgbaar bij de studio.</p>
+        <h3 class="asset-group-title">Merk- en winkelscènes</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop gezellig snoep-samenvoeg-puzzelspelpictogram" loading="lazy" decoding="async"><strong>Spelpictogram</strong><span>Gezellig snoep-samenvoegpuzzelpictogram.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop gezellig samenvoegpuzzel-alternatief spelpictogram" loading="lazy" decoding="async"><strong>Alternatief pictogram</strong><span>Pictogram voor secundaire winkelstijl.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop gezellige mascotte met snoep-samenvoegpuzzellogo" loading="lazy" decoding="async"><strong>Logo-mascotte</strong><span>Merkmascotte met Candy Shop-titel.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp" download><img src="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp" srcset="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp 360w, ../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop beer mascotte karakter" loading="lazy" decoding="async"><strong>Berenmascotte</strong><span>Vriendelijk mascottekarakter.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 781w" sizes="(max-width: 760px) 34vw, 76px" width="781" height="1400" alt="Candy Shop gezellige samenvoegpuzzelwinkelmenu-achtergrond" loading="lazy" decoding="async"><strong>Winkelmenu</strong><span>Gezellige snoepwinkelmenuachtergrond.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop casual samenvoegpuzzelpauze-achtergrond" loading="lazy" decoding="async"><strong>Achtergrond pauzeren</strong><span>Casual pauzescène voor samenvoegpuzzels.</span></a>
+        </div>
+        <h3 class="asset-group-title">Gezellige puzzelachtergronden samenvoegen</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 01" loading="lazy" decoding="async"><strong>Achtergrond 01</strong><span>Gezellige puzzelscène met snoepjes.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 02" loading="lazy" decoding="async"><strong>Achtergrond 02</strong><span>Snoepwinkel puzzelscène samenvoegen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 03" loading="lazy" decoding="async"><strong>Achtergrond 03</strong><span>Mobiele puzzelscène voor het samenvoegen van snoep.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 04" loading="lazy" decoding="async"><strong>Achtergrond 04</strong><span>Leuke puzzelwinkelscène.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 05" loading="lazy" decoding="async"><strong>Achtergrond 05</strong><span>Gezellige informele puzzelachtergrond.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 06" loading="lazy" decoding="async"><strong>Achtergrond 06</strong><span>Achtergrond voor het samenvoegen van snoepjes.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 07" loading="lazy" decoding="async"><strong>Achtergrond 07</strong><span>Gezellige mobiele snoepscène.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 08" loading="lazy" decoding="async"><strong>Achtergrond 08</strong><span>Casual samenvoegpuzzelachtergrond.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 09" loading="lazy" decoding="async"><strong>Achtergrond 09</strong><span>Snoepwinkelpuzzelachtergrond.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop gezellige snoep-samenvoegpuzzelachtergrond 10" loading="lazy" decoding="async"><strong>Achtergrond 10</strong><span>Gezellige snoepwereldachtergrond.</span></a>
+        </div>
+        <h3 class="asset-group-title">Natuurkunde voegt snoepketen samen</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 01 samen" loading="lazy" decoding="async"><strong>Snoep 01</strong><span>Eerste snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 02 samen" loading="lazy" decoding="async"><strong>Snoep 02</strong><span>Tweede snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 03 samen" loading="lazy" decoding="async"><strong>Snoep 03</strong><span>Derde snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 04 samen" loading="lazy" decoding="async"><strong>Snoep 04</strong><span>Vierde snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 05 samen" loading="lazy" decoding="async"><strong>Snoep 05</strong><span>Vijfde snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 06 samen" loading="lazy" decoding="async"><strong>Snoep 06</strong><span>Zesde snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 07 samen" loading="lazy" decoding="async"><strong>Snoep 07</strong><span>Zevende snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 08 samen" loading="lazy" decoding="async"><strong>Snoep 08</strong><span>Achtste snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 09 samen" loading="lazy" decoding="async"><strong>Snoep 09</strong><span>Negende snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 10 samen" loading="lazy" decoding="async"><strong>Snoep 10</strong><span>Tiende snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 11 samen" loading="lazy" decoding="async"><strong>Snoep 11</strong><span>Elfde snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 12 samen" loading="lazy" decoding="async"><strong>Snoep 12</strong><span>Twaalfde snoepje in de samenvoegketen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop natuurkunde voegt snoep 13 samen" loading="lazy" decoding="async"><strong>Snoep 13</strong><span>Laatste snoepje in de samenvoegketen.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Ontwikkelingstraject</div>
+        <h2>Van eerste prototype tot een diepere productiebuild.</h2>
+        <ul class="update-list">
+          <li><span>Eind juni 2025</span><strong>Tweede spelidee</strong><p>WillowinWorld begon een helder snoepproject te verkennen, opgebouwd rond iets eenvoudigs, vrolijks en breed aantrekkelijks.</p></li>
+          <li><span>Augustus 2025</span><strong>Eerste snoepkarakters</strong><p>De eerste snoepkarakters werden gemaakt en de samenvoegketen werd later uitgebreid van 11 snoepjes naar 13 voor een sterkere voortgang.</p></li>
+          <li><span>September 2025</span><strong>Eerste prototype</strong><p>Het eerste prototype werd gebouwd en getest. Het resultaat toonde aan dat het idee meer identiteit, progressie en een duidelijkere insteek nodig had.</p></li>
+          <li><span>Oktober 2025</span><strong>GDD-uitbreiding</strong><p>Het ontwerpdocument is uitgebreid met nieuwe mechanica, speciale snoepjes, voortgangsideeën en containerrichting.</p></li>
+          <li><span>December 2025-februari 2026</span><strong>Kern snoepsystemen</strong><p>De belangrijkste snoepmechanismen werden geïmplementeerd, de snoepset werd voltooid en er werd begonnen met vroege containersystemen.</p></li>
+          <li><span>April-juli 2026</span><strong>Systemen en polijstpas</strong><p>De build is uitgebreid met tien containerregelsets, speciale snoepinteracties, planningstools, dagelijkse uitdagingen en verzamelsystemen, naast optimalisatie en UI-verfijning.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Gerelateerde werelden</div>
+        <h2>Volg het samengevoegde puzzelpubliek naar de bredere WillowinWorld-catalogus.</h2>
+        <p class="related-worlds-copy">Candy Shop bedekt de gezellige drop-and-merge-puzzelbaan. Ga verder met een ontspannende lijn-fysica-puzzel, een kleurenkettingreactie-arcade of de hardcore afdaling van de studio met roterende toren.</p>
+        <div class="related-world-grid" aria-label="Gerelateerde WillowinWorld-spelpagina's">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">Ontspannende natuurkundepuzzel</span>
+            <strong>Nature Seed</strong>
+            <p>Teken beperkte fysieke routes, breng twee personages samen en herstel bosniveaus via rustige mobiele fysica.</p>
+            <span class="related-world-meta">Lijnpuzzel tekenen om op te lossen</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">Arcade voor kleurvernietiging</span>
+            <strong>Paint Blasters</strong>
+            <p>Bouw voor elk schot een projectiel, lees de zwakke punten van de toren en activeer fysische kettingreacties.</p>
+            <span class="related-world-meta">Natuurkundepuzzel richten en schieten</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Verhaalarcade</span>
+            <strong>Ball is God?!</strong>
+            <p>Ga van gezellige sessies naar een spannende afdaling met een draaiende toren met combo-smash, mythische werelden en baasdruk.</p>
+            <span class="related-world-meta">hardcore torenarcade</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Pers / uitgevers</span>
+            <strong>Portefeuillefeiten</strong>
+            <p>Open een compact overzicht van genres, productiestatus, publieke middelen en game-hooks voor uitgevers.</p>
+            <span class="related-world-meta">WillowinWorld-portfolio</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Candy Shop Veelgestelde vragen</div>
+        <h2>Antwoorden voor spelers, pers en uitgeverijpartners.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Wat voor soort spel is Candy Shop?</h3><p>Een gezellige samenvoegpuzzel van snoepjes met zachte natuurkundige druppels, speciale snoepjes, combo's en voortgang.</p></article>
+          <article class="detail-card"><h3>Hoe werkt de gameplay?</h3><p>Kies een snoepje, laat het in de container vallen, voeg bijpassende snoepjes samen, beheer de ruimte en achtervolg grotere snoepstadia.</p></article>
+          <article class="detail-card"><h3>Wat maakt het anders?</h3><p>Het combineert een bekende samenvoegpuzzellus met gezellige snoepidentiteit, speciale snoepjes, leesbare combo's en containerdruk.</p></article>
+          <article class="detail-card"><h3>Wat is de huidige status?</h3><p>Actieve ontwikkeling. De samenvoegketen, tien containerregelsets, speciale recepten, dagelijkse uitdaging, Candy Book en lokale scoretabellen bestaan ​​in het huidige project.</p></article>
+          <article class="detail-card"><h3>Kunnen publieke middelen worden gebruikt?</h3><p>Ja, voor pers-, uitgeversrecensies en winkelreferenties. Bronitems blijven privé, tenzij ze rechtstreeks worden aangevraagd.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Candy Shop Devlog</div>
+        <h2>Wat is er veranderd en wanneer</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 juli 2026</time><strong>Productiemenu en HUD-pas</strong><p>Hoofdmenu, niveauselectie, HUD-bediening en opdrachtpictogrammen delen nu één visuele taal; aanvullende stresstests in de motor bestrijken de bijgewerkte stroom.</p></li>
+          <li><span>Juli 2026</span><strong>Diepere productieopbouw</strong><p>Het huidige project combineert de volledige samenvoegingsketen met tien containerregelsets, speciale recepten, planningstools, dagelijkse uitdagingen, Candy Book-ontdekkingen en lokale scoretabellen.</p></li>
+          <li><span>april 2026</span><strong>UI-elementen passeren</strong><p>De eerste grote UI-elementen zijn gemaakt, waardoor Candy Shop een duidelijkere mobiele identiteit en een sterkere informele presentatie krijgt.</p></li>
+          <li><span>Februari 2026</span><strong>Snoepketting en containers</strong><p>De volledige snoepset was voltooid en containersystemen begonnen de geometrie, zwaartekracht en puzzeldruk te veranderen.</p></li>
+          <li><span>december 2025</span><strong>Belangrijkste snoepmechanismen</strong><p>De belangrijkste snoepmechanismen zijn in ruwe vorm geïmplementeerd, waardoor de uitgebreide GDD in een speelbaar systeem is veranderd.</p></li>
+          <li><span>Oktober 2025</span><strong>GDD-uitbreiding</strong><p>Nadat het eerste prototype niet sterk genoeg aanvoelde, werd het ontwerp uitgebreid met bijzondere snoepjes en progressie-ideeën.</p></li>
+          <li><span>Augustus 2025</span><strong>Eerste snoepkarakters</strong><p>De eerste snoepkarakters werden gecreëerd, waarmee de zachte, vriendelijke richting van de samenvoegketen werd bepaald.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Candy Shop is een WillowinWorld-spel.</strong>
+        <span>Een gezellige samenvoegpuzzel waarbij de volgende druppel eenvoudig is en de container dat nooit is.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Candy Shop voettekstnavigatie">
+        <a href="../index.html#games">Alle spellen</a>
+        <a href="../press-kit.html">Persmap</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../legal.html">Juridisch</a>
+        <a href="mailto:contact@willowinworld.com?subject=Candy%20Shop">Contactpersoon</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

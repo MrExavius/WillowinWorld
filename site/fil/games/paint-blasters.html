@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fil" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="fil">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ang Paint Blasters ay isang palaisipang pisikal para sa mobile tungkol sa pagwasak gamit ang kulay at aktibo itong ginagawa. Pagsamahin ang 35 recipe ng projectile, puntiryahin ang mahihinang bahagi, at magpasimula ng sunod-sunod na reaksiyon.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#071225" id="metaThemeColor">
+  <meta property="og:title" content="Paint Blasters - Physics Puzzle ng Pagwasak ng Kulay">
+  <meta property="og:description" content="Paghaluin ang mga putok na may kulay, basagin ang mga bloke, at magpasimula ng sunod-sunod na reaksiyon sa palaisipang arkada para sa mobile na gumagamit ng pisika mula sa WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Paint Blasters, arkadang palaisipang pisikal sa pagwasak gamit ang kulay mula sa WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/fil/games/paint-blasters.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="tl_PH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paint Blasters - Physics Puzzle Game ng Pagwasak ng Kulay">
+  <meta name="twitter:description" content="Paghaluin ang mga putok na may kulay, wasakin ang mga tore, at magpasimula ng sunod-sunod na reaksiyon sa palaisipang arkada para sa mobile na gumagamit ng pisika mula sa WillowinWorld.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Paint Blasters paghahalo ng kulay at physics puzzle ng pagkawasak ng tore">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Paint Blasters | Arcade ng Palaisipan sa Physics ng Paghahalo ng Kulay</title>
+  <link rel="canonical" href="https://willowinworld.com/fil/games/paint-blasters.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/fil/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Mga laro",
+          "item": "https://willowinworld.com/fil/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paint Blasters",
+          "item": "https://willowinworld.com/fil/games/paint-blasters.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/fil/games/paint-blasters.html#game",
+      "name": "Paint Blasters",
+      "url": "https://willowinworld.com/fil/games/paint-blasters.html",
+      "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
+      "description": "Isang makulay na physics puzzle arcade tungkol sa paghahalo ng mga shot na pinapagana ng kulay, pagbagsak ng mga tore at pag-trigger ng mga chain reaction.",
+      "genre": [
+        "Palaisipan ng kulay",
+        "Physics arcade",
+        "Palaisipan ng pagkawasak",
+        "Chain reaction"
+      ],
+      "gamePlatform": "Mobile",
+      "creativeWorkStatus": "Aktibong pag-unlad - prototype ng produksyon",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/fil/games/paint-blasters.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "fil"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/paint-blasters-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/paint-blasters-hero-480.avif 480w, ../../assets/responsive/paint-blasters-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
+  <link rel="preload" href="../../assets/Paint%20Blasters/site/picon1.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-paint-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/paint-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-paint paint-blasters-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Lumaktaw sa Paint Blasters</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Paint Blasters — bumalik sa WillowinWorld">
+      <img src="../../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters icon ng larong puzzle ng pagkasira ng kulay" fetchpriority="high" decoding="async">
+      <span><strong>Paint Blasters</strong><small>pahina ng laro ng WillowinWorld</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Pag-navigate sa pahina ng laro">
+      <a href="../index.html">Studio home</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Lumipat ng tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Wika"><details><summary aria-label="Pumili ng wika"><span aria-hidden="true">FIL</span></summary><div class="language-options"><a href="../../games/paint-blasters.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/paint-blasters.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/paint-blasters.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/paint-blasters.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/paint-blasters.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/paint-blasters.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/paint-blasters.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/paint-blasters.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/paint-blasters.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/paint-blasters.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="paint-blasters.html" lang="fil" hreflang="tl" aria-current="page"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/paint-blasters.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/paint-blasters.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/paint-blasters.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/paint-blasters.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/paint-blasters.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/paint-blasters.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/paint-blasters.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/paint-blasters.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/paint-blasters.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/paint-blasters.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/paint-blasters.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/paint-blasters.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/paint-blasters.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/paint-blasters.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/paint-blasters.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/paint-blasters.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/paint-blasters.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/paint-blasters.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/paint-blasters.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/paint-blasters.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/paint-blasters.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/paint-blasters.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/paint-blasters.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/paint-blasters.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/paint-blasters.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/paint-blasters.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/paint-blasters.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/paint-blasters.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/paint-blasters.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/paint-blasters.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/paint-blasters.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell paint-blasters-shell" id="game-main">
+    <div class="paint-page-backdrop ambient-only" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="../../assets/responsive/paint-blasters-ship-840.avif 840w" sizes="(max-width: 760px) 64vw, 38vw">
+        <img class="paint-ship-panel" src="../../assets/responsive/paint-blasters-ship-840.webp" srcset="../../assets/responsive/paint-blasters-ship-480.webp 480w, ../../assets/responsive/paint-blasters-ship-840.webp 840w, ../../assets/Paint%20Blasters/site/ship.webp 1672w" sizes="(max-width: 760px) 64vw, 38vw" width="1672" height="941" alt="" loading="lazy" decoding="async">
+      </picture>
+      <div class="paint-menu-world">
+        <span class="paint-menu-pipe paint-menu-pipe-one"></span>
+        <span class="paint-menu-pipe paint-menu-pipe-two"></span>
+        <span class="paint-menu-pipe paint-menu-pipe-three"></span>
+        <span class="paint-menu-beam paint-menu-beam-one"></span>
+        <span class="paint-menu-beam paint-menu-beam-two"></span>
+        <span class="paint-menu-splash paint-menu-splash-one"></span>
+        <span class="paint-menu-splash paint-menu-splash-two"></span>
+        <span class="paint-menu-splash paint-menu-splash-three"></span>
+        <span class="paint-menu-gauge paint-menu-gauge-one"></span>
+        <span class="paint-menu-gauge paint-menu-gauge-two"></span>
+      </div>
+    </div>
+
+    <section class="paint-game-hero" aria-labelledby="paintHeroTitle">
+      <div class="container paint-hero-layout">
+        <div class="paint-hero-copy">
+          <div class="eyebrow">Paint Blasters</div>
+          <h1 id="paintHeroTitle">Paghaluin ang tatlong kulay. Basagin ang tore.</h1>
+          <p class="hero-copy">Isang palaisipang arkada para sa mobile na gumagamit ng pisika, kung saan nagiging isa sa 35 dinisenyong recipe ng projectile ang tatlong input ng kulay. Basahin ang tore, buuin ang epekto, at gawing matingkad na sunod-sunod na reaksiyon ang isang eksaktong tama.</p>
+          <p class="paint-hero-note">Aktibong pag-unlad · prototype ng produksyon. Lahat ng 35 projectile recipe ay ipinatupad; ang kasalukuyang pass ay nakatuon sa pagiging madaling mabasa ng projectile, kalinawan ng tore at puna ng pagkasira ng punchier.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Paint+Blasters+update">Humiling ng mga update sa Paint Blasters</a>
+            <a class="btn btn-ghost" href="#devlog">Buksan ang Devlog</a>
+          </div>
+          <div class="paint-hero-stats" role="group" aria-label="mga highlight ng Paint Blasters">
+            <span><strong>35 recipe</strong><small>isinulat na pag-uugali ng projectile</small></span>
+            <span><strong>7 bloke</strong><small>iba't ibang mga tungkulin sa istruktura</small></span>
+            <span><strong>5 palapag</strong><small>aktibong presyon ng tore</small></span>
+          </div>
+        </div>
+
+        <aside class="paint-hero-showcase" aria-label="Preview ng gameplay ng Paint Blasters">
+          <div class="paint-device-frame">
+            <div class="paint-stage paint-stage-showcase" aria-hidden="true">
+              <picture>
+                <source type="image/avif" srcset="../../assets/responsive/paint-blasters-hero-480.avif 480w, ../../assets/responsive/paint-blasters-hero-760.avif 760w" sizes="(max-width: 760px) 82vw, 360px">
+                <img class="paint-bg" src="../../assets/responsive/paint-blasters-hero-760.webp" srcset="../../assets/responsive/paint-blasters-hero-480.webp 480w, ../../assets/responsive/paint-blasters-hero-760.webp 760w" sizes="(max-width: 760px) 82vw, 360px" width="760" height="1361" alt="" fetchpriority="high" decoding="async">
+              </picture>
+              <div class="paint-arena">
+                <div class="paint-cube-stack">
+                  <span class="paint-cube paint-cube-a"></span>
+                  <span class="paint-cube paint-cube-b"></span>
+                  <span class="paint-cube paint-cube-c"></span>
+                  <span class="paint-cube paint-cube-d"></span>
+                  <span class="paint-cube paint-cube-e"></span>
+                  <span class="paint-cube paint-cube-f"></span>
+                  <span class="paint-cube paint-cube-g"></span>
+                  <span class="paint-cube paint-cube-h"></span>
+                  <span class="paint-cube paint-cube-i"></span>
+                  <span class="paint-cube paint-cube-j"></span>
+                </div>
+                <span class="paint-platform"></span>
+                <span class="paint-aim-line"></span>
+                <span class="paint-projectile paint-projectile-one"></span>
+                <span class="paint-projectile paint-projectile-two"></span>
+                <span class="paint-projectile paint-projectile-three"></span>
+                <span class="paint-impact"></span>
+                <span class="paint-shard paint-shard-one"></span>
+                <span class="paint-shard paint-shard-two"></span>
+                <span class="paint-shard paint-shard-three"></span>
+                <span class="paint-shard paint-shard-four"></span>
+                <img loading="lazy" class="paint-blaster" src="../../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" decoding="async">
+              </div>
+              <img loading="lazy" class="paint-module" src="../../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" decoding="async">
+              <img loading="lazy" class="paint-hero" src="../../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" decoding="async">
+            </div>
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-primary" src="../../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="icon ng laro ng Paint Blasters na may makulay na aksyong arcade" decoding="async">
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-alt" src="../../assets/Paint%20Blasters/site/picon2.webp" width="520" height="520" alt="" decoding="async">
+            <span class="paint-preview-title">
+              <small>Physics Puzzle ng Pagwasak ng Kulay</small>
+              <strong>Paint Blasters</strong>
+              <span class="paint-cycle"><b>Haluin</b><b>Layunin</b><b>Sabog</b></span>
+            </span>
+            <span class="paint-control-lights" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <div class="magic-hud">
+              <span>Prototype ng Produksyon · 35 Combos</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid paint-blasters-content">
+      <section class="game-proof-section" aria-labelledby="paintProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Sa loob ng kasalukuyang build</span>
+            <h2 id="paintProofTitle">Ang recipe ang magpapasya sa shot.</h2>
+            <p>Ang Paint Blasters ay hindi humihingi ng hiwalay na pagpipilian sa pagsingil. Ang tatlong-kulay na recipe ay lumulutas sa isang pinangalanang gawi na may sarili nitong tungkulin, target at kabayaran — mula sa mga tool na puro kulay hanggang sa magkahalong epekto at sampung diskarte sa bahaghari.</p>
+            <span class="proof-status"><b>Bumuo ng katayuan</b> Prototype ng produksyon</span>
+          </div>
+          <div class="proof-visual">
+            <div class="paint-recipe-board">
+              <h3>Combo Lab sample</h3>
+              <p>Tatlong input ang naging isang awtorisadong pisikal na kakayahan bago ang layunin ng manlalaro.</p>
+              <div class="paint-recipe-slots" aria-label="Pula, asul at dilaw na mga input ng kulay">
+                <span class="paint-recipe-slot is-red"></span>
+                <span class="paint-recipe-slot is-blue"></span>
+                <span class="paint-recipe-slot is-yellow"></span>
+              </div>
+              <div class="paint-recipe-output">
+                <small>Pamilya ng recipe</small>
+                <strong>diskarte sa Rainbow</strong>
+                <span>Ang pag-uugali, perpektong target at epekto ng kabayaran ay tinutukoy nang magkasama.</span>
+              </div>
+              <img src="../../assets/responsive/paint-blasters-ship-840.webp" srcset="../../assets/responsive/paint-blasters-ship-480.webp 480w, ../../assets/responsive/paint-blasters-ship-840.webp 840w" sizes="(max-width: 560px) 82vw, 34vw" width="840" height="473" alt="Paint Blasters mechanical color ship at projectile workshop" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Na-verify na Paint Blasters build facts">
+          <article><strong>35 ipinatupad na mga estratehiya</strong><span>5 payak, 20 halo at 10 bahaghari.</span></article>
+          <article><strong>Pitong block archetypes</strong><span>Mula sa marupok at pinalakas hanggang sa paputok at chameleon.</span></article>
+          <article><strong>Limang aktibong palapag</strong><span>Ang tore ay nagpapakita ng presyon habang umuusad ang pagtakbo.</span></article>
+          <article><strong>Recipe-unang labanan</strong><span>Paghaluin, layunin, epekto, pagkatapos ay ibagay.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Pangkalahatang-ideya ng laro</div>
+        <h2>Isang palaisipang pisikal tungkol sa pagsira gamit ang kulay, kung saan ginagawa ang pinakamatalinong pasya bago pa ang putok.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Pangako ng manlalaro</h3><p>Buuin ang shot, pindutin ang mahinang punto at panoorin ang isang smart color-powered impact na naging isang kasiya-siyang chain reaction.</p></article>
+          <article class="detail-card"><h3>Kasalukuyang build</h3><p>Lahat ng 35 projectile recipe, pitong structural block archetypes at progresibong five-floor tower pressure ay ipinatupad sa production prototype.</p></article>
+          <article class="detail-card"><h3>Madla</h3><p>Para sa mga manlalarong mahilig sa physics puzzle, pagtutok at pagpapaputok, estratehiya sa kulay, pagwasak ng tore, at maiikling antas ng arkada na may taktikal na lalim.</p></article>
+          <article class="detail-card"><h3>Katayuan</h3><p>Aktibong pag-unlad - prototype ng produksyon. Ang combo system ay ipinatupad; presentasyon, pagiging madaling mabasa ng tore at panghuling saklaw ng eksena ay nananatiling refinement.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Mga Tampok</div>
+        <h2>Ano ang ginagawa ng mga manlalaro sa Paint Blasters.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Bumuo ng color-powered shots</h3><p>Pinagsasama ng mga manlalaro ang tatlong kulay na input bago magpaputok; ang nalutas na recipe ay nagtatalaga ng pag-uugali at taktikal na papel ng projectile.</p></article>
+          <article class="detail-card"><h3>Basahin ang mga mahihinang punto ng tore</h3><p>Ang mga hugis ng block, kulay at istraktura ng tower ay lumilikha ng malinaw na mga target para sa mga matalinong epekto at mas mahusay na mga chain reaction.</p></article>
+          <article class="detail-card"><h3>Pagbagsak ng pisika ng trigger</h3><p>Ang mga shot ay lumilikha ng galaw, masira ang istraktura at itulak ang arena patungo sa isang makulay na kabayaran sa pagkawasak ng tore.</p></article>
+          <article class="detail-card"><h3>Arcade puzzle pacing</h3><p>Ang mga maiikling antas ng mobile ay panatilihing nababasa ang aksyon habang nag-iiwan ng puwang para sa mastery, replay at mga challenge mode sa hinaharap.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Gameplay loop</div>
+        <h2>Paghaluin ang projectile, tunguhin ang kahinaan at matuto mula sa pagbagsak.</h2>
+        <ul class="update-list">
+          <li><span>Hakbang 01</span><strong>Basahin ang tore</strong><p>Pinag-aaralan ng player ang kulay ng block, istraktura, balanse at malamang na mahina ang mga puntos bago gumawa ng isang shot.</p></li>
+          <li><span>Hakbang 02</span><strong>Paghaluin ang shot</strong><p>Tatlong kulay na input ang nalutas sa isang pinangalanang recipe na tumutukoy kung paano kumikilos ang projectile sa epekto.</p></li>
+          <li><span>Hakbang 03</span><strong>Layunin at sabog</strong><p>Ang touch-friendly na pagpuntirya ay ginagawang projectile, epekto at reaksyon ng pisika ang plano.</p></li>
+          <li><span>Hakbang 04</span><strong>I-chain o ayusin</strong><p>Ang isang malakas na hit ay lumilikha ng pagbagsak. Ang isang bahagyang hit ay nagtuturo sa susunod na pagpipilian ng kulay, anggulo o mahinang punto.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section paint-story-section">
+        <div class="eyebrow">Kwento / mundo</div>
+        <h2>Isang maliwanag na mechanical arena kung saan ang kulay ay parehong bala at diskarte.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Ang Paint Blasters ay nag-e-explore ng orihinal na twist sa mga mobile physics puzzle: ang mga manlalaro ay bumuo ng bawat projectile bago ito pagpapaputok, paghahalo ng kulay na lohika sa pagkawasak ng tower at epekto sa arcade.</p>
+            <p>Ang mundo ay nakasandal sa isang malakas na pantasya ng workshop: mga tubo, module, color tank at mechanical blaster na binabalangkas ang bawat antas na parang isang eksperimento na malapit nang sumabog.</p>
+            <p>Ang kakaibang lakas ay hindi lamang pagkasira, ngunit ang desisyon bago ang pagbaril. Ang mga manlalaro ay hindi lamang nagpapaputok ng mga projectiles - ginagawa nila ang mga ito.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Core hook</dt><dd>Gumawa ng color-powered shots bago magpaputok</dd></div>
+            <div><dt>Kasalukuyang saklaw</dt><dd>35 ipinatupad na mga recipe ng projectile</dd></div>
+            <div><dt>Pokus sa disenyo</dt><dd>Ang kakayahang mabasa ng projectile at kalinawan ng tore</dd></div>
+            <div><dt>Wika ng tore</dt><dd>Pitong nababasang block archetypes</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section paint-story-section">
+        <div class="eyebrow">Anggulo ng publisher</div>
+        <h2>Maaliwalas na epekto sa arcade na may mga taktikal na desisyon sa kulay.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Paint Blasters ang agarang pag-apila ng aim-and-shoot physics gameplay na may mas malalim na pre-shot decision system. Ang resulta ay isang mobile-friendly na destruction puzzle na madaling maunawaan sa isang maikling clip, ngunit may puwang para sa tactical mastery.</p>
+            <p>Kasama sa production prototype ang lahat ng 35 projectile recipe at pitong block archetypes; presentasyon at panghuling saklaw ng eksena ay nananatiling nasa refinement.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Genre</dt><dd>Palaisipan sa pisika ng pagkasira ng kulay</dd></div>
+            <div><dt>Target ng platform</dt><dd>iOS / Android</dd></div>
+            <div><dt>Hugis ng session</dt><dd>Mga arcade puzzle na nakabatay sa antas</dd></div>
+            <div><dt>Pangunahing CTA</dt><dd>Pagpapalawak ng disenyo at pagpapakintab</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Mag-download ng mga asset</div>
+        <h2>Paint Blasters press at mga asset ng creator</h2>
+        <p class="asset-kit-copy">Na-curate ang mga preview ng WebP para sa saklaw ng editoryal, pagsusuri ng publisher at mga sanggunian sa layout ng tindahan. Available ang full-resolution na source file mula sa studio kapag hiniling.</p>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters icon ng larong puzzle ng physics ng pagkasira ng kulay" loading="lazy" decoding="async"><strong>Icon ng laro</strong><span>icon ng puzzle ng pisika ng pagkasira ng kulay.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Logo ng color chain-reaction arcade na Paint Blasters" loading="lazy" decoding="async"><strong>Logo ng arcade</strong><span>asset ng brand ng color chain reaction.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters Zetun robot na karakter" loading="lazy" decoding="async"><strong>Zetun character</strong><span>Robot character asset para sa arcade puzzle.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 387w" sizes="(max-width: 760px) 34vw, 76px" width="387" height="645" alt="Paint Blasters background ng larong puzzle ng pagkasira ng kulay" loading="lazy" decoding="async"><strong>Background ng gameplay</strong><span>Kulay destruction puzzle scene.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 782w" sizes="(max-width: 760px) 34vw, 76px" width="782" height="1400" alt="Background ng menu ng color arcade puzzle na Paint Blasters" loading="lazy" decoding="async"><strong>Background ng menu</strong><span>Eksena ng menu ng arcade puzzle.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Paglalakbay sa pag-unlad</div>
+        <h2>Mula sa ideya ng kulay hanggang sa nape-play na draft ng produksyon.</h2>
+        <ul class="update-list">
+          <li><span>Pebrero 2026</span><strong>Nagsisimula ang pag-unlad</strong><p>Paint Blasters ay pumasok sa pagbuo bilang isang bagong mobile physics puzzle na binuo sa paligid ng pagkasira ng kulay, pagbagsak ng tore at mga chain reaction.</p></li>
+          <li><span>Maagang Marso 2026</span><strong>Panloob na pagsubok at visual pass</strong><p>Ang koponan ay nagpatakbo ng isang buong panloob na pagsubok at pinahusay ang visual na direksyon sa paligid ng pagiging madaling mabasa, kalinawan ng kulay at feedback sa arcade.</p></li>
+          <li><span>Huling bahagi ng Marso 2026</span><strong>Pinakabagong direksyon ng GDD</strong><p>Ang kasalukuyang GDD ay humubog sa proyekto sa paligid ng tatlong kulay na mga recipe, nababasang mga tore at nakabatay sa antas na pag-unlad.</p></li>
+          <li><span>Huling bahagi ng Abril 2026</span><strong>Core mechanics draft</strong><p>Ang mga pangunahing mekanika mula sa kasalukuyang GDD ay ipinatupad sa magaspang na anyo, na nagbibigay sa koponan ng puwedeng laruin na draft ng destruction loop.</p></li>
+          <li><span>Hulyo 2026</span><strong>Kumpleto ang 35-combo system</strong><p>Limang dalisay, dalawampu't halo-halong at sampung diskarte sa bahaghari ang nalutas na ngayon mula sa registry ng recipe, habang ang presentasyon at pagiging madaling mabasa ng tower ay patuloy na bumubuti.</p></li>
+          <li><span>Kasalukuyang pagpipino</span><strong>Presentasyon at saklaw ng eksena</strong><p>Ang pagiging madaling mabasa ng projectile, kalinawan ng tore, feedback sa pagkawasak at panghuling saklaw ng eksena ay nananatili sa aktibong pagpipino.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Mga Kaugnay na Mundo</div>
+        <h2>Tumalon mula sa pagkasira ng kulay patungo sa iba pang WillowinWorld system.</h2>
+        <p class="related-worlds-copy">Paint Blasters ay ang tactical arcade edge ng portfolio: layunin, paghaluin at sirain. I-explore ang mas malambot na physics puzzle, ang maaliwalas na candy merge loop o ang mas malaking story-driven na vertical arcade world.</p>
+        <div class="related-world-grid" aria-label="Mga kaugnay na pahina ng laro ng WillowinWorld">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">Line physics puzzle</span>
+            <strong>Nature Seed</strong>
+            <p>Gumuhit ng limitadong mga pisikal na ruta, ikonekta ang dalawang character at ibalik ang kalikasan sa pamamagitan ng nakakarelaks na mobile puzzle loop.</p>
+            <span class="related-world-meta">Nakaka-relax na physics puzzle</span>
+          </a>
+          <a class="related-world-link" href="candy-shop.html">
+            <span class="related-world-kicker">Maginhawang merge na laro</span>
+            <strong>Candy Shop</strong>
+            <p>Mag-drop ng mga kendi, pagsamahin ang mga katugmang matamis, pamahalaan ang espasyo sa lalagyan at humabol ng mas malalaking combo reward.</p>
+            <span class="related-world-meta">Candy merge puzzle</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Hardcore vertical arcade</span>
+            <strong>Ball is God?!</strong>
+            <p>Ipagpalit ang pagpaplano ng projectile para sa pag-ikot ng tower, combo-smash timing, mabilis na pagbaba at mythic pressure.</p>
+            <span class="related-world-meta">Vertical arcade game</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Pindutin / mga publisher</span>
+            <strong>Portfolio katotohanan</strong>
+            <p>Paghambingin ang mga yugto ng produksyon, player hook, patakaran sa asset at pampublikong visual sa lahat ng proyekto.</p>
+            <span class="related-world-meta">Press kit ng game studio</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">FAQ ng Paint Blasters</div>
+        <h2>Mga sagot para sa mga manlalaro, press at mga kasosyo sa pag-publish.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Anong uri ng laro ang Paint Blasters?</h3><p>Isang arkadang palaisipang pisikal para sa mobile tungkol sa paghahalo ng mga putok na may kulay at pagpapasimula ng sunod-sunod na reaksiyon sa bawat tama.</p></article>
+          <article class="detail-card"><h3>Paano gumagana ang gameplay?</h3><p>Basahin ang tore, bumuo ng color-powered projectile, puntirya ang mahinang punto, sunugin at gamitin ang pagbagsak upang planuhin ang susunod na shot.</p></article>
+          <article class="detail-card"><h3>Ano ang pinagkaiba nito?</h3><p>Ang manlalaro ay hindi lamang bumaril. Binubuo muna nila ang projectile, hinahalo ang diskarte sa kulay sa pagkasira ng pisika.</p></article>
+          <article class="detail-card"><h3>Ano ang kasalukuyang status?</h3><p>Aktibong pag-unlad bilang prototype ng produksyon. Lahat ng 35 projectile recipe ay ipinatupad; presentasyon, pagiging madaling mabasa ng tore at saklaw ng eksena ay nananatiling refinement.</p></article>
+          <article class="detail-card"><h3>Maaari bang gamitin ang mga pampublikong asset?</h3><p>Oo, para sa press, publisher review at store references. Mananatiling pribado ang mga source asset maliban kung direktang hiniling.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Paint Blasters Devlog</div>
+        <h2>Ano ang nagbago at kailan</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">Hulyo 31, 2026</time><strong>Pagpapahusay sa katatagan ng pisika at mga epekto</strong><p>Ang pag-uugali ng projectile, resolution ng Match-3 at mga hit effect ay sinubukan at hinigpitan para sa mas pare-parehong resulta ng combo.</p></li>
+          <li><span>Hulyo 2026</span><strong>Lahat ng 35 projectile recipe ay ipinatupad</strong><p>Ang kasalukuyang registry ng recipe ay naglalaman ng limang purong, dalawampung halo-halong at sampung rainbow projectile na pag-uugali na may mga akda na tungkulin, mga target at mga kabayaran.</p></li>
+          <li><span>Abril 2026</span><strong>Core mechanics draft</strong><p>Ang mga pangunahing mekanika mula sa kasalukuyang GDD ay ipinatupad sa magaspang na anyo, na lumilikha ng nape-play na color-powered destruction loop.</p></li>
+          <li><span>Huling bahagi ng Marso 2026</span><strong>direksyon ng GDD</strong><p>Ang pinakabagong GDD na hugis Paint Blasters sa paligid ng projectile-building: pinagsama ng mga manlalaro ang tatlong kulay na input sa isang tinukoy na gawi bago ang bawat shot.</p></li>
+          <li><span>Marso 2026</span><strong>Panloob na pagsubok at visual pass</strong><p>Pinahusay ng team ang contrast ng kulay, pagiging madaling mabasa ng tower at mas malakas na epekto sa arcade pagkatapos ng panloob na pagsubok.</p></li>
+          <li><span>Pebrero 2026</span><strong>Nagsisimula ang pag-unlad</strong><p>Ang laro ay pumasok sa pagbuo bilang isang mobile physics puzzle na binuo sa paligid ng pagkasira ng kulay at kasiya-siyang mga reaksyon sa chain.</p></li>
+          <li><span>Tala sa saklaw</span><strong>Pinipino pa rin ang huling saklaw</strong><p>Sinasaklaw ng kasalukuyang prototype ang pinakabagong GDD sa draft form, ngunit ang panghuling saklaw ng produksyon ay maaaring lumaki habang nagpapatuloy ang disenyo ng track.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Ang Paint Blasters ay isang WillowinWorld na laro.</strong>
+        <span>Tatlong kulay na input, 35 authored effect at isang tore na naghihintay para sa tamang epekto.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Nabigasyon sa ibabang bahagi ng Paint Blasters">
+        <a href="../index.html#games">Lahat ng laro</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Pagkapribado</a>
+        <a href="../legal.html">Legal</a>
+        <a href="mailto:contact@willowinworld.com?subject=Paint%20Blasters">Makipag-ugnayan</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

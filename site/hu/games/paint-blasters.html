@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="hu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A Paint Blasters egy mobil színromboló fizikai rejtvény, aktív fejlesztés alatt. Keverj össze 35 lövedékreceptet, célozd meg a gyenge pontokat, és indíts láncreakciót.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#071225" id="metaThemeColor">
+  <meta property="og:title" content="Paint Blasters - Színpusztító fizika rejtvény">
+  <meta property="og:description" content="Keverj színes felvételeket, törj össze blokkokat és válts ki láncreakciókat a WillowinWorld mobil fizika arcade puzzle-jában.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Paint Blasters színes pusztító fizika puzzle játékterem, WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/hu/games/paint-blasters.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="hu_HU">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Paint Blasters – Színpusztító fizika kirakós játék">
+  <meta name="twitter:description" content="Keverj színes felvételeket, törj össze tornyokat és válts ki láncreakciókat a WillowinWorld mobil fizika arcade puzzle-jében.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/paint-blasters-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Paint Blasters színkeverő és toronypusztító fizikai rejtvény">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Paint Blasters | Színkeverő fizika Puzzle Arcade</title>
+  <link rel="canonical" href="https://willowinworld.com/hu/games/paint-blasters.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/hu/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "játékok",
+          "item": "https://willowinworld.com/hu/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paint Blasters",
+          "item": "https://willowinworld.com/hu/games/paint-blasters.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/hu/games/paint-blasters.html#game",
+      "name": "Paint Blasters",
+      "url": "https://willowinworld.com/hu/games/paint-blasters.html",
+      "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
+      "description": "Élénk fizika-rejtvényjáték a színekkel hajtott felvételek keveréséről, a tornyok összetöréséről és a láncreakciók kiváltásáról.",
+      "genre": [
+        "Színes puzzle",
+        "Fizika arcade",
+        "Pusztítási puzzle",
+        "Láncreakció"
+      ],
+      "gamePlatform": "Mobil",
+      "creativeWorkStatus": "Aktív fejlesztés - gyártási prototípus",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/hu/games/paint-blasters.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "hu"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/paint-blasters-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/paint-blasters-hero-480.avif 480w, ../../assets/responsive/paint-blasters-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
+  <link rel="preload" href="../../assets/Paint%20Blasters/site/picon1.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-paint-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/paint-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-paint paint-blasters-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Ugrás a Paint Blasters-hez</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Paint Blasters — vissza a WillowinWorld-hez">
+      <img src="../../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters színpusztító kirakós játék ikon" fetchpriority="high" decoding="async">
+      <span><strong>Paint Blasters</strong><small>WillowinWorld játékoldal</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Játékoldal navigáció">
+      <a href="../index.html">Stúdióház</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Sajtókészlet</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Téma váltása">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Nyelv"><details><summary aria-label="Válasszon nyelvet"><span aria-hidden="true">HU</span></summary><div class="language-options"><a href="../../games/paint-blasters.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/paint-blasters.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/paint-blasters.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/paint-blasters.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/paint-blasters.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/paint-blasters.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/paint-blasters.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/paint-blasters.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/paint-blasters.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/paint-blasters.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/paint-blasters.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/paint-blasters.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/paint-blasters.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/paint-blasters.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/paint-blasters.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/paint-blasters.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/paint-blasters.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="paint-blasters.html" lang="hu" hreflang="hu" aria-current="page"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/paint-blasters.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/paint-blasters.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/paint-blasters.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/paint-blasters.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/paint-blasters.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/paint-blasters.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/paint-blasters.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/paint-blasters.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/paint-blasters.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/paint-blasters.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/paint-blasters.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/paint-blasters.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/paint-blasters.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/paint-blasters.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/paint-blasters.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/paint-blasters.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/paint-blasters.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/paint-blasters.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/paint-blasters.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/paint-blasters.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/paint-blasters.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/paint-blasters.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/paint-blasters.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/paint-blasters.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell paint-blasters-shell" id="game-main">
+    <div class="paint-page-backdrop ambient-only" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="../../assets/responsive/paint-blasters-ship-840.avif 840w" sizes="(max-width: 760px) 64vw, 38vw">
+        <img class="paint-ship-panel" src="../../assets/responsive/paint-blasters-ship-840.webp" srcset="../../assets/responsive/paint-blasters-ship-480.webp 480w, ../../assets/responsive/paint-blasters-ship-840.webp 840w, ../../assets/Paint%20Blasters/site/ship.webp 1672w" sizes="(max-width: 760px) 64vw, 38vw" width="1672" height="941" alt="" loading="lazy" decoding="async">
+      </picture>
+      <div class="paint-menu-world">
+        <span class="paint-menu-pipe paint-menu-pipe-one"></span>
+        <span class="paint-menu-pipe paint-menu-pipe-two"></span>
+        <span class="paint-menu-pipe paint-menu-pipe-three"></span>
+        <span class="paint-menu-beam paint-menu-beam-one"></span>
+        <span class="paint-menu-beam paint-menu-beam-two"></span>
+        <span class="paint-menu-splash paint-menu-splash-one"></span>
+        <span class="paint-menu-splash paint-menu-splash-two"></span>
+        <span class="paint-menu-splash paint-menu-splash-three"></span>
+        <span class="paint-menu-gauge paint-menu-gauge-one"></span>
+        <span class="paint-menu-gauge paint-menu-gauge-two"></span>
+      </div>
+    </div>
+
+    <section class="paint-game-hero" aria-labelledby="paintHeroTitle">
+      <div class="container paint-hero-layout">
+        <div class="paint-hero-copy">
+          <div class="eyebrow">Paint Blasters</div>
+          <h1 id="paintHeroTitle">Keverj össze három színt. Törje le a tornyot.</h1>
+          <p class="hero-copy">Egy mobil fizikai játéktermi rejtvény, amelyben három színes bemenet a 35 szerzői lövedékrecept egyikévé válik. Olvassa el a tornyot, építse fel a hatást, és egy pontos becsapódást alakítson fényes láncreakcióvá.</p>
+          <p class="paint-hero-note">Aktív fejlesztés · gyártási prototípus. Mind a 35 lövedékreceptet végrehajtják; a jelenlegi bérlet a lövedékek olvashatóságára, a torony tisztaságára és az ütősebb megsemmisítési visszajelzésekre összpontosít.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Paint+Blasters+friss%C3%ADt%C3%A9s">Kérjen Paint Blasters frissítéseket</a>
+            <a class="btn btn-ghost" href="#devlog">Nyissa meg a Devlogot</a>
+          </div>
+          <div class="paint-hero-stats" role="group" aria-label="Paint Blasters kiemelések">
+            <span><strong>35 recept</strong><small>szerzői lövedékviselkedések</small></span>
+            <span><strong>7 blokk</strong><small>különböző strukturális szerepek</small></span>
+            <span><strong>5 emelet</strong><small>aktív toronynyomás</small></span>
+          </div>
+        </div>
+
+        <aside class="paint-hero-showcase" aria-label="A Paint Blasters játék előnézete">
+          <div class="paint-device-frame">
+            <div class="paint-stage paint-stage-showcase" aria-hidden="true">
+              <picture>
+                <source type="image/avif" srcset="../../assets/responsive/paint-blasters-hero-480.avif 480w, ../../assets/responsive/paint-blasters-hero-760.avif 760w" sizes="(max-width: 760px) 82vw, 360px">
+                <img class="paint-bg" src="../../assets/responsive/paint-blasters-hero-760.webp" srcset="../../assets/responsive/paint-blasters-hero-480.webp 480w, ../../assets/responsive/paint-blasters-hero-760.webp 760w" sizes="(max-width: 760px) 82vw, 360px" width="760" height="1361" alt="" fetchpriority="high" decoding="async">
+              </picture>
+              <div class="paint-arena">
+                <div class="paint-cube-stack">
+                  <span class="paint-cube paint-cube-a"></span>
+                  <span class="paint-cube paint-cube-b"></span>
+                  <span class="paint-cube paint-cube-c"></span>
+                  <span class="paint-cube paint-cube-d"></span>
+                  <span class="paint-cube paint-cube-e"></span>
+                  <span class="paint-cube paint-cube-f"></span>
+                  <span class="paint-cube paint-cube-g"></span>
+                  <span class="paint-cube paint-cube-h"></span>
+                  <span class="paint-cube paint-cube-i"></span>
+                  <span class="paint-cube paint-cube-j"></span>
+                </div>
+                <span class="paint-platform"></span>
+                <span class="paint-aim-line"></span>
+                <span class="paint-projectile paint-projectile-one"></span>
+                <span class="paint-projectile paint-projectile-two"></span>
+                <span class="paint-projectile paint-projectile-three"></span>
+                <span class="paint-impact"></span>
+                <span class="paint-shard paint-shard-one"></span>
+                <span class="paint-shard paint-shard-two"></span>
+                <span class="paint-shard paint-shard-three"></span>
+                <span class="paint-shard paint-shard-four"></span>
+                <img loading="lazy" class="paint-blaster" src="../../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" decoding="async">
+              </div>
+              <img loading="lazy" class="paint-module" src="../../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" decoding="async">
+              <img loading="lazy" class="paint-hero" src="../../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" decoding="async">
+            </div>
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-primary" src="../../assets/Paint%20Blasters/site/picon1.webp" width="520" height="520" alt="Paint Blasters játékikon színes arcade akcióval" decoding="async">
+            <img loading="lazy" class="paint-showcase-icon paint-showcase-icon-alt" src="../../assets/Paint%20Blasters/site/picon2.webp" width="520" height="520" alt="" decoding="async">
+            <span class="paint-preview-title">
+              <small>Színpusztító fizika puzzle</small>
+              <strong>Paint Blasters</strong>
+              <span class="paint-cycle"><b>Mix</b><b>Cél</b><b>robbanás</b></span>
+            </span>
+            <span class="paint-control-lights" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </span>
+            <div class="magic-hud">
+              <span>Gyártási prototípus · 35 kombó</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid paint-blasters-content">
+      <section class="game-proof-section" aria-labelledby="paintProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">A jelenlegi builden belül</span>
+            <h2 id="paintProofTitle">A recept dönti el a felvételt.</h2>
+            <p>A Paint Blasters nem kér külön díjválasztást. A háromszínű recept egy elnevezett viselkedéssé válik, saját szerepével, céljával és hozadékával – a tiszta színű eszközöktől a vegyes effektusokig és tíz szivárványstratégiáig.</p>
+            <span class="proof-status"><b>Build állapota</b> Gyártási prototípus</span>
+          </div>
+          <div class="proof-visual">
+            <div class="paint-recipe-board">
+              <h3>Combo Lab minta</h3>
+              <p>Három bemenet válik egy meghatározott fizikai képességgé, mielőtt a játékos célozna.</p>
+              <div class="paint-recipe-slots" aria-label="Piros, kék és sárga színű bemenetek">
+                <span class="paint-recipe-slot is-red"></span>
+                <span class="paint-recipe-slot is-blue"></span>
+                <span class="paint-recipe-slot is-yellow"></span>
+              </div>
+              <div class="paint-recipe-output">
+                <small>Receptcsalád</small>
+                <strong>Szivárvány stratégia</strong>
+                <span>A viselkedést, az ideális célpontot és a hatás-kifizetést együtt határozzák meg.</span>
+              </div>
+              <img src="../../assets/responsive/paint-blasters-ship-840.webp" srcset="../../assets/responsive/paint-blasters-ship-480.webp 480w, ../../assets/responsive/paint-blasters-ship-840.webp 840w" sizes="(max-width: 560px) 82vw, 34vw" width="840" height="473" alt="Paint Blasters mechanikus színes hajó és lövedék műhely" loading="lazy" decoding="async">
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Ellenőrzött Paint Blasters építési tények">
+          <article><strong>35 megvalósított stratégia</strong><span>5 tiszta, 20 vegyes és 10 szivárvány.</span></article>
+          <article><strong>Hét blokk archetípus</strong><span>A törékenytől és a megerősítetttől a robbanékony és kaméleonig.</span></article>
+          <article><strong>Öt aktív emelet</strong><span>A torony nyomást mutat fel a futás előrehaladtával.</span></article>
+          <article><strong>Recept-első harc</strong><span>Keverj, célozd meg, csapj be, majd alkalmazkodj.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">A játék áttekintése</div>
+        <h2>Színpusztító fizikai rejtvény, ahol a legokosabb döntés a lövés előtt megtörténik.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Játékos ígérete</h3><p>Építsd meg a lövést, találd el a gyenge pontot, és nézd meg, amint egy intelligens, színekkel hajtott ütés kielégítő láncreakcióvá válik.</p></article>
+          <article class="detail-card"><h3>Jelenlegi build</h3><p>A gyártási prototípusban mind a 35 lövedékrecept, hét szerkezeti blokk archetípus és progresszív ötszintes toronynyomás megvalósul.</p></article>
+          <article class="detail-card"><h3>közönség</h3><p>Játékosok, akik élvezik a fizika rejtvényeket, a célzás és lövés játékmenetet, a színstratégiát, a toronypusztítást és a rövid játéktermi szinteket taktikai mélységgel.</p></article>
+          <article class="detail-card"><h3>Állapot</h3><p>Aktív fejlesztés - gyártási prototípus. A kombinált rendszer megvalósul; A bemutatás, a torony olvashatósága és a végső jelenet terjedelme továbbra is finomítás alatt áll.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Jellemzők</div>
+        <h2>Mit csinálnak a játékosok a Paint Blasters-ben.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Készítsen színes képeket</h3><p>A játékosok három színbevitelt kombinálnak a tüzelés előtt; a megoldott recept kijelöli a lövedék viselkedését és taktikai szerepét.</p></article>
+          <article class="detail-card"><h3>Olvassa el a torony gyenge pontjait</h3><p>A blokkformák, a színek és a toronyszerkezet egyértelmű célokat teremt az intelligens hatásokhoz és a jobb láncreakciókhoz.</p></article>
+          <article class="detail-card"><h3>Kiváltó fizika összeomlás</h3><p>A lövések mozgást hoznak létre, megtörik a szerkezetet, és egy színes toronypusztulás felé tolják az arénát.</p></article>
+          <article class="detail-card"><h3>Arcade puzzle ingerlés</h3><p>A rövid mobil szintek olvashatóan tartják az eseményeket, miközben teret engednek a mesteri, visszajátszási és jövőbeli kihívási módoknak.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Játékmenet</div>
+        <h2>Keverd össze a lövedéket, célozd meg a gyengeséget, és tanulj az összeomlásból.</h2>
+        <ul class="update-list">
+          <li><span>01. lépés</span><strong>Olvassa el a tornyot</strong><p>A játékos a lövés előtt tanulmányozza a blokk színét, szerkezetét, egyensúlyát és valószínű gyenge pontjait.</p></li>
+          <li><span>02. lépés</span><strong>Keverje össze a lövést</strong><p>A három színbemenet egy elnevezett receptúra alakul ki, amely meghatározza, hogy a lövedék hogyan viselkedik becsapódáskor.</p></li>
+          <li><span>03. lépés</span><strong>Cél és robbanás</strong><p>Az érintésbarát célzás lövedékké, becsapódássá és fizikai reakcióvá varázsolja a tervet.</p></li>
+          <li><span>04. lépés</span><strong>Láncolás vagy beállítás</strong><p>Egy erős találat összeomlást okoz. A részleges találat megtanítja a következő színválasztást, szöget vagy gyenge pontot.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section paint-story-section">
+        <div class="eyebrow">Történet / világ</div>
+        <h2>Egy fényes mechanikus aréna, ahol a szín egyszerre lőszer és stratégia.</h2>
+        <div class="info-grid">
+          <div>
+            <p>A Paint Blasters a mobil fizika rejtvények egy eredeti fordulatát kutatja: a játékosok minden lövedéket megépítenek, mielőtt kilőnék őket, keverve a színlogikát a toronypusztítással és az árkád becsapódással.</p>
+            <p>A világ hangos műhelyfantáziába hajlik: csövek, modulok, színes tartályok és mechanikus robbantók kereteznek minden szintet, mint egy kísérlet, amely hamarosan felrobban.</p>
+            <p>Az egyedülálló erősség nem csak a pusztítás, hanem a lövés előtti döntés. A játékosok nem csak lövedékeket lőnek ki, hanem építik is azokat.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Maghorog</dt><dd>Készítsen színes felvételeket a kilövés előtt</dd></div>
+            <div><dt>Jelenlegi hatókör</dt><dd>35 megvalósított lövedékrecept</dd></div>
+            <div><dt>Tervezési fókusz</dt><dd>A lövedék olvashatósága és a torony tisztasága</dd></div>
+            <div><dt>Torony nyelv</dt><dd>Hét olvasható blokk-archetípus</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section paint-story-section">
+        <div class="eyebrow">Kiadói szög</div>
+        <h2>Tiszta arcade hatás taktikai színdöntésekkel.</h2>
+        <div class="info-grid">
+          <div>
+            <p>A Paint Blasters egyesíti a cél és lövés fizikai játékmenet azonnali vonzerejét egy mélyebb, lövöldözés előtti döntési rendszerrel. Az eredmény egy mobilbarát megsemmisítő feladvány, amely egy rövid klipben könnyen megérthető, de van helye a taktikai elsajátításnak.</p>
+            <p>A gyártási prototípus tartalmazza mind a 35 lövedékreceptet és hét blokk-archetípust; a bemutató és a végső jelenet terjedelme finomításban marad.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Műfaj</dt><dd>Színes megsemmisítési fizika puzzle</dd></div>
+            <div><dt>Platformcél</dt><dd>iOS / Android</dd></div>
+            <div><dt>Munkamenet alakja</dt><dd>Szintalapú arcade rejtvények</dd></div>
+            <div><dt>Elsődleges CTA</dt><dd>Tervezési bővítés és polírozás</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Eszközök letöltése</div>
+        <h2>Paint Blasters sajtó- és alkotói eszközök</h2>
+        <p class="asset-kit-copy">Vállalkozó WebP előzetesek a szerkesztői lefedettséghez, a kiadói véleményekhez és az üzletelrendezési hivatkozásokhoz. A stúdiótól kérésre teljes felbontású forrásfájlok is elérhetők.</p>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-destruction-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters színes pusztítás fizikai kirakós játék ikon" loading="lazy" decoding="async"><strong>játék ikonra</strong><span>Színes megsemmisítés fizika puzzle ikon.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-chain-reaction-arcade-logo.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters színes láncreakciós arcade logó" loading="lazy" decoding="async"><strong>Arcade logó</strong><span>Színláncreakciós márkaelem.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-zetun-robot-character.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-zetun-robot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Paint Blasters Zetun robotkarakter" loading="lazy" decoding="async"><strong>Zetun karakter</strong><span>Robot karakterkészlet az arcade puzzle-hoz.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-destruction-puzzle-game-background.webp 387w" sizes="(max-width: 760px) 34vw, 76px" width="387" height="645" alt="Paint Blasters színes pusztító kirakós játék háttér" loading="lazy" decoding="async"><strong>Játékmenet háttér</strong><span>Színes megsemmisítési kirakós jelenet.</span></a>
+          <a class="asset-link" href="../../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" download><img src="../../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp" srcset="../../assets/previews/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 360w, ../../assets/downloads/paint-blasters/paint-blasters-color-arcade-puzzle-menu-background.webp 782w" sizes="(max-width: 760px) 34vw, 76px" width="782" height="1400" alt="Paint Blasters színes arcade puzzle menü háttere" loading="lazy" decoding="async"><strong>Menü háttere</strong><span>Arcade puzzle menü jelenet.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Fejlesztési út</div>
+        <h2>A színes ötlettől a játszható produkciós vázlatig.</h2>
+        <ul class="update-list">
+          <li><span>2026. február</span><strong>A fejlesztés megkezdődik</strong><p>A Paint Blasters egy új mobil fizikai rejtvényként lépett be a fejlesztésbe, amely a színpusztítás, a torony összeomlása és a láncreakció köré épül.</p></li>
+          <li><span>2026. március eleje</span><strong>Belső teszt és vizuális sikeres</strong><p>A csapat teljes belső tesztet végzett, és javította a vizuális irányt az olvashatóság, a színek tisztasága és a játéktermi visszajelzések körül.</p></li>
+          <li><span>2026. március vége</span><strong>Legújabb GDD irány</strong><p>A jelenlegi GDD a projektet háromszínű receptek, olvasható tornyok és szintalapú előrehaladás köré formálta.</p></li>
+          <li><span>2026. április vége</span><strong>Az alapvető mechanikai vázlat</strong><p>A jelenlegi GDD fő mechanikáját durva formában valósították meg, így a csapat játszható vázlatot ad a pusztító hurokból.</p></li>
+          <li><span>2026. július</span><strong>35 kombinált rendszer kész</strong><p>Öt tiszta, húsz vegyes és tíz szivárványstratégia most már feloldódik a receptnyilvántartásból, miközben a bemutató és a torony olvashatósága tovább javul.</p></li>
+          <li><span>Jelenlegi finomítás</span><strong>Bemutató és jelenet hatóköre</strong><p>A lövedékek olvashatósága, a torony tisztasága, a megsemmisítés visszajelzése és a végső jelenet hatóköre továbbra is aktív finomítás alatt áll.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Kapcsolódó világok</div>
+        <h2>Ugrás a színmegsemmisítésből a többi WillowinWorld rendszerbe.</h2>
+        <p class="related-worlds-copy">A Paint Blasters a portfólió taktikai játékterme: célozd meg, keverd össze és semmisíts meg. Fedezze fel a lágyabb fizika rejtvényt, a hangulatos cukorka egyesítő hurkot vagy a nagyobb, történetekkel vezérelt függőleges játéktermi világot.</p>
+        <div class="related-world-grid" aria-label="Kapcsolódó WillowinWorld játékoldalak">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">Vonalfizika puzzle</span>
+            <strong>Nature Seed</strong>
+            <p>Rajzolj korlátozott fizikai útvonalakat, köss össze két karaktert, és állítsd helyre a természetet egy pihentető mobil puzzle hurkon keresztül.</p>
+            <span class="related-world-meta">Pihentető fizika puzzle</span>
+          </a>
+          <a class="related-world-link" href="candy-shop.html">
+            <span class="related-world-kicker">Hangulatos egyesítési játék</span>
+            <strong>Candy Shop</strong>
+            <p>Dobj le cukorkákat, egyesítsd a hozzáillő édességeket, kezeld a konténerterületet, és szerezz nagyobb kombinált jutalmakat.</p>
+            <span class="related-world-meta">Cukorka egyesítése puzzle</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Hardcore függőleges árkád</span>
+            <strong>Ball is God?!</strong>
+            <p>Kereskedelmi lövedéktervezés toronyforgatáshoz, kombinált összetörési időzítéshez, gyors leereszkedéshez és mitikus nyomáshoz.</p>
+            <span class="related-world-meta">Függőleges arcade játék</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Sajtó / kiadók</span>
+            <strong>Portfólió tények</strong>
+            <p>Hasonlítsa össze az összes projekt gyártási szakaszait, játékos horogjait, eszközpolitikáját és nyilvános látványvilágát.</p>
+            <span class="related-world-meta">Játékstúdió sajtókészlet</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Paint Blasters GYIK</div>
+        <h2>Válaszok játékosoknak, sajtó- és kiadópartnereknek.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Milyen játék a Paint Blasters?</h3><p>Mobil színpusztító fizika puzzle játékterem a lövések keveréséről és a hatások láncreakcióvá alakításáról.</p></article>
+          <article class="detail-card"><h3>Hogyan működik a játékmenet?</h3><p>Olvasd el a tornyot, építs egy színes hajtású lövedéket, célozd meg a gyenge pontot, tüzelj és használd az összeomlást a következő lövés megtervezéséhez.</p></article>
+          <article class="detail-card"><h3>Mitől más?</h3><p>A játékos nem csak lő. Először megépítik a lövedéket, keverve a színstratégiát a fizikai pusztítással.</p></article>
+          <article class="detail-card"><h3>Mi a jelenlegi állapot?</h3><p>Aktív fejlesztés gyártási prototípusként. Mind a 35 lövedékreceptet végrehajtják; a bemutatás, a torony olvashatósága és a jelenet terjedelme továbbra is finomítás alatt áll.</p></article>
+          <article class="detail-card"><h3>Használhatók-e közvagyonok?</h3><p>Igen, sajtó, kiadói ismertetők és bolti referenciák esetén. A forráseszközök privátak maradnak, hacsak nem kérik közvetlenül.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Paint Blasters Devlog</div>
+        <h2>Mi változott és mikor</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">2026. július 31</time><strong>Fizika és hatásstabilitás átadás</strong><p>A lövedékek viselkedését, a Match-3 felbontást és a találati hatásokat tesztelték és szigorították a következetesebb kombinációs eredmények érdekében.</p></li>
+          <li><span>2026. július</span><strong>Mind a 35 lövedékrecept végrehajtva</strong><p>A jelenlegi receptnyilvántartás öt tiszta, húsz vegyes és tíz szivárványlövedék-viselkedést tartalmaz szerzői szerepekkel, célpontokkal és kifizetésekkel.</p></li>
+          <li><span>2026. április</span><strong>Az alapvető mechanikai vázlat</strong><p>A jelenlegi GDD fő mechanikáját durva formában valósították meg, így egy játszható, színekkel hajtott megsemmisítő hurkot hoztak létre.</p></li>
+          <li><span>2026. március vége</span><strong>GDD irány</strong><p>A legújabb GDD formájú Paint Blasters a lövedéképítés körül: a játékosok három színbevitelt kombinálnak egy meghatározott viselkedésbe minden egyes lövés előtt.</p></li>
+          <li><span>2026. március</span><strong>Belső teszt és vizuális sikeres</strong><p>A csapat a belső tesztelést követően javította a színkontrasztot, a torony olvashatóságát és erősebb játéktermi hatást.</p></li>
+          <li><span>2026. február</span><strong>A fejlesztés megkezdődik</strong><p>A játék egy mobil fizikai rejtvényként lépett be a fejlesztésbe, amely a színpusztítás és a kielégítő láncreakció köré épült.</p></li>
+          <li><span>Hatály megjegyzés</span><strong>A végső hatókör még finomítás alatt áll</strong><p>A jelenlegi prototípus a legújabb GDD-t fedi le tervezet formájában, de a végső gyártási hatókör a tervezési pálya folytatódásával nőhet.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>A Paint Blasters egy WillowinWorld játék.</strong>
+        <span>Három színbemenet, 35 szerzői effektus és egy torony várja a megfelelő hatást.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Paint Blasters lábléc-navigáció">
+        <a href="../index.html#games">Minden játék</a>
+        <a href="../press-kit.html">Sajtókészlet</a>
+        <a href="../privacy.html">Adatvédelem</a>
+        <a href="../legal.html">Jogi</a>
+        <a href="mailto:contact@willowinworld.com?subject=Paint%20Blasters">Kapcsolat</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

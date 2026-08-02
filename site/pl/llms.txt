@@ -1,0 +1,37 @@
+# WillowinWorld — Polski
+
+> WillowinWorld to niezależne studio gier mobilnych, tworzące cztery gry logiczne i zręcznościowe oparte na fizyce, z dotykowym sterowaniem, czytelnymi systemami i wyrazistymi światami 2D.
+
+Język witryny: Polski. Kanoniczne źródło angielskie: https://willowinworld.com/llms.txt
+
+## Gry
+
+- [Nature Seed](https://willowinworld.com/pl/games/nature-seed.html): Relaksująca mobilna łamigłówka, którą można narysować i rozwiązać. Narysuj fizyczną ścieżkę ograniczoną atramentem, zjednocz ponownie Water Drop i Seed i przywróć akwarelowy las na 10 obecnych poziomach. Gatunki: Zagadka polegająca na narysowaniu i ułożeniu, Zagadka fizyki, Relaksująca łamigłówka, Łamigłówka do rysowania linii. Aktualny stan: Aktywny rozwój - grywalny prototyp.
+- [Candy Shop](https://willowinworld.com/pl/games/candy-shop.html): Przytulna mobilna łamigłówka łącząca z 13-etapowym łańcuchem cukierków, 10 zestawami zasad pojemników, ośmioma specjalnymi efektami cukierków i narzędziami do planowania następnej kropli. Gatunki: Połącz puzzle, Puzzle ze słodyczami, Zwykła łamigłówka, Zagadka fizyki. Aktualny stan: Aktywny rozwój – grywalna wersja produkcyjna.
+- [Paint Blasters](https://willowinworld.com/pl/games/paint-blasters.html): Mobilna gra zręcznościowa z łamigłówkami fizycznymi polegającymi na niszczeniu kolorów. Połącz trzy kolorowe wejścia w 35 autorskich receptur pocisków, celuj w słabe punkty wieży i wyzwalaj reakcje łańcuchowe. Gatunki: Kolorowa łamigłówka, Salon gier fizycznych, Zagadka zniszczenia, Reakcja łańcuchowa. Aktualny stan: Aktywny rozwój – prototyp produkcyjny.
+- [Ball is God?!](https://willowinworld.com/pl/games/ball-is-god.html): Oparty na fabule hardcorowy mobilny salon gier o pionowym zjeździe. Obróć wieżę wokół Espa, buduj kombinacje ciosów, przetrwaj bossów i noś karmę w 10 mitycznych lokalizacjach. Gatunki: Pasaż z pionowym zejściem, Hardkorowa gra zręcznościowa, Salon gier oparty na fabule, Akcja z bossem. Aktualny stan: Aktywna produkcja.
+
+## Najnowsze notatki rozwojowe
+
+- [Nature Seed — Przepustka przywracania i stabilności poziomu 2](https://willowinworld.com/pl/games/nature-seed.html#devlog): Opublikowano 2026-07-31. Poziom 2 korzysta teraz z pary tła produkcyjnego, z bardziej niezawodną konfiguracją poziomów, sprawdzaniem kolizji i informacją zwrotną o ukończeniu.
+- [Candy Shop — Menu produkcyjne i karnet HUD](https://willowinworld.com/pl/games/candy-shop.html#devlog): Opublikowano 2026-07-31. Menu główne, wybór poziomu, elementy sterujące HUD i ikony poleceń mają teraz jeden język wizualny; dodatkowe testy obciążeniowe w silniku obejmują zaktualizowany przepływ.
+- [Paint Blasters — Zaliczenie fizyki i stabilności efektów](https://willowinworld.com/pl/games/paint-blasters.html#devlog): Opublikowano 2026-07-31. Zachowanie pocisku, rozdzielczość Match-3 i efekty trafienia zostały przetestowane i dopracowane, aby uzyskać bardziej spójne wyniki kombinacji.
+- [Ball is God?! — Powierzchnie świata i walidacja zagrożeń](https://willowinworld.com/pl/games/ball-is-god.html#devlog): Opublikowano 2026-07-31. Prezentacja postaci, generowanie deterministyczne i zagrożenia cierniowe otrzymały skoordynowaną ocenę wizualną i produkcyjno-walidacyjną.
+
+## Studio i prasa
+
+- [Dom studyjny](https://willowinworld.com/pl/)
+- [Zestaw prasowy](https://willowinworld.com/pl/press-kit.html)
+- [Wykorzystanie zasobów multimedialnych](https://willowinworld.com/pl/asset-usage.html)
+
+## Kanały i zasady
+
+- [Kanał RSS Devloga](https://willowinworld.com/rss.xml)
+- [Mapa witryny XML](https://willowinworld.com/sitemap.xml)
+- [Indeks języka](https://willowinworld.com/languages.json)
+- [Polityka prywatności](https://willowinworld.com/pl/privacy.html)
+- [Nota prawna](https://willowinworld.com/pl/legal.html)
+
+## Kontakt
+
+- [E-mail WillowinWorld](mailto:contact@willowinworld.com)

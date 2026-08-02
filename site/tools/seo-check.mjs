@@ -33,14 +33,15 @@ const titles = new Map();
 const descriptions = new Map();
 const latestDevlogs = await loadLatestDevlogs();
 const latestByFile = new Map(latestDevlogs.map(update => [update.file, update]));
+const compactScriptLocales = new Set(["zh-hans", "zh-hant", "ja", "ko", "th"]);
 
 function fail(file, message) {
   errors.push(`${file}: ${message}`);
 }
 
 function attr(tag, name) {
-  const match = tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"));
-  return match?.[1] || "";
+  const match = tag.match(new RegExp(`\\b${name}=(["'])([\\s\\S]*?)\\1`, "i"));
+  return match?.[2] || "";
 }
 
 function meta(html, key, value) {
@@ -90,6 +91,9 @@ for (const page of pages) {
   if (attr(html.match(/<html\b[^>]*>/i)?.[0] || "", "lang") !== page.locale.htmlLang) {
     fail(page.file, `html lang must be ${page.locale.htmlLang}`);
   }
+  if (isIndexable && attr(html.match(/<html\b[^>]*>/i)?.[0] || "", "dir") !== page.locale.direction) {
+    fail(page.file, `html dir must be ${page.locale.direction}`);
+  }
   if (!title) fail(page.file, "missing title");
   if (h1Count !== 1) fail(page.file, `expected exactly one h1, found ${h1Count}`);
   if (meta(html, "name", "keywords")) fail(page.file, "meta keywords must not be used");
@@ -101,14 +105,26 @@ for (const page of pages) {
   }
 
   if (!description) fail(page.file, "missing meta description");
-  const maximumTitleLength = page.locale.code === sourceLocale.code ? 75 : 90;
-  const maximumDescriptionLength = page.locale.code === sourceLocale.code ? 180 : 210;
-  if (title.length < 20 || title.length > maximumTitleLength) fail(page.file, `title length ${title.length} is outside 20-${maximumTitleLength}`);
-  if (description.length < 70 || description.length > maximumDescriptionLength) fail(page.file, `description length ${description.length} is outside 70-${maximumDescriptionLength}`);
-  if (titles.has(title)) fail(page.file, `duplicates title from ${titles.get(title)}`);
-  if (descriptions.has(description)) fail(page.file, `duplicates description from ${descriptions.get(description)}`);
-  titles.set(title, page.file);
-  descriptions.set(description, page.file);
+  if (attr(meta(html, "http-equiv", "content-language") || "", "content") !== page.locale.htmlLang) {
+    fail(page.file, `content-language must be ${page.locale.htmlLang}`);
+  }
+  const compactScript = compactScriptLocales.has(page.locale.code);
+  const minimumTitleLength = compactScript ? 8 : (page.locale.code === sourceLocale.code ? 20 : 15);
+  const maximumTitleLength = page.locale.code === sourceLocale.code ? 75 : 110;
+  const minimumDescriptionLength = compactScript ? 30 : (page.locale.code === sourceLocale.code ? 70 : 50);
+  const maximumDescriptionLength = page.locale.code === sourceLocale.code ? 180 : 250;
+  if (title.length < minimumTitleLength || title.length > maximumTitleLength) {
+    fail(page.file, `title length ${title.length} is outside ${minimumTitleLength}-${maximumTitleLength}`);
+  }
+  if (description.length < minimumDescriptionLength || description.length > maximumDescriptionLength) {
+    fail(page.file, `description length ${description.length} is outside ${minimumDescriptionLength}-${maximumDescriptionLength}`);
+  }
+  const titleKey = `${page.locale.code}:${title}`;
+  const descriptionKey = `${page.locale.code}:${description}`;
+  if (titles.has(titleKey)) fail(page.file, `duplicates title from ${titles.get(titleKey)}`);
+  if (descriptions.has(descriptionKey)) fail(page.file, `duplicates description from ${descriptions.get(descriptionKey)}`);
+  titles.set(titleKey, page.file);
+  descriptions.set(descriptionKey, page.file);
 
   if (!robots.includes("index") || !robots.includes("follow")) fail(page.file, "robots must include index and follow");
   if (canonicalTags.length !== 1 || attr(canonicalTags[0] || "", "href") !== page.canonical) {
@@ -116,14 +132,7 @@ for (const page of pages) {
   }
 
   const alternateTags = (html.match(/<link\b[^>]*rel=["']alternate["'][^>]*hreflang=["'][^"']+["'][^>]*>/gi) || []);
-  const expectedAlternates = alternateLinks(page.source);
-  for (const expected of expectedAlternates) {
-    const match = alternateTags.find(tag => attr(tag, "hreflang") === expected.hreflang);
-    if (!match || attr(match, "href") !== expected.href) {
-      fail(page.file, `missing reciprocal hreflang ${expected.hreflang}`);
-    }
-  }
-  if (alternateTags.length !== expectedAlternates.length) fail(page.file, `expected ${expectedAlternates.length} hreflang links, found ${alternateTags.length}`);
+  if (alternateTags.length) fail(page.file, "hreflang must use the authoritative sitemap cluster, not duplicate HTML-head clusters");
 
   for (const property of ["og:type", "og:site_name", "og:locale", "og:title", "og:description", "og:image", "og:image:alt", "og:url"]) {
     if (!attr(meta(html, "property", property) || "", "content")) fail(page.file, `missing ${property}`);
@@ -135,6 +144,10 @@ for (const page of pages) {
   }
 
   const objects = structuredObjects(html, page.file);
+  const organization = objects.find(object => hasType(object, "Organization") && object?.["@id"] === "https://willowinworld.com/#studio");
+  if (page.source.kind === "home" && organization?.url !== "https://willowinworld.com/") {
+    fail(page.file, "Organization must preserve one canonical studio URL across locales");
+  }
   if (page.game) {
     const game = objects.find(object => hasType(object, "VideoGame"));
     const source = gameDevlogSources.find(candidate => candidate.file === page.sourceFile);
@@ -162,8 +175,24 @@ for (const page of pages) {
 
 const sitemap = await readFile(join(siteRoot, "sitemap.xml"), "utf8");
 const sitemapLocs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
+if (!/xmlns:xhtml=["']http:\/\/www\.w3\.org\/1999\/xhtml["']/.test(sitemap)) {
+  fail("sitemap.xml", "missing XHTML namespace for multilingual alternates");
+}
 for (const page of pages.filter(page => page.indexable !== false)) {
   if (!sitemapLocs.includes(page.canonical)) fail("sitemap.xml", `missing ${page.canonical}`);
+  const block = (sitemap.match(/<url>[\s\S]*?<\/url>/g) || [])
+    .find(candidate => candidate.includes(`<loc>${page.canonical}</loc>`));
+  const alternateTags = block?.match(/<xhtml:link\b[^>]*\/>/g) || [];
+  const expectedAlternates = alternateLinks(page.source);
+  for (const expected of expectedAlternates) {
+    const match = alternateTags.find(tag => attr(tag, "hreflang") === expected.hreflang);
+    if (!match || attr(match, "href") !== expected.href || attr(match, "rel") !== "alternate") {
+      fail("sitemap.xml", `${page.canonical} missing reciprocal hreflang ${expected.hreflang}`);
+    }
+  }
+  if (alternateTags.length !== expectedAlternates.length) {
+    fail("sitemap.xml", `${page.canonical} expected ${expectedAlternates.length} hreflang links, found ${alternateTags.length}`);
+  }
 }
 if (sitemapLocs.some(loc => loc.endsWith("/404.html"))) fail("sitemap.xml", "must not include 404.html");
 
@@ -197,6 +226,7 @@ for (const requiredUrl of [
   "https://willowinworld.com/asset-usage.html",
   "https://willowinworld.com/rss.xml",
   "https://willowinworld.com/sitemap.xml",
+  "https://willowinworld.com/languages.json",
   "mailto:contact@willowinworld.com"
 ]) {
   if (!llms.includes(`](${requiredUrl})`)) fail("llms.txt", `missing official resource ${requiredUrl}`);
@@ -219,11 +249,81 @@ for (const crawler of ["OAI-SearchBot", "PerplexityBot", "Claude-SearchBot", "Ch
     }
   }
 }
+const wildcardGroup = robotsTxt
+  .split(/\n\s*\n/)
+  .find(candidate => /^User-agent:\s*\*$/mi.test(candidate));
+if (!wildcardGroup) {
+  fail("robots.txt", "missing wildcard crawler group");
+} else {
+  if (!/^Allow:\s*\/$/mi.test(wildcardGroup)) fail("robots.txt", "wildcard crawlers must be allowed on public pages");
+  for (const protectedPath of ["/private/", "/admin/", "/api/"]) {
+    if (!new RegExp(`^Disallow:\\s*${protectedPath.replaceAll("/", "\\/")}$`, "mi").test(wildcardGroup)) {
+      fail("robots.txt", `wildcard crawlers must preserve the ${protectedPath} restriction`);
+    }
+  }
+}
 if (!/^Sitemap:\s*https:\/\/willowinworld\.com\/sitemap\.xml$/mi.test(robotsTxt)) {
   fail("robots.txt", "missing canonical sitemap declaration");
 }
 if (!robotsTxt.includes("https://willowinworld.com/llms.txt")) {
   fail("robots.txt", "missing llms.txt discovery comment");
+}
+if (!robotsTxt.includes("https://willowinworld.com/languages.json")) {
+  fail("robots.txt", "missing multilingual discovery index comment");
+}
+
+const redirects = await readFile(join(siteRoot, "_redirects"), "utf8");
+if (!/^\/index\.html\s+\/\s+301!$/m.test(redirects)) {
+  fail("_redirects", "missing permanent English /index.html normalization");
+}
+if (!/^\/:locale\/index\.html\s+\/:locale\/\s+301!$/m.test(redirects)) {
+  fail("_redirects", "missing permanent localized /index.html normalization");
+}
+
+let languageIndex;
+try {
+  languageIndex = JSON.parse(await readFile(join(siteRoot, "languages.json"), "utf8"));
+} catch (error) {
+  fail("languages.json", `invalid or missing language index (${error.message})`);
+}
+if (languageIndex) {
+  if (languageIndex.defaultLanguage !== sourceLocale.htmlLang) fail("languages.json", "defaultLanguage must identify English");
+  if (languageIndex.languages?.length !== locales.length) fail("languages.json", `expected ${locales.length} language records`);
+  const homes = new Set();
+  for (const locale of locales) {
+    const record = languageIndex.languages?.find(candidate => candidate.code === locale.htmlLang);
+    if (!record) {
+      fail("languages.json", `missing ${locale.htmlLang}`);
+      continue;
+    }
+    const expectedHome = pageUrl(locale, localizedPages[0]);
+    const expectedLlms = locale.code === sourceLocale.code
+      ? "https://willowinworld.com/llms.txt"
+      : `https://willowinworld.com/${locale.code}/llms.txt`;
+    if (record.hreflang !== locale.hreflang) fail("languages.json", `${locale.htmlLang} has incorrect hreflang`);
+    if (record.direction !== locale.direction) fail("languages.json", `${locale.htmlLang} has incorrect direction`);
+    if (record.home !== expectedHome) fail("languages.json", `${locale.htmlLang} has incorrect home URL`);
+    if (record.llms !== expectedLlms) fail("languages.json", `${locale.htmlLang} has incorrect AI guide URL`);
+    if (homes.has(record.home)) fail("languages.json", `${locale.htmlLang} duplicates a home URL`);
+    homes.add(record.home);
+  }
+}
+
+for (const locale of locales.filter(candidate => candidate.code !== sourceLocale.code)) {
+  const file = `${locale.code}/llms.txt`;
+  let localizedLlms = "";
+  try {
+    localizedLlms = await readFile(join(siteRoot, file), "utf8");
+  } catch (error) {
+    fail(file, `missing localized AI guide (${error.message})`);
+    continue;
+  }
+  if (!localizedLlms.startsWith(`# WillowinWorld — ${locale.label}\n`)) fail(file, "must identify its native language");
+  if (/___WILLOW_|__W\d+\s*__/.test(localizedLlms)) fail(file, "contains leaked translation placeholders");
+  for (const game of gameDevlogSources) {
+    const gamePage = localizedPages.find(page => page.file === game.file);
+    if (!localizedLlms.includes(`](${pageUrl(locale, gamePage)})`)) fail(file, `missing localized ${game.name} link`);
+  }
 }
 
 if (errors.length) {
@@ -232,4 +332,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages across ${locales.length} languages, sitemap.xml, robots.txt and llms.txt.`);
+console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages across ${locales.length} languages, multilingual sitemap.xml, robots.txt, languages.json and localized AI guides.`);

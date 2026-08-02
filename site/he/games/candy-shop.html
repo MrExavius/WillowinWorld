@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="he">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Candy Shop הוא פאזל מיזוג נייד נעים בפיתוח פעיל. זרוק דרך רשת ממתקים בת 13 שלבים, שולט בעשרה מיכלים והפעל ממתקים מיוחדים.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#211027" id="metaThemeColor">
+  <meta property="og:title" content="Candy Shop - משחק פאזל מיזוג ממתקים נעים">
+  <meta property="og:description" content="זרוק, שלב ופתח סוכריות בפאזל מיזוג נייד נעים מאת WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Candy Shop משחק פאזל מיזוג ממתקים נעים מאת WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/he/games/candy-shop.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="he_IL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Candy Shop - משחק פאזל מיזוג ממתקים נעים">
+  <meta name="twitter:description" content="זרוק, שלב ופתח סוכריות בפאזל מיזוג נייד נעים מאת WillowinWorld.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/candy-shop-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Candy Shop מיזוג פאזל בפיזיקה נעימה עם ממתקים צבעוניים">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Candy Shop | משחק פאזל מיזוג ממתקים נעים לנייד</title>
+  <link rel="canonical" href="https://willowinworld.com/he/games/candy-shop.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/he/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "משחקים",
+          "item": "https://willowinworld.com/he/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Candy Shop",
+          "item": "https://willowinworld.com/he/games/candy-shop.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/he/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/he/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "description": "פאזל מיזוג ממתקים נעים עם שרשרת מיזוג בת 13 שלבים, עשר חוקים של מיכל, ממתקים מיוחדים וכלי תכנון.",
+      "genre": [
+        "מיזוג פאזל",
+        "פאזל ממתקים",
+        "פאזל סתמי",
+        "פאזל פיזיקה"
+      ],
+      "gamePlatform": "נייד",
+      "creativeWorkStatus": "פיתוח פעיל - בניית הפקה ניתנת להפעלה",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/he/games/candy-shop.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "he"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
+  <link rel="preload" href="../../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/home-candy-card.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/candy-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-candy candy-shop-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">דלג אל Candy Shop</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — חזרה ל-WillowinWorld">
+      <img src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop סמל משחק פאזל מיזוג ממתקים נעים" fetchpriority="high" decoding="async">
+      <span><strong>Candy Shop</strong><small>דף המשחק WillowinWorld</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="ניווט בדף המשחק">
+      <a href="../index.html">בית סטודיו</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">ערכת עיתונות</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="החלף נושא">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="שפה"><details><summary aria-label="בחר שפה"><span aria-hidden="true">HE</span></summary><div class="language-options"><a href="../../games/candy-shop.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/candy-shop.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/candy-shop.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/candy-shop.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/candy-shop.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/candy-shop.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/candy-shop.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/candy-shop.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/candy-shop.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/candy-shop.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/candy-shop.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/candy-shop.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/candy-shop.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/candy-shop.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/candy-shop.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="candy-shop.html" lang="he" hreflang="he" aria-current="page"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/candy-shop.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/candy-shop.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/candy-shop.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/candy-shop.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/candy-shop.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/candy-shop.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/candy-shop.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/candy-shop.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/candy-shop.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/candy-shop.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/candy-shop.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/candy-shop.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/candy-shop.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/candy-shop.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/candy-shop.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/candy-shop.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/candy-shop.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/candy-shop.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/candy-shop.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/candy-shop.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/candy-shop.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/candy-shop.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/candy-shop.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/candy-shop.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/candy-shop.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/candy-shop.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell candy-shop-shell" id="game-main">
+    <div class="candy-page-backdrop ambient-only" aria-hidden="true">
+      <div class="candy-menu-world">
+        <span class="candy-menu-shelf candy-menu-shelf-top"></span>
+        <span class="candy-menu-shelf candy-menu-shelf-bottom"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-one"></span>
+        <span class="candy-menu-swirl candy-menu-swirl-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-one"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-two"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-three"></span>
+        <span class="candy-menu-sugar candy-menu-sugar-four"></span>
+      </div>
+    </div>
+
+    <section class="candy-game-hero" aria-labelledby="candyHeroTitle">
+      <div class="container candy-hero-layout">
+        <div class="candy-hero-copy">
+          <div class="eyebrow">Candy Shop</div>
+          <h1 id="candyHeroTitle">זרוק ממתקים. בנה פינוקים גדולים יותר.</h1>
+          <p class="hero-copy">פאזל מיזוג נייד נעים על הצבת ממתקים, הפעלת שילובי פיזיקה רכים ורדיפה אחר אבולוציה מספקת נוספת.</p>
+          <p class="candy-hero-note">פיתוח פעיל עם 13 שלבי ממתקים, 10 ערכי חוקים של מיכל, שמונה אפקטים של ממתקים מיוחדים ושכבת תכנון הבנויה סביב החזקה, תצוגה מקדימה של נחיתה ותור שלושת הבאים.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Candy+Shop+%D7%A2%D7%93%D7%9B%D7%95%D7%A0%D7%99%D7%9D">בקש עדכוני Candy Shop</a>
+            <a class="btn btn-ghost" href="#devlog">פתח את Devlog</a>
+          </div>
+          <div class="candy-hero-stats" role="group" aria-label="הדגשות Candy Shop">
+            <span><strong>13 סוכריות</strong><small>שרשרת אבולוציה אחת קריא</small></span>
+            <span><strong>10 שדות</strong><small>גיאומטריה וכללים חדשים</small></span>
+            <span><strong>8 מבצעים</strong><small>צמד אפקטים ומתכונים</small></span>
+          </div>
+        </div>
+
+        <aside class="candy-hero-showcase" aria-label="Candy Shop תצוגה מקדימה של משחק">
+          <div class="candy-device-frame">
+            <div class="candy-stage candy-stage-showcase" aria-hidden="true">
+              <div class="candy-bg-stack">
+                <img loading="lazy" class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-2" src="../../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-3" src="../../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-4" src="../../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-5" src="../../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-6" src="../../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-7" src="../../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-8" src="../../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" decoding="async">
+                <img loading="lazy" class="candy-bg candy-bg-9" src="../../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
+                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                </picture>
+              </div>
+              <img loading="lazy" class="candy-piece candy-piece-left" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-right" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
+              <img loading="lazy" class="candy-piece candy-piece-result" src="../../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
+              <span class="candy-impact"></span>
+            </div>
+            <img loading="lazy" class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="סמל משחק Candy Shop עם ממתקים בהירים" decoding="async">
+            <span class="candy-preview-title">
+              <small>פאזל מיזוג פיזיקה נעים</small>
+              <strong>Candy Shop</strong>
+              <span class="candy-cycle"><b>זרוק</b><b>מיזוג</b><b>משולבת</b></span>
+            </span>
+            <div class="magic-hud">
+              <span>מבנה ניתן לשחק · פיתוח פעיל</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid candy-shop-content">
+      <section class="game-proof-section" aria-labelledby="candyProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">בתוך המבנה הנוכחי</span>
+            <h2 id="candyProofTitle">כל מיכל משכתב את הפאזל.</h2>
+            <p>כלל המיזוג נשאר קבוע; השדה לא. בקבוקון משנה את החלל השמיש, שעון החול יוצר נקודת חנק, פורטלים משולשים מפצלים את התוכנית, כוח הכבידה מסתובב מעלה את הממתקים המיושבים, וקירות מכשולים הופכים את הגמר לכאוס מבוקר.</p>
+            <span class="proof-status"><b>סטטוס בנייה</b> פיתוח פעיל</span>
+          </div>
+          <div class="proof-visual">
+            <div class="candy-container-section">
+              <h3>שמונה שינויים כלל גלויים</h3>
+              <p>אמנות מכולה אמיתית מפרויקט Unity הנוכחי.</p>
+              <div class="container-showcase" aria-label="Candy Shop גלריית מיכלים">
+                <figure><img src="../../assets/game-proof/candy-containers/container_pot.webp" width="400" height="500" alt="מיכל מיזוג בצורת סיר Candy Shop" loading="lazy" decoding="async"><figcaption>סיר</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_hourglass.webp" width="400" height="500" alt="Candy Shop מיכל מיזוג שעון חול עם מרכז צר" loading="lazy" decoding="async"><figcaption>שעון חול</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_flask.webp" width="400" height="500" alt="Candy Shop מיכל מיזוג בצורת בקבוק" loading="lazy" decoding="async"><figcaption>בקבוק</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_tilted.webp" width="400" height="500" alt="Candy Shop מיכל מיזוג רצפה מוטה" loading="lazy" decoding="async"><figcaption>מוטה</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_stepped.webp" width="400" height="500" alt="Candy Shop" loading="lazy" decoding="async"><figcaption>צעד</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_triple.webp" width="400" height="500" alt="Candy Shop מיכל מיזוג פורטל משולש" loading="lazy" decoding="async"><figcaption>פורטל משולש</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_rotating.webp" width="400" height="500" alt="Candy Shop מיכל מסתובב עם כוח הכבידה" loading="lazy" decoding="async"><figcaption>כוח הכבידה מסתובב</figcaption></figure>
+                <figure><img src="../../assets/game-proof/candy-containers/container_obstacles.webp" width="400" height="500" alt="Candy Shop מיכל מיכל עם קירות מכשולים" loading="lazy" decoding="async"><figcaption>קירות מכשולים</figcaption></figure>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="עובדות בנייה מאומתות של Candy Shop">
+          <article><strong>אבולוציה בת 13 שלבים</strong><span>סולם ממתקים שלם.</span></article>
+          <article><strong>החזק + שלוש הבאות</strong><span>תכנון לפני כל ירידה.</span></article>
+          <article><strong>מתכונים מיוחדים</strong><span>אש, קרח, מגנט, ג'לי ועוד.</span></article>
+          <article><strong>לולאה יומית ואיסוף</strong><span>אתגר Seeded, Candy Book וחמישיית המקומות המובילים המקומיים.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">סקירת משחק</div>
+        <h2>פאזל מיזוג נייד נעים שנבנה סביב פיזיקה רכה והחלטות של טיפה אחת נוספת.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>הבטחת שחקן</h3><p>זרוק ממתקים, צרו פינוקים גדולים יותר והפכו כל ריצה לשרשרת עליזה של פיזיקה רכה, הפתעות מתוקות ומיזוגים מספקים.</p></article>
+          <article class="detail-card"><h3>מבנה נוכחי</h3><p>מיושמים עשר מערכות חוקים של מיכל, שרשרת שלמה של 13 ממתקים, שמונה אפקטים מיוחדים, תצוגה מקדימה של נחיתה, החזקה ותור של שלושה הבאים.</p></article>
+          <article class="detail-card"><h3>קהל</h3><p>שחקני פאזל מזדמנים שנהנים ממשחקי שחרור ומיזוג, חזותי ממתקים נעימים, אסטרטגיה בלחץ נמוך והפעלות ניידות מהירות.</p></article>
+          <article class="detail-card"><h3>סטטוס</h3><p>פיתוח פעיל. העבודה הנוכחית מתמקדת בביצועים ניידים, ליטוש ממשק משתמש, איזון סוכריות, לחץ מיכל ומשוב משולב קריא.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">תכונות</div>
+        <h2>מה שחקנים עושים ב-Candy Shop.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>משחק ממתקים שחרר ומיזוג</h3><p>שחקנים מניחים ממתקים לתוך המיכל, משתמשים בכוח המשיכה ובתזמון, ואז ממזגים סוכריות תואמות לפינוקים גדולים יותר.</p></article>
+          <article class="detail-card"><h3>שרשרת ממתקים בת 13 שלבים</h3><p>סולם המיזוג נותן לכל ריצה מטרה נראית לעין, מממתקים זעירים ועד לחתיכות תגמול גדולות יותר עם נוכחות מסך חזקה יותר.</p></article>
+          <article class="detail-card"><h3>קומבינות וממתקים מיוחדים</h3><p>שמונה אפקטים מיושמים של ממתקים מיוחדים יוצרים מתכונים ותופעות לוואי מותאמות, מה שמעניק למפגשים חוזרים מרקם טקטי יותר.</p></article>
+          <article class="detail-card"><h3>מצגת נעימה לנייד</h3><p>צבעים רכים, רקעים לחנות ממתקים וממשק משתמש ידידותי למגע הופכים את המשחק לקריאה עבור הפעלות קצרות של iOS ואנדרואיד.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">לולאת משחק</div>
+        <h2>בחרו את הירידה, שלטו במיכל והשאירו את שרשרת המיזוג בחיים.</h2>
+        <ul class="update-list">
+          <li><span>שלב 01</span><strong>קרא את הממתק הבא</strong><p>השחקן בודק את המתוק הבא, את הערימה הנוכחית ואת השטח הפנוי בתוך המיכל.</p></li>
+          <li><span>שלב 02</span><strong>מקום עם כוונה</strong><p>ירידה יכולה להגדיר מיזוג נקי, לחסום מהלך עתידי או ליצור לחץ שמשנה את ההחלטה הבאה.</p></li>
+          <li><span>שלב 03</span><strong>מיזוג ושילוב</strong><p>ממתקים תואמים מתפתחים לפינוקים גדולים יותר, ותגובות שרשרת מתגמלות מיקום חכם.</p></li>
+          <li><span>שלב 04</span><strong>התקדמו וחזרו</strong><p>שחקנים רודפים אחרי שלבי ממתקים גבוהים יותר, ריצות טובות יותר, שילובים נקיים יותר ותגמולי התקדמות עתידיים.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">סיפור / עולם</div>
+        <h2>חנות ממתקים עליזה שבה כל מתוק יכול להפוך למשהו גדול יותר.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop התחיל בשנת 2025 כרעיון המשחק השני של WillowinWorld: פאזל מיזוג ממתקים בהיר ונעים שנבנה סביב שמחה פשוטה ופיזיקה מספקת.</p>
+            <p>העולם חם וקריא בכוונה: מדפים, ממתקים, קמעות רכים ומיכלים דמויי חנות תומכים בפנטזיה שלכל ממתק זעיר יש דרך להפוך לפינוק גדול יותר.</p>
+            <p>לאחר אב הטיפוס הראשון, הצוות הרחיב את ה-GDD, בנה מחדש את הכיוון, השלים את שרשרת המיזוג של 13 ממתקים והטמיע עשרה ערכי חוקים של מיכל, מתכונים מיוחדים, כלי תכנון ומערכות מטא-התקדמות ראשונות.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>מיזוג שרשרת</dt><dd>13 שלבי ממתקים</dd></div>
+            <div><dt>מיקוד עיצובי</dt><dd>פיזיקה רכה ושילובים קריאים</dd></div>
+            <div><dt>סיור במכולות</dt><dd>10 גרסאות של גיאומטריה ושל כללים</dd></div>
+            <div><dt>שלב נוכחי</dt><dd>פיתוח ואופטימיזציה פעילים</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section candy-story-section">
+        <div class="eyebrow">זווית מפרסם</div>
+        <h2>כלל מיזוג מוכר על פני עשרה מיכלים שונים.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Candy Shop שומר על חוק ההורדה והמיזוג קריא בזמן שכל מיכל משנה שטח שמיש, כוח המשיכה, מכשולים או המסלול לתוך הערימה.</p>
+            <p>המבנה הנוכחי מרחיב ריצות קצרות עם אתגרים יומיומיים, תגליות Candy Book וטבלאות ניקוד מקומיות.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>ז'אנר</dt><dd>פאזל מיזוג ממתקים מזדמן</dd></div>
+            <div><dt>יעד פלטפורמה</dt><dd>iOS / אנדרואיד</dd></div>
+            <div><dt>צורת הפעלה</dt><dd>ריצות קצרות שניתנות לחזרה</dd></div>
+            <div><dt>CTA ראשי</dt><dd>בקש עדכוני פיתוח</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">הורד נכסים</div>
+        <h2>Candy Shop נכסי עיתונות ויוצרים</h2>
+        <p class="asset-kit-copy">תצוגות מקדימות של WebP שנאספו לסיקור עריכה, סקירת מוציאים לאור והפניות לפריסת חנות. קבצי מקור ברזולוציה מלאה זמינים מהאולפן לפי בקשה.</p>
+        <h3 class="asset-group-title">סצנות מותגים וחנויות</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop סמל משחק פאזל מיזוג ממתקים נעים" loading="lazy" decoding="async"><strong>סמל משחק</strong><span>סמל פאזל של מיזוג ממתקים נעים.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-alternate-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop סמל משחק חלופי של פאזל מיזוג נעים" loading="lazy" decoding="async"><strong>סמל חלופי</strong><span>סמל בסגנון חנות משני.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-logo-mascot.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop ממתקים נעימים מיזוג פאזל לוגו קמע" loading="lazy" decoding="async"><strong>קמע לוגו</strong><span>קמע מותג עם כותרת Candy Shop.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp" download><img src="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp" srcset="../../assets/previews/candy-shop/candy-shop-bear-mascot-character.webp 360w, ../../assets/downloads/candy-shop/candy-shop-bear-mascot-character.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Candy Shop דמות קמע דוב" loading="lazy" decoding="async"><strong>קמע דוב</strong><span>נכס אופי קמע ידידותי.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-merge-puzzle-shop-menu-background.webp 781w" sizes="(max-width: 760px) 34vw, 76px" width="781" height="1400" alt="Candy Shop רקע תפריט חנות פאזל מיזוג נעים" loading="lazy" decoding="async"><strong>תפריט חנות</strong><span>רקע תפריט חנות ממתקים נעים.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" download><img src="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp" srcset="../../assets/previews/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 360w, ../../assets/downloads/candy-shop/candy-shop-casual-merge-puzzle-pause-background.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע הפסקת פאזל מיזוג מזדמן" loading="lazy" decoding="async"><strong>השהה רקע</strong><span>סצנת הפסקת פאזל מיזוג מזדמנת.</span></a>
+        </div>
+        <h3 class="asset-group-title">רקע של מיזוג נעים</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-01.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 01" loading="lazy" decoding="async"><strong>רקע 01</strong><span>סצנת פאזל מיזוג ממתקים נעימה.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-02.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 02" loading="lazy" decoding="async"><strong>רקע 02</strong><span>סצנת פאזל מיזוג חנות ממתקים.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-03.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 03" loading="lazy" decoding="async"><strong>רקע 03</strong><span>סצנת פאזל מיזוג ממתקים ניידים.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-04.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 04" loading="lazy" decoding="async"><strong>רקע 04</strong><span>סצנת חנות פאזל מיזוג מתוקה.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-05.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 05" loading="lazy" decoding="async"><strong>רקע 05</strong><span>רקע פאזל מזדמן נעים.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-06.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 06" loading="lazy" decoding="async"><strong>רקע 06</strong><span>רקע פאזל מיזוג ממתקים.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-07.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 07" loading="lazy" decoding="async"><strong>רקע 07</strong><span>סצנת ממתקים ניידת נעימה.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-08.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 08" loading="lazy" decoding="async"><strong>רקע 08</strong><span>רקע פאזל מיזוג מזדמן.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-09.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 09" loading="lazy" decoding="async"><strong>רקע 09</strong><span>רקע פאזל של חנות מתוקה.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-cozy-candy-merge-puzzle-background-10.webp 788w" sizes="(max-width: 760px) 34vw, 76px" width="788" height="1400" alt="Candy Shop רקע פאזל מיזוג ממתקים נעים 10" loading="lazy" decoding="async"><strong>רקע 10</strong><span>רקע עולם ממתקים נעים.</span></a>
+        </div>
+        <h3 class="asset-group-title">שרשרת ממתקים של מיזוג פיזיקה</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-01.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-01.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 01" loading="lazy" decoding="async"><strong>Candy 01</strong><span>ממתק ראשון בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-02.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-02.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 02" loading="lazy" decoding="async"><strong>Candy 02</strong><span>ממתק שני בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-03.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-03.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 03" loading="lazy" decoding="async"><strong>סוכריות 03</strong><span>ממתק שלישי בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-04.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-04.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 04" loading="lazy" decoding="async"><strong>סוכריות 04</strong><span>ממתק רביעי בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-05.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-05.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 05" loading="lazy" decoding="async"><strong>סוכריות 05</strong><span>ממתק חמישי בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-06.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-06.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 06" loading="lazy" decoding="async"><strong>סוכריות 06</strong><span>ממתק שישי בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-07.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-07.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיזיקה מיזוג סוכריות 07" loading="lazy" decoding="async"><strong>סוכריות 07</strong><span>ממתק שביעי בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-08.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-08.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 08" loading="lazy" decoding="async"><strong>סוכריות 08</strong><span>ממתק שמיני בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-09.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-09.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 09" loading="lazy" decoding="async"><strong>סוכריות 09</strong><span>ממתק תשיעי בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-10.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-10.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 10" loading="lazy" decoding="async"><strong>סוכריות 10</strong><span>ממתק עשירי בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-11.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-11.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 11" loading="lazy" decoding="async"><strong>סוכריות 11</strong><span>ממתק אחד עשר בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-12.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-12.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 12" loading="lazy" decoding="async"><strong>סוכריות 12</strong><span>ממתק 12 בשרשרת המיזוג.</span></a>
+          <a class="asset-link" href="../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp" download><img src="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp" srcset="../../assets/previews/candy-shop/candy-shop-physics-merge-candy-13.webp 360w, ../../assets/downloads/candy-shop/candy-shop-physics-merge-candy-13.webp 900w" sizes="(max-width: 760px) 34vw, 76px" width="900" height="900" alt="Candy Shop פיסיקה מיזוג סוכריות 13" loading="lazy" decoding="async"><strong>סוכריות 13</strong><span>ממתק אחרון בשרשרת המיזוג.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">מסע פיתוח</div>
+        <h2>מאב טיפוס ראשון לבניית ייצור עמוקה יותר.</h2>
+        <ul class="update-list">
+          <li><span>סוף יוני 2025</span><strong>רעיון למשחק שני</strong><p>WillowinWorld החלה לחקור פרויקט ממתקים בהיר שנבנה סביב משהו פשוט, משמח ומושך באופן נרחב.</p></li>
+          <li><span>אוגוסט 2025</span><strong>דמויות ממתקים ראשונות</strong><p>נוצרו דמויות הממתקים הראשונות, ושרשרת המיזוג התרחבה מאוחר יותר מ-11 סוכריות ל-13 להתקדמות חזקה יותר.</p></li>
+          <li><span>ספטמבר 2025</span><strong>אב טיפוס ראשון</strong><p>אב הטיפוס הראשון נבנה ונבדק. התוצאה הראתה שהרעיון זקוק ליותר זהות, התקדמות והוק ברור יותר.</p></li>
+          <li><span>אוקטובר 2025</span><strong>הרחבת GDD</strong><p>מסמך העיצוב הורחב עם מכניקה חדשה, ממתקים מיוחדים, רעיונות התקדמות והכוונה למכולות.</p></li>
+          <li><span>דצמבר 2025-פברואר 2026</span><strong>מערכות ליבה של ממתקים</strong><p>מכניקת הממתקים העיקרית יושמה, ערכת הממתקים הושלמה והחלו מערכות מיכל מוקדמות.</p></li>
+          <li><span>אפריל-יולי 2026</span><strong>מערכות ופוליש עובר</strong><p>ה-build התרחב עם עשר ערכי חוקים של מיכל, אינטראקציות מיוחדות-ממתקים, כלי תכנון, אתגרים יומיומיים ומערכות איסוף לצד אופטימיזציה וליטוש ממשק משתמש.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">עולמות קשורים</div>
+        <h2>עקבו אחרי קהל החידה המיזוג לתוך הקטלוג הרחב יותר של WillowinWorld.</h2>
+        <p class="related-worlds-copy">Candy Shop מכסה את מסלול הפאזלים הנעים להורדה ומיזוג. המשך לפאזל קו-פיזיקה מרגיע, משחק ארקייד של תגובת שרשרת צבע או ירידת מגדל מסתובב הארדקור של האולפן.</p>
+        <div class="related-world-grid" aria-label="דפי משחק קשורים WillowinWorld">
+          <a class="related-world-link is-primary" href="nature-seed.html">
+            <span class="related-world-kicker">פאזל פיזיקה מרגיע</span>
+            <strong>Nature Seed</strong>
+            <p>צייר מסלולים פיזיים מוגבלים, חבר שתי דמויות ושחזר את רמות היער באמצעות פיזיקה ניידת רגועה.</p>
+            <span class="related-world-meta">חידת צייר לפתרון</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">ארקייד להרס צבע</span>
+            <strong>Paint Blasters</strong>
+            <p>בנו טיל לפני כל ירייה, קראו נקודות תורפה של המגדל והפעילו תגובות שרשרת בפיזיקה.</p>
+            <span class="related-world-meta">כוון וירה בפאזל פיזיקה</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">ארקייד סיפורים</span>
+            <strong>Ball is God?!</strong>
+            <p>עברו מסשנים נעימים לירידה מתוחה במגדל מסתובב עם שילוב משולבים, עולמות מיתיים ולחץ בוס.</p>
+            <span class="related-world-meta">ארקייד מגדל הארדקור</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">עיתונות / מוציאים לאור</span>
+            <strong>עובדות תיק</strong>
+            <p>פתח סקירה קומפקטית של ז'אנרים, סטטוס הפקה, נכסים ציבוריים והוקס למשחקים הפונים למפרסמים.</p>
+            <span class="related-world-meta">WillowinWorld תיק</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Candy Shop שאלות נפוצות</div>
+        <h2>תשובות לשחקנים, עיתונות ושותפים להוצאה לאור.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>איזה סוג משחק הוא Candy Shop?</h3><p>פאזל מיזוג ממתקים נעים עם טיפות פיזיקה רכות, ממתקים מיוחדים, שילובים והתקדמות.</p></article>
+          <article class="detail-card"><h3>איך המשחק עובד?</h3><p>בחרו ממתק, זרוק אותו למיכל, מיזוג ממתקים תואמים, נהל מקום ורדף אחר שלבי ממתקים גדולים יותר.</p></article>
+          <article class="detail-card"><h3>מה מייחד את זה?</h3><p>הוא משלב לולאת פאזל מיזוג מוכרת עם זהות ממתקים נעימה, ממתקים מיוחדים, שילובים קריאים ולחץ מיכל.</p></article>
+          <article class="detail-card"><h3>מה המצב הנוכחי?</h3><p>פיתוח פעיל. שרשרת המיזוג, עשר ערכי חוקים של מיכל, מתכונים מיוחדים, אתגר יומי, Candy Book וטבלאות ניקוד מקומיות קיימות בפרויקט הנוכחי.</p></article>
+          <article class="detail-card"><h3>האם ניתן להשתמש בנכסי ציבור?</h3><p>כן, לעיתונות, סקירת מפרסמים והפניות לחנות. נכסי המקור נשארים פרטיים אלא אם כן מתבקשים ישירות.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Candy Shop Devlog</div>
+        <h2>מה השתנה ומתי</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 ביולי 2026</time><strong>תפריט הפקה וכרטיס HUD</strong><p>תפריט ראשי, בחירת רמה, בקרות HUD וסמלי פקודות חולקים כעת שפה חזותית אחת; מבחני מאמץ נוספים במנוע מכסים את הזרימה המעודכנת.</p></li>
+          <li><span>יולי 2026</span><strong>בניית ייצור עמוקה יותר</strong><p>הפרויקט הנוכחי משלב את שרשרת המיזוג המלאה עם עשר ערכי חוקים של מיכל, מתכונים מיוחדים, כלי תכנון, אתגרים יומיומיים, תגליות Candy Book וטבלאות ניקוד מקומיות.</p></li>
+          <li><span>אפריל 2026</span><strong>רכיבי ממשק משתמש עוברים</strong><p>נוצרו רכיבי ממשק המשתמש העיקריים הראשונים, והעניקו ל-Candy Shop זהות ניידת ברורה יותר ומצגת סתמית חזקה יותר.</p></li>
+          <li><span>פברואר 2026</span><strong>שרשרת ממתקים ומיכלים</strong><p>ערכת הממתקים המלאה הושלמה, ומערכות מיכל החלו לשנות את הגיאומטריה, כוח המשיכה ולחץ הפאזל.</p></li>
+          <li><span>דצמבר 2025</span><strong>מכניקת ליבה של ממתקים</strong><p>מכניקת הממתקים העיקרית יושמה בצורה גסה, והפכה את ה-GDD המורחב למערכת הניתנת להפעלה.</p></li>
+          <li><span>אוקטובר 2025</span><strong>הרחבת GDD</strong><p>לאחר שאב הטיפוס הראשון לא הרגיש חזק מספיק, העיצוב הורחב עם ממתקים מיוחדים ורעיונות התקדמות.</p></li>
+          <li><span>אוגוסט 2025</span><strong>דמויות ממתקים ראשונות</strong><p>נוצרו דמויות הממתקים הראשונות, וביססו את הכיוון הרך והידידותי של שרשרת המיזוג.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Candy Shop הוא משחק WillowinWorld.</strong>
+        <span>פאזל מיזוג נעים שבו הטיפה הבאה היא פשוטה והמיכל אף פעם לא.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Candy Shop ניווט תחתון">
+        <a href="../index.html#games">כל המשחקים</a>
+        <a href="../press-kit.html">ערכת עיתונות</a>
+        <a href="../privacy.html">פרטיות</a>
+        <a href="../legal.html">משפטי</a>
+        <a href="mailto:contact@willowinworld.com?subject=Candy%20Shop">צור קשר</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+- generic [active] [ref=f2e1]:
+  - link "Lumaktaw sa pangunahing nilalaman" [ref=f2e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - status: Magic unlocked - Maligayang pagdating sa WillowinWorld
+  - status
+  - generic [ref=f2e3]:
+    - banner [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - link "WillowinWorld bahay" [ref=f2e6] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f2e8]:
+            - generic [ref=f2e9]: W
+            - text: illo
+            - generic [ref=f2e10]: w
+            - text: in
+            - generic [ref=f2e11]: W
+            - text: orld
+        - generic [ref=f2e12]:
+          - button "Lumipat ng tema" [ref=f2e13] [cursor=pointer]
+          - navigation "Wika" [ref=f2e16]:
+            - group [ref=f2e17]:
+              - generic "Pumili ng wika" [ref=f2e18] [cursor=pointer]: FIL
+          - button "Buksan ang menu" [ref=f2e20] [cursor=pointer]
+    - main [ref=f2e22]:
+      - generic [ref=f2e24]:
+        - generic [ref=f2e25]:
+          - generic [ref=f2e26]: Indie studio ng mga mobile game
+          - heading "WillowinWorld Maliit na laro. Mga buhay na mundo." [level=1] [ref=f2e27]:
+            - generic [ref=f2e28]: WillowinWorld
+            - generic [ref=f2e29]: Maliit na laro. Mga buhay na mundo.
+          - paragraph [ref=f2e30]: Tactile puzzle at arcade game kung saan ang bawat draw, drop, shot at fall ay nagbabago sa mundo.
+          - generic [ref=f2e31]:
+            - link "Mag-explore ng mga laro" [ref=f2e32] [cursor=pointer]:
+              - /url: "#games"
+            - link "Press kit" [ref=f2e33] [cursor=pointer]:
+              - /url: press-kit.html
+          - navigation "Itinatampok na WillowinWorld na mga laro" [ref=f2e34]:
+            - link "Nature Seed pisika ng draw-to-solve" [ref=f2e35] [cursor=pointer]:
+              - /url: "#nature-card"
+              - strong [ref=f2e36]: Nature Seed
+              - generic [ref=f2e37]: pisika ng draw-to-solve
+            - link "Candy Shop maginhawang merge puzzle" [ref=f2e38] [cursor=pointer]:
+              - /url: "#candy-card"
+              - strong [ref=f2e39]: Candy Shop
+              - generic [ref=f2e40]: maginhawang merge puzzle
+            - link "Paint Blasters mga reaksyon ng chain ng kulay" [ref=f2e41] [cursor=pointer]:
+              - /url: "#paint-card"
+              - strong [ref=f2e42]: Paint Blasters
+              - generic [ref=f2e43]: mga reaksyon ng chain ng kulay
+            - link "Ball is God?! patayong pagbaba ng arcade" [ref=f2e44] [cursor=pointer]:
+              - /url: "#ball-card"
+              - strong [ref=f2e45]: Ball is God?!
+              - generic [ref=f2e46]: patayong pagbaba ng arcade
+        - 'img "Kasalukuyang spotlight: Nature Seed restoration preview" [ref=f2e47]':
+          - generic [ref=f2e48]:
+            - generic [ref=f2e57]:
+              - generic [ref=f2e58]: Kasalukuyang spotlight · Draw-to-Solve
+              - strong [ref=f2e59]: Nature Seed
+            - generic [ref=f2e60]:
+              - generic [ref=f2e61]: Sketch
+              - generic [ref=f2e62]: Kumonekta
+              - generic [ref=f2e63]: Bloom
+          - generic [ref=f2e64]: Apat na mundo
+          - generic [ref=f2e66]: Tampok · Prototype ng Nature Seed
+      - generic [ref=f2e73]:
+        - generic [ref=f2e74]:
+          - generic [ref=f2e75]:
+            - generic [ref=f2e76]: Aming Mundo
+            - heading "Apat na mundo. Isang dampi lang." [level=2] [ref=f2e77]
+          - paragraph [ref=f2e78]: Gumuhit ng mga pisikal na landas, pagsamahin ang kendi, bumuo ng mga color shot o paikutin ang isang banal na tore. Nagsisimula ang bawat laro sa isang nababasang pagkilos sa mobile.
+        - group "Mga filter ng laro" [ref=f2e79]:
+          - button "Lahat" [pressed] [ref=f2e80] [cursor=pointer]
+          - button "Arcade" [ref=f2e81] [cursor=pointer]
+          - button "Palaisipan" [ref=f2e82] [cursor=pointer]
+          - button "Pisika" [ref=f2e83] [cursor=pointer]
+          - button "Maginhawa" [ref=f2e84] [cursor=pointer]
+        - generic [ref=f2e85]:
+          - article "Draw-to-solve physics puzzle na Nature Seed" [ref=f2e86]:
+            - generic [ref=f2e87]:
+              - img "Nature Seed draw-to-solve icon ng larong puzzle ng nature physics" [ref=f2e95]
+              - generic [ref=f2e96]:
+                - generic [ref=f2e97]: Draw-to-Solve Physics Puzzle
+                - heading "Nature Seed" [level=3] [ref=f2e98]
+            - generic [ref=f2e99]:
+              - generic [ref=f2e100]: Nape-play na prototype
+              - paragraph [ref=f2e102]: Ang Nature Seed ay isang nakakarelaks na palaisipang pisikal na draw-to-solve para sa mobile, kung saan ginagamit ang limitadong haba ng linya upang pagtagpuin ang Water Drop at Seed. Pinag-uugnay ng sampung kasalukuyang antas ang mga pisikal na guhit, bituin sa kahusayan, tuloy-tuloy na progreso, at pagpapanumbalik ng watercolor.
+              - generic [ref=f2e103]:
+                - generic [ref=f2e104]: Mobile
+                - generic [ref=f2e105]: Draw-to-Solve
+                - generic [ref=f2e106]: Line Physics
+              - generic [ref=f2e107]:
+                - link "I-explore ang Nature Seed" [ref=f2e108] [cursor=pointer]:
+                  - /url: games/nature-seed.html
+                - link "Humiling ng mga update sa pagpapaunlad ng Nature Seed" [ref=f2e109] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Nature+Seed+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Nature+Seed+development+updates.
+                  - text: Humiling ng mga update
+          - article "Candy Shop maginhawang candy merge puzzle" [ref=f2e110]:
+            - generic [ref=f2e111]:
+              - img "Candy Shop maginhawang icon ng larong puzzle na pinagsama ng kendi" [ref=f2e115]
+              - generic [ref=f2e116]:
+                - generic [ref=f2e117]: Casual Merge Puzzle
+                - heading "Candy Shop" [level=3] [ref=f2e118]
+            - generic [ref=f2e119]:
+              - generic [ref=f2e120]: Aktibong pag-unlad
+              - paragraph [ref=f2e122]: Ang Candy Shop ay isang maginhawang merge puzzle para sa mobile na gumagamit ng pisika, may kumpletong ebolusyon ng 13 kendi, sampung lalagyang nagbabago sa field, walong espesyal na epekto, at pagpaplanong nakabatay sa hold, preview ng lapag, at pila ng susunod na tatlong kendi.
+              - generic [ref=f2e123]:
+                - generic [ref=f2e124]: Mobile
+                - generic [ref=f2e125]: Candy Merge
+                - generic [ref=f2e126]: Palaisipan sa Pisika
+              - generic [ref=f2e127]:
+                - link "I-explore ang Candy Shop" [ref=f2e128] [cursor=pointer]:
+                  - /url: games/candy-shop.html
+                - link "Humiling ng mga update sa pagpapaunlad ng Candy Shop" [ref=f2e129] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Candy+Shop+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Candy+Shop+development+updates.
+                  - text: Humiling ng mga update
+          - article "Paint Blasters, arkadang palaisipang pisikal tungkol sa pagwasak gamit ang kulay" [ref=f2e130]:
+            - generic [ref=f2e131]:
+              - img "Icon ng Paint Blasters, isang larong arkada at physics puzzle na gumagamit ng kulay" [ref=f2e155]
+              - generic [ref=f2e156]:
+                - generic [ref=f2e157]: Palaisipan sa Physics / Arcade Hybrid
+                - heading "Paint Blasters" [level=3] [ref=f2e158]
+            - generic [ref=f2e159]:
+              - generic [ref=f2e160]: Prototype ng produksyon
+              - paragraph [ref=f2e162]: Ang Paint Blasters ay isang palaisipang pisikal para sa mobile tungkol sa pagwasak gamit ang kulay, kung saan ang tatlong input ng kulay ay nagiging isa sa 35 dinisenyong recipe ng projectile. Puntiryahin ang pitong uri ng bloke at gawing sunod-sunod na reaksiyon sa buong tore ang isang eksaktong tama.
+              - generic [ref=f2e163]:
+                - generic [ref=f2e164]: Mobile
+                - generic [ref=f2e165]: Color Puzzle
+                - generic [ref=f2e166]: Physics Arcade
+              - generic [ref=f2e167]:
+                - link "I-explore ang Paint Blasters" [ref=f2e168] [cursor=pointer]:
+                  - /url: games/paint-blasters.html
+                - link "Humiling ng mga update sa pagpapaunlad ng Paint Blasters" [ref=f2e169] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Paint+Blasters+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Paint+Blasters+development+updates.
+                  - text: Humiling ng mga update
+          - article "Ball is God, isang hardcore na arcade game ng patayong pagbaba" [ref=f2e170]:
+            - generic [ref=f2e171]:
+              - img "Ball is God vertical descent tower icon ng arcade game" [ref=f2e194]
+              - generic [ref=f2e195]:
+                - generic [ref=f2e196]: Vertical Descent Arcade
+                - heading "Ball is God?!" [level=3] [ref=f2e197]
+            - generic [ref=f2e198]:
+              - generic [ref=f2e199]: Aktibong produksyon
+              - paragraph [ref=f2e201]: Ang Ball is God?! ay isang matinding arkadang patayong pagbaba kung saan iniikot ng pahalang na drag ang tore sa paligid ni Espa. Lampasan ang tatlong lapagan upang punuin ang smash, gumamit ng cooldown shield laban sa nakamamatay na tama, at dalhin ang karma sa sampung maalamat na lokasyon.
+              - generic [ref=f2e202]:
+                - generic [ref=f2e203]: Mobile
+                - generic [ref=f2e204]: Patayong Pagbaba
+                - generic [ref=f2e205]: I-rotate ang Tower
+              - generic [ref=f2e206]:
+                - link "I-explore ang Ball is God?!" [ref=f2e207] [cursor=pointer]:
+                  - /url: games/ball-is-god.html
+                - link "Humiling ng mga update sa pagpapaunlad ng Ball is God" [ref=f2e208] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Ball+is+God+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Ball+is+God+development+updates.
+                  - text: Humiling ng mga update
+      - generic [ref=f2e210]:
+        - generic [ref=f2e211]:
+          - heading "Isang aksyon. Isang buhay na mundo." [level=2] [ref=f2e213]
+          - paragraph [ref=f2e214]: Nagsisimula ang bawat laro sa isang panuntunan sa pagpindot—pag-draw, drop, mix o dodge—pagkatapos ay nagdaragdag ng karakter, malinaw na feedback at mga kahihinatnan na mababasa ng mga manlalaro nang walang manual.
+        - generic [ref=f2e215]:
+          - article [ref=f2e216]:
+            - heading "Mapaglarong Pakikipag-ugnayan" [level=3] [ref=f2e220]
+            - paragraph [ref=f2e221]: Bawat tap, linya, drop at shot ay nakakakuha ng agarang visual na tugon, kaya ang sanhi at epekto ay manatiling malinaw.
+          - article [ref=f2e222]:
+            - heading "Nababasang Disenyo" [level=3] [ref=f2e226]
+            - paragraph [ref=f2e227]: Ang paggalaw, contrast at pacing ay nagpapakita ng layunin at kahihinatnan bago kailangan ang tekstong paliwanag.
+          - article [ref=f2e228]:
+            - heading "Pagkakakilanlan ng Tauhan" [level=3] [ref=f2e232]
+            - paragraph [ref=f2e233]: Ang mga maskot, bagay at UI ay may personalidad bago sila magkaroon ng dekorasyon.
+          - article [ref=f2e234]:
+            - heading "Mobile-first UX" [level=3] [ref=f2e238]
+            - paragraph [ref=f2e239]: Ang mga kontrol, ritmo at layout ay binuo para sa mga thumbs, maiikling session, nababasang UI at malinaw na mga desisyon sa maliliit na screen.
+          - article [ref=f2e240]:
+            - heading "Kasiya-siyang Feedback" [level=3] [ref=f2e244]
+            - paragraph [ref=f2e245]: Pinapakinis ang bawat bagsak, merge, tilamsik, tagumpay, at pagkatalo hanggang maging malinaw at kasiya-siya ang pakiramdam.
+          - article [ref=f2e246]:
+            - heading "Maginhawang Lalim" [level=3] [ref=f2e250]
+            - paragraph [ref=f2e251]: Ang malambot na pagtatanghal ay nag-iiwan ng puwang para sa pagpaplano, pagkabisado at pag-replay.
+      - generic [ref=f2e253]:
+        - article [ref=f2e254]:
+          - heading "Isang maliit na studio para sa mga tactile mobile na mundo." [level=2] [ref=f2e255]
+          - paragraph [ref=f2e256]: "Ang WillowinWorld ay bubuo ng apat na mobile-first puzzle at arcade game: Nature Seed, Candy Shop, Paint Blasters at Ball is God?! Ang bawat proyekto ay may pampublikong pahina ng asset ng laro, kasalukuyang status ng build, may petsang devlog at press."
+          - generic [ref=f2e257]:
+            - generic [ref=f2e258]: Mobile-first feel
+            - generic [ref=f2e259]: Mga maaliwalas na mundo ng pantasya
+            - generic [ref=f2e260]: Mga interactive na system
+            - generic [ref=f2e261]: Natatanging 2D art
+          - paragraph [ref=f2e262]: Saklaw ng kasalukuyang trabaho ang line physics na draw-to-solve, pagsasanib ng kendi sa sampung lalagyan, 35 recipe ng projectile na may kulay, at pagbaba sa umiikot na tore sa sampung lokasyon.
+        - article [ref=f2e263]:
+          - img "Logo ng WillowinWorld na may mahiwagang pusa, kambal na markang W, at mundong may kastilyo" [ref=f2e265]
+          - generic [ref=f2e266]:
+            - heading "Apat na laro. Apat na natatanging puwedeng laruin na sistema." [level=3] [ref=f2e267]
+            - paragraph [ref=f2e268]: Gumuhit ng limitadong pisikal na landas, pamahalaan ang isang nagbabagong lalagyan ng kendi, mag-assemble ng color shot o paikutin ang pababang tore. Buksan ang bawat page ng laro para sa kasalukuyang saklaw nito, katayuan ng produksyon at pinakabagong napetsahan na update.
+      - generic [ref=f2e270]:
+        - heading "Mula sa unang kawit sa pinakintab na paglabas ng mobile." [level=2] [ref=f2e273]
+        - generic [ref=f2e274]:
+          - article [ref=f2e275]:
+            - text: "01"
+            - heading "Ideya" [level=3] [ref=f2e276]
+            - paragraph [ref=f2e277]: Tukuyin ang pantasya, malinaw na genre, pangako ng manlalaro at pangunahing tactile loop.
+          - article [ref=f2e278]:
+            - text: "02"
+            - heading "Prototype" [level=3] [ref=f2e279]
+            - paragraph [ref=f2e280]: Buuin ang pinakamaikling puwedeng laruin na patunay na may totoong input, feedback at mga estado ng pagkabigo.
+          - article [ref=f2e281]:
+            - text: "03"
+            - heading "Pagsubok sa Pakiramdam" [level=3] [ref=f2e282]
+            - paragraph [ref=f2e283]: Ayusin ang kontrol, friction, pacing, at linaw, at tiyaking masarap pa ring ulitin ang gameplay loop.
+          - article [ref=f2e284]:
+            - text: "04"
+            - heading "Direksyon ng Sining" [level=3] [ref=f2e285]
+            - paragraph [ref=f2e286]: Hubugin ang mga silweta, palette, wika ng UI, linaw ng mga icon, at pagkakakilanlan ng karakter.
+          - article [ref=f2e287]:
+            - text: "05"
+            - heading "Produksyon" [level=3] [ref=f2e288]
+            - paragraph [ref=f2e289]: I-scale ang content, system, progression, optimization at teknikal na pundasyon.
+          - article [ref=f2e290]:
+            - text: "06"
+            - heading "Polish" [level=3] [ref=f2e291]
+            - paragraph [ref=f2e292]: Pinuhin ang mga transition, VFX, kumpas ng audio, onboarding, accessibility, at ginhawa ng user.
+          - article [ref=f2e293]:
+            - text: "07"
+            - heading "Ilunsad" [level=3] [ref=f2e294]
+            - paragraph [ref=f2e295]: Ihanda ang mga asset ng store, materyales para sa press, analytics, agarang update, at mga gawaing pangkomunidad.
+          - article [ref=f2e296]:
+            - text: "08"
+            - heading "Live Care" [level=3] [ref=f2e297]
+            - paragraph [ref=f2e298]: Sukatin ang paglabas, makinig sa mga manlalaro at panatilihing malusog ang bawat mundo sa mga nakatutok na update.
+      - generic [ref=f2e300]:
+        - generic [ref=f2e301]:
+          - generic [ref=f2e302]:
+            - generic [ref=f2e303]: Mga Devlog ng Laro
+            - heading "Pinakabagong tala ng dev, walang paghuhukay." [level=2] [ref=f2e304]
+          - paragraph [ref=f2e305]: Ang pinakabagong may petsang tala mula sa bawat page ng laro, na batay sa mga nape-play na system na nasa loob na ngayon ng Unity build.
+        - generic [ref=f2e306]:
+          - article [ref=f2e307]:
+            - generic [ref=f2e308]:
+              - generic [ref=f2e309]: Nature Seed
+              - time [ref=f2e310]: Hulyo 31, 2026
+            - heading "Level 2 restoration at stability pass" [level=3] [ref=f2e311]
+            - paragraph [ref=f2e312]: Level 2 ang pares ng background ng produksyon nito, na may mas maaasahang pag-setup ng level, mga pagsusuri sa banggaan at feedback sa pagkumpleto.
+            - link "Buksan ang Nature Seed devlog" [ref=f2e313] [cursor=pointer]:
+              - /url: games/nature-seed.html#devlog
+          - article [ref=f2e314]:
+            - generic [ref=f2e315]:
+              - generic [ref=f2e316]: Candy Shop
+              - time [ref=f2e317]: Hulyo 31, 2026
+            - heading "Production menu at HUD pass" [level=3] [ref=f2e318]
+            - paragraph [ref=f2e319]: Ang pangunahing menu, pagpili ng antas, mga kontrol ng HUD at mga icon ng command ay nagbabahagi na ngayon ng isang visual na wika; Sinasaklaw ng mga karagdagang in-engine stress test ang na-update na daloy.
+            - link "Buksan ang Candy Shop devlog" [ref=f2e320] [cursor=pointer]:
+              - /url: games/candy-shop.html#devlog
+          - article [ref=f2e321]:
+            - generic [ref=f2e322]:
+              - generic [ref=f2e323]: Paint Blasters
+              - time [ref=f2e324]: Hulyo 31, 2026
+            - heading "Physics at effect stability pass" [level=3] [ref=f2e325]
+            - paragraph [ref=f2e326]: Ang pag-uugali ng projectile, resolution ng Match-3 at mga hit effect ay sinubukan at hinigpitan para sa mas pare-parehong resulta ng combo.
+            - link "Buksan ang Paint Blasters devlog" [ref=f2e327] [cursor=pointer]:
+              - /url: games/paint-blasters.html#devlog
+          - article [ref=f2e328]:
+            - generic [ref=f2e329]:
+              - generic [ref=f2e330]: Ball is God?!
+              - time [ref=f2e331]: Hulyo 31, 2026
+            - heading "Mga ibabaw ng mundo at pagpapatunay ng panganib" [level=3] [ref=f2e332]
+            - paragraph [ref=f2e333]: Ang pagtatanghal ng karakter, deterministikong henerasyon at mga panganib sa tinik ay nakatanggap ng coordinated visual at production-validation pass.
+            - link "Buksan ang Ball is God?! devlog" [ref=f2e334] [cursor=pointer]:
+              - /url: games/ball-is-god.html#devlog
+      - generic [ref=f2e336]:
+        - heading "Mabilis na sagot para sa mga manlalaro, press at publisher." [level=2] [ref=f2e339]
+        - generic [ref=f2e340]:
+          - article [ref=f2e341]:
+            - button "Anong uri ng mga laro ang ginagawa ng WillowinWorld?" [ref=f2e342] [cursor=pointer]
+          - article [ref=f2e344]:
+            - button "Iginagalang ba ng site ang mga setting ng reduced-motion?" [ref=f2e345] [cursor=pointer]
+          - article [ref=f2e347]:
+            - button "Sinusundan ba ng site ang aking tema sa araw o gabi?" [ref=f2e348] [cursor=pointer]
+          - article [ref=f2e350]:
+            - button "Nagtatrabaho ka ba sa mga publisher?" [ref=f2e351] [cursor=pointer]
+          - article [ref=f2e353]:
+            - button "Pang-mobile ba ang iyong mga laro?" [ref=f2e354] [cursor=pointer]
+          - article [ref=f2e356]:
+            - button "Maaari ba akong magpadala ng portfolio?" [ref=f2e357] [cursor=pointer]
+          - article [ref=f2e359]:
+            - button "Maaari ba akong makipagtulungan sa studio?" [ref=f2e360] [cursor=pointer]
+      - generic [ref=f2e363]:
+        - heading "Makipag-usap sa WillowinWorld." [level=2] [ref=f2e364]
+        - paragraph [ref=f2e365]: Tinatanggap namin ang feedback ng manlalaro, mga kahilingan sa press, mga pag-uusap sa publisher at mga pakikipagtulungang may isip sa produksyon.
+        - generic [ref=f2e366]:
+          - button "Makipag-ugnayan sa studio" [ref=f2e367] [cursor=pointer]
+          - link "Press kit" [ref=f2e368] [cursor=pointer]:
+            - /url: press-kit.html
+    - contentinfo [ref=f2e369]:
+      - generic [ref=f2e370]:
+        - link "WillowinWorld bahay" [ref=f2e372] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f2e374]:
+            - generic [ref=f2e375]: W
+            - text: illo
+            - generic [ref=f2e376]: w
+            - text: in
+            - generic [ref=f2e377]: W
+            - text: orld
+        - navigation "Pag-navigate sa footer" [ref=f2e378]:
+          - link "Mga laro" [ref=f2e379] [cursor=pointer]:
+            - /url: "#games"
+          - link "Studio" [ref=f2e380] [cursor=pointer]:
+            - /url: "#studio"
+          - link "Devlog" [ref=f2e381] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "Press kit" [ref=f2e382] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "Makipag-ugnayan" [ref=f2e383] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Mga Nawalang Bituin" [ref=f2e384] [cursor=pointer]:
+            - /url: /404.html
+          - button "Magic hunt" [ref=f2e385] [cursor=pointer]
+        - generic [ref=f2e386]:
+          - link "contact@willowinworld.com" [ref=f2e387] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com
+          - link "Nature Seed playtest" [ref=f2e388] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Humiling+ng+access+sa+Nature+Seed+playtest
+          - link "Paggamit ng asset" [ref=f2e389] [cursor=pointer]:
+            - /url: asset-usage.html
+          - link "Pagkapribado" [ref=f2e390] [cursor=pointer]:
+            - /url: privacy.html
+          - link "Legal" [ref=f2e391] [cursor=pointer]:
+            - /url: legal.html
+          - button "Seguridad" [ref=f2e392] [cursor=pointer]
+          - link "Kontak ng publisher" [ref=f2e393] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Pagtatanong+ng+publisher
+          - button "Mga Trabaho / Pakikipagtulungan" [ref=f2e394] [cursor=pointer]
+        - generic [ref=f2e395]: © 2026 WillowinWorld. Lahat ng karapatan ay nakalaan.

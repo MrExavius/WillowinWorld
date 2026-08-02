@@ -1,0 +1,330 @@
+- generic [active] [ref=f5e1]:
+  - link "मुख्य सामग्री पर जाएं" [ref=f5e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - status: मैजिक अनलॉक - WillowinWorld में आपका स्वागत है
+  - status
+  - generic [ref=f5e3]:
+    - banner [ref=f5e4]:
+      - generic [ref=f5e5]:
+        - link "WillowinWorld घर" [ref=f5e6] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f5e8]:
+            - generic [ref=f5e9]: W
+            - text: illo
+            - generic [ref=f5e10]: w
+            - text: in
+            - generic [ref=f5e11]: W
+            - text: orld
+        - generic [ref=f5e12]:
+          - button "थीम स्विच करें" [ref=f5e13] [cursor=pointer]
+          - navigation "भाषा" [ref=f5e16]:
+            - group [ref=f5e17]:
+              - generic "भाषा चुनें" [ref=f5e18] [cursor=pointer]: HI
+          - button "मेनू खोलें" [ref=f5e20] [cursor=pointer]
+    - main [ref=f5e22]:
+      - generic [ref=f5e24]:
+        - generic [ref=f5e25]:
+          - generic [ref=f5e26]: इंडी मोबाइल गेम स्टूडियो
+          - heading "WillowinWorld छोटे खेल। जीवित संसार." [level=1] [ref=f5e27]:
+            - generic [ref=f5e28]: WillowinWorld
+            - generic [ref=f5e29]: छोटे खेल। जीवित संसार.
+          - paragraph [ref=f5e30]: स्पर्शनीय पहेली और आर्केड गेम जहां हर ड्रॉ, ड्रॉप, शॉट और फ़ॉल दुनिया को बदल देता है।
+          - generic [ref=f5e31]:
+            - link "खेलों का अन्वेषण करें" [ref=f5e32] [cursor=pointer]:
+              - /url: "#games"
+            - link "प्रेस किट" [ref=f5e33] [cursor=pointer]:
+              - /url: press-kit.html
+          - navigation "विशेष रुप से प्रदर्शित WillowinWorld गेम्स" [ref=f5e34]:
+            - link "Nature Seed ड्रा-टू-सॉल्व भौतिकी" [ref=f5e35] [cursor=pointer]:
+              - /url: "#nature-card"
+              - strong [ref=f5e36]: Nature Seed
+              - generic [ref=f5e37]: ड्रा-टू-सॉल्व भौतिकी
+            - link "Candy Shop आरामदायक मर्ज पहेली" [ref=f5e38] [cursor=pointer]:
+              - /url: "#candy-card"
+              - strong [ref=f5e39]: Candy Shop
+              - generic [ref=f5e40]: आरामदायक मर्ज पहेली
+            - link "Paint Blasters रंग श्रृंखला प्रतिक्रियाएं" [ref=f5e41] [cursor=pointer]:
+              - /url: "#paint-card"
+              - strong [ref=f5e42]: Paint Blasters
+              - generic [ref=f5e43]: रंग श्रृंखला प्रतिक्रियाएं
+            - link "Ball is God?! ऊर्ध्वाधर आर्केड वंश" [ref=f5e44] [cursor=pointer]:
+              - /url: "#ball-card"
+              - strong [ref=f5e45]: Ball is God?!
+              - generic [ref=f5e46]: ऊर्ध्वाधर आर्केड वंश
+        - 'img "वर्तमान स्पॉटलाइट: Nature Seed बहाली पूर्वावलोकन" [ref=f5e47]':
+          - generic [ref=f5e48]:
+            - generic [ref=f5e57]:
+              - generic [ref=f5e58]: वर्तमान स्पॉटलाइट · ड्रा-टू-सॉल्व
+              - strong [ref=f5e59]: Nature Seed
+            - generic [ref=f5e60]:
+              - generic [ref=f5e61]: स्केच
+              - generic [ref=f5e62]: कनेक्ट करें
+              - generic [ref=f5e63]: ब्लूम
+          - generic [ref=f5e64]: चार लोक
+          - generic [ref=f5e66]: स्पॉटलाइट · Nature Seed प्रोटोटाइप
+      - generic [ref=f5e73]:
+        - generic [ref=f5e74]:
+          - generic [ref=f5e75]:
+            - generic [ref=f5e76]: हमारी दुनिया
+            - heading "चार लोक. एक स्पर्श दूर." [level=2] [ref=f5e77]
+          - paragraph [ref=f5e78]: भौतिक पथ बनाएं, कैंडी को मर्ज करें, रंगीन शॉट्स बनाएं या एक दिव्य टॉवर को घुमाएं। प्रत्येक गेम एक पठनीय मोबाइल एक्शन से शुरू होता है।
+        - group "गेम फ़िल्टर" [ref=f5e79]:
+          - button "सभी" [pressed] [ref=f5e80] [cursor=pointer]
+          - button "आर्केड" [ref=f5e81] [cursor=pointer]
+          - button "पहेली" [ref=f5e82] [cursor=pointer]
+          - button "भौतिकी" [ref=f5e83] [cursor=pointer]
+          - button "आरामदायक" [ref=f5e84] [cursor=pointer]
+        - generic [ref=f5e85]:
+          - article "Nature Seed ड्रा-टू-सॉल्व भौतिकी पहेली" [ref=f5e86]:
+            - generic [ref=f5e87]:
+              - img "Nature Seed ड्रा-टू-सॉल्व नेचर फिजिक्स पहेली गेम आइकन" [ref=f5e95]
+              - generic [ref=f5e96]:
+                - generic [ref=f5e97]: ड्रा-टू-सॉल्व फिजिक्स पहेली
+                - heading "Nature Seed" [level=3] [ref=f5e98]
+            - generic [ref=f5e99]:
+              - generic [ref=f5e100]: बजाने योग्य प्रोटोटाइप
+              - paragraph [ref=f5e102]: Nature Seed एक आरामदायक मोबाइल ड्रॉ-टू-सॉल्व भौतिकी पहेली है जो Water Drop और Seed को एक साथ लाने के लिए एक सीमित लाइन बजट खर्च करने के बारे में है। दस वर्तमान स्तर भौतिक स्ट्रोक, दक्षता सितारे, लगातार प्रगति और जल रंग बहाली को जोड़ते हैं।
+              - generic [ref=f5e103]:
+                - generic [ref=f5e104]: मोबाइल
+                - generic [ref=f5e105]: ड्रा-टू-सॉल्व
+                - generic [ref=f5e106]: रेखा भौतिकी
+              - generic [ref=f5e107]:
+                - link "Nature Seed का अन्वेषण करें" [ref=f5e108] [cursor=pointer]:
+                  - /url: games/nature-seed.html
+                - link "Nature Seed विकास अपडेट का अनुरोध करें" [ref=f5e109] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Nature+Seed+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorld%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Nature+Seed+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
+                  - text: अपडेट का अनुरोध करें
+          - article "Candy Shop आरामदायक कैंडी मर्ज पहेली" [ref=f5e110]:
+            - generic [ref=f5e111]:
+              - img "Candy Shop आरामदायक कैंडी मर्ज पहेली गेम आइकन" [ref=f5e115]
+              - generic [ref=f5e116]:
+                - generic [ref=f5e117]: कैज़ुअल मर्ज पहेली
+                - heading "Candy Shop" [level=3] [ref=f5e118]
+            - generic [ref=f5e119]:
+              - generic [ref=f5e120]: सक्रिय विकास
+              - paragraph [ref=f5e122]: Candy Shop एक आरामदायक मोबाइल भौतिकी मर्ज पहेली है जिसमें संपूर्ण 13-कैंडी विकास, दस कंटेनर जो फ़ील्ड को फिर से लिखते हैं, आठ विशेष प्रभाव और होल्ड, लैंडिंग पूर्वावलोकन और अगली-तीन कतार के चारों ओर बनाई गई एक योजना परत है।
+              - generic [ref=f5e123]:
+                - generic [ref=f5e124]: मोबाइल
+                - generic [ref=f5e125]: कैंडी मर्ज
+                - generic [ref=f5e126]: भौतिकी पहेली
+              - generic [ref=f5e127]:
+                - link "Candy Shop का अन्वेषण करें" [ref=f5e128] [cursor=pointer]:
+                  - /url: games/candy-shop.html
+                - link "Candy Shop विकास अपडेट का अनुरोध करें" [ref=f5e129] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Candy+Shop+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorld%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Candy+Shop+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
+                  - text: अपडेट का अनुरोध करें
+          - article "Paint Blasters रंग विनाश भौतिकी पहेली आर्केड" [ref=f5e130]:
+            - generic [ref=f5e131]:
+              - img "Paint Blasters रंग भौतिकी पहेली आर्केड गेम आइकन" [ref=f5e155]
+              - generic [ref=f5e156]:
+                - generic [ref=f5e157]: भौतिकी पहेली / आर्केड हाइब्रिड
+                - heading "Paint Blasters" [level=3] [ref=f5e158]
+            - generic [ref=f5e159]:
+              - generic [ref=f5e160]: उत्पादन प्रोटोटाइप
+              - paragraph [ref=f5e162]: Paint Blasters एक मोबाइल रंग विनाश भौतिकी पहेली है जहां तीन रंग इनपुट 35 लिखित प्रक्षेप्य व्यंजनों में से एक में हल हो जाते हैं। सात ब्लॉक आर्कटाइप्स पर निशाना लगाएं और एक सटीक हिट को टावर-वाइड चेन रिएक्शन में बदल दें।
+              - generic [ref=f5e163]:
+                - generic [ref=f5e164]: मोबाइल
+                - generic [ref=f5e165]: रंग पहेली
+                - generic [ref=f5e166]: भौतिकी आर्केड
+              - generic [ref=f5e167]:
+                - link "Paint Blasters का अन्वेषण करें" [ref=f5e168] [cursor=pointer]:
+                  - /url: games/paint-blasters.html
+                - link "Paint Blasters विकास अपडेट का अनुरोध करें" [ref=f5e169] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Paint+Blasters+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorld%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Paint+Blasters+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
+                  - text: अपडेट का अनुरोध करें
+          - article "Ball is God हार्डकोर वर्टिकल डिसेंट आर्केड गेम" [ref=f5e170]:
+            - generic [ref=f5e171]:
+              - img "Ball is God वर्टिकल डिसेंट टॉवर आर्केड गेम आइकन" [ref=f5e194]
+              - generic [ref=f5e195]:
+                - generic [ref=f5e196]: वर्टिकल डिसेंट आर्केड
+                - heading "Ball is God?!" [level=3] [ref=f5e197]
+            - generic [ref=f5e198]:
+              - generic [ref=f5e199]: सक्रिय उत्पादन
+              - paragraph [ref=f5e201]: Ball is God?! एक हार्डकोर वर्टिकल डिसेंट आर्केड है जहां क्षैतिज ड्रैग टावर को Espa के चारों ओर घुमाता है। एक स्मैश चार्ज करने के लिए तीन लैंडिंग छोड़ें, एक घातक हिट के खिलाफ कूलडाउन शील्ड का उपयोग करें और दस पौराणिक स्थानों के माध्यम से कर्म ले जाएं।
+              - generic [ref=f5e202]:
+                - generic [ref=f5e203]: मोबाइल
+                - generic [ref=f5e204]: लंबवत अवतरण
+                - generic [ref=f5e205]: टॉवर को घुमाएँ
+              - generic [ref=f5e206]:
+                - link "Ball is God?! का अन्वेषण करें" [ref=f5e207] [cursor=pointer]:
+                  - /url: games/ball-is-god.html
+                - link "Ball is God विकास अपडेट का अनुरोध करें" [ref=f5e208] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Ball+is+God+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorld%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Ball+is+God+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
+                  - text: अपडेट का अनुरोध करें
+      - generic [ref=f5e210]:
+        - generic [ref=f5e211]:
+          - heading "एक क्रिया. एक जीवित दुनिया." [level=2] [ref=f5e213]
+          - paragraph [ref=f5e214]: प्रत्येक गेम एक स्पर्श नियम से शुरू होता है - ड्रा, ड्रॉप, मिक्स या चकमा - फिर चरित्र, स्पष्ट प्रतिक्रिया और परिणाम जोड़ता है जिसे खिलाड़ी मैनुअल के बिना पढ़ सकते हैं।
+        - generic [ref=f5e215]:
+          - article [ref=f5e216]:
+            - heading "चंचल बातचीत" [level=3] [ref=f5e220]
+            - paragraph [ref=f5e221]: प्रत्येक टैप, लाइन, ड्रॉप और शॉट को तत्काल दृश्य प्रतिक्रिया मिलती है, इसलिए कारण और प्रभाव स्पष्ट रहते हैं।
+          - article [ref=f5e222]:
+            - heading "पठनीय डिज़ाइन" [level=3] [ref=f5e226]
+            - paragraph [ref=f5e227]: व्याख्यात्मक पाठ की आवश्यकता से पहले गति, कंट्रास्ट और गति लक्ष्य और परिणाम दिखाते हैं।
+          - article [ref=f5e228]:
+            - heading "चरित्र पहचान" [level=3] [ref=f5e232]
+            - paragraph [ref=f5e233]: शुभंकर, वस्तुओं और यूआई में सजावट से पहले व्यक्तित्व होता है।
+          - article [ref=f5e234]:
+            - heading "मोबाइल-पहला UX" [level=3] [ref=f5e238]
+            - paragraph [ref=f5e239]: नियंत्रण, लय और लेआउट छोटी स्क्रीन पर अंगूठे, छोटे सत्र, पढ़ने योग्य यूआई और स्पष्ट निर्णयों के लिए बनाए गए हैं।
+          - article [ref=f5e240]:
+            - heading "संतोषजनक प्रतिक्रिया" [level=3] [ref=f5e244]
+            - paragraph [ref=f5e245]: प्रभाव, विलय, छींटे, जीत और असफलता के क्षणों को तब तक ट्यून किया जाता है जब तक वे स्पष्ट न हो जाएं।
+          - article [ref=f5e246]:
+            - heading "आरामदायक गहराई" [level=3] [ref=f5e250]
+            - paragraph [ref=f5e251]: सॉफ्ट प्रेजेंटेशन योजना, महारत और पुनरावृत्ति के लिए जगह छोड़ता है।
+      - generic [ref=f5e253]:
+        - article [ref=f5e254]:
+          - heading "स्पर्शनीय मोबाइल दुनिया के लिए एक छोटा स्टूडियो।" [level=2] [ref=f5e255]
+          - paragraph [ref=f5e256]: "WillowinWorld ने चार मोबाइल-फर्स्ट पज़ल और आर्केड गेम विकसित किए हैं: Nature Seed, Candy Shop, Paint Blasters और Ball is God?! प्रत्येक प्रोजेक्ट में एक सार्वजनिक गेम पेज, वर्तमान बिल्ड स्थिति, दिनांकित डेवलॉग और प्रेस संपत्तियां हैं।"
+          - generic [ref=f5e257]:
+            - generic [ref=f5e258]: मोबाइल-पहला अहसास
+            - generic [ref=f5e259]: आरामदायक काल्पनिक दुनिया
+            - generic [ref=f5e260]: इंटरएक्टिव सिस्टम
+            - generic [ref=f5e261]: विशिष्ट 2डी कला
+          - paragraph [ref=f5e262]: वर्तमान कार्य में ड्रॉ-टू-सॉल्व लाइन भौतिकी, दस कंटेनरों में कैंडी का विलय, 35 रंग-प्रोजेक्टाइल रेसिपी और दस स्थानों पर घूमने वाला टावर वंश शामिल है।
+        - article [ref=f5e263]:
+          - img "जादुई बिल्ली, जुड़वां डब्ल्यू मार्क और महल की दुनिया के साथ WillowinWorld लोगो" [ref=f5e265]
+          - generic [ref=f5e266]:
+            - heading "चार गेम। चार अलग-अलग बजाने योग्य प्रणालियाँ।" [level=3] [ref=f5e267]
+            - paragraph [ref=f5e268]: एक सीमित भौतिक पथ बनाएं, एक बदलते कैंडी कंटेनर का प्रबंधन करें, एक रंगीन शॉट इकट्ठा करें या एक अवरोही टॉवर को घुमाएं। प्रत्येक गेम पेज को उसके वर्तमान दायरे, उत्पादन स्थिति और नवीनतम दिनांकित अपडेट के लिए खोलें।
+      - generic [ref=f5e270]:
+        - heading "पहले हुक से पॉलिश मोबाइल रिलीज के लिए।" [level=2] [ref=f5e273]
+        - generic [ref=f5e274]:
+          - article [ref=f5e275]:
+            - text: "01"
+            - heading "आइडिया" [level=3] [ref=f5e276]
+            - paragraph [ref=f5e277]: फंतासी, स्पष्ट शैली, खिलाड़ी का वादा और कोर स्पर्श लूप को परिभाषित करें।
+          - article [ref=f5e278]:
+            - text: "02"
+            - heading "प्रोटोटाइप" [level=3] [ref=f5e279]
+            - paragraph [ref=f5e280]: वास्तविक इनपुट, फीडबैक और विफलता स्थितियों के साथ सबसे छोटा बजाने योग्य प्रमाण बनाएं।
+          - article [ref=f5e281]:
+            - text: "03"
+            - heading "फील टेस्ट" [level=3] [ref=f5e282]
+            - paragraph [ref=f5e283]: ट्यून नियंत्रण, घर्षण, गति, पठनीयता और क्या लूप दोहराव के बाद भी अच्छा लगता है।
+          - article [ref=f5e284]:
+            - text: "04"
+            - heading "कला निर्देशन" [level=3] [ref=f5e285]
+            - paragraph [ref=f5e286]: आकार सिल्हूट, पैलेट, यूआई भाषा, आइकन पठनीयता और चरित्र पहचान।
+          - article [ref=f5e287]:
+            - text: "05"
+            - heading "उत्पादन" [level=3] [ref=f5e288]
+            - paragraph [ref=f5e289]: स्केल सामग्री, सिस्टम, प्रगति, अनुकूलन और तकनीकी नींव।
+          - article [ref=f5e290]:
+            - text: "06"
+            - heading "पोलिश" [level=3] [ref=f5e291]
+            - paragraph [ref=f5e292]: ट्रांज़िशन, VFX, ऑडियो बीट्स, ऑनबोर्डिंग, एक्सेसिबिलिटी और उपयोगकर्ता आराम को परिष्कृत करें।
+          - article [ref=f5e293]:
+            - text: "07"
+            - heading "लॉन्च" [level=3] [ref=f5e294]
+            - paragraph [ref=f5e295]: स्टोर संपत्ति, प्रेस सामग्री, विश्लेषण, लाइव अपडेट और सामुदायिक लूप तैयार करें।
+          - article [ref=f5e296]:
+            - text: "08"
+            - heading "लाइव केयर" [level=3] [ref=f5e297]
+            - paragraph [ref=f5e298]: रिलीज को मापें, खिलाड़ियों को सुनें और केंद्रित अपडेट के साथ प्रत्येक दुनिया को स्वस्थ रखें।
+      - generic [ref=f5e300]:
+        - generic [ref=f5e301]:
+          - generic [ref=f5e302]:
+            - generic [ref=f5e303]: गेम डेवलॉग्स
+            - heading "नवीनतम देव नोट्स, कोई खुदाई नहीं." [level=2] [ref=f5e304]
+          - paragraph [ref=f5e305]: प्रत्येक गेम पेज से नवीनतम दिनांकित नोट, अब Unity बिल्ड के अंदर खेलने योग्य सिस्टम पर आधारित है।
+        - generic [ref=f5e306]:
+          - article [ref=f5e307]:
+            - generic [ref=f5e308]:
+              - generic [ref=f5e309]: Nature Seed
+              - time [ref=f5e310]: 31 जुलाई 2026
+            - heading "लेवल 2 बहाली और स्थिरता पास" [level=3] [ref=f5e311]
+            - paragraph [ref=f5e312]: लेवल 2 अब अधिक विश्वसनीय लेवल सेटअप, टकराव की जांच और पूर्णता फीडबैक के साथ अपनी उत्पादन पृष्ठभूमि जोड़ी का उपयोग करता है।
+            - link "Nature Seed डेवलॉग खोलें" [ref=f5e313] [cursor=pointer]:
+              - /url: games/nature-seed.html#devlog
+          - article [ref=f5e314]:
+            - generic [ref=f5e315]:
+              - generic [ref=f5e316]: Candy Shop
+              - time [ref=f5e317]: 31 जुलाई 2026
+            - heading "उत्पादन मेनू और HUD पास" [level=3] [ref=f5e318]
+            - paragraph [ref=f5e319]: मुख्य मेनू, स्तर चयन, HUD नियंत्रण और कमांड आइकन अब एक दृश्य भाषा साझा करते हैं; अतिरिक्त इन-इंजन तनाव परीक्षण अद्यतन प्रवाह को कवर करते हैं।
+            - link "Candy Shop डेवलॉग खोलें" [ref=f5e320] [cursor=pointer]:
+              - /url: games/candy-shop.html#devlog
+          - article [ref=f5e321]:
+            - generic [ref=f5e322]:
+              - generic [ref=f5e323]: Paint Blasters
+              - time [ref=f5e324]: 31 जुलाई 2026
+            - heading "भौतिकी और प्रभाव स्थिरता पास" [level=3] [ref=f5e325]
+            - paragraph [ref=f5e326]: प्रक्षेप्य व्यवहार, Match-3 रिज़ॉल्यूशन और हिट प्रभावों का परीक्षण किया गया और अधिक सुसंगत कॉम्बो परिणामों के लिए उन्हें कड़ा किया गया।
+            - link "Paint Blasters डेवलॉग खोलें" [ref=f5e327] [cursor=pointer]:
+              - /url: games/paint-blasters.html#devlog
+          - article [ref=f5e328]:
+            - generic [ref=f5e329]:
+              - generic [ref=f5e330]: Ball is God?!
+              - time [ref=f5e331]: 31 जुलाई 2026
+            - heading "विश्व सतहें और खतरे का सत्यापन" [level=3] [ref=f5e332]
+            - paragraph [ref=f5e333]: चरित्र प्रस्तुति, नियतात्मक पीढ़ी और कांटेदार खतरों को एक समन्वित दृश्य और उत्पादन-सत्यापन पास प्राप्त हुआ।
+            - link "Ball is God?! डेवलॉग खोलें" [ref=f5e334] [cursor=pointer]:
+              - /url: games/ball-is-god.html#devlog
+      - generic [ref=f5e336]:
+        - heading "खिलाड़ियों, प्रेस और प्रकाशकों के लिए त्वरित उत्तर।" [level=2] [ref=f5e339]
+        - generic [ref=f5e340]:
+          - article [ref=f5e341]:
+            - button "WillowinWorld किस प्रकार के गेम बनाता है?" [ref=f5e342] [cursor=pointer]
+          - article [ref=f5e344]:
+            - button "क्या साइट कम-गति सेटिंग्स का सम्मान करती है?" [ref=f5e345] [cursor=pointer]
+          - article [ref=f5e347]:
+            - button "क्या साइट मेरी दिन या रात की थीम का पालन करती है?" [ref=f5e348] [cursor=pointer]
+          - article [ref=f5e350]:
+            - button "क्या आप प्रकाशकों के साथ काम करते हैं?" [ref=f5e351] [cursor=pointer]
+          - article [ref=f5e353]:
+            - button "क्या आपके गेम मोबाइल-फर्स्ट हैं?" [ref=f5e354] [cursor=pointer]
+          - article [ref=f5e356]:
+            - button "क्या मैं पोर्टफोलियो भेज सकता हूँ?" [ref=f5e357] [cursor=pointer]
+          - article [ref=f5e359]:
+            - button "क्या मैं स्टूडियो के साथ सहयोग कर सकता हूँ?" [ref=f5e360] [cursor=pointer]
+      - generic [ref=f5e363]:
+        - heading "WillowinWorld से बात करें।" [level=2] [ref=f5e364]
+        - paragraph [ref=f5e365]: हम खिलाड़ियों की प्रतिक्रिया, प्रेस अनुरोध, प्रकाशक वार्तालाप और उत्पादन-आधारित सहयोग का स्वागत करते हैं।
+        - generic [ref=f5e366]:
+          - button "स्टूडियो से संपर्क करें" [ref=f5e367] [cursor=pointer]
+          - link "प्रेस किट" [ref=f5e368] [cursor=pointer]:
+            - /url: press-kit.html
+    - contentinfo [ref=f5e369]:
+      - generic [ref=f5e370]:
+        - link "WillowinWorld घर" [ref=f5e372] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f5e374]:
+            - generic [ref=f5e375]: W
+            - text: illo
+            - generic [ref=f5e376]: w
+            - text: in
+            - generic [ref=f5e377]: W
+            - text: orld
+        - navigation "फुटर नेविगेशन" [ref=f5e378]:
+          - link "खेल" [ref=f5e379] [cursor=pointer]:
+            - /url: "#games"
+          - link "स्टूडियो" [ref=f5e380] [cursor=pointer]:
+            - /url: "#studio"
+          - link "देवलॉग" [ref=f5e381] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "प्रेस किट" [ref=f5e382] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "संपर्क करें" [ref=f5e383] [cursor=pointer]:
+            - /url: "#contact"
+          - link "खोए हुए सितारे" [ref=f5e384] [cursor=pointer]:
+            - /url: /404.html
+          - button "जादुई शिकार" [ref=f5e385] [cursor=pointer]
+        - generic [ref=f5e386]:
+          - link "contact@willowinworld.com" [ref=f5e387] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com
+          - link "Nature Seed प्लेटेस्ट" [ref=f5e388] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Nature+Seed+%E0%A4%AA%E0%A5%8D%E0%A4%B2%E0%A5%87%E0%A4%9F%E0%A5%87%E0%A4%B8%E0%A5%8D%E0%A4%9F+%E0%A4%A4%E0%A4%95+%E0%A4%AA%E0%A4%B9%E0%A5%81%E0%A4%82%E0%A4%9A+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B0%E0%A5%8B%E0%A4%A7+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82
+          - link "संपत्ति का उपयोग" [ref=f5e389] [cursor=pointer]:
+            - /url: asset-usage.html
+          - link "गोपनीयता" [ref=f5e390] [cursor=pointer]:
+            - /url: privacy.html
+          - link "कानूनी" [ref=f5e391] [cursor=pointer]:
+            - /url: legal.html
+          - button "सुरक्षा" [ref=f5e392] [cursor=pointer]
+          - link "प्रकाशक संपर्क" [ref=f5e393] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%B6%E0%A4%95+%E0%A4%AA%E0%A5%82%E0%A4%9B%E0%A4%A4%E0%A4%BE%E0%A4%9B
+          - button "करियर/सहयोग" [ref=f5e394] [cursor=pointer]
+        - generic [ref=f5e395]: © 2026 WillowinWorld. सर्वाधिकार सुरक्षित।

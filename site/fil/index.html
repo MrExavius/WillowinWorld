@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="fil" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="fil">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I-explore ang Nature Seed, Candy Shop, Paint Blasters at Ball is God?!—mobile-first puzzle at arcade game na may tactile physics at expressive 2D worlds.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="author" content="WillowinWorld">
+  <meta name="theme-color" content="#031735" id="metaThemeColor">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:title" content="WillowinWorld - Indie Mobile Puzzle at Arcade Game Studio">
+  <meta property="og:description" content="Nature Seed, Candy Shop, Paint Blasters at Ball is God?! Magical mobile puzzle at arcade worlds ng WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mga mundo ng independent mobile game studio na WillowinWorld: Nature Seed, Candy Shop, Paint Blasters, at Ball is God">
+  <meta property="og:url" content="https://willowinworld.com/fil/">
+  <meta property="og:locale" content="tl_PH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WillowinWorld - Magical Mobile Puzzle at Arcade Games">
+  <meta name="twitter:description" content="Maginhawang physics puzzle, candy merge na laro, color arcade action at vertical descent world na may mobile-first polish.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="WillowinWorld mobile game studio at ang apat nitong puwedeng laruin na mundo">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-jqIjHAcrf1EK0LpdfWKKtXnjFgupkcVxLtUgppHLbHU='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>WillowinWorld | Indie Mobile Puzzle at Arcade Game Studio</title>
+  <link rel="canonical" href="https://willowinworld.com/fil/">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
+  <link rel="preload" href="../assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../css/nature-scene.css">
+  <link rel="stylesheet" href="../css/home-card-base.css">
+  <link rel="stylesheet" href="../css/home-ball-card.css">
+  <link rel="stylesheet" href="../css/home-nature-card.css">
+  <link rel="stylesheet" href="../css/home-paint-card.css">
+  <link rel="stylesheet" href="../css/home-candy-card.css">
+  <link rel="stylesheet" href="../css/game-components.css">
+  <link rel="stylesheet" href="../css/game-content.css">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20260731-2">
+  <link rel="stylesheet" href="../css/keyframes.css?v=20260731-1">
+  <link rel="stylesheet" href="../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../css/responsive-preferences.css?v=20260731-1">
+  <link rel="stylesheet" href="../motion.css">
+  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20260731-10">
+  <script type="application/ld+json" id="structuredData">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://willowinworld.com/#studio",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/",
+      "logo": "https://willowinworld.com/assets/willowinworld-logo.webp",
+      "email": "contact@willowinworld.com",
+      "description": "Ang WillowinWorld ay isang independent game studio para sa mobile na gumagawa ng apat na puzzle at larong arkada na may mechanics na nakabatay sa pisika at natatanging direksiyong pansining sa 2D.",
+      "knowsAbout": [
+        "Mobile game development",
+        "Physics puzzle games",
+        "Merge puzzle games",
+        "Cozy games",
+        "Arcade games",
+        "2D art direction",
+        "Mobile UI/UX"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://willowinworld.com/fil/#website",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/fil/",
+      "inLanguage": "fil",
+      "description": "Opisyal na site para sa WillowinWorld mobile puzzle at arcade game kabilang ang Nature Seed, Candy Shop, Paint Blasters at Ball is God?!",
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://willowinworld.com/fil/#games-list",
+      "name": "WillowinWorld Mga Larong Mobile",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Nature Seed",
+          "url": "https://willowinworld.com/fil/games/nature-seed.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Candy Shop",
+          "url": "https://willowinworld.com/fil/games/candy-shop.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paint Blasters",
+          "url": "https://willowinworld.com/fil/games/paint-blasters.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ball is God?!",
+          "url": "https://willowinworld.com/fil/games/ball-is-god.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/fil/games/nature-seed.html#game",
+      "name": "Nature Seed",
+      "url": "https://willowinworld.com/fil/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "genre": [
+        "Draw-to-solve puzzle",
+        "Palaisipan sa pisika",
+        "Nakaka-relax na puzzle",
+        "Water puzzle"
+      ],
+      "gamePlatform": "Mobile",
+      "description": "Isang nakakarelaks na draw-to-solve physics puzzle kung saan pinagsasama-sama ng isang linyang limitado ang tinta ng Water Drop at Seed at nagpapanumbalik ng watercolor na kagubatan.",
+      "creativeWorkStatus": "Aktibong pagbuo - nalalarong prototipo",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "fil"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/fil/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/fil/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "genre": [
+        "Pagsamahin ang puzzle",
+        "Palaisipan ng kendi",
+        "Kaswal na palaisipan",
+        "Palaisipan sa pisika"
+      ],
+      "gamePlatform": "Mobile",
+      "description": "Isang maginhawang candy merge puzzle na may 13 candy stages, sampung container ruleset, mga espesyal na recipe at mga tool sa pagpaplano.",
+      "creativeWorkStatus": "Aktibong pag-unlad - nape-play na pagbuo ng produksyon",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "fil"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/fil/games/paint-blasters.html#game",
+      "name": "Paint Blasters",
+      "url": "https://willowinworld.com/fil/games/paint-blasters.html",
+      "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
+      "genre": [
+        "Palaisipan ng kulay",
+        "Physics arcade",
+        "Palaisipan ng pagkawasak",
+        "Chain reaction"
+      ],
+      "gamePlatform": "Mobile",
+      "description": "Isang makulay na physics puzzle arcade kung saan ang tatlong kulay na input ay nagre-solve sa isa sa 35 authored projectile recipe.",
+      "creativeWorkStatus": "Aktibong pag-unlad - prototype ng produksyon",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "fil"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/fil/games/ball-is-god.html#game",
+      "name": "Ball is God?!",
+      "url": "https://willowinworld.com/fil/games/ball-is-god.html",
+      "image": "https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp",
+      "genre": [
+        "Vertical descent arcade",
+        "Hardcore arcade",
+        "arcade na hinimok ng kuwento",
+        "Pagkilos ng amo"
+      ],
+      "gamePlatform": "Mobile",
+      "description": "Isang matinding arkadang patayong pagbaba kung saan iniikot ng manlalaro ang tore, bumubuo ng mga combo smash, at dinadala ang karma sa sampung lokasyon.",
+      "creativeWorkStatus": "Aktibong produksyon",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "fil"
+    }
+  ]
+}
+</script>
+</head>
+<body class="home-polish-2026" data-theme="dark">
+  <a class="skip-link" href="#main-content">Lumaktaw sa pangunahing nilalaman</a>
+  <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
+  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magic unlocked - Maligayang pagdating sa WillowinWorld</div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="WillowinWorld bahay">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" fetchpriority="high" decoding="async">
+          </span>
+          <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="Pangunahing nabigasyon">
+          <a href="#home">Tahanan</a>
+          <a href="#games">Mga laro</a>
+          <a href="#studio">Studio</a>
+          <a href="#devlog">Devlog</a>
+          <a href="press-kit.html">Press kit</a>
+          <a href="#contact" data-open-contact>Makipag-ugnayan</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-small btn-ghost contact-header" data-open-contact type="button">Makipag-ugnayan sa studio</button>
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Lumipat ng tema" title="Mahikang Gabi / Liwanag ng Araw">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Wika"><details><summary aria-label="Pumili ng wika"><span aria-hidden="true">FIL</span></summary><div class="language-options"><a href="../index.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../ar/index.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../hy/index.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../bn/index.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../bg/index.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../zh-hans/index.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../zh-hant/index.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../cs/index.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../da/index.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../nl/index.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="index.html" lang="fil" hreflang="tl" aria-current="page"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../fi/index.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../fr/index.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../de/index.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../el/index.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../he/index.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../hi/index.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../hu/index.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../id/index.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../it/index.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../ja/index.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../ko/index.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../ms/index.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../no/index.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../fa/index.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../pl/index.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../pt/index.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../pt-pt/index.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../kk/index.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../ro/index.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../ru/index.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../es/index.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../es-419/index.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../sw/index.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../sv/index.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../tt/index.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../th/index.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../tr/index.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../uk/index.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../ur/index.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../uz/index.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../vi/index.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buksan ang menu" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow hero-eyebrow">Indie studio ng mga mobile game</div>
+            <h1><span class="hero-brand-title">WillowinWorld</span><span class="hero-title-line">Maliit na laro. Mga buhay na mundo.</span></h1>
+            <p class="hero-copy">Tactile puzzle at arcade game kung saan ang bawat draw, drop, shot at fall ay nagbabago sa mundo.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#games">Mag-explore ng mga laro</a>
+              <a class="btn btn-ghost" href="press-kit.html">Press kit</a>
+            </div>
+            <nav class="hero-worlds" aria-label="Itinatampok na WillowinWorld na mga laro">
+              <a href="#nature-card"><strong>Nature Seed</strong><span>pisika ng draw-to-solve</span></a>
+              <a href="#candy-card"><strong>Candy Shop</strong><span>maginhawang merge puzzle</span></a>
+              <a href="#paint-card"><strong>Paint Blasters</strong><span>mga reaksyon ng chain ng kulay</span></a>
+              <a href="#ball-card"><strong>Ball is God?!</strong><span>patayong pagbaba ng arcade</span></a>
+            </nav>
+          </div>
+
+          <div class="hero-panel" role="img" aria-label="Kasalukuyang spotlight: Nature Seed restoration preview">
+            <div class="nature-preview ambient-only" aria-hidden="true">
+              <div class="nature-stage nature-stage-hero">
+                <img class="nature-level nature-level-sketch" src="../assets/responsive/nature-seed-sketch-720.webp" width="720" height="405" alt="" fetchpriority="high" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../assets/responsive/nature-seed-hero-720.avif 720w, ../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 50vw">
+                  <img class="nature-level nature-level-painted" src="../assets/responsive/nature-seed-hero-1376.webp" srcset="../assets/responsive/nature-seed-hero-720.webp 720w, ../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 50vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+                </picture>
+                <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+                  <path d="M46 194C142 196 147 260 237 262C320 263 318 195 404 195C484 195 482 313 566 316" />
+                  <path d="M76 336C164 336 178 420 278 420C365 420 384 368 506 380" />
+                </svg>
+                <span class="nature-water-drop is-first"></span>
+                <span class="nature-water-drop is-second"></span>
+                <span class="nature-water-drop is-third"></span>
+                <span class="nature-bloom"></span>
+                <img loading="lazy" class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+              </div>
+              <img loading="lazy" class="nature-preview-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
+              <span class="nature-preview-title">
+                <small>Kasalukuyang spotlight · Draw-to-Solve</small>
+                <strong>Nature Seed</strong>
+              </span>
+              <span class="nature-cycle"><b>Sketch</b><b>Kumonekta</b><b>Bloom</b></span>
+            </div>
+            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only"></span>
+            <div class="hero-portal-badge ambient-only" aria-hidden="true">
+              <img loading="lazy" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
+              <span>Apat na mundo</span>
+            </div>
+            <div class="magic-hud">
+              <span>Tampok · Prototype ng Nature Seed</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="games">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Aming Mundo</div>
+              <h2 class="section-title">Apat na mundo. Isang dampi lang.</h2>
+            </div>
+            <p class="section-copy">Gumuhit ng mga pisikal na landas, pagsamahin ang kendi, bumuo ng mga color shot o paikutin ang isang banal na tore. Nagsisimula ang bawat laro sa isang nababasang pagkilos sa mobile.</p>
+          </div>
+
+          <div class="game-filters" role="group" aria-label="Mga filter ng laro">
+            <button class="filter-btn is-active" data-filter="All" type="button" aria-pressed="true" aria-controls="gamesGrid">Lahat</button>
+            <button class="filter-btn" data-filter="Arcade" type="button" aria-pressed="false" aria-controls="gamesGrid">Arcade</button>
+            <button class="filter-btn" data-filter="Puzzle" type="button" aria-pressed="false" aria-controls="gamesGrid">Palaisipan</button>
+            <button class="filter-btn" data-filter="Physics" type="button" aria-pressed="false" aria-controls="gamesGrid">Pisika</button>
+            <button class="filter-btn" data-filter="Cozy" type="button" aria-pressed="false" aria-controls="gamesGrid">Maginhawa</button>
+          </div>
+          <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
+
+          <div class="games-grid" id="gamesGrid">
+            <article class="game-card nature-card" id="nature-card" aria-label="Draw-to-solve physics puzzle na Nature Seed" data-tags="Puzzle Physics Cozy Ecology Nature Draw-to-solve Magic Mobile Meditative Relaxing Zen Atmospheric Restoration Prototype">
+              <div class="game-cover nature-game-cover">
+                <div class="nature-stage nature-stage-card" aria-hidden="true">
+                  <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" loading="lazy" decoding="async">
+                  <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" loading="lazy" decoding="async">
+                  <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                    <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                    <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+                  </svg>
+                  <span class="nature-water-drop is-first"></span>
+                  <span class="nature-water-drop is-second"></span>
+                  <span class="nature-bloom"></span>
+                  <img class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" loading="lazy" decoding="async">
+                  <img class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
+                  <img class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
+                </div>
+                <img class="nature-cover-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed draw-to-solve icon ng larong puzzle ng nature physics" loading="lazy" decoding="async">
+                <img class="nature-hover-icon" src="../assets/responsive/nature-seed-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Draw-to-Solve Physics Puzzle</span>
+                  <h3>Nature Seed</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Nalalarong prototipo</span>
+                  <span class="game-genre">Pangunahing genre: Palaisipang Pisikal na Draw-to-Solve</span>
+                </div>
+                <p>Ang Nature Seed ay isang nakakarelaks na palaisipang pisikal na draw-to-solve para sa mobile, kung saan ginagamit ang limitadong haba ng linya upang pagtagpuin ang Water Drop at Seed. Pinag-uugnay ng sampung kasalukuyang antas ang mga pisikal na guhit, bituin sa kahusayan, tuloy-tuloy na progreso, at pagpapanumbalik ng watercolor.</p>
+                <div class="feature-callout">Gameplay hook: bawat naka-commit na stroke ay nagiging bahagi ng pisikal na antas, at ang isang linyang solve ay nakakakuha ng tatlong bituin.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobile</span><span class="tag">Draw-to-Solve</span><span class="tag">Line Physics</span><span class="tag">Pagpapanumbalik ng Kalikasan</span><span class="tag">Nakaka-relax na Palaisipan</span><span class="tag">Maginhawang Eco Game</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/nature-seed.html">I-explore ang Nature Seed</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Subaybayan+ang+Nature+Seed+Pag-unlad&amp;body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Nature+Seed+development+updates." aria-label="Humiling ng mga update sa pagpapaunlad ng Nature Seed">Humiling ng mga update</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="game-card candy-card" id="candy-card" aria-label="Candy Shop maginhawang candy merge puzzle" data-tags="Merge Physics Casual Candy Cozy Mobile Puzzle Combo Relaxing Suika-like Concept Prototype">
+              <div class="game-cover candy-game-cover">
+                <div class="candy-stage" aria-hidden="true">
+                  <div class="candy-bg-stack">
+                    <img class="candy-bg candy-bg-1" src="../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-2" src="../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-3" src="../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-4" src="../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-5" src="../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-6" src="../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-7" src="../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-8" src="../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-9" src="../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-10" src="../assets/Candy%20Shop/site/back_glavnie_10.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <img class="candy-piece candy-piece-left" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <img class="candy-piece candy-piece-right" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <img class="candy-piece candy-piece-result" src="../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <span class="candy-impact"></span>
+                </div>
+                <img class="candy-cover-icon" src="../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="Candy Shop maginhawang icon ng larong puzzle na pinagsama ng kendi" loading="lazy" decoding="async">
+                <img class="candy-hover-icon" src="../assets/responsive/candy-shop-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Casual Merge Puzzle</span>
+                  <h3>Candy Shop</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Aktibong pag-unlad</span>
+                  <span class="game-genre">Pangunahing genre: Kaswal na Merge Puzzle</span>
+                </div>
+                <p>Ang Candy Shop ay isang maginhawang merge puzzle para sa mobile na gumagamit ng pisika, may kumpletong ebolusyon ng 13 kendi, sampung lalagyang nagbabago sa field, walong espesyal na epekto, at pagpaplanong nakabatay sa hold, preview ng lapag, at pila ng susunod na tatlong kendi.</p>
+                <div class="feature-callout">Gameplay hook: ang isang pamilyar na patak ay nagiging isang bagong palaisipan kapag binago ng container ang gravity, geometry o ang ruta papunta sa stack.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobile</span><span class="tag">Candy Merge</span><span class="tag">Palaisipan sa Pisika</span><span class="tag">Maginhawang Laro</span><span class="tag">Combo Puzzle</span><span class="tag">Mga Espesyal na Matamis</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/candy-shop.html">I-explore ang Candy Shop</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Subaybayan+ang+Candy+Shop+Pag-unlad&amp;body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Candy+Shop+development+updates." aria-label="Humiling ng mga update sa pagpapaunlad ng Candy Shop">Humiling ng mga update</a>
+                </div>
+              </div>
+            </article>
+
+            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters, arkadang palaisipang pisikal tungkol sa pagwasak gamit ang kulay" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
+              <div class="game-cover paint-game-cover">
+                <div class="paint-stage" aria-hidden="true">
+                  <img class="paint-bg" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" loading="lazy" decoding="async">
+                  <div class="paint-arena">
+                    <div class="paint-cube-stack">
+                      <span class="paint-cube paint-cube-a"></span>
+                      <span class="paint-cube paint-cube-b"></span>
+                      <span class="paint-cube paint-cube-c"></span>
+                      <span class="paint-cube paint-cube-d"></span>
+                      <span class="paint-cube paint-cube-e"></span>
+                      <span class="paint-cube paint-cube-f"></span>
+                      <span class="paint-cube paint-cube-g"></span>
+                      <span class="paint-cube paint-cube-h"></span>
+                      <span class="paint-cube paint-cube-i"></span>
+                      <span class="paint-cube paint-cube-j"></span>
+                    </div>
+                    <span class="paint-platform"></span>
+                    <span class="paint-aim-line"></span>
+                    <span class="paint-projectile paint-projectile-one"></span>
+                    <span class="paint-projectile paint-projectile-two"></span>
+                    <span class="paint-projectile paint-projectile-three"></span>
+                    <span class="paint-impact"></span>
+                    <span class="paint-shard paint-shard-one"></span>
+                    <span class="paint-shard paint-shard-two"></span>
+                    <span class="paint-shard paint-shard-three"></span>
+                    <span class="paint-shard paint-shard-four"></span>
+                    <img class="paint-blaster" src="../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <img class="paint-module" src="../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" loading="lazy" decoding="async">
+                  <img class="paint-hero" src="../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" loading="lazy" decoding="async">
+                </div>
+                <img class="paint-cover-icon" src="../assets/responsive/paint-blasters-icon-192.webp" width="192" height="192" alt="Icon ng Paint Blasters, isang larong arkada at physics puzzle na gumagamit ng kulay" loading="lazy" decoding="async">
+                <img class="paint-hover-icon" src="../assets/responsive/paint-blasters-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Palaisipan sa Physics / Arcade Hybrid</span>
+                  <h3>Paint Blasters</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Prototype ng produksyon</span>
+                  <span class="game-genre">Pangunahing genre: Pinagsamang Physics Puzzle at Arkada</span>
+                </div>
+                <p>Ang Paint Blasters ay isang palaisipang pisikal para sa mobile tungkol sa pagwasak gamit ang kulay, kung saan ang tatlong input ng kulay ay nagiging isa sa 35 dinisenyong recipe ng projectile. Puntiryahin ang pitong uri ng bloke at gawing sunod-sunod na reaksiyon sa buong tore ang isang eksaktong tama.</p>
+                <div class="feature-callout">Gameplay hook: ang recipe ang magpapasya sa projectile bago ang shot, kaya ang paghahalo ay kasing taktikal ng pagpuntirya.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobile</span><span class="tag">Color Puzzle</span><span class="tag">Physics Arcade</span><span class="tag">Layunin at Abutin</span><span class="tag">Mga Chain Reaction</span><span class="tag">Mga Tactical Shots</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/paint-blasters.html">I-explore ang Paint Blasters</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Subaybayan+ang+Paint+Blasters+Pag-unlad&amp;body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Paint+Blasters+development+updates." aria-label="Humiling ng mga update sa pagpapaunlad ng Paint Blasters">Humiling ng mga update</a>
+                </div>
+              </div>
+            </article>
+
+            <article id="ball-card" class="game-card ball-card" aria-label="Ball is God, isang hardcore na arcade game ng patayong pagbaba" data-tags="Arcade Hardcore Narrative Story Vertical Action Boss Dark Fantasy Mobile Skill-based One-Hit-Kill In Development Prototype">
+              <div class="game-cover ball-game-cover">
+                <div class="ball-stage" aria-hidden="true">
+                  <img class="ball-bg" src="../assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" loading="lazy" decoding="async">
+                  <div class="ball-cloud-field">
+                    <img class="ball-cloud ball-cloud-1" src="../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-2" src="../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-3" src="../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="162" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-4" src="../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-5" src="../assets/Ball%20is%20God/site/cloud-5.webp" width="460" height="184" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-6" src="../assets/Ball%20is%20God/site/cloud-6.webp" width="460" height="167" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-7" src="../assets/Ball%20is%20God/site/cloud-7.webp" width="460" height="168" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-8" src="../assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-9 is-reverse" src="../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-10 is-reverse" src="../assets/Ball%20is%20God/site/cloud-10.webp" width="460" height="179" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-11 is-reverse" src="../assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-12 is-reverse" src="../assets/Ball%20is%20God/site/cloud-12.webp" width="460" height="159" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-13 is-reverse" src="../assets/Ball%20is%20God/site/cloud-13.webp" width="460" height="155" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-14 is-reverse" src="../assets/Ball%20is%20God/site/cloud-14.webp" width="460" height="153" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-15 is-reverse" src="../assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-16 is-reverse" src="../assets/Ball%20is%20God/site/cloud-16.webp" width="460" height="156" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <div class="ball-tower">
+                    <span class="ball-vine ball-vine-one"></span>
+                    <span class="ball-vine ball-vine-two"></span>
+                    <span class="ball-leaf ball-leaf-one"></span>
+                    <span class="ball-leaf ball-leaf-two"></span>
+                    <span class="ball-leaf ball-leaf-three"></span>
+                    <span class="ball-leaf ball-leaf-four"></span>
+                  </div>
+                  <div class="ball-platforms">
+                    <span class="ball-platform ball-platform-a"><i></i></span>
+                    <span class="ball-platform ball-platform-b"><i></i></span>
+                    <span class="ball-platform ball-platform-c"><i></i></span>
+                    <span class="ball-platform ball-platform-d"><i></i></span>
+                    <span class="ball-platform ball-platform-e"><i></i></span>
+                    <span class="ball-platform ball-platform-f"><i></i></span>
+                  </div>
+                  <div class="ball-espa-wrap">
+                    <img class="ball-espa ball-espa-base" src="../assets/Ball%20is%20God/site/espa.webp" width="520" height="285" alt="" loading="lazy" decoding="async">
+                    <img class="ball-espa ball-espa-alt" src="../assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <img class="ball-cover-icon" src="../assets/responsive/ball-is-god-icon-192.webp" width="192" height="192" alt="Ball is God vertical descent tower icon ng arcade game" loading="lazy" decoding="async">
+                <img class="ball-hover-icon" src="../assets/responsive/ball-is-god-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Vertical Descent Arcade</span>
+                  <h3>Ball is God?!</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Aktibong produksyon</span>
+                  <span class="game-genre">Pangunahing genre: Hardcore Arcade</span>
+                </div>
+                <p>Ang Ball is God?! ay isang matinding arkadang patayong pagbaba kung saan iniikot ng pahalang na drag ang tore sa paligid ni Espa. Lampasan ang tatlong lapagan upang punuin ang smash, gumamit ng cooldown shield laban sa nakamamatay na tama, at dalhin ang karma sa sampung maalamat na lokasyon.</p>
+                <div class="feature-callout">Gameplay hook: ipagsapalaran ang ligtas na mga platform upang maging epekto, habang binabago ng karma ang mga kaaway, telegraph at mga yugto ng boss.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobile</span><span class="tag">Patayong Pagbaba</span><span class="tag">I-rotate ang Tower</span><span class="tag">One-Hit Tension</span><span class="tag">Presyon ng Boss</span><span class="tag">Mga Landas ng Karma</span><span class="tag">Batay sa Kwento</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/ball-is-god.html">I-explore ang Ball is God?!</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Subaybayan+ang+Ball+is+God+Pag-unlad&amp;body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Ball+is+God+development+updates." aria-label="Humiling ng mga update sa pagpapaunlad ng Ball is God">Humiling ng mga update</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="studio">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Pilosopiya ng Studio</div>
+              <h2 class="section-title">Isang aksyon. Isang buhay na mundo.</h2>
+            </div>
+            <p class="section-copy">Nagsisimula ang bawat laro sa isang panuntunan sa pagpindot—pag-draw, drop, mix o dodge—pagkatapos ay nagdaragdag ng karakter, malinaw na feedback at mga kahihinatnan na mababasa ng mga manlalaro nang walang manual.</p>
+          </div>
+
+          <div class="principles-grid">
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Mapaglarong Pakikipag-ugnayan</h3>
+              <p>Bawat tap, linya, drop at shot ay nakakakuha ng agarang visual na tugon, kaya ang sanhi at epekto ay manatiling malinaw.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h12M4 18h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Nababasang Disenyo</h3>
+              <p>Ang paggalaw, contrast at pacing ay nagpapakita ng layunin at kahihinatnan bago kailangan ang tekstong paliwanag.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3 6 6 .9-4.5 4.4 1.1 6.2L12 17.4l-5.6 3.1 1.1-6.2L3 9.9 9 9l3-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <h3>Pagkakakilanlan ng Tauhan</h3>
+              <p>Ang mga maskot, bagay at UI ay may personalidad bago sila magkaroon ng dekorasyon.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 2h8a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2zM10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Mobile-first UX</h3>
+              <p>Ang mga kontrol, ritmo at layout ay binuo para sa mga thumbs, maiikling session, nababasang UI at malinaw na mga desisyon sa maliliit na screen.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Kasiya-siyang Feedback</h3>
+              <p>Pinapakinis ang bawat bagsak, merge, tilamsik, tagumpay, at pagkatalo hanggang maging malinaw at kasiya-siya ang pakiramdam.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19c6-1 9-4 10-10 4 2 6 5 6 10H4zM14 9c0-3-2-5-5-6 0 4 2 6 5 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Maginhawang Lalim</h3>
+              <p>Ang malambot na pagtatanghal ay nag-iiwan ng puwang para sa pagpaplano, pagkabisado at pag-replay.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 16l3-8 3 8M13 16l2-5 3 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>2D Art Direction</h3>
+              <p>Ang mga simpleng hugis, malalakas na silhouette at pare-parehong interface art ay nagpapanatili sa bawat mundo na nakikilala.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3.5 3.5M15.5 15.5L19 19M19 5l-3.5 3.5M8.5 15.5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Buhay na Mundo</h3>
+              <p>Dapat na tahimik na tumugon ang mga background, UI at mga character kahit sa labas ng pangunahing loop.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="systems">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Ang Ginagawa Namin</div>
+              <h2 class="section-title">Mga system na may kagandahan, timbang at replayability.</h2>
+            </div>
+          </div>
+
+          <div class="systems-grid">
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 16c2 3 7 4 10 1 3-2 4-7 1-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/></svg></div><h3>Mga puzzle na nakabatay sa pisika</h3><p>Mga panuntunan sa pandamdam, nababasang mga resulta at stable na gawi ng bagay para sa paglalaro sa mobile.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 20c8-2 12-7 12-16C10 4 5 9 4 18c2-1 4-1 6 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Mga maginhawang laro sa mobile</h3><p>Mga malalambot na mundo na kalmadong pasukin at kasiya-siyang makabisado.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 11V8a5 5 0 0110 0v3M5 11h14v10H5V11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Mga interactive na character</h3><p>Mga maskot na may walang ginagawang buhay, mga reaksyon at emosyonal na kalinawan.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 14a4 4 0 100-8 4 4 0 000 8zM17 18a4 4 0 100-8 4 4 0 000 8zM9.8 12.2l4.4 1.6" stroke="currentColor" stroke-width="2"/></svg></div><h3>Mechanics ng kumbinasyon ng kulay</h3><p>Mga simpleng panuntunan sa kulay na nagbubukas ng mga taktikal na pagpipilian sa isang format na mauunawaan ng mga manlalaro mula sa isang maikling clip.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0zM12 9a3 3 0 100 6 3 3 0 000-6z" stroke="currentColor" stroke-width="2"/></svg></div><h3>Buhay na background</h3><p>Ang mga eksena ay mananatiling nakikilala nang hindi nakikipagkumpitensya sa gameplay, text o mga kontrol.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16L18 9l-6-5-6 5-2 11zM9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Mga cute na fantasy world</h3><p>Mga buwan, portal, kagubatan, kastilyo at mga karakter na may pagpigil.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6M4 18h16M8 15l3-4 3 2 5-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Meta progression</h3><p>I-unlock ang mga landas na gumagalang sa haba ng session at pagganyak ng manlalaro.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5zM8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Laro UI/UX</h3><p>Gumagamit ang mga interface ng malinaw na hierarchy, agarang feedback at visual na wika na partikular sa laro.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <article class="soft-card about-copy">
+            <div class="eyebrow">Tungkol sa WillowinWorld</div>
+            <h2 class="section-title">Isang maliit na studio para sa mga tactile mobile na mundo.</h2>
+            <p>Ang WillowinWorld ay bubuo ng apat na mobile-first puzzle at arcade game: Nature Seed, Candy Shop, Paint Blasters at Ball is God?! Ang bawat proyekto ay may pampublikong pahina ng asset ng laro, kasalukuyang status ng build, may petsang devlog at press.</p>
+            <div class="about-points">
+              <span>Mobile-first feel</span>
+              <span>Mga maaliwalas na mundo ng pantasya</span>
+              <span>Mga interactive na system</span>
+              <span>Natatanging 2D art</span>
+            </div>
+            <p>Saklaw ng kasalukuyang trabaho ang line physics na draw-to-solve, pagsasanib ng kendi sa sampung lalagyan, 35 recipe ng projectile na may kulay, at pagbaba sa umiikot na tore sa sampung lokasyon.</p>
+          </article>
+          <article class="soft-card symbol-card">
+            <div class="symbol-stage">
+              <img class="studio-brand-logo" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 280px, 315px" data-logo-theme data-logo-sizes="(max-width: 760px) 280px, 315px" width="1024" height="1024" alt="Logo ng WillowinWorld na may mahiwagang pusa, kambal na markang W, at mundong may kastilyo" loading="lazy" decoding="async">
+            </div>
+            <div class="symbol-copy">
+              <h3>Apat na laro. Apat na natatanging puwedeng laruin na sistema.</h3>
+              <p>Gumuhit ng limitadong pisikal na landas, pamahalaan ang isang nagbabagong lalagyan ng kendi, mag-assemble ng color shot o paikutin ang pababang tore. Buksan ang bawat page ng laro para sa kasalukuyang saklaw nito, katayuan ng produksyon at pinakabagong napetsahan na update.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Proseso</div>
+              <h2 class="section-title"><span class="title-line">Mula sa unang kawit</span> <span class="title-line">sa pinakintab na paglabas ng mobile.</span></h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <article class="step"><h3>Ideya</h3><p>Tukuyin ang pantasya, malinaw na genre, pangako ng manlalaro at pangunahing tactile loop.</p></article>
+            <article class="step"><h3>Prototipo</h3><p>Buuin ang pinakamaikling puwedeng laruin na patunay na may totoong input, feedback at mga estado ng pagkabigo.</p></article>
+            <article class="step"><h3>Pagsubok sa Pakiramdam</h3><p>Ayusin ang kontrol, friction, pacing, at linaw, at tiyaking masarap pa ring ulitin ang gameplay loop.</p></article>
+            <article class="step"><h3>Direksyon ng Sining</h3><p>Hubugin ang mga silweta, palette, wika ng UI, linaw ng mga icon, at pagkakakilanlan ng karakter.</p></article>
+            <article class="step"><h3>Produksyon</h3><p>I-scale ang content, system, progression, optimization at teknikal na pundasyon.</p></article>
+            <article class="step"><h3>Pagpapakinis</h3><p>Pinuhin ang mga transition, VFX, kumpas ng audio, onboarding, accessibility, at ginhawa ng user.</p></article>
+            <article class="step"><h3>Ilunsad</h3><p>Ihanda ang mga asset ng store, materyales para sa press, analytics, agarang update, at mga gawaing pangkomunidad.</p></article>
+            <article class="step"><h3>Patuloy na suporta</h3><p>Sukatin ang paglabas, makinig sa mga manlalaro at panatilihing malusog ang bawat mundo sa mga nakatutok na update.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="devlog">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Mga Devlog ng Laro</div>
+              <h2 class="section-title"><span class="title-line">Pinakabagong tala sa pagbuo,</span> <span class="title-line">nang hindi na naghahanap.</span></h2>
+            </div>
+            <p class="section-copy">Ang pinakabagong may petsang tala mula sa bawat page ng laro, na batay sa mga nape-play na system na nasa loob na ngayon ng Unity build.</p>
+          </div>
+
+          <div class="devlog-grid" data-latest-devlogs>
+            <!-- latest-devlogs:start -->
+            <article class="devlog-card" data-devlog-card data-devlog-game="nature-seed" data-devlog-source="games/nature-seed.html">
+              <span><b data-devlog-name>Nature Seed</b><time datetime="2026-07-31" data-devlog-date>Hulyo 31, 2026</time></span>
+              <h3 data-devlog-title>Pagpapanumbalik ng Level 2 at pagpapahusay ng katatagan</h3>
+              <p data-devlog-summary>Level 2 ang pares ng background ng produksyon nito, na may mas maaasahang pag-setup ng level, mga pagsusuri sa banggaan at feedback sa pagkumpleto.</p>
+              <a class="btn btn-ghost" href="games/nature-seed.html#devlog" aria-label="Buksan ang Nature Seed devlog">Buksan ang Nature Seed devlog</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="candy-shop" data-devlog-source="games/candy-shop.html">
+              <span><b data-devlog-name>Candy Shop</b><time datetime="2026-07-31" data-devlog-date>Hulyo 31, 2026</time></span>
+              <h3 data-devlog-title>Pagpapahusay sa production menu at HUD</h3>
+              <p data-devlog-summary>Ang pangunahing menu, pagpili ng antas, mga kontrol ng HUD at mga icon ng command ay nagbabahagi na ngayon ng isang visual na wika; Sinasaklaw ng mga karagdagang in-engine stress test ang na-update na daloy.</p>
+              <a class="btn btn-ghost" href="games/candy-shop.html#devlog" aria-label="Buksan ang Candy Shop devlog">Buksan ang Candy Shop devlog</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="paint-blasters" data-devlog-source="games/paint-blasters.html">
+              <span><b data-devlog-name>Paint Blasters</b><time datetime="2026-07-31" data-devlog-date>Hulyo 31, 2026</time></span>
+              <h3 data-devlog-title>Pagpapahusay sa katatagan ng pisika at mga epekto</h3>
+              <p data-devlog-summary>Ang pag-uugali ng projectile, resolution ng Match-3 at mga hit effect ay sinubukan at hinigpitan para sa mas pare-parehong resulta ng combo.</p>
+              <a class="btn btn-ghost" href="games/paint-blasters.html#devlog" aria-label="Buksan ang Paint Blasters devlog">Buksan ang Paint Blasters devlog</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="ball-is-god" data-devlog-source="games/ball-is-god.html">
+              <span><b data-devlog-name>Ball is God?!</b><time datetime="2026-07-31" data-devlog-date>Hulyo 31, 2026</time></span>
+              <h3 data-devlog-title>Mga ibabaw ng mundo at pagpapatunay ng panganib</h3>
+              <p data-devlog-summary>Ang pagtatanghal ng karakter, deterministikong henerasyon at mga panganib sa tinik ay nakatanggap ng coordinated visual at production-validation pass.</p>
+              <a class="btn btn-ghost" href="games/ball-is-god.html#devlog" aria-label="Buksan ang Ball is God?! devlog">Buksan ang Ball is God?! devlog</a>
+            </article>
+            <!-- latest-devlogs:end -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">FAQ</div>
+              <h2 class="section-title">Mabilis na sagot para sa mga manlalaro, press at publisher.</h2>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Anong uri ng mga laro ang ginagawa ng WillowinWorld?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Bumuo kami ng apat na larong pang-mobile: isang draw-to-solve physics puzzle, isang candy merge puzzle, isang color-mixing physics arcade at isang story-driven na vertical-descent arcade.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Iginagalang ba ng site ang mga setting ng reduced-motion?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Oo. Sinusundan nito ang kagustuhan sa pinababang paggalaw ng iyong device, binabawasan ang mga epekto kapag pinagana ang Save-Data at pini-pause ang animation kapag nakatago ang tab.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Sinusundan ba ng site ang aking tema sa araw o gabi?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Oo. Sa unang pagbisita, ginagamit nito ang naka-save na tema kung mayroon, pagkatapos ay ang kagustuhan sa kulay ng system, pagkatapos ay lokal na oras. Kung wala sa mga iyon ang mababasa, ang WillowinWorld ay magsisimula sa dark mode.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Nagtatrabaho ka ba sa mga publisher?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Bukas kami sa pagsusuri ng publisher para sa apat na proyektong ipinapakita dito. Inililista ng press kit ang status ng build ng bawat laro, mga pampublikong asset at ruta ng direktang contact.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Pang-mobile ba ang iyong mga laro?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Oo. Nagdidisenyo kami sa paligid ng mobile input, haba ng session, kalinawan ng screen at pagganap mula sa unang prototype.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Maaari ba akong magpadala ng portfolio?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Oo. Maaaring makipag-ugnayan sa amin ang mga artist, Unity developer, designer, animator at audio collaborator sa contact@willowinworld.com na may nakatutok na link ng portfolio at konteksto ng papel.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Maaari ba akong makipagtulungan sa studio?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Kami ay bukas sa sining, Unity, disenyo, animation, audio at mga pakikipagtulungan sa pag-publish na akma sa isa sa apat na kasalukuyang proyekto.</p></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta" id="contact">
+        <div class="container">
+          <h2 class="section-title">Makipag-usap sa WillowinWorld.</h2>
+          <p class="section-copy">Tinatanggap namin ang feedback ng manlalaro, mga kahilingan sa press, mga pag-uusap sa publisher at mga pakikipagtulungang may isip sa produksyon.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary" data-open-contact type="button">Makipag-ugnayan sa studio</button>
+            <a class="btn btn-ghost" href="press-kit.html">Press kit</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#home" aria-label="WillowinWorld bahay">
+            <span class="brand-mark" aria-hidden="true">
+              <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" loading="lazy" decoding="async">
+            </span>
+            <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
+          </a>
+        </div>
+        <nav class="footer-links" aria-label="Pag-navigate sa footer">
+          <a href="#games">Mga laro</a>
+          <a href="#studio">Studio</a>
+          <a href="#devlog">Devlog</a>
+          <a href="press-kit.html">Press kit</a>
+          <a href="#contact" data-open-contact>Makipag-ugnayan</a>
+          <a href="/404.html">Mga Nawalang Bituin</a>
+          <button id="promoHuntToggle" type="button" aria-pressed="false">Magic hunt</button>
+        </nav>
+        <div class="footer-contact">
+          <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a>
+          <a href="mailto:contact@willowinworld.com?subject=Humiling+ng+access+sa+Nature+Seed+playtest">Nature Seed playtest</a>
+          <a class="footer-action" href="asset-usage.html" data-open-info="asset">Paggamit ng asset</a>
+          <a class="footer-action" href="privacy.html" data-open-info="privacy">Pagkapribado</a>
+          <a class="footer-action" href="legal.html" data-open-info="legal">Legal</a>
+          <button class="footer-action" type="button" data-open-info="security">Seguridad</button>
+          <a href="mailto:contact@willowinworld.com?subject=Pagtatanong+ng+publisher">Kontak ng publisher</a>
+          <button class="footer-action" type="button" data-open-info="careers">Mga Trabaho / Pakikipagtulungan</button>
+        </div>
+        <div class="copyright">© 2026 WillowinWorld. Lahat ng karapatan ay nakalaan.</div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal" id="contactModal" hidden role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div>
+          <h2 id="contactTitle">Makipag-ugnayan sa WillowinWorld</h2>
+          <p>Naghahanda ito ng email sa contact@willowinworld.com, kaya ang mga kahilingan sa press, publisher at pakikipagtulungan ay dumaan sa isang malinaw na direktang ruta.</p>
+        </div>
+        <button class="icon-btn" id="closeContact" type="button" aria-label="Close contact form">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="contact-draft-row">
+          <p id="contactDraftStatus" role="status" aria-live="polite">Ang draft ay nananatili sa tab ng browser na ito habang nagtatrabaho ka.</p>
+          <button id="clearContactDraft" type="button">Burahin ang draft</button>
+        </div>
+        <div class="field">
+          <label for="name">Pangalan</label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Pangalan mo" aria-describedby="contactHandoff">
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="type">Uri ng pagtatanong</label>
+          <select id="type" name="type">
+            <option value="General">Pangkalahatan</option>
+            <option value="Publishing">Paglalathala</option>
+            <option value="Partnership">Pakikipagtulungan</option>
+            <option value="Press">Pindutin ang</option>
+            <option value="Portfolio">Portfolio</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Mensahe</label>
+          <textarea id="message" name="message" maxlength="1200" required placeholder="Sabihin sa amin kung ano ang gusto mong talakayin."></textarea>
+        </div>
+        <p class="contact-handoff-note" id="contactHandoff">Nagbubukas ito ng inihandang draft sa iyong email app. Walang ipapadala hanggang sa kumpirmahin mo ito doon. Maaari ka ring mag-email <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a> direkta.</p>
+        <div class="contact-form-actions">
+          <button class="btn btn-primary" type="submit">Maghanda ng email</button>
+          <button class="btn btn-ghost" id="copyContactMessage" type="button">Kopyahin ang mensahe</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="careersModal" hidden role="dialog" aria-modal="true" aria-labelledby="careersTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Mga Trabaho / Pakikipagtulungan</div>
+          <h2 id="careersTitle">Gustong bumuo ng mga mahiwagang laro sa amin?</h2>
+          <p>Kami ay bukas sa maalalahanin na mga collaborator na nagmamalasakit sa pakiramdam, pagkakakilanlan at produksyon na unang-una sa manlalaro.</p>
+        </div>
+        <button class="icon-btn" id="closeCareers" type="button" aria-label="Isara ang mga detalye ng karera at pakikipagtulungan">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-card">
+        <h3>Buksan ang mga tungkulin at mga track ng pakikipagtulungan</h3>
+        <div class="roles">
+          <span class="tag">Mga 2D artist</span>
+          <span class="tag">mga developer ng Unity</span>
+          <span class="tag">Mga designer ng laro</span>
+          <span class="tag">Mga animator</span>
+          <span class="tag">Mga sound designer</span>
+          <span class="tag">Mga Publisher</span>
+          <span class="tag">Mga kasosyo</span>
+        </div>
+        <p>Magpadala ng nakatutok na link ng portfolio, tungkulin, availability at ang WillowinWorld na laro o style area na sa tingin mo ay pinakamalapit sa iyo.</p>
+      </div>
+      <div class="info-actions">
+        <button class="btn btn-primary" data-open-contact data-contact-type="Portfolio" type="button">Buksan ang Contact Form</button>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Portfolio+o+pakikipagtulungan+para+sa+WillowinWorld">Magpadala ng Portfolio</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="pressModal" hidden role="dialog" aria-modal="true" aria-labelledby="pressTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Pindutin ang / Mga Publisher</div>
+          <h2 id="pressTitle">Compact studio facts para sa press at mga kasosyo.</h2>
+          <p>WillowinWorld ay gumagawa ng tactile mobile-first puzzle at mga arcade game na may maginhawang direksyon ng fantasy art, nababasa na mga system at malakas na pakiramdam.</p>
+        </div>
+        <button class="icon-btn" id="closePress" type="button" aria-label="Isara ang mga detalye ng press at publisher">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Studio pitch</h3>
+          <p>Saklaw ng kasalukuyang portfolio ang draw-to-solve na pisika, candy merge puzzle, pagwasak gamit ang kulay, at patayong pagbaba sa arkada.</p>
+          <p>Ang focus sa studio ay mobile-first input, malalakas na silhouette, 2D art na partikular sa laro at mga mechanics na naiintindihan ng mga manlalaro sa pamamagitan ng paggalaw.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Factsheet</h3>
+          <dl>
+            <div><dt>Studio</dt><dd>WillowinWorld</dd></div>
+            <div><dt>Tumutok</dt><dd>Mobile-first puzzle at arcade game</dd></div>
+            <div><dt>Makipag-ugnayan</dt><dd><a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="press-kit.html">Buksan ang Press Kit</a>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Pagtatanong+ng+publisher">Makipag-ugnayan sa Publisher</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="privacyModal" hidden role="dialog" aria-modal="true" aria-labelledby="privacyTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Pagkapribado</div>
+          <h2 id="privacyTitle">tala sa privacy ng WillowinWorld.</h2>
+          <p>Sadyang simple ang pampublikong site: walang script para sa analytics, pixel sa pag-aanunsiyo, cookie sa pagsubaybay, embed mula sa third party, o sistema ng account.</p>
+        </div>
+        <button class="icon-btn" id="closePrivacy" type="button" aria-label="Isara ang mga detalye ng privacy">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Ano ang nakaimbak</h3>
+          <p>Maaaring mag-save ang site ng maliit na lokal na kagustuhan sa tema sa iyong browser upang manatiling pare-pareho ang switch ng araw/gabi. Hindi ito gumagawa ng player account o behavioral profile.</p>
+          <p>Pinapanatili ng form ng contact sa homepage ang pangalan, email, uri ng pagtatanong at mga field ng mensahe nito sa imbakan ng session sa parehong tab upang hindi mabura ng reload ang iyong draft. Maaari mo itong i-clear sa form, at aalisin ito ng browser kapag natapos ang session ng tab na iyon.</p>
+          <p>Kung mag-email ka sa WillowinWorld, ang iyong mensahe, email address at mga link ay ginagamit lamang upang tumugon sa iyong pagtatanong.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Mga katotohanan sa privacy</h3>
+          <dl>
+            <div><dt>Analytics</dt><dd>Wala</dd></div>
+            <div><dt>Cookies</dt><dd>Walang tracking cookies</dd></div>
+            <div><dt>Makipag-ugnayan sa draft</dt><dd>Parehong tab lang</dd></div>
+            <div><dt>Makipag-ugnayan</dt><dd><a href="mailto:contact@willowinworld.com?subject=Tanong+sa+privacy">Privacy email</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Tanong+sa+privacy">Privacy Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="legalModal" hidden role="dialog" aria-modal="true" aria-labelledby="legalTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Legal</div>
+          <h2 id="legalTitle">WillowinWorld legal notice.</h2>
+          <p>WillowinWorld, ang studio logo, mga pangalan ng laro, character, screenshot, visual asset at kopya ng website ay nabibilang sa WillowinWorld maliban kung iba ang nabanggit.</p>
+        </div>
+        <button class="icon-btn" id="closeLegal" type="button" aria-label="Isara ang mga legal na detalye">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Pinapayagan ang pampublikong sanggunian</h3>
+          <p>Press, maaaring sumangguni ang mga publisher at creator sa mga pampublikong page ng laro at gumamit ng mga preview-tier na materyales para sa coverage, pagsusuri ng publisher at mga mockup na reference sa tindahan na may WillowinWorld credit.</p>
+          <p>Ang pampublikong pag-access sa isang asset ay hindi nagbibigay ng pahintulot na ibenta, muling ipamahagi, i-mint, gamitin ito para sanayin ang AI o mga database ng machine-learning, gayahin ang studio o bumuo ng hindi nauugnay na mga komersyal na produkto mula rito.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Ruta ng paglilisensya</h3>
+          <dl>
+            <div><dt>May-ari</dt><dd>WillowinWorld</dd></div>
+            <div><dt>Espesyal na paggamit</dt><dd>Magtanong muna</dd></div>
+            <div><dt>Makipag-ugnayan</dt><dd><a href="mailto:contact@willowinworld.com?subject=Legal+na+tanong">Legal na email</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <button class="btn btn-primary" data-open-info="asset" type="button">Paggamit ng Asset</button>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Legal+na+tanong">Legal na Pakikipag-ugnayan</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="assetModal" hidden role="dialog" aria-modal="true" aria-labelledby="assetTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Paggamit ng Asset</div>
+          <h2 id="assetTitle">Preview-tier na patakaran sa pampublikong asset.</h2>
+          <p>Ang mga pampublikong file sa WillowinWorld na mga page ng laro ay mga na-optimize na preview na materyales para sa mga press article, publisher review deck, store-reference mockups at coverage tungkol sa WillowinWorld na mga laro.</p>
+        </div>
+        <button class="icon-btn" id="closeAsset" type="button" aria-label="Isara ang mga detalye ng paggamit ng asset">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Pinapayagan</h3>
+          <p>Gumamit ng mga pampublikong preview sa mga artikulo, post, pitch reference, coverage, wishlist, store mockups at publisher review notes na may WillowinWorld credit.</p>
+          <p>Magtanong bago i-crop ang pagba-brand, muling pagkulay, paggamit ng mga asset sa mga bayad na ad, paghiling ng mga layered na source file o pagpapakita ng mga hindi pa nailalabas na build.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Hindi pinapayagan</h3>
+          <dl>
+            <div><dt>Muling pagbebenta</dt><dd>Walang mga asset pack</dd></div>
+            <div><dt>AI dataset</dt><dd>Walang gamit sa pagsasanay</dd></div>
+            <div><dt>Pagkakakilanlan</dt><dd>Walang pagpapanggap</dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="press-kit.html#press-assets">Buksan ang Press Assets</a>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Kahilingan+sa+paggamit+ng+asset">Humiling ng Pahintulot</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="securityModal" hidden role="dialog" aria-modal="true" aria-labelledby="securityTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Seguridad</div>
+          <h2 id="securityTitle">Seguridad-unang static na postura ng site.</h2>
+          <p>WillowinWorld ang pampublikong site na maliit, static at dependency-light upang mabawasan ang attack surface habang pinapanatili ang isang makintab na interactive na karanasan.</p>
+        </div>
+        <button class="icon-btn" id="closeSecurity" type="button" aria-label="Isara ang mga detalye ng seguridad">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Kasalukuyang baseline</h3>
+          <p>Iniiwasan ng site ang mga third-party na script, embed, account at external na form processor. Gumagamit ito ng mahigpit na Patakaran sa Seguridad ng Nilalaman, walang mga inline na tagapangasiwa ng kaganapan at direktang ruta ng email para sa pakikipag-ugnayan.</p>
+          <p>Ang mga ulat sa seguridad ay tinatanggap kapag ang mga ito ay nasasakupan sa pampublikong WillowinWorld na site at ibinahagi nang responsable.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Responsableng pagsisiwalat</h3>
+          <dl>
+            <div><dt>Makipag-ugnayan</dt><dd><a href="mailto:contact@willowinworld.com?subject=Ulat+sa+seguridad">Email ng seguridad</a></dd></div>
+            <div><dt>Wika</dt><dd>Ingles ang ginustong</dd></div>
+            <div><dt>Pamantayan</dt><dd><a href="../.well-known/security.txt">security.txt</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Ulat+sa+seguridad">Iulat ang Isyu sa Seguridad</a>
+        <a class="btn btn-ghost" href="../.well-known/security.txt">Buksan ang security.txt</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="gameModal" hidden role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
+    <div class="modal-dialog game-dialog" id="gameDialog">
+      <div class="game-dialog-cover" id="gameDialogCover" aria-hidden="true">
+        <span class="game-dialog-status status-pill" id="gameModalStatus"></span>
+        <span class="game-dialog-spark"></span>
+      </div>
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="gameModalGenre">Mundo ng laro</div>
+          <h2 id="gameModalTitle">WillowinWorld na laro</h2>
+        </div>
+        <button class="icon-btn" id="closeGame" type="button" aria-label="Isara ang mga detalye ng laro">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="game-dialog-grid">
+        <div>
+          <p class="game-dialog-copy" id="gameModalCopy"></p>
+          <ul class="game-detail-tags" id="gameModalTags"></ul>
+        </div>
+        <div class="game-pillar-panel">
+          <h3>Mga haligi ng gameplay</h3>
+          <ul id="gameModalPillars"></ul>
+        </div>
+      </div>
+      <div class="secret-actions">
+        <button class="btn btn-primary" data-open-contact type="button">Makipag-ugnayan sa studio</button>
+        <button class="btn btn-ghost" id="dismissGame" type="button">Bumalik sa Mundo</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="secretModal" hidden role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+    <div class="modal-dialog secret-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Nagbukas ang isang nakatagong portal</div>
+          <h2 id="secretTitle">Nahanap na sikreto</h2>
+        </div>
+        <button class="icon-btn" id="closeSecret" type="button" aria-label="Isara ang lihim na gantimpala">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <p id="secretMessage"></p>
+      <div class="secret-actions">
+        <a class="btn btn-primary" id="claimSecret" href="mailto:contact@willowinworld.com?subject=Promo+claim">Humiling ng Promo Code</a>
+        <button class="btn btn-ghost" id="dismissSecret" type="button">Isara ang Portal</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts.js?v=20260801-1"></script>
+  <script src="i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

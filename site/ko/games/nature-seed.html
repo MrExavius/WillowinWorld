@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="ko">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nature Seed은 현재 개발 중인 그리기-풀기 물리 퍼즐입니다. 잉크 제한 경로를 그리고 Water Drop과 Seed을 재결합하여 수채화 숲을 복원합니다.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#07162d" id="metaThemeColor">
+  <meta property="og:title" content="Nature Seed - 그림으로 해결하는 물리 퍼즐 게임">
+  <meta property="og:description" content="WillowinWorld의 편안한 모바일 퍼즐에서 잉크가 제한된 물리적 경로를 그리고 Water Drop과 Seed을 재결합하고 자연을 복원하세요.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nature Seed WillowinWorld의 그리기-해결 라인 물리 퍼즐">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/ko/games/nature-seed.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nature Seed - 편안한 그림 그리기 물리 퍼즐 게임">
+  <meta name="twitter:description" content="이 모바일 물리학 퍼즐에서 잉크 제한 경로를 그리고 Water Drop과 Seed을 재결합하고 수채화 숲을 복원하세요.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Nature Seed 복원된 수채화 숲에서 그리는 물리 퍼즐">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Nature Seed | 편안한 그림 그리기 물리 퍼즐 게임</title>
+  <link rel="canonical" href="https://willowinworld.com/ko/games/nature-seed.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/ko/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "게임",
+          "item": "https://willowinworld.com/ko/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nature Seed",
+          "item": "https://willowinworld.com/ko/games/nature-seed.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/ko/games/nature-seed.html#game",
+      "name": "Nature Seed",
+      "url": "https://willowinworld.com/ko/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "description": "잉크가 제한된 라인이 Water Drop과 Seed을 함께 가져와 수채화 숲을 복원하는 편안한 그림 그리기 물리 퍼즐입니다.",
+      "genre": [
+        "그리기 퍼즐",
+        "물리학 퍼즐",
+        "편안한 퍼즐",
+        "선 그리기 퍼즐"
+      ],
+      "gamePlatform": "모바일",
+      "creativeWorkStatus": "활발한 개발 - 플레이 가능한 프로토타입",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/ko/games/nature-seed.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "ko"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
+  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/nature-scene.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/nature-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-nature nature-seed-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Nature Seed으로 건너뛰기</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — WillowinWorld으로 돌아가기">
+      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed 모바일 그리기 퍼즐 게임 아이콘" fetchpriority="high" decoding="async">
+      <span><strong>Nature Seed</strong><small>WillowinWorld 게임 페이지</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="게임 페이지 탐색">
+      <a href="../index.html">스튜디오 홈</a>
+      <a href="#devlog">개발로그</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">보도자료</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="테마 전환">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="언어"><details><summary aria-label="언어 선택"><span aria-hidden="true">KO</span></summary><div class="language-options"><a href="../../games/nature-seed.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/nature-seed.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/nature-seed.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/nature-seed.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/nature-seed.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/nature-seed.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/nature-seed.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/nature-seed.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/nature-seed.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/nature-seed.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/nature-seed.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/nature-seed.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/nature-seed.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/nature-seed.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/nature-seed.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/nature-seed.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/nature-seed.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/nature-seed.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/nature-seed.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/nature-seed.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/nature-seed.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="nature-seed.html" lang="ko" hreflang="ko" aria-current="page"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/nature-seed.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/nature-seed.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/nature-seed.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/nature-seed.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/nature-seed.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/nature-seed.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/nature-seed.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/nature-seed.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/nature-seed.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/nature-seed.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/nature-seed.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/nature-seed.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/nature-seed.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/nature-seed.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/nature-seed.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/nature-seed.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/nature-seed.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/nature-seed.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/nature-seed.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/nature-seed.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell nature-seed-shell" id="game-main">
+    <div class="nature-page-backdrop ambient-only" aria-hidden="true">
+      <div class="nature-menu-world">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+    </div>
+    <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
+      <div class="nature-hero-bg ambient-only" aria-hidden="true">
+        <div class="nature-stage nature-stage-backdrop">
+          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <picture>
+            <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
+            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+          </picture>
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+            <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
+            <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
+          </svg>
+          <span class="nature-water-drop is-first"></span>
+          <span class="nature-water-drop is-second"></span>
+          <span class="nature-water-drop is-third"></span>
+          <span class="nature-bloom"></span>
+          <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+        </div>
+      </div>
+      <div class="nature-menu-world ambient-only" aria-hidden="true">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+
+      <div class="container nature-hero-layout">
+        <div class="nature-hero-copy">
+          <div class="eyebrow">Nature Seed</div>
+          <h1 id="natureHeroTitle">길을 그립니다. 함께 가져오세요.</h1>
+          <p class="hero-copy">잉크가 제한된 스트로크가 레벨의 일부가 되어 Water Drop과 Seed을 함께 사용하여 수채화 숲을 깨우는 명상적인 모바일 물리학 퍼즐입니다.</p>
+          <p class="nature-hero-note">활발한 개발 · 플레이 가능한 프로토타입. 현재 빌드에는 10개 레벨, 라인 효율성 별, 지속적인 진행 및 안정적인 물리적 라인 생성이 포함되어 있습니다.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Nature+Seed+%ED%94%8C%EB%A0%88%EC%9D%B4%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%97%90+%EB%8C%80%ED%95%9C+%EC%95%A1%EC%84%B8%EC%8A%A4+%EC%9A%94%EC%B2%AD">플레이테스트 액세스 요청</a>
+            <a class="btn btn-ghost" href="#devlog">개발로그 열기</a>
+          </div>
+          <div class="nature-hero-stats" role="group" aria-label="Nature Seed 하이라이트">
+            <span><strong>추첨</strong><small>제한된 라인 예산을 사용합니다.</small></span>
+            <span><strong>연결</strong><small>Water Drop을 Seed으로 가져옵니다.</small></span>
+            <span><strong>블룸</strong><small>복원된 장면을 획득하세요</small></span>
+          </div>
+        </div>
+
+        <aside class="nature-hero-showcase" aria-label="Nature Seed 게임플레이 미리보기">
+          <div class="nature-device-frame">
+            <div class="nature-stage nature-stage-showcase" aria-hidden="true">
+              <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
+              <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+              </svg>
+              <span class="nature-water-drop is-first"></span>
+              <span class="nature-water-drop is-second"></span>
+              <span class="nature-bloom"></span>
+              <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+            </div>
+            <img loading="lazy" class="nature-showcase-icon" src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="물과 씨앗 문자가 있는 Nature Seed 게임 아이콘" decoding="async">
+            <span class="nature-preview-title">
+              <small>그림으로 풀어내는 물리 퍼즐</small>
+              <strong>Nature Seed</strong>
+            </span>
+            <span class="nature-cycle"><b>스케치</b><b>안내수</b><b>블룸</b></span>
+            <div class="magic-hud">
+              <span>플레이 가능한 프로토타입 · 활발한 개발</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid nature-seed-content">
+      <section class="game-proof-section" aria-labelledby="natureProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">현재 빌드 내부</span>
+            <h2 id="natureProofTitle">선은 장식이 아닙니다. 퍼즐이 됩니다.</h2>
+            <p>모든 커밋된 스트로크는 물리적 충돌 기하학을 생성합니다. 플레이어는 잉크, 라인 수 및 모양의 균형을 맞춘 다음 Water Drop 및 Seed이 경로에 응답하는 것을 지켜봅니다. 한 줄 솔루션은 가장 깔끔한 별 3개 결과를 얻습니다.</p>
+            <span class="proof-status"><b>빌드 상태</b> 플레이 가능한 프로토타입</span>
+          </div>
+          <div class="proof-visual">
+            <div class="nature-proof-frames" aria-label="Nature Seed 스케치 및 복원된 레벨 비교">
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 560px) 44vw, 28vw" width="1600" height="900" alt="퍼즐이 풀리기 전 조용한 연필 스케치로 표시되는 Nature Seed 레벨" loading="lazy" decoding="async">
+                <figcaption><strong>스케치 읽기</strong><span>해결 전</span></figcaption>
+              </figure>
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 560px) 44vw, 28vw" width="1280" height="714" alt="해결 후 수채화 나무와 캐릭터로 복원된 동일한 Nature Seed 장면" loading="lazy" decoding="async">
+                <figcaption><strong>꽃을 획득하세요</strong><span>해결 후</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="검증된 Nature Seed 빌드 사실">
+          <article><strong>현재 레벨 10개</strong><span>데이터 기반 프로토타입 진행.</span></article>
+          <article><strong>잉크 및 선 제한</strong><span>모든 스트로크에는 실제 비용이 발생합니다.</span></article>
+          <article><strong>한 줄의 달인</strong><span>별 3개로 가는 기본 경로입니다.</span></article>
+          <article><strong>지속적인 발전</strong><span>잠금 해제된 레벨과 결과는 세션 간에 유지됩니다.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">게임 개요</div>
+        <h2>두 명의 작은 캐릭터를 하나로 모으는 편안한 선 물리학 퍼즐입니다.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>선수 약속</h3><p>깨끗한 물리적 경로를 그리고 Water Drop과 Seed을 함께 가져와 조용한 스케치가 다시 살아나는 것을 지켜보세요.</p></article>
+          <article class="detail-card"><h3>현재 빌드</h3><p>10개의 플레이 가능한 레벨에는 터치 드로잉, 물리적 선 기하학, 선 효율성 별, 지속적인 진행 및 복원 피드백이 결합되어 있습니다.</p></article>
+          <article class="detail-card"><h3>관객</h3><p>잔잔한 퍼즐 게임, 에코 테마, 빛 물리학, 아늑한 복원, 아름다운 2D 아트 및 모바일 세션을 스트레스 없이 즐기는 플레이어.</p></article>
+          <article class="detail-card"><h3>상태</h3><p>활발한 개발 - 플레이 가능한 프로토타입. 현재 작업은 드로잉 느낌, 레벨 가독성, 진행 및 모바일 안정성에 중점을 두고 있습니다.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">특징</div>
+        <h2>Nature Seed에서 플레이어가 하는 일.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>그리기를 통해 해결하는 물리적 경로</h3><p>각 퍼즐은 지형, Seed 및 Water Drop으로 시작됩니다. 플레이어의 스트로크는 의도와 물리학 사이의 다리가 됩니다.</p></article>
+          <article class="detail-card"><h3>읽을 수 있는 물리학 피드백</h3><p>캐릭터의 움직임을 한눈에 알 수 있도록 디자인하여 실패한 시도가 무작위 처벌이 아닌 정보처럼 느껴집니다.</p></article>
+          <article class="detail-card"><h3>숲 복원 보상</h3><p>레벨을 해결하면 단순한 점수 화면이 아닌 성장, 색상, 작은 감정적 피드백을 통해 장면에 생기를 불어넣습니다.</p></article>
+          <article class="detail-card"><h3>모바일 우선 퍼즐 속도</h3><p>손으로 직접 만든 짧은 레벨, 터치 드로잉, 선명한 실루엣 덕분에 빠른 iOS 및 Android 세션에서 게임이 편안해졌습니다.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">게임플레이 루프</div>
+        <h2>레벨을 읽고, 경로를 그리고, 캐릭터가 다음 시도를 가르치도록 하세요.</h2>
+        <ul class="update-list">
+          <li><span>01단계</span><strong>스케치 읽기</strong><p>플레이어는 경사면, 틈새, 장애물 및 두 캐릭터를 연결하는 가장 안전한 방법을 찾습니다.</p></li>
+          <li><span>02단계</span><strong>선을 그어라</strong><p>손가락 스트로크는 캐릭터의 물리적 가이드, 램프 또는 캐치 포인트가 됩니다.</p></li>
+          <li><span>03단계</span><strong>결심하고 관찰하기</strong><p>캐릭터는 물리적인 경로를 거슬러 이동하며, 무거운 UI 설명 없이 성공과 실수를 눈에 띄게 만듭니다.</p></li>
+          <li><span>04단계</span><strong>꽃을 피우거나 개선하세요</strong><p>Water Drop이 Seed에 도달하면 포리스트가 복원됩니다. 놓치면 플레이어는 더 명확한 정보로 다시 그립니다.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">스토리/세계</div>
+        <h2>조용한 숲, 목마른 씨앗, 그리고 배려를 중심으로 만들어진 퍼즐 언어입니다.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed은 간단한 질문으로 시작되었습니다. 그리기-풀기 물리 퍼즐이 물체를 밀어내는 것이 아니라 깨지기 쉬운 것을 복원하는 것이라면 어떨까요?</p>
+            <p>세상은 Seed, Water Drop, 그리고 스케치에서 삶으로 천천히 돌아오는 숲을 중심으로 구축되었습니다. 모든 퍼즐은 작은 배려의 행위처럼 느껴지도록 만들어졌습니다. 플레이어는 땅을 연구하고 길을 그리며 물이 자랄 수 있는 것에 도달하도록 돕습니다.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>디자인 방향</dt><dd>차분한 물리학과 눈에 보이는 복원</dd></div>
+            <div><dt>감정핵</dt><dd>Seed, 물 및 회수</dd></div>
+            <div><dt>상호작용</dt><dd>원인과 결과를 읽을 수 있는 터치 드로잉</dd></div>
+            <div><dt>마스터리 보상</dt><dd>한 줄로 풀면 별 3개를 얻습니다.</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">출판사 각도</div>
+        <h2>명확한 모바일 후크가 있는 아늑한 퍼즐입니다.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed은 하나의 제한된 스트로크를 레벨 기하학으로 바꿉니다. 물리적 경로를 그리고 Water Drop과 Seed을 재결합한 다음 동일한 솔루션을 개선하여 한 줄의 별 3개 결과를 얻습니다.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>장르</dt><dd>그림으로 풀 수 있는 물리 퍼즐</dd></div>
+            <div><dt>플랫폼 대상</dt><dd>iOS / 안드로이드</dd></div>
+            <div><dt>세션 형태</dt><dd>짧은 차분 레벨</dd></div>
+            <div><dt>기본 CTA</dt><dd>플레이테스트 액세스 요청</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">자산 다운로드</div>
+        <h2>Nature Seed 언론 및 창작자 자산</h2>
+        <p class="asset-kit-copy">편집 범위, 게시자 리뷰 및 매장 레이아웃 참조를 위해 엄선된 WebP 미리보기입니다. 전체 해상도 소스 파일은 요청 시 스튜디오에서 제공됩니다.</p>
+        <h3 class="asset-group-title">브랜드 및 캐릭터</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed 그리기-해결 라인 물리 퍼즐 게임 아이콘" loading="lazy" decoding="async"><strong>게임 아이콘</strong><span>그리기-해결 라인 물리 퍼즐 아이콘.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="모바일 물리 퍼즐 게임용 Nature Seed 물방울 캐릭터" loading="lazy" decoding="async"><strong>Water Drop</strong><span>복원 퍼즐 판타지용 캐릭터 에셋입니다.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="아늑한 퍼즐 게임을 위한 Nature Seed 시드 캐릭터" loading="lazy" decoding="async"><strong>Seed 문자</strong><span>Nature Seed의 핵심 캐릭터 자산입니다.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed 나무 성장 복원 자산" loading="lazy" decoding="async"><strong>나무 성장</strong><span>자연복원보상자산.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 편안한 퍼즐 숲 메뉴 배경" loading="lazy" decoding="async"><strong>숲 메뉴</strong><span>편안한 모바일 퍼즐 메뉴 배경.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed 손으로 그린 물리 수준 배경" loading="lazy" decoding="async"><strong>게임플레이 배경</strong><span>손으로 그린 물리 레벨 배경.</span></a>
+        </div>
+        <h3 class="asset-group-title">그리기-해결 스케치 레벨</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 01" loading="lazy" decoding="async"><strong>스케치 레벨 01</strong><span>물 물리학 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 1536w" sizes="(max-width: 760px) 34vw, 76px" width="1536" height="764" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 02" loading="lazy" decoding="async"><strong>스케치 레벨 02</strong><span>물 경로 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 03" loading="lazy" decoding="async"><strong>스케치 레벨 03</strong><span>선 그리기 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 04" loading="lazy" decoding="async"><strong>스케치 레벨 04</strong><span>모바일 물리 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 05" loading="lazy" decoding="async"><strong>스케치 레벨 05</strong><span>물길 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 06" loading="lazy" decoding="async"><strong>스케치 레벨 06</strong><span>물리 경로 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 07" loading="lazy" decoding="async"><strong>스케치 레벨 07</strong><span>그려진 선 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 08" loading="lazy" decoding="async"><strong>스케치 레벨 08</strong><span>물 흐름 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 09" loading="lazy" decoding="async"><strong>스케치 레벨 09</strong><span>복원 퍼즐 초안 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 그리기-해결 물 물리학 스케치 레벨 10" loading="lazy" decoding="async"><strong>스케치 레벨 10</strong><span>자연 퍼즐 초안 장면.</span></a>
+        </div>
+        <h3 class="asset-group-title">복원된 퍼즐 장면</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="714" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 01" loading="lazy" decoding="async"><strong>복원된 레벨 01</strong><span>자연 복원 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 02" loading="lazy" decoding="async"><strong>복원된 레벨 02</strong><span>복원된 숲 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 03" loading="lazy" decoding="async"><strong>복원된 레벨 03</strong><span>물과 숲의 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 04" loading="lazy" decoding="async"><strong>복원된 레벨 04</strong><span>복원된 자연 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 05" loading="lazy" decoding="async"><strong>복원된 레벨 05</strong><span>차분한 복원 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 06" loading="lazy" decoding="async"><strong>복원된 레벨 06</strong><span>자연회복 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 07" loading="lazy" decoding="async"><strong>복원된 레벨 07</strong><span>복원된 풍경 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 08" loading="lazy" decoding="async"><strong>복원된 레벨 08</strong><span>녹색 복원 퍼즐 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 09" loading="lazy" decoding="async"><strong>복원된 레벨 09</strong><span>워터 퍼즐 복구 장면.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed 자연 복원 퍼즐 복원 레벨 10" loading="lazy" decoding="async"><strong>레벨 10 복원됨</strong><span>복원 퍼즐 장면이 완성되었습니다.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">개발 여정</div>
+        <h2>작은 복원 아이디어부터 10레벨 플레이 가능한 프로토타입까지.</h2>
+        <ul class="update-list">
+          <li><span>2025년 여름</span><strong>오리지널 컨셉</strong><p>Nature Seed은 연결, 자연, 복원에 관한 차분한 모바일 퍼즐에 대한 아이디어로 시작되었습니다.</p></li>
+          <li><span>2025년 10월</span><strong>Seed 및 Water Drop ID</strong><p>GDD가 완성되었고, Seed과 Water Drop이 게임 비주얼 아이덴티티의 감성적 중심이 되었습니다.</p></li>
+          <li><span>2025년 12월</span><strong>개발 시작</strong><p>첫 번째 페이퍼 레벨이 계획된 후 적극적인 개발이 시작되었고 핵심 시스템이 플레이 가능한 형태로 전환되었습니다.</p></li>
+          <li><span>2026년 2월</span><strong>대규모 드래프트 레벨 패스</strong><p>게임은 대략적인 대규모 콘텐츠 패스에 도달하여 향후 다듬기, 균형 및 제작 개선을 위한 기반을 마련했습니다.</p></li>
+          <li><span>2026년 3월~4월</span><strong>메커니즘 및 레벨 검토</strong><p>게임을 더욱 차분하고 명확하며 집중적으로 유지하기 위해 추가 메커니즘과 초안 레벨을 검토하고 단순화하고 재작업했습니다.</p></li>
+          <li><span>2026년 7월</span><strong>수직 프로토타입 합격</strong><p>현재 빌드는 10개의 레벨, 제한된 선 그리기, 효율성 별, 지속적인 진행 및 안정적인 라인 생성을 하나의 플레이 가능한 루프로 제공합니다.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">관련 세계</div>
+        <h2>차분한 선 물리학에서 다음 WillowinWorld 후크로 이동하세요.</h2>
+        <p class="related-worlds-copy">Nature Seed은 포트폴리오의 편안한 그리기-해결 측면입니다. 스튜디오의 아늑한 캔디 병합 퍼즐, 색상 파괴 물리 아케이드 및 하드코어 회전 타워 하강과 비교해 보세요.</p>
+        <div class="related-world-grid" aria-label="관련 WillowinWorld 게임 페이지">
+          <a class="related-world-link is-primary" href="candy-shop.html">
+            <span class="related-world-kicker">아늑한 병합 퍼즐</span>
+            <strong>Candy Shop</strong>
+            <p>사탕을 떨어뜨리고, 어울리는 사탕을 합치고, 용기 압력을 관리하고, 소프트 물리학을 중심으로 긴 세션 진행을 구축하세요.</p>
+            <span class="related-world-meta">사탕 합치기 게임</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">컬러 물리 아케이드</span>
+            <strong>Paint Blasters</strong>
+            <p>다양한 색상의 발사체를 혼합하여 타워의 약점을 겨냥하고 한 발의 사격을 연쇄 반응으로 전환하세요.</p>
+            <span class="related-world-meta">색 파괴 퍼즐</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">하드코어 아케이드</span>
+            <strong>Ball is God?!</strong>
+            <p>Espa을 중심으로 적대적인 타워를 회전하고 콤보 스매시를 구축하고 신화 세계를 가로지르는 보스의 압력에서 살아남으세요.</p>
+            <span class="related-world-meta">수직 하강 아케이드</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">언론/출판사</span>
+            <strong>포트폴리오 정보</strong>
+            <p>하나의 컴팩트한 보도 자료 섹션에서 게임 상태, 공개 자산, 장르, 후크 및 게시자 컨텍스트를 검토합니다.</p>
+            <span class="related-world-meta">WillowinWorld 프레스 키트</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Nature Seed FAQ</div>
+        <h2>플레이어, 언론, 출판 파트너를 위한 답변입니다.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Nature Seed은 어떤 퍼즐인가요?</h3><p>제한된 선이 두 캐릭터가 만나는 데 도움이 되는 물리적 개체가 되는 편안한 그림 그리기 물리 퍼즐입니다.</p></article>
+          <article class="detail-card"><h3>게임플레이는 어떻게 진행되나요?</h3><p>지형을 읽고, 제한된 경로를 그리고, 두 캐릭터가 이에 반응하는 것을 관찰하고, 경로에 더 깔끔한 각도가 필요할 때 다시 그립니다.</p></article>
+          <article class="detail-card"><h3>무엇이 다른가요?</h3><p>고압 타이머나 시끄러운 고장보다는 차분한 복원, 판독 가능한 라인 물리학 및 효율적인 단일 라인 솔루션에 중점을 둡니다.</p></article>
+          <article class="detail-card"><h3>현재 상황은 어떤가요?</h3><p>현재 10개 레벨의 플레이 가능한 프로토타입으로 활발히 개발 중입니다. 드로잉 느낌, 진행성, 가독성 및 모바일 안정성에 중점을 둡니다.</p></article>
+          <article class="detail-card"><h3>공공자산을 사용할 수 있나요?</h3><p>예, 언론, 출판사 리뷰 및 매장 참조용입니다. 소스 자산은 직접 요청하지 않는 한 비공개로 유지됩니다.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Nature Seed 개발 로그</div>
+        <h2>변경된 내용과 시기</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">2026년 7월 31일</time><strong>2단계 복원 및 안정성 통과</strong><p>레벨 2는 이제 보다 안정적인 레벨 설정, 충돌 검사 및 완료 피드백과 함께 프로덕션 배경 쌍을 사용합니다.</p></li>
+          <li><span>2026년 7월</span><strong>10레벨 플레이 가능한 프로토타입</strong><p>현재 빌드는 제한된 물리적 선 그리기, 효율성 별, 지속적인 진행 및 10개 레벨에 걸친 복원 피드백을 결합합니다.</p></li>
+          <li><span>2026년 4월</span><strong>레벨 재작업 패스</strong><p>불필요한 복잡성을 제거하고 모바일 가독성을 향상시키기 위해 내부 검토 후 여러 초안 수준이 재작업되었습니다.</p></li>
+          <li><span>2026년 3월</span><strong>역학 검토</strong><p>팀에서는 추가 메커니즘을 테스트한 후 경험에 과부하가 걸리는 메커니즘을 제거했습니다.</p></li>
+          <li><span>2026년 2월</span><strong>대규모 드래프트 레벨 패스</strong><p>대규모 러프 콘텐츠 패스는 이후의 다듬기, 균형 및 생산 개선을 위한 기반이 되었습니다.</p></li>
+          <li><span>2025년 12월</span><strong>개발 시작</strong><p>핵심 시스템은 컨셉과 GDD에서 플레이 가능한 형태로 이동하기 시작했습니다.</p></li>
+          <li><span>2025년 여름</span><strong>오리지널 컨셉</strong><p>Nature Seed의 첫 번째 버전은 연결, 자연 및 복원에 대한 차분한 퍼즐 아이디어로 시작되었습니다.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Nature Seed은 WillowinWorld 게임입니다.</strong>
+        <span>그리기-풀기 물리학, 수채화 복원 및 완성할 가치가 있는 작은 길.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Nature Seed 바닥글 탐색">
+        <a href="../index.html#games">모든 게임</a>
+        <a href="../press-kit.html">보도자료</a>
+        <a href="../privacy.html">개인정보 보호</a>
+        <a href="../legal.html">법적</a>
+        <a href="mailto:contact@willowinworld.com?subject=Nature%20Seed">연락처</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

@@ -1,0 +1,495 @@
+- generic [ref=f1e1]:
+  - link "Zum Hauptinhalt springen" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - status: Magie freigeschaltet – Willkommen bei WillowinWorld
+  - status
+  - generic [ref=f1e3]:
+    - banner [ref=f1e4]:
+      - generic [ref=f1e5]:
+        - link "WillowinWorld nach Hause" [ref=f1e6] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f1e8]:
+            - generic [ref=f1e9]: W
+            - text: illo
+            - generic [ref=f1e10]: w
+            - text: in
+            - generic [ref=f1e11]: W
+            - text: orld
+        - navigation "Primäre Navigation" [ref=f1e12]:
+          - link "Startseite" [ref=f1e13] [cursor=pointer]:
+            - /url: "#home"
+          - link "Spiele" [ref=f1e14] [cursor=pointer]:
+            - /url: "#games"
+          - link "Studio" [ref=f1e15] [cursor=pointer]:
+            - /url: "#studio"
+          - link "Devlog" [ref=f1e16] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "Pressemappe" [ref=f1e17] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "Kontakt" [ref=f1e18] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=f1e19]:
+          - button "Kontaktieren Sie das Studio" [ref=f1e20] [cursor=pointer]
+          - button "Thema wechseln" [ref=f1e21] [cursor=pointer]
+          - navigation "Sprache" [ref=f1e24]:
+            - group [ref=f1e25]:
+              - generic "Wählen Sie die Sprache" [active] [ref=f1e26] [cursor=pointer]: DE
+              - generic [ref=f1e422]:
+                - link "English" [ref=f1e423] [cursor=pointer]:
+                  - /url: ../index.html
+                  - generic [ref=f1e425]: en
+                - link "العربية" [ref=f1e426] [cursor=pointer]:
+                  - /url: ../ar/index.html
+                  - generic [ref=f1e428]: ar
+                - link "Հայերեն" [ref=f1e429] [cursor=pointer]:
+                  - /url: ../hy/index.html
+                  - generic [ref=f1e431]: hy
+                - link "বাংলা" [ref=f1e432] [cursor=pointer]:
+                  - /url: ../bn/index.html
+                  - generic [ref=f1e434]: bn
+                - link "Български" [ref=f1e435] [cursor=pointer]:
+                  - /url: ../bg/index.html
+                  - generic [ref=f1e437]: bg
+                - link "简体中文" [ref=f1e438] [cursor=pointer]:
+                  - /url: ../zh-hans/index.html
+                  - generic [ref=f1e440]: zh-Hans
+                - link "繁體中文" [ref=f1e441] [cursor=pointer]:
+                  - /url: ../zh-hant/index.html
+                  - generic [ref=f1e443]: zh-Hant
+                - link "Čeština" [ref=f1e444] [cursor=pointer]:
+                  - /url: ../cs/index.html
+                  - generic [ref=f1e446]: cs
+                - link "Dansk" [ref=f1e447] [cursor=pointer]:
+                  - /url: ../da/index.html
+                  - generic [ref=f1e449]: da
+                - link "Nederlands" [ref=f1e450] [cursor=pointer]:
+                  - /url: ../nl/index.html
+                  - generic [ref=f1e452]: nl
+                - link "Filipino" [ref=f1e453] [cursor=pointer]:
+                  - /url: ../fil/index.html
+                  - generic [ref=f1e455]: fil
+                - link "Suomi" [ref=f1e456] [cursor=pointer]:
+                  - /url: ../fi/index.html
+                  - generic [ref=f1e458]: fi
+                - link "Français" [ref=f1e459] [cursor=pointer]:
+                  - /url: ../fr/index.html
+                  - generic [ref=f1e461]: fr
+                - link "Deutsch" [ref=f1e462] [cursor=pointer]:
+                  - /url: index.html
+                  - generic [ref=f1e464]: de
+                - link "Ελληνικά" [ref=f1e465] [cursor=pointer]:
+                  - /url: ../el/index.html
+                  - generic [ref=f1e467]: el
+                - link "עברית" [ref=f1e468] [cursor=pointer]:
+                  - /url: ../he/index.html
+                  - generic [ref=f1e470]: he
+                - link "हिन्दी" [ref=f1e471] [cursor=pointer]:
+                  - /url: ../hi/index.html
+                  - generic [ref=f1e473]: hi
+                - link "Magyar" [ref=f1e474] [cursor=pointer]:
+                  - /url: ../hu/index.html
+                  - generic [ref=f1e476]: hu
+                - link "Bahasa Indonesia" [ref=f1e477] [cursor=pointer]:
+                  - /url: ../id/index.html
+                  - generic [ref=f1e479]: id
+                - link "Italiano" [ref=f1e480] [cursor=pointer]:
+                  - /url: ../it/index.html
+                  - generic [ref=f1e482]: it
+                - link "日本語" [ref=f1e483] [cursor=pointer]:
+                  - /url: ../ja/index.html
+                  - generic [ref=f1e485]: ja
+                - link "한국어" [ref=f1e486] [cursor=pointer]:
+                  - /url: ../ko/index.html
+                  - generic [ref=f1e488]: ko
+                - link "Bahasa Melayu" [ref=f1e489] [cursor=pointer]:
+                  - /url: ../ms/index.html
+                  - generic [ref=f1e491]: ms
+                - link "Norsk" [ref=f1e492] [cursor=pointer]:
+                  - /url: ../no/index.html
+                  - generic [ref=f1e494]: "no"
+                - link "فارسی" [ref=f1e495] [cursor=pointer]:
+                  - /url: ../fa/index.html
+                  - generic [ref=f1e497]: fa
+                - link "Polski" [ref=f1e498] [cursor=pointer]:
+                  - /url: ../pl/index.html
+                  - generic [ref=f1e500]: pl
+                - link "Português (Brasil)" [ref=f1e501] [cursor=pointer]:
+                  - /url: ../pt/index.html
+                  - generic [ref=f1e503]: pt-BR
+                - link "Português (Portugal)" [ref=f1e504] [cursor=pointer]:
+                  - /url: ../pt-pt/index.html
+                  - generic [ref=f1e506]: pt-PT
+                - link "Қазақша" [ref=f1e507] [cursor=pointer]:
+                  - /url: ../kk/index.html
+                  - generic [ref=f1e509]: kk
+                - link "Română" [ref=f1e510] [cursor=pointer]:
+                  - /url: ../ro/index.html
+                  - generic [ref=f1e512]: ro
+                - link "Русский" [ref=f1e513] [cursor=pointer]:
+                  - /url: ../ru/index.html
+                  - generic [ref=f1e515]: ru
+                - link "Español (España)" [ref=f1e516] [cursor=pointer]:
+                  - /url: ../es/index.html
+                  - generic [ref=f1e518]: es-ES
+                - link "Español (Latinoamérica)" [ref=f1e519] [cursor=pointer]:
+                  - /url: ../es-419/index.html
+                  - generic [ref=f1e521]: es-419
+                - link "Kiswahili" [ref=f1e522] [cursor=pointer]:
+                  - /url: ../sw/index.html
+                  - generic [ref=f1e524]: sw
+                - link "Svenska" [ref=f1e525] [cursor=pointer]:
+                  - /url: ../sv/index.html
+                  - generic [ref=f1e527]: sv
+                - link "Татарча" [ref=f1e528] [cursor=pointer]:
+                  - /url: ../tt/index.html
+                  - generic [ref=f1e530]: tt
+                - link "ไทย" [ref=f1e531] [cursor=pointer]:
+                  - /url: ../th/index.html
+                  - generic [ref=f1e533]: th
+                - link "Türkçe" [ref=f1e534] [cursor=pointer]:
+                  - /url: ../tr/index.html
+                  - generic [ref=f1e536]: tr
+                - link "Українська" [ref=f1e537] [cursor=pointer]:
+                  - /url: ../uk/index.html
+                  - generic [ref=f1e539]: uk
+                - link "اردو" [ref=f1e540] [cursor=pointer]:
+                  - /url: ../ur/index.html
+                  - generic [ref=f1e542]: ur
+                - link "O‘zbekcha" [ref=f1e543] [cursor=pointer]:
+                  - /url: ../uz/index.html
+                  - generic [ref=f1e545]: uz
+                - link "Tiếng Việt" [ref=f1e546] [cursor=pointer]:
+                  - /url: ../vi/index.html
+                  - generic [ref=f1e548]: vi
+    - main [ref=f1e28]:
+      - generic [ref=f1e29]:
+        - generic [ref=f1e30]:
+          - generic [ref=f1e31]:
+            - generic [ref=f1e32]: Indie-Mobile-Game-Studio
+            - heading "WillowinWorld Kleine Spiele. Lebendige Welten." [level=1] [ref=f1e33]:
+              - generic [ref=f1e34]: WillowinWorld
+              - generic [ref=f1e35]: Kleine Spiele. Lebendige Welten.
+            - paragraph [ref=f1e36]: Taktile Puzzle- und Arcade-Spiele, bei denen jedes Ziehen, Fallenlassen, Schießen und Fallen die Welt verändert.
+            - generic [ref=f1e37]:
+              - link "Spiele entdecken" [ref=f1e38] [cursor=pointer]:
+                - /url: "#games"
+              - link "Pressemappe" [ref=f1e39] [cursor=pointer]:
+                - /url: press-kit.html
+            - navigation "Empfohlene WillowinWorld-Spiele" [ref=f1e40]:
+              - link "Nature Seed Draw-to-solve-Physik" [ref=f1e41] [cursor=pointer]:
+                - /url: "#nature-card"
+                - strong [ref=f1e42]: Nature Seed
+                - generic [ref=f1e43]: Draw-to-solve-Physik
+              - link "Candy Shop gemütliches Merge-Puzzle" [ref=f1e44] [cursor=pointer]:
+                - /url: "#candy-card"
+                - strong [ref=f1e45]: Candy Shop
+                - generic [ref=f1e46]: gemütliches Merge-Puzzle
+              - link "Paint Blasters Farbkettenreaktionen" [ref=f1e47] [cursor=pointer]:
+                - /url: "#paint-card"
+                - strong [ref=f1e48]: Paint Blasters
+                - generic [ref=f1e49]: Farbkettenreaktionen
+              - link "Ball is God?! vertikaler Arcade-Abstieg" [ref=f1e50] [cursor=pointer]:
+                - /url: "#ball-card"
+                - strong [ref=f1e51]: Ball is God?!
+                - generic [ref=f1e52]: vertikaler Arcade-Abstieg
+          - 'img "Aktuelles Spotlight: Nature Seed-Wiederherstellungsvorschau" [ref=f1e53]':
+            - generic [ref=f1e54]:
+              - generic [ref=f1e63]:
+                - generic [ref=f1e64]: Aktuelles Spotlight · Draw-to-Solve
+                - strong [ref=f1e65]: Nature Seed
+              - generic [ref=f1e66]:
+                - generic [ref=f1e67]: Skizze
+                - generic [ref=f1e68]: Verbinden
+                - generic [ref=f1e69]: Blüte
+            - generic [ref=f1e73]: Vier Welten
+            - generic [ref=f1e75]: Spotlight · Nature Seed-Prototyp
+        - button [ref=f1e81] [cursor=pointer]: t
+        - button [ref=f1e82] [cursor=pointer]: a
+      - generic [ref=f1e83]:
+        - generic [ref=f1e84]:
+          - generic [ref=f1e85]:
+            - generic [ref=f1e86]:
+              - generic [ref=f1e87]: Unsere Welten
+              - heading "Vier Welten. Eine Berührung entfernt." [level=2] [ref=f1e88]
+            - paragraph [ref=f1e89]: Zeichnen Sie physische Pfade, fügen Sie Süßigkeiten zusammen, bauen Sie Farbaufnahmen oder drehen Sie einen göttlichen Turm. Jedes Spiel beginnt mit einer lesbaren mobilen Aktion.
+          - group "Spielfilter" [ref=f1e90]:
+            - button "Alle" [pressed] [ref=f1e91] [cursor=pointer]
+            - button "Arcade" [ref=f1e92] [cursor=pointer]
+            - button "Rätsel" [ref=f1e93] [cursor=pointer]
+            - button "Physik" [ref=f1e94] [cursor=pointer]
+            - button "Gemütlich" [ref=f1e95] [cursor=pointer]
+          - generic [ref=f1e96]:
+            - article "Nature Seed Physik-Rätsel zum Lösen durch Zeichnen" [ref=f1e97]:
+              - generic [ref=f1e98]:
+                - img "Nature Seed Symbol für ein Naturphysik-Rätselspiel, bei dem es darum geht, es zu lösen" [ref=f1e106]
+                - generic [ref=f1e107]:
+                  - generic [ref=f1e108]: Physik-Rätsel zum Lösen durch Zeichnen
+                  - heading "Nature Seed" [level=3] [ref=f1e109]
+              - generic [ref=f1e110]:
+                - generic [ref=f1e111]: Spielbarer Prototyp
+                - paragraph [ref=f1e113]: Nature Seed ist ein entspannendes mobiles Physik-Puzzle, bei dem es darum geht, ein begrenztes Linienbudget auszugeben, um Water Drop und Seed zusammenzubringen. Zehn aktuelle Level verbinden physische Striche, Leistungsfähigkeiten, anhaltenden Fortschritt und Aquarell-Restaurierung.
+                - generic [ref=f1e114]:
+                  - generic [ref=f1e115]: Mobil
+                  - generic [ref=f1e116]: Draw-to-Solve
+                  - generic [ref=f1e117]: Linienphysik
+                - generic [ref=f1e118]:
+                  - link "Entdecken Sie Nature Seed" [ref=f1e119] [cursor=pointer]:
+                    - /url: games/nature-seed.html
+                  - link "Fordern Sie Nature Seed-Entwicklungsupdates an" [ref=f1e120] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
+                    - text: Aktualisierungen anfordern
+            - article "Candy Shop gemütliches Süßigkeiten-Zusammenführungspuzzle" [ref=f1e121]:
+              - generic [ref=f1e122]:
+                - img "Candy Shop Cozy Candy Merge Puzzlespiel-Symbol" [ref=f1e126]
+                - generic [ref=f1e127]:
+                  - generic [ref=f1e128]: Lässiges Merge-Puzzle
+                  - heading "Candy Shop" [level=3] [ref=f1e129]
+              - generic [ref=f1e130]:
+                - generic [ref=f1e131]: Aktive Entwicklung
+                - paragraph [ref=f1e133]: Candy Shop ist ein gemütliches mobiles Physik-Merge-Puzzle mit einer vollständigen 13-Bonbon-Entwicklung, zehn Containern, die das Feld neu schreiben, acht Spezialeffekten und einer Planungsebene, die sich um Halten, Landungsvorschau und die Warteschlange für die nächsten drei dreht.
+                - generic [ref=f1e134]:
+                  - generic [ref=f1e135]: Mobil
+                  - generic [ref=f1e136]: Candy Merge
+                  - generic [ref=f1e137]: Physik-Puzzle
+                - generic [ref=f1e138]:
+                  - link "Entdecken Sie Candy Shop" [ref=f1e139] [cursor=pointer]:
+                    - /url: games/candy-shop.html
+                  - link "Fordern Sie Candy Shop-Entwicklungsupdates an" [ref=f1e140] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
+                    - text: Aktualisierungen anfordern
+            - article "Paint Blasters Farbzerstörungs-Physik-Puzzle-Arcade" [ref=f1e141]:
+              - generic [ref=f1e142]:
+                - img "Paint Blasters Farbphysik-Puzzle-Arcade-Spielsymbol" [ref=f1e166]
+                - generic [ref=f1e167]:
+                  - generic [ref=f1e168]: Physik-Puzzle/Arcade-Hybrid
+                  - heading "Paint Blasters" [level=3] [ref=f1e169]
+              - generic [ref=f1e170]:
+                - generic [ref=f1e171]: Produktionsprototyp
+                - paragraph [ref=f1e173]: Paint Blasters ist ein mobiles physikalisches Farbzerstörungsrätsel, bei dem drei Farbeingaben zu einem von 35 verfassten Projektilrezepten aufgelöst werden. Zielen Sie auf sieben Blockarchetypen und verwandeln Sie einen genauen Treffer in eine turmweite Kettenreaktion.
+                - generic [ref=f1e174]:
+                  - generic [ref=f1e175]: Mobil
+                  - generic [ref=f1e176]: Farbpuzzle
+                  - generic [ref=f1e177]: Physik-Arcade
+                - generic [ref=f1e178]:
+                  - link "Entdecken Sie Paint Blasters" [ref=f1e179] [cursor=pointer]:
+                    - /url: games/paint-blasters.html
+                  - link "Fordern Sie Paint Blasters-Entwicklungsupdates an" [ref=f1e180] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
+                    - text: Aktualisierungen anfordern
+            - article "Ball is God Hardcore-Arcade-Spiel mit vertikalem Abstieg" [ref=f1e181]:
+              - generic [ref=f1e182]:
+                - img "Ball is God Arcade-Spielsymbol mit vertikalem Abstiegsturm" [ref=f1e205]
+                - generic [ref=f1e206]:
+                  - generic [ref=f1e207]: Arcade mit vertikalem Abstieg
+                  - heading "Ball is God?!" [level=3] [ref=f1e208]
+              - generic [ref=f1e209]:
+                - generic [ref=f1e210]: Aktive Produktion
+                - paragraph [ref=f1e212]: Ball is God?! ist eine Hardcore-Arcade mit vertikalem Abstieg, bei der horizontaler Widerstand den Turm um Espa dreht. Überspringen Sie drei Landungen, um einen Schlag auszuführen, nutzen Sie einen Abklingzeitschild gegen einen tödlichen Treffer und tragen Sie Karma durch zehn mythische Orte.
+                - generic [ref=f1e213]:
+                  - generic [ref=f1e214]: Mobil
+                  - generic [ref=f1e215]: Vertikaler Abstieg
+                  - generic [ref=f1e216]: Drehen Sie den Turm
+                - generic [ref=f1e217]:
+                  - link "Entdecken Sie Ball is God?!" [ref=f1e218] [cursor=pointer]:
+                    - /url: games/ball-is-god.html
+                  - link "Fordern Sie Ball is God-Entwicklungsupdates an" [ref=f1e219] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Ball%20is%20God%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Ball%20is%20God%20development%20updates.
+                    - text: Aktualisierungen anfordern
+        - button [ref=f1e220] [cursor=pointer]: s
+      - generic [ref=f1e221]:
+        - generic [ref=f1e222]:
+          - generic [ref=f1e223]:
+            - heading "Eine Aktion. Eine lebendige Welt." [level=2] [ref=f1e225]
+            - paragraph [ref=f1e226]: Jedes Spiel beginnt mit einer One-Touch-Regel – Zeichnen, Ablegen, Mischen oder Ausweichen – und fügt dann Charakter, klares Feedback und Konsequenzen hinzu, die Spieler ohne Handbuch lesen können.
+          - generic [ref=f1e227]:
+            - article [ref=f1e228]:
+              - heading "Spielerische Interaktion" [level=3] [ref=f1e232]
+              - paragraph [ref=f1e233]: Auf jedes Tippen, jede Linie, jedes Tropfen und jeden Schuss wird sofort eine visuelle Reaktion ausgelöst, sodass Ursache und Wirkung klar bleiben.
+            - article [ref=f1e234]:
+              - heading "Lesbares Design" [level=3] [ref=f1e238]
+              - paragraph [ref=f1e239]: Bewegung, Kontrast und Tempo zeigen das Ziel und die Konsequenz, bevor es eines erklärenden Textes bedarf.
+            - article [ref=f1e240]:
+              - heading "Charakteridentität" [level=3] [ref=f1e244]
+              - paragraph [ref=f1e245]: Maskottchen, Objekte und Benutzeroberfläche haben Persönlichkeit, bevor sie Dekoration haben.
+            - article [ref=f1e246]:
+              - heading "Mobile-first UX" [level=3] [ref=f1e250]
+              - paragraph [ref=f1e251]: Steuerung, Rhythmus und Layout sind für Daumen, kurze Sitzungen, lesbare Benutzeroberfläche und klare Entscheidungen auf kleinen Bildschirmen ausgelegt.
+            - article [ref=f1e252]:
+              - heading "Befriedigendes Feedback" [level=3] [ref=f1e256]
+              - paragraph [ref=f1e257]: Impact-, Merge-, Splash-, Win- und Fail-Momente werden abgestimmt, bis sie sich knackig anfühlen.
+            - article [ref=f1e258]:
+              - heading "Gemütliche Tiefe" [level=3] [ref=f1e262]
+              - paragraph [ref=f1e263]: Die sanfte Präsentation lässt Raum für Planung, Beherrschung und Wiederholung.
+        - button [ref=f1e264] [cursor=pointer]: t
+      - generic [ref=f1e265]:
+        - generic [ref=f1e266]:
+          - article [ref=f1e267]:
+            - heading "Ein kleines Studio für taktile mobile Welten." [level=2] [ref=f1e268]
+            - paragraph [ref=f1e269]: "WillowinWorld entwickelt vier Mobile-First-Puzzle- und Arcade-Spiele: Nature Seed, Candy Shop, Paint Blasters und Ball is God?!. Jedes Projekt verfügt über eine öffentliche Spieleseite, den aktuellen Build-Status, ein datiertes Devlog und Presseressourcen."
+            - generic [ref=f1e270]:
+              - generic [ref=f1e271]: Mobile-First-Feeling
+              - generic [ref=f1e272]: Gemütliche Fantasiewelten
+              - generic [ref=f1e273]: Interaktive Systeme
+              - generic [ref=f1e274]: Einzigartige 2D-Kunst
+            - paragraph [ref=f1e275]: Die aktuelle Arbeit umfasst das Ziehen und Lösen von Linien, das Verschmelzen von Süßigkeiten in zehn Behältern, 35 Farbprojektilrezepte und einen Abstieg mit rotierenden Türmen an zehn Standorten.
+          - article [ref=f1e276]:
+            - img "WillowinWorld-Logo mit der magischen Katze, dem Zwillings-W-Zeichen und der Burgwelt" [ref=f1e278]
+            - generic [ref=f1e279]:
+              - heading "Vier Spiele. Vier verschiedene spielbare Systeme." [level=3] [ref=f1e280]
+              - paragraph [ref=f1e281]: Zeichnen Sie einen begrenzten physischen Weg, verwalten Sie einen wechselnden Süßigkeitenbehälter, stellen Sie eine Farbaufnahme zusammen oder drehen Sie einen absteigenden Turm. Öffnen Sie jede Spielseite, um den aktuellen Umfang, den Produktionsstatus und das neueste Update zu erfahren.
+        - button [ref=f1e282] [cursor=pointer]: "n"
+        - button [ref=f1e283] [cursor=pointer]: B
+      - generic [ref=f1e284]:
+        - generic [ref=f1e285]:
+          - heading "Vom ersten Haken zur ausgefeilten mobilen Veröffentlichung." [level=2] [ref=f1e288]:
+            - generic [ref=f1e289]: Vom ersten Haken
+            - generic [ref=f1e290]: zur ausgefeilten mobilen Veröffentlichung.
+          - generic [ref=f1e291]:
+            - article [ref=f1e292]:
+              - text: "01"
+              - heading "Idee" [level=3] [ref=f1e293]
+              - paragraph [ref=f1e294]: Definieren Sie die Fantasie, das klare Genre, das Versprechen des Spielers und den Kern der taktilen Schleife.
+            - article [ref=f1e295]:
+              - text: "02"
+              - heading "Prototyp" [level=3] [ref=f1e296]
+              - paragraph [ref=f1e297]: Erstellen Sie den kürzesten spielbaren Beweis mit echten Eingaben, Rückmeldungen und Fehlerzuständen.
+            - article [ref=f1e298]:
+              - text: "03"
+              - heading "Gefühlstest" [level=3] [ref=f1e299]
+              - paragraph [ref=f1e300]: Optimieren Sie die Steuerung, die Reibung, das Tempo, die Lesbarkeit und ob sich die Schleife nach der Wiederholung immer noch gut anfühlt.
+            - article [ref=f1e301]:
+              - text: "04"
+              - heading "Art Direction" [level=3] [ref=f1e302]
+              - paragraph [ref=f1e303]: Formsilhouetten, Palette, UI-Sprache, Lesbarkeit von Symbolen und Charakteridentität.
+            - article [ref=f1e304]:
+              - text: "05"
+              - heading "Produktion" [level=3] [ref=f1e305]
+              - paragraph [ref=f1e306]: Skalieren Sie Inhalte, Systeme, Fortschritt, Optimierung und technische Grundlagen.
+            - article [ref=f1e307]:
+              - text: "06"
+              - heading "Polnisch" [level=3] [ref=f1e308]
+              - paragraph [ref=f1e309]: Verfeinern Sie Übergänge, VFX, Audio-Beats, Onboarding, Zugänglichkeit und Benutzerkomfort.
+            - article [ref=f1e310]:
+              - text: "07"
+              - heading "Starten" [level=3] [ref=f1e311]
+              - paragraph [ref=f1e312]: Bereiten Sie Shop-Assets, Pressematerialien, Analysen, Live-Updates und Community-Loops vor.
+            - article [ref=f1e313]:
+              - text: "08"
+              - heading "Live-Pflege" [level=3] [ref=f1e314]
+              - paragraph [ref=f1e315]: Messen Sie die Veröffentlichung, hören Sie den Spielern zu und halten Sie jede Welt mit gezielten Updates gesund.
+        - button [ref=f1e316] [cursor=pointer]: P
+        - button [ref=f1e317] [cursor=pointer]: l
+      - generic [ref=f1e318]:
+        - generic [ref=f1e319]:
+          - generic [ref=f1e320]:
+            - generic [ref=f1e321]:
+              - generic [ref=f1e322]: Game Devlogs
+              - heading "Neueste Entwicklernotizen, kein Graben." [level=2] [ref=f1e323]:
+                - generic [ref=f1e324]: Neueste Entwicklernotizen,
+                - generic [ref=f1e325]: kein Graben.
+            - paragraph [ref=f1e326]: Die neueste datierte Notiz von jeder Spieleseite, basierend auf den spielbaren Systemen, die jetzt in den Unity-Builds enthalten sind.
+          - generic [ref=f1e327]:
+            - article [ref=f1e328]:
+              - generic [ref=f1e329]:
+                - generic [ref=f1e330]: Nature Seed
+                - time [ref=f1e331]: 31. Juli 2026
+              - heading "Wiederherstellung und Stabilität der Stufe 2 bestanden" [level=3] [ref=f1e332]
+              - paragraph [ref=f1e333]: Level 2 verwendet jetzt sein Produktions-Hintergrundpaar mit zuverlässigerer Level-Einrichtung, Kollisionsprüfungen und Abschluss-Feedback.
+              - link "Öffnen Sie das Nature Seed-Devlog" [ref=f1e334] [cursor=pointer]:
+                - /url: games/nature-seed.html#devlog
+            - article [ref=f1e335]:
+              - generic [ref=f1e336]:
+                - generic [ref=f1e337]: Candy Shop
+                - time [ref=f1e338]: 31. Juli 2026
+              - heading "Produktionsmenü und HUD-Pass" [level=3] [ref=f1e339]
+              - paragraph [ref=f1e340]: Hauptmenü, Levelauswahl, HUD-Steuerelemente und Befehlssymbole teilen sich jetzt eine visuelle Sprache; Zusätzliche innermotorische Stresstests decken den aktualisierten Ablauf ab.
+              - link "Öffnen Sie das Candy Shop-Devlog" [ref=f1e341] [cursor=pointer]:
+                - /url: games/candy-shop.html#devlog
+            - article [ref=f1e342]:
+              - generic [ref=f1e343]:
+                - generic [ref=f1e344]: Paint Blasters
+                - time [ref=f1e345]: 31. Juli 2026
+              - heading "Physik und Effektstabilität bestanden" [level=3] [ref=f1e346]
+              - paragraph [ref=f1e347]: Projektilverhalten, Match-3-Auflösung und Treffereffekte wurden getestet und verschärft, um konsistentere Combo-Ergebnisse zu erzielen.
+              - link "Öffnen Sie das Paint Blasters-Devlog" [ref=f1e348] [cursor=pointer]:
+                - /url: games/paint-blasters.html#devlog
+            - article [ref=f1e349]:
+              - generic [ref=f1e350]:
+                - generic [ref=f1e351]: Ball is God?!
+                - time [ref=f1e352]: 31. Juli 2026
+              - heading "Weltoberflächen und Gefahrenvalidierung" [level=3] [ref=f1e353]
+              - paragraph [ref=f1e354]: Charakterpräsentation, deterministische Generierung und Dornengefahren erhielten einen koordinierten visuellen und Produktionsvalidierungsdurchlauf.
+              - link "Öffnen Sie das Ball is God?!-Devlog" [ref=f1e355] [cursor=pointer]:
+                - /url: games/ball-is-god.html#devlog
+        - button [ref=f1e356] [cursor=pointer]: s
+      - generic [ref=f1e357]:
+        - generic [ref=f1e358]:
+          - heading "Schnelle Antworten für Spieler, Presse und Verlage." [level=2] [ref=f1e361]
+          - generic [ref=f1e362]:
+            - article [ref=f1e363]:
+              - button "Welche Art von Spielen macht WillowinWorld?" [ref=f1e364] [cursor=pointer]
+            - article [ref=f1e366]:
+              - button "Berücksichtigt die Website die Einstellungen zur Bewegungsreduzierung?" [ref=f1e367] [cursor=pointer]
+            - article [ref=f1e369]:
+              - button "Folgt die Website meinem Tages- oder Nachtthema?" [ref=f1e370] [cursor=pointer]
+            - article [ref=f1e372]:
+              - button "Arbeiten Sie mit Verlagen zusammen?" [ref=f1e373] [cursor=pointer]
+            - article [ref=f1e375]:
+              - button "Sind Ihre Spiele mobile-first?" [ref=f1e376] [cursor=pointer]
+            - article [ref=f1e378]:
+              - button "Kann ich ein Portfolio senden?" [ref=f1e379] [cursor=pointer]
+            - article [ref=f1e381]:
+              - button "Kann ich mit dem Studio zusammenarbeiten?" [ref=f1e382] [cursor=pointer]
+        - button [ref=f1e384] [cursor=pointer]: i
+        - button [ref=f1e385] [cursor=pointer]: r
+      - generic [ref=f1e386]:
+        - generic [ref=f1e387]:
+          - heading "Sprich mit WillowinWorld." [level=2] [ref=f1e388]
+          - paragraph [ref=f1e389]: Wir freuen uns über Spieler-Feedback, Presseanfragen, Publisher-Gespräche und produktionsorientierte Kooperationen.
+          - generic [ref=f1e390]:
+            - button "Kontaktieren Sie das Studio" [ref=f1e391] [cursor=pointer]
+            - link "Pressemappe" [ref=f1e392] [cursor=pointer]:
+              - /url: press-kit.html
+        - button [ref=f1e393] [cursor=pointer]: a
+        - button [ref=f1e394] [cursor=pointer]: e
+    - contentinfo [ref=f1e395]:
+      - generic [ref=f1e396]:
+        - link "WillowinWorld nach Hause" [ref=f1e398] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f1e400]:
+            - generic [ref=f1e401]: W
+            - text: illo
+            - generic [ref=f1e402]: w
+            - text: in
+            - generic [ref=f1e403]: W
+            - text: orld
+        - navigation "Fußzeilennavigation" [ref=f1e404]:
+          - link "Spiele" [ref=f1e405] [cursor=pointer]:
+            - /url: "#games"
+          - link "Studio" [ref=f1e406] [cursor=pointer]:
+            - /url: "#studio"
+          - link "Devlog" [ref=f1e407] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "Pressemappe" [ref=f1e408] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "Kontakt" [ref=f1e409] [cursor=pointer]:
+            - /url: "#contact"
+          - link "Verlorene Sterne" [ref=f1e410] [cursor=pointer]:
+            - /url: /404.html
+          - button "Magische Jagd" [ref=f1e411] [cursor=pointer]
+        - generic [ref=f1e412]:
+          - link "contact@willowinworld.com" [ref=f1e413] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com
+          - link "Nature Seed-Spieltest" [ref=f1e414] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Nature%20Seed%20Playtest%20Access
+          - link "Asset-Nutzung" [ref=f1e415] [cursor=pointer]:
+            - /url: asset-usage.html
+          - link "Datenschutz" [ref=f1e416] [cursor=pointer]:
+            - /url: privacy.html
+          - link "Legal" [ref=f1e417] [cursor=pointer]:
+            - /url: legal.html
+          - button "Sicherheit" [ref=f1e418] [cursor=pointer]
+          - link "Herausgeberkontakt" [ref=f1e419] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Publisher%20inquiry
+          - button "Karriere / Zusammenarbeit" [ref=f1e420] [cursor=pointer]
+        - generic [ref=f1e421]: © 2026 WillowinWorld. Alle Rechte vorbehalten.

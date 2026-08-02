@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="cs">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nature Seed je losování k vyřešení fyzikální hádanky v aktivním vývoji. Nakreslete cestu omezenou inkoustem, spojte Water Drop a Seed a obnovte akvarelový les.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#07162d" id="metaThemeColor">
+  <meta property="og:title" content="Nature Seed – Fyzikální logická hra kreslením k řešení">
+  <meta property="og:description" content="Nakreslete fyzickou cestu s omezeným inkoustem, spojte Water Drop a Seed a obnovte přírodu v relaxačním mobilním puzzle WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Nature Seed kreslení a vyřešení čárové fyzikální hádanky od WillowinWorld">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworld.com/cs/games/nature-seed.html">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nature Seed – Odpočinková fyzikální logická hra s kreslením k řešení">
+  <meta name="twitter:description" content="Nakreslete cestu s omezeným inkoustem, spojte Water Drop a Seed a obnovte akvarelový les v tomto mobilním fyzikálním puzzle.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/nature-seed-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="Nature Seed losování a řešení fyzikální hádanky v obnoveném akvarelovém lese">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Nature Seed | Odpočinková hra na kreslení k řešení fyziky</title>
+  <link rel="canonical" href="https://willowinworld.com/cs/games/nature-seed.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorld",
+          "item": "https://willowinworld.com/cs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hry",
+          "item": "https://willowinworld.com/cs/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nature Seed",
+          "item": "https://willowinworld.com/cs/games/nature-seed.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/cs/games/nature-seed.html#game",
+      "name": "Nature Seed",
+      "url": "https://willowinworld.com/cs/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "description": "Odpočinkové losování k vyřešení fyzikální hádanky, kde linka s omezeným množstvím inkoustu spojuje Water Drop a Seed a obnovuje akvarelový les.",
+      "genre": [
+        "Nakreslete a vyřešte hádanku",
+        "Fyzikální puzzle",
+        "Relaxační puzzle",
+        "Hádanka pro kreslení čar"
+      ],
+      "gamePlatform": "Mobil",
+      "creativeWorkStatus": "Aktivní vývoj – hratelný prototyp",
+      "dateModified": "2026-07-31",
+      "mainEntityOfPage": "https://willowinworld.com/cs/games/nature-seed.html",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "cs"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
+  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../../css/nature-scene.css">
+  <link rel="stylesheet" href="../../css/game-shell.css">
+  <link rel="stylesheet" href="../../css/nature-page.css">
+  <link rel="stylesheet" href="../../css/game-content.css">
+  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+</head>
+<body class="game-detail-page game-theme-nature nature-seed-page" data-theme="dark">
+  <a class="skip-link" href="#game-main">Přejít na Nature Seed</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — zpět na WillowinWorld">
+      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Ikona mobilní logické hry Nature Seed" fetchpriority="high" decoding="async">
+      <span><strong>Nature Seed</strong><small>herní stránka WillowinWorld</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigace na stránce hry">
+      <a href="../index.html">Studio domů</a>
+      <a href="#devlog">Devlog</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Přepnout téma">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Jazyk"><details><summary aria-label="Vyberte jazyk"><span aria-hidden="true">CS</span></summary><div class="language-options"><a href="../../games/nature-seed.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/nature-seed.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/nature-seed.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/nature-seed.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/nature-seed.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/nature-seed.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/nature-seed.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="nature-seed.html" lang="cs" hreflang="cs" aria-current="page"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/nature-seed.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/nature-seed.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/nature-seed.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/nature-seed.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/nature-seed.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/nature-seed.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/nature-seed.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/nature-seed.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/nature-seed.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/nature-seed.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/nature-seed.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/nature-seed.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/nature-seed.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/nature-seed.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/nature-seed.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/nature-seed.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/nature-seed.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/nature-seed.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/nature-seed.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/nature-seed.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/nature-seed.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/nature-seed.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/nature-seed.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/nature-seed.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/nature-seed.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/nature-seed.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/nature-seed.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/nature-seed.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/nature-seed.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/nature-seed.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/nature-seed.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/nature-seed.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/nature-seed.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/nature-seed.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell nature-seed-shell" id="game-main">
+    <div class="nature-page-backdrop ambient-only" aria-hidden="true">
+      <div class="nature-menu-world">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+    </div>
+    <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
+      <div class="nature-hero-bg ambient-only" aria-hidden="true">
+        <div class="nature-stage nature-stage-backdrop">
+          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <picture>
+            <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
+            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+          </picture>
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+            <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
+            <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
+          </svg>
+          <span class="nature-water-drop is-first"></span>
+          <span class="nature-water-drop is-second"></span>
+          <span class="nature-water-drop is-third"></span>
+          <span class="nature-bloom"></span>
+          <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+          <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+        </div>
+      </div>
+      <div class="nature-menu-world ambient-only" aria-hidden="true">
+        <span class="nature-menu-sun"></span>
+        <span class="nature-menu-hill nature-menu-hill-left"></span>
+        <span class="nature-menu-hill nature-menu-hill-right"></span>
+        <span class="nature-menu-river nature-menu-river-top"></span>
+        <span class="nature-menu-river nature-menu-river-bottom"></span>
+        <span class="nature-menu-branch nature-menu-branch-one"></span>
+        <span class="nature-menu-branch nature-menu-branch-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-one"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-two"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-three"></span>
+        <span class="nature-menu-leaf nature-menu-leaf-four"></span>
+      </div>
+
+      <div class="container nature-hero-layout">
+        <div class="nature-hero-copy">
+          <div class="eyebrow">Nature Seed</div>
+          <h1 id="natureHeroTitle">Nakreslete cestu. Dejte je dohromady.</h1>
+          <p class="hero-copy">Meditativní mobilní fyzikální puzzle, kde se součástí úrovně stává tah s omezeným inkoustem a spojuje Water Drop a Seed a probudí akvarelový les.</p>
+          <p class="nature-hero-note">Aktivní vývoj · hratelný prototyp. Aktuální sestavení obsahuje 10 úrovní, hvězdy efektivity linky, trvalý pokrok a stabilní generování fyzické linie.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Po%C5%BE%C3%A1dejte+o+p%C5%99%C3%ADstup+k+Nature+Seed+playtestu">Žádost o přístup k testu Playtest</a>
+            <a class="btn btn-ghost" href="#devlog">Otevřete Devlog</a>
+          </div>
+          <div class="nature-hero-stats" role="group" aria-label="Nature Seed zvýraznění">
+            <span><strong>Kreslit</strong><small>utratit omezený řádkový rozpočet</small></span>
+            <span><strong>Připojit</strong><small>přineste Water Drop do Seed</small></span>
+            <span><strong>Bloom</strong><small>vydělejte obnovenou scénu</small></span>
+          </div>
+        </div>
+
+        <aside class="nature-hero-showcase" aria-label="náhled hry Nature Seed">
+          <div class="nature-device-frame">
+            <div class="nature-stage nature-stage-showcase" aria-hidden="true">
+              <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
+              <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+              </svg>
+              <span class="nature-water-drop is-first"></span>
+              <span class="nature-water-drop is-second"></span>
+              <span class="nature-bloom"></span>
+              <img loading="lazy" class="nature-growth" src="../../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-water" src="../../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+              <img loading="lazy" class="nature-companion nature-companion-seed" src="../../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+            </div>
+            <img loading="lazy" class="nature-showcase-icon" src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Ikona hry Nature Seed s vodními a semennými postavami" decoding="async">
+            <span class="nature-preview-title">
+              <small>Fyzikální puzzle kreslení k řešení</small>
+              <strong>Nature Seed</strong>
+            </span>
+            <span class="nature-cycle"><b>Náčrt</b><b>Vodící voda</b><b>Bloom</b></span>
+            <div class="magic-hud">
+              <span>Hratelný prototyp · Aktivní vývoj</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="container game-page-grid nature-seed-content">
+      <section class="game-proof-section" aria-labelledby="natureProofTitle">
+        <div class="game-proof-layout">
+          <div class="proof-copy">
+            <span class="proof-kicker">Uvnitř aktuálního sestavení</span>
+            <h2 id="natureProofTitle">Linka není dekorace. Stává se z toho hádanka.</h2>
+            <p>Každý provedený tah vytvoří geometrii fyzické kolize. Hráč vyvažuje inkoust, počet čar a tvar a poté sleduje, jak Water Drop a Seed reagují na trasu. Jednořádkové řešení přináší nejčistší tříhvězdičkový výsledek.</p>
+            <span class="proof-status"><b>Stav sestavení</b> Hratelný prototyp</span>
+          </div>
+          <div class="proof-visual">
+            <div class="nature-proof-frames" aria-label="Náčrt Nature Seed a obnovené srovnání úrovní">
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 560px) 44vw, 28vw" width="1600" height="900" alt="Úroveň Nature Seed zobrazená jako tichý náčrt tužkou před vyřešením hádanky" loading="lazy" decoding="async">
+                <figcaption><strong>Přečtěte si náčrt</strong><span>Před vyřešením</span></figcaption>
+              </figure>
+              <figure class="nature-proof-frame">
+                <img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 560px) 44vw, 28vw" width="1280" height="714" alt="Po vyřešení byla obnovena stejná scéna Nature Seed s akvarelovými stromy a postavami" loading="lazy" decoding="async">
+                <figcaption><strong>Získejte květ</strong><span>Po vyřešení</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="proof-facts" aria-label="Ověřená fakta o sestavení Nature Seed">
+          <article><strong>10 aktuálních úrovní</strong><span>Vývoj prototypu řízený daty.</span></article>
+          <article><strong>Limity inkoustu a čar</strong><span>Každá mrtvice má skutečnou cenu.</span></article>
+          <article><strong>Zvládnutí jedné linie</strong><span>Výchozí cesta ke třem hvězdám.</span></article>
+          <article><strong>Trvalý pokrok</strong><span>Odemčené úrovně a výsledky přežívají mezi relacemi.</span></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Přehled hry</div>
+        <h2>Odpočinkové čárové-fyzikální puzzle o spojení dvou malých postaviček.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Slib hráče</h3><p>Nakreslete čistou fyzickou cestu, spojte Water Drop a Seed a sledujte, jak se tichý náčrt vrací k životu.</p></article>
+          <article class="detail-card"><h3>Aktuální sestavení</h3><p>Deset hratelných úrovní kombinuje kreslení dotykem, fyzickou geometrii čar, hvězdy efektivity čar, trvalý postup a zpětnou vazbu při obnově.</p></article>
+          <article class="detail-card"><h3>publikum</h3><p>Hráči, kteří mají rádi klidné logické hry, ekologická témata, fyziku světla, útulné restaurování, krásné 2D umění a mobilní sezení bez stresu.</p></article>
+          <article class="detail-card"><h3>Stav</h3><p>Aktivní vývoj - hratelný prototyp. Současná práce se zaměřuje na kresbu, úroveň čitelnosti, progresi a mobilní stabilitu.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="features">
+        <div class="eyebrow">Vlastnosti</div>
+        <h2>Co hráči dělají ve Nature Seed.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Nakreslete a vyřešte fyzické cesty</h3><p>Každá hádanka začíná terénem, Seed a Water Drop. Úder hráče se stává mostem mezi záměrem a fyzikou.</p></article>
+          <article class="detail-card"><h3>Čitelná fyzikální zpětná vazba</h3><p>Pohyb postav je navržen tak, aby byl srozumitelný na první pohled, takže neúspěšné pokusy působí jako informace namísto náhodného trestu.</p></article>
+          <article class="detail-card"><h3>Odměny za obnovu lesa</h3><p>Vyřešení úrovně přivede scénu zpět k životu s růstem, barvou a malou emocionální zpětnou vazbou namísto pouhé obrazovky skóre.</p></article>
+          <article class="detail-card"><h3>Pohyb hlavolamu jako první na mobilu</h3><p>Krátké ručně vyrobené úrovně, dotykové kreslení a jasné siluety udržují hru pohodlnou pro rychlé relace iOS a Android.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="gameplay-loop">
+        <div class="eyebrow">Herní smyčka</div>
+        <h2>Přečtěte si úroveň, nakreslete trasu a další pokus nechte postavy naučit.</h2>
+        <ul class="update-list">
+          <li><span>Krok 01</span><strong>Přečtěte si náčrt</strong><p>Hráči hledají svahy, mezery, bloky a nejbezpečnější způsob, jak spojit obě postavy.</p></li>
+          <li><span>Krok 02</span><strong>Nakreslete čáru</strong><p>Úder prstem se pro postavy stává fyzickým vodítkem, rampou nebo záchytným bodem.</p></li>
+          <li><span>Krok 03</span><strong>Zavázat se a pozorovat</strong><p>Postavy se pohybují proti fyzické trase, takže úspěch a chyby jsou viditelné bez složitého vysvětlování uživatelského rozhraní.</p></li>
+          <li><span>Krok 04</span><strong>Kvetou nebo zušlechťují</strong><p>Pokud Water Drop dosáhne Seed, les se obnoví. Pokud netrefí, hráč překreslí s jasnějšími informacemi.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">Příběh / svět</div>
+        <h2>Tichý les, žíznivé semínko a hádankový jazyk založený na péči.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed začal jednoduchou otázkou: co když fyzikální hádanka losování nebyla o stlačování objektů k sobě, ale o obnovení něčeho křehkého?</p>
+            <p>Svět je postaven kolem Seed, Water Drop a lesa, který se pomalu vrací z náčrtu k životu. Každá hádanka má působit jako malý akt péče: hráč studuje zemi, kreslí cestu a pomáhá vodě dosáhnout něčeho, co může růst.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Směr návrhu</dt><dd>Klidná fyzika a viditelná obnova</dd></div>
+            <div><dt>Emocionální jádro</dt><dd>Seed, voda a regenerace</dd></div>
+            <div><dt>Interakce</dt><dd>Dotyková kresba s čitelnou příčinou a následkem</dd></div>
+            <div><dt>Odměna za mistrovství</dt><dd>Jednořádkové řešení získává tři hvězdičky</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section nature-story-section">
+        <div class="eyebrow">Úhel vydavatele</div>
+        <h2>Útulné puzzle s jasným mobilním háčkem.</h2>
+        <div class="info-grid">
+          <div>
+            <p>Nature Seed promění jeden omezený tah na úrovňovou geometrii: nakreslete fyzickou trasu, znovu spojte Water Drop a Seed a poté vylepšete stejné řešení pro jednořádkový tříhvězdičkový výsledek.</p>
+          </div>
+          <dl class="game-page-facts">
+            <div><dt>Žánr</dt><dd>Nakreslete a vyřešte fyzikální hádanku</dd></div>
+            <div><dt>Cíl platformy</dt><dd>iOS / Android</dd></div>
+            <div><dt>Tvar relace</dt><dd>Krátké klidné hladiny</dd></div>
+            <div><dt>Primární CTA</dt><dd>Požádejte o přístup k testu přehrávání</dd></div>
+          </dl>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="download-assets">
+        <div class="eyebrow">Stáhnout aktiva</div>
+        <h2>Tisková a tvůrčí díla Nature Seed</h2>
+        <p class="asset-kit-copy">Vybrané náhledy WebP pro redakční pokrytí, recenze vydavatele a odkazy na uspořádání prodejen. Zdrojové soubory v plném rozlišení jsou k dispozici ve studiu na vyžádání.</p>
+        <h3 class="asset-group-title">Značka a znaky</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ikona logické hry Nature Seed nakreslením a vyřešením čáry" loading="lazy" decoding="async"><strong>Ikona hry</strong><span>Ikona puzzle fyziky čáry nakreslením.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Postava vodní kapky Nature Seed pro mobilní fyzikální logickou hru" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Charakterový přínos pro restaurování puzzle fantasy.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Semínková postava Nature Seed pro útulnou logickou hru" loading="lazy" decoding="async"><strong>Seed</strong><span>Základní znak pro Nature Seed.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="aktivum obnovy růstu stromů Nature Seed" loading="lazy" decoding="async"><strong>Růst stromů</strong><span>Odměna za obnovu přírody.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed relaxační pozadí nabídky skládačky" loading="lazy" decoding="async"><strong>Lesní menu</strong><span>Relaxační pozadí nabídky mobilního puzzle.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed ručně kreslené pozadí úrovně fyziky" loading="lazy" decoding="async"><strong>Herní pozadí</strong><span>Ručně kreslené pozadí úrovně fyziky.</span></a>
+        </div>
+        <h3 class="asset-group-title">Nakreslením vyřešte úrovně náčrtu</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-01.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed nákres náčrtu fyziky vody vyřešte kreslením úrovně 01" loading="lazy" decoding="async"><strong>Úroveň náčrtu 01</strong><span>Scéna s návrhem puzzle fyziky vody.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-02.webp 1536w" sizes="(max-width: 760px) 34vw, 76px" width="1536" height="764" alt="Nature Seed kreslení k vyřešení fyzikálního náčrtu vody úroveň 02" loading="lazy" decoding="async"><strong>Úroveň náčrtu 02</strong><span>Scéna návrhu skládačky s vodním směrováním.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-03.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed kreslení k vyřešení fyzikálního náčrtu vody úroveň 03" loading="lazy" decoding="async"><strong>Úroveň náčrtu 03</strong><span>Čárová kresba puzzle scéna.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed kreslení k vyřešení fyzikálního náčrtu vody úroveň 04" loading="lazy" decoding="async"><strong>Úroveň náčrtu 04</strong><span>Scéna s návrhem mobilní fyziky.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed kreslení k vyřešení fyzikálního náčrtu vody úroveň 05" loading="lazy" decoding="async"><strong>Úroveň náčrtu 05</strong><span>Scéna návrhu puzzle vodní cesty.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed náčrt náčrtu fyziky vody vyřešte kreslením úrovně 06" loading="lazy" decoding="async"><strong>Úroveň náčrtu 06</strong><span>Scéna s návrhem puzzle cesty fyziky.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-07.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed nákres náčrtu fyziky vody vyřešte kreslením úrovně 07" loading="lazy" decoding="async"><strong>Úroveň náčrtu 07</strong><span>Kreslená čárová scéna s návrhem puzzle.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-08.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed náčrt náčrtu fyziky vody vyřešte kreslením úrovně 08" loading="lazy" decoding="async"><strong>Úroveň skici 08</strong><span>Scéna návrhu puzzle s tokem vody.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed kreslení k vyřešení fyzikálního náčrtu vody úroveň 09" loading="lazy" decoding="async"><strong>Úroveň náčrtu 09</strong><span>Scéna návrhu skládačky restaurování.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-sketch-level-10.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed náčrt náčrtu fyziky vody vyřešte kreslením úrovně 10" loading="lazy" decoding="async"><strong>Úroveň náčrtu 10</strong><span>Scéna návrhu přírodní puzzle.</span></a>
+        </div>
+        <h3 class="asset-group-title">Obnovené puzzle scény</h3>
+        <div class="asset-list">
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-01.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="714" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 01" loading="lazy" decoding="async"><strong>Obnovena úroveň 01</strong><span>Puzzle scéna obnovy přírody.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-02.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 02" loading="lazy" decoding="async"><strong>Obnovená úroveň 02</strong><span>Obnovená lesní puzzle scéna.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-03.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 03" loading="lazy" decoding="async"><strong>Obnovená úroveň 03</strong><span>Vodní a lesní puzzle scéna.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-04.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="900" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 04" loading="lazy" decoding="async"><strong>Obnovená úroveň 04</strong><span>Obnovená přírodní puzzle scéna.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-05.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 05" loading="lazy" decoding="async"><strong>Obnovená úroveň 05</strong><span>Klidné restaurování puzzle scéna.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-06.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 06" loading="lazy" decoding="async"><strong>Obnovená úroveň 06</strong><span>Puzzle scéna obnovy přírody.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-07.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 07" loading="lazy" decoding="async"><strong>Obnovená úroveň 07</strong><span>Obnovená scéna s puzzle krajiny.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-08.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 08" loading="lazy" decoding="async"><strong>Obnovená úroveň 08</strong><span>Zelená restaurátorská puzzle scéna.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-09.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 09" loading="lazy" decoding="async"><strong>Obnovená úroveň 09</strong><span>Scéna obnovy vodní hádanky.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-puzzle-restored-level-10.webp 1376w" sizes="(max-width: 760px) 34vw, 76px" width="1376" height="768" alt="Nature Seed obnovena hádanka obnovy přírody úroveň 10" loading="lazy" decoding="async"><strong>Obnovena úroveň 10</strong><span>Dokončená scéna restaurování.</span></a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section">
+        <div class="eyebrow">Vývojová cesta</div>
+        <h2>Od malého nápadu na obnovu k prototypu hratelnému na deseti úrovních.</h2>
+        <ul class="update-list">
+          <li><span>Léto 2025</span><strong>Originální koncept</strong><p>Nature Seed začal jako nápad na klidnou mobilní hádanku o spojení, přírodě a obnově.</p></li>
+          <li><span>říjen 2025</span><strong>identita Seed a Water Drop</strong><p>GDD byl dokončen a Seed a Water Drop se staly emocionálním centrem vizuální identity hry.</p></li>
+          <li><span>prosinec 2025</span><strong>Vývoj začíná</strong><p>Po naplánování prvních papírových úrovní začal aktivní vývoj a základní systémy se přesunuly do hratelné podoby.</p></li>
+          <li><span>února 2026</span><strong>Průchod s velkým ponorem</strong><p>Hra dosáhla velkého hrubého obsahu a vytvořila základ pro pozdější vyleštění, vyváženost a zdokonalování výroby.</p></li>
+          <li><span>březen–duben 2026</span><strong>Mechanika a kontrola úrovně</strong><p>Další mechaniky a úrovně draftu byly zkontrolovány, zjednodušeny a přepracovány, aby hra zůstala klidnější, jasnější a soustředěnější.</p></li>
+          <li><span>červenec 2026</span><strong>Vertikální průchod prototypu</strong><p>Aktuální sestavení přináší 10 úrovní, omezené kreslení čar, hvězdy efektivity, trvalý pokrok a stabilní generování čar do jedné hratelné smyčky.</p></li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section related-worlds" id="related">
+        <div class="eyebrow">Související světy</div>
+        <h2>Přejděte od fyziky klidné linie k dalšímu háčku WillowinWorld.</h2>
+        <p class="related-worlds-copy">Nature Seed je relaxační strana portfolia, která láká k řešení. Porovnejte to s útulnou bonbónovou skládačkou studia, arkádou s fyzikální destrukcí barev a hardcore sestupem z rotující věže.</p>
+        <div class="related-world-grid" aria-label="Související herní stránky WillowinWorld">
+          <a class="related-world-link is-primary" href="candy-shop.html">
+            <span class="related-world-kicker">Útulné sloučení puzzle</span>
+            <strong>Candy Shop</strong>
+            <p>Odhazujte sladkosti, spojujte odpovídající bonbony, řiďte tlak v nádobě a vytvářejte postup dlouhých relací kolem měkké fyziky.</p>
+            <span class="related-world-meta">Candy merge hra</span>
+          </a>
+          <a class="related-world-link" href="paint-blasters.html">
+            <span class="related-world-kicker">Arkáda barevné fyziky</span>
+            <strong>Paint Blasters</strong>
+            <p>Smíchejte barevné projektily, zamiřte na slabá místa věže a proměňte jeden výstřel v řetězovou reakci.</p>
+            <span class="related-world-meta">Puzzle ničení barev</span>
+          </a>
+          <a class="related-world-link" href="ball-is-god.html">
+            <span class="related-world-kicker">Hardcore arkáda</span>
+            <strong>Ball is God?!</strong>
+            <p>Otočte nepřátelskou věž kolem Espa, postavte kombo smeč a přežijte tlak šéfů napříč mýtickými světy.</p>
+            <span class="related-world-meta">Vertikální sestupová pasáž</span>
+          </a>
+          <a class="related-world-link" href="../press-kit.html#press-games">
+            <span class="related-world-kicker">Tisk / vydavatelství</span>
+            <strong>Fakta o portfoliu</strong>
+            <p>Prohlédněte si stavy her, veřejná aktiva, žánry, háčky a kontext vydavatele v jedné kompaktní sekci tiskové sady.</p>
+            <span class="related-world-meta">Tisková sada WillowinWorld</span>
+          </a>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq">
+        <div class="eyebrow">Nature Seed FAQ</div>
+        <h2>Odpovědi pro hráče, tisk a vydavatelské partnery.</h2>
+        <div class="detail-grid">
+          <article class="detail-card"><h3>Jaký druh hádanky je Nature Seed?</h3><p>Odpočinkové kreslení k vyřešení fyzikální hádanky, kde se omezené čáry stávají fyzickými objekty, které pomáhají dvěma postavám setkat se.</p></article>
+          <article class="detail-card"><h3>Jak funguje hra?</h3><p>Přečtěte si terén, nakreslete omezenou trasu, sledujte, jak na ni obě postavy reagují, a překreslete, když cesta potřebuje čistší úhel.</p></article>
+          <article class="detail-card"><h3>Čím se liší?</h3><p>Středem zájmu je klidná obnova, čitelná fyzika čar a účinná jednořádková řešení spíše než vysokotlaké časovače nebo hlučné poruchy.</p></article>
+          <article class="detail-card"><h3>Jaký je současný stav?</h3><p>Aktivní vývoj jako hratelný prototyp s 10 aktuálními úrovněmi. Důraz je kladen na kresbu, progresi, čitelnost a mobilní stabilitu.</p></article>
+          <article class="detail-card"><h3>Lze použít veřejný majetek?</h3><p>Ano, pro tisk, recenze vydavatelů a reference obchodů. Zdrojová aktiva zůstávají soukromá, pokud nejsou přímo požadována.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-updates" id="devlog">
+        <div class="eyebrow">Vývojář Nature Seed</div>
+        <h2>Co se změnilo a kdy</h2>
+        <ul class="update-list">
+          <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31. července 2026</time><strong>Obnova a stabilita úrovně 2</strong><p>Úroveň 2 nyní využívá svůj pár produkčního pozadí se spolehlivějším nastavením úrovně, kontrolami kolize a zpětnou vazbou o dokončení.</p></li>
+          <li><span>červenec 2026</span><strong>Desetiúrovňový hratelný prototyp</strong><p>Aktuální sestavení spojuje omezené fyzické kreslení čar, hvězdičky efektivity, trvalý pokrok a zpětnou vazbu při obnově v deseti úrovních.</p></li>
+          <li><span>duben 2026</span><strong>Přepracování úrovně</strong><p>Po interní kontrole bylo přepracováno několik úrovní konceptů, aby se odstranily zbytečné složitosti a zlepšila se čitelnost pro mobilní zařízení.</p></li>
+          <li><span>březen 2026</span><strong>Kontrola mechaniky</strong><p>Tým testoval další mechaniky a poté odstranil ty, které způsobovaly pocit přetížení.</p></li>
+          <li><span>února 2026</span><strong>Průchod s velkým ponorem</strong><p>Velký hrubý obsah se stal základem pro pozdější leštění, vyvážení a zdokonalování výroby.</p></li>
+          <li><span>prosinec 2025</span><strong>Vývoj začíná</strong><p>Základní systémy se začaly přesouvat z konceptu a GDD do hratelné formy.</p></li>
+          <li><span>Léto 2025</span><strong>Originální koncept</strong><p>První verze Nature Seed začala jako klidná hádanka o spojení, přírodě a obnově.</p></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Nature Seed je hra WillowinWorld.</strong>
+        <span>Nakresli k vyřešení fyziky, restaurování akvarelů a malá cesta, kterou stojí za to zdokonalit.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navigace v zápatí Nature Seed">
+        <a href="../index.html#games">Všechny hry</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Ochrana osobních údajů</a>
+        <a href="../legal.html">Právní</a>
+        <a href="mailto:contact@willowinworld.com?subject=Nature%20Seed">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20260801-1"></script>
+  <script src="../i18n-runtime.js?v=20260802"></script>
+</body>
+</html>

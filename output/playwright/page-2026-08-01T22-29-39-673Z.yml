@@ -1,0 +1,457 @@
+- generic [ref=f2e1]:
+  - link "انتقل إلى المحتوى الرئيسي" [ref=f2e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - status: تم فتح السحر - مرحبًا بك في WillowinWorld
+  - status
+  - generic [ref=f2e3]:
+    - banner [ref=f2e4]:
+      - generic [ref=f2e5]:
+        - link "WillowinWorld المنزل" [ref=f2e6] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f2e8]:
+            - generic [ref=f2e9]: W
+            - text: illo
+            - generic [ref=f2e10]: w
+            - text: in
+            - generic [ref=f2e11]: W
+            - text: orld
+        - generic [ref=f2e12]:
+          - button "تبديل الموضوع" [ref=f2e13] [cursor=pointer]
+          - navigation "اللغة" [ref=f2e16]:
+            - group [ref=f2e17]:
+              - generic "اختر اللغة" [active] [ref=f2e18] [cursor=pointer]: AR
+              - generic [ref=f2e396]:
+                - link "English" [ref=f2e397] [cursor=pointer]:
+                  - /url: ../index.html
+                  - generic [ref=f2e399]: en
+                - link "العربية" [ref=f2e400] [cursor=pointer]:
+                  - /url: index.html
+                  - generic [ref=f2e402]: ar
+                - link "Հայերեն" [ref=f2e403] [cursor=pointer]:
+                  - /url: ../hy/index.html
+                  - generic [ref=f2e405]: hy
+                - link "বাংলা" [ref=f2e406] [cursor=pointer]:
+                  - /url: ../bn/index.html
+                  - generic [ref=f2e408]: bn
+                - link "Български" [ref=f2e409] [cursor=pointer]:
+                  - /url: ../bg/index.html
+                  - generic [ref=f2e411]: bg
+                - link "简体中文" [ref=f2e412] [cursor=pointer]:
+                  - /url: ../zh-hans/index.html
+                  - generic [ref=f2e414]: zh-Hans
+                - link "繁體中文" [ref=f2e415] [cursor=pointer]:
+                  - /url: ../zh-hant/index.html
+                  - generic [ref=f2e417]: zh-Hant
+                - link "Čeština" [ref=f2e418] [cursor=pointer]:
+                  - /url: ../cs/index.html
+                  - generic [ref=f2e420]: cs
+                - link "Dansk" [ref=f2e421] [cursor=pointer]:
+                  - /url: ../da/index.html
+                  - generic [ref=f2e423]: da
+                - link "Nederlands" [ref=f2e424] [cursor=pointer]:
+                  - /url: ../nl/index.html
+                  - generic [ref=f2e426]: nl
+                - link "Filipino" [ref=f2e427] [cursor=pointer]:
+                  - /url: ../fil/index.html
+                  - generic [ref=f2e429]: fil
+                - link "Suomi" [ref=f2e430] [cursor=pointer]:
+                  - /url: ../fi/index.html
+                  - generic [ref=f2e432]: fi
+                - link "Français" [ref=f2e433] [cursor=pointer]:
+                  - /url: ../fr/index.html
+                  - generic [ref=f2e435]: fr
+                - link "Deutsch" [ref=f2e436] [cursor=pointer]:
+                  - /url: ../de/index.html
+                  - generic [ref=f2e438]: de
+                - link "Ελληνικά" [ref=f2e439] [cursor=pointer]:
+                  - /url: ../el/index.html
+                  - generic [ref=f2e441]: el
+                - link "עברית" [ref=f2e442] [cursor=pointer]:
+                  - /url: ../he/index.html
+                  - generic [ref=f2e444]: he
+                - link "हिन्दी" [ref=f2e445] [cursor=pointer]:
+                  - /url: ../hi/index.html
+                  - generic [ref=f2e447]: hi
+                - link "Magyar" [ref=f2e448] [cursor=pointer]:
+                  - /url: ../hu/index.html
+                  - generic [ref=f2e450]: hu
+                - link "Bahasa Indonesia" [ref=f2e451] [cursor=pointer]:
+                  - /url: ../id/index.html
+                  - generic [ref=f2e453]: id
+                - link "Italiano" [ref=f2e454] [cursor=pointer]:
+                  - /url: ../it/index.html
+                  - generic [ref=f2e456]: it
+                - link "日本語" [ref=f2e457] [cursor=pointer]:
+                  - /url: ../ja/index.html
+                  - generic [ref=f2e459]: ja
+                - link "한국어" [ref=f2e460] [cursor=pointer]:
+                  - /url: ../ko/index.html
+                  - generic [ref=f2e462]: ko
+                - link "Bahasa Melayu" [ref=f2e463] [cursor=pointer]:
+                  - /url: ../ms/index.html
+                  - generic [ref=f2e465]: ms
+                - link "Norsk" [ref=f2e466] [cursor=pointer]:
+                  - /url: ../no/index.html
+                  - generic [ref=f2e468]: "no"
+                - link "فارسی" [ref=f2e469] [cursor=pointer]:
+                  - /url: ../fa/index.html
+                  - generic [ref=f2e471]: fa
+                - link "Polski" [ref=f2e472] [cursor=pointer]:
+                  - /url: ../pl/index.html
+                  - generic [ref=f2e474]: pl
+                - link "Português (Brasil)" [ref=f2e475] [cursor=pointer]:
+                  - /url: ../pt/index.html
+                  - generic [ref=f2e477]: pt-BR
+                - link "Português (Portugal)" [ref=f2e478] [cursor=pointer]:
+                  - /url: ../pt-pt/index.html
+                  - generic [ref=f2e480]: pt-PT
+                - link "Қазақша" [ref=f2e481] [cursor=pointer]:
+                  - /url: ../kk/index.html
+                  - generic [ref=f2e483]: kk
+                - link "Română" [ref=f2e484] [cursor=pointer]:
+                  - /url: ../ro/index.html
+                  - generic [ref=f2e486]: ro
+                - link "Русский" [ref=f2e487] [cursor=pointer]:
+                  - /url: ../ru/index.html
+                  - generic [ref=f2e489]: ru
+                - link "Español (España)" [ref=f2e490] [cursor=pointer]:
+                  - /url: ../es/index.html
+                  - generic [ref=f2e492]: es-ES
+                - link "Español (Latinoamérica)" [ref=f2e493] [cursor=pointer]:
+                  - /url: ../es-419/index.html
+                  - generic [ref=f2e495]: es-419
+                - link "Kiswahili" [ref=f2e496] [cursor=pointer]:
+                  - /url: ../sw/index.html
+                  - generic [ref=f2e498]: sw
+                - link "Svenska" [ref=f2e499] [cursor=pointer]:
+                  - /url: ../sv/index.html
+                  - generic [ref=f2e501]: sv
+                - link "Татарча" [ref=f2e502] [cursor=pointer]:
+                  - /url: ../tt/index.html
+                  - generic [ref=f2e504]: tt
+                - link "ไทย" [ref=f2e505] [cursor=pointer]:
+                  - /url: ../th/index.html
+                  - generic [ref=f2e507]: th
+                - link "Türkçe" [ref=f2e508] [cursor=pointer]:
+                  - /url: ../tr/index.html
+                  - generic [ref=f2e510]: tr
+                - link "Українська" [ref=f2e511] [cursor=pointer]:
+                  - /url: ../uk/index.html
+                  - generic [ref=f2e513]: uk
+                - link "اردو" [ref=f2e514] [cursor=pointer]:
+                  - /url: ../ur/index.html
+                  - generic [ref=f2e516]: ur
+                - link "O‘zbekcha" [ref=f2e517] [cursor=pointer]:
+                  - /url: ../uz/index.html
+                  - generic [ref=f2e519]: uz
+                - link "Tiếng Việt" [ref=f2e520] [cursor=pointer]:
+                  - /url: ../vi/index.html
+                  - generic [ref=f2e522]: vi
+          - button "فتح القائمة" [ref=f2e20] [cursor=pointer]
+    - main [ref=f2e22]:
+      - generic [ref=f2e24]:
+        - generic [ref=f2e25]:
+          - generic [ref=f2e26]: استوديو ألعاب الهاتف المحمول المستقل
+          - heading "WillowinWorld العاب صغيرة. عوالم حية." [level=1] [ref=f2e27]:
+            - generic [ref=f2e28]: WillowinWorld
+            - generic [ref=f2e29]: العاب صغيرة. عوالم حية.
+          - paragraph [ref=f2e30]: ألعاب الألغاز وألعاب الأركيد الملموسة حيث كل سحب وإسقاط وطلقة وسقوط يغير العالم.
+          - generic [ref=f2e31]:
+            - link "اكتشف الألعاب" [ref=f2e32] [cursor=pointer]:
+              - /url: "#games"
+            - link "عدة صحفية" [ref=f2e33] [cursor=pointer]:
+              - /url: press-kit.html
+          - navigation "ألعاب WillowinWorld المميزة" [ref=f2e34]:
+            - link "Nature Seed فيزياء السحب لحلها" [ref=f2e35] [cursor=pointer]:
+              - /url: "#nature-card"
+              - strong [ref=f2e36]: Nature Seed
+              - generic [ref=f2e37]: فيزياء السحب لحلها
+            - link "Candy Shop لغز دمج مريح" [ref=f2e38] [cursor=pointer]:
+              - /url: "#candy-card"
+              - strong [ref=f2e39]: Candy Shop
+              - generic [ref=f2e40]: لغز دمج مريح
+            - link "Paint Blasters تفاعلات السلسلة اللونية" [ref=f2e41] [cursor=pointer]:
+              - /url: "#paint-card"
+              - strong [ref=f2e42]: Paint Blasters
+              - generic [ref=f2e43]: تفاعلات السلسلة اللونية
+            - link "Ball is God?! نزول الممرات العمودية" [ref=f2e44] [cursor=pointer]:
+              - /url: "#ball-card"
+              - strong [ref=f2e45]: Ball is God?!
+              - generic [ref=f2e46]: نزول الممرات العمودية
+        - 'img "الأضواء الحالية: معاينة استعادة Nature Seed" [ref=f2e47]':
+          - generic [ref=f2e48]:
+            - generic [ref=f2e57]:
+              - generic [ref=f2e58]: الأضواء الحالية · الرسم للحل
+              - strong [ref=f2e59]: Nature Seed
+            - generic [ref=f2e60]:
+              - generic [ref=f2e61]: رسم
+              - generic [ref=f2e62]: تواصل
+              - generic [ref=f2e63]: بلوم
+          - generic [ref=f2e64]: أربعة عوالم
+          - generic [ref=f2e66]: أضواء كاشفة · نموذج Nature Seed
+      - generic [ref=f2e73]:
+        - generic [ref=f2e74]:
+          - generic [ref=f2e75]:
+            - generic [ref=f2e76]: عوالمنا
+            - heading "أربعة عوالم. لمسة واحدة بعيدا." [level=2] [ref=f2e77]
+          - paragraph [ref=f2e78]: ارسم مسارات مادية أو ادمج الحلوى أو أنشئ لقطات ملونة أو قم بتدوير برج إلهي. تبدأ كل لعبة بإجراء واحد قابل للقراءة على الهاتف المحمول.
+        - group "مرشحات اللعبة" [ref=f2e79]:
+          - button "الكل" [pressed] [ref=f2e80] [cursor=pointer]
+          - button "الممرات" [ref=f2e81] [cursor=pointer]
+          - button "اللغز" [ref=f2e82] [cursor=pointer]
+          - button "فيزياء" [ref=f2e83] [cursor=pointer]
+          - button "مريح" [ref=f2e84] [cursor=pointer]
+        - generic [ref=f2e85]:
+          - article "Nature Seed لغز فيزياء السحب لحله" [ref=f2e86]:
+            - generic [ref=f2e87]:
+              - img "Nature Seed أيقونة لعبة ألغاز فيزياء الطبيعة التي يمكن حلها" [ref=f2e95]
+              - generic [ref=f2e96]:
+                - generic [ref=f2e97]: لغز الفيزياء للرسم
+                - heading "Nature Seed" [level=3] [ref=f2e98]
+            - generic [ref=f2e99]:
+              - generic [ref=f2e100]: نموذج أولي قابل للتشغيل
+              - paragraph [ref=f2e102]: Nature Seed عبارة عن لغز فيزيائي مريح يتم حله عبر الهاتف المحمول حول إنفاق ميزانية محدودة للجمع بين Water Drop وSeed معًا. تربط المستويات العشرة الحالية بين الضربات البدنية ونجوم الكفاءة والتقدم المستمر واستعادة الألوان المائية.
+              - generic [ref=f2e103]:
+                - generic [ref=f2e104]: جوال
+                - generic [ref=f2e105]: الرسم للحل
+                - generic [ref=f2e106]: فيزياء الخط
+              - generic [ref=f2e107]:
+                - link "اكتشف Nature Seed" [ref=f2e108] [cursor=pointer]:
+                  - /url: games/nature-seed.html
+                - link "طلب تحديثات تطوير Nature Seed" [ref=f2e109] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
+                  - text: طلب التحديثات
+          - article "Candy Shop لغز دمج الحلوى المريح" [ref=f2e110]:
+            - generic [ref=f2e111]:
+              - img "Candy Shop رمز لعبة ألغاز دمج الحلوى المريحة" [ref=f2e115]
+              - generic [ref=f2e116]:
+                - generic [ref=f2e117]: لغز دمج غير رسمي
+                - heading "Candy Shop" [level=3] [ref=f2e118]
+            - generic [ref=f2e119]:
+              - generic [ref=f2e120]: التطوير النشط
+              - paragraph [ref=f2e122]: Candy Shop عبارة عن لغز مدمج لفيزياء الهاتف المحمول مع تطور كامل مكون من 13 حلوى، وعشر حاويات تعيد كتابة الحقل، وثمانية مؤثرات خاصة وطبقة تخطيط مبنية على الانتظار ومعاينة الهبوط وقائمة الانتظار الثلاثة التالية.
+              - generic [ref=f2e123]:
+                - generic [ref=f2e124]: جوال
+                - generic [ref=f2e125]: دمج الحلوى
+                - generic [ref=f2e126]: لغز الفيزياء
+              - generic [ref=f2e127]:
+                - link "اكتشف Candy Shop" [ref=f2e128] [cursor=pointer]:
+                  - /url: games/candy-shop.html
+                - link "طلب تحديثات تطوير Candy Shop" [ref=f2e129] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
+                  - text: طلب التحديثات
+          - article "Paint Blasters ألغاز فيزياء تدمير الألوان" [ref=f2e130]:
+            - generic [ref=f2e131]:
+              - img "Paint Blasters أيقونة لعبة الألغاز الفيزيائية الملونة" [ref=f2e155]
+              - generic [ref=f2e156]:
+                - generic [ref=f2e157]: لغز الفيزياء / الممرات الهجينة
+                - heading "Paint Blasters" [level=3] [ref=f2e158]
+            - generic [ref=f2e159]:
+              - generic [ref=f2e160]: نموذج الإنتاج
+              - paragraph [ref=f2e162]: Paint Blasters عبارة عن لغز فيزياء تدمير الألوان المحمول حيث يتم حل ثلاثة مدخلات ألوان في واحدة من 35 وصفة مقذوفة مؤلفة. استهدف سبعة نماذج أولية من الكتل وحوّل ضربة واحدة دقيقة إلى رد فعل متسلسل على مستوى البرج.
+              - generic [ref=f2e163]:
+                - generic [ref=f2e164]: جوال
+                - generic [ref=f2e165]: لغز اللون
+                - generic [ref=f2e166]: ممر الفيزياء
+              - generic [ref=f2e167]:
+                - link "اكتشف Paint Blasters" [ref=f2e168] [cursor=pointer]:
+                  - /url: games/paint-blasters.html
+                - link "طلب تحديثات تطوير Paint Blasters" [ref=f2e169] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
+                  - text: طلب التحديثات
+          - article "Ball is God لعبة أركيد ذات نزول عمودي" [ref=f2e170]:
+            - generic [ref=f2e171]:
+              - img "Ball is God رمز لعبة الأركيد في برج الهبوط العمودي" [ref=f2e194]
+              - generic [ref=f2e195]:
+                - generic [ref=f2e196]: ممر الهبوط العمودي
+                - heading "Ball is God?!" [level=3] [ref=f2e197]
+            - generic [ref=f2e198]:
+              - generic [ref=f2e199]: الإنتاج النشط
+              - paragraph [ref=f2e201]: Ball is God?! عبارة عن ممر هبوط عمودي قوي حيث يقوم السحب الأفقي بتدوير البرج حول Espa. تخطي ثلاث عمليات هبوط لتوجيه الضربة الساحقة، واستخدم درع التهدئة ضد الضربة المميتة واحمل الكارما عبر عشرة مواقع أسطورية.
+              - generic [ref=f2e202]:
+                - generic [ref=f2e203]: جوال
+                - generic [ref=f2e204]: نزول عمودي
+                - generic [ref=f2e205]: قم بتدوير البرج
+              - generic [ref=f2e206]:
+                - link "اكتشف Ball is God?!" [ref=f2e207] [cursor=pointer]:
+                  - /url: games/ball-is-god.html
+                - link "طلب تحديثات تطوير Ball is God" [ref=f2e208] [cursor=pointer]:
+                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Ball%20is%20God%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Ball%20is%20God%20development%20updates.
+                  - text: طلب التحديثات
+      - generic [ref=f2e210]:
+        - generic [ref=f2e211]:
+          - heading "عمل واحد. عالم حي واحد." [level=2] [ref=f2e213]
+          - paragraph [ref=f2e214]: تبدأ كل لعبة بقاعدة تعمل بلمسة واحدة - ارسم أو أسقط أو امزج أو مراوغة - ثم تضيف شخصية وتعليقات واضحة وعواقب يمكن للاعبين قراءتها بدون دليل.
+        - generic [ref=f2e215]:
+          - article [ref=f2e216]:
+            - heading "التفاعل الممتع" [level=3] [ref=f2e220]
+            - paragraph [ref=f2e221]: تحصل كل نقرة وخط وإسقاط ولقطة على استجابة مرئية فورية، لذلك يظل السبب والنتيجة واضحين.
+          - article [ref=f2e222]:
+            - heading "تصميم مقروء" [level=3] [ref=f2e226]
+            - paragraph [ref=f2e227]: تُظهر الحركة والتباين والإيقاع الهدف والنتيجة قبل الحاجة إلى نص توضيحي.
+          - article [ref=f2e228]:
+            - heading "هوية الشخصية" [level=3] [ref=f2e232]
+            - paragraph [ref=f2e233]: التمائم والأشياء وواجهة المستخدم لها شخصية قبل أن يكون لها ديكور.
+          - article [ref=f2e234]:
+            - heading "تجربة المستخدم الأولى للهاتف المحمول" [level=3] [ref=f2e238]
+            - paragraph [ref=f2e239]: تم تصميم عناصر التحكم والإيقاع والتخطيط للإبهام والجلسات القصيرة وواجهة المستخدم القابلة للقراءة والقرارات الواضحة على الشاشات الصغيرة.
+          - article [ref=f2e240]:
+            - heading "ردود فعل مرضية" [level=3] [ref=f2e244]
+            - paragraph [ref=f2e245]: يتم ضبط لحظات التأثير والدمج والرش والفوز والفشل حتى تصبح واضحة.
+          - article [ref=f2e246]:
+            - heading "عمق مريح" [level=3] [ref=f2e250]
+            - paragraph [ref=f2e251]: العرض الناعم يترك مجالاً للتخطيط والإتقان والإعادة.
+      - generic [ref=f2e253]:
+        - article [ref=f2e254]:
+          - heading "استوديو صغير لعوالم المحمول اللمسي." [level=2] [ref=f2e255]
+          - paragraph [ref=f2e256]: "WillowinWorld تطور أربع ألعاب ألغاز وأركيد على الهاتف المحمول أولاً: Nature Seed وCandy Shop وPaint Blasters وBall is God?! يحتوي كل مشروع على صفحة ألعاب عامة وحالة البناء الحالية ومدونة تطوير مؤرخة وأصول صحفية."
+          - generic [ref=f2e257]:
+            - generic [ref=f2e258]: الجوال أول إحساس
+            - generic [ref=f2e259]: عوالم خيالية مريحة
+            - generic [ref=f2e260]: الأنظمة التفاعلية
+            - generic [ref=f2e261]: فن ثنائي الأبعاد مميز
+          - paragraph [ref=f2e262]: يمتد العمل الحالي إلى فيزياء الخطوط من الرسم إلى الحل، ودمج الحلوى عبر عشر حاويات، و35 وصفة مقذوفة ملونة ونزول برج دوار عبر عشرة مواقع.
+        - article [ref=f2e263]:
+          - img "شعار WillowinWorld مع القط السحري وعلامة W المزدوجة وعالم القلعة" [ref=f2e265]
+          - generic [ref=f2e266]:
+            - heading "اربع العاب. أربعة أنظمة لعب مميزة." [level=3] [ref=f2e267]
+            - paragraph [ref=f2e268]: ارسم مسارًا ماديًا محدودًا أو قم بإدارة حاوية الحلوى المتغيرة أو قم بتجميع لقطة ملونة أو قم بتدوير برج هابط. افتح كل صفحة لعبة للاطلاع على نطاقها الحالي وحالة الإنتاج وآخر تحديث مؤرخ.
+      - generic [ref=f2e270]:
+        - heading "من الخطاف الأول لإصدار الجوال المصقول." [level=2] [ref=f2e273]
+        - generic [ref=f2e274]:
+          - article [ref=f2e275]:
+            - text: "01"
+            - heading "فكرة" [level=3] [ref=f2e276]
+            - paragraph [ref=f2e277]: حدد الخيال والنوع الواضح ووعد اللاعب وحلقة اللمس الأساسية.
+          - article [ref=f2e278]:
+            - text: "02"
+            - heading "النموذج الأولي" [level=3] [ref=f2e279]
+            - paragraph [ref=f2e280]: أنشئ أقصر دليل قابل للتشغيل باستخدام المدخلات الحقيقية والتعليقات وحالات الفشل.
+          - article [ref=f2e281]:
+            - text: "03"
+            - heading "اختبار الشعور" [level=3] [ref=f2e282]
+            - paragraph [ref=f2e283]: ضبط عناصر التحكم والاحتكاك والسرعة وسهولة القراءة وما إذا كانت الحلقة لا تزال جيدة بعد التكرار.
+          - article [ref=f2e284]:
+            - text: "04"
+            - heading "اتجاه فني" [level=3] [ref=f2e285]
+            - paragraph [ref=f2e286]: الصور الظلية للأشكال واللوحة ولغة واجهة المستخدم وسهولة قراءة الأيقونات وهوية الشخصية.
+          - article [ref=f2e287]:
+            - text: "05"
+            - heading "الإنتاج" [level=3] [ref=f2e288]
+            - paragraph [ref=f2e289]: مقياس المحتوى والأنظمة والتقدم والتحسين والأسس التقنية.
+          - article [ref=f2e290]:
+            - text: "06"
+            - heading "بولندية" [level=3] [ref=f2e291]
+            - paragraph [ref=f2e292]: تحسين التحولات، VFX، إيقاعات الصوت، الإعداد، إمكانية الوصول وراحة المستخدم.
+          - article [ref=f2e293]:
+            - text: "07"
+            - heading "الانطلاق" [level=3] [ref=f2e294]
+            - paragraph [ref=f2e295]: قم بإعداد أصول المتجر والمواد الصحفية والتحليلات والتحديثات المباشرة وحلقات المجتمع.
+          - article [ref=f2e296]:
+            - text: "08"
+            - heading "لايف كير" [level=3] [ref=f2e297]
+            - paragraph [ref=f2e298]: قم بقياس الإصدار واستمع إلى اللاعبين وحافظ على صحة كل عالم من خلال التحديثات المركزة.
+      - generic [ref=f2e300]:
+        - generic [ref=f2e301]:
+          - generic [ref=f2e302]:
+            - generic [ref=f2e303]: مدونات تطوير اللعبة
+            - heading "أحدث ملاحظات التطوير، ممنوع الحفر." [level=2] [ref=f2e304]
+          - paragraph [ref=f2e305]: أحدث ملاحظة مؤرخة من كل صفحة لعبة، ومرتكزة على الأنظمة القابلة للتشغيل الآن داخل إصدارات Unity.
+        - generic [ref=f2e306]:
+          - article [ref=f2e307]:
+            - generic [ref=f2e308]:
+              - generic [ref=f2e309]: Nature Seed
+              - time [ref=f2e310]: 31 يوليو 2026
+            - heading "تمريرة الترميم والاستقرار المستوى الثاني" [level=3] [ref=f2e311]
+            - paragraph [ref=f2e312]: يستخدم المستوى 2 الآن زوج خلفية الإنتاج الخاص به، مع إعداد مستوى أكثر موثوقية وفحوصات التصادم وملاحظات الإكمال.
+            - link "افتح مدونة تطوير Nature Seed" [ref=f2e313] [cursor=pointer]:
+              - /url: games/nature-seed.html#devlog
+          - article [ref=f2e314]:
+            - generic [ref=f2e315]:
+              - generic [ref=f2e316]: Candy Shop
+              - time [ref=f2e317]: 31 يوليو 2026
+            - heading "قائمة الإنتاج وبطاقة HUD" [level=3] [ref=f2e318]
+            - paragraph [ref=f2e319]: القائمة الرئيسية واختيار المستوى وعناصر التحكم HUD وأيقونات الأوامر تشترك الآن في لغة مرئية واحدة؛ وتغطي اختبارات الضغط الإضافية داخل المحرك التدفق المحدث.
+            - link "افتح مدونة تطوير Candy Shop" [ref=f2e320] [cursor=pointer]:
+              - /url: games/candy-shop.html#devlog
+          - article [ref=f2e321]:
+            - generic [ref=f2e322]:
+              - generic [ref=f2e323]: Paint Blasters
+              - time [ref=f2e324]: 31 يوليو 2026
+            - heading "تمريرة الفيزياء وثبات التأثير" [level=3] [ref=f2e325]
+            - paragraph [ref=f2e326]: تم اختبار وتشديد السلوك المقذوف ودقة Match-3 وتأثيرات الضربة للحصول على نتائج أكثر اتساقًا في التحرير والسرد.
+            - link "افتح مدونة تطوير Paint Blasters" [ref=f2e327] [cursor=pointer]:
+              - /url: games/paint-blasters.html#devlog
+          - article [ref=f2e328]:
+            - generic [ref=f2e329]:
+              - generic [ref=f2e330]: Ball is God?!
+              - time [ref=f2e331]: 31 يوليو 2026
+            - heading "الأسطح العالمية والتحقق من المخاطر" [level=3] [ref=f2e332]
+            - paragraph [ref=f2e333]: تلقى عرض الشخصية والتوليد الحتمي والمخاطر الشائكة تصريحًا بصريًا منسقًا والتحقق من صحة الإنتاج.
+            - link "افتح مدونة تطوير Ball is God?!" [ref=f2e334] [cursor=pointer]:
+              - /url: games/ball-is-god.html#devlog
+      - generic [ref=f2e336]:
+        - heading "إجابات سريعة للاعبين والصحافة والناشرين." [level=2] [ref=f2e339]
+        - generic [ref=f2e340]:
+          - article [ref=f2e341]:
+            - button "ما نوع الألعاب التي يصنعها WillowinWorld؟" [ref=f2e342] [cursor=pointer]
+          - article [ref=f2e344]:
+            - button "هل الموقع يحترم إعدادات الحركة المنخفضة؟" [ref=f2e345] [cursor=pointer]
+          - article [ref=f2e347]:
+            - button "هل الموقع يتبع موضوعي النهاري أم الليلي؟" [ref=f2e348] [cursor=pointer]
+          - article [ref=f2e350]:
+            - button "هل تعمل مع ناشرين؟" [ref=f2e351] [cursor=pointer]
+          - article [ref=f2e353]:
+            - button "هل ألعابك على الهاتف المحمول هي الأولى؟" [ref=f2e354] [cursor=pointer]
+          - article [ref=f2e356]:
+            - button "هل يمكنني إرسال المحفظة؟" [ref=f2e357] [cursor=pointer]
+          - article [ref=f2e359]:
+            - button "هل يمكنني التعاون مع الاستوديو؟" [ref=f2e360] [cursor=pointer]
+      - generic [ref=f2e363]:
+        - heading "تحدث إلى WillowinWorld." [level=2] [ref=f2e364]
+        - paragraph [ref=f2e365]: نرحب بتعليقات اللاعبين وطلبات الصحافة ومحادثات الناشرين والتعاون القائم على الإنتاج.
+        - generic [ref=f2e366]:
+          - button "تواصل مع الاستديو" [ref=f2e367] [cursor=pointer]
+          - link "عدة صحفية" [ref=f2e368] [cursor=pointer]:
+            - /url: press-kit.html
+    - contentinfo [ref=f2e369]:
+      - generic [ref=f2e370]:
+        - link "WillowinWorld المنزل" [ref=f2e372] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=f2e374]:
+            - generic [ref=f2e375]: W
+            - text: illo
+            - generic [ref=f2e376]: w
+            - text: in
+            - generic [ref=f2e377]: W
+            - text: orld
+        - navigation "التنقل في التذييل" [ref=f2e378]:
+          - link "العاب" [ref=f2e379] [cursor=pointer]:
+            - /url: "#games"
+          - link "ستوديو" [ref=f2e380] [cursor=pointer]:
+            - /url: "#studio"
+          - link "مدونة التطوير" [ref=f2e381] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "عدة صحفية" [ref=f2e382] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "إتصل" [ref=f2e383] [cursor=pointer]:
+            - /url: "#contact"
+          - link "النجوم الضائعة" [ref=f2e384] [cursor=pointer]:
+            - /url: /404.html
+          - button "الصيد السحري" [ref=f2e385] [cursor=pointer]
+        - generic [ref=f2e386]:
+          - link "contact@willowinworld.com" [ref=f2e387] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com
+          - link "اختبار اللعب Nature Seed" [ref=f2e388] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Nature%20Seed%20Playtest%20Access
+          - link "استخدام الأصول" [ref=f2e389] [cursor=pointer]:
+            - /url: asset-usage.html
+          - link "الخصوصية" [ref=f2e390] [cursor=pointer]:
+            - /url: privacy.html
+          - link "قانوني" [ref=f2e391] [cursor=pointer]:
+            - /url: legal.html
+          - button "الأمن" [ref=f2e392] [cursor=pointer]
+          - link "الاتصال بالناشر" [ref=f2e393] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Publisher%20inquiry
+          - button "الوظائف / التعاون" [ref=f2e394] [cursor=pointer]
+        - generic [ref=f2e395]: © 2026 WillowinWorld. جميع الحقوق محفوظة.

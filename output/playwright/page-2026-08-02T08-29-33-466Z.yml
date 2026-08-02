@@ -1,0 +1,365 @@
+- generic [active] [ref=e1]:
+  - link "メインコンテンツにスキップ" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - status: 魔法のロックが解除されました - WillowinWorld へようこそ
+  - status
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - generic [ref=e5]:
+        - link "WillowinWorld ホーム" [ref=e6] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e8]:
+            - generic [ref=e9]: W
+            - text: illo
+            - generic [ref=e10]: w
+            - text: in
+            - generic [ref=e11]: W
+            - text: orld
+        - navigation "プライマリナビゲーション" [ref=e12]:
+          - link "ホーム" [ref=e13] [cursor=pointer]:
+            - /url: "#home"
+          - link "ゲーム" [ref=e14] [cursor=pointer]:
+            - /url: "#games"
+          - link "スタジオ" [ref=e15] [cursor=pointer]:
+            - /url: "#studio"
+          - link "開発ブログ" [ref=e16] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "プレスキット" [ref=e17] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "お問い合わせ" [ref=e18] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e19]:
+          - button "スタジオへのお問い合わせ" [ref=e20] [cursor=pointer]
+          - button "テーマを切り替える" [ref=e21] [cursor=pointer]
+          - navigation "言語" [ref=e24]:
+            - group [ref=e25]:
+              - generic "言語を選択してください" [ref=e26] [cursor=pointer]: JA
+    - main [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: インディーズモバイルゲームスタジオ
+            - heading "WillowinWorld 小さなゲーム。生きている世界。" [level=1] [ref=e33]:
+              - generic [ref=e34]: WillowinWorld
+              - generic [ref=e35]: 小さなゲーム。生きている世界。
+            - paragraph [ref=e36]: 描く、落とす、撃つ、落ちるたびに世界が変わる触覚パズルとアーケード ゲーム。
+            - generic [ref=e37]:
+              - link "ゲームを探索する" [ref=e38] [cursor=pointer]:
+                - /url: "#games"
+              - link "プレスキット" [ref=e39] [cursor=pointer]:
+                - /url: press-kit.html
+            - navigation "注目の WillowinWorld ゲーム" [ref=e40]:
+              - link "Nature Seed 描画から解決までの物理学" [ref=e41] [cursor=pointer]:
+                - /url: "#nature-card"
+                - strong [ref=e42]: Nature Seed
+                - generic [ref=e43]: 描画から解決までの物理学
+              - link "Candy Shop 居心地の良いマージパズル" [ref=e44] [cursor=pointer]:
+                - /url: "#candy-card"
+                - strong [ref=e45]: Candy Shop
+                - generic [ref=e46]: 居心地の良いマージパズル
+              - link "Paint Blasters 色の連鎖反応" [ref=e47] [cursor=pointer]:
+                - /url: "#paint-card"
+                - strong [ref=e48]: Paint Blasters
+                - generic [ref=e49]: 色の連鎖反応
+              - link "Ball is God?! アーケード垂直降下" [ref=e50] [cursor=pointer]:
+                - /url: "#ball-card"
+                - strong [ref=e51]: Ball is God?!
+                - generic [ref=e52]: アーケード垂直降下
+          - 'img "現在のスポットライト: Nature Seed 復元プレビュー" [ref=e53]':
+            - generic [ref=e54]:
+              - generic [ref=e63]:
+                - generic [ref=e64]: 現在のスポットライト · 描画から解決まで
+                - strong [ref=e65]: Nature Seed
+              - generic [ref=e66]:
+                - generic [ref=e67]: スケッチ
+                - generic [ref=e68]: 接続する
+                - generic [ref=e69]: ブルーム
+            - generic [ref=e73]: 4つの世界
+            - generic [ref=e75]: スポットライト · Nature Seed プロトタイプ
+        - button [ref=e81] [cursor=pointer]: u
+      - generic [ref=e82]:
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - generic [ref=e85]:
+              - generic [ref=e86]: 私たちの世界
+              - heading "4つの世界。ワンタッチで。" [level=2] [ref=e87]
+            - paragraph [ref=e88]: 物理的なパスを描画したり、キャンディーを結合したり、カラーショットを構築したり、神聖な塔を回転させたりします。各ゲームは 1 つの読み取り可能なモバイル アクションから始まります。
+          - group "ゲームフィルター" [ref=e89]:
+            - button "すべて" [pressed] [ref=e90] [cursor=pointer]
+            - button "アーケード" [ref=e91] [cursor=pointer]
+            - button "パズル" [ref=e92] [cursor=pointer]
+            - button "物理学" [ref=e93] [cursor=pointer]
+            - button "居心地の良い" [ref=e94] [cursor=pointer]
+          - generic [ref=e95]:
+            - article "Nature Seed 描いて解く物理パズル" [ref=e96]:
+              - generic [ref=e97]:
+                - img "Nature Seed ドロートゥソルブ自然物理パズルゲームアイコン" [ref=e105]
+                - generic [ref=e106]:
+                  - generic [ref=e107]: 描いて解く物理パズル
+                  - heading "Nature Seed" [level=3] [ref=e108]
+              - generic [ref=e109]:
+                - generic [ref=e110]: プレイアブルプロトタイプ
+                - paragraph [ref=e112]: Nature Seed は、限られた回線予算を使って Water Drop と Seed を結びつける、リラックスできるモバイルの描画して解く物理パズルです。現在の 10 のレベルは、物理的なストローク、効率の星、持続的な進歩、水彩画の復元を結びつけます。
+                - generic [ref=e113]:
+                  - generic [ref=e114]: モバイル
+                  - generic [ref=e115]: 描画から解決まで
+                  - generic [ref=e116]: 線の物理学
+                - generic [ref=e117]:
+                  - link "Nature Seed を探索する" [ref=e118] [cursor=pointer]:
+                    - /url: games/nature-seed.html
+                  - link "Nature Seed 開発アップデートをリクエスト" [ref=e119] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Nature+Seed+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%A7%E3%81%99%E3%80%82Nature+Seed+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                    - text: 更新をリクエストする
+            - article "Candy Shop 居心地の良いキャンディーマージパズル" [ref=e120]:
+              - generic [ref=e121]:
+                - img "Candy Shop 居心地の良いキャンディーマージパズルゲームアイコン" [ref=e125]
+                - generic [ref=e126]:
+                  - generic [ref=e127]: カジュアルマージパズル
+                  - heading "Candy Shop" [level=3] [ref=e128]
+              - generic [ref=e129]:
+                - generic [ref=e130]: 積極的な開発
+                - paragraph [ref=e132]: Candy Shop は、完全な 13 個のキャンディの進化、フィールドを書き換える 10 個のコンテナ、8 つの特殊効果、保留、着陸プレビュー、次の 3 つのキューを中心に構築された計画レイヤーを備えた、居心地の良いモバイル物理マージ パズルです。
+                - generic [ref=e133]:
+                  - generic [ref=e134]: モバイル
+                  - generic [ref=e135]: キャンディーマージ
+                  - generic [ref=e136]: 物理パズル
+                - generic [ref=e137]:
+                  - link "Candy Shop を探索する" [ref=e138] [cursor=pointer]:
+                    - /url: games/candy-shop.html
+                  - link "Candy Shop 開発アップデートをリクエスト" [ref=e139] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Candy+Shop+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%A7%E3%81%99%E3%80%82Candy+Shop+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                    - text: 更新をリクエストする
+            - article "Paint Blasters カラー破壊物理パズルアーケード" [ref=e140]:
+              - generic [ref=e141]:
+                - img "Paint Blasters カラー物理パズル アーケード ゲーム アイコン" [ref=e165]
+                - generic [ref=e166]:
+                  - generic [ref=e167]: 物理パズル / アーケード ハイブリッド
+                  - heading "Paint Blasters" [level=3] [ref=e168]
+              - generic [ref=e169]:
+                - generic [ref=e170]: 量産試作品
+                - paragraph [ref=e172]: Paint Blasters はモバイル カラー破壊物理パズルで、3 つのカラー入力が 35 の作成された発射体レシピの 1 つに解決されます。 7 つのブロックの原型を目指し、1 つの正確なヒットをタワー全体の連鎖反応に変えます。
+                - generic [ref=e173]:
+                  - generic [ref=e174]: モバイル
+                  - generic [ref=e175]: カラーパズル
+                  - generic [ref=e176]: 物理アーケード
+                - generic [ref=e177]:
+                  - link "Paint Blasters を探索する" [ref=e178] [cursor=pointer]:
+                    - /url: games/paint-blasters.html
+                  - link "Paint Blasters 開発アップデートをリクエスト" [ref=e179] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Paint+Blasters+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%95%E3%82%93%E3%80%82Paint+Blasters+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                    - text: 更新をリクエストする
+            - article "Ball is God ハードコア垂直降下アーケード ゲーム" [ref=e180]:
+              - generic [ref=e181]:
+                - img "Ball is God 垂直降下タワー アーケード ゲーム アイコン" [ref=e204]
+                - generic [ref=e205]:
+                  - generic [ref=e206]: 垂直降下アーケード
+                  - heading "Ball is God?!" [level=3] [ref=e207]
+              - generic [ref=e208]:
+                - generic [ref=e209]: アクティブな生産
+                - paragraph [ref=e211]: Ball is God?! は、水平方向のドラッグで Espa の周りを回転させる、ハードコアの垂直降下アーケードです。 3 回の着地をスキップしてスマッシュをチャージし、致命的な攻撃に対してクールダウン シールドを使用し、10 の神話上の場所を通ってカルマを運びます。
+                - generic [ref=e212]:
+                  - generic [ref=e213]: モバイル
+                  - generic [ref=e214]: 垂直降下
+                  - generic [ref=e215]: タワーを回転させます
+                - generic [ref=e216]:
+                  - link "Ball is God?! を探索する" [ref=e217] [cursor=pointer]:
+                    - /url: games/ball-is-god.html
+                  - link "Ball is God 開発アップデートをリクエスト" [ref=e218] [cursor=pointer]:
+                    - /url: mailto:contact@willowinworld.com?subject=Ball+is+God+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%A7%E3%81%99%E3%80%82Ball+is+God+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                    - text: 更新をリクエストする
+        - button [ref=e219] [cursor=pointer]: r
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - heading "ワンアクション。一つの生きた世界。" [level=2] [ref=e224]
+            - paragraph [ref=e225]: 各ゲームはワンタッチ ルール (ドロー、ドロップ、ミックス、またはドッジ) で始まり、その後、キャラクター、明確なフィードバック、およびプレイヤーがマニュアルなしで読むことができる結果が追加されます。
+          - generic [ref=e226]:
+            - article [ref=e227]:
+              - heading "遊び心のあるインタラクション" [level=3] [ref=e231]
+              - paragraph [ref=e232]: タップ、ライン、ドロップ、ショットのたびに視覚的な反応が即座に得られるため、原因と結果が明確になります。
+            - article [ref=e233]:
+              - heading "読みやすいデザイン" [level=3] [ref=e237]
+              - paragraph [ref=e238]: 動き、コントラスト、ペースは、説明文が必要になる前に目標と結果を示します。
+            - article [ref=e239]:
+              - heading "キャラクターアイデンティティ" [level=3] [ref=e243]
+              - paragraph [ref=e244]: マスコットやオブジェクト、UIには装飾以前に個性があります。
+            - article [ref=e245]:
+              - heading "モバイルファーストのUX" [level=3] [ref=e249]
+              - paragraph [ref=e250]: コントロール、リズム、レイアウトは、小さな画面でも親指、短いセッション、読みやすい UI、明確な意思決定を考慮して構築されています。
+            - article [ref=e251]:
+              - heading "満足のいくフィードバック" [level=3] [ref=e255]
+              - paragraph [ref=e256]: インパクト、マージ、スプラッシュ、勝利、失敗の瞬間が鮮明に感じられるまで調整されています。
+            - article [ref=e257]:
+              - heading "居心地の良い奥行き" [level=3] [ref=e261]
+              - paragraph [ref=e262]: ソフトなプレゼンテーションにより、計画、習得、再現の余地が残ります。
+        - button [ref=e263] [cursor=pointer]: d
+      - generic [ref=e264]:
+        - generic [ref=e265]:
+          - article [ref=e266]:
+            - heading "触覚モバイル世界のための小さなスタジオ。" [level=2] [ref=e267]
+            - paragraph [ref=e268]: "WillowinWorld は、4 つのモバイルファーストのパズルおよびアーケード ゲームを開発しています: Nature Seed、Candy Shop、Paint Blasters、および Ball is God?! 各プロジェクトには、公開ゲーム ページ、現在のビルド ステータス、日付の付いた開発ブログおよびプレス アセットがあります。"
+            - generic [ref=e269]:
+              - generic [ref=e270]: モバイルファーストの感触
+              - generic [ref=e271]: 居心地の良いファンタジーの世界
+              - generic [ref=e272]: インタラクティブシステム
+              - generic [ref=e273]: 独特の 2D アート
+            - paragraph [ref=e274]: 現在の作業は、描画から解決までのライン物理学、10 個のコンテナにわたるキャンディーの結合、35 個のカラー発射体レシピ、および 10 か所にわたる回転塔降下に及びます。
+          - article [ref=e275]:
+            - img "WillowinWorld ロゴと魔法の猫、ツイン W マーク、城の世界" [ref=e277]
+            - generic [ref=e278]:
+              - heading "4試合。 4 つの異なるプレイ可能なシステム。" [level=3] [ref=e279]
+              - paragraph [ref=e280]: 限られた物理的なパスを描画し、変化するキャンディーの容器を管理し、カラーショットを組み立て、下降するタワーを回転させます。各ゲームのページを開いて、現在の範囲、制作ステータス、最新の日付の更新を確認してください。
+        - button [ref=e281] [cursor=pointer]: a
+      - generic [ref=e282]:
+        - generic [ref=e283]:
+          - heading "最初のサビから 洗練されたモバイルリリースへ。" [level=2] [ref=e286]:
+            - generic [ref=e287]: 最初のサビから
+            - generic [ref=e288]: 洗練されたモバイルリリースへ。
+          - generic [ref=e289]:
+            - article [ref=e290]:
+              - text: "01"
+              - heading "アイデア" [level=3] [ref=e291]
+              - paragraph [ref=e292]: ファンタジー、明確なジャンル、プレイヤーの約束、核となる触覚ループを定義します。
+            - article [ref=e293]:
+              - text: "02"
+              - heading "プロトタイプ" [level=3] [ref=e294]
+              - paragraph [ref=e295]: 実際の入力、フィードバック、失敗状態を使用して、最短のプレイアブルプルーフを構築します。
+            - article [ref=e296]:
+              - text: "03"
+              - heading "感触テスト" [level=3] [ref=e297]
+              - paragraph [ref=e298]: コントロール、フリクション、ペーシング、読みやすさ、繰り返した後もループが良好に感じられるかどうかを調整します。
+            - article [ref=e299]:
+              - text: "04"
+              - heading "アートディレクション" [level=3] [ref=e300]
+              - paragraph [ref=e301]: 形状のシルエット、パレット、UI 言語、アイコンの読みやすさ、キャラクターのアイデンティティ。
+            - article [ref=e302]:
+              - text: "05"
+              - heading "制作" [level=3] [ref=e303]
+              - paragraph [ref=e304]: コンテンツ、システム、進行、最適化、技術的基盤をスケールします。
+            - article [ref=e305]:
+              - text: "06"
+              - heading "ポーランド語" [level=3] [ref=e306]
+              - paragraph [ref=e307]: トランジション、VFX、オーディオビート、オンボーディング、アクセシビリティ、ユーザーの快適さを洗練させます。
+            - article [ref=e308]:
+              - text: "07"
+              - heading "起動" [level=3] [ref=e309]
+              - paragraph [ref=e310]: ストアアセット、報道資料、分析、ライブアップデート、コミュニティループを準備します。
+            - article [ref=e311]:
+              - text: "08"
+              - heading "ライブケア" [level=3] [ref=e312]
+              - paragraph [ref=e313]: リリースを測定し、プレイヤーの声に耳を傾け、集中的なアップデートで各世界を健全に保ちます。
+        - button [ref=e314] [cursor=pointer]: "N"
+        - button [ref=e315] [cursor=pointer]: e
+      - generic [ref=e316]:
+        - generic [ref=e317]:
+          - generic [ref=e318]:
+            - generic [ref=e319]:
+              - generic [ref=e320]: ゲーム開発ブログ
+              - heading "最新の開発ノート、 掘りません。" [level=2] [ref=e321]:
+                - generic [ref=e322]: 最新の開発ノート、
+                - generic [ref=e323]: 掘りません。
+            - paragraph [ref=e324]: Unity ビルド内の現在プレイ可能なシステムに基づいた、各ゲーム ページの最新の日付付きメモ。
+          - generic [ref=e325]:
+            - article [ref=e326]:
+              - generic [ref=e327]:
+                - generic [ref=e328]: Nature Seed
+                - time [ref=e329]: 2026 年 7 月 31 日
+              - heading "レベル 2 回復および安定性パス" [level=3] [ref=e330]
+              - paragraph [ref=e331]: レベル 2 は、より信頼性の高いレベル設定、衝突チェック、完了フィードバックを備えたプロダクション バックグラウンド ペアを使用するようになりました。
+              - link "Nature Seed 開発ブログを開く" [ref=e332] [cursor=pointer]:
+                - /url: games/nature-seed.html#devlog
+            - article [ref=e333]:
+              - generic [ref=e334]:
+                - generic [ref=e335]: Candy Shop
+                - time [ref=e336]: 2026 年 7 月 31 日
+              - heading "制作メニューとHUDパス" [level=3] [ref=e337]
+              - paragraph [ref=e338]: メイン メニュー、レベル選択、HUD コントロール、およびコマンド アイコンが 1 つの視覚言語を共有するようになりました。追加のエンジン内ストレス テストでは、更新されたフローがカバーされます。
+              - link "Candy Shop 開発ブログを開く" [ref=e339] [cursor=pointer]:
+                - /url: games/candy-shop.html#devlog
+            - article [ref=e340]:
+              - generic [ref=e341]:
+                - generic [ref=e342]: Paint Blasters
+                - time [ref=e343]: 2026 年 7 月 31 日
+              - heading "物理およびエフェクトの安定性パス" [level=3] [ref=e344]
+              - paragraph [ref=e345]: より安定したコンボ結果を得るために、発射物の動作、Match-3 の解像度、ヒット効果がテストされ、強化されました。
+              - link "Paint Blasters 開発ブログを開く" [ref=e346] [cursor=pointer]:
+                - /url: games/paint-blasters.html#devlog
+            - article [ref=e347]:
+              - generic [ref=e348]:
+                - generic [ref=e349]: Ball is God?!
+                - time [ref=e350]: 2026 年 7 月 31 日
+              - heading "世界の地表と危険性の検証" [level=3] [ref=e351]
+              - paragraph [ref=e352]: キャラクターのプレゼンテーション、決定論的生成、およびとげのハザードは、調整されたビジュアルおよびプロダクション検証パスを受け取りました。
+              - link "Ball is God?! 開発ブログを開く" [ref=e353] [cursor=pointer]:
+                - /url: games/ball-is-god.html#devlog
+        - button [ref=e354] [cursor=pointer]: t
+      - generic [ref=e355]:
+        - generic [ref=e356]:
+          - heading "プレーヤー、プレス、出版社向けのクイックアンサー。" [level=2] [ref=e359]
+          - generic [ref=e360]:
+            - article [ref=e361]:
+              - button "WillowinWorldはどんなゲームを作っていますか？" [ref=e362] [cursor=pointer]
+            - article [ref=e364]:
+              - button "サイトはモーション軽減設定を尊重していますか?" [ref=e365] [cursor=pointer]
+            - article [ref=e367]:
+              - button "サイトは昼と夜のテーマに従っていますか?" [ref=e368] [cursor=pointer]
+            - article [ref=e370]:
+              - button "出版社と提携していますか?" [ref=e371] [cursor=pointer]
+            - article [ref=e373]:
+              - button "あなたのゲームはモバイルファーストですか?" [ref=e374] [cursor=pointer]
+            - article [ref=e376]:
+              - button "ポートフォリオを送ってもいいですか？" [ref=e377] [cursor=pointer]
+            - article [ref=e379]:
+              - button "スタジオとコラボできますか？" [ref=e380] [cursor=pointer]
+        - button [ref=e382] [cursor=pointer]: S
+        - button [ref=e383] [cursor=pointer]: e
+      - generic [ref=e384]:
+        - generic [ref=e385]:
+          - heading "WillowinWorldと話します。" [level=2] [ref=e386]
+          - paragraph [ref=e387]: プレイヤーからのフィードバック、プレスリクエスト、パブリッシャーとの会話、制作を目的としたコラボレーションを歓迎します。
+          - generic [ref=e388]:
+            - button "スタジオへのお問い合わせ" [ref=e389] [cursor=pointer]
+            - link "プレスキット" [ref=e390] [cursor=pointer]:
+              - /url: press-kit.html
+        - button [ref=e391] [cursor=pointer]: e
+    - contentinfo [ref=e392]:
+      - generic [ref=e393]:
+        - link "WillowinWorld ホーム" [ref=e395] [cursor=pointer]:
+          - /url: "#home"
+          - generic [ref=e397]:
+            - generic [ref=e398]: W
+            - text: illo
+            - generic [ref=e399]: w
+            - text: in
+            - generic [ref=e400]: W
+            - text: orld
+        - navigation "フッターナビゲーション" [ref=e401]:
+          - link "ゲーム" [ref=e402] [cursor=pointer]:
+            - /url: "#games"
+          - link "スタジオ" [ref=e403] [cursor=pointer]:
+            - /url: "#studio"
+          - link "開発ブログ" [ref=e404] [cursor=pointer]:
+            - /url: "#devlog"
+          - link "プレスキット" [ref=e405] [cursor=pointer]:
+            - /url: press-kit.html
+          - link "お問い合わせ" [ref=e406] [cursor=pointer]:
+            - /url: "#contact"
+          - link "ロストスターズ" [ref=e407] [cursor=pointer]:
+            - /url: /404.html
+          - button "魔法狩り" [ref=e408] [cursor=pointer]
+        - generic [ref=e409]:
+          - link "contact@willowinworld.com" [ref=e410] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com
+          - link "Nature Seed プレイテスト" [ref=e411] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=Nature+Seed+%E3%83%97%E3%83%AC%E3%82%A4%E3%83%86%E3%82%B9%E3%83%88%E3%81%B8%E3%81%AE%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%82%92%E3%83%AA%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B
+          - link "資産の使用状況" [ref=e412] [cursor=pointer]:
+            - /url: asset-usage.html
+          - link "プライバシー" [ref=e413] [cursor=pointer]:
+            - /url: privacy.html
+          - link "法的" [ref=e414] [cursor=pointer]:
+            - /url: legal.html
+          - button "セキュリティ" [ref=e415] [cursor=pointer]
+          - link "出版社連絡先" [ref=e416] [cursor=pointer]:
+            - /url: mailto:contact@willowinworld.com?subject=%E5%87%BA%E7%89%88%E7%A4%BE%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B
+          - button "キャリア / コラボレーション" [ref=e417] [cursor=pointer]
+        - generic [ref=e418]: © 2026 WillowinWorld.無断転載を禁じます。

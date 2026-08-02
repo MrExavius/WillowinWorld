@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="da" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="da">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Udforsk Nature Seed, Candy Shop, Paint Blasters og Ball is God?! – mobil-første puslespil og arkadespil med taktil fysik og udtryksfulde 2D-verdener.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="author" content="WillowinWorld">
+  <meta name="theme-color" content="#031735" id="metaThemeColor">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="WillowinWorld">
+  <meta property="og:title" content="WillowinWorld - Uafhængigt studie for mobile puzzle- og arkadespil">
+  <meta property="og:description" content="Nature Seed, Candy Shop, Paint Blasters og Ball is God?! Magisk mobilpuslespil og arkadeverdener af WillowinWorld.">
+  <meta property="og:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="WillowinWorld indie mobile spilstudieverdener: Nature Seed, Candy Shop, Paint Blasters og Ball is God">
+  <meta property="og:url" content="https://willowinworld.com/da/">
+  <meta property="og:locale" content="da_DK">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WillowinWorld - Magisk mobilpuslespil og arkadespil">
+  <meta name="twitter:description" content="Hyggelige fysikpuslespil, slikfusionsspil, farvearkade-action og lodret nedstigningsverdener med mobile-first polish.">
+  <meta name="twitter:image" content="https://willowinworld.com/assets/og/willowinworld-og-1200x630.webp">
+  <meta name="twitter:image:alt" content="WillowinWorld mobilspilstudie og dets fire spilbare verdener">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-jqIjHAcrf1EK0LpdfWKKtXnjFgupkcVxLtUgppHLbHU='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>WillowinWorld | Uafhængigt studie for mobile puzzle- og arkadespil</title>
+  <link rel="canonical" href="https://willowinworld.com/da/">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorld Devlog RSS" href="../rss.xml">
+  <link rel="preload" href="../assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../css/base.css?v=20260801-2">
+  <link rel="stylesheet" href="../css/nature-scene.css">
+  <link rel="stylesheet" href="../css/home-card-base.css">
+  <link rel="stylesheet" href="../css/home-ball-card.css">
+  <link rel="stylesheet" href="../css/home-nature-card.css">
+  <link rel="stylesheet" href="../css/home-paint-card.css">
+  <link rel="stylesheet" href="../css/home-candy-card.css">
+  <link rel="stylesheet" href="../css/game-components.css">
+  <link rel="stylesheet" href="../css/game-content.css">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20260731-2">
+  <link rel="stylesheet" href="../css/keyframes.css?v=20260731-1">
+  <link rel="stylesheet" href="../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../css/responsive-tablet.css">
+  <link rel="stylesheet" href="../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../css/responsive-preferences.css?v=20260731-1">
+  <link rel="stylesheet" href="../motion.css">
+  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20260731-10">
+  <script type="application/ld+json" id="structuredData">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://willowinworld.com/#studio",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/",
+      "logo": "https://willowinworld.com/assets/willowinworld-logo.webp",
+      "email": "contact@willowinworld.com",
+      "description": "WillowinWorld er et indie-mobilspilstudie, der udvikler fire puslespil- og arkadespil med fysikbaseret mekanik og særskilt 2D-kunstretning.",
+      "knowsAbout": [
+        "Mobile game development",
+        "Physics puzzle games",
+        "Merge puzzle games",
+        "Cozy games",
+        "Arcade games",
+        "2D art direction",
+        "Mobile UI/UX"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://willowinworld.com/da/#website",
+      "name": "WillowinWorld",
+      "url": "https://willowinworld.com/da/",
+      "inLanguage": "da",
+      "description": "Officiel side for WillowinWorld mobilpuslespil og arkadespil, herunder Nature Seed, Candy Shop, Paint Blasters og Ball is God?!",
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://willowinworld.com/da/#games-list",
+      "name": "WillowinWorld Mobilspil",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 4,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Nature Seed",
+          "url": "https://willowinworld.com/da/games/nature-seed.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Candy Shop",
+          "url": "https://willowinworld.com/da/games/candy-shop.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Paint Blasters",
+          "url": "https://willowinworld.com/da/games/paint-blasters.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Ball is God?!",
+          "url": "https://willowinworld.com/da/games/ball-is-god.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/da/games/nature-seed.html#game",
+      "name": "Nature Seed",
+      "url": "https://willowinworld.com/da/games/nature-seed.html",
+      "image": "https://willowinworld.com/assets/Nature%20Seeds/Icon-site.webp",
+      "genre": [
+        "Tegn for at løse puslespil",
+        "Fysik puslespil",
+        "Afslappende puslespil",
+        "Water puzzle"
+      ],
+      "gamePlatform": "Mobil",
+      "description": "Et afslappende fysikpuslespil, der skal løses, hvor en blækbegrænset linje bringer Water Drop og Seed sammen og genopretter en akvarelskov.",
+      "creativeWorkStatus": "Aktiv udvikling - spilbar prototype",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "da"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/da/games/candy-shop.html#game",
+      "name": "Candy Shop",
+      "url": "https://willowinworld.com/da/games/candy-shop.html",
+      "image": "https://willowinworld.com/assets/Candy%20Shop/site/icon_playmarket.webp",
+      "genre": [
+        "Flet puslespil",
+        "Slikpuslespil",
+        "Afslappet puslespil",
+        "Fysik puslespil"
+      ],
+      "gamePlatform": "Mobil",
+      "description": "Et hyggeligt slikfusionspuslespil med 13 slikstadier, ti beholderregelsæt, specielle opskrifter og planlægningsværktøjer.",
+      "creativeWorkStatus": "Aktiv udvikling - spilbar produktionsbygning",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "da"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/da/games/paint-blasters.html#game",
+      "name": "Paint Blasters",
+      "url": "https://willowinworld.com/da/games/paint-blasters.html",
+      "image": "https://willowinworld.com/assets/Paint%20Blasters/site/picon1.webp",
+      "genre": [
+        "Farvepuslespil",
+        "Fysik arkade",
+        "Destruktionspuslespil",
+        "Kædereaktion"
+      ],
+      "gamePlatform": "Mobil",
+      "description": "En pulserende fysikpuslespilsarkade, hvor tre farveinput forvandles til en af 35 forfattede projektilopskrifter.",
+      "creativeWorkStatus": "Aktiv udvikling - produktionsprototype",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "da"
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworld.com/da/games/ball-is-god.html#game",
+      "name": "Ball is God?!",
+      "url": "https://willowinworld.com/da/games/ball-is-god.html",
+      "image": "https://willowinworld.com/assets/Ball%20is%20God/site/icon1.webp",
+      "genre": [
+        "Lodret nedstigningsarkade",
+        "Hardcore arkade",
+        "Historiedrevet arkade",
+        "Boss handling"
+      ],
+      "gamePlatform": "Mobil",
+      "description": "En hardcore lodret nedstigningsarkade, hvor spillere roterer tårnet, bygger combo smashes og bærer karma gennem ti steder.",
+      "creativeWorkStatus": "Aktiv produktion",
+      "author": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworld.com/#studio"
+      },
+      "inLanguage": "da"
+    }
+  ]
+}
+</script>
+</head>
+<body class="home-polish-2026" data-theme="dark">
+  <a class="skip-link" href="#main-content">Spring til hovedindhold</a>
+  <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
+  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magi ulåst - Velkommen til WillowinWorld</div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <div class="page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="WillowinWorld hjem">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" fetchpriority="high" decoding="async">
+          </span>
+          <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
+        </a>
+
+        <nav class="main-nav" id="mainNav" aria-label="Primær navigation">
+          <a href="#home">Hjem</a>
+          <a href="#games">Spil</a>
+          <a href="#studio">Studie</a>
+          <a href="#devlog">Devlog</a>
+          <a href="press-kit.html">Pressesæt</a>
+          <a href="#contact" data-open-contact>Kontakt</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="btn btn-small btn-ghost contact-header" data-open-contact type="button">Kontakt studie</button>
+          <button class="icon-btn" id="themeToggle" type="button" aria-label="Skift tema" title="Natmagi / dagslys">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Sprog"><details><summary aria-label="Vælg sprog"><span aria-hidden="true">DA</span></summary><div class="language-options"><a href="../index.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../ar/index.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../hy/index.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../bn/index.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../bg/index.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../zh-hans/index.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../zh-hant/index.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../cs/index.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="index.html" lang="da" hreflang="da" aria-current="page"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../nl/index.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../fil/index.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../fi/index.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../fr/index.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../de/index.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../el/index.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../he/index.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../hi/index.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../hu/index.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../id/index.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../it/index.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../ja/index.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../ko/index.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../ms/index.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../no/index.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../fa/index.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../pl/index.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../pt/index.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../pt-pt/index.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../kk/index.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../ro/index.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../ru/index.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../es/index.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../es-419/index.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../sw/index.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../sv/index.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../tt/index.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../th/index.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../tr/index.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../uk/index.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../ur/index.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../uz/index.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../vi/index.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Åbn menuen" aria-expanded="false" aria-controls="mainNav"><span></span></button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="section hero" id="home">
+        <div class="container hero-grid">
+          <div>
+            <div class="eyebrow hero-eyebrow">Indie mobilspilstudie</div>
+            <h1><span class="hero-brand-title">WillowinWorld</span><span class="hero-title-line">Små spil. Levende verdener.</span></h1>
+            <p class="hero-copy">Taktil puslespil og arkadespil, hvor hver trækning, hvert fald, skud og fald ændrer verden.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#games">Udforsk spil</a>
+              <a class="btn btn-ghost" href="press-kit.html">Pressesæt</a>
+            </div>
+            <nav class="hero-worlds" aria-label="Udvalgte WillowinWorld-spil">
+              <a href="#nature-card"><strong>Nature Seed</strong><span>tegne for at løse fysik</span></a>
+              <a href="#candy-card"><strong>Candy Shop</strong><span>hyggeligt fusionspuslespil</span></a>
+              <a href="#paint-card"><strong>Paint Blasters</strong><span>farvekædereaktioner</span></a>
+              <a href="#ball-card"><strong>Ball is God?!</strong><span>lodret arkadenedstigning</span></a>
+            </nav>
+          </div>
+
+          <div class="hero-panel" role="img" aria-label="Nuværende spotlight: Nature Seed restaurering forhåndsvisning">
+            <div class="nature-preview ambient-only" aria-hidden="true">
+              <div class="nature-stage nature-stage-hero">
+                <img class="nature-level nature-level-sketch" src="../assets/responsive/nature-seed-sketch-720.webp" width="720" height="405" alt="" fetchpriority="high" decoding="async">
+                <picture>
+                  <source type="image/avif" srcset="../assets/responsive/nature-seed-hero-720.avif 720w, ../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 50vw">
+                  <img class="nature-level nature-level-painted" src="../assets/responsive/nature-seed-hero-1376.webp" srcset="../assets/responsive/nature-seed-hero-720.webp 720w, ../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 50vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+                </picture>
+                <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+                  <path d="M46 194C142 196 147 260 237 262C320 263 318 195 404 195C484 195 482 313 566 316" />
+                  <path d="M76 336C164 336 178 420 278 420C365 420 384 368 506 380" />
+                </svg>
+                <span class="nature-water-drop is-first"></span>
+                <span class="nature-water-drop is-second"></span>
+                <span class="nature-water-drop is-third"></span>
+                <span class="nature-bloom"></span>
+                <img loading="lazy" class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
+                <img loading="lazy" class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
+              </div>
+              <img loading="lazy" class="nature-preview-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
+              <span class="nature-preview-title">
+                <small>Nuværende spotlight · Draw-to-Solve</small>
+                <strong>Nature Seed</strong>
+              </span>
+              <span class="nature-cycle"><b>Skitse</b><b>Tilslut</b><b>Blomstre</b></span>
+            </div>
+            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only"></span>
+            <div class="hero-portal-badge ambient-only" aria-hidden="true">
+              <img loading="lazy" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
+              <span>Fire verdener</span>
+            </div>
+            <div class="magic-hud">
+              <span>Fokus · Nature Seed-prototype</span>
+              <span class="hud-dots" aria-hidden="true"><span class="hud-dot"></span><span class="hud-dot"></span><span class="hud-dot"></span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="games">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Vores verdener</div>
+              <h2 class="section-title">Fire verdener. Et tryk væk.</h2>
+            </div>
+            <p class="section-copy">Tegn fysiske stier, flet slik, byg farvebilleder eller drej et guddommeligt tårn. Hvert spil begynder med én læsbar mobilhandling.</p>
+          </div>
+
+          <div class="game-filters" role="group" aria-label="Spilfiltre">
+            <button class="filter-btn is-active" data-filter="All" type="button" aria-pressed="true" aria-controls="gamesGrid">Alle</button>
+            <button class="filter-btn" data-filter="Arcade" type="button" aria-pressed="false" aria-controls="gamesGrid">Arcade</button>
+            <button class="filter-btn" data-filter="Puzzle" type="button" aria-pressed="false" aria-controls="gamesGrid">Puslespil</button>
+            <button class="filter-btn" data-filter="Physics" type="button" aria-pressed="false" aria-controls="gamesGrid">Fysik</button>
+            <button class="filter-btn" data-filter="Cozy" type="button" aria-pressed="false" aria-controls="gamesGrid">Hyggeligt</button>
+          </div>
+          <p class="filter-status" data-filter-status role="status" aria-live="polite"></p>
+
+          <div class="games-grid" id="gamesGrid">
+            <article class="game-card nature-card" id="nature-card" aria-label="Nature Seed tegner for at løse fysikpuslespil" data-tags="Puzzle Physics Cozy Ecology Nature Draw-to-solve Magic Mobile Meditative Relaxing Zen Atmospheric Restoration Prototype">
+              <div class="game-cover nature-game-cover">
+                <div class="nature-stage nature-stage-card" aria-hidden="true">
+                  <img class="nature-level nature-level-sketch" src="../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" loading="lazy" decoding="async">
+                  <img class="nature-level nature-level-painted" src="../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" loading="lazy" decoding="async">
+                  <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+                    <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
+                    <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
+                  </svg>
+                  <span class="nature-water-drop is-first"></span>
+                  <span class="nature-water-drop is-second"></span>
+                  <span class="nature-bloom"></span>
+                  <img class="nature-growth" src="../assets/Nature%20Seeds/Galvnie_tree.webp" width="669" height="373" alt="" loading="lazy" decoding="async">
+                  <img class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
+                  <img class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" loading="lazy" decoding="async">
+                </div>
+                <img class="nature-cover-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed tegn for at løse naturfysikpuslespilsikon" loading="lazy" decoding="async">
+                <img class="nature-hover-icon" src="../assets/responsive/nature-seed-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Tegn for at løse fysikpuslespil</span>
+                  <h3>Nature Seed</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Spilbar prototype</span>
+                  <span class="game-genre">Hovedgenre: Draw-to-solve Physics Puzzle</span>
+                </div>
+                <p>Nature Seed er et afslappende mobilt træk for at løse fysikpuslespil om at bruge et begrænset budget på at bringe Water Drop og Seed sammen. Ti aktuelle niveauer forbinder fysiske streger, effektivitetsstjerner, vedvarende fremskridt og akvarelrestaurering.</p>
+                <div class="feature-callout">Gameplay-hook: hvert forpligtet slag bliver en del af det fysiske niveau, og en en-linjes løsning giver tre stjerner.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobil</span><span class="tag">Tegn for at løse</span><span class="tag">Linjefysik</span><span class="tag">Naturgenopretning</span><span class="tag">Afslappende puslespil</span><span class="tag">Hyggeligt økospil</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/nature-seed.html">Udforsk Nature Seed</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=F%C3%B8lg+Nature+Seed+udvikling&amp;body=Hej+WillowinWorld%2C+jeg+vil+f%C3%B8lge+Nature+Seed+udviklingsopdateringer." aria-label="Anmod om Nature Seed-udviklingsopdateringer">Anmod om opdateringer</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="game-card candy-card" id="candy-card" aria-label="Candy Shop hyggeligt slikfusionspuslespil" data-tags="Merge Physics Casual Candy Cozy Mobile Puzzle Combo Relaxing Suika-like Concept Prototype">
+              <div class="game-cover candy-game-cover">
+                <div class="candy-stage" aria-hidden="true">
+                  <div class="candy-bg-stack">
+                    <img class="candy-bg candy-bg-1" src="../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-2" src="../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-3" src="../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-4" src="../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-5" src="../assets/Candy%20Shop/site/back_glavnie_5.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-6" src="../assets/Candy%20Shop/site/back_glavnie_6.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-7" src="../assets/Candy%20Shop/site/back_glavnie_7.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-8" src="../assets/Candy%20Shop/site/back_glavnie_8.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-9" src="../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                    <img class="candy-bg candy-bg-10" src="../assets/Candy%20Shop/site/back_glavnie_10.webp" width="640" height="1137" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <img class="candy-piece candy-piece-left" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <img class="candy-piece candy-piece-right" src="../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <img class="candy-piece candy-piece-result" src="../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" loading="lazy" decoding="async">
+                  <span class="candy-impact"></span>
+                </div>
+                <img class="candy-cover-icon" src="../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="Candy Shop hyggeligt slikfusions-puslespilikon" loading="lazy" decoding="async">
+                <img class="candy-hover-icon" src="../assets/responsive/candy-shop-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Casual Merge Puzzle</span>
+                  <h3>Candy Shop</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Aktiv udvikling</span>
+                  <span class="game-genre">Hovedgenre: Casual Merge Puzzle</span>
+                </div>
+                <p>Candy Shop er et hyggeligt mobilt fysikfusions-puslespil med en komplet 13-slik-evolution, ti beholdere, der omskriver feltet, otte specialeffekter og et planlægningslag bygget op omkring hold, landingspreview og de næste-tre køer.</p>
+                <div class="feature-callout">Gameplay-hook: et velkendt fald bliver et nyt puslespil, når beholderen ændrer tyngdekraft, geometri eller ruten ind i stakken.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobil</span><span class="tag">Candy Merge</span><span class="tag">Fysik puslespil</span><span class="tag">Hyggeligt spil</span><span class="tag">Kombinationspuslespil</span><span class="tag">Særlige slik</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/candy-shop.html">Udforsk Candy Shop</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=F%C3%B8lg+Candy+Shop+udvikling&amp;body=Hej+WillowinWorld%2C+jeg+vil+f%C3%B8lge+Candy+Shop+udviklingsopdateringer." aria-label="Anmod om Candy Shop-udviklingsopdateringer">Anmod om opdateringer</a>
+                </div>
+              </div>
+            </article>
+
+            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters farveødelæggelse fysik puslespil arkade" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
+              <div class="game-cover paint-game-cover">
+                <div class="paint-stage" aria-hidden="true">
+                  <img class="paint-bg" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" loading="lazy" decoding="async">
+                  <div class="paint-arena">
+                    <div class="paint-cube-stack">
+                      <span class="paint-cube paint-cube-a"></span>
+                      <span class="paint-cube paint-cube-b"></span>
+                      <span class="paint-cube paint-cube-c"></span>
+                      <span class="paint-cube paint-cube-d"></span>
+                      <span class="paint-cube paint-cube-e"></span>
+                      <span class="paint-cube paint-cube-f"></span>
+                      <span class="paint-cube paint-cube-g"></span>
+                      <span class="paint-cube paint-cube-h"></span>
+                      <span class="paint-cube paint-cube-i"></span>
+                      <span class="paint-cube paint-cube-j"></span>
+                    </div>
+                    <span class="paint-platform"></span>
+                    <span class="paint-aim-line"></span>
+                    <span class="paint-projectile paint-projectile-one"></span>
+                    <span class="paint-projectile paint-projectile-two"></span>
+                    <span class="paint-projectile paint-projectile-three"></span>
+                    <span class="paint-impact"></span>
+                    <span class="paint-shard paint-shard-one"></span>
+                    <span class="paint-shard paint-shard-two"></span>
+                    <span class="paint-shard paint-shard-three"></span>
+                    <span class="paint-shard paint-shard-four"></span>
+                    <img class="paint-blaster" src="../assets/Paint%20Blasters/site/blasters.webp" width="640" height="450" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <img class="paint-module" src="../assets/Paint%20Blasters/site/modul.webp" width="520" height="867" alt="" loading="lazy" decoding="async">
+                  <img class="paint-hero" src="../assets/Paint%20Blasters/site/hero_blasters.webp" width="780" height="738" alt="" loading="lazy" decoding="async">
+                </div>
+                <img class="paint-cover-icon" src="../assets/responsive/paint-blasters-icon-192.webp" width="192" height="192" alt="Paint Blasters farvefysikpuslespil arkadespilikon" loading="lazy" decoding="async">
+                <img class="paint-hover-icon" src="../assets/responsive/paint-blasters-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Fysik puslespil / Arcade Hybrid</span>
+                  <h3>Paint Blasters</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Produktionsprototype</span>
+                  <span class="game-genre">Hovedgenre: Fysik Puslespil / Arcade Hybrid</span>
+                </div>
+                <p>Paint Blasters er et mobilt farvedestruktionsfysikpuslespil, hvor tre farveinput løses til en af 35 forfattede projektilopskrifter. Sigt på syv blokarketyper og forvandl et præcist hit til en kædereaktion i hele tårnet.</p>
+                <div class="feature-callout">Gameplay-krog: opskriften bestemmer projektilet før skuddet, så blanding er lige så taktisk som at sigte.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobil</span><span class="tag">Farvepuslespil</span><span class="tag">Fysik Arcade</span><span class="tag">Sigt og skyd</span><span class="tag">Kædereaktioner</span><span class="tag">Taktiske skud</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/paint-blasters.html">Udforsk Paint Blasters</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=F%C3%B8lg+Paint+Blasters+udvikling&amp;body=Hej+WillowinWorld%2C+jeg+vil+f%C3%B8lge+Paint+Blasters+udviklingsopdateringer." aria-label="Anmod om Paint Blasters-udviklingsopdateringer">Anmod om opdateringer</a>
+                </div>
+              </div>
+            </article>
+
+            <article id="ball-card" class="game-card ball-card" aria-label="Ball is God hardcore lodret afstamning arkadespil" data-tags="Arcade Hardcore Narrative Story Vertical Action Boss Dark Fantasy Mobile Skill-based One-Hit-Kill In Development Prototype">
+              <div class="game-cover ball-game-cover">
+                <div class="ball-stage" aria-hidden="true">
+                  <img class="ball-bg" src="../assets/Ball%20is%20God/site/back.webp" width="760" height="1340" alt="" loading="lazy" decoding="async">
+                  <div class="ball-cloud-field">
+                    <img class="ball-cloud ball-cloud-1" src="../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-2" src="../assets/Ball%20is%20God/site/cloud-2.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-3" src="../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="162" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-4" src="../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-5" src="../assets/Ball%20is%20God/site/cloud-5.webp" width="460" height="184" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-6" src="../assets/Ball%20is%20God/site/cloud-6.webp" width="460" height="167" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-7" src="../assets/Ball%20is%20God/site/cloud-7.webp" width="460" height="168" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-8" src="../assets/Ball%20is%20God/site/cloud-8.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-9 is-reverse" src="../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-10 is-reverse" src="../assets/Ball%20is%20God/site/cloud-10.webp" width="460" height="179" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-11 is-reverse" src="../assets/Ball%20is%20God/site/cloud-11.webp" width="460" height="190" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-12 is-reverse" src="../assets/Ball%20is%20God/site/cloud-12.webp" width="460" height="159" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-13 is-reverse" src="../assets/Ball%20is%20God/site/cloud-13.webp" width="460" height="155" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-14 is-reverse" src="../assets/Ball%20is%20God/site/cloud-14.webp" width="460" height="153" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-15 is-reverse" src="../assets/Ball%20is%20God/site/cloud-15.webp" width="460" height="187" alt="" loading="lazy" decoding="async">
+                    <img class="ball-cloud ball-cloud-16 is-reverse" src="../assets/Ball%20is%20God/site/cloud-16.webp" width="460" height="156" alt="" loading="lazy" decoding="async">
+                  </div>
+                  <div class="ball-tower">
+                    <span class="ball-vine ball-vine-one"></span>
+                    <span class="ball-vine ball-vine-two"></span>
+                    <span class="ball-leaf ball-leaf-one"></span>
+                    <span class="ball-leaf ball-leaf-two"></span>
+                    <span class="ball-leaf ball-leaf-three"></span>
+                    <span class="ball-leaf ball-leaf-four"></span>
+                  </div>
+                  <div class="ball-platforms">
+                    <span class="ball-platform ball-platform-a"><i></i></span>
+                    <span class="ball-platform ball-platform-b"><i></i></span>
+                    <span class="ball-platform ball-platform-c"><i></i></span>
+                    <span class="ball-platform ball-platform-d"><i></i></span>
+                    <span class="ball-platform ball-platform-e"><i></i></span>
+                    <span class="ball-platform ball-platform-f"><i></i></span>
+                  </div>
+                  <div class="ball-espa-wrap">
+                    <img class="ball-espa ball-espa-base" src="../assets/Ball%20is%20God/site/espa.webp" width="520" height="285" alt="" loading="lazy" decoding="async">
+                    <img class="ball-espa ball-espa-alt" src="../assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <img class="ball-cover-icon" src="../assets/responsive/ball-is-god-icon-192.webp" width="192" height="192" alt="Ball is God lodret nedstigningstårn arkadespilikon" loading="lazy" decoding="async">
+                <img class="ball-hover-icon" src="../assets/responsive/ball-is-god-icon-alt-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async">
+                <div class="cover-title">
+                  <span>Vertical Descent Arcade</span>
+                  <h3>Ball is God?!</h3>
+                </div>
+              </div>
+              <div class="game-body">
+                <div class="game-meta">
+                  <span class="status-pill">Aktiv produktion</span>
+                  <span class="game-genre">Hovedgenre: Hardcore Arcade</span>
+                </div>
+                <p>Ball is God?! er en hardcore lodret nedstigningsarkade, hvor vandret træk roterer tårnet omkring Espa. Spring over tre landinger for at oplade et smash, brug et nedkølingsskjold mod et dødbringende hit og bær karma gennem ti mytiske steder.</p>
+                <div class="feature-callout">Gameplay-hook: risikere, at sikre platforme bliver virkningen, mens karma ændrer fjender, telegrafer og cheffaser.</div>
+                <div class="game-tags">
+                  <span class="tag">Mobil</span><span class="tag">Lodret nedstigning</span><span class="tag">Roter tårnet</span><span class="tag">One-Hit Tension</span><span class="tag">Boss pres</span><span class="tag">Karma-stier</span><span class="tag">Historiedrevet</span>
+                </div>
+                <div class="game-actions">
+                  <a class="btn btn-primary" href="games/ball-is-god.html">Udforsk Ball is God?!</a>
+                  <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=F%C3%B8lg+Ball+is+God+udvikling&amp;body=Hej+WillowinWorld%2C+jeg+vil+f%C3%B8lge+Ball+is+God+udviklingsopdateringer." aria-label="Anmod om Ball is God-udviklingsopdateringer">Anmod om opdateringer</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="studio">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Studiefilosofi</div>
+              <h2 class="section-title">Én handling. Én levende verden.</h2>
+            </div>
+            <p class="section-copy">Hvert spil starter med én-touch-regel – tegn, drop, mix eller undvig – tilføjer derefter karakter, klar feedback og konsekvenser, som spillere kan læse uden en manual.</p>
+          </div>
+
+          <div class="principles-grid">
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Legende interaktion</h3>
+              <p>Hvert tryk, streg, drop og skud får en øjeblikkelig visuel respons, så årsag og virkning forbliver klar.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h12M4 18h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Læsbart design</h3>
+              <p>Bevægelse, kontrast og pacing viser målet og konsekvensen, før forklarende tekst er nødvendig.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l3 6 6 .9-4.5 4.4 1.1 6.2L12 17.4l-5.6 3.1 1.1-6.2L3 9.9 9 9l3-6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+              <h3>Karakteridentitet</h3>
+              <p>Maskoter, genstande og brugergrænseflade har personlighed, før de har dekoration.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M8 2h8a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V4a2 2 0 012-2zM10 18h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Mobil-først UX</h3>
+              <p>Kontroller, rytme og layout er bygget til tommelfingre, korte sessioner, læsbar brugergrænseflade og klare beslutninger på små skærme.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Tilfredsstillende feedback</h3>
+              <p>Øjeblikke med effekt, fletning, sprøjt, vind og fejl er tunet, indtil de føles sprøde.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19c6-1 9-4 10-10 4 2 6 5 6 10H4zM14 9c0-3-2-5-5-6 0 4 2 6 5 6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>Hyggelig dybde</h3>
+              <p>Blød præsentation giver plads til planlægning, mestring og gentagelse.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 16l3-8 3 8M13 16l2-5 3 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+              <h3>2D Art Direction</h3>
+              <p>Simple former, stærke silhuetter og ensartet interfacekunst gør, at hver verden er genkendelig.</p>
+            </article>
+            <article class="principle">
+              <div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2v5M12 17v5M2 12h5M17 12h5M5 5l3.5 3.5M15.5 15.5L19 19M19 5l-3.5 3.5M8.5 15.5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+              <h3>Levende verdener</h3>
+              <p>Baggrunde, brugergrænseflade og karakterer bør stille og roligt reagere, selv uden for hovedsløjfen.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="systems">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Hvad vi bygger</div>
+              <h2 class="section-title">Systemer med charme, vægt og genspilbarhed.</h2>
+            </div>
+          </div>
+
+          <div class="systems-grid">
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 16c2 3 7 4 10 1 3-2 4-7 1-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="2"/></svg></div><h3>Fysik-baserede puslespil</h3><p>Taktile regler, læsbare resultater og stabil objektadfærd til mobilspil.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 20c8-2 12-7 12-16C10 4 5 9 4 18c2-1 4-1 6 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Hyggelige mobilspil</h3><p>Bløde verdener, der er rolige at komme ind i og tilfredsstillende at mestre.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 11V8a5 5 0 0110 0v3M5 11h14v10H5V11z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Interaktive karakterer</h3><p>Maskoter med tomgang, reaktioner og følelsesmæssig klarhed.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 14a4 4 0 100-8 4 4 0 000 8zM17 18a4 4 0 100-8 4 4 0 000 8zM9.8 12.2l4.4 1.6" stroke="currentColor" stroke-width="2"/></svg></div><h3>Farvekombinationsmekanik</h3><p>Simple farveregler, der åbner taktiske valg i et format, som spillere kan forstå fra et kort klip.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0zM12 9a3 3 0 100 6 3 3 0 000-6z" stroke="currentColor" stroke-width="2"/></svg></div><h3>Levende baggrunde</h3><p>Scener forbliver genkendelige uden at konkurrere med gameplay, tekst eller kontroller.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16L18 9l-6-5-6 5-2 11zM9 20v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div><h3>Søde fantasiverdener</h3><p>Måner, portaler, skove, slotte og figurer med tilbageholdenhed.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V6M4 18h16M8 15l3-4 3 2 5-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Meta progression</h3><p>Lås op for stier, der respekterer sessionslængde og spillermotivation.</p></article>
+            <article class="system-card"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4V5zM8 9h8M8 13h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><h3>Spil UI/UX</h3><p>Grænseflader bruger tydeligt hierarki, øjeblikkelig feedback og spilspecifikt visuelt sprog.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <article class="soft-card about-copy">
+            <div class="eyebrow">Om WillowinWorld</div>
+            <h2 class="section-title">Et lille studie til taktile mobile verdener.</h2>
+            <p>WillowinWorld udvikler fire mobil-første puslespil og arkadespil: Nature Seed, Candy Shop, Paint Blasters og Ball is God?! Hvert projekt har en offentlig spilside, aktuel build-status, dateret devlog og presse.</p>
+            <div class="about-points">
+              <span>Mobil-først-følelse</span>
+              <span>Hyggelige fantasiverdener</span>
+              <span>Interaktive systemer</span>
+              <span>Distinkt 2D-kunst</span>
+            </div>
+            <p>Nuværende arbejde spænder over tegne-til-løsning linjefysik, slik smelter sammen på tværs af ti beholdere, 35 farve-projektil-opskrifter og en roterende tårnnedstigning på tværs af ti steder.</p>
+          </article>
+          <article class="soft-card symbol-card">
+            <div class="symbol-stage">
+              <img class="studio-brand-logo" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 280px, 315px" data-logo-theme data-logo-sizes="(max-width: 760px) 280px, 315px" width="1024" height="1024" alt="WillowinWorld-logo med den magiske kat, tvilling W-mærke og slotsverden" loading="lazy" decoding="async">
+            </div>
+            <div class="symbol-copy">
+              <h3>Fire spil. Fire forskellige spilbare systemer.</h3>
+              <p>Tegn en begrænset fysisk vej, administrer en skiftende slikbeholder, saml et farvebillede eller drej et faldende tårn. Åbn hver spilside for dets aktuelle omfang, produktionsstatus og seneste daterede opdatering.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Proces</div>
+              <h2 class="section-title"><span class="title-line">Fra første krog</span> <span class="title-line">til poleret mobiludgivelse.</span></h2>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <article class="step"><h3>Idé</h3><p>Definer fantasy, klar genre, spillerløfte og kerne taktile loop.</p></article>
+            <article class="step"><h3>Prototype</h3><p>Byg det korteste spilbare bevis med ægte input, feedback og fejltilstande.</p></article>
+            <article class="step"><h3>Føltest</h3><p>Tune kontroller, friktion, pacing, læsbarhed og om løkken stadig føles god efter gentagelse.</p></article>
+            <article class="step"><h3>Art Direction</h3><p>Form silhuetter, palet, UI-sprog, ikonlæsbarhed og karakteridentitet.</p></article>
+            <article class="step"><h3>Produktion</h3><p>Skaler indhold, systemer, progression, optimering og teknisk grundlag.</p></article>
+            <article class="step"><h3>polsk</h3><p>Forfin overgange, VFX, lydbeats, onboarding, tilgængelighed og brugerkomfort.</p></article>
+            <article class="step"><h3>Start</h3><p>Forbered butiksaktiver, pressemateriale, analyser, liveopdateringer og fællesskabsløkker.</p></article>
+            <article class="step"><h3>Live Care</h3><p>Mål udgivelsen, lyt til spillere og hold hver verden sund med fokuserede opdateringer.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="devlog">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Spildevlogs</div>
+              <h2 class="section-title"><span class="title-line">Seneste dev-noter,</span> <span class="title-line">ingen gravning.</span></h2>
+            </div>
+            <p class="section-copy">Den nyeste daterede note fra hver spilside, baseret på de spilbare systemer, der nu er inde i Unity builds.</p>
+          </div>
+
+          <div class="devlog-grid" data-latest-devlogs>
+            <!-- latest-devlogs:start -->
+            <article class="devlog-card" data-devlog-card data-devlog-game="nature-seed" data-devlog-source="games/nature-seed.html">
+              <span><b data-devlog-name>Nature Seed</b><time datetime="2026-07-31" data-devlog-date>31. juli 2026</time></span>
+              <h3 data-devlog-title>Niveau 2 restaurering og stabilitetspas</h3>
+              <p data-devlog-summary>Niveau 2 bruger nu sit produktionsbaggrundspar med mere pålidelig niveauopsætning, kollisionstjek og færdiggørelsesfeedback.</p>
+              <a class="btn btn-ghost" href="games/nature-seed.html#devlog" aria-label="Åbn Nature Seed devlog">Åbn Nature Seed devlog</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="candy-shop" data-devlog-source="games/candy-shop.html">
+              <span><b data-devlog-name>Candy Shop</b><time datetime="2026-07-31" data-devlog-date>31. juli 2026</time></span>
+              <h3 data-devlog-title>Produktionsmenu og HUD-pas</h3>
+              <p data-devlog-summary>Hovedmenu, niveauvalg, HUD-kontroller og kommandoikoner deler nu ét visuelt sprog; yderligere stresstest i motoren dækker det opdaterede flow.</p>
+              <a class="btn btn-ghost" href="games/candy-shop.html#devlog" aria-label="Åbn Candy Shop devlog">Åbn Candy Shop devlog</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="paint-blasters" data-devlog-source="games/paint-blasters.html">
+              <span><b data-devlog-name>Paint Blasters</b><time datetime="2026-07-31" data-devlog-date>31. juli 2026</time></span>
+              <h3 data-devlog-title>Fysik og effektstabilitet bestået</h3>
+              <p data-devlog-summary>Projektiladfærd, Match-3-opløsning og hit-effekter blev testet og strammet for mere konsistente combo-resultater.</p>
+              <a class="btn btn-ghost" href="games/paint-blasters.html#devlog" aria-label="Åbn Paint Blasters devlog">Åbn Paint Blasters devlog</a>
+            </article>
+            <article class="devlog-card" data-devlog-card data-devlog-game="ball-is-god" data-devlog-source="games/ball-is-god.html">
+              <span><b data-devlog-name>Ball is God?!</b><time datetime="2026-07-31" data-devlog-date>31. juli 2026</time></span>
+              <h3 data-devlog-title>Verdensoverflader og farevalidering</h3>
+              <p data-devlog-summary>Karakterpræsentation, deterministisk generering og tornefarer modtog et koordineret visuelt og produktionsvalideringspas.</p>
+              <a class="btn btn-ghost" href="games/ball-is-god.html#devlog" aria-label="Åbn Ball is God?! devlog">Åbn Ball is God?! devlog</a>
+            </article>
+            <!-- latest-devlogs:end -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">FAQ</div>
+              <h2 class="section-title">Hurtige svar til spillere, presse og udgivere.</h2>
+            </div>
+          </div>
+
+          <div class="faq-list">
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Hvilken slags spil laver WillowinWorld?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Vi udvikler fire mobile-first-spil: et fysikpuslespil, der skal løses, et slikfusionspuslespil, en fysikarkade med farveblanding og en historiedrevet arkade med lodret afstamning.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Respekterer webstedet indstillinger for reduceret bevægelse?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Ja. Den følger din enheds præference for reduceret bevægelse, reducerer effekter, når Save-Data er aktiveret og sætter animation på pause, når fanen er skjult.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Følger siden mit dag- eller nat-tema?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Ja. Ved et første besøg bruger den det gemte tema, hvis der findes et, derefter systemfarvepræferencen og derefter lokal tid. Hvis ingen af ​​disse kan læses, starter WillowinWorld i mørk tilstand.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Arbejder du med forlag?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Vi er åbne for udgivergennemgang for de fire projekter, der er vist her. Pressesættet viser hvert spils byggestatus, offentlige aktiver og direkte kontaktrute.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Er dine spil mobil-først?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Ja. Vi designer omkring mobil input, sessionslængde, skærmklarhed og ydeevne fra den første prototype.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Kan jeg sende en portfolio?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Ja. Kunstnere, Unity-udviklere, designere, animatorer og lydsamarbejdspartnere kan kontakte os på contact@willowinworld.com med et fokuseret porteføljelink og rollekontekst.</p></div></div>
+            </article>
+            <article class="faq-item">
+              <button class="faq-question" type="button" aria-expanded="false">Kan jeg samarbejde med studiet?<span class="faq-icon" aria-hidden="true"></span></button>
+              <div class="faq-answer"><div><p>Vi er åbne for kunst, Unity, design, animation, lyd og udgivelsessamarbejder, der passer til et af de fire aktuelle projekter.</p></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section final-cta" id="contact">
+        <div class="container">
+          <h2 class="section-title">Tal med WillowinWorld.</h2>
+          <p class="section-copy">Vi glæder os over spillerfeedback, presseforespørgsler, udgiversamtaler og produktionsorienterede samarbejder.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary" data-open-contact type="button">Kontakt studie</button>
+            <a class="btn btn-ghost" href="press-kit.html">Pressesæt</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <a class="brand" href="#home" aria-label="WillowinWorld hjem">
+            <span class="brand-mark" aria-hidden="true">
+              <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" loading="lazy" decoding="async">
+            </span>
+            <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orld</span>
+          </a>
+        </div>
+        <nav class="footer-links" aria-label="Sidefodnavigation">
+          <a href="#games">Spil</a>
+          <a href="#studio">Studie</a>
+          <a href="#devlog">Devlog</a>
+          <a href="press-kit.html">Pressesæt</a>
+          <a href="#contact" data-open-contact>Kontakt</a>
+          <a href="/404.html">Fortabte stjerner</a>
+          <button id="promoHuntToggle" type="button" aria-pressed="false">Magisk jagt</button>
+        </nav>
+        <div class="footer-contact">
+          <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a>
+          <a href="mailto:contact@willowinworld.com?subject=Anmod+om+adgang+til+Nature+Seed+playtesten">Nature Seed afspilningstest</a>
+          <a class="footer-action" href="asset-usage.html" data-open-info="asset">Aktiv brug</a>
+          <a class="footer-action" href="privacy.html" data-open-info="privacy">Privatliv</a>
+          <a class="footer-action" href="legal.html" data-open-info="legal">Juridisk</a>
+          <button class="footer-action" type="button" data-open-info="security">Sikkerhed</button>
+          <a href="mailto:contact@willowinworld.com?subject=Udgiverforesp%C3%B8rgsel">Udgiverkontakt</a>
+          <button class="footer-action" type="button" data-open-info="careers">Karriere / Samarbejde</button>
+        </div>
+        <div class="copyright">© 2026 WillowinWorld. Alle rettigheder forbeholdes.</div>
+      </div>
+    </footer>
+  </div>
+
+  <div class="modal" id="contactModal" hidden role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <div>
+          <h2 id="contactTitle">Kontakt WillowinWorld</h2>
+          <p>Dette forbereder en e-mail til contact@willowinworld.com, så presse-, udgiver- og samarbejdsanmodninger går gennem en klar direkte rute.</p>
+        </div>
+        <button class="icon-btn" id="closeContact" type="button" aria-label="Luk kontaktformular">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <div class="contact-draft-row">
+          <p id="contactDraftStatus" role="status" aria-live="polite">Kladde forbliver på denne browserfane, mens du arbejder.</p>
+          <button id="clearContactDraft" type="button">Ryd udkast</button>
+        </div>
+        <div class="field">
+          <label for="name">Navn</label>
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="80" required placeholder="Dit navn" aria-describedby="contactHandoff">
+        </div>
+        <div class="field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" maxlength="120" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="type">Forespørgselstype</label>
+          <select id="type" name="type">
+            <option value="General">Generelt</option>
+            <option value="Publishing">Udgivelse</option>
+            <option value="Partnership">Partnerskab</option>
+            <option value="Press">Tryk</option>
+            <option value="Portfolio">Portefølje</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Besked</label>
+          <textarea id="message" name="message" maxlength="1200" required placeholder="Fortæl os, hvad du vil diskutere."></textarea>
+        </div>
+        <p class="contact-handoff-note" id="contactHandoff">Dette åbner en forberedt kladde i din e-mail-app. Der sendes intet, før du bekræfter det der. Du kan også maile <a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a> direkte.</p>
+        <div class="contact-form-actions">
+          <button class="btn btn-primary" type="submit">Forbered e-mail</button>
+          <button class="btn btn-ghost" id="copyContactMessage" type="button">Kopiér besked</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="careersModal" hidden role="dialog" aria-modal="true" aria-labelledby="careersTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Karriere / Samarbejde</div>
+          <h2 id="careersTitle">Vil du bygge magiske spil med os?</h2>
+          <p>Vi er åbne for tankevækkende samarbejdspartnere, der bekymrer sig om følelse, identitet og player-first-produktion.</p>
+        </div>
+        <button class="icon-btn" id="closeCareers" type="button" aria-label="Luk karriere- og samarbejdsdetaljer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-card">
+        <h3>Åbne roller og samarbejdsspor</h3>
+        <div class="roles">
+          <span class="tag">2D-kunstnere</span>
+          <span class="tag">Unity udviklere</span>
+          <span class="tag">Spildesignere</span>
+          <span class="tag">Animatorer</span>
+          <span class="tag">Lyddesignere</span>
+          <span class="tag">Udgivere</span>
+          <span class="tag">Partnere</span>
+        </div>
+        <p>Send et fokuseret porteføljelink, rolle, tilgængelighed og det WillowinWorld spil eller stilområde, du føler dig tættest på.</p>
+      </div>
+      <div class="info-actions">
+        <button class="btn btn-primary" data-open-contact data-contact-type="Portfolio" type="button">Åbn kontaktformularen</button>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Portef%C3%B8lje+eller+samarbejde+for+WillowinWorld">Send portefølje</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="pressModal" hidden role="dialog" aria-modal="true" aria-labelledby="pressTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Presse / Udgivere</div>
+          <h2 id="pressTitle">Kompakt studiefakta til presse og partnere.</h2>
+          <p>WillowinWorld bygger taktile mobil-første puslespil og arkadespil med hyggelig fantasy art direction, læsbare systemer og stærk følelse.</p>
+        </div>
+        <button class="icon-btn" id="closePress" type="button" aria-label="Luk presse- og udgiveroplysninger">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Studio pitch</h3>
+          <p>Den nuværende portefølje dækker fysik med tegning for at løse, slikfusionsopgaver, farveødelæggelse og lodret arkadenedstigning.</p>
+          <p>Studiets fokus er mobil-først input, stærke silhuetter, spilspecifik 2D-kunst og mekanik, som spillere kan forstå gennem bevægelse.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Faktaark</h3>
+          <dl>
+            <div><dt>Studie</dt><dd>WillowinWorld</dd></div>
+            <div><dt>Fokus</dt><dd>Mobile-første puslespil og arkadespil</dd></div>
+            <div><dt>Kontakt</dt><dd><a href="mailto:contact@willowinworld.com">contact@willowinworld.com</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="press-kit.html">Åbn Press Kit</a>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Udgiverforesp%C3%B8rgsel">Udgiverkontakt</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="privacyModal" hidden role="dialog" aria-modal="true" aria-labelledby="privacyTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Privatliv</div>
+          <h2 id="privacyTitle">WillowinWorld fortrolighedsnotat.</h2>
+          <p>Det offentlige websted er bevidst simpelt: ingen analysescripts, reklamepixels, sporingscookies, tredjeparts indlejringer eller kontosystemer.</p>
+        </div>
+        <button class="icon-btn" id="closePrivacy" type="button" aria-label="Luk privatlivsoplysninger">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Hvad er gemt</h3>
+          <p>Siden gemmer muligvis en lille lokal temapræference i din browser, så dag/nat-skiftet forbliver konsekvent. Det opretter ikke en spillerkonto eller adfærdsprofil.</p>
+          <p>Hjemmesidens kontaktformular opbevarer dens navn, e-mail, forespørgselstype og meddelelsesfelter på samme fane, så en genindlæsning ikke sletter dit kladde. Du kan rydde det i formularen, og browseren fjerner det, når fanesessionen slutter.</p>
+          <p>Hvis du sender en e-mail til WillowinWorld, bruges din besked, e-mailadresse og links kun til at besvare din forespørgsel.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Fakta om fortrolighed</h3>
+          <dl>
+            <div><dt>Analyse</dt><dd>Ingen</dd></div>
+            <div><dt>Cookies</dt><dd>Ingen sporingscookies</dd></div>
+            <div><dt>Kontaktudkast</dt><dd>Kun samme fane</dd></div>
+            <div><dt>Kontakt</dt><dd><a href="mailto:contact@willowinworld.com?subject=Sp%C3%B8rgsm%C3%A5l+om+beskyttelse+af+personlige+oplysninger">Privatlivs-e-mail</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Sp%C3%B8rgsm%C3%A5l+om+beskyttelse+af+personlige+oplysninger">Kontakt til beskyttelse af personlige oplysninger</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="legalModal" hidden role="dialog" aria-modal="true" aria-labelledby="legalTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Juridisk</div>
+          <h2 id="legalTitle">WillowinWorld juridisk meddelelse.</h2>
+          <p>WillowinWorld, studielogoet, spilnavne, karakterer, skærmbilleder, visuelle aktiver og hjemmesidekopi tilhører WillowinWorld, medmindre andet er angivet.</p>
+        </div>
+        <button class="icon-btn" id="closeLegal" type="button" aria-label="Luk juridiske detaljer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Tilladt offentlig reference</h3>
+          <p>Presse, udgivere og skabere kan henvise til offentlige spilsider og bruge forhåndsvisningsmateriale til dækning, udgiveranmeldelse og mockups med butiksreferencer med WillowinWorld-kredit.</p>
+          <p>Offentlig adgang til et aktiv giver ikke tilladelse til at videresælge, omdistribuere, præge, bruge det til at træne AI eller maskinlæringsdatasæt, efterligne studiet eller bygge ikke-relaterede kommercielle produkter ud fra det.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Licensrute</h3>
+          <dl>
+            <div><dt>Ejer</dt><dd>WillowinWorld</dd></div>
+            <div><dt>Særlig brug</dt><dd>Spørg først</dd></div>
+            <div><dt>Kontakt</dt><dd><a href="mailto:contact@willowinworld.com?subject=Juridisk+sp%C3%B8rgsm%C3%A5l">Juridisk e-mail</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <button class="btn btn-primary" data-open-info="asset" type="button">Anvendelse af aktiver</button>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Juridisk+sp%C3%B8rgsm%C3%A5l">Juridisk kontakt</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="assetModal" hidden role="dialog" aria-modal="true" aria-labelledby="assetTitle" data-nosnippet>
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Anvendelse af aktiver</div>
+          <h2 id="assetTitle">Politik om offentlige aktiver på forhåndsvisningsniveau.</h2>
+          <p>Offentlige filer på WillowinWorld-spilsider er optimeret forhåndsvisningsmateriale til presseartikler, udgiveranmeldelser, mockups med butiksreferencer og dækning om WillowinWorld-spil.</p>
+        </div>
+        <button class="icon-btn" id="closeAsset" type="button" aria-label="Luk oplysninger om aktivbrug">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Tilladt</h3>
+          <p>Brug offentlige forhåndsvisninger i artikler, indlæg, pitch-referencer, dækning, ønskelister, butiksmockups og udgiveranmeldelsesnoter med WillowinWorld-kredit.</p>
+          <p>Spørg, før du beskærer branding, omfarver, bruger aktiver i betalte annoncer, anmoder om lagdelte kildefiler eller viser ikke-udgivne builds.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Ikke tilladt</h3>
+          <dl>
+            <div><dt>Videresalg</dt><dd>Ingen aktivpakker</dd></div>
+            <div><dt>AI-datasæt</dt><dd>Ingen træningsbrug</dd></div>
+            <div><dt>Identitet</dt><dd>Ingen efterligning</dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="press-kit.html#press-assets">Åbn Presseaktiver</a>
+        <a class="btn btn-ghost" href="mailto:contact@willowinworld.com?subject=Anmodning+om+brug+af+aktiv">Anmod om tilladelse</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="securityModal" hidden role="dialog" aria-modal="true" aria-labelledby="securityTitle">
+    <div class="modal-dialog info-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">Sikkerhed</div>
+          <h2 id="securityTitle">Sikkerhed-første statiske site holdning.</h2>
+          <p>WillowinWorld holder det offentlige websted lille, statisk og afhængighedslys for at reducere angrebsoverfladen og samtidig bevare en poleret interaktiv oplevelse.</p>
+        </div>
+        <button class="icon-btn" id="closeSecurity" type="button" aria-label="Luk sikkerhedsoplysninger">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="info-grid">
+        <section class="info-card">
+          <h3>Nuværende basislinje</h3>
+          <p>Siden undgår tredjepartsscripts, indlejringer, konti og eksterne formularbehandlere. Den bruger en streng indholdssikkerhedspolitik, ingen inline hændelseshandlere og direkte e-mail-ruter til kontakt.</p>
+          <p>Sikkerhedsrapporter er velkomne, når de er omfattet af det offentlige WillowinWorld-websted og delt ansvarligt.</p>
+        </section>
+        <aside class="info-card info-facts">
+          <h3>Ansvarlig offentliggørelse</h3>
+          <dl>
+            <div><dt>Kontakt</dt><dd><a href="mailto:contact@willowinworld.com?subject=Sikkerhedsrapport">Sikkerheds-e-mail</a></dd></div>
+            <div><dt>Sprog</dt><dd>Engelsk foretrækkes</dd></div>
+            <div><dt>Standard</dt><dd><a href="../.well-known/security.txt">security.txt</a></dd></div>
+          </dl>
+        </aside>
+      </div>
+      <div class="info-actions">
+        <a class="btn btn-primary" href="mailto:contact@willowinworld.com?subject=Sikkerhedsrapport">Rapportér sikkerhedsproblem</a>
+        <a class="btn btn-ghost" href="../.well-known/security.txt">Åbn security.txt</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="gameModal" hidden role="dialog" aria-modal="true" aria-labelledby="gameModalTitle">
+    <div class="modal-dialog game-dialog" id="gameDialog">
+      <div class="game-dialog-cover" id="gameDialogCover" aria-hidden="true">
+        <span class="game-dialog-status status-pill" id="gameModalStatus"></span>
+        <span class="game-dialog-spark"></span>
+      </div>
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow" id="gameModalGenre">Spilverden</div>
+          <h2 id="gameModalTitle">WillowinWorld spil</h2>
+        </div>
+        <button class="icon-btn" id="closeGame" type="button" aria-label="Luk spildetaljer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <div class="game-dialog-grid">
+        <div>
+          <p class="game-dialog-copy" id="gameModalCopy"></p>
+          <ul class="game-detail-tags" id="gameModalTags"></ul>
+        </div>
+        <div class="game-pillar-panel">
+          <h3>Gameplay-søjler</h3>
+          <ul id="gameModalPillars"></ul>
+        </div>
+      </div>
+      <div class="secret-actions">
+        <button class="btn btn-primary" data-open-contact type="button">Kontakt studie</button>
+        <button class="btn btn-ghost" id="dismissGame" type="button">Tilbage til verdener</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="secretModal" hidden role="dialog" aria-modal="true" aria-labelledby="secretTitle">
+    <div class="modal-dialog secret-dialog">
+      <div class="modal-head">
+        <div>
+          <div class="eyebrow">En skjult portal åbnede</div>
+          <h2 id="secretTitle">Hemmelighed fundet</h2>
+        </div>
+        <button class="icon-btn" id="closeSecret" type="button" aria-label="Luk hemmelig belønning">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+      <p id="secretMessage"></p>
+      <div class="secret-actions">
+        <a class="btn btn-primary" id="claimSecret" href="mailto:contact@willowinworld.com?subject=Kampagnekrav">Anmod om kampagnekode</a>
+        <button class="btn btn-ghost" id="dismissSecret" type="button">Luk portalen</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../scripts.js?v=20260801-1"></script>
+  <script src="i18n-runtime.js?v=20260802"></script>
+</body>
+</html>
