@@ -11,9 +11,9 @@ export const gameDevlogSources = Object.freeze([
     href: "games/nature-seed.html#devlog",
     canonical: "https://willowinworld.com/games/nature-seed.html#devlog",
     pageCanonical: "https://willowinworld.com/games/nature-seed.html",
-    status: "Active development - playable prototype",
+    status: "Released",
     genres: Object.freeze(["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Line drawing puzzle"]),
-    machineSummary: "A relaxing mobile draw-to-solve physics puzzle. Draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 current levels."
+    machineSummary: "A released mobile draw-to-solve physics puzzle. Released on 10 September 2026 as Nature Seed, it asks players to draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 launch levels."
   }),
   Object.freeze({
     id: "candy-shop",
@@ -257,7 +257,7 @@ export function renderLlmsTxt(updates) {
 
 > WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.
 
-All four games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. No public release date, price, store availability, rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
+Nature Seed is released; the other three games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date; no public price, store availability, rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
 
 ## Games
 

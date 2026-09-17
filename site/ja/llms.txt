@@ -6,14 +6,14 @@
 
 ## ゲーム
 
-- [Nature Seed](https://willowinworld.com/ja/games/nature-seed.html): リラックスできるモバイル描画パズル物理パズル。インク制限のある物理パスを描き、Water Drop と Seed を再結合し、現在の 10 レベルにわたる水彩の森を復元します。 ジャンル: 描いて解くパズル, 物理パズル, リラックスパズル, 線画パズル. 現在の状況: 活発な開発 - プレイアブルプロトタイプ.
+- [Nature Seed](https://willowinworld.com/ja/games/nature-seed.html): モバイル向けの描いて解く物理パズルがリリースされました。 2026 年 9 月 10 日に Nature Seed としてリリースされ、プレイヤーはインク制限のある物理的なパスを描き、Water Drop と Seed を再会させ、10 の起動レベルにわたって水彩の森を復元するように求められます。 ジャンル: 描いて解くパズル, 物理パズル, リラックスパズル, 線画パズル. 現在の状況: リリースされました.
 - [Candy Shop](https://willowinworld.com/ja/games/candy-shop.html): 13 段階のキャンディー チェーン、10 個のコンテナ ルールセット、8 つの特別なキャンディー エフェクト、および次のドロップの計画ツールを備えた居心地の良いモバイル マージ パズル。 ジャンル: 結合パズル, キャンディパズル, カジュアルパズル, 物理パズル. 現在の状況: 積極的な開発 - プレイ可能な製品ビルド.
 - [Paint Blasters](https://willowinworld.com/ja/games/paint-blasters.html): モバイルカラー破壊物理パズルアーケード。 3 つの色の入力を 35 の作成された発射物レシピに組み合わせ、タワーの弱点を狙い、連鎖反応を引き起こします。 ジャンル: カラーパズル, 物理アーケード, 破壊パズル, 連鎖反応. 現在の状況: 積極的な開発 - 量産プロトタイプ.
 - [Ball is God?!](https://willowinworld.com/ja/games/ball-is-god.html): ストーリー主導のハードコア垂直降下モバイル アーケード。 Espa を中心にタワーを回転させ、コンボ スマッシュを構築し、ボスを生き延び、10 の神話上の場所でカルマの選択を実行します。 ジャンル: 垂直降下アーケード, ハードコアアーケード, ストーリー主導のアーケード, ボスアクション. 現在の状況: アクティブな生産.
 
 ## 最新の開発ノート
 
-- [Nature Seed — レベル2の復元と安定性改善](https://willowinworld.com/ja/games/nature-seed.html#devlog): 公開 2026-07-31. レベル 2 は、より信頼性の高いレベル設定、衝突チェック、完了フィードバックを備えたプロダクション バックグラウンド ペアを使用するようになりました。
+- [Nature Seed — Nature Seed リリース](https://willowinworld.com/ja/games/nature-seed.html#devlog): 公開 2026-09-10. Nature Seed は、10 の手作りレベル、ライン効率の星、持続的な進歩、および水彩画の修復報酬を備えた最終タイトルで開始されました。
 - [Candy Shop — 本番用メニューとHUDの改善](https://willowinworld.com/ja/games/candy-shop.html#devlog): 公開 2026-07-31. メイン メニュー、レベル選択、HUD コントロール、およびコマンド アイコンが 1 つの視覚言語を共有するようになりました。追加のエンジン内ストレス テストでは、更新されたフローがカバーされます。
 - [Paint Blasters — 物理挙動とエフェクトの安定性改善](https://willowinworld.com/ja/games/paint-blasters.html#devlog): 公開 2026-07-31. より安定したコンボ結果を得るために、発射物の動作、Match-3 の解像度、ヒット効果がテストされ、強化されました。
 - [Ball is God?! — 世界の地表と危険性の検証](https://willowinworld.com/ja/games/ball-is-god.html#devlog): 公開 2026-07-31. キャラクターのプレゼンテーション、決定論的生成、およびとげのハザードは、調整されたビジュアルおよびプロダクション検証パスを受け取りました。

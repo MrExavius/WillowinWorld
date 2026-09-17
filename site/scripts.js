@@ -143,9 +143,9 @@
     nature: {
       title: "Nature Seed",
       genre: "Draw-to-Solve Physics Puzzle",
-      status: "Playable Vertical Prototype",
-      copy: "A meditative mobile physics puzzle about drawing limited lines that become solid objects. Shape a safe route, bring the Water Drop and Seed together, and solve ten handcrafted vertical levels with as little ink as possible.",
-      tags: ["Mobile", "Draw-to-Solve", "Line Physics", "10 Levels", "Relaxing Puzzle"],
+      status: "Released 10 September 2026",
+      copy: "A released meditative mobile physics puzzle about drawing limited lines that become solid objects. Nature Seed launched on 10 September 2026 with ten handcrafted vertical levels and watercolor restoration rewards.",
+      tags: ["Mobile", "Draw-to-Solve", "Line Physics", "10 Levels", "Released"],
       pillars: [
         "Draw a constrained physical route with a strict ink and line budget.",
         "Bring the Water Drop and Seed characters together through readable cause and effect.",

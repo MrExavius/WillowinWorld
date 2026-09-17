@@ -1,5 +1,5 @@
 export const siteOrigin = "https://willowinworld.com";
-export const localizationLastModified = "2026-08-02";
+export const localizationLastModified = "2026-09-10";
 
 export const locales = Object.freeze([
   Object.freeze({

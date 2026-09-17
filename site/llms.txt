@@ -2,18 +2,18 @@
 
 > WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.
 
-All four games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. No public release date, price, store availability, rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: 2026-07-31.
+Nature Seed is released; the other three games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date; no public price, store availability, rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: 2026-09-10.
 
 ## Games
 
-- [Nature Seed](https://willowinworld.com/games/nature-seed.html): A relaxing mobile draw-to-solve physics puzzle. Draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 current levels. Genres: Draw-to-solve puzzle, Physics puzzle, Relaxing puzzle, Line drawing puzzle. Current status: Active development - playable prototype.
+- [Nature Seed](https://willowinworld.com/games/nature-seed.html): A released mobile draw-to-solve physics puzzle. Released on 10 September 2026 as Nature Seed, it asks players to draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 launch levels. Genres: Draw-to-solve puzzle, Physics puzzle, Relaxing puzzle, Line drawing puzzle. Current status: Released.
 - [Candy Shop](https://willowinworld.com/games/candy-shop.html): A cozy mobile merge puzzle with a 13-stage candy chain, 10 container rulesets, eight special-candy effects and planning tools for the next drop. Genres: Merge puzzle, Candy puzzle, Casual puzzle, Physics puzzle. Current status: Active development - playable production build.
 - [Paint Blasters](https://willowinworld.com/games/paint-blasters.html): A mobile color-destruction physics puzzle arcade. Combine three color inputs into 35 authored projectile recipes, target tower weak points and trigger chain reactions. Genres: Color puzzle, Physics arcade, Destruction puzzle, Chain reaction. Current status: Active development - production prototype.
 - [Ball is God?!](https://willowinworld.com/games/ball-is-god.html): A story-driven hardcore vertical-descent mobile arcade. Rotate the tower around Espa, build combo smashes, survive bosses and carry karma choices through 10 mythic locations. Genres: Vertical descent arcade, Hardcore arcade, Story-driven arcade, Boss action. Current status: Active production.
 
 ## Latest development notes
 
-- [Nature Seed - Level 2 restoration and stability pass](https://willowinworld.com/games/nature-seed.html#devlog): Published 2026-07-31. Level 2 now uses its production background pair, with more reliable level setup, collision checks and completion feedback.
+- [Nature Seed - Nature Seed release](https://willowinworld.com/games/nature-seed.html#devlog): Published 2026-09-10. Nature Seed launched under its final title with 10 handcrafted levels, line-efficiency stars, persistent progress and watercolor restoration rewards.
 - [Candy Shop - Production menu and HUD pass](https://willowinworld.com/games/candy-shop.html#devlog): Published 2026-07-31. Main menu, level selection, HUD controls and command icons now share one visual language; additional in-engine stress tests cover the updated flow.
 - [Paint Blasters - Physics and effect stability pass](https://willowinworld.com/games/paint-blasters.html#devlog): Published 2026-07-31. Projectile behavior, Match-3 resolution and hit effects were tested and tightened for more consistent combo outcomes.
 - [Ball is God?! - World surfaces and hazard validation](https://willowinworld.com/games/ball-is-god.html#devlog): Published 2026-07-31. Character presentation, deterministic generation and thorn hazards received a coordinated visual and production-validation pass.

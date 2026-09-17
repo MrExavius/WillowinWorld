@@ -136,7 +136,7 @@ const manualTranslationOverrides = Object.freeze({
   }),
   da: Object.freeze({
     "Hardcore Vertical Descent Arcade": "Hardcore arkadespil med lodret nedstigning",
-    "Spotlight · Nature Seed prototype": "Fokus · Nature Seed-prototype",
+    "Spotlight · Nature Seed release": "Fokus · Nature Seed-udgivelse",
     "WillowinWorld - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld - Uafhængigt studie for mobile puzzle- og arkadespil",
     "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Uafhængigt studie for mobile puzzle- og arkadespil"
   }),
@@ -149,13 +149,10 @@ const manualTranslationOverrides = Object.freeze({
   fil: Object.freeze({
     "Ball is God Development Build": "Bersiyon para sa pagbuo ng Ball is God",
     "Night Magic / Daylight": "Mahikang Gabi / Liwanag ng Araw",
+    "Spotlight · Nature Seed release": "Tampok · Paglabas ng Nature Seed",
     "Prototype": "Prototipo",
     "First prototype": "Unang prototipo",
-    "Playable prototype": "Nalalarong prototipo",
-    "Playable Prototype": "Nalalarong Prototipo",
-    "Playable Vertical Prototype": "Nalalarong Prototipo ng Patayong Pagbaba",
-    "Ten-level playable prototype": "Nalalarong prototipo na may sampung antas",
-    "Active development - playable prototype": "Aktibong pagbuo - nalalarong prototipo",
+    "Released": "Inilabas",
     "Polish": "Pagpapakinis",
     "Live Care": "Patuloy na suporta",
     "Latest dev notes,": "Pinakabagong tala sa pagbuo,",
@@ -199,7 +196,7 @@ const manualTranslationOverrides = Object.freeze({
     "Candy Shop - Cozy Candy Merge Puzzle Game": "Candy Shop - Koselig puslespill med sammenslåing av godteri",
     "Hardcore Vertical Descent Arcade": "Hardcore arkadespill med vertikal nedstigning",
     "Paint Blasters - Color Destruction Physics Puzzle Game": "Paint Blasters - Fysikkpuslespill med fargeødeleggelse",
-    "Spotlight · Nature Seed prototype": "I fokus · Nature Seed-prototype",
+    "Spotlight · Nature Seed release": "I fokus · Nature Seed-lansering",
     "WillowinWorld - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld - Uavhengig studio for mobile pusle- og arkadespill",
     "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Uavhengig studio for mobile pusle- og arkadespill"
   }),
@@ -212,7 +209,7 @@ const manualTranslationOverrides = Object.freeze({
   ru: Object.freeze({
     "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Инди-студия мобильных головоломок и аркад",
     "Nature Seed | Relaxing Draw-to-Solve Physics Puzzle Game": "Nature Seed | Уютная физическая головоломка с рисованием",
-    "Nature Seed is a draw-to-solve physics puzzle in active development. Draw an ink-limited path, reunite Water Drop and Seed, and restore a watercolor forest.": "Nature Seed — физическая головоломка в разработке: нарисуйте путь с ограниченным запасом чернил, соедините Water Drop и Seed и восстановите акварельный лес.",
+    "Nature Seed is a released draw-to-solve physics puzzle from WillowinWorld. Released on 10 September 2026, it reunites Water Drop and Seed across 10 levels.": "Nature Seed — вышедшая физическая головоломка от WillowinWorld: игра вышла 10 сентября 2026 года и соединяет Water Drop и Seed на 10 уровнях.",
     "Candy Shop | Cozy Candy Merge Puzzle Game for Mobile": "Candy Shop | Уютная мобильная головоломка со слиянием сладостей",
     "Paint Blasters | Color-Mixing Physics Puzzle Arcade": "Paint Blasters | Аркадная физическая головоломка о смешении цветов",
     "Ball is God?! | Vertical Descent Tower Arcade Game": "Ball is God?! | Аркада с вращением башни и вертикальным спуском",
@@ -226,10 +223,14 @@ const manualTranslationOverrides = Object.freeze({
     "Press kit": "Пресс-кит",
     "Current spotlight: Nature Seed restoration preview": "В центре внимания: восстановление мира Nature Seed",
     "Current spotlight · Draw-to-Solve": "В центре внимания · Рисуй и решай",
-    "Spotlight · Nature Seed prototype": "В центре · Прототип Nature Seed",
+    "Spotlight · Nature Seed release": "В центре · Релиз Nature Seed",
     "Connect": "Соединить",
     "Bloom": "Расцвет",
-    "Nature Seed is a relaxing mobile draw-to-solve physics puzzle about spending a limited line budget to bring Water Drop and Seed together. Ten current levels connect physical strokes, efficiency stars, persistent progress and watercolor restoration.": "Nature Seed — уютная мобильная физическая головоломка: рисуйте путь с ограниченным запасом чернил, чтобы соединить Water Drop и Seed. В десяти готовых уровнях есть физические линии, рейтинг эффективности, постоянный прогресс и восстановление акварельного мира.",
+    "Nature Seed is a released mobile draw-to-solve physics puzzle about spending a limited line budget to bring Water Drop and Seed together. Released on 10 September 2026, its 10 launch levels connect physical strokes, efficiency stars, persistent progress and watercolor restoration.": "Nature Seed — вышедшая мобильная физическая головоломка: рисуйте путь с ограниченным запасом чернил, чтобы соединить Water Drop и Seed. Игра вышла 10 сентября 2026 года под названием Nature Seed; 10 стартовых уровней объединяют физические линии, рейтинг эффективности, постоянный прогресс и восстановление акварельного мира.",
+    "Nature Seed is a released mobile draw-to-solve puzzle about drawing limited lines that become physical objects. Released on 10 September 2026, its ten launch levels ask players to bring Water Drop and Seed together, then improve the route for a better efficiency rating.": "Nature Seed — вышедшая мобильная головоломка, где ограниченные линии становятся физическими объектами. Игра вышла 10 сентября 2026 года; десять стартовых уровней предлагают соединить Water Drop и Seed, а затем улучшить маршрут ради более высокой оценки эффективности.",
+    "Released 10 September 2026 as Nature Seed. The launch build contains 10 levels, line-efficiency stars, persistent progress and stable physical line generation.": "Выпущено 10 сентября 2026 г. как Nature Seed. Стартовая сборка содержит 10 уровней, звезды эффективности линий, постоянный прогресс и стабильное физическое создание линий.",
+    "The game released under the title Nature Seed with ten launch levels, line-efficiency stars, persistent progress and watercolor restoration rewards.": "Игра вышла под названием Nature Seed с десятью стартовыми уровнями, звездами за эффективность линии, постоянным прогрессом и наградами за восстановление акварельного мира.",
+    "Nature Seed launched under its final title with 10 handcrafted levels, line-efficiency stars, persistent progress and watercolor restoration rewards.": "Nature Seed вышла под финальным названием с 10 вручную созданными уровнями, звездами за эффективность линии, постоянным прогрессом и наградами за восстановление акварельного мира.",
     "Four worlds. One touch away.": "Четыре мира. Одно касание — и вы внутри.",
     "Draw physical paths, merge candy, build color shots or rotate a divine tower. Each game begins with one readable mobile action.": "Рисуйте физические пути, объединяйте сладости, собирайте цветные выстрелы или вращайте божественную башню. В основе каждой игры — одно понятное мобильное действие.",
     "One action. One living world.": "Одно действие. Целый живой мир.",
@@ -297,8 +298,8 @@ const manualTranslationOverrides = Object.freeze({
     "Request updates": "Seguir las novedades",
     "Press kit": "Kit de prensa",
     "Current spotlight · Draw-to-Solve": "En portada · Dibuja para resolver",
-    "Spotlight · Nature Seed prototype": "En portada · Prototipo de Nature Seed",
-    "Nature Seed is a relaxing mobile draw-to-solve physics puzzle about spending a limited line budget to bring Water Drop and Seed together. Ten current levels connect physical strokes, efficiency stars, persistent progress and watercolor restoration.": "Nature Seed es un relajante puzle de física para móviles: dibuja un camino con tinta limitada para reunir a Water Drop y Seed. Sus diez niveles actuales combinan trazos físicos, estrellas de eficiencia, progreso persistente y la restauración de un mundo de acuarela.",
+    "Spotlight · Nature Seed release": "En portada · Lanzamiento de Nature Seed",
+    "Nature Seed is a released mobile draw-to-solve physics puzzle about spending a limited line budget to bring Water Drop and Seed together. Released on 10 September 2026, its 10 launch levels connect physical strokes, efficiency stars, persistent progress and watercolor restoration.": "Nature Seed es un puzle de física para móviles ya lanzado: dibuja un camino con tinta limitada para reunir a Water Drop y Seed. Lanzado el 10 de septiembre de 2026, sus 10 niveles iniciales combinan trazos físicos, estrellas de eficiencia, progreso persistente y restauración en acuarela.",
     "Four worlds. One touch away.": "Cuatro mundos. A un solo toque.",
     "Draw physical paths, merge candy, build color shots or rotate a divine tower. Each game begins with one readable mobile action.": "Traza caminos físicos, fusiona dulces, crea disparos de color o gira una torre divina. Cada juego nace de una acción móvil clara.",
     "One action. One living world.": "Una acción. Todo un mundo vivo.",
@@ -360,8 +361,8 @@ const manualTranslationOverrides = Object.freeze({
     "Request updates": "Acompanhar novidades",
     "Press kit": "Kit de imprensa",
     "Current spotlight · Draw-to-Solve": "Em destaque · Desenhe para resolver",
-    "Spotlight · Nature Seed prototype": "Em destaque · Protótipo de Nature Seed",
-    "Nature Seed is a relaxing mobile draw-to-solve physics puzzle about spending a limited line budget to bring Water Drop and Seed together. Ten current levels connect physical strokes, efficiency stars, persistent progress and watercolor restoration.": "Nature Seed é um quebra-cabeça relaxante de física para dispositivos móveis: desenhe um caminho com tinta limitada para unir Water Drop e Seed. Seus dez níveis atuais combinam traços físicos, estrelas de eficiência, progresso persistente e a restauração de um mundo em aquarela.",
+    "Spotlight · Nature Seed release": "Em destaque · Lançamento de Nature Seed",
+    "Nature Seed is a released mobile draw-to-solve physics puzzle about spending a limited line budget to bring Water Drop and Seed together. Released on 10 September 2026, its 10 launch levels connect physical strokes, efficiency stars, persistent progress and watercolor restoration.": "Nature Seed é um quebra-cabeça de física para dispositivos móveis já lançado: desenhe um caminho com tinta limitada para unir Water Drop e Seed. Lançado em 10 de setembro de 2026, seus 10 níveis iniciais combinam traços físicos, estrelas de eficiência, progresso persistente e restauração em aquarela.",
     "Four worlds. One touch away.": "Quatro mundos. A um toque de distância.",
     "Draw physical paths, merge candy, build color shots or rotate a divine tower. Each game begins with one readable mobile action.": "Desenhe caminhos físicos, combine doces, monte disparos coloridos ou gire uma torre divina. Cada jogo começa com uma ação mobile fácil de entender.",
     "One action. One living world.": "Uma ação. Um mundo inteiro vivo.",
@@ -409,7 +410,7 @@ const manualTranslationOverrides = Object.freeze({
     "Ball is God?! press and creator assets": "Materiais de Ball is God?! para imprensa e criadores"
   }),
   de: Object.freeze({
-    "Nature Seed is a draw-to-solve physics puzzle in active development. Draw an ink-limited path, reunite Water Drop and Seed, and restore a watercolor forest.": "Nature Seed ist ein Physikrätsel in aktiver Entwicklung. Zeichne einen Weg mit begrenzter Tinte, vereine Water Drop und Seed und erwecke einen Aquarellwald zu neuem Leben.",
+    "Nature Seed is a released draw-to-solve physics puzzle from WillowinWorld. Released on 10 September 2026, it reunites Water Drop and Seed across 10 levels.": "Nature Seed ist ein veröffentlichtes Physikrätsel von WillowinWorld. Es erschien am 10. September 2026 und vereint Water Drop und Seed in 10 Levels.",
     "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Indie-Studio für mobile Puzzle- und Arcade-Spiele",
     "Hardcore Vertical Descent Arcade": "Hardcore-Arcade mit vertikalem Abstieg"
   }),
@@ -428,6 +429,9 @@ const manualTranslationOverrides = Object.freeze({
   }),
   sw: Object.freeze({
     "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Studio Huru ya Michezo ya Simu ya Mafumbo na Arcade"
+  }),
+  sv: Object.freeze({
+    "Spotlight · Nature Seed release": "Fokus · Nature Seed-lansering"
   })
 });
 
