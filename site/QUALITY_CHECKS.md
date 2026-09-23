@@ -1,4 +1,4 @@
-# WillowinWorld Quality Checks
+# WillowinWorlds Quality Checks
 
 Local checks:
 

@@ -62,7 +62,7 @@ const structuredDataSkippedKeys = new Set([
 ]);
 
 const protectedExactText = new Set([
-  "WillowinWorld",
+  "WillowinWorlds",
   "Nature Seed",
   "Candy Shop",
   "Paint Blasters",
@@ -128,7 +128,7 @@ const protectedExactText = new Set([
 
 const manualTranslationOverrides = Object.freeze({
   hy: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Ինդի շարժական գլուխկոտրուկների և արկադային խաղերի ստուդիա",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Ինդի շարժական գլուխկոտրուկների և արկադային խաղերի ստուդիա",
     "Physics Puzzle / Arcade Hybrid": "Ֆիզիկական գլուխկոտրուկ / արկադային հիբրիդ"
   }),
   cs: Object.freeze({
@@ -137,8 +137,8 @@ const manualTranslationOverrides = Object.freeze({
   da: Object.freeze({
     "Hardcore Vertical Descent Arcade": "Hardcore arkadespil med lodret nedstigning",
     "Spotlight · Nature Seed release": "Fokus · Nature Seed-udgivelse",
-    "WillowinWorld - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld - Uafhængigt studie for mobile puzzle- og arkadespil",
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Uafhængigt studie for mobile puzzle- og arkadespil"
+    "WillowinWorlds - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds - Uafhængigt studie for mobile puzzle- og arkadespil",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Uafhængigt studie for mobile puzzle- og arkadespil"
   }),
   nl: Object.freeze({
     "Open Nature Seed devlog": "Open het devlog van Nature Seed",
@@ -165,7 +165,7 @@ const manualTranslationOverrides = Object.freeze({
     "Production state": "Kalagayan ng produksyon"
   }),
   fi: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Riippumaton mobiilipulma- ja arcadepelistudio",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Riippumaton mobiilipulma- ja arcadepelistudio",
     "Color Destruction Physics Puzzle": "Värintuhoon perustuva fysiikkapulma",
     "Hardcore Vertical Descent Arcade": "Haastava pystysuoran laskeutumisen arcadepeli",
     "Night Magic / Daylight": "Yön taika / Päivänvalo"
@@ -197,23 +197,23 @@ const manualTranslationOverrides = Object.freeze({
     "Hardcore Vertical Descent Arcade": "Hardcore arkadespill med vertikal nedstigning",
     "Paint Blasters - Color Destruction Physics Puzzle Game": "Paint Blasters - Fysikkpuslespill med fargeødeleggelse",
     "Spotlight · Nature Seed release": "I fokus · Nature Seed-lansering",
-    "WillowinWorld - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld - Uavhengig studio for mobile pusle- og arkadespill",
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Uavhengig studio for mobile pusle- og arkadespill"
+    "WillowinWorlds - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds - Uavhengig studio for mobile pusle- og arkadespill",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Uavhengig studio for mobile pusle- og arkadespill"
   }),
   ro: Object.freeze({
     "Ball is God?! - Hardcore Vertical Descent Arcade Game": "Ball is God?! - Joc arcade hardcore cu coborâre verticală",
     "Cozy Physics Merge Puzzle": "Puzzle relaxant de fizică și combinare",
     "Hardcore Vertical Descent Arcade": "Arcade hardcore cu coborâre verticală",
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Studio indie de jocuri mobile puzzle și arcade"
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Studio indie de jocuri mobile puzzle și arcade"
   }),
   ru: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Инди-студия мобильных головоломок и аркад",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Инди-студия мобильных головоломок и аркад",
     "Nature Seed | Relaxing Draw-to-Solve Physics Puzzle Game": "Nature Seed | Уютная физическая головоломка с рисованием",
-    "Nature Seed is a released draw-to-solve physics puzzle from WillowinWorld. Released on 10 September 2026, it reunites Water Drop and Seed across 10 levels.": "Nature Seed — вышедшая физическая головоломка от WillowinWorld: игра вышла 10 сентября 2026 года и соединяет Water Drop и Seed на 10 уровнях.",
+    "Nature Seed is a released draw-to-solve physics puzzle from WillowinWorlds. Released on 10 September 2026, it reunites Water Drop and Seed across 10 levels.": "Nature Seed — вышедшая физическая головоломка от WillowinWorlds: игра вышла 10 сентября 2026 года и соединяет Water Drop и Seed на 10 уровнях.",
     "Candy Shop | Cozy Candy Merge Puzzle Game for Mobile": "Candy Shop | Уютная мобильная головоломка со слиянием сладостей",
     "Paint Blasters | Color-Mixing Physics Puzzle Arcade": "Paint Blasters | Аркадная физическая головоломка о смешении цветов",
     "Ball is God?! | Vertical Descent Tower Arcade Game": "Ball is God?! | Аркада с вращением башни и вертикальным спуском",
-    "WillowinWorld Press Kit | Game Facts, Assets & Contact": "Пресс-кит WillowinWorld | Игры, материалы и контакты",
+    "WillowinWorlds Press Kit | Game Facts, Assets & Contact": "Пресс-кит WillowinWorlds | Игры, материалы и контакты",
     "Indie mobile game studio": "Инди-студия мобильных игр",
     "Small games. Living worlds.": "Небольшие игры. Живые миры.",
     "Tactile puzzle and arcade games where every draw, drop, shot and fall changes the world.": "Тактильные головоломки и аркады, где каждый штрих, бросок, выстрел и падение меняют мир.",
@@ -255,7 +255,7 @@ const manualTranslationOverrides = Object.freeze({
     "Physics and effect stability pass": "Стабилизация физики и эффектов",
     "The newest dated note from each game page, grounded in the playable systems now inside the Unity builds.": "Свежая датированная запись по каждой игре — только о системах, которые уже работают в текущих Unity-сборках.",
     "Quick answers for players, press and publishers.": "Короткие ответы для игроков, прессы и издателей.",
-    "Talk to WillowinWorld.": "Поговорите с WillowinWorld.",
+    "Talk to WillowinWorlds.": "Поговорите с WillowinWorlds.",
     "Draw a path. Bring them together.": "Нарисуйте путь. Соедините их.",
     "The line is not decoration. It becomes the puzzle.": "Линия — не украшение. Она становится частью головоломки.",
     "Drop sweets. Build bigger treats.": "Бросайте сладости. Собирайте всё более крупные угощения.",
@@ -284,12 +284,12 @@ const manualTranslationOverrides = Object.freeze({
     "Ball is God?! press and creator assets": "Материалы Ball is God?! для прессы и авторов"
   }),
   es: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Estudio indie de juegos móviles de puzles y arcade",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Estudio indie de juegos móviles de puzles y arcade",
     "Nature Seed | Relaxing Draw-to-Solve Physics Puzzle Game": "Nature Seed | Relajante puzle de física para dibujar y resolver",
     "Candy Shop | Cozy Candy Merge Puzzle Game for Mobile": "Candy Shop | Acogedor puzle móvil de fusión de dulces",
     "Paint Blasters | Color-Mixing Physics Puzzle Arcade": "Paint Blasters | Puzle arcade de física y mezcla de colores",
     "Ball is God?! | Vertical Descent Tower Arcade Game": "Ball is God?! | Arcade de descenso vertical y torre giratoria",
-    "WillowinWorld Press Kit | Game Facts, Assets & Contact": "Kit de prensa de WillowinWorld | Juegos, recursos y contacto",
+    "WillowinWorlds Press Kit | Game Facts, Assets & Contact": "Kit de prensa de WillowinWorlds | Juegos, recursos y contacto",
     "Indie mobile game studio": "Estudio indie de juegos móviles",
     "Small games. Living worlds.": "Juegos pequeños. Mundos vivos.",
     "Tactile puzzle and arcade games where every draw, drop, shot and fall changes the world.": "Puzles y arcades táctiles donde cada trazo, caída, disparo y descenso transforma el mundo.",
@@ -324,7 +324,7 @@ const manualTranslationOverrides = Object.freeze({
     "Physics and effect stability pass": "Mejoras de estabilidad en físicas y efectos",
     "The newest dated note from each game page, grounded in the playable systems now inside the Unity builds.": "La actualización fechada más reciente de cada juego, basada en sistemas que ya funcionan dentro de las builds de Unity.",
     "Quick answers for players, press and publishers.": "Respuestas rápidas para jugadores, prensa y editoras.",
-    "Talk to WillowinWorld.": "Habla con WillowinWorld.",
+    "Talk to WillowinWorlds.": "Habla con WillowinWorlds.",
     "Draw a path. Bring them together.": "Traza un camino. Reúne a los dos.",
     "The line is not decoration. It becomes the puzzle.": "La línea no adorna: se convierte en el puzle.",
     "Drop sweets. Build bigger treats.": "Suelta dulces. Crea delicias más grandes.",
@@ -347,12 +347,12 @@ const manualTranslationOverrides = Object.freeze({
     "Ball is God?! press and creator assets": "Recursos de Ball is God?! para prensa y creadores"
   }),
   pt: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Estúdio indie de jogos mobile de quebra-cabeça e arcade",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Estúdio indie de jogos mobile de quebra-cabeça e arcade",
     "Nature Seed | Relaxing Draw-to-Solve Physics Puzzle Game": "Nature Seed | Quebra-cabeça relaxante de física e desenho",
     "Candy Shop | Cozy Candy Merge Puzzle Game for Mobile": "Candy Shop | Quebra-cabeça mobile de combinar doces",
     "Paint Blasters | Color-Mixing Physics Puzzle Arcade": "Paint Blasters | Arcade de física e mistura de cores",
     "Ball is God?! | Vertical Descent Tower Arcade Game": "Ball is God?! | Arcade de descida vertical e torre giratória",
-    "WillowinWorld Press Kit | Game Facts, Assets & Contact": "Kit de imprensa WillowinWorld | Jogos, materiais e contato",
+    "WillowinWorlds Press Kit | Game Facts, Assets & Contact": "Kit de imprensa WillowinWorlds | Jogos, materiais e contato",
     "Indie mobile game studio": "Estúdio indie de jogos mobile",
     "Small games. Living worlds.": "Pequenos jogos. Mundos vivos.",
     "Tactile puzzle and arcade games where every draw, drop, shot and fall changes the world.": "Quebra-cabeças e arcades táteis em que cada traço, queda, disparo e descida transforma o mundo.",
@@ -387,7 +387,7 @@ const manualTranslationOverrides = Object.freeze({
     "Physics and effect stability pass": "Melhorias de estabilidade na física e nos efeitos",
     "The newest dated note from each game page, grounded in the playable systems now inside the Unity builds.": "A atualização mais recente de cada jogo, baseada em sistemas que já funcionam nas builds atuais de Unity.",
     "Quick answers for players, press and publishers.": "Respostas rápidas para jogadores, imprensa e publishers.",
-    "Talk to WillowinWorld.": "Fale com a WillowinWorld.",
+    "Talk to WillowinWorlds.": "Fale com a WillowinWorlds.",
     "Draw a path. Bring them together.": "Desenhe um caminho. Una os dois.",
     "The line is not decoration. It becomes the puzzle.": "A linha não é enfeite: ela se torna parte do quebra-cabeça.",
     "Drop sweets. Build bigger treats.": "Solte doces. Crie delícias maiores.",
@@ -410,25 +410,25 @@ const manualTranslationOverrides = Object.freeze({
     "Ball is God?! press and creator assets": "Materiais de Ball is God?! para imprensa e criadores"
   }),
   de: Object.freeze({
-    "Nature Seed is a released draw-to-solve physics puzzle from WillowinWorld. Released on 10 September 2026, it reunites Water Drop and Seed across 10 levels.": "Nature Seed ist ein veröffentlichtes Physikrätsel von WillowinWorld. Es erschien am 10. September 2026 und vereint Water Drop und Seed in 10 Levels.",
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Indie-Studio für mobile Puzzle- und Arcade-Spiele",
+    "Nature Seed is a released draw-to-solve physics puzzle from WillowinWorlds. Released on 10 September 2026, it reunites Water Drop and Seed across 10 levels.": "Nature Seed ist ein veröffentlichtes Physikrätsel von WillowinWorlds. Es erschien am 10. September 2026 und vereint Water Drop und Seed in 10 Levels.",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Indie-Studio für mobile Puzzle- und Arcade-Spiele",
     "Hardcore Vertical Descent Arcade": "Hardcore-Arcade mit vertikalem Abstieg"
   }),
   ar: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | استوديو مستقل لألعاب الألغاز والأركيد على الهاتف",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | استوديو مستقل لألعاب الألغاز والأركيد على الهاتف",
     "Canonical English source": "المصدر الإنجليزي الأساسي"
   }),
   fa: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | استودیوی مستقل بازی‌های پازل و آرکید موبایل"
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | استودیوی مستقل بازی‌های پازل و آرکید موبایل"
   }),
   kk: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Мобильді басқатырғыштар мен аркада ойындарының тәуелсіз студиясы"
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Мобильді басқатырғыштар мен аркада ойындарының тәуелсіз студиясы"
   }),
   ms: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Studio Bebas Permainan Teka-teki dan Arked Mudah Alih"
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Studio Bebas Permainan Teka-teki dan Arked Mudah Alih"
   }),
   sw: Object.freeze({
-    "WillowinWorld | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorld | Studio Huru ya Michezo ya Simu ya Mafumbo na Arcade"
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Studio Huru ya Michezo ya Simu ya Mafumbo na Arcade"
   }),
   sv: Object.freeze({
     "Spotlight · Nature Seed release": "Fokus · Nature Seed-lansering"
@@ -476,7 +476,7 @@ const explicitRuntimeStrings = Object.freeze([
   "Draft cleared. New text will save in this tab.",
   "Switch to light theme",
   "Switch to dark theme",
-  "WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.",
+  "WillowinWorlds is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.",
   "Site language",
   "Canonical English source",
   "Games",
@@ -495,7 +495,7 @@ const explicitRuntimeStrings = Object.freeze([
   "Privacy policy",
   "Legal notice",
   "Contact",
-  "Email WillowinWorld",
+  "Email WillowinWorlds",
   ...gameDevlogSources.flatMap(game => [game.status, game.machineSummary, ...game.genres])
 ]);
 
@@ -1117,9 +1117,9 @@ function renderLocalizedLlms(locale, translations, updates) {
     .map(update => `- [${escapeMarkdown(update.name)} — ${escapeMarkdown(t(update.title))}](${localizedPage(locale, update.file)}#devlog): ${escapeMarkdown(t("Published"))} ${update.published}. ${escapeMarkdown(t(update.summary))}`)
     .join("\n");
 
-  return `# WillowinWorld — ${locale.label}
+  return `# WillowinWorlds — ${locale.label}
 
-> ${escapeMarkdown(t("WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds."))}
+> ${escapeMarkdown(t("WillowinWorlds is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds."))}
 
 ${escapeMarkdown(t("Site language"))}: ${locale.label}. ${escapeMarkdown(t("Canonical English source"))}: https://willowinworld.com/llms.txt
 
@@ -1147,7 +1147,7 @@ ${devlogs}
 
 ## ${escapeMarkdown(t("Contact"))}
 
-- [${escapeMarkdown(t("Email WillowinWorld"))}](mailto:contact@willowinworld.com)
+- [${escapeMarkdown(t("Email WillowinWorlds"))}](mailto:contact@willowinworld.com)
 `;
 }
 

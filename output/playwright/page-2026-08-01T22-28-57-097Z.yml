@@ -1,12 +1,12 @@
 - generic [ref=f1e1]:
   - link "Zum Hauptinhalt springen" [ref=f1e2] [cursor=pointer]:
     - /url: "#main-content"
-  - status: Magie freigeschaltet – Willkommen bei WillowinWorld
+  - status: Magie freigeschaltet – Willkommen bei WillowinWorlds
   - status
   - generic [ref=f1e3]:
     - banner [ref=f1e4]:
       - generic [ref=f1e5]:
-        - link "WillowinWorld nach Hause" [ref=f1e6] [cursor=pointer]:
+        - link "WillowinWorlds nach Hause" [ref=f1e6] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f1e8]:
             - generic [ref=f1e9]: W
@@ -166,8 +166,8 @@
         - generic [ref=f1e30]:
           - generic [ref=f1e31]:
             - generic [ref=f1e32]: Indie-Mobile-Game-Studio
-            - heading "WillowinWorld Kleine Spiele. Lebendige Welten." [level=1] [ref=f1e33]:
-              - generic [ref=f1e34]: WillowinWorld
+            - heading "WillowinWorlds Kleine Spiele. Lebendige Welten." [level=1] [ref=f1e33]:
+              - generic [ref=f1e34]: WillowinWorlds
               - generic [ref=f1e35]: Kleine Spiele. Lebendige Welten.
             - paragraph [ref=f1e36]: Taktile Puzzle- und Arcade-Spiele, bei denen jedes Ziehen, Fallenlassen, Schießen und Fallen die Welt verändert.
             - generic [ref=f1e37]:
@@ -175,7 +175,7 @@
                 - /url: "#games"
               - link "Pressemappe" [ref=f1e39] [cursor=pointer]:
                 - /url: press-kit.html
-            - navigation "Empfohlene WillowinWorld-Spiele" [ref=f1e40]:
+            - navigation "Empfohlene WillowinWorlds-Spiele" [ref=f1e40]:
               - link "Nature Seed Draw-to-solve-Physik" [ref=f1e41] [cursor=pointer]:
                 - /url: "#nature-card"
                 - strong [ref=f1e42]: Nature Seed
@@ -236,7 +236,7 @@
                   - link "Entdecken Sie Nature Seed" [ref=f1e119] [cursor=pointer]:
                     - /url: games/nature-seed.html
                   - link "Fordern Sie Nature Seed-Entwicklungsupdates an" [ref=f1e120] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
                     - text: Aktualisierungen anfordern
             - article "Candy Shop gemütliches Süßigkeiten-Zusammenführungspuzzle" [ref=f1e121]:
               - generic [ref=f1e122]:
@@ -255,7 +255,7 @@
                   - link "Entdecken Sie Candy Shop" [ref=f1e139] [cursor=pointer]:
                     - /url: games/candy-shop.html
                   - link "Fordern Sie Candy Shop-Entwicklungsupdates an" [ref=f1e140] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
                     - text: Aktualisierungen anfordern
             - article "Paint Blasters Farbzerstörungs-Physik-Puzzle-Arcade" [ref=f1e141]:
               - generic [ref=f1e142]:
@@ -274,7 +274,7 @@
                   - link "Entdecken Sie Paint Blasters" [ref=f1e179] [cursor=pointer]:
                     - /url: games/paint-blasters.html
                   - link "Fordern Sie Paint Blasters-Entwicklungsupdates an" [ref=f1e180] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
                     - text: Aktualisierungen anfordern
             - article "Ball is God Hardcore-Arcade-Spiel mit vertikalem Abstieg" [ref=f1e181]:
               - generic [ref=f1e182]:
@@ -293,7 +293,7 @@
                   - link "Entdecken Sie Ball is God?!" [ref=f1e218] [cursor=pointer]:
                     - /url: games/ball-is-god.html
                   - link "Fordern Sie Ball is God-Entwicklungsupdates an" [ref=f1e219] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Ball%20is%20God%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Ball%20is%20God%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Ball%20is%20God%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Ball%20is%20God%20development%20updates.
                     - text: Aktualisierungen anfordern
         - button [ref=f1e220] [cursor=pointer]: s
       - generic [ref=f1e221]:
@@ -325,7 +325,7 @@
         - generic [ref=f1e266]:
           - article [ref=f1e267]:
             - heading "Ein kleines Studio für taktile mobile Welten." [level=2] [ref=f1e268]
-            - paragraph [ref=f1e269]: "WillowinWorld entwickelt vier Mobile-First-Puzzle- und Arcade-Spiele: Nature Seed, Candy Shop, Paint Blasters und Ball is God?!. Jedes Projekt verfügt über eine öffentliche Spieleseite, den aktuellen Build-Status, ein datiertes Devlog und Presseressourcen."
+            - paragraph [ref=f1e269]: "WillowinWorlds entwickelt vier Mobile-First-Puzzle- und Arcade-Spiele: Nature Seed, Candy Shop, Paint Blasters und Ball is God?!. Jedes Projekt verfügt über eine öffentliche Spieleseite, den aktuellen Build-Status, ein datiertes Devlog und Presseressourcen."
             - generic [ref=f1e270]:
               - generic [ref=f1e271]: Mobile-First-Feeling
               - generic [ref=f1e272]: Gemütliche Fantasiewelten
@@ -333,7 +333,7 @@
               - generic [ref=f1e274]: Einzigartige 2D-Kunst
             - paragraph [ref=f1e275]: Die aktuelle Arbeit umfasst das Ziehen und Lösen von Linien, das Verschmelzen von Süßigkeiten in zehn Behältern, 35 Farbprojektilrezepte und einen Abstieg mit rotierenden Türmen an zehn Standorten.
           - article [ref=f1e276]:
-            - img "WillowinWorld-Logo mit der magischen Katze, dem Zwillings-W-Zeichen und der Burgwelt" [ref=f1e278]
+            - img "WillowinWorlds-Logo mit der magischen Katze, dem Zwillings-W-Zeichen und der Burgwelt" [ref=f1e278]
             - generic [ref=f1e279]:
               - heading "Vier Spiele. Vier verschiedene spielbare Systeme." [level=3] [ref=f1e280]
               - paragraph [ref=f1e281]: Zeichnen Sie einen begrenzten physischen Weg, verwalten Sie einen wechselnden Süßigkeitenbehälter, stellen Sie eine Farbaufnahme zusammen oder drehen Sie einen absteigenden Turm. Öffnen Sie jede Spielseite, um den aktuellen Umfang, den Produktionsstatus und das neueste Update zu erfahren.
@@ -427,7 +427,7 @@
           - heading "Schnelle Antworten für Spieler, Presse und Verlage." [level=2] [ref=f1e361]
           - generic [ref=f1e362]:
             - article [ref=f1e363]:
-              - button "Welche Art von Spielen macht WillowinWorld?" [ref=f1e364] [cursor=pointer]
+              - button "Welche Art von Spielen macht WillowinWorlds?" [ref=f1e364] [cursor=pointer]
             - article [ref=f1e366]:
               - button "Berücksichtigt die Website die Einstellungen zur Bewegungsreduzierung?" [ref=f1e367] [cursor=pointer]
             - article [ref=f1e369]:
@@ -444,7 +444,7 @@
         - button [ref=f1e385] [cursor=pointer]: r
       - generic [ref=f1e386]:
         - generic [ref=f1e387]:
-          - heading "Sprich mit WillowinWorld." [level=2] [ref=f1e388]
+          - heading "Sprich mit WillowinWorlds." [level=2] [ref=f1e388]
           - paragraph [ref=f1e389]: Wir freuen uns über Spieler-Feedback, Presseanfragen, Publisher-Gespräche und produktionsorientierte Kooperationen.
           - generic [ref=f1e390]:
             - button "Kontaktieren Sie das Studio" [ref=f1e391] [cursor=pointer]
@@ -454,7 +454,7 @@
         - button [ref=f1e394] [cursor=pointer]: e
     - contentinfo [ref=f1e395]:
       - generic [ref=f1e396]:
-        - link "WillowinWorld nach Hause" [ref=f1e398] [cursor=pointer]:
+        - link "WillowinWorlds nach Hause" [ref=f1e398] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f1e400]:
             - generic [ref=f1e401]: W
@@ -492,4 +492,4 @@
           - link "Herausgeberkontakt" [ref=f1e419] [cursor=pointer]:
             - /url: mailto:contact@willowinworld.com?subject=Publisher%20inquiry
           - button "Karriere / Zusammenarbeit" [ref=f1e420] [cursor=pointer]
-        - generic [ref=f1e421]: © 2026 WillowinWorld. Alle Rechte vorbehalten.
+        - generic [ref=f1e421]: © 2026 WillowinWorlds. Alle Rechte vorbehalten.

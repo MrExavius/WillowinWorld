@@ -1,12 +1,12 @@
 - generic [active] [ref=e1]:
   - link "Skip to main content" [ref=e2] [cursor=pointer]:
     - /url: "#main-content"
-  - status: Magic unlocked - Welcome to WillowinWorld
+  - status: Magic unlocked - Welcome to WillowinWorlds
   - status
   - generic [ref=e3]:
     - banner [ref=e4]:
       - generic [ref=e5]:
-        - link "WillowinWorld home" [ref=e6] [cursor=pointer]:
+        - link "WillowinWorlds home" [ref=e6] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=e8]:
             - generic [ref=e9]: W
@@ -39,8 +39,8 @@
         - generic [ref=e30]:
           - generic [ref=e31]:
             - generic [ref=e32]: Indie mobile game studio
-            - heading "WillowinWorld Small games. Living worlds." [level=1] [ref=e33]:
-              - generic [ref=e34]: WillowinWorld
+            - heading "WillowinWorlds Small games. Living worlds." [level=1] [ref=e33]:
+              - generic [ref=e34]: WillowinWorlds
               - generic [ref=e35]: Small games. Living worlds.
             - paragraph [ref=e36]: Tactile puzzle and arcade games where every draw, drop, shot and fall changes the world.
             - generic [ref=e37]:
@@ -48,7 +48,7 @@
                 - /url: "#games"
               - link "Press kit" [ref=e39] [cursor=pointer]:
                 - /url: press-kit.html
-            - navigation "Featured WillowinWorld games" [ref=e40]:
+            - navigation "Featured WillowinWorlds games" [ref=e40]:
               - link "Nature Seed draw-to-solve physics" [ref=e41] [cursor=pointer]:
                 - /url: "#nature-card"
                 - strong [ref=e42]: Nature Seed
@@ -109,7 +109,7 @@
                   - link "Explore Nature Seed" [ref=e119] [cursor=pointer]:
                     - /url: games/nature-seed.html
                   - link "Request Nature Seed development updates" [ref=e120] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
                     - text: Request updates
             - article "Candy Shop cozy candy merge puzzle" [ref=e121]:
               - generic [ref=e122]:
@@ -128,7 +128,7 @@
                   - link "Explore Candy Shop" [ref=e139] [cursor=pointer]:
                     - /url: games/candy-shop.html
                   - link "Request Candy Shop development updates" [ref=e140] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
                     - text: Request updates
             - article "Paint Blasters color destruction physics puzzle arcade" [ref=e141]:
               - generic [ref=e142]:
@@ -147,7 +147,7 @@
                   - link "Explore Paint Blasters" [ref=e179] [cursor=pointer]:
                     - /url: games/paint-blasters.html
                   - link "Request Paint Blasters development updates" [ref=e180] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
                     - text: Request updates
             - article "Ball is God hardcore vertical descent arcade game" [ref=e181]:
               - generic [ref=e182]:
@@ -166,7 +166,7 @@
                   - link "Explore Ball is God?!" [ref=e218] [cursor=pointer]:
                     - /url: games/ball-is-god.html
                   - link "Request Ball is God development updates" [ref=e219] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Ball%20is%20God%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Ball%20is%20God%20development%20updates.
+                    - /url: mailto:contact@willowinworld.com?subject=Follow%20Ball%20is%20God%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Ball%20is%20God%20development%20updates.
                     - text: Request updates
         - button [ref=e220] [cursor=pointer]: o
       - generic [ref=e221]:
@@ -198,7 +198,7 @@
         - generic [ref=e266]:
           - article [ref=e267]:
             - heading "A small studio for tactile mobile worlds." [level=2] [ref=e268]
-            - paragraph [ref=e269]: "WillowinWorld develops four mobile-first puzzle and arcade games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?! Each project has a public game page, current build status, dated devlog and press assets."
+            - paragraph [ref=e269]: "WillowinWorlds develops four mobile-first puzzle and arcade games: Nature Seed, Candy Shop, Paint Blasters and Ball is God?! Each project has a public game page, current build status, dated devlog and press assets."
             - generic [ref=e270]:
               - generic [ref=e271]: Mobile-first feel
               - generic [ref=e272]: Cozy fantasy worlds
@@ -206,7 +206,7 @@
               - generic [ref=e274]: Distinct 2D art
             - paragraph [ref=e275]: Current work spans draw-to-solve line physics, candy merging across ten containers, 35 color-projectile recipes and a rotating-tower descent across ten locations.
           - article [ref=e276]:
-            - img "WillowinWorld logo with the magic cat, twin W mark and castle world" [ref=e278]
+            - img "WillowinWorlds logo with the magic cat, twin W mark and castle world" [ref=e278]
             - generic [ref=e279]:
               - heading "Four games. Four distinct playable systems." [level=3] [ref=e280]
               - paragraph [ref=e281]: Draw a limited physical path, manage a changing candy container, assemble a color shot or rotate a descending tower. Open each game page for its current scope, production status and latest dated update.
@@ -298,7 +298,7 @@
           - heading "Quick answers for players, press and publishers." [level=2] [ref=e359]
           - generic [ref=e360]:
             - article [ref=e361]:
-              - button "What kind of games does WillowinWorld make?" [ref=e362] [cursor=pointer]
+              - button "What kind of games does WillowinWorlds make?" [ref=e362] [cursor=pointer]
             - article [ref=e364]:
               - button "Does the site respect reduced-motion settings?" [ref=e365] [cursor=pointer]
             - article [ref=e367]:
@@ -314,7 +314,7 @@
         - button [ref=e382] [cursor=pointer]: l
       - generic [ref=e383]:
         - generic [ref=e384]:
-          - heading "Talk to WillowinWorld." [level=2] [ref=e385]
+          - heading "Talk to WillowinWorlds." [level=2] [ref=e385]
           - paragraph [ref=e386]: We welcome player feedback, press requests, publisher conversations and production-minded collaborations.
           - generic [ref=e387]:
             - button "Contact studio" [ref=e388] [cursor=pointer]
@@ -323,7 +323,7 @@
         - button [ref=e390] [cursor=pointer]: G
     - contentinfo [ref=e391]:
       - generic [ref=e392]:
-        - link "WillowinWorld home" [ref=e394] [cursor=pointer]:
+        - link "WillowinWorlds home" [ref=e394] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=e396]:
             - generic [ref=e397]: W
@@ -361,4 +361,4 @@
           - link "Publisher contact" [ref=e415] [cursor=pointer]:
             - /url: mailto:contact@willowinworld.com?subject=Publisher%20inquiry
           - button "Careers / Collaboration" [ref=e416] [cursor=pointer]
-        - generic [ref=e417]: © 2026 WillowinWorld. All rights reserved.
+        - generic [ref=e417]: © 2026 WillowinWorlds. All rights reserved.

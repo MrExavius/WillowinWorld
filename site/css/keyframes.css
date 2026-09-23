@@ -1,4 +1,4 @@
-/* WillowinWorld CSS: keyframes used by game previews and decorative systems. */
+/* WillowinWorlds CSS: keyframes used by game previews and decorative systems. */
 @keyframes moonFloat {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }

@@ -146,7 +146,7 @@ for (const [viewportSlug] of viewports) {
 await rm(tempRoot, { recursive: true, force: true });
 
 if (failures.length) {
-  console.error("WillowinWorld visual check failed:");
+  console.error("WillowinWorlds visual check failed:");
   failures.forEach(failure => console.error(`- ${failure}`));
   process.exit(1);
 }

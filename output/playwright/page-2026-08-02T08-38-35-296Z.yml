@@ -1,12 +1,12 @@
 - generic [active] [ref=f7e1]:
   - link "Lumaktaw sa pangunahing nilalaman" [ref=f7e2] [cursor=pointer]:
     - /url: "#main-content"
-  - status: Magic unlocked - Maligayang pagdating sa WillowinWorld
+  - status: Magic unlocked - Maligayang pagdating sa WillowinWorlds
   - status
   - generic [ref=f7e3]:
     - banner [ref=f7e4]:
       - generic [ref=f7e5]:
-        - link "WillowinWorld bahay" [ref=f7e6] [cursor=pointer]:
+        - link "WillowinWorlds bahay" [ref=f7e6] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f7e8]:
             - generic [ref=f7e9]: W
@@ -25,8 +25,8 @@
       - generic [ref=f7e24]:
         - generic [ref=f7e25]:
           - generic [ref=f7e26]: Indie studio ng mga mobile game
-          - heading "WillowinWorld Maliit na laro. Mga buhay na mundo." [level=1] [ref=f7e27]:
-            - generic [ref=f7e28]: WillowinWorld
+          - heading "WillowinWorlds Maliit na laro. Mga buhay na mundo." [level=1] [ref=f7e27]:
+            - generic [ref=f7e28]: WillowinWorlds
             - generic [ref=f7e29]: Maliit na laro. Mga buhay na mundo.
           - paragraph [ref=f7e30]: Tactile puzzle at arcade game kung saan ang bawat draw, drop, shot at fall ay nagbabago sa mundo.
           - generic [ref=f7e31]:
@@ -34,7 +34,7 @@
               - /url: "#games"
             - link "Press kit" [ref=f7e33] [cursor=pointer]:
               - /url: press-kit.html
-          - navigation "Itinatampok na WillowinWorld na mga laro" [ref=f7e34]:
+          - navigation "Itinatampok na WillowinWorlds na mga laro" [ref=f7e34]:
             - link "Nature Seed pisika ng draw-to-solve" [ref=f7e35] [cursor=pointer]:
               - /url: "#nature-card"
               - strong [ref=f7e36]: Nature Seed
@@ -92,7 +92,7 @@
                 - link "I-explore ang Nature Seed" [ref=f7e108] [cursor=pointer]:
                   - /url: games/nature-seed.html
                 - link "Humiling ng mga update sa pagpapaunlad ng Nature Seed" [ref=f7e109] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Nature+Seed+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Nature+Seed+development+updates.
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Nature+Seed+Pag-unlad&body=Hi+WillowinWorlds%2C+gusto+kong+sundan+ang+Nature+Seed+development+updates.
                   - text: Humiling ng mga update
           - article "Candy Shop maginhawang candy merge puzzle" [ref=f7e110]:
             - generic [ref=f7e111]:
@@ -111,7 +111,7 @@
                 - link "I-explore ang Candy Shop" [ref=f7e128] [cursor=pointer]:
                   - /url: games/candy-shop.html
                 - link "Humiling ng mga update sa pagpapaunlad ng Candy Shop" [ref=f7e129] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Candy+Shop+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Candy+Shop+development+updates.
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Candy+Shop+Pag-unlad&body=Hi+WillowinWorlds%2C+gusto+kong+sundan+ang+Candy+Shop+development+updates.
                   - text: Humiling ng mga update
           - article "Paint Blasters, arkadang palaisipang pisikal tungkol sa pagwasak gamit ang kulay" [ref=f7e130]:
             - generic [ref=f7e131]:
@@ -130,7 +130,7 @@
                 - link "I-explore ang Paint Blasters" [ref=f7e168] [cursor=pointer]:
                   - /url: games/paint-blasters.html
                 - link "Humiling ng mga update sa pagpapaunlad ng Paint Blasters" [ref=f7e169] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Paint+Blasters+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Paint+Blasters+development+updates.
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Paint+Blasters+Pag-unlad&body=Hi+WillowinWorlds%2C+gusto+kong+sundan+ang+Paint+Blasters+development+updates.
                   - text: Humiling ng mga update
           - article "Ball is God, isang hardcore na arcade game ng patayong pagbaba" [ref=f7e170]:
             - generic [ref=f7e171]:
@@ -149,7 +149,7 @@
                 - link "I-explore ang Ball is God?!" [ref=f7e207] [cursor=pointer]:
                   - /url: games/ball-is-god.html
                 - link "Humiling ng mga update sa pagpapaunlad ng Ball is God" [ref=f7e208] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Ball+is+God+Pag-unlad&body=Hi+WillowinWorld%2C+gusto+kong+sundan+ang+Ball+is+God+development+updates.
+                  - /url: mailto:contact@willowinworld.com?subject=Subaybayan+ang+Ball+is+God+Pag-unlad&body=Hi+WillowinWorlds%2C+gusto+kong+sundan+ang+Ball+is+God+development+updates.
                   - text: Humiling ng mga update
       - generic [ref=f7e210]:
         - generic [ref=f7e211]:
@@ -177,7 +177,7 @@
       - generic [ref=f7e253]:
         - article [ref=f7e254]:
           - heading "Isang maliit na studio para sa mga tactile mobile na mundo." [level=2] [ref=f7e255]
-          - paragraph [ref=f7e256]: "Ang WillowinWorld ay bubuo ng apat na mobile-first puzzle at arcade game: Nature Seed, Candy Shop, Paint Blasters at Ball is God?! Ang bawat proyekto ay may pampublikong pahina ng asset ng laro, kasalukuyang status ng build, may petsang devlog at press."
+          - paragraph [ref=f7e256]: "Ang WillowinWorlds ay bubuo ng apat na mobile-first puzzle at arcade game: Nature Seed, Candy Shop, Paint Blasters at Ball is God?! Ang bawat proyekto ay may pampublikong pahina ng asset ng laro, kasalukuyang status ng build, may petsang devlog at press."
           - generic [ref=f7e257]:
             - generic [ref=f7e258]: Mobile-first feel
             - generic [ref=f7e259]: Mga maaliwalas na mundo ng pantasya
@@ -185,7 +185,7 @@
             - generic [ref=f7e261]: Natatanging 2D art
           - paragraph [ref=f7e262]: Saklaw ng kasalukuyang trabaho ang line physics na draw-to-solve, pagsasanib ng kendi sa sampung lalagyan, 35 recipe ng projectile na may kulay, at pagbaba sa umiikot na tore sa sampung lokasyon.
         - article [ref=f7e263]:
-          - img "Logo ng WillowinWorld na may mahiwagang pusa, kambal na markang W, at mundong may kastilyo" [ref=f7e265]
+          - img "Logo ng WillowinWorlds na may mahiwagang pusa, kambal na markang W, at mundong may kastilyo" [ref=f7e265]
           - generic [ref=f7e266]:
             - heading "Apat na laro. Apat na natatanging puwedeng laruin na sistema." [level=3] [ref=f7e267]
             - paragraph [ref=f7e268]: Gumuhit ng limitadong pisikal na landas, pamahalaan ang isang nagbabagong lalagyan ng kendi, mag-assemble ng color shot o paikutin ang pababang tore. Buksan ang bawat page ng laro para sa kasalukuyang saklaw nito, katayuan ng produksyon at pinakabagong napetsahan na update.
@@ -267,7 +267,7 @@
         - heading "Mabilis na sagot para sa mga manlalaro, press at publisher." [level=2] [ref=f7e339]
         - generic [ref=f7e340]:
           - article [ref=f7e341]:
-            - button "Anong uri ng mga laro ang ginagawa ng WillowinWorld?" [ref=f7e342] [cursor=pointer]
+            - button "Anong uri ng mga laro ang ginagawa ng WillowinWorlds?" [ref=f7e342] [cursor=pointer]
           - article [ref=f7e344]:
             - button "Iginagalang ba ng site ang mga setting ng reduced-motion?" [ref=f7e345] [cursor=pointer]
           - article [ref=f7e347]:
@@ -281,7 +281,7 @@
           - article [ref=f7e359]:
             - button "Maaari ba akong makipagtulungan sa studio?" [ref=f7e360] [cursor=pointer]
       - generic [ref=f7e363]:
-        - heading "Makipag-usap sa WillowinWorld." [level=2] [ref=f7e364]
+        - heading "Makipag-usap sa WillowinWorlds." [level=2] [ref=f7e364]
         - paragraph [ref=f7e365]: Tinatanggap namin ang feedback ng manlalaro, mga kahilingan sa press, mga pag-uusap sa publisher at mga pakikipagtulungang may isip sa produksyon.
         - generic [ref=f7e366]:
           - button "Makipag-ugnayan sa studio" [ref=f7e367] [cursor=pointer]
@@ -289,7 +289,7 @@
             - /url: press-kit.html
     - contentinfo [ref=f7e369]:
       - generic [ref=f7e370]:
-        - link "WillowinWorld bahay" [ref=f7e372] [cursor=pointer]:
+        - link "WillowinWorlds bahay" [ref=f7e372] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f7e374]:
             - generic [ref=f7e375]: W
@@ -327,4 +327,4 @@
           - link "Kontak ng publisher" [ref=f7e393] [cursor=pointer]:
             - /url: mailto:contact@willowinworld.com?subject=Pagtatanong+ng+publisher
           - button "Mga Trabaho / Pakikipagtulungan" [ref=f7e394] [cursor=pointer]
-        - generic [ref=f7e395]: © 2026 WillowinWorld. Lahat ng karapatan ay nakalaan.
+        - generic [ref=f7e395]: © 2026 WillowinWorlds. Lahat ng karapatan ay nakalaan.

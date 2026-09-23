@@ -182,9 +182,9 @@ for (const file of siteFiles) {
 }
 
 if (errors.length) {
-  console.error("WillowinWorld security check failed:");
+  console.error("WillowinWorlds security check failed:");
   errors.forEach(error => console.error(`- ${error}`));
   exit(1);
 }
 
-console.log("WillowinWorld security check passed.");
+console.log("WillowinWorlds security check passed.");

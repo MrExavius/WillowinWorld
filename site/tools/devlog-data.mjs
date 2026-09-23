@@ -222,9 +222,9 @@ export function renderDevlogRss(updates) {
   return `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
   <channel>
-    <title>WillowinWorld Devlog</title>
+    <title>WillowinWorlds Devlog</title>
     <link>https://willowinworld.com/#devlog</link>
-    <description>Latest production notes for WillowinWorld mobile games.</description>
+    <description>Latest production notes for WillowinWorlds mobile games.</description>
     <language>en-us</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
 ${items}
@@ -253,9 +253,9 @@ export function renderLlmsTxt(updates) {
     `- [${escapeMarkdown(update.name)} - ${escapeMarkdown(update.title)}](${update.canonical}): Published ${update.published}. ${escapeMarkdown(update.summary)}`
   ).join("\n");
 
-  return `# WillowinWorld
+  return `# WillowinWorlds
 
-> WillowinWorld is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.
+> WillowinWorlds is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.
 
 Nature Seed is released; the other three games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date; no public price, store availability, rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
 
@@ -269,9 +269,9 @@ ${devlogs}
 
 ## Studio and press
 
-- [Official WillowinWorld website](https://willowinworld.com/): Studio overview, complete game portfolio and current production notes.
+- [Official WillowinWorlds website](https://willowinworld.com/): Studio overview, complete game portfolio and current production notes.
 - [Press and creator kit](https://willowinworld.com/press-kit.html): Factual studio and game summaries, production statuses and downloadable editorial assets.
-- [Media asset usage](https://willowinworld.com/asset-usage.html): Rules for using WillowinWorld screenshots, logos and character artwork.
+- [Media asset usage](https://willowinworld.com/asset-usage.html): Rules for using WillowinWorlds screenshots, logos and character artwork.
 
 ## Feeds and policies
 
@@ -283,7 +283,7 @@ ${devlogs}
 
 ## Contact
 
-- [Email WillowinWorld](mailto:contact@willowinworld.com): Press, publishing, development-build and business enquiries.
+- [Email WillowinWorlds](mailto:contact@willowinworld.com): Press, publishing, development-build and business enquiries.
 `;
 }
 

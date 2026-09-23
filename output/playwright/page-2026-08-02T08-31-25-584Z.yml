@@ -1,12 +1,12 @@
 - generic [ref=f3e1]:
   - link "मुख्य सामग्री पर जाएं" [ref=f3e2] [cursor=pointer]:
     - /url: "#main-content"
-  - status: मैजिक अनलॉक - WillowinWorld में आपका स्वागत है
+  - status: मैजिक अनलॉक - WillowinWorlds में आपका स्वागत है
   - status
   - generic [ref=f3e3]:
     - banner [ref=f3e4]:
       - generic [ref=f3e5]:
-        - link "WillowinWorld घर" [ref=f3e6] [cursor=pointer]:
+        - link "WillowinWorlds घर" [ref=f3e6] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f3e8]:
             - generic [ref=f3e9]: W
@@ -25,8 +25,8 @@
       - generic [ref=f3e30]:
         - generic [ref=f3e31]:
           - generic [ref=f3e32]: इंडी मोबाइल गेम स्टूडियो
-          - heading "WillowinWorld छोटे खेल। जीवित संसार." [level=1] [ref=f3e33]:
-            - generic [ref=f3e34]: WillowinWorld
+          - heading "WillowinWorlds छोटे खेल। जीवित संसार." [level=1] [ref=f3e33]:
+            - generic [ref=f3e34]: WillowinWorlds
             - generic [ref=f3e35]: छोटे खेल। जीवित संसार.
           - paragraph [ref=f3e36]: स्पर्शनीय पहेली और आर्केड गेम जहां हर ड्रॉ, ड्रॉप, शॉट और फ़ॉल दुनिया को बदल देता है।
           - generic [ref=f3e37]:
@@ -34,7 +34,7 @@
               - /url: "#games"
             - link "प्रेस किट" [ref=f3e39] [cursor=pointer]:
               - /url: press-kit.html
-          - navigation "विशेष रुप से प्रदर्शित WillowinWorld गेम्स" [ref=f3e40]:
+          - navigation "विशेष रुप से प्रदर्शित WillowinWorlds गेम्स" [ref=f3e40]:
             - link "Nature Seed ड्रा-टू-सॉल्व भौतिकी" [ref=f3e41] [cursor=pointer]:
               - /url: "#nature-card"
               - strong [ref=f3e42]: Nature Seed
@@ -93,7 +93,7 @@
                 - link "Paint Blasters का अन्वेषण करें" [ref=f3e179] [cursor=pointer]:
                   - /url: games/paint-blasters.html
                 - link "Paint Blasters विकास अपडेट का अनुरोध करें" [ref=f3e180] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Paint+Blasters+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorld%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Paint+Blasters+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
+                  - /url: mailto:contact@willowinworld.com?subject=Paint+Blasters+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorlds%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Paint+Blasters+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
                   - text: अपडेट का अनुरोध करें
           - article "Ball is God हार्डकोर वर्टिकल डिसेंट आर्केड गेम" [ref=f3e181]:
             - generic [ref=f3e182]:
@@ -112,7 +112,7 @@
                 - link "Ball is God?! का अन्वेषण करें" [ref=f3e218] [cursor=pointer]:
                   - /url: games/ball-is-god.html
                 - link "Ball is God विकास अपडेट का अनुरोध करें" [ref=f3e219] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Ball+is+God+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorld%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Ball+is+God+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
+                  - /url: mailto:contact@willowinworld.com?subject=Ball+is+God+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%95%E0%A4%BE+%E0%A4%AA%E0%A4%BE%E0%A4%B2%E0%A4%A8+%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&body=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87+WillowinWorlds%2C+%E0%A4%AE%E0%A5%88%E0%A4%82+Ball+is+God+%E0%A4%B5%E0%A4%BF%E0%A4%95%E0%A4%BE%E0%A4%B8+%E0%A4%85%E0%A4%AA%E0%A4%A1%E0%A5%87%E0%A4%9F+%E0%A4%95%E0%A4%BE+%E0%A4%85%E0%A4%A8%E0%A5%81%E0%A4%B8%E0%A4%B0%E0%A4%A3+%E0%A4%95%E0%A4%B0%E0%A4%A8%E0%A4%BE+%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%A4%E0%A4%BE+%E0%A4%B9%E0%A5%82%E0%A4%82%E0%A5%A4
                   - text: अपडेट का अनुरोध करें
       - generic [ref=f3e222]:
         - generic [ref=f3e223]:
@@ -140,7 +140,7 @@
       - generic [ref=f3e267]:
         - article [ref=f3e268]:
           - heading "स्पर्शनीय मोबाइल दुनिया के लिए एक छोटा स्टूडियो।" [level=2] [ref=f3e269]
-          - paragraph [ref=f3e270]: "WillowinWorld ने चार मोबाइल-फर्स्ट पज़ल और आर्केड गेम विकसित किए हैं: Nature Seed, Candy Shop, Paint Blasters और Ball is God?! प्रत्येक प्रोजेक्ट में एक सार्वजनिक गेम पेज, वर्तमान बिल्ड स्थिति, दिनांकित डेवलॉग और प्रेस संपत्तियां हैं।"
+          - paragraph [ref=f3e270]: "WillowinWorlds ने चार मोबाइल-फर्स्ट पज़ल और आर्केड गेम विकसित किए हैं: Nature Seed, Candy Shop, Paint Blasters और Ball is God?! प्रत्येक प्रोजेक्ट में एक सार्वजनिक गेम पेज, वर्तमान बिल्ड स्थिति, दिनांकित डेवलॉग और प्रेस संपत्तियां हैं।"
           - generic [ref=f3e271]:
             - generic [ref=f3e272]: मोबाइल-पहला अहसास
             - generic [ref=f3e273]: आरामदायक काल्पनिक दुनिया
@@ -148,7 +148,7 @@
             - generic [ref=f3e275]: विशिष्ट 2डी कला
           - paragraph [ref=f3e276]: वर्तमान कार्य में ड्रॉ-टू-सॉल्व लाइन भौतिकी, दस कंटेनरों में कैंडी का विलय, 35 रंग-प्रोजेक्टाइल रेसिपी और दस स्थानों पर घूमने वाला टावर वंश शामिल है।
         - article [ref=f3e277]:
-          - img "जादुई बिल्ली, जुड़वां डब्ल्यू मार्क और महल की दुनिया के साथ WillowinWorld लोगो" [ref=f3e279]
+          - img "जादुई बिल्ली, जुड़वां डब्ल्यू मार्क और महल की दुनिया के साथ WillowinWorlds लोगो" [ref=f3e279]
           - generic [ref=f3e280]:
             - heading "चार गेम। चार अलग-अलग बजाने योग्य प्रणालियाँ।" [level=3] [ref=f3e281]
             - paragraph [ref=f3e282]: एक सीमित भौतिक पथ बनाएं, एक बदलते कैंडी कंटेनर का प्रबंधन करें, एक रंगीन शॉट इकट्ठा करें या एक अवरोही टॉवर को घुमाएं। प्रत्येक गेम पेज को उसके वर्तमान दायरे, उत्पादन स्थिति और नवीनतम दिनांकित अपडेट के लिए खोलें।
@@ -230,7 +230,7 @@
         - heading "खिलाड़ियों, प्रेस और प्रकाशकों के लिए त्वरित उत्तर।" [level=2] [ref=f3e361]
         - generic [ref=f3e362]:
           - article [ref=f3e363]:
-            - button "WillowinWorld किस प्रकार के गेम बनाता है?" [ref=f3e364] [cursor=pointer]
+            - button "WillowinWorlds किस प्रकार के गेम बनाता है?" [ref=f3e364] [cursor=pointer]
           - article [ref=f3e366]:
             - button "क्या साइट कम-गति सेटिंग्स का सम्मान करती है?" [ref=f3e367] [cursor=pointer]
           - article [ref=f3e369]:
@@ -244,7 +244,7 @@
           - article [ref=f3e381]:
             - button "क्या मैं स्टूडियो के साथ सहयोग कर सकता हूँ?" [ref=f3e382] [cursor=pointer]
       - generic [ref=f3e387]:
-        - heading "WillowinWorld से बात करें।" [level=2] [ref=f3e388]
+        - heading "WillowinWorlds से बात करें।" [level=2] [ref=f3e388]
         - paragraph [ref=f3e389]: हम खिलाड़ियों की प्रतिक्रिया, प्रेस अनुरोध, प्रकाशक वार्तालाप और उत्पादन-आधारित सहयोग का स्वागत करते हैं।
         - generic [ref=f3e390]:
           - button "स्टूडियो से संपर्क करें" [ref=f3e391] [cursor=pointer]
@@ -252,7 +252,7 @@
             - /url: press-kit.html
     - contentinfo [ref=f3e395]:
       - generic [ref=f3e396]:
-        - link "WillowinWorld घर" [ref=f3e398] [cursor=pointer]:
+        - link "WillowinWorlds घर" [ref=f3e398] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f3e400]:
             - generic [ref=f3e401]: W
@@ -290,4 +290,4 @@
           - link "प्रकाशक संपर्क" [ref=f3e419] [cursor=pointer]:
             - /url: mailto:contact@willowinworld.com?subject=%E0%A4%AA%E0%A5%8D%E0%A4%B0%E0%A4%95%E0%A4%BE%E0%A4%B6%E0%A4%95+%E0%A4%AA%E0%A5%82%E0%A4%9B%E0%A4%A4%E0%A4%BE%E0%A4%9B
           - button "करियर/सहयोग" [ref=f3e420] [cursor=pointer]
-        - generic [ref=f3e421]: © 2026 WillowinWorld. सर्वाधिकार सुरक्षित।
+        - generic [ref=f3e421]: © 2026 WillowinWorlds. सर्वाधिकार सुरक्षित।

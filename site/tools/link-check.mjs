@@ -172,9 +172,9 @@ for (const xmlName of ["rss.xml", "sitemap.xml"]) {
 }
 
 if (errors.length) {
-  console.error("WillowinWorld link check failed:");
+  console.error("WillowinWorlds link check failed:");
   errors.forEach(error => console.error(`- ${error}`));
   process.exit(1);
 }
 
-console.log("WillowinWorld link check passed.");
+console.log("WillowinWorlds link check passed.");

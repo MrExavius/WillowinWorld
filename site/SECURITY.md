@@ -1,4 +1,4 @@
-# WillowinWorld Static Site Security
+# WillowinWorlds Static Site Security
 
 ## Hard limits
 

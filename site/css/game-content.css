@@ -1,4 +1,4 @@
-/* WillowinWorld CSS: shared game-page content blocks, related worlds, facts and assets. */
+/* WillowinWorlds CSS: shared game-page content blocks, related worlds, facts and assets. */
 .game-page-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);

@@ -1,12 +1,12 @@
 - generic [active] [ref=f2e1]:
   - link "Перейти к основному содержанию" [ref=f2e2] [cursor=pointer]:
     - /url: "#main-content"
-  - status: Магия разблокирована — добро пожаловать в WillowinWorld
+  - status: Магия разблокирована — добро пожаловать в WillowinWorlds
   - status
   - generic [ref=f2e3]:
     - banner [ref=f2e4]:
       - generic [ref=f2e5]:
-        - link "WillowinWorld домой" [ref=f2e6] [cursor=pointer]:
+        - link "WillowinWorlds домой" [ref=f2e6] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f2e8]:
             - generic [ref=f2e9]: W
@@ -39,8 +39,8 @@
         - generic [ref=f2e30]:
           - generic [ref=f2e31]:
             - generic [ref=f2e32]: Инди-студия мобильных игр
-            - heading "WillowinWorld Небольшие игры. Живые миры." [level=1] [ref=f2e33]:
-              - generic [ref=f2e34]: WillowinWorld
+            - heading "WillowinWorlds Небольшие игры. Живые миры." [level=1] [ref=f2e33]:
+              - generic [ref=f2e34]: WillowinWorlds
               - generic [ref=f2e35]: Небольшие игры. Живые миры.
             - paragraph [ref=f2e36]: Тактильные головоломки и аркады, где каждый штрих, бросок, выстрел и падение меняют мир.
             - generic [ref=f2e37]:
@@ -48,7 +48,7 @@
                 - /url: "#games"
               - link "Пресс-кит" [ref=f2e39] [cursor=pointer]:
                 - /url: press-kit.html
-            - navigation "Рекомендуемые игры WillowinWorld" [ref=f2e40]:
+            - navigation "Рекомендуемые игры WillowinWorlds" [ref=f2e40]:
               - link "Nature Seed физика рисования и решения" [ref=f2e41] [cursor=pointer]:
                 - /url: "#nature-card"
                 - strong [ref=f2e42]: Nature Seed
@@ -108,7 +108,7 @@
                   - link "Исследуйте Nature Seed" [ref=f2e118] [cursor=pointer]:
                     - /url: games/nature-seed.html
                   - link "Запросить обновления разработки Nature Seed" [ref=f2e119] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Nature+Seed&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Nature+Seed.
+                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Nature+Seed&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorlds%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Nature+Seed.
                     - text: Следить за обновлениями
             - article "Candy Shop уютная головоломка-слияние конфет" [ref=f2e120]:
               - generic [ref=f2e121]:
@@ -127,7 +127,7 @@
                   - link "Исследуйте Candy Shop" [ref=f2e138] [cursor=pointer]:
                     - /url: games/candy-shop.html
                   - link "Запрос обновлений разработки Candy Shop" [ref=f2e139] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Candy+Shop&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Candy+Shop.
+                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Candy+Shop&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorlds%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Candy+Shop.
                     - text: Следить за обновлениями
             - article "Paint Blasters аркадная головоломка с физикой разрушения цвета" [ref=f2e140]:
               - generic [ref=f2e141]:
@@ -146,7 +146,7 @@
                   - link "Исследуйте Paint Blasters" [ref=f2e178] [cursor=pointer]:
                     - /url: games/paint-blasters.html
                   - link "Запрос обновлений разработки Paint Blasters" [ref=f2e179] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Paint+Blasters&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Paint+Blasters.
+                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Paint+Blasters&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorlds%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Paint+Blasters.
                     - text: Следить за обновлениями
             - article "Ball is God хардкорная аркадная игра с вертикальным спуском" [ref=f2e180]:
               - generic [ref=f2e181]:
@@ -165,7 +165,7 @@
                   - link "Исследуйте Ball is God?!" [ref=f2e217] [cursor=pointer]:
                     - /url: games/ball-is-god.html
                   - link "Запрос обновлений разработки Ball is God" [ref=f2e218] [cursor=pointer]:
-                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Ball+is+God&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorld%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Ball+is+God.
+                    - /url: mailto:contact@willowinworld.com?subject=%D0%A1%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D0%B5+%D0%B7%D0%B0+%D1%80%D0%B0%D0%B7%D0%B2%D0%B8%D1%82%D0%B8%D0%B5%D0%BC+Ball+is+God&body=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82%2C+WillowinWorlds%2C+%D1%8F+%D1%85%D0%BE%D1%87%D1%83+%D1%81%D0%BB%D0%B5%D0%B4%D0%B8%D1%82%D1%8C+%D0%B7%D0%B0+%D0%BE%D0%B1%D0%BD%D0%BE%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%BC%D0%B8+%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B8+Ball+is+God.
                     - text: Следить за обновлениями
         - button [ref=f2e219] [cursor=pointer]: o
       - generic [ref=f2e220]:
@@ -197,7 +197,7 @@
         - generic [ref=f2e265]:
           - article [ref=f2e266]:
             - heading "Небольшая студия живых мобильных миров." [level=2] [ref=f2e267]
-            - paragraph [ref=f2e268]: "WillowinWorld разрабатывает четыре мобильные головоломки и аркадные игры: Nature Seed, Candy Shop, Paint Blasters и Ball is God?!. Каждый проект имеет общедоступную страницу игры, текущий статус сборки, датированный журнал разработки и материалы для прессы."
+            - paragraph [ref=f2e268]: "WillowinWorlds разрабатывает четыре мобильные головоломки и аркадные игры: Nature Seed, Candy Shop, Paint Blasters и Ball is God?!. Каждый проект имеет общедоступную страницу игры, текущий статус сборки, датированный журнал разработки и материалы для прессы."
             - generic [ref=f2e269]:
               - generic [ref=f2e270]: Мобильный подход
               - generic [ref=f2e271]: Уютные фэнтезийные миры
@@ -205,7 +205,7 @@
               - generic [ref=f2e273]: Отличительная 2D-графика
             - paragraph [ref=f2e274]: Текущая работа включает в себя физику рисования линий, объединение конфет в десяти контейнерах, 35 рецептов цветных снарядов и спуск с помощью вращающейся башни в десяти локациях.
           - article [ref=f2e275]:
-            - img "Логотип WillowinWorld с волшебным котом, двойным знаком W и миром замков." [ref=f2e277]
+            - img "Логотип WillowinWorlds с волшебным котом, двойным знаком W и миром замков." [ref=f2e277]
             - generic [ref=f2e278]:
               - heading "Четыре игры. Четыре различные игровые системы." [level=3] [ref=f2e279]
               - paragraph [ref=f2e280]: Нарисуйте ограниченный физический путь, управляйте меняющимся контейнером для конфет, соберите цветной снимок или вращайте нисходящую башню. Откройте каждую страницу игры, чтобы узнать ее текущий объем, статус производства и последнее датированное обновление.
@@ -298,7 +298,7 @@
           - heading "Короткие ответы для игроков, прессы и издателей." [level=2] [ref=f2e359]
           - generic [ref=f2e360]:
             - article [ref=f2e361]:
-              - button "Какие игры производит WillowinWorld?" [ref=f2e362] [cursor=pointer]
+              - button "Какие игры производит WillowinWorlds?" [ref=f2e362] [cursor=pointer]
             - article [ref=f2e364]:
               - button "Соблюдает ли сайт настройки замедленного движения?" [ref=f2e365] [cursor=pointer]
             - article [ref=f2e367]:
@@ -314,7 +314,7 @@
         - button [ref=f2e382] [cursor=pointer]: "n"
       - generic [ref=f2e383]:
         - generic [ref=f2e384]:
-          - heading "Поговорите с WillowinWorld." [level=2] [ref=f2e385]
+          - heading "Поговорите с WillowinWorlds." [level=2] [ref=f2e385]
           - paragraph [ref=f2e386]: Мы приветствуем отзывы игроков, запросы прессы, беседы с издателями и сотрудничество в сфере производства.
           - generic [ref=f2e387]:
             - button "Связаться со студией" [ref=f2e388] [cursor=pointer]
@@ -323,7 +323,7 @@
         - button [ref=f2e390] [cursor=pointer]: "y"
     - contentinfo [ref=f2e391]:
       - generic [ref=f2e392]:
-        - link "WillowinWorld домой" [ref=f2e394] [cursor=pointer]:
+        - link "WillowinWorlds домой" [ref=f2e394] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f2e396]:
             - generic [ref=f2e397]: W
@@ -361,4 +361,4 @@
           - link "Контактная информация издателя" [ref=f2e415] [cursor=pointer]:
             - /url: mailto:contact@willowinworld.com?subject=%D0%97%D0%B0%D0%BF%D1%80%D0%BE%D1%81+%D0%B8%D0%B7%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8F
           - button "Карьера/Сотрудничество" [ref=f2e416] [cursor=pointer]
-        - generic [ref=f2e417]: © 2026 WillowinWorld. Все права защищены.
+        - generic [ref=f2e417]: © 2026 WillowinWorlds. Все права защищены.

@@ -1,12 +1,12 @@
 - generic [ref=f2e1]:
   - link "انتقل إلى المحتوى الرئيسي" [ref=f2e2] [cursor=pointer]:
     - /url: "#main-content"
-  - status: تم فتح السحر - مرحبًا بك في WillowinWorld
+  - status: تم فتح السحر - مرحبًا بك في WillowinWorlds
   - status
   - generic [ref=f2e3]:
     - banner [ref=f2e4]:
       - generic [ref=f2e5]:
-        - link "WillowinWorld المنزل" [ref=f2e6] [cursor=pointer]:
+        - link "WillowinWorlds المنزل" [ref=f2e6] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f2e8]:
             - generic [ref=f2e9]: W
@@ -25,8 +25,8 @@
       - generic [ref=f2e24]:
         - generic [ref=f2e25]:
           - generic [ref=f2e26]: استوديو ألعاب الهاتف المحمول المستقل
-          - heading "WillowinWorld العاب صغيرة. عوالم حية." [level=1] [ref=f2e27]:
-            - generic [ref=f2e28]: WillowinWorld
+          - heading "WillowinWorlds العاب صغيرة. عوالم حية." [level=1] [ref=f2e27]:
+            - generic [ref=f2e28]: WillowinWorlds
             - generic [ref=f2e29]: العاب صغيرة. عوالم حية.
           - paragraph [ref=f2e30]: ألعاب الألغاز وألعاب الأركيد الملموسة حيث كل سحب وإسقاط وطلقة وسقوط يغير العالم.
           - generic [ref=f2e31]:
@@ -34,7 +34,7 @@
               - /url: "#games"
             - link "عدة صحفية" [ref=f2e33] [cursor=pointer]:
               - /url: press-kit.html
-          - navigation "ألعاب WillowinWorld المميزة" [ref=f2e34]:
+          - navigation "ألعاب WillowinWorlds المميزة" [ref=f2e34]:
             - link "Nature Seed فيزياء السحب لحلها" [ref=f2e35] [cursor=pointer]:
               - /url: "#nature-card"
               - strong [ref=f2e36]: Nature Seed
@@ -93,7 +93,7 @@
                 - link "اكتشف Nature Seed" [ref=f2e108] [cursor=pointer]:
                   - /url: games/nature-seed.html
                 - link "طلب تحديثات تطوير Nature Seed" [ref=f2e109] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
+                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Nature%20Seed%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Nature%20Seed%20development%20updates.
                   - text: طلب التحديثات
           - article "Candy Shop لغز دمج الحلوى المريح" [ref=f2e110]:
             - generic [ref=f2e111]:
@@ -112,7 +112,7 @@
                 - link "اكتشف Candy Shop" [ref=f2e128] [cursor=pointer]:
                   - /url: games/candy-shop.html
                 - link "طلب تحديثات تطوير Candy Shop" [ref=f2e129] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
+                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Candy%20Shop%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Candy%20Shop%20development%20updates.
                   - text: طلب التحديثات
           - article "Paint Blasters ألغاز فيزياء تدمير الألوان" [ref=f2e130]:
             - generic [ref=f2e131]:
@@ -131,7 +131,7 @@
                 - link "اكتشف Paint Blasters" [ref=f2e168] [cursor=pointer]:
                   - /url: games/paint-blasters.html
                 - link "طلب تحديثات تطوير Paint Blasters" [ref=f2e169] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorld%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
+                  - /url: mailto:contact@willowinworld.com?subject=Follow%20Paint%20Blasters%20Development&body=Hi%20WillowinWorlds%2C%0A%0AI%20want%20to%20follow%20Paint%20Blasters%20development%20updates.
                   - text: طلب التحديثات
       - generic [ref=f2e210]:
         - generic [ref=f2e211]:
@@ -159,7 +159,7 @@
       - generic [ref=f2e253]:
         - article [ref=f2e254]:
           - heading "استوديو صغير لعوالم المحمول اللمسي." [level=2] [ref=f2e255]
-          - paragraph [ref=f2e256]: "WillowinWorld تطور أربع ألعاب ألغاز وأركيد على الهاتف المحمول أولاً: Nature Seed وCandy Shop وPaint Blasters وBall is God?! يحتوي كل مشروع على صفحة ألعاب عامة وحالة البناء الحالية ومدونة تطوير مؤرخة وأصول صحفية."
+          - paragraph [ref=f2e256]: "WillowinWorlds تطور أربع ألعاب ألغاز وأركيد على الهاتف المحمول أولاً: Nature Seed وCandy Shop وPaint Blasters وBall is God?! يحتوي كل مشروع على صفحة ألعاب عامة وحالة البناء الحالية ومدونة تطوير مؤرخة وأصول صحفية."
           - generic [ref=f2e257]:
             - generic [ref=f2e258]: الجوال أول إحساس
             - generic [ref=f2e259]: عوالم خيالية مريحة
@@ -167,7 +167,7 @@
             - generic [ref=f2e261]: فن ثنائي الأبعاد مميز
           - paragraph [ref=f2e262]: يمتد العمل الحالي إلى فيزياء الخطوط من الرسم إلى الحل، ودمج الحلوى عبر عشر حاويات، و35 وصفة مقذوفة ملونة ونزول برج دوار عبر عشرة مواقع.
         - article [ref=f2e263]:
-          - img "شعار WillowinWorld مع القط السحري وعلامة W المزدوجة وعالم القلعة" [ref=f2e265]
+          - img "شعار WillowinWorlds مع القط السحري وعلامة W المزدوجة وعالم القلعة" [ref=f2e265]
           - generic [ref=f2e266]:
             - heading "اربع العاب. أربعة أنظمة لعب مميزة." [level=3] [ref=f2e267]
             - paragraph [ref=f2e268]: ارسم مسارًا ماديًا محدودًا أو قم بإدارة حاوية الحلوى المتغيرة أو قم بتجميع لقطة ملونة أو قم بتدوير برج هابط. افتح كل صفحة لعبة للاطلاع على نطاقها الحالي وحالة الإنتاج وآخر تحديث مؤرخ.
@@ -249,7 +249,7 @@
         - heading "إجابات سريعة للاعبين والصحافة والناشرين." [level=2] [ref=f2e339]
         - generic [ref=f2e340]:
           - article [ref=f2e341]:
-            - button "ما نوع الألعاب التي يصنعها WillowinWorld؟" [ref=f2e342] [cursor=pointer]
+            - button "ما نوع الألعاب التي يصنعها WillowinWorlds؟" [ref=f2e342] [cursor=pointer]
           - article [ref=f2e344]:
             - button "هل الموقع يحترم إعدادات الحركة المنخفضة؟" [ref=f2e345] [cursor=pointer]
           - article [ref=f2e347]:
@@ -263,7 +263,7 @@
           - article [ref=f2e359]:
             - button "هل يمكنني التعاون مع الاستوديو؟" [ref=f2e360] [cursor=pointer]
       - generic [ref=f2e363]:
-        - heading "تحدث إلى WillowinWorld." [level=2] [ref=f2e364]
+        - heading "تحدث إلى WillowinWorlds." [level=2] [ref=f2e364]
         - paragraph [ref=f2e365]: نرحب بتعليقات اللاعبين وطلبات الصحافة ومحادثات الناشرين والتعاون القائم على الإنتاج.
         - generic [ref=f2e366]:
           - button "تواصل مع الاستديو" [ref=f2e367] [cursor=pointer]
@@ -271,7 +271,7 @@
             - /url: press-kit.html
     - contentinfo [ref=f2e369]:
       - generic [ref=f2e370]:
-        - link "WillowinWorld المنزل" [ref=f2e372] [cursor=pointer]:
+        - link "WillowinWorlds المنزل" [ref=f2e372] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f2e374]:
             - generic [ref=f2e375]: W
@@ -309,4 +309,4 @@
           - link "الاتصال بالناشر" [ref=f2e393] [cursor=pointer]:
             - /url: mailto:contact@willowinworld.com?subject=Publisher%20inquiry
           - button "الوظائف / التعاون" [ref=f2e394] [cursor=pointer]
-        - generic [ref=f2e395]: © 2026 WillowinWorld. جميع الحقوق محفوظة.
+        - generic [ref=f2e395]: © 2026 WillowinWorlds. جميع الحقوق محفوظة.

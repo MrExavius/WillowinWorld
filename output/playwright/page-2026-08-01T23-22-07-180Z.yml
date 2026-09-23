@@ -2,12 +2,12 @@
   - link "Candy Shop にスキップ" [ref=f5e2] [cursor=pointer]:
     - /url: "#game-main"
   - banner [ref=f5e3]:
-    - link "Candy Shop — WillowinWorld に戻る" [ref=f5e4] [cursor=pointer]:
+    - link "Candy Shop — WillowinWorlds に戻る" [ref=f5e4] [cursor=pointer]:
       - /url: ../index.html
       - img "Candy Shop 居心地の良いキャンディーマージパズルゲームアイコン" [ref=f5e5]
       - generic [ref=f5e6]:
         - strong [ref=f5e7]: Candy Shop
-        - generic [ref=f5e8]: WillowinWorld ゲームページ
+        - generic [ref=f5e8]: WillowinWorlds ゲームページ
     - navigation "ゲームページのナビゲーション" [ref=f5e9]:
       - link "スタジオホーム" [ref=f5e10] [cursor=pointer]:
         - /url: ../index.html
@@ -155,7 +155,7 @@
         - heading "あらゆるお菓子が大きなものになる、陽気なお菓子屋さん。" [level=2] [ref=f5e166]
         - generic [ref=f5e167]:
           - generic [ref=f5e168]:
-            - paragraph [ref=f5e169]: Candy Shop は、WillowinWorld の 2 番目のゲーム アイデアとして 2025 年に始まりました。それは、シンプルな喜びと満足のいく物理学を中心に構築された、明るく居心地の良いキャンディー マージ パズルです。
+            - paragraph [ref=f5e169]: Candy Shop は、WillowinWorlds の 2 番目のゲーム アイデアとして 2025 年に始まりました。それは、シンプルな喜びと満足のいく物理学を中心に構築された、明るく居心地の良いキャンディー マージ パズルです。
             - paragraph [ref=f5e170]: 世界は意図的に温かく、読みやすいものになっています。棚、お菓子、柔らかいマスコット、お店のような容器は、どんな小さなお菓子にも大きなお菓子になる道があるという幻想を裏付けています。
             - paragraph [ref=f5e171]: 最初のプロトタイプの後、チームは GDD を拡張し、方向性を再構築し、13 個のキャンディーのマージ チェーンを完成させ、10 個のコンテナ ルールセット、特別なレシピ、計画ツール、最初のメタ進行システムを実装しました。
           - generic [ref=f5e172]:
@@ -353,7 +353,7 @@
           - listitem [ref=f5e335]:
             - generic [ref=f5e336]: 2025年6月下旬
             - strong [ref=f5e337]: 2番目のゲームアイデア
-            - paragraph [ref=f5e338]: WillowinWorld は、シンプルで楽しく、幅広い人に親しまれる遊びを軸に、明るいキャンディゲームの企画を模索し始めました。
+            - paragraph [ref=f5e338]: WillowinWorlds は、シンプルで楽しく、幅広い人に親しまれる遊びを軸に、明るいキャンディゲームの企画を模索し始めました。
           - listitem [ref=f5e339]:
             - generic [ref=f5e340]: 2025 年 8 月
             - strong [ref=f5e341]: 最初のキャンディキャラクター
@@ -376,9 +376,9 @@
             - paragraph [ref=f5e358]: 最適化とUIの磨き込みを進めながら、10種類の容器ルール、スペシャルキャンディの相互作用、計画ツール、デイリーチャレンジ、コレクションシステムをビルドに追加しました。
       - generic [ref=f5e359]:
         - generic [ref=f5e360]: 関連ワールド
-        - heading "マージパズルを楽しんだ方に向けて、WillowinWorld の多彩な作品をご案内します。" [level=2] [ref=f5e361]
+        - heading "マージパズルを楽しんだ方に向けて、WillowinWorlds の多彩な作品をご案内します。" [level=2] [ref=f5e361]
         - paragraph [ref=f5e362]: Candy Shop は、心地よいドロップ＆マージパズルを楽しめる作品です。続いて、穏やかなライン物理パズル、色彩豊かな連鎖反応アーケード、あるいはスタジオの高難度な回転タワー降下ゲームもご覧ください。
-        - generic "WillowinWorld ゲーム関連ページ" [ref=f5e363]:
+        - generic "WillowinWorlds ゲーム関連ページ" [ref=f5e363]:
           - link "リラックスできる物理パズル Nature Seed 限られた長さの物理ルートを描いて2人のキャラクターを出会わせ、穏やかなモバイル物理パズルで森のステージをよみがえらせます。 描いて解くラインパズル" [ref=f5e364] [cursor=pointer]:
             - /url: nature-seed.html
             - generic [ref=f5e365]: リラックスできる物理パズル
@@ -397,12 +397,12 @@
             - strong [ref=f5e376]: Ball is God?!
             - paragraph [ref=f5e377]: 心地よいプレイ体験の次は、コンボスマッシュ、神話世界、手強いボスが待つ緊張感あふれる回転タワー降下へ。
             - generic [ref=f5e378]: Hardcore tower arcade
-          - link "プレス/出版社 ポートフォリオの事実 ジャンル、制作状況、公開素材、パブリッシャー向けのゲームの訴求点を簡潔にまとめた概要を開きます。 WillowinWorld portfolio" [ref=f5e379] [cursor=pointer]:
+          - link "プレス/出版社 ポートフォリオの事実 ジャンル、制作状況、公開素材、パブリッシャー向けのゲームの訴求点を簡潔にまとめた概要を開きます。 WillowinWorlds portfolio" [ref=f5e379] [cursor=pointer]:
             - /url: ../press-kit.html#press-games
             - generic [ref=f5e380]: プレス/出版社
             - strong [ref=f5e381]: ポートフォリオの事実
             - paragraph [ref=f5e382]: ジャンル、制作状況、公開素材、パブリッシャー向けのゲームの訴求点を簡潔にまとめた概要を開きます。
-            - generic [ref=f5e383]: WillowinWorld portfolio
+            - generic [ref=f5e383]: WillowinWorlds portfolio
       - generic [ref=f5e384]:
         - generic [ref=f5e385]: Candy Shop FAQ
         - heading "プレーヤー、プレス、出版パートナー向けの回答。" [level=2] [ref=f5e386]
@@ -457,7 +457,7 @@
   - contentinfo [ref=f5e435]:
     - generic [ref=f5e436]:
       - generic [ref=f5e437]:
-        - strong [ref=f5e438]: Candy Shop は WillowinWorld のゲームです。
+        - strong [ref=f5e438]: Candy Shop は WillowinWorlds のゲームです。
         - generic [ref=f5e439]: 次のキャンディを落とす操作はシンプル。でも、容器の攻略は一筋縄ではいかない、心地よいマージパズル。
       - navigation "Candy Shop フッター ナビゲーション" [ref=f5e440]:
         - link "すべてのゲーム" [ref=f5e441] [cursor=pointer]:

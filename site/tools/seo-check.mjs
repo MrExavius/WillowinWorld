@@ -205,10 +205,10 @@ for (const update of latestByFile.values()) {
 
 const llms = await readFile(join(siteRoot, "llms.txt"), "utf8");
 if (llms !== renderLlmsTxt(latestDevlogs)) fail("llms.txt", "must be regenerated from the canonical game devlogs");
-if ((llms.match(/^# /gm) || []).length !== 1 || !llms.startsWith("# WillowinWorld\n")) {
-  fail("llms.txt", "must begin with one H1 naming WillowinWorld");
+if ((llms.match(/^# /gm) || []).length !== 1 || !llms.startsWith("# WillowinWorlds\n")) {
+  fail("llms.txt", "must begin with one H1 naming WillowinWorlds");
 }
-if (!/^> WillowinWorld is an independent mobile game studio/m.test(llms)) {
+if (!/^> WillowinWorlds is an independent mobile game studio/m.test(llms)) {
   fail("llms.txt", "must include a concise studio summary blockquote");
 }
 for (const game of gameDevlogSources) {
@@ -318,7 +318,7 @@ for (const locale of locales.filter(candidate => candidate.code !== sourceLocale
     fail(file, `missing localized AI guide (${error.message})`);
     continue;
   }
-  if (!localizedLlms.startsWith(`# WillowinWorld — ${locale.label}\n`)) fail(file, "must identify its native language");
+  if (!localizedLlms.startsWith(`# WillowinWorlds — ${locale.label}\n`)) fail(file, "must identify its native language");
   if (/___WILLOW_|__W\d+\s*__/.test(localizedLlms)) fail(file, "contains leaked translation placeholders");
   for (const game of gameDevlogSources) {
     const gamePage = localizedPages.find(page => page.file === game.file);

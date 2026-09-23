@@ -1,4 +1,4 @@
-/* WillowinWorld CSS: desktop and short viewport responsive rules. */
+/* WillowinWorlds CSS: desktop and short viewport responsive rules. */
 @media (min-width: 921px) and (max-height: 1080px) {
   .hero {
     padding-top: calc(var(--header-h) + 28px);

@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-Players discovering distinctive mobile puzzle games, returning followers checking development progress, and publishers, press, or creators evaluating WillowinWorld and its four game worlds.
+Players discovering distinctive mobile puzzle games, returning followers checking development progress, and publishers, press, or creators evaluating WillowinWorlds and its four game worlds.
 
 ## Product Purpose
 
-WillowinWorld is the studio hub and canonical discovery surface for Nature Seed, Candy Shop, Paint Blasters, and Ball is God. It should make each game understandable within seconds, reward deeper exploration with credible production detail, and turn interest into game-page visits, beta enquiries, press-kit use, and long-term studio recognition.
+WillowinWorlds is the studio hub and canonical discovery surface for Nature Seed, Candy Shop, Paint Blasters, and Ball is God. It should make each game understandable within seconds, reward deeper exploration with credible production detail, and turn interest into game-page visits, beta enquiries, press-kit use, and long-term studio recognition.
 
 ## Brand Personality
 

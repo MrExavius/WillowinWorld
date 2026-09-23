@@ -195,25 +195,25 @@
       key: "ball",
       phrase: "Ball is God?!",
       title: "Ball is God?! promo word found",
-      message: "You found the hidden Ball is God?! word. Promo codes are issued manually by WillowinWorld after a claim review."
+      message: "You found the hidden Ball is God?! word. Promo codes are issued manually by WillowinWorlds after a claim review."
     },
     {
       key: "candy",
       phrase: "Candy Shop",
       title: "Candy Shop promo word found",
-      message: "You found the hidden Candy Shop word. Promo codes are issued manually by WillowinWorld after a claim review."
+      message: "You found the hidden Candy Shop word. Promo codes are issued manually by WillowinWorlds after a claim review."
     },
     {
       key: "paint",
       phrase: "Paint Blasters",
       title: "Paint Blasters promo word found",
-      message: "You found the hidden Paint Blasters word. Promo codes are issued manually by WillowinWorld after a claim review."
+      message: "You found the hidden Paint Blasters word. Promo codes are issued manually by WillowinWorlds after a claim review."
     },
     {
       key: "seed",
       phrase: "Nature Seed",
       title: "Nature Seed promo word found",
-      message: "You found the hidden Nature Seed word. Promo codes are issued manually by WillowinWorld after a claim review."
+      message: "You found the hidden Nature Seed word. Promo codes are issued manually by WillowinWorlds after a claim review."
     }
   ].map(secret => ({
     ...secret,
@@ -294,7 +294,7 @@
     const email = String(formData.get("email") || "").trim();
     const type = String(formData.get("type") || "General").trim();
     const message = String(formData.get("message") || "").trim();
-    const subject = type + " inquiry from " + (name || "WillowinWorld visitor");
+    const subject = type + " inquiry from " + (name || "WillowinWorlds visitor");
     const body =
       "Name: " + name + "\n" +
       "Email: " + email + "\n" +
@@ -1647,8 +1647,8 @@
   function buildPromoClaimHref(secret, claimId) {
     const subject = encodeURIComponent(`Promo claim - ${secret.phrase}`);
     const body = encodeURIComponent(
-      "Hi WillowinWorld,\n\n" +
-      "I found the hidden promo word on the WillowinWorld website.\n\n" +
+      "Hi WillowinWorlds,\n\n" +
+      "I found the hidden promo word on the WillowinWorlds website.\n\n" +
       `Claim phrase: ${secret.phrase}\n` +
       `Claim ID: ${claimId}\n\n` +
       "I understand this does not reveal a real promo code on the website and that the studio reviews claims manually.\n"

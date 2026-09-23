@@ -1,12 +1,12 @@
 - generic [active] [ref=f6e1]:
   - link "メインコンテンツにスキップ" [ref=f6e2] [cursor=pointer]:
     - /url: "#main-content"
-  - status: 魔法のロックが解除されました - WillowinWorld へようこそ
+  - status: 魔法のロックが解除されました - WillowinWorlds へようこそ
   - status
   - generic [ref=f6e3]:
     - banner [ref=f6e4]:
       - generic [ref=f6e5]:
-        - link "WillowinWorld ホーム" [ref=f6e6] [cursor=pointer]:
+        - link "WillowinWorlds ホーム" [ref=f6e6] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f6e8]:
             - generic [ref=f6e9]: W
@@ -25,8 +25,8 @@
       - generic [ref=f6e24]:
         - generic [ref=f6e25]:
           - generic [ref=f6e26]: インディーズモバイルゲームスタジオ
-          - heading "WillowinWorld 小さなゲーム。生きている世界。" [level=1] [ref=f6e27]:
-            - generic [ref=f6e28]: WillowinWorld
+          - heading "WillowinWorlds 小さなゲーム。生きている世界。" [level=1] [ref=f6e27]:
+            - generic [ref=f6e28]: WillowinWorlds
             - generic [ref=f6e29]: 小さなゲーム。生きている世界。
           - paragraph [ref=f6e30]: 描く、落とす、撃つ、落ちるたびに世界が変わる触覚パズルとアーケード ゲーム。
           - generic [ref=f6e31]:
@@ -34,7 +34,7 @@
               - /url: "#games"
             - link "プレスキット" [ref=f6e33] [cursor=pointer]:
               - /url: press-kit.html
-          - navigation "注目の WillowinWorld ゲーム" [ref=f6e34]:
+          - navigation "注目の WillowinWorlds ゲーム" [ref=f6e34]:
             - link "Nature Seed 描画から解決までの物理学" [ref=f6e35] [cursor=pointer]:
               - /url: "#nature-card"
               - strong [ref=f6e36]: Nature Seed
@@ -92,7 +92,7 @@
                 - link "Nature Seed を探索する" [ref=f6e108] [cursor=pointer]:
                   - /url: games/nature-seed.html
                 - link "Nature Seed 開発アップデートをリクエスト" [ref=f6e109] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Nature+Seed+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%A7%E3%81%99%E3%80%82Nature+Seed+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                  - /url: mailto:contact@willowinworld.com?subject=Nature+Seed+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorlds+%E3%81%A7%E3%81%99%E3%80%82Nature+Seed+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
                   - text: 更新をリクエストする
           - article "Candy Shop 居心地の良いキャンディーマージパズル" [ref=f6e110]:
             - generic [ref=f6e111]:
@@ -111,7 +111,7 @@
                 - link "Candy Shop を探索する" [ref=f6e128] [cursor=pointer]:
                   - /url: games/candy-shop.html
                 - link "Candy Shop 開発アップデートをリクエスト" [ref=f6e129] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Candy+Shop+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%A7%E3%81%99%E3%80%82Candy+Shop+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                  - /url: mailto:contact@willowinworld.com?subject=Candy+Shop+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorlds+%E3%81%A7%E3%81%99%E3%80%82Candy+Shop+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
                   - text: 更新をリクエストする
           - article "Paint Blasters カラー破壊物理パズルアーケード" [ref=f6e130]:
             - generic [ref=f6e131]:
@@ -130,7 +130,7 @@
                 - link "Paint Blasters を探索する" [ref=f6e168] [cursor=pointer]:
                   - /url: games/paint-blasters.html
                 - link "Paint Blasters 開発アップデートをリクエスト" [ref=f6e169] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Paint+Blasters+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%95%E3%82%93%E3%80%82Paint+Blasters+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                  - /url: mailto:contact@willowinworld.com?subject=Paint+Blasters+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorlds+%E3%81%95%E3%82%93%E3%80%82Paint+Blasters+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
                   - text: 更新をリクエストする
           - article "Ball is God ハードコア垂直降下アーケード ゲーム" [ref=f6e170]:
             - generic [ref=f6e171]:
@@ -149,7 +149,7 @@
                 - link "Ball is God?! を探索する" [ref=f6e207] [cursor=pointer]:
                   - /url: games/ball-is-god.html
                 - link "Ball is God 開発アップデートをリクエスト" [ref=f6e208] [cursor=pointer]:
-                  - /url: mailto:contact@willowinworld.com?subject=Ball+is+God+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorld+%E3%81%A7%E3%81%99%E3%80%82Ball+is+God+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
+                  - /url: mailto:contact@willowinworld.com?subject=Ball+is+God+%E9%96%8B%E7%99%BA%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%99%E3%82%8B&body=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF+WillowinWorlds+%E3%81%A7%E3%81%99%E3%80%82Ball+is+God+%E3%81%AE%E9%96%8B%E7%99%BA%E6%9C%80%E6%96%B0%E6%83%85%E5%A0%B1%E3%82%92%E3%83%95%E3%82%A9%E3%83%AD%E3%83%BC%E3%81%97%E3%81%9F%E3%81%84%E3%81%A8%E6%80%9D%E3%81%A3%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82
                   - text: 更新をリクエストする
       - generic [ref=f6e210]:
         - generic [ref=f6e211]:
@@ -177,7 +177,7 @@
       - generic [ref=f6e253]:
         - article [ref=f6e254]:
           - heading "触覚モバイル世界のための小さなスタジオ。" [level=2] [ref=f6e255]
-          - paragraph [ref=f6e256]: "WillowinWorld は、4 つのモバイルファーストのパズルおよびアーケード ゲームを開発しています: Nature Seed、Candy Shop、Paint Blasters、および Ball is God?! 各プロジェクトには、公開ゲーム ページ、現在のビルド ステータス、日付の付いた開発ブログおよびプレス アセットがあります。"
+          - paragraph [ref=f6e256]: "WillowinWorlds は、4 つのモバイルファーストのパズルおよびアーケード ゲームを開発しています: Nature Seed、Candy Shop、Paint Blasters、および Ball is God?! 各プロジェクトには、公開ゲーム ページ、現在のビルド ステータス、日付の付いた開発ブログおよびプレス アセットがあります。"
           - generic [ref=f6e257]:
             - generic [ref=f6e258]: モバイルファーストの感触
             - generic [ref=f6e259]: 居心地の良いファンタジーの世界
@@ -185,7 +185,7 @@
             - generic [ref=f6e261]: 独特の 2D アート
           - paragraph [ref=f6e262]: 現在の作業は、描画から解決までのライン物理学、10 個のコンテナにわたるキャンディーの結合、35 個のカラー発射体レシピ、および 10 か所にわたる回転塔降下に及びます。
         - article [ref=f6e263]:
-          - img "WillowinWorld ロゴと魔法の猫、ツイン W マーク、城の世界" [ref=f6e265]
+          - img "WillowinWorlds ロゴと魔法の猫、ツイン W マーク、城の世界" [ref=f6e265]
           - generic [ref=f6e266]:
             - heading "4試合。 4 つの異なるプレイ可能なシステム。" [level=3] [ref=f6e267]
             - paragraph [ref=f6e268]: 限られた物理的なパスを描画し、変化するキャンディーの容器を管理し、カラーショットを組み立て、下降するタワーを回転させます。各ゲームのページを開いて、現在の範囲、制作ステータス、最新の日付の更新を確認してください。
@@ -267,7 +267,7 @@
         - heading "プレーヤー、プレス、出版社向けのクイックアンサー。" [level=2] [ref=f6e339]
         - generic [ref=f6e340]:
           - article [ref=f6e341]:
-            - button "WillowinWorldはどんなゲームを作っていますか？" [ref=f6e342] [cursor=pointer]
+            - button "WillowinWorldsはどんなゲームを作っていますか？" [ref=f6e342] [cursor=pointer]
           - article [ref=f6e344]:
             - button "サイトはモーション軽減設定を尊重していますか?" [ref=f6e345] [cursor=pointer]
           - article [ref=f6e347]:
@@ -281,7 +281,7 @@
           - article [ref=f6e359]:
             - button "スタジオとコラボできますか？" [ref=f6e360] [cursor=pointer]
       - generic [ref=f6e363]:
-        - heading "WillowinWorldと話します。" [level=2] [ref=f6e364]
+        - heading "WillowinWorldsと話します。" [level=2] [ref=f6e364]
         - paragraph [ref=f6e365]: プレイヤーからのフィードバック、プレスリクエスト、パブリッシャーとの会話、制作を目的としたコラボレーションを歓迎します。
         - generic [ref=f6e366]:
           - button "スタジオへのお問い合わせ" [ref=f6e367] [cursor=pointer]
@@ -289,7 +289,7 @@
             - /url: press-kit.html
     - contentinfo [ref=f6e369]:
       - generic [ref=f6e370]:
-        - link "WillowinWorld ホーム" [ref=f6e372] [cursor=pointer]:
+        - link "WillowinWorlds ホーム" [ref=f6e372] [cursor=pointer]:
           - /url: "#home"
           - generic [ref=f6e374]:
             - generic [ref=f6e375]: W
@@ -327,4 +327,4 @@
           - link "出版社連絡先" [ref=f6e393] [cursor=pointer]:
             - /url: mailto:contact@willowinworld.com?subject=%E5%87%BA%E7%89%88%E7%A4%BE%E3%81%B8%E3%81%AE%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B
           - button "キャリア / コラボレーション" [ref=f6e394] [cursor=pointer]
-        - generic [ref=f6e395]: © 2026 WillowinWorld.無断転載を禁じます。
+        - generic [ref=f6e395]: © 2026 WillowinWorlds.無断転載を禁じます。
