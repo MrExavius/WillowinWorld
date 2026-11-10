@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
+import { contactEmail, siteOrigin } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 
@@ -9,8 +10,8 @@ export const gameDevlogSources = Object.freeze([
     name: "Nature Seed",
     file: "games/nature-seed.html",
     href: "games/nature-seed.html#devlog",
-    canonical: "https://willowinworld.com/games/nature-seed.html#devlog",
-    pageCanonical: "https://willowinworld.com/games/nature-seed.html",
+    canonical: `${siteOrigin}/games/nature-seed.html#devlog`,
+    pageCanonical: `${siteOrigin}/games/nature-seed.html`,
     status: "Released",
     genres: Object.freeze(["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Line drawing puzzle"]),
     machineSummary: "A released mobile draw-to-solve physics puzzle. Released on 10 September 2026 as Nature Seed, it asks players to draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 launch levels."
@@ -20,8 +21,8 @@ export const gameDevlogSources = Object.freeze([
     name: "Candy Shop",
     file: "games/candy-shop.html",
     href: "games/candy-shop.html#devlog",
-    canonical: "https://willowinworld.com/games/candy-shop.html#devlog",
-    pageCanonical: "https://willowinworld.com/games/candy-shop.html",
+    canonical: `${siteOrigin}/games/candy-shop.html#devlog`,
+    pageCanonical: `${siteOrigin}/games/candy-shop.html`,
     status: "Active development - playable production build",
     genres: Object.freeze(["Merge puzzle", "Candy puzzle", "Casual puzzle", "Physics puzzle"]),
     machineSummary: "A cozy mobile merge puzzle with a 13-stage candy chain, 10 container rulesets, eight special-candy effects and planning tools for the next drop."
@@ -31,8 +32,8 @@ export const gameDevlogSources = Object.freeze([
     name: "Paint Blasters",
     file: "games/paint-blasters.html",
     href: "games/paint-blasters.html#devlog",
-    canonical: "https://willowinworld.com/games/paint-blasters.html#devlog",
-    pageCanonical: "https://willowinworld.com/games/paint-blasters.html",
+    canonical: `${siteOrigin}/games/paint-blasters.html#devlog`,
+    pageCanonical: `${siteOrigin}/games/paint-blasters.html`,
     status: "Active development - production prototype",
     genres: Object.freeze(["Color puzzle", "Physics arcade", "Destruction puzzle", "Chain reaction"]),
     machineSummary: "A mobile color-destruction physics puzzle arcade. Combine three color inputs into 35 authored projectile recipes, target tower weak points and trigger chain reactions."
@@ -42,8 +43,8 @@ export const gameDevlogSources = Object.freeze([
     name: "Ball is God?!",
     file: "games/ball-is-god.html",
     href: "games/ball-is-god.html#devlog",
-    canonical: "https://willowinworld.com/games/ball-is-god.html#devlog",
-    pageCanonical: "https://willowinworld.com/games/ball-is-god.html",
+    canonical: `${siteOrigin}/games/ball-is-god.html#devlog`,
+    pageCanonical: `${siteOrigin}/games/ball-is-god.html`,
     status: "Active production",
     genres: Object.freeze(["Vertical descent arcade", "Hardcore arcade", "Story-driven arcade", "Boss action"]),
     machineSummary: "A story-driven hardcore vertical-descent mobile arcade. Rotate the tower around Espa, build combo smashes, survive bosses and carry karma choices through 10 mythic locations."
@@ -190,7 +191,7 @@ function replaceSitemapLastmod(xml, loc, date) {
 
 export function injectSitemapDevlogDates(xml, updates) {
   const newest = [...updates].sort((left, right) => right.timestamp - left.timestamp)[0];
-  let next = replaceSitemapLastmod(xml, "https://willowinworld.com/", newest.published);
+  let next = replaceSitemapLastmod(xml, `${siteOrigin}/`, newest.published);
   for (const update of updates) {
     const gameUrl = update.canonical.replace(/#devlog$/, "");
     next = replaceSitemapLastmod(next, gameUrl, update.published);
@@ -223,7 +224,7 @@ export function renderDevlogRss(updates) {
 <rss version="2.0">
   <channel>
     <title>WillowinWorlds Devlog</title>
-    <link>https://willowinworld.com/#devlog</link>
+    <link>${siteOrigin}/#devlog</link>
     <description>Latest production notes for WillowinWorlds mobile games.</description>
     <language>en-us</language>
     <lastBuildDate>${lastBuildDate}</lastBuildDate>
@@ -269,21 +270,21 @@ ${devlogs}
 
 ## Studio and press
 
-- [Official WillowinWorlds website](https://willowinworld.com/): Studio overview, complete game portfolio and current production notes.
-- [Press and creator kit](https://willowinworld.com/press-kit.html): Factual studio and game summaries, production statuses and downloadable editorial assets.
-- [Media asset usage](https://willowinworld.com/asset-usage.html): Rules for using WillowinWorlds screenshots, logos and character artwork.
+- [Official WillowinWorlds website](${siteOrigin}/): Studio overview, complete game portfolio and current production notes.
+- [Press and creator kit](${siteOrigin}/press-kit.html): Factual studio and game summaries, production statuses and downloadable editorial assets.
+- [Media asset usage](${siteOrigin}/asset-usage.html): Rules for using WillowinWorlds screenshots, logos and character artwork.
 
 ## Feeds and policies
 
-- [Devlog RSS feed](https://willowinworld.com/rss.xml): Latest dated production notes for all four games.
-- [XML sitemap](https://willowinworld.com/sitemap.xml): Canonical indexable pages and their current modification dates.
-- [Language index](https://willowinworld.com/languages.json): Machine-readable map of every localized site and AI guide.
-- [Privacy policy](https://willowinworld.com/privacy.html): Website privacy information.
-- [Legal notice](https://willowinworld.com/legal.html): Ownership, trademarks and website terms.
+- [Devlog RSS feed](${siteOrigin}/rss.xml): Latest dated production notes for all four games.
+- [XML sitemap](${siteOrigin}/sitemap.xml): Canonical indexable pages and their current modification dates.
+- [Language index](${siteOrigin}/languages.json): Machine-readable map of every localized site and AI guide.
+- [Privacy policy](${siteOrigin}/privacy.html): Website privacy information.
+- [Legal notice](${siteOrigin}/legal.html): Ownership, trademarks and website terms.
 
 ## Contact
 
-- [Email WillowinWorlds](mailto:contact@willowinworld.com): Press, publishing, development-build and business enquiries.
+- [Email WillowinWorlds](mailto:${contactEmail}): Press, publishing, development-build and business enquiries.
 `;
 }
 

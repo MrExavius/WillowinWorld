@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { exit } from "node:process";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { contactEmail, siteOrigin } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const cssFileNames = [
@@ -100,10 +101,10 @@ requireMatch("index.html", files.html, /Content-Security-Policy/i);
 requireMatch("index.html", files.html, /script-src 'self'/i);
 requireMatch("index.html", files.html, /style-src 'self'/i);
 requireMatch("index.html", files.html, /application\/ld\+json/i);
-requireMatch("index.html", files.html, /rel="canonical"\s+href="https:\/\/willowinworld\.com\/"/i);
+requireMatch("index.html", files.html, new RegExp(`rel="canonical"\\s+href="${escapeRegExp(`${siteOrigin}/`)}"`, "i"));
 requireMatch("index.html", files.html, /og:title/i);
 requireMatch("index.html", files.html, /twitter:card/i);
-requireMatch("sitemap.xml", files.sitemap, /https:\/\/willowinworld\.com\/press-kit\.html/i);
+requireMatch("sitemap.xml", files.sitemap, new RegExp(escapeRegExp(`${siteOrigin}/press-kit.html`), "i"));
 requireMatch("_headers", files.headers, /frame-ancestors 'none'/i);
 requireMatch("_headers", files.headers, /Strict-Transport-Security:/i);
 requireMatch("_headers", files.headers, /X-Content-Type-Options:\s*nosniff/i);
@@ -120,7 +121,7 @@ requireMatch("apache-security.htaccess", files.apache, /X-Frame-Options\s+"DENY"
 requireMatch("apache-security.htaccess", files.apache, /Origin-Agent-Cluster\s+"\?1"/i);
 requireMatch("apache-security.htaccess", files.apache, /X-Permitted-Cross-Domain-Policies\s+"none"/i);
 requireMatch("apache-security.htaccess", files.apache, /ExpiresByType\s+text\/html\s+"access plus 0 seconds"/i);
-requireMatch("security.txt", files.securityTxt, /Contact:\s*mailto:contact@willowinworld\.com/i);
+requireMatch("security.txt", files.securityTxt, new RegExp(`Contact:\\s*mailto:${escapeRegExp(contactEmail)}`, "i"));
 
 if (structuredDataHash) {
   const hashPattern = new RegExp(escapeRegExp(structuredDataHash));
@@ -150,7 +151,7 @@ for (const [name, html] of Object.entries(htmlPages)) {
 
   const urlAttributes = [...html.matchAll(/\b(href|src|action)\s*=\s*["']([^"']+)/gi)];
   for (const [, attr, url] of urlAttributes) {
-    const safeSameOrigin = attr.toLowerCase() === "href" && url.startsWith("https://willowinworld.com/");
+    const safeSameOrigin = attr.toLowerCase() === "href" && url.startsWith(`${siteOrigin}/`);
     const unsafe = /^(https?:|\/\/|javascript:|data:text\/html)/i.test(url);
     if (unsafe && !safeSameOrigin) {
       errors.push(`${name}: unsafe ${attr} URL ${url}`);

@@ -1,5 +1,5 @@
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
+import { readdir, readFile } from "node:fs/promises";
+import { extname, join, relative } from "node:path";
 import {
   gameDevlogSources,
   loadLatestDevlogs,
@@ -8,10 +8,12 @@ import {
 } from "./devlog-data.mjs";
 import {
   alternateLinks,
+  contactEmail,
   localizedPages,
   locales,
   outputFile,
   pageUrl,
+  siteOrigin,
   sourceLocale
 } from "./localization-config.mjs";
 
@@ -34,6 +36,11 @@ const descriptions = new Map();
 const latestDevlogs = await loadLatestDevlogs();
 const latestByFile = new Map(latestDevlogs.map(update => [update.file, update]));
 const compactScriptLocales = new Set(["zh-hans", "zh-hant", "ja", "ko", "th"]);
+const studioId = `${siteOrigin}/#studio`;
+const legacyPublicDomain = ["willowinworld", ".com"].join("");
+const migrationTextExtensions = new Set([".conf", ".css", ".htaccess", ".html", ".js", ".json", ".md", ".mjs", ".txt", ".webmanifest", ".xml"]);
+const migrationTextNames = new Set(["_headers", "_redirects"]);
+const migrationSkippedDirectories = new Set(["dist", "reports"]);
 
 function fail(file, message) {
   errors.push(`${file}: ${message}`);
@@ -77,6 +84,28 @@ function structuredObjects(html, file) {
 function hasType(object, type) {
   const types = Array.isArray(object?.["@type"]) ? object["@type"] : [object?.["@type"]];
   return types.includes(type);
+}
+
+async function migrationTextFiles(directory) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    if (entry.isDirectory() && migrationSkippedDirectories.has(entry.name)) continue;
+    const path = join(directory, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...await migrationTextFiles(path));
+    } else if (entry.isFile() && (migrationTextExtensions.has(extname(entry.name)) || migrationTextNames.has(entry.name))) {
+      files.push(path);
+    }
+  }
+  return files;
+}
+
+for (const file of await migrationTextFiles(siteRoot)) {
+  const content = await readFile(file, "utf8");
+  if (content.includes(legacyPublicDomain)) {
+    fail(relative(siteRoot, file), `contains legacy public domain ${legacyPublicDomain}`);
+  }
 }
 
 for (const page of pages) {
@@ -144,8 +173,8 @@ for (const page of pages) {
   }
 
   const objects = structuredObjects(html, page.file);
-  const organization = objects.find(object => hasType(object, "Organization") && object?.["@id"] === "https://willowinworld.com/#studio");
-  if (page.source.kind === "home" && organization?.url !== "https://willowinworld.com/") {
+  const organization = objects.find(object => hasType(object, "Organization") && object?.["@id"] === studioId);
+  if (page.source.kind === "home" && organization?.url !== `${siteOrigin}/`) {
     fail(page.file, "Organization must preserve one canonical studio URL across locales");
   }
   if (page.game) {
@@ -155,8 +184,8 @@ for (const page of pages) {
     if (objects.some(object => hasType(object, "SoftwareApplication"))) fail(page.file, "unreleased game must not claim SoftwareApplication rich-result data");
     if (objects.some(object => hasType(object, "FAQPage"))) fail(page.file, "game FAQ schema must not diverge from visible FAQ content");
     if (game?.["@id"] !== `${page.canonical}#game`) fail(page.file, "VideoGame @id must be canonical#game");
-    if (game?.author?.["@id"] !== "https://willowinworld.com/#studio") fail(page.file, "VideoGame author must reference #studio");
-    if (game?.publisher?.["@id"] !== "https://willowinworld.com/#studio") fail(page.file, "VideoGame publisher must reference #studio");
+    if (game?.author?.["@id"] !== studioId) fail(page.file, "VideoGame author must reference #studio");
+    if (game?.publisher?.["@id"] !== studioId) fail(page.file, "VideoGame publisher must reference #studio");
     if (game?.inLanguage !== page.locale.htmlLang) fail(page.file, `VideoGame inLanguage must be ${page.locale.htmlLang}`);
     if (page.locale.code === sourceLocale.code) {
       if (source?.pageCanonical !== page.canonical) fail(page.file, "AI profile canonical must match the page canonical");
@@ -222,12 +251,12 @@ for (const update of latestDevlogs) {
   }
 }
 for (const requiredUrl of [
-  "https://willowinworld.com/press-kit.html",
-  "https://willowinworld.com/asset-usage.html",
-  "https://willowinworld.com/rss.xml",
-  "https://willowinworld.com/sitemap.xml",
-  "https://willowinworld.com/languages.json",
-  "mailto:contact@willowinworld.com"
+  `${siteOrigin}/press-kit.html`,
+  `${siteOrigin}/asset-usage.html`,
+  `${siteOrigin}/rss.xml`,
+  `${siteOrigin}/sitemap.xml`,
+  `${siteOrigin}/languages.json`,
+  `mailto:${contactEmail}`
 ]) {
   if (!llms.includes(`](${requiredUrl})`)) fail("llms.txt", `missing official resource ${requiredUrl}`);
 }
@@ -262,13 +291,13 @@ if (!wildcardGroup) {
     }
   }
 }
-if (!/^Sitemap:\s*https:\/\/willowinworld\.com\/sitemap\.xml$/mi.test(robotsTxt)) {
+if (!robotsTxt.split(/\r?\n/).includes(`Sitemap: ${siteOrigin}/sitemap.xml`)) {
   fail("robots.txt", "missing canonical sitemap declaration");
 }
-if (!robotsTxt.includes("https://willowinworld.com/llms.txt")) {
+if (!robotsTxt.includes(`${siteOrigin}/llms.txt`)) {
   fail("robots.txt", "missing llms.txt discovery comment");
 }
-if (!robotsTxt.includes("https://willowinworld.com/languages.json")) {
+if (!robotsTxt.includes(`${siteOrigin}/languages.json`)) {
   fail("robots.txt", "missing multilingual discovery index comment");
 }
 
@@ -298,8 +327,8 @@ if (languageIndex) {
     }
     const expectedHome = pageUrl(locale, localizedPages[0]);
     const expectedLlms = locale.code === sourceLocale.code
-      ? "https://willowinworld.com/llms.txt"
-      : `https://willowinworld.com/${locale.code}/llms.txt`;
+      ? `${siteOrigin}/llms.txt`
+      : `${siteOrigin}/${locale.code}/llms.txt`;
     if (record.hreflang !== locale.hreflang) fail("languages.json", `${locale.htmlLang} has incorrect hreflang`);
     if (record.direction !== locale.direction) fail("languages.json", `${locale.htmlLang} has incorrect direction`);
     if (record.home !== expectedHome) fail("languages.json", `${locale.htmlLang} has incorrect home URL`);

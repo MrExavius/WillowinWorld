@@ -4,6 +4,7 @@ import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   alternateLinks,
+  contactEmail,
   localizationLastModified,
   localizedPages,
   locales,
@@ -468,7 +469,7 @@ const explicitRuntimeStrings = Object.freeze([
   "Magic hunt paused.",
   "Email draft requested. If it did not open, use Copy message.",
   "Contact message copied.",
-  "Copy was blocked. Use contact@willowinworld.com.",
+  "Copy was blocked. Use contact@willowinworlds.com.",
   "Draft saved in this browser tab.",
   "Draft stays in this browser tab while you work.",
   "Draft is available until this page closes.",
@@ -1121,7 +1122,7 @@ function renderLocalizedLlms(locale, translations, updates) {
 
 > ${escapeMarkdown(t("WillowinWorlds is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds."))}
 
-${escapeMarkdown(t("Site language"))}: ${locale.label}. ${escapeMarkdown(t("Canonical English source"))}: https://willowinworld.com/llms.txt
+${escapeMarkdown(t("Site language"))}: ${locale.label}. ${escapeMarkdown(t("Canonical English source"))}: ${siteOrigin}/llms.txt
 
 ## ${escapeMarkdown(t("Games"))}
 
@@ -1147,7 +1148,7 @@ ${devlogs}
 
 ## ${escapeMarkdown(t("Contact"))}
 
-- [${escapeMarkdown(t("Email WillowinWorlds"))}](mailto:contact@willowinworld.com)
+- [${escapeMarkdown(t("Email WillowinWorlds"))}](mailto:${contactEmail})
 `;
 }
 

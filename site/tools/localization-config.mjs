@@ -1,4 +1,5 @@
-export const siteOrigin = "https://willowinworld.com";
+export const siteOrigin = "https://willowinworlds.com";
+export const contactEmail = "contact@willowinworlds.com";
 export const localizationLastModified = "2026-09-10";
 
 export const locales = Object.freeze([

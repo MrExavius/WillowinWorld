@@ -2,9 +2,10 @@ import { readdir, readFile } from "node:fs/promises";
 import { existsSync } from "node:fs";
 import { dirname, extname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { siteOrigin } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
-const sameOrigin = "https://willowinworld.com";
+const sameOrigin = siteOrigin;
 const skippedDirectories = new Set(["dist", "reports"]);
 const errors = [];
 

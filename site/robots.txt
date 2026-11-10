@@ -42,9 +42,9 @@ Disallow: /private/
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://willowinworld.com/sitemap.xml
+Sitemap: https://willowinworlds.com/sitemap.xml
 
 # Curated machine-readable studio and game guide (an emerging LLM convention):
-# https://willowinworld.com/llms.txt
+# https://willowinworlds.com/llms.txt
 # Multilingual discovery map, including every localized AI guide:
-# https://willowinworld.com/languages.json
+# https://willowinworlds.com/languages.json

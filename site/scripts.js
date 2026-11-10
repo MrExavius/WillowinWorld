@@ -301,8 +301,8 @@
       "Inquiry type: " + type + "\n\n" +
       message;
     return {
-      href: "mailto:contact@willowinworld.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body),
-      plainText: "To: contact@willowinworld.com\nSubject: " + subject + "\n\n" + body
+      href: "mailto:contact@willowinworlds.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body),
+      plainText: "To: contact@willowinworlds.com\nSubject: " + subject + "\n\n" + body
     };
   }
 
@@ -1653,7 +1653,7 @@
       `Claim ID: ${claimId}\n\n` +
       "I understand this does not reveal a real promo code on the website and that the studio reviews claims manually.\n"
     );
-    return `mailto:contact@willowinworld.com?subject=${subject}&body=${body}`;
+    return `mailto:contact@willowinworlds.com?subject=${subject}&body=${body}`;
   }
 
   function openSecretReward(secret) {
@@ -2123,7 +2123,7 @@
           await copyText(getContactDraft().plainText);
           showToast("Contact message copied.");
         } catch (error) {
-          showToast("Copy was blocked. Use contact@willowinworld.com.");
+          showToast("Copy was blocked. Use contact@willowinworlds.com.");
         }
       });
     }

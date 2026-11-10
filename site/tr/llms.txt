@@ -2,36 +2,36 @@
 
 > WillowinWorlds dokunsal kontrollere, okunabilir sistemlere ve etkileyici 2D dünyalara sahip dört fizik odaklı bulmaca ve atari oyunu yaratan bağımsız bir mobil oyun stüdyosudur.
 
-Site dili: Türkçe. Kanonik İngilizce kaynağı: https://willowinworld.com/llms.txt
+Site dili: Türkçe. Kanonik İngilizce kaynağı: https://willowinworlds.com/llms.txt
 
 ## Oyunlar
 
-- [Nature Seed](https://willowinworld.com/tr/games/nature-seed.html): Yayınlanan mobil, çizimle çözülebilen fizik bulmacası. 10 Eylül 2026'da Nature Seed adıyla piyasaya sürülen bu oyun, oyunculardan mürekkeple sınırlı bir fiziksel yol çizmelerini, Water Drop ile Seed'yi yeniden birleştirmelerini ve 10 başlatma seviyesi boyunca sulu boya ormanını restore etmelerini istiyor. Türler: Çizerek çözebileceğiniz bulmaca, Fizik bulmacası, Rahatlatıcı bulmaca, Çizgi çizme bulmacası. Mevcut durum: Yayınlandı.
-- [Candy Shop](https://willowinworld.com/tr/games/candy-shop.html): 13 aşamalı şeker zinciri, 10 kapsayıcı kural seti, sekiz özel şeker efekti ve bir sonraki düşüş için planlama araçları içeren rahat bir mobil birleştirme bulmacası. Türler: Bulmacayı birleştir, Şeker bulmacası, Gündelik bulmaca, Fizik bulmacası. Mevcut durum: Aktif geliştirme - oynanabilir üretim yapısı.
-- [Paint Blasters](https://willowinworld.com/tr/games/paint-blasters.html): Mobil renk imhalı fizik bulmaca atari salonu. Üç renk girişini 35 ayrı mermi tarifinde birleştirin, kulenin zayıf noktalarını hedefleyin ve zincir reaksiyonlarını tetikleyin. Türler: Renkli bulmaca, Fizik arcade, İmha bulmacası, Zincirleme reaksiyon. Mevcut durum: Aktif geliştirme - üretim prototipi.
-- [Ball is God?!](https://willowinworld.com/tr/games/ball-is-god.html): Hikaye odaklı, hardcore dikey inişli bir mobil arcade. Kuleyi Espa etrafında döndürün, kombo vuruşlar yapın, patronlardan sağ çıkın ve 10 efsanevi mekanda karma seçimlerini taşıyın. Türler: Dikey inişli arcade, Zorlu arcade, Hikaye odaklı arcade, Patron eylemi. Mevcut durum: Aktif üretim.
+- [Nature Seed](https://willowinworlds.com/tr/games/nature-seed.html): Yayınlanan mobil, çizimle çözülebilen fizik bulmacası. 10 Eylül 2026'da Nature Seed adıyla piyasaya sürülen bu oyun, oyunculardan mürekkeple sınırlı bir fiziksel yol çizmelerini, Water Drop ile Seed'yi yeniden birleştirmelerini ve 10 başlatma seviyesi boyunca sulu boya ormanını restore etmelerini istiyor. Türler: Çizerek çözebileceğiniz bulmaca, Fizik bulmacası, Rahatlatıcı bulmaca, Çizgi çizme bulmacası. Mevcut durum: Yayınlandı.
+- [Candy Shop](https://willowinworlds.com/tr/games/candy-shop.html): 13 aşamalı şeker zinciri, 10 kapsayıcı kural seti, sekiz özel şeker efekti ve bir sonraki düşüş için planlama araçları içeren rahat bir mobil birleştirme bulmacası. Türler: Bulmacayı birleştir, Şeker bulmacası, Gündelik bulmaca, Fizik bulmacası. Mevcut durum: Aktif geliştirme - oynanabilir üretim yapısı.
+- [Paint Blasters](https://willowinworlds.com/tr/games/paint-blasters.html): Mobil renk imhalı fizik bulmaca atari salonu. Üç renk girişini 35 ayrı mermi tarifinde birleştirin, kulenin zayıf noktalarını hedefleyin ve zincir reaksiyonlarını tetikleyin. Türler: Renkli bulmaca, Fizik arcade, İmha bulmacası, Zincirleme reaksiyon. Mevcut durum: Aktif geliştirme - üretim prototipi.
+- [Ball is God?!](https://willowinworlds.com/tr/games/ball-is-god.html): Hikaye odaklı, hardcore dikey inişli bir mobil arcade. Kuleyi Espa etrafında döndürün, kombo vuruşlar yapın, patronlardan sağ çıkın ve 10 efsanevi mekanda karma seçimlerini taşıyın. Türler: Dikey inişli arcade, Zorlu arcade, Hikaye odaklı arcade, Patron eylemi. Mevcut durum: Aktif üretim.
 
 ## En son geliştirme notları
 
-- [Nature Seed — Nature Seed yayın](https://willowinworld.com/tr/games/nature-seed.html#devlog): Yayınlandı 2026-09-10. Nature Seed, 10 el yapımı seviye, çizgi verimliliği yıldızları, kalıcı ilerleme ve sulu boya restorasyon ödülleriyle son başlığı altında piyasaya sürüldü.
-- [Candy Shop — Üretim menüsü ve HUD geçişi](https://willowinworld.com/tr/games/candy-shop.html#devlog): Yayınlandı 2026-07-31. Ana menü, seviye seçimi, HUD kontrolleri ve komut simgeleri artık tek bir görsel dili paylaşıyor; ek motor içi stres testleri güncellenen akışı kapsar.
-- [Paint Blasters — Fizik ve efekt stabilite geçişi](https://willowinworld.com/tr/games/paint-blasters.html#devlog): Yayınlandı 2026-07-31. Roket davranışı, Match-3 çözünürlüğü ve vuruş efektleri, daha tutarlı kombo sonuçları için test edildi ve sıkılaştırıldı.
-- [Ball is God?! — Dünya yüzeyleri ve tehlike doğrulaması](https://willowinworld.com/tr/games/ball-is-god.html#devlog): Yayınlandı 2026-07-31. Karakter sunumu, deterministik oluşum ve diken tehlikeleri koordineli bir görsel ve üretim-doğrulama geçişi aldı.
+- [Nature Seed — Nature Seed yayın](https://willowinworlds.com/tr/games/nature-seed.html#devlog): Yayınlandı 2026-09-10. Nature Seed, 10 el yapımı seviye, çizgi verimliliği yıldızları, kalıcı ilerleme ve sulu boya restorasyon ödülleriyle son başlığı altında piyasaya sürüldü.
+- [Candy Shop — Üretim menüsü ve HUD geçişi](https://willowinworlds.com/tr/games/candy-shop.html#devlog): Yayınlandı 2026-07-31. Ana menü, seviye seçimi, HUD kontrolleri ve komut simgeleri artık tek bir görsel dili paylaşıyor; ek motor içi stres testleri güncellenen akışı kapsar.
+- [Paint Blasters — Fizik ve efekt stabilite geçişi](https://willowinworlds.com/tr/games/paint-blasters.html#devlog): Yayınlandı 2026-07-31. Roket davranışı, Match-3 çözünürlüğü ve vuruş efektleri, daha tutarlı kombo sonuçları için test edildi ve sıkılaştırıldı.
+- [Ball is God?! — Dünya yüzeyleri ve tehlike doğrulaması](https://willowinworlds.com/tr/games/ball-is-god.html#devlog): Yayınlandı 2026-07-31. Karakter sunumu, deterministik oluşum ve diken tehlikeleri koordineli bir görsel ve üretim-doğrulama geçişi aldı.
 
 ## Stüdyo ve basın
 
-- [Stüdyo ev](https://willowinworld.com/tr/)
-- [Basın kiti](https://willowinworld.com/tr/press-kit.html)
-- [Medya varlığı kullanımı](https://willowinworld.com/tr/asset-usage.html)
+- [Stüdyo ev](https://willowinworlds.com/tr/)
+- [Basın kiti](https://willowinworlds.com/tr/press-kit.html)
+- [Medya varlığı kullanımı](https://willowinworlds.com/tr/asset-usage.html)
 
 ## Yayınlar ve politikalar
 
-- [Devlog RSS beslemesi](https://willowinworld.com/rss.xml)
-- [XML site haritası](https://willowinworld.com/sitemap.xml)
-- [Dil dizini](https://willowinworld.com/languages.json)
-- [Gizlilik politikası](https://willowinworld.com/tr/privacy.html)
-- [Yasal bildirim](https://willowinworld.com/tr/legal.html)
+- [Devlog RSS beslemesi](https://willowinworlds.com/rss.xml)
+- [XML site haritası](https://willowinworlds.com/sitemap.xml)
+- [Dil dizini](https://willowinworlds.com/languages.json)
+- [Gizlilik politikası](https://willowinworlds.com/tr/privacy.html)
+- [Yasal bildirim](https://willowinworlds.com/tr/legal.html)
 
 ## İletişim
 
-- [E-posta WillowinWorlds](mailto:contact@willowinworld.com)
+- [E-posta WillowinWorlds](mailto:contact@willowinworlds.com)
