@@ -1,5 +1,14 @@
 # AI Change Log
 
+## 2026-11-10 — Route public contact mail to Gmail
+
+- Scope: Replace the website contact destination with `willowinworlds@gmail.com` inside branch `35`; no account, DNS, Git publishing or deployment changes were authorized.
+- Changed: Updated contact links, form-generated drafts, JSON-LD, `security.txt`, localization sources and all 41 generated locales; refreshed the JSON-LD CSP hash.
+- Compatibility/config: No dependency or DNS changes. The contact form still opens the visitor's email application through `mailto:` rather than sending from a website backend.
+- Validation: `node site/tools/quality-check.mjs` — PASS; site scan for `contact@willowinworlds.com` — PASS (0 matches); new address found in 2,131 published/source locations including `security.txt`.
+- Risks/follow-up: Gmail account delivery was not tested by sending a real message. The public site changes require a separate commit/push and Pages deployment.
+- Rollback: Restore the previous contact constant and content strings, regenerate locales, restore the prior CSP hash, then rerun the quality check.
+
 ## 2026-11-10 — Align public SEO identity with willowinworlds.com
 
 - Scope: Migrate public website URLs and contact addresses inside `site/` from the singular domain to `willowinworlds.com`, preserving unrelated asset filenames and making no deployment or Git publishing changes.

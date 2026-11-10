@@ -469,7 +469,7 @@ const explicitRuntimeStrings = Object.freeze([
   "Magic hunt paused.",
   "Email draft requested. If it did not open, use Copy message.",
   "Contact message copied.",
-  "Copy was blocked. Use contact@willowinworlds.com.",
+  "Copy was blocked. Use willowinworlds@gmail.com.",
   "Draft saved in this browser tab.",
   "Draft stays in this browser tab while you work.",
   "Draft is available until this page closes.",
