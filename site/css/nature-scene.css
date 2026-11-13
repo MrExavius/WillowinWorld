@@ -263,6 +263,7 @@
   border: 1px solid rgba(68, 91, 62, 0.18);
   border-radius: 999px;
   background: var(--nature-paper);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow: 0 12px 24px rgba(43, 58, 37, 0.1);
   font-size: 0.76rem;
@@ -297,6 +298,7 @@
   color: #315d47;
   background: rgba(255, 249, 228, 0.72);
   box-shadow: 0 10px 24px rgba(39, 58, 37, 0.08);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   font-size: 0.72rem;
   font-weight: 850;

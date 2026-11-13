@@ -90,7 +90,22 @@
   }
 
   if (!readStoredTheme() && typeof prefersDark.addEventListener === "function") {
-    prefersDark.addEventListener("change", event => setTheme(event.matches ? "dark" : "light", false));
+    prefersDark.addEventListener("change", event => {
+      if (readStoredTheme()) return;
+      setTheme(event.matches ? "dark" : "light", false);
+    });
+  }
+
+  const languageDetails = document.querySelector(".language-switcher details");
+  if (languageDetails) {
+    document.addEventListener("pointerdown", event => {
+      if (languageDetails.open && !languageDetails.contains(event.target)) languageDetails.open = false;
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key !== "Escape" || !languageDetails.open) return;
+      languageDetails.open = false;
+      languageDetails.querySelector("summary").focus();
+    });
   }
 
   function initGameFilters() {
@@ -123,7 +138,7 @@
         if (status) {
           status.textContent = filter === "All"
             ? ""
-            : `Showing ${visibleCount} ${filter} game ${visibleCount === 1 ? "world" : "worlds"}.`;
+            : `Showing ${visibleCount} ${filter.toLowerCase()} game${visibleCount === 1 ? "." : "s."}`;
         }
       };
 

@@ -19,6 +19,7 @@
   <meta property="og:site_name" content="WillowinWorlds">
   <meta property="og:locale" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Nature Seed - Relajante juego de rompecabezas de física para dibujar y resolver">
   <meta name="twitter:description" content="Nature Seed lanzado el 10 de septiembre de 2026 con física de líneas con tinta limitada, Water Drop, Seed y restauración de acuarela.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/nature-seed-og-1200x630.webp">
@@ -70,6 +71,18 @@
         "Rompecabezas de dibujo lineal"
       ],
       "gamePlatform": "Móvil",
+      "sameAs": [
+        "https://willowinworlds.itch.io/nature-seed",
+        "https://gamejolt.com/games/nature-seed/1100526",
+        "https://www.indiexpo.net/en/games/nature-seed"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://willowinworlds.itch.io/nature-seed"
+      },
       "creativeWorkStatus": "Liberado",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
@@ -88,17 +101,17 @@
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Registro de desarrollo RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
-  <link rel="stylesheet" href="../../css/nature-scene.css">
-  <link rel="stylesheet" href="../../css/game-shell.css">
-  <link rel="stylesheet" href="../../css/nature-page.css">
-  <link rel="stylesheet" href="../../css/game-content.css">
-  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
-  <link rel="stylesheet" href="../../css/responsive-tablet.css">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -106,7 +119,7 @@
   <a class="skip-link" href="#game-main">Saltar a Nature Seed</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — volver a WillowinWorlds">
-      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed ícono de juego de rompecabezas de dibujar y resolver para dispositivos móviles" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed ícono de juego de rompecabezas de dibujar y resolver para dispositivos móviles" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>Página del juego WillowinWorlds</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Navegación de la página del juego">
@@ -143,12 +156,12 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
             <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
           </picture>
-          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
             <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
           </svg>
@@ -182,11 +195,13 @@
           <p class="hero-copy">Un rompecabezas de física móvil meditativo donde un trazo con tinta limitada se convierte en parte del nivel, uniendo a Water Drop y Seed para despertar un bosque de acuarela.</p>
           <p class="nature-hero-note">Publicado el 10 de septiembre de 2026 como Nature Seed. La versión de lanzamiento contiene 10 niveles, estrellas de eficiencia de línea, progreso persistente y generación de línea física estable.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#download-assets">Descargar recursos</a>
-            <a class="btn btn-ghost" href="#devlog">Notas de la versión</a>
+            <a class="btn btn-primary" href="https://willowinworlds.itch.io/nature-seed">Jugar gratis en el navegador</a>
+            <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
+            <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
+            <a class="btn btn-ghost" href="#download-assets">Descargar recursos</a>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Aspectos destacados de Nature Seed">
-            <span><strong>Sorteo</strong><small>gastar una línea de presupuesto limitada</small></span>
+            <span><strong>Dibujar</strong><small>gastar una línea de presupuesto limitada</small></span>
             <span><strong>Conectar</strong><small>trae Water Drop a Seed</small></span>
             <span><strong>Florecer</strong><small>gana la escena restaurada</small></span>
           </div>
@@ -197,7 +212,7 @@
             <div class="nature-stage nature-stage-showcase" aria-hidden="true">
               <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
               <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
-              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none" aria-hidden="true">
                 <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
                 <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
               </svg>
@@ -229,7 +244,7 @@
           <div class="proof-copy">
             <span class="proof-kicker">Dentro de la compilación actual</span>
             <h2 id="natureProofTitle">La línea no adorna: se convierte en el puzle.</h2>
-            <p>Cada golpe cometido crea una geometría de colisión física. El jugador equilibra la tinta, el número de líneas y la forma, luego observa cómo Water Drop y Seed responden a la ruta. Una solución de una sola línea obtiene el resultado más limpio de tres estrellas.</p>
+            <p>Cada trazo confirmado crea una geometría de colisión física. El jugador equilibra la tinta, el número de líneas y la forma, luego observa cómo Water Drop y Seed responden a la ruta. Una solución de una sola línea obtiene el resultado más limpio de tres estrellas.</p>
             <span class="proof-status"><b>Estado de lanzamiento</b> Publicado el 10 de septiembre de 2026</span>
           </div>
           <div class="proof-visual">
@@ -247,7 +262,7 @@
         </div>
         <div class="proof-facts" aria-label="Datos de construcción verificados de Nature Seed">
           <article><strong>10 niveles de lanzamiento</strong><span>Progresión de lanzamiento basada en datos.</span></article>
-          <article><strong>Límites de tinta y líneas</strong><span>Cada golpe tiene un coste real.</span></article>
+          <article><strong>Límites de tinta y líneas</strong><span>Cada trazo tiene un coste real.</span></article>
           <article><strong>Dominio de una línea</strong><span>La ruta predeterminada hacia tres estrellas.</span></article>
           <article><strong>Progreso persistente</strong><span>Los niveles desbloqueados y los resultados sobreviven entre sesiones.</span></article>
         </div>
@@ -266,7 +281,7 @@
         <div class="eyebrow">Características</div>
         <h2>Qué hacen los jugadores en Nature Seed.</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Dibujar para resolver caminos físicos</h3><p>Cada rompecabezas comienza con el terreno, Seed y Water Drop. El golpe del jugador se convierte en el puente entre la intención y la física.</p></article>
+          <article class="detail-card"><h3>Dibujar para resolver caminos físicos</h3><p>Cada rompecabezas comienza con el terreno, Seed y Water Drop. El trazo del jugador se convierte en el puente entre la intención y la física.</p></article>
           <article class="detail-card"><h3>Comentarios de física legibles</h3><p>El movimiento de los personajes está diseñado para ser comprensible de un vistazo, por lo que los intentos fallidos se sienten como información en lugar de un castigo aleatorio.</p></article>
           <article class="detail-card"><h3>Recompensas por restauración forestal</h3><p>Resolver un nivel devuelve la vida a la escena con crecimiento, color y pequeña retroalimentación emocional en lugar de solo una pantalla de puntuación.</p></article>
           <article class="detail-card"><h3>Ritmo de rompecabezas para dispositivos móviles</h3><p>Los niveles cortos hechos a mano, el dibujo táctil y las siluetas claras mantienen el juego cómodo para sesiones rápidas de iOS y Android.</p></article>
@@ -308,8 +323,9 @@
           <dl class="game-page-facts">
             <div><dt>Género</dt><dd>Rompecabezas de física para dibujar y resolver</dd></div>
             <div><dt>Objetivo de plataforma</dt><dd>iOS/Android</dd></div>
+            <div><dt>Disponible ahora</dt><dd><span>Versión web gratuita</span>: <a href="https://willowinworlds.itch.io/nature-seed">itch.io</a> · <a href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a> · <a href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a></dd></div>
             <div><dt>Forma de sesión</dt><dd>Niveles de calma cortos</dd></div>
-            <div><dt>CTA principal</dt><dd>Materiales de lanzamiento abierto</dd></div>
+            <div><dt>CTA principal</dt><dd>Jugar gratis en el navegador</dd></div>
           </dl>
         </div>
       </section>
@@ -320,9 +336,9 @@
         <h3 class="asset-group-title">Marca y personajes</h3>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed ícono del juego de rompecabezas de física de líneas para dibujar y resolver" loading="lazy" decoding="async"><strong>Icono del juego</strong><span>Icono de rompecabezas de física de líneas de dibujar y resolver.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed personaje de gota de agua para un juego de rompecabezas de física móvil" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Activo de personaje para la fantasía del rompecabezas de restauración.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed personaje semilla para un acogedor juego de rompecabezas" loading="lazy" decoding="async"><strong>personaje Seed</strong><span>Activo de personaje principal para Nature Seed.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Activo de restauración del crecimiento de árboles Nature Seed" loading="lazy" decoding="async"><strong>Crecimiento de árboles</strong><span>Activo de recompensa por restauración de la naturaleza.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed personaje de gota de agua para un juego de rompecabezas de física móvil" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Recurso de personaje para la fantasía del rompecabezas de restauración.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed personaje semilla para un acogedor juego de rompecabezas" loading="lazy" decoding="async"><strong>personaje Seed</strong><span>Recurso de personaje principal para Nature Seed.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Recurso de restauración del crecimiento de árboles Nature Seed" loading="lazy" decoding="async"><strong>Crecimiento de árboles</strong><span>Recurso de recompensa por restauración de la naturaleza.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed fondo de menú de bosque de rompecabezas relajante" loading="lazy" decoding="async"><strong>Menú bosque</strong><span>Fondo de menú de rompecabezas móvil relajante.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed fondo de nivel de física dibujado a mano" loading="lazy" decoding="async"><strong>Antecedentes del juego</strong><span>Fondo de nivel de física dibujado a mano.</span></a>
         </div>
@@ -405,7 +421,7 @@
           <article class="detail-card"><h3>¿Cómo funciona el juego?</h3><p>Lee el terreno, dibuja una ruta restringida, observa cómo reaccionan ambos personajes y vuelve a dibujar cuando el camino necesite un ángulo más limpio.</p></article>
           <article class="detail-card"><h3>¿Qué lo hace diferente?</h3><p>La atención se centra en una restauración tranquila, una física de línea legible y soluciones eficientes de una línea en lugar de temporizadores de alta presión o fallas ruidosas.</p></article>
           <article class="detail-card"><h3>¿Cuál es el estado actual?</h3><p>Publicado el 10 de septiembre de 2026 como Nature Seed, con 10 niveles de lanzamiento. El foco sigue siendo la sensación de dibujo, la progresión, la legibilidad y la estabilidad móvil.</p></article>
-          <article class="detail-card"><h3>¿Se pueden utilizar bienes públicos?</h3><p>Sí, para prensa, reseñas de editoriales y referencias de tiendas. Los activos de origen permanecen privados a menos que se soliciten directamente.</p></article>
+          <article class="detail-card"><h3>¿Se pueden utilizar recursos públicos?</h3><p>Sí, para prensa, reseñas de editoriales y referencias de tiendas. Los recursos de origen permanecen privados a menos que se soliciten directamente.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
@@ -437,9 +453,13 @@
         <a href="../legal.html">Legales</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Nature%20Seed">Contacto</a>
       </nav>
+      <div class="social-block social-block--game">
+        <p class="social-title" id="gameSocialTitle">Sigue a WillowinWorlds</p>
+        <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds_ES" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds_es" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds_es_pr/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds_es" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20260801-1"></script>
-  <script src="../i18n-runtime.js?v=20260910"></script>
+  <script src="../../game-theme.js?v=20261113-1"></script>
+  <script src="../i18n-runtime.js?v=20261113"></script>
 </body>
 </html>

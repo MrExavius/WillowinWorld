@@ -19,6 +19,7 @@
   <meta property="og:site_name" content="WillowinWorlds">
   <meta property="og:locale" content="ar_SA">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Nature Seed - لعبة ألغاز فيزيائية مريحة للرسم">
   <meta name="twitter:description" content="Nature Seed تم إصداره في 10 سبتمبر 2026 مع فيزياء الخطوط المحدودة بالحبر، Water Drop، Seed واستعادة الألوان المائية.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/nature-seed-og-1200x630.webp">
@@ -70,6 +71,18 @@
         "لغز رسم الخط"
       ],
       "gamePlatform": "جوال",
+      "sameAs": [
+        "https://willowinworlds.itch.io/nature-seed",
+        "https://gamejolt.com/games/nature-seed/1100526",
+        "https://www.indiexpo.net/en/games/nature-seed"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://willowinworlds.itch.io/nature-seed"
+      },
       "creativeWorkStatus": "صدر",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
@@ -88,17 +101,17 @@
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
-  <link rel="stylesheet" href="../../css/nature-scene.css">
-  <link rel="stylesheet" href="../../css/game-shell.css">
-  <link rel="stylesheet" href="../../css/nature-page.css">
-  <link rel="stylesheet" href="../../css/game-content.css">
-  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
-  <link rel="stylesheet" href="../../css/responsive-tablet.css">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -106,7 +119,7 @@
   <a class="skip-link" href="#game-main">انتقل إلى Nature Seed</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — العودة إلى WillowinWorlds">
-      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed أيقونة لعبة ألغاز السحب لحلها على الأجهزة المحمولة" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed أيقونة لعبة ألغاز الرسم للحل على الأجهزة المحمولة" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>صفحة اللعبة WillowinWorlds</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="التنقل في صفحة اللعبة">
@@ -143,12 +156,12 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
             <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
           </picture>
-          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
             <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
           </svg>
@@ -182,8 +195,10 @@
           <p class="hero-copy">لغز فيزياء متنقل تأملي حيث تصبح ضربة الحبر المحدودة جزءًا من المستوى، مما يجمع Water Drop وSeed معًا لإيقاظ غابة من الألوان المائية.</p>
           <p class="nature-hero-note">تم إصداره في 10 سبتمبر 2026 باسم Nature Seed. يحتوي إصدار الإطلاق على 10 مستويات ونجوم كفاءة الخط والتقدم المستمر وتوليد خط مادي مستقر.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#download-assets">تحميل الأصول</a>
-            <a class="btn btn-ghost" href="#devlog">ملاحظات الإصدار</a>
+            <a class="btn btn-primary" href="https://willowinworlds.itch.io/nature-seed">العب مجانًا في متصفحك</a>
+            <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
+            <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
+            <a class="btn btn-ghost" href="#download-assets">تحميل المواد</a>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Nature Seed يسلط الضوء على">
             <span><strong>رسم</strong><small>إنفاق ميزانية محدودة</small></span>
@@ -197,7 +212,7 @@
             <div class="nature-stage nature-stage-showcase" aria-hidden="true">
               <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
               <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
-              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none" aria-hidden="true">
                 <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
                 <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
               </svg>
@@ -247,7 +262,7 @@
         </div>
         <div class="proof-facts" aria-label="حقائق بناء Nature Seed التي تم التحقق منها">
           <article><strong>10 مستويات إطلاق</strong><span>تقدم الإصدار المعتمد على البيانات.</span></article>
-          <article><strong>حدود الحبر والخط</strong><span>كل جلطة لها تكلفة حقيقية.</span></article>
+          <article><strong>حدود الحبر والخط</strong><span>كل خط له تكلفة حقيقية.</span></article>
           <article><strong>إتقان السطر الواحد</strong><span>الطريق الافتراضي إلى ثلاث نجوم.</span></article>
           <article><strong>التقدم المستمر</strong><span>المستويات والنتائج غير المقفلة تبقى بين الجلسات.</span></article>
         </div>
@@ -308,21 +323,22 @@
           <dl class="game-page-facts">
             <div><dt>النوع</dt><dd>لغز فيزياء الرسم لحله</dd></div>
             <div><dt>هدف المنصة</dt><dd>iOS/أندرويد</dd></div>
+            <div><dt>متاح الآن</dt><dd><span>نسخة ويب مجانية</span>: <a href="https://willowinworlds.itch.io/nature-seed">itch.io</a> · <a href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a> · <a href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a></dd></div>
             <div><dt>شكل الجلسة</dt><dd>مستويات الهدوء القصيرة</dd></div>
-            <div><dt>CTA الأساسي</dt><dd>مواد الإصدار المفتوح</dd></div>
+            <div><dt>CTA الأساسي</dt><dd>العب مجانًا في متصفحك</dd></div>
           </dl>
         </div>
       </section>
       <section class="soft-card game-page-section" id="download-assets">
-        <div class="eyebrow">تحميل الأصول</div>
-        <h2>Nature Seed أصول الصحافة والمبدعين</h2>
+        <div class="eyebrow">تحميل المواد</div>
+        <h2>Nature Seed مواد الصحافة والمبدعين</h2>
         <p class="asset-kit-copy">معاينات WebP المنسقة للتغطية التحريرية ومراجعة الناشر ومراجع تخطيط المتجر. تتوفر ملفات المصدر كاملة الدقة من الاستوديو عند الطلب.</p>
         <h3 class="asset-group-title">العلامة التجارية والشخصيات</h3>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed رمز لعبة الألغاز الفيزيائية للرسم لحل الخط" loading="lazy" decoding="async"><strong>أيقونة اللعبة</strong><span>رمز اللغز الفيزيائي للرسم لحل الخط.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="شخصية قطرة الماء Nature Seed للعبة ألغاز فيزيائية متنقلة" loading="lazy" decoding="async"><strong>Water Drop</strong><span>أصول الشخصية لخيال لغز الترميم.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="شخصية Nature Seed الأساسية للعبة ألغاز مريحة" loading="lazy" decoding="async"><strong>حرف Seed</strong><span>أصل الشخصية الأساسية لـ Nature Seed.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="أصول استعادة نمو الشجرة Nature Seed" loading="lazy" decoding="async"><strong>نمو الشجرة</strong><span>أصل مكافأة استعادة الطبيعة.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="شخصية قطرة الماء Nature Seed للعبة ألغاز فيزيائية متنقلة" loading="lazy" decoding="async"><strong>Water Drop</strong><span>مواد الشخصية لخيال لغز الترميم.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="شخصية Nature Seed الأساسية للعبة ألغاز مريحة" loading="lazy" decoding="async"><strong>حرف Seed</strong><span>مادة الشخصية الأساسية لـ Nature Seed.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="مواد استعادة نمو الشجرة Nature Seed" loading="lazy" decoding="async"><strong>نمو الشجرة</strong><span>مادة مكافأة استعادة الطبيعة.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed خلفية قائمة غابة الألغاز المريحة" loading="lazy" decoding="async"><strong>قائمة الغابة</strong><span>خلفية قائمة الألغاز المحمولة المريحة.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed خلفية مستوى الفيزياء مرسومة باليد" loading="lazy" decoding="async"><strong>خلفية اللعب</strong><span>خلفية مستوى الفيزياء مرسومة باليد.</span></a>
         </div>
@@ -369,7 +385,7 @@
       <section class="soft-card game-page-section related-worlds" id="related">
         <div class="eyebrow">عوالم ذات صلة</div>
         <h2>انتقل من فيزياء الخط الهادئ إلى خطاف WillowinWorlds التالي.</h2>
-        <p class="related-worlds-copy">Nature Seed هو الجانب المريح من عملية السحب للحل في المحفظة. قارنها مع أحجية دمج الحلوى المريحة في الاستوديو، والأروقة الفيزيائية لتدمير الألوان، ونزول البرج الدوار القوي.</p>
+        <p class="related-worlds-copy">Nature Seed هو الجانب المريح القائم على الرسم للحل في المحفظة. قارنها مع أحجية دمج الحلوى المريحة في الاستوديو، والأروقة الفيزيائية لتدمير الألوان، ونزول البرج الدوار القوي.</p>
         <div class="related-world-grid" aria-label="صفحات لعبة WillowinWorlds ذات الصلة">
           <a class="related-world-link is-primary" href="candy-shop.html">
             <span class="related-world-kicker">لغز دمج مريح</span>
@@ -392,7 +408,7 @@
           <a class="related-world-link" href="../press-kit.html#press-games">
             <span class="related-world-kicker">الصحافة/ الناشرون</span>
             <strong>حقائق المحفظة</strong>
-            <p>قم بمراجعة حالات اللعبة والأصول العامة والأنواع والخطافات وسياق الناشر في قسم واحد لمجموعة أدوات صحفية مدمجة.</p>
+            <p>قم بمراجعة حالات اللعبة والمواد العامة والأنواع والخطافات وسياق الناشر في قسم واحد لمجموعة أدوات صحفية مدمجة.</p>
             <span class="related-world-meta">مجموعة الضغط WillowinWorlds</span>
           </a>
         </div>
@@ -405,7 +421,7 @@
           <article class="detail-card"><h3>كيف تعمل طريقة اللعب؟</h3><p>اقرأ التضاريس، وارسم طريقًا مقيدًا، وشاهد كلا الشخصيتين يتفاعلان معها وأعدا الرسم عندما يحتاج المسار إلى زاوية أكثر وضوحًا.</p></article>
           <article class="detail-card"><h3>ما الذي يجعلها مختلفة؟</h3><p>ينصب التركيز على استعادة الهدوء وفيزياء الخطوط القابلة للقراءة والحلول الفعالة المكونة من سطر واحد بدلاً من مؤقتات الضغط العالي أو الفشل المزعج.</p></article>
           <article class="detail-card"><h3>ما هو الوضع الحالي؟</h3><p>تم إصدارها في 10 سبتمبر 2026 باسم Nature Seed، مع 10 مستويات إطلاق. يظل التركيز على رسم الإحساس والتقدم وسهولة القراءة واستقرار الهاتف المحمول.</p></article>
-          <article class="detail-card"><h3>هل يمكن الاستفادة من الأصول العامة؟</h3><p>نعم للصحافة ومراجعة الناشرين ومراجع المتجر. تظل أصول المصدر خاصة ما لم يتم طلبها مباشرة.</p></article>
+          <article class="detail-card"><h3>هل يمكن الاستفادة من المواد العامة؟</h3><p>نعم للصحافة ومراجعة الناشرين ومراجع المتجر. تظل مواد المصدر خاصة ما لم يتم طلبها مباشرة.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
@@ -437,9 +453,13 @@
         <a href="../legal.html">قانوني</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Nature%20Seed">إتصل</a>
       </nav>
+      <div class="social-block social-block--game">
+        <p class="social-title" id="gameSocialTitle">تابع WillowinWorlds</p>
+        <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20260801-1"></script>
-  <script src="../i18n-runtime.js?v=20260910"></script>
+  <script src="../../game-theme.js?v=20261113-1"></script>
+  <script src="../i18n-runtime.js?v=20261113"></script>
 </body>
 </html>

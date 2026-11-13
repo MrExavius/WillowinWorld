@@ -19,6 +19,7 @@
   <meta property="og:site_name" content="WillowinWorlds">
   <meta property="og:locale" content="tl_PH">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Candy Shop - Maginhawang Laro ng Pagsasanib ng Kendi">
   <meta name="twitter:description" content="I-drop, pagsamahin at i-evolve ang mga kendi sa isang maginhawang mobile merge puzzle ng WillowinWorlds.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/candy-shop-og-1200x630.webp">
@@ -87,17 +88,17 @@
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
-  <link rel="preload" href="../../assets/Candy%20Shop/site/icon_playmarket.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
+  <link rel="preload" href="../../assets/responsive/candy-shop-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/home-candy-card.css">
-  <link rel="stylesheet" href="../../css/game-shell.css">
-  <link rel="stylesheet" href="../../css/candy-page.css">
-  <link rel="stylesheet" href="../../css/game-content.css">
-  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/candy-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
-  <link rel="stylesheet" href="../../css/responsive-tablet.css">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -105,7 +106,7 @@
   <a class="skip-link" href="#game-main">Lumaktaw sa Candy Shop</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — bumalik sa WillowinWorlds">
-      <img src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Candy Shop maginhawang icon ng larong puzzle na pinagsama ng kendi" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="Candy Shop maginhawang icon ng larong puzzle na pinagsama ng kendi" fetchpriority="high" decoding="async">
       <span><strong>Candy Shop</strong><small>pahina ng laro ng WillowinWorlds</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Pag-navigate sa pahina ng laro">
@@ -145,7 +146,7 @@
           <p class="hero-copy">Isang maginhawang mobile merge puzzle tungkol sa paglalagay ng candy, pag-trigger ng soft physics combos at paghabol ng isa pang kasiya-siyang ebolusyon.</p>
           <p class="candy-hero-note">Aktibong pag-develop na may 13 yugto ng kendi, 10 container ruleset, walong special-candy effect at isang planning layer na binuo sa paligid ng hold, landing preview at ang susunod na tatlong queue.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:willowinworlds@gmail.com?subject=Candy+Shop+update">Humiling ng mga update sa Candy Shop</a>
+            <a class="btn btn-primary" href="mailto:willowinworlds@gmail.com?subject=Candy%20Shop%20update">Humiling ng mga update sa Candy Shop</a>
             <a class="btn btn-ghost" href="#devlog">Buksan ang Devlog</a>
           </div>
           <div class="candy-hero-stats" role="group" aria-label="mga highlight ng Candy Shop">
@@ -414,9 +415,13 @@
         <a href="../legal.html">Legal</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Candy%20Shop">Makipag-ugnayan</a>
       </nav>
+      <div class="social-block social-block--game">
+        <p class="social-title" id="gameSocialTitle">Sundan ang WillowinWorlds</p>
+        <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20260801-1"></script>
-  <script src="../i18n-runtime.js?v=20260910"></script>
+  <script src="../../game-theme.js?v=20261113-1"></script>
+  <script src="../i18n-runtime.js?v=20261113"></script>
 </body>
 </html>

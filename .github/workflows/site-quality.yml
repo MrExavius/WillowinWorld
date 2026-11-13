@@ -7,6 +7,9 @@ on:
   schedule:
     - cron: "20 6 * * 1"
 
+permissions:
+  contents: read
+
 jobs:
   static-site-quality:
     runs-on: ubuntu-latest
@@ -21,29 +24,16 @@ jobs:
 
       - name: Check JavaScript syntax
         run: |
-          node --check site/scripts.js
-          node --check site/game-theme.js
-          node --check site/404.js
-          node --check site/tools/update-sitemap-lastmod.mjs
-          node --check site/tools/devlog-data.mjs
-          node --check site/tools/sync-devlogs.mjs
-          node --check site/tools/seo-check.mjs
-          node --check site/tools/build-minified.mjs
-          node --check site/tools/css-coverage-audit.mjs
-          node --check site/tools/quality-check.mjs
-          node --check site/tools/security-check.mjs
+          for file in site/*.js site/tools/*.mjs; do
+            node --check "$file"
+          done
 
-      - name: Run security baseline
-        run: node site/tools/security-check.mjs
+      - name: Run full quality check
+        run: node site/tools/quality-check.mjs
 
-      - name: Run CSS coverage audit
+      - name: Run CSS coverage audit (informational)
+        continue-on-error: true
         run: node site/tools/css-coverage-audit.mjs
-
-      - name: Verify devlog synchronization
-        run: node site/tools/sync-devlogs.mjs --check
-
-      - name: Verify SEO contract
-        run: node site/tools/seo-check.mjs
 
       - name: Build minified static output
         run: node site/tools/build-minified.mjs

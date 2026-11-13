@@ -15,7 +15,7 @@
       const leftTouch = document.querySelector("[data-touch-left]");
       const rightTouch = document.querySelector("[data-touch-right]");
 
-      const assetBase = "assets/404/";
+      const assetBase = "/assets/404/";
       const imageSources = {
         stay: "magic-cat-mascot_stay_clean.webp",
         step1: "magic-cat-mascot_step1_clean.webp",
@@ -73,6 +73,7 @@
         particles: [],
         backgroundStars: []
       };
+      const touchHeld = new Map();
 
       const cat = {
         x: 0,
@@ -196,6 +197,8 @@
       };
 
       function fitCanvas() {
+        const previousWidth = state.width;
+        const previousHeight = state.height;
         state.dpr = Math.min(window.devicePixelRatio || 1, 2);
         state.width = window.innerWidth;
         state.height = window.innerHeight;
@@ -209,7 +212,9 @@
         cat.x = cat.x || state.width * 0.5;
         cat.y = Math.max(156, state.height - clamp(state.height * 0.145, 96, 130));
         cat.x = clamp(cat.x, cat.width * 0.5, state.width - cat.width * 0.5);
-        makeBackgroundStars();
+        const resizedALot = Math.abs(state.width - previousWidth) > previousWidth * 0.15 || Math.abs(state.height - previousHeight) > previousHeight * 0.15;
+        if (resizedALot) makeBackgroundStars();
+        draw();
       }
 
       function makeBackgroundStars() {
@@ -236,20 +241,26 @@
         body.dataset.gameState = mode;
         pauseButtons.forEach((button) => {
           button.textContent = mode === "paused" ? "Resume" : button.classList.contains("icon-pill") ? "II" : "Pause";
+          if (button.hasAttribute("aria-label")) button.setAttribute("aria-label", mode === "paused" ? "Resume game" : "Pause game");
         });
         queueFrame(mode === "playing");
       }
 
+      function setText(element, value) {
+        const text = String(value);
+        if (element.textContent !== text) element.textContent = text;
+      }
+
       function updateHud() {
-        scoreValue.textContent = state.score;
-        bestValue.textContent = state.best;
-        comboValue.textContent = "x" + state.comboMultiplier;
-        livesValue.textContent = state.lives;
+        setText(scoreValue, state.score);
+        setText(bestValue, state.best);
+        setText(comboValue, "x" + state.comboMultiplier);
+        setText(livesValue, state.lives);
         const active = [];
         if (state.effects.speed > 0) active.push("Speed " + Math.ceil(state.effects.speed));
         if (state.effects.shield > 0) active.push("Shield " + Math.ceil(state.effects.shield));
         if (state.effects.calm > 0) active.push("Clear " + Math.ceil(state.effects.calm));
-        effectValue.textContent = active.length ? active.join(" / ") : "None";
+        setText(effectValue, active.length ? active.join(" / ") : "None");
       }
 
       function showToast(message) {
@@ -821,6 +832,7 @@
       }
 
       function drawImageContained(image, maxWidth, maxHeight, offsetY = 0) {
+        if (!image || (image instanceof HTMLImageElement && !image.naturalWidth)) return;
         const sourceWidth = image.width || image.naturalWidth || maxWidth;
         const sourceHeight = image.height || image.naturalHeight || maxHeight;
         const aspect = sourceWidth > 0 && sourceHeight > 0 ? sourceWidth / sourceHeight : 1;
@@ -1015,8 +1027,30 @@
         state.pointerX = null;
       }
 
+      function releaseInput() {
+        state.keys.left = false;
+        state.keys.right = false;
+        touchHeld.clear();
+        pointerEnd();
+      }
+
+      function touchStart(side, event) {
+        event.preventDefault();
+        touchHeld.set(event.pointerId, side);
+        state.keys[side] = true;
+      }
+
+      function touchEnd(event) {
+        const side = touchHeld.get(event.pointerId);
+        if (!side) return;
+        touchHeld.delete(event.pointerId);
+        state.keys[side] = false;
+      }
+
       function keyDown(event) {
+        if (event.repeat || event.ctrlKey || event.metaKey || event.altKey) return;
         const key = event.key.toLowerCase();
+        if (key === " " && event.target.closest?.("button, a")) return;
         if ([" ", "a", "d", "arrowleft", "arrowright"].includes(key)) event.preventDefault();
         if (key === " ") {
           if (state.mode === "playing" || state.mode === "paused") {
@@ -1049,31 +1083,17 @@
       window.addEventListener("pointermove", pointerMove, { passive: true });
       window.addEventListener("pointerup", pointerEnd, { passive: true });
       window.addEventListener("pointercancel", pointerEnd, { passive: true });
+      window.addEventListener("pointerup", touchEnd, { passive: true });
+      window.addEventListener("pointercancel", touchEnd, { passive: true });
+      window.addEventListener("blur", releaseInput);
       window.addEventListener("keydown", keyDown, { passive: false });
       window.addEventListener("keyup", keyUp, { passive: true });
 
-      leftTouch.addEventListener("pointerdown", (event) => {
-        event.preventDefault();
-        state.keys.left = true;
-      });
-      leftTouch.addEventListener("pointerup", () => {
-        state.keys.left = false;
-      });
-      leftTouch.addEventListener("pointercancel", () => {
-        state.keys.left = false;
-      });
-      rightTouch.addEventListener("pointerdown", (event) => {
-        event.preventDefault();
-        state.keys.right = true;
-      });
-      rightTouch.addEventListener("pointerup", () => {
-        state.keys.right = false;
-      });
-      rightTouch.addEventListener("pointercancel", () => {
-        state.keys.right = false;
-      });
+      leftTouch.addEventListener("pointerdown", (event) => touchStart("left", event));
+      rightTouch.addEventListener("pointerdown", (event) => touchStart("right", event));
 
       document.addEventListener("visibilitychange", () => {
+        releaseInput();
         if (document.hidden && state.mode === "playing") setMode("paused");
         state.lastFrame = performance.now();
         queueFrame(!document.hidden && state.mode === "playing");

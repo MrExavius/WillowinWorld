@@ -27,8 +27,24 @@ const cssFileNames = [
   "css/responsive-desktop.css",
   "css/responsive-tablet.css",
   "css/responsive-mobile.css",
-  "css/responsive-preferences.css"
+  "css/responsive-preferences.css",
+  "css/home-polish-2026.css"
 ];
+// Studio store and social profiles that pages may link to with <a href="https:...">. Never for src/action.
+const allowedExternalHrefHosts = new Set([
+  "willowinworlds.itch.io",
+  "gamejolt.com",
+  "www.indiexpo.net",
+  "www.youtube.com",
+  "www.tiktok.com",
+  "www.instagram.com",
+  "www.threads.com",
+  "www.facebook.com",
+  "x.com",
+  "www.reddit.com",
+  "vk.ru",
+  "t.me"
+]);
 
 async function walkFiles(directory) {
   const entries = await readdir(directory, { withFileTypes: true });
@@ -86,6 +102,15 @@ function escapeRegExp(value) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
+function isAllowedExternalHref(url) {
+  try {
+    const parsed = new URL(url);
+    return parsed.protocol === "https:" && !parsed.username && !parsed.password && allowedExternalHrefHosts.has(parsed.hostname);
+  } catch {
+    return false;
+  }
+}
+
 function getStructuredDataHash() {
   const match = files.html.match(/<script\b(?=[^>]*\btype=["']application\/ld\+json["'])(?=[^>]*\bid=["']structuredData["'])[^>]*>([\s\S]*?)<\/script>/i);
   if (!match) {
@@ -122,6 +147,17 @@ requireMatch("apache-security.htaccess", files.apache, /Origin-Agent-Cluster\s+"
 requireMatch("apache-security.htaccess", files.apache, /X-Permitted-Cross-Domain-Policies\s+"none"/i);
 requireMatch("apache-security.htaccess", files.apache, /ExpiresByType\s+text\/html\s+"access plus 0 seconds"/i);
 requireMatch("security.txt", files.securityTxt, new RegExp(`Contact:\\s*mailto:${escapeRegExp(contactEmail)}`, "i"));
+const securityTxtExpires = files.securityTxt.match(/^Expires:.*$/gim) || [];
+if (securityTxtExpires.length !== 1) {
+  errors.push(`security.txt: expected exactly one Expires field, found ${securityTxtExpires.length}`);
+} else {
+  const expires = securityTxtExpires[0].match(/^Expires:\s*(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2}))\s*$/i)?.[1];
+  if (!expires || Number.isNaN(Date.parse(expires))) {
+    errors.push(`security.txt: Expires must be an RFC 3339 date-time (${securityTxtExpires[0].trim()})`);
+  } else if (Date.parse(expires) <= Date.now()) {
+    errors.push(`security.txt: Expires ${expires} is in the past; renew it`);
+  }
+}
 
 if (structuredDataHash) {
   const hashPattern = new RegExp(escapeRegExp(structuredDataHash));
@@ -151,9 +187,10 @@ for (const [name, html] of Object.entries(htmlPages)) {
 
   const urlAttributes = [...html.matchAll(/\b(href|src|action)\s*=\s*["']([^"']+)/gi)];
   for (const [, attr, url] of urlAttributes) {
-    const safeSameOrigin = attr.toLowerCase() === "href" && url.startsWith(`${siteOrigin}/`);
+    const isHref = attr.toLowerCase() === "href";
+    const safeSameOrigin = isHref && url.startsWith(`${siteOrigin}/`);
     const unsafe = /^(https?:|\/\/|javascript:|data:text\/html)/i.test(url);
-    if (unsafe && !safeSameOrigin) {
+    if (unsafe && !safeSameOrigin && !(isHref && isAllowedExternalHref(url))) {
       errors.push(`${name}: unsafe ${attr} URL ${url}`);
     }
   }

@@ -1,5 +1,13 @@
 /* WillowinWorlds CSS: tablet navigation, grids and game hero rules. */
-@media (max-width: 1120px) {
+/* Header breakpoints are container queries in em on .site-header: em follows the header's font size,
+   so 200% text collapses the header like a narrow screen (WCAG 1.4.4 / 1.4.10). */
+@container site-header (max-width: 78em) {
+  .header-actions .contact-header {
+    display: none;
+  }
+}
+
+@container site-header (max-width: 70em) {
   .main-nav {
     position: fixed;
     top: var(--header-h);
@@ -42,11 +50,20 @@
   .menu-toggle {
     display: inline-grid;
   }
+}
 
-  .header-actions .contact-header {
-    display: none;
+@container site-header (max-width: 30em) {
+  .brand {
+    min-width: 44px;
+    justify-content: center;
   }
 
+  .brand-name {
+    display: none;
+  }
+}
+
+@media (max-width: 1120px) {
   .principles-grid,
   .systems-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { contactEmail, siteOrigin } from "./localization-config.mjs";
+import { contactEmail, siteOrigin, socialProfilesFor } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 
@@ -214,7 +214,7 @@ export function renderDevlogRss(updates) {
     "    <item>",
     `      <title>${escapeXml(update.name)}: ${escapeXml(update.title)}</title>`,
     `      <link>${escapeXml(update.canonical)}</link>`,
-    `      <guid>${escapeXml(update.canonical)}-${update.published}</guid>`,
+    `      <guid isPermaLink="false">${escapeXml(update.canonical)}-${update.published}</guid>`,
     `      <pubDate>${formatRssDate(update.published)}</pubDate>`,
     `      <description>${escapeXml(update.summary)}</description>`,
     "    </item>"
@@ -258,7 +258,7 @@ export function renderLlmsTxt(updates) {
 
 > WillowinWorlds is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.
 
-Nature Seed is released; the other three games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date; no public price, store availability, rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
+Nature Seed is released; the other three games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date and is playable free in the browser on [itch.io](https://willowinworlds.itch.io/nature-seed), [Game Jolt](https://gamejolt.com/games/nature-seed/1100526) and [indiexpo](https://www.indiexpo.net/en/games/nature-seed); no rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
 
 ## Games
 
@@ -281,6 +281,10 @@ ${devlogs}
 - [Language index](${siteOrigin}/languages.json): Machine-readable map of every localized site and AI guide.
 - [Privacy policy](${siteOrigin}/privacy.html): Website privacy information.
 - [Legal notice](${siteOrigin}/legal.html): Ownership, trademarks and website terms.
+
+## Official channels
+
+${socialProfilesFor("en").map(profile => `- [${profile.name} ${profile.handle}](${profile.url})`).join("\n")}
 
 ## Contact
 

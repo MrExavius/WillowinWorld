@@ -19,6 +19,7 @@
   <meta property="og:site_name" content="WillowinWorlds">
   <meta property="og:locale" content="bg_BG">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Nature Seed - Релаксираща пъзел игра с рисуване и решаване">
   <meta name="twitter:description" content="Nature Seed издаден на 10 септември 2026 г. с ограничена до мастило физика на линиите, Water Drop, Seed и възстановяване на акварел.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/nature-seed-og-1200x630.webp">
@@ -70,6 +71,18 @@
         "Пъзел за рисуване на линии"
       ],
       "gamePlatform": "Мобилен",
+      "sameAs": [
+        "https://willowinworlds.itch.io/nature-seed",
+        "https://gamejolt.com/games/nature-seed/1100526",
+        "https://www.indiexpo.net/en/games/nature-seed"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://willowinworlds.itch.io/nature-seed"
+      },
       "creativeWorkStatus": "Издаден",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
@@ -88,17 +101,17 @@
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
-  <link rel="stylesheet" href="../../css/nature-scene.css">
-  <link rel="stylesheet" href="../../css/game-shell.css">
-  <link rel="stylesheet" href="../../css/nature-page.css">
-  <link rel="stylesheet" href="../../css/game-content.css">
-  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
-  <link rel="stylesheet" href="../../css/responsive-tablet.css">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -106,7 +119,7 @@
   <a class="skip-link" href="#game-main">Преминете към Nature Seed</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — обратно към WillowinWorlds">
-      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed мобилна икона на пъзел игра рисуване за решаване" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed мобилна икона на пъзел игра рисуване за решаване" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>Страница на играта WillowinWorlds</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Навигация на страницата на играта">
@@ -143,12 +156,12 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
             <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
           </picture>
-          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
             <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
           </svg>
@@ -182,11 +195,13 @@
           <p class="hero-copy">Медитативен мобилен пъзел с физика, в който щрих с ограничено мастило става част от нивото, обединявайки Water Drop и Seed, за да събудят акварелна гора.</p>
           <p class="nature-hero-note">Издаден на 10 септември 2026 г. като Nature Seed. Стартиращата компилация съдържа 10 нива, звезди за ефективност на линията, постоянен напредък и стабилно физическо генериране на линия.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#download-assets">Изтегляне на активи</a>
-            <a class="btn btn-ghost" href="#devlog">Бележки по изданието</a>
+            <a class="btn btn-primary" href="https://willowinworlds.itch.io/nature-seed">Играйте безплатно в браузъра</a>
+            <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
+            <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
+            <a class="btn btn-ghost" href="#download-assets">Изтегляне на материали</a>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Акценти на Nature Seed">
-            <span><strong>Теглене</strong><small>изразходвайте ограничен линеен бюджет</small></span>
+            <span><strong>Рисувай</strong><small>изразходвайте ограничен линеен бюджет</small></span>
             <span><strong>Свържи се</strong><small>донесете Water Drop на Seed</small></span>
             <span><strong>Блум</strong><small>спечелете възстановената сцена</small></span>
           </div>
@@ -197,7 +212,7 @@
             <div class="nature-stage nature-stage-showcase" aria-hidden="true">
               <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
               <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
-              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none" aria-hidden="true">
                 <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
                 <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
               </svg>
@@ -308,21 +323,22 @@
           <dl class="game-page-facts">
             <div><dt>Жанр</dt><dd>Рисувай за решаване на физичен пъзел</dd></div>
             <div><dt>Платформена цел</dt><dd>iOS / Android</dd></div>
+            <div><dt>Достъпно сега</dt><dd><span>Безплатна уеб версия</span>: <a href="https://willowinworlds.itch.io/nature-seed">itch.io</a> · <a href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a> · <a href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a></dd></div>
             <div><dt>Форма на сесия</dt><dd>Кратки спокойни нива</dd></div>
-            <div><dt>Първичен CTA</dt><dd>Материали за отворено издание</dd></div>
+            <div><dt>Първичен CTA</dt><dd>Играйте безплатно в браузъра</dd></div>
           </dl>
         </div>
       </section>
       <section class="soft-card game-page-section" id="download-assets">
-        <div class="eyebrow">Изтегляне на активи</div>
-        <h2>Nature Seed преса и активи на творци</h2>
+        <div class="eyebrow">Изтегляне на материали</div>
+        <h2>Nature Seed преса и материали на творци</h2>
         <p class="asset-kit-copy">Подбрани визуализации на WebP за редакционно отразяване, рецензия на издателя и препратки към оформлението на магазина. Изходните файлове с пълна разделителна способност са достъпни от студиото при поискване.</p>
         <h3 class="asset-group-title">Марка и герои</h3>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed чертане за решаване на линия физика пъзел игра икона" loading="lazy" decoding="async"><strong>Икона на играта</strong><span>Икона на физичен пъзел с чертане и решаване на линия.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed водна капка герой за мобилна физична пъзел игра" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Актив на персонаж за фантазията на пъзела за възстановяване.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed водна капка герой за мобилна физична пъзел игра" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Материал на персонаж за фантазията на пъзела за възстановяване.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed начален персонаж за уютна пъзел игра" loading="lazy" decoding="async"><strong>Символ Seed</strong><span>Основен символ за Nature Seed.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Актив за възстановяване на растежа на дърветата Nature Seed" loading="lazy" decoding="async"><strong>Растеж на дървета</strong><span>Актив за награда за възстановяване на природата.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Материал за възстановяване на растежа на дърветата Nature Seed" loading="lazy" decoding="async"><strong>Растеж на дървета</strong><span>Материал за награда за възстановяване на природата.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed релаксиращ пъзел меню фон" loading="lazy" decoding="async"><strong>Горско меню</strong><span>Релаксиращ фон на менюто с мобилен пъзел.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed ръчно нарисуван фон на нивото на физиката" loading="lazy" decoding="async"><strong>Геймплей фон</strong><span>Ръчно рисуван фон на ниво физика.</span></a>
         </div>
@@ -369,7 +385,7 @@
       <section class="soft-card game-page-section related-worlds" id="related">
         <div class="eyebrow">Сродни светове</div>
         <h2>Преминете от физиката на спокойна линия към следващата кука WillowinWorlds.</h2>
-        <p class="related-worlds-copy">Nature Seed е релаксиращата част от портфолиото, включваща теглене и решаване. Сравнете го с уютния пъзел за сливане на бонбони на студиото, аркадна игра с унищожаване на цветове и хардкор спускане с въртяща се кула.</p>
+        <p class="related-worlds-copy">Nature Seed е релаксиращата част от портфолиото, включваща рисуване и решаване. Сравнете го с уютния пъзел за сливане на бонбони на студиото, аркадна игра с унищожаване на цветове и хардкор спускане с въртяща се кула.</p>
         <div class="related-world-grid" aria-label="Свързани страници с игри WillowinWorlds">
           <a class="related-world-link is-primary" href="candy-shop.html">
             <span class="related-world-kicker">Уютен пъзел за сливане</span>
@@ -392,7 +408,7 @@
           <a class="related-world-link" href="../press-kit.html#press-games">
             <span class="related-world-kicker">Преса / издатели</span>
             <strong>Факти за портфолиото</strong>
-            <p>Преглед на статуси на игри, публични активи, жанрове, кукички и контекст на издателя в една компактна секция за пресата.</p>
+            <p>Преглед на статуси на игри, публични материали, жанрове, кукички и контекст на издателя в една компактна секция за пресата.</p>
             <span class="related-world-meta">Прес комплект WillowinWorlds</span>
           </a>
         </div>
@@ -405,7 +421,7 @@
           <article class="detail-card"><h3>Как работи играта?</h3><p>Прочетете терена, начертайте ограничен маршрут, наблюдавайте как и двамата герои реагират на него и преначертайте, когато пътеката се нуждае от по-чист ъгъл.</p></article>
           <article class="detail-card"><h3>Какво го прави различен?</h3><p>Фокусът е спокойно възстановяване, четлива физика на линията и ефективни едноредови решения, а не таймери с високо налягане или шумна повреда.</p></article>
           <article class="detail-card"><h3>Какво е текущото състояние?</h3><p>Издаден на 10 септември 2026 г. като Nature Seed, с 10 нива на стартиране. Фокусът остава усещането за рисуване, прогресията, четливостта и мобилната стабилност.</p></article>
-          <article class="detail-card"><h3>Могат ли да се използват публични активи?</h3><p>Да, за пресата, рецензии на издатели и справки за магазини. Изходните активи остават частни, освен ако не бъдат поискани директно.</p></article>
+          <article class="detail-card"><h3>Могат ли да се използват публични материали?</h3><p>Да, за пресата, рецензии на издатели и справки за магазини. Изходните материали остават частни, освен ако не бъдат поискани директно.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
@@ -437,9 +453,13 @@
         <a href="../legal.html">Законно</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Nature%20Seed">Контакт</a>
       </nav>
+      <div class="social-block social-block--game">
+        <p class="social-title" id="gameSocialTitle">Следвайте WillowinWorlds</p>
+        <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20260801-1"></script>
-  <script src="../i18n-runtime.js?v=20260910"></script>
+  <script src="../../game-theme.js?v=20261113-1"></script>
+  <script src="../i18n-runtime.js?v=20261113"></script>
 </body>
 </html>

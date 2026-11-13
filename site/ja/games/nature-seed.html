@@ -19,6 +19,7 @@
   <meta property="og:site_name" content="WillowinWorlds">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Nature Seed - リラックスできる描画して解く物理パズル ゲーム">
   <meta name="twitter:description" content="Nature Seed は、インク制限付きの線物理学、Water Drop、Seed、水彩修復を備え、2026 年 9 月 10 日にリリースされました。">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/nature-seed-og-1200x630.webp">
@@ -70,6 +71,18 @@
         "線画パズル"
       ],
       "gamePlatform": "モバイル",
+      "sameAs": [
+        "https://willowinworlds.itch.io/nature-seed",
+        "https://gamejolt.com/games/nature-seed/1100526",
+        "https://www.indiexpo.net/en/games/nature-seed"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://willowinworlds.itch.io/nature-seed"
+      },
       "creativeWorkStatus": "リリースされました",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
@@ -88,17 +101,17 @@
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds 開発ブログ RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
-  <link rel="stylesheet" href="../../css/nature-scene.css">
-  <link rel="stylesheet" href="../../css/game-shell.css">
-  <link rel="stylesheet" href="../../css/nature-page.css">
-  <link rel="stylesheet" href="../../css/game-content.css">
-  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
-  <link rel="stylesheet" href="../../css/responsive-tablet.css">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -106,7 +119,7 @@
   <a class="skip-link" href="#game-main">Nature Seed にスキップ</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — WillowinWorlds に戻る">
-      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed モバイル描画パズル ゲーム アイコン" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed モバイル描画パズル ゲーム アイコン" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>WillowinWorlds ゲームページ</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="ゲームページのナビゲーション">
@@ -143,12 +156,12 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
             <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
           </picture>
-          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
             <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
           </svg>
@@ -182,8 +195,10 @@
           <p class="hero-copy">インク制限のあるストロークがレベルの一部となり、Water Drop と Seed を組み合わせて水彩の森を目覚めさせる瞑想的なモバイル物理パズル。</p>
           <p class="nature-hero-note">Nature Seed として 2026 年 9 月 10 日にリリースされました。ローンチ ビルドには 10 のレベル、ライン効率のスター、持続的な進歩、安定した物理ラインの生成が含まれています。</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#download-assets">アセットをダウンロード</a>
-            <a class="btn btn-ghost" href="#devlog">リリースノート</a>
+            <a class="btn btn-primary" href="https://willowinworlds.itch.io/nature-seed">ブラウザで無料プレイ</a>
+            <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
+            <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
+            <a class="btn btn-ghost" href="#download-assets">アセットをダウンロード</a>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Nature Seed ハイライト">
             <span><strong>描く</strong><small>限られた回線予算を費やす</small></span>
@@ -197,7 +212,7 @@
             <div class="nature-stage nature-stage-showcase" aria-hidden="true">
               <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
               <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
-              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none" aria-hidden="true">
                 <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
                 <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
               </svg>
@@ -308,8 +323,9 @@
           <dl class="game-page-facts">
             <div><dt>ジャンル</dt><dd>描いて解く物理パズル</dd></div>
             <div><dt>プラットフォームターゲット</dt><dd>iOS / Android</dd></div>
+            <div><dt>今すぐ利用可能</dt><dd><span>無料のWeb版</span>: <a href="https://willowinworlds.itch.io/nature-seed">itch.io</a> · <a href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a> · <a href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a></dd></div>
             <div><dt>セッションの形状</dt><dd>短い穏やかなレベル</dd></div>
-            <div><dt>プライマリCTA</dt><dd>リリース資料を公開</dd></div>
+            <div><dt>プライマリCTA</dt><dd>ブラウザで無料プレイ</dd></div>
           </dl>
         </div>
       </section>
@@ -322,7 +338,7 @@
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed 描画して解くラインの物理パズル ゲーム アイコン" loading="lazy" decoding="async"><strong>ゲームアイコン</strong><span>描いて解くラインの物理パズルアイコン。</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed モバイル物理パズル ゲーム用ウォーター ドロップ キャラクター" loading="lazy" decoding="async"><strong>Water Drop</strong><span>復興パズルファンタジーのキャラクターアセット。</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nature Seed 居心地の良いパズル ゲームのシード キャラクター" loading="lazy" decoding="async"><strong>Seed 文字</strong><span>Nature Seed のコアキャラクターアセット。</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed 木の成長回復アセット" loading="lazy" decoding="async"><strong>木の成長</strong><span>自然回復報酬資産。</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed 木の成長回復アセット" loading="lazy" decoding="async"><strong>木の成長</strong><span>自然回復報酬アセット。</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed リラックスパズルフォレストメニュー背景" loading="lazy" decoding="async"><strong>森のメニュー</strong><span>リラックスできるモバイルパズルメニューの背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed 手描きの物理レベルの背景" loading="lazy" decoding="async"><strong>ゲームプレイの背景</strong><span>手描きの物理レベルの背景。</span></a>
         </div>
@@ -369,7 +385,7 @@
       <section class="soft-card game-page-section related-worlds" id="related">
         <div class="eyebrow">関連ワールド</div>
         <h2>穏やかなラインの物理学から次の WillowinWorlds フックに進みます。</h2>
-        <p class="related-worlds-copy">Nature Seed は、ポートフォリオのリラックスしたドロー・トゥ・ソルブ側です。スタジオの居心地の良いキャンディー マージ パズル、カラー破壊の物理アーケード、ハードコアな回転塔降下と比較してください。</p>
+        <p class="related-worlds-copy">Nature Seed は、ポートフォリオのリラックスした「描いて解く」担当です。スタジオの居心地の良いキャンディー マージ パズル、カラー破壊の物理アーケード、ハードコアな回転塔降下と比較してください。</p>
         <div class="related-world-grid" aria-label="WillowinWorlds ゲーム関連ページ">
           <a class="related-world-link is-primary" href="candy-shop.html">
             <span class="related-world-kicker">居心地の良いマージパズル</span>
@@ -405,7 +421,7 @@
           <article class="detail-card"><h3>ゲームプレイはどのように機能しますか?</h3><p>地形を読み、制約のあるルートを描き、両方のキャラクターがそれに反応するのを観察し、パスにもっときれいな角度が必要なときに再描画します。</p></article>
           <article class="detail-card"><h3>何が違うのですか？</h3><p>高圧タイマーや騒々しい障害ではなく、穏やかな復元、読みやすいライン物理学、効率的な 1 ラインのソリューションに重点を置いています。</p></article>
           <article class="detail-card"><h3>現在の状況はどうですか？</h3><p>2026 年 9 月 10 日に Nature Seed として 10 の起動レベルでリリースされました。描画感、進行性、読みやすさ、モバイルの安定性に引き続き重点を置いています。</p></article>
-          <article class="detail-card"><h3>公開素材は使用できますか？</h3><p>はい、プレス、出版社のレビュー、ストアの参照用です。ソース資産は、直接要求されない限り非公開のままです。</p></article>
+          <article class="detail-card"><h3>公開素材は使用できますか？</h3><p>はい、プレス、出版社のレビュー、ストアの参照用です。ソースアセットは、直接要求されない限り非公開のままです。</p></article>
         </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
@@ -437,9 +453,13 @@
         <a href="../legal.html">法的</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Nature%20Seed">お問い合わせ</a>
       </nav>
+      <div class="social-block social-block--game">
+        <p class="social-title" id="gameSocialTitle">WillowinWorlds をフォロー</p>
+        <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20260801-1"></script>
-  <script src="../i18n-runtime.js?v=20260910"></script>
+  <script src="../../game-theme.js?v=20261113-1"></script>
+  <script src="../i18n-runtime.js?v=20261113"></script>
 </body>
 </html>

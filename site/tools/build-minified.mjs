@@ -21,7 +21,9 @@ const staticFiles = [
   "_redirects",
   "favicon.ico",
   "manifest.webmanifest",
-  "robots.txt"
+  "robots.txt",
+  "SECURITY.md",
+  "yandex_d08a3b38c62144a2.html"
 ];
 
 const cssFiles = [
@@ -46,6 +48,7 @@ const cssFiles = [
   "css/responsive-tablet.css",
   "css/responsive-mobile.css",
   "css/responsive-preferences.css",
+  "css/home-polish-2026.css",
   "motion.css",
   "404.css"
 ];
@@ -77,7 +80,7 @@ const sourceFiles = [
 function minifyHtml(input) {
   return input
     .replace(/<!--[\s\S]*?-->/g, "")
-    .replace(/>\s+</g, "><")
+    .replace(/>\s+</g, "> <")
     .replace(/\s{2,}/g, " ")
     .trim();
 }
@@ -86,7 +89,7 @@ function minifyCss(input) {
   return input
     .replace(/\/\*[\s\S]*?\*\//g, "")
     .replace(/\s+/g, " ")
-    .replace(/\s*([{}:;,>+~])\s*/g, "$1")
+    .replace(/\s*([{};,>~])\s*/g, "$1")
     .replace(/;}/g, "}")
     .trim();
 }

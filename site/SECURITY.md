@@ -21,16 +21,26 @@ must be issued privately by email or a server-side redemption system.
 - No backend form submission and no network connection from the page.
 - DOM text created from JavaScript uses text nodes instead of HTML strings.
 - Theme storage is validated before use.
-- A strict meta CSP protects direct `index.html` usage where server headers do not exist.
-- `_headers` and `deploy/nginx-security.conf` provide the stronger HTTP-header layer for hosting.
+- Outbound links to the studio's store and social profiles are plain `<a href>` navigation to hosts allow-listed in `tools/security-check.mjs`; nothing is loaded from them.
+- Production is GitHub Pages, which does not send custom HTTP response headers. The strict meta CSP in every HTML page is the only policy layer this repository applies there.
+- `_headers`, `_redirects` and everything in `deploy/` are not applied by GitHub Pages and are not published. They are kept only as ready-made configuration for a host that supports them.
+- Header-only protections (`frame-ancestors` and clickjacking defense, which a meta CSP ignores, `X-Frame-Options`, `Permissions-Policy`) are therefore not in effect on GitHub Pages.
+
+## CSP limits by design
+
+- `frame-src`, `child-src`, `media-src`, `connect-src`, `font-src` and `worker-src` are `'none'`. Embedded players or iframes, audio/video, web fonts and any `fetch`/XHR/WebSocket call are blocked.
+- `trusted-types 'none'` with `require-trusted-types-for 'script'` blocks HTML injection through DOM sinks.
+- Allowing any of these needs a CSP change in every HTML page (home, press kit, policy, game and all localized pages), a review of the new origin, and an update of `tools/security-check.mjs`.
 
 ## Deployment checklist
 
 1. Serve the site only over HTTPS.
-2. Apply the security headers in `_headers` on a static host that supports that file,
-   include `deploy/nginx-security.conf` in an HTTPS Nginx server block, or use
+2. Only when hosting somewhere that can send headers (not GitHub Pages): apply the
+   security headers in `_headers` on a static host that supports that file, include
+   `deploy/nginx-security.conf` in an HTTPS Nginx server block, or use
    `deploy/apache-security.htaccess` on an HTTPS Apache host with `mod_headers`.
-3. Verify the live headers with a browser network panel or a security-header scanner.
+3. Verify the live behavior with a browser network panel or a security-header scanner.
+   On GitHub Pages only the meta CSP can be observed.
 4. Keep hosting, DNS, repository, and domain registrar accounts behind MFA and least
    privilege access.
 5. Deploy from a protected branch and review every future external script, iframe,
@@ -40,7 +50,7 @@ must be issued privately by email or a server-side redemption system.
    regressions such as inline event handlers, external assets, network APIs, and
    token-shaped strings in client JavaScript.
 
-`Strict-Transport-Security` currently uses one year without `includeSubDomains`.
+Where `_headers` or the `deploy/` snippets are used, `Strict-Transport-Security` currently uses one year without `includeSubDomains`.
 Add `includeSubDomains` or preload only after every subdomain is HTTPS-ready.
 Optional preload snippets live in `deploy/hsts-preload-nginx.conf` and
 `deploy/hsts-preload-apache.htaccess`; keep them disabled until that condition is

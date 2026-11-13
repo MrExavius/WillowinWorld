@@ -605,6 +605,7 @@
     repeating-linear-gradient(118deg, rgba(26, 101, 140, 0.04) 0 1px, transparent 1px 14px),
     rgba(247, 254, 255, 0.72);
   box-shadow: 0 22px 54px rgba(33, 155, 184, 0.12);
+  -webkit-backdrop-filter: blur(14px) saturate(1.08);
   backdrop-filter: blur(14px) saturate(1.08);
 }
 
@@ -655,6 +656,7 @@
     repeating-linear-gradient(118deg, rgba(26, 101, 140, 0.04) 0 1px, transparent 1px 13px),
     rgba(252, 255, 250, 0.72);
   box-shadow: 0 18px 42px rgba(33, 155, 184, 0.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.06);
   backdrop-filter: blur(10px) saturate(1.06);
 }
 
@@ -810,6 +812,34 @@
   overflow-wrap: anywhere;
 }
 
+.social-links--detailed .social-list {
+  display: grid;
+  gap: 6px;
+}
+
+.social-links--detailed .social-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0 12px;
+  padding: 8px 14px;
+  border-radius: 14px;
+  text-align: start;
+}
+
+.social-link-name {
+  font-weight: 850;
+}
+
+.social-link-handle {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
 .press-kit-ocean-page .press-kit-section .section-head {
   margin-bottom: clamp(22px, 3vw, 34px);
 }
@@ -843,6 +873,7 @@
     repeating-linear-gradient(118deg, rgba(26, 101, 140, 0.04) 0 1px, transparent 1px 13px),
     rgba(252, 255, 250, 0.7);
   box-shadow: 0 18px 42px rgba(33, 155, 184, 0.1);
+  -webkit-backdrop-filter: blur(10px) saturate(1.06);
   backdrop-filter: blur(10px) saturate(1.06);
 }
 

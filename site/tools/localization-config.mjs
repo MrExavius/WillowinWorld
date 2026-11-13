@@ -1,6 +1,6 @@
 export const siteOrigin = "https://willowinworlds.com";
 export const contactEmail = "willowinworlds@gmail.com";
-export const localizationLastModified = "2026-09-10";
+export const localizationLastModified = "2026-11-13";
 
 export const locales = Object.freeze([
   Object.freeze({
@@ -497,3 +497,58 @@ export function alternateLinks(page) {
     { hreflang: "x-default", href: pageUrl(sourceLocale, page) }
   ];
 }
+
+// Official studio channels (owner list, 2026-11-13). Each locale shows one regional set;
+// X, Reddit and VK are shared by every set and VK is always last.
+// Hosts used here must stay in the external-link allowlist of security-check.mjs.
+const sharedSocialProfiles = Object.freeze([
+  Object.freeze({ name: "X", handle: "@willowinworlds", url: "https://x.com/willowinworlds" }),
+  Object.freeze({ name: "Reddit", handle: "u/WillowinWorlds", url: "https://www.reddit.com/user/WillowinWorlds/" }),
+  Object.freeze({ name: "VK", handle: "vk.ru/willowinworlds", url: "https://vk.ru/willowinworlds" })
+]);
+const facebookGroup = Object.freeze({ name: "Facebook", handle: "groups/willowinworlds", url: "https://www.facebook.com/groups/willowinworlds" });
+
+export const socialProfileSets = Object.freeze({
+  en: Object.freeze([
+    Object.freeze({ name: "YouTube", handle: "@WillowinWorlds", url: "https://www.youtube.com/@WillowinWorlds" }),
+    Object.freeze({ name: "TikTok", handle: "@willowinworlds", url: "https://www.tiktok.com/@willowinworlds" }),
+    Object.freeze({ name: "Instagram", handle: "@willowinworlds", url: "https://www.instagram.com/willowinworlds/" }),
+    Object.freeze({ name: "Threads", handle: "@willowinworlds", url: "https://www.threads.com/@willowinworlds" }),
+    facebookGroup,
+    ...sharedSocialProfiles
+  ]),
+  // Facebook is blocked in Russia, so the RU set has no Facebook fallback.
+  ru: Object.freeze([
+    Object.freeze({ name: "Telegram", handle: "@WillowinWorlds", url: "https://t.me/WillowinWorlds" }),
+    Object.freeze({ name: "YouTube", handle: "@WillowinWorlds_RU", url: "https://www.youtube.com/@WillowinWorlds_RU" }),
+    Object.freeze({ name: "TikTok", handle: "@willowinworlds_ru", url: "https://www.tiktok.com/@willowinworlds_ru" }),
+    Object.freeze({ name: "Instagram", handle: "@willowinworlds_ru", url: "https://www.instagram.com/willowinworlds_ru/" }),
+    Object.freeze({ name: "Threads", handle: "@willowinworlds_ru", url: "https://www.threads.com/@willowinworlds_ru" }),
+    ...sharedSocialProfiles
+  ]),
+  es: Object.freeze([
+    Object.freeze({ name: "YouTube", handle: "@WillowinWorlds_ES", url: "https://www.youtube.com/@WillowinWorlds_ES" }),
+    Object.freeze({ name: "TikTok", handle: "@willowinworlds_es", url: "https://www.tiktok.com/@willowinworlds_es" }),
+    Object.freeze({ name: "Instagram", handle: "@willowinworlds_es_pr", url: "https://www.instagram.com/willowinworlds_es_pr/" }),
+    Object.freeze({ name: "Threads", handle: "@willowinworlds_es", url: "https://www.threads.com/@willowinworlds_es" }),
+    facebookGroup,
+    ...sharedSocialProfiles
+  ])
+});
+
+// CIS languages use the RU set; Spanish and Portuguese use the ES set; everything else uses EN.
+const socialSetByLocale = Object.freeze({
+  ru: "ru", kk: "ru", uz: "ru", hy: "ru", tt: "ru",
+  es: "es", "es-419": "es", pt: "es", "pt-pt": "es"
+});
+
+export function socialProfilesFor(localeCode) {
+  return socialProfileSets[socialSetByLocale[localeCode] || "en"];
+}
+
+// Store pages and studio profiles that are not language specific (Organization sameAs).
+export const studioStoreProfiles = Object.freeze([
+  "https://willowinworlds.itch.io/",
+  "https://gamejolt.com/@WillowinWorlds",
+  "https://www.indiexpo.net/en/users/WillowinWorlds"
+]);

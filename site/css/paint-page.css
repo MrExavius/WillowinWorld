@@ -402,6 +402,7 @@ body.paint-blasters-page[data-theme="dark"] {
     repeating-linear-gradient(118deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 14px),
     color-mix(in srgb, var(--surface-strong) 76%, transparent);
   box-shadow: 0 18px 42px rgba(20, 44, 70, 0.12);
+  -webkit-backdrop-filter: blur(14px) saturate(1.04);
   backdrop-filter: blur(14px) saturate(1.04);
 }
 
@@ -655,6 +656,7 @@ body.paint-blasters-page[data-theme="dark"] {
   padding-inline: 0;
   border-color: transparent;
   border-radius: 0;
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
   background: transparent;
   box-shadow: none;
@@ -747,6 +749,7 @@ body.paint-blasters-page[data-theme="dark"] {
     repeating-linear-gradient(118deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 13px),
     rgba(241, 249, 255, 0.68);
   box-shadow: 0 18px 42px rgba(20, 44, 70, 0.12);
+  -webkit-backdrop-filter: blur(12px) saturate(1.04);
   backdrop-filter: blur(12px) saturate(1.04);
 }
 

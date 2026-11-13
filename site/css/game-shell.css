@@ -91,6 +91,7 @@
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--surface-strong) 88%, transparent), color-mix(in srgb, var(--surface) 78%, transparent)),
     linear-gradient(135deg, color-mix(in srgb, var(--game-accent) 12%, transparent), color-mix(in srgb, var(--game-accent-2) 8%, transparent));
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
   box-shadow: 0 18px 50px var(--game-shadow);
 }
@@ -170,7 +171,6 @@
 .game-theme-toggle:focus-visible {
   border-color: color-mix(in srgb, var(--game-accent) 52%, var(--line));
   color: var(--text);
-  outline: none;
 }
 
 .game-theme-toggle {

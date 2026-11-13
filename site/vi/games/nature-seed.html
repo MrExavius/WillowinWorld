@@ -19,6 +19,7 @@
   <meta property="og:site_name" content="WillowinWorlds">
   <meta property="og:locale" content="vi_VN">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Nature Seed - Trò chơi giải đố vật lý vẽ để giải thư giãn">
   <meta name="twitter:description" content="Nature Seed phát hành vào ngày 10 tháng 9 năm 2026 với vật lý dòng giới hạn mực, Water Drop, Seed và phục hồi màu nước.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/nature-seed-og-1200x630.webp">
@@ -70,6 +71,18 @@
         "Câu đố vẽ đường thẳng"
       ],
       "gamePlatform": "Di động",
+      "sameAs": [
+        "https://willowinworlds.itch.io/nature-seed",
+        "https://gamejolt.com/games/nature-seed/1100526",
+        "https://www.indiexpo.net/en/games/nature-seed"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://willowinworlds.itch.io/nature-seed"
+      },
       "creativeWorkStatus": "Đã phát hành",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
@@ -88,17 +101,17 @@
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
-  <link rel="stylesheet" href="../../css/nature-scene.css">
-  <link rel="stylesheet" href="../../css/game-shell.css">
-  <link rel="stylesheet" href="../../css/nature-page.css">
-  <link rel="stylesheet" href="../../css/game-content.css">
-  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
-  <link rel="stylesheet" href="../../css/responsive-tablet.css">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -106,7 +119,7 @@
   <a class="skip-link" href="#game-main">Chuyển tới Nature Seed</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — quay lại WillowinWorlds">
-      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed biểu tượng trò chơi giải đố vẽ để giải trên thiết bị di động" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed biểu tượng trò chơi giải đố vẽ để giải trên thiết bị di động" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>Trang trò chơi WillowinWorlds</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Điều hướng trang trò chơi">
@@ -143,12 +156,12 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
             <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
           </picture>
-          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
             <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
           </svg>
@@ -182,8 +195,10 @@
           <p class="hero-copy">Một câu đố vật lý di động mang tính thiền định trong đó nét vẽ giới hạn mực trở thành một phần của cấp độ, đưa Water Drop và Seed lại với nhau để đánh thức một khu rừng màu nước.</p>
           <p class="nature-hero-note">Phát hành ngày 10 tháng 9 năm 2026 với tên Nature Seed. Bản dựng khởi chạy bao gồm 10 cấp độ, sao hiệu quả đường truyền, tiến trình bền bỉ và tạo đường truyền vật lý ổn định.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#download-assets">Tải xuống nội dung</a>
-            <a class="btn btn-ghost" href="#devlog">Ghi chú phát hành</a>
+            <a class="btn btn-primary" href="https://willowinworlds.itch.io/nature-seed">Chơi miễn phí trên trình duyệt</a>
+            <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
+            <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
+            <a class="btn btn-ghost" href="#download-assets">Tải xuống nội dung</a>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Điểm nổi bật của Nature Seed">
             <span><strong>Vẽ</strong><small>chi tiêu một ngân sách giới hạn</small></span>
@@ -197,7 +212,7 @@
             <div class="nature-stage nature-stage-showcase" aria-hidden="true">
               <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
               <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
-              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none" aria-hidden="true">
                 <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
                 <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
               </svg>
@@ -308,21 +323,22 @@
           <dl class="game-page-facts">
             <div><dt>Thể loại</dt><dd>Câu đố vật lý vẽ để giải</dd></div>
             <div><dt>Mục tiêu nền tảng</dt><dd>iOS / Android</dd></div>
+            <div><dt>Hiện đã có</dt><dd><span>Phiên bản web miễn phí</span>: <a href="https://willowinworlds.itch.io/nature-seed">itch.io</a> · <a href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a> · <a href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a></dd></div>
             <div><dt>Hình dạng phiên</dt><dd>Mức độ bình tĩnh ngắn</dd></div>
-            <div><dt>CTA chính</dt><dd>Tài liệu phát hành mở</dd></div>
+            <div><dt>CTA chính</dt><dd>Chơi miễn phí trên trình duyệt</dd></div>
           </dl>
         </div>
       </section>
       <section class="soft-card game-page-section" id="download-assets">
         <div class="eyebrow">Tải nội dung xuống</div>
-        <h2>Nature Seed tài sản báo chí và người sáng tạo</h2>
+        <h2>Nature Seed tài nguyên báo chí và người sáng tạo</h2>
         <p class="asset-kit-copy">Bản xem trước WebP được tuyển chọn để đưa tin biên tập, đánh giá của nhà xuất bản và tham chiếu bố cục cửa hàng. Các tệp nguồn có độ phân giải đầy đủ có sẵn từ studio theo yêu cầu.</p>
         <h3 class="asset-group-title">Thương hiệu và nhân vật</h3>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed biểu tượng trò chơi giải đố vật lý dòng vẽ để giải" loading="lazy" decoding="async"><strong>Biểu tượng trò chơi</strong><span>Biểu tượng câu đố vật lý vẽ đường để giải.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nhân vật giọt nước Nature Seed dành cho trò chơi giải đố vật lý trên thiết bị di động" loading="lazy" decoding="async"><strong>Water Drop</strong><span>Nội dung nhân vật cho câu đố giả tưởng phục hồi.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="Nhân vật hạt giống Nature Seed cho một trò chơi giải đố ấm cúng" loading="lazy" decoding="async"><strong>Nhân vật Seed</strong><span>Nội dung nhân vật cốt lõi cho Nature Seed.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed tài sản phục hồi tăng trưởng cây" loading="lazy" decoding="async"><strong>Sự phát triển của cây</strong><span>Tài sản phần thưởng phục hồi thiên nhiên.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed tài nguyên phục hồi tăng trưởng cây" loading="lazy" decoding="async"><strong>Sự phát triển của cây</strong><span>Tài nguyên phần thưởng phục hồi thiên nhiên.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed nền menu câu đố thư giãn" loading="lazy" decoding="async"><strong>Thực đơn rừng</strong><span>Nền menu câu đố di động thư giãn.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed nền cấp độ vật lý vẽ tay" loading="lazy" decoding="async"><strong>Nền trò chơi</strong><span>Nền cấp độ vật lý vẽ tay.</span></a>
         </div>
@@ -369,7 +385,7 @@
       <section class="soft-card game-page-section related-worlds" id="related">
         <div class="eyebrow">Thế giới liên quan</div>
         <h2>Chuyển từ vật lý dòng bình tĩnh sang móc WillowinWorlds tiếp theo.</h2>
-        <p class="related-worlds-copy">Nature Seed là phần rút ra để giải quyết thư giãn của danh mục đầu tư. Hãy so sánh nó với câu đố hợp nhất kẹo ấm cúng của studio, trò chơi vật lý phá hủy màu sắc và việc đi xuống tháp xoay khó tính.</p>
+        <p class="related-worlds-copy">Nature Seed là phần vẽ để giải thư giãn của danh mục đầu tư. Hãy so sánh nó với câu đố hợp nhất kẹo ấm cúng của studio, trò chơi vật lý phá hủy màu sắc và việc đi xuống tháp xoay khó tính.</p>
         <div class="related-world-grid" aria-label="Các trang trò chơi WillowinWorlds liên quan">
           <a class="related-world-link is-primary" href="candy-shop.html">
             <span class="related-world-kicker">Câu đố hợp nhất ấm cúng</span>
@@ -392,7 +408,7 @@
           <a class="related-world-link" href="../press-kit.html#press-games">
             <span class="related-world-kicker">Báo chí/nhà xuất bản</span>
             <strong>Thông tin về danh mục đầu tư</strong>
-            <p>Xem lại trạng thái trò chơi, tài sản công cộng, thể loại, nội dung hấp dẫn và bối cảnh của nhà xuất bản trong một phần bộ công cụ báo chí nhỏ gọn.</p>
+            <p>Xem lại trạng thái trò chơi, tài nguyên công cộng, thể loại, nội dung hấp dẫn và bối cảnh của nhà xuất bản trong một phần bộ công cụ báo chí nhỏ gọn.</p>
             <span class="related-world-meta">Bộ báo chí WillowinWorlds</span>
           </a>
         </div>
@@ -405,7 +421,7 @@
           <article class="detail-card"><h3>Cách chơi trò chơi hoạt động như thế nào?</h3><p>Đọc địa hình, vẽ tuyến đường bị hạn chế, xem cả hai nhân vật phản ứng với nó và vẽ lại khi đường đi cần một góc rõ ràng hơn.</p></article>
           <article class="detail-card"><h3>Điều gì khiến nó khác biệt?</h3><p>Trọng tâm là khôi phục yên tĩnh, vật lý dòng dễ đọc và các giải pháp một dòng hiệu quả thay vì bộ hẹn giờ áp suất cao hoặc lỗi ồn ào.</p></article>
           <article class="detail-card"><h3>Tình trạng hiện tại là gì?</h3><p>Được phát hành vào ngày 10 tháng 9 năm 2026 với tên gọi Nature Seed, với 10 cấp độ ra mắt. Trọng tâm vẫn là cảm giác vẽ, sự tiến triển, khả năng đọc và tính ổn định trên thiết bị di động.</p></article>
-          <article class="detail-card"><h3>Tài sản công có được sử dụng không?</h3><p>Có, dành cho báo chí, nhà xuất bản đánh giá và tài liệu tham khảo của cửa hàng. Tài sản nguồn được giữ kín trừ khi được yêu cầu trực tiếp.</p></article>
+          <article class="detail-card"><h3>Có thể sử dụng tài nguyên công khai không?</h3><p>Có, dành cho báo chí, nhà xuất bản đánh giá và tài liệu tham khảo của cửa hàng. Tài nguyên nguồn được giữ kín trừ khi được yêu cầu trực tiếp.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
@@ -437,9 +453,13 @@
         <a href="../legal.html">Pháp lý</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Nature%20Seed">Liên hệ</a>
       </nav>
+      <div class="social-block social-block--game">
+        <p class="social-title" id="gameSocialTitle">Theo dõi WillowinWorlds</p>
+        <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20260801-1"></script>
-  <script src="../i18n-runtime.js?v=20260910"></script>
+  <script src="../../game-theme.js?v=20261113-1"></script>
+  <script src="../i18n-runtime.js?v=20261113"></script>
 </body>
 </html>

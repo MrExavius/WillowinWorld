@@ -58,6 +58,7 @@
   const secretMessage = document.getElementById("secretMessage");
   const claimSecret = document.getElementById("claimSecret");
   const metaThemeColor = document.getElementById("metaThemeColor");
+  const languageDetails = document.querySelector(".language-switcher details");
   const contactDraftKey = "willow-contact-draft";
   let contactDraftTimer = 0;
   const mascotImage = new Image();
@@ -230,7 +231,8 @@
     [18, 96], [82, 96], [3, 84], [97, 86], [9, 60], [91, 62]
   ];
 
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const prefersReduced = reducedMotionQuery.matches;
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   const saveData = Boolean(connection && connection.saveData);
   const slowNetwork = Boolean(connection && /(^slow-2g$|^2g$|^3g$)/i.test(connection.effectiveType || ""));
@@ -397,7 +399,6 @@
     if (qualityState) qualityState.textContent = state.quality;
     if (modePill) modePill.textContent = state.disabled ? "STATIC" : state.lowMotion || state.lowData ? "LOW" : state.playMode ? "PLAY" : "AUTO";
     if (themeState) themeState.textContent = state.theme === "dark" ? "Night Magic" : "Daylight";
-    if (pauseMagic) pauseMagic.textContent = state.paused ? "Resume Magic" : "Pause Magic";
     if (lowMotion) lowMotion.textContent = state.lowMotion ? "Full Magic" : "Low Motion";
     if (disableMagic) disableMagic.textContent = state.disabled ? "Enable Magic" : "Disable Magic";
   }
@@ -532,6 +533,7 @@
   }
 
   function drawHillLayer(w, h, base, fill, lift, phase) {
+    if (!(w > 0)) return;
     ctx.save();
     ctx.fillStyle = fill;
     ctx.beginPath();
@@ -1303,6 +1305,10 @@
   }
 
   function render(now) {
+    if (!state.width || !state.height) {
+      state.rafId = null;
+      return;
+    }
     const frameInterval = targetFrameInterval();
     if (frameInterval && state.lastDraw && now - state.lastDraw < frameInterval) {
       state.rafId = requestAnimationFrame(render);
@@ -1560,7 +1566,7 @@
     const triggerInsideOpenModal = nextTrigger instanceof Element && Boolean(nextTrigger.closest(".modal.is-open"));
     closeGameDetails(false);
     closeContactModal(false);
-    closeSecretReward();
+    closeSecretReward(false);
     closeInfoModals(false);
     if (!triggerInsideOpenModal) activeInfoTrigger = nextTrigger;
     entry.modal.hidden = false;
@@ -1575,16 +1581,20 @@
     entry.modal.classList.remove("is-open");
     entry.modal.hidden = true;
     syncModalLock();
-    if (restoreFocus && activeInfoTrigger && typeof activeInfoTrigger.focus === "function") {
+    if (restoreFocus) restoreInfoTriggerFocus();
+  }
+
+  function restoreInfoTriggerFocus() {
+    if (activeInfoTrigger && typeof activeInfoTrigger.focus === "function") {
       activeInfoTrigger.focus();
     }
+    activeInfoTrigger = null;
   }
 
   function closeInfoModals(restoreFocus = true) {
+    const wasOpen = Object.values(infoModals).some(entry => entry.modal && entry.modal.classList.contains("is-open"));
     Object.keys(infoModals).forEach(key => closeInfoModal(key, false));
-    if (restoreFocus && activeInfoTrigger && typeof activeInfoTrigger.focus === "function") {
-      activeInfoTrigger.focus();
-    }
+    if (wasOpen && restoreFocus) restoreInfoTriggerFocus();
   }
 
   function getOpenModal() {
@@ -1670,10 +1680,12 @@
     window.setTimeout(() => (claimSecret || dismissSecret).focus(), 30);
   }
 
-  function closeSecretReward() {
+  function closeSecretReward(restoreFocus = true) {
+    const wasOpen = secretModal.classList.contains("is-open");
     secretModal.classList.remove("is-open");
     secretModal.hidden = true;
     syncModalLock();
+    if (wasOpen && restoreFocus && promoHuntToggle) promoHuntToggle.focus();
   }
 
   function unlockSecret(secret, point) {
@@ -1691,6 +1703,7 @@
   }
 
   function collectSecret(secret, index, glint, event) {
+    if (!body.classList.contains("promo-hunt-active")) return;
     if (secret.found.has(index) || secret.rewarded) return;
     event.preventDefault();
     event.stopPropagation();
@@ -1784,10 +1797,14 @@
   }
 
   function openContact(trigger) {
+    const opener = trigger || document.activeElement;
+    const sourceModal = opener instanceof Element ? opener.closest(".modal") : null;
     closeGameDetails(false);
     closeInfoModals(false);
     closeMenu();
-    activeContactTrigger = trigger || document.activeElement;
+    activeContactTrigger = sourceModal
+      ? (sourceModal === gameModal ? activeGameTrigger : activeInfoTrigger) || opener
+      : opener;
     contactModal.hidden = false;
     contactModal.classList.add("is-open");
     const requestedType = trigger && trigger.dataset ? trigger.dataset.contactType : "";
@@ -1895,7 +1912,7 @@
         const active = link === sectionLinks.get(id);
         link.classList.toggle("is-active", active);
         if (active) {
-          link.setAttribute("aria-current", "page");
+          link.setAttribute("aria-current", "location");
         } else {
           link.removeAttribute("aria-current");
         }
@@ -1969,6 +1986,7 @@
       const button = item.querySelector(".faq-question");
       const answer = item.querySelector(".faq-answer");
       if (!button || !answer) return;
+      item.classList.add("is-js");
       const buttonId = `faq-question-${index + 1}`;
       const answerId = `faq-answer-${index + 1}`;
       button.id = buttonId;
@@ -2004,21 +2022,21 @@
 
   function initSmoothAnchors() {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener("click", event => {
+      link.addEventListener("click", () => {
         if (link.hasAttribute("data-open-contact")) return;
-        const id = link.getAttribute("href");
-        const target = document.querySelector(id);
-        if (!target) return;
-        event.preventDefault();
         closeMenu();
-        target.scrollIntoView({ behavior: state.lowMotion ? "auto" : "smooth", block: "start" });
       });
     });
   }
 
   function initDeepLinkStability() {
     if (!window.location.hash) return;
-    const target = document.querySelector(window.location.hash);
+    let target = null;
+    try {
+      target = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+    } catch (error) {
+      // A malformed hash such as "#%25" must not abort the page script.
+    }
     if (!target) return;
     window.addEventListener("load", () => {
       window.requestAnimationFrame(() => {
@@ -2055,9 +2073,15 @@
       pauseMagic.addEventListener("click", () => {
         state.paused = !state.paused;
         state.disabled = false;
-        body.classList.toggle("magic-off", state.paused);
+        body.classList.toggle("animations-paused", state.paused);
+        pauseMagic.setAttribute("aria-pressed", String(state.paused));
         updateLabels();
-        if (!state.paused) startLoop();
+        if (state.paused) {
+          window.cancelAnimationFrame(state.rafId);
+          state.rafId = null;
+        } else {
+          startLoop();
+        }
       });
     }
     if (lowMotion) {
@@ -2113,8 +2137,7 @@
       persistContactDraft();
       const draft = getContactDraft();
       window.location.href = draft.href;
-      showToast("Email draft requested. If it did not open, use Copy message.");
-      closeContactModal();
+      setContactDraftStatus("Email app requested. If nothing opened, press Copy message or write to willowinworlds@gmail.com.");
     });
     if (copyContactMessage) {
       copyContactMessage.addEventListener("click", async () => {
@@ -2130,10 +2153,21 @@
     contactForm.addEventListener("input", scheduleContactDraft);
     contactForm.addEventListener("change", scheduleContactDraft);
     if (clearContactDraft) clearContactDraft.addEventListener("click", resetContactDraft);
+    document.addEventListener("pointerdown", event => {
+      if (languageDetails && languageDetails.open && !languageDetails.contains(event.target)) languageDetails.open = false;
+    });
     window.addEventListener("keydown", event => {
       trapModalFocus(event);
       if (event.key === "Escape") {
-        closeMenu();
+        if (languageDetails && languageDetails.open) {
+          languageDetails.open = false;
+          languageDetails.querySelector("summary").focus();
+          return;
+        }
+        if (body.classList.contains("menu-open")) {
+          closeMenu();
+          menuToggle.focus();
+        }
         closeContactModal();
         closeGameDetails();
         closeInfoModals();
@@ -2149,7 +2183,23 @@
     });
     if (!savedTheme && typeof colorSchemeQuery.addEventListener === "function") {
       colorSchemeQuery.addEventListener("change", event => {
+        try {
+          if (localStorage.getItem("willow-theme")) return;
+        } catch (error) {
+          // Storage is unavailable, so there is no saved choice to protect.
+        }
         setTheme(event.matches ? "dark" : "light", false);
+      });
+    }
+    if (typeof reducedMotionQuery.addEventListener === "function") {
+      reducedMotionQuery.addEventListener("change", event => {
+        state.lowMotion = event.matches;
+        state.quality = state.lowMotion || state.lowData ? "Low" : "Auto";
+        body.classList.toggle("low-motion", state.lowMotion);
+        state.backgroundCacheKey = "";
+        seedScene();
+        updateLabels();
+        startLoop();
       });
     }
   }
@@ -2161,7 +2211,14 @@
     window.requestAnimationFrame(() => {
       resizeScheduled = false;
       resize();
-      if (state.lowMotion) startLoop();
+      if (state.paused) {
+        const now = performance.now();
+        state.lastDraw = 0;
+        state.lastFrame = now;
+        render(now);
+      } else {
+        startLoop();
+      }
     });
   }
 
@@ -2174,7 +2231,6 @@
     if (!event.relatedTarget && !event.toElement) handlePointerLeave();
   });
   window.addEventListener("click", handlePointerDown);
-  window.addEventListener("touchend", handlePointerDown, { passive: true });
   mascotImage.addEventListener("load", startLoop, { once: true });
   mascotImage.addEventListener("error", () => body.classList.add("mascot-image-missing"), { once: true });
   mascotImage.src = assetUrl("assets/magic-cat-mascot.webp");

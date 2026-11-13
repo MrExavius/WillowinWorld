@@ -6,26 +6,26 @@
   <meta name="robots" content="noindex">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>404 — Catch the Lost Stars | WillowinWorlds</title>
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" href="assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="404.css">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/404.css?v=20261113-1">
 </head>
 <body data-game-state="idle" data-theme="dark">
   <main class="lost-stars-page" aria-label="404 Catch the Lost Stars mini game">
     <div class="starfield" aria-hidden="true"></div>
-    <canvas class="lost-stars-canvas" id="lostStarsCanvas"></canvas>
+    <canvas class="lost-stars-canvas" id="lostStarsCanvas" aria-hidden="true"></canvas>
 
     <header class="topbar">
-      <a class="brand" href="index.html" aria-label="Back to WillowinWorlds main menu">
-        <img src="assets/willowinworld-logo.webp" width="1024" height="1024" alt="" fetchpriority="high" decoding="async">
+      <a class="brand" href="/" aria-label="Back to WillowinWorlds main menu">
+        <img src="/assets/responsive/willowinworld-logo-64.webp" srcset="/assets/responsive/willowinworld-logo-64.webp 64w, /assets/responsive/willowinworld-logo-256.webp 256w" sizes="44px" width="64" height="64" alt="" fetchpriority="high" decoding="async">
         <span>
           <strong>WillowinWorlds</strong>
           <small>404 mini game</small>
         </span>
       </a>
       <div class="top-actions">
-        <a class="pill" href="index.html">Home</a>
+        <a class="pill" href="/">Home</a>
         <button class="pill pill-primary" type="button" data-start-game>Start game</button>
         <button class="icon-pill" type="button" data-pause-game aria-label="Pause game">II</button>
         <button class="icon-pill" type="button" data-theme-toggle aria-label="Switch to light theme">☾</button>
@@ -41,7 +41,7 @@
           <p class="microcopy">Choose mouse or keyboard on desktop. On mobile, move the cat with your finger. Space starts the game and toggles pause. Scores reset when the page closes.</p>
           <div class="actions">
             <button class="pill pill-primary" type="button" data-start-game>Start game · Space</button>
-            <a class="pill" href="index.html">Back to home</a>
+            <a class="pill" href="/">Back to home</a>
           </div>
           <div class="control-picker" role="group" aria-label="Desktop control mode">
             <button class="control-option is-active" type="button" data-control-mode="mouse" aria-pressed="true">Mouse</button>
@@ -70,24 +70,24 @@
             <span class="preview-spark preview-spark-three"></span>
             <span class="preview-score-pop">+10</span>
             <span class="preview-combo-pop">x3</span>
-            <img loading="lazy" class="preview-item star-a" src="assets/404/magic-cat-mascot_star1_clean.webp" width="512" height="512" data-sprite-preview="star1" alt="">
-            <img loading="lazy" class="preview-item star-b" src="assets/404/magic-cat-mascot_star3_clean.webp" width="512" height="512" data-sprite-preview="star3" alt="">
-            <img loading="lazy" class="preview-item heart" src="assets/404/magic-cat-mascot_heart_clean.webp" width="512" height="512" data-sprite-preview="heart" alt="">
-            <img loading="lazy" class="preview-item hole" src="assets/404/magic-cat-mascot_blackhole_clean.webp" width="512" height="512" data-sprite-preview="blackhole" alt="">
-            <img loading="lazy" class="preview-cat" src="assets/404/magic-cat-mascot_stay_clean.webp" width="512" height="512" data-sprite-preview="stay" alt="">
+            <img loading="lazy" class="preview-item star-a" src="/assets/404/magic-cat-mascot_star1_clean.webp" width="512" height="512" data-sprite-preview="star1" alt="">
+            <img loading="lazy" class="preview-item star-b" src="/assets/404/magic-cat-mascot_star3_clean.webp" width="512" height="512" data-sprite-preview="star3" alt="">
+            <img loading="lazy" class="preview-item heart" src="/assets/404/magic-cat-mascot_heart_clean.webp" width="512" height="512" data-sprite-preview="heart" alt="">
+            <img loading="lazy" class="preview-item hole" src="/assets/404/magic-cat-mascot_blackhole_clean.webp" width="512" height="512" data-sprite-preview="blackhole" alt="">
+            <img loading="lazy" class="preview-cat" src="/assets/404/magic-cat-mascot_stay_clean.webp" width="512" height="512" data-sprite-preview="stay" alt="">
           </div>
         </aside>
       </div>
     </section>
 
-    <div class="hud" aria-live="polite">
+    <div class="hud">
       <div class="score-pill"><span>Score</span><b id="scoreValue">0</b></div>
       <div class="score-pill"><span>Session best</span><b id="bestValue">0</b></div>
       <div class="score-pill combo-pill"><span>Combo</span><b id="comboValue">x1</b></div>
       <div class="score-pill"><span>Lives</span><b id="livesValue">3</b></div>
       <div class="score-pill effect-pill"><span>Effect</span><b id="effectValue">None</b></div>
       <button class="pill" type="button" data-pause-game>Pause</button>
-      <a class="pill" href="index.html">Back to home</a>
+      <a class="pill" href="/">Back to home</a>
     </div>
 
     <div class="mobile-controls" role="group" aria-label="Mobile movement controls">
@@ -95,9 +95,9 @@
       <button type="button" data-touch-right aria-label="Move right">&gt;</button>
     </div>
 
-    <div class="toast" id="gameToast"></div>
+    <div class="toast" id="gameToast" role="status" aria-live="polite"></div>
   </main>
 
-  <script src="404.js"></script>
+  <script src="/404.js?v=20261113-1"></script>
 </body>
 </html>

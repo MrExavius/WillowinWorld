@@ -384,6 +384,7 @@ body.ball-is-god-page[data-theme="dark"] {
     repeating-linear-gradient(118deg, rgba(47, 91, 150, 0.045) 0 1px, transparent 1px 14px),
     color-mix(in srgb, var(--surface-strong) 76%, transparent);
   box-shadow: 0 18px 42px rgba(47, 91, 150, 0.12);
+  -webkit-backdrop-filter: blur(14px) saturate(1.04);
   backdrop-filter: blur(14px) saturate(1.04);
 }
 
@@ -702,6 +703,7 @@ body.ball-is-god-page[data-theme="dark"] {
   padding-inline: 0;
   border-color: transparent;
   border-radius: 0;
+  -webkit-backdrop-filter: none;
   backdrop-filter: none;
   background: transparent;
   box-shadow: none;
@@ -794,6 +796,7 @@ body.ball-is-god-page[data-theme="dark"] {
     repeating-linear-gradient(118deg, rgba(47, 91, 150, 0.045) 0 1px, transparent 1px 13px),
     rgba(247, 252, 255, 0.7);
   box-shadow: 0 18px 42px rgba(47, 91, 150, 0.12);
+  -webkit-backdrop-filter: blur(12px) saturate(1.04);
   backdrop-filter: blur(12px) saturate(1.04);
 }
 
@@ -1001,6 +1004,7 @@ body.ball-is-god-page[data-theme="dark"] {
   color: var(--text);
   background: color-mix(in srgb, var(--surface-strong) 84%, transparent);
   box-shadow: 0 14px 28px rgba(47, 91, 150, 0.1);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
@@ -1162,6 +1166,7 @@ body.ball-is-god-page[data-theme="dark"] {
   border-top: 1px solid rgba(226, 242, 255, 0.22);
   color: #f7fbff;
   background: linear-gradient(90deg, rgba(5, 19, 43, 0.94), rgba(10, 29, 61, 0.9));
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 }
 
@@ -1257,6 +1262,7 @@ body.ball-is-god-page[data-theme="dark"] {
   background: rgba(247, 238, 250, 0.56);
   font-size: 0.69rem;
   font-weight: 900;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -1285,6 +1291,7 @@ body.ball-is-god-page[data-theme="dark"] {
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.32);
   transform: translateX(-50%);
   white-space: nowrap;
+  -webkit-backdrop-filter: blur(9px);
   backdrop-filter: blur(9px);
 }
 

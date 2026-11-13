@@ -26,6 +26,7 @@ const cssFiles = [
   "css/responsive-tablet.css",
   "css/responsive-mobile.css",
   "css/responsive-preferences.css",
+  "css/home-polish-2026.css",
   "motion.css"
 ];
 const css = (await Promise.all(cssFiles.map(file => readFile(join(siteRoot, file), "utf8")))).join("\n");

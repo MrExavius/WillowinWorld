@@ -12,6 +12,7 @@
   --line: rgba(226, 248, 239, 0.18);
   --moon: #fff8df;
   --cyan: #71e7ff;
+  --focus-ring: #71e7ff;
   --blue: #42b9f2;
   --brand-w: #4289ff;
   --brand-w-shine: #b2dfff;
@@ -51,7 +52,7 @@
   --line-tight: 1.08;
   --line-copy: 1.62;
   --ease: cubic-bezier(.2, .8, .2, 1);
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 [data-theme="light"] {
@@ -67,6 +68,7 @@
   --line: rgba(7, 73, 112, 0.16);
   --moon: #fffceb;
   --cyan: #08a9c9;
+  --focus-ring: #066f8a;
   --blue: #168ce0;
   --brand-w: #0fb9de;
   --brand-w-shine: #8cefff;
@@ -197,6 +199,19 @@ body.low-motion .ambient-only {
   animation-play-state: paused !important;
 }
 
+body.animations-paused *,
+body.animations-paused *::before,
+body.animations-paused *::after {
+  animation-play-state: paused !important;
+}
+
+/* A paused entrance animation would leave these links stuck at opacity 0 (e.g. when the mobile menu opens). */
+body.animations-paused .main-nav a {
+  animation: none;
+  opacity: 1;
+  transform: none;
+}
+
 body.modal-open,
 body.menu-open {
   overflow: hidden;
@@ -205,19 +220,24 @@ body.menu-open {
 .skip-link {
   position: fixed;
   top: 12px;
-  left: 50%;
+  left: 12px;
   z-index: 120;
+  max-width: calc(100vw - 24px);
   padding: 10px 16px;
   border-radius: 999px;
   color: #06111f;
   background: linear-gradient(135deg, #eafdff, #76e7ff 40%, #bfa4ff 100%);
   box-shadow: var(--shadow-soft);
-  transform: translate(-50%, -140%);
-  transition: transform .24s var(--ease);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-12px);
+  transition: transform .24s var(--ease), opacity .24s var(--ease);
 }
 
 .skip-link:focus {
-  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 a {
@@ -279,10 +299,12 @@ picture img[width][height] {
   right: 0;
   z-index: 50;
   height: var(--header-h);
+  container: site-header / inline-size;
   border-bottom: 1px solid color-mix(in srgb, var(--paper) 20%, var(--line));
   background:
     linear-gradient(90deg, color-mix(in srgb, var(--bg) 82%, transparent), color-mix(in srgb, var(--bg-2) 68%, transparent)),
     repeating-linear-gradient(110deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 12px);
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
 
@@ -415,13 +437,17 @@ picture img[width][height] {
 .main-nav a.is-active {
   color: var(--text);
   background: var(--surface-soft);
-  outline: none;
 }
 
 .header-actions {
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
   gap: 10px;
+}
+
+.header-actions > * {
+  flex: 0 0 auto;
 }
 
 .btn {
@@ -467,8 +493,13 @@ picture img[width][height] {
 .filter-btn:focus-visible,
 .faq-question:focus-visible,
 .menu-toggle:focus-visible,
+.main-nav a:focus-visible,
+.hero-worlds a:focus-visible,
+.game-detail-nav a:focus-visible,
+.game-theme-toggle:focus-visible,
+.social-link:focus-visible,
 .secret-glint:focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--focus-ring);
   outline-offset: 3px;
 }
 
@@ -492,6 +523,33 @@ picture img[width][height] {
   min-height: 44px;
   padding: 9px 13px;
   font-size: 0.88rem;
+}
+
+/* Icon-only pause control: the translated label stays in the DOM for assistive tech, so any locale fits. */
+.header-actions .motion-toggle {
+  width: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+.header-actions .motion-toggle::before {
+  content: "";
+  flex: none;
+  box-sizing: border-box;
+  width: 12px;
+  height: 14px;
+  border-inline: 4px solid currentColor;
+}
+
+.motion-toggle[aria-pressed="true"] {
+  border-color: var(--focus-ring);
+  background: color-mix(in srgb, var(--cyan) 24%, var(--surface-strong));
+  box-shadow: inset 0 0 0 1px var(--focus-ring);
 }
 
 .icon-btn,
@@ -672,6 +730,7 @@ main {
   border-radius: 999px;
   color: var(--muted);
   background: var(--surface-soft);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   font-size: 0.86rem;
   font-weight: 700;
@@ -772,7 +831,6 @@ h1 {
   transform: translateY(-3px);
   border-color: rgba(113, 231, 255, 0.38);
   background: rgba(113, 231, 255, 0.12);
-  outline: none;
 }
 
 .hero-worlds strong {
@@ -842,6 +900,7 @@ h1 {
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--surface-strong) 86%, transparent), color-mix(in srgb, var(--cyan) 18%, transparent));
   box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: blur(14px);
   backdrop-filter: blur(14px);
   font-size: 0.78rem;
   font-weight: 900;
@@ -921,6 +980,7 @@ h1 {
   border: 1px solid var(--line);
   border-radius: 18px;
   background: rgba(6, 14, 27, 0.58);
+  -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
   color: rgba(244,251,255,0.82);
   font-size: 0.82rem;
@@ -1052,6 +1112,7 @@ h1 {
     repeating-linear-gradient(118deg, rgba(255,255,255,0.052) 0 1px, transparent 1px 14px),
     linear-gradient(156deg, color-mix(in srgb, var(--surface) 94%, var(--paper)), color-mix(in srgb, var(--surface) 82%, var(--blue)));
   box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: blur(18px);
   backdrop-filter: blur(18px);
 }
 
@@ -1216,6 +1277,7 @@ h1 {
   color: var(--text);
   background: color-mix(in srgb, var(--surface) 92%, transparent);
   box-shadow: 0 14px 40px rgba(0, 8, 27, 0.28);
+  -webkit-backdrop-filter: blur(18px) saturate(1.18);
   backdrop-filter: blur(18px) saturate(1.18);
   cursor: pointer;
   list-style: none;
@@ -1257,6 +1319,7 @@ h1 {
   border-radius: 24px;
   background: var(--surface-strong);
   box-shadow: 0 14px 40px rgba(0, 8, 27, 0.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.18);
   backdrop-filter: blur(18px) saturate(1.18);
 }
 

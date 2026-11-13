@@ -37,7 +37,12 @@ const latestDevlogs = await loadLatestDevlogs();
 const latestByFile = new Map(latestDevlogs.map(update => [update.file, update]));
 const compactScriptLocales = new Set(["zh-hans", "zh-hant", "ja", "ko", "th"]);
 const studioId = `${siteOrigin}/#studio`;
-const legacyPublicDomain = ["willowinworld", ".com"].join("");
+// Patterns are written so that this file does not match itself (it is scanned too).
+const forbiddenPublicStrings = [
+  { label: "legacy public domain (singular)", pattern: /willowinworld\.com/gi },
+  { label: "misspelled studio name", pattern: /wilowinworl[d]/gi },
+  { label: "mailbox at the studio domain, which has no mailbox", pattern: /[\p{L}\p{N}_.+-]+@willowinworlds\.com/giu }
+];
 const migrationTextExtensions = new Set([".conf", ".css", ".htaccess", ".html", ".js", ".json", ".md", ".mjs", ".txt", ".webmanifest", ".xml"]);
 const migrationTextNames = new Set(["_headers", "_redirects"]);
 const migrationSkippedDirectories = new Set(["dist", "reports"]);
@@ -103,8 +108,11 @@ async function migrationTextFiles(directory) {
 
 for (const file of await migrationTextFiles(siteRoot)) {
   const content = await readFile(file, "utf8");
-  if (content.includes(legacyPublicDomain)) {
-    fail(relative(siteRoot, file), `contains legacy public domain ${legacyPublicDomain}`);
+  for (const { label, pattern } of forbiddenPublicStrings) {
+    for (const match of content.matchAll(pattern)) {
+      const line = content.slice(0, match.index).split("\n").length;
+      fail(relative(siteRoot, file), `line ${line} contains ${label}: ${match[0]}`);
+    }
   }
 }
 
@@ -155,7 +163,10 @@ for (const page of pages) {
   titles.set(titleKey, page.file);
   descriptions.set(descriptionKey, page.file);
 
-  if (!robots.includes("index") || !robots.includes("follow")) fail(page.file, "robots must include index and follow");
+  const robotsDirectives = robots.split(",").map(directive => directive.trim());
+  if (!robotsDirectives.includes("index") || !robotsDirectives.includes("follow") || robotsDirectives.some(directive => ["noindex", "nofollow", "none"].includes(directive))) {
+    fail(page.file, "robots must include index and follow, without noindex, nofollow or none");
+  }
   if (canonicalTags.length !== 1 || attr(canonicalTags[0] || "", "href") !== page.canonical) {
     fail(page.file, "canonical must be unique and self-referencing");
   }

@@ -19,6 +19,7 @@
   <meta property="og:site_name" content="WillowinWorlds">
   <meta property="og:locale" content="ko_KR">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Nature Seed - 편안한 그림 그리기 물리 퍼즐 게임">
   <meta name="twitter:description" content="Nature Seed는 잉크 제한 선 물리학, Water Drop, Seed 및 수채화 복원 기능을 포함하여 2026년 9월 10일에 출시되었습니다.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/nature-seed-og-1200x630.webp">
@@ -70,6 +71,18 @@
         "선 그리기 퍼즐"
       ],
       "gamePlatform": "모바일",
+      "sameAs": [
+        "https://willowinworlds.itch.io/nature-seed",
+        "https://gamejolt.com/games/nature-seed/1100526",
+        "https://www.indiexpo.net/en/games/nature-seed"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "url": "https://willowinworlds.itch.io/nature-seed"
+      },
       "creativeWorkStatus": "출시됨",
       "datePublished": "2026-09-10",
       "dateModified": "2026-09-10",
@@ -88,17 +101,17 @@
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/Nature%20Seeds/Icon-site.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20260801-2">
-  <link rel="stylesheet" href="../../css/nature-scene.css">
-  <link rel="stylesheet" href="../../css/game-shell.css">
-  <link rel="stylesheet" href="../../css/nature-page.css">
-  <link rel="stylesheet" href="../../css/game-content.css">
-  <link rel="stylesheet" href="../../css/site-sections.css">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/nature-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
-  <link rel="stylesheet" href="../../css/responsive-tablet.css">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -106,7 +119,7 @@
   <a class="skip-link" href="#game-main">Nature Seed으로 건너뛰기</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — WillowinWorlds으로 돌아가기">
-      <img src="../../assets/Nature%20Seeds/Icon-site.webp" width="640" height="640" alt="Nature Seed 모바일 그리기 퍼즐 게임 아이콘" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed 모바일 그리기 퍼즐 게임 아이콘" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>WillowinWorlds 게임 페이지</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="게임 페이지 탐색">
@@ -143,12 +156,12 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
             <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
           </picture>
-          <svg class="nature-route" viewBox="0 0 640 560" fill="none">
+          <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
             <path d="M72 356C166 352 181 426 279 425C374 424 389 366 546 382" />
           </svg>
@@ -182,11 +195,13 @@
           <p class="hero-copy">잉크가 제한된 스트로크가 레벨의 일부가 되어 Water Drop과 Seed을 함께 사용하여 수채화 숲을 깨우는 명상적인 모바일 물리학 퍼즐입니다.</p>
           <p class="nature-hero-note">2026년 9월 10일 Nature Seed로 출시되었습니다. 출시 빌드에는 10개 레벨, 라인 효율성 스타, 지속적인 진행 및 안정적인 물리적 라인 생성이 포함됩니다.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#download-assets">자산 다운로드</a>
-            <a class="btn btn-ghost" href="#devlog">출시 노트</a>
+            <a class="btn btn-primary" href="https://willowinworlds.itch.io/nature-seed">브라우저에서 무료로 플레이</a>
+            <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
+            <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
+            <a class="btn btn-ghost" href="#download-assets">에셋 다운로드</a>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Nature Seed 하이라이트">
-            <span><strong>추첨</strong><small>제한된 라인 예산을 사용합니다.</small></span>
+            <span><strong>그리기</strong><small>제한된 라인 예산을 사용합니다.</small></span>
             <span><strong>연결</strong><small>Water Drop을 Seed으로 가져옵니다.</small></span>
             <span><strong>블룸</strong><small>복원된 장면을 획득하세요</small></span>
           </div>
@@ -197,7 +212,7 @@
             <div class="nature-stage nature-stage-showcase" aria-hidden="true">
               <img loading="lazy" class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_1_0-site.webp" width="1440" height="810" alt="" decoding="async">
               <img loading="lazy" class="nature-level nature-level-painted" src="../../assets/Nature%20Seeds/Galvnie_1_1-site.webp" width="1280" height="714" alt="" decoding="async">
-              <svg class="nature-route" viewBox="0 0 640 360" fill="none">
+              <svg class="nature-route" viewBox="0 0 640 360" fill="none" aria-hidden="true">
                 <path d="M34 110C115 111 128 174 219 174C306 174 309 116 387 116C480 116 476 240 592 240" />
                 <path d="M84 248C173 244 178 308 291 308C378 308 413 270 546 276" />
               </svg>
@@ -308,21 +323,22 @@
           <dl class="game-page-facts">
             <div><dt>장르</dt><dd>그림으로 풀 수 있는 물리 퍼즐</dd></div>
             <div><dt>플랫폼 대상</dt><dd>iOS / 안드로이드</dd></div>
+            <div><dt>지금 이용 가능</dt><dd><span>무료 웹 버전</span>: <a href="https://willowinworlds.itch.io/nature-seed">itch.io</a> · <a href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a> · <a href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a></dd></div>
             <div><dt>세션 형태</dt><dd>짧은 차분 레벨</dd></div>
-            <div><dt>기본 CTA</dt><dd>출시 자료 공개</dd></div>
+            <div><dt>기본 CTA</dt><dd>브라우저에서 무료로 플레이</dd></div>
           </dl>
         </div>
       </section>
       <section class="soft-card game-page-section" id="download-assets">
-        <div class="eyebrow">자산 다운로드</div>
-        <h2>Nature Seed 언론 및 창작자 자산</h2>
+        <div class="eyebrow">에셋 다운로드</div>
+        <h2>Nature Seed 언론 및 창작자 에셋</h2>
         <p class="asset-kit-copy">편집 범위, 게시자 리뷰 및 매장 레이아웃 참조를 위해 엄선된 WebP 미리보기입니다. 전체 해상도 소스 파일은 요청 시 스튜디오에서 제공됩니다.</p>
         <h3 class="asset-group-title">브랜드 및 캐릭터</h3>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" download><img src="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp" srcset="../../assets/previews/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 360w, ../../assets/downloads/nature-seed/nature-seed-draw-to-solve-water-physics-puzzle-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Nature Seed 그리기-해결 라인 물리 퍼즐 게임 아이콘" loading="lazy" decoding="async"><strong>게임 아이콘</strong><span>그리기-해결 라인 물리 퍼즐 아이콘.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-drop-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-drop-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="모바일 물리 퍼즐 게임용 Nature Seed 물방울 캐릭터" loading="lazy" decoding="async"><strong>Water Drop</strong><span>복원 퍼즐 판타지용 캐릭터 에셋입니다.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="아늑한 퍼즐 게임을 위한 Nature Seed 시드 캐릭터" loading="lazy" decoding="async"><strong>Seed 문자</strong><span>Nature Seed의 핵심 캐릭터 자산입니다.</span></a>
-          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed 나무 성장 복원 자산" loading="lazy" decoding="async"><strong>나무 성장</strong><span>자연복원보상자산.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-seed-character.webp" download><img src="../../assets/previews/nature-seed/nature-seed-seed-character.webp" srcset="../../assets/previews/nature-seed/nature-seed-seed-character.webp 360w, ../../assets/downloads/nature-seed/nature-seed-seed-character.webp 500w" sizes="(max-width: 760px) 34vw, 76px" width="500" height="500" alt="아늑한 퍼즐 게임을 위한 Nature Seed 시드 캐릭터" loading="lazy" decoding="async"><strong>Seed 문자</strong><span>Nature Seed의 핵심 캐릭터 에셋입니다.</span></a>
+          <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp" download><img src="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp" srcset="../../assets/previews/nature-seed/nature-seed-nature-restoration-tree-growth.webp 360w, ../../assets/downloads/nature-seed/nature-seed-nature-restoration-tree-growth.webp 669w" sizes="(max-width: 760px) 34vw, 76px" width="669" height="373" alt="Nature Seed 나무 성장 복원 에셋" loading="lazy" decoding="async"><strong>나무 성장</strong><span>자연복원보상에셋.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-relaxing-puzzle-forest-menu-background.webp 1600w" sizes="(max-width: 760px) 34vw, 76px" width="1600" height="893" alt="Nature Seed 편안한 퍼즐 숲 메뉴 배경" loading="lazy" decoding="async"><strong>숲 메뉴</strong><span>편안한 모바일 퍼즐 메뉴 배경.</span></a>
           <a class="asset-link" href="../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp" download><img src="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp" srcset="../../assets/previews/nature-seed/nature-seed-water-physics-in-game-background.webp 360w, ../../assets/downloads/nature-seed/nature-seed-water-physics-in-game-background.webp 1280w" sizes="(max-width: 760px) 34vw, 76px" width="1280" height="720" alt="Nature Seed 손으로 그린 물리 수준 배경" loading="lazy" decoding="async"><strong>게임플레이 배경</strong><span>손으로 그린 물리 레벨 배경.</span></a>
         </div>
@@ -392,7 +408,7 @@
           <a class="related-world-link" href="../press-kit.html#press-games">
             <span class="related-world-kicker">언론/출판사</span>
             <strong>포트폴리오 정보</strong>
-            <p>하나의 컴팩트한 보도 자료 섹션에서 게임 상태, 공개 자산, 장르, 후크 및 게시자 컨텍스트를 검토합니다.</p>
+            <p>하나의 컴팩트한 보도 자료 섹션에서 게임 상태, 공개 에셋, 장르, 후크 및 게시자 컨텍스트를 검토합니다.</p>
             <span class="related-world-meta">WillowinWorlds 프레스 키트</span>
           </a>
         </div>
@@ -405,7 +421,7 @@
           <article class="detail-card"><h3>게임플레이는 어떻게 진행되나요?</h3><p>지형을 읽고, 제한된 경로를 그리고, 두 캐릭터가 이에 반응하는 것을 관찰하고, 경로에 더 깔끔한 각도가 필요할 때 다시 그립니다.</p></article>
           <article class="detail-card"><h3>무엇이 다른가요?</h3><p>고압 타이머나 시끄러운 고장보다는 차분한 복원, 판독 가능한 라인 물리학 및 효율적인 단일 라인 솔루션에 중점을 둡니다.</p></article>
           <article class="detail-card"><h3>현재 상황은 어떤가요?</h3><p>2026년 9월 10일에 Nature Seed로 출시되었으며 10가지 출시 레벨이 있습니다. 드로잉 느낌, 진행성, 가독성 및 모바일 안정성에 중점을 둡니다.</p></article>
-          <article class="detail-card"><h3>공공자산을 사용할 수 있나요?</h3><p>예, 언론, 출판사 리뷰 및 매장 참조용입니다. 소스 자산은 직접 요청하지 않는 한 비공개로 유지됩니다.</p></article>
+          <article class="detail-card"><h3>공개 에셋을 사용할 수 있나요?</h3><p>예, 언론, 출판사 리뷰 및 매장 참조용입니다. 소스 에셋은 직접 요청하지 않는 한 비공개로 유지됩니다.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-updates" id="devlog">
@@ -437,9 +453,13 @@
         <a href="../legal.html">법적</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Nature%20Seed">연락처</a>
       </nav>
+      <div class="social-block social-block--game">
+        <p class="social-title" id="gameSocialTitle">WillowinWorlds 팔로우</p>
+        <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20260801-1"></script>
-  <script src="../i18n-runtime.js?v=20260910"></script>
+  <script src="../../game-theme.js?v=20261113-1"></script>
+  <script src="../i18n-runtime.js?v=20261113"></script>
 </body>
 </html>

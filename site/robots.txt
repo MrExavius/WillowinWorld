@@ -36,6 +36,16 @@ Disallow: /private/
 Disallow: /admin/
 Disallow: /api/
 
+# AI/ML training crawlers: site assets must not be used for model training (see legal.html and asset-usage.html).
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: CCBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: Meta-ExternalAgent
+User-agent: Bytespider
+Disallow: /assets/
+
 User-agent: *
 Allow: /
 Disallow: /private/

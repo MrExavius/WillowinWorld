@@ -12,7 +12,8 @@ import {
   pageUrl,
   siteOrigin,
   sourceLocale,
-  translatedLocales
+  translatedLocales,
+  socialProfilesFor
 } from "./localization-config.mjs";
 import { gameDevlogSources, loadLatestDevlogs } from "./devlog-data.mjs";
 
@@ -32,6 +33,8 @@ const alternateStart = "<!-- locale-alternates:start -->";
 const alternateEnd = "<!-- locale-alternates:end -->";
 const switcherStart = "<!-- locale-switcher:start -->";
 const switcherEnd = "<!-- locale-switcher:end -->";
+const socialStart = "<!-- social-links:start -->";
+const socialEnd = "<!-- social-links:end -->";
 const sitemapStart = "<!-- localized-pages:start -->";
 const sitemapEnd = "<!-- localized-pages:end -->";
 
@@ -124,7 +127,12 @@ const protectedExactText = new Set([
   "Claude-SearchBot",
   "ChatGPT-User",
   "Perplexity-User",
-  "Claude-User"
+  "Claude-User",
+  "itch.io",
+  "Game Jolt",
+  "indiexpo",
+  "orlds",
+  "willowinworlds@gmail.com"
 ]);
 
 const manualTranslationOverrides = Object.freeze({
@@ -468,6 +476,7 @@ const explicitRuntimeStrings = Object.freeze([
   "Hidden letters are awake.",
   "Magic hunt paused.",
   "Email draft requested. If it did not open, use Copy message.",
+  "Email app requested. If nothing opened, press Copy message or write to willowinworlds@gmail.com.",
   "Contact message copied.",
   "Copy was blocked. Use willowinworlds@gmail.com.",
   "Draft saved in this browser tab.",
@@ -548,6 +557,7 @@ function localizeMailto(value, translations) {
       const translated = translations[normalizedText(current)];
       if (translated) url.searchParams.set(key, translated);
     }
+    url.search = url.searchParams.toString().replaceAll("+", "%20");
     return encodeHtml(url.href, true);
   } catch {
     return value;
@@ -569,6 +579,7 @@ function stripGeneratedBlocks(html) {
   return html
     .replace(new RegExp(`\\s*${alternateStart}[\\s\\S]*?${alternateEnd}`, "g"), "")
     .replace(new RegExp(`\\s*${switcherStart}[\\s\\S]*?${switcherEnd}`, "g"), "")
+    .replace(new RegExp(`${socialStart}[\\s\\S]*?${socialEnd}`, "g"), `${socialStart}${socialEnd}`)
     .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "");
 }
 
@@ -680,7 +691,7 @@ function protectTerms(value) {
     protectedValue = protectedValue.replaceAll(placeholder, token);
     replacements.push({ token, term: placeholder });
   }
-  const exactOnlyFragments = new Set(["illo", "w", "in", "orld"]);
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld", "orlds"]);
   [...protectedExactText]
     .sort((left, right) => right.length - left.length)
     .forEach(term => {
@@ -774,7 +785,7 @@ async function requestTranslations(locale, entries) {
 }
 
 function protectedTermsIn(value) {
-  const exactOnlyFragments = new Set(["illo", "w", "in", "orld"]);
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld", "orlds"]);
   return [...protectedExactText].filter(term => {
     if (exactOnlyFragments.has(term)) return value === term;
     return protectedTermPattern(term).test(value);
@@ -784,7 +795,7 @@ function protectedTermsIn(value) {
 function containsUnexpectedEnglishRun(locale, translation) {
   if (!nonLatinLocaleCodes.has(locale.code)) return false;
   let candidate = translation;
-  const exactOnlyFragments = new Set(["illo", "w", "in", "orld"]);
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld", "orlds"]);
   for (const term of protectedExactText) {
     if (!exactOnlyFragments.has(term)) candidate = candidate.replace(protectedTermPattern(term, "gu"), "$1 ");
   }
@@ -987,6 +998,19 @@ function renderLanguageSwitcher(locale, page, translations = {}, standalone = fa
   return `${switcherStart}\n  <nav class="${className}" aria-label="${encodeHtml(navigationLabel, true)}"><details><summary aria-label="${encodeHtml(chooseLabel, true)}"><span aria-hidden="true">${locale.shortLabel}</span></summary><div class="language-options">${links}</div></details></nav>\n  ${switcherEnd}`;
 }
 
+function renderSocialLinks(html, locale) {
+  const profiles = socialProfilesFor(locale.code);
+  return html.replace(new RegExp(`(<[^>]*\\bdata-social-links=(["'])(compact|detailed)\\2[^>]*>)${socialStart}${socialEnd}`, "g"), (match, openTag, quote, mode) => {
+    const items = profiles.map(profile => {
+      const label = mode === "detailed"
+        ? `<span class="social-link-name">${profile.name}</span> <span class="social-link-handle">${encodeHtml(profile.handle)}</span>`
+        : profile.name;
+      return `<li><a class="social-link" href="${encodeHtml(profile.url, true)}" rel="me">${label}</a></li>`;
+    }).join("");
+    return `${openTag}${socialStart}<ul class="social-list" role="list">${items}</ul>${socialEnd}`;
+  });
+}
+
 function addLocaleMetadata(html, locale, page, translations = {}) {
   let output = html
     .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "")
@@ -1038,6 +1062,7 @@ function rewriteSharedResourceUrls(html, page) {
 
 function renderLocalizedPage(source, locale, page, translations) {
   let output = translateHtml(source, locale, translations);
+  output = renderSocialLinks(output, locale);
   output = addLocaleMetadata(output, locale, page, translations);
   output = rewriteSharedResourceUrls(output, page);
   const runtimePath = `${page.kind === "game" ? "../i18n-runtime.js" : "i18n-runtime.js"}?v=${localizationLastModified.replaceAll("-", "")}`;
@@ -1054,7 +1079,7 @@ function addStructuredLanguage(html, locale) {
 }
 
 function renderEnglishPage(source, page) {
-  return `${addLocaleMetadata(addStructuredLanguage(source, sourceLocale), sourceLocale, page).trim()}\n`;
+  return `${addLocaleMetadata(renderSocialLinks(addStructuredLanguage(source, sourceLocale), sourceLocale), sourceLocale, page).trim()}\n`;
 }
 
 function renderSitemapAlternates(page) {

@@ -7,12 +7,35 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  quality:
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run quality checks
+        run: node site/tools/quality-check.mjs
+
+  deploy:
+    needs: quality
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     environment:
       name: github-pages
@@ -21,17 +44,49 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          ref: "35"
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # Publish the source site/ folder (not site/dist) without internal files.
+      # .well-known/ must stay in the artifact (checked below); re-verify hidden-file
+      # handling before upgrading upload-pages-artifact. The custom domain comes from
+      # the repository Pages settings, so the root CNAME file is not part of the
+      # artifact (same as before).
+      - name: Build publish folder
+        run: |
+          rm -rf _site
+          cp -a site _site
+          rm -rf _site/tools _site/deploy _site/dist _site/reports
+          rm -f _site/_headers _site/_redirects _site/QUALITY_CHECKS.md
+          test -f _site/index.html
+          test -f _site/.well-known/security.txt
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./site
+          path: ./_site
 
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Smoke test deployment
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          base="${PAGE_URL%/}"
+          check() {
+            for attempt in $(seq 1 12); do
+              code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "$1" || true)"
+              if [ "$code" = "$2" ]; then
+                echo "OK: $1 returned $code"
+                return 0
+              fi
+              echo "Attempt $attempt/12: $1 returned ${code:-000}, expected $2"
+              sleep 10
+            done
+            return 1
+          }
+          check "$base/" 200
+          check "$base/smoke-$(date +%s)-$RANDOM-does-not-exist" 404

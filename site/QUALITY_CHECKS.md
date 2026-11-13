@@ -10,6 +10,13 @@ Local checks:
 - `node site/tools/build-minified.mjs`
 - `node site/tools/update-sitemap-lastmod.mjs`
 
+Deployment model:
+
+- Production (GitHub Pages, branch `35`) publishes the source `site/` folder minus internal files (`tools/`, `deploy/`, `dist/`, `reports/`, `_headers`, `_redirects`, `QUALITY_CHECKS.md`). `site/dist` is a build check only and is never deployed. `.github/workflows/pages.yml` runs `node site/tools/quality-check.mjs` before every deploy.
+- `_headers`, `_redirects` and `deploy/*` are not applied by GitHub Pages; only the meta CSP in each page is. See `SECURITY.md`.
+- `node site/tools/security-check.mjs` requires exactly one future `Expires:` in `.well-known/security.txt`, so it fails once that date passes. Renew it (RFC 9116: less than a year ahead) before then.
+- `node site/tools/seo-check.mjs` fails if any public text file under `site/` (except `dist/` and `reports/`) contains the legacy singular domain, the misspelled studio name or a mailbox at the studio domain. Use the contact email from `tools/localization-config.mjs`.
+
 Devlog publishing:
 
 - Add the newest item inside the game's `#devlog .update-list` with `data-devlog-entry`, `data-published="YYYY-MM-DD"`, and a matching `<time datetime="YYYY-MM-DD">`.
