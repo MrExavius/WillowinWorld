@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="An endless sci-fi flight through an alien tunnel: steer, slip through gates and collect crystals. Status: Early prototype. In development at WillowinWorlds.">
+  <meta name="description" content="An endless flight through an alien tunnel: steer around the wall, slip through the gaps in each gate and collect crystals to charge a shield.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#0A203C" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#E7FDFF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A203C" id="metaThemeColor">
   <meta property="og:title" content="Alien Flying — endless tunnel flyer in development">
-  <meta property="og:description" content="An endless sci-fi flight through an alien tunnel: steer, slip through gates and collect crystals. Status: Early prototype. In development at WillowinWorlds.">
+  <meta property="og:description" content="An endless flight through an alien tunnel: steer around the wall, slip through the gaps in each gate and collect crystals to charge a shield.">
   <meta property="og:image" content="https://willowinworlds.com/assets/upcoming/alien-flying/hero-1280.webp">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="720">
@@ -22,11 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Alien Flying — endless tunnel flyer in development">
-  <meta name="twitter:description" content="An endless sci-fi flight through an alien tunnel: steer, slip through gates and collect crystals. Status: Early prototype. In development at WillowinWorlds.">
+  <meta name="twitter:description" content="An endless flight through an alien tunnel: steer around the wall, slip through the gaps in each gate and collect crystals to charge a shield.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/upcoming/alien-flying/hero-1280.webp">
   <meta name="twitter:image:alt" content="Dark navy alien tunnel wall panels with thin cyan seams, a texture from the game.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Alien Flying — endless tunnel flyer in development | WillowinWorlds</title>
+  <title>Alien Flying — tunnel flyer in development | WillowinWorlds</title>
   <link rel="canonical" href="https://willowinworlds.com/games/alien-flying.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -48,7 +47,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Games",
-          "item": "https://willowinworlds.com/#games"
+          "item": "https://willowinworlds.com/#in-development"
         },
         {
           "@type": "ListItem",
@@ -95,13 +94,15 @@
   <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
-  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-3">
+  <link rel="stylesheet" href="../css/upcoming-alien-flying.css?v=20261113-2">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="alien-flying">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Alien Flying — back to WillowinWorlds">
-      <img src="../assets/responsive/willowinworld-logo-64.webp" width="64" height="64" alt="WillowinWorlds logo" decoding="async">
+    <a class="game-detail-brand" href="../index.html" aria-label="Alien Flying WillowinWorlds game page, back to WillowinWorlds home">
+      <img src="../assets/upcoming/alien-flying/icon-192.webp" width="192" height="192" alt="" decoding="async">
       <span><strong>Alien Flying</strong><small>WillowinWorlds game page</small></span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
@@ -110,6 +111,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -127,12 +129,26 @@
           <p class="ug-status-note">The Unity project has a full run loop, a hangar and settings screens; there is no public build yet.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#vote">Follow development</a>
-            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">All games</a>
           </div>
         </div>
-        <figure class="ug-hero-media">
-          <img src="../assets/upcoming/alien-flying/hero-1280.webp" srcset="../assets/upcoming/alien-flying/hero-720.webp 720w, ../assets/upcoming/alien-flying/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="Dark navy alien tunnel wall panels with thin cyan seams, a texture from the game." fetchpriority="high" decoding="async">
-          <figcaption>Texture preview: tunnel wall panels. Not a gameplay screenshot.</figcaption>
+        <figure class="aw-figure">
+          <div class="aw-stage" aria-hidden="true">
+            <div class="aw-scene">
+              <span class="aw-wall"></span>
+              <span class="aw-spokes"></span>
+              <div class="aw-twist">
+                <div class="aw-tunnel">
+                  <span class="aw-ring"><i class="aw-crystal"></i></span><span class="aw-ring"><i class="aw-crystal"></i></span><span class="aw-ring"><i class="aw-crystal"></i></span><span class="aw-ring"><i class="aw-crystal"></i></span><span class="aw-ring"><i class="aw-crystal"></i></span><span class="aw-ring"><i class="aw-crystal"></i></span><span class="aw-ring"><i class="aw-crystal"></i></span><span class="aw-ring"><i class="aw-crystal"></i></span>
+                </div>
+              </div>
+              <span class="aw-haze"></span>
+              <div class="aw-orbit">
+                <div class="aw-craft"><span class="aw-shield"></span></div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Illustration drawn in CSS from the game's tunnel, ship and crystal textures. Not a gameplay screenshot.</figcaption>
         </figure>
       </div>
     </section>
@@ -183,7 +199,7 @@
         <div class="eyebrow">Images</div>
         <h2 id="galleryTitle">Gallery</h2>
         <p class="ug-lede">Material texture previews from the project. They are textures, not gameplay screenshots.</p>
-        <div class="ug-gallery">
+        <div class="ug-gallery ug-gallery--3">
           <figure class="ug-shot"><img src="../assets/upcoming/alien-flying/gallery-scout-hull.webp" width="720" height="720" alt="Cobalt ceramic hull texture with silver trim and cyan seams, used for the player ship." loading="lazy" decoding="async"><figcaption>Scout hull texture</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/alien-flying/gallery-xeno-crystal.webp" width="720" height="720" alt="Emerald and turquoise crystal facets with mint veins, the skin used for collectible crystals." loading="lazy" decoding="async"><figcaption>Xeno crystal texture</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/alien-flying/gallery-hazard-armor.webp" width="720" height="720" alt="Graphite armor panels with coral-red grooves, the surface used for obstacles." loading="lazy" decoding="async"><figcaption>Hazard armor texture</figcaption></figure>
@@ -209,6 +225,16 @@
       </section>
     </div>
   </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">More worlds in the lab</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="blastblast.html"><strong>BlastBlast!</strong><span>Another endless run through gates, powered by recoil.</span></a></li>
+        <li><a class="lab-related-link" href="vacuum-shot.html"><strong>Vacuum Shot</strong><span>Another endless flight in development: vacuum up a prop and fire it to fly.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">All games in development</a>
+    </div>
+  </nav>
   <footer class="game-footer">
     <div class="container game-footer-inner">
       <div class="game-footer-copy">
@@ -216,7 +242,7 @@
         <span>An endless sci-fi flight through an alien tunnel: steer, slip through gates and collect crystals.</span>
       </div>
       <nav class="game-footer-nav" aria-label="Alien Flying footer navigation">
-        <a href="../index.html#games">All games</a>
+        <a href="../index.html#in-development">All games</a>
         <a href="../press-kit.html">Press kit</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../legal.html">Legal</a>

@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta name="description" content="A one-button endless run: pump the extinguisher on the pilot's back, blast at the right moment and ride the recoil as far as the gas lasts.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#091326" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#FFF1E7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#091326" id="metaThemeColor">
   <meta property="og:title" content="BlastBlast! — one-button physics runner in development">
-  <meta property="og:description" content="A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta property="og:description" content="A one-button endless run: pump the extinguisher on the pilot's back, blast at the right moment and ride the recoil as far as the gas lasts.">
   <meta property="og:image" content="https://willowinworlds.com/assets/upcoming/blastblast/hero-1280.webp">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="720">
@@ -22,11 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="BlastBlast! — one-button physics runner in development">
-  <meta name="twitter:description" content="A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta name="twitter:description" content="A one-button endless run: pump the extinguisher on the pilot's back, blast at the right moment and ride the recoil as far as the gas lasts.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/upcoming/blastblast/hero-1280.webp">
   <meta name="twitter:image:alt" content="A pilot in a yellow suit with a red extinguisher on their back above rolling red terrain; a pole, a round gate and a bumper lie ahead.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>BlastBlast! — one-button physics runner in development | WillowinWorlds</title>
+  <title>BlastBlast! — one-button physics runner | WillowinWorlds</title>
   <link rel="canonical" href="https://willowinworlds.com/games/blastblast.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -47,8 +46,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Games",
-          "item": "https://willowinworlds.com/#games"
+          "name": "In development",
+          "item": "https://willowinworlds.com/#in-development"
         },
         {
           "@type": "ListItem",
@@ -86,7 +85,7 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../rss.xml">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/game-components.css">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../css/keyframes.css">
@@ -95,12 +94,14 @@
   <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
-  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-3">
+  <link rel="stylesheet" href="../css/upcoming-blastblast.css?v=20261113-2">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="blastblast">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="BlastBlast! — back to WillowinWorlds">
+    <a class="game-detail-brand" href="../index.html" aria-label="BlastBlast! WillowinWorlds game page, back to the studio home">
       <img src="../assets/upcoming/blastblast/icon-192.webp" width="192" height="192" alt="The BlastBlast! pilot in a yellow flight suit with a red extinguisher pack, against a dusk sky." decoding="async">
       <span><strong>BlastBlast!</strong><small>WillowinWorlds game page</small></span>
     </a>
@@ -110,6 +111,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -121,18 +123,46 @@
       <div class="container ug-hero-layout">
         <div class="ug-hero-copy">
           <p class="ug-meta"><span class="status-pill ug-pill">Vertical slice</span><span class="ug-genre">One-button physics runner</span></p>
-          <h1 id="heroTitle">BlastBlast!</h1>
+          <h1 id="heroTitle"><span class="bb-t1">Blast</span><span class="bb-t2">Blast!</span></h1>
           <p class="ug-tagline">Pump. Blast. Ride the recoil.</p>
           <p class="hero-copy">A one-button endless run. Pump the extinguisher on the pilot's back, blast at the right moment and let the recoil carry you as far as the gas lasts.</p>
           <p class="ug-status-note">One endless run scene with a main menu, shop and settings is built in the Unity project; Android and iOS builds and on-device testing are still ahead.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#vote">Follow development</a>
-            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">All games in development</a>
           </div>
         </div>
-        <figure class="ug-hero-media">
-          <img src="../assets/upcoming/blastblast/hero-1280.webp" srcset="../assets/upcoming/blastblast/hero-720.webp 720w, ../assets/upcoming/blastblast/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="A pilot in a yellow suit with a red extinguisher on their back above rolling red terrain; a pole, a round gate and a bumper lie ahead." fetchpriority="high" decoding="async">
-          <figcaption>Capture from the Unity editor.</figcaption>
+        <figure class="ug-hero-media bb-stage">
+          <div class="bb-scene" role="img" aria-label="Illustrated scene: the pilot hops along dashed blast arcs, with a shock ring at every blast and round gates to fly through.">
+            <div class="bb-world" aria-hidden="true">
+              <div class="bb-world-track">
+                <img src="../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" fetchpriority="high" decoding="async">
+                <img class="is-mirror" src="../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+                <img src="../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+                <img class="is-mirror" src="../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+              </div>
+            </div>
+            <svg class="bb-arcs" viewBox="0 0 100 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M-11.5 50Q7.5 2 26.5 50"/>
+              <path d="M26.5 50Q45.5 2 64.5 50"/>
+              <path d="M64.5 50Q83.5 2 102.5 50"/>
+            </svg>
+            <span class="bb-gate bb-gate--one" aria-hidden="true"></span>
+            <span class="bb-gate bb-gate--two" aria-hidden="true"></span>
+            <div class="bb-streaks" aria-hidden="true"></div>
+            <div class="bb-hills" aria-hidden="true"></div>
+            <span class="bb-ring bb-ring--one" aria-hidden="true"></span>
+            <span class="bb-ring bb-ring--two" aria-hidden="true"></span>
+            <span class="bb-ring bb-ring--three" aria-hidden="true"></span>
+            <div class="bb-flight" aria-hidden="true">
+              <div class="bb-lift"><img class="bb-pilot" src="../assets/upcoming/blastblast/pilot-cutout.webp" width="360" height="343" alt="" decoding="async"></div>
+            </div>
+            <div class="bb-hud" aria-hidden="true">
+              <span class="bb-gauge"><i></i></span>
+              <span class="bb-rail"><b></b><b></b><b></b><b></b><b></b><b></b></span>
+            </div>
+          </div>
+          <figcaption>Scene built from Unity editor captures. The motion is illustrative, not gameplay footage.</figcaption>
         </figure>
       </div>
     </section>
@@ -185,7 +215,7 @@
         <div class="eyebrow">Images</div>
         <h2 id="galleryTitle">Gallery</h2>
         <p class="ug-lede">Captures from the Unity editor.</p>
-        <div class="ug-gallery">
+        <div class="ug-gallery ug-gallery--3">
           <figure class="ug-shot"><img src="../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="Gameplay capture in front of a citadel backdrop: teal round gates, a red-gold bar hazard and black marker poles." loading="lazy" decoding="async"><figcaption>Gates and hazards</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/blastblast/gallery-blast-arc.webp" width="960" height="540" alt="A second gameplay capture with a thin blast trail and a small round gate ahead of the pilot." loading="lazy" decoding="async"><figcaption>Blast trail</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/blastblast/gallery-main-menu.webp" width="960" height="540" alt="The main menu: the BlastBlast! title, a red extinguisher preview, and play, tank and settings buttons." loading="lazy" decoding="async"><figcaption>Main menu</figcaption></figure>
@@ -212,6 +242,16 @@
       </section>
     </div>
   </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">More worlds in the lab</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="vacuum-shot.html"><strong>Vacuum Shot</strong><span>Same studio, same base &mdash; a different flight. Vacuum a prop and fire it instead of pumping an extinguisher.</span></a></li>
+        <li><a class="lab-related-link" href="alien-flying.html"><strong>Alien Flying</strong><span>Another flying game in development.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">All games in development</a>
+    </div>
+  </nav>
   <footer class="game-footer">
     <div class="container game-footer-inner">
       <div class="game-footer-copy">
@@ -219,7 +259,7 @@
         <span>A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil.</span>
       </div>
       <nav class="game-footer-nav" aria-label="BlastBlast! footer navigation">
-        <a href="../index.html#games">All games</a>
+        <a href="../index.html#in-development">Games in development</a>
         <a href="../press-kit.html">Press kit</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../legal.html">Legal</a>

@@ -1039,21 +1039,112 @@ body.nature-seed-page::after {
 }
 
 
-/* Four hero actions: primary and the last button span the row, the two store buttons share one. */
+/* Hero actions: one dominant primary CTA, a compact "also on" pair, then a quiet text link. */
+.nature-seed-page .hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.nature-hero-secondary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+  max-width: 100%;
+}
+
+.nature-seed-page .hero-actions .btn-primary {
+  max-width: 100%;
+  min-height: 62px;
+  padding: 16px 34px;
+  border: 0;
+  color: #052415;
+  background: linear-gradient(135deg, #8df08f, #4fd6c8);
+  box-shadow:
+    0 16px 42px rgba(88, 214, 130, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  font-size: 1.14rem;
+  font-weight: 800;
+  text-align: center;
+  white-space: normal;
+}
+
+.nature-seed-page[data-theme="light"] .hero-actions .btn-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #1b7648, #167a68);
+  box-shadow: 0 16px 36px rgba(20, 96, 64, 0.32);
+}
+
+.nature-seed-page .hero-actions .btn-primary:hover,
+.nature-seed-page .hero-actions .btn-primary:focus-visible {
+  filter: brightness(1.07);
+  box-shadow: 0 20px 48px rgba(88, 214, 130, 0.46), inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.nature-seed-page[data-theme="light"] .hero-actions .btn-primary:hover,
+.nature-seed-page[data-theme="light"] .hero-actions .btn-primary:focus-visible {
+  box-shadow: 0 20px 44px rgba(20, 96, 64, 0.4);
+}
+
+.nature-hero-also {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid color-mix(in srgb, var(--game-accent) 36%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-strong) 84%, transparent);
+}
+
+.nature-seed-page .nature-hero-also .btn,
+.nature-seed-page .nature-hero-secondary > .btn-ghost {
+  padding: 8px 18px;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  color: var(--text);
+  font-size: 0.94rem;
+  font-weight: 700;
+  text-align: center;
+  white-space: normal;
+}
+
+.nature-seed-page .nature-hero-also .btn + .btn::before {
+  content: "";
+  position: absolute;
+  inset-block: 12px;
+  inset-inline-start: -1px;
+  width: 1px;
+  background: var(--line);
+}
+
+.nature-seed-page .nature-hero-secondary > .btn-ghost {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.nature-seed-page .nature-hero-also .btn:hover,
+.nature-seed-page .nature-hero-secondary > .btn-ghost:hover {
+  border-color: transparent;
+  background: color-mix(in srgb, var(--game-accent) 18%, transparent);
+  box-shadow: none;
+  transform: none;
+}
+
 @media (max-width: 640px) {
   .nature-seed-page .hero-actions {
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .nature-hero-secondary {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+  }
+
+  .nature-hero-also {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-  }
-
-  .nature-seed-page .hero-actions .btn {
-    padding-inline: 12px;
-    text-align: center;
-    white-space: normal;
-  }
-
-  .nature-seed-page .hero-actions .btn-primary,
-  .nature-seed-page .hero-actions .btn:last-child {
-    grid-column: 1 / -1;
   }
 }

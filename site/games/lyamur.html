@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A jungle marble shooter where a crowned lemur king fires colored marbles at a moving chain. Status: Early prototype. In development at WillowinWorlds.">
+  <meta name="description" content="A jungle marble shooter where a crowned lemur king fires colored marbles at a moving chain.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#132E10" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#EAF8E6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#132E10" id="metaThemeColor">
   <meta property="og:title" content="Lyamur — marble shooter in development">
-  <meta property="og:description" content="A jungle marble shooter where a crowned lemur king fires colored marbles at a moving chain. Status: Early prototype. In development at WillowinWorlds.">
+  <meta property="og:description" content="A jungle marble shooter where a crowned lemur king fires colored marbles at a moving chain.">
   <meta property="og:image" content="https://willowinworlds.com/assets/upcoming/lyamur/hero-1280.webp">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="720">
@@ -22,11 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Lyamur — marble shooter in development">
-  <meta name="twitter:description" content="A jungle marble shooter where a crowned lemur king fires colored marbles at a moving chain. Status: Early prototype. In development at WillowinWorlds.">
+  <meta name="twitter:description" content="A jungle marble shooter where a crowned lemur king fires colored marbles at a moving chain.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/upcoming/lyamur/hero-1280.webp">
   <meta name="twitter:image:alt" content="An illustrated jungle clearing ringed by dense foliage, the board art for the first level.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Lyamur — marble shooter in development | WillowinWorlds</title>
+  <title>Lyamur — jungle marble shooter | WillowinWorlds</title>
   <link rel="canonical" href="https://willowinworlds.com/games/lyamur.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -48,7 +47,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Games",
-          "item": "https://willowinworlds.com/#games"
+          "item": "https://willowinworlds.com/#in-development"
         },
         {
           "@type": "ListItem",
@@ -99,11 +98,13 @@
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
   <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-lyamur.css?v=20261113-2">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="lyamur">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Lyamur — back to WillowinWorlds">
+    <a class="game-detail-brand" href="../index.html" aria-label="Lyamur WillowinWorlds game page, back to the studio home">
       <img src="../assets/upcoming/lyamur/icon-192.webp" width="192" height="192" alt="Lyamur, the crowned ring-tailed lemur king, holding a blue marble." decoding="async">
       <span><strong>Lyamur</strong><small>WillowinWorlds game page</small></span>
     </a>
@@ -113,6 +114,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -130,12 +132,26 @@
           <p class="ug-status-note">A single test level has the full shoot-and-match loop; the campaign, level map and bosses from the design document are not built yet.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#vote">Follow development</a>
-            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">All games</a>
           </div>
         </div>
-        <figure class="ug-hero-media">
-          <img src="../assets/upcoming/lyamur/hero-1280.webp" srcset="../assets/upcoming/lyamur/hero-720.webp 720w, ../assets/upcoming/lyamur/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="An illustrated jungle clearing ringed by dense foliage, the board art for the first level." fetchpriority="high" decoding="async">
-          <figcaption>Board art for the first level. Not a gameplay screenshot.</figcaption>
+        <figure class="ug-hero-media lm-hero-media">
+          <div class="lm-stage">
+            <img class="lm-board" src="../assets/upcoming/lyamur/hero-1280.webp" srcset="../assets/upcoming/lyamur/hero-720.webp 720w, ../assets/upcoming/lyamur/hero-1280.webp 1280w" sizes="(max-width: 920px) calc((100vw - 40px) * 1.78), 960px" width="1280" height="720" alt="An illustrated jungle clearing ringed by dense foliage, the board art for the first level." fetchpriority="high" decoding="async">
+            <div class="lm-scene" aria-hidden="true">
+              <span class="lm-light"></span>
+              <span class="lm-groove"></span>
+              <span class="lm-pit"></span>
+              <span class="lm-chain"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class="lm-shot"></b></span>
+              <span class="lm-lemur"></span>
+              <span class="lm-burst"></span>
+              <span class="lm-bush"></span>
+              <span class="lm-leaves lm-leaves--a"></span>
+              <span class="lm-leaves lm-leaves--b"></span>
+              <span class="lm-motes"></span>
+            </div>
+          </div>
+          <figcaption>Board art for the first level. The marbles and the lemur's aim are an animation made for this page, not gameplay footage.</figcaption>
         </figure>
       </div>
     </section>
@@ -188,7 +204,7 @@
         <div class="eyebrow">Images</div>
         <h2 id="galleryTitle">Gallery</h2>
         <p class="ug-lede">Art assets from the Unity project, not gameplay captures.</p>
-        <div class="ug-gallery">
+        <div class="ug-gallery ug-gallery--3">
           <figure class="ug-shot"><img src="../assets/upcoming/lyamur/gallery-lemur-king.webp" width="640" height="805" alt="The crowned lemur king standing with a glossy blue marble in one hand." loading="lazy" decoding="async"><figcaption>The lemur king</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/lyamur/gallery-top-down-shooter.webp" width="960" height="691" alt="Top-down view of the crowned lemur shooter with a striped tail." loading="lazy" decoding="async"><figcaption>Top-down shooter view</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/lyamur/gallery-color-crystal.webp" width="560" height="709" alt="A white crystal cluster on dark stone, a color-changing object that sits on the board." loading="lazy" decoding="async"><figcaption>Color crystal</figcaption></figure>
@@ -215,6 +231,16 @@
       </section>
     </div>
   </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">More worlds in the lab</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>Another casual arcade prototype in the lab: tap to stack the order.</span></a></li>
+        <li><a class="lab-related-link" href="sandwich-stack.html"><strong>Sandwich Stack</strong><span>Another casual arcade prototype in the lab: tap to stack the sandwich.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">All games in development</a>
+    </div>
+  </nav>
   <footer class="game-footer">
     <div class="container game-footer-inner">
       <div class="game-footer-copy">
@@ -222,7 +248,7 @@
         <span>A jungle marble shooter where a crowned lemur king fires colored marbles at a moving chain.</span>
       </div>
       <nav class="game-footer-nav" aria-label="Lyamur footer navigation">
-        <a href="../index.html#games">All games</a>
+        <a href="../index.html#in-development">All games</a>
         <a href="../press-kit.html">Press kit</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../legal.html">Legal</a>

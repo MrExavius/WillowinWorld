@@ -39,9 +39,9 @@
   <link rel="stylesheet" href="css/home-paint-card.css">
   <link rel="stylesheet" href="css/home-candy-card.css">
   <link rel="stylesheet" href="css/game-components.css">
-  <link rel="stylesheet" href="css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="css/game-shell.css?v=20261113-2">
   <link rel="stylesheet" href="css/game-content.css?v=20261113-1">
-  <link rel="stylesheet" href="css/press-kit.css?v=20261113-1">
+  <link rel="stylesheet" href="css/press-kit.css?v=20261113-3">
   <link rel="stylesheet" href="css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="css/keyframes.css">
   <link rel="stylesheet" href="css/responsive-desktop.css">
@@ -51,6 +51,7 @@
   <link rel="stylesheet" href="motion.css">
 </head>
 <body class="press-kit-ocean-page" data-theme="dark">
+  <script src="theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#press-main">Skip to press kit content</a>
   <header class="game-detail-topbar press-kit-topbar">
     <a class="game-detail-brand" href="index.html" aria-label="Back to WillowinWorlds main menu">
@@ -65,6 +66,7 @@
       <a href="#asset-policy">Policy</a>
       <a href="#press-contact">Contact</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -441,6 +443,97 @@
         </div>
       </section>
 
+      <section class="soft-card press-kit-section press-lab-section" id="press-lab" aria-labelledby="pressLabTitle">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">In development</div>
+            <h2 class="section-title" id="pressLabTitle">Next worlds in the lab</h2>
+          </div>
+        </div>
+        <ul class="press-lab-grid" role="list">
+          <li>
+            <a class="press-lab-card" href="games/blastblast.html" hreflang="en">
+              <span class="press-lab-icon"><img src="assets/upcoming/blastblast/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">BlastBlast!</strong>
+                <span class="press-lab-genre">One-button physics runner</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--slice">Vertical slice</span>
+            </a>
+          </li>
+          <li>
+            <a class="press-lab-card" href="games/vacuum-shot.html" hreflang="en">
+              <span class="press-lab-icon"><img src="assets/upcoming/vacuum-shot/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">Vacuum Shot</strong>
+                <span class="press-lab-genre">Endless recoil-flight arcade</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--slice">Vertical slice</span>
+            </a>
+          </li>
+          <li>
+            <a class="press-lab-card" href="games/burger-stack.html" hreflang="en">
+              <span class="press-lab-icon"><img src="assets/upcoming/burger-stack/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">Burger Stack</strong>
+                <span class="press-lab-genre">Arcade stacking game</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--prototype">Prototype</span>
+            </a>
+          </li>
+          <li>
+            <a class="press-lab-card" href="games/sandwich-stack.html" hreflang="en">
+              <span class="press-lab-icon"><img src="assets/upcoming/sandwich-stack/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">Sandwich Stack</strong>
+                <span class="press-lab-genre">Arcade stacking game</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--prototype">Prototype</span>
+            </a>
+          </li>
+          <li>
+            <a class="press-lab-card" href="games/scooter-mechanic-simulator.html" hreflang="en">
+              <span class="press-lab-icon"><img src="assets/upcoming/scooter-mechanic-simulator/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">Scooter Mechanic Simulator</strong>
+                <span class="press-lab-genre">Repair shop simulator</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--prototype">Prototype</span>
+            </a>
+          </li>
+          <li>
+            <a class="press-lab-card" href="games/alien-flying.html" hreflang="en">
+              <span class="press-lab-icon press-lab-icon--monogram" aria-hidden="true">AF</span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">Alien Flying</strong>
+                <span class="press-lab-genre">Endless tunnel flyer</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--early">Early prototype</span>
+            </a>
+          </li>
+          <li>
+            <a class="press-lab-card" href="games/lyamur.html" hreflang="en">
+              <span class="press-lab-icon"><img src="assets/upcoming/lyamur/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">Lyamur</strong>
+                <span class="press-lab-genre">Marble shooter</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--early">Early prototype</span>
+            </a>
+          </li>
+          <li>
+            <a class="press-lab-card" href="games/stack-tower.html" hreflang="en">
+              <span class="press-lab-icon"><img src="assets/upcoming/stack-tower/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
+              <span class="press-lab-body">
+                <strong class="press-lab-name">Stack Tower</strong>
+                <span class="press-lab-genre">One-tap tower stacker</span>
+              </span>
+              <span class="status-pill press-lab-status press-lab-status--early">Early prototype</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+
       <section class="soft-card press-kit-section press-assets-section" id="press-assets">
         <div class="section-head">
           <div>
@@ -492,6 +585,6 @@
       </section>
     </div>
   </main>
-  <script src="game-theme.js?v=20261113-1"></script>
+  <script src="game-theme.js?v=20261113-2"></script>
 </body>
 </html>

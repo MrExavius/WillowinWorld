@@ -104,8 +104,8 @@
   <link rel="preload" href="../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/nature-scene.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/nature-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/nature-page.css?v=20261113-2">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../css/keyframes.css">
@@ -116,6 +116,7 @@
   <link rel="stylesheet" href="../motion.css">
 </head>
 <body class="game-detail-page game-theme-nature nature-seed-page" data-theme="dark">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#game-main">Skip to Nature Seed</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — back to WillowinWorlds">
@@ -128,6 +129,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -190,15 +192,18 @@
 
       <div class="container nature-hero-layout">
         <div class="nature-hero-copy">
-          <div class="eyebrow">Nature Seed</div>
-          <h1 id="natureHeroTitle">Draw a path. Bring them together.</h1>
+          <h1 id="natureHeroTitle"><span class="eyebrow game-hero-name">Nature Seed</span> <span class="game-hero-tagline">Draw a path. Bring them together.</span></h1>
           <p class="hero-copy">A meditative mobile physics puzzle where an ink-limited stroke becomes part of the level, bringing Water Drop and Seed together to wake a watercolor forest.</p>
           <p class="nature-hero-note">Released 10 September 2026 as Nature Seed. The launch build contains 10 levels, line-efficiency stars, persistent progress and stable physical line generation.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://willowinworlds.itch.io/nature-seed">Play free in your browser</a>
-            <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
-            <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
-            <a class="btn btn-ghost" href="#download-assets">Download Assets</a>
+            <div class="nature-hero-secondary">
+              <div class="nature-hero-also">
+                <a class="btn btn-ghost" href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a>
+                <a class="btn btn-ghost" href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a>
+              </div>
+              <a class="btn btn-ghost" href="#download-assets">Download Assets</a>
+            </div>
           </div>
           <div class="nature-hero-stats" role="group" aria-label="Nature Seed highlights">
             <span><strong>Draw</strong><small>spend a limited line budget</small></span>
@@ -325,7 +330,6 @@
             <div><dt>Platform target</dt><dd>iOS / Android</dd></div>
             <div><dt>Available now</dt><dd><span>Free web version</span>: <a href="https://willowinworlds.itch.io/nature-seed">itch.io</a> · <a href="https://gamejolt.com/games/nature-seed/1100526">Game Jolt</a> · <a href="https://www.indiexpo.net/en/games/nature-seed">indiexpo</a></dd></div>
             <div><dt>Session shape</dt><dd>Short calm levels</dd></div>
-            <div><dt>Primary CTA</dt><dd>Play free in your browser</dd></div>
           </dl>
         </div>
       </section>
@@ -459,6 +463,6 @@
       </div>
     </div>
   </footer>
-  <script src="../game-theme.js?v=20261113-1"></script>
+  <script src="../game-theme.js?v=20261113-2"></script>
 </body>
 </html>

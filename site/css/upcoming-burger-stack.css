@@ -1,0 +1,749 @@
+/* WillowinWorlds CSS: Burger Stack page (games/burger-stack.html). Loaded after upcoming-game.css.
+   Signature element: a burger tower built from the game's ingredient-tray art. Tiles drop in one after another with a
+   squash-and-settle while the tower sways, in front of the game's underwater (dark theme) or sky (light theme) kitchen
+   backdrop. Only transform and opacity are animated. The static composition is the finished burger, so reduced motion
+   and the pause button show a complete picture. */
+
+body[data-game="burger-stack"] {
+  --bs-brass: #EFB630;
+  --bs-brass-hi: #F6D68B;
+  --bs-deep: #083331;
+  --bs-sprite: url("../assets/upcoming/burger-stack/gallery-ingredient-tray.webp");
+  --ug-motif:
+    radial-gradient(circle at 12% 14%, transparent 0 8px, color-mix(in srgb, var(--ug-accent-2) 26%, transparent) 8px 9.5px, transparent 10.5px),
+    radial-gradient(circle at 84% 30%, transparent 0 5px, color-mix(in srgb, var(--ug-accent-2) 22%, transparent) 5px 6.5px, transparent 7.5px),
+    radial-gradient(circle at 46% 8%, transparent 0 11px, color-mix(in srgb, var(--ug-accent-2) 18%, transparent) 11px 12.5px, transparent 13.5px);
+}
+
+/* Ingredient sprite: every tile is a window onto the tray art (76 x 82 source px per tile). */
+.bs-tile {
+  --u: calc(var(--t) / 76);
+  display: block;
+  flex: none;
+  width: var(--t);
+  aspect-ratio: 76 / 82;
+  border-radius: 19%;
+  background: var(--bs-sprite) no-repeat;
+  background-size: calc(960 * var(--u)) calc(395 * var(--u));
+  background-position: calc(var(--sx) * var(--u) * -1) calc(var(--sy) * var(--u) * -1);
+}
+
+.bs-i-patty { --sx: 100; --sy: 40; }
+.bs-i-bun { --sx: 177; --sy: 40; }
+.bs-i-tomato { --sx: 255; --sy: 40; }
+.bs-i-lettuce { --sx: 332; --sy: 40; }
+.bs-i-bacon { --sx: 410; --sy: 40; }
+
+/* Hero copy: three real numbers from the build. */
+.bs-hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bs-hero-stats li {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid var(--ug-line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ug-card) 90%, transparent);
+  transition: transform 0.3s cubic-bezier(0.3, 1.5, 0.5, 1), border-color 0.25s ease;
+}
+
+.bs-hero-stats strong {
+  color: var(--ug-accent);
+  font-size: 1.6rem;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.bs-hero-stats span {
+  color: var(--ug-muted);
+  font-weight: 760;
+}
+
+@media (hover: hover) {
+  .bs-hero-stats li:hover {
+    transform: translateY(-3px) rotate(-1.5deg);
+    border-color: var(--ug-accent);
+  }
+}
+
+/* Hero stage: a portrait game-screen composition. */
+.bs-hero-media {
+  position: relative;
+  isolation: isolate;
+  justify-self: end;
+  width: min(100%, 27.5rem);
+  min-width: 0;
+  margin: 0;
+}
+
+.bs-hero-media::before {
+  content: "";
+  position: absolute;
+  inset: 6% -16% -4%;
+  z-index: -1;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--ug-accent-2) 34%, transparent), transparent);
+  pointer-events: none;
+}
+
+.bs-hero-media figcaption {
+  margin-top: 14px;
+  color: var(--ug-muted);
+  font-size: 0.9rem;
+  font-weight: 760;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.bs-stage {
+  --t: 14cqw;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  container-type: inline-size;
+  aspect-ratio: 7 / 9;
+  border: 3px solid var(--bs-brass);
+  border-radius: 30px;
+  background: #0A5F78;
+  box-shadow:
+    0 30px 70px var(--ug-shadow),
+    0 0 0 8px color-mix(in srgb, var(--ug-fill) 14%, transparent),
+    inset 0 0 0 2px rgba(255, 244, 200, 0.4);
+}
+
+/* Soft shade top and bottom keeps the overlays legible on the bright parts of the art. */
+.bs-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background: linear-gradient(180deg, rgba(4, 40, 48, 0.4), transparent 26%, transparent 74%, rgba(4, 30, 36, 0.34));
+  pointer-events: none;
+}
+
+.bs-world {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 100%;
+  animation: bsWorld 22s ease-in-out infinite alternate;
+}
+
+.bs-bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.5s ease;
+}
+
+.bs-bg--sky,
+body[data-theme="light"] .bs-bg--sea {
+  opacity: 0;
+}
+
+body[data-theme="light"] .bs-bg--sky {
+  opacity: 1;
+}
+
+/* Light shafts in the water, drawn over the backdrop. */
+.bs-world::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 40% 0;
+  background: repeating-linear-gradient(104deg, transparent 0 9%, rgba(210, 250, 255, 0.14) 12%, transparent 17% 27%);
+  -webkit-mask-image: linear-gradient(#000, transparent 92%);
+  mask-image: linear-gradient(#000, transparent 92%);
+  pointer-events: none;
+}
+
+body[data-theme="light"] .bs-world::after {
+  opacity: 0.55;
+}
+
+/* Parallax particles: bubbles rise in the sea, clouds drift in the sky. Two depths, far and near. */
+.bs-fx {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 200%;
+  background-repeat: repeat-y;
+  background-size: 100% 50%;
+  pointer-events: none;
+}
+
+.bs-fx--far {
+  opacity: 0.8;
+  background-image:
+    radial-gradient(circle 3px at 14% 18%, rgba(255,255,255,0.14) 0 50%, rgba(255,255,255,0.80) 66% 82%, transparent 90%),
+    radial-gradient(circle 4px at 31% 52%, rgba(255,255,255,0.14) 0 50%, rgba(255,255,255,0.75) 66% 82%, transparent 90%),
+    radial-gradient(circle 2.5px at 47% 8%, rgba(255,255,255,0.13) 0 50%, rgba(255,255,255,0.70) 66% 82%, transparent 90%),
+    radial-gradient(circle 4px at 63% 70%, rgba(255,255,255,0.14) 0 50%, rgba(255,255,255,0.80) 66% 82%, transparent 90%),
+    radial-gradient(circle 3px at 79% 33%, rgba(255,255,255,0.13) 0 50%, rgba(255,255,255,0.70) 66% 82%, transparent 90%),
+    radial-gradient(circle 3.5px at 90% 88%, rgba(255,255,255,0.14) 0 50%, rgba(255,255,255,0.75) 66% 82%, transparent 90%);
+  animation: bsRise 26s linear infinite;
+}
+
+.bs-fx--near {
+  z-index: 3;
+  background-image:
+    radial-gradient(circle 9px at 22% 38%, rgba(255,255,255,0.13) 0 50%, rgba(255,255,255,0.70) 66% 82%, transparent 90%),
+    radial-gradient(circle 12px at 71% 62%, rgba(255,255,255,0.12) 0 50%, rgba(255,255,255,0.65) 66% 82%, transparent 90%),
+    radial-gradient(circle 7px at 52% 92%, rgba(255,255,255,0.13) 0 50%, rgba(255,255,255,0.70) 66% 82%, transparent 90%);
+  animation: bsRise 16s linear infinite;
+}
+
+body[data-theme="light"] .bs-fx {
+  width: 200%;
+  height: 100%;
+  background-size: 50% 100%;
+  background-repeat: repeat-x;
+}
+
+body[data-theme="light"] .bs-fx--far {
+  opacity: 0.9;
+  background-image:
+    radial-gradient(ellipse 15% 4.5% at 22% 20%, rgba(255,255,255,0.8), transparent 72%),
+    radial-gradient(ellipse 12% 3.5% at 70% 34%, rgba(255,255,255,0.7), transparent 72%),
+    radial-gradient(ellipse 10% 3% at 46% 52%, rgba(255,255,255,0.6), transparent 72%);
+  animation: bsDrift 60s linear infinite;
+}
+
+body[data-theme="light"] .bs-fx--near {
+  background-image:
+    radial-gradient(ellipse 18% 5.5% at 30% 26%, rgba(255,255,255,0.7), transparent 72%),
+    radial-gradient(ellipse 14% 4% at 80% 44%, rgba(255,255,255,0.55), transparent 72%);
+  animation: bsDrift 38s linear infinite;
+}
+
+/* The burger tower. */
+.bs-tower {
+  position: absolute;
+  z-index: 2;
+  left: calc(50% - var(--t) / 2);
+  bottom: 13cqw;
+  width: var(--t);
+  height: calc(var(--t) * 6.3);
+  transform-origin: 50% 100%;
+  animation: bsSway 5.8s ease-in-out infinite alternate;
+}
+
+.bs-plate {
+  position: absolute;
+  left: -70%;
+  bottom: calc(var(--t) * -0.2);
+  width: 240%;
+  height: calc(var(--t) * 0.5);
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 30%, #FBE7A3, #D9A63A 55%, #8A5E10);
+  box-shadow: 0 1.2cqw 2cqw rgba(0, 20, 28, 0.5), inset 0 -0.8cqw 1cqw rgba(60, 35, 0, 0.4);
+}
+
+body[data-theme="light"] .bs-plate {
+  opacity: 0.55;
+}
+
+.bs-tower .bs-tile {
+  position: absolute;
+  left: calc(var(--dx, 0) * 1cqw);
+  bottom: calc(var(--n) * var(--t) * 0.93);
+  transform-origin: 50% 100%;
+  box-shadow: 0 0.9cqw 1.4cqw rgba(0, 24, 32, 0.4);
+  animation: linear infinite 12s;
+}
+
+.bs-tower .bs-t1 { --n: 0; animation: none; }
+.bs-tower .bs-t2 { --n: 1; --dx: 2; animation-name: bsDrop2; }
+.bs-tower .bs-t3 { --n: 2; --dx: -2.6; animation-name: bsDrop3; }
+.bs-tower .bs-t4 { --n: 3; --dx: 1.8; animation-name: bsDrop4; }
+.bs-tower .bs-t5 { --n: 4; --dx: -1.6; animation-name: bsDrop5; }
+.bs-tower .bs-t6 { --n: 5; --dx: 0.1; animation-name: bsDrop6; }
+
+/* The order ticket: the recipe being built and a bar that fills with every landing. */
+.bs-ticket {
+  position: absolute;
+  z-index: 4;
+  top: 4.5cqw;
+  left: 4.5cqw;
+  display: grid;
+  gap: 1.4cqw;
+  padding: 2cqw 2.4cqw 2.2cqw;
+  border-radius: 2cqw;
+  color: var(--bs-deep);
+  background: #FCF0BA;
+  box-shadow: 0 0.8cqw 2cqw rgba(0, 20, 30, 0.35);
+  transform: rotate(-2.5deg);
+}
+
+.bs-ticket b {
+  font-size: clamp(10px, 2.9cqw, 13px);
+  font-weight: 850;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.bs-ticket-row {
+  display: flex;
+  gap: 0.8cqw;
+}
+
+.bs-ticket-row .bs-tile {
+  --t: 5.6cqw;
+}
+
+.bs-ticket-bar {
+  height: 1.3cqw;
+  overflow: hidden;
+  border-radius: 99px;
+  background: rgba(8, 51, 49, 0.2);
+}
+
+.bs-ticket-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #C98A08, #EFB630);
+  transform-origin: 0 50%;
+  animation: bsOrderBar 12s linear infinite;
+}
+
+.bs-perfect {
+  position: absolute;
+  z-index: 5;
+  top: 19cqw;
+  left: 62%;
+  padding: 1.5cqw 4cqw;
+  border-radius: 99px;
+  color: #093A38;
+  background: linear-gradient(135deg, #F6D68B, #EFB630);
+  box-shadow: 0 1cqw 2.4cqw rgba(0, 20, 30, 0.4), inset 0 0 0 0.5cqw rgba(255, 255, 255, 0.45);
+  font-size: clamp(14px, 5.2cqw, 24px);
+  font-weight: 900;
+  line-height: 1.1;
+  white-space: nowrap;
+  transform: translateX(-50%) rotate(-3deg);
+  animation: bsPerfect 12s linear infinite;
+}
+
+.bs-perfect::before,
+.bs-perfect::after {
+  content: "";
+  position: absolute;
+  width: 3.2cqw;
+  aspect-ratio: 1;
+  background: #FFF7D1;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+}
+
+.bs-perfect::before {
+  top: -1.8cqw;
+  right: -1.2cqw;
+}
+
+.bs-perfect::after {
+  bottom: -1.2cqw;
+  left: -1.6cqw;
+  width: 2.2cqw;
+}
+
+/* Sections. */
+body.upcoming-game-page[data-game="burger-stack"] .soft-card {
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--ug-accent-2) 14%, transparent), transparent 42%),
+    linear-gradient(160deg, var(--ug-card), color-mix(in srgb, var(--ug-card) 90%, var(--ug-bg)));
+}
+
+body[data-game="burger-stack"] .btn {
+  overflow: hidden;
+}
+
+body[data-game="burger-stack"] .btn:active {
+  transform: translateY(1px) scale(0.97);
+}
+
+body[data-game="burger-stack"] .btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.6) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+body[data-game="burger-stack"] .btn-primary:hover::after,
+body[data-game="burger-stack"] .btn-primary:focus-visible::after {
+  transform: translateX(120%);
+}
+
+.ug-facts .game-page-facts > div {
+  border-inline-start: 4px solid var(--bs-brass);
+  transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+  .ug-facts .game-page-facts > div:hover {
+    transform: translateY(-3px);
+    border-color: var(--ug-accent);
+  }
+}
+
+/* How it plays: each step opens with a small aquarium window showing the move. */
+.ug-steps li {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.ug-steps li::before {
+  content: "";
+  display: block;
+  height: 64px;
+  margin: -2px 0 14px;
+  border-radius: 12px;
+  background:
+    repeating-linear-gradient(90deg, var(--bs-brass-hi) 0 6px, transparent 6px 10px) 50% calc(100% - 3px) / 46px 2px no-repeat,
+    radial-gradient(circle 3px at 18% 30%, rgba(255,255,255,0.5), transparent 90%),
+    radial-gradient(circle 2px at 82% 56%, rgba(255,255,255,0.45), transparent 90%),
+    linear-gradient(180deg, #0F6C86, #083D49);
+}
+
+.ug-steps li::after {
+  --t: 38px;
+  --u: calc(var(--t) / 76);
+  content: "";
+  position: absolute;
+  top: 33px;
+  left: calc(50% - 19px);
+  width: var(--t);
+  aspect-ratio: 76 / 82;
+  border-radius: 19%;
+  background: var(--bs-sprite) no-repeat;
+  background-size: calc(960 * var(--u)) calc(395 * var(--u));
+  background-position: calc(var(--sx) * var(--u) * -1) calc(var(--sy) * var(--u) * -1);
+  box-shadow: 0 4px 6px rgba(0, 20, 28, 0.4);
+  transform-origin: 50% 100%;
+}
+
+.ug-steps li:nth-child(1)::after { --sx: 100; --sy: 40; animation: bsStepDrop 5.2s linear infinite; }
+.ug-steps li:nth-child(2)::after { --sx: 255; --sy: 40; animation: bsStepSlide 4.6s ease-in-out infinite alternate; }
+.ug-steps li:nth-child(3)::after { --sx: 332; --sy: 40; animation: bsStepPop 4.4s ease-in-out infinite; }
+
+@media (hover: hover) {
+  .ug-steps li:hover {
+    transform: translateY(-4px);
+    border-color: var(--ug-accent);
+  }
+}
+
+/* Feature cards: an ingredient tile leads each title and tips over on hover or focus. */
+.ug-features .detail-card,
+.ug-faq .detail-card,
+.ug-next li {
+  transition: transform 0.3s ease, border-color 0.25s ease, box-shadow 0.3s ease;
+}
+
+.ug-features .detail-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.ug-features .detail-card h3::before {
+  --t: 1.9rem;
+  --u: calc(var(--t) / 76);
+  content: "";
+  display: block;
+  flex: none;
+  width: var(--t);
+  aspect-ratio: 76 / 82;
+  border-radius: 19%;
+  background: var(--bs-sprite) no-repeat;
+  background-size: calc(960 * var(--u)) calc(395 * var(--u));
+  background-position: calc(var(--sx) * var(--u) * -1) calc(var(--sy) * var(--u) * -1);
+  box-shadow: 0 3px 5px rgba(0, 20, 28, 0.35);
+  transform: rotate(-6deg);
+  transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+.ug-features .detail-card:nth-child(1) h3::before { --sx: 177; --sy: 40; }
+.ug-features .detail-card:nth-child(2) h3::before { --sx: 410; --sy: 133; }
+.ug-features .detail-card:nth-child(3) h3::before { --sx: 255; --sy: 40; }
+.ug-features .detail-card:nth-child(4) h3::before { --sx: 255; --sy: 133; }
+.ug-features .detail-card:nth-child(5) h3::before { --sx: 719; --sy: 133; }
+.ug-features .detail-card:nth-child(6) h3::before { --sx: 177; --sy: 133; }
+
+.ug-features .detail-card:hover h3::before,
+.ug-features .detail-card:focus-within h3::before {
+  transform: rotate(5deg) scale(1.18) translateY(-2px);
+}
+
+@media (hover: hover) {
+  .ug-features .detail-card:hover,
+  .ug-faq .detail-card:hover,
+  .ug-next li:hover {
+    transform: translateY(-4px);
+    border-color: var(--ug-accent);
+    box-shadow: 0 16px 30px var(--ug-shadow);
+  }
+}
+
+.ug-faq .detail-card:focus-within {
+  border-color: var(--ug-accent);
+}
+
+/* Gallery: images ease in on hover; the transparent tray sits on deep water. */
+.ug-shot {
+  transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.ug-shot img {
+  transition: transform 0.6s ease;
+}
+
+.ug-shot--strip img {
+  background: linear-gradient(180deg, #0F6C86, #083D49);
+}
+
+@media (hover: hover) {
+  .ug-shot:hover {
+    border-color: var(--ug-accent);
+  }
+
+  .ug-shot:hover img {
+    transform: scale(1.04);
+  }
+}
+
+/* Gallery: the two backdrops sit either side of the tray instead of leaving the right half empty. */
+body[data-game="burger-stack"] .ug-gallery--2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 0.75fr));
+  gap: 14px;
+  align-items: center;
+  max-width: none;
+  columns: auto;
+}
+
+body[data-game="burger-stack"] .ug-gallery--2 .ug-shot {
+  margin: 0;
+}
+
+body[data-game="burger-stack"] .ug-gallery--2 .ug-shot--strip {
+  max-width: none;
+}
+
+@media (max-width: 760px) {
+  body[data-game="burger-stack"] .ug-gallery--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body[data-game="burger-stack"] .ug-gallery--2 .ug-shot--strip {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Voting: a bun tile hops beside the heading, like an order bell. */
+.ug-vote h2::after {
+  --t: 1.9rem;
+  --u: calc(var(--t) / 76);
+  --sx: 177;
+  --sy: 40;
+  content: "";
+  display: inline-block;
+  width: var(--t);
+  aspect-ratio: 76 / 82;
+  margin-inline-start: 0.6rem;
+  vertical-align: -0.35em;
+  border-radius: 19%;
+  background: var(--bs-sprite) no-repeat;
+  background-size: calc(960 * var(--u)) calc(395 * var(--u));
+  background-position: calc(var(--sx) * var(--u) * -1) calc(var(--sy) * var(--u) * -1);
+  box-shadow: 0 3px 5px rgba(0, 20, 28, 0.35);
+  transform-origin: 50% 100%;
+  animation: bsHop 4.8s ease-in-out infinite;
+}
+
+.ug-vote {
+  position: relative;
+}
+
+@media (min-width: 1100px) {
+  .ug-vote::after {
+    content: "";
+    position: absolute;
+    right: 40px;
+    bottom: 30px;
+    width: min(32%, 340px);
+    aspect-ratio: 960 / 395;
+    background: var(--bs-sprite) center / contain no-repeat;
+    filter: drop-shadow(0 10px 14px rgba(0, 20, 28, 0.4));
+    transform: rotate(-2deg);
+    pointer-events: none;
+  }
+}
+
+body[data-game="burger-stack"] .social-link {
+  transition: transform 0.25s cubic-bezier(0.3, 1.5, 0.5, 1), border-color 0.25s ease, background 0.25s ease;
+}
+
+body[data-game="burger-stack"] .social-link:hover,
+body[data-game="burger-stack"] .social-link:focus-visible {
+  transform: translateY(-3px);
+}
+
+/* Motion. */
+@keyframes bsWorld {
+  from { transform: scale(1); }
+  to { transform: scale(1.045) translateY(0.8%); }
+}
+
+@keyframes bsRise {
+  from { transform: translateY(0); }
+  to { transform: translateY(-50%); }
+}
+
+@keyframes bsDrift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes bsSway {
+  from { transform: rotate(-1.5deg) translateX(-0.6cqw); }
+  to { transform: rotate(1.5deg) translateX(0.6cqw); }
+}
+
+@keyframes bsOrderBar {
+  0%, 9.6% { transform: scaleX(0); }
+  11.25%, 24.6% { transform: scaleX(0.2); }
+  26.25%, 39.6% { transform: scaleX(0.4); }
+  41.25%, 54.6% { transform: scaleX(0.6); }
+  56.25%, 69.6% { transform: scaleX(0.8); }
+  71.25%, 93.3% { transform: scaleX(1); }
+  96%, 100% { transform: scaleX(0); }
+}
+
+@keyframes bsPerfect {
+  0%, 70% { opacity: 0; transform: translateX(-50%) rotate(-3deg) scale(0.5); }
+  72.9% { opacity: 1; transform: translateX(-50%) rotate(-6deg) scale(1.18); }
+  74.6%, 88.5% { opacity: 1; transform: translateX(-50%) rotate(-3deg) scale(1); }
+  94%, 100% { opacity: 0; transform: translateX(-50%) rotate(-3deg) scale(0.9); }
+}
+
+@keyframes bsStepDrop {
+  0%, 2% { opacity: 0; transform: translateY(-16px) scale(1, 1); }
+  8% { opacity: 1; transform: translateY(-14px) scale(1, 1); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6); }
+  30% { opacity: 1; transform: translateY(0) scale(1, 1); animation-timing-function: ease-out; }
+  36% { transform: translateY(0) scale(1.15, 0.82); animation-timing-function: ease-in-out; }
+  44% { transform: translateY(0) scale(0.97, 1.05); animation-timing-function: ease-in-out; }
+  52%, 86% { opacity: 1; transform: translateY(0) scale(1, 1); }
+  96%, 100% { opacity: 0; transform: translateY(0) scale(1, 1); }
+}
+
+@keyframes bsStepSlide {
+  from { transform: translateX(-3.4rem); }
+  to { transform: translateX(3.4rem); }
+}
+
+@keyframes bsStepPop {
+  0%, 60%, 100% { transform: scale(1) rotate(0); }
+  68% { transform: scale(1.22) rotate(-6deg); }
+  78% { transform: scale(0.94) rotate(3deg); }
+  88% { transform: scale(1.05) rotate(0); }
+}
+
+@keyframes bsHop {
+  0%, 62%, 100% { transform: translateY(0) scale(1, 1); }
+  70% { transform: translateY(-0.7rem) scale(0.94, 1.08); }
+  78% { transform: translateY(0) scale(1.1, 0.86); }
+  86% { transform: translateY(0) scale(0.98, 1.03); }
+}
+
+@keyframes bsDrop2 {
+  0%, 5.83% { opacity: 1; transform: translateY(-700%) scale(1, 1); animation-timing-function: cubic-bezier(.5, 0, .9, .6); }
+  10% { transform: translateY(0) scale(1, 1); animation-timing-function: ease-out; }
+  11% { transform: translateY(0) scale(1.14, .8); animation-timing-function: ease-in-out; }
+  12.83% { transform: translateY(0) scale(.97, 1.06); animation-timing-function: ease-in-out; }
+  14.83%, 90.83% { opacity: 1; transform: translateY(0) scale(1, 1); }
+  95.83%, 99% { opacity: 0; transform: translateY(-6%) scale(.96, .96); }
+  100% { opacity: 0; transform: translateY(-700%) scale(1, 1); }
+}
+
+@keyframes bsDrop3 {
+  0%, 20.83% { opacity: 1; transform: translateY(-700%) scale(1, 1); animation-timing-function: cubic-bezier(.5, 0, .9, .6); }
+  25% { transform: translateY(0) scale(1, 1); animation-timing-function: ease-out; }
+  26% { transform: translateY(0) scale(1.14, .8); animation-timing-function: ease-in-out; }
+  27.83% { transform: translateY(0) scale(.97, 1.06); animation-timing-function: ease-in-out; }
+  29.83%, 90.83% { opacity: 1; transform: translateY(0) scale(1, 1); }
+  95.83%, 99% { opacity: 0; transform: translateY(-6%) scale(.96, .96); }
+  100% { opacity: 0; transform: translateY(-700%) scale(1, 1); }
+}
+
+@keyframes bsDrop4 {
+  0%, 35.83% { opacity: 1; transform: translateY(-600%) scale(1, 1); animation-timing-function: cubic-bezier(.5, 0, .9, .6); }
+  40% { transform: translateY(0) scale(1, 1); animation-timing-function: ease-out; }
+  41% { transform: translateY(0) scale(1.14, .8); animation-timing-function: ease-in-out; }
+  42.83% { transform: translateY(0) scale(.97, 1.06); animation-timing-function: ease-in-out; }
+  44.83%, 90.83% { opacity: 1; transform: translateY(0) scale(1, 1); }
+  95.83%, 99% { opacity: 0; transform: translateY(-6%) scale(.96, .96); }
+  100% { opacity: 0; transform: translateY(-600%) scale(1, 1); }
+}
+
+@keyframes bsDrop5 {
+  0%, 50.83% { opacity: 1; transform: translateY(-500%) scale(1, 1); animation-timing-function: cubic-bezier(.5, 0, .9, .6); }
+  55% { transform: translateY(0) scale(1, 1); animation-timing-function: ease-out; }
+  56% { transform: translateY(0) scale(1.14, .8); animation-timing-function: ease-in-out; }
+  57.83% { transform: translateY(0) scale(.97, 1.06); animation-timing-function: ease-in-out; }
+  59.83%, 90.83% { opacity: 1; transform: translateY(0) scale(1, 1); }
+  95.83%, 99% { opacity: 0; transform: translateY(-6%) scale(.96, .96); }
+  100% { opacity: 0; transform: translateY(-500%) scale(1, 1); }
+}
+
+@keyframes bsDrop6 {
+  0%, 65.83% { opacity: 1; transform: translateY(-400%) scale(1, 1); animation-timing-function: cubic-bezier(.5, 0, .9, .6); }
+  70% { transform: translateY(0) scale(1, 1); animation-timing-function: ease-out; }
+  71% { transform: translateY(0) scale(1.14, .8); animation-timing-function: ease-in-out; }
+  72.83% { transform: translateY(0) scale(.97, 1.06); animation-timing-function: ease-in-out; }
+  74.83%, 90.83% { opacity: 1; transform: translateY(0) scale(1, 1); }
+  95.83%, 99% { opacity: 0; transform: translateY(-6%) scale(.96, .96); }
+  100% { opacity: 0; transform: translateY(-400%) scale(1, 1); }
+}
+/* Small screens: the stage keeps its proportions; only the copy column reflows. */
+@media (max-width: 920px) {
+  .bs-hero-media {
+    justify-self: center;
+  }
+}
+
+/* Reduced motion: no decorative animation; the static composition is the finished burger. */
+@media (prefers-reduced-motion: reduce) {
+  .bs-world,
+  .bs-fx,
+  .bs-tower,
+  .bs-tower .bs-tile,
+  .bs-ticket-bar i,
+  .bs-perfect,
+  .ug-steps li::after,
+  .ug-vote h2::after {
+    animation: none !important;
+  }
+}
+
+/* Paused: the loop-based pieces show their finished state instead of freezing mid-fall (the shared rule freezes the rest). */
+body.animations-paused .bs-tower .bs-tile,
+body.animations-paused .bs-ticket-bar i,
+body.animations-paused .bs-perfect,
+body.animations-paused .ug-steps li::after,
+body.animations-paused .ug-vote h2::after {
+  animation: none;
+}

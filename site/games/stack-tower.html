@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Drop floors from a swinging crane and build a tower that stays standing. Status: Early prototype. In development at WillowinWorlds.">
+  <meta name="description" content="A one-tap tower stacker: a crane swings each floor, you time the drop, and the landing grade sets your score, stability and streak.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#18262F" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#EAF3FA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#18262F" id="metaThemeColor">
   <meta property="og:title" content="Stack Tower — one-tap tower stacker in development">
-  <meta property="og:description" content="Drop floors from a swinging crane and build a tower that stays standing. Status: Early prototype. In development at WillowinWorlds.">
+  <meta property="og:description" content="A one-tap tower stacker: a crane swings each floor, you time the drop, and the landing grade sets your score, stability and streak.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/willowinworld-og-1200x630.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -22,11 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Stack Tower — one-tap tower stacker in development">
-  <meta name="twitter:description" content="Drop floors from a swinging crane and build a tower that stays standing. Status: Early prototype. In development at WillowinWorlds.">
+  <meta name="twitter:description" content="A one-tap tower stacker: a crane swings each floor, you time the drop, and the landing grade sets your score, stability and streak.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/willowinworld-og-1200x630.webp">
   <meta name="twitter:image:alt" content="WillowinWorlds indie mobile game studio">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Stack Tower — one-tap tower stacker in development | WillowinWorlds</title>
+  <title>Stack Tower — tower stacker in development | WillowinWorlds</title>
   <link rel="canonical" href="https://willowinworlds.com/games/stack-tower.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -48,7 +47,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Games",
-          "item": "https://willowinworlds.com/#games"
+          "item": "https://willowinworlds.com/#in-development"
         },
         {
           "@type": "ListItem",
@@ -94,12 +93,14 @@
   <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
-  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-3">
+  <link rel="stylesheet" href="../css/upcoming-stack-tower.css?v=20261113-2">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="stack-tower">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Stack Tower — back to WillowinWorlds">
+    <a class="game-detail-brand" href="../index.html" aria-label="Stack Tower WillowinWorlds game page, back to WillowinWorlds home">
       <img src="../assets/responsive/willowinworld-logo-64.webp" width="64" height="64" alt="WillowinWorlds logo" decoding="async">
       <span><strong>Stack Tower</strong><small>WillowinWorlds game page</small></span>
     </a>
@@ -109,6 +110,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -119,7 +121,7 @@
     <section class="ug-hero" aria-labelledby="heroTitle">
       <div class="container ug-hero-frame">
         <img class="ug-hero-bg" src="../assets/upcoming/stack-tower/hero-1280.webp" srcset="../assets/upcoming/stack-tower/hero-720.webp 720w, ../assets/upcoming/stack-tower/hero-1280.webp 1280w" sizes="(max-width: 1220px) calc(100vw - 40px), 1180px" width="1280" height="720" alt="" aria-hidden="true" decoding="async">
-        <div class="ug-hero-layout ug-hero-layout--solo">
+        <div class="ug-hero-layout">
           <div class="ug-hero-copy">
           <p class="ug-meta"><span class="status-pill ug-pill">Early prototype</span><span class="ug-genre">One-tap tower stacker</span></p>
           <h1 id="heroTitle">Stack Tower</h1>
@@ -128,9 +130,36 @@
           <p class="ug-status-note">One scene with the crane, floor drops, landing grades, stability and a HUD is built around a single 20-floor building; menus, audio and progression are not built.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#vote">Follow development</a>
-            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">All games</a>
           </div>
         </div>
+          <figure class="st-figure">
+            <div class="st-stage" aria-hidden="true">
+              <div class="st-scene">
+                <span class="st-far"></span>
+                <span class="st-clouds"></span>
+                <span class="st-crane"><span class="st-mast"></span><span class="st-jib"></span><span class="st-cab"></span><span class="st-trolley"></span></span>
+                <div class="st-world">
+                  <div class="st-tower">
+                    <span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span>
+                  </div>
+                  <span class="st-floor st-floor--a st-drop st-drop--a"></span>
+                  <span class="st-floor st-floor--b st-drop st-drop--b"></span>
+                </div>
+                <div class="st-swing">
+                  <span class="st-cable"></span>
+                  <span class="st-hook"></span>
+                  <span class="st-hang st-hang--a"><span class="st-sling"></span><span class="st-floor st-floor--a"></span></span>
+                  <span class="st-hang st-hang--b"><span class="st-sling"></span><span class="st-floor st-floor--b"></span></span>
+                </div>
+                <span class="st-flash st-flash--a"></span>
+                <span class="st-flash st-flash--b"></span>
+                <span class="st-grade st-grade--a">Perfect</span>
+                <span class="st-grade st-grade--b">Good</span>
+              </div>
+            </div>
+            <figcaption>Illustrated loop: swing, drop, land. Drawn in CSS, not gameplay footage.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -199,6 +228,16 @@
       </section>
     </div>
   </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">More worlds in the lab</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>Same tap-to-drop stacking mechanic, with burger layers and nine modes.</span></a></li>
+        <li><a class="lab-related-link" href="sandwich-stack.html"><strong>Sandwich Stack</strong><span>Same one-tap stacking mechanic, with sandwich layers and four modes.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">All games in development</a>
+    </div>
+  </nav>
   <footer class="game-footer">
     <div class="container game-footer-inner">
       <div class="game-footer-copy">
@@ -206,7 +245,7 @@
         <span>Drop floors from a swinging crane and build a tower that stays standing.</span>
       </div>
       <nav class="game-footer-nav" aria-label="Stack Tower footer navigation">
-        <a href="../index.html#games">All games</a>
+        <a href="../index.html#in-development">All games</a>
         <a href="../press-kit.html">Press kit</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../legal.html">Legal</a>

@@ -1,4 +1,27 @@
 /* WillowinWorlds home: "In development" lab section. Cards link to the English-only prototype pages. */
+
+/* The dark theme paints a pale scene behind this area: keep the heading on its own panel,
+   like the paragraph below it, so title and eyebrow keep 4.5:1 text contrast on any backdrop. */
+.lab-section .section-head > div {
+  display: inline-block;
+  max-width: 100%;
+  padding: 14px 20px 18px;
+  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+}
+
+.lab-section .eyebrow {
+  margin-bottom: 10px;
+}
+
+.lab-section .section-title {
+  overflow-wrap: break-word;
+}
+
 .lab-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -27,6 +50,9 @@
 }
 
 .lab-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
   flex: 1;
   grid-template-columns: auto minmax(0, 1fr);
@@ -48,9 +74,27 @@
   transition: transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
 }
 
+/* Two-tone focus ring: the accent ring sits between the card and a halo in the page background
+   colour, so it stays visible on the card and on whatever scene is painted behind it. */
 .lab-card:focus-visible {
   outline: 3px solid var(--focus-ring);
-  outline-offset: 3px;
+  outline-offset: 0;
+  box-shadow: 0 0 0 6px var(--bg), var(--shadow-soft);
+}
+
+/* Motion is lighter than the main game cards so the 2x2 gallery stays the hero: one slow icon drift per card,
+   hover effects as transitions or one-shot animations, transform and opacity only. */
+
+/* Accent sweep: a soft diagonal light that crosses the card once on hover, behind the content. */
+.lab-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 32%, color-mix(in srgb, var(--cyan) 20%, transparent) 50%, transparent 68%);
+  opacity: 0;
+  transform: translateX(-100%);
+  pointer-events: none;
 }
 
 @media (hover: hover) {
@@ -59,10 +103,28 @@
     border-color: color-mix(in srgb, var(--cyan) 52%, var(--line));
   }
 
+  .lab-card:hover::before {
+    opacity: 1;
+    transform: translateX(100%);
+    transition: transform .9s var(--ease), opacity .9s var(--ease);
+  }
+
   .lab-card:hover .lab-name {
     text-decoration: underline;
     text-underline-offset: 3px;
   }
+
+  .lab-card:hover .lab-icon {
+    transform: rotate(-5deg) scale(1.07);
+  }
+
+  .lab-card:hover .lab-status::after {
+    animation: labPillPulse 1.1s var(--ease);
+  }
+}
+
+.lab-card:focus-visible .lab-icon {
+  transform: rotate(-5deg) scale(1.07);
 }
 
 .lab-icon {
@@ -75,6 +137,24 @@
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--surface-soft);
+  transition: transform .35s var(--ease);
+  animation: labIconDrift 7s ease-in-out infinite;
+}
+
+/* Cards drift out of step so the grid never moves in unison. */
+.lab-grid > li:nth-child(3n+2) .lab-icon {
+  animation-duration: 8s;
+  animation-delay: -2.7s;
+}
+
+.lab-grid > li:nth-child(3n) .lab-icon {
+  animation-duration: 9s;
+  animation-delay: -5.1s;
+}
+
+@keyframes labIconDrift {
+  0%, 100% { translate: 0 0; rotate: 0deg; }
+  50% { translate: 0 -3px; rotate: 1.4deg; }
 }
 
 .lab-icon img {
@@ -122,11 +202,28 @@
 }
 
 .lab-status {
+  position: relative;
   grid-area: status;
   justify-self: start;
   align-self: start;
   max-width: 100%;
   line-height: 1.25;
+}
+
+/* Hover pulse: a ring in the stage colour that grows out of the pill once and fades. */
+.lab-status::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid currentColor;
+  border-radius: inherit;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes labPillPulse {
+  from { opacity: 0.55; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.2, 1.5); }
 }
 
 /* Stage tones reuse the shared status-pill contrast mixing (game-components.css). */
@@ -146,6 +243,17 @@
   }
 }
 
+/* Off-screen cards are paused by initGameAnimationVisibility (scripts.js); low motion and "Disable Magic" freeze the drift too. */
+.lab-card.is-animation-paused .lab-icon,
+body:is(.low-motion, .magic-off) .lab-card .lab-icon {
+  animation-play-state: paused;
+}
+
+/* "Pause animations" freezes the drift (base.css); a hovered pill ring would freeze at its first frame, so drop it. */
+body.animations-paused .lab-card:hover .lab-status::after {
+  animation: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .lab-card {
     transition: none;
@@ -153,5 +261,18 @@
 
   .lab-card:hover {
     transform: none;
+  }
+
+  .lab-icon,
+  .lab-card:hover .lab-icon,
+  .lab-card:focus-visible .lab-icon {
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+
+  .lab-card::before,
+  .lab-status::after {
+    display: none;
   }
 }

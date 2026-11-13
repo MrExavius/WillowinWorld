@@ -1,0 +1,809 @@
+/* WillowinWorlds CSS: Stack Tower page (games/stack-tower.html). Loaded after upcoming-game.css.
+   Signature element: a CSS-drawn crane swings a floor, the floor drops, lands with a flash and a grade, and the camera lifts.
+   The scene is decoration only (aria-hidden) and an illustration, not gameplay footage.
+   Loop: 8 s (two pendulum periods of 4 s), two landings (Perfect, then Good). The tower is two floors periodic, so the reset at the end of the loop is invisible.
+   Units: inside .st-scene 1em = 1% of the stage width (container query unit), so the scene scales with the stage.
+   Only transform and opacity are animated; transitions handle hover and press, so they still work while animations are paused. */
+
+/* ---------- Hero ---------- */
+body[data-game="stack-tower"] .ug-hero-frame {
+  background:
+    radial-gradient(ellipse at 80% 46%, color-mix(in srgb, #A1C7E6 26%, transparent), transparent 58%),
+    var(--ug-card);
+}
+
+/* The illustration stays a quiet backdrop: pushed right so its own tower hides behind the stage, and tinted by the overlay. */
+body[data-game="stack-tower"] .ug-hero-bg {
+  inset: 0 auto 0 25%;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  opacity: 0.42;
+  -webkit-mask-image: radial-gradient(ellipse 40% 46% at 70% 42%, #000 0, transparent 100%);
+  mask-image: radial-gradient(ellipse 40% 46% at 70% 42%, #000 0, transparent 100%);
+}
+
+body[data-game="stack-tower"] .ug-hero-frame::before {
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--ug-bg) 97%, transparent) 0%,
+    color-mix(in srgb, var(--ug-bg) 93%, transparent) 55%,
+    color-mix(in srgb, var(--ug-bg) 72%, transparent) 100%
+  );
+}
+
+.st-figure {
+  justify-self: center;
+  width: min(100%, 25rem);
+  margin: 0;
+}
+
+.st-figure figcaption {
+  margin-top: 14px;
+  color: var(--ug-muted);
+  font-size: 0.9rem;
+  font-weight: 760;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.st-stage {
+  --st-h: 10.4em;
+  container-type: inline-size;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 20 / 27;
+  border: 1px solid color-mix(in srgb, var(--ug-fill) 45%, var(--ug-line));
+  border-radius: 28px;
+  background: linear-gradient(180deg, #78AEDB 0%, #A1C7E6 46%, #D2E6F4 100%);
+  box-shadow:
+    0 30px 70px var(--ug-shadow),
+    0 0 0 8px color-mix(in srgb, var(--ug-fill) 14%, transparent);
+}
+
+.st-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border-radius: inherit;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 -50px 60px rgba(16, 32, 46, 0.2);
+  pointer-events: none;
+}
+
+.st-scene {
+  position: absolute;
+  inset: 0;
+  font-size: 1cqw;
+}
+
+.st-scene > * {
+  position: absolute;
+}
+
+/* ---------- Sky: clouds and distant towers ---------- */
+.st-clouds {
+  top: 9em;
+  left: 0;
+  width: 200em;
+  height: 30em;
+  opacity: 0.92;
+  background:
+    radial-gradient(circle 3.6em at 18em 7.4em, #fff 0 92%, transparent 100%),
+    radial-gradient(circle 4.6em at 24.5em 6.4em, #fff 0 92%, transparent 100%),
+    radial-gradient(circle 3.2em at 30em 8.6em, #fff 0 92%, transparent 100%),
+    radial-gradient(ellipse 12.5em 3.4em at 24em 10em, #fff 0 92%, transparent 100%),
+    radial-gradient(circle 2.8em at 72em 20.4em, #fff 0 92%, transparent 100%),
+    radial-gradient(circle 3.5em at 77em 19.4em, #fff 0 92%, transparent 100%),
+    radial-gradient(ellipse 9em 2.6em at 75em 22.2em, #fff 0 92%, transparent 100%);
+  background-size: 100em 30em;
+  background-repeat: repeat-x;
+  animation: st-drift 70s linear infinite;
+}
+
+.st-far {
+  top: -30em;
+  bottom: -30em;
+  left: 0;
+  right: 0;
+  animation: st-far-lift 8s linear infinite;
+}
+
+.st-far::before,
+.st-far::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 4.3em, rgba(255, 255, 255, 0.3) 4.3em 5.2em),
+    linear-gradient(90deg, #8DB6D8, #9FC3DF);
+  opacity: 0.8;
+}
+
+.st-far::before {
+  left: 15em;
+  width: 15em;
+}
+
+.st-far::after {
+  left: 71em;
+  width: 20em;
+  opacity: 0.6;
+}
+
+/* ---------- Crane (fixed to the screen: it climbs with the tower) ---------- */
+.st-crane {
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.st-crane > * {
+  position: absolute;
+}
+
+.st-mast {
+  top: 0;
+  bottom: 0;
+  left: 4em;
+  width: 7em;
+  background:
+    linear-gradient(90deg, #E1A11F 0 1em, transparent 1em calc(100% - 1em), #E1A11F calc(100% - 1em)),
+    repeating-linear-gradient(45deg, transparent 0 3.4em, #3B5062 3.4em 4em),
+    repeating-linear-gradient(-45deg, transparent 0 3.4em, #3B5062 3.4em 4em);
+}
+
+.st-jib {
+  top: 2em;
+  left: 4em;
+  width: 104em;
+  height: 6em;
+  background:
+    linear-gradient(180deg, #E1A11F 0 1.1em, transparent 1.1em calc(100% - 1.1em), #E1A11F calc(100% - 1.1em)),
+    repeating-linear-gradient(60deg, transparent 0 3.2em, #3B5062 3.2em 3.8em),
+    repeating-linear-gradient(-60deg, transparent 0 3.2em, #3B5062 3.2em 3.8em);
+}
+
+.st-cab {
+  top: 8.4em;
+  left: 12.4em;
+  width: 10em;
+  height: 7.4em;
+  border: 0.5em solid #E1A11F;
+  border-radius: 1.2em;
+  background: linear-gradient(180deg, #E4F5FF 0 56%, #3B5062 56%);
+}
+
+.st-trolley {
+  top: 8em;
+  left: 45em;
+  width: 10em;
+  height: 5em;
+  border-bottom: 0.9em solid #E1A11F;
+  border-radius: 0.9em 0.9em 1.6em 1.6em;
+  background: #3B5062;
+}
+
+/* ---------- Tower and camera lift ---------- */
+.st-world {
+  inset: 0;
+  z-index: 1;
+  will-change: transform;
+  animation: st-lift 8s linear infinite;
+}
+
+/* Height ruler: ticks every floor, so the camera lift reads. Period equals one floor, so the loop reset does not show. */
+.st-world::before {
+  content: "";
+  position: absolute;
+  top: -30em;
+  bottom: -40em;
+  left: 90.6em;
+  width: 3em;
+  background: repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0 0.35em, transparent 0.35em 10.4em) 0 10em;
+}
+
+.st-world::after {
+  content: "";
+  position: absolute;
+  top: -30em;
+  bottom: -40em;
+  left: 93.4em;
+  width: 0.35em;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.st-tower {
+  position: absolute;
+  top: 84em;
+  left: 0;
+  right: 0;
+}
+
+.st-floor {
+  --f: #9A6A3A;
+  --f-hi: #BA8751;
+  --f-lo: #6F4824;
+  --p: #86A0AE;
+  --p-hi: #A6BCC7;
+  --band: #8A5E31;
+  position: relative;
+  display: block;
+  width: 34em;
+  height: 10.4em;
+  margin-inline: auto;
+  border-radius: 1.7em;
+  background: linear-gradient(180deg, var(--f-hi) 0 12%, var(--f) 12%);
+  box-shadow:
+    inset 0 -0.7em 0 var(--f-lo),
+    0 0.15em 0 rgba(20, 34, 46, 0.38);
+}
+
+.st-floor::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.18) 0 14%, transparent 14% 86%, rgba(0, 0, 0, 0.18) 86%);
+}
+
+.st-floor::after {
+  content: "";
+  position: absolute;
+  inset: 2em 17% 2.3em;
+  border-radius: 0.9em;
+  background: linear-gradient(180deg, var(--p-hi) 0 42%, var(--band) 42% 54%, var(--p) 54%);
+  box-shadow: 0 0.3em 0 rgba(0, 0, 0, 0.16);
+}
+
+.st-floor--b {
+  --f: #D08A33;
+  --f-hi: #E8A850;
+  --f-lo: #9E6420;
+  --p: #E6CB93;
+  --p-hi: #F4E2B7;
+  --band: #C98A36;
+  transform: translateX(-3.2em);
+}
+
+/* ---------- Dropped floors (in the world, so they lift with the tower) ---------- */
+.st-drop {
+  position: absolute;
+  left: 33em;
+  opacity: 0;
+  transform-origin: 50% 100%;
+}
+
+.st-drop--a {
+  top: 73.6em;
+  animation: st-drop-a 8s linear infinite;
+}
+
+.st-drop--b {
+  top: 63.2em;
+  animation: st-drop-b 8s linear infinite;
+}
+
+/* ---------- Crane pendulum ---------- */
+.st-swing {
+  top: 12em;
+  left: 50em;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0;
+  will-change: transform;
+  animation: st-swing 4s linear infinite;
+}
+
+.st-swing > * {
+  position: absolute;
+}
+
+.st-cable {
+  top: 0;
+  left: -0.2em;
+  width: 0.4em;
+  height: 14em;
+  background: #2B3E4D;
+}
+
+.st-hook {
+  top: 12.6em;
+  left: -2em;
+  width: 4em;
+  height: 5.6em;
+  border: 0.5em solid #3B5062;
+  border-radius: 1em 1em 1.8em 1.8em;
+  background: #E1A11F;
+}
+
+.st-hang {
+  top: 18em;
+  left: -17em;
+  width: 34em;
+  height: 16.4em;
+  transform-origin: 50% 0;
+}
+
+.st-hang--a {
+  animation: st-hang-a 8s linear infinite;
+}
+
+.st-hang--b {
+  opacity: 0;
+  animation: st-hang-b 8s linear infinite;
+}
+
+.st-hang .st-floor {
+  position: absolute;
+  top: 6em;
+  left: 0;
+  margin: 0;
+  transform: none;
+}
+
+.st-sling {
+  position: absolute;
+  top: 0;
+  left: 6em;
+  width: 22em;
+  height: 6.2em;
+  background:
+    linear-gradient(to top left, transparent calc(50% - 0.22em), #2B3E4D calc(50% - 0.22em) calc(50% + 0.22em), transparent calc(50% + 0.22em)) left / 50% 100% no-repeat,
+    linear-gradient(to top right, transparent calc(50% - 0.22em), #2B3E4D calc(50% - 0.22em) calc(50% + 0.22em), transparent calc(50% + 0.22em)) right / 50% 100% no-repeat;
+}
+
+/* ---------- Landing flash and grade ---------- */
+.st-flash {
+  z-index: 2;
+  top: 84em;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.st-flash--a {
+  left: 50em;
+  animation: st-flash-a 8s linear infinite;
+}
+
+.st-flash--b {
+  left: 46.8em;
+  animation: st-flash-b 8s linear infinite;
+}
+
+.st-flash::before {
+  content: "";
+  position: absolute;
+  top: -10em;
+  left: -36em;
+  width: 72em;
+  height: 20em;
+  background:
+    radial-gradient(circle at 21% 30%, #fff 0 0.55em, transparent 0.9em),
+    radial-gradient(circle at 80% 26%, #fff 0 0.45em, transparent 0.8em),
+    radial-gradient(circle at 36% 80%, #fff 0 0.4em, transparent 0.7em),
+    radial-gradient(circle at 68% 78%, #fff 0 0.55em, transparent 0.9em),
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.95) 0 6%, rgba(255, 238, 168, 0.72) 22%, rgba(255, 214, 102, 0) 62%);
+}
+
+.st-flash::after {
+  content: "";
+  position: absolute;
+  top: -0.4em;
+  left: -17em;
+  width: 34em;
+  height: 0.8em;
+  border-radius: 0.4em;
+  background: linear-gradient(90deg, transparent, #fff 22% 78%, transparent);
+  box-shadow: 0 0 1.6em 0.4em rgba(255, 240, 170, 0.9);
+}
+
+.st-flash--b::before {
+  background:
+    radial-gradient(circle at 24% 32%, #fff 0 0.4em, transparent 0.7em),
+    radial-gradient(circle at 76% 70%, #fff 0 0.4em, transparent 0.7em),
+    radial-gradient(ellipse at center, rgba(255, 255, 255, 0.85) 0 5%, rgba(214, 246, 190, 0.6) 22%, rgba(154, 219, 124, 0) 60%);
+}
+
+.st-flash--b::after {
+  box-shadow: 0 0 1.4em 0.3em rgba(190, 240, 160, 0.8);
+}
+
+.st-grade {
+  z-index: 4;
+  top: 64cqw;
+  padding: 0.3em 0.95em 0.34em;
+  border-radius: 999px;
+  color: #1E2F3B;
+  background: linear-gradient(180deg, #FFE69E, #FFC84B);
+  box-shadow:
+    0 0.1em 0 rgba(0, 0, 0, 0.16),
+    0 0 0.55em rgba(255, 214, 102, 0.85);
+  font-size: max(12px, 4.4em);
+  font-weight: 850;
+  line-height: 1.1;
+  white-space: nowrap;
+  opacity: 0;
+}
+
+.st-grade--a {
+  left: 50%;
+  animation: st-grade-a 8s linear infinite;
+}
+
+.st-grade--b {
+  left: calc(50% - 3.2cqw);
+  background: linear-gradient(180deg, #DDF7CD, #9ADB7C);
+  box-shadow:
+    0 0.1em 0 rgba(0, 0, 0, 0.16),
+    0 0 0.55em rgba(154, 219, 124, 0.85);
+  animation: st-grade-b 8s linear infinite;
+}
+
+/* ---------- Keyframes ----------
+   Pendulum: 4 s, centre at 0 s, 2 s, 4 s ...; extremes at 1 s, 3 s ...; sine easing.
+   Loop (8 s, 1% = 80 ms): floor A drops at 2.0 s (pendulum at centre, Perfect) and lands at 2.55 s; the camera lifts to 3.45 s;
+   floor B hangs from 3.5 s, drops at 6.26 s (just past centre, so it lands 3 units off-centre: Good) and lands at 6.81 s; lift to 7.7 s. */
+@keyframes st-swing {
+  0% { transform: rotate(0deg); animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1); }
+  25% { transform: rotate(-16deg); animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0); }
+  50% { transform: rotate(0deg); animation-timing-function: cubic-bezier(0.61, 1, 0.88, 1); }
+  75% { transform: rotate(16deg); animation-timing-function: cubic-bezier(0.12, 0, 0.39, 0); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes st-lift {
+  0%,
+  31.9% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+  }
+
+  43.1%,
+  85.1% {
+    transform: translateY(var(--st-h));
+    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+  }
+
+  96.3%,
+  100% { transform: translateY(calc(var(--st-h) * 2)); }
+}
+
+@keyframes st-far-lift {
+  0%,
+  31.9% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+  }
+
+  43.1%,
+  85.1% {
+    transform: translateY(calc(var(--st-h) / 2));
+    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
+  }
+
+  96.3%,
+  100% { transform: translateY(var(--st-h)); }
+}
+
+@keyframes st-drift {
+  to { transform: translateX(-100em); }
+}
+
+@keyframes st-hang-a {
+  0%,
+  24.9% { opacity: 1; transform: scale(1); }
+  25% { opacity: 0; transform: scale(1); }
+  91.9% { opacity: 0; transform: scale(0.6); }
+  96.9%,
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes st-hang-b {
+  0%,
+  43.7% { opacity: 0; transform: scale(0.6); }
+  48.7%,
+  78.2% { opacity: 1; transform: scale(1); }
+  78.3%,
+  100% { opacity: 0; transform: scale(1); }
+}
+
+@keyframes st-drop-a {
+  0%,
+  24.9% { opacity: 0; transform: translate(0, -37.6em) rotate(0deg) scale(1, 1); }
+
+  25% {
+    opacity: 1;
+    transform: translate(0, -37.6em) rotate(0deg) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.55, 0.05, 0.9, 0.5);
+  }
+
+  31.9% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1, 1);
+    animation-timing-function: ease-out;
+  }
+
+  33.5% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1.04, 0.93); }
+  35.5%,
+  100% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(1, 1); }
+}
+
+@keyframes st-drop-b {
+  0%,
+  78.2% { opacity: 0; transform: translate(-3.2em, -37.9em) rotate(6.4deg) scale(1, 1); }
+
+  78.3% {
+    opacity: 1;
+    transform: translate(-3.2em, -37.9em) rotate(6.4deg) scale(1, 1);
+    animation-timing-function: cubic-bezier(0.55, 0.05, 0.9, 0.5);
+  }
+
+  85.1% {
+    opacity: 1;
+    transform: translate(-3.2em, 0) rotate(0deg) scale(1, 1);
+    animation-timing-function: ease-out;
+  }
+
+  86.7% { opacity: 1; transform: translate(-3.2em, 0) rotate(0deg) scale(1.04, 0.93); }
+  88.7%,
+  100% { opacity: 1; transform: translate(-3.2em, 0) rotate(0deg) scale(1, 1); }
+}
+
+@keyframes st-flash-a {
+  0%,
+  31.9% { opacity: 0; transform: scale(0.5); }
+  32.7% { opacity: 1; transform: scale(0.85); }
+  37.5%,
+  100% { opacity: 0; transform: scale(1.3); }
+}
+
+@keyframes st-flash-b {
+  0%,
+  85.1% { opacity: 0; transform: scale(0.5); }
+  85.9% { opacity: 1; transform: scale(0.85); }
+  90.7%,
+  100% { opacity: 0; transform: scale(1.3); }
+}
+
+@keyframes st-grade-a {
+  0%,
+  31.9% { opacity: 0; transform: translate(-50%, 2cqw) scale(0.8); animation-timing-function: ease-out; }
+  34.4% { opacity: 1; transform: translate(-50%, -1cqw) scale(1.07); }
+  36.3% { opacity: 1; transform: translate(-50%, -1.8cqw) scale(1); animation-timing-function: ease-in; }
+  42.3% { opacity: 1; transform: translate(-50%, -3.4cqw) scale(1); }
+  46.8%,
+  100% { opacity: 0; transform: translate(-50%, -4.6cqw) scale(1); }
+}
+
+@keyframes st-grade-b {
+  0%,
+  85.1% { opacity: 0; transform: translate(-50%, 2cqw) scale(0.8); animation-timing-function: ease-out; }
+  87.6% { opacity: 1; transform: translate(-50%, -1cqw) scale(1.07); }
+  89.5% { opacity: 1; transform: translate(-50%, -1.8cqw) scale(1); animation-timing-function: ease-in; }
+  95.5% { opacity: 1; transform: translate(-50%, -3.1cqw) scale(1); }
+  100% { opacity: 0; transform: translate(-50%, -3.6cqw) scale(1); }
+}
+
+/* ---------- Sections ---------- */
+/* Features: a small floor chip before each title; the card lifts on hover and the chip drops into place. */
+body[data-game="stack-tower"] .ug-features .detail-card {
+  position: relative;
+  transition: transform 0.22s ease-out, border-color 0.22s ease-out, box-shadow 0.22s ease-out;
+}
+
+body[data-game="stack-tower"] .ug-features .detail-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+body[data-game="stack-tower"] .ug-features .detail-card h3::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 1.9rem;
+  height: 0.7rem;
+  border-radius: 0.24rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0 28%, transparent 28%), #9A6A3A;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.28);
+  transform: translateY(-3px);
+  transition: transform 0.38s cubic-bezier(0.3, 1.7, 0.5, 1);
+}
+
+body[data-game="stack-tower"] .ug-features .detail-card:nth-child(even) h3::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0 28%, transparent 28%), #D08A33;
+}
+
+body[data-game="stack-tower"] .ug-features .detail-card:hover,
+body[data-game="stack-tower"] .ug-features .detail-card:focus-within {
+  border-color: var(--ug-accent);
+  box-shadow: 0 16px 34px var(--ug-shadow);
+  transform: translateY(-4px);
+}
+
+body[data-game="stack-tower"] .ug-features .detail-card:hover h3::before,
+body[data-game="stack-tower"] .ug-features .detail-card:focus-within h3::before {
+  transform: translateY(0);
+}
+
+body[data-game="stack-tower"] .ug-features .detail-card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+body[data-game="stack-tower"] .btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* How it plays: each step carries a tiny pictogram of its moment, idling slowly. */
+body[data-game="stack-tower"] .ug-steps li {
+  position: relative;
+  transition: transform 0.22s ease-out, border-color 0.22s ease-out;
+}
+
+body[data-game="stack-tower"] .ug-steps li:hover {
+  border-color: var(--ug-accent);
+  transform: translateY(-3px);
+}
+
+body[data-game="stack-tower"] .ug-steps li::before,
+body[data-game="stack-tower"] .ug-steps li::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 2.6rem;
+  height: 2.6rem;
+  pointer-events: none;
+}
+
+/* Step 1: a floor on a swinging cable. */
+body[data-game="stack-tower"] .ug-steps li:nth-child(1)::before {
+  display: none;
+}
+
+body[data-game="stack-tower"] .ug-steps li:nth-child(1)::after {
+  background:
+    linear-gradient(var(--ug-muted), var(--ug-muted)) 50% 0 / 2px 1.5rem no-repeat,
+    linear-gradient(180deg, #E8A850 0 30%, #D08A33 30%) 50% 100% / 1.7rem 0.72rem no-repeat;
+  border-radius: 0.2rem;
+  transform-origin: 50% 0;
+  animation: st-step-swing 4.4s ease-in-out infinite;
+}
+
+/* Step 2: a floor falling onto a line. */
+body[data-game="stack-tower"] .ug-steps li:nth-child(2)::before {
+  background: linear-gradient(var(--ug-line), var(--ug-line)) 50% 100% / 100% 2px no-repeat;
+}
+
+body[data-game="stack-tower"] .ug-steps li:nth-child(2)::after {
+  background: linear-gradient(180deg, #BA8751 0 30%, #9A6A3A 30%) 50% 100% / 1.7rem 0.72rem no-repeat;
+  transform-origin: 50% 100%;
+  animation: st-step-drop 4.8s ease-in infinite;
+}
+
+/* Step 3: the grade ring around a golden floor. */
+body[data-game="stack-tower"] .ug-steps li:nth-child(3)::before {
+  background: linear-gradient(180deg, #F4D76A 0 30%, #D9A91F 30%) 50% 50% / 1.7rem 0.72rem no-repeat;
+}
+
+body[data-game="stack-tower"] .ug-steps li:nth-child(3)::after {
+  border: 2px solid var(--ug-accent);
+  border-radius: 50%;
+  animation: st-step-ring 4.2s ease-out infinite;
+}
+
+@keyframes st-step-swing {
+  0%,
+  100% { transform: rotate(-16deg); }
+  50% { transform: rotate(16deg); }
+}
+
+@keyframes st-step-drop {
+  0%,
+  8% { opacity: 0; transform: translateY(-1.3rem); }
+  16% { opacity: 1; transform: translateY(-1.3rem); animation-timing-function: cubic-bezier(0.55, 0.05, 0.9, 0.5); }
+  34% { opacity: 1; transform: translateY(0) scale(1, 1); animation-timing-function: ease-out; }
+  38% { opacity: 1; transform: translateY(0) scale(1.06, 0.88); }
+  44%,
+  84% { opacity: 1; transform: translateY(0) scale(1, 1); }
+  100% { opacity: 0; transform: translateY(0) scale(1, 1); }
+}
+
+@keyframes st-step-ring {
+  0%,
+  45% { opacity: 0; transform: scale(0.45); }
+  50% { opacity: 0.9; transform: scale(0.5); }
+  100% { opacity: 0; transform: scale(1.1); }
+}
+
+/* Vote: a small stack with a golden floor that floats above it (five Perfect landings in a row queue a Golden floor). */
+body[data-game="stack-tower"] .ug-vote {
+  position: relative;
+}
+
+body[data-game="stack-tower"] .ug-vote::before,
+body[data-game="stack-tower"] .ug-vote::after {
+  content: "";
+  position: absolute;
+  right: clamp(18px, 4vw, 38px);
+  width: 3.6rem;
+  height: 1.2rem;
+  border-radius: 0.34rem;
+  pointer-events: none;
+}
+
+body[data-game="stack-tower"] .ug-vote::before {
+  top: clamp(36px, 5vw, 52px);
+  height: 2.5rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0 14%, transparent 14%) 0 0 / 100% 1.25rem no-repeat,
+    linear-gradient(180deg, #D08A33 0 48%, #B9772A 48%) 0 0 / 100% 1.2rem no-repeat,
+    linear-gradient(180deg, #BA8751 0 48%, #9A6A3A 48%) 0 100% / 100% 1.2rem no-repeat;
+  opacity: 0.9;
+  transform: translateX(-0.5rem);
+}
+
+body[data-game="stack-tower"] .ug-vote::after {
+  top: calc(clamp(36px, 5vw, 52px) - 1.35rem);
+  background: linear-gradient(180deg, #F8E083 0 30%, #E2B02C 30%);
+  box-shadow: 0 0 14px rgba(244, 215, 106, 0.55);
+  animation: st-vote-float 5s ease-in-out infinite;
+}
+
+@keyframes st-vote-float {
+  0%,
+  100% { transform: translate(0.4rem, 0) rotate(-3deg); }
+  50% { transform: translate(0.4rem, -0.45rem) rotate(2deg); }
+}
+
+@media (max-width: 560px) {
+  body[data-game="stack-tower"] .ug-vote::before,
+  body[data-game="stack-tower"] .ug-vote::after {
+    width: 2.6rem;
+  }
+
+  body[data-game="stack-tower"] .ug-vote::after {
+    height: 0.9rem;
+  }
+
+  body[data-game="stack-tower"] .ug-vote::before {
+    height: 1.9rem;
+  }
+}
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 920px) {
+  .st-figure {
+    width: min(100%, 22rem);
+    margin-top: 6px;
+  }
+}
+
+/* ---------- Reduced motion: a still, finished frame (floor hanging over the tower, no flash). ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .st-clouds,
+  .st-far,
+  .st-world,
+  .st-swing,
+  .st-hang--a,
+  .st-hang--b,
+  .st-drop,
+  .st-flash,
+  .st-grade,
+  body[data-game="stack-tower"] .ug-steps li::after,
+  body[data-game="stack-tower"] .ug-vote::after {
+    animation: none;
+  }
+
+  body[data-game="stack-tower"] .ug-features .detail-card,
+  body[data-game="stack-tower"] .ug-steps li,
+  body[data-game="stack-tower"] .ug-features .detail-card h3::before {
+    transition: none;
+  }
+}

@@ -257,9 +257,27 @@
     state.particleCount = 18;
   }
 
-  body.setAttribute("data-theme", initialTheme);
+  // theme-init.js (first element in <body>) has normally set body[data-theme] before first paint; only write it when it is missing or different.
+  if (body.dataset.theme !== initialTheme) body.dataset.theme = initialTheme;
   root.style.colorScheme = initialTheme === "dark" ? "dark" : "light";
   if (metaThemeColor) metaThemeColor.content = initialTheme === "dark" ? "#031735" : "#fcfff2";
+
+  // The HTML ships the dark logos; swap them as soon as the script runs (not after the rest of init) and only when the theme differs.
+  let logoTheme = "dark";
+  function syncLogos(theme) {
+    if (theme === logoTheme) return;
+    logoTheme = theme;
+    document.querySelectorAll("[data-logo-theme]").forEach(logo => {
+      const darkLogo = assetUrl("assets/willowinworld-logo.webp");
+      const lightLogo = assetUrl("assets/willowinworld-logo-day.webp");
+      const darkSrcset = `${assetUrl("assets/responsive/willowinworld-logo-256.webp")} 256w, ${assetUrl("assets/responsive/willowinworld-logo-512.webp")} 512w, ${assetUrl("assets/willowinworld-logo.webp")} 1024w`;
+      const lightSrcset = `${assetUrl("assets/responsive/willowinworld-logo-day-256.webp")} 256w, ${assetUrl("assets/responsive/willowinworld-logo-day-512.webp")} 512w, ${assetUrl("assets/willowinworld-logo-day.webp")} 1024w`;
+      logo.src = theme === "dark" ? darkLogo : lightLogo;
+      logo.srcset = theme === "dark" ? darkSrcset : lightSrcset;
+      logo.sizes = logo.getAttribute("data-logo-sizes") || "(max-width: 760px) 44px, 52px";
+    });
+  }
+  syncLogos(initialTheme);
 
   const cssCache = new Map();
   const cachedCssVariables = [
@@ -1370,19 +1388,11 @@
 
   function setTheme(theme, persist = true) {
     state.theme = theme;
-    body.setAttribute("data-theme", theme);
+    if (body.dataset.theme !== theme) body.dataset.theme = theme;
     root.style.colorScheme = theme === "dark" ? "dark" : "light";
     state.backgroundCacheKey = "";
     refreshCssCache();
-    document.querySelectorAll("[data-logo-theme]").forEach(logo => {
-      const darkLogo = assetUrl("assets/willowinworld-logo.webp");
-      const lightLogo = assetUrl("assets/willowinworld-logo-day.webp");
-      const darkSrcset = `${assetUrl("assets/responsive/willowinworld-logo-256.webp")} 256w, ${assetUrl("assets/responsive/willowinworld-logo-512.webp")} 512w, ${assetUrl("assets/willowinworld-logo.webp")} 1024w`;
-      const lightSrcset = `${assetUrl("assets/responsive/willowinworld-logo-day-256.webp")} 256w, ${assetUrl("assets/responsive/willowinworld-logo-day-512.webp")} 512w, ${assetUrl("assets/willowinworld-logo-day.webp")} 1024w`;
-      logo.src = theme === "dark" ? darkLogo : lightLogo;
-      logo.srcset = theme === "dark" ? darkSrcset : lightSrcset;
-      logo.sizes = logo.getAttribute("data-logo-sizes") || "(max-width: 760px) 44px, 52px";
-    });
+    syncLogos(theme);
     if (metaThemeColor) metaThemeColor.content = theme === "dark" ? "#031735" : "#fcfff2";
     if (persist) {
       try {
@@ -1934,7 +1944,7 @@
   }
 
   function initGameAnimationVisibility() {
-    const gameCards = document.querySelectorAll(".game-card");
+    const gameCards = document.querySelectorAll(".game-card, .lab-card");
     if (!gameCards.length || !("IntersectionObserver" in window)) return;
 
     gameCards.forEach(card => card.classList.add("is-animation-paused"));

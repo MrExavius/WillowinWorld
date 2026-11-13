@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A burger-themed stacking arcade game with nine modes, from classic tower building to timed order rushes. Status: Prototype. In development at WillowinWorlds.">
+  <meta name="description" content="Tap to stack burger ingredients in nine modes, from classic tower building to timed order rushes; a Unity prototype with no public build yet.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#0C4E4B" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#E7FAFA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0C4E4B" id="metaThemeColor">
   <meta property="og:title" content="Burger Stack — arcade stacking game in development">
-  <meta property="og:description" content="A burger-themed stacking arcade game with nine modes, from classic tower building to timed order rushes. Status: Prototype. In development at WillowinWorlds.">
+  <meta property="og:description" content="Tap to stack burger ingredients in nine modes, from classic tower building to timed order rushes; a Unity prototype with no public build yet.">
   <meta property="og:image" content="https://willowinworlds.com/assets/upcoming/burger-stack/hero-1280.webp">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="720">
@@ -22,11 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Burger Stack — arcade stacking game in development">
-  <meta name="twitter:description" content="A burger-themed stacking arcade game with nine modes, from classic tower building to timed order rushes. Status: Prototype. In development at WillowinWorlds.">
+  <meta name="twitter:description" content="Tap to stack burger ingredients in nine modes, from classic tower building to timed order rushes; a Unity prototype with no public build yet.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/upcoming/burger-stack/hero-1280.webp">
   <meta name="twitter:image:alt" content="Illustrated underwater kitchen with a striped awning, brass shell lamps and a coral seabed.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Burger Stack — arcade stacking game in development | WillowinWorlds</title>
+  <title>Burger Stack — arcade stacking game | WillowinWorlds</title>
   <link rel="canonical" href="https://willowinworlds.com/games/burger-stack.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -48,7 +47,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Games",
-          "item": "https://willowinworlds.com/#games"
+          "item": "https://willowinworlds.com/#in-development"
         },
         {
           "@type": "ListItem",
@@ -96,11 +95,13 @@
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
   <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-burger-stack.css?v=20261113-2">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="burger-stack">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Burger Stack — back to WillowinWorlds">
+    <a class="game-detail-brand" href="../index.html" aria-label="Burger Stack WillowinWorlds game page, back to the studio home">
       <img src="../assets/upcoming/burger-stack/icon-192.webp" width="192" height="192" alt="A grilled beef patty on a pink rounded tile, one of the game's ingredient icons." decoding="async">
       <span><strong>Burger Stack</strong><small>WillowinWorlds game page</small></span>
     </a>
@@ -110,6 +111,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -127,12 +129,39 @@
           <p class="ug-status-note">Nine modes, 20 ingredients and a 166-recipe catalog are built in the Unity project; there is no public build yet.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#vote">Follow development</a>
-            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">All games</a>
           </div>
+          <ul class="bs-hero-stats" aria-label="Burger Stack at a glance">
+            <li><strong>9</strong><span>modes</span></li>
+            <li><strong>20</strong><span>ingredients</span></li>
+            <li><strong>166</strong><span>recipes</span></li>
+          </ul>
         </div>
-        <figure class="ug-hero-media">
-          <img src="../assets/upcoming/burger-stack/hero-1280.webp" srcset="../assets/upcoming/burger-stack/hero-720.webp 720w, ../assets/upcoming/burger-stack/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="Illustrated underwater kitchen with a striped awning, brass shell lamps and a coral seabed." fetchpriority="high" decoding="async">
-          <figcaption>Underwater kitchen backdrop from the game. Not a gameplay screenshot.</figcaption>
+        <figure class="bs-hero-media">
+          <div class="bs-stage" role="img" aria-label="Animated illustration: ingredient tiles drop onto a swaying burger stack in an underwater kitchen.">
+            <div class="bs-world">
+              <img class="bs-bg bs-bg--sea" src="../assets/upcoming/burger-stack/gallery-underwater-kitchen.webp" width="540" height="987" alt="" fetchpriority="high" decoding="async">
+              <img class="bs-bg bs-bg--sky" src="../assets/upcoming/burger-stack/gallery-sky-kitchen.webp" width="540" height="987" alt="" decoding="async">
+            </div>
+            <span class="bs-fx bs-fx--far"></span>
+            <div class="bs-ticket">
+              <b>Order</b>
+              <span class="bs-ticket-row"><i class="bs-tile bs-i-bun"></i><i class="bs-tile bs-i-patty"></i><i class="bs-tile bs-i-bacon"></i><i class="bs-tile bs-i-tomato"></i><i class="bs-tile bs-i-lettuce"></i><i class="bs-tile bs-i-bun"></i></span>
+              <span class="bs-ticket-bar"><i></i></span>
+            </div>
+            <div class="bs-tower">
+              <span class="bs-plate"></span>
+              <span class="bs-tile bs-i-bun bs-t1"></span>
+              <span class="bs-tile bs-i-patty bs-t2"></span>
+              <span class="bs-tile bs-i-bacon bs-t3"></span>
+              <span class="bs-tile bs-i-tomato bs-t4"></span>
+              <span class="bs-tile bs-i-lettuce bs-t5"></span>
+              <span class="bs-tile bs-i-bun bs-t6"></span>
+            </div>
+            <span class="bs-fx bs-fx--near"></span>
+            <span class="bs-perfect">Perfect!</span>
+          </div>
+          <figcaption>Kitchen backdrop and ingredient art from the game, animated as an illustration. Not a gameplay screenshot.</figcaption>
         </figure>
       </div>
     </section>
@@ -185,8 +214,8 @@
         <div class="eyebrow">Images</div>
         <h2 id="galleryTitle">Gallery</h2>
         <p class="ug-lede">Art and interface assets from the Unity project, not gameplay captures.</p>
-        <div class="ug-gallery">
-          <figure class="ug-shot"><img src="../assets/upcoming/burger-stack/gallery-ingredient-tray.webp" width="960" height="395" alt="The ingredient tray: 20 ingredient icons in a teal wooden board with rope lights and a brass lantern." loading="lazy" decoding="async"><figcaption>Ingredient tray</figcaption></figure>
+        <div class="ug-gallery ug-gallery--2">
+          <figure class="ug-shot ug-shot--strip"><img src="../assets/upcoming/burger-stack/gallery-ingredient-tray.webp" width="960" height="395" alt="The ingredient tray: 20 ingredient icons in a teal wooden board with rope lights and a brass lantern." loading="lazy" decoding="async"><figcaption>Ingredient tray</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/burger-stack/gallery-underwater-kitchen.webp" width="540" height="987" alt="Full portrait backdrop of the underwater kitchen with a wooden deck, a market stall and a sign board." loading="lazy" decoding="async"><figcaption>Underwater kitchen</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/burger-stack/gallery-sky-kitchen.webp" width="540" height="987" alt="Full portrait backdrop of the sky kitchen: brass lanterns and pipes among clouds above a round platform." loading="lazy" decoding="async"><figcaption>Sky kitchen</figcaption></figure>
         </div>
@@ -211,6 +240,16 @@
       </section>
     </div>
   </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">More worlds in the lab</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="sandwich-stack.html"><strong>Sandwich Stack</strong><span>Same one-tap stacking, different kitchens: a countertop board and four modes.</span></a></li>
+        <li><a class="lab-related-link" href="stack-tower.html"><strong>Stack Tower</strong><span>Same one-tap stacking, different kitchens: floors dropped from a swinging crane.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">All games in development</a>
+    </div>
+  </nav>
   <footer class="game-footer">
     <div class="container game-footer-inner">
       <div class="game-footer-copy">
@@ -218,7 +257,7 @@
         <span>A burger-themed stacking arcade game with nine modes, from classic tower building to timed order rushes.</span>
       </div>
       <nav class="game-footer-nav" aria-label="Burger Stack footer navigation">
-        <a href="../index.html#games">All games</a>
+        <a href="../index.html#in-development">All games</a>
         <a href="../press-kit.html">Press kit</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../legal.html">Legal</a>

@@ -260,9 +260,9 @@ export function renderLlmsTxt(updates) {
 
   return `# WillowinWorlds
 
-> WillowinWorlds is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.
+> WillowinWorlds is an independent mobile game studio creating four flagship physics-led puzzle and arcade games, with eight more in the lab, built on tactile controls, readable systems and expressive 2D worlds.
 
-Nature Seed is released; the other three games are currently in development. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date and is playable free in the browser on [itch.io](https://willowinworlds.itch.io/nature-seed), [Game Jolt](https://gamejolt.com/games/nature-seed/1100526) and [indiexpo](https://www.indiexpo.net/en/games/nature-seed); no rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
+Nature Seed is released; the other three flagship games are currently in development, and eight more prototypes are in the lab. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date and is playable free in the browser on [itch.io](https://willowinworlds.itch.io/nature-seed), [Game Jolt](https://gamejolt.com/games/nature-seed/1100526) and [indiexpo](https://www.indiexpo.net/en/games/nature-seed); no rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
 
 ## Games
 
@@ -286,7 +286,7 @@ ${devlogs}
 
 ## Feeds and policies
 
-- [Devlog RSS feed](${siteOrigin}/rss.xml): Latest dated production notes for all four games.
+- [Devlog RSS feed](${siteOrigin}/rss.xml): Latest dated production notes for the four flagship games.
 - [XML sitemap](${siteOrigin}/sitemap.xml): Canonical indexable pages and their current modification dates.
 - [Language index](${siteOrigin}/languages.json): Machine-readable map of every localized site and AI guide.
 - [Privacy policy](${siteOrigin}/privacy.html): Website privacy information.

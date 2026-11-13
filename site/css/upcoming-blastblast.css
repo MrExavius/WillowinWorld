@@ -1,0 +1,850 @@
+/* WillowinWorlds CSS: BlastBlast! page identity (games/blastblast.html). Loaded after upcoming-game.css.
+   Signature: the one-button blast. A pilot hops along dashed ballistic arcs, an expanding shock ring marks every blast,
+   speed streaks follow it and gates wait at the top of each arc; the painted world drifts behind.
+   Motion language: punchy bursts and arcs. Everything animated is transform/opacity only and lives under
+   prefers-reduced-motion: no-preference; the base rules below are the finished static composition. */
+
+body[data-game="blastblast"] {
+  --bb-ember: #ff8d3b;
+  --bb-ember-hot: #ff5a36;
+  --bb-gold: #ffd36a;
+  --bb-glow: #4ff3df;
+  --bb-hop: 1.6s;
+  --bb-run: 6.4s;
+}
+
+/* ---------- Hero copy ---------- */
+body[data-game="blastblast"] .ug-hero {
+  position: relative;
+  isolation: isolate;
+}
+
+body[data-game="blastblast"] .ug-hero::before {
+  content: "";
+  position: absolute;
+  inset: -6% -12% -4% 34%;
+  z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 55% at 62% 42%, color-mix(in srgb, var(--bb-ember) 30%, transparent), transparent 70%),
+    repeating-radial-gradient(circle at 62% 42%, transparent 0 54px, color-mix(in srgb, var(--bb-ember) 18%, transparent) 54px 56px);
+  -webkit-mask-image: radial-gradient(ellipse 70% 70% at 62% 42%, #000 35%, transparent 75%);
+  mask-image: radial-gradient(ellipse 70% 70% at 62% 42%, #000 35%, transparent 75%);
+  pointer-events: none;
+}
+
+body[data-game="blastblast"] .ug-hero-copy h1 {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  text-wrap: nowrap;
+}
+
+body[data-game="blastblast"] .bb-t2 {
+  color: var(--ug-accent);
+  transform: translateY(-0.04em) skewX(-4deg);
+  text-shadow: 0 0.06em 0 color-mix(in srgb, var(--bb-ember) 28%, transparent);
+}
+
+body[data-game="blastblast"] .ug-tagline {
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+body[data-game="blastblast"] .ug-pill {
+  border-radius: 6px;
+  transform: skewX(-9deg);
+}
+
+body[data-game="blastblast"] .ug-pill::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-inline-end: 8px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+}
+
+/* Status note reads like hazard tape on a mission brief. */
+body[data-game="blastblast"] .ug-status-note {
+  position: relative;
+  padding-inline-start: 26px;
+  border-inline-start-width: 1px;
+}
+
+body[data-game="blastblast"] .ug-status-note::before {
+  content: "";
+  position: absolute;
+  inset: -1px auto -1px -1px;
+  width: 10px;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+  background: repeating-linear-gradient(135deg, var(--bb-ember) 0 6px, var(--ug-bg) 6px 12px);
+}
+
+body[data-game="blastblast"] .btn {
+  transition:
+    transform 0.18s cubic-bezier(0.2, 0.9, 0.2, 1.2),
+    box-shadow 0.18s ease,
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+body[data-game="blastblast"] .btn-primary {
+  box-shadow:
+    0 5px 0 color-mix(in srgb, var(--bb-ember) 55%, #000),
+    0 16px 30px color-mix(in srgb, var(--bb-ember) 30%, transparent);
+}
+
+body[data-game="blastblast"] .btn-primary:hover {
+  transform: translateY(-3px) scale(1.025);
+  box-shadow:
+    0 8px 0 color-mix(in srgb, var(--bb-ember) 55%, #000),
+    0 22px 34px color-mix(in srgb, var(--bb-ember) 36%, transparent);
+}
+
+body[data-game="blastblast"] .btn-primary:active {
+  transform: translateY(3px) scale(0.99);
+  box-shadow: 0 2px 0 color-mix(in srgb, var(--bb-ember) 55%, #000);
+}
+
+body[data-game="blastblast"] .btn-ghost:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--bb-ember) 14%, var(--ug-card));
+}
+
+/* ---------- Hero stage ---------- */
+.bb-stage {
+  position: relative;
+  overflow: hidden;
+  border-color: color-mix(in srgb, var(--bb-ember) 48%, var(--ug-line));
+  border-width: 2px;
+  background: var(--ug-card);
+}
+
+.bb-scene {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 5 / 4;
+  container-type: inline-size;
+  background: linear-gradient(180deg, #f2a35f, #ffd9a1 58%, #f3a76d);
+}
+
+.bb-scene > * {
+  position: absolute;
+}
+
+/* Painted world: four copies side by side, every second one mirrored, so the drift loops without a seam. */
+.bb-world {
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bb-world-track {
+  display: flex;
+  width: 568cqw;
+  height: 100%;
+  transform: translateX(-30cqw);
+}
+
+.bb-world-track img {
+  flex: none;
+  width: 142cqw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bb-world-track .is-mirror {
+  transform: scaleX(-1);
+}
+
+.bb-scene::before,
+.bb-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.bb-scene::before {
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 80% 60% at 80% 0%, rgba(255, 224, 170, 0.5), transparent 70%),
+    linear-gradient(180deg, rgba(255, 205, 150, 0.4) 0, rgba(255, 190, 140, 0.34) 55%, rgba(9, 19, 38, 0.34));
+}
+
+.bb-scene::after {
+  z-index: 9;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2), inset 0 -18cqw 22cqw -14cqw rgba(9, 19, 38, 0.4);
+}
+
+/* Dashed ballistic arcs: the path the pilot rides. */
+.bb-arcs {
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.bb-arcs path {
+  fill: none;
+  stroke: #006f65;
+  stroke-opacity: 0.8;
+  stroke-width: 0.6;
+  stroke-linecap: round;
+  stroke-dasharray: 1.5 1.7;
+}
+
+/* Gates at the top of an arc: a bezel, studs, a teal glass face. */
+.bb-gate {
+  z-index: 3;
+  top: 12cqw;
+  width: 28cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle closest-side, transparent 0 74%, #35e8d3 75% 78%, transparent 79%),
+    radial-gradient(circle closest-side, rgba(0, 160, 144, 0.24) 0 74%, transparent 75%),
+    radial-gradient(circle closest-side, transparent 0 80%, #7e2616 81%, #c9472b 87%, #e8683a 93%, #7e2616 100%);
+  box-shadow: 0 0 5cqw rgba(79, 243, 223, 0.38);
+}
+
+.bb-gate--one {
+  left: 31.5cqw;
+}
+
+.bb-gate--two {
+  left: 69.5cqw;
+}
+
+.bb-gate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from -5deg, #ffd36a 0 10deg, transparent 10deg 45deg);
+  -webkit-mask-image: radial-gradient(circle closest-side, transparent 0 82%, #000 83% 92%, transparent 93%);
+  mask-image: radial-gradient(circle closest-side, transparent 0 82%, #000 83% 92%, transparent 93%);
+}
+
+.bb-gate::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 0.9cqw solid var(--bb-glow);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+/* Speed streaks, a few thin lines made of gradients. */
+.bb-streaks {
+  top: 0;
+  left: 0;
+  z-index: 7;
+  width: 130cqw;
+  height: 100%;
+  opacity: 0.55;
+  background:
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent) 8cqw 17cqw / 26cqw 0.5cqw no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 241, 201, 0.8), transparent) 52cqw 24cqw / 34cqw 0.4cqw no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent) 22cqw 33cqw / 40cqw 0.5cqw no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 241, 201, 0.8), transparent) 78cqw 40cqw / 30cqw 0.4cqw no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.85), transparent) 40cqw 49cqw / 36cqw 0.5cqw no-repeat,
+    linear-gradient(90deg, transparent, rgba(255, 241, 201, 0.8), transparent) 96cqw 58cqw / 26cqw 0.4cqw no-repeat;
+}
+
+/* Foreground ground: the capture's own terrain texture under a rolling-hill mask. */
+.bb-hills {
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  width: 260cqw;
+  height: 15cqw;
+  background:
+    linear-gradient(180deg, rgba(255, 140, 90, 0.28), transparent 38%),
+    url("../assets/upcoming/blastblast/hero-1280.webp") 0 -75cqw / 160cqw auto repeat-x;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 15' preserveAspectRatio='none'%3E%3Cpath d='M0 9C14 9 16 3 28 3S42 10 54 10 68 9 80 9V15H0Z'/%3E%3C/svg%3E") 0 0 / 80cqw 100% repeat-x;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 15' preserveAspectRatio='none'%3E%3Cpath d='M0 9C14 9 16 3 28 3S42 10 54 10 68 9 80 9V15H0Z'/%3E%3C/svg%3E") 0 0 / 80cqw 100% repeat-x;
+  transform: translateX(-40cqw);
+}
+
+/* Shock rings: one per blast, centred on the nozzle at the moment of the blast. */
+.bb-ring {
+  z-index: 5;
+  top: 46.4cqw;
+  width: 18cqw;
+  aspect-ratio: 1;
+  border: 1.3cqw solid #fff6d8;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffbe8 0 16%, rgba(255, 190, 90, 0.7) 34%, rgba(255, 110, 40, 0.28) 56%, transparent 64%);
+  box-shadow:
+    0 0 0 2cqw rgba(255, 120, 30, 0.85),
+    0 0 0 3.6cqw rgba(255, 90, 54, 0.38),
+    inset 0 0 3cqw rgba(255, 200, 120, 0.8),
+    0 0 5cqw rgba(255, 130, 40, 0.8);
+  opacity: 0;
+}
+
+.bb-ring--one {
+  left: 5.5cqw;
+  opacity: 0.6;
+  transform: translateX(-3cqw) scale(1.1);
+}
+
+.bb-ring--two {
+  left: 43.5cqw;
+}
+
+.bb-ring--three {
+  left: 81.5cqw;
+}
+
+/* The pilot (cutout of the editor capture) and its hop. */
+.bb-flight {
+  top: 38cqw;
+  left: 0;
+  z-index: 6;
+  width: 25cqw;
+  transform: translateX(33cqw);
+}
+
+.bb-lift {
+  transform: translateY(-24cqw) rotate(-5deg);
+}
+
+.bb-pilot {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: 50% 72%;
+  filter: drop-shadow(0 1.2cqw 1.6cqw rgba(60, 20, 10, 0.35));
+}
+
+/* Text-free HUD in the game's own language: a pressure gauge with ticks, and a six-node route rail. */
+.bb-hud {
+  top: 3cqw;
+  left: 3cqw;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  gap: 2.4cqw;
+  padding: 1.7cqw 2.6cqw;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 99px;
+  background: rgba(9, 19, 38, 0.66);
+}
+
+.bb-gauge {
+  position: relative;
+  display: block;
+  width: 26cqw;
+  height: 2.6cqw;
+  overflow: hidden;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #1dc9b5 0 42%, #ffb13b 42% 76.9%, #ff5a36 77% 100%);
+}
+
+.bb-gauge i {
+  position: absolute;
+  inset: 0;
+  background: #1a2538;
+  transform: translateX(64%);
+}
+
+.bb-gauge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, transparent 0 calc(10% - 1px), rgba(9, 19, 38, 0.85) calc(10% - 1px) 10%);
+}
+
+.bb-rail {
+  display: flex;
+  align-items: center;
+  gap: 1.1cqw;
+}
+
+.bb-rail b {
+  display: block;
+  width: 2.1cqw;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.bb-rail b:nth-child(-n + 3) {
+  background: var(--bb-ember);
+  box-shadow: 0 0 1.4cqw rgba(255, 141, 59, 0.8);
+}
+
+.bb-stage figcaption {
+  border-top: 2px solid color-mix(in srgb, var(--bb-ember) 40%, var(--ug-line));
+  background: var(--ug-card-2);
+  color: var(--ug-muted);
+}
+
+/* ---------- Page sections ---------- */
+body[data-game="blastblast"] .eyebrow {
+  border-radius: 6px;
+  transform: skewX(-9deg);
+  font-weight: 850;
+}
+
+body[data-game="blastblast"] .eyebrow::before {
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--ug-fill);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ug-fill) 26%, transparent);
+}
+
+body[data-game="blastblast"] .game-page-section h2 {
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+body[data-game="blastblast"] .game-page-section h2::after {
+  content: "";
+  display: block;
+  width: 3.4rem;
+  height: 5px;
+  margin-top: 0.6rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--ug-fill), var(--bb-ember-hot) 70%, transparent);
+  transition: width 0.45s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+body[data-game="blastblast"] .soft-card:hover h2::after {
+  width: 7rem;
+}
+
+body[data-game="blastblast"] .soft-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body[data-game="blastblast"] .soft-card:hover {
+  border-color: color-mix(in srgb, var(--bb-ember) 46%, var(--ug-line));
+}
+
+/* Facts: instrument cells with a gauge tick on the left. */
+.ug-facts .game-page-facts > div {
+  border-inline-start: 4px solid var(--ug-fill);
+  border-radius: 6px var(--radius-md) var(--radius-md) 6px;
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1.2), border-color 0.25s ease;
+}
+
+.ug-facts .game-page-facts > div:hover {
+  transform: translateY(-3px);
+  border-color: var(--bb-ember-hot);
+}
+
+body[data-game="blastblast"] .game-page-facts dt {
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* How it plays: three pictograms with an idle motion each (needle, ring, dot through a gate). */
+.ug-steps li {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.2, 0.9, 0.2, 1.2), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ug-steps li:hover {
+  transform: translateY(-4px);
+  border-color: var(--bb-ember);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--bb-ember) 22%, transparent);
+}
+
+.ug-steps li strong {
+  padding-inline-end: 4.2rem;
+  font-size: 1.2rem;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.ug-steps li::before,
+.ug-steps li::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ug-steps li::before {
+  border: 2px solid color-mix(in srgb, var(--bb-ember) 72%, transparent);
+  background: radial-gradient(circle, color-mix(in srgb, var(--bb-ember) 22%, transparent) 0 58%, transparent 62%);
+}
+
+/* 1 Pump: a gauge needle. */
+.ug-steps li:nth-child(1)::after {
+  background: linear-gradient(var(--ug-accent), var(--ug-accent)) 50% 7px / 3px 19px no-repeat;
+  transform: rotate(-52deg);
+}
+
+/* 2 Blast: a ring that has just gone off. */
+.ug-steps li:nth-child(2)::after {
+  border: 2px solid var(--ug-accent);
+  opacity: 0.5;
+  transform: scale(0.8);
+}
+
+/* 3 Thread the gates: a dot on its way through a ring. */
+.ug-steps li:nth-child(3)::before {
+  border-style: dashed;
+}
+
+.ug-steps li:nth-child(3)::after {
+  top: 33px;
+  right: 14px;
+  width: 10px;
+  height: 10px;
+  background: var(--ug-accent);
+  transform: translateX(-30px);
+}
+
+/* Features: instrument panels with a numbered header and a ruler that stretches on hover. */
+.ug-features {
+  counter-reset: bbf;
+}
+
+.ug-features .detail-card {
+  position: relative;
+  padding-top: 2.6rem;
+  counter-increment: bbf;
+  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1.2), border-color 0.28s ease, box-shadow 0.28s ease;
+}
+
+.ug-features .detail-card::before {
+  content: counter(bbf, decimal-leading-zero);
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: var(--ug-muted);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+}
+
+.ug-features .detail-card::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  width: calc(100% - 96px);
+  height: 8px;
+  background: repeating-linear-gradient(90deg, var(--ug-fill) 0 2px, transparent 2px 9px);
+  opacity: 0.7;
+  transform: scaleX(0.3);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.ug-features .detail-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--bb-ember);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--bb-ember) 20%, transparent);
+}
+
+.ug-features .detail-card:hover::after {
+  transform: scaleX(1);
+}
+
+.ug-features .detail-card h3 {
+  font-style: italic;
+  font-weight: 900;
+}
+
+/* Direction list: a ring instead of a diamond. */
+body[data-game="blastblast"] .ug-next li::before {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--ug-fill);
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--ug-fill) 22%, transparent);
+  transform: none;
+}
+
+body[data-game="blastblast"] .ug-next li {
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1.2), border-color 0.25s ease;
+}
+
+body[data-game="blastblast"] .ug-next li:hover {
+  transform: translateX(4px);
+  border-color: var(--bb-ember);
+}
+
+/* Gallery. */
+.ug-shot img {
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.ug-shot:hover img {
+  transform: scale(1.05);
+}
+
+body[data-game="blastblast"] .ug-shot {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+body[data-game="blastblast"] .ug-shot:hover {
+  border-color: var(--bb-ember);
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--bb-ember) 20%, transparent);
+}
+
+/* FAQ. */
+body[data-game="blastblast"] .ug-faq .detail-card {
+  border-inline-start: 4px solid var(--ug-accent-2);
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1.2), border-color 0.25s ease;
+}
+
+body[data-game="blastblast"] .ug-faq .detail-card:hover {
+  transform: translateX(4px);
+  border-color: var(--bb-ember);
+}
+
+/* Vote: a blast ring keeps going off in the corner. */
+.ug-vote {
+  position: relative;
+  overflow: clip;
+}
+
+.ug-vote::before,
+.ug-vote::after {
+  content: "";
+  position: absolute;
+  top: 26px;
+  right: 30px;
+  width: 84px;
+  height: 84px;
+  border: 3px solid var(--bb-ember);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ug-vote::before {
+  opacity: 0.55;
+  transform: scale(0.55);
+}
+
+.ug-vote::after {
+  opacity: 0.3;
+  transform: scale(1);
+}
+
+body[data-game="blastblast"] .social-link {
+  transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.2, 1.2), border-color 0.2s ease, background 0.2s ease;
+}
+
+body[data-game="blastblast"] .social-link:hover {
+  transform: translateY(-3px);
+}
+
+/* More worlds in the lab (shared .lab-related markup). */
+body[data-game="blastblast"] .lab-related-title {
+  font-style: italic;
+  font-weight: 900;
+}
+
+body[data-game="blastblast"] .lab-related-link {
+  border-inline-start: 4px solid var(--ug-fill);
+  border-radius: 6px var(--radius-md) var(--radius-md) 6px;
+}
+
+body[data-game="blastblast"] .lab-related-link:hover {
+  border-color: var(--bb-ember);
+}
+
+@media (max-width: 920px) {
+  .bb-stage {
+    width: 100%;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  body[data-game="blastblast"] .ug-hero::before {
+    inset: 44% -12% -4% -12%;
+  }
+}
+
+@media (max-width: 520px) {
+  .ug-vote::before,
+  .ug-vote::after {
+    display: none;
+  }
+
+  body[data-game="blastblast"] .ug-hero-copy h1 {
+    font-size: clamp(2.2rem, 13vw, 3.4rem);
+  }
+}
+
+/* ---------- Motion (transform and opacity only) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .bb-world-track {
+    animation: bb-drift 60s linear infinite;
+  }
+
+  .bb-flight {
+    animation: bb-run var(--bb-run) linear infinite;
+  }
+
+  .bb-lift {
+    animation: bb-hop var(--bb-run) linear infinite;
+  }
+
+  .bb-pilot {
+    animation: bb-kick var(--bb-hop) linear infinite;
+  }
+
+  .bb-ring {
+    animation: bb-ring var(--bb-run) linear infinite;
+    transform: scale(0.15);
+  }
+
+  .bb-ring--one {
+    opacity: 0;
+    animation-delay: 1.6s;
+  }
+
+  .bb-ring--two {
+    animation-delay: 3.2s;
+  }
+
+  .bb-ring--three {
+    animation-delay: 4.8s;
+  }
+
+  .bb-streaks {
+    animation: bb-streaks var(--bb-hop) linear infinite;
+  }
+
+  .bb-gate::after {
+    animation: bb-gate-pulse var(--bb-run) linear infinite;
+  }
+
+  .bb-gate--one::after {
+    animation-delay: 2.4s;
+  }
+
+  .bb-gate--two::after {
+    animation-delay: 4s;
+  }
+
+  .bb-gauge i {
+    animation: bb-gauge var(--bb-hop) linear infinite;
+  }
+
+  .ug-steps li:nth-child(1)::after {
+    animation: bb-needle 2.4s ease-in-out infinite alternate;
+  }
+
+  .ug-steps li:nth-child(2)::after {
+    animation: bb-step-ring 2.8s cubic-bezier(0.1, 0.7, 0.3, 1) infinite;
+  }
+
+  .ug-steps li:nth-child(3)::after {
+    animation: bb-step-dot 3s ease-in-out infinite;
+  }
+
+  .ug-vote::after {
+    animation: bb-vote-ring 3.6s cubic-bezier(0.1, 0.7, 0.3, 1) infinite;
+  }
+}
+
+@keyframes bb-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-284cqw); }
+}
+
+/* Linear in x across four hops: the pilot enters left, blasts at 14, 52 and 90 cqw, leaves right. */
+@keyframes bb-run {
+  from { transform: translateX(-24cqw); }
+  to { transform: translateX(128cqw); }
+}
+
+/* Four hops: ease-out on the way up (the blast), ease-in on the way down. */
+@keyframes bb-hop {
+  0%     { transform: translateY(0) rotate(8deg); animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  12.5%  { transform: translateY(-24cqw) rotate(-9deg); animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+  25%    { transform: translateY(0) rotate(8deg); animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  37.5%  { transform: translateY(-24cqw) rotate(-9deg); animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+  50%    { transform: translateY(0) rotate(8deg); animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  62.5%  { transform: translateY(-24cqw) rotate(-9deg); animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+  75%    { transform: translateY(0) rotate(8deg); animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+  87.5%  { transform: translateY(-24cqw) rotate(-9deg); animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53); }
+  100%   { transform: translateY(0) rotate(8deg); }
+}
+
+/* Squash before the blast, stretch as the recoil lets go. */
+@keyframes bb-kick {
+  0%   { transform: scale(1.14, 0.86); animation-timing-function: ease-out; }
+  7%   { transform: scale(0.93, 1.1); animation-timing-function: ease-in-out; }
+  22%  { transform: scale(1, 1); }
+  78%  { transform: scale(1, 1); animation-timing-function: ease-in; }
+  100% { transform: scale(1.14, 0.86); }
+}
+
+/* The ring is anchored where the blast happened and slides back with the world as it opens. */
+@keyframes bb-ring {
+  0%   { opacity: 1; transform: translateX(0) scale(0.15); animation-timing-function: cubic-bezier(0.1, 0.7, 0.3, 1); }
+  14%  { opacity: 0; transform: translateX(-9cqw) scale(1.7); }
+  100% { opacity: 0; transform: translateX(-9cqw) scale(1.7); }
+}
+
+@keyframes bb-streaks {
+  0%   { opacity: 0; transform: translateX(8cqw); }
+  14%  { opacity: 0.95; }
+  55%  { opacity: 0.55; }
+  100% { opacity: 0; transform: translateX(-24cqw); }
+}
+
+@keyframes bb-gate-pulse {
+  0%   { opacity: 0.95; transform: scale(1); animation-timing-function: cubic-bezier(0.1, 0.7, 0.3, 1); }
+  12%  { opacity: 0; transform: scale(1.4); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+/* The gauge fills while you pump and empties at the blast. */
+@keyframes bb-gauge {
+  0%   { transform: translateX(6%); }
+  90%  { transform: translateX(84%); }
+  100% { transform: translateX(6%); }
+}
+
+@keyframes bb-needle {
+  from { transform: rotate(-62deg); }
+  to { transform: rotate(48deg); }
+}
+
+@keyframes bb-step-ring {
+  0%   { opacity: 0.7; transform: scale(0.35); }
+  70%  { opacity: 0; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+@keyframes bb-step-dot {
+  0%   { opacity: 0; transform: translateX(-34px); }
+  15%  { opacity: 1; }
+  75%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(34px); }
+}
+
+@keyframes bb-vote-ring {
+  0%   { opacity: 0.6; transform: scale(0.5); }
+  75%  { opacity: 0; transform: scale(1.9); }
+  100% { opacity: 0; transform: scale(1.9); }
+}

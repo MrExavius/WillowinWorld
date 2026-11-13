@@ -1,0 +1,538 @@
+/* WillowinWorlds CSS: Alien Flying page (games/alien-flying.html). Loaded after upcoming-game.css.
+   Signature element: a warp tunnel. Rings textured with the game's tunnel-wall texture rush toward the viewer, each with a gap;
+   a small CSS-drawn craft (hull textured with the ship texture) weaves around the wall and threads one gap per loop; a shield shimmers around it.
+   The scene is decoration only (aria-hidden) and an illustration, not gameplay footage.
+   Why it loops without a seam: the rings follow a geometric series (each ring is 1.8 times the one inside it), so zooming the whole
+   tunnel by 1.8 over one loop puts every ring exactly where the next one started. The twist (50 degrees per loop) matches the 50 degree
+   step between neighbouring gaps. The centre glow hides the rings that emerge or leave at the ends.
+   Units: inside .aw-scene 1em = 1% of the stage width (container query unit). Only transform and opacity are animated. */
+
+/* ---------- Hero ---------- */
+body[data-game="alien-flying"] .ug-hero {
+  position: relative;
+}
+
+body[data-game="alien-flying"] .ug-hero::before {
+  content: "";
+  position: absolute;
+  inset: -4% -6% -6% 38%;
+  background: radial-gradient(ellipse at 62% 48%, color-mix(in srgb, var(--ug-fill) 17%, transparent), transparent 64%);
+  pointer-events: none;
+}
+
+body[data-game="alien-flying"] .ug-hero > .container {
+  position: relative;
+}
+
+.aw-figure {
+  justify-self: center;
+  width: min(100%, 26rem);
+  margin: 0;
+}
+
+.aw-figure figcaption {
+  margin-top: 14px;
+  color: var(--ug-muted);
+  font-size: 0.9rem;
+  font-weight: 760;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.aw-stage {
+  container-type: inline-size;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  border: 1px solid color-mix(in srgb, var(--ug-fill) 55%, var(--ug-line));
+  border-radius: 28px;
+  background: #030A16;
+  box-shadow:
+    0 30px 70px var(--ug-shadow),
+    0 0 0 8px color-mix(in srgb, var(--ug-fill) 14%, transparent),
+    0 0 70px color-mix(in srgb, var(--ug-fill) 24%, transparent);
+}
+
+.aw-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  border-radius: inherit;
+  box-shadow: inset 0 0 70px 8px rgba(1, 6, 14, 0.72);
+  pointer-events: none;
+}
+
+.aw-scene {
+  position: absolute;
+  inset: 0;
+  font-size: 1cqw;
+}
+
+.aw-scene > * {
+  position: absolute;
+}
+
+/* ---------- Tunnel ---------- */
+/* The wall behind the rings: the tunnel texture, darkened toward the vanishing point (centre at 50% 46.4%). */
+.aw-wall {
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 46.4%, #02060E 0 6em, rgba(2, 6, 14, 0.64) 30em, rgba(2, 6, 14, 0.2) 74em),
+    url("../assets/upcoming/alien-flying/hero-720.webp") center / cover;
+}
+
+.aw-spokes {
+  inset: 0;
+  background: repeating-conic-gradient(from 0deg at 50% 46.4%, rgba(56, 235, 255, 0.26) 0 0.45deg, transparent 0.45deg 15deg);
+  -webkit-mask-image: radial-gradient(circle at 50% 46.4%, transparent 7em, #000 46em);
+  mask-image: radial-gradient(circle at 50% 46.4%, transparent 7em, #000 46em);
+}
+
+.aw-twist {
+  top: 58em;
+  left: 50em;
+  width: 0;
+  height: 0;
+  animation: aw-twist 4s linear infinite;
+}
+
+.aw-tunnel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  will-change: transform;
+  animation: aw-rush 4s cubic-bezier(0.333, 0.245, 0.667, 0.559) infinite;
+}
+
+/* Eight rings, diameters 3 x 1.8^k em. Gap angle steps 50 degrees per ring; 72.5 degrees offsets the pattern so the
+   gap of the ring that crosses the craft's path (ring 5, at 3 s) faces the craft at that moment. */
+.aw-ring {
+  --k: 0;
+  --d: 3em;
+  position: absolute;
+  top: calc(var(--d) / -2);
+  left: calc(var(--d) / -2);
+  width: var(--d);
+  height: var(--d);
+  transform: rotate(calc(var(--k) * 50deg + 72.5deg));
+}
+
+.aw-ring:nth-child(2) { --k: 1; --d: 5.4em; }
+.aw-ring:nth-child(3) { --k: 2; --d: 9.72em; }
+.aw-ring:nth-child(4) { --k: 3; --d: 17.5em; }
+.aw-ring:nth-child(5) { --k: 4; --d: 31.5em; }
+.aw-ring:nth-child(6) { --k: 5; --d: 56.7em; }
+.aw-ring:nth-child(7) { --k: 6; --d: 102em; }
+.aw-ring:nth-child(8) { --k: 7; --d: 183.7em; }
+
+.aw-ring::before,
+.aw-ring::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+/* The ring body: tunnel texture, lifted with a blue screen so the plates read, cut to a band with a gap at the bottom. */
+.aw-ring::after {
+  background:
+    radial-gradient(farthest-side, transparent 89%, rgba(0, 8, 24, 0) 92%, rgba(0, 8, 24, 0.55) 100%),
+    linear-gradient(rgba(96, 176, 255, 0.26), rgba(96, 176, 255, 0.26)),
+    url("../assets/upcoming/alien-flying/hero-720.webp") 35% 40% / cover;
+  background-blend-mode: normal, screen, normal;
+  -webkit-mask-image:
+    radial-gradient(farthest-side, transparent 89%, #000 89.4%),
+    conic-gradient(#000 0 148deg, transparent 148deg 212deg, #000 212deg);
+  mask-image:
+    radial-gradient(farthest-side, transparent 89%, #000 89.4%),
+    conic-gradient(#000 0 148deg, transparent 148deg 212deg, #000 212deg);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
+.aw-ring:nth-child(even)::after {
+  background-position: 70% 60%;
+}
+
+/* The lit inner lip of the ring. */
+.aw-ring::before {
+  background: radial-gradient(farthest-side, transparent 87.4%, rgba(160, 250, 255, 0.96) 89%, rgba(56, 235, 255, 0.5) 90.8%, rgba(56, 235, 255, 0) 97%);
+  -webkit-mask-image: conic-gradient(#000 0 148deg, transparent 148deg 212deg, #000 212deg);
+  mask-image: conic-gradient(#000 0 148deg, transparent 148deg 212deg, #000 212deg);
+}
+
+/* A crystal floating in each gap (the Xeno crystal texture). */
+.aw-crystal {
+  position: absolute;
+  top: 94.6%;
+  left: 50%;
+  width: calc(var(--d) * 0.065);
+  height: calc(var(--d) * 0.065);
+  margin: calc(var(--d) * -0.0325) 0 0 calc(var(--d) * -0.0325);
+}
+
+.aw-crystal::before {
+  content: "";
+  position: absolute;
+  inset: -90%;
+  background: radial-gradient(circle, rgba(148, 255, 133, 0.7) 0, rgba(148, 255, 133, 0.22) 32%, transparent 64%);
+}
+
+.aw-crystal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0, 90% 34%, 100% 62%, 50% 100%, 0 62%, 10% 34%);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.7), transparent 56%),
+    linear-gradient(rgba(148, 255, 133, 0.45), rgba(148, 255, 133, 0.45)),
+    url("../assets/upcoming/alien-flying/gallery-xeno-crystal.webp") center / cover;
+  background-blend-mode: normal, screen, normal;
+}
+
+/* Light at the end of the tunnel; also hides the rings that emerge at the centre. */
+.aw-haze {
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle at 50% 46.4%, #EAFEFF 0 1.6em, rgba(130, 242, 255, 0.92) 3.6em, rgba(56, 235, 255, 0.4) 8em, rgba(3, 10, 22, 0) 24em);
+}
+
+/* ---------- Craft ---------- */
+.aw-orbit {
+  top: 58em;
+  left: 50em;
+  z-index: 2;
+  width: 0;
+  height: 0;
+  animation: aw-weave 4s ease-in-out infinite;
+}
+
+.aw-craft {
+  position: absolute;
+  top: 32.25em;
+  left: -13em;
+  width: 26em;
+  height: 17.5em;
+  filter: drop-shadow(0 0 0.7em rgba(56, 235, 255, 0.55));
+  animation: aw-bob 5s ease-in-out infinite;
+}
+
+/* Hull and wings: a delta seen from behind, filled with the ship texture. */
+.aw-craft::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0, 60% 34%, 100% 66%, 96% 86%, 66% 76%, 58% 100%, 42% 100%, 34% 76%, 4% 86%, 0 66%, 40% 34%);
+  background:
+    linear-gradient(180deg, rgba(190, 250, 255, 0.5), rgba(190, 250, 255, 0) 38%, rgba(0, 10, 40, 0.45)),
+    linear-gradient(90deg, rgba(0, 10, 40, 0.35), transparent 30% 70%, rgba(0, 10, 40, 0.35)),
+    linear-gradient(rgba(110, 180, 255, 0.34), rgba(110, 180, 255, 0.34)),
+    url("../assets/upcoming/alien-flying/gallery-scout-hull.webp") center / cover;
+  background-blend-mode: normal, normal, screen, normal;
+}
+
+/* Canopy, engine glow and wing lights. */
+.aw-craft::after {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(ellipse 5% 7% at 50% 41%, #E8FFFF 0, #7DEFFF 38%, #1B8EA8 78%, transparent 100%),
+    radial-gradient(circle at 40.5% 83%, #FFFFFF 0 1.2%, #7DEFFF 2.2%, rgba(56, 235, 255, 0.55) 5.5%, transparent 11%),
+    radial-gradient(circle at 59.5% 83%, #FFFFFF 0 1.2%, #7DEFFF 2.2%, rgba(56, 235, 255, 0.55) 5.5%, transparent 11%),
+    radial-gradient(circle at 17.5% 72%, #C8FFD0 0 0.7%, rgba(148, 255, 133, 0.7) 1.6%, transparent 4.5%),
+    radial-gradient(circle at 82.5% 72%, #C8FFD0 0 0.7%, rgba(148, 255, 133, 0.7) 1.6%, transparent 4.5%);
+  animation: aw-engine 4.2s ease-in-out infinite;
+}
+
+/* Shield: a soft bubble with a rim and a highlight that sweeps across it. */
+.aw-shield {
+  position: absolute;
+  top: -6.75em;
+  left: -6em;
+  z-index: 1;
+  overflow: hidden;
+  width: 38em;
+  height: 31em;
+  border: 0.18em solid rgba(150, 255, 214, 0.7);
+  border-radius: 50%;
+  background:
+    radial-gradient(ellipse at 36% 24%, rgba(190, 255, 224, 0.34), transparent 52%),
+    radial-gradient(ellipse at 50% 55%, rgba(148, 255, 133, 0.05) 40%, rgba(56, 235, 255, 0.24) 100%);
+  box-shadow:
+    inset 0 0 1.6em rgba(120, 255, 210, 0.45),
+    0 0 1.4em rgba(120, 255, 210, 0.3);
+  animation: aw-shield 4.4s ease-in-out infinite;
+}
+
+.aw-shield::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: 0;
+  width: 26%;
+  height: 140%;
+  background: linear-gradient(100deg, transparent, rgba(220, 255, 240, 0.5), transparent);
+  transform: translateX(-120%) skewX(-16deg);
+  animation: aw-sweep 6s ease-in-out infinite;
+}
+
+/* ---------- Keyframes (loop: 4 s; 3 s is the moment the craft crosses the gap) ---------- */
+@keyframes aw-rush {
+  from { transform: scale(1); }
+  to { transform: scale(1.8); }
+}
+
+@keyframes aw-twist {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(50deg); }
+}
+
+@keyframes aw-weave {
+  0%,
+  100% { transform: rotate(-32deg); }
+  50% { transform: rotate(32deg); }
+}
+
+@keyframes aw-bob {
+  0%,
+  100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-0.9em) rotate(2deg); }
+}
+
+@keyframes aw-engine {
+  0%,
+  100% { opacity: 0.82; }
+  50% { opacity: 1; }
+}
+
+@keyframes aw-shield {
+  0%,
+  100% { opacity: 0.72; transform: scale(0.98); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+@keyframes aw-sweep {
+  0%,
+  40% { transform: translateX(-120%) skewX(-16deg); }
+  80%,
+  100% { transform: translateX(520%) skewX(-16deg); }
+}
+
+/* ---------- Sections ---------- */
+/* Feature cards: a seam of light on the top edge (like the cyan seams on the texture) grows on hover; the card lifts. */
+body[data-game="alien-flying"] .ug-features .detail-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s ease-out, border-color 0.22s ease-out, box-shadow 0.22s ease-out;
+}
+
+body[data-game="alien-flying"] .ug-features .detail-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ug-fill), color-mix(in srgb, var(--ug-fill) 0%, transparent));
+  transform: scaleX(0.16);
+  transform-origin: 0 50%;
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+body[data-game="alien-flying"] .ug-features .detail-card:hover,
+body[data-game="alien-flying"] .ug-features .detail-card:focus-within {
+  border-color: var(--ug-accent);
+  box-shadow: 0 16px 34px var(--ug-shadow);
+  transform: translateY(-4px);
+}
+
+body[data-game="alien-flying"] .ug-features .detail-card:hover::before,
+body[data-game="alien-flying"] .ug-features .detail-card:focus-within::before {
+  transform: scaleX(1);
+}
+
+body[data-game="alien-flying"] .ug-features .detail-card:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+body[data-game="alien-flying"] .btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* How it plays: a tiny pictogram per step. */
+body[data-game="alien-flying"] .ug-steps li {
+  position: relative;
+  transition: transform 0.22s ease-out, border-color 0.22s ease-out;
+}
+
+body[data-game="alien-flying"] .ug-steps li:hover {
+  border-color: var(--ug-accent);
+  transform: translateY(-3px);
+}
+
+body[data-game="alien-flying"] .ug-steps li::before,
+body[data-game="alien-flying"] .ug-steps li::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* A ring (the tunnel) in every step. */
+body[data-game="alien-flying"] .ug-steps li::before {
+  border: 2px solid color-mix(in srgb, var(--ug-accent) 55%, transparent);
+}
+
+/* Step 1: the craft dot orbits the tunnel wall. */
+body[data-game="alien-flying"] .ug-steps li:nth-child(1)::after {
+  background: radial-gradient(circle at 50% 8%, var(--ug-accent) 0 3px, transparent 3.5px);
+  animation: aw-step-orbit 5.6s ease-in-out infinite;
+}
+
+/* Step 2: a ring with a gap, and the dot passing through it. */
+body[data-game="alien-flying"] .ug-steps li:nth-child(2)::before {
+  border-color: var(--ug-accent);
+  border-bottom-color: transparent;
+}
+
+body[data-game="alien-flying"] .ug-steps li:nth-child(2)::after {
+  background: radial-gradient(circle at 50% 92%, var(--ug-accent-2) 0 3px, transparent 3.5px);
+  animation: aw-step-pass 5.6s ease-in-out infinite;
+}
+
+/* Step 3: a crystal that glints. */
+body[data-game="alien-flying"] .ug-steps li:nth-child(3)::before {
+  border-color: transparent;
+}
+
+body[data-game="alien-flying"] .ug-steps li:nth-child(3)::after {
+  border-radius: 0;
+  background: linear-gradient(135deg, var(--ug-accent-2), var(--ug-accent));
+  clip-path: polygon(50% 8%, 88% 36%, 96% 60%, 50% 94%, 4% 60%, 12% 36%);
+  animation: aw-step-glint 4.8s ease-in-out infinite;
+}
+
+@keyframes aw-step-orbit {
+  0%,
+  100% { transform: rotate(-60deg); }
+  50% { transform: rotate(60deg); }
+}
+
+@keyframes aw-step-pass {
+  0%,
+  100% { transform: rotate(-70deg); }
+  50% { transform: rotate(70deg); }
+}
+
+@keyframes aw-step-glint {
+  0%,
+  100% { opacity: 0.7; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+/* Gallery: the texture swatches lift a little. */
+body[data-game="alien-flying"] .ug-shot {
+  transition: transform 0.22s ease-out, border-color 0.22s ease-out, box-shadow 0.22s ease-out;
+}
+
+body[data-game="alien-flying"] .ug-shot img {
+  transition: transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+body[data-game="alien-flying"] .ug-shot:hover {
+  border-color: var(--ug-accent);
+  box-shadow: 0 16px 34px var(--ug-shadow);
+  transform: translateY(-3px);
+}
+
+body[data-game="alien-flying"] .ug-shot:hover img {
+  transform: scale(1.04);
+}
+
+/* Vote: a small shield ring that shimmers. */
+body[data-game="alien-flying"] .ug-vote {
+  position: relative;
+}
+
+body[data-game="alien-flying"] .ug-vote::before,
+body[data-game="alien-flying"] .ug-vote::after {
+  content: "";
+  position: absolute;
+  top: clamp(24px, 4vw, 40px);
+  right: clamp(20px, 4vw, 40px);
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body[data-game="alien-flying"] .ug-vote::before {
+  border: 2px solid color-mix(in srgb, var(--ug-accent) 70%, transparent);
+  background: radial-gradient(circle at 36% 28%, color-mix(in srgb, var(--ug-accent-2) 40%, transparent), transparent 56%);
+}
+
+body[data-game="alien-flying"] .ug-vote::after {
+  border: 2px solid var(--ug-accent-2);
+  opacity: 0;
+  animation: aw-vote-ring 4.8s ease-out infinite;
+}
+
+@keyframes aw-vote-ring {
+  0%,
+  30% { opacity: 0; transform: scale(0.8); }
+  40% { opacity: 0.9; transform: scale(0.9); }
+  100% { opacity: 0; transform: scale(1.4); }
+}
+
+@media (max-width: 560px) {
+  body[data-game="alien-flying"] .ug-vote::before,
+  body[data-game="alien-flying"] .ug-vote::after {
+    width: 2.6rem;
+    height: 2.6rem;
+  }
+}
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 920px) {
+  .aw-figure {
+    width: min(100%, 22rem);
+    margin-top: 6px;
+  }
+}
+
+/* ---------- Reduced motion: a still, finished frame (tunnel at rest, craft centred at the bottom with its shield up). ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .aw-twist,
+  .aw-tunnel,
+  .aw-orbit,
+  .aw-craft,
+  .aw-craft::after,
+  .aw-shield,
+  .aw-shield::after,
+  body[data-game="alien-flying"] .ug-steps li::after,
+  body[data-game="alien-flying"] .ug-vote::after {
+    animation: none;
+  }
+
+  .aw-shield::after {
+    transform: translateX(120%) skewX(-16deg);
+  }
+
+  body[data-game="alien-flying"] .ug-features .detail-card,
+  body[data-game="alien-flying"] .ug-features .detail-card::before,
+  body[data-game="alien-flying"] .ug-steps li,
+  body[data-game="alien-flying"] .ug-shot,
+  body[data-game="alien-flying"] .ug-shot img {
+    transition: none;
+  }
+}

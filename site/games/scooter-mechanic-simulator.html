@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Run a scooter repair shop in a small city: carry scooters in, work the stations, get paid. Status: Prototype. In development at WillowinWorlds.">
+  <meta name="description" content="Run a scooter repair shop in a small city: carry scooters in, work the stations, get paid.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#1C1F24" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#EDF1F6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1C1F24" id="metaThemeColor">
   <meta property="og:title" content="Scooter Mechanic Simulator — repair shop simulator in development">
-  <meta property="og:description" content="Run a scooter repair shop in a small city: carry scooters in, work the stations, get paid. Status: Prototype. In development at WillowinWorlds.">
+  <meta property="og:description" content="Run a scooter repair shop in a small city: carry scooters in, work the stations, get paid.">
   <meta property="og:image" content="https://willowinworlds.com/assets/upcoming/scooter-mechanic-simulator/hero-1280.webp">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="720">
@@ -22,11 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Scooter Mechanic Simulator — repair shop simulator in development">
-  <meta name="twitter:description" content="Run a scooter repair shop in a small city: carry scooters in, work the stations, get paid. Status: Prototype. In development at WillowinWorlds.">
+  <meta name="twitter:description" content="Run a scooter repair shop in a small city: carry scooters in, work the stations, get paid.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/upcoming/scooter-mechanic-simulator/hero-1280.webp">
   <meta name="twitter:image:alt" content="A white electric scooter on a yellow podium in front of two yellow city buildings under a blue sky.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Scooter Mechanic Simulator — repair shop simulator in development | WillowinWorlds</title>
+  <title>Scooter Mechanic Simulator | WillowinWorlds</title>
   <link rel="canonical" href="https://willowinworlds.com/games/scooter-mechanic-simulator.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -48,7 +47,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Games",
-          "item": "https://willowinworlds.com/#games"
+          "item": "https://willowinworlds.com/#in-development"
         },
         {
           "@type": "ListItem",
@@ -100,11 +99,13 @@
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
   <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-scooter-mechanic-simulator.css?v=20261113-2">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="scooter-mechanic-simulator">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Scooter Mechanic Simulator — back to WillowinWorlds">
+    <a class="game-detail-brand" href="../index.html" aria-label="Scooter Mechanic Simulator WillowinWorlds game page, back to the studio home">
       <img src="../assets/upcoming/scooter-mechanic-simulator/icon-192.webp" width="192" height="192" alt="Scooter Mechanic Simulator icon: a white electric scooter on a yellow display podium in front of city buildings." decoding="async">
       <span><strong>Scooter Mechanic Simulator</strong><small>WillowinWorlds game page</small></span>
     </a>
@@ -114,6 +115,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -132,12 +134,60 @@
           <p class="ug-collab">In collaboration with Render Software Studio</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#vote">Follow development</a>
-            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">All games</a>
           </div>
         </div>
-        <figure class="ug-hero-media">
-          <img src="../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp" srcset="../assets/upcoming/scooter-mechanic-simulator/hero-720.webp 720w, ../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="A white electric scooter on a yellow podium in front of two yellow city buildings under a blue sky." fetchpriority="high" decoding="async">
-          <figcaption>Capture from the Unity project.</figcaption>
+        <figure class="ug-hero-media sm-hero-media">
+          <div class="sm-bay">
+            <img class="sm-capture" src="../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp" srcset="../assets/upcoming/scooter-mechanic-simulator/hero-720.webp 720w, ../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="A white electric scooter on a yellow podium in front of two yellow city buildings under a blue sky." fetchpriority="high" decoding="async">
+            <div class="sm-fx" aria-hidden="true">
+              <span class="sm-glow"></span>
+              <span class="sm-lamp"></span>
+              <span class="sm-ring"></span>
+              <span class="sm-scan"></span>
+              <span class="sm-dust"></span>
+            </div>
+          </div>
+          <div class="sm-dock" aria-hidden="true">
+            <div class="sm-gauge">
+              <svg viewBox="0 0 120 120" width="118" height="118" focusable="false">
+                <circle class="sm-gauge-face" cx="60" cy="62" r="57"/>
+                <path class="sm-gauge-ticks" pathLength="100" d="M21.1 100.9A55 55 0 1 1 98.9 100.9"/>
+                <path class="sm-gauge-track" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <path class="sm-zone sm-zone--low" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <path class="sm-zone sm-zone--ok" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <path class="sm-zone sm-zone--hot" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <g class="sm-needle"><path d="M60 68L57.4 62L60 22L62.6 62Z"/></g>
+                <circle class="sm-hub" cx="60" cy="62" r="5.5"/>
+              </svg>
+            </div>
+            <div class="sm-tool">
+              <svg viewBox="0 0 150 128" width="128" height="109" focusable="false">
+                <defs>
+                  <linearGradient id="smSteel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef1f4"/><stop offset="0.5" stop-color="#a9b0b8"/><stop offset="1" stop-color="#6d747c"/></linearGradient>
+                  <linearGradient id="smBrass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe680"/><stop offset="1" stop-color="#d9a400"/></linearGradient>
+                </defs>
+                <g class="sm-wrench">
+                  <path class="sm-steel" d="M50 56H134a8 8 0 0 1 0 16H50Z"/>
+                  <path class="sm-shine" d="M70 61H130"/>
+                  <circle class="sm-hole" cx="132" cy="64" r="3"/>
+                  <circle class="sm-steel" cx="50" cy="64" r="32"/>
+                </g>
+                <g class="sm-nut">
+                  <polygon class="sm-hex" points="50,40 70.8,52 70.8,76 50,88 29.2,76 29.2,52"/>
+                  <circle class="sm-hole" cx="50" cy="64" r="8.5"/>
+                </g>
+              </svg>
+            </div>
+            <div class="sm-card">
+              <p class="sm-card-head"><span>Repair card</span><b>2 jobs</b></p>
+              <ol>
+                <li class="sm-job sm-job--done"><i></i>Balance</li>
+                <li class="sm-job"><i></i>Paint</li>
+              </ol>
+            </div>
+          </div>
+          <figcaption>Capture from the Unity project. The gauge, wrench and repair card under it are an animated illustration, not in-game UI.</figcaption>
         </figure>
       </div>
     </section>
@@ -190,7 +240,7 @@
         <div class="eyebrow">Images</div>
         <h2 id="galleryTitle">Gallery</h2>
         <p class="ug-lede">Captures from the Unity project.</p>
-        <div class="ug-gallery">
+        <div class="ug-gallery ug-gallery--3">
           <figure class="ug-shot"><img src="../assets/upcoming/scooter-mechanic-simulator/gallery-01.webp" width="960" height="540" alt="The Scooter Service garage seen from the street, with customer scooters parked in a row in front." loading="lazy" decoding="async"><figcaption>The garage from the street</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/scooter-mechanic-simulator/gallery-02.webp" width="960" height="540" alt="An overview of the walled workshop yard with stations inside and many colored scooters parked outside." loading="lazy" decoding="async"><figcaption>Workshop yard overview</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/scooter-mechanic-simulator/gallery-03.webp" width="900" height="506" alt="A scooter pile on the street plaza outside the workshop yard, seen from above." loading="lazy" decoding="async"><figcaption>Scooter pile outside the yard</figcaption></figure>
@@ -216,6 +266,16 @@
       </section>
     </div>
   </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">More worlds in the lab</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="vacuum-shot.html"><strong>Vacuum Shot</strong><span>Another prototype in the lab: an endless recoil-flight arcade, at vertical-slice stage.</span></a></li>
+        <li><a class="lab-related-link" href="blastblast.html"><strong>BlastBlast!</strong><span>Another prototype in the lab: a one-button physics runner, at vertical-slice stage.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">All games in development</a>
+    </div>
+  </nav>
   <footer class="game-footer">
     <div class="container game-footer-inner">
       <div class="game-footer-copy">
@@ -223,7 +283,7 @@
         <span>Run a scooter repair shop in a small city: carry scooters in, work the stations, get paid.</span>
       </div>
       <nav class="game-footer-nav" aria-label="Scooter Mechanic Simulator footer navigation">
-        <a href="../index.html#games">All games</a>
+        <a href="../index.html#in-development">All games</a>
         <a href="../press-kit.html">Press kit</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../legal.html">Legal</a>

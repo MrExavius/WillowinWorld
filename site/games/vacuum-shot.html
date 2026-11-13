@@ -4,13 +4,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="content-language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vacuum up garden props and fire them to fly across an endless pastel meadow. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta name="description" content="An endless recoil-flight arcade game: vacuum up garden props, fire them for recoil and land softly across a pastel meadow.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#221E1A" media="(prefers-color-scheme: dark)">
-  <meta name="theme-color" content="#FAF0DA" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#221E1A" id="metaThemeColor">
   <meta property="og:title" content="Vacuum Shot — endless recoil-flight arcade in development">
-  <meta property="og:description" content="Vacuum up garden props and fire them to fly across an endless pastel meadow. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta property="og:description" content="An endless recoil-flight arcade game: vacuum up garden props, fire them for recoil and land softly across a pastel meadow.">
   <meta property="og:image" content="https://willowinworlds.com/assets/upcoming/vacuum-shot/hero-1280.webp">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="720">
@@ -22,11 +21,11 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
   <meta name="twitter:title" content="Vacuum Shot — endless recoil-flight arcade in development">
-  <meta name="twitter:description" content="Vacuum up garden props and fire them to fly across an endless pastel meadow. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta name="twitter:description" content="An endless recoil-flight arcade game: vacuum up garden props, fire them for recoil and land softly across a pastel meadow.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/upcoming/vacuum-shot/hero-1280.webp">
   <meta name="twitter:image:alt" content="The pilot with a vacuum on a sunny meadow in front of round pastel garden houses and flowering trees.">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
-  <title>Vacuum Shot — endless recoil-flight arcade in development | WillowinWorlds</title>
+  <title>Vacuum Shot — endless recoil-flight arcade | WillowinWorlds</title>
   <link rel="canonical" href="https://willowinworlds.com/games/vacuum-shot.html">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
@@ -47,8 +46,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Games",
-          "item": "https://willowinworlds.com/#games"
+          "name": "In development",
+          "item": "https://willowinworlds.com/#in-development"
         },
         {
           "@type": "ListItem",
@@ -86,7 +85,7 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../rss.xml">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/game-components.css">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../css/keyframes.css">
@@ -95,12 +94,14 @@
   <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
-  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-3">
+  <link rel="stylesheet" href="../css/upcoming-vacuum-shot.css?v=20261113-2">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="vacuum-shot">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Skip to main content</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Vacuum Shot — back to WillowinWorlds">
+    <a class="game-detail-brand" href="../index.html" aria-label="Vacuum Shot WillowinWorlds game page, back to the studio home">
       <img src="../assets/upcoming/vacuum-shot/icon-192.webp" width="192" height="192" alt="Vacuum Shot icon: a teal vacuum cleaner with a flower on its body, a black hose and orange details, on a mint background." decoding="async">
       <span><strong>Vacuum Shot</strong><small>WillowinWorlds game page</small></span>
     </a>
@@ -110,6 +111,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -121,18 +123,37 @@
       <div class="container ug-hero-layout">
         <div class="ug-hero-copy">
           <p class="ug-meta"><span class="status-pill ug-pill">Vertical slice</span><span class="ug-genre">Endless recoil-flight arcade</span></p>
-          <h1 id="heroTitle">Vacuum Shot</h1>
+          <h1 id="heroTitle"><span class="vs-t1">Vacuum</span> <span class="vs-t2">Shot</span></h1>
           <p class="ug-tagline">Vacuum a prop. Fire it. Fly.</p>
           <p class="hero-copy">A vertical slice of an endless recoil-flight game. Tap a prop to pull it into the bag, fire it for recoil, then land softly to keep your score chain going.</p>
           <p class="ug-status-note">One vacuum, 39 props, an endless route and an upgrade panel are in the Unity project with automated tests; audio and device builds are still to come.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#vote">Follow development</a>
-            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">All games in development</a>
           </div>
         </div>
-        <figure class="ug-hero-media">
-          <img src="../assets/upcoming/vacuum-shot/hero-1280.webp" srcset="../assets/upcoming/vacuum-shot/hero-720.webp 720w, ../assets/upcoming/vacuum-shot/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="The pilot with a vacuum on a sunny meadow in front of round pastel garden houses and flowering trees." fetchpriority="high" decoding="async">
-          <figcaption>Capture from the Unity editor.</figcaption>
+        <figure class="ug-hero-media vs-stage">
+          <div class="vs-scene" role="img" aria-label="Illustrated scene: props spiral into the vacuum's hose, then the vacuum is pushed forward by the recoil in a puff of petals.">
+            <div class="vs-garden" aria-hidden="true">
+              <img src="../assets/upcoming/vacuum-shot/hero-1280.webp" srcset="../assets/upcoming/vacuum-shot/hero-720.webp 720w, ../assets/upcoming/vacuum-shot/hero-1280.webp 1280w" sizes="(max-width: 920px) 144vw, 780px" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
+            </div>
+            <div class="vs-lawn" aria-hidden="true"></div>
+            <div class="vs-craft" aria-hidden="true"><img src="../assets/upcoming/vacuum-shot/vacuum-cutout.webp" width="390" height="378" alt="" decoding="async"></div>
+            <svg class="vs-vortex" viewBox="-24 -24 48 48" aria-hidden="true" focusable="false">
+                <path class="vs-arm vs-arm--1" d="M22.50 0.00L19.18 7.28L14.00 12.41L7.93 15.10L1.87 15.44L-3.39 13.77L-7.35 10.64L-9.70 6.70L-10.44 2.57L-9.73 -1.18L-7.92 -4.15L-5.41 -6.10L-2.64 -6.95L-0.00 -6.78L2.19 -5.78L3.74 -4.22L4.55 -2.39L4.65 -0.56L4.15 1.02L3.21 2.21L2.02 2.92L0.77 3.14L-0.36 2.93L-1.25 2.38L-1.84 1.63L-2.09 0.79L-2.04 0.00"/>
+                <path class="vs-arm vs-arm--2" d="M-11.25 19.49L-15.89 12.98L-17.74 5.92L-17.04 -0.69L-14.31 -6.10L-10.23 -9.82L-5.54 -11.68L-0.95 -11.75L2.99 -10.33L5.89 -7.84L7.56 -4.78L7.99 -1.63L7.34 1.19L5.87 3.39L3.91 4.79L1.78 5.34L-0.21 5.13L-1.84 4.31L-2.96 3.08L-3.52 1.67L-3.54 0.29L-3.11 -0.90L-2.36 -1.77L-1.44 -2.28L-0.49 -2.41L0.36 -2.21L1.02 -1.77"/>
+                <path class="vs-arm vs-arm--3" d="M-11.25 -19.49L-3.29 -20.25L3.74 -18.33L9.12 -14.42L12.43 -9.34L13.62 -3.95L12.89 1.04L10.65 5.05L7.45 7.75L3.84 9.02L0.36 8.93L-2.58 7.73L-4.70 5.76L-5.87 3.39L-6.10 0.99L-5.52 -1.13L-4.34 -2.75L-2.81 -3.75L-1.19 -4.10L0.31 -3.88L1.52 -3.21L2.34 -2.24L2.72 -1.16L2.69 -0.11L2.33 0.78L1.73 1.42L1.02 1.77"/>
+            </svg>
+            <span class="vs-dew vs-dew--a" aria-hidden="true"></span>
+            <span class="vs-dew vs-dew--b" aria-hidden="true"></span>
+            <span class="vs-prop vs-prop--acorn" aria-hidden="true"></span>
+            <span class="vs-prop vs-prop--duck" aria-hidden="true"></span>
+            <span class="vs-prop vs-prop--berry" aria-hidden="true"></span>
+            <span class="vs-burst" aria-hidden="true"></span>
+            <span class="vs-puff" aria-hidden="true"></span>
+            <div class="vs-hud" aria-hidden="true"><span class="vs-pips"><b></b><b></b><b></b><b></b><b></b></span></div>
+          </div>
+          <figcaption>Scene built from art in the Unity project. The motion is illustrative, not gameplay footage.</figcaption>
         </figure>
       </div>
     </section>
@@ -185,7 +206,7 @@
         <div class="eyebrow">Images</div>
         <h2 id="galleryTitle">Gallery</h2>
         <p class="ug-lede">In-engine captures from the Unity project, plus a sheet of the collectible props.</p>
-        <div class="ug-gallery">
+        <div class="ug-gallery ug-gallery--3">
           <figure class="ug-shot"><img src="../assets/upcoming/vacuum-shot/gallery-01.webp" width="960" height="540" alt="Gameplay over rolling green hills in front of the garden houses, with the bag, score and run counters on screen." loading="lazy" decoding="async"><figcaption>Endless meadow run</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/vacuum-shot/gallery-02.webp" width="960" height="540" alt="High-altitude flight through a pastel cloudy sky, with the pilot and floating props and the HUD on screen." loading="lazy" decoding="async"><figcaption>High-altitude flight</figcaption></figure>
           <figure class="ug-shot"><img src="../assets/upcoming/vacuum-shot/gallery-03.webp" width="960" height="640" alt="All 39 collectible props: acorn, alarm clock, apple, brass bell, cupcake, kite, teapot, rubber duck, plush bunny and more." loading="lazy" decoding="async"><figcaption>The 39 collectible props</figcaption></figure>
@@ -211,6 +232,16 @@
       </section>
     </div>
   </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">More worlds in the lab</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="blastblast.html"><strong>BlastBlast!</strong><span>Same studio, same base &mdash; a different flight. Pump an extinguisher and blast instead of vacuuming a prop.</span></a></li>
+        <li><a class="lab-related-link" href="alien-flying.html"><strong>Alien Flying</strong><span>Another flying game in development.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">All games in development</a>
+    </div>
+  </nav>
   <footer class="game-footer">
     <div class="container game-footer-inner">
       <div class="game-footer-copy">
@@ -218,7 +249,7 @@
         <span>Vacuum up garden props and fire them to fly across an endless pastel meadow.</span>
       </div>
       <nav class="game-footer-nav" aria-label="Vacuum Shot footer navigation">
-        <a href="../index.html#games">All games</a>
+        <a href="../index.html#in-development">Games in development</a>
         <a href="../press-kit.html">Press kit</a>
         <a href="../privacy.html">Privacy</a>
         <a href="../legal.html">Legal</a>

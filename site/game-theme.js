@@ -4,6 +4,9 @@
   const scriptBaseUrl = document.currentScript?.src || document.baseURI;
   const assetUrl = path => new URL(path, scriptBaseUrl).href;
   const themeToggle = document.getElementById("themeToggle");
+  const motionToggles = document.querySelectorAll("[data-motion-toggle]");
+  const mascotStops = [];
+  const motionPaused = () => body.classList.contains("animations-paused");
   const metaThemeColor = document.getElementById("metaThemeColor");
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
   const prefersLight = window.matchMedia("(prefers-color-scheme: light)");
@@ -88,6 +91,15 @@
       setTheme(body.getAttribute("data-theme") === "dark" ? "light" : "dark");
     });
   }
+
+  // WCAG 2.2.2: one switch pauses every CSS animation (rule in css/base.css) and the cursor mascot loop.
+  motionToggles.forEach(toggle => {
+    toggle.addEventListener("click", () => {
+      const paused = body.classList.toggle("animations-paused");
+      motionToggles.forEach(item => item.setAttribute("aria-pressed", String(paused)));
+      if (paused) mascotStops.forEach(stop => stop());
+    });
+  });
 
   if (!readStoredTheme() && typeof prefersDark.addEventListener === "function") {
     prefersDark.addEventListener("change", event => {
@@ -192,7 +204,7 @@
     }
 
     function start() {
-      if (!frame) frame = requestAnimationFrame(render);
+      if (!frame && !motionPaused()) frame = requestAnimationFrame(render);
     }
 
     function stop() {
@@ -203,7 +215,10 @@
       }
     }
 
+    mascotStops.push(stop);
+
     window.addEventListener("pointermove", event => {
+      if (motionPaused()) return;
       if (event.pointerType && event.pointerType !== "mouse" && event.pointerType !== "pen") return;
       targetX = Math.min(window.innerWidth - options.boundary, Math.max(options.boundary, event.clientX + options.offsetX));
       targetY = Math.min(window.innerHeight - options.boundary, Math.max(options.boundary, event.clientY + options.offsetY));

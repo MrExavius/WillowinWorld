@@ -91,7 +91,7 @@
   <link rel="preload" href="../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/home-ball-card.css">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
   <link rel="stylesheet" href="../css/ball-page.css?v=20261113-1">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
@@ -103,6 +103,7 @@
   <link rel="stylesheet" href="../motion.css">
 </head>
 <body class="game-detail-page game-theme-ball ball-is-god-page" data-theme="dark">
+  <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#game-main">Skip to Ball is God?!</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html" aria-label="Ball is God?! — back to WillowinWorlds">
@@ -116,6 +117,7 @@
       <a href="#faq">FAQ</a>
       <a href="../press-kit.html">Press kit</a>
     </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pause animations"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pause animations</span></button>
     <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -144,8 +146,7 @@
     <section class="ball-game-hero" aria-labelledby="ballHeroTitle">
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
-          <div class="eyebrow">Ball is God?!</div>
-          <h1 id="ballHeroTitle">Rotate the tower. Become the impact.</h1>
+          <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Rotate the tower. Become the impact.</span></h1>
           <p class="hero-copy">A hardcore vertical descent arcade where horizontal drag rotates the tower around the falling Espa. Skip safe landings, charge a combo smash and break through a mythic world where one unguarded hit ends the run.</p>
           <p class="ball-hero-note">Active production across ten location scenes, deterministic tower generation, boss configurations, branching dialogue and karma paths that change the rules of play.</p>
           <div class="hero-actions">
@@ -470,7 +471,6 @@
             <div><dt>Genre</dt><dd>Story-driven vertical descent arcade</dd></div>
             <div><dt>Platform target</dt><dd>iOS / Android</dd></div>
             <div><dt>Session shape</dt><dd>Fast skill-based runs</dd></div>
-            <div><dt>Primary CTA</dt><dd>Request a development build</dd></div>
           </dl>
         </div>
       </section>
@@ -542,18 +542,6 @@
           <a class="asset-link" href="../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God story arcade cave dialogue background" loading="lazy" decoding="async"><strong>09 · Cave dialogue</strong><span>Ennea story background.</span></a>
           <a class="asset-link" href="../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God story arcade hell dialogue background" loading="lazy" decoding="async"><strong>10 · Hell dialogue</strong><span>Deka story background.</span></a>
         </div>
-      </section>
-      <section class="soft-card game-page-section">
-        <div class="eyebrow">Development journey</div>
-        <h2>From first studio idea to larger narrative arcade project.</h2>
-        <ul class="update-list">
-          <li><span>July 2024</span><strong>Original concept</strong><p>Ball is God?! began as WillowinWorlds's first game idea: a fast vertical arcade game about falling through a divine tower and surviving stone gaps.</p></li>
-          <li><span>August 2024</span><strong>Story direction begins</strong><p>After the first internal cut, the team decided the game should become more than a simple arcade descent.</p></li>
-          <li><span>Following months</span><strong>World and boss expansion</strong><p>The project grew into ten location scenes, boss encounters, moral choices and a more authored mythic structure.</p></li>
-          <li><span>April-May 2025</span><strong>Story rewrite</strong><p>The story was rewritten and expanded after months of drafting, improving character abilities, world logic and moral consequences.</p></li>
-          <li><span>February 2026</span><strong>Project scope review</strong><p>The team reviewed the full scale of the project after story integration and recognized it had become a larger narrative arcade game.</p></li>
-          <li><span>July 2026</span><strong>Active systems, UI and world pass</strong><p>Production now spans ten location scenes, deterministic tower generation, combo smash, shield, karma-driven rules, level-selection UI and expression-ready dialogue portraits.</p></li>
-        </ul>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
         <div class="eyebrow">Related Worlds</div>
@@ -631,6 +619,6 @@
       </div>
     </div>
   </footer>
-  <script src="../game-theme.js?v=20261113-1"></script>
+  <script src="../game-theme.js?v=20261113-2"></script>
 </body>
 </html>

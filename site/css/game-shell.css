@@ -83,7 +83,7 @@
   z-index: 60;
   min-height: 74px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto auto auto;
   align-items: center;
   gap: 18px;
   padding: 12px max(20px, calc((100vw - var(--max)) / 2));
@@ -142,7 +142,8 @@
 }
 
 .game-detail-nav a,
-.game-theme-toggle {
+.game-theme-toggle,
+.game-motion-toggle {
   min-height: 42px;
   border: 1px solid color-mix(in srgb, var(--paper) 22%, var(--line));
   background: color-mix(in srgb, var(--surface) 78%, transparent);
@@ -168,19 +169,135 @@
 .game-detail-nav a:hover,
 .game-detail-nav a:focus-visible,
 .game-theme-toggle:hover,
-.game-theme-toggle:focus-visible {
+.game-theme-toggle:focus-visible,
+.game-motion-toggle:hover,
+.game-motion-toggle:focus-visible {
   border-color: color-mix(in srgb, var(--game-accent) 52%, var(--line));
   color: var(--text);
 }
 
-.game-theme-toggle {
-  width: 42px;
+.game-theme-toggle,
+.game-motion-toggle {
+  width: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex: 0 0 42px;
+  flex: 0 0 44px;
   padding: 0;
   color: var(--text);
+}
+
+/* Pause control (WCAG 2.2.2): same 44 px round button as the theme toggle; the icon swaps pause/play with aria-pressed. */
+.game-motion-toggle {
+  position: relative;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.game-motion-toggle:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.game-motion-toggle[aria-pressed="true"] {
+  box-shadow: inset 0 0 0 2px var(--focus-ring);
+}
+
+.game-motion-toggle .motion-icon-play,
+.game-motion-toggle[aria-pressed="true"] .motion-icon-pause {
+  display: none;
+}
+
+.game-motion-toggle[aria-pressed="true"] .motion-icon-play {
+  display: inline;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* The press kit topbar has its own palette for the theme toggle (css/press-kit.css); the pause control matches it. */
+.press-kit-topbar .game-motion-toggle {
+  color: #d6e8f4;
+  border-color: rgba(151, 201, 232, 0.22);
+  background: rgba(22, 39, 67, 0.72);
+}
+
+.press-kit-topbar .game-motion-toggle:hover,
+.press-kit-topbar .game-motion-toggle:focus-visible {
+  color: #ffffff;
+  border-color: rgba(113, 231, 255, 0.48);
+  background: rgba(113, 231, 255, 0.12);
+}
+
+.press-kit-ocean-page[data-theme="light"] .press-kit-topbar .game-motion-toggle {
+  color: #31586c;
+  border-color: rgba(38, 126, 155, 0.17);
+  background: rgba(255, 255, 247, 0.66);
+}
+
+.press-kit-ocean-page[data-theme="light"] .press-kit-topbar .game-motion-toggle:hover,
+.press-kit-ocean-page[data-theme="light"] .press-kit-topbar .game-motion-toggle:focus-visible {
+  color: #102843;
+  border-color: rgba(33, 191, 214, 0.44);
+  background: rgba(113, 231, 255, 0.16);
+}
+
+/* responsive-tablet.css sets three columns at this width; the extra control needs a fourth. */
+@media (max-width: 920px) {
+  header.game-detail-topbar {
+    grid-template-columns: minmax(0, 1fr) auto auto auto;
+  }
+}
+
+/* Six press kit links, the brand and three controls no longer fit on one row below about 1040 px: wrap the links like the tablet layout. */
+@media (max-width: 1040px) {
+  header.press-kit-topbar {
+    grid-template-columns: minmax(0, 1fr) auto auto auto;
+  }
+
+  .press-kit-topbar .game-detail-nav {
+    grid-column: 1 / -1;
+    order: 3;
+    flex-wrap: wrap;
+    padding-bottom: 2px;
+  }
+}
+
+/* At 320-480 px the brand name wraps instead of being cut by the extra control. */
+@media (max-width: 480px) {
+  header.game-detail-topbar {
+    column-gap: 8px;
+  }
+
+  .game-detail-brand strong {
+    overflow: visible;
+    overflow-wrap: anywhere;
+    line-height: 1.15;
+    white-space: normal;
+  }
+}
+
+/* Game name inside the H1: keeps the former eyebrow pill, the tagline carries the display type. */
+.game-detail-page h1 .game-hero-name {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  line-height: 1.25;
+  text-shadow: none;
+}
+
+.game-detail-page h1 .game-hero-tagline {
+  display: block;
 }
 
 .game-detail-page .game-detail-shell {

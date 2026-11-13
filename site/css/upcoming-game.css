@@ -45,18 +45,14 @@ body.upcoming-game-page .skip-link {
   font-weight: 800;
 }
 
-body.upcoming-game-page :is(a, button, summary):focus-visible {
+body.upcoming-game-page.game-detail-page :is(a, button, summary):focus-visible {
   outline: 3px solid var(--ug-focus);
   outline-offset: 3px;
   border-radius: 12px;
 }
 
-body.upcoming-game-page :is(.btn, .social-link, .game-detail-nav a, .game-theme-toggle):focus-visible {
+body.upcoming-game-page.game-detail-page :is(.btn, .social-link, .game-detail-nav a, .game-motion-toggle, .game-theme-toggle, .lab-related-all):focus-visible {
   border-radius: 999px;
-}
-
-body.upcoming-game-page .game-theme-toggle:focus-visible {
-  border-radius: 50%;
 }
 
 /* Topbar: wraps instead of overflowing at narrow widths and large text sizes. */
@@ -75,8 +71,9 @@ body.upcoming-game-page .game-detail-topbar {
 }
 
 body.upcoming-game-page .game-detail-brand {
-  flex: 1 1 12rem;
+  flex: 0 1 auto;
   min-width: 0;
+  margin-inline-end: auto;
 }
 
 body.upcoming-game-page .game-detail-brand img {
@@ -101,11 +98,12 @@ body.upcoming-game-page .game-detail-nav {
   padding-bottom: 0;
 }
 
-body.upcoming-game-page .game-theme-toggle {
+body.upcoming-game-page :is(.game-motion-toggle, .game-theme-toggle) {
   order: 3;
 }
 
 body.upcoming-game-page .game-detail-nav a,
+body.upcoming-game-page .game-motion-toggle,
 body.upcoming-game-page .game-theme-toggle {
   border-color: var(--ug-line);
   background: var(--ug-card-2);
@@ -116,6 +114,7 @@ body.upcoming-game-page .game-detail-nav a {
 }
 
 body.upcoming-game-page .game-detail-nav a:hover,
+body.upcoming-game-page .game-motion-toggle:hover,
 body.upcoming-game-page .game-theme-toggle:hover {
   border-color: var(--ug-accent);
   color: var(--ug-ink);
@@ -132,13 +131,44 @@ body.upcoming-game-page .game-theme-toggle:hover {
     order: 1;
   }
 
-  body.upcoming-game-page .game-theme-toggle {
+  body.upcoming-game-page :is(.game-motion-toggle, .game-theme-toggle) {
     order: 2;
   }
 
   body.upcoming-game-page .game-detail-nav {
     order: 3;
     flex: 1 1 100%;
+  }
+}
+
+/* Phones: one compact row (brand, pause, theme). The in-page and press-kit links are repeated in the footer, so the nav is collapsed instead of wrapping into extra rows above the H1. */
+@media (max-width: 480px) {
+  body.upcoming-game-page .game-detail-topbar {
+    flex-wrap: nowrap;
+    gap: 8px;
+    min-height: 0;
+    padding-block: 8px;
+    padding-inline: 14px;
+  }
+
+  body.upcoming-game-page .game-detail-brand {
+    flex: 1 1 0;
+    min-width: 0;
+    gap: 10px;
+  }
+
+  body.upcoming-game-page .game-detail-brand img {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+  }
+
+  body.upcoming-game-page .game-detail-brand strong {
+    font-size: 1rem;
+  }
+
+  body.upcoming-game-page .game-detail-nav {
+    display: none;
   }
 }
 
@@ -247,7 +277,7 @@ body.upcoming-game-page .ug-pill {
   padding: 8px 14px;
   border-color: color-mix(in srgb, var(--ug-fill) 55%, var(--ug-line));
   color: var(--ug-accent);
-  background: color-mix(in srgb, var(--ug-fill) 16%, var(--ug-card));
+  background: color-mix(in srgb, var(--ug-fill) 9%, var(--ug-card));
   font-size: 0.86rem;
   font-weight: 850;
   line-height: 1.1;
@@ -302,8 +332,7 @@ body.upcoming-game-page .ug-pill {
 
 .ug-collab {
   display: inline-block;
-  margin-bottom: 22px;
-  border-radius: 999px;
+  margin-bottom: 0;
   font-weight: 800;
 }
 
@@ -428,6 +457,16 @@ body.upcoming-game-page .game-page-facts dd {
   column-gap: 14px;
 }
 
+.ug-gallery--2 {
+  columns: 15rem 2;
+  max-width: 44rem;
+}
+
+.ug-shot--strip {
+  column-span: all;
+  max-width: 40rem;
+}
+
 .ug-shot {
   margin: 0 0 14px;
   overflow: hidden;
@@ -473,6 +512,88 @@ body.upcoming-game-page .game-page-facts dd {
   flex: none;
   padding-top: 0;
   border-top: 0;
+}
+
+/* Related worlds row before the footer (nav.lab-related). Shared by every upcoming-game page. */
+.lab-related {
+  padding: clamp(20px, 4vw, 40px) 0 clamp(28px, 5vw, 52px);
+}
+
+.lab-related-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+}
+
+.lab-related-title {
+  flex: 1 1 100%;
+  margin: 0;
+  color: var(--ug-ink);
+  font-size: clamp(1.15rem, 0.9rem + 1vw, 1.5rem);
+  line-height: 1.2;
+}
+
+.lab-related-list {
+  display: grid;
+  flex: 1 1 32rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lab-related-link {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  height: 100%;
+  padding: 14px 18px;
+  border: 1px solid var(--ug-line);
+  border-radius: var(--radius-md);
+  color: var(--ug-ink);
+  background: var(--ug-card-2);
+  transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.lab-related-link strong {
+  font-size: 1.05rem;
+  font-weight: 850;
+}
+
+.lab-related-link strong::after {
+  content: " \2192" / "";
+  color: var(--ug-accent);
+}
+
+.lab-related-link span {
+  color: var(--ug-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.lab-related-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--ug-accent);
+  box-shadow: 0 12px 28px var(--ug-shadow);
+}
+
+.lab-related-all {
+  flex: 0 0 auto;
+  padding: 12px 20px;
+  border: 1px solid var(--ug-accent);
+  border-radius: 999px;
+  color: var(--ug-ink);
+  background: color-mix(in srgb, var(--ug-card) 80%, transparent);
+  font-weight: 800;
+  text-align: center;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.lab-related-all:hover {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--ug-fill) 16%, var(--ug-card));
 }
 
 /* Footer. */
@@ -536,7 +657,7 @@ body.upcoming-game-page .social-link:hover {
     90deg,
     color-mix(in srgb, var(--ug-bg) 97%, transparent) 0%,
     color-mix(in srgb, var(--ug-bg) 94%, transparent) 62%,
-    color-mix(in srgb, var(--ug-bg) 60%, transparent) 100%
+    color-mix(in srgb, var(--ug-bg) 80%, transparent) 100%
   );
 }
 

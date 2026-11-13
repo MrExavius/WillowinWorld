@@ -1,0 +1,604 @@
+/* WillowinWorlds CSS: Lyamur page (games/lyamur.html). Loaded after upcoming-game.css.
+   Signature element: a marble chain flowing along a curved jungle track, a marble shot from the lemur king and a three-marble pop.
+   The whole chain is driven by one animation on registered custom properties (--lm-phase, --lm-push, --lm-pop) that feed `translate`,
+   `scale` and `opacity` on each marble, so nothing changes layout. Colours repeat every six marbles and the cycle moves the chain by
+   twelve slots, so the loop restarts on an identical picture. Without motion the scene is a finished still: chain in place, lemur aimed. */
+
+@property --lm-phase { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --lm-push { syntax: "<number>"; inherits: true; initial-value: 0; }
+@property --lm-pop { syntax: "<number>"; inherits: true; initial-value: 0; }
+
+body[data-game="lyamur"] {
+  --lm-red-1: #ffd4d0; --lm-red-2: #ee4a43; --lm-red-3: #9e120e;
+  --lm-blue-1: #cfe3ff; --lm-blue-2: #3a86f4; --lm-blue-3: #0e3796;
+  --lm-yel-1: #fff1ae; --lm-yel-2: #f6c11d; --lm-yel-3: #a56500;
+}
+
+/* Hero scene */
+.lm-hero-media {
+  width: 100%;
+  max-width: 600px;
+  justify-self: end;
+}
+
+body[data-game="lyamur"][data-theme="dark"] .lm-hero-media {
+  box-shadow: 0 30px 70px var(--ug-shadow), 0 0 0 8px color-mix(in srgb, var(--ug-fill) 14%, transparent), 0 0 110px rgb(101 202 73 / 0.16);
+}
+
+.lm-stage {
+  position: relative;
+  container-type: inline-size;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #274d12;
+  --lm-r: 31cqw;
+  --lm-d: 5.6cqw;
+  --lm-step: 10.4deg;
+  --lm-a12: 176.4deg;
+  --lm-cy: 56cqw;
+  --lm-aim: calc(var(--lm-a12) + 13.16 * var(--lm-step));
+  --lm-hit: calc(var(--lm-a12) + 13.16 * var(--lm-step));
+  --lm-hit2: calc(var(--lm-a12) + 13.6 * var(--lm-step));
+}
+
+.lm-hero-media .lm-board {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lm-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.lm-scene::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background: radial-gradient(circle at 50% 53%, transparent 52%, rgb(6 28 6 / 0.42) 100%);
+}
+
+.lm-scene > span {
+  position: absolute;
+}
+
+/* Sun shafts through the canopy */
+.lm-light {
+  inset: -6% -10%;
+  z-index: 0;
+  background:
+    linear-gradient(104deg, transparent 18%, rgb(255 246 190 / 0.2) 27%, transparent 38%, transparent 52%, rgb(255 246 190 / 0.15) 60%, transparent 71%);
+  opacity: 0.8;
+}
+
+/* The track: a worn trench along an arc of the clearing, with a pit at the end */
+.lm-groove {
+  left: calc(50% - 35cqw);
+  top: calc(var(--lm-cy) - 35cqw);
+  width: 70cqw;
+  height: 70cqw;
+  z-index: 0;
+  background: radial-gradient(circle closest-side, transparent 77%, rgb(50 31 10 / 0.62) 80%, rgb(50 31 10 / 0.62) 96.5%, transparent 99.5%);
+  -webkit-mask-image: conic-gradient(from 256deg, transparent 0deg, #000 6deg, #000 204deg, transparent 213deg, transparent 360deg);
+  mask-image: conic-gradient(from 256deg, transparent 0deg, #000 6deg, #000 204deg, transparent 213deg, transparent 360deg);
+}
+
+.lm-pit {
+  left: 50%;
+  top: var(--lm-cy);
+  z-index: 1;
+  width: 9.4cqw;
+  height: 9.4cqw;
+  margin: -4.7cqw 0 0 -4.7cqw;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 42%, #000 0 36%, #231709 50%, #6a4a20 62%, #b98a45 69%, #5b3f1a 74%, transparent 76%);
+  box-shadow: 0 0 2.6cqw rgb(0 0 0 / 0.45);
+  translate:
+    calc(cos(calc(var(--lm-a12) + 18.9 * var(--lm-step))) * var(--lm-r))
+    calc(sin(calc(var(--lm-a12) + 18.9 * var(--lm-step))) * var(--lm-r));
+}
+
+/* A leafy mound where the chain comes out, cut from the same board art */
+.lm-bush {
+  left: 50%;
+  top: var(--lm-cy);
+  z-index: 3;
+  width: 17cqw;
+  height: 16cqw;
+  margin: -8cqw 0 0 -8.5cqw;
+  background: url("../assets/upcoming/lyamur/hero-1280.webp") 0 -56cqw / 177.8cqw 100cqw no-repeat;
+  -webkit-mask-image: radial-gradient(ellipse closest-side, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse closest-side, #000 55%, transparent 100%);
+  translate:
+    calc(cos(calc(var(--lm-a12) + 0.1 * var(--lm-step))) * var(--lm-r))
+    calc(sin(calc(var(--lm-a12) + 0.1 * var(--lm-step))) * var(--lm-r));
+}
+
+/* The chain */
+.lm-chain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.lm-chain i,
+.lm-shot {
+  position: absolute;
+  left: 50%;
+  top: var(--lm-cy);
+  width: var(--lm-d);
+  height: var(--lm-d);
+  margin: calc(var(--lm-d) / -2) 0 0 calc(var(--lm-d) / -2);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.95) 0 7%, transparent 17%),
+    radial-gradient(circle at 38% 34%, var(--c1), var(--c2) 52%, var(--c3) 100%);
+  box-shadow: 0 0.45cqw 0.7cqw rgb(15 10 0 / 0.45), inset -0.25cqw -0.35cqw 0.6cqw rgb(0 0 0 / 0.28);
+}
+
+.lm-chain i {
+  --s: calc(var(--j) + var(--lm-phase) + var(--lm-push) * var(--aft, 0));
+  --ang: calc(var(--lm-a12) + (var(--s) - 12) * var(--lm-step));
+  --e: clamp(0, min(var(--s) - 12, 30 - var(--s)) / 1.6, 1);
+  translate: calc(cos(var(--ang)) * var(--lm-r)) calc(sin(var(--ang)) * var(--lm-r));
+  scale: calc((0.4 + 0.6 * var(--e)) * (1 + var(--lm-pop) * var(--hit, 0) * 0.5));
+  opacity: min(var(--e), 1 - var(--lm-pop) * var(--hit, 0));
+}
+
+.lm-chain i:nth-child(6n+1), .lm-chain i:nth-child(6n+2) { --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-chain i:nth-child(6n+3), .lm-chain i:nth-child(6n+5) { --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-chain i:nth-child(6n+4), .lm-chain i:nth-child(6n+6) { --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-chain i:nth-child(19), .lm-chain i:nth-child(20) { --hit: 1; }
+.lm-chain i:nth-child(n+21) { --aft: 1; }
+.lm-chain i:nth-child(1) { --j: 0; }
+.lm-chain i:nth-child(2) { --j: 1; }
+.lm-chain i:nth-child(3) { --j: 2; }
+.lm-chain i:nth-child(4) { --j: 3; }
+.lm-chain i:nth-child(5) { --j: 4; }
+.lm-chain i:nth-child(6) { --j: 5; }
+.lm-chain i:nth-child(7) { --j: 6; }
+.lm-chain i:nth-child(8) { --j: 7; }
+.lm-chain i:nth-child(9) { --j: 8; }
+.lm-chain i:nth-child(10) { --j: 9; }
+.lm-chain i:nth-child(11) { --j: 10; }
+.lm-chain i:nth-child(12) { --j: 11; }
+.lm-chain i:nth-child(13) { --j: 12; }
+.lm-chain i:nth-child(14) { --j: 13; }
+.lm-chain i:nth-child(15) { --j: 14; }
+.lm-chain i:nth-child(16) { --j: 15; }
+.lm-chain i:nth-child(17) { --j: 16; }
+.lm-chain i:nth-child(18) { --j: 17; }
+.lm-chain i:nth-child(19) { --j: 18; }
+.lm-chain i:nth-child(20) { --j: 19; }
+.lm-chain i:nth-child(21) { --j: 20; }
+.lm-chain i:nth-child(22) { --j: 21; }
+.lm-chain i:nth-child(23) { --j: 22; }
+.lm-chain i:nth-child(24) { --j: 23; }
+.lm-chain i:nth-child(25) { --j: 24; }
+.lm-chain i:nth-child(26) { --j: 25; }
+.lm-chain i:nth-child(27) { --j: 26; }
+.lm-chain i:nth-child(28) { --j: 27; }
+.lm-chain i:nth-child(29) { --j: 28; }
+.lm-chain i:nth-child(30) { --j: 29; }
+.lm-chain i:nth-child(31) { --j: 30; }
+
+/* The shot: red, so it joins the red pair. At rest it sits loaded at the lemur's nose. */
+.lm-shot {
+  --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3);
+  z-index: 2;
+  translate: calc(cos(var(--lm-aim)) * 23cqw) calc(sin(var(--lm-aim)) * 23cqw);
+}
+
+/* The lemur king, seen from above, turned toward the pair */
+.lm-lemur {
+  left: calc(50% - 22cqw);
+  top: calc(var(--lm-cy) - 9.4cqw);
+  z-index: 1;
+  width: 44cqw;
+  aspect-ratio: 960 / 410;
+  background:
+    radial-gradient(ellipse 46% 38% at 50% 62%, rgb(20 15 0 / 0.38), transparent 72%),
+    url("../assets/upcoming/lyamur/gallery-top-down-shooter.webp") 0 0 / 100% auto no-repeat;
+  rotate: var(--lm-aim);
+}
+
+/* Aim guide */
+.lm-lemur::after {
+  content: "";
+  position: absolute;
+  left: 96%;
+  top: 50%;
+  width: 17%;
+  height: 0.55cqw;
+  margin-top: -0.27cqw;
+  border-radius: 0.3cqw;
+  background: repeating-linear-gradient(90deg, rgb(255 255 255 / 0.9) 0 0.7cqw, transparent 0.7cqw 1.9cqw);
+  opacity: 0.85;
+}
+
+/* The pop at the impact point */
+.lm-burst {
+  left: 50%;
+  top: var(--lm-cy);
+  z-index: 4;
+  width: 0;
+  height: 0;
+  translate: calc(cos(var(--lm-hit)) * var(--lm-r)) calc(sin(var(--lm-hit)) * var(--lm-r));
+}
+
+.lm-burst::before,
+.lm-burst::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.lm-burst::before {
+  width: 11cqw;
+  height: 11cqw;
+  margin: -5.5cqw 0 0 -5.5cqw;
+  border: 0.55cqw solid rgb(255 244 200 / 0.95);
+  box-shadow: 0 0 1.6cqw rgb(255 220 120 / 0.8), inset 0 0 1.4cqw rgb(255 220 120 / 0.6);
+}
+
+.lm-burst::after {
+  width: 1cqw;
+  height: 1cqw;
+  margin: -0.5cqw 0 0 -0.5cqw;
+  background: #fff4c4;
+  box-shadow:
+    0 -5cqw 0 0 #fff4c4, 3.6cqw -3.6cqw 0 0 #ffd44a, 5cqw 0 0 0 #fff4c4, 3.6cqw 3.6cqw 0 0 #ff8f84,
+    0 5cqw 0 0 #fff4c4, -3.6cqw 3.6cqw 0 0 #8cc0ff, -5cqw 0 0 0 #fff4c4, -3.6cqw -3.6cqw 0 0 #ffd44a;
+}
+
+/* Foliage copies from the board art; they sway above the track and the marbles */
+.lm-leaves {
+  inset: 0;
+  z-index: 5;
+  background: url("../assets/upcoming/lyamur/hero-1280.webp") center / cover no-repeat;
+}
+
+.lm-leaves--a {
+  -webkit-mask-image: radial-gradient(circle 34cqw at 0 0, #000 55%, transparent 100%), radial-gradient(circle 34cqw at 100% 100%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(circle 34cqw at 0 0, #000 55%, transparent 100%), radial-gradient(circle 34cqw at 100% 100%, #000 55%, transparent 100%);
+}
+
+.lm-leaves--b {
+  -webkit-mask-image: radial-gradient(circle 34cqw at 100% 0, #000 55%, transparent 100%), radial-gradient(circle 34cqw at 0 100%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(circle 34cqw at 100% 0, #000 55%, transparent 100%), radial-gradient(circle 34cqw at 0 100%, #000 55%, transparent 100%);
+}
+
+/* Pollen drifting up through the light */
+.lm-motes {
+  inset: 0;
+  z-index: 6;
+}
+
+.lm-motes::before {
+  content: "";
+  position: absolute;
+  left: 18%;
+  top: 74%;
+  width: 0.9cqw;
+  height: 0.9cqw;
+  border-radius: 50%;
+  background: #fff5b8;
+  box-shadow:
+    9cqw -6cqw 0 0 rgb(255 245 184 / 0.9), 21cqw 3cqw 0 -0.1cqw #fff5b8, 33cqw -9cqw 0 0 rgb(255 245 184 / 0.8),
+    44cqw 1cqw 0 0 #fff5b8, 56cqw -5cqw 0 -0.1cqw rgb(255 245 184 / 0.9), 63cqw 5cqw 0 0 #fff5b8, 14cqw -17cqw 0 0 rgb(255 245 184 / 0.8),
+    38cqw -19cqw 0 0 #fff5b8, 52cqw -14cqw 0 -0.1cqw rgb(255 245 184 / 0.85);
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lm-light { animation: lmLight 9s ease-in-out infinite alternate; }
+  .lm-chain { animation: lmChain 15s linear infinite; }
+  .lm-shot { animation: lmShot 15s linear infinite; }
+  .lm-lemur { animation: lmAim 15s ease-in-out infinite; }
+  .lm-lemur::after { animation: lmGuide 15s linear infinite; }
+  .lm-burst::before { animation: lmRing 15s ease-out infinite; }
+  .lm-burst::after { animation: lmSparks 15s ease-out infinite; }
+  .lm-leaves--a { animation: lmSwayA 8s ease-in-out infinite; }
+  .lm-leaves--b { animation: lmSwayB 10s ease-in-out infinite; }
+  .lm-motes::before { animation: lmMotes 12s linear infinite; }
+}
+
+@keyframes lmLight {
+  from { opacity: 0.55; translate: -3cqw 0; }
+  to { opacity: 0.95; translate: 3cqw 0; }
+}
+
+@keyframes lmChain {
+  0% { --lm-phase: 0; --lm-push: 0; --lm-pop: 0; }
+  41% { --lm-push: 0; animation-timing-function: ease-in-out; }
+  43% { --lm-push: 1; }
+  44% { --lm-pop: 0; animation-timing-function: ease-out; }
+  49% { --lm-pop: 1; }
+  100% { --lm-phase: 12; --lm-push: 1; --lm-pop: 1; }
+}
+
+@keyframes lmShot {
+  0%, 35% { opacity: 0; scale: 0.4; translate: calc(cos(var(--lm-aim)) * 23cqw) calc(sin(var(--lm-aim)) * 23cqw); }
+  38% { opacity: 1; scale: 1; translate: calc(cos(var(--lm-aim)) * 23cqw) calc(sin(var(--lm-aim)) * 23cqw); }
+  40% { opacity: 1; scale: 1; translate: calc(cos(var(--lm-aim)) * 23cqw) calc(sin(var(--lm-aim)) * 23cqw); animation-timing-function: cubic-bezier(0.5, 0, 0.9, 0.6); }
+  43% { opacity: 1; scale: 1; translate: calc(cos(var(--lm-hit)) * var(--lm-r)) calc(sin(var(--lm-hit)) * var(--lm-r)); }
+  44.5% { opacity: 1; scale: 1.25; }
+  47% { opacity: 0; scale: 1.7; translate: calc(cos(var(--lm-hit2)) * var(--lm-r)) calc(sin(var(--lm-hit2)) * var(--lm-r)); }
+  100% { opacity: 0; scale: 1.7; translate: calc(cos(var(--lm-hit2)) * var(--lm-r)) calc(sin(var(--lm-hit2)) * var(--lm-r)); }
+}
+
+@keyframes lmAim {
+  0% { rotate: 262deg; scale: 1; transform: translateX(0); }
+  20% { rotate: 292deg; }
+  33% { rotate: 276deg; }
+  38% { rotate: var(--lm-aim); }
+  40% { rotate: var(--lm-aim); transform: translateX(0); animation-timing-function: ease-out; }
+  41% { transform: translateX(-1.4cqw); }
+  45% { transform: translateX(0); scale: 1; animation-timing-function: ease-out; }
+  48% { scale: 1.06; }
+  54% { scale: 1; }
+  60% { rotate: var(--lm-aim); }
+  80% { rotate: 270deg; }
+  100% { rotate: 262deg; scale: 1; transform: translateX(0); }
+}
+
+@keyframes lmGuide {
+  0%, 31% { opacity: 0; }
+  35%, 39.5% { opacity: 0.85; }
+  41%, 100% { opacity: 0; }
+}
+
+@keyframes lmRing {
+  0%, 43% { opacity: 0; scale: 0.3; }
+  44% { opacity: 1; scale: 0.4; }
+  52%, 100% { opacity: 0; scale: 1.5; }
+}
+
+@keyframes lmSparks {
+  0%, 43.5% { opacity: 0; scale: 0.3; }
+  45% { opacity: 1; scale: 0.7; }
+  51%, 100% { opacity: 0; scale: 1.6; }
+}
+
+@keyframes lmSwayA {
+  0%, 100% { rotate: -1.1deg; translate: 0 0; }
+  50% { rotate: 1.2deg; translate: 0.4cqw 0.3cqw; }
+}
+
+@keyframes lmSwayB {
+  0%, 100% { rotate: 1.1deg; translate: 0 0.3cqw; }
+  50% { rotate: -1.2deg; translate: -0.4cqw 0; }
+}
+
+@keyframes lmMotes {
+  0% { opacity: 0; translate: 0 2cqw; }
+  15%, 75% { opacity: 0.85; }
+  100% { opacity: 0; translate: 3cqw -10cqw; }
+}
+
+@media (max-width: 920px) {
+  .lm-hero-media {
+    justify-self: center;
+    max-width: 520px;
+  }
+}
+
+/* Sections: the marble motif, kept quiet. Hover and press use transitions so a paused page still shows the final state. */
+.ug-steps li,
+.ug-features .detail-card,
+.ug-faq .detail-card,
+.ug-next li,
+.ug-facts .game-page-facts > div,
+.ug-shot {
+  transition: transform 0.28s var(--ease), border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
+}
+
+body[data-game="lyamur"] .eyebrow::before {
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.9) 0 10%, transparent 24%),
+    radial-gradient(circle at 38% 34%, var(--lm-yel-1), var(--lm-yel-2) 55%, var(--lm-yel-3));
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.35);
+}
+
+body[data-game="lyamur"] .btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+.ug-facts .game-page-facts > div:hover {
+  transform: translateY(-2px);
+  border-color: var(--ug-accent);
+}
+
+/* Steps: a groove along the card bottom; the marble rolls to the far end on hover or focus. */
+.ug-steps li {
+  position: relative;
+  container-type: inline-size;
+  padding-bottom: 44px;
+}
+
+.ug-steps li::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ug-ink) 16%, transparent);
+}
+
+.ug-steps li::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.92) 0 8%, transparent 20%),
+    radial-gradient(circle at 38% 34%, var(--c1), var(--c2) 55%, var(--c3));
+  box-shadow: 0 2px 3px rgb(0 0 0 / 0.35);
+  transition: translate 0.9s var(--ease), rotate 0.9s var(--ease);
+}
+
+.ug-steps li:nth-child(3n+1), .ug-features .detail-card:nth-child(3n+1), .ug-next li:nth-child(3n+1) { --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.ug-steps li:nth-child(3n+2), .ug-features .detail-card:nth-child(3n+2), .ug-next li:nth-child(3n+2) { --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.ug-steps li:nth-child(3n+3), .ug-features .detail-card:nth-child(3n+3), .ug-next li:nth-child(3n+3) { --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+
+.ug-steps li:hover,
+.ug-steps li:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--ug-accent);
+  box-shadow: 0 16px 32px var(--ug-shadow);
+}
+
+.ug-steps li:hover::after,
+.ug-steps li:focus-within::after {
+  translate: calc(100cqw - 50px) 0;
+  rotate: 720deg;
+}
+
+/* Features: a marble badge in the corner */
+.ug-features .detail-card {
+  position: relative;
+}
+
+.ug-features .detail-card h3 {
+  padding-right: 32px;
+}
+
+.ug-features .detail-card::after {
+  content: "";
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.92) 0 8%, transparent 20%),
+    radial-gradient(circle at 38% 34%, var(--c1), var(--c2) 55%, var(--c3));
+  box-shadow: 0 2px 3px rgb(0 0 0 / 0.35);
+  transition: translate 0.28s var(--ease), scale 0.28s var(--ease);
+}
+
+.ug-features .detail-card:hover,
+.ug-faq .detail-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ug-accent);
+  box-shadow: 0 14px 28px var(--ug-shadow);
+}
+
+.ug-features .detail-card:hover::after {
+  translate: 0 -3px;
+  scale: 1.15;
+}
+
+/* Next: marbles instead of diamonds */
+.ug-next li::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.92) 0 8%, transparent 20%),
+    radial-gradient(circle at 38% 34%, var(--c1), var(--c2) 55%, var(--c3));
+  box-shadow: 0 2px 3px rgb(0 0 0 / 0.35);
+  transform: none;
+}
+
+.ug-next li:hover {
+  transform: translateX(3px);
+  border-color: var(--ug-accent);
+}
+
+/* Gallery: the art sits on a soft clearing-green spot */
+.ug-shot {
+  background:
+    radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--ug-accent-2) 30%, transparent), transparent 66%),
+    var(--ug-card-2);
+}
+
+.ug-shot img {
+  transition: transform 0.4s var(--ease);
+}
+
+.ug-shot:hover {
+  transform: translateY(-3px);
+  border-color: var(--ug-accent);
+}
+
+.ug-shot:hover img {
+  transform: scale(1.03);
+}
+
+/* Vote: a swirl marble rolls back and forth along a groove under the card */
+.ug-vote {
+  position: relative;
+  container-type: inline-size;
+  overflow: hidden;
+  padding-bottom: calc(clamp(24px, 4vw, 38px) + 24px);
+}
+
+.ug-vote::after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 18px;
+  height: 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--ug-ink) 16%, transparent);
+}
+
+.ug-vote::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  bottom: 12px;
+  z-index: 1;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.85) 0 8%, transparent 20%),
+    conic-gradient(var(--lm-red-2), var(--lm-yel-2), var(--lm-blue-2), var(--lm-red-2));
+  box-shadow: 0 2px 3px rgb(0 0 0 / 0.35);
+}
+
+/* Scroll reveal for the steps: movement only, so the text stays fully readable while it settles. */
+@media (prefers-reduced-motion: no-preference) {
+  .ug-vote::before { animation: lmVoteRoll 11s ease-in-out infinite alternate; }
+
+  @supports (animation-timeline: view()) {
+    .ug-steps li {
+      animation: lmStepIn linear both;
+      animation-timeline: view();
+      animation-range: entry 4% entry 58%;
+    }
+
+    .ug-steps li:nth-child(2) { animation-range: entry 10% entry 64%; }
+    .ug-steps li:nth-child(3) { animation-range: entry 16% entry 70%; }
+  }
+}
+
+@keyframes lmVoteRoll {
+  from { translate: 0 0; rotate: 0deg; }
+  to { translate: calc(100cqw - 78px) 0; rotate: 1080deg; }
+}
+
+@keyframes lmStepIn {
+  from { translate: 0 22px; }
+  to { translate: 0 0; }
+}
+
+/* A paused page keeps everything at its resting pose */
+body.animations-paused .ug-steps li {
+  animation: none;
+}
