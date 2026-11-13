@@ -482,6 +482,31 @@ export const localizedPages = Object.freeze([
   Object.freeze({ file: "asset-usage.html", path: "asset-usage.html", kind: "policy", priority: "0.25", changefreq: "yearly" })
 ]);
 
+// English-only pages: published once at the site root, never localized and no hreflang cluster.
+// Hand-kept <url> entries in sitemap.xml; name, genre and status feed llms.txt and must match the
+// "In development" cards on index.html (seo-check.mjs verifies both). Listed in card order:
+// status maturity, then name.
+export const englishOnlyPages = Object.freeze([
+  ["blastblast", "BlastBlast!", "One-button physics runner", "Vertical slice"],
+  ["vacuum-shot", "Vacuum Shot", "Endless recoil-flight arcade", "Vertical slice"],
+  ["burger-stack", "Burger Stack", "Arcade stacking game", "Prototype"],
+  ["sandwich-stack", "Sandwich Stack", "Arcade stacking game", "Prototype"],
+  ["scooter-mechanic-simulator", "Scooter Mechanic Simulator", "Repair shop simulator", "Prototype"],
+  ["alien-flying", "Alien Flying", "Endless tunnel flyer", "Early prototype"],
+  ["lyamur", "Lyamur", "Marble shooter", "Early prototype"],
+  ["stack-tower", "Stack Tower", "One-tap tower stacker", "Early prototype"]
+].map(([slug, name, genre, status]) => Object.freeze({
+  file: `games/${slug}.html`,
+  path: `games/${slug}.html`,
+  kind: "game-upcoming",
+  priority: "0.6",
+  changefreq: "monthly",
+  slug,
+  name,
+  genre,
+  status
+})));
+
 export function pageUrl(locale, page) {
   const localePrefix = locale.code === sourceLocale.code ? "" : `${locale.code}/`;
   return `${siteOrigin}/${localePrefix}${page.path}`;

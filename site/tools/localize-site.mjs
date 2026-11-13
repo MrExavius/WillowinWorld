@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import {
   alternateLinks,
   contactEmail,
+  englishOnlyPages,
   localizationLastModified,
   localizedPages,
   locales,
@@ -72,6 +73,7 @@ const protectedExactText = new Set([
   "Paint Blasters",
   "Ball is God?!",
   "Ball is God",
+  ...englishOnlyPages.map(page => page.name),
   "Espa",
   "Water Drop",
   "Seed",
@@ -1000,7 +1002,7 @@ function renderLanguageSwitcher(locale, page, translations = {}, standalone = fa
 
 function renderSocialLinks(html, locale) {
   const profiles = socialProfilesFor(locale.code);
-  return html.replace(new RegExp(`(<[^>]*\\bdata-social-links=(["'])(compact|detailed)\\2[^>]*>)${socialStart}${socialEnd}`, "g"), (match, openTag, quote, mode) => {
+  const rendered = html.replace(new RegExp(`(<[^>]*\\bdata-social-links=(["'])(compact|detailed)\\2[^>]*>\\s*)${socialStart}${socialEnd}`, "g"), (match, openTag, quote, mode) => {
     const items = profiles.map(profile => {
       const label = mode === "detailed"
         ? `<span class="social-link-name">${profile.name}</span> <span class="social-link-handle">${encodeHtml(profile.handle)}</span>`
@@ -1009,6 +1011,10 @@ function renderSocialLinks(html, locale) {
     }).join("");
     return `${openTag}${socialStart}<ul class="social-list" role="list">${items}</ul>${socialEnd}`;
   });
+  if (rendered.includes(`${socialStart}${socialEnd}`)) {
+    throw new Error(`Empty ${socialStart}${socialEnd} block left after rendering social links for ${locale.code}; check that it follows an opening tag with data-social-links="compact|detailed".`);
+  }
+  return rendered;
 }
 
 function addLocaleMetadata(html, locale, page, translations = {}) {
@@ -1029,6 +1035,8 @@ function addLocaleMetadata(html, locale, page, translations = {}) {
   return output;
 }
 
+const englishOnlyPaths = new Set(englishOnlyPages.map(page => page.path));
+
 function rewriteSharedResourceUrls(html, page) {
   const depthPrefix = page.kind === "game" ? "../" : "../";
   const gameSourcePrefix = page.kind === "game" ? "../" : "";
@@ -1043,7 +1051,7 @@ function rewriteSharedResourceUrls(html, page) {
       if (sharedRoots.some(root => path.startsWith(`${gameSourcePrefix}${root}`))) return `${depthPrefix}${path}${suffix}`;
       return value;
     }
-    if (sharedRoots.some(root => path.startsWith(root))) return `${depthPrefix}${path}${suffix}`;
+    if (sharedRoots.some(root => path.startsWith(root)) || englishOnlyPaths.has(path)) return `${depthPrefix}${path}${suffix}`;
     if (path === "404.html") return `/404.html${suffix}`;
     return value;
   }

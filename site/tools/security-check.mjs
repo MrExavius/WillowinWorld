@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { exit } from "node:process";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { contactEmail, siteOrigin } from "./localization-config.mjs";
+import { contactEmail, englishOnlyPages, siteOrigin } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const cssFileNames = [
@@ -28,7 +28,9 @@ const cssFileNames = [
   "css/responsive-tablet.css",
   "css/responsive-mobile.css",
   "css/responsive-preferences.css",
-  "css/home-polish-2026.css"
+  "css/home-polish-2026.css",
+  "css/home-lab.css",
+  "css/upcoming-game.css"
 ];
 // Studio store and social profiles that pages may link to with <a href="https:...">. Never for src/action.
 const allowedExternalHrefHosts = new Set([
@@ -84,6 +86,8 @@ const htmlPages = {
   "games/candy-shop.html": await readFile(new URL("../games/candy-shop.html", import.meta.url), "utf8"),
   "games/paint-blasters.html": await readFile(new URL("../games/paint-blasters.html", import.meta.url), "utf8"),
   "games/ball-is-god.html": await readFile(new URL("../games/ball-is-god.html", import.meta.url), "utf8"),
+  // English-only prototype pages get the same CSP, inline-script and external-URL rules.
+  ...Object.fromEntries(await Promise.all(englishOnlyPages.map(async page => [page.file, await readFile(new URL(`../${page.file}`, import.meta.url), "utf8")]))),
   "privacy.html": await readFile(new URL("../privacy.html", import.meta.url), "utf8"),
   "legal.html": await readFile(new URL("../legal.html", import.meta.url), "utf8"),
   "asset-usage.html": await readFile(new URL("../asset-usage.html", import.meta.url), "utf8"),
@@ -154,8 +158,8 @@ if (securityTxtExpires.length !== 1) {
   const expires = securityTxtExpires[0].match(/^Expires:\s*(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2}))\s*$/i)?.[1];
   if (!expires || Number.isNaN(Date.parse(expires))) {
     errors.push(`security.txt: Expires must be an RFC 3339 date-time (${securityTxtExpires[0].trim()})`);
-  } else if (Date.parse(expires) <= Date.now()) {
-    errors.push(`security.txt: Expires ${expires} is in the past; renew it`);
+  } else if (Date.parse(expires) <= Date.now() + 30 * 864e5) {
+    errors.push(`security.txt: Expires ${expires} is in the past or less than 30 days away; renew it`);
   }
 }
 

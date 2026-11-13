@@ -238,7 +238,7 @@
 
 .game-page-facts dt,
 .press-kit-facts dt {
-  color: var(--muted-2);
+  color: color-mix(in srgb, var(--text) 74%, var(--muted-2));
   font-size: 0.78rem;
   font-weight: 900;
   text-transform: uppercase;

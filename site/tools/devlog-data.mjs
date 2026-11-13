@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { contactEmail, siteOrigin, socialProfilesFor } from "./localization-config.mjs";
+import { contactEmail, englishOnlyPages, pageUrl, siteOrigin, socialProfilesFor, sourceLocale } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 
@@ -250,6 +250,10 @@ export function renderLlmsTxt(updates) {
     `- [${escapeMarkdown(game.name)}](${game.pageCanonical}): ${escapeMarkdown(game.machineSummary)} Genres: ${game.genres.map(escapeMarkdown).join(", ")}. Current status: ${escapeMarkdown(game.status)}.`
   ).join("\n");
 
+  const prototypes = englishOnlyPages.map(page =>
+    `- [${escapeMarkdown(page.name)}](${pageUrl(sourceLocale, page)}): Genre: ${escapeMarkdown(page.genre)}. Current status: ${escapeMarkdown(page.status)}.`
+  ).join("\n");
+
   const devlogs = ordered.map(update =>
     `- [${escapeMarkdown(update.name)} - ${escapeMarkdown(update.title)}](${update.canonical}): Published ${update.published}. ${escapeMarkdown(update.summary)}`
   ).join("\n");
@@ -263,6 +267,12 @@ Nature Seed is released; the other three games are currently in development. The
 ## Games
 
 ${games}
+
+## In development
+
+Prototypes with English-only pages. None is released yet; scope and status may change.
+
+${prototypes}
 
 ## Latest development notes
 

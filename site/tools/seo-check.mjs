@@ -9,6 +9,7 @@ import {
 import {
   alternateLinks,
   contactEmail,
+  englishOnlyPages,
   localizedPages,
   locales,
   outputFile,
@@ -27,6 +28,17 @@ const pages = Object.freeze([
     game: source.kind === "game",
     policy: source.kind === "policy"
   }))),
+  // English-only prototype pages: the English contract applies, but no localized copies or hreflang cluster.
+  ...englishOnlyPages.map(source => ({
+    file: source.file,
+    sourceFile: source.file,
+    canonical: pageUrl(sourceLocale, source),
+    locale: sourceLocale,
+    source,
+    game: true,
+    englishOnly: true,
+    policy: false
+  })),
   { file: "404.html", locale: sourceLocale, indexable: false }
 ]);
 
@@ -198,13 +210,19 @@ for (const page of pages) {
     if (game?.author?.["@id"] !== studioId) fail(page.file, "VideoGame author must reference #studio");
     if (game?.publisher?.["@id"] !== studioId) fail(page.file, "VideoGame publisher must reference #studio");
     if (game?.inLanguage !== page.locale.htmlLang) fail(page.file, `VideoGame inLanguage must be ${page.locale.htmlLang}`);
-    if (page.locale.code === sourceLocale.code) {
-      if (source?.pageCanonical !== page.canonical) fail(page.file, "AI profile canonical must match the page canonical");
-      if (game?.creativeWorkStatus !== source?.status) fail(page.file, "AI profile status must match VideoGame creativeWorkStatus");
-      if (JSON.stringify(game?.genre) !== JSON.stringify(source?.genres)) fail(page.file, "AI profile genres must match VideoGame genres");
+    if (page.englishOnly) {
+      // No devlog and no AI profile yet: the page itself is the source of truth for name and status.
+      if (game?.name !== page.source.name) fail(page.file, `VideoGame name must be ${page.source.name}`);
+      if (game?.creativeWorkStatus !== page.source.status) fail(page.file, `VideoGame creativeWorkStatus must be ${page.source.status}`);
+    } else {
+      if (page.locale.code === sourceLocale.code) {
+        if (source?.pageCanonical !== page.canonical) fail(page.file, "AI profile canonical must match the page canonical");
+        if (game?.creativeWorkStatus !== source?.status) fail(page.file, "AI profile status must match VideoGame creativeWorkStatus");
+        if (JSON.stringify(game?.genre) !== JSON.stringify(source?.genres)) fail(page.file, "AI profile genres must match VideoGame genres");
+      }
+      const latest = latestByFile.get(page.sourceFile);
+      if (game?.dateModified !== latest?.published) fail(page.file, "dateModified must match the newest dated devlog");
     }
-    const latest = latestByFile.get(page.sourceFile);
-    if (game?.dateModified !== latest?.published) fail(page.file, "dateModified must match the newest dated devlog");
   }
 
   if (page.policy) {
@@ -223,7 +241,7 @@ for (const page of pages.filter(page => page.indexable !== false)) {
   const block = (sitemap.match(/<url>[\s\S]*?<\/url>/g) || [])
     .find(candidate => candidate.includes(`<loc>${page.canonical}</loc>`));
   const alternateTags = block?.match(/<xhtml:link\b[^>]*\/>/g) || [];
-  const expectedAlternates = alternateLinks(page.source);
+  const expectedAlternates = page.englishOnly ? [] : alternateLinks(page.source);
   for (const expected of expectedAlternates) {
     const match = alternateTags.find(tag => attr(tag, "hreflang") === expected.hreflang);
     if (!match || attr(match, "href") !== expected.href || attr(match, "rel") !== "alternate") {
@@ -235,6 +253,26 @@ for (const page of pages.filter(page => page.indexable !== false)) {
   }
 }
 if (sitemapLocs.some(loc => loc.endsWith("/404.html"))) fail("sitemap.xml", "must not include 404.html");
+for (const page of pages.filter(page => page.englishOnly)) {
+  const block = (sitemap.match(/<url>[\s\S]*?<\/url>/g) || []).find(candidate => candidate.includes(`<loc>${page.canonical}</loc>`));
+  if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(block || "")) fail("sitemap.xml", `${page.canonical} needs a YYYY-MM-DD lastmod`);
+}
+
+// The home "In development" cards must match the English-only page list (name, genre, status, link).
+const homeHtml = await readFile(join(siteRoot, "index.html"), "utf8");
+for (const page of englishOnlyPages) {
+  const card = homeHtml.match(new RegExp(`<a\\b[^>]*\\bhref="${page.path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>[\\s\\S]*?<\\/a>`))?.[0] || "";
+  if (!card) {
+    fail("index.html", `missing In development card linking to ${page.path}`);
+    continue;
+  }
+  for (const [label, value] of [["name", page.name], ["genre", page.genre]]) {
+    if (!text(card).includes(value)) fail("index.html", `${page.path} card must show its ${label}: ${value}`);
+  }
+  if (text(card.match(/<span class="status-pill[^"]*">([^<]*)<\/span>/)?.[1]) !== page.status) {
+    fail("index.html", `${page.path} card status pill must read: ${page.status}`);
+  }
+}
 
 for (const update of latestByFile.values()) {
   const loc = update.canonical.replace(/#devlog$/, "");
@@ -255,6 +293,11 @@ for (const game of gameDevlogSources) {
   if (!llms.includes(`[${game.name}](${game.pageCanonical})`)) fail("llms.txt", `missing canonical ${game.name} game link`);
   if (!llms.includes(`Genres: ${game.genres.join(", ")}.`)) fail("llms.txt", `missing factual ${game.name} genres`);
   if (!llms.includes(`Current status: ${game.status}.`)) fail("llms.txt", `missing factual ${game.name} status`);
+}
+for (const page of englishOnlyPages) {
+  if (!llms.includes(`[${page.name}](${pageUrl(sourceLocale, page)}): Genre: ${page.genre}. Current status: ${page.status}.`)) {
+    fail("llms.txt", `missing In development entry for ${page.name}`);
+  }
 }
 for (const update of latestDevlogs) {
   if (!llms.includes(`](${update.canonical}): Published ${update.published}.`)) {
@@ -372,4 +415,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages across ${locales.length} languages, multilingual sitemap.xml, robots.txt, languages.json and localized AI guides.`);
+console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages (${englishOnlyPages.length} English-only) across ${locales.length} languages, multilingual sitemap.xml, robots.txt, languages.json and localized AI guides.`);

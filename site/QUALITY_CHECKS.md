@@ -23,6 +23,14 @@ Devlog publishing:
 - Run `node site/tools/sync-devlogs.mjs` to refresh the homepage fallback, `rss.xml`, `llms.txt`, game `dateModified` values and sitemap devlog dates.
 - Production builds derive the homepage, RSS, machine-readable studio guide, game structured-data dates and sitemap dates directly from the newest dated game-page entries. `node site/tools/sync-devlogs.mjs --check` fails CI when checked-in output is stale.
 
+English-only pages:
+
+- Prototype game pages (`games/<slug>.html`) are listed in `englishOnlyPages` in `tools/localization-config.mjs` (file, path, kind `game-upcoming`, priority, changefreq, plus name, genre and status). They are written by hand in English, are never run through `localize-site.mjs` and have no localized copies.
+- `localize-site.mjs` keeps their names untranslated and rewrites `games/<slug>.html` links in every localized home page to `../games/<slug>.html`, so locale visitors reach the English page.
+- `sitemap.xml` keeps one hand-written `<url>` per page (before the generated `localized-pages` block) with no hreflang links. Update `lastmod` when a page changes.
+- `seo-check.mjs` applies the English metadata, canonical, robots and VideoGame JSON-LD contract to them, requires no hreflang cluster, and checks that `index.html` shows a matching "In development" card and `llms.txt` an entry. `security-check.mjs` scans them like other pages and `link-check.mjs` walks every HTML file. `css/upcoming-game.css` and `css/home-lab.css` are in the security-check and build lists.
+- Adding a page: add it to `englishOnlyPages`, add the card to `index.html#in-development`, add the sitemap entry, run `node site/tools/sync-devlogs.mjs`, then `node site/tools/localize-site.mjs` (new card strings need translations first).
+
 SEO publishing:
 
 - Keep every indexable page title, description, canonical URL and social preview unique and factual.

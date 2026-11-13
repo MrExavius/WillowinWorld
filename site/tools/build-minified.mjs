@@ -9,7 +9,7 @@ import {
   renderDevlogRss,
   renderLlmsTxt
 } from "./devlog-data.mjs";
-import { localizedPages, outputFile, translatedLocales } from "./localization-config.mjs";
+import { englishOnlyPages, localizedPages, outputFile, translatedLocales } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const outRoot = join(siteRoot, "dist");
@@ -49,6 +49,8 @@ const cssFiles = [
   "css/responsive-mobile.css",
   "css/responsive-preferences.css",
   "css/home-polish-2026.css",
+  "css/home-lab.css",
+  "css/upcoming-game.css",
   "motion.css",
   "404.css"
 ];
@@ -72,6 +74,7 @@ const sourceFiles = [
   "games/candy-shop.html",
   "games/paint-blasters.html",
   "games/ball-is-god.html",
+  ...englishOnlyPages.map(page => page.file),
   ...translatedLocales.flatMap(locale => localizedPages.map(page => outputFile(locale, page))),
   ...translatedLocales.map(locale => `${locale.code}/i18n-runtime.js`),
   ...translatedLocales.map(locale => `${locale.code}/llms.txt`)

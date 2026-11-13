@@ -1606,7 +1606,7 @@
 
   function trapModalFocus(event) {
     if (event.key !== "Tab") return;
-    const modal = getOpenModal();
+    const modal = getOpenModal() || (body.classList.contains("menu-open") && menuToggle.offsetParent ? menuToggle.closest(".site-header") : null);
     if (!modal) return;
     const focusable = [...modal.querySelectorAll("a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])")]
       .filter(element => !element.hidden && element.offsetParent !== null);
@@ -1788,6 +1788,11 @@
     body.classList.add("menu-open");
     menuToggle.setAttribute("aria-expanded", "true");
     menuToggle.setAttribute("aria-label", "Close menu");
+    // The links sit before the toggle in the DOM, so Tab would otherwise leave for the page content.
+    // The panel is still visibility:hidden on the first frame of its transition, so focus a moment later.
+    window.setTimeout(() => {
+      if (body.classList.contains("menu-open")) document.querySelector(".main-nav a")?.focus();
+    }, 60);
   }
 
   function closeMenu() {
@@ -2060,6 +2065,12 @@
 
     themeToggle.addEventListener("click", () => {
       setTheme(state.theme === "dark" ? "light" : "dark");
+      if (state.paused) {
+        const now = performance.now();
+        state.lastDraw = 0;
+        state.lastFrame = now;
+        render(now);
+      }
       startLoop();
     });
     if (promoHuntToggle) {
@@ -2189,6 +2200,12 @@
           // Storage is unavailable, so there is no saved choice to protect.
         }
         setTheme(event.matches ? "dark" : "light", false);
+        if (state.paused) {
+          const now = performance.now();
+          state.lastDraw = 0;
+          state.lastFrame = now;
+          render(now);
+        }
       });
     }
     if (typeof reducedMotionQuery.addEventListener === "function") {

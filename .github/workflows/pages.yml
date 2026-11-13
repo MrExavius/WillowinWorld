@@ -54,6 +54,7 @@ jobs:
       # the repository Pages settings, so the root CNAME file is not part of the
       # artifact (same as before).
       - name: Build publish folder
+        id: build
         run: |
           rm -rf _site
           cp -a site _site
@@ -61,6 +62,7 @@ jobs:
           rm -f _site/_headers _site/_redirects _site/QUALITY_CHECKS.md
           test -f _site/index.html
           test -f _site/.well-known/security.txt
+          echo "index_sha=$(sha256sum _site/index.html | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
@@ -74,6 +76,7 @@ jobs:
       - name: Smoke test deployment
         env:
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_INDEX_SHA: ${{ steps.build.outputs.index_sha }}
         run: |
           base="${PAGE_URL%/}"
           check() {
@@ -88,5 +91,18 @@ jobs:
             done
             return 1
           }
+          check_build() {
+            for attempt in $(seq 1 12); do
+              served="$(curl -s --max-time 20 "$base/" | sha256sum | cut -d' ' -f1 || true)"
+              if [ "$served" = "$EXPECTED_INDEX_SHA" ]; then
+                echo "OK: $base/ serves the new build (sha256 $served)"
+                return 0
+              fi
+              echo "Attempt $attempt/12: $base/ sha256 ${served:-none}, expected $EXPECTED_INDEX_SHA"
+              sleep 10
+            done
+            return 1
+          }
           check "$base/" 200
+          check_build
           check "$base/smoke-$(date +%s)-$RANDOM-does-not-exist" 404

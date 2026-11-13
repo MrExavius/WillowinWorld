@@ -63,6 +63,72 @@
   }
 }
 
+/* Fallback for browsers without container queries (Safari < 16, Chrome < 105): same rules as the blocks above,
+   with the header's em breakpoints converted to viewport widths at 16px (78em = 1248px, 70em = 1120px, 30em = 480px). */
+@supports not (container-type: inline-size) {
+  @media (max-width: 1248px) {
+    .header-actions .contact-header {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1120px) {
+    .main-nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 20px;
+      right: 20px;
+      display: grid;
+      gap: 4px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: var(--surface-strong);
+      box-shadow: var(--shadow);
+      transform: translateY(-16px);
+      opacity: 0;
+      visibility: hidden;
+      transition: transform .25s var(--ease), opacity .25s var(--ease), visibility .25s var(--ease);
+    }
+
+    .main-nav a {
+      opacity: 0;
+      transform: translateY(-8px);
+      animation: none;
+    }
+
+    .menu-open .main-nav {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .menu-open .main-nav a {
+      animation: navLinkEnter .28s var(--ease) both;
+      animation-delay: calc(70ms + (var(--nav-index) * 48ms));
+    }
+
+    .main-nav a {
+      padding: 14px 16px;
+    }
+
+    .menu-toggle {
+      display: inline-grid;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .brand {
+      min-width: 44px;
+      justify-content: center;
+    }
+
+    .brand-name {
+      display: none;
+    }
+  }
+}
+
 @media (max-width: 1120px) {
   .principles-grid,
   .systems-grid {
@@ -140,7 +206,7 @@
   .game-detail-nav {
     grid-column: 1 / -1;
     order: 3;
-    overflow-x: auto;
+    flex-wrap: wrap;
     padding-bottom: 2px;
   }
 

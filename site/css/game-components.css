@@ -23,6 +23,15 @@
   border-color: color-mix(in srgb, var(--card-accent, var(--cyan)) 34%, var(--line));
 }
 
+/* The raw accent is too close to its own tint for 4.5:1; shift it darker (light) or lighter (dark) and keep the hue. */
+[data-theme="light"] .status-pill {
+  color: color-mix(in srgb, var(--card-accent, var(--cyan)) 40%, black);
+}
+
+[data-theme="dark"] .status-pill {
+  color: color-mix(in srgb, var(--card-accent, var(--cyan)) 68%, white);
+}
+
 .game-genre {
   color: var(--muted);
   font-size: 0.92rem;
@@ -114,6 +123,10 @@
 .game-tags .tag {
   color: color-mix(in srgb, var(--card-accent, var(--cyan)) 72%, var(--text));
   background: color-mix(in srgb, var(--card-accent, var(--cyan)) 8%, transparent);
+}
+
+[data-theme="light"] .game-tags .tag {
+  color: color-mix(in srgb, var(--card-accent, var(--cyan)) 40%, black);
 }
 
 .game-actions {
