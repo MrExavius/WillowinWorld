@@ -84,7 +84,7 @@
   object-fit: cover;
 }
 
-/* No artwork yet: a flat monogram tile in the prototype's palette (same in both themes). */
+/* No icon file yet (Alien Flying): a flat monogram tile in the prototype's palette, same in both themes. */
 .lab-icon--monogram {
   display: grid;
   place-items: center;
@@ -97,11 +97,6 @@
 .lab-icon--alien-flying {
   color: #bdf7ff;
   background: linear-gradient(145deg, #0b2447, #0e5a73);
-}
-
-.lab-icon--stack-tower {
-  color: #fff8df;
-  background: linear-gradient(145deg, #1a4f8f, #2a6db8);
 }
 
 .lab-body {

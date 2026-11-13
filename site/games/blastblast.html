@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#091326" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FFF1E7" media="(prefers-color-scheme: light)">
+  <meta property="og:title" content="BlastBlast! — one-button physics runner in development">
+  <meta property="og:description" content="A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/upcoming/blastblast/hero-1280.webp">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="A pilot in a yellow suit with a red extinguisher on their back above rolling red terrain; a pole, a round gate and a bumper lie ahead.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/games/blastblast.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="BlastBlast! — one-button physics runner in development">
+  <meta name="twitter:description" content="A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil. Status: Vertical slice. In development at WillowinWorlds.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/upcoming/blastblast/hero-1280.webp">
+  <meta name="twitter:image:alt" content="A pilot in a yellow suit with a red extinguisher on their back above rolling red terrain; a pole, a round gate and a bumper lie ahead.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>BlastBlast! — one-button physics runner in development | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/games/blastblast.html">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Games",
+          "item": "https://willowinworlds.com/#games"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "BlastBlast!",
+          "item": "https://willowinworlds.com/games/blastblast.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/games/blastblast.html#game",
+      "name": "BlastBlast!",
+      "url": "https://willowinworlds.com/games/blastblast.html",
+      "image": "https://willowinworlds.com/assets/upcoming/blastblast/hero-1280.webp",
+      "description": "A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil.",
+      "genre": [
+        "One-button physics runner"
+      ],
+      "gamePlatform": "Mobile",
+      "creativeWorkStatus": "Vertical slice",
+      "mainEntityOfPage": "https://willowinworlds.com/games/blastblast.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../rss.xml">
+  <link rel="stylesheet" href="../css/base.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-components.css">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/keyframes.css">
+  <link rel="stylesheet" href="../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../motion.css">
+  <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="blastblast">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html" aria-label="BlastBlast! — back to WillowinWorlds">
+      <img src="../assets/upcoming/blastblast/icon-192.webp" width="192" height="192" alt="The BlastBlast! pilot in a yellow flight suit with a red extinguisher pack, against a dusk sky." decoding="async">
+      <span><strong>BlastBlast!</strong><small>WillowinWorlds game page</small></span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Game page navigation">
+      <a href="../index.html">Studio home</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Vertical slice</span><span class="ug-genre">One-button physics runner</span></p>
+          <h1 id="heroTitle">BlastBlast!</h1>
+          <p class="ug-tagline">Pump. Blast. Ride the recoil.</p>
+          <p class="hero-copy">A one-button endless run. Pump the extinguisher on the pilot's back, blast at the right moment and let the recoil carry you as far as the gas lasts.</p>
+          <p class="ug-status-note">One endless run scene with a main menu, shop and settings is built in the Unity project; Android and iOS builds and on-device testing are still ahead.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Follow development</a>
+            <a class="btn btn-ghost" href="../index.html#games">All games</a>
+          </div>
+        </div>
+        <figure class="ug-hero-media">
+          <img src="../assets/upcoming/blastblast/hero-1280.webp" srcset="../assets/upcoming/blastblast/hero-720.webp 720w, ../assets/upcoming/blastblast/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="A pilot in a yellow suit with a red extinguisher on their back above rolling red terrain; a pole, a round gate and a bumper lie ahead." fetchpriority="high" decoding="async">
+          <figcaption>Capture from the Unity editor.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Facts</div>
+        <h2 id="factsTitle">At a glance</h2>
+        <dl class="game-page-facts">
+          <div><dt>Genre</dt><dd>One-button physics runner</dd></div>
+          <div><dt>Platform target</dt><dd>Android / iOS (planned)</dd></div>
+          <div><dt>Engine</dt><dd>Unity 6</dd></div>
+          <div><dt>Status</dt><dd>Vertical slice</dd></div>
+          <div><dt>Session shape</dt><dd>Endless runs measured by distance</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Gameplay loop</div>
+        <h2 id="loopTitle">How it plays</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Step 01</span><strong>Pump</strong><p>Tap quickly to build pressure in the extinguisher. Above 100% the tank leaks gas, and at 130% it bursts.</p></li>
+          <li><span>Step 02</span><strong>Blast</strong><p>Hold anywhere and release. The nozzle aims itself from the pilot's vertical speed, and the recoil pushes the pilot the opposite way.</p></li>
+          <li><span>Step 03</span><strong>Thread the gates</strong><p>Pass each six-gate sector to win back gas and build the score multiplier. The run ends when the gas runs out or the tank bursts.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Features</div>
+        <h2 id="featuresTitle">What's in the build</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Recoil flight</h3><p>Blast timing and power are the only choices in a run. There is no manual aiming: gas leaves along the visible nozzle and the recoil pushes the other way.</p></article>
+          <article class="detail-card"><h3>Flow Gates</h3><p>Optional gates in six-gate sectors restore safe gas and build a Flow multiplier. A hard impact or a skipped gate breaks it.</p></article>
+          <article class="detail-card"><h3>Endless canyon</h3><p>Terrain is built from seamless 16-metre chunks with bumpers, boost vents, wind corridors and rotors. Difficulty ramps over the first 640 metres.</p></article>
+          <article class="detail-card"><h3>Ten extinguishers</h3><p>New finishes unlock at best distances from 250 to 100,000 metres. Each extinguisher has four upgrade tracks (capacity, efficiency, thrust, stability) up to level 10.</p></article>
+          <article class="detail-card"><h3>Text-free HUD</h3><p>Gameplay uses gauges and symbols instead of text: pressure ticks, a six-node route rail, a distance readout and a gas vessel.</p></article>
+          <article class="detail-card"><h3>Local progress and settings</h3><p>Progress is saved on the device with backup recovery. Settings cover volume, camera shake, reduced motion, quality and a 60 or 120 FPS target.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Direction</div>
+        <h2 id="nextTitle">What's next</h2>
+        <p class="ug-lede">These are goals for the project, not release dates.</p>
+        <ul class="ug-next">
+          <li>Android and iOS builds, with performance, touch-feel and app-lifecycle testing on real devices.</li>
+          <li>Authored, licensed sound to replace the audio that is currently created in code.</li>
+          <li>Human playtests of the first run, pump fatigue and the difficulty curve.</li>
+          <li>Accessibility checks for colour separation, camera shake and flashing.</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Images</div>
+        <h2 id="galleryTitle">Gallery</h2>
+        <p class="ug-lede">Captures from the Unity editor.</p>
+        <div class="ug-gallery">
+          <figure class="ug-shot"><img src="../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="Gameplay capture in front of a citadel backdrop: teal round gates, a red-gold bar hazard and black marker poles." loading="lazy" decoding="async"><figcaption>Gates and hazards</figcaption></figure>
+          <figure class="ug-shot"><img src="../assets/upcoming/blastblast/gallery-blast-arc.webp" width="960" height="540" alt="A second gameplay capture with a thin blast trail and a small round gate ahead of the pilot." loading="lazy" decoding="async"><figcaption>Blast trail</figcaption></figure>
+          <figure class="ug-shot"><img src="../assets/upcoming/blastblast/gallery-main-menu.webp" width="960" height="540" alt="The main menu: the BlastBlast! title, a red extinguisher preview, and play, tank and settings buttons." loading="lazy" decoding="async"><figcaption>Main menu</figcaption></figure>
+          <figure class="ug-shot"><img src="../assets/upcoming/blastblast/gallery-pilot.webp" width="720" height="720" alt="Close view of the pilot: yellow flight suit, dark visor and a red extinguisher pack with a hose." loading="lazy" decoding="async"><figcaption>The pilot</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">BlastBlast! FAQ</div>
+        <h2 id="faqTitle">Questions and answers</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>What kind of game is BlastBlast!?</h3><p>A one-button endless physics runner. You pump pressure into an extinguisher, blast, and use the recoil to travel as far as you can.</p></article>
+          <article class="detail-card"><h3>Can I play it yet?</h3><p>Not yet. BlastBlast! is a vertical slice with no public build. The Unity project is set up for Android and iOS, but builds and testing on devices are still ahead.</p></article>
+          <article class="detail-card"><h3>How can I follow development?</h3><p>Follow WillowinWorlds on the social channels linked on this page, or email <a href="mailto:willowinworlds@gmail.com?subject=BlastBlast!">willowinworlds@gmail.com</a> to ask for updates on BlastBlast!.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Voting</div>
+        <h2 id="voteTitle">Help choose what ships next</h2>
+        <p class="ug-lede">Voting will open on the studio's channels, so following WillowinWorlds is the way to take part.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Follow WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>BlastBlast! is a WillowinWorlds game in development.</strong>
+        <span>A one-button endless run: pump an extinguisher, blast at the right moment and ride the recoil.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="BlastBlast! footer navigation">
+        <a href="../index.html#games">All games</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../legal.html">Legal</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=BlastBlast!">Contact</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Follow WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+    </div>
+  </footer>
+  <script src="../game-theme.js?v=20261113-2"></script>
+</body>
+</html>
