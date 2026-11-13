@@ -1,0 +1,195 @@
+https://developer.mozilla.org/en-US/observatory/analyze?host=willowinworlds.com
+ Scan summary: willowinworlds.com
+C
+Score: 55 / 100
+Scan Time: 46 minutes ago
+Tests Passed: 9 /  12
+
+Rescan
+Scan another website
+Scan results
+
+Scoring
+Test	Score	Reason	Recommendation
+Content Security Policy (CSP)
+0* Passed
+Content Security Policy (CSP) implemented without 'unsafe-inline' or 'unsafe-eval'
+
+Set default-src to 'none'
+
+Cookies	-
+No cookies detected
+
+None
+
+Cross Origin Resource Sharing (CORS)
+0 Passed
+Content is not visible via cross-origin resource sharing (CORS) files or headers.
+
+None
+
+Redirection
+0 Passed
+Initial redirection is to HTTPS on same host, final destination is HTTPS
+
+None
+
+Referrer Policy
+0* Passed
+Referrer-Policy header set to no-referrer, same-origin, strict-origin or strict-origin-when-cross-origin.
+
+None
+
+Strict Transport Security (HSTS)
+−20 Failed
+Strict-Transport-Security header not implemented.
+
+Add HSTS. Consider rolling out with shorter periods first (as suggested on https://hstspreload.org/).
+
+Subresource Integrity	-
+Subresource Integrity (SRI) not implemented, but all scripts are loaded from a similar origin.
+
+Add SRI for bonus points.
+
+X-Content-Type-Options
+−5 Failed
+X-Content-Type-Options header not implemented.
+
+Set to nosniff.
+
+X-Frame-Options
+−20 Failed
+X-Frame-Options (XFO) header not implemented.
+
+Implement frame-ancestors CSP.
+
+Cross Origin Embedder Policy
+0 Passed
+Cross-Origin-Embedder-Policy header not implemented.
+
+Set to require-corp or credentialless.
+
+Cross Origin Opener Policy
+0 Passed
+Cross-Origin-Opener-Policy header not implemented.
+
+Set to same-origin, same-origin-allow-popups, or noopener-allow-popups.
+
+Cross Origin Resource Policy	-
+Cross Origin Resource Policy (CORP) is not implemented (defaults to cross-origin).
+
+None
+
+Passed
+
+Content Security Policy (CSP) implemented without 'unsafe-inline' or 'unsafe-eval'
+
+Test	Result	Info
+Blocks execution of inline JavaScript by not allowing 'unsafe-inline' inside script-src
+
+Passed
+Blocking the execution of inline JavaScript provides CSP's strongest protection against cross-site scripting attacks. Moving JavaScript to external files can also help make your site more maintainable.
+
+Blocks execution of JavaScript's eval() function by not allowing 'unsafe-eval' inside script-src
+
+Passed
+Blocking the use of JavaScript's eval() function can help prevent the execution of untrusted code.
+
+Blocks execution of plug-ins, using object-src restrictions
+
+Passed
+Blocking the execution of plug-ins via object-src 'none' or as inherited from default-src can prevent attackers from loading Flash or Java in the context of your page.
+
+Blocks inline styles by not allowing 'unsafe-inline' inside style-src
+
+Passed
+Blocking inline styles can help prevent attackers from modifying the contents or appearance of your page. Moving styles to external stylesheets can also help make your site more maintainable.
+
+Blocks loading of active content over HTTP or FTP
+
+Passed
+Loading JavaScript or plugins can allow a man-in-the-middle to execute arbitrary code or your website. Restricting your policy and changing links to HTTPS can help prevent this.
+
+Blocks loading of passive content over HTTP or FTP
+
+Passed
+This site's Content Security Policy allows the loading of passive content such as images or videos over insecure protocols such as HTTP or FTP. Consider changing them to load them over HTTPS.
+
+Clickjacking protection, using frame-ancestors
+
+Failed
+The use of CSP's frame-ancestors directive offers fine-grained control over who can frame your site.
+
+Deny by default, using default-src 'none'
+
+Failed
+Denying by default using default-src 'none'can ensure that your Content Security Policy doesn't allow the loading of resources you didn't intend to allow.
+
+Restricts use of the <base> tag by using base-uri 'none', base-uri 'self', or specific origins.
+
+Passed
+The <base> tag can be used to trick your site into loading scripts from untrusted origins.
+
+Restricts where <form> contents may be submitted by using form-action 'none', form-action 'self', or specific URIs
+
+Passed
+Malicious JavaScript or content injection could modify where sensitive form data is submitted to or create additional forms for data exfiltration.
+
+Uses CSP3's 'strict-dynamic' directive to allow dynamic script loading (optional)
+
+-
+'strict-dynamic' lets you use a JavaScript shim loader to load all your site's JavaScript dynamically, without having to track script-src origins.
+Header	Value
+Age	0
+Via	1.1 varnish
+Date	Sun, 08 Nov 2026 20:20:06 GMT
+Etag	W/"6ab40dcf-147a0"
+Vary	Accept-Encoding
+Server	GitHub.com
+Expires	Sun, 08 Nov 2026 20:25:20 GMT
+X-Cache	HIT
+X-Timer	S1794169206.190734,VS0,VE101
+Connection	close
+X-Served-By	cache-bfi-kbfi7400041-BFI
+Content-Type	text/html; charset=utf-8
+X-Cache-Hits	1
+Accept-Ranges	bytes
+Cache-Control	max-age=600
+Last-Modified	Wed, 23 Sep 2026 17:35:11 GMT
+X-Proxy-Cache	HIT
+Content-Length	16380
+X-Fastly-Request-Id	2602e47b0314ab0152bfb56e27ab1c71a4ad741d
+X-Github-Request-Id	3F3E:139E5C:4FAE0:A2939:6AF0D91B
+X-Github-Edge-Region	westus2
+Access-Control-Allow-Origin	*
+
+Performance trends from the past year
+Number of sites by grade
+Grade	Sites
+A+	106261 sites
+A	1438 sites
+A−	6044 sites
+B+	104992 sites
+B	323033 sites
+B−	87448 sites
+C+	79444 sites
+C (Current grade)	360079 sites
+C−	176194 sites
+D+	79045 sites
+D	506038 sites
+D−	598741 sites
+F	1399625 sites
+A+
+A
+A−
+B+
+B
+B−
+C+
+C
+C−
+D+
+D
+D−
+F
+

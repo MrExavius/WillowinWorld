@@ -1,0 +1,959 @@
+https://gtmetrix.com/reports/willowinworlds.com/bEIzOmp9/
+40% OFF
+Get 40% off all GTmetrix PRO plans!
+Get the Deal
+
+Why GTmetrix
+Explore PRO
+AI-Built Sites
+Pricing
+Resources
+Hey Искандер!
+Re-Test
+
+Compare
+Monitor
+
+Set Up Alerts
+
+Tags
+
+Page Settings
+
+Share
+Get more Monitored Slots
+Monitor more pages and keep track of performance for all your critical pages with GTmetrix PRO!
+
+Upgrade Plan
+Page Overview > Performance Report for Sun, Nov 8, 2026 1:18 PM -0700
+
+Latest Performance Report for:
+http://willowinworlds.com/
+View Page Overview
+Report generated:
+Sun, Nov 8, 2026 1:18 PM -0700
+Test Server Location:
+Seattle, WA, USA
+Using:
+Chrome 154.0.0.0, Lighthouse 12.6.1
+GTmetrix Grade
+Performance
+74%
+Structure
+98%
+Web Vitals
+Largest Contentful Paint
+
+1.2s
+Total Blocking Time
+
+352ms
+Cumulative Layout Shift
+
+0
+Summary
+Performance
+Structure
+CrUX
+Waterfall
+Video
+History
+Alerts
+Speed Visualization
+0.7s
+
+1.5s
+
+2.2s
+
+3s
+
+3.7s
+
+4.4s
+
+5.2s
+
+5.9s
+
+TTFB: 82ms
+Redirect: 2ms
+Connect: 57ms
+Backend: 23ms
+Onload Time: 1.1sTime to Interactive: 2.8sFully Loaded Time: 5.9s
+First Contentful Paint: 1.2s
+Largest Contentful Paint: 1.2s
+Top Issues
+These audits are identified as the top issues impacting your performance.
+
+
+
+
+
+
+Med-Low
+Avoid an excessive DOM size TBT
+974 elements
+A large DOM will increase memory usage, cause longer style calculations, and produce costly layout reflows.
+
+Learn how to improve this
+Statistic	Element	Value
+Total DOM Elements		974
+Maximum DOM Depth
+div.paint-stage > div.paint-arena > div.paint-cube-stack > span.paint-cube
+<span class="paint-cube paint-cube-a">
+12
+Maximum Child Elements
+div.header-actions > nav.language-switcher > details > div.language-options
+<div class="language-options">
+42
+Med-Low
+Serve static assets with an efficient cache policy
+Potential savings of 1.28MB
+A long cache lifetime can speed up repeat visits to your page.
+
+Learn how to improve this
+URL	Cache TTL	Transfer Size
+https://willowinworlds.com/assets/Paint%20Blasters/site/back.webp
+10 minutes	150KB
+https://willowinworlds.com/assets/Nature%20Seeds/Galvnie_1_1-site.webp
+10 minutes	114KB
+https://willowinworlds.com/assets/Paint%20Blasters/site/hero_blasters.webp
+10 minutes	109KB
+https://willowinworlds.com/assets/Paint%20Blasters/site/modul.webp
+10 minutes	79.0KB
+https://willowinworlds.com/assets/Nature%20Seeds/Galvnie_1_0-site.webp
+10 minutes	69.9KB
+https://willowinworlds.com/assets/Paint%20Blasters/site/blasters.webp
+10 minutes	66.2KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_2.webp
+10 minutes	40.7KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_4.webp
+10 minutes	38.6KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_3.webp
+10 minutes	37.4KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_9.webp
+10 minutes	37.2KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_6.webp
+10 minutes	36.6KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_5.webp
+10 minutes	35.2KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_8.webp
+10 minutes	33.9KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_1.webp
+10 minutes	33.8KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_7.webp
+10 minutes	33.8KB
+https://willowinworlds.com/assets/Nature%20Seeds/Galvnie_tree.webp
+10 minutes	29.8KB
+https://willowinworlds.com/assets/Candy%20Shop/site/back_glavnie_10.webp
+10 minutes	29.0KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/espa1.webp
+10 minutes	27.4KB
+https://willowinworlds.com/assets/responsive/nature-seed-hero-720.avif
+10 minutes	26.9KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/espa.webp
+10 minutes	24.6KB
+https://willowinworlds.com/assets/responsive/nature-seed-sketch-720.webp
+10 minutes	20.4KB
+https://willowinworlds.com/scripts.js?v=20260801-1
+10 minutes	20.0KB
+https://willowinworlds.com/assets/magic-cat-mascot.webp
+10 minutes	19.4KB
+https://willowinworlds.com/assets/Nature%20Seeds/Galvnie1.webp
+10 minutes	17.6KB
+https://willowinworlds.com/assets/Nature%20Seeds/Galvnie2.webp
+10 minutes	16.8KB
+https://willowinworlds.com/assets/responsive/willowinworld-logo-256.webp
+10 minutes	16.2KB
+https://willowinworlds.com/assets/responsive/willowinworld-logo-day-256.webp
+10 minutes	15.9KB
+https://willowinworlds.com/assets/Candy%20Shop/site/candy_glavnie_2.webp
+10 minutes	15.3KB
+https://willowinworlds.com/assets/responsive/paint-blasters-icon-192.webp
+10 minutes	13.9KB
+https://willowinworlds.com/assets/responsive/paint-blasters-icon-alt-192.webp
+10 minutes	13.8KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/back.webp
+10 minutes	12.1KB
+https://willowinworlds.com/assets/responsive/candy-shop-icon-alt-192.webp
+10 minutes	10.9KB
+https://willowinworlds.com/assets/responsive/candy-shop-icon-192.webp
+10 minutes	10.6KB
+https://willowinworlds.com/assets/responsive/ball-is-god-icon-192.webp
+10 minutes	9.83KB
+https://willowinworlds.com/assets/responsive/ball-is-god-icon-alt-192.webp
+10 minutes	9.77KB
+https://willowinworlds.com/assets/Candy%20Shop/site/candy_glavnie_1.webp
+10 minutes	9.62KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-2.webp
+10 minutes	9.33KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-3.webp
+10 minutes	9.09KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-1.webp
+10 minutes	9.05KB
+https://willowinworlds.com/assets/responsive/nature-seed-icon-192.webp
+10 minutes	8.85KB
+https://willowinworlds.com/assets/responsive/nature-seed-icon-alt-192.webp
+10 minutes	8.68KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-9.webp
+10 minutes	7.93KB
+https://willowinworlds.com/css/base.css?v=20260801-2
+10 minutes	7.05KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-11.webp
+10 minutes	6.41KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-10.webp
+10 minutes	6.40KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-8.webp
+10 minutes	6.29KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-16.webp
+10 minutes	6.19KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-4.webp
+10 minutes	6.12KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-12.webp
+10 minutes	6.10KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-5.webp
+10 minutes	6.05KB
+https://willowinworlds.com/assets/Ball%20is%20God/site/cloud-7.webp
+10 minutes	6.03KB
+https://willowinworlds.com/css/site-sections.css?v=20260731-2
+10 minutes	4.95KB
+https://willowinworlds.com/css/home-polish-2026.css?v=20260731-10
+10 minutes	4.50KB
+https://willowinworlds.com/css/game-content.css
+10 minutes	3.78KB
+https://willowinworlds.com/css/keyframes.css?v=20260731-1
+10 minutes	3.33KB
+https://willowinworlds.com/css/home-ball-card.css
+10 minutes	3.09KB
+https://willowinworlds.com/css/home-paint-card.css
+10 minutes	2.72KB
+https://willowinworlds.com/css/responsive-mobile.css
+10 minutes	2.42KB
+https://willowinworlds.com/css/nature-scene.css
+10 minutes	2.32KB
+https://willowinworlds.com/css/responsive-tablet.css
+10 minutes	1.49KB
+https://willowinworlds.com/css/home-candy-card.css
+10 minutes	1.48KB
+https://willowinworlds.com/css/game-components.css
+10 minutes	1.31KB
+https://willowinworlds.com/css/home-card-base.css
+10 minutes	1.18KB
+https://willowinworlds.com/css/home-nature-card.css
+10 minutes	840B
+https://willowinworlds.com/css/responsive-preferences.css?v=20260731-1
+10 minutes	778B
+https://willowinworlds.com/css/responsive-desktop.css
+10 minutes	616B
+https://willowinworlds.com/motion.css
+10 minutes	539B
+Low
+Avoid long main-thread tasks TBT
+8 long tasks found
+Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay.
+
+Learn how to improve this
+URL	Start Time	Duration
+https://willowinworlds.com/
+250ms	463ms
+https://willowinworlds.com/scripts.js?v=20260801-1
+1.1s	394ms
+https://willowinworlds.com/
+2.6s	209ms
+https://willowinworlds.com/scripts.js?v=20260801-1
+965ms	95ms
+https://willowinworlds.com/scripts.js?v=20260801-1
+785ms	79ms
+https://willowinworlds.com/scripts.js?v=20260801-1
+714ms	68ms
+https://willowinworlds.com/scripts.js?v=20260801-1
+1.5s	65ms
+Unattributable
+877ms	58ms
+Low
+Reduce JavaScript execution time TBT
+159ms spent executing JavaScript
+Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this.
+
+Learn how to improve this
+URL	Total CPU Time	Script Evaluation	Script Parse
+https://willowinworlds.com/
+1.0s	22ms	0ms
+https://willowinworlds.com/scripts.js?v=20260801-1
+983ms	132ms	2ms
+Unattributable
+162ms	1ms	0ms
+Low
+Avoid chaining critical requests FCP LCP
+19 chains found
+The Critical Request Chains below show you what resources are loaded with a high priority. Consider reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load.
+
+Learn how to improve this
+Maximum critical path latency: 261ms
+
+Initial Navigation
+
+http://willowinworlds.com/ 0B, 1ms
+
+https://willowinworlds.com/ 16.4KB, 79ms
+
+https://willowinworlds.com/manifest.webmanifest 942B, 146ms
+
+https://willowinworlds.com/motion.css 539B, 135ms
+
+https://willowinworlds.com/css/responsive-desktop.css 616B, 131ms
+
+https://willowinworlds.com/scripts.js?v=20260801-1 20.0KB, 130ms
+
+https://willowinworlds.com/css/responsive-preferences.css?v=20260731-1 778B, 127ms
+
+https://willowinworlds.com/css/home-polish-2026.css?v=20260731-10 4.50KB, 125ms
+
+https://willowinworlds.com/css/game-components.css 1.31KB, 119ms
+
+https://willowinworlds.com/css/responsive-tablet.css 1.49KB, 114ms
+
+https://willowinworlds.com/css/keyframes.css?v=20260731-1 3.33KB, 114ms
+
+https://willowinworlds.com/css/home-card-base.css 1.18KB, 113ms
+
+https://willowinworlds.com/css/home-candy-card.css 1.48KB, 112ms
+
+https://willowinworlds.com/css/home-nature-card.css 840B, 110ms
+
+https://willowinworlds.com/css/responsive-mobile.css 2.42KB, 104ms
+
+https://willowinworlds.com/css/home-paint-card.css 2.72KB, 100ms
+
+https://willowinworlds.com/css/base.css?v=20260801-2 7.05KB, 98ms
+
+https://willowinworlds.com/css/home-ball-card.css 3.09KB, 96ms
+
+https://willowinworlds.com/css/nature-scene.css 2.32KB, 96ms
+
+https://willowinworlds.com/css/site-sections.css?v=20260731-2 4.95KB, 88ms
+
+https://willowinworlds.com/css/game-content.css 3.78KB, 82ms
+
+Improving these audits seen here can help as a starting point for overall performance gains.
+See all Structure audits.
+
+Page Details
+Pages with smaller total sizes and fewer requests tend to load faster.
+
+5.9s
+Fully Loaded Time
+
+Total Page Size - 1.49MB
+IMG
+1.33MB
+Other
+94.9KB
+CSS
+38.8KB
+JS
+19.8KB
+HTML
+16.0KB
+Total Page Requests - 72
+IMG
+68.1%
+CSS
+23.6%
+Other
+4.2%
+HTML
+2.8%
+JS
+1.4%
+Look into reducing JavaScript, reducing web-fonts, and image optimization to ensure a lightweight and streamlined website.
+
+More from GTmetrix
+Additional tips and suggestions based on your page analysis.
+
+JavaScript is affecting performance
+Learn how using too much JS hurts performance.Read the guide
+
+Need optimization guides and advice?
+Check out the GTmetrix blog for tips and how-tos!Read the guide
+
+Need help with optimization?
+Find a developer with our partner Fiverr to optimize your performance
+
+Discover more insights with GTmetrix PRO
+Analyze more pages, test on mobile devices, check performance in Additional Test Locations, monitor hourly and much more
+
+Get PRO insights now
+Read our blog for more performance tips and advice.
+
+Compare with another URL
+Analyze the following URL and compare it to the current report.
+
+Enter URL to Compare...
+
+Location
+
+Seattle, WA, USA
+Device/Browser
+
+Chrome
+Connection Speed
+
+Unthrottled Connection
+Options
+Basic features and functions for this page.
+
+ Create Video
+ Adblock Plus
+Advanced Options
+Additional options and features to analyze your page.
+
+Advanced Options
+Compare
+Export History
+Get report history for this page in CSV format based on selected settings.
+
+Select Format
+
+Download CSV file
+Select time range
+
+Last 25 Reports
+Select columns
+Select columns
+ Use Legacy Columns
+Download CSV
+Share this Report
+Share on X
+Share on Facebook
+Copy Report Link
+Download PDF
+Select which version of the PDF report to download:
+
+Report Type
+
+Regular Report
+
+Download PDF
+Unlock Full PDF Reports with GTmetrix PRO
+Upgrade to PRO
+GTmetrix was developed for website owners to easily test the performance of their webpages.
+
+Learn more about us or Check out Careers.
+
+Got questions? Contact us
+
+Product
+Why GTmetrix
+Explore PRO
+Test Server Locations
+GTmetrix REST API
+GTmetrix MCP
+Pricing
+Plans
+Resources
+Guides
+Metrics & Audits
+How to Guides
+Using GTmetrix
+FAQ
+Blog
+Changes
+Case Studies
+Optimization Explained
+© 2026 GTmetrix. All rights reserved.
+
+Terms of Service
+Privacy Policy
+Legal
+Cookies
+VAT
+Performance Metrics
+The following metrics are generated using Lighthouse Performance data.
+
+Metric details
+First Contentful Paint
+Longer than recommended
+1.2s
+Time to Interactive
+OK, but consider improvement
+2.8s
+Speed Index
+Longer than recommended
+2.2s
+Total Blocking Time
+Much longer than recommended
+352ms
+Largest Contentful Paint
+OK, but consider improvement
+1.2s
+Cumulative Layout Shift
+Good - Nothing to do here
+0
+Browser Timings
+These timings are milestones reported by the browser.
+
+Redirect Duration
+2ms
+Connection Duration
+57ms
+Backend Duration
+23ms
+Time to First Byte (TTFB)
+82ms
+DOM Interactive Time
+1.1s
+DOM Content Loaded Time
+1.1s
+Onload Time
+1.1s
+First Paint
+1.2s
+Fully Loaded Time
+5.9s
+
+Impact
+Audit
+Med-Low
+Avoid an excessive DOM size TBT
+974 elements
+Med-Low
+Serve static assets with an efficient cache policy
+Potential savings of 1.28MB
+Low
+Avoid long main-thread tasks TBT
+8 long tasks found
+Low
+Reduce JavaScript execution time TBT
+159ms spent executing JavaScript
+Low
+Avoid chaining critical requests FCP LCP
+19 chains found
+Low
+Avoid non-composited animations CLS
+67 animated elements found
+Low
+Avoid multiple page redirects FCP LCP
+Potential savings of 2ms
+Low
+Avoid enormous network payloads LCP
+Total size was 1.51MB
+Low
+Minify JavaScript FCP LCP
+Potential savings of 4.30KB
+Low
+Properly size images
+Potential savings of 992KB
+N/A
+Largest Contentful Paint element LCP
+1,240 ms
+N/A
+Minimize main-thread work TBT
+Main-thread busy for 2.2s
+N/A
+Eliminate render-blocking resources FCP LCP
+Potential savings of 62ms
+N/A
+Reduce initial server response time FCP LCP
+Root document took 22ms
+N/A
+Reduce the impact of third-party code TBT
+Total size was 181B
+N/A
+Avoid serving legacy JavaScript to modern browsers TBT
+N/A
+User Timing marks and measures
+CrUX Metrics (Latest 28 Day Collection Period)
+The following metrics are generated using Google's CrUX API database. Metrics are based on the 75th percentile.
+
+No CrUX data available
+There is insufficient real-world performance data for this page.
+Learn more
+Largest Contentful Paint (LCP)
+GTmetrix LCP - 1.2s
+
+—
+—
+Interaction to Next Paint (INP)
+GTmetrix TBT - 352ms
+
+—
+—
+Cumulative Layout Shift (CLS)
+GTmetrix CLS - 0
+
+—
+—
+Other Notable Metrics
+First Contentful Paint (FCP)
+GTmetrix FCP - 1.2s
+
+—
+—
+Time to First Byte (TTFB)
+GTmetrix TTFB - 82ms
+
+—
+—
+WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio
+/
+307
+willowinworlds.com
+0
+ 0ms
+/
+200
+willowinworlds.com
+16.0KB
+ 80ms
+nature-seed-sketch-720.webp
+200
+willowinworlds.com
+20.2KB
+ 130ms
+base.css?v=20260801-2
+200
+willowinworlds.com
+6.88KB
+ 99ms
+nature-scene.css
+200
+willowinworlds.com
+2.17KB
+ 104ms
+home-card-base.css
+200
+willowinworlds.com
+1.00KB
+ 122ms
+home-ball-card.css
+200
+willowinworlds.com
+2.89KB
+ 106ms
+home-nature-card.css
+200
+willowinworlds.com
+640B
+ 120ms
+home-paint-card.css
+200
+willowinworlds.com
+2.54KB
+ 110ms
+home-candy-card.css
+200
+willowinworlds.com
+1.21KB
+ 122ms
+game-components.css
+200
+willowinworlds.com
+1.04KB
+ 130ms
+game-content.css
+200
+willowinworlds.com
+3.57KB
+ 93ms
+site-sections.css?v=20260731-2
+200
+willowinworlds.com
+4.68KB
+ 100ms
+keyframes.css?v=20260731-1
+200
+willowinworlds.com
+3.18KB
+ 126ms
+responsive-desktop.css
+200
+willowinworlds.com
+339B
+ 144ms
+responsive-tablet.css
+200
+willowinworlds.com
+1.30KB
+ 127ms
+responsive-mobile.css
+200
+willowinworlds.com
+2.14KB
+ 117ms
+responsive-preferences.css?v=20260731-1
+200
+willowinworlds.com
+565B
+ 139ms
+motion.css
+200
+willowinworlds.com
+372B
+ 148ms
+home-polish-2026.css?v=20260731-10
+200
+willowinworlds.com
+4.34KB
+ 139ms
+willowinworld-logo-256.webp
+200
+willowinworlds.com
+16.0KB
+ 137ms
+nature-seed-hero-720.avif
+200
+willowinworlds.com
+26.8KB
+ 115ms
+scripts.js?v=20260801-1
+200
+willowinworlds.com
+19.8KB
+ 136ms
+manifest.webmanifest
+200
+willowinworlds.com
+509B
+ 151ms
+Galvnie1.webp
+200
+willowinworlds.com
+17.5KB
+ 126ms
+Galvnie2.webp
+200
+willowinworlds.com
+16.6KB
+ 146ms
+nature-seed-icon-192.webp
+200
+willowinworlds.com
+8.61KB
+ 98ms
+Galvnie_1_0-site.webp
+200
+willowinworlds.com
+69.7KB
+ 140ms
+Galvnie_1_1-site.webp
+200
+willowinworlds.com
+114KB
+ 181ms
+nature-seed-icon-alt-192.webp
+200
+willowinworlds.com
+8.46KB
+ 152ms
+back_glavnie_1.webp
+200
+willowinworlds.com
+33.6KB
+ 126ms
+back_glavnie_2.webp
+200
+willowinworlds.com
+40.5KB
+ 126ms
+back_glavnie_3.webp
+200
+willowinworlds.com
+37.2KB
+ 233ms
+back_glavnie_4.webp
+200
+willowinworlds.com
+38.4KB
+ 97ms
+back_glavnie_5.webp
+200
+willowinworlds.com
+34.9KB
+ 149ms
+back_glavnie_6.webp
+200
+willowinworlds.com
+36.4KB
+ 152ms
+back_glavnie_7.webp
+200
+willowinworlds.com
+33.6KB
+ 238ms
+back_glavnie_8.webp
+200
+willowinworlds.com
+33.8KB
+ 225ms
+back_glavnie_9.webp
+200
+willowinworlds.com
+36.9KB
+ 199ms
+back_glavnie_10.webp
+200
+willowinworlds.com
+28.7KB
+ 487ms
+candy_glavnie_1.webp
+200
+willowinworlds.com
+9.46KB
+ 157ms
+candy_glavnie_2.webp
+200
+willowinworlds.com
+15.0KB
+ 143ms
+candy-shop-icon-192.webp
+200
+willowinworlds.com
+10.5KB
+ 171ms
+candy-shop-icon-alt-192.webp
+200
+willowinworlds.com
+10.8KB
+ 156ms
+back.webp
+200
+willowinworlds.com
+150KB
+ 237ms
+blasters.webp
+200
+willowinworlds.com
+66.0KB
+ 232ms
+modul.webp
+200
+willowinworlds.com
+78.7KB
+ 145ms
+hero_blasters.webp
+200
+willowinworlds.com
+109KB
+ 234ms
+paint-blasters-icon-192.webp
+200
+willowinworlds.com
+13.7KB
+ 485ms
+paint-blasters-icon-alt-192.webp
+200
+willowinworlds.com
+13.6KB
+ 148ms
+back.webp
+200
+willowinworlds.com
+12.0KB
+ 179ms
+cloud-1.webp
+200
+willowinworlds.com
+8.89KB
+ 130ms
+cloud-2.webp
+200
+willowinworlds.com
+9.08KB
+ 125ms
+cloud-3.webp
+200
+willowinworlds.com
+8.94KB
+ 198ms
+cloud-4.webp
+200
+willowinworlds.com
+5.97KB
+ 230ms
+cloud-5.webp
+200
+willowinworlds.com
+5.90KB
+ 169ms
+cloud-7.webp
+200
+willowinworlds.com
+5.88KB
+ 142ms
+cloud-8.webp
+200
+willowinworlds.com
+6.07KB
+ 173ms
+cloud-9.webp
+200
+willowinworlds.com
+7.68KB
+ 177ms
+cloud-10.webp
+200
+willowinworlds.com
+6.15KB
+ 139ms
+cloud-11.webp
+200
+willowinworlds.com
+6.27KB
+ 139ms
+cloud-12.webp
+200
+willowinworlds.com
+5.86KB
+ 164ms
+cloud-16.webp
+200
+willowinworlds.com
+5.97KB
+ 163ms
+espa.webp
+200
+willowinworlds.com
+24.4KB
+ 129ms
+espa1.webp
+200
+willowinworlds.com
+27.2KB
+ 139ms
+ball-is-god-icon-192.webp
+200
+willowinworlds.com
+9.61KB
+ 140ms
+ball-is-god-icon-alt-192.webp
+200
+willowinworlds.com
+9.61KB
+ 148ms
+magic-cat-mascot.webp
+200
+willowinworlds.com
+19.2KB
+ 158ms
+willowinworld-logo-day-256.webp
+200
+willowinworlds.com
+15.7KB
+ 114ms
+favicon.ico
+200
+willowinworlds.com
+24.5KB
+ 100ms
+willowinworld-logo-192.png
+200
+willowinworlds.com
+69.9KB
+ 167ms
+Galvnie_tree.webp
+200
+willowinworlds.com
+29.5KB
+ 82ms

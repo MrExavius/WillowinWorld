@@ -1,0 +1,48 @@
+https://securityheaders.com/?q=https%3A%2F%2Fwillowinworlds.com%2F&hide=on&followRedirects=on
+Security Report Summary
+F
+Site:	https://willowinworlds.com/
+IP Address:	185.199.110.153
+Report Time:	08 Nov 2026 20:20:11 UTC
+Headers:
+Strict-Transport-Security Content-Security-Policy X-Frame-Options X-Content-Type-Options Referrer-Policy Permissions-Policy
+Advanced:
+Ouch, you should work on your security posture immediately:
+Missing Headers
+Strict-Transport-Security	HTTP Strict Transport Security is an excellent feature to support on your site and strengthens your implementation of TLS by getting the User Agent to enforce the use of HTTPS. Recommended value "Strict-Transport-Security: max-age=31536000; includeSubDomains".
+Content-Security-Policy	Content Security Policy is an effective measure to protect your site from XSS attacks. By whitelisting sources of approved content, you can prevent the browser from loading malicious assets.
+X-Frame-Options	X-Frame-Options tells the browser whether you want to allow your site to be framed or not. By preventing a browser from framing your site you can defend against attacks like clickjacking. Recommended value "X-Frame-Options: SAMEORIGIN".
+X-Content-Type-Options	X-Content-Type-Options stops a browser from trying to MIME-sniff the content type and forces it to stick with the declared content-type. The only valid value for this header is "X-Content-Type-Options: nosniff".
+Referrer-Policy	Referrer Policy is a new header that allows a site to control how much information the browser includes with navigations away from a document and should be set by all sites.
+Permissions-Policy	Permissions Policy is a new header that allows a site to control which features and APIs can be used in the browser.
+Raw Headers
+HTTP/2	200
+server	GitHub.com
+content-type	text/html; charset=utf-8
+last-modified	Wed, 23 Sep 2026 17:35:11 GMT
+access-control-allow-origin	*
+etag	W/"6ab40dcf-147a0"
+expires	Sun, 08 Nov 2026 20:30:11 GMT
+cache-control	max-age=600
+content-encoding	gzip
+x-proxy-cache	MISS
+x-github-request-id	F688:24DE0B:3B5BA:9C3B4:6AF0D97B
+x-github-edge-region	northeurope
+accept-ranges	bytes
+age	0
+date	Sun, 08 Nov 2026 20:20:11 GMT
+via	1.1 varnish
+x-served-by	cache-dub4345-DUB
+x-cache	MISS
+x-cache-hits	0
+x-timer	S1794169212.680035,VS0,VE116
+vary	Accept-Encoding
+x-fastly-request-id	ea98c1c4ca392e6a2004a30e7d188a6be759fe16
+content-length	16380
+Upcoming Headers
+Cross-Origin-Embedder-Policy	Cross-Origin Embedder Policy allows a site to prevent assets being loaded that do not grant permission to load them via CORS or CORP.
+Cross-Origin-Opener-Policy	Cross-Origin Opener Policy allows a site to opt-in to Cross-Origin Isolation in the browser.
+Cross-Origin-Resource-Policy	Cross-Origin Resource Policy allows a resource owner to specify who can load the resource.
+Additional Information
+server	Server value has been changed. Typically you will see values like "Microsoft-IIS/8.0" or "nginx 1.7.2".
+access-control-allow-origin	This is a very lax CORS policy. Such a policy should only be used on a public CDN.

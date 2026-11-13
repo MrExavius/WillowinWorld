@@ -1,0 +1,78 @@
+https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&level=warning&doc=https%3A%2F%2Fwillowinworlds.com%2F
+Nu Html Checker
+This tool is an ongoing experiment in better HTML checking, and its behavior remains subject to change
+
+Showing results for https://willowinworlds.com/ (checked with vnu 26.11.5)
+Checker Input
+Show
+source
+outline
+image report
+errors & warnings only
+
+Check by
+address
+https://willowinworlds.com/
+
+Use the Message Filtering button below to hide/show particular messages, and to see total counts of errors and warnings.
+Message Filtering
+Error: Using the meta element to specify the document-wide default language is obsolete. Consider specifying the language on the root element instead.
+
+From line 5, column 3; to line 5, column 51
+
+UTF-8">↩  <meta http-equiv="content-language" content="en">↩  <me
+
+Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections, or else use a div element instead for any cases where no heading is needed.
+
+From line 625, column 7; to line 625, column 42
+
+n>↩↩      <section class="section" id="about">↩
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 724, column 13; to line 724, column 38
+
+          <article class="faq-item">↩
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 728, column 13; to line 728, column 38
+
+          <article class="faq-item">↩
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 732, column 13; to line 732, column 38
+
+          <article class="faq-item">↩
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 736, column 13; to line 736, column 38
+
+          <article class="faq-item">↩
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 740, column 13; to line 740, column 38
+
+          <article class="faq-item">↩
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 744, column 13; to line 744, column 38
+
+          <article class="faq-item">↩
+
+Warning: Article lacks heading. Consider using h2-h6 elements to add identifying headings to all articles.
+
+From line 748, column 13; to line 748, column 38
+
+          <article class="faq-item">↩
+
+Warning: Inline script violates Content Security Policy (meta tag): blocked by script-src directive (missing ‘unsafe-inline’ or nonce/hash).
+
+From line 54, column 3; to line 54, column 57
+
+31-10">↩  <script type="application/ld+json" id="structuredData">↩{↩  "
+
