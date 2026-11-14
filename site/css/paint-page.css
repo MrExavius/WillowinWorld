@@ -1,54 +1,89 @@
-/* WillowinWorlds CSS: Paint Blasters game page. */
+/* WillowinWorlds CSS: Paint Blasters game page.
+   The page is the game's steampunk paint factory. Light theme: a warm daylight workshop (cream, brass, copper). Dark theme: the same
+   factory at night, with the paint glowing. Depth, far to near:
+     far   the menu art (back.webp) scrolling with the page, and the control console (ship.webp) along the bottom edge;
+     mid   a frame of copper pipes round the viewport (risers, a top manifold) with paint flowing through glass windows, brass gauges,
+           valve wheels, glass tanks, a mixing chamber and meshing gears;
+     near  a chain reaction: a three-colour shot arcs in, a tower of blocks bursts into debris, a splat hits the wall and drips; paint
+           drips from the manifold nozzles; pigment dust drifts through a shaft of light.
+   Independent GPU-composited transform and opacity keyframes drive a focused set of backdrop elements (no inherited @property clocks,
+   animated filters, or animated background-position), keeping frame cost low while preserving the lively factory chain reaction. */
+
 .paint-blasters-page {
   --paint-cycle: 8.4s;
-  --bg: #eef7ff;
-  --bg-2: #fff0df;
-  --surface: rgba(241, 249, 255, 0.72);
-  --surface-strong: rgba(250, 253, 255, 0.95);
-  --surface-soft: rgba(54, 211, 255, 0.12);
-  --text: #10213a;
-  --muted: #405b73;
-  --muted-2: #71889c;
-  --line: rgba(20, 44, 70, 0.16);
-  --paper: #fff6e8;
-  --paint-ink: #10213a;
+  --bg: #e6d4b0;
+  --bg-2: #d6bf93;
+  --surface: rgba(247, 238, 217, 0.9);
+  --surface-strong: rgba(251, 245, 230, 0.97);
+  --surface-soft: rgba(185, 138, 46, 0.14);
+  --text: #14233a;
+  --muted: #453f31;
+  --muted-2: #6b624c;
+  --line: rgba(110, 72, 30, 0.34);
+  --paper: #f7ecd2;
+  --paint-ink: #14233a;
   --paint-metal: #294465;
   --paint-copper: #b06f3f;
   --paint-glow: #36d3ff;
   --paint-rose: #ff3ab5;
   --paint-lime: #73ff31;
+  --pb-cyan: #1fc4ff;
+  --pb-rose: #ff2fa8;
+  --pb-sun: #ffd21f;
+  --pb-lime: #5fe21f;
+  --pb-violet: #9b57ff;
+  --pb-green: #33d14d;
+  --pb-orange: #ff8a1f;
+  --pb-red: #ff3d45;
+  --pb-blue: #3a5cff;
+  --pb-console: clamp(120px, 24vh, 240px);
+  --pm-cu: #4a230d 0, #a65a2b 14%, #e8a66f 34%, #f7c797 44%, #d17f45 58%, #8f4a22 82%, #3e1d0a 100%;
+  --pm-br: #5c3d0a 0, #d9a93f 30%, #f6e2a0 46%, #c7922c 70%, #5c3d0a 100%;
+  --pb-brass-a: #f2d27a;
+  --pb-brass-b: #b9862e;
+  --pb-brass-c: #7a5114;
+  --pb-ink-brass: #1c1204;
+  --pb-gear-a: #e8c46a;
+  --pb-gear-b: #b0802c;
+  --pb-gear-c: #6f4a12;
+  --pb-poly-16: polygon(45.4% 8.8%, 47.1% 0.1%, 52.9% 0.1%, 54.6% 8.8%, 58.1% 9.3%, 61.6% 10.1%, 66.4% 2.8%, 71.8% 5.0%, 70.0% 13.6%, 73.1% 15.5%, 75.9% 17.6%, 83.2% 12.6%, 87.4% 16.8%, 82.4% 24.1%, 84.5% 26.9%, 86.4% 30.0%, 95.0% 28.2%, 97.2% 33.6%, 89.9% 38.4%, 90.7% 41.9%, 91.2% 45.4%, 99.9% 47.1%, 99.9% 52.9%, 91.2% 54.6%, 90.7% 58.1%, 89.9% 61.6%, 97.2% 66.4%, 95.0% 71.8%, 86.4% 70.0%, 84.5% 73.1%, 82.4% 75.9%, 87.4% 83.2%, 83.2% 87.4%, 75.9% 82.4%, 73.1% 84.5%, 70.0% 86.4%, 71.8% 95.0%, 66.4% 97.2%, 61.6% 89.9%, 58.1% 90.7%, 54.6% 91.2%, 52.9% 99.9%, 47.1% 99.9%, 45.4% 91.2%, 41.9% 90.7%, 38.4% 89.9%, 33.6% 97.2%, 28.2% 95.0%, 30.0% 86.4%, 26.9% 84.5%, 24.1% 82.4%, 16.8% 87.4%, 12.6% 83.2%, 17.6% 75.9%, 15.5% 73.1%, 13.6% 70.0%, 5.0% 71.8%, 2.8% 66.4%, 10.1% 61.6%, 9.3% 58.1%, 8.8% 54.6%, 0.1% 52.9%, 0.1% 47.1%, 8.8% 45.4%, 9.3% 41.9%, 10.1% 38.4%, 2.8% 33.6%, 5.0% 28.2%, 13.6% 30.0%, 15.5% 26.9%, 17.6% 24.1%, 12.6% 16.8%, 16.8% 12.6%, 24.1% 17.6%, 26.9% 15.5%, 30.0% 13.6%, 28.2% 5.0%, 33.6% 2.8%, 38.4% 10.1%, 41.9% 9.3%);
+  --pb-poly-10: polygon(42.7% 9.1%, 45.3% 0.2%, 54.7% 0.2%, 57.3% 9.1%, 62.8% 10.5%, 68.1% 12.7%, 75.5% 7.0%, 83.1% 12.5%, 79.9% 21.2%, 83.6% 25.6%, 86.6% 30.5%, 95.9% 30.1%, 98.8% 39.1%, 91.1% 44.3%, 91.5% 50.0%, 91.1% 55.7%, 98.8% 60.9%, 95.9% 69.9%, 86.6% 69.5%, 83.6% 74.4%, 79.9% 78.8%, 83.1% 87.5%, 75.5% 93.0%, 68.1% 87.3%, 62.8% 89.5%, 57.3% 90.9%, 54.7% 99.8%, 45.3% 99.8%, 42.7% 90.9%, 37.2% 89.5%, 31.9% 87.3%, 24.5% 93.0%, 16.9% 87.5%, 20.1% 78.8%, 16.4% 74.4%, 13.4% 69.5%, 4.1% 69.9%, 1.2% 60.9%, 8.9% 55.7%, 8.5% 50.0%, 8.9% 44.3%, 1.2% 39.1%, 4.1% 30.1%, 13.4% 30.5%, 16.4% 25.6%, 20.1% 21.2%, 16.9% 12.5%, 24.5% 7.0%, 31.9% 12.7%, 37.2% 10.5%);
+  --pb-poly-12: polygon(43.9% 8.9%, 46.1% 0.2%, 53.9% 0.2%, 56.1% 8.9%, 60.7% 9.9%, 65.3% 11.4%, 71.5% 4.9%, 78.3% 8.8%, 75.8% 17.5%, 79.3% 20.7%, 82.5% 24.2%, 91.2% 21.7%, 95.1% 28.5%, 88.6% 34.7%, 90.1% 39.3%, 91.1% 43.9%, 99.8% 46.1%, 99.8% 53.9%, 91.1% 56.1%, 90.1% 60.7%, 88.6% 65.3%, 95.1% 71.5%, 91.2% 78.3%, 82.5% 75.8%, 79.3% 79.3%, 75.8% 82.5%, 78.3% 91.2%, 71.5% 95.1%, 65.3% 88.6%, 60.7% 90.1%, 56.1% 91.1%, 53.9% 99.8%, 46.1% 99.8%, 43.9% 91.1%, 39.3% 90.1%, 34.7% 88.6%, 28.5% 95.1%, 21.7% 91.2%, 24.2% 82.5%, 20.7% 79.3%, 17.5% 75.8%, 8.8% 78.3%, 4.9% 71.5%, 11.4% 65.3%, 9.9% 60.7%, 8.9% 56.1%, 0.2% 53.9%, 0.2% 46.1%, 8.9% 43.9%, 9.9% 39.3%, 11.4% 34.7%, 4.9% 28.5%, 8.8% 21.7%, 17.5% 24.2%, 20.7% 20.7%, 24.2% 17.5%, 21.7% 8.8%, 28.5% 4.9%, 34.7% 11.4%, 39.3% 9.9%);
+  --pb-splat: polygon(50.0% 20.4%, 53.1% 2.0%, 56.5% 0.4%, 59.8% 1.0%, 62.9% 1.7%, 65.9% 3.1%, 65.0% 13.9%, 66.9% 15.8%, 73.5% 9.2%, 77.5% 8.8%, 73.8% 19.0%, 68.9% 28.5%, 66.8% 33.2%, 66.1% 35.9%, 65.6% 38.1%, 66.3% 39.1%, 71.5% 37.6%, 82.2% 34.1%, 87.4% 34.5%, 81.2% 39.4%, 74.9% 43.3%, 72.9% 45.4%, 72.5% 47.0%, 72.2% 48.5%, 72.3% 50.0%, 72.8% 51.5%, 73.7% 53.1%, 74.4% 54.9%, 74.5% 56.6%, 73.8% 58.1%, 72.4% 59.3%, 70.9% 60.3%, 69.6% 61.3%, 68.9% 62.6%, 68.9% 64.5%, 69.1% 66.8%, 69.2% 69.2%, 68.6% 71.3%, 67.4% 72.7%, 65.8% 73.6%, 64.2% 74.6%, 63.8% 77.9%, 65.1% 86.6%, 66.1% 97.3%, 62.9% 98.3%, 59.8% 99.0%, 55.1% 88.8%, 51.7% 76.6%, 50.0% 71.6%, 48.8% 69.1%, 47.7% 67.4%, 46.7% 66.8%, 45.4% 67.0%, 44.0% 67.8%, 42.4% 68.4%, 40.8% 68.6%, 39.4% 68.4%, 38.1% 67.8%, 36.6% 67.4%, 34.8% 67.3%, 32.5% 67.5%, 28.7% 68.6%, 17.1% 75.2%, 8.4% 77.8%, 19.1% 67.8%, 24.1% 62.8%, 25.0% 60.4%, 25.6% 58.3%, 25.9% 56.5%, 25.6% 54.9%, 24.9% 53.3%, 24.3% 51.7%, 24.3% 50.0%, 24.9% 48.4%, 25.2% 46.7%, 20.7% 44.2%, 13.7% 40.3%, 19.5% 39.7%, 26.6% 40.3%, 27.7% 39.0%, 28.0% 37.3%, 29.0% 36.0%, 30.8% 35.3%, 33.0% 35.1%, 35.2% 35.2%, 37.0% 35.2%, 38.2% 34.6%, 39.0% 33.6%, 39.8% 32.3%, 40.7% 31.1%, 41.8% 30.3%, 43.2% 29.9%, 44.6% 29.7%, 45.8% 29.1%, 47.1% 27.8%, 48.4% 25.7%);
 }
 
 .paint-blasters-page[data-theme="dark"] {
-  --bg: #071225;
-  --bg-2: #111f38;
-  --surface: rgba(9, 21, 42, 0.72);
-  --surface-strong: rgba(7, 14, 29, 0.95);
+  --bg: #060d1a;
+  --bg-2: #0d1a2e;
+  --surface: rgba(9, 19, 38, 0.9);
+  --surface-strong: rgba(6, 13, 27, 0.97);
   --surface-soft: rgba(54, 211, 255, 0.1);
   --text: #f2f8ff;
   --muted: #b8c9dc;
   --muted-2: #8298b0;
-  --line: rgba(202, 228, 255, 0.18);
+  --line: rgba(212, 152, 100, 0.3);
   --paper: #17283f;
   --paint-ink: #f2f8ff;
   --paint-metal: #172d4a;
   --paint-copper: #d49864;
+  --pm-cu: #2a1307 0, #7a3f1c 14%, #bf7a44 34%, #d9a070 44%, #a85f30 58%, #6a3417 82%, #240f05 100%;
+  --pm-br: #3d2806 0, #a37a22 30%, #d9bd6a 46%, #8f6618 70%, #3d2806 100%;
+  --pb-brass-a: #d9b85e;
+  --pb-brass-b: #9a6f22;
+  --pb-brass-c: #5a3c0c;
+  --pb-gear-a: #b5914a;
+  --pb-gear-b: #7d5a1f;
+  --pb-gear-c: #47300c;
 }
 
 body.paint-blasters-page[data-theme="light"] {
-  background-color: #eef7ff;
-  background:
-    radial-gradient(ellipse at 18% 8%, rgba(54, 211, 255, 0.24), transparent 30%),
-    radial-gradient(ellipse at 82% 16%, rgba(255, 58, 181, 0.2), transparent 34%),
-    linear-gradient(180deg, #f4fbff 0%, #eef7ff 42%, #fff0df 100%);
+  background-color: #d9c49b;
+  background: linear-gradient(180deg, #e8d7b3 0%, #dcc79e 50%, #cfb584 100%);
 }
 
 body.paint-blasters-page[data-theme="dark"] {
-  background-color: #071225;
-  background:
-    radial-gradient(ellipse at 18% 8%, rgba(54, 211, 255, 0.18), transparent 30%),
-    radial-gradient(ellipse at 82% 16%, rgba(255, 58, 181, 0.14), transparent 34%),
-    linear-gradient(180deg, #071225 0%, #10213c 48%, #050b18 100%);
+  background-color: #050b16;
+  background: linear-gradient(180deg, #060d1a 0%, #0a1526 50%, #04080f 100%);
 }
 
 .paint-blasters-page::before {
@@ -64,6 +99,7 @@ body.paint-blasters-page[data-theme="dark"] {
   background: transparent;
 }
 
+/* Far layer one: the game's menu art runs down the whole page. Nothing veils it; the copy has its own plates. */
 .paint-blasters-shell::before,
 .paint-blasters-shell::after {
   content: "";
@@ -74,47 +110,22 @@ body.paint-blasters-page[data-theme="dark"] {
 }
 
 .paint-blasters-shell::before {
-  background:
-    linear-gradient(92deg, rgba(241, 249, 255, 0.92) 0 17%, rgba(241, 249, 255, 0.7) 42%, rgba(241, 249, 255, 0.34) 76%),
-    radial-gradient(ellipse at 26% 36%, rgba(54, 211, 255, 0.22), transparent 28%),
-    radial-gradient(ellipse at 78% 20%, rgba(255, 58, 181, 0.16), transparent 28%),
-    url("../assets/Paint Blasters/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
-    linear-gradient(180deg, #eef7ff, #fff0df);
-  filter: saturate(1.03) contrast(1.02);
-  opacity: 0.78;
+  background: url("../assets/Paint Blasters/site/back.webp") center top / max(100vw, 1440px) auto repeat-y;
+  filter: sepia(0.22) saturate(1.18) brightness(1.12) contrast(1.04);
 }
 
 .paint-blasters-shell::after {
-  background:
-    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.14) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.16) 0 2px, transparent 3px),
-    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.16) 0 2px, transparent 3px),
-    repeating-linear-gradient(112deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 18px),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 46%, rgba(54, 211, 255, 0.12));
+  background: linear-gradient(180deg, rgba(255, 196, 110, 0.2), rgba(255, 150, 70, 0.1) 40%, rgba(255, 210, 140, 0.18));
   mix-blend-mode: multiply;
-  opacity: 0.74;
 }
 
 .paint-blasters-page[data-theme="dark"] .paint-blasters-shell::before {
-  background:
-    linear-gradient(92deg, rgba(7, 18, 37, 0.9) 0 17%, rgba(7, 18, 37, 0.68) 42%, rgba(15, 32, 57, 0.44) 76%),
-    radial-gradient(ellipse at 26% 36%, rgba(54, 211, 255, 0.13), transparent 28%),
-    radial-gradient(ellipse at 78% 20%, rgba(255, 58, 181, 0.11), transparent 28%),
-    url("../assets/Paint Blasters/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
-    linear-gradient(180deg, #071225, #050b18);
-  filter: saturate(0.92) contrast(1.05) brightness(0.68);
-  opacity: 0.82;
+  filter: saturate(1.25) contrast(1.1) brightness(0.68);
 }
 
 .paint-blasters-page[data-theme="dark"] .paint-blasters-shell::after {
-  background:
-    linear-gradient(90deg, rgba(7, 18, 37, 0.58), rgba(11, 28, 52, 0.22) 48%, rgba(5, 11, 24, 0.62)),
-    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.12) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.1) 0 2px, transparent 3px),
-    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.1) 0 2px, transparent 3px),
-    repeating-linear-gradient(112deg, rgba(202, 228, 255, 0.035) 0 1px, transparent 1px 18px);
-  mix-blend-mode: normal;
-  opacity: 0.9;
+  background: linear-gradient(180deg, rgba(10, 30, 70, 0.3), rgba(40, 12, 60, 0.2) 50%, rgba(5, 20, 50, 0.3));
+  mix-blend-mode: multiply;
 }
 
 .paint-page-backdrop {
@@ -126,203 +137,761 @@ body.paint-blasters-page[data-theme="dark"] {
   pointer-events: none;
 }
 
-.paint-page-backdrop::before,
+.paint-page-backdrop > *,
+.paint-frame > *,
+.paint-scene > *,
+.ps-tower > * {
+  position: absolute;
+  pointer-events: none;
+}
+
+.paint-frame > * {
+  z-index: 2;
+}
+
+.paint-page-backdrop > picture {
+  inset: 0;
+  z-index: 3;
+}
+
+.ps-tower {
+  inset: 0;
+  z-index: 4;
+}
+
+.paint-scene > * {
+  z-index: 4;
+}
+
+/* A soft vignette frames the factory without veiling it. */
 .paint-page-backdrop::after {
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 7;
+  background: radial-gradient(ellipse at 50% 42%, transparent 56%, rgba(40, 18, 2, 0.3));
   pointer-events: none;
-}
-
-.paint-page-backdrop::before {
-  z-index: 2;
-  background:
-    linear-gradient(92deg, rgba(241, 249, 255, 0.94) 0 17%, rgba(241, 249, 255, 0.68) 42%, rgba(241, 249, 255, 0.28) 76%),
-    radial-gradient(ellipse at 28% 38%, rgba(54, 211, 255, 0.28), transparent 30%),
-    radial-gradient(ellipse at 76% 18%, rgba(255, 58, 181, 0.2), transparent 26%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 226, 75, 0.12));
-}
-
-.paint-page-backdrop::after {
-  z-index: 5;
-  background:
-    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.14) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.18) 0 2px, transparent 3px),
-    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.16) 0 2px, transparent 3px),
-    repeating-linear-gradient(112deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 18px),
-    radial-gradient(ellipse at 50% 100%, rgba(54, 211, 255, 0.16), transparent 48%);
-  mix-blend-mode: multiply;
-  opacity: 0.82;
-}
-
-.paint-blasters-page[data-theme="dark"] .paint-page-backdrop::before {
-  background:
-    linear-gradient(92deg, rgba(7, 18, 37, 0.9) 0 17%, rgba(7, 18, 37, 0.68) 42%, rgba(15, 32, 57, 0.42) 76%),
-    radial-gradient(ellipse at 28% 38%, rgba(54, 211, 255, 0.16), transparent 30%),
-    radial-gradient(ellipse at 76% 18%, rgba(255, 58, 181, 0.12), transparent 26%),
-    linear-gradient(180deg, rgba(7, 18, 37, 0.26), rgba(5, 11, 24, 0.58));
 }
 
 .paint-blasters-page[data-theme="dark"] .paint-page-backdrop::after {
-  background:
-    linear-gradient(90deg, rgba(7, 18, 37, 0.54), rgba(11, 28, 52, 0.16) 48%, rgba(5, 11, 24, 0.58)),
-    radial-gradient(circle at 12% 20%, rgba(54, 211, 255, 0.1) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 36%, rgba(255, 226, 75, 0.1) 0 2px, transparent 3px),
-    radial-gradient(circle at 72% 18%, rgba(255, 58, 181, 0.1) 0 2px, transparent 3px),
-    repeating-linear-gradient(112deg, rgba(202, 228, 255, 0.035) 0 1px, transparent 1px 18px);
-  mix-blend-mode: normal;
-  opacity: 0.9;
+  background: radial-gradient(ellipse at 50% 42%, transparent 50%, rgba(0, 0, 0, 0.5));
 }
 
+/* A shaft of daylight (cool glow at night) from the upper right. */
+.paint-beam {
+  inset: 0;
+  z-index: 1;
+  transform-origin: 100% 0;
+  animation: pbBeam 13s ease-in-out infinite alternate;
+  background:
+    linear-gradient(112deg, transparent 56%, rgba(255, 236, 170, 0.34) 64%, transparent 72%),
+    linear-gradient(112deg, transparent 70%, rgba(255, 228, 150, 0.22) 77%, transparent 84%),
+    radial-gradient(ellipse at 100% 0%, rgba(255, 222, 140, 0.4), transparent 52%);
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-beam {
+  background:
+    linear-gradient(112deg, transparent 58%, rgba(90, 150, 255, 0.12) 66%, transparent 74%),
+    radial-gradient(ellipse at 100% 0%, rgba(80, 130, 255, 0.2), transparent 50%),
+    radial-gradient(ellipse at 0% 100%, rgba(255, 60, 170, 0.12), transparent 46%);
+}
+
+/* Far layer two: the control console (ship.webp) along the bottom edge, fading into the wall above it. */
 .paint-ship-panel {
   position: absolute;
-  left: 50%;
-  bottom: -10%;
-  z-index: 1;
-  width: min(116vw, 1920px);
-  height: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 100%;
+  height: var(--pb-console);
   max-width: none;
-  opacity: 0.32;
-  filter: saturate(1.08) contrast(1.03);
-  transform: translateX(-50%) scale(1.02);
-  animation: paintShipPanelDrift 16s ease-in-out infinite;
+  object-fit: cover;
+  object-position: 50% 100%;
+  filter: saturate(1.1) brightness(1.08);
+  -webkit-mask-image: linear-gradient(to top, #000 58%, transparent);
+  mask-image: linear-gradient(to top, #000 58%, transparent);
 }
 
 .paint-blasters-page[data-theme="dark"] .paint-ship-panel {
-  opacity: 0.26;
-  filter: saturate(0.92) contrast(1.08) brightness(0.82);
+  filter: saturate(1.15) brightness(0.85);
 }
 
-.paint-menu-world {
+/* ---------- Mid layer: the machinery (GPU transform/opacity animations only) ---------- */
+.paint-frame {
+  inset: 0;
+}
+
+.pm-riser,
+.pm-top {
+  position: absolute;
+  background: linear-gradient(90deg, var(--pm-cu));
+  box-shadow: 0 0 0 1px rgba(40, 18, 6, 0.6), 0 0 18px rgba(0, 0, 0, 0.3);
+}
+
+.pm-riser {
+  top: 0;
+  bottom: 0;
+  width: 26px;
+}
+
+.pm-riser-l { left: 1.9vw; }
+.pm-riser-r { right: 1.9vw; }
+
+.pm-top {
+  top: 4px;
+  left: 1.9vw;
+  right: 1.9vw;
+  height: 24px;
+  background: linear-gradient(180deg, var(--pm-cu));
+}
+
+/* Flanges: brass bands cut from one gradient with a repeating mask. */
+.pm-riser::before,
+.pm-top::before {
+  content: "";
+  position: absolute;
+}
+
+.pm-riser::before {
+  inset: 0 -5px;
+  background: linear-gradient(90deg, var(--pm-br));
+  -webkit-mask-image: repeating-linear-gradient(180deg, transparent 0 148px, #000 148px 162px);
+  mask-image: repeating-linear-gradient(180deg, transparent 0 148px, #000 148px 162px);
+}
+
+.pm-top::before {
+  inset: -5px 0;
+  background: linear-gradient(180deg, var(--pm-br));
+  -webkit-mask-image: repeating-linear-gradient(90deg, transparent 0 226px, #000 226px 240px);
+  mask-image: repeating-linear-gradient(90deg, transparent 0 226px, #000 226px 240px);
+}
+
+/* Glass windows with paint slugs; the clock slides each window by whole tiles, so the loop has no seam. */
+.pm-riser::after,
+.pm-top::after {
+  content: "";
+  position: absolute;
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.4), inset -1px 0 0 rgba(0, 0, 0, 0.35);
+}
+
+.pm-riser::after {
+  inset: 0 7px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0 2px, transparent 2px),
+    linear-gradient(180deg, #170c06 0 12%, var(--pb-cyan) 12% 29%, #170c06 29% 38%, var(--pb-rose) 38% 54%, #170c06 54% 63%, var(--pb-sun) 63% 80%, #170c06 80% 100%) 0 0 / 100% 520px repeat-y;
+}
+
+.pm-riser-r::after {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0 2px, transparent 2px),
+    linear-gradient(180deg, #170c06 0 10%, var(--pb-green) 10% 28%, #170c06 28% 40%, var(--pb-orange) 40% 56%, #170c06 56% 66%, var(--pb-violet) 66% 82%, #170c06 82% 100%) 0 0 / 100% 520px repeat-y;
+}
+
+.pm-top::after {
+  inset: 7px 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0 2px, transparent 2px),
+    linear-gradient(90deg, #170c06 0 8%, var(--pb-cyan) 8% 18%, #170c06 18% 26%, var(--pb-rose) 26% 38%, #170c06 38% 46%, var(--pb-sun) 46% 57%, #170c06 57% 66%, var(--pb-blue) 66% 78%, #170c06 78% 100%) 0 0 / 700px 100% repeat-x;
+}
+
+/* Elbows where the risers meet the manifold. */
+.paint-frame::before,
+.paint-frame::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -4px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #3a1c0a 0 22%, transparent 23%),
+    radial-gradient(circle at 38% 34%, rgba(255, 255, 255, 0.55), transparent 36%),
+    radial-gradient(circle, var(--pb-brass-a) 0 62%, var(--pb-brass-b) 78%, var(--pb-brass-c) 100%);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.paint-frame::before { left: calc(1.9vw - 9px); }
+.paint-frame::after { right: calc(1.9vw - 9px); }
+
+/* Brass gauges: ticks and a red zone on an arc, a needle that swings on the clock. */
+.pm-gauge {
+  width: 60px;
+  height: 60px;
+  border: 6px solid transparent;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, #fbf3dc 0 100%) padding-box,
+    conic-gradient(var(--pb-brass-a), var(--pb-brass-b), var(--pb-brass-a), var(--pb-brass-c), var(--pb-brass-a)) border-box;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), inset 0 0 8px rgba(80, 50, 10, 0.4);
+}
+
+.pm-gauge::before,
+.pm-gauge::after {
+  content: "";
   position: absolute;
   inset: 0;
-  z-index: 4;
-  overflow: hidden;
-}
-
-.paint-menu-pipe,
-.paint-menu-beam,
-.paint-menu-splash,
-.paint-menu-gauge {
-  position: absolute;
-  pointer-events: none;
-}
-
-.paint-menu-pipe {
-  width: 62vw;
-  height: 28px;
-  border-radius: 999px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 42%),
-    repeating-linear-gradient(90deg, rgba(64, 36, 24, 0.18) 0 2px, transparent 2px 54px),
-    linear-gradient(90deg, rgba(103, 66, 46, 0.42), rgba(198, 126, 70, 0.32), rgba(31, 64, 88, 0.36));
-  box-shadow: 0 22px 36px rgba(20, 44, 70, 0.14);
-  opacity: 0.7;
-}
-
-.paint-menu-pipe-one {
-  top: 18%;
-  left: 12%;
-  transform: rotate(22deg);
-}
-
-.paint-menu-pipe-two {
-  top: 39%;
-  right: -12%;
-  width: 54vw;
-  transform: rotate(-12deg);
-}
-
-.paint-menu-pipe-three {
-  bottom: 12%;
-  left: -8%;
-  width: 70vw;
-  height: 24px;
-  transform: rotate(-5deg);
-}
-
-.paint-menu-beam {
-  width: 46vw;
-  height: 18px;
-  border-radius: 999px;
-  background:
-    linear-gradient(90deg, transparent, rgba(54, 211, 255, 0.42), rgba(255, 226, 75, 0.34), rgba(255, 58, 181, 0.38), transparent);
-  filter: blur(0.2px);
-  opacity: 0.66;
-  animation: paintBeamFlow 7s ease-in-out infinite;
-}
-
-.paint-menu-beam-one {
-  top: 29%;
-  left: -7%;
-  transform: rotate(-18deg);
-}
-
-.paint-menu-beam-two {
-  bottom: 18%;
-  right: -9%;
-  transform: rotate(14deg);
-  animation-delay: -2.8s;
-}
-
-.paint-menu-splash {
-  width: clamp(92px, 8vw, 156px);
-  aspect-ratio: 1;
-  border-radius: 43% 57% 46% 54%;
-  background:
-    radial-gradient(circle at 30% 28%, rgba(255,255,255,0.72) 0 8%, transparent 9%),
-    radial-gradient(circle at 62% 35%, #ffe24b 0 14%, transparent 15%),
-    radial-gradient(circle at 34% 62%, #36d3ff 0 17%, transparent 18%),
-    radial-gradient(circle at 70% 70%, #ff3ab5 0 16%, transparent 17%),
-    #73ff31;
-  filter: drop-shadow(0 20px 30px rgba(20, 44, 70, 0.16));
-  opacity: 0.68;
-  transform-origin: center;
-  animation: paintSplashFloat 8s ease-in-out infinite;
-}
-
-.paint-menu-splash-one {
-  right: 12%;
-  top: 14%;
-}
-
-.paint-menu-splash-two {
-  left: 8%;
-  bottom: 12%;
-  width: clamp(70px, 6vw, 116px);
-  animation-delay: -2.2s;
-}
-
-.paint-menu-splash-three {
-  right: 24%;
-  bottom: 9%;
-  width: clamp(62px, 5vw, 96px);
-  animation-delay: -4.4s;
-}
-
-.paint-menu-gauge {
-  width: 74px;
-  aspect-ratio: 1;
   border-radius: 50%;
-  border: 8px solid rgba(126, 82, 52, 0.36);
+}
+
+.pm-gauge::before {
   background:
-    radial-gradient(circle at 50% 54%, rgba(255, 255, 245, 0.84) 0 38%, transparent 39%),
-    conic-gradient(from -42deg, #73ff31, #ffe24b, #ff3ab5, #36d3ff, #73ff31);
-  box-shadow: 0 18px 32px rgba(20, 44, 70, 0.16);
-  opacity: 0.62;
-  animation: paintGaugePulse 6s ease-in-out infinite;
+    radial-gradient(circle, #fbf3dc 0 66%, transparent 67%),
+    conic-gradient(from 60deg, #d4281f 0 28deg, transparent 28deg),
+    repeating-conic-gradient(from -120deg, #3a2a14 0 1.6deg, transparent 1.6deg 12deg);
+  -webkit-mask-image: conic-gradient(from -120deg, #000 0 240deg, transparent 240deg);
+  mask-image: conic-gradient(from -120deg, #000 0 240deg, transparent 240deg);
 }
 
-.paint-menu-gauge-one {
-  top: 13%;
-  left: 22%;
+.pm-gauge::after {
+  background:
+    radial-gradient(circle, #5a3a10 0 3.4px, transparent 4px),
+    linear-gradient(#d4281f, #d4281f) 50% 5px / 2.4px 22px no-repeat;
+  transform: rotate(var(--g0, 0deg));
 }
 
-.paint-menu-gauge-two {
-  right: 10%;
-  bottom: 26%;
-  width: 58px;
-  animation-delay: -2s;
+.pm-gauge-a { top: 36px; left: 7vw; --g0: -18deg; }
+.pm-gauge-a::after { animation: pbNeedle 12s ease-in-out infinite alternate; }
+.pm-gauge-b { top: 36px; left: 46vw; --g0: 26deg; }
+.pm-gauge-c { top: 46%; right: calc(1.9vw + 13px - 30px); --g0: -32deg; }
+
+/* Valve wheels turn back and forth. */
+.pm-valve {
+  width: 62px;
+  height: 62px;
+  border: 7px solid var(--pb-brass-b);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, var(--pb-brass-a) 0 16%, transparent 17%),
+    repeating-conic-gradient(var(--pb-brass-c) 0 7deg, transparent 7deg 60deg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35), inset 0 0 0 2px var(--pb-brass-a);
+}
+
+.pm-valve-a {
+  top: 24%;
+  left: calc(1.9vw + 13px - 31px);
+  animation: pbValve 18s ease-in-out infinite alternate;
+}
+.pm-valve-b { top: 72%; right: calc(1.9vw + 13px - 31px); transform: rotate(22deg); }
+
+/* Glass tanks hang from the manifold: primaries on the left, mixed colours on the right; the liquid level breathes. */
+.pm-tanks {
+  top: 28px;
+  width: 0;
+  height: 0;
+}
+
+.pm-tanks-l { left: 13vw; }
+.pm-tanks-r { right: 15vw; }
+
+.pm-tanks i {
+  position: absolute;
+  top: 0;
+  left: var(--x);
+  width: 24px;
+  height: 92px;
+  border: 3px solid var(--pb-brass-c);
+  border-radius: 6px 6px 14px 14px;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.6) 0 16%, transparent 16% 80%, rgba(0, 0, 0, 0.25) 80%),
+    linear-gradient(180deg, rgba(30, 20, 10, 0.5) 0 var(--top), var(--c) var(--top), color-mix(in srgb, var(--c) 70%, #000) 100%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--c) 55%, transparent), 0 4px 8px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+
+.pm-tanks i::before,
+.pm-tanks i::after {
+  content: "";
+  position: absolute;
+  left: -5px;
+  right: -5px;
+  height: 8px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--pb-brass-a), var(--pb-brass-b) 60%, var(--pb-brass-c));
+}
+
+.pm-tanks i::before { top: -9px; }
+.pm-tanks i::after { bottom: -9px; }
+
+.pm-tanks-l i:nth-child(1) { --x: 0; --c: var(--pb-cyan); --top: 30%; }
+.pm-tanks-l i:nth-child(2) { --x: 40px; --c: var(--pb-rose); --top: 38%; }
+.pm-tanks-l i:nth-child(3) { --x: 80px; --c: var(--pb-sun); --top: 26%; }
+.pm-tanks-r i:nth-child(1) { --x: 0; --c: var(--pb-green); --top: 34%; }
+.pm-tanks-r i:nth-child(2) { --x: 40px; --c: var(--pb-orange); --top: 42%; }
+.pm-tanks-r i:nth-child(3) { --x: 80px; --c: var(--pb-violet); --top: 28%; }
+
+/* Mixing chamber on the right riser: cyan, magenta and yellow blobs overlap to mix blue, red and green. */
+.pm-mixer {
+  top: 56%;
+  right: calc(1.9vw + 13px - 36px);
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border: 6px solid var(--pb-brass-b);
+  border-radius: 50%;
+  background: #fbf3dc;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4), inset 0 0 0 2px var(--pb-brass-a), inset 0 0 16px rgba(60, 30, 0, 0.5);
+}
+
+.pm-mixer i {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38px;
+  height: 38px;
+  margin: -19px 0 0 -19px;
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side, var(--c) 0 82%, transparent 100%);
+  mix-blend-mode: multiply;
+}
+
+.pm-mixer i:nth-child(1) { --c: var(--pb-cyan); transform: translate3d(0, 11px, 0); }
+.pm-mixer i:nth-child(2) { --c: var(--pb-rose); transform: translate3d(-10px, -6px, 0); }
+.pm-mixer i:nth-child(3) { --c: var(--pb-sun); transform: translate3d(10px, -6px, 0); }
+
+.pm-mixer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 32% 24%, rgba(255, 255, 255, 0.8), transparent 34%);
+}
+
+/* Nozzles on the manifold drip paint smoothly on GPU transform/opacity. */
+.pm-nozzle {
+  top: 28px;
+  left: var(--x);
+  width: 14px;
+  height: 14px;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(90deg, var(--pb-brass-c), var(--pb-brass-a) 40%, var(--pb-brass-b));
+}
+
+.pm-nozzle::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  width: 10px;
+  height: 14px;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(circle at 36% 34%, rgba(255, 255, 255, 0.8) 0 10%, transparent 11%), var(--c);
+  transform-origin: 50% 0;
+}
+
+.pm-nozzle-a { --x: 61vw; --c: var(--pb-cyan); }
+.pm-nozzle-a::after { animation: pbDrip 6.8s ease-in infinite; }
+.pm-nozzle-b { --x: 72vw; --c: var(--pb-rose); }
+.pm-nozzle-b::after { transform: translate3d(0, 14px, 0) scale(0.85); opacity: 0.72; }
+.pm-nozzle-c { --x: 84vw; --c: var(--pb-sun); }
+.pm-nozzle-c::after { transform: translate3d(0, 6px, 0) scale(0.7); opacity: 0.58; }
+
+/* A control-light bar along the bottom edge. */
+.pm-lamps {
+  left: 50%;
+  bottom: 9px;
+  z-index: 4;
+  display: flex;
+  gap: 18px;
+  transform: translateX(-50%);
+}
+
+.pm-lamps i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 32%, #fff 0 14%, var(--c) 40%, color-mix(in srgb, var(--c) 55%, #000));
+  box-shadow: 0 0 10px var(--c), 0 0 2px #000;
+  opacity: 0.9;
+}
+
+.pm-lamps i:nth-child(1) { --c: #ff3d45; }
+.pm-lamps i:nth-child(2) { --c: #ffd21f; opacity: 0.7; }
+.pm-lamps i:nth-child(3) { --c: #1fc4ff; }
+.pm-lamps i:nth-child(4) { --c: #5fe21f; opacity: 0.75; }
+.pm-lamps i:nth-child(5) { --c: #9b57ff; }
+.pm-lamps i:nth-child(6) { --c: #ff2fa8; opacity: 0.72; }
+.pm-lamps i:nth-child(7) { --c: #ffd21f; }
+
+/* Two meshing gears (16 and 10 teeth: the small one turns 1.6x as fast the other way), half hidden behind the console. */
+.pm-gears {
+  left: 8em;
+  bottom: calc(var(--pb-console) - 10em);
+  width: 0;
+  height: 0;
+  font-size: clamp(4px, 0.46vw, 7px);
+}
+
+.pm-gear {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--gs);
+  height: var(--gs);
+  margin: calc(var(--gs) / -2) 0 0 calc(var(--gs) / -2);
+  background:
+    radial-gradient(circle at 50% 50%, #2a1a08 0 6%, transparent 6.5%),
+    radial-gradient(circle at 50% 50%, var(--pb-gear-a) 0 13%, var(--pb-gear-c) 14%, transparent 14.5%),
+    radial-gradient(circle at 50% 50%, transparent 0 34%, rgba(0, 0, 0, 0.22) 34.5% 36%, transparent 37%),
+    radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.4), transparent 46%),
+    linear-gradient(135deg, var(--pb-gear-a), var(--pb-gear-b) 52%, var(--pb-gear-c));
+}
+
+/* Six spoke openings between hub and rim. */
+.pm-gear::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-conic-gradient(from 8deg, rgba(24, 13, 4, 0.78) 0 42deg, transparent 42deg 60deg);
+  -webkit-mask-image: radial-gradient(circle, transparent 0 17%, #000 17.5% 32%, transparent 32.6%);
+  mask-image: radial-gradient(circle, transparent 0 17%, #000 17.5% 32%, transparent 32.6%);
+}
+
+.pm-gear-a {
+  --gs: 52em;
+  clip-path: var(--pb-poly-16);
+  will-change: transform;
+  animation: pbGearA 48s linear infinite;
+}
+
+.pm-gear-b {
+  --gs: 32.5em;
+  clip-path: var(--pb-poly-10);
+  will-change: transform;
+  animation: pbGearB 30s linear infinite;
+}
+
+/* Steam from the left riser: GPU transform + opacity (no animated blur filter). */
+.pm-steam {
+  left: calc(1.9vw + 13px - 20px);
+  top: calc(24% - 60px);
+  width: 40px;
+  height: 90px;
+  background:
+    radial-gradient(circle 16px at 50% 70%, rgba(255, 255, 255, 0.72), transparent 76%),
+    radial-gradient(circle 13px at 38% 40%, rgba(255, 255, 255, 0.58), transparent 76%),
+    radial-gradient(circle 11px at 62% 16%, rgba(255, 255, 255, 0.48), transparent 76%);
+  animation: pbSteam 6s ease-out infinite;
+}
+
+.pm-steam-r {
+  left: auto;
+  right: calc(1.9vw + 13px - 20px);
+  top: calc(38% - 60px);
+  opacity: 0.42;
+  animation: none;
+}
+
+/* ---------- near layer: consolidated chain reaction (GPU transform/opacity keyframes only) ---------- */
+.paint-scene {
+  inset: 0;
+  --s: clamp(26px, 2.9vw, 42px);
+  --sx0: 4vw;
+  --sy0: calc(100vh - 74px - var(--pb-console) - 36px);
+  --sx1: calc(100vw - 7vw - 2.6 * var(--s));
+  --sy1: calc(100vh - 74px - var(--pb-console) - 2.4 * var(--s));
+}
+
+/* Consolidated to one chain-reaction scene for compositor performance and <= 16 backdrop loops. */
+.paint-scene-b {
+  display: none;
+}
+
+.ps-shelf {
+  right: calc(7vw - 0.6 * var(--s));
+  bottom: calc(var(--pb-console) - 4px);
+  width: calc(5.6 * var(--s));
+  height: 12px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--pb-brass-a), var(--pb-brass-b) 55%, var(--pb-brass-c));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.ps-block {
+  right: calc(7vw + var(--cx) * var(--s));
+  bottom: calc(var(--pb-console) + 8px + var(--ry) * var(--s));
+  width: var(--s);
+  height: var(--s);
+  border-radius: 12%;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--c) 78%, #fff), var(--c) 46%, color-mix(in srgb, var(--c) 66%, #000));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3), inset calc(var(--s) * -0.1) calc(var(--s) * -0.1) 0 rgba(0, 0, 0, 0.16), 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+.ps-block:nth-child(7),
+.ps-block:nth-child(9),
+.ps-block:nth-child(10) {
+  will-change: transform, opacity;
+  animation: pbBlockBurst 16s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+.ps-block:nth-child(1) { --cx: 4; --ry: 0; --c: #76ff00; --vx: -14vw; --vy: -22vh; --vr: -180deg; }
+.ps-block:nth-child(2) { --cx: 3; --ry: 0; --c: #ff4137; --vx: -9vw; --vy: -34vh; --vr: 180deg; }
+.ps-block:nth-child(3) { --cx: 2; --ry: 0; --c: #ffd923; --vx: -2vw; --vy: -22vh; --vr: -120deg; }
+.ps-block:nth-child(4) { --cx: 1; --ry: 0; --c: #bc00ff; --vx: 6vw; --vy: -30vh; --vr: 260deg; }
+.ps-block:nth-child(5) { --cx: 0; --ry: 0; --c: #49d400; --vx: 12vw; --vy: -24vh; --vr: -200deg; }
+.ps-block:nth-child(6) { --cx: 3.5; --ry: 1; --c: #d62f29; --vx: -14vw; --vy: -40vh; --vr: 300deg; }
+.ps-block:nth-child(7) { --cx: 2.5; --ry: 1; --c: #40f900; --vx: -8vw; --vy: -34vh; --vr: -160deg; animation-delay: 0.08s; }
+.ps-block:nth-child(8) { --cx: 1.5; --ry: 1; --c: #326df3; --vx: 5vw; --vy: -42vh; --vr: 220deg; }
+.ps-block:nth-child(9) { --cx: 0.5; --ry: 1; --c: #ff3c34; --vx: 9vw; --vy: -28vh; --vr: 210deg; animation-delay: 0.14s; }
+.ps-block:nth-child(10) { --cx: 2; --ry: 2; --c: #ffd826; --vx: 0vw; --vy: -42vh; --vr: 280deg; }
+
+.ps-shot {
+  left: 0;
+  top: 0;
+  width: 150px;
+  height: 14px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 100% 50%, #fff 0 22%, rgba(255, 255, 255, 0) 64%),
+    linear-gradient(90deg, transparent, rgba(255, 47, 168, 0.6) 30%, rgba(255, 210, 31, 0.9) 62%, #fff);
+  will-change: transform, opacity;
+  animation: pbShot 16s linear infinite;
+}
+
+.ps-flash {
+  left: 0;
+  top: 0;
+  width: 190px;
+  height: 190px;
+  margin: -95px 0 0 -95px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 10%, rgba(255, 226, 90, 0.9) 22%, rgba(255, 47, 168, 0.5) 46%, transparent 70%);
+  will-change: transform, opacity;
+  animation: pbFlash 16s linear infinite;
+}
+
+.ps-splat,
+.ps-spray {
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 230px;
+  margin: -115px 0 0 -115px;
+  will-change: transform, opacity;
+  animation: pbSplat 16s ease-out infinite;
+}
+
+.ps-splat {
+  clip-path: var(--pb-splat);
+  background:
+    radial-gradient(ellipse 14% 8% at 38% 30%, rgba(255, 255, 255, 0.85) 0 40%, transparent 100%),
+    radial-gradient(ellipse 26% 18% at 42% 40%, rgba(255, 255, 255, 0.28), transparent 100%),
+    radial-gradient(circle at 50% 50%, #ff2fa8 0 36%, #c52bd0 64%, #6a2bd6 100%);
+}
+
+.ps-spray {
+  background:
+    radial-gradient(circle 7px at 8% 30%, var(--pb-cyan) 0 98%, transparent 100%),
+    radial-gradient(circle 5px at 92% 22%, var(--pb-sun) 0 98%, transparent 100%),
+    radial-gradient(circle 8px at 96% 66%, var(--pb-lime) 0 98%, transparent 100%),
+    radial-gradient(circle 5px at 14% 82%, var(--pb-violet) 0 98%, transparent 100%),
+    radial-gradient(circle 6px at 70% 94%, var(--pb-cyan) 0 98%, transparent 100%),
+    radial-gradient(circle 4px at 3% 52%, var(--pb-rose) 0 98%, transparent 100%),
+    radial-gradient(circle 5px at 40% 4%, var(--pb-lime) 0 98%, transparent 100%);
+}
+
+.ps-drip {
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: var(--len);
+  border-radius: 0 0 999px 999px;
+  background: linear-gradient(90deg, #8a2bd0, #d12cc4 50%, #8a2bd0);
+  transform-origin: 50% 0;
+  transform: translate3d(calc(var(--sx1) + 0.5 * var(--s) + var(--dx)), calc(var(--sy1) + 0.3 * var(--s) + 70px), 0);
+  opacity: 0.78;
+}
+
+.ps-drip::after {
+  content: "";
+  position: absolute;
+  left: -3px;
+  bottom: -7px;
+  width: 14px;
+  height: 16px;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  background: radial-gradient(circle at 36% 34%, rgba(255, 255, 255, 0.8) 0 9%, transparent 10%), #d12cc4;
+}
+
+.ps-drip-a { --dx: -34px; --len: 120px; --dd: 0; }
+.ps-drip-b { --dx: 4px; --len: 170px; --dd: 0.06; }
+.ps-drip-c { --dx: 40px; --len: 96px; --dd: 0.12; }
+
+/* Pigment dust drifts down through the light: one tile, looped by exactly its own height. */
+.paint-motes {
+  left: 0;
+  right: 0;
+  top: -640px;
+  bottom: 0;
+  z-index: 5;
+  background:
+    radial-gradient(circle 2px at 667px 504px, rgba(255, 246, 214, 0.9) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 1211px 194px, rgba(255, 220, 140, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 970px 443px, rgba(31, 196, 255, 0.8) 0 99%, transparent 100%),
+    radial-gradient(circle 4px at 840px 86px, rgba(255, 47, 168, 0.75) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 53px 251px, rgba(255, 210, 31, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 946px 171px, rgba(95, 226, 31, 0.7) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 642px 210px, rgba(255, 246, 214, 0.9) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 1069px 587px, rgba(255, 220, 140, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 518px 619px, rgba(31, 196, 255, 0.8) 0 99%, transparent 100%),
+    radial-gradient(circle 4px at 97px 508px, rgba(255, 47, 168, 0.75) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 1105px 111px, rgba(255, 210, 31, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 812px 206px, rgba(95, 226, 31, 0.7) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 485px 485px, rgba(255, 246, 214, 0.9) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 351px 492px, rgba(255, 220, 140, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 259px 382px, rgba(31, 196, 255, 0.8) 0 99%, transparent 100%),
+    radial-gradient(circle 4px at 709px 352px, rgba(255, 47, 168, 0.75) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 452px 300px, rgba(255, 210, 31, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 1210px 374px, rgba(95, 226, 31, 0.7) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 506px 137px, rgba(255, 246, 214, 0.9) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 332px 110px, rgba(255, 220, 140, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 157px 147px, rgba(31, 196, 255, 0.8) 0 99%, transparent 100%),
+    radial-gradient(circle 4px at 1064px 342px, rgba(255, 47, 168, 0.75) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 919px 312px, rgba(255, 210, 31, 0.85) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 572px 323px, rgba(95, 226, 31, 0.7) 0 99%, transparent 100%);
+  background-size: 1280px 640px;
+  animation: pbMotesSink 46s linear infinite;
+}
+
+/* A second, dimmer layer of dust adds static depth. */
+.paint-motes-far {
+  z-index: 3;
+  background-position: 410px 230px;
+  opacity: 0.55;
+  animation: none;
+}
+
+@keyframes pbBeam {
+  from { opacity: 0.55; transform: translate3d(2vw, 0, 0) scale(1.04); }
+  to { opacity: 1; transform: translate3d(-2vw, 0, 0) scale(1); }
+}
+
+@keyframes pbGearA {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pbGearB {
+  from { transform: translate3d(31.1em, -24.3em, 0) rotate(9deg); }
+  to { transform: translate3d(31.1em, -24.3em, 0) rotate(-567deg); }
+}
+
+@keyframes pbNeedle {
+  0% { transform: rotate(-52deg); }
+  50% { transform: rotate(18deg); }
+  100% { transform: rotate(-28deg); }
+}
+
+@keyframes pbValve {
+  0% { transform: rotate(-42deg); }
+  100% { transform: rotate(42deg); }
+}
+
+@keyframes pbDrip {
+  0% { transform: translate3d(0, 0, 0) scale(0.35); opacity: 0; }
+  18% { transform: translate3d(0, 4px, 0) scale(1); opacity: 0.95; }
+  84% { transform: translate3d(0, 26vh, 0) scale(0.92); opacity: 0.85; }
+  100% { transform: translate3d(0, 32vh, 0) scale(0.8); opacity: 0; }
+}
+
+@keyframes pbShot {
+  0%, 3% { transform: translate3d(var(--sx0), var(--sy0), 0) rotate(-18deg); opacity: 0; }
+  5% { transform: translate3d(calc(var(--sx0) + 0.08 * (var(--sx1) - var(--sx0))), calc(var(--sy0) - 8vh), 0) rotate(-24deg); opacity: 1; }
+  17% { transform: translate3d(calc(var(--sx0) + 0.5 * (var(--sx1) - var(--sx0))), calc(var(--sy0) - 28vh), 0) rotate(-4deg); opacity: 1; }
+  29% { transform: translate3d(var(--sx1), var(--sy1), 0) rotate(16deg); opacity: 1; }
+  31%, 100% { transform: translate3d(var(--sx1), var(--sy1), 0) rotate(18deg); opacity: 0; }
+}
+
+@keyframes pbFlash {
+  0%, 26% { transform: translate3d(calc(var(--sx1) + 0.4 * var(--s)), calc(var(--sy1) + 0.2 * var(--s)), 0) scale(0.35); opacity: 0; }
+  31% { transform: translate3d(calc(var(--sx1) + 0.4 * var(--s)), calc(var(--sy1) + 0.2 * var(--s)), 0) scale(1.45); opacity: 0.95; }
+  38%, 100% { transform: translate3d(calc(var(--sx1) + 0.4 * var(--s)), calc(var(--sy1) + 0.2 * var(--s)), 0) scale(0.5); opacity: 0; }
+}
+
+@keyframes pbSplat {
+  0%, 28% { transform: translate3d(calc(var(--sx1) + 0.5 * var(--s)), calc(var(--sy1) + 0.3 * var(--s)), 0) scale(0.3); opacity: 0; }
+  36%, 90% { transform: translate3d(calc(var(--sx1) + 0.5 * var(--s)), calc(var(--sy1) + 0.3 * var(--s)), 0) scale(1); opacity: 1; }
+  98%, 100% { transform: translate3d(calc(var(--sx1) + 0.5 * var(--s)), calc(var(--sy1) + 0.3 * var(--s)), 0) scale(1); opacity: 0; }
+}
+
+@keyframes pbBlockBurst {
+  0%, 29% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 1; }
+  62% { transform: translate3d(var(--vx), var(--vy), 0) rotate(calc(var(--vr) * 0.65)); opacity: 1; }
+  76%, 94% { transform: translate3d(var(--vx), calc(var(--vy) + 38vh), 0) rotate(var(--vr)); opacity: 0; }
+  97%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 1; }
+}
+
+@keyframes pbMotesSink {
+  to { transform: translate3d(0, 640px, 0); }
+}
+
+@keyframes pbSteam {
+  0% { transform: translate3d(0, 20px, 0) scale(0.5); opacity: 0; }
+  20% { opacity: 0.7; }
+  100% { transform: translate3d(10px, -90px, 0) scale(1.5); opacity: 0; }
+}
+
+/* Small screens, where copy covers the whole width: art, a thin pipe frame, console, gears, dust and one drip row. */
+@media (max-width: 760px) {
+  .paint-beam,
+  .pm-valve,
+  .pm-tanks,
+  .pm-mixer,
+  .pm-steam,
+  .pm-gauge-a::after,
+  .pm-gauge-b,
+  .pm-gauge-c,
+  .pm-nozzle-a,
+  .pm-nozzle-c,
+  .pm-lamps i:nth-child(n + 4),
+  .paint-scene-b,
+  .ps-spray,
+  .paint-motes-far {
+    display: none;
+    animation: none;
+  }
+
+  .paint-scene {
+    --s: 22px;
+    --sx1: calc(100vw - 12px - 2.6 * var(--s));
+  }
+
+  .ps-shelf { right: calc(7vw - 0.6 * var(--s)); }
+
+  .pm-riser { width: 14px; }
+  .pm-riser-l { left: 3px; }
+  .pm-riser-r { right: 3px; }
+  .pm-riser::after { inset: 0 4px; }
+  .pm-riser::before { inset: 0 -3px; }
+  .paint-frame::before,
+  .paint-frame::after { display: none; }
+  .pm-top { left: 3px; right: 3px; height: 18px; }
+  .pm-top::after { inset: 5px 0; }
+  .pm-gears { left: 11em; font-size: 5px; }
+  .pm-gauge-a { left: 20vw; width: 48px; height: 48px; }
+  .pm-nozzle-b { --x: 70vw; }
+  .paint-blasters-page { --pb-console: clamp(90px, 15vh, 140px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .paint-page-backdrop,
+  .paint-page-backdrop *,
+  .paint-page-backdrop *::before,
+  .paint-page-backdrop *::after {
+    animation: none !important;
+  }
+
+  .ps-splat,
+  .ps-spray {
+    transform: translate3d(calc(var(--sx1) + 0.5 * var(--s)), calc(var(--sy1) + 0.3 * var(--s)), 0) scale(1);
+    opacity: 1;
+  }
+
+  .pm-steam,
+  .ps-shot,
+  .ps-flash {
+    display: none;
+  }
 }
 
 .paint-game-hero {
@@ -642,6 +1211,263 @@ body.paint-blasters-page[data-theme="dark"] {
   animation: paintButtonBlink 1.9s ease-in-out infinite;
 }
 
+/* The hero device and the recipe board keep the page's original blue palette, so the game scenes look exactly as before inside the new factory. */
+.paint-blasters-page .paint-device-frame {
+  color: #10213a;
+}
+
+.paint-blasters-page[data-theme="dark"] .paint-device-frame {
+  color: #f2f8ff;
+}
+
+.paint-blasters-page :is(.paint-device-frame, .paint-recipe-board) {
+  --bg: #eef7ff;
+  --bg-2: #fff0df;
+  --surface: rgba(241, 249, 255, 0.72);
+  --surface-strong: rgba(250, 253, 255, 0.95);
+  --surface-soft: rgba(54, 211, 255, 0.12);
+  --text: #10213a;
+  --muted: #405b73;
+  --muted-2: #71889c;
+  --line: rgba(20, 44, 70, 0.16);
+  --paper: #fff6e8;
+  --paint-ink: #10213a;
+  --paint-metal: #294465;
+  --paint-copper: #b06f3f;
+}
+
+.paint-blasters-page[data-theme="dark"] :is(.paint-device-frame, .paint-recipe-board) {
+  --bg: #071225;
+  --bg-2: #111f38;
+  --surface: rgba(9, 21, 42, 0.72);
+  --surface-strong: rgba(7, 14, 29, 0.95);
+  --surface-soft: rgba(54, 211, 255, 0.1);
+  --text: #f2f8ff;
+  --muted: #b8c9dc;
+  --muted-2: #8298b0;
+  --line: rgba(202, 228, 255, 0.18);
+  --paper: #17283f;
+  --paint-ink: #f2f8ff;
+  --paint-metal: #172d4a;
+  --paint-copper: #d49864;
+}
+
+/* ---------- Page chrome: steel header and footer with a copper pipe rail ---------- */
+.paint-blasters-page :is(.game-detail-topbar, .game-footer) {
+  --text: #f2f8ff;
+  --muted: #c4d3e6;
+  --muted-2: #9db0c7;
+  --line: rgba(217, 184, 94, 0.42);
+  --paper: #d9b85e;
+  --surface: rgba(20, 38, 64, 0.92);
+  --surface-strong: rgba(10, 22, 40, 0.98);
+  color: var(--text);
+}
+
+.paint-blasters-page .game-detail-topbar {
+  border-bottom: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 30%),
+    linear-gradient(180deg, #1d3858, #112742 60%, #0b1b30);
+  box-shadow: 0 4px 0 #a65a2b, 0 6px 0 #e8a66f, 0 9px 0 #3e1d0a, 0 16px 28px rgba(20, 8, 0, 0.4);
+}
+
+.paint-blasters-page .game-footer {
+  border-top: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 24%),
+    linear-gradient(180deg, #122844, #0a1a30);
+  box-shadow: inset 0 4px 0 #3e1d0a, inset 0 6px 0 #e8a66f, inset 0 9px 0 #a65a2b;
+}
+
+/* ---------- Text plates, nameplates, buttons ---------- */
+.paint-blasters-page {
+  --pb-scrim: rgba(248, 239, 219, 0.95);
+  --pb-scrim-edge: rgba(150, 100, 40, 0.55);
+  --pb-panel-a: #fbf3df;
+  --pb-panel-b: #f0e2bf;
+  --pb-bezel: linear-gradient(135deg, #f2d27a, #a8742a 26%, #e8c36a 50%, #8a5a1e 76%, #f0cf80);
+  --pb-rivet: #9c6f2c;
+  --pb-shadow: 0 12px 24px rgba(40, 20, 4, 0.3);
+  --pb-glass: rgba(255, 255, 255, 0.6);
+}
+
+.paint-blasters-page[data-theme="dark"] {
+  --pb-scrim: rgba(9, 19, 38, 0.92);
+  --pb-scrim-edge: rgba(212, 152, 100, 0.5);
+  --pb-panel-a: #17304f;
+  --pb-panel-b: #0c1a2f;
+  --pb-bezel: linear-gradient(135deg, #d9b85e, #7a4f1a 26%, #c79a45 50%, #5a3910 76%, #d9b85e);
+  --pb-rivet: #d1a350;
+  --pb-shadow: 0 14px 28px rgba(0, 0, 0, 0.5);
+  --pb-glass: rgba(255, 255, 255, 0.4);
+}
+
+/* Eyebrows are brass nameplates with a screw at each end. */
+.paint-blasters-page .eyebrow {
+  position: relative;
+  gap: 10px;
+  padding: 7px 22px;
+  border: 0;
+  border-radius: 5px;
+  color: var(--pb-ink-brass);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0 2px, transparent 2px),
+    linear-gradient(180deg, var(--pb-brass-a), color-mix(in srgb, var(--pb-brass-a) 84%, var(--pb-brass-b)) 48%, color-mix(in srgb, var(--pb-brass-a) 70%, var(--pb-brass-b)) 52%, color-mix(in srgb, var(--pb-brass-a) 80%, var(--pb-brass-b)));
+  box-shadow: inset 0 -2px 0 rgba(90, 60, 10, 0.4), 0 3px 0 var(--pb-brass-c), 0 6px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 900;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.paint-blasters-page .eyebrow::before,
+.paint-blasters-page .eyebrow::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 8px;
+  height: 8px;
+  margin: 0;
+  border-radius: 50%;
+  background:
+    linear-gradient(45deg, transparent 44%, rgba(60, 40, 8, 0.8) 44% 56%, transparent 56%),
+    radial-gradient(circle at 35% 30%, var(--pb-brass-a), var(--pb-brass-b) 60%, var(--pb-brass-c));
+  box-shadow: 0 0 0 1px rgba(60, 40, 8, 0.5);
+}
+
+.paint-blasters-page .eyebrow::after {
+  order: 2;
+}
+
+/* Brass and glass buttons, like the game's: a bright dome on a brass plate; the ghost button is steel with a copper rim. */
+.paint-blasters-page .btn {
+  border: 2px solid transparent;
+  border-radius: 14px;
+  letter-spacing: 0;
+  font-weight: 900;
+  text-shadow: none;
+}
+
+.paint-blasters-page .btn-primary {
+  color: var(--pb-ink-brass);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.75) 0 2px, transparent 2px),
+    linear-gradient(180deg, #fff0b8, #f4c75a 46%, #d19a2c 54%, #ecbd55 100%) padding-box,
+    linear-gradient(180deg, #fff3c4, #8a5a1e) border-box;
+  box-shadow: inset 0 -3px 0 rgba(120, 76, 8, 0.5), 0 4px 0 #7a5114, 0 10px 18px rgba(30, 14, 0, 0.35);
+}
+
+.paint-blasters-page .btn-primary:hover {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0 2px, transparent 2px),
+    linear-gradient(180deg, #fff6cf, #ffd36a 46%, #dca637 54%, #f6c862 100%) padding-box,
+    linear-gradient(180deg, #fff3c4, #8a5a1e) border-box;
+  box-shadow: inset 0 -3px 0 rgba(120, 76, 8, 0.5), 0 4px 0 #7a5114, 0 12px 22px rgba(255, 190, 60, 0.35);
+}
+
+.paint-blasters-page .btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 -1px 0 rgba(120, 76, 8, 0.5), 0 1px 0 #7a5114, 0 4px 8px rgba(30, 14, 0, 0.35);
+}
+
+.paint-blasters-page .btn-ghost {
+  color: #f2f8ff;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0 2px, transparent 2px),
+    linear-gradient(180deg, #2c4a6e, #182f4a) padding-box,
+    linear-gradient(135deg, #f2c88a, #a65a2b 40%, #e8a66f 60%, #6a3417) border-box;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.35), 0 4px 0 #3e1d0a, 0 10px 18px rgba(30, 14, 0, 0.35);
+}
+
+.paint-blasters-page .btn-ghost:hover {
+  border-color: transparent;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.24) 0 2px, transparent 2px),
+    linear-gradient(180deg, #355a85, #1d3a5c) padding-box,
+    linear-gradient(135deg, #f2c88a, #a65a2b 40%, #e8a66f 60%, #6a3417) border-box;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.35), 0 4px 0 #3e1d0a, 0 12px 22px rgba(31, 196, 255, 0.3);
+}
+
+.paint-blasters-page .btn-ghost:active {
+  transform: translateY(3px);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.35), 0 1px 0 #3e1d0a;
+}
+
+/* ---------- Hero ---------- */
+.paint-hero-copy {
+  position: relative;
+  padding: clamp(22px, 3vw, 40px);
+  border: 3px solid transparent;
+  border-radius: 18px;
+  background:
+    linear-gradient(110deg, var(--pb-scrim) 0, var(--pb-scrim) 72%, color-mix(in srgb, var(--pb-scrim) 55%, transparent)) padding-box,
+    var(--pb-bezel) border-box;
+  box-shadow: var(--pb-shadow);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+.paint-hero-copy h1,
+.paint-blasters-page[data-theme="dark"] .paint-hero-copy h1 {
+  text-shadow: none;
+}
+
+.paint-hero-copy .hero-copy,
+.paint-hero-note {
+  color: var(--text);
+}
+
+.paint-hero-copy .hero-copy {
+  color: color-mix(in srgb, var(--text) 92%, var(--muted));
+}
+
+/* Stat chips are gauge labels: a brass-rimmed plate with a glass lamp. */
+.paint-blasters-page .paint-hero-stats span {
+  position: relative;
+  min-width: 0;
+  padding: 14px 12px 14px 42px;
+  border: 3px solid transparent;
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, var(--pb-panel-a), var(--pb-panel-b)) padding-box,
+    var(--pb-bezel) border-box;
+  box-shadow: 0 8px 16px rgba(30, 14, 0, 0.3), inset 0 2px 3px rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.paint-hero-stats span::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  margin-top: -8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #fff 0 12%, var(--pb-c, var(--pb-cyan)) 40%, color-mix(in srgb, var(--pb-c, var(--pb-cyan)) 55%, #000));
+  box-shadow: 0 0 0 3px var(--pb-brass-b), 0 0 12px var(--pb-c, var(--pb-cyan));
+}
+
+.paint-hero-stats span:nth-child(2) { --pb-c: var(--pb-rose); }
+.paint-hero-stats span:nth-child(3) { --pb-c: var(--pb-sun); }
+
+/* Narrow screens: the lamp sits above the label instead of beside it. */
+@media (max-width: 640px) {
+  .paint-blasters-page .paint-hero-stats span {
+    padding: 28px 8px 10px;
+  }
+
+  .paint-hero-stats span::before {
+    left: 10px;
+    top: 9px;
+    width: 12px;
+    height: 12px;
+    margin-top: 0;
+    box-shadow: 0 0 0 2px var(--pb-brass-b), 0 0 8px var(--pb-c, var(--pb-cyan));
+  }
+}
+
+/* ---------- Sections ---------- */
 .paint-blasters-content {
   position: relative;
   z-index: 2;
@@ -653,6 +1479,7 @@ body.paint-blasters-page[data-theme="dark"] {
 
 .paint-blasters-page .game-page-section,
 .paint-blasters-page .game-page-updates {
+  position: relative;
   padding-inline: 0;
   border-color: transparent;
   border-radius: 0;
@@ -665,30 +1492,62 @@ body.paint-blasters-page[data-theme="dark"] {
 .paint-blasters-page .game-page-section + .game-page-section,
 .paint-blasters-page .game-page-section + .game-page-updates {
   border-top: 0;
-  padding-top: clamp(30px, 4vw, 52px);
+  padding-top: clamp(54px, 5.4vw, 78px);
+}
+
+/* Section dividers are pipes carrying paint: copper body, brass flanges, a glass window of coloured slugs. */
+.paint-blasters-content > section + section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8px;
+  height: 22px;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 286px, rgba(255, 255, 255, 0.5) 286px 288px, var(--pb-brass-b) 288px 302px, var(--pb-brass-c) 302px 304px) 0 0 / 100% 22px no-repeat,
+    linear-gradient(90deg, #170c06 0 4%, var(--pb-cyan) 4% 11%, #170c06 11% 16%, var(--pb-rose) 16% 25%, #170c06 25% 30%, var(--pb-sun) 30% 40%, #170c06 40% 46%, var(--pb-green) 46% 55%, #170c06 55% 60%, var(--pb-orange) 60% 68%, #170c06 68% 74%, var(--pb-blue) 74% 84%, #170c06 84% 100%) 0 7px / 608px 8px repeat-x,
+    linear-gradient(180deg, var(--pm-cu)) 0 3px / 100% 16px no-repeat;
+  filter: drop-shadow(0 4px 4px rgba(30, 14, 0, 0.35));
+}
+
+/* Headings sit on a plate, with the nameplate as its tab. */
+.paint-blasters-page .game-page-section > .eyebrow,
+.paint-blasters-page .game-page-updates > .eyebrow {
+  margin-bottom: -3px;
+  border-radius: 5px 5px 0 0;
+  z-index: 1;
 }
 
 .paint-blasters-page .game-page-section h2,
 .paint-blasters-page .game-page-updates h2 {
-  max-width: 940px;
-  text-shadow:
-    0 2px 0 rgba(255, 255, 255, 0.48),
-    0 18px 46px rgba(20, 44, 70, 0.14);
+  position: relative;
+  width: fit-content;
+  max-width: min(100%, 940px);
+  margin-top: 0;
+  padding: 12px 24px 14px;
+  border: 2px solid var(--pb-scrim-edge);
+  border-radius: 0 12px 12px 12px;
+  background: var(--pb-scrim);
+  box-shadow: var(--pb-shadow);
+  text-shadow: none;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 .paint-blasters-page[data-theme="dark"] .game-page-section h2,
 .paint-blasters-page[data-theme="dark"] .game-page-updates h2 {
-  text-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);
+  text-shadow: none;
 }
 
 @media (min-width: 901px) {
   .paint-blasters-page .paint-story-section {
-    padding-top: clamp(34px, 4.4vw, 64px);
-    padding-bottom: clamp(34px, 4.4vw, 64px);
+    padding-top: clamp(54px, 5.4vw, 78px);
+    padding-bottom: clamp(20px, 2.4vw, 34px);
   }
 
   .paint-blasters-page .paint-story-section + .paint-story-section {
-    padding-top: clamp(20px, 3vw, 38px);
+    padding-top: clamp(54px, 5.4vw, 78px);
   }
 
   .paint-blasters-page .paint-story-section h2 {
@@ -705,8 +1564,15 @@ body.paint-blasters-page[data-theme="dark"] {
     align-items: center;
   }
 
-  .paint-blasters-page .paint-story-section .info-grid > div {
+  .paint-blasters-page .paint-story-section .info-grid > div:first-child {
     max-width: 720px;
+    padding: 22px 28px;
+    border: 2px solid var(--pb-scrim-edge);
+    border-radius: 12px;
+    background: var(--pb-scrim);
+    box-shadow: var(--pb-shadow);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   }
 
   .paint-blasters-page .paint-story-section .info-grid > div p {
@@ -720,60 +1586,338 @@ body.paint-blasters-page[data-theme="dark"] {
   }
 
   .paint-blasters-page .paint-story-section .game-page-facts {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 18px;
-    padding: 24px;
-  }
-
-  .paint-blasters-page .paint-story-section .game-page-facts div {
-    gap: 6px;
-    min-height: 74px;
-    padding-bottom: 16px;
-  }
-
-  .paint-blasters-page .paint-story-section .game-page-facts div:last-child {
-    padding-bottom: 0;
-    border-bottom: 0;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 }
 
-.paint-blasters-page .detail-card,
-.paint-blasters-page .asset-link,
-.paint-blasters-page .update-list li,
+@media (max-width: 900px) {
+  .paint-blasters-page .paint-story-section .info-grid > div:first-child {
+    padding: 18px 20px;
+    border: 2px solid var(--pb-scrim-edge);
+    border-radius: 12px;
+    background: var(--pb-scrim);
+    box-shadow: var(--pb-shadow);
+  }
+}
+
+/* Paragraphs that sit straight on the backdrop get the same plate. */
+.paint-blasters-page :is(.related-worlds-copy, .asset-kit-copy) {
+  width: fit-content;
+  max-width: 100%;
+  margin-left: 0;
+  padding: 12px 20px;
+  border: 2px solid var(--pb-scrim-edge);
+  border-radius: 12px;
+  color: var(--text);
+  background: var(--pb-scrim);
+  box-shadow: var(--pb-shadow);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+/* ---------- Machine panels: steel with a bezel, four rivets and a glass paint tube on the top edge ---------- */
+.paint-blasters-page :is(.detail-card, .asset-link, .update-list li, .related-world-link) {
+  --pb-c: var(--pb-cyan);
+  --lvl: 72%;
+  position: relative;
+  overflow: visible;
+  padding: 34px 22px 26px;
+  border: 3px solid transparent;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 12px 12px, var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    radial-gradient(circle at calc(100% - 12px) 12px, var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    radial-gradient(circle at 12px calc(100% - 12px), var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    repeating-linear-gradient(100deg, rgba(120, 90, 40, 0.05) 0 1px, transparent 1px 7px) padding-box,
+    linear-gradient(180deg, var(--pb-panel-a), var(--pb-panel-b)) padding-box,
+    var(--pb-bezel) border-box;
+  box-shadow: var(--pb-shadow), inset 0 2px 3px rgba(255, 255, 255, 0.35);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.paint-blasters-page :is(.detail-card, .asset-link, .update-list li, .related-world-link)::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 26px;
+  width: 92px;
+  height: 20px;
+  border: 2px solid var(--pb-brass-c);
+  border-radius: 10px;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--pb-brass-b) 0 7px, transparent 7px calc(100% - 7px), var(--pb-brass-b) calc(100% - 7px)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0 20%, transparent 20% 56%, rgba(0, 0, 0, 0.28)),
+    linear-gradient(90deg, var(--pb-c) 0 var(--lvl), rgba(30, 20, 10, 0.55) var(--lvl));
+  box-shadow: 0 0 14px color-mix(in srgb, var(--pb-c) 60%, transparent), 0 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+.paint-blasters-page :is(.detail-grid, .update-list, .related-world-grid, .asset-list) > :nth-child(4n + 2) { --pb-c: var(--pb-rose); --lvl: 58%; }
+.paint-blasters-page :is(.detail-grid, .update-list, .related-world-grid, .asset-list) > :nth-child(4n + 3) { --pb-c: var(--pb-sun); --lvl: 84%; }
+.paint-blasters-page :is(.detail-grid, .update-list, .related-world-grid, .asset-list) > :nth-child(4n + 4) { --pb-c: var(--pb-lime); --lvl: 66%; }
+
+/* The related-world cards take the palette of the game they link to: Nature Seed lime, Candy Shop magenta, Ball is God gold, press cyan. */
+.paint-blasters-page .related-world-grid > :nth-child(1) { --pb-c: var(--pb-lime); }
+.paint-blasters-page .related-world-grid > :nth-child(2) { --pb-c: var(--pb-rose); }
+.paint-blasters-page .related-world-grid > :nth-child(3) { --pb-c: var(--pb-sun); }
+.paint-blasters-page .related-world-grid > :nth-child(4) { --pb-c: var(--pb-cyan); }
+
+.paint-blasters-page :is(.asset-link, .related-world-link):is(:hover, :focus-visible) {
+  --lvl: 100%;
+  border-color: transparent;
+  box-shadow: var(--pb-shadow), 0 0 0 2px color-mix(in srgb, var(--pb-c) 70%, transparent), inset 0 2px 3px rgba(255, 255, 255, 0.35);
+}
+
+.paint-blasters-page :is(.detail-card, .update-list li) :is(h3, strong) {
+  color: var(--text);
+}
+
+/* Step and date labels are small brass plates. */
+.paint-blasters-page .update-list :is(span, time) {
+  align-self: start;
+  padding: 3px 12px;
+  border-radius: 3px;
+  color: var(--pb-ink-brass);
+  background: linear-gradient(180deg, var(--pb-brass-a), color-mix(in srgb, var(--pb-brass-a) 76%, var(--pb-brass-b)));
+  box-shadow: inset 0 -2px 0 rgba(90, 60, 10, 0.35), 0 2px 0 var(--pb-brass-c);
+  font-weight: 900;
+}
+
+/* The asset strip scrolls sideways, so it keeps room for the tubes and takes no backdrop blur. */
+.paint-blasters-page #download-assets .asset-list {
+  padding-top: 22px;
+}
+
+/* Card width follows the text size, so the longest word of a label ("background") still fits at 200% text. */
+.game-detail-page.paint-blasters-page #download-assets .asset-list {
+  grid-auto-columns: minmax(max(8rem, 210px), max(8rem, 238px));
+}
+
+/* Gallery frames are pipe frames: a copper pipe round each preview, bolted at the corners. */
+.paint-blasters-page .asset-link img {
+  padding: 0;
+  border: 6px solid;
+  border-radius: 4px;
+  border-image: linear-gradient(135deg, #f7c797, #a65a2b 30%, #e8a66f 55%, #6a3417 80%, #f7c797) 1;
+  box-shadow: 0 0 0 1px #2a1307, 0 6px 10px rgba(0, 0, 0, 0.35);
+  background: #170c06;
+}
+
+/* Fact plates: each fact is read off a brass gauge dial. */
 .paint-blasters-page .game-page-facts {
-  border-color: color-mix(in srgb, var(--game-accent) 24%, rgba(20, 44, 70, 0.16));
-  border-radius: 18px;
+  position: relative;
+  padding: 30px 24px 24px;
+  border: 3px solid transparent;
+  border-radius: 12px;
   background:
-    radial-gradient(ellipse at 12% 10%, rgba(54, 211, 255, 0.12), transparent 32%),
-    radial-gradient(ellipse at 84% 22%, rgba(255, 58, 181, 0.08), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(20, 44, 70, 0.045) 0 1px, transparent 1px 13px),
-    rgba(241, 249, 255, 0.68);
-  box-shadow: 0 18px 42px rgba(20, 44, 70, 0.12);
-  -webkit-backdrop-filter: blur(12px) saturate(1.04);
-  backdrop-filter: blur(12px) saturate(1.04);
+    radial-gradient(circle at 12px 12px, var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    radial-gradient(circle at calc(100% - 12px) 12px, var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    radial-gradient(circle at 12px calc(100% - 12px), var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), var(--pb-rivet) 0 3px, transparent 3.6px) padding-box,
+    repeating-linear-gradient(100deg, rgba(120, 90, 40, 0.05) 0 1px, transparent 1px 7px) padding-box,
+    linear-gradient(180deg, var(--pb-panel-a), var(--pb-panel-b)) padding-box,
+    var(--pb-bezel) border-box;
+  box-shadow: var(--pb-shadow), inset 0 2px 3px rgba(255, 255, 255, 0.35);
 }
 
-.paint-blasters-page[data-theme="dark"] .detail-card,
-.paint-blasters-page[data-theme="dark"] .asset-link,
-.paint-blasters-page[data-theme="dark"] .update-list li,
-.paint-blasters-page[data-theme="dark"] .game-page-facts {
+.paint-blasters-page .game-page-facts > div {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  align-items: center;
+  gap: 2px 14px;
+  border-bottom-color: var(--pb-scrim-edge);
+}
+
+.paint-blasters-page .game-page-facts > div::before,
+.paint-blasters-page .game-page-facts > div::after {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  place-self: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+}
+
+.paint-blasters-page .game-page-facts > div::before {
+  border: 5px solid transparent;
   background:
-    radial-gradient(ellipse at 12% 10%, rgba(54, 211, 255, 0.1), transparent 32%),
-    radial-gradient(ellipse at 84% 22%, rgba(255, 58, 181, 0.08), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(202, 228, 255, 0.04) 0 1px, transparent 1px 13px),
-    rgba(9, 21, 42, 0.7);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+    radial-gradient(circle, #fbf3dc 0 100%) padding-box,
+    conic-gradient(var(--pb-brass-a), var(--pb-brass-b), var(--pb-brass-a), var(--pb-brass-c), var(--pb-brass-a)) border-box;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.35), inset 0 0 6px rgba(80, 50, 10, 0.4);
 }
 
-.paint-blasters-page .game-page-section .eyebrow,
-.paint-blasters-page .game-page-updates .eyebrow {
-  background: rgba(241, 249, 255, 0.68);
+.paint-blasters-page .game-page-facts > div::after {
+  background:
+    radial-gradient(circle, #5a3a10 0 3px, transparent 3.6px),
+    linear-gradient(var(--pb-c, #d4281f), var(--pb-c, #d4281f)) 50% 7px / 2.2px 16px no-repeat,
+    radial-gradient(circle, transparent 0 62%, #d4281f 63% 65%, transparent 66%);
+  rotate: var(--na, -40deg);
 }
 
-.paint-blasters-page[data-theme="dark"] .game-page-section .eyebrow,
-.paint-blasters-page[data-theme="dark"] .game-page-updates .eyebrow {
-  background: rgba(9, 21, 42, 0.7);
+.paint-blasters-page .game-page-facts > div:nth-child(1) { --na: -48deg; --pb-c: #d4281f; }
+.paint-blasters-page .game-page-facts > div:nth-child(2) { --na: 18deg; --pb-c: #1f7ad4; }
+.paint-blasters-page .game-page-facts > div:nth-child(3) { --na: 62deg; --pb-c: #d48a1f; }
+.paint-blasters-page .game-page-facts > div:nth-child(4) { --na: -12deg; --pb-c: #2a9d3a; }
+
+.paint-blasters-page .game-page-facts dt {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
 }
+
+.paint-blasters-page .game-page-facts dd {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+}
+
+/* The proof panel: a bezelled machine panel with the game's rainbow neon tube along its top edge. */
+.paint-blasters-page .game-proof-section {
+  overflow: visible;
+  border: 4px solid transparent;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 16px 16px, var(--pb-rivet) 0 4px, transparent 4.8px) padding-box,
+    radial-gradient(circle at calc(100% - 16px) 16px, var(--pb-rivet) 0 4px, transparent 4.8px) padding-box,
+    radial-gradient(circle at 16px calc(100% - 16px), var(--pb-rivet) 0 4px, transparent 4.8px) padding-box,
+    radial-gradient(circle at calc(100% - 16px) calc(100% - 16px), var(--pb-rivet) 0 4px, transparent 4.8px) padding-box,
+    repeating-linear-gradient(100deg, rgba(120, 90, 40, 0.05) 0 1px, transparent 1px 7px) padding-box,
+    linear-gradient(180deg, var(--pb-panel-a), var(--pb-panel-b)) padding-box,
+    var(--pb-bezel) border-box;
+  box-shadow: var(--pb-shadow), inset 0 2px 3px rgba(255, 255, 255, 0.35);
+  padding-top: clamp(44px, 5.6vw, 66px);
+}
+
+.paint-blasters-page .game-proof-section::before {
+  inset: auto;
+  top: -16px;
+  left: 50%;
+  width: min(52%, 460px);
+  height: 26px;
+  border: 3px solid var(--pb-brass-c);
+  border-radius: 14px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0 18%, transparent 18% 56%, rgba(0, 0, 0, 0.3)),
+    linear-gradient(90deg, #a54dff, #2f6bff, #1fc4ff, #33d14d, #ffd21f, #ff8a1f, #ff3d45);
+  box-shadow: 0 0 18px rgba(31, 196, 255, 0.55), 0 0 30px rgba(255, 47, 168, 0.3), 0 4px 6px rgba(0, 0, 0, 0.35);
+  translate: -50% 0;
+  z-index: 2;
+}
+
+/* Tank meters: every proof fact has a glass level bar over it. */
+.paint-blasters-page .proof-facts,
+.paint-blasters-page .proof-facts article {
+  border-color: var(--pb-scrim-edge);
+}
+
+.paint-blasters-page .proof-facts article::before {
+  content: "";
+  display: block;
+  height: 12px;
+  margin-bottom: 12px;
+  border: 2px solid var(--pb-brass-c);
+  border-radius: 7px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0 24%, transparent 24% 60%, rgba(0, 0, 0, 0.25)),
+    linear-gradient(90deg, var(--pb-c) 0 var(--lvl), rgba(30, 20, 10, 0.45) var(--lvl));
+  box-shadow: 0 0 10px color-mix(in srgb, var(--pb-c) 55%, transparent);
+}
+
+.paint-blasters-page .proof-facts article:nth-child(1) { --pb-c: var(--pb-cyan); --lvl: 100%; }
+.paint-blasters-page .proof-facts article:nth-child(2) { --pb-c: var(--pb-rose); --lvl: 78%; }
+.paint-blasters-page .proof-facts article:nth-child(3) { --pb-c: var(--pb-sun); --lvl: 62%; }
+.paint-blasters-page .proof-facts article:nth-child(4) { --pb-c: var(--pb-lime); --lvl: 90%; }
+
+/* ---------- Grid rhythm: no orphan rows; the column count follows the text size, not just the window. ---------- */
+.paint-blasters-page .detail-grid,
+.paint-blasters-page .related-world-grid,
+.paint-blasters-page #gameplay-loop .update-list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 28px 20px;
+}
+
+.paint-blasters-page #devlog .update-list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+  gap: 28px 20px;
+}
+
+@media (min-width: 921px) {
+  .paint-blasters-page #devlog .update-list li:first-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(11rem, 0.42fr) minmax(0, 1fr);
+    column-gap: clamp(20px, 3vw, 44px);
+    align-content: start;
+    min-height: 0;
+  }
+
+  .paint-blasters-page #devlog .update-list li:first-child > :is(time, span) { grid-area: 1 / 1; }
+  .paint-blasters-page #devlog .update-list li:first-child > strong { grid-area: 2 / 1; }
+  .paint-blasters-page #devlog .update-list li:first-child > p {
+    grid-area: 1 / 2 / 3 / 3;
+    align-self: center;
+    max-width: 62ch;
+  }
+
+}
+
+/* The FAQ is a row of panels joined by copper pipes: the stubs between neighbours follow the column count. */
+.paint-blasters-page #faq {
+  container-type: inline-size;
+  container-name: pbfaq;
+}
+
+.paint-blasters-page #faq .detail-grid {
+  gap: 28px;
+}
+
+.paint-blasters-page #faq .detail-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 -28px -28px 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, var(--pm-cu)) right 0 top calc(50% - 20px) / var(--sr, 0px) 12px no-repeat,
+    linear-gradient(90deg, var(--pm-cu)) left calc(50% - 20px) bottom 0 / 12px var(--sb, 0px) no-repeat;
+  z-index: -1;
+}
+
+@container pbfaq (min-width: 62rem) {
+  .paint-blasters-page #faq .detail-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .paint-blasters-page #faq .detail-card:nth-child(3n + 1),
+  .paint-blasters-page #faq .detail-card:nth-child(3n + 2) { --sr: 28px; }
+  .paint-blasters-page #faq .detail-card:nth-child(-n + 3) { --sb: 28px; }
+}
+
+@container pbfaq (min-width: 40rem) and (max-width: 61.99rem) {
+  .paint-blasters-page #faq .detail-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .paint-blasters-page #faq .detail-card:nth-child(odd) { --sr: 28px; }
+  .paint-blasters-page #faq .detail-card:nth-child(-n + 4) { --sb: 28px; }
+}
+
+@container pbfaq (max-width: 39.99rem) {
+  .paint-blasters-page #faq .detail-grid { grid-template-columns: 1fr; }
+  .paint-blasters-page #faq .detail-card:nth-child(-n + 5) { --sb: 28px; }
+}
+
+/* ---------- Light theme: deeper ink, kickers and focus rings that hold their contrast on cream ---------- */
+.paint-blasters-page[data-theme="light"] .related-world-kicker {
+  color: #0a587a;
+}
+
+.paint-blasters-page[data-theme="light"] :is(.game-detail-nav a, .game-motion-toggle, .game-theme-toggle, .asset-link, .related-world-link, .game-footer a):focus-visible {
+  outline-color: #0a6a94;
+}
+
+.paint-blasters-page[data-theme="light"] :is(.asset-link span, .proof-facts span, .detail-card p, .update-list p, .related-world-link p) {
+  color: #3a3426;
+}
+
 
 .paint-cursor-mascot {
   position: fixed;

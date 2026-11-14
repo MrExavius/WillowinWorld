@@ -144,44 +144,44 @@
     nature: {
       title: "Nature Seed",
       genre: "Draw-to-Solve Physics Puzzle",
-      status: "Released 10 September 2026",
-      copy: "A released meditative mobile physics puzzle about drawing limited lines that become solid objects. Nature Seed launched on 10 September 2026 with ten handcrafted vertical levels and watercolor restoration rewards.",
-      tags: ["Mobile", "Draw-to-Solve", "Line Physics", "10 Levels", "Released"],
+      status: "Released 18 September 2026",
+      copy: "A free draw-to-solve physics puzzle you can play in your browser. Draw a line with limited ink and it becomes a ramp, bridge or catch point that carries Water Drop to Seed. All 100 levels are playable, and each solved level restores a watercolor forest scene.",
+      tags: ["Mobile", "Draw-to-Solve", "Line Physics", "100 Levels", "Released"],
       pillars: [
-        "Draw a constrained physical route with a strict ink and line budget.",
-        "Bring the Water Drop and Seed characters together through readable cause and effect.",
-        "Replay compact levels to earn the best efficiency rating with fewer lines."
+        "Draw with limited ink and a limited number of lines.",
+        "Carry Water Drop to Seed with ramps, bridges and catch points.",
+        "Replay a level with fewer lines. One line earns three stars."
       ]
     },
     candy: {
       title: "Candy Shop",
       genre: "Casual Merge Puzzle",
       status: "Active Development",
-      copy: "A cozy physics-based merge puzzle with a 13-stage candy chain, ten gameplay containers and eight special candy effects. Plan the next three drops, hold a piece and manage the shape of each container before the stack reaches the top.",
+      copy: "A candy merge puzzle with soft physics. Drop sweets into a container and merge matching ones along a 13-stage chain. There are 10 containers with their own rules and eight special-candy effects. Hold a piece and check the next-three queue to plan each drop.",
       tags: ["Mobile", "Candy Merge", "10 Containers", "8 Effects", "Cozy Game"],
       pillars: [
         "Read the landing preview and next-three queue before every drop.",
         "Merge matching pieces through a 13-stage chain toward the largest candy.",
-        "Adapt to ten container rulesets and eight special effect families."
+        "Learn how each of the ten containers changes the rules and what the eight special-candy effects do."
       ]
     },
     paint: {
       title: "Paint Blasters",
       genre: "Physics Puzzle / Arcade Hybrid",
       status: "Production Prototype",
-      copy: "A color-destruction physics prototype where players assemble one of 35 projectile recipes, read seven block archetypes and dismantle a five-floor active tower through precise chain reactions.",
+      copy: "A color-mixing physics puzzle at the production prototype stage. Combine three colors to build one of 35 projectile recipes, aim at a weak point in the tower and set off a chain reaction. The tower has five floors and seven block types.",
       tags: ["Mobile", "35 Recipes", "7 Block Types", "Physics Arcade", "Chain Reactions"],
       pillars: [
-        "Combine three color ingredients into one of 35 defined projectile behaviors.",
-        "Read seven block archetypes, structural weak points and reaction opportunities.",
-        "Turn one deliberate shot into a colorful physics collapse across the active tower."
+        "Combine three colors into one of 35 projectile recipes.",
+        "Learn the seven block types and where a tower is weak.",
+        "Aim one shot so the collapse spreads through the tower."
       ]
     },
     ball: {
       title: "Ball is God?!",
       genre: "Hardcore Arcade",
       status: "Active Production",
-      copy: "A hardcore vertical tower arcade where horizontal drag rotates the world around the auto-falling Espa. Thread three platform gaps to trigger a combo smash, deploy a cooldown shield against lethal hits and let Karma reshape ten distinct locations.",
+      copy: "A hardcore vertical descent arcade. Drag horizontally to rotate the tower while Espa keeps falling. Skip three platforms to charge a combo smash, use the cooldown shield to survive a lethal hit, and let Karma choices change the rules of play across ten locations.",
       tags: ["Mobile", "Tower Rotation", "Combo Smash", "Karma System", "10 Locations"],
       pillars: [
         "Rotate each tower with horizontal drag while Espa keeps falling and jumping.",
@@ -1944,10 +1944,12 @@
   }
 
   function initGameAnimationVisibility() {
-    const gameCards = document.querySelectorAll(".game-card, .lab-card");
+    const gameCards = document.querySelectorAll(".game-card, .lab-card, .hero-panel");
     if (!gameCards.length || !("IntersectionObserver" in window)) return;
 
-    gameCards.forEach(card => card.classList.add("is-animation-paused"));
+    gameCards.forEach(card => {
+      if (!card.classList.contains("hero-panel")) card.classList.add("is-animation-paused");
+    });
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {

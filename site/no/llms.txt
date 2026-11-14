@@ -1,30 +1,30 @@
-# WillowinWorlds — Norsk
+# WillowinWorlds - Norsk
 
-> WillowinWorlds er et uavhengig mobilspillstudio som lager fire fysikkledede puslespill og arkadespill med taktile kontroller, lesbare systemer og uttrykksfulle 2D-verdener.
+> WillowinWorlds er et uavhengig studio for mobilspill som lager puslespill og arkadespill. Det har fire flaggskipspill (Nature Seed, Candy Shop, Paint Blasters og Ball is God?!) og åtte laboratorieprototyper.
 
 Språk på nettstedet: Norsk. Kanonisk engelsk kilde: https://willowinworlds.com/llms.txt
 
 ## Spill
 
-- [Nature Seed](https://willowinworlds.com/no/games/nature-seed.html): Et utgitt mobilt tegne-for-å-løse fysikk-puslespill. Utgitt 10. september 2026 som Nature Seed, ber den spillerne tegne en blekkbegrenset fysisk bane, gjenforene Water Drop og Seed og gjenopprette en akvarellskog på 10 lanseringsnivåer. Sjangere: Tegn for å løse puslespill, Fysikkpuslespill, Avslappende puslespill, Linjetegning puslespill. Nåværende status: Utgitt.
-- [Candy Shop](https://willowinworlds.com/no/games/candy-shop.html): Et koselig mobilt fusjonspuslespill med en 13-trinns godterikjede, 10 beholderregelsett, åtte spesialgodterieffekter og planleggingsverktøy for neste dråpe. Sjangere: Slå sammen puslespill, Godteri-puslespill, Uformelt puslespill, Fysikkpuslespill. Nåværende status: Aktiv utvikling - spillbar produksjonsbygging.
-- [Paint Blasters](https://willowinworlds.com/no/games/paint-blasters.html): En mobil arkade for fargeødeleggende fysikkpuslespill. Kombiner tre fargeinndata til 35 forfattere prosjektiloppskrifter, mål tårnets svake punkter og utløs kjedereaksjoner. Sjangere: Fargepuslespill, Fysikkarkade, Destruksjonsoppgave, Kjedereaksjon. Nåværende status: Aktiv utvikling - produksjonsprototype.
-- [Ball is God?!](https://willowinworlds.com/no/games/ball-is-god.html): En historiedrevet hardcore mobilarkade med vertikal nedstigning. Roter tårnet rundt Espa, bygg combo knuser, overlev sjefer og ta karmavalg gjennom 10 mytiske steder. Sjangere: Vertikal nedstigningsarkade, Hardcore arkade, Historiedrevet arkade, Sjefhandling. Nåværende status: Aktiv produksjon.
+- [Nature Seed](https://willowinworlds.com/no/games/nature-seed.html): Et mobilt tegn-og-løs-fysikkpuslespill, utgitt 18. september 2026. Spillerne tegner en linje med et begrenset blekkbudsjett, fører Water Drop og Seed sammen og gjenoppretter en akvarellskog gjennom 100 nivåer. Sjangere: Tegn-og-løs-puslespill, Fysikkpuslespill, Avslappende puslespill, Linjetegningspuslespill. Nåværende status: Utgitt.
+- [Candy Shop](https://willowinworlds.com/no/games/candy-shop.html): Et koselig mobilt merge-puslespill med en godterikjede på 13 trinn, 10 beholdere med egne regler, åtte effekter fra spesialgodteri, forhåndsvisning av landing, en reserveplass og en kø med de neste tre. Sjangere: Merge-puslespill, Godteri-puslespill, Casual puslespill, Fysikkpuslespill. Nåværende status: Aktiv utvikling - spillbar produksjonsbygging.
+- [Paint Blasters](https://willowinworlds.com/no/games/paint-blasters.html): Et mobilt fysikkpuslespill-arkadespill om fargeødeleggelse. Spillerne blander tre farger til en av 35 prosjektiloppskrifter, sikter på svake punkter i et tårn og setter i gang kjedereaksjoner. Sjangere: Fargepuslespill, Fysikkarkade, Destruksjonspuslespill, Kjedereaksjon. Nåværende status: Aktiv utvikling - produksjonsprototype.
+- [Ball is God?!](https://willowinworlds.com/no/games/ball-is-god.html): Et historiedrevet mobilt hardcore arkadespill med vertikal nedstigning. Spillerne drar for å rotere tårnet rundt den fallende Espa, hopper over tre plattformer for en combo smash, møter bosser og tar karmavalg gjennom 10 steder. Sjangere: Vertikal nedstigningsarkade, Hardcore arkade, Historiedrevet arkade, Boss-action. Nåværende status: Aktiv produksjon.
 
 ## Siste utviklingsnotater
 
-- [Nature Seed — Nature Seed utgivelse](https://willowinworlds.com/no/games/nature-seed.html#devlog): Publisert 2026-09-10. Nature Seed lansert under sin endelige tittel med 10 håndlagde nivåer, linjeeffektive stjerner, vedvarende fremgang og belønninger for akvarellrestaurering.
-- [Candy Shop — Produksjonsmeny og HUD-pass](https://willowinworlds.com/no/games/candy-shop.html#devlog): Publisert 2026-07-31. Hovedmeny, nivåvalg, HUD-kontroller og kommandoikoner deler nå ett visuelt språk; ekstra stresstester i motoren dekker den oppdaterte flyten.
-- [Paint Blasters — Bestått fysikk og effektstabilitet](https://willowinworlds.com/no/games/paint-blasters.html#devlog): Publisert 2026-07-31. Prosjektiladferd, Match-3-oppløsning og treffeffekter ble testet og strammet opp for mer konsistente kombinasjonsresultater.
-- [Ball is God?! — Verdensoverflater og farevalidering](https://willowinworlds.com/no/games/ball-is-god.html#devlog): Publisert 2026-07-31. Karakterpresentasjon, deterministisk generasjon og tornfarer fikk et koordinert visuelt og produksjonsvalideringspass.
+- [Nature Seed - Nature Seed-utgivelse](https://willowinworlds.com/no/games/nature-seed.html#devlog): Publisert 2026-09-18. Nature Seed kom ut under sin endelige tittel som et gratis nettleserspill på itch.io, Game Jolt og indiexpo, med 100 nivåer, stjerner for linjeeffektivitet og lagret fremgang.
+- [Candy Shop - Produksjonsmeny og HUD-gjennomgang](https://willowinworlds.com/no/games/candy-shop.html#devlog): Publisert 2026-07-31. Hovedmenyen, nivåvalget, HUD-kontrollene og kommandoikonene deler nå ett utseende, og flere stresstester i motoren dekker den oppdaterte flyten.
+- [Paint Blasters - Gjennomgang av fysikk- og effektstabilitet](https://willowinworlds.com/no/games/paint-blasters.html#devlog): Publisert 2026-07-31. Prosjektiladferd, Match-3-oppløsning og treffeffekter ble testet og strammet opp for mer konsistente kombinasjonsresultater.
+- [Ball is God?! - Verdensoverflater og farevalidering](https://willowinworlds.com/no/games/ball-is-god.html#devlog): Publisert 2026-07-31. Figurpresentasjon, deterministisk generering og tornefarer fikk en kombinert visuell gjennomgang og validering.
 
-## Studio og trykk
+## Studio og presse
 
-- [Studiohjem](https://willowinworlds.com/no/)
+- [Studioets forside](https://willowinworlds.com/no/)
 - [Pressesett](https://willowinworlds.com/no/press-kit.html)
 - [Bruk av medieressurser](https://willowinworlds.com/no/asset-usage.html)
 
-## Innmatinger og retningslinjer
+## Feeder og retningslinjer
 
 - [Devlog RSS-feed](https://willowinworlds.com/rss.xml)
 - [XML-nettstedskart](https://willowinworlds.com/sitemap.xml)

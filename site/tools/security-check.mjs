@@ -30,7 +30,15 @@ const cssFileNames = [
   "css/responsive-preferences.css",
   "css/home-polish-2026.css",
   "css/home-lab.css",
-  "css/upcoming-game.css"
+  "css/upcoming-game.css",
+  "css/upcoming-alien-flying.css",
+  "css/upcoming-blastblast.css",
+  "css/upcoming-burger-stack.css",
+  "css/upcoming-lyamur.css",
+  "css/upcoming-sandwich-stack.css",
+  "css/upcoming-scooter-mechanic-simulator.css",
+  "css/upcoming-stack-tower.css",
+  "css/upcoming-vacuum-shot.css"
 ];
 // Studio store and social profiles, and the share-intent hosts of the generated share row (vk.com), that pages may link to with <a href="https:...">. Never for src/action.
 const allowedExternalHrefHosts = new Set([
@@ -70,6 +78,7 @@ const files = {
   lostStarsCss: await readFile(new URL("../404.css", import.meta.url), "utf8"),
   js: await readFile(new URL("../scripts.js", import.meta.url), "utf8"),
   gameThemeJs: await readFile(new URL("../game-theme.js", import.meta.url), "utf8"),
+  themeInitJs: await readFile(new URL("../theme-init.js", import.meta.url), "utf8"),
   lostStarsJs: await readFile(new URL("../404.js", import.meta.url), "utf8"),
   headers: await readFile(new URL("../_headers", import.meta.url), "utf8"),
   nginx: await readFile(new URL("../deploy/nginx-security.conf", import.meta.url), "utf8"),
@@ -200,7 +209,7 @@ for (const [name, html] of Object.entries(htmlPages)) {
     }
   }
 }
-for (const [name, js] of Object.entries({ "scripts.js": files.js, "game-theme.js": files.gameThemeJs, "404.js": files.lostStarsJs })) {
+for (const [name, js] of Object.entries({ "scripts.js": files.js, "game-theme.js": files.gameThemeJs, "theme-init.js": files.themeInitJs, "404.js": files.lostStarsJs })) {
   forbidMatch(name, js, /\b(?:innerHTML|outerHTML|insertAdjacentHTML|document\.write|eval|Function)\b/);
   forbidMatch(name, js, /\b(?:fetch|XMLHttpRequest|WebSocket|EventSource)\b/);
   forbidMatch(name, js, /\b(?:api[_-]?key|private[_-]?key|secret[_-]?key|bearer\s+[a-z0-9._-]+)\b/i);

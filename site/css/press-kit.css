@@ -271,7 +271,6 @@
     linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.58) 30% 44%, transparent 70%),
     repeating-linear-gradient(104deg, rgba(35, 150, 174, 0.08) 0 1px, transparent 1px 18px),
     rgba(101, 222, 231, 0.26);
-  filter: blur(0.2px);
   transform-origin: center;
 }
 
@@ -312,7 +311,6 @@
   height: 110%;
   border-radius: 999px;
   background: linear-gradient(180deg, rgba(255, 255, 244, 0.42), rgba(255, 255, 244, 0.08) 54%, transparent);
-  filter: blur(0.4px);
   opacity: 0.46;
   transform-origin: top center;
   animation: pressLightSweep 14s ease-in-out infinite;
@@ -420,6 +418,7 @@
   left: 11%;
   bottom: -16px;
   opacity: 0.48;
+  animation: none;
 }
 
 .press-ocean-seaweed-three {
@@ -440,6 +439,7 @@
   right: 16%;
   bottom: -18px;
   opacity: 0.44;
+  animation: none;
 }
 
 .press-kit-ocean-page[data-theme="dark"] .press-ocean-seaweed {
@@ -511,7 +511,6 @@
   height: 58%;
   background: var(--fish-b, #2dbbd4);
   clip-path: polygon(0 50%, 100% 0, 82% 50%, 100% 100%);
-  animation: pressFishTail .7s ease-in-out infinite;
 }
 
 .press-ocean-fish::after {
@@ -556,14 +555,8 @@
 }
 
 .press-ocean-fish-four {
-  --fish-width: 52px;
-  --fish-a: #ffd1ef;
-  --fish-b: #ff7db8;
-  --fish-duration: 25s;
-  --fish-delay: -6s;
-  --fish-opacity: 0.58;
-  top: 75%;
-  left: -12%;
+  display: none;
+  animation: none;
 }
 
 .press-ocean-bubble {
@@ -579,15 +572,26 @@
 }
 
 .press-ocean-bubble-one { --bubble-size: 18px; --bubble-duration: 8s; --bubble-delay: -1s; left: 18%; bottom: -8%; }
-.press-ocean-bubble-two { --bubble-size: 12px; --bubble-duration: 10s; --bubble-delay: -4s; left: 28%; bottom: -8%; }
+.press-ocean-bubble-two,
+.press-ocean-bubble-four,
+.press-ocean-bubble-five,
+.press-ocean-bubble-six,
+.press-ocean-bubble-seven,
+.press-ocean-bubble-eight,
+.press-ocean-bubble-nine { display: none; animation: none; }
 .press-ocean-bubble-three { --bubble-size: 22px; --bubble-duration: 11s; --bubble-delay: -6s; right: 24%; bottom: -10%; }
-.press-ocean-bubble-four { --bubble-size: 14px; --bubble-duration: 9s; --bubble-delay: -2s; right: 14%; bottom: -9%; }
-.press-ocean-bubble-five { --bubble-size: 9px; --bubble-duration: 7.5s; --bubble-delay: -5s; left: 8%; bottom: -9%; }
-.press-ocean-bubble-six { --bubble-size: 26px; --bubble-duration: 12.5s; --bubble-delay: -8s; left: 42%; bottom: -11%; }
-.press-ocean-bubble-seven { --bubble-size: 11px; --bubble-duration: 8.8s; --bubble-delay: -6.4s; right: 36%; bottom: -8%; }
-.press-ocean-bubble-eight { --bubble-size: 18px; --bubble-duration: 10.8s; --bubble-delay: -7.2s; right: 8%; bottom: -12%; }
-.press-ocean-bubble-nine { --bubble-size: 7px; --bubble-duration: 6.8s; --bubble-delay: -2.8s; left: 54%; bottom: -8%; }
 .press-ocean-bubble-ten { --bubble-size: 15px; --bubble-duration: 9.6s; --bubble-delay: -9s; left: 68%; bottom: -10%; }
+
+@media (max-width: 760px) {
+  .press-ocean-current-two,
+  .press-ocean-ray-two,
+  .press-ocean-fish-two,
+  .press-ocean-bubble-six,
+  .press-ocean-bubble-ten {
+    display: none;
+    animation: none;
+  }
+}
 
 .press-kit-ocean-page .game-page-grid {
   gap: clamp(18px, 3vw, 30px);
@@ -1142,4 +1146,52 @@
   .press-lab-card:focus-visible {
     transform: none;
   }
+}
+
+/* Fact windows read from the top: label, heading and text start at the same height in all three cards. */
+.press-window {
+  align-content: start;
+}
+
+/* Five items never leave a single card alone in the last row. */
+@media (min-width: 1100px) {
+  .press-kit-ocean-page .press-asset-list:has(> :nth-child(5):last-child),
+  .press-kit-ocean-page .press-status-strip:has(> :nth-child(5):last-child) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .press-kit-ocean-page .press-asset-list:has(> :nth-child(5):last-child) .asset-link img {
+    width: 88px;
+    height: 88px;
+  }
+
+  .press-kit-ocean-page .press-status-strip:has(> :nth-child(5):last-child) > div,
+  .press-kit-ocean-page .press-status-strip:has(> :nth-child(5):last-child) > div:nth-child(n + 4) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 1099px) {
+  .press-kit-ocean-page :is(.press-asset-list, .press-status-strip) > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Rule lists: equal padding on all sides (the list used to add its own top margin), a readable line length, and room before the link below. */
+.press-kit-ocean-page .press-kit-section .brand-rules {
+  max-width: 58rem;
+  padding: clamp(18px, 2.6vw, 26px) clamp(18px, 3vw, 30px);
+}
+
+.press-kit-ocean-page .press-kit-section .brand-rules ul {
+  margin: 0;
+}
+
+.press-kit-ocean-page .press-kit-section .brand-rules + p {
+  margin-top: 18px;
+}
+
+/* Daylight: the small uppercase window label (cyan mix) measured 3.5:1 on the pale card, so it takes more of the text colour. */
+.press-kit-ocean-page[data-theme="light"] .press-window span {
+  color: color-mix(in srgb, var(--cyan) 42%, var(--text));
 }

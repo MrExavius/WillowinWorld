@@ -452,7 +452,13 @@ body.candy-shop-page[data-theme="dark"] {
   right: 22px;
   bottom: 22px;
   z-index: 11;
-  background: rgba(255, 249, 238, 0.82);
+  color: #4f2848;
+  background: rgba(255, 249, 238, 0.9);
+}
+
+body.candy-shop-page[data-theme="dark"] .candy-device-frame .magic-hud {
+  color: #fff4fa;
+  background: rgba(34, 15, 42, 0.88);
 }
 
 .candy-device-frame .hud-dot {
@@ -555,39 +561,701 @@ body.candy-shop-page[data-theme="dark"] {
   }
 }
 
-.candy-shop-page .detail-card,
-.candy-shop-page .asset-link,
-.candy-shop-page .update-list li,
-.candy-shop-page .game-page-facts {
-  border-color: color-mix(in srgb, var(--game-accent) 24%, rgba(125, 64, 104, 0.14));
+/* ==========================================================================
+   Backdrop v2: the candy shop is busy.
+   The page-wide world keeps every original layer (shelves, swirls, sugar petals) and adds depth.
+   One animation per layer, transform/opacity/translate only:
+     haze     soft sugar-coloured clouds drifting, with a fine polka-dot wallpaper
+     rain     wrapped candies, lollipops, gumdrops and sprinkles sinking (far: small and slow, near: big and quick)
+     pals     the two game candies bobbing about (pink gumdrop and its flat cousin)
+     sparkle  sugar glints twinkling
+     pop      a merge ring popping up in three places, one after another
+   Phones lose the far rain, the sparkles and the second pair of candies.
+   Every loop except the pop is slow, so each runs on steps() at 2 to 14 updates a second (one step is about a pixel):
+   the browser repaints and composites a few times a second instead of 60, which keeps the page light on weak GPUs.
+   ========================================================================== */
+.candy-shop-page {
+  --cs-cream: rgba(255, 249, 238, 0.93);
+  --cs-edge: #6b3b50;
+  --cs-rim: rgba(255, 249, 238, 0.85);
+  --cs-pink: #ff8fbd;
+  --cs-pink-d: #b0306c;
+  --cs-blue: #91d7ff;
+  --cs-blue-d: #1d6a9c;
+  --cs-mint: #9beecf;
+  --cs-mint-d: #1c7a58;
+  --cs-sun: #ffd36e;
+  --cs-sun-d: #86500a;
+  --cs-pop: #ff7db3;
+  --cs-stripe: #fff4e6;
+  --cs-dots: rgba(255, 143, 189, 0.22);
+  --cs-gloss: rgba(255, 255, 255, 0.55);
+  --cs-shadow: 0 14px 26px -16px rgba(150, 67, 111, 0.5);
+}
+
+.candy-shop-page[data-theme="dark"] {
+  --cs-cream: rgba(46, 20, 54, 0.92);
+  --cs-edge: rgba(255, 214, 236, 0.6);
+  --cs-rim: rgba(255, 143, 202, 0.16);
+  --cs-pink-d: #ffb3d4;
+  --cs-blue-d: #a6e0ff;
+  --cs-mint-d: #aef3d6;
+  --cs-sun-d: #ffe08a;
+  --cs-pop: #ffd0e6;
+  --cs-dots: rgba(255, 224, 246, 0.1);
+  --cs-gloss: rgba(255, 255, 255, 0.1);
+  --cs-shadow: 0 14px 26px -16px rgba(8, 0, 16, 0.8);
+}
+
+.candy-page-backdrop > :is(.candy-bg-haze, .candy-bg-rain, .candy-bg-pals, .candy-bg-sparkle, .candy-bg-pop) {
+  position: absolute;
+  pointer-events: none;
+}
+
+.candy-bg-haze {
+  inset: -8% -6%;
+  z-index: 1;
+  background:
+    radial-gradient(circle, var(--cs-dots) 0 2px, transparent 2.6px) 0 0 / 34px 34px,
+    radial-gradient(ellipse 36% 30% at 22% 30%, rgba(255, 143, 189, 0.3), transparent 72%),
+    radial-gradient(ellipse 32% 28% at 78% 64%, rgba(145, 215, 255, 0.28), transparent 72%),
+    radial-gradient(ellipse 28% 24% at 56% 12%, rgba(255, 211, 110, 0.24), transparent 72%),
+    radial-gradient(ellipse 30% 26% at 12% 88%, rgba(155, 238, 207, 0.24), transparent 72%);
+  will-change: transform;
+  animation: csHaze 44s ease-in-out infinite alternate;
+}
+
+.candy-bg-rain {
+  --cs-rain-tile: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='960' height='780' viewBox='0 0 960 780'%3E%3Cg transform='translate(90 110) rotate(-18) scale(0.9)'%3E%3Cpath d='M-13 0L-27 -11Q-24 0 -27 11Z' fill='%23ff9cc4' stroke='%23a8416f' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M13 0L27 -11Q24 0 27 11Z' fill='%23ff9cc4' stroke='%23a8416f' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cellipse rx='15' ry='12' fill='%23ffc9de' stroke='%23a8416f' stroke-width='1.8'/%3E%3Cpath d='M-8 -6Q-2 -9 5 -7' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' fill='none' opacity='.75'/%3E%3Cpath d='M-5 -12L-3 12M3 -12L5 12' stroke='%23a8416f' stroke-opacity='.28' stroke-width='1.3'/%3E%3C/g%3E%3Cg transform='translate(420 80) rotate(14) scale(0.85)'%3E%3Crect x='-1.8' y='4' width='3.6' height='34' rx='1.8' fill='%23fff6e8' stroke='%23a8416f' stroke-width='1.2'/%3E%3Ccircle r='15' fill='%23fff6fb' stroke='%23a8416f' stroke-width='1.8'/%3E%3Cpath d='M0 0m0 -3a3 3 0 1 1 -3 3a6 6 0 1 1 6 6a9.5 9.5 0 1 1 -9.5 -9.5a12.5 12.5 0 0 1 12.5 12.5' stroke='%23ff9cc4' stroke-width='3.2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M-9 -7Q-5 -11 0 -11' stroke='%23fff' stroke-width='2' stroke-linecap='round' fill='none' opacity='.7'/%3E%3C/g%3E%3Cg transform='translate(740 190) rotate(-8) scale(1)'%3E%3Cpath d='M-14 8A14 15 0 0 1 14 8Z' fill='%23c6e9ff' stroke='%233f84b8' stroke-width='1.8' stroke-linejoin='round'/%3E%3Crect x='-15' y='7' width='30' height='6' rx='3' fill='%23c6e9ff' stroke='%233f84b8' stroke-width='1.6'/%3E%3Cpath d='M-8 -2Q-4 -6 1 -6' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' fill='none' opacity='.75'/%3E%3Cg fill='%23fff' fill-opacity='.8'%3E%3Ccircle cx='3' cy='1' r='1'/%3E%3Ccircle cx='-3' cy='4' r='1'/%3E%3Ccircle cx='8' cy='5' r='1'/%3E%3C/g%3E%3C/g%3E%3Cg transform='translate(230 380) rotate(24) scale(0.8)'%3E%3Cpath d='M-13 0L-27 -11Q-24 0 -27 11Z' fill='%239eeccf' stroke='%232f8d6c' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M13 0L27 -11Q24 0 27 11Z' fill='%239eeccf' stroke='%232f8d6c' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cellipse rx='15' ry='12' fill='%23d2f6e6' stroke='%232f8d6c' stroke-width='1.8'/%3E%3Cpath d='M-8 -6Q-2 -9 5 -7' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' fill='none' opacity='.75'/%3E%3Cpath d='M-5 -12L-3 12M3 -12L5 12' stroke='%232f8d6c' stroke-opacity='.28' stroke-width='1.3'/%3E%3C/g%3E%3Cg transform='translate(560 420) rotate(12) scale(0.9)'%3E%3Cpath d='M-14 8A14 15 0 0 1 14 8Z' fill='%23fff0b5' stroke='%23b8892a' stroke-width='1.8' stroke-linejoin='round'/%3E%3Crect x='-15' y='7' width='30' height='6' rx='3' fill='%23fff0b5' stroke='%23b8892a' stroke-width='1.6'/%3E%3Cpath d='M-8 -2Q-4 -6 1 -6' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' fill='none' opacity='.75'/%3E%3Cg fill='%23fff' fill-opacity='.8'%3E%3Ccircle cx='3' cy='1' r='1'/%3E%3Ccircle cx='-3' cy='4' r='1'/%3E%3Ccircle cx='8' cy='5' r='1'/%3E%3C/g%3E%3C/g%3E%3Cg transform='translate(850 520) rotate(-20) scale(0.8)'%3E%3Crect x='-1.8' y='4' width='3.6' height='34' rx='1.8' fill='%23fff6e8' stroke='%233f84b8' stroke-width='1.2'/%3E%3Ccircle r='15' fill='%23f4fbff' stroke='%233f84b8' stroke-width='1.8'/%3E%3Cpath d='M0 0m0 -3a3 3 0 1 1 -3 3a6 6 0 1 1 6 6a9.5 9.5 0 1 1 -9.5 -9.5a12.5 12.5 0 0 1 12.5 12.5' stroke='%238fd3ff' stroke-width='3.2' fill='none' stroke-linecap='round'/%3E%3Cpath d='M-9 -7Q-5 -11 0 -11' stroke='%23fff' stroke-width='2' stroke-linecap='round' fill='none' opacity='.7'/%3E%3C/g%3E%3Cg transform='translate(60 640) rotate(8) scale(1)'%3E%3Cpath d='M-13 0L-27 -11Q-24 0 -27 11Z' fill='%23ffd978' stroke='%23b8892a' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M13 0L27 -11Q24 0 27 11Z' fill='%23ffd978' stroke='%23b8892a' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cellipse rx='15' ry='12' fill='%23fff0b5' stroke='%23b8892a' stroke-width='1.8'/%3E%3Cpath d='M-8 -6Q-2 -9 5 -7' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' fill='none' opacity='.75'/%3E%3Cpath d='M-5 -12L-3 12M3 -12L5 12' stroke='%23b8892a' stroke-opacity='.28' stroke-width='1.3'/%3E%3C/g%3E%3Cg transform='translate(360 690) rotate(-14) scale(0.85)'%3E%3Cpath d='M-14 8A14 15 0 0 1 14 8Z' fill='%23ffc9de' stroke='%23a8416f' stroke-width='1.8' stroke-linejoin='round'/%3E%3Crect x='-15' y='7' width='30' height='6' rx='3' fill='%23ffc9de' stroke='%23a8416f' stroke-width='1.6'/%3E%3Cpath d='M-8 -2Q-4 -6 1 -6' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' fill='none' opacity='.75'/%3E%3Cg fill='%23fff' fill-opacity='.8'%3E%3Ccircle cx='3' cy='1' r='1'/%3E%3Ccircle cx='-3' cy='4' r='1'/%3E%3Ccircle cx='8' cy='5' r='1'/%3E%3C/g%3E%3C/g%3E%3Cg transform='translate(690 700) rotate(-26) scale(0.85)'%3E%3Cpath d='M-13 0L-27 -11Q-24 0 -27 11Z' fill='%238fd3ff' stroke='%233f84b8' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cpath d='M13 0L27 -11Q24 0 27 11Z' fill='%238fd3ff' stroke='%233f84b8' stroke-width='1.4' stroke-linejoin='round'/%3E%3Cellipse rx='15' ry='12' fill='%23c6e9ff' stroke='%233f84b8' stroke-width='1.8'/%3E%3Cpath d='M-8 -6Q-2 -9 5 -7' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' fill='none' opacity='.75'/%3E%3Cpath d='M-5 -12L-3 12M3 -12L5 12' stroke='%233f84b8' stroke-opacity='.28' stroke-width='1.3'/%3E%3C/g%3E%3Crect transform='translate(300 250) rotate(30)' x='-6' y='-2' width='12' height='4' rx='2' fill='%23ff8fbd'/%3E%3Crect transform='translate(160 480) rotate(-40)' x='-6' y='-2' width='12' height='4' rx='2' fill='%2391d7ff'/%3E%3Crect transform='translate(640 330) rotate(70)' x='-6' y='-2' width='12' height='4' rx='2' fill='%23ffd36e'/%3E%3Crect transform='translate(900 380) rotate(-20)' x='-6' y='-2' width='12' height='4' rx='2' fill='%239beecf'/%3E%3Crect transform='translate(480 590) rotate(15)' x='-6' y='-2' width='12' height='4' rx='2' fill='%23ff8fbd'/%3E%3Crect transform='translate(780 90) rotate(-60)' x='-6' y='-2' width='12' height='4' rx='2' fill='%239beecf'/%3E%3C/svg%3E");
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 4;
+  height: calc(100% + 780px);
+  background-image: var(--cs-rain-tile);
+  background-size: 960px 780px;
+  background-repeat: repeat;
+  will-change: transform;
+}
+
+.candy-bg-rain-far {
+  z-index: 3;
+  opacity: 0.62;
+  animation: csRainFar 84s linear infinite;
+}
+
+/* The near layer reuses the far tile, shifted half a tile and a touch faster. A bigger or different tile made it several times
+   more expensive to composite, so depth comes from speed, opacity and offset instead. */
+.candy-bg-rain-near {
+  background-position: 480px 390px;
+  opacity: 0.86;
+  animation: csRainFar 52s linear -20s infinite;
+}
+
+.candy-bg-pals {
+  left: 3%;
+  top: 56%;
+  z-index: 4;
+  width: clamp(120px, 16vw, 230px);
+  aspect-ratio: 1.1;
+  will-change: transform;
+  animation: csPals 17s ease-in-out infinite alternate;
+}
+
+.candy-bg-pals-b {
+  top: 8%;
+  right: 3%;
+  left: auto;
+  animation-duration: 23s;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+}
+
+.candy-bg-pals i {
+  position: absolute;
+  width: 54%;
+  aspect-ratio: 1;
+  background: url("../assets/Candy%20Shop/site/candy_glavnie_1.webp") center / contain no-repeat;
+  opacity: 0.78;
+}
+
+.candy-bg-pals i:nth-child(1) { top: 40%; left: 0; rotate: -14deg; }
+.candy-bg-pals i:nth-child(2) { top: 0; right: 0; width: 40%; rotate: 18deg; background-image: url("../assets/Candy%20Shop/site/candy_glavnie_2.webp"); }
+.candy-bg-pals-b i:nth-child(1) { top: 46%; left: 30%; width: 44%; rotate: 24deg; background-image: url("../assets/Candy%20Shop/site/candy_glavnie_2.webp"); }
+.candy-bg-pals-b i:nth-child(2) { top: 0; left: 0; width: 42%; rotate: -22deg; background-image: url("../assets/Candy%20Shop/site/candy_glavnie_1.webp"); }
+
+.candy-bg-sparkle {
+  inset: 0;
+  z-index: 4;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='300' viewBox='0 0 360 300'%3E%3Cpath transform='translate(40 60) scale(1)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23fff'/%3E%3Cpath transform='translate(190 30) scale(0.7)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23ffe9a8'/%3E%3Cpath transform='translate(300 150) scale(1.2)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23fff'/%3E%3Cpath transform='translate(110 200) scale(0.8)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23ffd0e4'/%3E%3Cpath transform='translate(250 270) scale(0.65)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23d7efff'/%3E%3Cpath transform='translate(20 250) scale(0.55)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23fff'/%3E%3C/svg%3E") 0 0 / 360px 300px repeat;
+  opacity: 0.6;
+  will-change: opacity;
+  animation: csTwinkle 6s ease-in-out infinite alternate;
+}
+
+.candy-bg-pop {
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: clamp(96px, 10vw, 150px);
+  aspect-ratio: 1;
+  border: 3px solid var(--cs-pop);
+  border-radius: 50%;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='300' viewBox='0 0 360 300'%3E%3Cpath transform='translate(40 60) scale(1)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23fff'/%3E%3Cpath transform='translate(190 30) scale(0.7)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23ffe9a8'/%3E%3Cpath transform='translate(300 150) scale(1.2)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23fff'/%3E%3Cpath transform='translate(110 200) scale(0.8)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23ffd0e4'/%3E%3Cpath transform='translate(250 270) scale(0.65)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23d7efff'/%3E%3Cpath transform='translate(20 250) scale(0.55)' d='M0 -10C1.2 -3 3 -1.2 10 0C3 1.2 1.2 3 0 10C-1.2 3 -3 1.2 -10 0C-3 -1.2 -1.2 -3 0 -10Z' fill='%23fff'/%3E%3C/svg%3E") 50% 50% / 360px 300px no-repeat,
+    radial-gradient(circle, rgba(255, 255, 255, 0.65), transparent 62%);
+  box-shadow: 0 0 26px rgba(255, 143, 189, 0.55), inset 0 0 22px rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  will-change: transform, opacity;
+  animation: csPop 21s linear infinite;
+}
+
+@keyframes csHaze {
+  from { transform: translate3d(-1.8vw, -1vh, 0) scale(1.02); }
+  to { transform: translate3d(1.8vw, 1.4vh, 0) scale(1.06); }
+}
+
+@keyframes csRainFar {
+  0% { transform: translate3d(0, -780px, 0); }
+  25% { transform: translate3d(12px, -585px, 0); }
+  50% { transform: translate3d(0, -390px, 0); }
+  75% { transform: translate3d(-12px, -195px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes csPals {
+  from { transform: translate3d(-1.6vw, 1.4vh, 0) rotate(-2deg); }
+  to { transform: translate3d(1.8vw, -2vh, 0) rotate(2deg); }
+}
+
+@keyframes csTwinkle {
+  from { opacity: 0.25; }
+  to { opacity: 1; }
+}
+
+@keyframes csPop {
+  0% { transform: translate3d(14vw, 34vh, 0) scale(0.15); opacity: 0; }
+  2% { opacity: 0.9; }
+  7% { transform: translate3d(14vw, 34vh, 0) scale(1.15); opacity: 0; }
+  7.01%, 33% { transform: translate3d(70vw, 60vh, 0) scale(0.15); opacity: 0; }
+  35% { opacity: 0.9; }
+  40% { transform: translate3d(70vw, 60vh, 0) scale(1.15); opacity: 0; }
+  40.01%, 66% { transform: translate3d(40vw, 18vh, 0) scale(0.15); opacity: 0; }
+  68% { opacity: 0.9; }
+  73% { transform: translate3d(40vw, 18vh, 0) scale(1.15); opacity: 0; }
+  73.01%, 100% { transform: translate3d(14vw, 34vh, 0) scale(0.15); opacity: 0; }
+}
+
+@media (max-width: 760px) {
+  .candy-bg-rain-far,
+  .candy-bg-sparkle,
+  .candy-bg-pals-b,
+  .candy-bg-pop {
+    display: none;
+  }
+}
+
+/* Reduced motion: a still, finished frame (the pop ring stays hidden). */
+@media (prefers-reduced-motion: reduce) {
+  .candy-bg-haze,
+  .candy-bg-rain,
+  .candy-bg-pals,
+  .candy-bg-sparkle,
+  .candy-bg-pop {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   Frames v2: a sweet-shop counter. Chocolate outline and cream sticker rim like the game's candies,
+   pastel fills cycling pink, blue, mint and sun, a gloss highlight, twisted wrapper ends on feature cards,
+   a shop awning on the plates, a growing candy chain for steps and the timeline, price-list rows for facts.
+   ========================================================================== */
+body.candy-shop-page :is(.detail-card, .update-list li, .asset-link, .related-world-link, .game-page-facts) {
+  --cs-c: var(--cs-pink);
+  --cs-d: var(--cs-pink-d);
+  position: relative;
+  border: 2px solid var(--cs-edge);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, var(--cs-gloss), rgba(255, 255, 255, 0) 30%),
+    linear-gradient(160deg, color-mix(in srgb, var(--cs-c) 30%, var(--cs-cream)), var(--cs-cream) 72%);
+  box-shadow: 0 0 0 3px var(--cs-rim), var(--cs-shadow);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.candy-shop-page :is(.detail-card, .update-list li, .asset-link, .related-world-link):nth-child(4n + 2) {
+  --cs-c: var(--cs-blue);
+  --cs-d: var(--cs-blue-d);
+}
+
+body.candy-shop-page :is(.detail-card, .update-list li, .asset-link, .related-world-link):nth-child(4n + 3) {
+  --cs-c: var(--cs-mint);
+  --cs-d: var(--cs-mint-d);
+}
+
+body.candy-shop-page :is(.detail-card, .update-list li, .asset-link, .related-world-link):nth-child(4n) {
+  --cs-c: var(--cs-sun);
+  --cs-d: var(--cs-sun-d);
+}
+
+body.candy-shop-page .detail-grid,
+body.candy-shop-page .related-world-grid {
+  gap: 26px;
+}
+
+body.candy-shop-page .update-list {
+  gap: 22px;
+}
+
+/* feature cards are wrapped candies: a twisted end on each side */
+body.candy-shop-page .detail-card {
+  min-height: 0;
+  padding: 22px 22px 24px;
+}
+
+body.candy-shop-page .detail-card::before,
+body.candy-shop-page .detail-card::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 52px;
+  margin-top: -26px;
+  background: linear-gradient(90deg, var(--cs-c), color-mix(in srgb, var(--cs-c) 70%, var(--cs-d)));
+  clip-path: polygon(100% 12%, 38% 0, 64% 20%, 0 24%, 52% 38%, 6% 50%, 52% 62%, 0 76%, 64% 80%, 38% 100%, 100% 88%);
+}
+
+body.candy-shop-page .detail-card::before {
+  left: -15px;
+}
+
+body.candy-shop-page .detail-card::after {
+  right: -15px;
+  transform: scaleX(-1);
+}
+
+body.candy-shop-page .detail-card h3 {
+  color: var(--text);
+}
+
+body.candy-shop-page .detail-card h3::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 4px;
+  background: repeating-linear-gradient(135deg, var(--cs-c) 0 5px, var(--cs-stripe) 5px 10px);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--cs-d) 60%, transparent);
+}
+
+/* stickers: the asset tiles keep the rim and outline, no ends */
+body.candy-shop-page .asset-link img {
   border-radius: 18px;
+}
+
+/* labels, chips */
+body.candy-shop-page .update-list :is(span, time) {
+  margin-bottom: 14px;
+  padding: 4px 12px;
+  border: 1.5px solid color-mix(in srgb, var(--cs-d) 56%, transparent);
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--cs-d) 78%, var(--text));
+  background: color-mix(in srgb, var(--cs-c) 22%, var(--cs-cream));
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+}
+
+body.candy-shop-page .update-list li {
+  min-height: 0;
+  padding: 20px 22px 22px;
+}
+
+/* steps: a candy that grows with every step, the merge chain in miniature */
+body.candy-shop-page #gameplay-loop .update-list li::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: var(--chain, 24px);
+  aspect-ratio: 1;
+  border: 2px solid var(--cs-edge);
+  border-radius: 50%;
   background:
-    radial-gradient(ellipse at 12% 10%, rgba(255, 143, 202, 0.12), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(125, 64, 104, 0.045) 0 1px, transparent 1px 13px),
-    rgba(255, 249, 238, 0.66);
-  box-shadow: 0 18px 42px rgba(150, 67, 111, 0.12);
-  -webkit-backdrop-filter: blur(12px) saturate(1.04);
-  backdrop-filter: blur(12px) saturate(1.04);
+    radial-gradient(circle at 34% 50%, #4a2238 0 1.5px, transparent 2px),
+    radial-gradient(circle at 66% 50%, #4a2238 0 1.5px, transparent 2px),
+    radial-gradient(ellipse 14% 9% at 50% 66%, #b0306c 0 100%, transparent 105%),
+    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.85) 0 12%, transparent 13%),
+    linear-gradient(150deg, color-mix(in srgb, var(--cs-c) 70%, #fff), var(--cs-c));
+  box-shadow: 0 0 0 2px var(--cs-rim), 0 6px 10px -4px rgba(150, 67, 111, 0.5);
 }
 
-.candy-shop-page[data-theme="dark"] .detail-card,
-.candy-shop-page[data-theme="dark"] .asset-link,
-.candy-shop-page[data-theme="dark"] .update-list li,
-.candy-shop-page[data-theme="dark"] .game-page-facts {
+body.candy-shop-page #gameplay-loop .update-list li:nth-child(1) { --chain: 24px; }
+body.candy-shop-page #gameplay-loop .update-list li:nth-child(2) { --chain: 30px; }
+body.candy-shop-page #gameplay-loop .update-list li:nth-child(3) { --chain: 36px; }
+body.candy-shop-page #gameplay-loop .update-list li:nth-child(4) { --chain: 44px; }
+
+body.candy-shop-page #gameplay-loop .update-list strong {
+  padding-inline-end: 52px;
+}
+
+/* devlog entries are tags: a punched hole at the top */
+body.candy-shop-page #devlog .update-list li::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--cs-edge);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, rgba(0, 0, 0, 0.18), transparent 70%);
+}
+
+/* related plates: a striped awning along the top */
+body.candy-shop-page .related-world-link {
+  overflow: hidden;
+  padding: 28px 20px 18px;
+}
+
+body.candy-shop-page .related-world-link::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 10px;
+  background: repeating-linear-gradient(90deg, var(--cs-c) 0 18px, var(--cs-stripe) 18px 36px);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--cs-edge) 70%, transparent);
+}
+
+body.candy-shop-page .related-world-link .related-world-kicker {
+  border-color: color-mix(in srgb, var(--cs-d) 56%, transparent);
+  color: color-mix(in srgb, var(--cs-d) 78%, var(--text));
+  background: color-mix(in srgb, var(--cs-c) 22%, var(--cs-cream));
+}
+
+body.candy-shop-page .related-world-link .related-world-meta {
+  border-top: 2px dotted color-mix(in srgb, var(--cs-d) 50%, transparent);
+  color: color-mix(in srgb, var(--text) 82%, var(--cs-d));
+}
+
+body.candy-shop-page .related-world-link.is-primary {
+  border-width: 3px;
+}
+
+body.candy-shop-page :is(.related-world-link, .asset-link):hover,
+body.candy-shop-page :is(.related-world-link, .asset-link):focus-visible {
+  border-color: var(--cs-d);
   background:
-    radial-gradient(ellipse at 12% 10%, rgba(255, 143, 202, 0.08), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(255, 224, 246, 0.04) 0 1px, transparent 1px 13px),
-    rgba(42, 18, 48, 0.68);
-  box-shadow: 0 18px 42px rgba(8, 0, 16, 0.34);
+    linear-gradient(180deg, var(--cs-gloss), rgba(255, 255, 255, 0) 30%),
+    linear-gradient(160deg, color-mix(in srgb, var(--cs-c) 42%, var(--cs-cream)), var(--cs-cream) 72%);
 }
 
-.candy-shop-page .game-page-section .eyebrow,
-.candy-shop-page .game-page-updates .eyebrow {
-  background: rgba(255, 249, 238, 0.66);
+/* fact rows are a price list */
+body.candy-shop-page .game-page-facts {
+  padding: 22px 24px;
 }
 
-.candy-shop-page[data-theme="dark"] .game-page-section .eyebrow,
-.candy-shop-page[data-theme="dark"] .game-page-updates .eyebrow {
-  background: rgba(42, 18, 48, 0.68);
+body.candy-shop-page .game-page-facts div {
+  border-bottom: 2px dotted color-mix(in srgb, var(--cs-d) 46%, transparent);
 }
 
+body.candy-shop-page .game-page-facts div:last-child {
+  border-bottom: 0;
+}
+
+body.candy-shop-page .game-page-facts dt {
+  color: color-mix(in srgb, var(--cs-d) 78%, var(--text));
+}
+
+/* eyebrow chips: a gumdrop instead of a glowing dot */
+body.candy-shop-page .game-page-section .eyebrow,
+body.candy-shop-page .game-page-updates .eyebrow {
+  border: 2px solid var(--cs-edge);
+  color: var(--text);
+  background: var(--cs-cream);
+  box-shadow: 0 0 0 2px var(--cs-rim);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.candy-shop-page .game-page-section .eyebrow::before,
+body.candy-shop-page .game-page-updates .eyebrow::before {
+  width: 11px;
+  height: 11px;
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.9) 0 18%, transparent 20%),
+    linear-gradient(150deg, #ffb3d1, var(--cs-pink));
+  box-shadow: 0 0 0 1.5px var(--cs-edge);
+}
+
+/* candy-cane rule under section headings */
+body.candy-shop-page :is(.game-page-section, .game-page-updates) > h2 {
+  margin-bottom: 22px;
+}
+
+body.candy-shop-page :is(.game-page-section, .game-page-updates) > h2::after {
+  content: "";
+  display: block;
+  width: 104px;
+  height: 9px;
+  margin-top: 12px;
+  border-radius: 9px;
+  background: repeating-linear-gradient(135deg, var(--cs-pink) 0 8px, var(--cs-stripe) 8px 16px);
+  box-shadow: 0 0 0 2px var(--cs-edge);
+}
+
+/* hero chips */
+body.candy-shop-page .candy-hero-stats {
+  gap: 16px;
+}
+
+body.candy-shop-page .candy-hero-stats span {
+  border: 2px solid var(--cs-edge);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, var(--cs-gloss), rgba(255, 255, 255, 0) 34%),
+    linear-gradient(160deg, color-mix(in srgb, var(--cs-pink) 30%, var(--cs-cream)), var(--cs-cream) 72%);
+  box-shadow: 0 0 0 3px var(--cs-rim), var(--cs-shadow);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.candy-shop-page .candy-hero-stats span:nth-child(2) {
+  background:
+    linear-gradient(180deg, var(--cs-gloss), rgba(255, 255, 255, 0) 34%),
+    linear-gradient(160deg, color-mix(in srgb, var(--cs-blue) 34%, var(--cs-cream)), var(--cs-cream) 72%);
+}
+
+body.candy-shop-page .candy-hero-stats span:nth-child(3) {
+  background:
+    linear-gradient(180deg, var(--cs-gloss), rgba(255, 255, 255, 0) 34%),
+    linear-gradient(160deg, color-mix(in srgb, var(--cs-mint) 34%, var(--cs-cream)), var(--cs-cream) 72%);
+}
+
+body.candy-shop-page .candy-hero-stats small {
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
+}
+
+/* proof section: the shop front, with a striped scalloped awning */
+body.candy-shop-page .game-proof-section {
+  padding-top: calc(clamp(28px, 5vw, 58px) + 18px);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, var(--cs-gloss), rgba(255, 255, 255, 0) 24%),
+    radial-gradient(ellipse 60% 70% at 100% 100%, color-mix(in srgb, var(--cs-blue) 24%, transparent), transparent 72%),
+    linear-gradient(160deg, color-mix(in srgb, var(--cs-pink) 22%, var(--cs-cream)), var(--cs-cream) 70%);
+  box-shadow: inset 0 0 0 2px var(--cs-edge), 0 0 0 4px var(--cs-rim), var(--cs-shadow);
+}
+
+body.candy-shop-page .game-proof-section::before {
+  inset: 0 0 auto;
+  height: 28px;
+  background: repeating-linear-gradient(90deg, var(--cs-pink) 0 28px, var(--cs-stripe) 28px 56px);
+  -webkit-mask:
+    linear-gradient(#000, #000) 0 0 / 100% 12px no-repeat,
+    radial-gradient(circle at 14px 0, #000 13.5px, transparent 14px) 0 12px / 28px 16px repeat-x;
+  mask:
+    linear-gradient(#000, #000) 0 0 / 100% 12px no-repeat,
+    radial-gradient(circle at 14px 0, #000 13.5px, transparent 14px) 0 12px / 28px 16px repeat-x;
+  opacity: 0.95;
+}
+
+body.candy-shop-page .proof-kicker,
+body.candy-shop-page .proof-status {
+  border: 1.5px solid color-mix(in srgb, var(--cs-pink-d) 56%, transparent);
+  color: var(--text);
+  background: color-mix(in srgb, var(--cs-pink) 18%, var(--cs-cream));
+}
+
+body.candy-shop-page .proof-kicker::before {
+  background: radial-gradient(circle at 34% 30%, rgba(255, 255, 255, 0.9) 0 18%, transparent 20%), var(--cs-pink);
+  box-shadow: 0 0 0 1.5px var(--cs-edge);
+}
+
+body.candy-shop-page .proof-facts {
+  border-top: 2px dotted color-mix(in srgb, var(--cs-pink-d) 50%, transparent);
+}
+
+body.candy-shop-page .proof-facts article {
+  border-inline-start: 2px dotted color-mix(in srgb, var(--cs-pink-d) 46%, transparent);
+}
+
+body.candy-shop-page .proof-facts article:first-child {
+  border-inline-start: 0;
+}
+
+body.candy-shop-page .proof-facts strong {
+  color: var(--text);
+}
+
+body.candy-shop-page .proof-facts span {
+  color: color-mix(in srgb, var(--text) 76%, var(--muted));
+}
+
+body.candy-shop-page .candy-container-section h3 {
+  color: var(--text);
+}
+
+body.candy-shop-page .candy-container-section > p {
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
+}
+
+/* container jars */
+body.candy-shop-page .container-showcase {
+  gap: 14px;
+  padding: 6px 6px 16px;
+}
+
+body.candy-shop-page .container-showcase figure {
+  border: 2px solid var(--cs-edge);
+  border-radius: 18px;
+  background: var(--cs-cream);
+  box-shadow: 0 0 0 3px var(--cs-rim);
+}
+
+body.candy-shop-page .container-showcase figure:nth-child(4n + 1) img { background: color-mix(in srgb, var(--cs-pink) 26%, var(--cs-cream)); }
+body.candy-shop-page .container-showcase figure:nth-child(4n + 2) img { background: color-mix(in srgb, var(--cs-blue) 30%, var(--cs-cream)); }
+body.candy-shop-page .container-showcase figure:nth-child(4n + 3) img { background: color-mix(in srgb, var(--cs-mint) 30%, var(--cs-cream)); }
+body.candy-shop-page .container-showcase figure:nth-child(4n) img { background: color-mix(in srgb, var(--cs-sun) 32%, var(--cs-cream)); }
+
+body.candy-shop-page .container-showcase figcaption {
+  overflow-wrap: anywhere;
+  border-top: 2px dotted color-mix(in srgb, var(--cs-pink-d) 46%, transparent);
+  color: var(--text);
+}
+
+/* Steps in four across, the chain in one row. */
+@media (min-width: 561px) and (max-width: 1120px) {
+  body.candy-shop-page #gameplay-loop .update-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* seven devlog tags: the newest takes two cells so the rows come out even */
+  body.candy-shop-page #devlog .update-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.candy-shop-page #devlog .update-list li:first-child {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1121px) {
+  body.candy-shop-page #gameplay-loop .update-list,
+  body.candy-shop-page #devlog .update-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.candy-shop-page #devlog .update-list li:first-child {
+    grid-column: span 2;
+  }
+
+  body.candy-shop-page #faq .detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Timeline: a receipt rail. Each stage is a candy bigger than the last. */
+body.candy-shop-page .candy-ledger-section .update-list {
+  position: relative;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 18px;
+  padding: 6px 0 8px 58px;
+}
+
+body.candy-shop-page .candy-ledger-section .update-list::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  bottom: 8px;
+  left: 20px;
+  border-left: 3px dotted color-mix(in srgb, var(--cs-pink-d) 56%, transparent);
+}
+
+body.candy-shop-page .candy-ledger-section .update-list li::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: calc(-38.5px - var(--chain) / 2);
+  width: var(--chain);
+  aspect-ratio: 1;
+  border: 2px solid var(--cs-edge);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 255, 255, 0.85) 0 12%, transparent 13%),
+    linear-gradient(150deg, color-mix(in srgb, var(--cs-c) 70%, #fff), var(--cs-c));
+  box-shadow: 0 0 0 2px var(--cs-rim), 0 6px 10px -4px rgba(150, 67, 111, 0.5);
+}
+
+body.candy-shop-page .candy-ledger-section .update-list li:nth-child(1) { --chain: 16px; }
+body.candy-shop-page .candy-ledger-section .update-list li:nth-child(2) { --chain: 20px; }
+body.candy-shop-page .candy-ledger-section .update-list li:nth-child(3) { --chain: 24px; }
+body.candy-shop-page .candy-ledger-section .update-list li:nth-child(4) { --chain: 28px; }
+body.candy-shop-page .candy-ledger-section .update-list li:nth-child(5) { --chain: 32px; }
+body.candy-shop-page .candy-ledger-section .update-list li:nth-child(6) { --chain: 36px; }
+body.candy-shop-page .candy-ledger-section .update-list li:nth-child(7) { --chain: 40px; }
+
+@media (min-width: 761px) {
+  body.candy-shop-page .candy-ledger-section .update-list li {
+    display: grid;
+    grid-template-columns: minmax(150px, 0.36fr) minmax(0, 1fr);
+    column-gap: 28px;
+    align-items: start;
+  }
+
+  body.candy-shop-page .candy-ledger-section .update-list li > :is(span, time) {
+    grid-column: 1;
+    justify-self: start;
+    margin-bottom: 10px;
+  }
+
+  body.candy-shop-page .candy-ledger-section .update-list li > strong {
+    grid-column: 1;
+    padding-inline-end: 0;
+  }
+
+  body.candy-shop-page .candy-ledger-section .update-list li > p {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    padding-inline-start: 28px;
+    border-inline-start: 2px dotted color-mix(in srgb, var(--cs-d) 50%, transparent);
+    align-self: center;
+  }
+}
+
+/* Text that sits straight on the page backdrop (no card behind it): a halo keeps it readable while candies pass underneath. */
+body.candy-shop-page[data-theme] :is(.game-page-section > p, .info-grid > div > p, .related-worlds-copy, .asset-kit-copy, .asset-group-title) {
+  color: color-mix(in srgb, var(--text) 86%, var(--muted));
+  text-shadow: 0 0 14px color-mix(in srgb, var(--cs-cream) 96%, transparent), 0 0 4px color-mix(in srgb, var(--cs-cream) 88%, transparent);
+}
+
+body.candy-shop-page[data-theme] :is(.game-page-section, .game-page-updates) > h2 {
+  text-shadow: 0 0 18px color-mix(in srgb, var(--cs-cream) 96%, transparent), 0 0 5px color-mix(in srgb, var(--cs-cream) 80%, transparent);
+}
+
+/* The shared off-screen placeholder is 720px tall; a one-row asset strip is about 230px, so the page jumped when a strip scrolled into view. */
+body.candy-shop-page #download-assets .asset-list {
+  contain-intrinsic-size: auto 230px;
+}
+
+/* Card copy: a little more ink than the shared muted tone, so it holds up on the tinted fills. */
+body.candy-shop-page :is(.detail-card p, .update-list li p, .related-world-link p, .asset-link span, .proof-facts span) {
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+}
+
+/* Data saver: no extra layers. */
+@media (prefers-reduced-data: reduce) {
+  .candy-bg-rain,
+  .candy-bg-sparkle {
+    display: none;
+  }
+}
+
+/* Focus ring: strong candy pink on both themes (the shared pale ring is under 3:1 on the cream plates). */
+body.candy-shop-page[data-theme] :is(.game-detail-nav a, .game-motion-toggle, .game-theme-toggle, .asset-link, .related-world-link, .game-footer a):focus-visible {
+  outline: 3px solid var(--cs-pink-d);
+  outline-offset: 3px;
+}

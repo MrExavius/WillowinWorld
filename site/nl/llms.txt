@@ -1,37 +1,37 @@
-# WillowinWorlds — Nederlands
+# WillowinWorlds - Nederlands
 
-> WillowinWorlds is een onafhankelijke mobiele gamestudio die vier op fysica gebaseerde puzzel- en arcadespellen maakt met tactiele bediening, leesbare systemen en expressieve 2D-werelden.
+> WillowinWorlds is een onafhankelijke studio voor mobiele spellen die puzzel- en arcadespellen maakt. Het heeft vier vlaggenschipspellen (Nature Seed, Candy Shop, Paint Blasters en Ball is God?!) en acht labprototypes.
 
 Taal van de site: Nederlands. Canonieke Engelse bron: https://willowinworlds.com/llms.txt
 
-## Spelletjes
+## Spellen
 
-- [Nature Seed](https://willowinworlds.com/nl/games/nature-seed.html): Een vrijgegeven mobiele natuurkundepuzzel waarmee je kunt tekenen en oplossen. Uitgebracht op 10 september 2026 als Nature Seed, wordt spelers gevraagd een fysiek pad met beperkte inkt te tekenen, Water Drop en Seed te herenigen en een aquarelbos te herstellen in 10 lanceerniveaus. Genres: Teken-om-op te lossen puzzel, Natuurkundepuzzel, Ontspannende puzzel, Lijntekenpuzzel. Huidige status: Vrijgegeven.
-- [Candy Shop](https://willowinworlds.com/nl/games/candy-shop.html): Een gezellige mobiele samenvoegpuzzel met een snoepketen van 13 fasen, 10 containerregelsets, acht speciale snoepeffecten en planningstools voor de volgende drop. Genres: Puzzel samenvoegen, Snoeppuzzel, Casual puzzel, Natuurkundepuzzel. Huidige status: Actieve ontwikkeling - speelbare productiebuild.
-- [Paint Blasters](https://willowinworlds.com/nl/games/paint-blasters.html): Een mobiele puzzelarcade met kleurvernietigingsfysica. Combineer drie kleureninvoer in 35 geschreven projectielrecepten, richt je op zwakke punten in de toren en activeer kettingreacties. Genres: Kleurenpuzzel, Natuurkunde-arcade, Vernietigingspuzzel, Kettingreactie. Huidige status: Actieve ontwikkeling - productieprototype.
-- [Ball is God?!](https://willowinworlds.com/nl/games/ball-is-god.html): Een verhaalgedreven hardcore mobiele arcade met verticale afdaling. Draai de toren rond Espa, bouw combo-smashes, overleef bazen en draag karma-keuzes door 10 mythische locaties. Genres: Arcade met verticale afdaling, Hardcore-arcade, Verhaalgestuurde arcade, Baasactie. Huidige status: Actieve productie.
+- [Nature Seed](https://willowinworlds.com/nl/games/nature-seed.html): Een mobiele tekenpuzzel met natuurkunde, uitgebracht op 18 september 2026. Spelers tekenen een lijn met een beperkt inktbudget, brengen Water Drop en Seed bij elkaar en herstellen in 100 niveaus een aquarelbos. Genres: Tekenpuzzel, Natuurkundepuzzel, Ontspannende puzzel, Lijntekenpuzzel. Huidige status: Uitgebracht.
+- [Candy Shop](https://willowinworlds.com/nl/games/candy-shop.html): Een gezellige mobiele samenvoegpuzzel met snoepjes: een keten van 13 stadia, 10 containers met eigen regels, acht effecten voor speciale snoepjes, een landingsvoorbeeld, een reserveplek en een rij met de volgende drie. Genres: Samenvoegpuzzel, Snoeppuzzel, Casual puzzel, Natuurkundepuzzel. Huidige status: Actieve ontwikkeling - speelbare productiebuild.
+- [Paint Blasters](https://willowinworlds.com/nl/games/paint-blasters.html): Een mobiele arcadepuzzel met natuurkunde en kleurvernietiging. Spelers mengen drie kleuren tot een van 35 projectielrecepten, richten op zwakke punten in een toren en zetten kettingreacties in gang. Genres: Kleurenpuzzel, Natuurkunde-arcade, Vernietigingspuzzel, Kettingreactie. Huidige status: Actieve ontwikkeling - productieprototype.
+- [Ball is God?!](https://willowinworlds.com/nl/games/ball-is-god.html): Een verhaalgedreven mobiel hardcore arcadespel met verticale afdaling. Spelers slepen om de toren rond de vallende Espa te draaien, slaan drie platforms over voor een combo-smash, nemen het op tegen eindbazen en maken karmakeuzes in 10 locaties. Genres: Arcade met verticale afdaling, Hardcore-arcade, Verhaalgedreven arcade, Eindbaasactie. Huidige status: Actieve productie.
 
 ## Laatste ontwikkelingsnotities
 
-- [Nature Seed — Nature Seed vrijgeven](https://willowinworlds.com/nl/games/nature-seed.html#devlog): Gepubliceerd 2026-09-10. Nature Seed gelanceerd onder de uiteindelijke titel met 10 handgemaakte niveaus, lijnefficiëntiesterren, aanhoudende vooruitgang en beloningen voor aquarelherstel.
-- [Candy Shop — Productiemenu en HUD-pas](https://willowinworlds.com/nl/games/candy-shop.html#devlog): Gepubliceerd 2026-07-31. Hoofdmenu, niveauselectie, HUD-bediening en opdrachtpictogrammen delen nu één visuele taal; aanvullende stresstests in de motor bestrijken de bijgewerkte stroom.
-- [Paint Blasters — Fysica en effectstabiliteit zijn geslaagd](https://willowinworlds.com/nl/games/paint-blasters.html#devlog): Gepubliceerd 2026-07-31. Projectielgedrag, Match-3-resolutie en treffereffecten zijn getest en aangescherpt voor consistentere combo-resultaten.
-- [Ball is God?! — Wereldoppervlakken en gevarenvalidatie](https://willowinworlds.com/nl/games/ball-is-god.html#devlog): Gepubliceerd 2026-07-31. Karakterpresentatie, deterministische generatie en doorngevaren kregen een gecoördineerde visuele en productievalidatiepas.
+- [Nature Seed - Nature Seed-release](https://willowinworlds.com/nl/games/nature-seed.html#devlog): Gepubliceerd 2026-09-18. Nature Seed verscheen onder zijn definitieve titel als gratis browserspel op itch.io, Game Jolt en indiexpo, met 100 niveaus, sterren voor lijnefficiëntie en opgeslagen voortgang.
+- [Candy Shop - Productiemenu en HUD-verfijning](https://willowinworlds.com/nl/games/candy-shop.html#devlog): Gepubliceerd 2026-07-31. Het hoofdmenu, de niveaukeuze, de HUD-bediening en de commandopictogrammen delen nu één uiterlijk, en meer stresstests in de engine dekken de bijgewerkte flow.
+- [Paint Blasters - Stabiliteitsronde voor fysica en effecten](https://willowinworlds.com/nl/games/paint-blasters.html#devlog): Gepubliceerd 2026-07-31. Projectielgedrag, Match-3-resolutie en treffereffecten zijn getest en aangescherpt voor consistentere combo-resultaten.
+- [Ball is God?! - Wereldoppervlakken en gevarenvalidatie](https://willowinworlds.com/nl/games/ball-is-god.html#devlog): Gepubliceerd 2026-07-31. De presentatie van personages, de deterministische generatie en de doornige gevaren kregen een gecombineerde visuele en validatieronde.
 
-## Studio en druk op
+## Studio en pers
 
-- [Studiowoning](https://willowinworlds.com/nl/)
+- [Studio-home](https://willowinworlds.com/nl/)
 - [Persmap](https://willowinworlds.com/nl/press-kit.html)
-- [Gebruik van media-items](https://willowinworlds.com/nl/asset-usage.html)
+- [Gebruik van mediamaterialen](https://willowinworlds.com/nl/asset-usage.html)
 
 ## Feeds en beleid
 
-- [RSS-feed ontwikkelen](https://willowinworlds.com/rss.xml)
+- [Devlog-RSS-feed](https://willowinworlds.com/rss.xml)
 - [XML-sitemap](https://willowinworlds.com/sitemap.xml)
 - [Taalindex](https://willowinworlds.com/languages.json)
 - [Privacybeleid](https://willowinworlds.com/nl/privacy.html)
 - [Juridische mededeling](https://willowinworlds.com/nl/legal.html)
 
-## Contactpersoon
+## Contact
 
 - [E-mail WillowinWorlds](mailto:willowinworlds@gmail.com)

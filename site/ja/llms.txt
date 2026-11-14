@@ -1,28 +1,28 @@
-# WillowinWorlds — 日本語
+# WillowinWorlds - 日本語
 
-> WillowinWorlds は、触覚コントロール、読みやすいシステム、表現力豊かな 2D 世界を備えた 4 つの物理学主導のパズル ゲームとアーケード ゲームを作成する独立系モバイル ゲーム スタジオです。
+> WillowinWorlds は、パズルゲームとアーケードゲームをつくる独立系のモバイルゲームスタジオです。看板タイトルは 4 本 (Nature Seed、Candy Shop、Paint Blasters、Ball is God?!) で、ラボにはプロトタイプが 8 つあります。
 
-サイトの言語: 日本語. 正規の英語ソース: https://willowinworlds.com/llms.txt
+サイトの言語: 日本語. 正規の英語原文: https://willowinworlds.com/llms.txt
 
 ## ゲーム
 
-- [Nature Seed](https://willowinworlds.com/ja/games/nature-seed.html): モバイル向けの描いて解く物理パズルがリリースされました。 2026 年 9 月 10 日に Nature Seed としてリリースされ、プレイヤーはインク制限のある物理的なパスを描き、Water Drop と Seed を再会させ、10 の起動レベルにわたって水彩の森を復元するように求められます。 ジャンル: 描いて解くパズル, 物理パズル, リラックスパズル, 線画パズル. 現在の状況: リリースされました.
-- [Candy Shop](https://willowinworlds.com/ja/games/candy-shop.html): 13 段階のキャンディー チェーン、10 個のコンテナ ルールセット、8 つの特別なキャンディー エフェクト、および次のドロップの計画ツールを備えた居心地の良いモバイル マージ パズル。 ジャンル: 結合パズル, キャンディパズル, カジュアルパズル, 物理パズル. 現在の状況: 積極的な開発 - プレイ可能な製品ビルド.
-- [Paint Blasters](https://willowinworlds.com/ja/games/paint-blasters.html): モバイルカラー破壊物理パズルアーケード。 3 つの色の入力を 35 の作成された発射物レシピに組み合わせ、タワーの弱点を狙い、連鎖反応を引き起こします。 ジャンル: カラーパズル, 物理アーケード, 破壊パズル, 連鎖反応. 現在の状況: 積極的な開発 - 量産プロトタイプ.
-- [Ball is God?!](https://willowinworlds.com/ja/games/ball-is-god.html): ストーリー主導のハードコア垂直降下モバイル アーケード。 Espa を中心にタワーを回転させ、コンボ スマッシュを構築し、ボスを生き延び、10 の神話上の場所でカルマの選択を実行します。 ジャンル: 垂直降下アーケード, ハードコアアーケード, ストーリー主導のアーケード, ボスアクション. 現在の状況: アクティブな生産.
+- [Nature Seed](https://willowinworlds.com/ja/games/nature-seed.html): 2026 年 9 月 18 日にリリースされた、モバイル向けの線を描いて解く物理パズル。プレイヤーは限られたインクで線を引き、Water Drop と Seed を出会わせて、100 レベルをかけて水彩の森を取り戻します。 ジャンル: 描いて解くパズル, 物理パズル, リラックスパズル, 線画パズル. 現在の状況: リリースされました.
+- [Candy Shop](https://willowinworlds.com/ja/games/candy-shop.html): 13 段階のキャンディチェーン、それぞれ独自ルールを持つ 10 種類のコンテナ、8 種類のスペシャルキャンディ効果、着地プレビュー、ホールドスロット、次の 3 つのキューを備えた、心地よいモバイル向けキャンディマージパズル。 ジャンル: マージパズル, キャンディパズル, カジュアルパズル, 物理パズル. 現在の状況: 積極的な開発 - プレイ可能な製品ビルド.
+- [Paint Blasters](https://willowinworlds.com/ja/games/paint-blasters.html): 色を使ってタワーを壊す、モバイル向けの物理パズルアーケード。プレイヤーは 3 色を混ぜて 35 種類の発射体レシピのひとつを作り、タワーの弱点を狙って連鎖反応を起こします。 ジャンル: カラーパズル, 物理アーケード, 破壊パズル, 連鎖反応. 現在の状況: 開発進行中 - 制作中のプロトタイプ.
+- [Ball is God?!](https://willowinworlds.com/ja/games/ball-is-god.html): ストーリー重視のハードコアな垂直降下モバイルアーケード。プレイヤーはドラッグで、落下する Espa を中心にタワーを回転させ、足場を 3 つスキップしてコンボスマッシュを決め、ボスと戦い、10 のロケーションを通じてカルマの選択を重ねていきます。 ジャンル: 垂直降下アーケード, ハードコアアーケード, ストーリー重視のアーケード, ボスアクション. 現在の状況: 制作進行中.
 
 ## 最新の開発ノート
 
-- [Nature Seed — Nature Seed リリース](https://willowinworlds.com/ja/games/nature-seed.html#devlog): 公開 2026-09-10. Nature Seed は、10 の手作りレベル、ライン効率の星、持続的な進歩、および水彩画の修復報酬を備えた最終タイトルで開始されました。
-- [Candy Shop — 本番用メニューとHUDの改善](https://willowinworlds.com/ja/games/candy-shop.html#devlog): 公開 2026-07-31. メイン メニュー、レベル選択、HUD コントロール、およびコマンド アイコンが 1 つの視覚言語を共有するようになりました。追加のエンジン内ストレス テストでは、更新されたフローがカバーされます。
-- [Paint Blasters — 物理挙動とエフェクトの安定性改善](https://willowinworlds.com/ja/games/paint-blasters.html#devlog): 公開 2026-07-31. より安定したコンボ結果を得るために、発射物の動作、Match-3 の解像度、ヒット効果がテストされ、強化されました。
-- [Ball is God?! — 世界の地表と危険性の検証](https://willowinworlds.com/ja/games/ball-is-god.html#devlog): 公開 2026-07-31. キャラクターのプレゼンテーション、決定論的生成、およびとげのハザードは、調整されたビジュアルおよびプロダクション検証パスを受け取りました。
+- [Nature Seed - Nature Seed リリース](https://willowinworlds.com/ja/games/nature-seed.html#devlog): 公開 2026-09-18. Nature Seed は正式タイトルで、itch.io、Game Jolt、indiexpo にて無料ブラウザゲームとして公開されました。100 レベル、線の効率を競う星、セーブされる進行状況を備えています。
+- [Candy Shop - 本番用メニューとHUDの改善](https://willowinworlds.com/ja/games/candy-shop.html#devlog): 公開 2026-07-31. メインメニュー、レベル選択、HUD の操作、コマンドアイコンの見た目が統一され、更新後のフローをエンジン内でさらに多くのストレステストが検証しています。
+- [Paint Blasters - 物理挙動とエフェクトの安定性改善](https://willowinworlds.com/ja/games/paint-blasters.html#devlog): 公開 2026-07-31. より安定したコンボ結果を得るために、発射物の動作、Match-3 の解像度、ヒット効果がテストされ、強化されました。
+- [Ball is God?! - ワールドの地面と危険要素の検証](https://willowinworlds.com/ja/games/ball-is-god.html#devlog): 公開 2026-07-31. キャラクターの見せ方、決定論的な生成、トゲの危険物に対して、ビジュアルと検証をまとめて見直しました。
 
 ## スタジオとプレス
 
 - [スタジオホーム](https://willowinworlds.com/ja/)
 - [プレスキット](https://willowinworlds.com/ja/press-kit.html)
-- [メディアアセットの使用状況](https://willowinworlds.com/ja/asset-usage.html)
+- [メディアアセットの利用ルール](https://willowinworlds.com/ja/asset-usage.html)
 
 ## フィードとポリシー
 

@@ -473,6 +473,9 @@
   .btn {
     width: 100%;
     min-height: 48px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-align: center;
   }
 
   .related-world-link {
@@ -684,6 +687,14 @@
     width: calc(100% - 28px);
     justify-content: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .press-kit-ocean-page .press-kit-hub h1,
+  .press-kit-hero h1 {
+    font-size: clamp(1.85rem, 9.2vw, 3.05rem);
+    overflow-wrap: break-word;
   }
 }
 

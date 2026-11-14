@@ -1,28 +1,28 @@
-# WillowinWorlds — Suomi
+# WillowinWorlds - Suomi
 
-> WillowinWorlds on itsenäinen mobiilipelistudio, joka luo neljä fysiikkapohjaista pulma- ja pelihallipeliä, joissa on kosketussäätimet, luettavat järjestelmät ja ilmeikkäät 2D-maailmat.
+> WillowinWorlds on itsenäinen mobiilipelistudio, joka tekee pulma- ja arcade-pelejä. Sillä on neljä lippulaivapeliä (Nature Seed, Candy Shop, Paint Blasters ja Ball is God?!) ja kahdeksan laboratorioprototyyppiä.
 
 Sivuston kieli: Suomi. Kanoninen englanninkielinen lähde: https://willowinworlds.com/llms.txt
 
 ## Pelit
 
-- [Nature Seed](https://willowinworlds.com/fi/games/nature-seed.html): Julkaistu mobiili fysiikan arvoitustehtävä. Se julkaistiin 10. syyskuuta 2026 nimellä Nature Seed, ja ​​se pyytää pelaajia piirtämään musterajoitetun fyysisen polun, yhdistämään Water Drop ja Seed ja palauttamaan vesivärimetsän 10 laukaisutasolla. Genret: Ratkaisemaan tehtävä arvoitus, Fysiikan palapeli, Rentouttava palapeli, Viivapiirrospalapeli. Nykyinen tila: Julkaistu.
-- [Candy Shop](https://willowinworlds.com/fi/games/candy-shop.html): Viihtyisä mobiiliyhdistelmäpalapeli, jossa on 13-vaiheinen karkkiketju, 10 säilytyssääntösarjaa, kahdeksan erikoiskaramellitehostetta ja suunnittelutyökalut seuraavaa pisaraa varten. Genret: Yhdistä palapeli, Karkkipalapeli, Rento palapeli, Fysiikan palapeli. Nykyinen tila: Aktiivinen kehitys – pelattava tuotantorakenne.
-- [Paint Blasters](https://willowinworlds.com/fi/games/paint-blasters.html): Mobiili väriä tuhoava fysiikan pulmapeli. Yhdistä kolme värisyöttöä 35 luotuun ammusreseptiin, kohdista tornin heikkoihin kohtiin ja laukaise ketjureaktioita. Genret: Väripalapeli, Fysiikan pelihalli, Tuhotehtävä, Ketjureaktio. Nykyinen tila: Aktiivinen kehitys – tuotannon prototyyppi.
-- [Ball is God?!](https://willowinworlds.com/fi/games/ball-is-god.html): Tarinavetoinen hardcore pystysuoraan laskeutuva mobiilipelihalli. Pyöritä tornia Espa:n ympäri, rakenna yhdistelmäiskuja, selviä pomoista ja tee karmavalintoja 10 myyttisen sijainnin läpi. Genret: Pystysuora laskuhalli, Hardcore-pelihalli, Tarinavetoinen pelihalli, Pomon toiminta. Nykyinen tila: Aktiivinen tuotanto.
+- [Nature Seed](https://willowinworlds.com/fi/games/nature-seed.html): Mobiilin piirrä ja ratkaise -fysiikkapulma, julkaistu 18. syyskuuta 2026. Pelaajat piirtävät viivan rajallisella mustebudjetilla, tuovat Water Drop ja Seed yhteen ja palauttavat vesivärimetsän 100 tasolla. Genret: Piirrä ja ratkaise -pulma, Fysiikkapulma, Rentouttava pulma, Viivapiirrospulma. Nykyinen tila: Julkaistu.
+- [Candy Shop](https://willowinworlds.com/fi/games/candy-shop.html): Kodikas mobiilipulma karkkien yhdistelystä: 13 vaiheen karkkiketju, 10 omilla säännöillään varustettua astiaa, kahdeksan erikoiskarkkitehostetta, laskeutumisen esikatselu, varastopaikka ja kolmen seuraavan jono. Genret: Yhdistelypulma, Karkkipulma, Rento pulma, Fysiikkapulma. Nykyinen tila: Aktiivinen kehitys - pelattava tuotantoversio.
+- [Paint Blasters](https://willowinworlds.com/fi/games/paint-blasters.html): Mobiilin värituhon fysiikkapulma-arcade. Pelaajat sekoittavat kolme väriä yhdeksi 35 ammusreseptistä, tähtäävät tornin heikkoihin kohtiin ja käynnistävät ketjureaktioita. Genret: Väripulma, Fysiikka-arcade, Tuhopulma, Ketjureaktio. Nykyinen tila: Aktiivinen kehitys - tuotannon prototyyppi.
+- [Ball is God?!](https://willowinworlds.com/fi/games/ball-is-god.html): Tarinavetoinen hardcore-pystylaskeutumisen mobiiliarcade. Pelaajat vetävät pyörittääkseen tornia putoavan Espa-hahmon ympäri, ohittavat kolme tasoa kombosmashia varten, kohtaavat pomoja ja tekevät karmavalintoja 10 paikassa. Genret: Pystylaskeutumisen arcade, Hardcore-arcade, Tarinavetoinen arcade, Pomotaistelut. Nykyinen tila: Aktiivinen tuotanto.
 
-## Viimeisimmät kehityshuomautukset
+## Viimeisimmät kehitysmuistiinpanot
 
-- [Nature Seed — Nature Seed julkaisu](https://willowinworlds.com/fi/games/nature-seed.html#devlog): Julkaistu 2026-09-10. Nature Seed julkaistiin lopullisella nimellä, jossa on 10 käsintehtyä tasoa, linjatehokkuustähtiä, jatkuvaa edistystä ja akvarellien restaurointipalkintoja.
-- [Candy Shop — Tuotantovalikko ja HUD-passi](https://willowinworlds.com/fi/games/candy-shop.html#devlog): Julkaistu 2026-07-31. Päävalikko, tason valinta, HUD-säätimet ja komentokuvakkeet jakavat nyt yhden visuaalisen kielen; lisämoottorin sisäiset stressitestit kattavat päivitetyn virtauksen.
-- [Paint Blasters — Fysiikka ja tehostevakauspassi](https://willowinworlds.com/fi/games/paint-blasters.html#devlog): Julkaistu 2026-07-31. Ammuskäyttäytyminen, Match-3-resoluutio ja osumatehosteet testattiin ja kiristettiin johdonmukaisempien yhdistelmätulosten saavuttamiseksi.
-- [Ball is God?! — Maailman pinnat ja vaarojen validointi](https://willowinworlds.com/fi/games/ball-is-god.html#devlog): Julkaistu 2026-07-31. Hahmonesitys, deterministinen synty ja piikkivaarat saivat koordinoidun visuaalisen ja tuotanto-validointipassin.
+- [Nature Seed - Nature Seed -julkaisu](https://willowinworlds.com/fi/games/nature-seed.html#devlog): Julkaistu 2026-09-18. Nature Seed julkaistiin lopullisella nimellään ilmaisena selainpelinä alustoilla itch.io, Game Jolt ja indiexpo, ja mukana oli 100 tasoa, viivatehokkuustähdet ja tallennettu eteneminen.
+- [Candy Shop - Tuotantovalikon ja HUD:n viimeistely](https://willowinworlds.com/fi/games/candy-shop.html#devlog): Julkaistu 2026-07-31. Päävalikko, tasonvalinta, HUD-ohjaimet ja komentokuvakkeet jakavat nyt saman ilmeen, ja lisää pelimoottorin sisäisiä stressitestejä kattaa päivitetyn kulun.
+- [Paint Blasters - Fysiikan ja tehosteiden vakautus](https://willowinworlds.com/fi/games/paint-blasters.html#devlog): Julkaistu 2026-07-31. Ammuskäyttäytyminen, Match-3-resoluutio ja osumatehosteet testattiin ja kiristettiin johdonmukaisempien yhdistelmätulosten saavuttamiseksi.
+- [Ball is God?! - Maailman pinnat ja vaarojen validointi](https://willowinworlds.com/fi/games/ball-is-god.html#devlog): Julkaistu 2026-07-31. Hahmojen esitys, deterministinen generointi ja piikkivaarat saivat yhteisen visuaalisen ja validointikierroksen.
 
-## Studio ja paina
+## Studio ja lehdistö
 
-- [Yksiö](https://willowinworlds.com/fi/)
+- [Studion etusivu](https://willowinworlds.com/fi/)
 - [Lehdistöpakkaus](https://willowinworlds.com/fi/press-kit.html)
-- [Mediaresurssien käyttö](https://willowinworlds.com/fi/asset-usage.html)
+- [Mediamateriaalien käyttö](https://willowinworlds.com/fi/asset-usage.html)
 
 ## Syötteet ja käytännöt
 
@@ -34,4 +34,4 @@ Sivuston kieli: Suomi. Kanoninen englanninkielinen lähde: https://willowinworld
 
 ## Ota yhteyttä
 
-- [Sähköposti WillowinWorlds](mailto:willowinworlds@gmail.com)
+- [Lähetä sähköpostia: WillowinWorlds](mailto:willowinworlds@gmail.com)

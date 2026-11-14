@@ -354,14 +354,18 @@ body.home-polish-2026 .filter-btn:hover {
   transform: translateY(-1px);
 }
 
+/* Flagship gallery: four cards of one size. Cards in a row share the row height (stretch), the cover, status,
+   text, tags and button zones line up, and the buttons sit on the card bottom. Where subgrid exists the zones are
+   shared grid rows (below); without it the flex column and margin-top:auto give the same result. */
 body.home-polish-2026 .games-grid {
+  --games-gap: clamp(18px, 2.2vw, 28px);
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(18px, 2.2vw, 28px);
-  align-items: start;
+  gap: var(--games-gap);
+  align-items: stretch;
 }
 
 body.home-polish-2026 .game-card {
-  min-height: 650px;
+  min-height: 0;
   border-radius: 28px;
   box-shadow:
     0 28px 76px rgba(0, 11, 38, 0.24),
@@ -372,12 +376,49 @@ body.home-polish-2026 .game-card:hover {
   transform: translateY(-6px);
 }
 
-body.home-polish-2026 .game-cover {
+body.home-polish-2026 .game-card:focus-within {
+  border-color: color-mix(in srgb, var(--card-accent, var(--cyan)) 48%, var(--line));
+}
+
+/* One cover height for all four cards (the Nature Seed cover used to be taller). */
+body.home-polish-2026 :is(.game-cover, .nature-game-cover, .candy-game-cover, .paint-game-cover, .ball-game-cover) {
   min-height: 320px;
 }
 
 body.home-polish-2026 .game-body {
   padding: clamp(21px, 2.25vw, 30px);
+}
+
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 921px) {
+    /* Each card spans five shared rows (cover, status, text, tags, buttons) so both cards of a row get identical zones. */
+    body.home-polish-2026 .games-grid {
+      row-gap: 0;
+      margin-bottom: calc(-1 * var(--games-gap));
+    }
+
+    body.home-polish-2026 .game-card:not(.is-hidden) {
+      display: grid;
+      grid-row: span 5;
+      grid-template-rows: subgrid;
+      margin-bottom: var(--games-gap);
+    }
+
+    body.home-polish-2026 .game-card .game-cover {
+      grid-row: 1;
+    }
+
+    body.home-polish-2026 .game-card .game-body {
+      display: grid;
+      grid-row: 2 / span 4;
+      grid-template-rows: subgrid;
+    }
+
+    body.home-polish-2026 .game-body > .game-meta { grid-row: 1; align-self: start; }
+    body.home-polish-2026 .game-body > p { grid-row: 2; align-self: start; }
+    body.home-polish-2026 .game-body > .game-tags { grid-row: 3; align-self: start; }
+    body.home-polish-2026 .game-body > .game-actions { grid-row: 4; align-self: stretch; grid-template-rows: auto 1fr; margin-top: 0; }
+  }
 }
 
 body.home-polish-2026 .game-progress,
@@ -387,11 +428,7 @@ body.home-polish-2026 .game-genre {
 }
 
 body.home-polish-2026 .game-body > p {
-  display: -webkit-box;
-  overflow: hidden;
   margin-bottom: 20px;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
 }
 
 body.home-polish-2026 .game-tags {
@@ -403,8 +440,26 @@ body.home-polish-2026 .game-tags .tag:nth-child(n + 4) {
   display: none;
 }
 
+/* Buttons: the main action takes the first row, the other one or two share the second row, so every card has the
+   same two-row action block whether it has two buttons or three. */
+body.home-polish-2026 .game-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, auto));
+  gap: 10px;
+  margin-top: auto;
+}
+
 body.home-polish-2026 .game-actions .btn {
-  flex: 1 1 150px;
+  min-width: 0;
+  min-height: 48px;
+  white-space: normal;
+  text-align: center;
+  text-wrap: balance;
+}
+
+body.home-polish-2026 .game-actions .btn-primary,
+body.home-polish-2026 .game-actions .btn:nth-child(2):last-child {
+  grid-column: 1 / -1;
 }
 
 body.home-polish-2026 .principles-grid {
@@ -538,12 +593,13 @@ body.home-polish-2026 .devlog-card {
   --devlog-accent: var(--green);
   grid-column: auto;
   display: grid;
-  grid-template-columns: 68px minmax(185px, 0.55fr) minmax(300px, 1fr) auto;
+  grid-template-columns: 68px minmax(185px, 0.4fr) minmax(300px, 1fr) auto;
   grid-template-areas:
     "index meta title action"
     "index meta copy action";
   gap: 8px clamp(18px, 3vw, 42px);
   align-items: center;
+  align-content: center;
   min-height: 158px;
   padding: 24px 8px;
   border: 0;
@@ -602,6 +658,12 @@ body.home-polish-2026 .devlog-card > span {
   font-weight: 900;
   line-height: 1.45;
   text-transform: uppercase;
+}
+
+/* Daylight: the pale game accents (gold, yellow, mint) fail 4.5:1 on cream, so the label and index take a darker mix of the same hue. */
+body.home-polish-2026[data-theme="light"] .devlog-card > span,
+body.home-polish-2026[data-theme="light"] .devlog-card::before {
+  color: color-mix(in srgb, var(--devlog-accent) 34%, var(--text));
 }
 
 body.home-polish-2026 .devlog-card > span :is(b, time) {
@@ -937,17 +999,8 @@ body.home-polish-2026 .site-footer {
     grid-template-columns: 1fr;
   }
 
-  body.home-polish-2026 .game-cover {
-    min-height: 280px;
-  }
-
-  body.home-polish-2026 .candy-game-cover {
-    min-height: 310px;
-  }
-
-  body.home-polish-2026 .paint-game-cover,
-  body.home-polish-2026 .ball-game-cover {
-    min-height: 330px;
+  body.home-polish-2026 :is(.game-cover, .nature-game-cover, .candy-game-cover, .paint-game-cover, .ball-game-cover) {
+    min-height: 300px;
   }
 
   body.home-polish-2026 .game-body {
@@ -955,21 +1008,13 @@ body.home-polish-2026 .site-footer {
   }
 
   body.home-polish-2026 .game-actions {
-    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
 
   body.home-polish-2026 .game-actions .btn {
     width: auto;
-    min-width: 0;
     padding-inline: 11px;
-    font-size: 0.82rem;
-    text-align: center;
-    white-space: normal;
-  }
-
-  body.home-polish-2026 .game-actions .btn:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
+    font-size: 0.88rem;
   }
 
   body.home-polish-2026 .principle,
@@ -1060,6 +1105,12 @@ body.home-polish-2026 .site-footer {
   }
 }
 
+@media (max-width: 420px) {
+  body.home-polish-2026 .final-cta .cta-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (prefers-contrast: more) {
   body.home-polish-2026 .game-card,
   body.home-polish-2026 .principle,
@@ -1084,5 +1135,50 @@ body.home-polish-2026 .site-footer {
   body.home-polish-2026 .final-cta .container {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+  }
+}
+
+/* Three columns would leave the last row of eight steps with two cards, so the final two share the row. */
+@media (min-width: 921px) and (max-width: 1120px) {
+  body.home-polish-2026 .timeline {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  body.home-polish-2026 .timeline .step {
+    grid-column: span 2;
+  }
+
+  body.home-polish-2026 .timeline .step:nth-child(n + 7) {
+    grid-column: span 3;
+  }
+}
+
+/* Devlog rows share their columns, so every title, note and button lines up from row to row. */
+@supports (grid-template-columns: subgrid) {
+  @media (min-width: 641px) {
+    body.home-polish-2026 .devlog-grid {
+      grid-template-columns: 52px minmax(155px, 0.44fr) minmax(0, 1fr) auto;
+      column-gap: 20px;
+    }
+
+    body.home-polish-2026 :is(.devlog-card, .devlog-card:first-child, .devlog-card:last-child) {
+      grid-column: 1 / -1;
+      grid-template-columns: subgrid;
+      column-gap: normal;
+    }
+  }
+
+  @media (min-width: 921px) {
+    body.home-polish-2026 .devlog-grid {
+      grid-template-columns: 68px minmax(185px, 0.4fr) minmax(300px, 1fr) auto;
+      column-gap: clamp(18px, 3vw, 42px);
+    }
+  }
+}
+
+/* Very narrow phones: the two secondary buttons stack instead of wrapping into three-line labels. */
+@media (max-width: 380px) {
+  body.home-polish-2026 .game-actions .btn {
+    grid-column: 1 / -1;
   }
 }

@@ -322,7 +322,52 @@ body[data-game="scooter-mechanic-simulator"] {
   93%, 100% { scale: 0; }
 }
 
-/* Sections: hex nuts and hazard tape, kept quiet. Hover and press use transitions so a paused page still shows the final state. */
+/* ---- Sections: workshop plates. Brushed steel with rivets, a repair-card clip on the steps, taped photos, a hazard sign for the call to action.
+   Section wrappers draw no box (a steel rail and a hazard underline on the heading), so the garage world shows between the plates.
+   Hover and press use transitions, so a paused page still shows the final state. ---- */
+body[data-game="scooter-mechanic-simulator"][data-theme="dark"] {
+  --sm-plate: color-mix(in srgb, var(--ug-card-2) 95%, transparent);
+  --sm-plate-2: color-mix(in srgb, var(--ug-card) 95%, transparent);
+  --sm-brush: rgb(255 255 255 / 0.035);
+  --sm-rv: #8f969e;
+  --sm-rv-hi: #eef1f4;
+  --sm-rv-lo: rgb(0 0 0 / 0.55);
+  --sm-edge: rgb(255 255 255 / 0.1);
+  --sm-edge-lo: rgb(0 0 0 / 0.32);
+  --sm-rail: #5a5f66;
+}
+
+body[data-game="scooter-mechanic-simulator"][data-theme="light"] {
+  --sm-plate: color-mix(in srgb, var(--ug-card-2) 96%, transparent);
+  --sm-plate-2: color-mix(in srgb, var(--ug-card) 96%, transparent);
+  --sm-brush: rgb(40 50 60 / 0.03);
+  --sm-rv: #848c95;
+  --sm-rv-hi: #ffffff;
+  --sm-rv-lo: rgb(30 40 50 / 0.45);
+  --sm-edge: rgb(255 255 255 / 0.9);
+  --sm-edge-lo: rgb(30 40 50 / 0.18);
+  --sm-rail: #9aa1a9;
+}
+
+body[data-game="scooter-mechanic-simulator"] {
+  --sm-rivet-a: radial-gradient(circle at 10px 10px, var(--sm-rv-hi) 0 0.8px, var(--sm-rv) 1.3px 2.5px, var(--sm-rv-lo) 3px 3.4px, transparent 3.8px);
+  --sm-rivet-b: radial-gradient(circle at calc(100% - 10px) 10px, var(--sm-rv-hi) 0 0.8px, var(--sm-rv) 1.3px 2.5px, var(--sm-rv-lo) 3px 3.4px, transparent 3.8px);
+  --sm-rivet-c: radial-gradient(circle at 10px calc(100% - 10px), var(--sm-rv-hi) 0 0.8px, var(--sm-rv) 1.3px 2.5px, var(--sm-rv-lo) 3px 3.4px, transparent 3.8px);
+  --sm-rivet-d: radial-gradient(circle at calc(100% - 10px) calc(100% - 10px), var(--sm-rv-hi) 0 0.8px, var(--sm-rv) 1.3px 2.5px, var(--sm-rv-lo) 3px 3.4px, transparent 3.8px);
+  --sm-hazard: repeating-linear-gradient(135deg, var(--sm-yellow) 0 8px, #1a1d22 8px 16px);
+}
+
+/* The plate: brushed steel, four rivets, a lit top edge and a shaded bottom edge */
+body[data-game="scooter-mechanic-simulator"] :is(.detail-card, .update-list li, .ug-next li, .lab-related-link) {
+  border: 1px solid color-mix(in srgb, var(--ug-line) 88%, transparent);
+  border-radius: 7px;
+  background:
+    var(--sm-rivet-a), var(--sm-rivet-b), var(--sm-rivet-c), var(--sm-rivet-d),
+    repeating-linear-gradient(180deg, var(--sm-brush) 0 1px, transparent 1px 3px),
+    linear-gradient(165deg, var(--sm-plate), var(--sm-plate-2));
+  box-shadow: inset 0 1px 0 var(--sm-edge), inset 0 -2px 0 var(--sm-edge-lo), 0 8px 18px rgb(0 0 0 / 0.2);
+}
+
 .ug-steps li,
 .ug-features .detail-card,
 .ug-faq .detail-card,
@@ -332,14 +377,134 @@ body[data-game="scooter-mechanic-simulator"] {
   transition: transform 0.28s var(--ease), border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
 }
 
+body[data-game="scooter-mechanic-simulator"] .btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Section wrapper: no box, a steel rail with end rivets, and the heading on the world with a halo */
+body[data-game="scooter-mechanic-simulator"] .game-page-section.soft-card {
+  position: relative;
+  padding-inline: 0;
+  padding-top: clamp(30px, 4vw, 44px);
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body[data-game="scooter-mechanic-simulator"] .game-page-section.soft-card:not(.ug-vote)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  border-radius: 3px;
+  background:
+    radial-gradient(circle at 5px 3px, var(--sm-rv-hi) 0 0.8px, var(--sm-rv) 1.3px 2.4px, transparent 2.8px),
+    radial-gradient(circle at calc(100% - 5px) 3px, var(--sm-rv-hi) 0 0.8px, var(--sm-rv) 1.3px 2.4px, transparent 2.8px),
+    linear-gradient(180deg, var(--sm-edge), var(--sm-rail) 30%, var(--sm-rail));
+  box-shadow: 0 2px 0 var(--sm-edge-lo);
+}
+
+body[data-game="scooter-mechanic-simulator"] .game-page-section h2,
+body[data-game="scooter-mechanic-simulator"] .lab-related-title {
+  text-shadow: 0 0 20px color-mix(in srgb, var(--ug-bg) 92%, transparent), 0 0 6px color-mix(in srgb, var(--ug-bg) 78%, transparent);
+}
+
+body[data-game="scooter-mechanic-simulator"] .game-page-section h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 7px;
+  margin-top: 12px;
+  background: var(--sm-hazard);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 7px) 100%, 7px 100%);
+}
+
+body[data-game="scooter-mechanic-simulator"] :is(.ug-lede, .ug-vote .ug-lede) {
+  color: color-mix(in srgb, var(--ug-ink) 92%, var(--ug-muted));
+  text-shadow: 0 0 12px color-mix(in srgb, var(--ug-bg) 88%, transparent);
+}
+
+/* Eyebrow: a stamped steel tag with a hex nut */
+body[data-game="scooter-mechanic-simulator"] .eyebrow {
+  border-radius: 4px;
+  border-color: color-mix(in srgb, var(--sm-yellow) 42%, var(--ug-line));
+  background: linear-gradient(180deg, var(--sm-plate), var(--sm-plate-2));
+  box-shadow: inset 0 1px 0 var(--sm-edge), 0 2px 0 var(--sm-edge-lo);
+}
+
 body[data-game="scooter-mechanic-simulator"] .eyebrow::before {
   border-radius: 0;
   box-shadow: none;
   clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%);
 }
 
-body[data-game="scooter-mechanic-simulator"] .btn:active {
-  transform: translateY(1px) scale(0.98);
+/* Hero notes: the status note is a plate with a corner of tape, the credit is a stamped label */
+body[data-game="scooter-mechanic-simulator"] .ug-status-note {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--ug-line) 88%, transparent);
+  border-inline-start-width: 1px;
+  border-radius: 7px;
+  background:
+    var(--sm-rivet-c), var(--sm-rivet-d),
+    repeating-linear-gradient(180deg, var(--sm-brush) 0 1px, transparent 1px 3px),
+    linear-gradient(165deg, var(--sm-plate), var(--sm-plate-2));
+  box-shadow: inset 0 1px 0 var(--sm-edge), inset 0 -2px 0 var(--sm-edge-lo);
+}
+
+body[data-game="scooter-mechanic-simulator"] .ug-status-note::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -10px;
+  width: 52px;
+  height: 14px;
+  background: var(--sm-hazard);
+  opacity: 0.92;
+  rotate: -36deg;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 100%, 4px 100%);
+}
+
+body[data-game="scooter-mechanic-simulator"] .ug-collab {
+  border: 2px solid var(--sm-yellow);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--ug-card) 90%, transparent);
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--ug-card) 90%, transparent), inset 0 0 0 3px color-mix(in srgb, var(--sm-yellow) 55%, transparent);
+  rotate: -0.8deg;
+}
+
+/* Facts: tool tags with two rivets and a tape tab. Six tags sit in two rows of three on wide screens. */
+@media (min-width: 900px) {
+  body[data-game="scooter-mechanic-simulator"] .ug-facts .game-page-facts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+body[data-game="scooter-mechanic-simulator"] .ug-facts .game-page-facts > div {
+  position: relative;
+  padding-top: 18px;
+  border: 1px solid color-mix(in srgb, var(--ug-line) 88%, transparent);
+  border-radius: 7px;
+  box-shadow: inset 0 1px 0 var(--sm-edge), inset 0 -2px 0 var(--sm-edge-lo), 0 8px 18px rgb(0 0 0 / 0.2);
+  background:
+    var(--sm-rivet-a), var(--sm-rivet-b),
+    repeating-linear-gradient(180deg, var(--sm-brush) 0 1px, transparent 1px 3px),
+    linear-gradient(165deg, var(--sm-plate), var(--sm-plate-2));
+}
+
+.ug-facts .game-page-facts > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 20px);
+  width: 40px;
+  height: 5px;
+  background: var(--sm-hazard);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 3px) 100%, 3px 100%);
+  opacity: 0.9;
 }
 
 .ug-facts .game-page-facts > div:hover {
@@ -347,22 +512,25 @@ body[data-game="scooter-mechanic-simulator"] .btn:active {
   border-color: var(--ug-accent);
 }
 
-/* Steps: a hazard bar on top and a nut that gets a turn on hover or focus */
+/* Steps: repair cards. A steel clip over the top edge, a hex nut at the corner that turns on hover or focus. */
 .ug-steps li {
   position: relative;
-  overflow: hidden;
-  padding-top: 26px;
+  padding-top: 34px;
   padding-bottom: 28px;
 }
 
 .ug-steps li::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 6px;
-  background: repeating-linear-gradient(135deg, var(--ug-fill) 0 8px, transparent 8px 16px);
+  top: -9px;
+  left: calc(50% - 26px);
+  width: 52px;
+  height: 20px;
+  border-radius: 5px 5px 3px 3px;
+  background:
+    radial-gradient(circle at 50% 50%, var(--sm-rv-lo) 0 3.5px, transparent 4px),
+    linear-gradient(180deg, var(--sm-rv-hi), var(--sm-rv) 48%, color-mix(in srgb, var(--sm-rv) 70%, black));
+  box-shadow: 0 3px 5px rgb(0 0 0 / 0.3);
 }
 
 .ug-steps li::after,
@@ -379,15 +547,15 @@ body[data-game="scooter-mechanic-simulator"] .btn:active {
 }
 
 .ug-steps li::after {
-  right: 16px;
-  bottom: 14px;
+  right: 18px;
+  bottom: 16px;
 }
 
 .ug-steps li:hover,
 .ug-steps li:focus-within {
   transform: translateY(-4px);
   border-color: var(--ug-accent);
-  box-shadow: 0 16px 32px var(--ug-shadow);
+  box-shadow: inset 0 1px 0 var(--sm-edge), inset 0 -2px 0 var(--sm-edge-lo), 0 16px 32px var(--ug-shadow);
 }
 
 .ug-steps li:hover::after,
@@ -397,34 +565,66 @@ body[data-game="scooter-mechanic-simulator"] .btn:active {
   scale: 1.1;
 }
 
-/* Features: a bolt head in the corner */
+/* Features: spec plates with a bolt head in the corner */
 .ug-features .detail-card {
   position: relative;
 }
 
 .ug-features .detail-card h3 {
-  padding-right: 34px;
+  padding-right: 36px;
 }
 
 .ug-features .detail-card::after {
-  top: 18px;
-  right: 16px;
+  top: 20px;
+  right: 22px;
 }
 
 .ug-features .detail-card:hover,
 .ug-faq .detail-card:hover {
   transform: translateY(-3px);
   border-color: var(--ug-accent);
-  box-shadow: 0 14px 28px var(--ug-shadow);
+  box-shadow: inset 0 1px 0 var(--sm-edge), inset 0 -2px 0 var(--sm-edge-lo), 0 14px 28px var(--ug-shadow);
 }
 
-/* Next: hex nuts instead of diamonds */
+/* FAQ: service tags. An eyelet at the top corner and a dashed tear line under the question. */
+body[data-game="scooter-mechanic-simulator"] .ug-faq .detail-card {
+  position: relative;
+  background:
+    repeating-linear-gradient(180deg, var(--sm-brush) 0 1px, transparent 1px 3px),
+    linear-gradient(165deg, var(--sm-plate), var(--sm-plate-2));
+}
+
+.ug-faq .detail-card::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--ug-bg) 0 3.5px, var(--sm-rv-lo) 4px 4.6px, var(--sm-rv) 5px 7px, var(--sm-rv-hi) 7.4px 8px, transparent 8.4px);
+}
+
+.ug-faq .detail-card h3 {
+  margin-bottom: 12px;
+  padding-right: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed color-mix(in srgb, var(--ug-muted) 55%, transparent);
+}
+
+/* Next: a job list. A checkbox that is not ticked yet, like the open jobs on a repair card. */
+.ug-next li {
+  padding-left: 52px;
+}
+
 .ug-next li::before {
-  width: 15px;
-  height: 15px;
-  border-radius: 0;
-  clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%);
-  background: linear-gradient(135deg, var(--ug-fill), var(--ug-fill-2));
+  top: 1rem;
+  left: 22px;
+  width: 17px;
+  height: 17px;
+  border: 2px solid var(--sm-yellow);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--sm-yellow) 10%, transparent);
   transform: none;
 }
 
@@ -433,12 +633,43 @@ body[data-game="scooter-mechanic-simulator"] .btn:active {
   border-color: var(--ug-accent);
 }
 
+/* Gallery: photos taped to the pegboard */
+.ug-shot {
+  position: relative;
+  overflow: visible;
+  padding: 8px 8px 0;
+  border: 1px solid color-mix(in srgb, var(--ug-line) 88%, transparent);
+  border-radius: 4px;
+  background: linear-gradient(165deg, var(--sm-plate), var(--sm-plate-2));
+  box-shadow: inset 0 1px 0 var(--sm-edge), 0 10px 20px rgb(0 0 0 / 0.26);
+  rotate: -0.6deg;
+}
+
+.ug-shot:nth-child(even) {
+  rotate: 0.5deg;
+}
+
+.ug-shot::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: calc(50% - 36px);
+  z-index: 1;
+  width: 72px;
+  height: 20px;
+  background: repeating-linear-gradient(135deg, rgb(255 208 49 / 0.86) 0 8px, rgb(30 33 38 / 0.86) 8px 16px);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 3px) 100%, 3px 100%);
+  rotate: 2.5deg;
+}
+
 .ug-shot img {
+  border-radius: 2px;
   transition: transform 0.4s var(--ease);
 }
 
 .ug-shot:hover {
   transform: translateY(-3px);
+  rotate: 0deg;
   border-color: var(--ug-accent);
 }
 
@@ -446,11 +677,36 @@ body[data-game="scooter-mechanic-simulator"] .btn:active {
   transform: scale(1.03);
 }
 
-/* Vote: hazard tape under the card, crawling very slowly ("work in progress") */
-.ug-vote {
+.ug-shot {
+  transition: transform 0.28s var(--ease), rotate 0.28s var(--ease), border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
+}
+
+.ug-shot figcaption {
+  padding-inline: 4px;
+}
+
+/* Vote: a closed plate with a hazard sign bar on top; tape crawls under it, very slowly ("work in progress") */
+body[data-game="scooter-mechanic-simulator"] .game-page-section.ug-vote {
   position: relative;
   overflow: hidden;
-  padding-bottom: calc(clamp(24px, 4vw, 38px) + 12px);
+  padding: clamp(40px, 5vw, 52px) clamp(24px, 4vw, 38px) calc(clamp(24px, 4vw, 38px) + 12px);
+  border: 1px solid color-mix(in srgb, var(--ug-line) 88%, transparent);
+  border-radius: 7px;
+  background:
+    var(--sm-rivet-c), var(--sm-rivet-d),
+    repeating-linear-gradient(180deg, var(--sm-brush) 0 1px, transparent 1px 3px),
+    linear-gradient(165deg, var(--sm-plate), var(--sm-plate-2));
+  box-shadow: inset 0 1px 0 var(--sm-edge), inset 0 -2px 0 var(--sm-edge-lo), 0 14px 30px rgb(0 0 0 / 0.26);
+}
+
+.ug-vote::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: var(--sm-hazard);
 }
 
 .ug-vote::after {
@@ -462,6 +718,25 @@ body[data-game="scooter-mechanic-simulator"] .btn:active {
   height: 10px;
   background: repeating-linear-gradient(90deg, var(--sm-yellow) 0 16px, #1a1d22 16px 32px);
   transform: skewX(-35deg);
+}
+
+body[data-game="scooter-mechanic-simulator"] .lab-related-all {
+  background: var(--sm-plate);
+}
+
+/* Buttons: pressed-metal, a lit top edge and a shaded base */
+body[data-game="scooter-mechanic-simulator"] .btn,
+body[data-game="scooter-mechanic-simulator"].game-detail-page .btn:focus-visible {
+  border-radius: 8px;
+}
+
+body[data-game="scooter-mechanic-simulator"] .btn-primary {
+  box-shadow: inset 0 2px 0 rgb(255 255 255 / 0.34), inset 0 -4px 0 rgb(0 0 0 / 0.22), 0 10px 22px rgb(255 208 49 / 0.22);
+}
+
+body[data-game="scooter-mechanic-simulator"] .btn-ghost {
+  background: var(--sm-plate);
+  box-shadow: inset 0 1px 0 var(--sm-edge), inset 0 -3px 0 var(--sm-edge-lo);
 }
 
 /* Scroll reveal for the steps: movement only, so the text stays fully readable while it settles. */
@@ -495,8 +770,19 @@ body.animations-paused .ug-steps li {
   animation: none;
 }
 
-/* ---- Page-wide garage world: pegboard wall, a blurred view of the street from the capture, tool silhouettes, lamp glow pools,
-   a swaying work lamp, slow dust and an occasional spark. Fixed behind every section (z-index -1); the cards on top are translucent glass. ---- */
+/* Hero copy sits directly on the world: a soft halo keeps it readable */
+body[data-game="scooter-mechanic-simulator"] :is(.ug-hero-copy h1, .ug-tagline, .ug-hero-copy .hero-copy, .ug-genre) {
+  text-shadow: 0 0 16px color-mix(in srgb, var(--ug-bg) 88%, transparent), 0 1px 3px color-mix(in srgb, var(--ug-bg) 60%, transparent);
+}
+
+/* ---- Page-wide world: the view out of the garage door. Fixed behind every section (z-index -1), back to front:
+   dusk (or daylight) sky, the street from the capture, a swaying work lamp and warm glow pools, then one clock-driven group
+   (a street with two scooters riding past, pegboard posts with hanging tools that swing, meshing gears), a text scrim,
+   slow dust and an occasional weld spark.
+   One registered number (--smt, 0 to 1 over 60 s) drives every continuous motion in the clock group, so wheels, gears, tools and
+   scooters add a single infinite animation. Every motion uses a whole number of cycles per loop, so the loop has no seam.
+   Without motion the clock stays at 0: a finished still with the scooters parked on the street. ---- */
+/* Background motion uses independent GPU transform/opacity animations per element (no inherited clock). */
 
 /* main becomes the stacking context, so the world (z-index -1) paints above the page background and below the sections */
 body[data-game="scooter-mechanic-simulator"] .game-detail-shell {
@@ -510,7 +796,53 @@ body[data-game="scooter-mechanic-simulator"] .lab-related {
   z-index: 1;
 }
 
+body[data-game="scooter-mechanic-simulator"][data-theme="dark"] {
+  --sm-sky: linear-gradient(180deg, #0a0e14 0%, #131b26 34%, #2b2630 62%, #5b3b25 100%);
+  --sm-city: 0.5;
+  --sm-road-1: #2a2c32;
+  --sm-road-2: #14161a;
+  --sm-dash: rgb(255 208 49 / 0.5);
+  --sm-sil: #06070a;
+  --sm-spoke: rgb(255 255 255 / 0.28);
+  --sm-beam: rgb(255 214 130 / 0.5);
+  --sm-peg-1: #33281d;
+  --sm-peg-2: #17120e;
+  --sm-peg-dot: rgb(255 235 200 / 0.12);
+  --sm-post: rgb(255 208 49 / 0.55);
+  --sm-tool: rgb(255 208 49 / 0.46);
+  --sm-hook: #8d949c;
+  --sm-gear: rgb(150 160 172 / 0.5);
+  --sm-dustc: rgb(255 226 160 / 0.9);
+  --sm-pool-a: 0.5;
+  --sm-pool-b: 0.32;
+  --sm-cone: 0.3;
+}
+
+body[data-game="scooter-mechanic-simulator"][data-theme="light"] {
+  --sm-sky: linear-gradient(180deg, #b7d3ec 0%, #d6e6f3 38%, #efe4cd 78%, #f0d9ae 100%);
+  --sm-city: 0.55;
+  --sm-road-1: #a3a8af;
+  --sm-road-2: #858b93;
+  --sm-dash: rgb(255 255 255 / 0.7);
+  --sm-sil: #23272d;
+  --sm-spoke: rgb(255 255 255 / 0.5);
+  --sm-beam: rgb(255 236 170 / 0.55);
+  --sm-peg-1: #d9c7a6;
+  --sm-peg-2: #bba983;
+  --sm-peg-dot: rgb(60 45 25 / 0.22);
+  --sm-post: rgb(168 118 12 / 0.65);
+  --sm-tool: rgb(70 52 28 / 0.46);
+  --sm-hook: #6b7480;
+  --sm-gear: rgb(92 102 114 / 0.42);
+  --sm-dustc: rgb(176 118 18 / 0.75);
+  --sm-pool-a: 0.4;
+  --sm-pool-b: 0.28;
+  --sm-cone: 0.36;
+}
+
 .sm-world {
+  --sm-road-h: clamp(92px, 19vh, 200px);
+  --sm-g: clamp(1.3px, 0.19vw, 2.7px);
   position: fixed;
   inset: 0;
   z-index: -1;
@@ -519,46 +851,40 @@ body[data-game="scooter-mechanic-simulator"] .lab-related {
   pointer-events: none;
 }
 
-.sm-world > :is(span, svg) {
+.sm-world > * {
   position: absolute;
 }
 
-.sm-w-wall {
-  inset: 0;
-  background:
-    radial-gradient(circle at 50% 50%, var(--sm-peg) 0 1.7px, transparent 2.6px) 0 0 / 30px 30px,
-    linear-gradient(180deg, var(--sm-wall-1), var(--sm-wall-2));
+.sm-w-defs {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
+.sm-w-sky {
+  inset: 0;
+  background: var(--sm-sky);
+}
+
+/* The street from the capture, soft behind the scooters */
 .sm-w-city {
   left: 0;
   right: 0;
-  top: 0;
-  height: 64%;
-  background: url("../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp") center 34% / cover no-repeat;
-  filter: blur(7px) saturate(0.9);
-  -webkit-mask-image: linear-gradient(180deg, #000 0, transparent 92%);
-  mask-image: linear-gradient(180deg, #000 0, transparent 92%);
-  opacity: var(--sm-city);
+  bottom: calc(var(--sm-road-h) - 8px);
+  height: 46vh;
+  background: url("../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp") center 41% / cover no-repeat;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 40%, #000 86%, transparent 100%);
+  mask-image: linear-gradient(180deg, transparent 0, #000 40%, #000 86%, transparent 100%);
+  opacity: calc(var(--sm-city) * 0.86);
 }
-
-.sm-w-tools {
-  top: 0;
-  height: 100%;
-  width: clamp(96px, 14vw, 220px);
-  color: var(--sm-tool);
-  fill: currentColor;
-}
-
-.sm-w-tools--l { left: 0; }
-.sm-w-tools--r { right: 0; }
 
 .sm-w-pools {
   inset: 0;
   background:
     radial-gradient(ellipse 36% 42% at 14% 4%, rgb(255 176 70 / var(--sm-pool-a)), transparent 70%),
-    radial-gradient(ellipse 30% 38% at 88% 40%, rgb(255 160 50 / var(--sm-pool-b)), transparent 72%),
-    radial-gradient(ellipse 42% 36% at 30% 104%, rgb(255 150 40 / var(--sm-pool-b)), transparent 70%);
+    radial-gradient(ellipse 30% 38% at 90% 46%, rgb(255 160 50 / var(--sm-pool-b)), transparent 72%),
+    radial-gradient(ellipse 46% 30% at 34% 100%, rgb(255 150 40 / var(--sm-pool-b)), transparent 70%);
 }
 
 .sm-w-lamp {
@@ -570,6 +896,204 @@ body[data-game="scooter-mechanic-simulator"] .lab-related {
   background: linear-gradient(180deg, rgb(255 208 126 / var(--sm-cone)), transparent 80%);
   transform-origin: 50% 0;
   rotate: -3deg;
+}
+
+/* ---- The clock group ---- */
+.sm-w-clock {
+  inset: 0;
+}
+
+.sm-w-clock > * {
+  position: absolute;
+}
+
+/* The street: curb tape, asphalt, a lane line */
+.sm-w-road {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--sm-road-h);
+  background: linear-gradient(180deg, var(--sm-road-1), var(--sm-road-2));
+}
+
+.sm-w-road::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7px;
+  background: repeating-linear-gradient(135deg, #ffd031 0 10px, #1a1d22 10px 20px);
+  opacity: 0.5;
+}
+
+.sm-w-lane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 56%;
+  height: 4px;
+  background: repeating-linear-gradient(90deg, var(--sm-dash) 0 46px, transparent 46px 92px);
+}
+
+/* Scooters: a rider on an electric scooter, seen from the side. The near one rolls right, the far one rolls left. */
+.sm-w-sc {
+  --w: clamp(116px, 13vw, 230px);
+  position: absolute;
+  left: 0;
+  width: var(--w);
+  height: auto;
+  overflow: visible;
+  color: var(--sm-sil);
+  fill: currentColor;
+}
+
+.sm-w-sc--near {
+  bottom: 7%;
+  transform: translate3d(38vw, 0, 0);
+}
+
+.sm-w-sc--far {
+  --w: clamp(70px, 7.6vw, 132px);
+  bottom: 46%;
+  opacity: 0.8;
+  transform: translate3d(68vw, 0, 0) scaleX(-1);
+}
+
+.sm-w-sc :is(.sm-sc-stem, .sm-sc-leg, .sm-sc-torso, .sm-sc-arm, .sm-sc-fender) {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sm-sc-leg { stroke-width: 9; }
+.sm-sc-torso { stroke-width: 14; }
+.sm-sc-fender { stroke-width: 3; }
+.sm-sc-deck { fill: var(--sc, #ff7a3d); }
+.sm-sc-helmet { fill: var(--sc, #ff7a3d); }
+.sm-sc-tail { fill: #ff5440; }
+.sm-w-sc--far { --sc: #35c2c9; }
+.sm-sc-beam { fill: url(#smBeam); opacity: 0.85; }
+
+.sm-sc-wheel {
+  transform-box: view-box;
+}
+
+.sm-sc-wheel circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 6;
+}
+
+.sm-sc-wheel path {
+  fill: none;
+  stroke: var(--sm-spoke);
+  stroke-width: 2.4;
+}
+
+.sm-sc-wheel--r { transform-origin: 24px 82px; }
+.sm-sc-wheel--f { transform-origin: 108px 82px; }
+
+/* Pegboard posts at both sides: hanging tools that swing on their pegs, and gears that mesh */
+.sm-w-side {
+  top: 0;
+  bottom: 0;
+  width: clamp(60px, 8vw, 136px);
+  background:
+    radial-gradient(circle at 50% 50%, var(--sm-peg-dot) 0 1.7px, transparent 2.6px) 0 0 / 28px 28px,
+    linear-gradient(180deg, var(--sm-peg-1), var(--sm-peg-2));
+}
+
+.sm-w-side--l {
+  left: 0;
+  box-shadow: inset -3px 0 0 var(--sm-post), 8px 0 22px rgb(0 0 0 / 0.28);
+}
+
+.sm-w-side--r {
+  right: 0;
+  box-shadow: inset 3px 0 0 var(--sm-post), -8px 0 22px rgb(0 0 0 / 0.28);
+}
+
+.sm-w-tool {
+  --o: 0;
+  position: absolute;
+  left: 26%;
+  width: 46%;
+  color: var(--sm-tool);
+  transform-origin: 50% 0;
+}
+
+.sm-w-tool::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: calc(50% - 4px);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sm-hook);
+}
+
+.sm-w-tool svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: currentColor;
+}
+
+.sm-w-side--l .sm-w-tool--1 { top: 5%; }
+.sm-w-side--l .sm-w-tool--2 { top: 20%; --o: 0.27; }
+.sm-w-side--l .sm-w-tool--3 { top: 36%; --o: 0.55; }
+.sm-w-side--l .sm-w-tool--4 { top: 49%; --o: 0.8; }
+.sm-w-side--r .sm-w-tool--1 { top: 36%; --o: 0.12; }
+.sm-w-side--r .sm-w-tool--2 { top: 44%; --o: 0.4; }
+.sm-w-side--r .sm-w-tool--3 { top: 58%; --o: 0.66; }
+.sm-w-side--r .sm-w-tool--4 { top: 68%; --o: 0.93; }
+
+.sm-gear {
+  position: absolute;
+  overflow: visible;
+  fill: var(--sm-gear);
+}
+
+/* Left train: A (24 teeth) drives B (12, up and to the right) and C (6). Right train: D drives E. One tooth module is --sm-g. */
+.sm-gear--a {
+  width: calc(104 * var(--sm-g));
+  height: calc(104 * var(--sm-g));
+  left: calc(-52 * var(--sm-g) - 34px);
+  top: calc(90% - 52 * var(--sm-g));
+}
+
+.sm-gear--b {
+  width: calc(56 * var(--sm-g));
+  height: calc(56 * var(--sm-g));
+  left: calc(-34px - 28 * var(--sm-g) + 72 * var(--sm-g) * cos(-50deg));
+  top: calc(90% - 28 * var(--sm-g) + 72 * var(--sm-g) * sin(-50deg));
+  transform: rotate(15deg);
+}
+
+.sm-gear--c {
+  width: calc(32 * var(--sm-g));
+  height: calc(32 * var(--sm-g));
+  left: calc(-34px - 16 * var(--sm-g) + 72 * var(--sm-g) * cos(-50deg) + 36 * var(--sm-g) * cos(-100deg));
+  top: calc(90% - 16 * var(--sm-g) + 72 * var(--sm-g) * sin(-50deg) + 36 * var(--sm-g) * sin(-100deg));
+}
+
+.sm-gear--d {
+  width: calc(104 * var(--sm-g));
+  height: calc(104 * var(--sm-g));
+  right: calc(-52 * var(--sm-g) - 34px);
+  top: calc(16% - 52 * var(--sm-g));
+}
+
+.sm-gear--e {
+  width: calc(56 * var(--sm-g));
+  height: calc(56 * var(--sm-g));
+  right: calc(-34px - 28 * var(--sm-g) - 72 * var(--sm-g) * cos(-130deg));
+  top: calc(16% - 28 * var(--sm-g) + 72 * var(--sm-g) * sin(-130deg));
+  transform: rotate(15deg);
 }
 
 .sm-w-veil {
@@ -597,10 +1121,10 @@ body[data-game="scooter-mechanic-simulator"] .lab-related {
     62vw 6vh 3px 0 var(--sm-dustc), 95vw 132vh 3px 0 var(--sm-dustc);
 }
 
-/* An occasional spark near the workbench: invisible for most of a 16 s loop */
+/* A weld spark: invisible for most of a 16 s loop */
 .sm-w-spark {
-  left: 9vw;
-  top: 66vh;
+  left: 12vw;
+  top: 62vh;
 }
 
 .sm-w-spark::before {
@@ -615,131 +1139,117 @@ body[data-game="scooter-mechanic-simulator"] .lab-related {
     0 0 22px 8px rgb(255 160 60 / 0.5);
 }
 
-.sm-w-floor {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 18vh;
-  background: linear-gradient(180deg, transparent, var(--sm-floor));
-}
-
-.sm-w-floor::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 6px;
-  background: repeating-linear-gradient(135deg, var(--sm-yellow) 0 10px, #1a1d22 10px 20px);
-  opacity: 0.55;
-}
-
-body[data-game="scooter-mechanic-simulator"][data-theme="dark"] {
-  --sm-wall-1: #2a221b;
-  --sm-wall-2: #14161a;
-  --sm-peg: rgb(255 235 200 / 0.09);
-  --sm-tool: rgb(255 208 49 / 0.26);
-  --sm-dustc: rgb(255 226 160 / 0.9);
-  --sm-pool-a: 0.5;
-  --sm-pool-b: 0.3;
-  --sm-cone: 0.26;
-  --sm-city: 0.62;
-  --sm-floor: rgb(0 0 0 / 0.4);
-}
-
-body[data-game="scooter-mechanic-simulator"][data-theme="light"] {
-  --sm-wall-1: #f3ede1;
-  --sm-wall-2: #dde1e6;
-  --sm-peg: rgb(60 45 25 / 0.12);
-  --sm-tool: rgb(60 45 25 / 0.17);
-  --sm-dustc: rgb(176 118 18 / 0.75);
-  --sm-pool-a: 0.42;
-  --sm-pool-b: 0.3;
-  --sm-cone: 0.3;
-  --sm-city: 0.4;
-  --sm-floor: rgb(70 58 40 / 0.16);
-}
-
 /* A scrim keeps the hero copy, which sits directly on the world, above 4.5:1 */
 body[data-game="scooter-mechanic-simulator"][data-theme="dark"] .sm-w-veil {
   background:
-    radial-gradient(ellipse 58% 74% at 27% 56%, rgb(10 11 14 / 0.84), rgb(10 11 14 / 0.6) 62%, transparent 100%),
-    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(14 15 18 / 0.35) 0, rgb(14 15 18 / 0.22) 60%, transparent 100%);
+    radial-gradient(ellipse 58% 74% at 27% 56%, rgb(10 11 14 / 0.8), rgb(10 11 14 / 0.52) 62%, transparent 100%),
+    linear-gradient(180deg, rgb(8 10 14 / 0.3), transparent 26%);
 }
 
 body[data-game="scooter-mechanic-simulator"][data-theme="light"] .sm-w-veil {
   background:
-    radial-gradient(ellipse 60% 82% at 27% 58%, rgb(244 247 251 / 0.96), rgb(242 246 250 / 0.84) 66%, transparent 100%),
-    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 244 249 / 0.4) 0, rgb(238 242 248 / 0.25) 60%, transparent 100%);
-}
-
-/* Cards: translucent glass over the world, plus a soft halo on the hero text that sits directly on it */
-body[data-game="scooter-mechanic-simulator"] .soft-card {
-  background: linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 64%, transparent), color-mix(in srgb, var(--ug-card) 50%, transparent));
-}
-
-@media (min-width: 761px) {
-  body[data-game="scooter-mechanic-simulator"] .soft-card {
-    -webkit-backdrop-filter: blur(6px);
-    backdrop-filter: blur(6px);
-  }
-}
-
-body[data-game="scooter-mechanic-simulator"] :is(.detail-card, .update-list li, .ug-next li, .ug-facts .game-page-facts > div) {
-  background: color-mix(in srgb, var(--ug-card-2) 80%, transparent);
-}
-
-body[data-game="scooter-mechanic-simulator"] :is(.ug-status-note, .ug-collab) {
-  background: color-mix(in srgb, var(--ug-card) 84%, transparent);
-}
-
-body[data-game="scooter-mechanic-simulator"] .lab-related-link {
-  background: color-mix(in srgb, var(--ug-card-2) 95%, transparent);
-}
-
-body[data-game="scooter-mechanic-simulator"] .lab-related-all {
-  background: color-mix(in srgb, var(--ug-card) 94%, transparent);
-}
-
-body[data-game="scooter-mechanic-simulator"] :is(.ug-hero-copy h1, .ug-tagline, .ug-hero-copy .hero-copy, .ug-genre) {
-  text-shadow: 0 0 16px color-mix(in srgb, var(--ug-bg) 88%, transparent), 0 1px 3px color-mix(in srgb, var(--ug-bg) 60%, transparent);
+    radial-gradient(ellipse 60% 82% at 27% 58%, rgb(244 247 251 / 0.74), rgb(242 246 250 / 0.5) 66%, transparent 100%),
+    linear-gradient(180deg, rgb(244 247 251 / 0.3), transparent 26%);
 }
 
 @media (max-width: 920px) {
   body[data-game="scooter-mechanic-simulator"][data-theme="dark"] .sm-w-veil {
-    background:
-      linear-gradient(180deg, rgb(10 11 14 / 0.84), rgb(10 11 14 / 0.62) 70%, rgb(10 11 14 / 0.45));
+    background: linear-gradient(180deg, rgb(10 11 14 / 0.8), rgb(10 11 14 / 0.58) 70%, rgb(10 11 14 / 0.4));
   }
 
   body[data-game="scooter-mechanic-simulator"][data-theme="light"] .sm-w-veil {
-    background:
-      linear-gradient(180deg, rgb(244 247 251 / 0.92), rgb(242 246 250 / 0.7) 70%, rgb(238 242 248 / 0.45));
+    background: linear-gradient(180deg, rgb(244 247 251 / 0.9), rgb(242 246 250 / 0.7) 70%, rgb(238 242 248 / 0.4));
   }
 }
 
+/* Phones: one scooter, no far lane, no gears or tools, a narrow pegboard post, no spark and no lamp cone. */
 @media (max-width: 760px) {
   .sm-w-city {
     background-image: url("../assets/upcoming/scooter-mechanic-simulator/hero-720.webp");
     filter: none;
   }
 
-  .sm-w-tools--r,
+  .sm-w-sc--far,
+  .sm-w-sc--far .sm-sc-wheel,
+  .sm-gear,
+  .sm-w-tool,
+  .sm-w-spark,
+  .sm-w-lamp {
+    animation: none;
+  }
+
+  .sm-w-sc--far,
+  .sm-gear,
+  .sm-w-tool,
   .sm-w-spark,
   .sm-w-lamp {
     display: none;
   }
+
+  .sm-w-side {
+    width: 14px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .sm-w-pools { animation: smPools 11s ease-in-out infinite alternate; }
+  .sm-w-sc--near { animation: smScooterNear 30s linear -10.2s infinite; }
+  .sm-w-sc--far { animation: smScooterFar 60s linear -16.8s infinite; }
+  .sm-sc-wheel { animation: smWheelSpin 2.14s linear infinite; }
+  .sm-gear--a { animation: smGearCw 30s linear infinite; }
+  .sm-gear--b { animation: smGearCcwOffset 15s linear infinite; }
+  .sm-gear--c { animation: smGearCw 7.5s linear infinite; }
+  .sm-gear--d { animation: smGearCcw 30s linear infinite; }
+  .sm-gear--e { animation: smGearCwOffset 15s linear infinite; }
+  .sm-w-side--l .sm-w-tool--1 { animation: smToolSwing 10s ease-in-out infinite alternate; }
   .sm-w-lamp { animation: smWorldLamp 12s ease-in-out infinite alternate; }
   .sm-w-dust::before { animation: smWorldDust 38s linear infinite; }
   .sm-w-spark::before { animation: smWorldSpark 16s ease-out infinite; }
 }
 
-@keyframes smPools {
-  from { opacity: 0.78; }
-  to { opacity: 1; }
+@media (prefers-reduced-motion: reduce) {
+  .sm-world,
+  .sm-world *,
+  .sm-world *::before,
+  .sm-world *::after {
+    animation: none !important;
+  }
+}
+
+@keyframes smScooterNear {
+  from { transform: translate3d(calc(-1 * var(--w)), 0, 0); }
+  to { transform: translate3d(calc(100vw + var(--w)), 0, 0); }
+}
+
+@keyframes smScooterFar {
+  from { transform: translate3d(calc(100vw + var(--w)), 0, 0) scaleX(-1); }
+  to { transform: translate3d(calc(-1 * var(--w)), 0, 0) scaleX(-1); }
+}
+
+@keyframes smWheelSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes smGearCw {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes smGearCcw {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes smGearCwOffset {
+  from { transform: rotate(15deg); }
+  to { transform: rotate(375deg); }
+}
+
+@keyframes smGearCcwOffset {
+  from { transform: rotate(15deg); }
+  to { transform: rotate(-345deg); }
+}
+
+@keyframes smToolSwing {
+  from { transform: rotate(-2.4deg); }
+  to { transform: rotate(2.4deg); }
 }
 
 @keyframes smWorldLamp {

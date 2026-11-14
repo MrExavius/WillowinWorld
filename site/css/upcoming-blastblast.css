@@ -24,9 +24,7 @@ body[data-game="blastblast"] .ug-hero::before {
   position: absolute;
   inset: -6% -12% -4% 34%;
   z-index: -1;
-  background:
-    radial-gradient(ellipse 60% 55% at 62% 42%, color-mix(in srgb, var(--bb-ember) 30%, transparent), transparent 70%),
-    repeating-radial-gradient(circle at 62% 42%, transparent 0 54px, color-mix(in srgb, var(--bb-ember) 18%, transparent) 54px 56px);
+  background: radial-gradient(ellipse 60% 55% at 62% 42%, color-mix(in srgb, var(--bb-ember) 30%, transparent), transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 70% 70% at 62% 42%, #000 35%, transparent 75%);
   mask-image: radial-gradient(ellipse 70% 70% at 62% 42%, #000 35%, transparent 75%);
   pointer-events: none;
@@ -297,12 +295,14 @@ body[data-game="blastblast"] .btn-ghost:hover {
   transform: translateX(-3cqw) scale(1.1);
 }
 
-.bb-ring--two {
-  left: 43.5cqw;
-}
-
-.bb-ring--three {
-  left: 81.5cqw;
+/* The moving blast: one ring that rides on the pilot's flight and goes off at the bottom of every hop (it replaces three
+   separate rings, one animation instead of three). Its own motion cancels the flight, so each ring stays where its blast happened. */
+.bb-ring--blast {
+  position: absolute;
+  top: 8.4cqw;
+  left: -9cqw;
+  z-index: -1;
+  opacity: 0;
 }
 
 /* The pilot (cutout of the editor capture) and its hop. */
@@ -740,7 +740,7 @@ body[data-game="blastblast"] .game-detail-shell::before {
 
 body[data-game="blastblast"][data-theme="dark"] .bb-page-backdrop::before {
   background:
-    linear-gradient(90deg, rgba(9, 19, 38, 0.72) 0, rgba(9, 19, 38, 0.56) 50%, rgba(9, 19, 38, 0.4) 100%),
+    linear-gradient(90deg, rgba(9, 19, 38, 0.68) 0, rgba(9, 19, 38, 0.46) 50%, rgba(9, 19, 38, 0.22) 100%),
     radial-gradient(ellipse 60% 50% at 84% 12%, rgba(255, 141, 59, 0.24), transparent 70%);
 }
 
@@ -750,7 +750,7 @@ body[data-game="blastblast"][data-theme="dark"] .bb-page-backdrop::after {
 
 body[data-game="blastblast"][data-theme="light"] .bb-page-backdrop::before {
   background:
-    linear-gradient(90deg, rgba(255, 241, 231, 0.76) 0, rgba(255, 241, 231, 0.58) 50%, rgba(255, 241, 231, 0.4) 100%),
+    linear-gradient(90deg, rgba(255, 241, 231, 0.74) 0, rgba(255, 241, 231, 0.5) 50%, rgba(255, 241, 231, 0.26) 100%),
     radial-gradient(ellipse 60% 50% at 84% 12%, rgba(255, 141, 59, 0.2), transparent 70%);
 }
 
@@ -766,7 +766,8 @@ body[data-game="blastblast"][data-theme="light"] .bb-page-backdrop::after {
 
 .bb-bg-far img {
   display: block;
-  width: 100%;
+  width: 114vw;
+  max-width: none;
   height: 100%;
   object-fit: cover;
   object-position: 30% 70%;
@@ -858,28 +859,235 @@ body[data-game="blastblast"][data-theme="light"] .bb-page-backdrop::after {
   transform: translateX(-50%);
 }
 
-/* Speed lines: a tilted strip, two copies of the same pattern, sliding by one copy. */
+/* Speed lines: 160vw wide, two copies of the same pattern, sliding by one copy (axis-aligned, so it is only moved, never redrawn). */
 .bb-bg-streaks {
-  top: -10%;
+  top: 0;
   left: 0;
   z-index: 2;
   width: 160vw;
-  height: 120%;
+  height: 100%;
   opacity: 0.55;
-  transform: rotate(-14deg) translateX(-10vw);
   background:
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 6vw 14% / 16vw 2px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 30vw 31% / 22vw 1.5px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.55), transparent) 52vw 47% / 14vw 2px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 66vw 63% / 20vw 1.5px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 14vw 76% / 18vw 2px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.35), transparent) 44vw 88% / 24vw 1.5px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 86vw 14% / 16vw 2px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 110vw 31% / 22vw 1.5px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.55), transparent) 132vw 47% / 14vw 2px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 146vw 63% / 20vw 1.5px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 94vw 76% / 18vw 2px no-repeat,
-    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.35), transparent) 124vw 88% / 24vw 1.5px no-repeat;
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 6vw 14% / 16vw 3px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 30vw 31% / 22vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.55), transparent) 52vw 47% / 14vw 3px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 66vw 63% / 20vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 14vw 76% / 18vw 3px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.35), transparent) 44vw 88% / 24vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 86vw 14% / 16vw 3px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 110vw 31% / 22vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.55), transparent) 132vw 47% / 14vw 3px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 146vw 63% / 20vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 94vw 76% / 18vw 3px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.35), transparent) 124vw 88% / 24vw 2px no-repeat;
+}
+
+/* Far blasts: warm glow at the edges that flares and dies. */
+.bb-bg-glow {
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 36% 32% at 88% 22%, var(--bb-flare), transparent 70%),
+    radial-gradient(ellipse 34% 30% at 6% 82%, var(--bb-flare-2), transparent 70%);
+}
+
+/* Shock rings from the hero stage: four concentric rings, each flashing in turn from the inside out, so the blast seems to travel
+   (opacity only: nothing is scaled or redrawn). They live in the hero and scroll away with it, so they never pass behind the text
+   cards below; the biggest one stays inside the right half so it never reaches the hero copy. */
+.bb-hero-waves {
+  --cx: calc(50% + min(1180px, 100vw - 40px) * 0.26);
+  --cy: 44%;
+  position: absolute;
+  top: calc(-1 * clamp(34px, 5vw, 62px));
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bb-hero-waves > span {
+  position: absolute;
+  top: var(--cy);
+  left: var(--cx);
+  width: 0;
+  height: 0;
+}
+
+.bb-hero-waves i {
+  --d: 12vmax;
+  position: absolute;
+  top: calc(var(--d) / -2);
+  left: calc(var(--d) / -2);
+  width: var(--d);
+  height: var(--d);
+  border: 3px solid var(--bb-wave);
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side, transparent 72%, var(--bb-wave-fill));
+  opacity: 0;
+}
+
+.bb-hero-waves i::before {
+  content: "";
+  position: absolute;
+  inset: calc(var(--d) * 0.035);
+  border: 2px dashed var(--bb-wave-2);
+  border-radius: 50%;
+}
+
+.bb-hero-waves i:nth-child(2) { --d: 22vmax; }
+.bb-hero-waves i:nth-child(3) { --d: 33vmax; }
+.bb-hero-waves i:nth-child(4) { --d: 44vmax; }
+.bb-hero-waves i:nth-child(5) { display: none; }
+
+/* Debris and embers live in lanes: full strength beside the content, and a low floor behind it, so the bright chunks never lower the
+   contrast of the translucent cards' text (the small embers keep more of their strength, they are too small to matter). */
+.bb-bg-lane {
+  inset: 0;
+  z-index: 6;
+  overflow: hidden;
+}
+
+.bb-bg-lane--embers {
+  z-index: 7;
+}
+
+/* Debris thrown out by the blasts: steel shards and a few red-hot chunks, two copies side by side so the drift loops. */
+.bb-bg-debris {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.bb-bg-debris .bb-bg-half i {
+  --x: 10;
+  --y: 20;
+  --s: 3.4;
+  --r: 0deg;
+  left: calc(var(--x) * 1%);
+  top: calc(var(--y) * 1%);
+  width: calc(var(--s) * 1vmin);
+  aspect-ratio: 1.5;
+  background: linear-gradient(120deg, var(--bb-shard-hi) 0 12%, var(--bb-shard-mid) 13% 58%, var(--bb-shard-lo));
+  clip-path: polygon(0 62%, 62% 0, 100% 38%, 24% 100%);
+  transform: rotate(var(--r));
+}
+
+/* Three slivers: a long quad, a spike and a notched plate. */
+.bb-bg-debris .bb-bg-half i:nth-child(3n + 2) {
+  clip-path: polygon(0 100%, 58% 0, 100% 46%);
+}
+
+.bb-bg-debris .bb-bg-half i:nth-child(3n) {
+  clip-path: polygon(0 20%, 46% 0, 100% 14%, 78% 62%, 52% 100%, 20% 70%);
+}
+
+.bb-bg-debris .bb-bg-half i:nth-child(1) { --x: 6; --y: 18; --s: 4.6; --r: 24deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(2) { --x: 14; --y: 64; --s: 3; --r: -40deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(3) { --x: 27; --y: 36; --s: 3.6; --r: 70deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(4) { --x: 38; --y: 82; --s: 5.4; --r: 15deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(5) { --x: 49; --y: 12; --s: 2.6; --r: 110deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(6) { --x: 58; --y: 52; --s: 3.2; --r: -20deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(7) { --x: 69; --y: 28; --s: 5; --r: 200deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(8) { --x: 78; --y: 74; --s: 2.8; --r: 60deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(9) { --x: 90; --y: 44; --s: 4; --r: -65deg; }
+.bb-bg-debris .bb-bg-half i:nth-child(10) { --x: 96; --y: 90; --s: 3.2; --r: 140deg; }
+
+/* The red-hot chunks. */
+.bb-bg-debris .bb-bg-half i:nth-child(2),
+.bb-bg-debris .bb-bg-half i:nth-child(5),
+.bb-bg-debris .bb-bg-half i:nth-child(8) {
+  background: linear-gradient(120deg, #ffd36a 0 14%, #ff5a36 15% 58%, #7e2616);
+}
+
+/* Embers and sparks rising: a tile of glowing dots, two tiles tall, sliding by one tile. */
+.bb-bg-embers {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 200vh;
+  opacity: 0.7;
+  background-repeat: repeat-y;
+  background-size: 100% 50%;
+  background-image:
+    radial-gradient(circle 10px at 79.4% 9.3%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 13px at 56.4% 69.6%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 10px at 40.7% 61.0%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 16px at 97.8% 35.6%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 13px at 56.9% 86.3%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 13px at 29.9% 59.9%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 10px at 6.9% 5.2%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 16px at 22.6% 83.1%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 13px at 27.4% 40.7%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 13px at 32.5% 76.1%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 16px at 79.4% 49.1%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 13px at 79.9% 31.2%, var(--bb-e2) 0 30%, transparent 100%),
+    radial-gradient(circle 2px at 65.8% 24.8%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 5.5px at 41.3% 81.7%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 41.5% 71.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 15.1% 16.3%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 16.8% 47.2%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 84.4% 37.2%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 60.5% 29.2%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 10.3% 14.0%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2px at 40.7% 17.9%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3px at 56.1% 39.6%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 29.3% 47.2%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 17.6% 95.0%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 45.4% 39.0%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 45.1% 51.9%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 5.5px at 97.2% 63.3%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 33.9% 26.9%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 42.8% 27.6%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 52.4% 91.1%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 93.2% 91.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 14.8% 23.9%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 94.1% 86.8%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 89.6% 75.1%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3px at 92.7% 51.0%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2px at 82.1% 60.9%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 34.3% 9.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 6.1% 93.0%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3px at 77.8% 15.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 81.1% 95.9%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 64.6% 53.5%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2px at 67.5% 7.0%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 5.5px at 33.5% 81.8%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3px at 96.9% 29.3%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3px at 68.9% 75.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 71.1% 94.7%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 54.8% 14.5%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 5.5px at 71.4% 41.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 58.9% 47.7%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2px at 17.5% 57.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 96.3% 16.5%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3.5px at 57.9% 9.1%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3px at 71.4% 85.1%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 2.5px at 10.2% 37.8%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 3px at 77.8% 72.0%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(circle 4.5px at 41.2% 95.4%, var(--bb-e0) 0 36%, var(--bb-e1) 40% 70%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 84.2% 83.2%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 20.1% 74.6%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 2.6% 51.2%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 34.8% 96.6%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 95.9% 5.4%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 3.4% 63.4%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 4.8% 30.1%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 47.9% 4.7%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 5.4% 86.8%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 70.7% 14.1%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 15.5% 36.2%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 22.3% 7.9%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 3.2% 74.8%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 73.0% 62.3%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 29.9% 17.0%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%),
+    radial-gradient(ellipse 1.8px 9px at 53.0% 57.3%, var(--bb-e0) 0 40%, var(--bb-e1) 60%, transparent 100%);
 }
 
 /* Soft scrims behind the two blocks of text that sit straight on the world (hero copy, related worlds); they fade out, no box. */
@@ -893,23 +1101,52 @@ body[data-game="blastblast"] .ug-hero-copy::before,
 body[data-game="blastblast"] .lab-related-inner::before {
   content: "";
   position: absolute;
-  inset: -28px -48px -28px -64px;
+  inset: -56px -96px;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse 62% 62% at 42% 50%, var(--bb-scrim) 28%, transparent 100%);
+  background: var(--bb-scrim);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 96px, #000 calc(100% - 96px), transparent), linear-gradient(180deg, transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 96px, #000 calc(100% - 96px), transparent), linear-gradient(180deg, transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 body[data-game="blastblast"] .lab-related-inner::before {
-  inset: -24px -40px -24px -40px;
-  background: radial-gradient(ellipse 70% 80% at 38% 50%, var(--bb-scrim) 26%, transparent 100%);
+  inset: -48px -80px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 80px, #000 calc(100% - 80px), transparent), linear-gradient(180deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 80px, #000 calc(100% - 80px), transparent), linear-gradient(180deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
 }
 
 body[data-game="blastblast"][data-theme="dark"] {
-  --bb-scrim: rgba(9, 19, 38, 0.9);
+  --bb-scrim: rgba(9, 19, 38, 0.84);
+  --bb-e0: #fff0c2;
+  --bb-e1: rgba(255, 141, 59, 0.9);
+  --bb-e2: rgba(255, 106, 40, 0.3);
+  --bb-wave: rgba(255, 177, 77, 0.85);
+  --bb-wave-2: rgba(255, 211, 106, 0.6);
+  --bb-wave-fill: rgba(255, 106, 40, 0.3);
+  --bb-wave-glow: rgba(255, 90, 54, 0.8);
+  --bb-flare: rgba(255, 106, 40, 0.34);
+  --bb-flare-2: rgba(255, 70, 40, 0.26);
+  --bb-shard-hi: #8b97b6;
+  --bb-shard-mid: #2a3347;
+  --bb-shard-lo: #0e121d;
 }
 
 body[data-game="blastblast"][data-theme="light"] {
-  --bb-scrim: rgba(255, 241, 231, 0.92);
+  --bb-scrim: rgba(255, 241, 231, 0.88);
+  --bb-e0: #ffd27a;
+  --bb-e1: rgba(232, 80, 30, 0.9);
+  --bb-e2: rgba(232, 100, 40, 0.26);
+  --bb-wave: rgba(201, 71, 43, 0.75);
+  --bb-wave-2: rgba(201, 71, 43, 0.55);
+  --bb-wave-fill: rgba(232, 104, 58, 0.26);
+  --bb-wave-glow: rgba(232, 104, 58, 0.6);
+  --bb-flare: rgba(255, 141, 59, 0.36);
+  --bb-flare-2: rgba(255, 120, 60, 0.28);
+  --bb-shard-hi: #e9c7a6;
+  --bb-shard-mid: #8a4a36;
+  --bb-shard-lo: #4a2a22;
 }
 
 /* Cards stay readable but let the world show through a little. */
@@ -918,6 +1155,12 @@ body[data-game="blastblast"] .soft-card {
 }
 
 @media (max-width: 920px) {
+  /* The hero stacks: the shock rings go off behind the stage, centred. */
+  .bb-hero-waves {
+    --cx: 50%;
+    --cy: 66%;
+  }
+
   /* Text spans the full width: an even, denser veil. */
   body[data-game="blastblast"][data-theme="dark"] .bb-page-backdrop::before {
     background: linear-gradient(180deg, rgba(9, 19, 38, 0.82), rgba(9, 19, 38, 0.74));
@@ -929,9 +1172,11 @@ body[data-game="blastblast"] .soft-card {
 }
 
 @media (max-width: 760px) {
-  /* Phones: just the painted backdrop and the veil. */
+  /* Phones: the painted backdrop, the veil, the flares, the shock rings and the embers. */
   .bb-bg-mid,
-  .bb-bg-streaks {
+  .bb-bg-streaks,
+  .bb-bg-debris,
+  .bb-hero-waves i:nth-child(n + 3) {
     display: none;
   }
 
@@ -979,9 +1224,28 @@ body[data-game="blastblast"] .lab-related-link:hover {
 }
 
 /* ---------- Motion (transform and opacity only) ---------- */
+/* Budget: 10 infinite animations on the page backdrop (art pan, glow, streaks, hazards, debris, embers, four rings), 8 in the hero stage and 2 on the cards.
+   Only translate and opacity move; big layers are axis-aligned and unmasked, so nothing has to be redrawn per frame.
+   Everything below is the finished static composition until motion is allowed. */
 @media (prefers-reduced-motion: no-preference) {
   .bb-world-track {
     animation: bb-drift 60s linear infinite;
+  }
+
+  .bb-bg-glow {
+    animation: bb-bg-flicker 9s linear infinite;
+  }
+
+  .bb-hero-waves i {
+    animation: bb-bg-ring 4.4s linear infinite;
+  }
+
+  .bb-hero-waves i:nth-child(2) { animation-delay: 0.55s; }
+  .bb-hero-waves i:nth-child(3) { animation-delay: 1.1s; }
+  .bb-hero-waves i:nth-child(4) { animation-delay: 1.65s; }
+
+  .bb-bg-far img {
+    animation: bb-bg-pan 80s ease-in-out infinite alternate;
   }
 
   .bb-bg-mid {
@@ -990,6 +1254,14 @@ body[data-game="blastblast"] .lab-related-link:hover {
 
   .bb-bg-streaks {
     animation: bb-bg-streaks 16s linear infinite;
+  }
+
+  .bb-bg-debris {
+    animation: bb-bg-debris 44s linear infinite;
+  }
+
+  .bb-bg-embers {
+    animation: bb-bg-embers 30s linear infinite;
   }
 
   .bb-flight {
@@ -1004,38 +1276,20 @@ body[data-game="blastblast"] .lab-related-link:hover {
     animation: bb-kick var(--bb-hop) linear infinite;
   }
 
-  .bb-ring {
-    animation: bb-ring var(--bb-run) linear infinite;
-    transform: scale(0.15);
-  }
-
   .bb-ring--one {
     opacity: 0;
-    animation-delay: 1.6s;
   }
 
-  .bb-ring--two {
-    animation-delay: 3.2s;
-  }
-
-  .bb-ring--three {
-    animation-delay: 4.8s;
+  .bb-ring--blast {
+    animation: bb-ring-blast var(--bb-hop) linear infinite;
   }
 
   .bb-streaks {
     animation: bb-streaks var(--bb-hop) linear infinite;
   }
 
-  .bb-gate::after {
-    animation: bb-gate-pulse var(--bb-run) linear infinite;
-  }
-
   .bb-gate--one::after {
-    animation-delay: 2.4s;
-  }
-
-  .bb-gate--two::after {
-    animation-delay: 4s;
+    animation: bb-gate-pulse var(--bb-run) linear infinite;
   }
 
   .bb-gauge i {
@@ -1057,8 +1311,48 @@ body[data-game="blastblast"] .lab-related-link:hover {
 }
 
 @keyframes bb-bg-streaks {
-  from { transform: rotate(-14deg) translateX(0); }
-  to { transform: rotate(-14deg) translateX(-80vw); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-80vw); }
+}
+
+/* Debris: two identical halves side by side; sliding by one half loops without a seam. */
+@keyframes bb-bg-debris {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100vw); }
+}
+
+/* Embers: the layer is two tiles tall and loops by one tile. */
+@keyframes bb-bg-embers {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100vh); }
+}
+
+/* Shock rings: a flash that fades out, one ring after the other, from the inside out. */
+@keyframes bb-bg-ring {
+  0%   { opacity: 0; }
+  6%   { opacity: 0.95; }
+  38%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* The castle art pans slowly behind everything. */
+@keyframes bb-bg-pan {
+  from { transform: translateX(0); }
+  to { transform: translateX(-14vw); }
+}
+
+/* Far blasts: the glow at the edges flares and dies, off the beat of the rings. */
+@keyframes bb-bg-flicker {
+  0%   { opacity: 0.55; }
+  5%   { opacity: 1; }
+  11%  { opacity: 0.6; }
+  38%  { opacity: 0.5; }
+  43%  { opacity: 0.9; }
+  47%  { opacity: 0.55; }
+  71%  { opacity: 0.6; }
+  76%  { opacity: 1; }
+  83%  { opacity: 0.55; }
+  100% { opacity: 0.55; }
 }
 
 @keyframes bb-drift {
@@ -1094,11 +1388,20 @@ body[data-game="blastblast"] .lab-related-link:hover {
   100% { transform: scale(1.14, 0.86); }
 }
 
-/* The ring is anchored where the blast happened and slides back with the world as it opens. */
-@keyframes bb-ring {
-  0%   { opacity: 1; transform: translateX(0) scale(0.15); animation-timing-function: cubic-bezier(0.1, 0.7, 0.3, 1); }
-  14%  { opacity: 0; transform: translateX(-9cqw) scale(1.7); }
-  100% { opacity: 0; transform: translateX(-9cqw) scale(1.7); }
+/* One blast per hop. The ring rides on the pilot, so it slides back at the flight's speed (plus a little for the world)
+   and stays where the blast happened; its scale follows an ease-out curve written out as steps, so one linear
+   timing function serves both the slide and the burst. */
+@keyframes bb-ring-blast {
+  0%    { opacity: 1.00; transform: translateX(0cqw) scale(0.15); }
+  1.2%  { opacity: 0.87; transform: translateX(-0.6cqw) scale(0.36); }
+  3%    { opacity: 0.71; transform: translateX(-1.6cqw) scale(0.60); }
+  6%    { opacity: 0.53; transform: translateX(-3.2cqw) scale(0.88); }
+  10%   { opacity: 0.37; transform: translateX(-5.4cqw) scale(1.12); }
+  16%   { opacity: 0.23; transform: translateX(-8.6cqw) scale(1.35); }
+  24%   { opacity: 0.12; transform: translateX(-13cqw) scale(1.52); }
+  34%   { opacity: 0.05; transform: translateX(-18.4cqw) scale(1.63); }
+  45%   { opacity: 0.01; transform: translateX(-24.3cqw) scale(1.69); }
+  56.2%, 100% { opacity: 0; transform: translateX(-30.4cqw) scale(1.7); }
 }
 
 @keyframes bb-streaks {
@@ -1108,10 +1411,14 @@ body[data-game="blastblast"] .lab-related-link:hover {
   100% { opacity: 0; transform: translateX(-24cqw); }
 }
 
+/* Two pulses in one run, one per gate: the ring flashes at the first gate, then (invisible) moves to the second gate and flashes again. */
 @keyframes bb-gate-pulse {
-  0%   { opacity: 0.95; transform: scale(1); animation-timing-function: cubic-bezier(0.1, 0.7, 0.3, 1); }
-  12%  { opacity: 0; transform: scale(1.4); }
-  100% { opacity: 0; transform: scale(1.4); }
+  0%, 37.4% { opacity: 0; transform: translateX(0) scale(1); }
+  37.5% { opacity: 0.95; transform: translateX(0) scale(1); animation-timing-function: cubic-bezier(0.1, 0.7, 0.3, 1); }
+  49.5% { opacity: 0; transform: translateX(0) scale(1.4); }
+  62.4% { opacity: 0; transform: translateX(38cqw) scale(1); }
+  62.5% { opacity: 0.95; transform: translateX(38cqw) scale(1); animation-timing-function: cubic-bezier(0.1, 0.7, 0.3, 1); }
+  74.5%, 100% { opacity: 0; transform: translateX(38cqw) scale(1.4); }
 }
 
 /* The gauge fills while you pump and empties at the blast. */

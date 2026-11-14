@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { englishOnlyPages } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const reportPath = join(siteRoot, "reports", "css-coverage.json");
@@ -27,6 +28,14 @@ const cssFiles = [
   "css/responsive-mobile.css",
   "css/responsive-preferences.css",
   "css/home-polish-2026.css",
+  "css/upcoming-alien-flying.css",
+  "css/upcoming-blastblast.css",
+  "css/upcoming-burger-stack.css",
+  "css/upcoming-lyamur.css",
+  "css/upcoming-sandwich-stack.css",
+  "css/upcoming-scooter-mechanic-simulator.css",
+  "css/upcoming-stack-tower.css",
+  "css/upcoming-vacuum-shot.css",
   "motion.css"
 ];
 const css = (await Promise.all(cssFiles.map(file => readFile(join(siteRoot, file), "utf8")))).join("\n");
@@ -43,7 +52,8 @@ const files = [
   "games/nature-seed.html",
   "games/candy-shop.html",
   "games/paint-blasters.html",
-  "games/ball-is-god.html"
+  "games/ball-is-god.html",
+  ...englishOnlyPages.map(page => page.file)
 ];
 
 let searchable = "";

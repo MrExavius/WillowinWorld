@@ -95,6 +95,9 @@ body[data-game="burger-stack"] {
 
 .bs-hero-media figcaption {
   margin-top: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ug-card) 88%, transparent);
   color: var(--ug-ink);
   font-size: 0.9rem;
   font-weight: 760;
@@ -389,7 +392,6 @@ body[data-theme="light"] .bs-page-bg {
   height: 100%;
   object-fit: cover;
   object-position: 50% 12%;
-  filter: blur(5px) saturate(1.15);
 }
 
 .bs-page-img--sky,
@@ -401,18 +403,32 @@ body[data-theme="light"] .bs-page-img--sky {
   opacity: 1;
 }
 
-/* Light shafts and a seabed glow ride on the drifting art. */
-.bs-page-art::after {
-  content: "";
+/* Light shafts from the surface (sun rays in the sky theme): their own layer, hung from the top edge, swaying slowly. */
+.bs-page-rays {
   position: absolute;
-  inset: 0 0 30% 0;
-  background: repeating-linear-gradient(104deg, transparent 0 9%, rgba(210, 250, 255, 0.13) 12%, transparent 17% 27%);
+  top: -8%;
+  left: -12%;
+  z-index: 1;
+  width: 124%;
+  height: 78%;
+  background: repeating-linear-gradient(104deg, transparent 0 9%, rgba(210, 250, 255, 0.15) 12%, transparent 17% 27%);
   -webkit-mask-image: linear-gradient(#000, transparent 88%);
   mask-image: linear-gradient(#000, transparent 88%);
+  transform-origin: 50% 0;
 }
 
-body[data-theme="light"] .bs-page-art::after {
-  opacity: 0.5;
+body[data-theme="light"] .bs-page-rays {
+  background: repeating-linear-gradient(104deg, transparent 0 9%, rgba(255, 246, 204, 0.5) 12%, transparent 17% 27%);
+}
+
+/* Deck lamps: warm pools of light at the bottom corners that breathe. */
+.bs-page-lamps {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    radial-gradient(ellipse 22% 30% at 2% 102%, rgba(255, 196, 70, 0.34), transparent 70%),
+    radial-gradient(ellipse 22% 30% at 98% 102%, rgba(255, 196, 70, 0.3), transparent 70%);
 }
 
 /* Scrim: darkens the art for the text sitting on it, lets the aqua and brass colours through at the edges. */
@@ -513,38 +529,158 @@ body[data-theme="light"] .bs-page-fx--near {
   animation: bsDrift 95s linear infinite;
 }
 
-/* Local scrims: soft gradients that fade to nothing keep the text on the bare backdrop readable, so the backdrop can stay bright elsewhere. */
-.ug-hero,
-.lab-related {
+/* Ingredient tiles sinking (dark) or drifting (light) down the sides of the page: the tiles are windows onto the game's own ingredient tray.
+   A static wrapper hides the middle (hero text and cards) and leaves the two lanes beside the content; inside it each layer is two identical
+   screens tall and slides down by one screen, so the fall loops without a seam. Each tile sits in a lane by a fraction (--k) of its width. */
+.bs-rains {
+  --gl: calc(50vw - min(590px, 50vw - 20px));
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--gl) - 30px), transparent calc(var(--gl) - 6px), transparent calc(100% - var(--gl) + 6px), #000 calc(100% - var(--gl) + 30px));
+  mask-image: linear-gradient(90deg, #000 calc(var(--gl) - 30px), transparent calc(var(--gl) - 6px), transparent calc(100% - var(--gl) + 6px), #000 calc(100% - var(--gl) + 30px));
+}
+
+.bs-rain {
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+}
+
+.bs-half {
+  position: relative;
+  height: 100vh;
+}
+
+.bs-rain--far {
+  opacity: 0.6;
+}
+
+.bs-rain--near {
+  opacity: 0.92;
+}
+
+.bs-rain i {
+  --side: 0;
+  --k: 0.5;
+  --y: 0;
+  --s: 4;
+  --r: 0deg;
+  --sx: 100;
+  --sy: 40;
+  --t: calc(var(--s) * 1vmin);
+  --u: calc(var(--t) / 76);
+  position: absolute;
+  top: calc(var(--y) * 1%);
+  left: calc(var(--gl) * var(--k) + var(--side) * (100vw - var(--gl)) - var(--t) / 2);
+  width: var(--t);
+  aspect-ratio: 76 / 82;
+  border-radius: 19%;
+  background: var(--bs-sprite) no-repeat;
+  background-size: calc(960 * var(--u)) calc(395 * var(--u));
+  background-position: calc(var(--sx) * var(--u) * -1) calc(var(--sy) * var(--u) * -1);
+  box-shadow: 0 0.6vmin 1vmin rgba(0, 24, 32, 0.4);
+  transform: rotate(var(--r));
+}
+
+.bs-rain i:nth-child(9n + 1) { --sx: 100; --sy: 40; }
+.bs-rain i:nth-child(9n + 2) { --sx: 177; --sy: 40; }
+.bs-rain i:nth-child(9n + 3) { --sx: 255; --sy: 40; }
+.bs-rain i:nth-child(9n + 4) { --sx: 332; --sy: 40; }
+.bs-rain i:nth-child(9n + 5) { --sx: 410; --sy: 40; }
+.bs-rain i:nth-child(9n + 6) { --sx: 410; --sy: 133; }
+.bs-rain i:nth-child(9n + 7) { --sx: 255; --sy: 133; }
+.bs-rain i:nth-child(9n + 8) { --sx: 177; --sy: 133; }
+.bs-rain i:nth-child(9n + 0) { --sx: 719; --sy: 133; }
+
+.bs-rain--far .bs-half i:nth-child(1) { --side: 0; --k: 0.57; --y: -0.5; --s: 3.4; --r: -1deg; }
+.bs-rain--far .bs-half i:nth-child(2) { --side: 1; --k: 0.62; --y: 6.1; --s: 4.6; --r: -15deg; }
+.bs-rain--far .bs-half i:nth-child(3) { --side: 0; --k: 0.14; --y: 12.9; --s: 4; --r: 18deg; }
+.bs-rain--far .bs-half i:nth-child(4) { --side: 1; --k: 0.39; --y: 23.1; --s: 4.6; --r: 14deg; }
+.bs-rain--far .bs-half i:nth-child(5) { --side: 0; --k: 0.11; --y: 28.9; --s: 3.4; --r: -19deg; }
+.bs-rain--far .bs-half i:nth-child(6) { --side: 1; --k: 0.51; --y: 36.5; --s: 3.4; --r: -25deg; }
+.bs-rain--far .bs-half i:nth-child(7) { --side: 0; --k: 0.26; --y: 43.1; --s: 3.4; --r: 11deg; }
+.bs-rain--far .bs-half i:nth-child(8) { --side: 1; --k: 0.12; --y: 49.5; --s: 4.6; --r: -17deg; }
+.bs-rain--far .bs-half i:nth-child(9) { --side: 0; --k: 0.36; --y: 58.1; --s: 3.4; --r: -9deg; }
+.bs-rain--far .bs-half i:nth-child(10) { --side: 1; --k: 0.34; --y: 64.6; --s: 3.4; --r: 14deg; }
+.bs-rain--far .bs-half i:nth-child(11) { --side: 0; --k: 0.16; --y: 72.6; --s: 3.4; --r: 14deg; }
+.bs-rain--far .bs-half i:nth-child(12) { --side: 1; --k: 0.49; --y: 79.2; --s: 4; --r: -14deg; }
+.bs-rain--far .bs-half i:nth-child(13) { --side: 0; --k: 0.11; --y: 87.1; --s: 3.4; --r: -24deg; }
+.bs-rain--far .bs-half i:nth-child(14) { --side: 1; --k: 0.38; --y: 92.6; --s: 4.6; --r: -3deg; }
+
+.bs-rain--near .bs-half i:nth-child(1) { --side: 0; --k: 0.36; --y: -2.1; --s: 9.5; --r: -11deg; }
+.bs-rain--near .bs-half i:nth-child(2) { --side: 1; --k: 0.42; --y: 12.2; --s: 7; --r: 13deg; }
+.bs-rain--near .bs-half i:nth-child(3) { --side: 0; --k: 0.38; --y: 29.9; --s: 7; --r: -20deg; }
+.bs-rain--near .bs-half i:nth-child(4) { --side: 1; --k: 0.58; --y: 40.9; --s: 9.5; --r: -26deg; }
+.bs-rain--near .bs-half i:nth-child(5) { --side: 0; --k: 0.53; --y: 58.1; --s: 9.5; --r: 27deg; }
+.bs-rain--near .bs-half i:nth-child(6) { --side: 1; --k: 0.61; --y: 72.2; --s: 7; --r: 14deg; }
+.bs-rain--near .bs-half i:nth-child(7) { --side: 0; --k: 0.52; --y: 83.1; --s: 8.2; --r: 13deg; }
+
+/* Backdrop motion. Budget: 16 infinite animations on the page (7 backdrop, 8 in the hero stage, none on the cards: those move on hover). */
+.bs-page-rays {
+  animation: bsRays 22s ease-in-out infinite alternate;
+}
+
+.bs-page-lamps {
+  animation: bsLamps 7s ease-in-out infinite alternate;
+}
+
+.bs-rain--far {
+  animation: bsSink 110s linear infinite;
+}
+
+.bs-rain--near {
+  animation: bsSink 64s linear infinite;
+}
+
+/* Local scrims: a soft pool behind the hero copy and the related-worlds text keeps them above 4.5:1; it fades out, no box. */
+.ug-hero-copy,
+.lab-related-inner {
   position: relative;
   isolation: isolate;
 }
 
-.ug-hero::before,
-.lab-related::before {
+.lab-related {
+  overflow-x: clip;
+}
+
+.ug-hero-copy::before,
+.lab-related-inner::before {
   content: "";
   position: absolute;
-  inset: -40px 0;
+  inset: -56px -96px;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(4, 36, 38, 0.86) 0%, rgba(4, 36, 38, 0.8) 48%, rgba(4, 36, 38, 0.66) 100%);
-  -webkit-mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent);
-  mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent);
+  background: var(--bs-scrim);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 96px, #000 calc(100% - 96px), transparent), linear-gradient(180deg, transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 96px, #000 calc(100% - 96px), transparent), linear-gradient(180deg, transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
-body[data-theme="light"] .ug-hero::before,
-body[data-theme="light"] .lab-related::before {
-  background: linear-gradient(90deg, rgba(240, 252, 252, 0.88) 0%, rgba(240, 252, 252, 0.82) 48%, rgba(240, 252, 252, 0.7) 100%);
+.lab-related-inner::before {
+  inset: -48px -80px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 80px, #000 calc(100% - 80px), transparent), linear-gradient(180deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 80px, #000 calc(100% - 80px), transparent), linear-gradient(180deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
 }
 
-/* Small screens: one particle layer, no drift, no blur. */
+body[data-game="burger-stack"][data-theme="dark"] {
+  --bs-scrim: rgba(4, 36, 38, 0.84);
+}
+
+body[data-game="burger-stack"][data-theme="light"] {
+  --bs-scrim: rgba(240, 252, 252, 0.88);
+}
+
+/* Small screens: no drift, no rays, no lamps, no falling tiles (their lanes are a sliver there), one particle layer. */
 @media (max-width: 760px) {
   .bs-page-art {
     animation: none;
   }
 
   .bs-page-img {
-    filter: none;
     opacity: 0.7;
   }
 
@@ -557,16 +693,99 @@ body[data-theme="light"] .lab-related::before {
     opacity: 0.8;
   }
 
-  .bs-page-fx--near {
+  .bs-page-fx--near,
+  .bs-page-rays,
+  .bs-page-lamps,
+  .bs-rains {
     display: none;
   }
 }
 
-/* Sections. */
+/* ---------- Order tickets ----------
+   The page's frames are kitchen tickets: every section is a continuous-feed slip with a column of punched holes down both sides,
+   every heading is underlined with the layers of a burger (bun, lettuce, tomato, patty), and the cards inside are order chits
+   with punched notches and tear lines. Tokens: hole and rim colours, and the four layer colours. */
+body[data-game="burger-stack"] {
+  --bs-leaf: #7BC043;
+  --bs-tomato: #E4572E;
+  --bs-patty: #7A4A22;
+  --bs-feed: 26px;
+}
+
+body[data-game="burger-stack"][data-theme="dark"] {
+  --bs-hole: rgba(2, 22, 24, 0.75);
+  --bs-hole-rim: rgba(239, 182, 48, 0.6);
+}
+
+body[data-game="burger-stack"][data-theme="light"] {
+  --bs-hole: rgba(8, 51, 49, 0.2);
+  --bs-hole-rim: rgba(124, 95, 25, 0.6);
+}
+
+/* Section slips. */
 body.upcoming-game-page[data-game="burger-stack"] .soft-card {
+  position: relative;
+  overflow: clip;
+  padding-inline: calc(var(--bs-feed) + clamp(16px, 2.6vw, 30px));
+  border-radius: 16px;
   background:
     radial-gradient(circle at 100% 0, color-mix(in srgb, var(--ug-accent-2) 14%, transparent), transparent 42%),
     linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 82%, transparent), color-mix(in srgb, var(--ug-card) 74%, transparent));
+}
+
+/* The feed strips: punched holes with a brass rim, and a dashed tear line along the inner edge. */
+body[data-game="burger-stack"] .soft-card::before,
+body[data-game="burger-stack"] .soft-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: var(--bs-feed);
+  box-sizing: border-box;
+  background: radial-gradient(circle 6px at 50% 50%, var(--bs-hole) 0 4px, var(--bs-hole-rim) 4.5px 5.5px, transparent 6.2px) 0 0 / 100% 26px repeat-y;
+  pointer-events: none;
+}
+
+body[data-game="burger-stack"] .soft-card::before {
+  left: 0;
+  border-inline-end: 2px dashed color-mix(in srgb, var(--ug-line) 90%, transparent);
+}
+
+body[data-game="burger-stack"] .soft-card::after {
+  right: 0;
+  border-inline-start: 2px dashed color-mix(in srgb, var(--ug-line) 90%, transparent);
+}
+
+/* The vote slip keeps its picture of the tray at the right (see below), so its right strip stays but the picture sits inside it. */
+body[data-game="burger-stack"] .game-page-section h2 {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+/* Underline made of four burger layers; it stretches when the slip is hovered. */
+body[data-game="burger-stack"] .game-page-section:not(.ug-vote) h2::after {
+  content: "";
+  display: block;
+  width: 5.4rem;
+  height: 8px;
+  margin-top: 0.65rem;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--bs-brass) 0 30%, var(--bs-leaf) 30% 52%, var(--bs-tomato) 52% 74%, var(--bs-patty) 74%);
+  transition: width 0.45s var(--ease);
+}
+
+body[data-game="burger-stack"] .soft-card:hover h2::after {
+  width: 8.4rem;
+}
+
+/* The eyebrow is the stub at the top of the slip: punched notches at both ends. */
+body[data-game="burger-stack"] .eyebrow {
+  padding-inline: 16px;
+  border-radius: 5px;
+  font-weight: 850;
+  letter-spacing: 0.05em;
+  -webkit-mask: radial-gradient(circle 5px at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 5px at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
+  mask: radial-gradient(circle 5px at 0 50%, #0000 97%, #000) left / 51% 100% no-repeat, radial-gradient(circle 5px at 100% 50%, #0000 97%, #000) right / 51% 100% no-repeat;
 }
 
 body[data-game="burger-stack"] .btn {
@@ -575,6 +794,14 @@ body[data-game="burger-stack"] .btn {
 
 body[data-game="burger-stack"] .btn:active {
   transform: translateY(1px) scale(0.97);
+}
+
+/* Buttons are buns: a glossy top and a toasted underside. */
+body[data-game="burger-stack"] .btn-primary {
+  box-shadow:
+    inset 0 3px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -3px 0 rgba(120, 70, 0, 0.28),
+    0 14px 34px color-mix(in srgb, var(--ug-fill) 30%, transparent);
 }
 
 body[data-game="burger-stack"] .btn-primary::after {
@@ -592,9 +819,28 @@ body[data-game="burger-stack"] .btn-primary:focus-visible::after {
   transform: translateX(120%);
 }
 
+/* Order chits: a punched notch at each side halfway down. Chits draw no shadow on hover (the notches would clip it); they lift and light up instead. */
+body[data-game="burger-stack"] :is(.ug-features .detail-card, .ug-faq .detail-card, .ug-steps li, .ug-next li, .lab-related-link) {
+  position: relative;
+  border-radius: 12px;
+  -webkit-mask: radial-gradient(circle 7px at 0 50%, #0000 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 7px at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
+  mask: radial-gradient(circle 7px at 0 50%, #0000 98%, #000) left / 51% 100% no-repeat, radial-gradient(circle 7px at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
+}
+
+/* Facts are torn off the roll: a sawtooth bottom edge. */
 .ug-facts .game-page-facts > div {
+  padding-bottom: 22px;
   border-inline-start: 4px solid var(--bs-brass);
+  border-bottom: 0;
+  border-radius: 8px 8px 0 0;
+  -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 14px 100%;
+  mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 14px 100%;
   transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.ug-facts .game-page-facts > div:last-child {
+  padding-bottom: 22px;
+  border-bottom: 0;
 }
 
 @media (hover: hover) {
@@ -604,11 +850,20 @@ body[data-game="burger-stack"] .btn-primary:focus-visible::after {
   }
 }
 
-/* How it plays: each step opens with a small aquarium window showing the move. */
+/* How it plays: each step opens with a small aquarium window showing the move, and a stamped step number. */
 .ug-steps li {
-  position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.ug-steps li > span {
+  display: inline-block;
+  padding: 1px 9px 2px;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  transform: rotate(-3deg);
 }
 
 .ug-steps li::before {
@@ -641,22 +896,34 @@ body[data-game="burger-stack"] .btn-primary:focus-visible::after {
   transform-origin: 50% 100%;
 }
 
-.ug-steps li:nth-child(1)::after { --sx: 100; --sy: 40; animation: bsStepDrop 5.2s linear infinite; }
-.ug-steps li:nth-child(2)::after { --sx: 255; --sy: 40; animation: bsStepSlide 4.6s ease-in-out infinite alternate; }
-.ug-steps li:nth-child(3)::after { --sx: 332; --sy: 40; animation: bsStepPop 4.4s ease-in-out infinite; }
+.ug-steps li:nth-child(1)::after { --sx: 100; --sy: 40; }
+.ug-steps li:nth-child(2)::after { --sx: 255; --sy: 40; }
+.ug-steps li:nth-child(3)::after { --sx: 332; --sy: 40; }
 
+/* The tile in each window plays its move once when the chit is hovered or has focus inside (no perpetual motion beside the text). */
 @media (hover: hover) {
   .ug-steps li:hover {
     transform: translateY(-4px);
     border-color: var(--ug-accent);
   }
+
+  body:not(.animations-paused) .ug-steps li:nth-child(1):hover::after { animation: bsStepDrop 1.8s linear 1 both; }
+  body:not(.animations-paused) .ug-steps li:nth-child(2):hover::after { animation: bsStepSlide 2.4s ease-in-out 1 both; }
+  body:not(.animations-paused) .ug-steps li:nth-child(3):hover::after { animation: bsStepPop 1.4s ease-in-out 1 both; }
 }
 
-/* Feature cards: an ingredient tile leads each title and tips over on hover or focus. */
+/* Feature cards: an ingredient tile leads each title and tips over on hover or focus; a dashed tear line sits under every title. */
 .ug-features .detail-card,
 .ug-faq .detail-card,
 .ug-next li {
-  transition: transform 0.3s ease, border-color 0.25s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.ug-features .detail-card h3,
+.ug-faq .detail-card h3 {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.7rem;
+  border-bottom: 2px dashed color-mix(in srgb, var(--ug-line) 85%, transparent);
 }
 
 .ug-features .detail-card h3 {
@@ -700,7 +967,6 @@ body[data-game="burger-stack"] .btn-primary:focus-visible::after {
   .ug-next li:hover {
     transform: translateY(-4px);
     border-color: var(--ug-accent);
-    box-shadow: 0 16px 30px var(--ug-shadow);
   }
 }
 
@@ -708,9 +974,50 @@ body[data-game="burger-stack"] .btn-primary:focus-visible::after {
   border-color: var(--ug-accent);
 }
 
-/* Gallery: images ease in on hover; the transparent tray sits on deep water. */
+/* Direction list: a tick box per goal. */
+body[data-game="burger-stack"] .ug-next li::before {
+  top: 1.15rem;
+  left: 16px;
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--bs-brass);
+  border-radius: 4px;
+  background: transparent;
+  transform: none;
+}
+
+body[data-game="burger-stack"] .ug-next li::after {
+  content: "";
+  position: absolute;
+  top: calc(1.15rem + 2px);
+  left: 21px;
+  width: 7px;
+  height: 4px;
+  border-bottom: 2px solid var(--bs-brass-hi);
+  border-left: 2px solid var(--bs-brass-hi);
+  transform: rotate(-45deg);
+}
+
+/* Gallery: brass-rimmed trays with a rivet in each corner; the transparent tray sits on deep water. */
 .ug-shot {
+  position: relative;
+  border: 2px solid color-mix(in srgb, var(--bs-brass) 70%, var(--ug-line));
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 3px rgba(255, 244, 200, 0.14);
   transition: transform 0.3s ease, border-color 0.25s ease;
+}
+
+.ug-shot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(circle 3.5px at 11px 11px, var(--bs-brass-hi) 0 55%, transparent 100%),
+    radial-gradient(circle 3.5px at calc(100% - 11px) 11px, var(--bs-brass-hi) 0 55%, transparent 100%),
+    radial-gradient(circle 3.5px at 11px calc(100% - 11px), var(--bs-brass-hi) 0 55%, transparent 100%),
+    radial-gradient(circle 3.5px at calc(100% - 11px) calc(100% - 11px), var(--bs-brass-hi) 0 55%, transparent 100%);
+  pointer-events: none;
 }
 
 .ug-shot img {
@@ -759,7 +1066,7 @@ body[data-game="burger-stack"] .ug-gallery--2 .ug-shot--strip {
   }
 }
 
-/* Voting: a bun tile hops beside the heading, like an order bell. */
+/* Voting: a bun tile hops beside the heading, like an order bell, when the slip is hovered. */
 .ug-vote h2::after {
   --t: 1.9rem;
   --u: calc(var(--t) / 76);
@@ -777,7 +1084,12 @@ body[data-game="burger-stack"] .ug-gallery--2 .ug-shot--strip {
   background-position: calc(var(--sx) * var(--u) * -1) calc(var(--sy) * var(--u) * -1);
   box-shadow: 0 3px 5px rgba(0, 20, 28, 0.35);
   transform-origin: 50% 100%;
-  animation: bsHop 4.8s ease-in-out infinite;
+}
+
+@media (hover: hover) {
+  .ug-vote:hover h2::after {
+    animation: bsHop 1.6s ease-in-out 1 both;
+  }
 }
 
 .ug-vote {
@@ -785,17 +1097,12 @@ body[data-game="burger-stack"] .ug-gallery--2 .ug-shot--strip {
 }
 
 @media (min-width: 1200px) {
-  .ug-vote::after {
-    content: "";
-    position: absolute;
-    top: 28px;
-    right: 40px;
-    width: min(26%, 300px);
-    aspect-ratio: 960 / 395;
-    background: var(--bs-sprite) center / contain no-repeat;
-    filter: drop-shadow(0 10px 14px rgba(0, 20, 28, 0.4));
-    transform: rotate(-2deg);
-    pointer-events: none;
+  .ug-vote .ug-lede {
+    max-width: 32rem;
+  }
+
+  .ug-vote .social-block--game {
+    max-width: 32rem;
   }
 }
 
@@ -806,6 +1113,41 @@ body[data-game="burger-stack"] .social-link {
 body[data-game="burger-stack"] .social-link:hover,
 body[data-game="burger-stack"] .social-link:focus-visible {
   transform: translateY(-3px);
+}
+
+/* Hero chips are buns: a domed top with sesame seeds. */
+.bs-hero-stats li {
+  padding-top: 18px;
+  border-radius: 26px 26px 10px 10px;
+  background:
+    radial-gradient(ellipse 3px 1.8px at 24% 60%, rgba(255, 244, 200, 0.75) 0 70%, transparent 100%) 0 0 / 100% 14px no-repeat,
+    radial-gradient(ellipse 3px 1.8px at 38% 30%, rgba(255, 244, 200, 0.75) 0 70%, transparent 100%) 0 0 / 100% 14px no-repeat,
+    radial-gradient(ellipse 3px 1.8px at 52% 62%, rgba(255, 244, 200, 0.75) 0 70%, transparent 100%) 0 0 / 100% 14px no-repeat,
+    radial-gradient(ellipse 3px 1.8px at 66% 30%, rgba(255, 244, 200, 0.75) 0 70%, transparent 100%) 0 0 / 100% 14px no-repeat,
+    radial-gradient(ellipse 3px 1.8px at 80% 60%, rgba(255, 244, 200, 0.75) 0 70%, transparent 100%) 0 0 / 100% 14px no-repeat,
+    color-mix(in srgb, var(--ug-card) 90%, transparent);
+}
+
+/* The status note is a ticket note: a dashed edge and a brass tab. */
+body[data-game="burger-stack"] .ug-status-note {
+  border-style: dashed;
+  border-inline-start: 6px solid var(--bs-brass);
+  border-radius: 6px 14px 14px 6px;
+}
+
+/* Narrow slips: thinner feed strips, and no right strip on the smallest phones so the text keeps its width. */
+@media (max-width: 560px) {
+  body[data-game="burger-stack"] {
+    --bs-feed: 16px;
+  }
+
+  body.upcoming-game-page[data-game="burger-stack"] .soft-card {
+    padding-inline: calc(var(--bs-feed) + 12px) 14px;
+  }
+
+  body[data-game="burger-stack"] .soft-card::after {
+    display: none;
+  }
 }
 
 /* Motion. */
@@ -822,6 +1164,25 @@ body[data-game="burger-stack"] .social-link:focus-visible {
 @keyframes bsDrift {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
+}
+
+/* Tiles sinking: down by one screen, with a gentle sway that comes back to where it started. */
+@keyframes bsSink {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(1.4vw, 25vh); }
+  50%  { transform: translate(0, 50vh); }
+  75%  { transform: translate(-1.4vw, 75vh); }
+  100% { transform: translate(0, 100vh); }
+}
+
+@keyframes bsRays {
+  from { transform: rotate(-3deg); }
+  to { transform: rotate(3deg); }
+}
+
+@keyframes bsLamps {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
 }
 
 @keyframes bsSway {
@@ -935,6 +1296,9 @@ body[data-game="burger-stack"] .social-link:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   .bs-page-art,
   .bs-page-fx,
+  .bs-page-rays,
+  .bs-page-lamps,
+  .bs-rain,
   .bs-tower,
   .bs-tower .bs-tile,
   .bs-ticket-bar i,

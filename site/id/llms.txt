@@ -1,32 +1,32 @@
-# WillowinWorlds — Bahasa Indonesia
+# WillowinWorlds - Bahasa Indonesia
 
-> WillowinWorlds adalah studio game seluler independen yang menciptakan empat game puzzle dan arcade berbasis fisika dengan kontrol sentuhan, sistem yang dapat dibaca, dan dunia 2D yang ekspresif.
+> WillowinWorlds adalah studio game ponsel independen yang membuat game puzzle dan arcade. Studio ini punya empat game andalan (Nature Seed, Candy Shop, Paint Blasters, dan Ball is God?!) serta delapan prototipe lab.
 
-Bahasa situs: Bahasa Indonesia. Sumber bahasa Inggris kanonik: https://willowinworlds.com/llms.txt
+Bahasa situs: Bahasa Indonesia. Sumber bahasa Inggris asli: https://willowinworlds.com/llms.txt
 
 ## Permainan
 
-- [Nature Seed](https://willowinworlds.com/id/games/nature-seed.html): Teka-teki fisika seluler yang dipecahkan dengan menggambar, kini telah dirilis. Dirilis pada 10 September 2026 sebagai Nature Seed, game ini meminta pemain untuk menggambar jalur fisik terbatas tinta, menyatukan kembali Water Drop dan Seed, dan memulihkan hutan cat air di 10 level peluncuran. Genre: Teka-teki menggambar untuk dipecahkan, Teka-teki fisika, Teka-teki santai, Teka-teki menggambar garis. Status saat ini: Dirilis.
-- [Candy Shop](https://willowinworlds.com/id/games/candy-shop.html): Teka-teki penggabungan seluler yang nyaman dengan rantai permen 13 tahap, 10 aturan wadah, delapan efek permen khusus, dan alat perencanaan untuk tetes berikutnya. Genre: Gabungkan teka-teki, Teka-teki permen, Teka-teki santai, Teka-teki fisika. Status saat ini: Pengembangan aktif - produksi produksi yang dapat dimainkan.
-- [Paint Blasters](https://willowinworlds.com/id/games/paint-blasters.html): Arcade puzzle fisika penghancur warna seluler. Gabungkan tiga masukan warna ke dalam 35 resep proyektil yang dibuat, titik lemah menara target, dan pemicu reaksi berantai. Genre: Teka-teki warna, Arena fisika, Teka-teki penghancuran, Reaksi berantai. Status saat ini: Pengembangan aktif - prototipe produksi.
-- [Ball is God?!](https://willowinworlds.com/id/games/ball-is-god.html): Sebuah arcade seluler keturunan vertikal yang digerakkan oleh cerita. Putar menara di sekitar Espa, bangun kombo smash, selamat dari bos, dan bawa pilihan karma melalui 10 lokasi mitis. Genre: Arcade keturunan vertikal, Arkade keras, Arcade yang digerakkan oleh cerita, Aksi bos. Status saat ini: Produksi aktif.
+- [Nature Seed](https://willowinworlds.com/id/games/nature-seed.html): Puzzle fisika menggambar garis untuk ponsel, dirilis pada 18 September 2026. Pemain menggambar garis dengan jatah tinta terbatas, mempertemukan Water Drop dan Seed, lalu memulihkan hutan cat air di 100 level. Genre: Puzzle menggambar garis, Puzzle fisika, Puzzle santai, Puzzle menggambar garis. Status saat ini: Dirilis.
+- [Candy Shop](https://willowinworlds.com/id/games/candy-shop.html): Puzzle penggabung permen yang nyaman untuk ponsel dengan rantai permen 13 tahap, 10 wadah dengan aturan sendiri, delapan efek permen spesial, pratinjau pendaratan, slot simpan, dan antrean tiga berikutnya. Genre: Puzzle penggabungan, Puzzle permen, Puzzle kasual, Puzzle fisika. Status saat ini: Pengembangan aktif - produksi produksi yang dapat dimainkan.
+- [Paint Blasters](https://willowinworlds.com/id/games/paint-blasters.html): Arcade puzzle fisika penghancuran warna untuk ponsel. Pemain memadukan tiga warna menjadi salah satu dari 35 resep proyektil, membidik titik lemah menara, dan memicu reaksi berantai. Genre: Puzzle warna, Arcade fisika, Puzzle penghancuran, Reaksi berantai. Status saat ini: Pengembangan aktif - prototipe produksi.
+- [Ball is God?!](https://willowinworlds.com/id/games/ball-is-god.html): Arcade turun vertikal untuk ponsel yang keras dan digerakkan oleh cerita. Pemain menggeser untuk memutar menara di sekitar Espa yang terus jatuh, melewati tiga pijakan untuk combo smash, menghadapi bos, dan membuat pilihan karma di 10 lokasi. Genre: Arcade turun vertikal, Arcade keras, Arcade berbasis cerita, Aksi bos. Status saat ini: Produksi aktif.
 
 ## Catatan perkembangan terkini
 
-- [Nature Seed — Nature Seed rilis](https://willowinworlds.com/id/games/nature-seed.html#devlog): Diterbitkan 2026-09-10. Nature Seed diluncurkan dengan judul terakhirnya dengan 10 level buatan tangan, bintang efisiensi garis, kemajuan yang gigih, dan hadiah restorasi cat air.
-- [Candy Shop — Menu produksi dan tiket HUD](https://willowinworlds.com/id/games/candy-shop.html#devlog): Diterbitkan 2026-07-31. Menu utama, pemilihan level, kontrol HUD, dan ikon perintah kini berbagi satu bahasa visual; tes stres tambahan di dalam mesin mencakup aliran yang diperbarui.
-- [Paint Blasters — Fisika dan stabilitas efek lulus](https://willowinworlds.com/id/games/paint-blasters.html#devlog): Diterbitkan 2026-07-31. Perilaku proyektil, resolusi Match-3, dan efek pukulan diuji dan diperketat untuk hasil kombo yang lebih konsisten.
-- [Ball is God?! — Permukaan dunia dan validasi bahaya](https://willowinworlds.com/id/games/ball-is-god.html#devlog): Diterbitkan 2026-07-31. Presentasi karakter, generasi deterministik, dan bahaya duri menerima izin visual dan validasi produksi yang terkoordinasi.
+- [Nature Seed - Rilis Nature Seed](https://willowinworlds.com/id/games/nature-seed.html#devlog): Diterbitkan 2026-09-18. Nature Seed diluncurkan dengan judul akhirnya sebagai game browser gratis di itch.io, Game Jolt, dan indiexpo, dengan 100 level, bintang efisiensi garis, dan progres tersimpan.
+- [Candy Shop - Perbaikan menu produksi dan HUD](https://willowinworlds.com/id/games/candy-shop.html#devlog): Diterbitkan 2026-07-31. Menu utama, pemilihan level, kontrol HUD, dan ikon perintah kini berbagi satu tampilan, dan lebih banyak uji beban di dalam engine mencakup alur yang diperbarui.
+- [Paint Blasters - Perbaikan stabilitas fisika dan efek](https://willowinworlds.com/id/games/paint-blasters.html#devlog): Diterbitkan 2026-07-31. Perilaku proyektil, resolusi Match-3, dan efek pukulan diuji dan diperketat untuk hasil kombo yang lebih konsisten.
+- [Ball is God?! - Permukaan dunia dan validasi bahaya](https://willowinworlds.com/id/games/ball-is-god.html#devlog): Diterbitkan 2026-07-31. Tampilan karakter, pembuatan level yang deterministik, dan jebakan duri mendapat satu putaran penyempurnaan visual sekaligus validasi.
 
-## Studio dan tekan
+## Studio dan pers
 
-- [Rumah studio](https://willowinworlds.com/id/)
-- [Perlengkapan pers](https://willowinworlds.com/id/press-kit.html)
+- [Beranda studio](https://willowinworlds.com/id/)
+- [Kit pers](https://willowinworlds.com/id/press-kit.html)
 - [Penggunaan aset media](https://willowinworlds.com/id/asset-usage.html)
 
 ## Umpan dan kebijakan
 
-- [Umpan RSS pengembangan](https://willowinworlds.com/rss.xml)
+- [Umpan RSS devlog](https://willowinworlds.com/rss.xml)
 - [Peta situs XML](https://willowinworlds.com/sitemap.xml)
 - [Indeks bahasa](https://willowinworlds.com/languages.json)
 - [Kebijakan privasi](https://willowinworlds.com/id/privacy.html)

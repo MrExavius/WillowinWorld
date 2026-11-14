@@ -79,7 +79,6 @@ function text(value) {
     .replace(/&amp;/g, "&")
     .replace(/&quot;/g, "\"")
     .replace(/&#39;/g, "'")
-    .replace(/&mdash;|&#8212;/g, "—")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -401,7 +400,7 @@ for (const locale of locales.filter(candidate => candidate.code !== sourceLocale
     fail(file, `missing localized AI guide (${error.message})`);
     continue;
   }
-  if (!localizedLlms.startsWith(`# WillowinWorlds — ${locale.label}\n`)) fail(file, "must identify its native language");
+  if (!localizedLlms.startsWith(`# WillowinWorlds - ${locale.label}\n`)) fail(file, "must identify its native language");
   if (/___WILLOW_|__W\d+\s*__/.test(localizedLlms)) fail(file, "contains leaked translation placeholders");
   for (const game of gameDevlogSources) {
     const gamePage = localizedPages.find(page => page.file === game.file);

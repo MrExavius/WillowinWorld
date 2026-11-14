@@ -1,28 +1,28 @@
-# WillowinWorlds — Polski
+# WillowinWorlds - Polski
 
-> WillowinWorlds to niezależne studio gier mobilnych, tworzące cztery gry logiczne i zręcznościowe oparte na fizyce, z dotykowym sterowaniem, czytelnymi systemami i wyrazistymi światami 2D.
+> WillowinWorlds to niezależne studio gier mobilnych tworzące łamigłówki i gry zręcznościowe. Ma cztery flagowe gry (Nature Seed, Candy Shop, Paint Blasters i Ball is God?!) oraz osiem prototypów w laboratorium.
 
 Język witryny: Polski. Kanoniczne źródło angielskie: https://willowinworlds.com/llms.txt
 
 ## Gry
 
-- [Nature Seed](https://willowinworlds.com/pl/games/nature-seed.html): Wydana mobilna łamigłówka fizyczna, którą można narysować i rozwiązać. Wydany 10 września 2026 r. jako Nature Seed, prosi graczy o narysowanie fizycznej ścieżki ograniczonej atramentem, ponowne zjednoczenie Water Drop i Seed oraz przywrócenie akwarelowego lasu na 10 poziomach premiery. Gatunki: Zagadka polegająca na narysowaniu i ułożeniu, Zagadka fizyki, Relaksująca łamigłówka, Łamigłówka do rysowania linii. Aktualny stan: Wydano.
-- [Candy Shop](https://willowinworlds.com/pl/games/candy-shop.html): Przytulna mobilna łamigłówka łącząca z 13-etapowym łańcuchem cukierków, 10 zestawami zasad pojemników, ośmioma specjalnymi efektami cukierków i narzędziami do planowania następnej kropli. Gatunki: Połącz puzzle, Puzzle ze słodyczami, Zwykła łamigłówka, Zagadka fizyki. Aktualny stan: Aktywny rozwój – grywalna wersja produkcyjna.
-- [Paint Blasters](https://willowinworlds.com/pl/games/paint-blasters.html): Mobilna gra zręcznościowa z łamigłówkami fizycznymi polegającymi na niszczeniu kolorów. Połącz trzy kolorowe wejścia w 35 autorskich receptur pocisków, celuj w słabe punkty wieży i wyzwalaj reakcje łańcuchowe. Gatunki: Kolorowa łamigłówka, Salon gier fizycznych, Zagadka zniszczenia, Reakcja łańcuchowa. Aktualny stan: Aktywny rozwój – prototyp produkcyjny.
-- [Ball is God?!](https://willowinworlds.com/pl/games/ball-is-god.html): Oparty na fabule hardcorowy mobilny salon gier o pionowym zjeździe. Obróć wieżę wokół Espa, buduj kombinacje ciosów, przetrwaj bossów i noś karmę w 10 mitycznych lokalizacjach. Gatunki: Pasaż z pionowym zejściem, Hardkorowa gra zręcznościowa, Salon gier oparty na fabule, Akcja z bossem. Aktualny stan: Aktywna produkcja.
+- [Nature Seed](https://willowinworlds.com/pl/games/nature-seed.html): Mobilna łamigłówka fizyczna z rysowaniem, wydana 18 września 2026 r. Gracze rysują linię z ograniczonego zapasu atramentu, łączą Water Drop i Seed i odtwarzają akwarelowy las na przestrzeni 100 poziomów. Gatunki: Łamigłówka z rysowaniem, Łamigłówka fizyczna, Relaksująca łamigłówka, Łamigłówka do rysowania linii. Aktualny stan: Wydano.
+- [Candy Shop](https://willowinworlds.com/pl/games/candy-shop.html): Przytulna mobilna łamigłówka z łączeniem cukierków: 13-etapowy łańcuch cukierków, 10 pojemników z własnymi zasadami, osiem efektów specjalnych cukierków, podgląd lądowania, miejsce na rezerwę i kolejka następnych trzech. Gatunki: Łamigłówka z łączeniem, Puzzle ze słodyczami, Casualowa łamigłówka, Łamigłówka fizyczna. Aktualny stan: Aktywny rozwój - grywalna wersja produkcyjna.
+- [Paint Blasters](https://willowinworlds.com/pl/games/paint-blasters.html): Mobilna zręcznościowa łamigłówka fizyczna o niszczeniu kolorem. Gracze mieszają trzy kolory w jedną z 35 receptur pocisków, celują w słabe punkty wieży i wywołują reakcje łańcuchowe. Gatunki: Kolorowa łamigłówka, Arkada fizyczna, Łamigłówka o niszczeniu, Reakcja łańcuchowa. Aktualny stan: Aktywny rozwój - prototyp produkcyjny.
+- [Ball is God?!](https://willowinworlds.com/pl/games/ball-is-god.html): Hardkorowa mobilna arkada o pionowym zejściu, z fabułą. Gracze przeciągają palcem, by obracać wieżę wokół spadającego Espa, pomijają trzy platformy dla uderzenia combo, mierzą się z bossami i dokonują wyborów karmy w 10 lokacjach. Gatunki: Arkada o pionowym zejściu, Hardkorowa gra zręcznościowa, Arkada fabularna, Akcja z bossem. Aktualny stan: Aktywna produkcja.
 
 ## Najnowsze notatki rozwojowe
 
-- [Nature Seed — Nature Seed wydanie](https://willowinworlds.com/pl/games/nature-seed.html#devlog): Opublikowano 2026-09-10. Nature Seed wystartowało pod swoim ostatecznym tytułem z 10 ręcznie wykonanymi poziomami, gwiazdkami za wydajność linii, stałym postępem i nagrodami za odnawianie akwareli.
-- [Candy Shop — Menu produkcyjne i karnet HUD](https://willowinworlds.com/pl/games/candy-shop.html#devlog): Opublikowano 2026-07-31. Menu główne, wybór poziomu, elementy sterujące HUD i ikony poleceń mają teraz jeden język wizualny; dodatkowe testy obciążeniowe w silniku obejmują zaktualizowany przepływ.
-- [Paint Blasters — Zaliczenie fizyki i stabilności efektów](https://willowinworlds.com/pl/games/paint-blasters.html#devlog): Opublikowano 2026-07-31. Zachowanie pocisku, rozdzielczość Match-3 i efekty trafienia zostały przetestowane i dopracowane, aby uzyskać bardziej spójne wyniki kombinacji.
-- [Ball is God?! — Powierzchnie świata i walidacja zagrożeń](https://willowinworlds.com/pl/games/ball-is-god.html#devlog): Opublikowano 2026-07-31. Prezentacja postaci, generowanie deterministyczne i zagrożenia cierniowe otrzymały skoordynowaną ocenę wizualną i produkcyjno-walidacyjną.
+- [Nature Seed - Premiera Nature Seed](https://willowinworlds.com/pl/games/nature-seed.html#devlog): Opublikowano 2026-09-18. Nature Seed zadebiutowało pod finalnym tytułem jako darmowa gra przeglądarkowa na itch.io, Game Jolt i indiexpo, ze 100 poziomami, gwiazdkami za efektywność linii i zapisem postępów.
+- [Candy Shop - Dopracowanie menu produkcyjnego i HUD](https://willowinworlds.com/pl/games/candy-shop.html#devlog): Opublikowano 2026-07-31. Menu główne, wybór poziomu, elementy sterujące HUD i ikony poleceń mają teraz wspólny wygląd, a więcej testów obciążeniowych w silniku obejmuje zaktualizowany przebieg.
+- [Paint Blasters - Stabilizacja fizyki i efektów](https://willowinworlds.com/pl/games/paint-blasters.html#devlog): Opublikowano 2026-07-31. Zachowanie pocisku, rozdzielczość Match-3 i efekty trafienia zostały przetestowane i dopracowane, aby uzyskać bardziej spójne wyniki kombinacji.
+- [Ball is God?! - Powierzchnie świata i walidacja zagrożeń](https://willowinworlds.com/pl/games/ball-is-god.html#devlog): Opublikowano 2026-07-31. Prezentacja postaci, deterministyczne generowanie i zagrożenia w postaci cierni przeszły wspólny przegląd wizualny i walidację.
 
 ## Studio i prasa
 
-- [Dom studyjny](https://willowinworlds.com/pl/)
+- [Strona główna studia](https://willowinworlds.com/pl/)
 - [Zestaw prasowy](https://willowinworlds.com/pl/press-kit.html)
-- [Wykorzystanie zasobów multimedialnych](https://willowinworlds.com/pl/asset-usage.html)
+- [Użycie materiałów medialnych](https://willowinworlds.com/pl/asset-usage.html)
 
 ## Kanały i zasady
 

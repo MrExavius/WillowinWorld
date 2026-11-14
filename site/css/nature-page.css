@@ -818,6 +818,13 @@ body.nature-seed-page::after {
   z-index: 10;
 }
 
+/* keep the chips below the title block when the root font size is raised (198px at the default size) */
+@media (min-width: 641px) {
+  .nature-device-frame .nature-cycle {
+    top: max(198px, calc(24px + 2.2rem + 8px + 1.84 * clamp(2.1rem, 4vw, 4.35rem) + 2.3rem));
+  }
+}
+
 .nature-device-frame .magic-hud {
   z-index: 11;
 }
@@ -914,19 +921,9 @@ body.nature-seed-page::after {
   }
 
   .nature-seed-page .nature-story-section .game-page-facts {
-    position: relative;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0 18px;
     padding: 24px;
-    border: 1px solid color-mix(in srgb, var(--game-accent) 22%, var(--line));
-    border-radius: 18px;
-    background:
-      radial-gradient(ellipse at 18% 0%, rgba(160, 213, 127, 0.16), transparent 34%),
-      repeating-linear-gradient(118deg, rgba(83, 116, 71, 0.045) 0 1px, transparent 1px 13px),
-      rgba(255, 254, 235, 0.58);
-    box-shadow: 0 18px 42px rgba(45, 109, 96, 0.12);
-    -webkit-backdrop-filter: blur(12px) saturate(1.04);
-    backdrop-filter: blur(12px) saturate(1.04);
   }
 
   .nature-seed-page .nature-story-section .game-page-facts div {
@@ -944,48 +941,6 @@ body.nature-seed-page::after {
     font-size: 0.96rem;
     line-height: 1.34;
   }
-
-  .nature-seed-page[data-theme="dark"] .nature-story-section .game-page-facts {
-    background:
-      radial-gradient(ellipse at 18% 0%, rgba(98, 213, 236, 0.08), transparent 34%),
-      repeating-linear-gradient(118deg, rgba(199, 230, 255, 0.045) 0 1px, transparent 1px 13px),
-      rgba(8, 24, 48, 0.68);
-    box-shadow: 0 18px 42px rgba(0, 8, 26, 0.34);
-  }
-}
-
-.nature-seed-page .detail-card,
-.nature-seed-page .asset-link,
-.nature-seed-page .update-list li {
-  border-color: color-mix(in srgb, var(--game-accent) 22%, rgba(75, 99, 66, 0.14));
-  border-radius: 18px;
-  background:
-    radial-gradient(ellipse at 12% 10%, rgba(160, 213, 127, 0.16), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(83, 116, 71, 0.045) 0 1px, transparent 1px 13px),
-    rgba(255, 254, 235, 0.64);
-  box-shadow: 0 18px 42px rgba(45, 109, 96, 0.12);
-  -webkit-backdrop-filter: blur(12px) saturate(1.04);
-  backdrop-filter: blur(12px) saturate(1.04);
-}
-
-.nature-seed-page .game-page-section .eyebrow,
-.nature-seed-page .game-page-updates .eyebrow {
-  background: rgba(255, 254, 235, 0.62);
-}
-
-.nature-seed-page[data-theme="dark"] .detail-card,
-.nature-seed-page[data-theme="dark"] .asset-link,
-.nature-seed-page[data-theme="dark"] .update-list li {
-  background:
-    radial-gradient(ellipse at 12% 10%, rgba(98, 213, 236, 0.08), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(199, 230, 255, 0.045) 0 1px, transparent 1px 13px),
-    rgba(8, 24, 48, 0.68);
-  box-shadow: 0 18px 42px rgba(0, 8, 26, 0.34);
-}
-
-.nature-seed-page[data-theme="dark"] .game-page-section .eyebrow,
-.nature-seed-page[data-theme="dark"] .game-page-updates .eyebrow {
-  background: rgba(8, 24, 48, 0.66);
 }
 
 .nature-cursor-mascot {
@@ -1147,4 +1102,643 @@ body.nature-seed-page::after {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* ==========================================================================
+   Backdrop v2: the watercolor forest comes alive.
+   The page-wide world keeps every original layer (sketch paper, sun, hills, rivers, branches, leaves)
+   and adds depth. One animation per layer, transform/opacity/translate only:
+     wash   the painted forest breathes in over the pencil sketch, with wet colour clouds
+     rain   water drops, glowing pollen, leaves and seeds falling (one tile, one layer)
+     ink    two short lines drawn toward each other (Seed green, Water Drop blue), held, then erased
+   plus the sun's rays turning. Only wash and rain are full-screen layers; ink and rays are small. Phones lose rain and ink.
+   Every loop is slow, so each runs on steps() at 2 to 15 updates a second (one step is about a pixel): the browser
+   repaints and composites a few times a second instead of 60, which keeps the page light on weak GPUs.
+   ========================================================================== */
+.nature-seed-page {
+  --ns-leaf: #1f6f45;
+  --ns-water: #0f6f8e;
+  --ns-leaf-glow: #5ccf84;
+  --ns-water-glow: #62d5ec;
+  --ns-paper: rgba(255, 254, 240, 0.9);
+  --ns-paper-2: rgba(244, 251, 230, 0.94);
+  --ns-ink-1: rgba(31, 111, 69, 0.5);
+  --ns-ink-2: rgba(15, 111, 142, 0.5);
+      --ns-card-shadow: 0 16px 30px -20px rgba(24, 84, 64, 0.55);
+  --ns-wash-max: 0.44;
+}
+
+.nature-seed-page[data-theme="dark"] {
+  --ns-leaf: #8ae7a6;
+  --ns-water: #84ddf2;
+  --ns-paper: rgba(7, 27, 48, 0.88);
+  --ns-paper-2: rgba(8, 33, 54, 0.92);
+  --ns-ink-1: rgba(150, 240, 176, 0.5);
+  --ns-ink-2: rgba(132, 221, 242, 0.55);
+  --ns-card-shadow: 0 18px 34px -20px rgba(0, 8, 26, 0.75);
+  --ns-wash-max: 0.3;
+}
+
+.nature-page-backdrop > :is(.nature-bg-wash, .nature-bg-rain, .nature-bg-ink) {
+  position: absolute;
+  pointer-events: none;
+}
+
+.nature-bg-wash {
+  inset: 0;
+  z-index: 1;
+  background-image:
+    radial-gradient(ellipse 34% 30% at 18% 26%, rgba(120, 214, 132, 0.36), transparent 72%),
+    radial-gradient(ellipse 30% 26% at 82% 62%, rgba(98, 213, 236, 0.32), transparent 72%),
+    radial-gradient(ellipse 26% 22% at 62% 14%, rgba(246, 218, 126, 0.28), transparent 72%),
+    url("../assets/responsive/nature-seed-hero-1376.webp");
+  background-image:
+    radial-gradient(ellipse 34% 30% at 18% 26%, rgba(120, 214, 132, 0.36), transparent 72%),
+    radial-gradient(ellipse 30% 26% at 82% 62%, rgba(98, 213, 236, 0.32), transparent 72%),
+    radial-gradient(ellipse 26% 22% at 62% 14%, rgba(246, 218, 126, 0.28), transparent 72%),
+    image-set(url("../assets/responsive/nature-seed-hero-1376.avif") type("image/avif"), url("../assets/responsive/nature-seed-hero-1376.webp") type("image/webp"));
+  background-position: 0 0, 0 0, 0 0, center 44%;
+  background-size: auto, auto, auto, cover;
+  background-repeat: no-repeat;
+  opacity: calc(var(--ns-wash-max) * 0.5);
+  will-change: transform, opacity;
+  animation: nsWash 40s ease-in-out infinite;
+}
+
+.nature-bg-rain {
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  background-repeat: repeat;
+  will-change: transform;
+}
+
+.nature-bg-rain {
+  height: calc(100% + 700px);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='700' viewBox='0 0 900 700'%3E%3Ccircle cx='150' cy='300' r='9' fill='%23f6c445' fill-opacity='.16'/%3E%3Ccircle cx='150' cy='300' r='5' fill='%23f6c445' fill-opacity='.3'/%3E%3Ccircle cx='150' cy='300' r='2.2' fill='%23fff3b0' fill-opacity='.95'/%3E%3Ccircle cx='380' cy='560' r='10.799999999999999' fill='%23f6c445' fill-opacity='.16'/%3E%3Ccircle cx='380' cy='560' r='6' fill='%23f6c445' fill-opacity='.3'/%3E%3Ccircle cx='380' cy='560' r='2.64' fill='%23fff3b0' fill-opacity='.95'/%3E%3Ccircle cx='560' cy='120' r='8.1' fill='%23f6c445' fill-opacity='.16'/%3E%3Ccircle cx='560' cy='120' r='4.5' fill='%23f6c445' fill-opacity='.3'/%3E%3Ccircle cx='560' cy='120' r='1.9800000000000002' fill='%23fff3b0' fill-opacity='.95'/%3E%3Ccircle cx='700' cy='380' r='9' fill='%23f6c445' fill-opacity='.16'/%3E%3Ccircle cx='700' cy='380' r='5' fill='%23f6c445' fill-opacity='.3'/%3E%3Ccircle cx='700' cy='380' r='2.2' fill='%23fff3b0' fill-opacity='.95'/%3E%3Ccircle cx='820' cy='40' r='7.2' fill='%23f6c445' fill-opacity='.16'/%3E%3Ccircle cx='820' cy='40' r='4' fill='%23f6c445' fill-opacity='.3'/%3E%3Ccircle cx='820' cy='40' r='1.7600000000000002' fill='%23fff3b0' fill-opacity='.95'/%3E%3Ccircle cx='40' cy='650' r='8.1' fill='%23f6c445' fill-opacity='.16'/%3E%3Ccircle cx='40' cy='650' r='4.5' fill='%23f6c445' fill-opacity='.3'/%3E%3Ccircle cx='40' cy='650' r='1.9800000000000002' fill='%23fff3b0' fill-opacity='.95'/%3E%3Cg transform='translate(70 90) rotate(8) scale(0.8)'%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 -11 4C-11 -3 -4 -8 0 -15Z' fill='%235bb8ea' stroke='%232f86b8' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 0 15Z' fill='%2343a6e2' fill-opacity='.45'/%3E%3Cellipse cx='-4' cy='3' rx='2.4' ry='4.4' fill='%23fff' fill-opacity='.6' transform='rotate(18 -4 3)'/%3E%3C/g%3E%3Cg transform='translate(260 330) rotate(-6) scale(1.1)'%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 -11 4C-11 -3 -4 -8 0 -15Z' fill='%235bb8ea' stroke='%232f86b8' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 0 15Z' fill='%2343a6e2' fill-opacity='.45'/%3E%3Cellipse cx='-4' cy='3' rx='2.4' ry='4.4' fill='%23fff' fill-opacity='.6' transform='rotate(18 -4 3)'/%3E%3C/g%3E%3Cg transform='translate(430 60) rotate(4) scale(0.7)'%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 -11 4C-11 -3 -4 -8 0 -15Z' fill='%235bb8ea' stroke='%232f86b8' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 0 15Z' fill='%2343a6e2' fill-opacity='.45'/%3E%3Cellipse cx='-4' cy='3' rx='2.4' ry='4.4' fill='%23fff' fill-opacity='.6' transform='rotate(18 -4 3)'/%3E%3C/g%3E%3Cg transform='translate(590 440) rotate(10) scale(1)'%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 -11 4C-11 -3 -4 -8 0 -15Z' fill='%235bb8ea' stroke='%232f86b8' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 0 15Z' fill='%2343a6e2' fill-opacity='.45'/%3E%3Cellipse cx='-4' cy='3' rx='2.4' ry='4.4' fill='%23fff' fill-opacity='.6' transform='rotate(18 -4 3)'/%3E%3C/g%3E%3Cg transform='translate(740 210) rotate(-10) scale(0.85)'%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 -11 4C-11 -3 -4 -8 0 -15Z' fill='%235bb8ea' stroke='%232f86b8' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 0 15Z' fill='%2343a6e2' fill-opacity='.45'/%3E%3Cellipse cx='-4' cy='3' rx='2.4' ry='4.4' fill='%23fff' fill-opacity='.6' transform='rotate(18 -4 3)'/%3E%3C/g%3E%3Cg transform='translate(830 600) rotate(3) scale(0.65)'%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 -11 4C-11 -3 -4 -8 0 -15Z' fill='%235bb8ea' stroke='%232f86b8' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 0 15Z' fill='%2343a6e2' fill-opacity='.45'/%3E%3Cellipse cx='-4' cy='3' rx='2.4' ry='4.4' fill='%23fff' fill-opacity='.6' transform='rotate(18 -4 3)'/%3E%3C/g%3E%3Cg transform='translate(160 560) rotate(-4) scale(0.9)'%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 -11 4C-11 -3 -4 -8 0 -15Z' fill='%235bb8ea' stroke='%232f86b8' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -15C4 -8 11 -3 11 4A11 11 0 0 1 0 15Z' fill='%2343a6e2' fill-opacity='.45'/%3E%3Cellipse cx='-4' cy='3' rx='2.4' ry='4.4' fill='%23fff' fill-opacity='.6' transform='rotate(18 -4 3)'/%3E%3C/g%3E%3Cg transform='scale(0.82 0.78)'%3E%3Cg transform='translate(520 380) rotate(-52) scale(1.25)' opacity='1'%3E%3Cpath d='M0 -22C15 -14 17 6 0 22C-17 6 -15 -14 0 -22Z' fill='%236fd68c' stroke='%231f8a66' stroke-opacity='.5' stroke-width='1'/%3E%3Cpath d='M0 -22C15 -14 17 6 0 22Z' fill='%232caf86' fill-opacity='.45'/%3E%3Cpath d='M0 -17V19M0 -6L-6 -11M0 3L7 -3M0 10L-6 5' stroke='%23fff' stroke-opacity='.5' stroke-width='1.3' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate(300 700) rotate(20) scale(1.1)' opacity='1'%3E%3Cpath d='M0 -22C15 -14 17 6 0 22C-17 6 -15 -14 0 -22Z' fill='%236fd68c' stroke='%231f8a66' stroke-opacity='.5' stroke-width='1'/%3E%3Cpath d='M0 -22C15 -14 17 6 0 22Z' fill='%232caf86' fill-opacity='.45'/%3E%3Cpath d='M0 -17V19M0 -6L-6 -11M0 3L7 -3M0 10L-6 5' stroke='%23fff' stroke-opacity='.5' stroke-width='1.3' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate(820 760) rotate(-28) scale(1.35)' opacity='0.95'%3E%3Cpath d='M0 -22C15 -14 17 6 0 22C-17 6 -15 -14 0 -22Z' fill='%236fd68c' stroke='%231f8a66' stroke-opacity='.5' stroke-width='1'/%3E%3Cpath d='M0 -22C15 -14 17 6 0 22Z' fill='%232caf86' fill-opacity='.45'/%3E%3Cpath d='M0 -17V19M0 -6L-6 -11M0 3L7 -3M0 10L-6 5' stroke='%23fff' stroke-opacity='.5' stroke-width='1.3' stroke-linecap='round'/%3E%3C/g%3E%3Cg transform='translate(690 60) rotate(12) scale(0.9)'%3E%3Ccircle r='11' fill='%237fd16a' stroke='%232e8f4e' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -10C-2 -18 -10 -18 -11 -13C-6 -12 -2 -10 0 -10Z' fill='%2355bb62'/%3E%3Cpath d='M0 -10C2 -17 9 -18 12 -13C7 -12 3 -10 0 -10Z' fill='%238ddc7d'/%3E%3Cellipse cx='-4' cy='-3' rx='2.6' ry='3.6' fill='%23fff' fill-opacity='.45'/%3E%3C/g%3E%3Cg transform='translate(60 480) rotate(-14) scale(1.1)'%3E%3Ccircle r='11' fill='%237fd16a' stroke='%232e8f4e' stroke-opacity='.55' stroke-width='1'/%3E%3Cpath d='M0 -10C-2 -18 -10 -18 -11 -13C-6 -12 -2 -10 0 -10Z' fill='%2355bb62'/%3E%3Cpath d='M0 -10C2 -17 9 -18 12 -13C7 -12 3 -10 0 -10Z' fill='%238ddc7d'/%3E%3Cellipse cx='-4' cy='-3' rx='2.6' ry='3.6' fill='%23fff' fill-opacity='.45'/%3E%3C/g%3E%3Cellipse transform='translate(250 330) rotate(40) scale(1)' rx='4' ry='9' fill='%23fff7c9' fill-opacity='.85' stroke='%23d9b64f' stroke-opacity='.5'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 900px 700px;
+  opacity: 0.8;
+  animation: nsRain 38s linear infinite;
+}
+
+.nature-bg-ink {
+  z-index: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  will-change: transform, opacity;
+}
+
+.nature-bg-ink-a {
+  left: -2vw;
+  bottom: 6vh;
+  width: 52vw;
+  height: 24vh;
+  transform-origin: left center;
+  animation: nsInkA 24s ease-in-out -8s infinite;
+}
+
+.nature-bg-ink-b {
+  top: 10vh;
+  right: -2vw;
+  width: 46vw;
+  height: 20vh;
+  transform-origin: right center;
+  animation: nsInkB 24s ease-in-out -20s infinite;
+}
+
+.nature-bg-ink path {
+  stroke: var(--ns-ink-1);
+  stroke-width: 3.2;
+}
+
+.nature-bg-ink-b path {
+  stroke: var(--ns-ink-2);
+}
+
+.nature-menu-sun::before {
+  animation: nsRays 150s linear infinite;
+}
+
+@keyframes nsWash {
+  0%, 100% { opacity: calc(var(--ns-wash-max) * 0.5); transform: translate3d(-1.2vw, 0.6vh, 0) scale(1.03); }
+  50% { opacity: var(--ns-wash-max); transform: translate3d(1.2vw, -0.8vh, 0) scale(1.06); }
+}
+
+@keyframes nsRain {
+  0% { transform: translate3d(0, -700px, 0); }
+  25% { transform: translate3d(14px, -525px, 0); }
+  50% { transform: translate3d(0, -350px, 0); }
+  75% { transform: translate3d(-14px, -175px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Ink strokes glide in smoothly on the compositor (transform + opacity only, avoiding clip-path repaints). */
+@keyframes nsInkA {
+  0% { transform: translate3d(-5vw, 0, 0) scaleX(0.72); opacity: 0; }
+  30%, 64% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
+  100% { transform: translate3d(6vw, 0, 0) scaleX(0.76); opacity: 0; }
+}
+
+@keyframes nsInkB {
+  0% { transform: translate3d(5vw, 0, 0) scaleX(0.72); opacity: 0; }
+  30%, 64% { transform: translate3d(0, 0, 0) scaleX(1); opacity: 1; }
+  100% { transform: translate3d(-6vw, 0, 0) scaleX(0.76); opacity: 0; }
+}
+
+@keyframes nsRays {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 760px) {
+  .nature-bg-rain,
+  .nature-bg-ink {
+    display: none;
+  }
+
+  .nature-bg-wash {
+    background-image:
+      radial-gradient(ellipse 34% 30% at 18% 26%, rgba(120, 214, 132, 0.36), transparent 72%),
+      radial-gradient(ellipse 30% 26% at 82% 62%, rgba(98, 213, 236, 0.32), transparent 72%),
+      radial-gradient(ellipse 26% 22% at 62% 14%, rgba(246, 218, 126, 0.28), transparent 72%),
+      url("../assets/responsive/nature-seed-hero-720.webp");
+    background-image:
+      radial-gradient(ellipse 34% 30% at 18% 26%, rgba(120, 214, 132, 0.36), transparent 72%),
+      radial-gradient(ellipse 30% 26% at 82% 62%, rgba(98, 213, 236, 0.32), transparent 72%),
+      radial-gradient(ellipse 26% 22% at 62% 14%, rgba(246, 218, 126, 0.28), transparent 72%),
+      image-set(url("../assets/responsive/nature-seed-hero-720.avif") type("image/avif"), url("../assets/responsive/nature-seed-hero-720.webp") type("image/webp"));
+  }
+}
+
+/* Reduced motion: a still, finished frame of the same world. */
+@media (prefers-reduced-motion: reduce) {
+  .nature-bg-wash,
+  .nature-bg-rain,
+  .nature-bg-ink,
+  .nature-menu-sun::before {
+    animation: none;
+  }
+}
+
+/* ==========================================================================
+   Frames v2: a field sketchbook. Leaf-cornered paper, alternating Seed green and Water Drop blue,
+   a pencil guide line inside every card, ink-wave rules under headings, roots for the timeline.
+   ========================================================================== */
+body.nature-seed-page :is(.detail-card, .update-list li, .asset-link, .related-world-link, .game-page-facts) {
+  --ns-accent: var(--ns-leaf);
+  --ns-accent-glow: var(--ns-leaf-glow);
+  --ns-other: var(--ns-water-glow);
+  position: relative;
+  border: 1.5px solid color-mix(in srgb, var(--ns-accent) 50%, transparent);
+  border-radius: 28px 8px 28px 8px;
+  background:
+    radial-gradient(ellipse 85% 75% at 0% 0%, color-mix(in srgb, var(--ns-accent-glow) 22%, transparent), transparent 70%),
+    radial-gradient(ellipse 65% 55% at 100% 100%, color-mix(in srgb, var(--ns-other) 15%, transparent), transparent 72%),
+    var(--ns-paper);
+  box-shadow: var(--ns-card-shadow);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.nature-seed-page :is(.detail-card, .update-list li, .asset-link, .related-world-link):nth-child(even) {
+  --ns-accent: var(--ns-water);
+  --ns-accent-glow: var(--ns-water-glow);
+  --ns-other: var(--ns-leaf-glow);
+  border-radius: 8px 28px 8px 28px;
+}
+
+/* the pencil guide line */
+body.nature-seed-page :is(.detail-card, .update-list li, .asset-link, .related-world-link)::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1px dashed color-mix(in srgb, var(--ns-accent) 30%, transparent);
+  border-radius: 22px 3px 22px 3px;
+  pointer-events: none;
+}
+
+body.nature-seed-page :is(.detail-card, .update-list li, .asset-link, .related-world-link):nth-child(even)::after {
+  border-radius: 3px 22px 3px 22px;
+}
+
+/* the marker: a leaf (Seed side) on odd cards, a water drop on even cards */
+body.nature-seed-page :is(.detail-card, .update-list li, .related-world-link)::before {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 17px;
+  height: 17px;
+  border-radius: 0 100% 0 100%;
+  background:
+    linear-gradient(135deg, transparent 45%, rgba(255, 255, 255, 0.55) 46% 53%, transparent 54%),
+    linear-gradient(140deg, color-mix(in srgb, var(--ns-accent-glow) 70%, white), var(--ns-accent-glow) 48%, color-mix(in srgb, var(--ns-accent) 55%, var(--ns-accent-glow)));
+  box-shadow: 0 3px 8px -2px color-mix(in srgb, var(--ns-accent) 55%, transparent);
+  transition: transform 0.4s var(--ease);
+}
+
+body.nature-seed-page :is(.detail-card, .update-list li, .related-world-link):nth-child(even)::before {
+  border-radius: 0 50% 50% 50%;
+  background:
+    radial-gradient(circle at 34% 64%, rgba(255, 255, 255, 0.8) 0 1.6px, transparent 2.6px),
+    linear-gradient(140deg, color-mix(in srgb, var(--ns-accent-glow) 70%, white), var(--ns-accent-glow) 55%, color-mix(in srgb, var(--ns-accent) 55%, var(--ns-accent-glow)));
+  transform: rotate(45deg);
+}
+
+@media (hover: hover) {
+  body.nature-seed-page :is(.detail-card, .update-list li, .related-world-link):hover::before {
+    transform: rotate(14deg) scale(1.14);
+  }
+
+  body.nature-seed-page :is(.detail-card, .update-list li, .related-world-link):nth-child(even):hover::before {
+    transform: rotate(45deg) translateY(-2px) scale(1.14);
+  }
+}
+
+body.nature-seed-page .detail-card {
+  min-height: 0;
+  padding: 22px 22px 24px;
+}
+
+body.nature-seed-page .detail-card h3 {
+  padding-inline-end: 30px;
+  color: var(--text);
+}
+
+body.nature-seed-page .update-list li {
+  min-height: 0;
+  padding: 20px 22px 22px;
+}
+
+body.nature-seed-page .update-list :is(span, time) {
+  margin-bottom: 14px;
+  padding: 4px 11px;
+  border-radius: 12px 3px 12px 3px;
+  color: color-mix(in srgb, var(--ns-accent) 86%, var(--text));
+  background: color-mix(in srgb, var(--ns-accent-glow) 16%, transparent);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+}
+
+body.nature-seed-page .update-list strong {
+  padding-inline-end: 24px;
+}
+
+body.nature-seed-page .asset-link img {
+  border-radius: 16px 4px 16px 4px;
+}
+
+body.nature-seed-page .related-world-link {
+  padding: 20px 20px 18px;
+}
+
+body.nature-seed-page .related-world-link .related-world-kicker {
+  border-color: color-mix(in srgb, var(--ns-accent) 44%, transparent);
+  border-radius: 12px 3px 12px 3px;
+  color: color-mix(in srgb, var(--ns-accent) 86%, var(--text));
+  background: color-mix(in srgb, var(--ns-accent-glow) 14%, transparent);
+}
+
+body.nature-seed-page .related-world-link .related-world-meta {
+  border-top: 1px dashed color-mix(in srgb, var(--ns-accent) 36%, transparent);
+  color: color-mix(in srgb, var(--text) 80%, var(--ns-accent));
+}
+
+body.nature-seed-page .related-world-link.is-primary {
+  border-width: 2px;
+  background:
+    radial-gradient(ellipse 85% 75% at 0% 0%, color-mix(in srgb, var(--ns-accent-glow) 30%, transparent), transparent 70%),
+    radial-gradient(ellipse 65% 55% at 100% 100%, color-mix(in srgb, var(--ns-other) 15%, transparent), transparent 72%),
+    var(--ns-paper);
+}
+
+body.nature-seed-page :is(.related-world-link, .asset-link):hover,
+body.nature-seed-page :is(.related-world-link, .asset-link):focus-visible {
+  border-color: var(--ns-accent);
+  background:
+    radial-gradient(ellipse 85% 75% at 0% 0%, color-mix(in srgb, var(--ns-accent-glow) 34%, transparent), transparent 70%),
+    radial-gradient(ellipse 65% 55% at 100% 100%, color-mix(in srgb, var(--ns-other) 20%, transparent), transparent 72%),
+    var(--ns-paper);
+}
+
+/* fact rows */
+body.nature-seed-page .game-page-facts {
+  padding: 22px 24px;
+}
+
+body.nature-seed-page .game-page-facts div {
+  border-bottom: 1px dashed color-mix(in srgb, var(--ns-leaf) 36%, transparent);
+}
+
+body.nature-seed-page .game-page-facts div:last-child {
+  border-bottom: 0;
+}
+
+body.nature-seed-page .game-page-facts dt {
+  color: color-mix(in srgb, var(--text) 68%, var(--ns-leaf));
+}
+
+/* eyebrow chips: a leaf instead of a glowing dot */
+body.nature-seed-page .game-page-section .eyebrow,
+body.nature-seed-page .game-page-updates .eyebrow {
+  border-color: color-mix(in srgb, var(--ns-leaf) 46%, transparent);
+  border-radius: 16px 5px 16px 5px;
+  color: var(--text);
+  background: color-mix(in srgb, var(--ns-paper) 92%, transparent);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.nature-seed-page .game-page-section .eyebrow::before,
+body.nature-seed-page .game-page-updates .eyebrow::before {
+  width: 10px;
+  height: 10px;
+  border-radius: 0 100% 0 100%;
+  background: var(--ns-leaf-glow);
+  box-shadow: none;
+}
+
+/* the ink-wave rule under section headings: the line you draw */
+body.nature-seed-page :is(.game-page-section, .game-page-updates) > h2 {
+  margin-bottom: 22px;
+}
+
+body.nature-seed-page :is(.game-page-section, .game-page-updates) > h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 10px;
+  margin-top: 12px;
+  background: linear-gradient(90deg, var(--ns-leaf), var(--ns-water));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 5Q10 -1 20 5T40 5' stroke='%23000' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 0 / 40px 10px;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 5Q10 -1 20 5T40 5' stroke='%23000' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 0 / 40px 10px;
+}
+
+/* hero chips */
+body.nature-seed-page .nature-hero-stats span {
+  border-width: 1.5px;
+  border-color: color-mix(in srgb, var(--ns-leaf) 50%, transparent);
+  border-radius: 24px 6px 24px 6px;
+  background:
+    radial-gradient(ellipse 90% 80% at 0% 0%, color-mix(in srgb, var(--ns-leaf-glow) 22%, transparent), transparent 70%),
+    var(--ns-paper);
+  box-shadow: var(--ns-card-shadow);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body.nature-seed-page .nature-hero-stats span:nth-child(even) {
+  border-color: color-mix(in srgb, var(--ns-water) 50%, transparent);
+  border-radius: 6px 24px 6px 24px;
+  background:
+    radial-gradient(ellipse 90% 80% at 0% 0%, color-mix(in srgb, var(--ns-water-glow) 24%, transparent), transparent 70%),
+    var(--ns-paper);
+}
+
+body.nature-seed-page .nature-hero-stats small {
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
+}
+
+/* proof section: one big leaf-cornered plate */
+body.nature-seed-page .game-proof-section {
+  border-radius: 48px 12px 48px 12px;
+  background:
+    radial-gradient(ellipse 60% 70% at 0% 0%, color-mix(in srgb, var(--ns-leaf-glow) 20%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 100% 100%, color-mix(in srgb, var(--ns-water-glow) 16%, transparent), transparent 72%),
+    var(--ns-paper-2);
+  box-shadow: inset 0 0 0 1.5px color-mix(in srgb, var(--ns-leaf) 46%, transparent), var(--ns-card-shadow);
+}
+
+body.nature-seed-page .game-proof-section::before {
+  inset: 8px;
+  border: 1px dashed color-mix(in srgb, var(--ns-leaf) 30%, transparent);
+  border-radius: 40px 6px 40px 6px;
+  background: none;
+}
+
+body.nature-seed-page .proof-kicker,
+body.nature-seed-page .proof-status {
+  border-radius: 14px 4px 14px 4px;
+}
+
+body.nature-seed-page .proof-kicker {
+  color: color-mix(in srgb, var(--text) 86%, var(--ns-leaf));
+  background: color-mix(in srgb, var(--ns-leaf-glow) 20%, transparent);
+}
+
+body.nature-seed-page .proof-kicker::before {
+  border-radius: 0 100% 0 100%;
+  box-shadow: none;
+}
+
+body.nature-seed-page .proof-status {
+  background: color-mix(in srgb, var(--ns-paper) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ns-leaf) 36%, transparent);
+}
+
+body.nature-seed-page .proof-facts {
+  border-top: 1px dashed color-mix(in srgb, var(--ns-leaf) 40%, transparent);
+}
+
+body.nature-seed-page .proof-facts article {
+  border-inline-start: 1px dashed color-mix(in srgb, var(--ns-leaf) 34%, transparent);
+}
+
+body.nature-seed-page .proof-facts article:first-child {
+  border-inline-start: 0;
+}
+
+body.nature-seed-page .proof-facts strong {
+  color: var(--text);
+}
+
+body.nature-seed-page .proof-facts span {
+  color: color-mix(in srgb, var(--text) 76%, var(--muted));
+}
+
+/* sketch and bloom prints */
+body.nature-seed-page .nature-proof-frame {
+  border: 1.5px dashed color-mix(in srgb, var(--ns-leaf) 56%, transparent);
+  border-radius: 22px 6px 22px 6px;
+  background: var(--ns-paper);
+  box-shadow: var(--ns-card-shadow);
+}
+
+body.nature-seed-page .nature-proof-frame:last-child {
+  border-style: solid;
+  border-color: color-mix(in srgb, var(--ns-water) 56%, transparent);
+  border-radius: 6px 22px 6px 22px;
+}
+
+body.nature-seed-page .nature-proof-frame img {
+  border-bottom: 1px dashed color-mix(in srgb, var(--ns-leaf) 36%, transparent);
+}
+
+/* Steps: the line that joins Water Drop and Seed runs through all four cards. */
+@media (min-width: 561px) and (max-width: 1120px) {
+  body.nature-seed-page #gameplay-loop .update-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1121px) {
+  body.nature-seed-page #gameplay-loop .update-list {
+    position: relative;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    padding-top: 34px;
+  }
+
+  body.nature-seed-page #gameplay-loop .update-list::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    right: 3%;
+    left: 3%;
+    height: 10px;
+    background: linear-gradient(90deg, var(--ns-water), var(--ns-leaf));
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 5Q10 -1 20 5T40 5' stroke='%23000' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 0 / 40px 10px;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='10' viewBox='0 0 40 10'%3E%3Cpath d='M0 5Q10 -1 20 5T40 5' stroke='%23000' stroke-width='2.6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 0 / 40px 10px;
+  }
+
+  body.nature-seed-page #gameplay-loop .update-list li::before {
+    top: -26px;
+    right: auto;
+    left: 22px;
+  }
+}
+
+/* Devlog: four across, so eight entries make two even rows. */
+@media (min-width: 561px) and (max-width: 1120px) {
+  body.nature-seed-page #devlog .update-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1121px) {
+  body.nature-seed-page #devlog .update-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  body.nature-seed-page #faq .detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Timeline: a root growing down through seven stages, a branch to each card. */
+body.nature-seed-page .nature-root-section .update-list {
+  --root-gap: 72px;
+  position: relative;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 16px;
+  padding: 6px 0 10px 46px;
+}
+
+body.nature-seed-page .nature-root-section .update-list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 12px;
+  width: 10px;
+  background: linear-gradient(180deg, var(--ns-leaf), var(--ns-water));
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='40' viewBox='0 0 10 40'%3E%3Cpath d='M5 0Q-1 10 5 20T5 40' stroke='%23000' stroke-width='2.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-y 50% 0 / 10px 40px;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='40' viewBox='0 0 10 40'%3E%3Cpath d='M5 0Q-1 10 5 20T5 40' stroke='%23000' stroke-width='2.8' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") repeat-y 50% 0 / 10px 40px;
+}
+
+body.nature-seed-page .nature-root-section .update-list li::before,
+body.nature-seed-page .nature-root-section .update-list li:nth-child(even)::before {
+  top: 24px;
+  right: auto;
+  left: -41px;
+  width: 41px;
+  height: 12px;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 6px 50%, var(--ns-accent-glow) 0 5px, var(--ns-accent) 5.5px 6.5px, transparent 7px),
+    linear-gradient(var(--ns-accent), var(--ns-accent)) 6px 50% / calc(100% - 6px) 2.5px no-repeat;
+  box-shadow: none;
+  transform: none;
+}
+
+@media (min-width: 901px) {
+  body.nature-seed-page .nature-root-section .update-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--root-gap);
+    padding: 6px 0 10px;
+  }
+
+  body.nature-seed-page .nature-root-section .update-list::before {
+    left: 50%;
+    margin-left: -5px;
+  }
+
+  body.nature-seed-page .nature-root-section .update-list li:nth-child(even) {
+    margin-top: 44px;
+  }
+
+  body.nature-seed-page .nature-root-section .update-list li::before {
+    right: calc(var(--root-gap) / -2);
+    left: auto;
+    width: calc(var(--root-gap) / 2);
+    background:
+      radial-gradient(circle at calc(100% - 6px) 50%, var(--ns-accent-glow) 0 5px, var(--ns-accent) 5.5px 6.5px, transparent 7px),
+      linear-gradient(var(--ns-accent), var(--ns-accent)) 0 50% / calc(100% - 6px) 2.5px no-repeat;
+  }
+
+  body.nature-seed-page .nature-root-section .update-list li:nth-child(even)::before {
+    right: auto;
+    left: calc(var(--root-gap) / -2);
+    width: calc(var(--root-gap) / 2);
+    background:
+      radial-gradient(circle at 6px 50%, var(--ns-accent-glow) 0 5px, var(--ns-accent) 5.5px 6.5px, transparent 7px),
+      linear-gradient(var(--ns-accent), var(--ns-accent)) 6px 50% / calc(100% - 6px) 2.5px no-repeat;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.nature-seed-page :is(.detail-card, .update-list li, .related-world-link)::before {
+    transition: none;
+  }
+}
+
+/* The shared off-screen placeholder is 720px tall; a one-row asset strip is about 230px, so the page jumped when a strip scrolled into view. */
+body.nature-seed-page #download-assets .asset-list {
+  contain-intrinsic-size: auto 230px;
+}
+
+/* Text that sits straight on the page backdrop (no card behind it): a paper halo keeps it readable while leaves and drops pass underneath. */
+body.nature-seed-page[data-theme] :is(.game-page-section > p, .info-grid > div > p, .related-worlds-copy, .asset-kit-copy, .asset-group-title) {
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  text-shadow: 0 0 14px color-mix(in srgb, var(--ns-paper) 96%, transparent), 0 0 4px color-mix(in srgb, var(--ns-paper) 88%, transparent);
+}
+
+body.nature-seed-page[data-theme] :is(.game-page-section, .game-page-updates) > h2 {
+  text-shadow: 0 0 18px color-mix(in srgb, var(--ns-paper) 96%, transparent), 0 0 5px color-mix(in srgb, var(--ns-paper) 80%, transparent);
+}
+
+/* Card copy: a little more ink than the shared muted tone, so it holds up on the tinted paper. */
+body.nature-seed-page :is(.detail-card p, .update-list li p, .related-world-link p, .asset-link span, .proof-facts span) {
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+}
+
+/* Data saver: no extra layers, and the painted forest image is not fetched. */
+@media (prefers-reduced-data: reduce) {
+  .nature-bg-wash,
+  .nature-bg-rain,
+  .nature-bg-ink {
+    display: none;
+  }
+}
+
+/* Focus ring: deep leaf green on the light paper, pale green on the dark one (the shared pale ring is under 3:1 on cream). */
+body.nature-seed-page[data-theme] :is(.game-detail-nav a, .game-motion-toggle, .game-theme-toggle, .asset-link, .related-world-link, .game-footer a):focus-visible {
+  outline: 3px solid var(--ns-leaf);
+  outline-offset: 3px;
+}
+
+/* The text link in the hero sits straight on the backdrop: same halo as the other bare text. */
+body.nature-seed-page[data-theme] .nature-hero-secondary > .btn-ghost {
+  text-shadow: 0 0 10px color-mix(in srgb, var(--ns-paper) 96%, transparent), 0 0 3px color-mix(in srgb, var(--ns-paper) 90%, transparent);
 }

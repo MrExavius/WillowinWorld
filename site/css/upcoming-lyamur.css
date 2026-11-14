@@ -345,7 +345,51 @@ body[data-game="lyamur"][data-theme="dark"] .lm-hero-media {
   }
 }
 
-/* Sections: the marble motif, kept quiet. Hover and press use transitions so a paused page still shows the final state. */
+/* Sections: jungle tablets. Leaf-cornered plates with a fringe of moss on top, glossy marbles as badges, a crown band on the call to action.
+   Section wrappers draw no box (a vine with leaves and three marbles under the heading), so the world shows between the plates.
+   Hover and press use transitions, so a paused page still shows the final state. */
+body[data-game="lyamur"][data-theme="dark"] {
+  --lm-moss-1: #6dbb4b;
+  --lm-moss-2: #2f7522;
+  --lm-plate: color-mix(in srgb, var(--ug-card-2) 90%, transparent);
+  --lm-plate-2: color-mix(in srgb, var(--ug-card) 90%, transparent);
+  --lm-edge: rgb(255 255 255 / 0.09);
+  --lm-edge-lo: rgb(0 0 0 / 0.3);
+}
+
+body[data-game="lyamur"][data-theme="light"] {
+  --lm-moss-1: #62b240;
+  --lm-moss-2: #2f7a1f;
+  --lm-plate: color-mix(in srgb, var(--ug-card-2) 93%, transparent);
+  --lm-plate-2: color-mix(in srgb, var(--ug-card) 93%, transparent);
+  --lm-edge: rgb(255 255 255 / 0.9);
+  --lm-edge-lo: rgb(20 60 20 / 0.14);
+}
+
+body[data-game="lyamur"] {
+  --lm-r: 24px 7px 24px 7px;
+  --lm-r-s: 16px 5px 16px 5px;
+  --lm-fringe:
+    radial-gradient(circle at 9px 0, var(--lm-moss-1) 0 6px, transparent 6.6px) 0 0 / 23px 12px repeat-x,
+    radial-gradient(circle at 12px 0, var(--lm-moss-2) 0 5px, transparent 5.6px) 7px 0 / 31px 10px repeat-x,
+    radial-gradient(circle at 6px 0, var(--lm-moss-1) 0 3.2px, transparent 3.8px) 3px 0 / 17px 7px repeat-x,
+    linear-gradient(var(--lm-moss-2), var(--lm-moss-2)) 0 0 / 100% 3px no-repeat;
+  --lm-fringe-s:
+    radial-gradient(circle at 6px 0, var(--lm-moss-1) 0 4px, transparent 4.5px) 0 0 / 13px 8px repeat-x,
+    radial-gradient(circle at 8px 0, var(--lm-moss-2) 0 3px, transparent 3.5px) 4px 0 / 19px 6px repeat-x,
+    linear-gradient(var(--lm-moss-2), var(--lm-moss-2)) 0 0 / 100% 2px no-repeat;
+  --lm-fill: linear-gradient(165deg, var(--lm-plate), var(--lm-plate-2));
+  --lm-glow: radial-gradient(ellipse 60% 50% at 92% 112%, rgb(101 202 73 / 0.14), transparent 70%);
+}
+
+/* The plate */
+body[data-game="lyamur"] :is(.detail-card, .update-list li, .ug-next li, .lab-related-link) {
+  border: 1px solid color-mix(in srgb, var(--ug-line) 90%, transparent);
+  border-radius: var(--lm-r);
+  background: var(--lm-fringe), var(--lm-glow), var(--lm-fill);
+  box-shadow: inset 0 1px 0 var(--lm-edge), inset 0 -2px 0 var(--lm-edge-lo), 0 8px 18px rgb(0 0 0 / 0.2);
+}
+
 .ug-steps li,
 .ug-features .detail-card,
 .ug-faq .detail-card,
@@ -355,6 +399,69 @@ body[data-game="lyamur"][data-theme="dark"] .lm-hero-media {
   transition: transform 0.28s var(--ease), border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
 }
 
+body[data-game="lyamur"] .btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Section wrapper: no box, a vine with leaves on top, and the heading on the world with a halo */
+body[data-game="lyamur"] .game-page-section.soft-card {
+  position: relative;
+  padding-inline: 0;
+  padding-top: clamp(30px, 4vw, 44px);
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+body[data-game="lyamur"] .game-page-section.soft-card:not(.ug-vote)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 6px 3px at 10px 3px, var(--lm-moss-1) 0 98%, transparent 100%) 0 0 / 52px 14px repeat-x,
+    radial-gradient(ellipse 6px 3px at 36px 11px, var(--lm-moss-2) 0 98%, transparent 100%) 0 0 / 52px 14px repeat-x,
+    linear-gradient(var(--lm-moss-2), var(--lm-moss-2)) 0 6px / 100% 2px no-repeat;
+}
+
+body[data-game="lyamur"] .game-page-section h2,
+body[data-game="lyamur"] .lab-related-title {
+  text-shadow: 0 0 20px color-mix(in srgb, var(--ug-bg) 92%, transparent), 0 0 6px color-mix(in srgb, var(--ug-bg) 78%, transparent);
+}
+
+/* Three marbles under every heading: red, blue, yellow, the colors of the chain */
+body[data-game="lyamur"] .game-page-section h2::after {
+  content: "";
+  display: block;
+  width: 54px;
+  height: 14px;
+  margin-top: 12px;
+  background:
+    radial-gradient(circle at 4px 4px, rgb(255 255 255 / 0.9) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 5px 6px, var(--lm-red-2), var(--lm-red-3) 6px, transparent 6.6px),
+    radial-gradient(circle at 24px 4px, rgb(255 255 255 / 0.9) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 25px 6px, var(--lm-blue-2), var(--lm-blue-3) 6px, transparent 6.6px),
+    radial-gradient(circle at 44px 4px, rgb(255 255 255 / 0.9) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 45px 6px, var(--lm-yel-2), var(--lm-yel-3) 6px, transparent 6.6px);
+  background-repeat: no-repeat;
+}
+
+body[data-game="lyamur"] :is(.ug-lede, .ug-vote .ug-lede) {
+  color: color-mix(in srgb, var(--ug-ink) 92%, var(--ug-muted));
+  text-shadow: 0 0 12px color-mix(in srgb, var(--ug-bg) 88%, transparent);
+}
+
+/* Eyebrow: a leaf tag with the yellow marble */
+body[data-game="lyamur"] .eyebrow {
+  border-radius: 14px 4px 14px 4px;
+  background: linear-gradient(180deg, var(--lm-plate), var(--lm-plate-2));
+}
+
 body[data-game="lyamur"] .eyebrow::before {
   background:
     radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.9) 0 10%, transparent 24%),
@@ -362,9 +469,43 @@ body[data-game="lyamur"] .eyebrow::before {
   box-shadow: 0 1px 3px rgb(0 0 0 / 0.35);
 }
 
-body[data-game="lyamur"] .btn:active {
-  transform: translateY(1px) scale(0.98);
+/* Hero note: a small leaf plate with a moss edge */
+body[data-game="lyamur"] .ug-status-note {
+  border: 1px solid color-mix(in srgb, var(--ug-line) 90%, transparent);
+  border-inline-start-width: 1px;
+  border-radius: var(--lm-r-s);
+  background: var(--lm-fringe-s), var(--lm-glow), var(--lm-fill);
+  box-shadow: inset 0 1px 0 var(--lm-edge), inset 0 -2px 0 var(--lm-edge-lo);
+  padding-top: 18px;
 }
+
+/* Facts: pebbles with a marble in the corner */
+body[data-game="lyamur"] .ug-facts .game-page-facts > div {
+  position: relative;
+  padding-top: 20px;
+  border: 1px solid color-mix(in srgb, var(--ug-line) 90%, transparent);
+  border-radius: var(--lm-r-s);
+  background: var(--lm-fringe-s), var(--lm-fill);
+  box-shadow: inset 0 1px 0 var(--lm-edge), inset 0 -2px 0 var(--lm-edge-lo), 0 8px 18px rgb(0 0 0 / 0.2);
+}
+
+.ug-facts .game-page-facts > div::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.92) 0 8%, transparent 20%),
+    radial-gradient(circle at 38% 34%, var(--c1), var(--c2) 55%, var(--c3));
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.35);
+}
+
+.ug-facts .game-page-facts > div:nth-child(3n+1) { --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.ug-facts .game-page-facts > div:nth-child(3n+2) { --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.ug-facts .game-page-facts > div:nth-child(3n+3) { --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
 
 .ug-facts .game-page-facts > div:hover {
   transform: translateY(-2px);
@@ -375,7 +516,7 @@ body[data-game="lyamur"] .btn:active {
 .ug-steps li {
   position: relative;
   container-type: inline-size;
-  padding-bottom: 44px;
+  padding-bottom: 46px;
 }
 
 .ug-steps li::before {
@@ -387,6 +528,7 @@ body[data-game="lyamur"] .btn:active {
   height: 6px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--ug-ink) 16%, transparent);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.35);
 }
 
 .ug-steps li::after {
@@ -412,7 +554,7 @@ body[data-game="lyamur"] .btn:active {
 .ug-steps li:focus-within {
   transform: translateY(-4px);
   border-color: var(--ug-accent);
-  box-shadow: 0 16px 32px var(--ug-shadow);
+  box-shadow: inset 0 1px 0 var(--lm-edge), inset 0 -2px 0 var(--lm-edge-lo), 0 16px 32px var(--ug-shadow);
 }
 
 .ug-steps li:hover::after,
@@ -424,17 +566,18 @@ body[data-game="lyamur"] .btn:active {
 /* Features: a marble badge in the corner */
 .ug-features .detail-card {
   position: relative;
+  padding-top: 26px;
 }
 
 .ug-features .detail-card h3 {
-  padding-right: 32px;
+  padding-right: 34px;
 }
 
 .ug-features .detail-card::after {
   content: "";
   position: absolute;
-  top: 18px;
-  right: 18px;
+  top: 22px;
+  right: 20px;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -449,7 +592,7 @@ body[data-game="lyamur"] .btn:active {
 .ug-faq .detail-card:hover {
   transform: translateY(-3px);
   border-color: var(--ug-accent);
-  box-shadow: 0 14px 28px var(--ug-shadow);
+  box-shadow: inset 0 1px 0 var(--lm-edge), inset 0 -2px 0 var(--lm-edge-lo), 0 14px 28px var(--ug-shadow);
 }
 
 .ug-features .detail-card:hover::after {
@@ -457,8 +600,31 @@ body[data-game="lyamur"] .btn:active {
   scale: 1.15;
 }
 
+/* FAQ: speech leaves. A small tail at the bottom corner, as if the lemur king answers. */
+.ug-faq .detail-card {
+  position: relative;
+  padding-top: 26px;
+}
+
+.ug-faq .detail-card::after {
+  content: "";
+  position: absolute;
+  left: 34px;
+  bottom: -9px;
+  width: 20px;
+  height: 11px;
+  background: color-mix(in srgb, var(--ug-card) 90%, transparent);
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
 /* Next: marbles instead of diamonds */
+.ug-next li {
+  position: relative;
+  padding-top: 20px;
+}
+
 .ug-next li::before {
+  top: 1.5rem;
   width: 14px;
   height: 14px;
   border-radius: 50%;
@@ -474,11 +640,31 @@ body[data-game="lyamur"] .btn:active {
   border-color: var(--ug-accent);
 }
 
-/* Gallery: the art sits on a soft clearing-green spot */
-.ug-shot {
+/* Gallery: art in a gold-studded frame (the crown beads) on a soft clearing-green spot */
+body[data-game="lyamur"] .ug-shot {
+  position: relative;
+  border: 2px solid color-mix(in srgb, var(--ug-accent) 55%, var(--ug-line));
+  border-radius: var(--lm-r);
   background:
     radial-gradient(circle at 50% 42%, color-mix(in srgb, var(--ug-accent-2) 30%, transparent), transparent 66%),
     var(--ug-card-2);
+}
+
+body[data-game="lyamur"] .ug-shot figcaption {
+  padding-inline: 30px;
+}
+
+.ug-shot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14px 14px, #fff4c8 0 1.4px, #f2b92a 2.4px 5px, #8a5a06 5.6px 6.2px, transparent 6.8px),
+    radial-gradient(circle at calc(100% - 14px) 14px, #fff4c8 0 1.4px, #f2b92a 2.4px 5px, #8a5a06 5.6px 6.2px, transparent 6.8px),
+    radial-gradient(circle at 14px calc(100% - 14px), #fff4c8 0 1.4px, #f2b92a 2.4px 5px, #8a5a06 5.6px 6.2px, transparent 6.8px),
+    radial-gradient(circle at calc(100% - 14px) calc(100% - 14px), #fff4c8 0 1.4px, #f2b92a 2.4px 5px, #8a5a06 5.6px 6.2px, transparent 6.8px);
 }
 
 .ug-shot img {
@@ -494,12 +680,23 @@ body[data-game="lyamur"] .btn:active {
   transform: scale(1.03);
 }
 
-/* Vote: a swirl marble rolls back and forth along a groove under the card */
-.ug-vote {
+/* Vote: a tablet with a crown band (gold, jewels and beads) on top; a swirl marble rolls back and forth along a groove under it */
+body[data-game="lyamur"] .game-page-section.ug-vote {
   position: relative;
   container-type: inline-size;
   overflow: hidden;
-  padding-bottom: calc(clamp(24px, 4vw, 38px) + 24px);
+  padding: clamp(44px, 5vw, 56px) clamp(24px, 4vw, 38px) calc(clamp(24px, 4vw, 38px) + 24px);
+  border: 1px solid color-mix(in srgb, var(--ug-line) 90%, transparent);
+  border-radius: var(--lm-r);
+  background:
+    radial-gradient(circle at 18% 8px, #ff7a6a 0 3.4px, #a81c16 4.2px 5px, transparent 5.6px),
+    radial-gradient(circle at 50% 8px, #7dea72 0 3.8px, #1d7418 4.6px 5.4px, transparent 6px),
+    radial-gradient(circle at 82% 8px, #ff7a6a 0 3.4px, #a81c16 4.2px 5px, transparent 5.6px),
+    radial-gradient(circle at 50% 50%, #fff4c8 0 1.6px, transparent 2.2px) 0 0 / 26px 16px repeat-x,
+    linear-gradient(180deg, #ffe7a0, #e9a008 55%, #b87a06) 0 0 / 100% 16px no-repeat,
+    var(--lm-glow),
+    var(--lm-fill);
+  box-shadow: inset 0 -2px 0 var(--lm-edge-lo), 0 14px 30px rgb(0 0 0 / 0.26);
 }
 
 .ug-vote::after {
@@ -511,6 +708,7 @@ body[data-game="lyamur"] .btn:active {
   height: 6px;
   border-radius: 999px;
   background: color-mix(in srgb, var(--ug-ink) 16%, transparent);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 0.35);
 }
 
 .ug-vote::before {
@@ -526,6 +724,25 @@ body[data-game="lyamur"] .btn:active {
     radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.85) 0 8%, transparent 20%),
     conic-gradient(var(--lm-red-2), var(--lm-yel-2), var(--lm-blue-2), var(--lm-red-2));
   box-shadow: 0 2px 3px rgb(0 0 0 / 0.35);
+}
+
+body[data-game="lyamur"] .lab-related-all {
+  background: var(--lm-plate);
+}
+
+/* Buttons: leaf-cornered; the primary one is a glossy gold marble */
+body[data-game="lyamur"] .btn,
+body[data-game="lyamur"].game-detail-page .btn:focus-visible {
+  border-radius: 20px 7px 20px 7px;
+}
+
+body[data-game="lyamur"] .btn-primary {
+  background: radial-gradient(ellipse 60% 70% at 24% 18%, rgb(255 255 255 / 0.38), transparent 70%), linear-gradient(135deg, var(--ug-fill), var(--ug-fill-2));
+  box-shadow: inset 0 -4px 0 rgb(0 0 0 / 0.2), 0 10px 22px rgb(233 160 8 / 0.26);
+}
+
+body[data-game="lyamur"] .btn-ghost {
+  background: var(--lm-plate);
 }
 
 /* Scroll reveal for the steps: movement only, so the text stays fully readable while it settles. */
@@ -559,15 +776,47 @@ body.animations-paused .ug-steps li {
   animation: none;
 }
 
-/* ---- Page-wide jungle world: floor, two swaying canopy layers cut from the board art, light shafts, pollen and a falling leaf.
-   Fixed behind every section (z-index -1); the cards on top are translucent glass so the world shows through. ---- */
+/* Hero copy sits directly on the world: a soft halo keeps it readable */
+body[data-game="lyamur"] :is(.ug-hero-copy h1, .ug-tagline, .ug-hero-copy .hero-copy, .ug-genre) {
+  text-shadow: 0 0 16px color-mix(in srgb, var(--ug-bg) 88%, transparent), 0 1px 3px color-mix(in srgb, var(--ug-bg) 60%, transparent);
+}
+
+/* ---- Page-wide jungle world. Fixed behind every section (z-index -1), back to front:
+   the clearing from the board art (a slow drift), dappled leaf shadows that slide across it, two swaying canopy layers cut from the board art,
+   one clock-driven group in front of them (a marble chain rolling along each page edge, glowing orbs and pollen rising, leaves
+   falling, two butterflies, the lemur king's tail swaying at the bottom corner), a text scrim and light shafts.
+   One registered number (--lwt, 0 to 1 over 60 s) drives every continuous motion in the clock group, so marbles, orbs, leaves,
+   butterflies and tail add a single infinite animation. Every motion uses a whole number of cycles per loop, so the loop has no seam.
+   Without motion the clock stays at 0: a finished still. ---- */
+/* Page-wide jungle world: independent GPU transform/opacity animations per element (no inherited clock or filter blur). */
+
 /* main becomes the stacking context, so the world (z-index -1) paints above the page background and below the sections */
 body[data-game="lyamur"] .game-detail-shell {
   position: relative;
   z-index: 0;
 }
 
+/* the related-worlds row sits outside main; lift it above main's stacking context so the world never covers it */
+body[data-game="lyamur"] .lab-related {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-game="lyamur"][data-theme="dark"] {
+  --lm-floor-dim: rgb(3 18 4 / 0.42);
+  --lm-dapple: rgb(3 22 5 / 0.46);
+  --lm-orb-op: 1;
+}
+
+body[data-game="lyamur"][data-theme="light"] {
+  --lm-floor-dim: rgb(236 248 228 / 0.2);
+  --lm-dapple: rgb(36 96 30 / 0.26);
+  --lm-orb-op: 0.85;
+}
+
 .lm-world {
+  --lm-d: clamp(22px, 3.6vh, 34px);
+  --lm-L: calc(100vh + 2 * var(--lm-d));
   position: fixed;
   inset: 0;
   z-index: -1;
@@ -576,15 +825,213 @@ body[data-game="lyamur"] .game-detail-shell {
   pointer-events: none;
 }
 
-.lm-world > span {
+.lm-world > * {
   position: absolute;
 }
 
 .lm-w-floor {
-  inset: 0;
-  background: url("../assets/upcoming/lyamur/hero-1280.webp") center / cover no-repeat;
+  inset: -4%;
+  background: linear-gradient(var(--lm-floor-dim), var(--lm-floor-dim)), url("../assets/upcoming/lyamur/hero-1280.webp") center / cover no-repeat;
 }
 
+/* Dappled shade: soft shadows in a tile that repeats sideways; the layer slides by exactly one tile, so the loop has no seam */
+.lm-w-shade {
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 100%;
+  background:
+    radial-gradient(ellipse 11vw 12vh at 8vw 18vh, var(--lm-dapple), transparent 72%),
+    radial-gradient(ellipse 8vw 9vh at 31vw 56vh, var(--lm-dapple), transparent 72%),
+    radial-gradient(ellipse 13vw 10vh at 52vw 12vh, var(--lm-dapple), transparent 72%),
+    radial-gradient(ellipse 9vw 13vh at 71vw 70vh, var(--lm-dapple), transparent 72%),
+    radial-gradient(ellipse 12vw 9vh at 88vw 38vh, var(--lm-dapple), transparent 72%),
+    radial-gradient(ellipse 7vw 8vh at 43vw 88vh, var(--lm-dapple), transparent 72%),
+    radial-gradient(ellipse 10vw 7vh at 94vw 90vh, var(--lm-dapple), transparent 72%);
+  background-size: 100vw 100%;
+  background-repeat: repeat-x;
+}
+
+/* ---- The clock group ---- */
+.lm-w-clock {
+  inset: 0;
+}
+
+.lm-w-clock > * {
+  position: absolute;
+}
+
+/* The lemur king's tail, cut from his portrait, swaying up from the bottom corner */
+.lm-w-tail {
+  --tw: clamp(104px, 11vw, 176px);
+  left: clamp(6px, 3vw, 64px);
+  bottom: calc(var(--tw) * -0.34);
+  width: var(--tw);
+  height: calc(var(--tw) * 1.31);
+  background: url("../assets/upcoming/lyamur/gallery-lemur-king.webp") 0 calc(var(--tw) * -1.0345) / calc(var(--tw) * 2.2069) auto no-repeat;
+  -webkit-mask-image: linear-gradient(90deg, #000 78%, transparent 96%), linear-gradient(180deg, #000 82%, transparent);
+  mask-image: linear-gradient(90deg, #000 78%, transparent 96%), linear-gradient(180deg, #000 82%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  transform-origin: 88% 92%;
+  transform: rotate(-3deg);
+}
+
+/* A marble chain rolls along each page edge: down on the left, up on the right, weaving like the track on the board */
+.lm-w-track {
+  top: 0;
+  bottom: 0;
+  width: calc(2 * var(--lm-d));
+}
+
+.lm-w-track--l { left: clamp(-4px, 1.4vw, 28px); }
+.lm-w-track--r { right: clamp(-4px, 1.4vw, 28px); }
+
+.lm-w-track i {
+  --f: 0;
+  position: absolute;
+  left: calc(50% - var(--lm-d) / 2);
+  top: 0;
+  width: var(--lm-d);
+  height: var(--lm-d);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 33% 28%, rgb(255 255 255 / 0.95) 0 7%, transparent 17%),
+    radial-gradient(circle at 38% 34%, var(--c1), var(--c2) 52%, var(--c3) 100%);
+  box-shadow: 0 3px 5px rgb(10 8 0 / 0.4), inset -2px -3px 5px rgb(0 0 0 / 0.26);
+}
+
+.lm-w-track--l i {
+  transform: translate3d(calc(sin(calc(var(--f) * 360deg * 3)) * 0.42 * var(--lm-d)), calc(var(--f) * var(--lm-L) - var(--lm-d)), 0);
+}
+
+.lm-w-track--r i {
+  transform: translate3d(calc(sin(calc(var(--f) * 360deg * 3)) * -0.42 * var(--lm-d)), calc((1 - var(--f)) * var(--lm-L) - var(--lm-d)), 0);
+}
+
+.lm-w-track i:nth-child(1) { --f: 0.000; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-w-track i:nth-child(2) { --f: 0.034; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-w-track i:nth-child(3) { --f: 0.068; --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-w-track i:nth-child(4) { --f: 0.102; --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-w-track i:nth-child(5) { --f: 0.136; --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-w-track i:nth-child(6) { --f: 0.306; --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-w-track i:nth-child(7) { --f: 0.340; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-w-track i:nth-child(8) { --f: 0.374; --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-w-track i:nth-child(9) { --f: 0.510; --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-w-track i:nth-child(10) { --f: 0.646; --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-w-track i:nth-child(11) { --f: 0.680; --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-w-track i:nth-child(12) { --f: 0.714; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-w-track i:nth-child(13) { --f: 0.748; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+
+/* Orbs: soft glowing nodes rising independently on the GPU (no filter blur). */
+.lm-w-orbs i {
+  --x: 50;
+  --sz: 20px;
+  --o: 0;
+  --a: 0.5;
+  position: absolute;
+  left: calc(var(--x) * 1vw);
+  top: 0;
+  width: var(--sz);
+  height: var(--sz);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 32%, rgb(255 255 255 / 0.85) 0 10%, transparent 24%),
+    radial-gradient(circle at 42% 40%, var(--c1) 0 26%, var(--c2) 58%, transparent 78%);
+  opacity: calc(var(--a) * var(--lm-orb-op));
+  transform: translate3d(0, calc(100vh - var(--o) * 90vh), 0);
+}
+
+.lm-w-orbs i:nth-child(n+4) {
+  opacity: calc(var(--a) * var(--lm-orb-op) * 0.55);
+}
+
+.lm-w-orbs i:nth-child(n+10) {
+  background: radial-gradient(circle, var(--c1) 0 32%, var(--c2) 64%, transparent 100%);
+}
+
+.lm-w-orbs i:nth-child(1) { --x: 6; --sz: 46px; --k: 1; --o: 0.1; --a: 0.34; --bl: 2.2px; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-w-orbs i:nth-child(2) { --x: 88; --sz: 52px; --k: 1; --o: 0.55; --a: 0.3; --bl: 2.4px; --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-w-orbs i:nth-child(3) { --x: 46; --sz: 38px; --k: 1; --o: 0.82; --a: 0.28; --bl: 2.0px; --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-w-orbs i:nth-child(4) { --x: 70; --sz: 34px; --k: 1; --o: 0.33; --a: 0.3; --bl: 1.8px; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-w-orbs i:nth-child(5) { --x: 22; --sz: 24px; --k: 2; --o: 0.2; --a: 0.55; --bl: 0px; --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-w-orbs i:nth-child(6) { --x: 34; --sz: 18px; --k: 2; --o: 0.7; --a: 0.6; --bl: 0px; --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-w-orbs i:nth-child(7) { --x: 58; --sz: 26px; --k: 2; --o: 0.45; --a: 0.5; --bl: 0px; --c1: var(--lm-red-1); --c2: var(--lm-red-2); --c3: var(--lm-red-3); }
+.lm-w-orbs i:nth-child(8) { --x: 80; --sz: 20px; --k: 2; --o: 0.92; --a: 0.55; --bl: 0px; --c1: var(--lm-blue-1); --c2: var(--lm-blue-2); --c3: var(--lm-blue-3); }
+.lm-w-orbs i:nth-child(9) { --x: 12; --sz: 16px; --k: 2; --o: 0.62; --a: 0.6; --bl: 0px; --c1: var(--lm-yel-1); --c2: var(--lm-yel-2); --c3: var(--lm-yel-3); }
+.lm-w-orbs i:nth-child(10) { --x: 28; --sz: 5px; --k: 3; --o: 0.15; --a: 0.9; --bl: 0px; --c1: #fffbe0; --c2: #ffe680; --c3: #ffd24a; }
+.lm-w-orbs i:nth-child(11) { --x: 52; --sz: 4px; --k: 3; --o: 0.48; --a: 0.9; --bl: 0px; --c1: #fffbe0; --c2: #ffe680; --c3: #ffd24a; }
+.lm-w-orbs i:nth-child(12) { --x: 66; --sz: 6px; --k: 3; --o: 0.77; --a: 0.9; --bl: 0px; --c1: #fffbe0; --c2: #ffe680; --c3: #ffd24a; }
+.lm-w-orbs i:nth-child(13) { --x: 92; --sz: 4px; --k: 3; --o: 0.3; --a: 0.9; --bl: 0px; --c1: #fffbe0; --c2: #ffe680; --c3: #ffd24a; }
+.lm-w-orbs i:nth-child(14) { --x: 40; --sz: 5px; --k: 3; --o: 0.95; --a: 0.9; --bl: 0px; --c1: #fffbe0; --c2: #ffe680; --c3: #ffd24a; }
+
+/* Leaves tumble down on a slow sway */
+.lm-w-leaves i {
+  --x: 20;
+  --o: 0;
+  --sc: 1;
+  position: absolute;
+  left: calc(var(--x) * 1vw);
+  top: 0;
+  width: calc(24px * var(--sc, 1));
+  height: calc(13px * var(--sc, 1));
+  border-radius: 0 100% 0 100%;
+  background: linear-gradient(135deg, var(--lf1, #a4e06b), var(--lf2, #2f7a1f));
+  box-shadow: inset 0 0 0 1px rgb(20 70 10 / 0.35);
+  opacity: 0.75;
+  transform: translate3d(0, calc(12vh + var(--o) * 78vh), 0) rotate(calc(var(--o) * 280deg));
+}
+
+.lm-w-leaves i:nth-child(3n+2) { --lf1: #d6f08a; --lf2: #5aa328; }
+.lm-w-leaves i:nth-child(3n+3) { --lf1: #f2b84a; --lf2: #b8651a; }
+
+.lm-w-leaves i:nth-child(1) { --x: 8; --o: 0.05; --sc: 1.0; }
+.lm-w-leaves i:nth-child(2) { --x: 30; --o: 0.4; --sc: 0.8; }
+.lm-w-leaves i:nth-child(3) { --x: 52; --o: 0.15; --sc: 1.1; }
+.lm-w-leaves i:nth-child(4) { --x: 70; --o: 0.72; --sc: 0.9; }
+.lm-w-leaves i:nth-child(5) { --x: 86; --o: 0.6; --sc: 1.2; }
+.lm-w-leaves i:nth-child(6) { --x: 18; --o: 0.88; --sc: 0.85; }
+
+/* Butterflies: a slow loop across the clearing, wings that flap about the body */
+.lm-w-fly {
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: #2a1a0a;
+  transform: translate3d(18vw, 34vh, 0) rotate(14deg);
+}
+
+.lm-w-fly--b {
+  transform: translate3d(84vw, 62vh, 0) rotate(-18deg);
+  --w1: #6fb7ff;
+  --w2: #2a5fd0;
+}
+
+.lm-w-fly::before,
+.lm-w-fly::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  width: 22px;
+  height: 24px;
+  background: radial-gradient(ellipse at 30% 40%, var(--w1, #ffcf5a), var(--w2, #e8741a) 70%);
+}
+
+.lm-w-fly::before {
+  right: 1px;
+  border-radius: 80% 20% 60% 40%;
+  transform-origin: 100% 50%;
+}
+
+.lm-w-fly::after {
+  left: 1px;
+  border-radius: 20% 80% 40% 60%;
+  transform-origin: 0 50%;
+}
+
+/* Foliage cut from the board art; it sways at the page edges */
 .lm-w-canopy {
   inset: -6%;
   background: url("../assets/upcoming/lyamur/hero-1280.webp") center / cover no-repeat;
@@ -613,65 +1060,17 @@ body[data-game="lyamur"] .game-detail-shell {
   background: linear-gradient(112deg, transparent 20%, rgb(255 246 190 / 0.17) 28%, transparent 38%, transparent 50%, rgb(255 246 190 / 0.13) 58%, transparent 68%, transparent 80%, rgb(255 246 190 / 0.11) 86%, transparent 94%);
 }
 
-.lm-w-pollen::before,
-.lm-w-pollen::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--lm-pollen);
-  opacity: 0;
-}
-
-.lm-w-pollen::before {
-  left: 5vw;
-  top: 0;
-  box-shadow:
-    14vw 12vh 3px 0 var(--lm-pollen), 27vw 41vh 3px 0 var(--lm-pollen), 38vw 78vh 3px 0 var(--lm-pollen), 52vw 24vh 3px 0 var(--lm-pollen),
-    63vw 96vh 3px 0 var(--lm-pollen), 75vw 55vh 3px 0 var(--lm-pollen), 88vw 130vh 3px 0 var(--lm-pollen), 7vw 118vh 3px 0 var(--lm-pollen),
-    44vw 150vh 3px 0 var(--lm-pollen), 93vw 33vh 3px 0 var(--lm-pollen), 20vw 88vh 3px 0 var(--lm-pollen), 70vw 8vh 3px 0 var(--lm-pollen);
-}
-
-.lm-w-pollen::after {
-  left: 11vw;
-  top: 0;
-  box-shadow:
-    9vw 64vh 3px 0 var(--lm-pollen), 24vw 110vh 3px 0 var(--lm-pollen), 41vw 36vh 3px 0 var(--lm-pollen), 57vw 142vh 3px 0 var(--lm-pollen),
-    69vw 70vh 3px 0 var(--lm-pollen), 81vw 18vh 3px 0 var(--lm-pollen), 3vw 28vh 3px 0 var(--lm-pollen), 33vw 124vh 3px 0 var(--lm-pollen),
-    48vw 4vh 3px 0 var(--lm-pollen), 76vw 104vh 3px 0 var(--lm-pollen);
-}
-
-.lm-w-leaf {
-  left: 0;
-  top: 0;
-  width: 24px;
-  height: 13px;
-  border-radius: 0 100% 0 100%;
-  background: linear-gradient(135deg, #a4e06b, #2f7a1f);
-  box-shadow: inset 0 0 0 1px rgb(20 70 10 / 0.35);
-  opacity: 0;
-}
-
-body[data-game="lyamur"][data-theme="dark"] {
-  --lm-pollen: rgb(255 240 170 / 0.8);
-}
-
-body[data-game="lyamur"][data-theme="light"] {
-  --lm-pollen: rgb(214 158 18 / 0.65);
-}
-
 body[data-game="lyamur"][data-theme="dark"] .lm-w-veil {
   background:
-    radial-gradient(ellipse 52% 60% at 27% 52%, rgb(4 14 3 / 0.84), rgb(4 14 3 / 0.62) 58%, transparent 100%),
-    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(7 22 6 / 0.52) 0, rgb(7 22 6 / 0.4) 55%, rgb(5 16 5 / 0.12) 100%),
-    linear-gradient(180deg, rgb(8 26 7 / 0.25), transparent 30%, rgb(3 10 3 / 0.35));
+    radial-gradient(ellipse 52% 60% at 27% 52%, rgb(4 14 3 / 0.8), rgb(4 14 3 / 0.58) 58%, transparent 100%),
+    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(7 22 6 / 0.4) 0, rgb(7 22 6 / 0.3) 55%, rgb(5 16 5 / 0.1) 100%),
+    linear-gradient(180deg, rgb(8 26 7 / 0.25), transparent 30%, rgb(3 10 3 / 0.3));
 }
 
 body[data-game="lyamur"][data-theme="light"] .lm-w-veil {
   background:
-    radial-gradient(ellipse 52% 60% at 27% 52%, rgb(246 253 241 / 0.9), rgb(244 252 238 / 0.66) 58%, transparent 100%),
-    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 251 234 / 0.5) 0, rgb(236 248 228 / 0.4) 55%, rgb(226 244 214 / 0.1) 100%),
+    radial-gradient(ellipse 52% 60% at 27% 52%, rgb(246 253 241 / 0.88), rgb(244 252 238 / 0.62) 58%, transparent 100%),
+    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 251 234 / 0.4) 0, rgb(236 248 228 / 0.3) 55%, rgb(226 244 214 / 0.1) 100%),
     linear-gradient(180deg, rgb(250 255 246 / 0.25), transparent 30%, rgb(214 238 200 / 0.25));
 }
 
@@ -679,78 +1078,118 @@ body[data-game="lyamur"][data-theme="light"] .lm-w-shafts {
   opacity: 0.55;
 }
 
-/* Cards: translucent glass over the world, plus a soft halo on the hero text that sits directly on it */
-body[data-game="lyamur"] .soft-card {
-  background: linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 70%, transparent), color-mix(in srgb, var(--ug-card) 56%, transparent));
-}
-
-@media (min-width: 761px) {
-  body[data-game="lyamur"] .soft-card {
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-  }
-}
-
-body[data-game="lyamur"] :is(.detail-card, .update-list li, .ug-next li, .ug-facts .game-page-facts > div) {
-  background: color-mix(in srgb, var(--ug-card-2) 80%, transparent);
-}
-
-/* the related-worlds row sits outside main; lift it above main's stacking context so the world never covers it */
-body[data-game="lyamur"] .lab-related {
-  position: relative;
-  z-index: 1;
-}
-
-body[data-game="lyamur"] .lab-related-link {
-  background: color-mix(in srgb, var(--ug-card-2) 95%, transparent);
-}
-
-body[data-game="lyamur"] .lab-related-all {
-  background: color-mix(in srgb, var(--ug-card) 94%, transparent);
-}
-
-body[data-game="lyamur"] .ug-status-note {
-  background: color-mix(in srgb, var(--ug-card) 82%, transparent);
-}
-
-body[data-game="lyamur"] :is(.ug-hero-copy h1, .ug-tagline, .ug-hero-copy .hero-copy, .ug-genre) {
-  text-shadow: 0 0 16px color-mix(in srgb, var(--ug-bg) 88%, transparent), 0 1px 3px color-mix(in srgb, var(--ug-bg) 60%, transparent);
-}
-
 @media (max-width: 920px) {
   body[data-game="lyamur"][data-theme="dark"] .lm-w-veil {
     background:
-      linear-gradient(180deg, rgb(4 14 3 / 0.84), rgb(4 14 3 / 0.66) 70%, rgb(4 14 3 / 0.5)),
-      radial-gradient(ellipse 80% 72% at 50% 45%, rgb(7 22 6 / 0.52) 0, rgb(7 22 6 / 0.4) 55%, rgb(5 16 5 / 0.12) 100%);
+      linear-gradient(180deg, rgb(4 14 3 / 0.82), rgb(4 14 3 / 0.62) 70%, rgb(4 14 3 / 0.46)),
+      radial-gradient(ellipse 80% 72% at 50% 45%, rgb(7 22 6 / 0.4) 0, rgb(7 22 6 / 0.3) 55%, rgb(5 16 5 / 0.1) 100%);
   }
 
   body[data-game="lyamur"][data-theme="light"] .lm-w-veil {
     background:
-      linear-gradient(180deg, rgb(246 253 241 / 0.9), rgb(244 252 238 / 0.7) 70%, rgb(240 250 234 / 0.5)),
-      radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 251 234 / 0.5) 0, rgb(236 248 228 / 0.4) 55%, rgb(226 244 214 / 0.1) 100%);
+      linear-gradient(180deg, rgb(246 253 241 / 0.88), rgb(244 252 238 / 0.68) 70%, rgb(240 250 234 / 0.48)),
+      radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 251 234 / 0.4) 0, rgb(236 248 228 / 0.3) 55%, rgb(226 244 214 / 0.1) 100%);
   }
 }
 
+/* Phones: the small board art, no edge chains, no big orbs, three leaves, no butterfly, no foliage frame, no light shafts */
 @media (max-width: 760px) {
-  .lm-w-floor,
-  .lm-w-canopy {
-    background-image: url("../assets/upcoming/lyamur/hero-720.webp");
+  .lm-w-floor {
+    background-image: linear-gradient(var(--lm-floor-dim), var(--lm-floor-dim)), url("../assets/upcoming/lyamur/hero-720.webp");
   }
 
-  .lm-w-canopy--b,
-  .lm-w-leaf,
-  .lm-w-pollen::after {
+  .lm-w-canopy,
+  .lm-w-shafts,
+  .lm-w-track,
+  .lm-w-fly,
+  .lm-w-tail,
+  .lm-w-leaves i:nth-child(n+4),
+  .lm-w-orbs i:nth-child(-n+4),
+  .lm-w-orbs i:nth-child(n+13) {
     display: none;
+  }
+
+  .lm-w-track,
+  .lm-w-fly,
+  .lm-w-fly::before,
+  .lm-w-fly::after,
+  .lm-w-tail {
+    animation: none !important;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .lm-w-floor { animation: lmFloor 70s ease-in-out infinite alternate; }
+  .lm-w-shade { animation: lmShade 60s linear infinite; }
   .lm-w-canopy--a { animation: lmCanopyA 11s ease-in-out infinite; }
-  .lm-w-canopy--b { animation: lmCanopyB 14s ease-in-out infinite; }
-  .lm-w-shafts { animation: lmShafts 16s ease-in-out infinite alternate; }
-  .lm-w-pollen::before { animation: lmPollen 30s linear infinite; }
-  .lm-w-pollen::after { animation: lmPollen 41s linear infinite -17s; }
-  .lm-w-leaf { animation: lmLeaf 44s linear infinite -9s; }
+  .lm-w-tail { animation: lmTail 8s ease-in-out infinite alternate; }
+  .lm-w-track--l { animation: lmTrackBob 9s ease-in-out infinite alternate; }
+  .lm-w-track--r { animation: lmTrackBob 9s ease-in-out -4.5s infinite alternate; }
+  .lm-w-fly--a { animation: lmFlyLoop 26s ease-in-out infinite alternate; }
+  .lm-w-fly--a::before,
+  .lm-w-fly--a::after { animation: lmWingFlap 0.42s ease-in-out infinite alternate; }
+  .lm-w-leaves i:nth-child(1) { animation: lmLeafFall 24s linear -4s infinite; }
+  .lm-w-leaves i:nth-child(2) { animation: lmLeafFall 28s linear -12s infinite; }
+  .lm-w-leaves i:nth-child(3) { animation: lmLeafFall 21s linear -17s infinite; }
+  .lm-w-orbs i:nth-child(1) { animation: lmOrbRise 26s linear -6s infinite; }
+  .lm-w-orbs i:nth-child(2) { animation: lmOrbRise 30s linear -18s infinite; }
+  .lm-w-orbs i:nth-child(3) { animation: lmOrbRise 22s linear -11s infinite; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm-world,
+  .lm-world *,
+  .lm-world *::before,
+  .lm-world *::after {
+    animation: none !important;
+  }
+}
+
+@keyframes lmTail {
+  from { transform: rotate(-4deg); }
+  to { transform: rotate(4deg); }
+}
+
+@keyframes lmTrackBob {
+  from { transform: translate3d(0, -14px, 0); }
+  to { transform: translate3d(0, 14px, 0); }
+}
+
+@keyframes lmFlyLoop {
+  0% { transform: translate3d(14vw, 32vh, 0) rotate(14deg); }
+  25% { transform: translate3d(42vw, 20vh, 0) rotate(8deg); }
+  50% { transform: translate3d(84vw, 38vh, 0) rotate(-14deg); }
+  75% { transform: translate3d(52vw, 58vh, 0) rotate(-8deg); }
+  100% { transform: translate3d(14vw, 32vh, 0) rotate(14deg); }
+}
+
+@keyframes lmWingFlap {
+  from { transform: scaleX(0.28); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes lmLeafFall {
+  0% { opacity: 0; transform: translate3d(-4vw, -24px, 0) rotate(0deg); }
+  10%, 88% { opacity: 0.88; }
+  50% { transform: translate3d(5vw, 52vh, 0) rotate(320deg); }
+  100% { opacity: 0; transform: translate3d(-3vw, 106vh, 0) rotate(680deg); }
+}
+
+@keyframes lmOrbRise {
+  0% { opacity: 0; transform: translate3d(0, 105vh, 0); }
+  12%, 85% { opacity: calc(var(--a, 0.4) * var(--lm-orb-op)); }
+  50% { transform: translate3d(2vw, 48vh, 0); }
+  100% { opacity: 0; transform: translate3d(-1.5vw, -60px, 0); }
+}
+
+@keyframes lmFloor {
+  from { scale: 1.02; translate: 0.8vw 0.5vh; }
+  to { scale: 1.1; translate: -1.2vw -0.8vh; }
+}
+
+@keyframes lmShade {
+  from { translate: 0 0; }
+  to { translate: -100vw 0; }
 }
 
 @keyframes lmCanopyA {
@@ -766,20 +1205,4 @@ body[data-game="lyamur"] :is(.ug-hero-copy h1, .ug-tagline, .ug-hero-copy .hero-
 @keyframes lmShafts {
   from { opacity: 0.55; translate: -4vw 0; }
   to { opacity: 1; translate: 4vw 0; }
-}
-
-@keyframes lmPollen {
-  0% { opacity: 0; translate: 0 0; }
-  12%, 82% { opacity: 0.9; }
-  100% { opacity: 0; translate: 3vw -70vh; }
-}
-
-@keyframes lmLeaf {
-  0% { opacity: 0; translate: 8vw -6vh; rotate: 20deg; }
-  6% { opacity: 0.85; }
-  25% { translate: 22vw 24vh; rotate: 130deg; }
-  50% { translate: 40vw 52vh; rotate: 250deg; }
-  75% { translate: 56vw 80vh; rotate: 380deg; }
-  94% { opacity: 0.85; }
-  100% { opacity: 0; translate: 66vw 106vh; rotate: 480deg; }
 }

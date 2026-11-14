@@ -470,12 +470,15 @@ picture img[width][height] {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  min-height: 44px;
-  padding: 12px 18px;
+  min-height: 48px;
+  padding: 12px 20px;
   border-radius: 999px;
   border: 1px solid transparent;
   color: var(--text);
   background: var(--surface-soft);
+  font-weight: 820;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   transition: transform .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease), color .25s var(--ease);
   user-select: none;
   white-space: nowrap;
@@ -488,15 +491,22 @@ picture img[width][height] {
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: translateY(1px) scale(0.985);
 }
 
-.btn[aria-disabled="true"] {
+.btn-ghost:hover {
+  border-color: color-mix(in srgb, var(--cyan) 50%, var(--line));
+  background: color-mix(in srgb, var(--cyan) 12%, var(--surface));
+}
+
+.btn[aria-disabled="true"],
+.btn:disabled {
   cursor: default;
   opacity: 0.66;
 }
 
-.btn[aria-disabled="true"]:hover {
+.btn[aria-disabled="true"]:hover,
+.btn:disabled:hover {
   transform: none;
   border-color: var(--line);
   box-shadow: none;
@@ -513,7 +523,13 @@ picture img[width][height] {
 .game-theme-toggle:focus-visible,
 .social-link:focus-visible,
 .secret-glint:focus-visible {
-  outline: 2px solid var(--focus-ring);
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+/* Fallback ring: any control that has no ring of its own still shows one (zero specificity, so page rules win). */
+:where(a, button, summary, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--focus-ring);
   outline-offset: 3px;
 }
 
@@ -1327,7 +1343,7 @@ h1 {
   position: absolute;
   inset-inline-end: 0;
   top: calc(100% + 8px);
-  width: min(620px, calc(100vw - 32px));
+  width: min(680px, calc(100vw - 32px));
   max-height: min(75vh, 660px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1350,8 +1366,8 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
-  padding: 8px 10px 8px 12px;
+  gap: 6px;
+  padding: 8px 8px 8px 10px;
   border: 1px solid transparent;
   border-radius: 14px;
   color: var(--muted);

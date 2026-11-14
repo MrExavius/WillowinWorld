@@ -1,32 +1,32 @@
-# WillowinWorlds — Magyar
+# WillowinWorlds - Magyar
 
-> A WillowinWorlds egy független mobil játékstúdió, amely négy fizikavezérelt puzzle- és arcade játékot hoz létre tapintható vezérlőkkel, olvasható rendszerekkel és kifejező 2D-s világokkal.
+> A WillowinWorlds független mobiljáték-stúdió, amely puzzle és arcade játékokat készít. Négy fő játéka (Nature Seed, Candy Shop, Paint Blasters és Ball is God?!) és nyolc labor-prototípusa van.
 
 A webhely nyelve: Magyar. Kanonikus angol forrás: https://willowinworlds.com/llms.txt
 
-## játékok
+## Játékok
 
-- [Nature Seed](https://willowinworlds.com/hu/games/nature-seed.html): Megjelent egy mobil, rajzolással megoldható fizikai rejtvény. A 2026. szeptember 10-én kiadott Nature Seed néven arra kéri a játékosokat, hogy rajzoljanak egy tintával korlátozott fizikai útvonalat, egyesítsék újra a Water Drop-t és a Seed-t, és állítsanak helyre egy akvarell erdőt 10 indítási szinten. Műfajok: Rajzolással megoldható rejtvény, Fizika puzzle, Pihentető puzzle, Vonalrajzos puzzle. Jelenlegi állapot: Megjelent.
-- [Candy Shop](https://willowinworlds.com/hu/games/candy-shop.html): Hangulatos mobil összevonó puzzle 13 szakaszból álló cukorkalánccal, 10 konténerszabályzattal, nyolc különleges cukorka effektussal és a következő csepp tervezési eszközeivel. Műfajok: Egyesítés puzzle, Cukorka puzzle, Alkalmi rejtvény, Fizika puzzle. Jelenlegi állapot: Aktív fejlesztés – játszható gyártási build.
-- [Paint Blasters](https://willowinworlds.com/hu/games/paint-blasters.html): Mobil színpusztító fizika puzzle arcade. Kombináljon három színbevitelt 35 szerzői lövedékreceptben, célozza meg a torony gyenge pontjait, és indítsa el a láncreakciókat. Műfajok: Színes puzzle, Fizika arcade, Pusztítási puzzle, Láncreakció. Jelenlegi állapot: Aktív fejlesztés - gyártási prototípus.
-- [Ball is God?!](https://willowinworlds.com/hu/games/ball-is-god.html): Történetvezérelt kemény, függőlegesen süllyedő mobil játékterem. Forgasd el a tornyot Espa körül, építs kombi összetöréseket, éld túl a főnököket, és vigyél karmaválasztásokat 10 mitikus helyszínen. Műfajok: Függőleges ereszkedő árkád, Hardcore arcade, Történetvezérelt játékterem, Főnök akció. Jelenlegi állapot: Aktív gyártás.
+- [Nature Seed](https://willowinworlds.com/hu/games/nature-seed.html): Mobilos, rajzolós fizikai puzzle, 2026. szeptember 18-án jelent meg. A játékosok korlátozott tintakerettel húznak egy vonalat, összehozzák a Water Dropot és a Seedet, és 100 szinten át helyreállítanak egy akvarellerdőt. Műfajok: Rajzolós puzzle, Fizikai puzzle, Pihentető puzzle, Vonalrajzos puzzle. Jelenlegi állapot: Megjelent.
+- [Candy Shop](https://willowinworlds.com/hu/games/candy-shop.html): Hangulatos mobilos cukorkaegyesítős puzzle 13 lépcsős cukorkaláncgal, 10 saját szabályú tartállyal, nyolc különleges cukorkaeffektussal, landolás-előnézettel, tartalékhellyel és a következő három cukorka sorával. Műfajok: Egyesítős puzzle, Cukorkapuzzle, Alkalmi puzzle, Fizikai puzzle. Jelenlegi állapot: Aktív fejlesztés - játszható gyártási build.
+- [Paint Blasters](https://willowinworlds.com/hu/games/paint-blasters.html): Mobilos színromboló fizikai puzzle arcade. A játékosok három színt kevernek a 35 lövedékrecept egyikévé, egy torony gyenge pontjait célozzák, és láncreakciókat indítanak. Műfajok: Színes puzzle, Fizikai arcade, Pusztítós puzzle, Láncreakció. Jelenlegi állapot: Aktív fejlesztés - gyártási prototípus.
+- [Ball is God?!](https://willowinworlds.com/hu/games/ball-is-god.html): Történetvezérelt, hardcore, függőleges leereszkedős mobil arcade. A játékosok húzással forgatják a tornyot a leeső Espa körül, három platformot kihagynak egy kombócsapásért, főellenségekkel küzdenek, és karmadöntéseket hoznak 10 helyszínen. Műfajok: Függőleges leereszkedős arcade, Hardcore arcade, Történetvezérelt arcade, Bossharcok. Jelenlegi állapot: Aktív gyártás.
 
 ## Legújabb fejlesztési megjegyzések
 
-- [Nature Seed — Nature Seed kiadás](https://willowinworlds.com/hu/games/nature-seed.html#devlog): Megjelent 2026-09-10. A Nature Seed végleges címe alatt indult el 10 kézzel készített szinttel, vonalhatékonysági csillagokkal, kitartó fejlődéssel és akvarell helyreállítási jutalmakkal.
-- [Candy Shop — Gyártási menü és HUD bérlet](https://willowinworlds.com/hu/games/candy-shop.html#devlog): Megjelent 2026-07-31. A főmenü, a szintválasztás, a HUD vezérlők és a parancsikonok mostantól egy vizuális nyelvet használnak; további motoron belüli stressztesztek fedik le a frissített áramlást.
-- [Paint Blasters — Fizika és hatásstabilitás átadás](https://willowinworlds.com/hu/games/paint-blasters.html#devlog): Megjelent 2026-07-31. A lövedékek viselkedését, a Match-3 felbontást és a találati hatásokat tesztelték és szigorították a következetesebb kombinációs eredmények érdekében.
-- [Ball is God?! — Világfelületek és veszélyellenőrzés](https://willowinworlds.com/hu/games/ball-is-god.html#devlog): Megjelent 2026-07-31. A karakterbemutató, a determinisztikus képződés és a tövisveszély összehangolt vizuális és gyártási-validációs igazolványt kapott.
+- [Nature Seed - Nature Seed kiadás](https://willowinworlds.com/hu/games/nature-seed.html#devlog): Megjelent 2026-09-18. A Nature Seed végleges címén jelent meg ingyenes böngészős játékként az itch.io, a Game Jolt és az indiexpo oldalán, 100 szinttel, vonalhatékonysági csillagokkal és mentett előrehaladással.
+- [Candy Shop - Gyártási menü és HUD átdolgozása](https://willowinworlds.com/hu/games/candy-shop.html#devlog): Megjelent 2026-07-31. A főmenü, a pályaválasztás, a HUD-vezérlők és a parancsikonok mostantól egységes megjelenést kapnak, és több motoron belüli stresszteszt fedi le a frissített folyamatot.
+- [Paint Blasters - Fizika és effektek stabilizálása](https://willowinworlds.com/hu/games/paint-blasters.html#devlog): Megjelent 2026-07-31. A lövedékek viselkedését, a Match-3 felbontást és a találati hatásokat tesztelték és szigorították a következetesebb kombinációs eredmények érdekében.
+- [Ball is God?! - Világfelületek és veszélyellenőrzés](https://willowinworlds.com/hu/games/ball-is-god.html#devlog): Megjelent 2026-07-31. A karakterek bemutatása, a determinisztikus generálás és a tüskés veszélyek közös vizuális és ellenőrzési átdolgozást kaptak.
 
-## Stúdió és nyomja meg
+## Stúdió és sajtó
 
-- [Stúdióház](https://willowinworlds.com/hu/)
+- [Stúdió kezdőlap](https://willowinworlds.com/hu/)
 - [Sajtókészlet](https://willowinworlds.com/hu/press-kit.html)
 - [Médiaanyag-használat](https://willowinworlds.com/hu/asset-usage.html)
 
 ## Feedek és szabályzatok
 
-- [Devlog RSS feed](https://willowinworlds.com/rss.xml)
+- [Devlog RSS-hírcsatorna](https://willowinworlds.com/rss.xml)
 - [XML oldaltérkép](https://willowinworlds.com/sitemap.xml)
 - [Nyelvi index](https://willowinworlds.com/languages.json)
 - [Adatvédelmi szabályzat](https://willowinworlds.com/hu/privacy.html)
@@ -34,4 +34,4 @@ A webhely nyelve: Magyar. Kanonikus angol forrás: https://willowinworlds.com/ll
 
 ## Kapcsolat
 
-- [E-mail WillowinWorlds](mailto:willowinworlds@gmail.com)
+- [E-mail küldése: WillowinWorlds](mailto:willowinworlds@gmail.com)

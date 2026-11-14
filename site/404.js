@@ -239,6 +239,7 @@
       function setMode(mode) {
         state.mode = mode;
         body.dataset.gameState = mode;
+        body.classList.toggle("animations-paused", mode === "paused");
         pauseButtons.forEach((button) => {
           button.textContent = mode === "paused" ? "Resume" : button.classList.contains("icon-pill") ? "II" : "Pause";
           if (button.hasAttribute("aria-label")) button.setAttribute("aria-label", mode === "paused" ? "Resume game" : "Pause game");
@@ -586,10 +587,10 @@
           createBurst(item.x, item.y, variant ? variant.color : item.type === "star3" ? "#ffe277" : "#67dcff", item.type === "star1" ? 12 : 18);
           if (item.variant === "speed") {
             state.effects.speed = variantConfigs.speed.duration;
-            showToast("Yellow star: speed boost for 5 seconds.");
+            showToast("Yellow star: speed boost.");
           } else if (item.variant === "shield") {
             state.effects.shield = variantConfigs.shield.duration;
-            showToast("Shield star: protected for 5 seconds.");
+            showToast("Shield star: protected from black holes.");
           } else if (item.variant === "red") {
             state.effects.calm = variantConfigs.red.duration;
             const removed = clearDropAroundCat();
@@ -968,7 +969,7 @@
         ctx.fillText(state.mode === "paused" ? "Paused" : "Game Over", state.width * 0.5, state.height * 0.48);
         ctx.font = "800 16px system-ui, sans-serif";
         ctx.fillStyle = "#b9d0df";
-        const detail = state.mode === "gameover" ? "Score " + state.score + " / run best " + state.best : "Press Space or Start to continue";
+        const detail = state.mode === "gameover" ? "Score " + state.score + " / session best " + state.best : "Press Space or Start to continue";
         ctx.fillText(detail, state.width * 0.5, state.height * 0.48 + 38);
         if (state.mode === "gameover") ctx.fillText("Close the page and this run is forgotten.", state.width * 0.5, state.height * 0.48 + 64);
         ctx.restore();

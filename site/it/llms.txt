@@ -1,26 +1,26 @@
-# WillowinWorlds — Italiano
+# WillowinWorlds - Italiano
 
-> WillowinWorlds è uno studio di giochi mobile indipendente che crea quattro giochi puzzle e arcade basati sulla fisica con controlli tattili, sistemi leggibili e mondi 2D espressivi.
+> WillowinWorlds è uno studio indipendente di giochi mobile che crea giochi di puzzle e arcade. Ha quattro giochi di punta (Nature Seed, Candy Shop, Paint Blasters e Ball is God?!) e otto prototipi del laboratorio.
 
 Lingua del sito: Italiano. Fonte inglese canonica: https://willowinworlds.com/llms.txt
 
 ## Giochi
 
-- [Nature Seed](https://willowinworlds.com/it/games/nature-seed.html): Un puzzle fisico disegnato e risolto per dispositivi mobili. Rilasciato il 10 settembre 2026 come Nature Seed, chiede ai giocatori di disegnare un percorso fisico con inchiostro limitato, riunire Water Drop e Seed e ripristinare una foresta acquerellata in 10 livelli di lancio. Generi: Puzzle da disegnare a risolvere, Puzzle di fisica, Puzzle rilassante, Puzzle con disegno a tratteggio. Stato attuale: Rilasciato.
-- [Candy Shop](https://willowinworlds.com/it/games/candy-shop.html): Un accogliente puzzle di fusione mobile con una catena di caramelle a 13 livelli, 10 set di regole per contenitori, otto effetti speciali di caramelle e strumenti di pianificazione per la prossima consegna. Generi: Unisci puzzle, Puzzle di caramelle, Puzzle casuale, Puzzle di fisica. Stato attuale: Sviluppo attivo: build di produzione giocabile.
-- [Paint Blasters](https://willowinworlds.com/it/games/paint-blasters.html): Un puzzle arcade mobile basato sulla fisica e la distruzione dei colori. Combina tre input di colore in 35 ricette di proiettili create, colpisci i punti deboli della torre e innesca reazioni a catena. Generi: Puzzle a colori, Arcade di fisica, Puzzle di distruzione, Reazione a catena. Stato attuale: Sviluppo attivo - prototipo di produzione.
-- [Ball is God?!](https://willowinworlds.com/it/games/ball-is-god.html): Un arcade mobile hardcore con discesa verticale basato su una trama. Ruota la torre attorno a Espa, costruisci combo distruttive, sopravvivi ai boss e porta avanti le scelte del karma attraverso 10 luoghi mitici. Generi: Arcata di discesa verticale, Arcade hardcore, Arcade basato sulla trama, Azione del boss. Stato attuale: Produzione attiva.
+- [Nature Seed](https://willowinworlds.com/it/games/nature-seed.html): Un puzzle fisico mobile in cui si disegna per risolvere, uscito il 18 settembre 2026. I giocatori tracciano una linea con un budget limitato di inchiostro, riuniscono Water Drop e Seed e ripristinano una foresta ad acquerello in 100 livelli. Generi: Puzzle da disegnare e risolvere, Puzzle di fisica, Puzzle rilassante, Puzzle di disegno di linee. Stato attuale: Uscito.
+- [Candy Shop](https://willowinworlds.com/it/games/candy-shop.html): Un accogliente puzzle mobile di fusione di caramelle con una catena di 13 stadi, 10 contenitori con regole proprie, otto effetti di caramelle speciali, anteprima di atterraggio, slot di riserva e coda dei prossimi tre. Generi: Puzzle di fusione, Puzzle di caramelle, Puzzle casual, Puzzle di fisica. Stato attuale: Sviluppo attivo: build di produzione giocabile.
+- [Paint Blasters](https://willowinworlds.com/it/games/paint-blasters.html): Un puzzle arcade fisico mobile in cui i colori distruggono. I giocatori mescolano tre colori in una delle 35 ricette di proiettili, mirano ai punti deboli di una torre e scatenano reazioni a catena. Generi: Puzzle a colori, Arcade di fisica, Puzzle di distruzione, Reazione a catena. Stato attuale: Sviluppo attivo - prototipo di produzione.
+- [Ball is God?!](https://willowinworlds.com/it/games/ball-is-god.html): Un arcade mobile hardcore a discesa verticale, guidato dalla storia. I giocatori trascinano per ruotare la torre attorno a Espa che cade, saltano tre piattaforme per un combo smash, affrontano boss e fanno scelte di karma in 10 luoghi. Generi: Arcade a discesa verticale, Arcade hardcore, Arcade guidato dalla storia, Azione del boss. Stato attuale: Produzione attiva.
 
 ## Ultime note di sviluppo
 
-- [Nature Seed — Nature Seed rilascio](https://willowinworlds.com/it/games/nature-seed.html#devlog): Pubblicato 2026-09-10. Nature Seed lanciato con il titolo finale con 10 livelli realizzati a mano, stelle di efficienza della linea, progressi persistenti e ricompense per il restauro degli acquerelli.
-- [Candy Shop — Menù di produzione e pass HUD](https://willowinworlds.com/it/games/candy-shop.html#devlog): Pubblicato 2026-07-31. Il menu principale, la selezione del livello, i controlli HUD e le icone dei comandi ora condividono un unico linguaggio visivo; ulteriori stress test nel motore coprono il flusso aggiornato.
-- [Paint Blasters — Superamento della stabilità fisica e degli effetti](https://willowinworlds.com/it/games/paint-blasters.html#devlog): Pubblicato 2026-07-31. Il comportamento dei proiettili, la risoluzione Match-3 e gli effetti dei colpi sono stati testati e migliorati per risultati combo più coerenti.
-- [Ball is God?! — Superfici mondiali e validazione dei pericoli](https://willowinworlds.com/it/games/ball-is-god.html#devlog): Pubblicato 2026-07-31. La presentazione dei personaggi, la generazione deterministica e i pericoli delle spine hanno ricevuto un passaggio coordinato di convalida visiva e di produzione.
+- [Nature Seed - Uscita di Nature Seed](https://willowinworlds.com/it/games/nature-seed.html#devlog): Pubblicato 2026-09-18. Nature Seed è uscito con il titolo definitivo come gioco browser gratuito su itch.io, Game Jolt e indiexpo, con 100 livelli, stelle di efficienza delle linee e progressi salvati.
+- [Candy Shop - Menu di produzione e rifinitura dell'HUD](https://willowinworlds.com/it/games/candy-shop.html#devlog): Pubblicato 2026-07-31. Il menu principale, la selezione dei livelli, i controlli dell'HUD e le icone dei comandi ora condividono un unico aspetto, e più stress test nel motore coprono il flusso aggiornato.
+- [Paint Blasters - Revisione della stabilità di fisica ed effetti](https://willowinworlds.com/it/games/paint-blasters.html#devlog): Pubblicato 2026-07-31. Il comportamento dei proiettili, la risoluzione Match-3 e gli effetti dei colpi sono stati testati e migliorati per risultati combo più coerenti.
+- [Ball is God?! - Superfici del mondo e validazione dei pericoli](https://willowinworlds.com/it/games/ball-is-god.html#devlog): Pubblicato 2026-07-31. La presentazione dei personaggi, la generazione deterministica e i pericoli di spine hanno avuto un passaggio combinato di revisione visiva e validazione.
 
 ## Studio e stampa
 
-- [Casa monolocale](https://willowinworlds.com/it/)
+- [Home dello studio](https://willowinworlds.com/it/)
 - [Cartella stampa](https://willowinworlds.com/it/press-kit.html)
 - [Utilizzo delle risorse multimediali](https://willowinworlds.com/it/asset-usage.html)
 

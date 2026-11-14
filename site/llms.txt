@@ -1,15 +1,15 @@
 # WillowinWorlds
 
-> WillowinWorlds is an independent mobile game studio creating four flagship physics-led puzzle and arcade games, with eight more in the lab, built on tactile controls, readable systems and expressive 2D worlds.
+> WillowinWorlds is an independent mobile game studio making puzzle and arcade games. It has four flagship games (Nature Seed, Candy Shop, Paint Blasters and Ball is God?!) and eight lab prototypes.
 
-Nature Seed is released; the other three flagship games are currently in development, and eight more prototypes are in the lab. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date and is playable free in the browser on [itch.io](https://willowinworlds.itch.io/nature-seed), [Game Jolt](https://gamejolt.com/games/nature-seed/1100526) and [indiexpo](https://www.indiexpo.net/en/games/nature-seed); no rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: 2026-09-10.
+Nature Seed was released on 2026-09-18 and is playable free in the browser on [itch.io](https://willowinworlds.itch.io/nature-seed), [Game Jolt](https://gamejolt.com/games/nature-seed/1100526) and [indiexpo](https://www.indiexpo.net/en/games/nature-seed). The other three flagship games are in development. The target platforms are iOS and Android. The game pages below are the source of truth for genre, scope, status, characters, gameplay and media assets. No rating or review score is claimed unless a game page publishes one. This guide is in English; the language index below lists the localized sites. Latest source update: 2026-09-18.
 
 ## Games
 
-- [Nature Seed](https://willowinworlds.com/games/nature-seed.html): A released mobile draw-to-solve physics puzzle. Released on 10 September 2026 as Nature Seed, it asks players to draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 launch levels. Genres: Draw-to-solve puzzle, Physics puzzle, Relaxing puzzle, Line drawing puzzle. Current status: Released.
-- [Candy Shop](https://willowinworlds.com/games/candy-shop.html): A cozy mobile merge puzzle with a 13-stage candy chain, 10 container rulesets, eight special-candy effects and planning tools for the next drop. Genres: Merge puzzle, Candy puzzle, Casual puzzle, Physics puzzle. Current status: Active development - playable production build.
-- [Paint Blasters](https://willowinworlds.com/games/paint-blasters.html): A mobile color-destruction physics puzzle arcade. Combine three color inputs into 35 authored projectile recipes, target tower weak points and trigger chain reactions. Genres: Color puzzle, Physics arcade, Destruction puzzle, Chain reaction. Current status: Active development - production prototype.
-- [Ball is God?!](https://willowinworlds.com/games/ball-is-god.html): A story-driven hardcore vertical-descent mobile arcade. Rotate the tower around Espa, build combo smashes, survive bosses and carry karma choices through 10 mythic locations. Genres: Vertical descent arcade, Hardcore arcade, Story-driven arcade, Boss action. Current status: Active production.
+- [Nature Seed](https://willowinworlds.com/games/nature-seed.html): A mobile draw-to-solve physics puzzle, released on 18 September 2026. Players draw a line with a limited ink budget, bring Water Drop and Seed together and restore a watercolor forest across 100 levels. Genres: Draw-to-solve puzzle, Physics puzzle, Relaxing puzzle, Line drawing puzzle. Current status: Released.
+- [Candy Shop](https://willowinworlds.com/games/candy-shop.html): A cozy mobile candy merge puzzle with a 13-stage candy chain, 10 containers with their own rules, eight special-candy effects, a landing preview, a hold slot and a next-three queue. Genres: Merge puzzle, Candy puzzle, Casual puzzle, Physics puzzle. Current status: Active development - playable production build.
+- [Paint Blasters](https://willowinworlds.com/games/paint-blasters.html): A mobile color-destruction physics puzzle arcade. Players mix three colors into one of 35 projectile recipes, aim at weak points in a tower and set off chain reactions. Genres: Color puzzle, Physics arcade, Destruction puzzle, Chain reaction. Current status: Active development - production prototype.
+- [Ball is God?!](https://willowinworlds.com/games/ball-is-god.html): A story-driven hardcore vertical-descent mobile arcade. Players drag to rotate the tower around the falling Espa, skip three platforms for a combo smash, face bosses and make karma choices across 10 locations. Genres: Vertical descent arcade, Hardcore arcade, Story-driven arcade, Boss action. Current status: Active production.
 
 ## In development
 
@@ -26,24 +26,24 @@ Prototypes with English-only pages. None is released yet; scope and status may c
 
 ## Latest development notes
 
-- [Nature Seed - Nature Seed release](https://willowinworlds.com/games/nature-seed.html#devlog): Published 2026-09-10. Nature Seed launched under its final title with 10 handcrafted levels, line-efficiency stars, persistent progress and watercolor restoration rewards.
-- [Candy Shop - Production menu and HUD pass](https://willowinworlds.com/games/candy-shop.html#devlog): Published 2026-07-31. Main menu, level selection, HUD controls and command icons now share one visual language; additional in-engine stress tests cover the updated flow.
+- [Nature Seed - Nature Seed release](https://willowinworlds.com/games/nature-seed.html#devlog): Published 2026-09-18. Nature Seed launched under its final title as a free browser game on itch.io, Game Jolt and indiexpo, with 100 levels, line-efficiency stars and saved progress.
+- [Candy Shop - Production menu and HUD pass](https://willowinworlds.com/games/candy-shop.html#devlog): Published 2026-07-31. The main menu, level selection, HUD controls and command icons now share one look, and more in-engine stress tests cover the updated flow.
 - [Paint Blasters - Physics and effect stability pass](https://willowinworlds.com/games/paint-blasters.html#devlog): Published 2026-07-31. Projectile behavior, Match-3 resolution and hit effects were tested and tightened for more consistent combo outcomes.
-- [Ball is God?! - World surfaces and hazard validation](https://willowinworlds.com/games/ball-is-god.html#devlog): Published 2026-07-31. Character presentation, deterministic generation and thorn hazards received a coordinated visual and production-validation pass.
+- [Ball is God?! - World surfaces and hazard validation](https://willowinworlds.com/games/ball-is-god.html#devlog): Published 2026-07-31. Character presentation, deterministic generation and thorn hazards got a combined visual and validation pass.
 
 ## Studio and press
 
-- [Official WillowinWorlds website](https://willowinworlds.com/): Studio overview, complete game portfolio and current production notes.
-- [Press and creator kit](https://willowinworlds.com/press-kit.html): Factual studio and game summaries, production statuses and downloadable editorial assets.
-- [Media asset usage](https://willowinworlds.com/asset-usage.html): Rules for using WillowinWorlds screenshots, logos and character artwork.
+- [Official WillowinWorlds website](https://willowinworlds.com/): Studio overview, all games and the latest development notes.
+- [Press and creator kit](https://willowinworlds.com/press-kit.html): Factsheet, boilerplate description, game statuses, preview assets and press contact.
+- [Media asset usage](https://willowinworlds.com/asset-usage.html): Rules for using WillowinWorlds screenshots, logos and preview assets.
 
 ## Feeds and policies
 
 - [Devlog RSS feed](https://willowinworlds.com/rss.xml): Latest dated production notes for the four flagship games.
 - [XML sitemap](https://willowinworlds.com/sitemap.xml): Canonical indexable pages and their current modification dates.
-- [Language index](https://willowinworlds.com/languages.json): Machine-readable map of every localized site and AI guide.
-- [Privacy policy](https://willowinworlds.com/privacy.html): Website privacy information.
-- [Legal notice](https://willowinworlds.com/legal.html): Ownership, trademarks and website terms.
+- [Language index](https://willowinworlds.com/languages.json): Machine-readable map of every localized site and its llms.txt guide.
+- [Privacy policy](https://willowinworlds.com/privacy.html): How the website handles local preferences, contact drafts and email inquiries.
+- [Legal notice](https://willowinworlds.com/legal.html): Ownership of studio branding, game names, characters and public assets, and how to request licensed use.
 
 ## Official channels
 
@@ -59,4 +59,4 @@ Prototypes with English-only pages. None is released yet; scope and status may c
 
 ## Contact
 
-- [Email WillowinWorlds](mailto:willowinworlds@gmail.com): Press, publishing, development-build and business enquiries.
+- [Email WillowinWorlds](mailto:willowinworlds@gmail.com): Press, publishing, development-build and business inquiries.

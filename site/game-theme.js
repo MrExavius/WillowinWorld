@@ -346,6 +346,19 @@
     boundary: 58,
     smoothing: 0.1
   });
+  function initCardVisibility() {
+    const cards = document.querySelectorAll(".game-card");
+    if (!cards.length || !("IntersectionObserver" in window)) return;
+    cards.forEach(card => card.classList.add("is-animation-paused"));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("is-animation-paused", !entry.isIntersecting);
+      });
+    }, { rootMargin: "240px 0px", threshold: 0.01 });
+    cards.forEach(card => observer.observe(card));
+  }
+
+  initCardVisibility();
   initGameFilters();
   initShareCopy();
 })();

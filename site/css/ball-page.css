@@ -80,7 +80,6 @@ body.ball-is-god-page[data-theme="dark"] {
     radial-gradient(ellipse at 78% 20%, rgba(255, 212, 61, 0.24), transparent 28%),
     url("../assets/Ball is God/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
     linear-gradient(180deg, #eaf6ff, #fff2c5);
-  filter: saturate(1.02) contrast(1);
   opacity: 0.82;
 }
 
@@ -94,25 +93,21 @@ body.ball-is-god-page[data-theme="dark"] {
   opacity: 0.74;
 }
 
+/* The dark page is dimmed with a layer on top, not with a filter: a filter on a layer this tall is redrawn with every frame of the animation above it. */
 .ball-is-god-page[data-theme="dark"] .ball-is-god-shell::before {
   background:
+    linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.28)),
     linear-gradient(92deg, rgba(7, 21, 48, 0.9) 0 18%, rgba(7, 21, 48, 0.68) 42%, rgba(16, 37, 77, 0.42) 76%),
     radial-gradient(ellipse at 28% 28%, rgba(126, 195, 255, 0.12), transparent 30%),
     radial-gradient(ellipse at 78% 20%, rgba(255, 212, 61, 0.12), transparent 28%),
     url("../assets/Ball is God/site/back.webp") center top / max(100vw, 1440px) auto repeat-y,
     linear-gradient(180deg, #071530, #050c1d);
-  filter: saturate(0.9) contrast(1.05) brightness(0.72);
   opacity: 0.84;
 }
 
+/* Dark: the page-long veil is merged into the one on the fixed backdrop (below), so the viewport carries one layer less. */
 .ball-is-god-page[data-theme="dark"] .ball-is-god-shell::after {
-  background:
-    linear-gradient(90deg, rgba(7, 21, 48, 0.62), rgba(12, 32, 66, 0.28) 48%, rgba(5, 12, 29, 0.64)),
-    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.08) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.1) 0 2px, transparent 3px),
-    repeating-linear-gradient(112deg, rgba(214, 235, 255, 0.035) 0 1px, transparent 1px 18px);
-  mix-blend-mode: normal;
-  opacity: 0.9;
+  display: none;
 }
 
 .ball-page-backdrop {
@@ -159,13 +154,9 @@ body.ball-is-god-page[data-theme="dark"] {
 }
 
 .ball-is-god-page[data-theme="dark"] .ball-page-backdrop::after {
-  background:
-    linear-gradient(90deg, rgba(7, 21, 48, 0.58), rgba(12, 32, 66, 0.2) 48%, rgba(5, 12, 29, 0.62)),
-    radial-gradient(circle at 12% 20%, rgba(255, 255, 255, 0.08) 0 2px, transparent 3px),
-    radial-gradient(circle at 30% 36%, rgba(255, 212, 61, 0.1) 0 2px, transparent 3px),
-    repeating-linear-gradient(112deg, rgba(214, 235, 255, 0.035) 0 1px, transparent 1px 18px);
+  background: linear-gradient(90deg, rgba(7, 21, 48, 0.84), rgba(12, 32, 66, 0.43) 48%, rgba(5, 12, 29, 0.86));
   mix-blend-mode: normal;
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .ball-menu-world {
@@ -207,7 +198,7 @@ body.ball-is-god-page[data-theme="dark"] {
   border-radius: 50%;
   box-shadow: 0 0 28px rgba(255, 212, 61, 0.18);
   opacity: 0.66;
-  animation: ballHaloFloat 8s ease-in-out infinite;
+  animation: blHalo 8s ease-in-out infinite;
 }
 
 .ball-menu-halo-one {
@@ -222,7 +213,7 @@ body.ball-is-god-page[data-theme="dark"] {
   width: 138px;
   height: 34px;
   transform: rotate(18deg);
-  animation-delay: -3.2s;
+  animation: none;
 }
 
 .ball-menu-pillar {
@@ -255,7 +246,7 @@ body.ball-is-god-page[data-theme="dark"] {
   background:
     linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.62), rgba(255, 212, 61, 0.44), transparent);
   opacity: 0.68;
-  animation: ballBeamFlow 7s ease-in-out infinite;
+  animation: blBeam 7s ease-in-out infinite;
 }
 
 .ball-menu-beam-one {
@@ -268,7 +259,7 @@ body.ball-is-god-page[data-theme="dark"] {
   bottom: 18%;
   right: -10%;
   transform: rotate(13deg);
-  animation-delay: -2.8s;
+  animation: none;
 }
 
 .ball-menu-rock {
@@ -280,7 +271,7 @@ body.ball-is-god-page[data-theme="dark"] {
   clip-path: polygon(4% 16%, 46% 0, 96% 14%, 86% 70%, 61% 96%, 22% 88%, 0 54%);
   box-shadow: 0 18px 28px rgba(47, 91, 150, 0.18);
   opacity: 0.62;
-  animation: ballRockFloat 8s ease-in-out infinite;
+  animation: blRock 8s ease-in-out infinite;
 }
 
 .ball-menu-rock-one {
@@ -294,7 +285,7 @@ body.ball-is-god-page[data-theme="dark"] {
   bottom: 30%;
   width: 86px;
   height: 58px;
-  animation-delay: -2.2s;
+  animation: none;
   transform: rotate(18deg);
 }
 
@@ -303,8 +294,316 @@ body.ball-is-god-page[data-theme="dark"] {
   bottom: 14%;
   width: 92px;
   height: 62px;
-  animation-delay: -4.2s;
+  animation: none;
   transform: rotate(10deg);
+}
+
+/* ---------- Page-wide descent: layers added on top of the original menu world ----------
+   Depth, back to front: god rays and shadow wedges (the karma wheel), two cloud banks and a temple (all under the veil), then the original
+   sun, halos, pillars, beams and rocks, golden dust, two stone slabs that rise past you, and Espa himself falling through the page.
+   The original pillars now turn: --ball-t is a 0 -> 1 clock (40s) on the backdrop that scrolls their stripes and platform rings, so the
+   rotating tower costs no extra animation. Pause or reduced motion freezes the clock, which is the finished still composition. */
+/* Backdrop layers: independent GPU transform/opacity animations per element (no inherited clock). */
+
+.ball-is-god-page {
+  --bl-ray-gold: rgba(255, 214, 84, 0.85);
+  --bl-ray-dark: rgba(92, 66, 172, 0.6);
+  --bl-karma-alpha: 0.55;
+  --bl-cloud-far: 0.62;
+  --bl-cloud-near: 0.88;
+  --bl-temple: rgba(255, 244, 205, 0.95);
+  --bl-temple-dark: rgba(214, 184, 112, 0.9);
+  --bl-temple-alpha: 0.34;
+  --bl-mote-a: rgba(255, 196, 40, 0.8);
+  --bl-mote-b: rgba(255, 255, 255, 0.95);
+  --bl-slab: linear-gradient(145deg, rgba(255, 255, 255, 0.16), transparent 30%), linear-gradient(180deg, #77736e, #4d4a46 72%, #343333);
+}
+
+.ball-is-god-page[data-theme="dark"] {
+  --bl-ray-gold: rgba(255, 226, 116, 0.8);
+  --bl-ray-dark: rgba(128, 100, 235, 0.85);
+  --bl-karma-alpha: 0.6;
+  --bl-cloud-far: 0.32;
+  --bl-cloud-near: 0.46;
+  --bl-temple: rgba(110, 130, 204, 0.9);
+  --bl-temple-dark: rgba(80, 98, 168, 0.95);
+  --bl-temple-alpha: 0.55;
+  --bl-mote-a: rgba(255, 226, 116, 0.8);
+  --bl-mote-b: rgba(190, 220, 255, 0.85);
+}
+
+.ball-deep {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ball-deep > * {
+  position: absolute;
+}
+
+/* Karma wheel: three golden rays (light) and three violet wedges (dark) turn slowly round the sun and fade out with distance. */
+.ball-karma {
+  left: 78vw;
+  top: 14%;
+  width: min(92vmax, 920px);
+  height: min(92vmax, 920px);
+  margin: calc(min(92vmax, 920px) / -2) 0 0 calc(min(92vmax, 920px) / -2);
+  opacity: var(--bl-karma-alpha);
+  background: repeating-conic-gradient(from -16deg, transparent 0deg, var(--bl-ray-gold) 16deg, transparent 32deg, transparent 50deg, var(--bl-ray-dark) 74deg, transparent 98deg, transparent 120deg);
+  -webkit-mask-image: radial-gradient(circle closest-side, #000 0, rgba(0, 0, 0, 0.7) 45%, transparent 100%);
+  mask-image: radial-gradient(circle closest-side, #000 0, rgba(0, 0, 0, 0.7) 45%, transparent 100%);
+  animation: blKarma 110s linear infinite;
+}
+
+/* Clouds: the game's own cloud art, four of them, each drifting across the page on its own (far ones small and slow, near ones big and quicker).
+   A cloud is a small picture that only moves, so it costs far less than a whole cloud bank drawn out of gradients. */
+.ball-cloud-art {
+  left: 0;
+  max-width: none;
+  height: auto;
+  will-change: transform;
+}
+
+.ball-cloud-art-1 { top: 9vh; width: 230px; opacity: var(--bl-cloud-far); animation: blCloudArt 150s linear -40s infinite; }
+.ball-cloud-art-2 { top: 27vh; width: 190px; opacity: var(--bl-cloud-far); animation: blCloudArt 190s linear -120s infinite; }
+.ball-cloud-art-3 { bottom: 4vh; width: 460px; opacity: var(--bl-cloud-near); animation: blCloudArt 96s linear -30s infinite; }
+.ball-cloud-art-4 { bottom: 15vh; width: 380px; opacity: var(--bl-cloud-near); animation: blCloudArt 124s linear -90s infinite; }
+
+/* A temple at the foot of the descent: steps, columns, entablature and pediment, drawn with gradients. */
+.ball-temple {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 30vh;
+  opacity: var(--bl-temple-alpha);
+  background:
+    linear-gradient(to top left, transparent 49.6%, var(--bl-temple) 50%) 50% calc(100% - 20.6vh) / 16vw 6.4vh no-repeat,
+    linear-gradient(to top right, transparent 49.6%, var(--bl-temple) 50%) calc(50% + 16vw) calc(100% - 20.6vh) / 16vw 6.4vh no-repeat,
+    linear-gradient(var(--bl-temple), var(--bl-temple)) 50% calc(100% - 18.4vh) / 32vw 2.2vh no-repeat,
+    repeating-linear-gradient(90deg, var(--bl-temple-dark) 0 1.1vw, transparent 1.1vw 3.2vw) 50% calc(100% - 4.4vh) / 29.6vw 14vh no-repeat,
+    linear-gradient(var(--bl-temple), var(--bl-temple)) 50% calc(100% - 2.2vh) / 34vw 2.2vh no-repeat,
+    linear-gradient(var(--bl-temple-dark), var(--bl-temple-dark)) 50% 100% / 38vw 2.2vh no-repeat;
+  -webkit-mask-image: linear-gradient(to top, #000 55%, transparent);
+  mask-image: linear-gradient(to top, #000 55%, transparent);
+}
+
+/* The original pillars now turn: stripes and platform rings scroll with the clock, with gaps passing through every ring. */
+.ball-menu-pillar {
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 5%, rgba(255, 252, 212, 0.58), transparent 26%) 0 0 / auto no-repeat,
+    linear-gradient(90deg, rgba(70, 46, 8, 0.34), transparent 26%, transparent 70%, rgba(70, 46, 8, 0.3)) 0 0 / auto no-repeat,
+    linear-gradient(90deg, rgba(177, 122, 25, 0.34), rgba(255, 224, 108, 0.38), rgba(177, 122, 25, 0.28)) 0 0 / auto no-repeat;
+}
+
+.ball-menu-pillar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -128px;
+  width: calc(100% + 128px);
+  background:
+    linear-gradient(90deg, rgba(87, 84, 82, 0.6) 0 36%, transparent 36% 52%, rgba(87, 84, 82, 0.6) 52%) 0 22% / 128px 18px repeat-x,
+    linear-gradient(90deg, rgba(87, 84, 82, 0.6) 0 36%, transparent 36% 52%, rgba(87, 84, 82, 0.6) 52%) 46px 46% / 128px 18px repeat-x,
+    linear-gradient(90deg, rgba(87, 84, 82, 0.6) 0 36%, transparent 36% 52%, rgba(87, 84, 82, 0.6) 52%) 92px 74% / 128px 18px repeat-x,
+    repeating-linear-gradient(90deg, rgba(146, 103, 25, 0.16) 0 2px, transparent 2px 32px) 0 0 / auto repeat;
+  animation: blPillarR 12s linear infinite;
+}
+
+.ball-menu-pillar-right::before {
+  left: 0;
+  animation: blPillarL 12s linear infinite;
+}
+
+/* Golden dust rises past the page, the way things do when you fall: one tile, looped by exactly its own height. */
+.ball-motes,
+.ball-rise,
+.ball-fall {
+  position: absolute;
+  pointer-events: none;
+}
+
+.ball-motes {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: -640px;
+  background:
+    radial-gradient(circle 3px at 581px 356px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 1166px 299px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 4px at 249px 327px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 801px 496px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 137px 202px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 132px 506px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 880px 45px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 1238px 599px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 4px at 215px 29px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 675px 56px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 566px 525px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 587px 187px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 1062px 445px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 411px 158px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 4px at 970px 260px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 397px 551px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 760px 196px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 1158px 142px, var(--bl-mote-b) 0 99%, transparent 100%),
+    radial-gradient(circle 3px at 1021px 595px, var(--bl-mote-a) 0 99%, transparent 100%),
+    radial-gradient(circle 2px at 812px 338px, var(--bl-mote-b) 0 99%, transparent 100%);
+  background-size: 1280px 640px;
+  animation: blMotesRise 44s linear infinite;
+}
+
+/* Stone slabs, cut like the original rocks, rise past the viewport on a slow turn. */
+.ball-rise {
+  left: var(--x);
+  top: 0;
+  width: var(--w);
+  height: calc(var(--w) * 0.63);
+  background: var(--bl-slab);
+  clip-path: polygon(4% 16%, 46% 0, 96% 14%, 86% 70%, 61% 96%, 22% 88%, 0 54%);
+  opacity: var(--o, 0.55);
+  translate: 0 62vh;
+  rotate: 12deg;
+  animation: blRise var(--d) linear var(--dl) infinite;
+}
+
+.ball-rise-one {
+  --x: 24vw;
+  --w: 92px;
+  --d: 38s;
+  --dl: -14s;
+}
+
+.ball-rise-two {
+  --x: 70vw;
+  --w: 60px;
+  --o: 0.4;
+  --d: 52s;
+  --dl: -33s;
+}
+
+/* Espa falls down the right side of the page, swaying, with a thin trail of light above him. */
+.ball-fall {
+  left: 80vw;
+  top: 0;
+  width: 92px;
+  translate: 0 30vh;
+  animation: blFall 26s linear -6s infinite;
+}
+
+.ball-fall::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 70%;
+  width: 6px;
+  height: 150px;
+  border-radius: 999px;
+  background: linear-gradient(transparent, rgba(255, 214, 84, 0.6));
+  translate: -50% 0;
+}
+
+.ball-fall img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Halo, beam and rock: the shared home keyframes also animate a filter, which has to be redrawn every frame; here only translate and opacity move. */
+@keyframes blHalo {
+  0%, 100% { translate: 0 0; opacity: 0.54; }
+  50% { translate: 0 -14px; opacity: 0.78; }
+}
+
+@keyframes blBeam {
+  0%, 100% { opacity: 0.42; }
+  50% { opacity: 0.76; }
+}
+
+@keyframes blRock {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -16px; }
+}
+
+@keyframes blPillarR {
+  to { transform: translate3d(128px, 0, 0); }
+}
+
+@keyframes blPillarL {
+  to { transform: translate3d(-128px, 0, 0); }
+}
+
+@keyframes blKarma {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blCloudArt {
+  from { transform: translateX(-500px); }
+  to { transform: translateX(calc(100vw + 40px)); }
+}
+
+@keyframes blMotesRise {
+  to { transform: translateY(-640px); }
+}
+
+@keyframes blRise {
+  0% { translate: 0 112vh; rotate: -10deg; opacity: 0; }
+  8% { opacity: var(--o, 0.55); }
+  92% { opacity: var(--o, 0.55); }
+  100% { translate: 0 -24vh; rotate: 34deg; opacity: 0; }
+}
+
+@keyframes blFall {
+  0% { translate: 0 -16vh; rotate: -8deg; opacity: 0; }
+  5% { opacity: 0.95; }
+  28% { translate: -5vw 28vh; rotate: 6deg; }
+  52% { translate: 4vw 62vh; rotate: -5deg; }
+  74% { translate: -3vw 98vh; rotate: 7deg; opacity: 0.95; }
+  78%, 100% { translate: -3vw 114vh; rotate: 7deg; opacity: 0; }
+}
+
+/* Small screens, where copy covers the whole width: karma wheel, two near clouds, dust and the turning pillars only. */
+@media (max-width: 760px) {
+  .ball-cloud-art-1,
+  .ball-cloud-art-2,
+  .ball-rise,
+  .ball-fall {
+    display: none;
+  }
+
+  .ball-karma {
+    left: 70vw;
+    opacity: calc(var(--bl-karma-alpha) * 0.7);
+  }
+
+  .ball-is-god-page .ball-menu-pillar {
+    opacity: 0.26;
+  }
+
+  .ball-is-god-page .ball-menu-pillar::before,
+  .ball-menu-halo-one,
+  .ball-menu-beam-one,
+  .ball-menu-rock-one {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ball-page-backdrop,
+  .ball-page-backdrop *,
+  .ball-page-backdrop *::before,
+  .ball-page-backdrop *::after {
+    animation: none !important;
+  }
+
+  .ball-fall {
+    display: none;
+  }
 }
 
 .ball-game-hero {
@@ -778,38 +1077,300 @@ body.ball-is-god-page[data-theme="dark"] {
     padding-bottom: 16px;
   }
 
-  .ball-is-god-page .ball-story-section .game-page-facts div:last-child {
+  .ball-is-god-page .ball-story-section .game-page-facts div:nth-child(n + 3) {
+    padding-top: 14px;
+  }
+
+  .ball-is-god-page .ball-story-section .game-page-facts div:nth-last-child(-n + 2) {
     padding-bottom: 0;
     border-bottom: 0;
   }
+
+  /* Narrow measure (200% text, or a tight column): the fact pairs stack in one column so a long name never overruns the plate. */
+  .ball-is-god-page .ball-story-section .info-grid {
+    container-type: inline-size;
+  }
+
+  @container (max-width: 50rem) {
+    .ball-is-god-page .ball-story-section .game-page-facts {
+      grid-template-columns: 1fr;
+    }
+
+    .ball-is-god-page .ball-story-section .game-page-facts div:nth-child(n + 3) {
+      padding-top: 0;
+    }
+
+    .ball-is-god-page .ball-story-section .game-page-facts div:nth-last-child(2) {
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--bs-edge);
+    }
+  }
 }
 
-.ball-is-god-page .detail-card,
-.ball-is-god-page .asset-link,
-.ball-is-god-page .update-list li,
+/* ---------- Text frames: carved stone slabs of the tower ----------
+   Every card is a slab of the temple: a gold hairline edge, gold inlay brackets in the four corners, faint mortar courses and a grain of
+   stone. Along the bottom edge runs the karma line: gold (light) on the left fading out, violet (dark) rising on the right. Fill stays near
+   opaque so copy keeps its contrast over the moving backdrop. */
+.ball-is-god-page {
+  --bs-plate: rgba(255, 252, 241, 0.88);
+  --bs-plate-2: rgba(243, 238, 221, 0.86);
+  --bs-edge: color-mix(in srgb, #a77a22 52%, rgba(47, 91, 150, 0.3));
+  --bs-gold: #c4922a;
+  --bs-karma-light: rgba(214, 160, 30, 0.85);
+  --bs-karma-dark: rgba(100, 74, 190, 0.7);
+  --bs-joint: rgba(96, 78, 44, 0.09);
+  --bs-grain: rgba(96, 78, 44, 0.12);
+  --bs-shadow: 0 14px 32px rgba(47, 91, 150, 0.14);
+}
+
+.ball-is-god-page[data-theme="dark"] {
+  --bs-plate: rgba(11, 23, 49, 0.88);
+  --bs-plate-2: rgba(16, 31, 62, 0.86);
+  --bs-edge: color-mix(in srgb, #ffe274 36%, rgba(214, 235, 255, 0.22));
+  --bs-gold: #ffe274;
+  --bs-karma-light: rgba(255, 226, 116, 0.85);
+  --bs-karma-dark: rgba(136, 108, 240, 0.8);
+  --bs-joint: rgba(214, 235, 255, 0.06);
+  --bs-grain: rgba(214, 235, 255, 0.1);
+  --bs-shadow: 0 16px 36px rgba(0, 0, 0, 0.36);
+}
+
+.ball-is-god-page :is(.detail-card, .asset-link, .update-list li, .related-world-link, .game-page-facts) {
+  --bs-brk: 14px;
+  position: relative;
+  overflow: hidden;
+  padding-block: 24px;
+  border: 1px solid var(--bs-edge);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle 1px at 21px 17px, var(--bs-grain) 0 98%, transparent 100%) 0 0 / 84px 84px,
+    radial-gradient(circle 1.2px at 63px 55px, var(--bs-grain) 0 98%, transparent 100%) 0 0 / 84px 84px,
+    radial-gradient(ellipse at 88% 0%, color-mix(in srgb, var(--bs-karma-light) 16%, transparent), transparent 46%),
+    linear-gradient(var(--bs-plate), var(--bs-plate-2));
+  box-shadow: var(--bs-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.34), inset 0 -1px 0 rgba(60, 45, 20, 0.14);
+  -webkit-backdrop-filter: blur(10px) saturate(1.04);
+  backdrop-filter: blur(10px) saturate(1.04);
+}
+
+/* The asset strip scrolls sideways; a backdrop blur inside a scroller paints a pale pane behind the whole strip, and the plate is near opaque anyway. */
+.ball-is-god-page .asset-link {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.ball-is-god-page :is(.detail-card, .asset-link, .update-list li, .related-world-link, .game-page-facts)::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left top / var(--bs-brk) 1.5px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left top / 1.5px var(--bs-brk) no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right top / var(--bs-brk) 1.5px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right top / 1.5px var(--bs-brk) no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left bottom / var(--bs-brk) 1.5px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left bottom / 1.5px var(--bs-brk) no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right bottom / var(--bs-brk) 1.5px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right bottom / 1.5px var(--bs-brk) no-repeat;
+  opacity: 0.8;
+}
+
+.ball-is-god-page :is(.detail-card, .asset-link, .update-list li, .related-world-link, .game-page-facts)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--bs-karma-light), transparent 38%, transparent 62%, var(--bs-karma-dark)) left bottom / 100% 2px no-repeat,
+    repeating-linear-gradient(180deg, transparent 0 41px, var(--bs-joint) 41px 42px);
+}
+
+.ball-is-god-page :is(.asset-link, .related-world-link):is(:hover, :focus-visible) {
+  border-color: color-mix(in srgb, var(--bs-gold) 72%, var(--bs-edge));
+  box-shadow: var(--bs-shadow), 0 0 0 1px color-mix(in srgb, var(--bs-gold) 34%, transparent), inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+/* Step and date plaques: a small chiselled tablet instead of loose text. */
+.ball-is-god-page .update-list :is(span, time) {
+  align-self: start;
+  padding: 3px 9px;
+  border: 1px solid var(--bs-edge);
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--bs-gold) 12%, transparent);
+}
+
 .ball-is-god-page .game-page-facts {
-  border-color: color-mix(in srgb, var(--game-accent) 25%, rgba(47, 91, 150, 0.16));
-  border-radius: 18px;
-  background:
-    radial-gradient(ellipse at 12% 10%, rgba(255, 255, 255, 0.24), transparent 32%),
-    radial-gradient(ellipse at 84% 22%, rgba(255, 212, 61, 0.12), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(47, 91, 150, 0.045) 0 1px, transparent 1px 13px),
-    rgba(247, 252, 255, 0.7);
-  box-shadow: 0 18px 42px rgba(47, 91, 150, 0.12);
-  -webkit-backdrop-filter: blur(12px) saturate(1.04);
-  backdrop-filter: blur(12px) saturate(1.04);
+  padding: 28px 22px 22px;
 }
 
-.ball-is-god-page[data-theme="dark"] .detail-card,
-.ball-is-god-page[data-theme="dark"] .asset-link,
-.ball-is-god-page[data-theme="dark"] .update-list li,
-.ball-is-god-page[data-theme="dark"] .game-page-facts {
+.ball-is-god-page .game-page-facts div {
+  border-bottom-color: var(--bs-edge);
+}
+
+/* Hero stat chips: the same slab, with two corner inlays. */
+.ball-hero-stats span {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--bs-edge);
+  border-radius: 6px;
   background:
-    radial-gradient(ellipse at 12% 10%, rgba(126, 195, 255, 0.08), transparent 32%),
-    radial-gradient(ellipse at 84% 22%, rgba(255, 212, 61, 0.08), transparent 32%),
-    repeating-linear-gradient(118deg, rgba(214, 235, 255, 0.04) 0 1px, transparent 1px 13px),
-    rgba(7, 21, 48, 0.72);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
+    radial-gradient(ellipse at 88% 0%, color-mix(in srgb, var(--bs-karma-light) 16%, transparent), transparent 46%),
+    linear-gradient(var(--bs-plate), var(--bs-plate-2));
+  box-shadow: var(--bs-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.34), inset 0 -1px 0 rgba(60, 45, 20, 0.14);
+}
+
+.ball-hero-stats span::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left top / 10px 1.5px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left top / 1.5px 10px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right bottom / 10px 1.5px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right bottom / 1.5px 10px no-repeat;
+  opacity: 0.8;
+}
+
+/* The proof panel: the same slab at full width, with a keystone at the top centre. */
+.ball-is-god-page .game-proof-section {
+  border: 1px solid var(--bs-edge);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle 1px at 21px 17px, var(--bs-grain) 0 98%, transparent 100%) 0 0 / 84px 84px,
+    radial-gradient(circle 1.2px at 63px 55px, var(--bs-grain) 0 98%, transparent 100%) 0 0 / 84px 84px,
+    radial-gradient(ellipse at 90% 0%, color-mix(in srgb, var(--bs-karma-light) 20%, transparent), transparent 48%),
+    radial-gradient(ellipse at 6% 100%, color-mix(in srgb, var(--bs-karma-dark) 7%, transparent), transparent 46%),
+    linear-gradient(var(--bs-plate), var(--bs-plate-2));
+  box-shadow: var(--bs-shadow), inset 0 1px 0 rgba(255, 255, 255, 0.34), inset 0 -1px 0 rgba(60, 45, 20, 0.14);
+}
+
+.ball-is-god-page .game-proof-section::before {
+  inset: 10px;
+  background:
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left top / 28px 2px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left top / 2px 28px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right top / 28px 2px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right top / 2px 28px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left bottom / 28px 2px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) left bottom / 2px 28px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right bottom / 28px 2px no-repeat,
+    linear-gradient(var(--bs-gold), var(--bs-gold)) right bottom / 2px 28px no-repeat;
+  opacity: 0.85;
+}
+
+.ball-is-god-page .game-proof-section::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  z-index: 1;
+  width: 64px;
+  height: 9px;
+  background: var(--bs-gold);
+  clip-path: polygon(0 0, 100% 0, 86% 100%, 14% 100%);
+  translate: -50% 0;
+  pointer-events: none;
+}
+
+.ball-is-god-page .proof-facts,
+.ball-is-god-page .proof-facts article {
+  border-color: var(--bs-edge);
+}
+
+.ball-is-god-page .world-filmstrip figure {
+  border: 1px solid var(--bs-edge);
+  border-radius: 6px;
+}
+
+/* Rhythm of the card grids: no orphan rows, and the column count follows the text size, not just the window (so 200% text drops to fewer,
+   wider columns). The four cards and the four steps run 4 across (2 x 2 when narrower), the six FAQ cards and six older devlog entries run
+   3 x 2, and the newest devlog entry spans the row above them. */
+.ball-is-god-page .detail-grid,
+.ball-is-god-page .related-world-grid,
+.ball-is-god-page #gameplay-loop .update-list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+}
+
+.ball-is-god-page #faq .detail-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+}
+
+.ball-is-god-page #devlog .update-list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr));
+}
+
+@media (max-width: 1120px) and (min-width: 640px) {
+  .ball-is-god-page .detail-grid,
+  .ball-is-god-page .related-world-grid,
+  .ball-is-god-page #gameplay-loop .update-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 760px) {
+  .ball-is-god-page #devlog .update-list li:first-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(11rem, 0.42fr) minmax(0, 1fr);
+    column-gap: clamp(20px, 3vw, 44px);
+    align-content: start;
+    min-height: 0;
+  }
+
+  .ball-is-god-page #devlog .update-list li:first-child > :is(time, span) {
+    grid-area: 1 / 1;
+  }
+
+  .ball-is-god-page #devlog .update-list li:first-child > strong {
+    grid-area: 2 / 1;
+  }
+
+  .ball-is-god-page #devlog .update-list li:first-child > p {
+    grid-area: 1 / 2 / 3 / 3;
+    align-self: center;
+    max-width: 62ch;
+  }
+}
+
+/* Paragraphs that sit straight on the moving backdrop get a soft frosted chip and a deeper ink, so clouds, rocks and dust never run through them. */
+.ball-is-god-page :is(.related-worlds-copy, .asset-kit-copy) {
+  width: fit-content;
+  max-width: calc(100% + 14px);
+  margin-left: -14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  background: color-mix(in srgb, var(--bg) 74%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+/* The shared focus ring is a pale accent; on the light theme it falls under 3:1 against the page, so interactive controls get a deeper ring. */
+body.ball-is-god-page[data-theme="light"] :is(.game-detail-nav a, .game-motion-toggle, .game-theme-toggle, .asset-link, .related-world-link, .game-footer a):focus-visible {
+  outline-color: #7a4f00;
+}
+
+.ball-is-god-page[data-theme="light"] .related-world-kicker {
+  color: #0a587a;
+}
+
+.ball-is-god-page :is(.ball-production-heading, .ball-cast-heading) > p {
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  background: color-mix(in srgb, var(--bg) 74%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+
+.ball-is-god-page[data-theme="light"] .ball-cast-heading .ball-ui-label {
+  color: #07546f;
+}
+
+/* Grey copy inside plates and the proof row takes a deeper ink in the light theme. */
+.ball-is-god-page[data-theme="light"] :is(.asset-link span, .proof-facts span, .detail-card p, .update-list p, .related-world-link p) {
+  color: color-mix(in srgb, var(--text) 78%, var(--muted));
 }
 
 .ball-is-god-page .game-page-section .eyebrow,
@@ -823,9 +1384,15 @@ body.ball-is-god-page[data-theme="dark"] {
 }
 
 .ball-is-god-page .asset-group-note {
-  max-width: 66ch;
-  margin: -7px 0 12px;
-  color: var(--muted);
+  width: fit-content;
+  max-width: min(66ch, calc(100% + 14px));
+  margin: -7px 0 12px -14px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: color-mix(in srgb, var(--text) 84%, var(--muted));
+  background: color-mix(in srgb, var(--bg) 74%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   line-height: 1.55;
 }
 
@@ -1122,7 +1689,7 @@ body.ball-is-god-page[data-theme="dark"] {
 
 .ball-ui-device {
   position: relative;
-  width: min(100%, 390px);
+  width: min(100%, 24.375rem);
   aspect-ratio: 760 / 1156;
   justify-self: center;
   overflow: hidden;
@@ -1185,7 +1752,7 @@ body.ball-is-god-page[data-theme="dark"] {
 .ball-level-select-content {
   position: absolute;
   z-index: 2;
-  inset: 5.5% 12% 76px;
+  inset: 5.5% 12% 4.75rem;
   display: grid;
   align-content: start;
   justify-items: center;
@@ -1314,7 +1881,7 @@ body.ball-is-god-page[data-theme="dark"] {
   position: absolute;
   z-index: 4;
   right: 0;
-  bottom: 55px;
+  bottom: 3.4375rem;
   left: 0;
 }
 
@@ -1461,8 +2028,14 @@ body.ball-is-god-page[data-theme="dark"] {
 
 .ball-result-menus {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(126px, 0.65fr);
+  grid-template-columns: minmax(0, 1.35fr) minmax(156px, 0.72fr);
   gap: 12px;
+}
+
+@media (max-width: 1080px) {
+  .ball-result-menus {
+    grid-template-columns: 1fr;
+  }
 }
 
 .ball-result-menu {
@@ -1752,6 +2325,12 @@ body.ball-is-god-page[data-theme="dark"] {
   color: #0a668d;
 }
 
+@media (max-width: 1040px) and (min-width: 561px) {
+  .ball-character-roster > :last-child {
+    grid-column: 2;
+  }
+}
+
 @media (max-width: 1040px) {
   .ball-character-roster {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1763,6 +2342,10 @@ body.ball-is-god-page[data-theme="dark"] {
 }
 
 @media (max-width: 920px) {
+  .ball-is-god-page :is(.ball-production-heading, .ball-cast-heading) > p {
+    margin-left: -14px;
+  }
+
   .ball-production-heading,
   .ball-cast-heading,
   .ball-production-ui-grid,

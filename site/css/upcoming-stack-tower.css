@@ -1036,12 +1036,59 @@ body[data-game="stack-tower"][data-theme="dark"] {
 }
 
 /* ---------- Sections on the sky ----------
-   Section wrappers draw no box, so headings sit directly on the sky (halo for contrast). Inner cards are translucent glass. */
+   Section wrappers draw no box (a lattice rail from the crane jib and a two-block underline on the heading), so headings sit directly on the sky
+   (halo for contrast). The cards are floor slabs, like the floors the crane drops: a lit roof band, shaded end caps, a thick base band, and the
+   brown and amber of the two floor types alternating along each row. */
+body[data-game="stack-tower"][data-theme="dark"] {
+  --st-end: rgba(0, 0, 0, 0.2);
+  --st-lattice: rgba(217, 142, 43, 0.62);
+  --st-fill: 90%;
+  --st-base: color-mix(in srgb, var(--ug-card-2) 72%, var(--ug-bg));
+}
+
+body[data-game="stack-tower"][data-theme="light"] {
+  --st-end: rgba(40, 30, 10, 0.08);
+  --st-lattice: rgba(168, 98, 14, 0.7);
+  --st-fill: 90%;
+  --st-base: var(--ug-card-2);
+}
+
+body[data-game="stack-tower"] {
+  --st-f1: #9A6A3A;
+  --st-f1-hi: #BA8751;
+  --st-f1-lo: #6F4824;
+  --st-f2: #D08A33;
+  --st-f2-hi: #E8A850;
+  --st-f2-lo: #9E6420;
+  --st-glass-a: #86A0AE;
+  --st-glass-b: #E6CB93;
+}
+
 body[data-game="stack-tower"] .game-page-section.soft-card {
+  position: relative;
   padding-inline: 0;
+  padding-top: clamp(32px, 4vw, 46px);
   border-color: transparent;
   background: none;
   box-shadow: none;
+}
+
+/* The lattice of a crane jib: two rails and crossing braces */
+body[data-game="stack-tower"] .game-page-section.soft-card:not(.ug-vote)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 14px;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--st-lattice), var(--st-lattice)) 0 0 / 100% 2px no-repeat,
+    linear-gradient(var(--st-lattice), var(--st-lattice)) 0 100% / 100% 2px no-repeat,
+    repeating-linear-gradient(60deg, transparent 0 11px, var(--st-lattice) 11px 13px),
+    repeating-linear-gradient(-60deg, transparent 0 11px, var(--st-lattice) 11px 13px);
+  -webkit-mask-image: linear-gradient(90deg, #000 55%, transparent);
+  mask-image: linear-gradient(90deg, #000 55%, transparent);
 }
 
 body[data-game="stack-tower"] .game-page-section h2,
@@ -1050,6 +1097,20 @@ body[data-game="stack-tower"] .ug-hero-copy h1 {
   text-shadow:
     0 0 22px color-mix(in srgb, var(--ug-bg) 88%, transparent),
     0 0 6px color-mix(in srgb, var(--ug-bg) 72%, transparent);
+}
+
+/* Two blocks under every heading: a floor sitting a little off-centre on the one below */
+body[data-game="stack-tower"] .game-page-section h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 15px;
+  margin-top: 12px;
+  background:
+    linear-gradient(180deg, var(--st-f2-hi) 0 2px, var(--st-f2) 2px) 14px 0 / 34px 7px no-repeat,
+    linear-gradient(180deg, var(--st-f1-hi) 0 2px, var(--st-f1) 2px) 0 8px / 46px 7px no-repeat;
+  border-radius: 2px;
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.35));
 }
 
 body[data-game="stack-tower"] :is(.ug-lede, .ug-hero-copy .hero-copy, .ug-genre, .ug-vote .ug-lede) {
@@ -1062,23 +1123,150 @@ body[data-game="stack-tower"][data-theme="light"] .ug-tagline {
   color: color-mix(in srgb, var(--ug-accent) 78%, var(--ug-ink));
 }
 
+/* Eyebrow: a small floor-shaped tag */
 body[data-game="stack-tower"] .eyebrow {
-  background: color-mix(in srgb, var(--ug-card) 66%, transparent);
+  border-radius: 6px;
+  border-color: color-mix(in srgb, var(--st-f2) 48%, var(--ug-line));
+  background: color-mix(in srgb, var(--ug-card) 78%, transparent);
+  box-shadow: inset 0 -3px 0 color-mix(in srgb, var(--st-f2-lo) 55%, transparent);
 }
 
-body[data-game="stack-tower"] :is(.detail-card, .update-list li, .ug-facts .game-page-facts > div, .ug-next li, .lab-related-link) {
-  border-color: color-mix(in srgb, var(--ug-line) 82%, transparent);
-  background: color-mix(in srgb, var(--ug-card-2) 82%, transparent);
+body[data-game="stack-tower"] .eyebrow::before {
+  width: 15px;
+  height: 7px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, var(--st-f2-hi) 0 2px, var(--st-f2) 2px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* The slab */
+body[data-game="stack-tower"] :is(.detail-card, .update-list li, .ug-next li, .lab-related-link) {
+  --st-f: var(--st-f1);
+  --st-hi: var(--st-f1-hi);
+  --st-lo: var(--st-f1-lo);
+  padding-bottom: 24px;
+  border: 1px solid color-mix(in srgb, var(--st-f) 42%, var(--ug-line));
+  border-radius: 14px;
+  background:
+    linear-gradient(90deg, var(--st-end) 0 10px, transparent 10px calc(100% - 10px), var(--st-end) calc(100% - 10px)),
+    linear-gradient(180deg, color-mix(in srgb, var(--st-hi) 72%, transparent) 0 4px, color-mix(in srgb, var(--st-f) 58%, transparent) 4px 7px, transparent 7px),
+    linear-gradient(180deg, color-mix(in srgb, color-mix(in srgb, var(--st-f) 4%, var(--st-base)) var(--st-fill), transparent), color-mix(in srgb, var(--st-base) var(--st-fill), transparent));
+  box-shadow:
+    inset 0 -5px 0 color-mix(in srgb, var(--st-lo) 62%, transparent),
+    0 2px 0 rgba(8, 16, 24, 0.34);
+}
+
+body[data-game="stack-tower"] :is(.detail-card, .update-list li, .ug-next li, .lab-related-link):nth-child(even) {
+  --st-f: var(--st-f2);
+  --st-hi: var(--st-f2-hi);
+  --st-lo: var(--st-f2-lo);
+}
+
+body[data-game="stack-tower"] .ug-facts .game-page-facts > div {
+  --st-f: var(--st-f1);
+  --st-hi: var(--st-f1-hi);
+  --st-lo: var(--st-f1-lo);
+  padding-bottom: 18px;
+  border: 1px solid color-mix(in srgb, var(--st-f) 42%, var(--ug-line));
+  border-radius: 10px;
+  background:
+    linear-gradient(90deg, var(--st-end) 0 7px, transparent 7px calc(100% - 7px), var(--st-end) calc(100% - 7px)),
+    linear-gradient(180deg, color-mix(in srgb, var(--st-hi) 72%, transparent) 0 3px, color-mix(in srgb, var(--st-f) 58%, transparent) 3px 5px, transparent 5px),
+    linear-gradient(180deg, color-mix(in srgb, color-mix(in srgb, var(--st-f) 4%, var(--st-base)) var(--st-fill), transparent), color-mix(in srgb, var(--st-base) var(--st-fill), transparent));
+  box-shadow:
+    inset 0 -4px 0 color-mix(in srgb, var(--st-lo) 62%, transparent),
+    0 2px 0 rgba(8, 16, 24, 0.34);
+}
+
+body[data-game="stack-tower"] .ug-facts .game-page-facts > div:nth-child(even) {
+  --st-f: var(--st-f2);
+  --st-hi: var(--st-f2-hi);
+  --st-lo: var(--st-f2-lo);
+}
+
+body[data-game="stack-tower"] .ug-facts .game-page-facts > div:hover {
+  border-color: var(--ug-accent);
+}
+
+/* FAQ: two small windows on the slab, like a floor of the tower */
+body[data-game="stack-tower"] .ug-faq .detail-card {
+  position: relative;
+}
+
+body[data-game="stack-tower"] .ug-faq .detail-card::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  width: 38px;
+  height: 14px;
+  pointer-events: none;
+  border-radius: 3px;
+  background:
+    linear-gradient(180deg, var(--st-glass-a) 0 40%, color-mix(in srgb, var(--st-glass-a) 70%, black) 40%) 0 0 / 16px 100% no-repeat,
+    linear-gradient(180deg, var(--st-glass-b) 0 40%, color-mix(in srgb, var(--st-glass-b) 70%, black) 40%) 100% 0 / 16px 100% no-repeat;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--st-lo) 80%, transparent);
+  opacity: 0.9;
+}
+
+body[data-game="stack-tower"] .ug-faq .detail-card h3 {
+  padding-right: 48px;
+}
+
+/* Next: each goal is a small floor, brown then amber, instead of a diamond */
+body[data-game="stack-tower"] .ug-next li {
+  padding-left: 58px;
+}
+
+body[data-game="stack-tower"] .ug-next li::before {
+  top: 1.35rem;
+  left: 20px;
+  width: 26px;
+  height: 10px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--st-hi) 0 3px, var(--st-f) 3px);
+  box-shadow: 0 2px 0 var(--st-lo);
+  transform: none;
 }
 
 body[data-game="stack-tower"] .ug-status-note {
-  background: color-mix(in srgb, var(--ug-card-2) 82%, transparent);
+  padding-bottom: 16px;
+  border: 1px solid color-mix(in srgb, var(--st-f2) 45%, var(--ug-line));
+  border-inline-start-width: 1px;
+  border-radius: 12px;
+  background:
+    linear-gradient(90deg, var(--st-end) 0 8px, transparent 8px calc(100% - 8px), var(--st-end) calc(100% - 8px)),
+    linear-gradient(180deg, color-mix(in srgb, var(--st-f2-hi) 72%, transparent) 0 3px, color-mix(in srgb, var(--st-f2) 58%, transparent) 3px 5px, transparent 5px),
+    color-mix(in srgb, var(--st-base) 90%, transparent);
+  box-shadow: inset 0 -4px 0 color-mix(in srgb, var(--st-f2-lo) 62%, transparent), 0 2px 0 rgba(8, 16, 24, 0.34);
 }
 
-body[data-game="stack-tower"] .ug-vote {
-  border-color: transparent;
+/* Vote: a big slab with a row of lit windows along the top */
+body[data-game="stack-tower"] .game-page-section.ug-vote {
+  padding: clamp(46px, 5vw, 58px) clamp(24px, 4vw, 38px) clamp(32px, 4vw, 44px);
+  border: 1px solid color-mix(in srgb, var(--st-f2) 48%, var(--ug-line));
+  border-radius: 18px;
   background:
-    radial-gradient(ellipse 60% 120% at 14% 0%, color-mix(in srgb, var(--ug-fill) 20%, transparent), transparent 70%);
+    linear-gradient(90deg, var(--st-end) 0 18px, transparent 18px calc(100% - 18px), var(--st-end) calc(100% - 18px)),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--st-glass-b) 55%, transparent) 0 14px, transparent 14px 28px) 34px 22px / calc(100% - 68px) 9px no-repeat,
+    linear-gradient(180deg, color-mix(in srgb, var(--st-f2-hi) 72%, transparent) 0 6px, color-mix(in srgb, var(--st-f2) 60%, transparent) 6px 10px, transparent 10px),
+    radial-gradient(ellipse 60% 120% at 14% 0%, color-mix(in srgb, var(--ug-fill) 16%, transparent), transparent 70%),
+    color-mix(in srgb, var(--st-base) 90%, transparent);
+  box-shadow: inset 0 -8px 0 color-mix(in srgb, var(--st-f2-lo) 62%, transparent), 0 3px 0 rgba(8, 16, 24, 0.34);
+}
+
+/* Buttons: block-shaped, with a lit top and a shaded base like the floors */
+body[data-game="stack-tower"] .btn,
+body[data-game="stack-tower"].game-detail-page .btn:focus-visible {
+  border-radius: 12px;
+}
+
+body[data-game="stack-tower"] .btn-primary {
+  box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.24), inset 0 -4px 0 rgba(0, 0, 0, 0.28), 0 10px 22px color-mix(in srgb, var(--ug-fill) 30%, transparent);
+}
+
+body[data-game="stack-tower"] .btn-ghost {
+  box-shadow: inset 0 -3px 0 color-mix(in srgb, var(--st-f2-lo) 55%, transparent);
 }
 
 body[data-game="stack-tower"] .social-link,

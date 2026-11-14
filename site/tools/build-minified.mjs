@@ -51,6 +51,14 @@ const cssFiles = [
   "css/home-polish-2026.css",
   "css/home-lab.css",
   "css/upcoming-game.css",
+  "css/upcoming-alien-flying.css",
+  "css/upcoming-blastblast.css",
+  "css/upcoming-burger-stack.css",
+  "css/upcoming-lyamur.css",
+  "css/upcoming-sandwich-stack.css",
+  "css/upcoming-scooter-mechanic-simulator.css",
+  "css/upcoming-stack-tower.css",
+  "css/upcoming-vacuum-shot.css",
   "motion.css",
   "404.css"
 ];
@@ -69,6 +77,7 @@ const sourceFiles = [
   ...cssFiles,
   "scripts.js",
   "game-theme.js",
+  "theme-init.js",
   "404.js",
   "games/nature-seed.html",
   "games/candy-shop.html",

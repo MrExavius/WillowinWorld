@@ -107,11 +107,11 @@
   text-shadow: 0 8px 30px rgba(0,0,0,0.38);
 }
 
-.game-card.is-animation-paused,
-.game-card.is-animation-paused::before,
-.game-card.is-animation-paused::after,
-.game-card.is-animation-paused *,
-.game-card.is-animation-paused *::before,
-.game-card.is-animation-paused *::after {
+:is(.game-card, .hero-panel).is-animation-paused,
+:is(.game-card, .hero-panel).is-animation-paused::before,
+:is(.game-card, .hero-panel).is-animation-paused::after,
+:is(.game-card, .hero-panel).is-animation-paused *,
+:is(.game-card, .hero-panel).is-animation-paused *::before,
+:is(.game-card, .hero-panel).is-animation-paused *::after {
   animation-play-state: paused !important;
 }

@@ -1,26 +1,26 @@
-# WillowinWorlds — O‘zbekcha
+# WillowinWorlds - O‘zbekcha
 
-> WillowinWorlds mustaqil mobil oʻyinlar studiyasi boʻlib, fizikaga asoslangan toʻrtta boshqotirma va arja oʻyinlarini taktil boshqaruvlari, oʻqilishi mumkin boʻlgan tizimlar va ifodali 2D olamlari bilan yaratadi.
+> WillowinWorlds - boshqotirmalar va arkadalar yaratadigan mustaqil mobil o'yin studiyasi. Uning to'rtta asosiy o'yini (Nature Seed, Candy Shop, Paint Blasters va Ball is God?!) va laboratoriyada sakkizta prototipi bor.
 
 Sayt tili: O‘zbekcha. Kanonik inglizcha manba: https://willowinworlds.com/llms.txt
 
 ## Oʻyinlar
 
-- [Nature Seed](https://willowinworlds.com/uz/games/nature-seed.html): Echish uchun moʻljallangan fizika boshqotirmasi chiqarildi. 2026-yil 10-sentabrda Nature Seed nomi bilan chiqarilgan u oʻyinchilardan siyoh bilan cheklangan jismoniy yoʻlni chizishni, Water Drop va Seedni birlashtirishni va 10 ta ishga tushirish darajasi boʻylab akvarel oʻrmonini tiklashni soʻraydi. Janrlar: Yechish uchun chizish, Fizika boshqotirmasi, Tinchlantiruvchi boshqotirma, Chiziqli chizilgan boshqotirma. Joriy holat: Chiqarildi.
-- [Candy Shop](https://willowinworlds.com/uz/games/candy-shop.html): 13 bosqichli shakarlamalar zanjiri, 10 ta konteyner qoidalari to'plami, sakkizta maxsus konfet effektlari va keyingi tomchi uchun rejalashtirish vositalariga ega qulay mobil birlashma boshqotirmasi. Janrlar: Jumboqni birlashtirish, Konfetli boshqotirma, Tasodifiy boshqotirma, Fizika boshqotirmasi. Joriy holat: Faol rivojlanish - o'ynaladigan ishlab chiqarish qurilishi.
-- [Paint Blasters](https://willowinworlds.com/uz/games/paint-blasters.html): Mobil rangni yoʻq qiladigan fizika boshqotirma arkadasi. 35 ta mualliflik snaryad retseptlariga uchta rang kiritishni birlashtiring, minoraning zaif nuqtalarini belgilang va zanjirli reaktsiyalarni ishga tushiring. Janrlar: Rangli boshqotirma, Fizika arkadasi, Vayronagarchilik boshqotirmasi, Zanjir reaktsiyasi. Joriy holat: Faol ishlanma - ishlab chiqarish prototipi.
-- [Ball is God?!](https://willowinworlds.com/uz/games/ball-is-god.html): Hikoya asosidagi qattiq vertikal pastga tushadigan mobil arkada. Minorani Espa atrofida aylantiring, kombinatsiyalangan zarbalarni yarating, boshliqlardan omon qoling va 10 ta afsonaviy joylardan karma tanlovlarini olib boring. Janrlar: Vertikal tushuvchi arkada, Hardkor arkada, Hikoya asosidagi arkada, Boss harakati. Joriy holat: Faol ishlab chiqarish.
+- [Nature Seed](https://willowinworlds.com/uz/games/nature-seed.html): 2026-yil 18-sentabrda chiqqan chizib yechiladigan mobil fizik boshqotirma. O'yinchilar cheklangan siyoh bilan chiziq tortadi, Water Drop va Seed'ni uchrashtiradi va 100 ta darajada akvarel o'rmonni tiklaydi. Janrlar: Chizib yechiladigan boshqotirma, Fizika boshqotirmasi, Tinchlantiruvchi boshqotirma, Chiziq chizish boshqotirmasi. Joriy holat: Chiqarildi.
+- [Candy Shop](https://willowinworlds.com/uz/games/candy-shop.html): 13 bosqichli konfet zanjiri, o'z qoidalariga ega 10 ta konteyner, maxsus konfetlarning sakkizta effekti, tushishni oldindan ko'rish, zaxira uyasi va keyingi uchta konfet navbati bor shinam mobil konfetlarni birlashtirish boshqotirmasi. Janrlar: Birlashtirish boshqotirmasi, Konfetli boshqotirma, Kazual boshqotirma, Fizika boshqotirmasi. Joriy holat: Faol rivojlanish - o'ynaladigan ishlab chiqarish qurilishi.
+- [Paint Blasters](https://willowinworlds.com/uz/games/paint-blasters.html): Rang bilan vayron qilishga asoslangan mobil fizik arkada-boshqotirma. O'yinchilar uch rangni aralashtirib, 35 ta snaryad retseptidan birini yaratadi, minoraning zaif nuqtalariga mo'ljallaydi va zanjirli reaksiyalarni boshlaydi. Janrlar: Rangli boshqotirma, Fizika arkadasi, Vayronagarchilik boshqotirmasi, Zanjirli reaksiya. Joriy holat: Faol ishlab chiqish - ishlab chiqarish prototipi.
+- [Ball is God?!](https://willowinworlds.com/uz/games/ball-is-god.html): Syujetli hardkor vertikal tushish mobil arkadasi. O'yinchilar tushib turgan Espa atrofidagi minorani aylantirish uchun barmoqlarini suradi, kombo zarba uchun uchta platformani o'tkazib yuboradi, bosslar bilan kurashadi va 10 ta lokatsiyada karma tanlovlarini qiladi. Janrlar: Vertikal tushuvchi arkada, Hardkor arkada, Syujetli arkada, Boss jangi. Joriy holat: Faol ishlab chiqarish.
 
 ## Eng so'nggi rivojlanish eslatmalari
 
-- [Nature Seed — Nature Seed chiqarish](https://willowinworlds.com/uz/games/nature-seed.html#devlog): Chop etilgan 2026-09-10. Nature Seed yakuniy nomi ostida 10 ta qoʻlda ishlangan darajalar, chiziqli samaradorlik yulduzlari, doimiy taraqqiyot va akvarelni tiklash mukofotlari bilan sotuvga chiqarildi.
-- [Candy Shop — Ishlab chiqarish menyusi va HUD o'tish](https://willowinworlds.com/uz/games/candy-shop.html#devlog): Chop etilgan 2026-07-31. Asosiy menyu, daraja tanlash, HUD boshqaruv elementlari va buyruq piktogrammalari endi bitta vizual tilni ulashadi; qo'shimcha dvigatel ichidagi stress testlari yangilangan oqimni qamrab oladi.
-- [Paint Blasters — Fizika va effekt barqarorligi oʻtadi](https://willowinworlds.com/uz/games/paint-blasters.html#devlog): Chop etilgan 2026-07-31. Snaryadlar harakati, Match-3 ruxsati va zarba effektlari yanada izchil kombinatsiyalangan natijalar uchun sinovdan o'tkazildi va kuchaytirildi.
-- [Ball is God?! — Dunyo yuzalari va xavfni tekshirish](https://willowinworlds.com/uz/games/ball-is-god.html#devlog): Chop etilgan 2026-07-31. Belgilar taqdimoti, deterministik generatsiya va tikan xavfi muvofiqlashtirilgan vizual va ishlab chiqarishni tekshirish ruxsatini oldi.
+- [Nature Seed - Nature Seed nashri](https://willowinworlds.com/uz/games/nature-seed.html#devlog): Chop etilgan 2026-09-18. Nature Seed yakuniy nomi bilan itch.io, Game Jolt va indiexpo'da 100 ta daraja, chiziq samaradorligi yulduzlari va saqlanadigan progressli bepul brauzer o'yini sifatida chiqdi.
+- [Candy Shop - Menyu va HUD takomillashtirish](https://willowinworlds.com/uz/games/candy-shop.html#devlog): Chop etilgan 2026-07-31. Asosiy menyu, daraja tanlash, HUD boshqaruv elementlari va buyruq ikonkalari endi bir xil ko'rinadi, dvigateldagi yangi stress-testlar esa yangilangan oqimni qamrab oladi.
+- [Paint Blasters - Fizika va effektlarni barqarorlashtirish](https://willowinworlds.com/uz/games/paint-blasters.html#devlog): Chop etilgan 2026-07-31. Snaryadlar harakati, Match-3 ruxsati va zarba effektlari yanada izchil kombinatsiyalangan natijalar uchun sinovdan o'tkazildi va kuchaytirildi.
+- [Ball is God?! - Dunyo yuzalari va xavfni tekshirish](https://willowinworlds.com/uz/games/ball-is-god.html#devlog): Chop etilgan 2026-07-31. Qahramonlar taqdimoti, deterministik generatsiya va tikanli xavflar umumiy vizual va tekshiruv ishidan o'tdi.
 
-## Studio va bosing
+## Studiya va matbuot
 
-- [Studiya uyi](https://willowinworlds.com/uz/)
+- [Studiyaning bosh sahifasi](https://willowinworlds.com/uz/)
 - [Matbuot to'plami](https://willowinworlds.com/uz/press-kit.html)
 - [Media materialidan foydalanish](https://willowinworlds.com/uz/asset-usage.html)
 

@@ -14,7 +14,7 @@ export const gameDevlogSources = Object.freeze([
     pageCanonical: `${siteOrigin}/games/nature-seed.html`,
     status: "Released",
     genres: Object.freeze(["Draw-to-solve puzzle", "Physics puzzle", "Relaxing puzzle", "Line drawing puzzle"]),
-    machineSummary: "A released mobile draw-to-solve physics puzzle. Released on 10 September 2026 as Nature Seed, it asks players to draw an ink-limited physical path, reunite Water Drop and Seed, and restore a watercolor forest across 10 launch levels."
+    machineSummary: "A mobile draw-to-solve physics puzzle, released on 18 September 2026. Players draw a line with a limited ink budget, bring Water Drop and Seed together and restore a watercolor forest across 100 levels."
   }),
   Object.freeze({
     id: "candy-shop",
@@ -25,7 +25,7 @@ export const gameDevlogSources = Object.freeze([
     pageCanonical: `${siteOrigin}/games/candy-shop.html`,
     status: "Active development - playable production build",
     genres: Object.freeze(["Merge puzzle", "Candy puzzle", "Casual puzzle", "Physics puzzle"]),
-    machineSummary: "A cozy mobile merge puzzle with a 13-stage candy chain, 10 container rulesets, eight special-candy effects and planning tools for the next drop."
+    machineSummary: "A cozy mobile candy merge puzzle with a 13-stage candy chain, 10 containers with their own rules, eight special-candy effects, a landing preview, a hold slot and a next-three queue."
   }),
   Object.freeze({
     id: "paint-blasters",
@@ -36,7 +36,7 @@ export const gameDevlogSources = Object.freeze([
     pageCanonical: `${siteOrigin}/games/paint-blasters.html`,
     status: "Active development - production prototype",
     genres: Object.freeze(["Color puzzle", "Physics arcade", "Destruction puzzle", "Chain reaction"]),
-    machineSummary: "A mobile color-destruction physics puzzle arcade. Combine three color inputs into 35 authored projectile recipes, target tower weak points and trigger chain reactions."
+    machineSummary: "A mobile color-destruction physics puzzle arcade. Players mix three colors into one of 35 projectile recipes, aim at weak points in a tower and set off chain reactions."
   }),
   Object.freeze({
     id: "ball-is-god",
@@ -47,7 +47,7 @@ export const gameDevlogSources = Object.freeze([
     pageCanonical: `${siteOrigin}/games/ball-is-god.html`,
     status: "Active production",
     genres: Object.freeze(["Vertical descent arcade", "Hardcore arcade", "Story-driven arcade", "Boss action"]),
-    machineSummary: "A story-driven hardcore vertical-descent mobile arcade. Rotate the tower around Espa, build combo smashes, survive bosses and carry karma choices through 10 mythic locations."
+    machineSummary: "A story-driven hardcore vertical-descent mobile arcade. Players drag to rotate the tower around the falling Espa, skip three platforms for a combo smash, face bosses and make karma choices across 10 locations."
   })
 ]);
 
@@ -260,9 +260,9 @@ export function renderLlmsTxt(updates) {
 
   return `# WillowinWorlds
 
-> WillowinWorlds is an independent mobile game studio creating four flagship physics-led puzzle and arcade games, with eight more in the lab, built on tactile controls, readable systems and expressive 2D worlds.
+> WillowinWorlds is an independent mobile game studio making puzzle and arcade games. It has four flagship games (Nature Seed, Candy Shop, Paint Blasters and Ball is God?!) and eight lab prototypes.
 
-Nature Seed is released; the other three flagship games are currently in development, and eight more prototypes are in the lab. The canonical game pages below are the source of truth for genre, scope, production status, characters, gameplay and media assets. Nature Seed lists its 2026-09-10 release date and is playable free in the browser on [itch.io](https://willowinworlds.itch.io/nature-seed), [Game Jolt](https://gamejolt.com/games/nature-seed/1100526) and [indiexpo](https://www.indiexpo.net/en/games/nature-seed); no rating or review score is claimed unless it is explicitly published on those pages. Site language: English. Latest source update: ${latestDate}.
+Nature Seed was released on 2026-09-18 and is playable free in the browser on [itch.io](https://willowinworlds.itch.io/nature-seed), [Game Jolt](https://gamejolt.com/games/nature-seed/1100526) and [indiexpo](https://www.indiexpo.net/en/games/nature-seed). The other three flagship games are in development. The target platforms are iOS and Android. The game pages below are the source of truth for genre, scope, status, characters, gameplay and media assets. No rating or review score is claimed unless a game page publishes one. This guide is in English; the language index below lists the localized sites. Latest source update: ${latestDate}.
 
 ## Games
 
@@ -280,17 +280,17 @@ ${devlogs}
 
 ## Studio and press
 
-- [Official WillowinWorlds website](${siteOrigin}/): Studio overview, complete game portfolio and current production notes.
-- [Press and creator kit](${siteOrigin}/press-kit.html): Factual studio and game summaries, production statuses and downloadable editorial assets.
-- [Media asset usage](${siteOrigin}/asset-usage.html): Rules for using WillowinWorlds screenshots, logos and character artwork.
+- [Official WillowinWorlds website](${siteOrigin}/): Studio overview, all games and the latest development notes.
+- [Press and creator kit](${siteOrigin}/press-kit.html): Factsheet, boilerplate description, game statuses, preview assets and press contact.
+- [Media asset usage](${siteOrigin}/asset-usage.html): Rules for using WillowinWorlds screenshots, logos and preview assets.
 
 ## Feeds and policies
 
 - [Devlog RSS feed](${siteOrigin}/rss.xml): Latest dated production notes for the four flagship games.
 - [XML sitemap](${siteOrigin}/sitemap.xml): Canonical indexable pages and their current modification dates.
-- [Language index](${siteOrigin}/languages.json): Machine-readable map of every localized site and AI guide.
-- [Privacy policy](${siteOrigin}/privacy.html): Website privacy information.
-- [Legal notice](${siteOrigin}/legal.html): Ownership, trademarks and website terms.
+- [Language index](${siteOrigin}/languages.json): Machine-readable map of every localized site and its llms.txt guide.
+- [Privacy policy](${siteOrigin}/privacy.html): How the website handles local preferences, contact drafts and email inquiries.
+- [Legal notice](${siteOrigin}/legal.html): Ownership of studio branding, game names, characters and public assets, and how to request licensed use.
 
 ## Official channels
 
@@ -298,7 +298,7 @@ ${socialProfilesFor("en").map(profile => `- [${profile.name} ${profile.handle}](
 
 ## Contact
 
-- [Email WillowinWorlds](mailto:${contactEmail}): Press, publishing, development-build and business enquiries.
+- [Email WillowinWorlds](mailto:${contactEmail}): Press, publishing, development-build and business inquiries.
 `;
 }
 

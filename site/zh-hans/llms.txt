@@ -1,32 +1,32 @@
-# WillowinWorlds — 简体中文
+# WillowinWorlds - 简体中文
 
-> WillowinWorlds 是一家独立的移动游戏工作室，创建了四款以物理为主导的益智和街机游戏，具有触觉控制、可读系统和富有表现力的 2D 世界。
+> WillowinWorlds 是一家制作益智与街机游戏的独立手机游戏工作室。拥有四款旗舰游戏（Nature Seed、Candy Shop、Paint Blasters 和 Ball is God?!）以及八个实验室原型。
 
-网站语言: 简体中文. 规范英文源码: https://willowinworlds.com/llms.txt
+网站语言: 简体中文. 规范英文原文: https://willowinworlds.com/llms.txt
 
 ## 游戏
 
-- [Nature Seed](https://willowinworlds.com/zh-hans/games/nature-seed.html): 一款已发布的移动绘图解决物理谜题。该游戏于 2026 年 9 月 10 日发布，游戏名称为 Nature Seed，要求玩家绘制一条墨水有限的物理路径，重新组合 Water Drop 和 Seed，并在 10 个发行关卡中恢复水彩森林。 流派: 画线解谜, 物理谜题, 放松益智, 画线拼图. 现状: 已发布.
-- [Candy Shop](https://willowinworlds.com/zh-hans/games/candy-shop.html): 一款舒适的移动合并拼图，包含 13 级糖果链、10 个容器规则集、八种特殊糖果效果以及下一滴糖果的规划工具。 流派: 合并拼图, 糖果拼图, 休闲益智, 物理谜题. 现状: 积极开发 - 可玩的制作版本.
-- [Paint Blasters](https://willowinworlds.com/zh-hans/games/paint-blasters.html): 移动色彩破坏物理益智街机。将三种颜色输入组合成 35 个编​​写的射弹配方，瞄准塔的弱点并触发连锁反应。 流派: 彩色拼图, 物理街机, 毁灭谜题, 连锁反应. 现状: 积极开发-生产原型.
-- [Ball is God?!](https://willowinworlds.com/zh-hans/games/ball-is-god.html): 一款故事驱动的硬核垂直下降移动街机游戏。围绕 Espa 旋转塔，进行组合粉碎，在 Boss 中幸存，并在 10 个神话地点进行业力选择。 流派: 垂直下降街机, 硬核街机, 故事驱动的街机, Boss行动. 现状: 积极生产.
+- [Nature Seed](https://willowinworlds.com/zh-hans/games/nature-seed.html): 一款手机上的画线解谜物理游戏，于 2026 年 9 月 18 日发布。玩家用有限的墨水画线，让 Water Drop 和 Seed 相聚，并在 100 个关卡中让水彩森林重焕生机。 类型: 画线解谜, 物理益智, 放松益智, 画线解谜. 现状: 已发布.
+- [Candy Shop](https://willowinworlds.com/zh-hans/games/candy-shop.html): 拥有 13 阶段糖果合并链、10 种各有规则的容器、8 种特殊糖果效果、落点预览、暂存槽和后三个队列的舒适手机糖果合并益智游戏。 类型: 合并益智, 糖果益智, 休闲益智, 物理益智. 现状: 积极开发 - 可玩的制作版本.
+- [Paint Blasters](https://willowinworlds.com/zh-hans/games/paint-blasters.html): 一款手机上的颜色破坏类物理益智街机游戏。玩家把三种颜色混合成 35 种弹丸配方中的一种，瞄准高塔的弱点，引发连锁反应。 类型: 色彩益智, 物理街机, 破坏益智, 连锁反应. 现状: 持续开发中 - 制作中的原型.
+- [Ball is God?!](https://willowinworlds.com/zh-hans/games/ball-is-god.html): 一款以故事为主的硬核垂直下降手机街机游戏。玩家通过拖动来围绕不断下坠的 Espa 旋转高塔，跳过三个平台打出连击重击，对抗 Boss，并在 10 个地点中做出业力选择。 类型: 垂直下降街机, 硬核街机, 剧情向街机, Boss 战动作. 现状: 全力制作中.
 
 ## 最新开发笔记
 
-- [Nature Seed — Nature Seed 发布](https://willowinworlds.com/zh-hans/games/nature-seed.html#devlog): 已发布 2026-09-10. Nature Seed 以最终标题推出，包含 10 个手工制作的关卡、生产线效率星星、持续进步和水彩修复奖励。
-- [Candy Shop — 制作菜单和 HUD 通证](https://willowinworlds.com/zh-hans/games/candy-shop.html#devlog): 已发布 2026-07-31. 主菜单、关卡选择、HUD 控件和命令图标现在共享一种视觉语言；额外的发动机内压力测试涵盖了更新的流程。
-- [Paint Blasters — 物理和效果稳定通过](https://willowinworlds.com/zh-hans/games/paint-blasters.html#devlog): 已发布 2026-07-31. 投射物行为、Match-3 分辨率和命中效果经过测试和加强，以获得更一致的组合结果。
-- [Ball is God?! — 世界表面和危险验证](https://willowinworlds.com/zh-hans/games/ball-is-god.html#devlog): 已发布 2026-07-31. 角色呈现、确定性生成和荆棘危害得到了协调的视觉和生产验证通过。
+- [Nature Seed - Nature Seed 发布](https://willowinworlds.com/zh-hans/games/nature-seed.html#devlog): 已发布 2026-09-18. Nature Seed 以最终标题作为免费网页游戏登陆 itch.io、Game Jolt 和 indiexpo，包含 100 个关卡、线条效率星级和进度保存。
+- [Candy Shop - 制作阶段的菜单与 HUD 优化](https://willowinworlds.com/zh-hans/games/candy-shop.html#devlog): 已发布 2026-07-31. 主菜单、关卡选择、HUD 控件和指令图标现在拥有统一的外观，更多的引擎内压力测试也覆盖了更新后的流程。
+- [Paint Blasters - 物理与特效稳定性优化](https://willowinworlds.com/zh-hans/games/paint-blasters.html#devlog): 已发布 2026-07-31. 投射物行为、Match-3 分辨率和命中效果经过测试和加强，以获得更一致的组合结果。
+- [Ball is God?! - 世界地面与危险要素验证](https://willowinworlds.com/zh-hans/games/ball-is-god.html#devlog): 已发布 2026-07-31. 角色表现、确定性生成和尖刺陷阱，经历了一轮视觉与验证的综合打磨。
 
 ## 工作室和媒体
 
-- [工作室之家](https://willowinworlds.com/zh-hans/)
+- [工作室首页](https://willowinworlds.com/zh-hans/)
 - [新闻资料](https://willowinworlds.com/zh-hans/press-kit.html)
-- [媒体资源使用](https://willowinworlds.com/zh-hans/asset-usage.html)
+- [媒体素材使用](https://willowinworlds.com/zh-hans/asset-usage.html)
 
-## 动态和政策
+## 订阅源与政策
 
-- [开发日志 RSS 提要](https://willowinworlds.com/rss.xml)
+- [开发日志 RSS 订阅源](https://willowinworlds.com/rss.xml)
 - [XML 站点地图](https://willowinworlds.com/sitemap.xml)
 - [语言索引](https://willowinworlds.com/languages.json)
 - [隐私政策](https://willowinworlds.com/zh-hans/privacy.html)
@@ -34,4 +34,4 @@
 
 ## 联系方式
 
-- [电子邮件 WillowinWorlds](mailto:willowinworlds@gmail.com)
+- [发邮件给 WillowinWorlds](mailto:willowinworlds@gmail.com)

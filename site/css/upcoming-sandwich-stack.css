@@ -431,7 +431,6 @@ body[data-theme="light"] .ss-page-bg {
   position: absolute;
   inset: -5%;
   transform-origin: 70% 40%;
-  animation: ssPageDrift 48s ease-in-out infinite alternate;
 }
 
 .ss-page-img {
@@ -441,7 +440,6 @@ body[data-theme="light"] .ss-page-bg {
   height: 100%;
   object-fit: cover;
   object-position: 80% 45%;
-  filter: blur(9px) saturate(1.2);
 }
 
 /* Scrim: darkens (or lightens) the photo for the text on it and adds window light and a tomato glow. */
@@ -506,20 +504,35 @@ body[data-theme="light"] .ss-page-bg::after {
   background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(181, 119, 58, 0.2) 100%);
 }
 
-/* Crumbs: far and near. The element is two screens tall and loops by half its height. */
-.ss-page-crumbs {
+/* Rain of ingredients. A static wrapper hides the middle (the hero text and the cards) and leaves the two lanes beside the content;
+   inside it each layer is two identical screens tall and slides down by one screen, so the fall loops without a seam. Every sprite
+   sits in a lane by a fraction (--k) of the lane's width, so the lanes fill at any window size. */
+.ss-rains {
+  --gl: calc(50vw - min(590px, 50vw - 20px));
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 200%;
-  background-repeat: repeat-y;
-  background-size: 100% 50%;
+  inset: 0;
+  z-index: 3;
+  -webkit-mask-image: linear-gradient(90deg, #000 calc(var(--gl) - 30px), transparent calc(var(--gl) - 6px), transparent calc(100% - var(--gl) + 6px), #000 calc(100% - var(--gl) + 30px));
+  mask-image: linear-gradient(90deg, #000 calc(var(--gl) - 30px), transparent calc(var(--gl) - 6px), transparent calc(100% - var(--gl) + 6px), #000 calc(100% - var(--gl) + 30px));
 }
 
-.ss-page-crumbs--far {
-  z-index: 3;
-  opacity: 0.6;
+.ss-rain {
+  position: absolute;
+  top: -100vh;
+  left: 0;
+  width: 100%;
+  height: 200vh;
+}
+
+.ss-half {
+  position: relative;
+  height: 100vh;
+}
+
+.ss-rain--far {
+  opacity: 0.7;
+  background-repeat: repeat-y;
+  background-size: 100% 50%;
   background-image:
     radial-gradient(circle 3px at 7% 12%, #F6DDA0 0 60%, transparent 100%),
     radial-gradient(circle 2.5px at 19% 46%, #C98A3E 0 60%, transparent 100%),
@@ -529,65 +542,199 @@ body[data-theme="light"] .ss-page-bg::after {
     radial-gradient(circle 3.5px at 72% 9%, #E8B467 0 60%, transparent 100%),
     radial-gradient(circle 2.5px at 83% 53%, #F6DDA0 0 60%, transparent 100%),
     radial-gradient(circle 3px at 94% 86%, #C98A3E 0 60%, transparent 100%);
-  animation: ssFall 120s linear infinite;
 }
 
-.ss-page-crumbs--near {
-  z-index: 4;
-  opacity: 0.5;
+.ss-rain--near {
+  opacity: 0.9;
+}
+
+.ss-rain i {
+  --side: 0;
+  --k: 0.5;
+  --y: 0;
+  --s: 4;
+  --r: 0deg;
+  position: absolute;
+  top: calc(var(--y) * 1%);
+  left: calc(var(--gl) * var(--k) + var(--side) * (100vw - var(--gl)) - var(--s) * 0.5vmin);
+  width: calc(var(--s) * 1vmin);
+  aspect-ratio: 1;
+  transform: rotate(var(--r));
+}
+
+/* Seven ingredients, drawn from the same colours as the hero sandwich. */
+.ss-rain i:nth-child(7n + 1) {
+  aspect-ratio: 1 / 0.92;
+  border-radius: 42% 42% 14% 14% / 50% 50% 14% 14%;
+  background:
+    radial-gradient(circle at 30% 55%, rgba(170, 112, 46, 0.5) 0 6%, transparent 9%) 0 0 / 38% 42%,
+    linear-gradient(180deg, #F8E5B4, #F1D18F);
+  box-shadow: inset 0 0 0 0.35vmin #C77E2E;
+}
+
+.ss-rain i:nth-child(7n + 2) {
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #FFC1A8 0 9%, transparent 10%),
+    repeating-conic-gradient(from 15deg, rgba(255, 200, 170, 0.55) 0 16deg, transparent 16deg 60deg),
+    radial-gradient(circle, #F0644A 0 62%, #C8392A 63% 82%, #A12B1F 83%);
+}
+
+.ss-rain i:nth-child(7n + 3) {
+  border-radius: 8%;
+  background:
+    radial-gradient(ellipse 12% 9% at 30% 38%, rgba(190, 120, 10, 0.55) 0 70%, transparent 75%),
+    radial-gradient(ellipse 9% 7% at 68% 62%, rgba(190, 120, 10, 0.55) 0 70%, transparent 75%),
+    linear-gradient(180deg, #FFDC6A, #F3B52A);
+}
+
+.ss-rain i:nth-child(7n + 4) {
+  border-radius: 46% 54% 40% 60% / 52% 44% 56% 48%;
+  background:
+    repeating-linear-gradient(100deg, rgba(255, 255, 255, 0.24) 0 3%, transparent 3% 18%),
+    linear-gradient(180deg, #B0DA62, #6AA735 60%, #4F8A28);
+}
+
+.ss-rain i:nth-child(7n + 5) {
+  aspect-ratio: 1.25;
+  border-radius: 46%;
+  background:
+    repeating-linear-gradient(100deg, rgba(255, 255, 255, 0.24) 0 3%, transparent 3% 22%),
+    linear-gradient(180deg, #F6B1B3, #E07E8A);
+}
+
+.ss-rain i:nth-child(7n + 6) {
+  border-radius: 50%;
+  background: radial-gradient(circle, #CDE59B 0 38%, #9CC25A 40% 70%, #6E9A3A 72%);
+}
+
+.ss-rain i:nth-child(7n) {
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 0 36%, #C77AB0 38% 56%, #E3A8D0 57% 62%, transparent 64%);
+}
+
+.ss-rain--far .ss-half i:nth-child(1) { --side: 0; --k: 0.58; --y: -1.3; --s: 3.8; --r: -11deg; }
+.ss-rain--far .ss-half i:nth-child(2) { --side: 1; --k: 0.51; --y: 7.9; --s: 5; --r: 41deg; }
+.ss-rain--far .ss-half i:nth-child(3) { --side: 0; --k: 0.47; --y: 14.8; --s: 4.4; --r: -62deg; }
+.ss-rain--far .ss-half i:nth-child(4) { --side: 1; --k: 0.42; --y: 21.3; --s: 4.4; --r: -41deg; }
+.ss-rain--far .ss-half i:nth-child(5) { --side: 0; --k: 0.11; --y: 27.4; --s: 3.2; --r: -48deg; }
+.ss-rain--far .ss-half i:nth-child(6) { --side: 1; --k: 0.59; --y: 36.9; --s: 5; --r: -65deg; }
+.ss-rain--far .ss-half i:nth-child(7) { --side: 0; --k: 0.2; --y: 44.1; --s: 5; --r: 17deg; }
+.ss-rain--far .ss-half i:nth-child(8) { --side: 1; --k: 0.39; --y: 50.0; --s: 3.2; --r: -23deg; }
+.ss-rain--far .ss-half i:nth-child(9) { --side: 0; --k: 0.38; --y: 57.2; --s: 3.2; --r: -10deg; }
+.ss-rain--far .ss-half i:nth-child(10) { --side: 1; --k: 0.57; --y: 63.2; --s: 3.2; --r: -17deg; }
+.ss-rain--far .ss-half i:nth-child(11) { --side: 0; --k: 0.17; --y: 69.4; --s: 5; --r: 51deg; }
+.ss-rain--far .ss-half i:nth-child(12) { --side: 1; --k: 0.22; --y: 78.1; --s: 5; --r: -33deg; }
+.ss-rain--far .ss-half i:nth-child(13) { --side: 0; --k: 0.28; --y: 86.1; --s: 5; --r: 45deg; }
+.ss-rain--far .ss-half i:nth-child(14) { --side: 1; --k: 0.29; --y: 91.1; --s: 5; --r: 54deg; }
+
+.ss-rain--near .ss-half i:nth-child(1) { --side: 0; --k: 0.46; --y: -1.4; --s: 7.5; --r: 63deg; }
+.ss-rain--near .ss-half i:nth-child(2) { --side: 1; --k: 0.44; --y: 16.3; --s: 10.5; --r: 11deg; }
+.ss-rain--near .ss-half i:nth-child(3) { --side: 0; --k: 0.69; --y: 26.5; --s: 7.5; --r: -42deg; }
+.ss-rain--near .ss-half i:nth-child(4) { --side: 1; --k: 0.5; --y: 44.2; --s: 9; --r: 19deg; }
+.ss-rain--near .ss-half i:nth-child(5) { --side: 0; --k: 0.31; --y: 60.0; --s: 7.5; --r: 8deg; }
+.ss-rain--near .ss-half i:nth-child(6) { --side: 1; --k: 0.16; --y: 68.4; --s: 7.5; --r: -54deg; }
+.ss-rain--near .ss-half i:nth-child(7) { --side: 0; --k: 0.56; --y: 83.1; --s: 7.5; --r: 25deg; }
+
+/* Window light: a warm band that sweeps slowly across the room and back. */
+.ss-page-light {
+  position: absolute;
+  top: -10vh;
+  left: 0;
+  z-index: 3;
+  width: 180vw;
+  height: 120vh;
+  background: linear-gradient(98deg, transparent 38%, rgba(255, 226, 160, 0.16) 45%, rgba(255, 238, 196, 0.3) 50%, rgba(255, 226, 160, 0.16) 55%, transparent 62%);
+  transform: translateX(-40vw);
+}
+
+body[data-theme="light"] .ss-page-light {
+  background: linear-gradient(98deg, transparent 38%, rgba(255, 255, 255, 0.18) 45%, rgba(255, 255, 255, 0.42) 50%, rgba(255, 255, 255, 0.18) 55%, transparent 62%);
+}
+
+/* Steam from the pans: soft blooms that rise through the room, two screens tall and rising by one. */
+.ss-page-steam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 200vh;
+  opacity: 0.8;
+  background-repeat: repeat-y;
+  background-size: 100% 50%;
   background-image:
-    radial-gradient(circle 6px at 12% 34%, #F6DDA0 0 60%, transparent 100%),
-    radial-gradient(circle 5px at 38% 88%, #C98A3E 0 60%, transparent 100%),
-    radial-gradient(circle 6px at 64% 18%, #E8B467 0 60%, transparent 100%),
-    radial-gradient(circle 4.5px at 81% 66%, #F6DDA0 0 60%, transparent 100%),
-    radial-gradient(circle 5px at 92% 40%, #C98A3E 0 60%, transparent 100%);
-  animation: ssFall 70s linear infinite;
+    radial-gradient(ellipse 9vw 15vh at 14% 24%, rgba(255, 244, 222, 0.2), transparent 72%),
+    radial-gradient(ellipse 11vw 17vh at 36% 52%, rgba(255, 244, 222, 0.16), transparent 72%),
+    radial-gradient(ellipse 8vw 13vh at 58% 18%, rgba(255, 244, 222, 0.18), transparent 72%),
+    radial-gradient(ellipse 10vw 16vh at 78% 64%, rgba(255, 244, 222, 0.2), transparent 72%),
+    radial-gradient(ellipse 7vw 12vh at 90% 30%, rgba(255, 244, 222, 0.16), transparent 72%),
+    radial-gradient(ellipse 9vw 14vh at 24% 82%, rgba(255, 244, 222, 0.18), transparent 72%),
+    radial-gradient(ellipse 11vw 15vh at 66% 90%, rgba(255, 244, 222, 0.16), transparent 72%),
+    radial-gradient(ellipse 7vw 11vh at 48% 36%, rgba(255, 244, 222, 0.14), transparent 72%);
 }
 
-body[data-theme="light"] .ss-page-crumbs--far {
-  opacity: 0.55;
+body[data-theme="light"] .ss-page-steam {
+  opacity: 0.9;
 }
 
-body[data-theme="light"] .ss-page-crumbs--near {
-  opacity: 0.42;
-}
-
-/* Local scrims: soft gradients that fade to nothing keep the text on the bare backdrop readable, so the backdrop can stay bright elsewhere. */
-.ug-hero,
-.lab-related {
+/* Local scrims: a soft pool behind the hero copy and the related-worlds text keeps them above 4.5:1; it fades out, no box. */
+.ug-hero-copy,
+.lab-related-inner {
   position: relative;
   isolation: isolate;
 }
 
-.ug-hero::before,
-.lab-related::before {
+.lab-related {
+  overflow-x: clip;
+}
+
+.ug-hero-copy::before,
+.lab-related-inner::before {
   content: "";
   position: absolute;
-  inset: -40px 0;
+  inset: -56px -96px;
   z-index: -1;
   pointer-events: none;
-  background: linear-gradient(90deg, rgba(26, 14, 5, 0.86) 0%, rgba(26, 14, 5, 0.8) 48%, rgba(26, 14, 5, 0.64) 100%);
-  -webkit-mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent);
-  mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent);
+  background: var(--ss-scrim);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 96px, #000 calc(100% - 96px), transparent), linear-gradient(180deg, transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 96px, #000 calc(100% - 96px), transparent), linear-gradient(180deg, transparent, #000 56px, #000 calc(100% - 56px), transparent);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
-body[data-theme="light"] .ug-hero::before,
-body[data-theme="light"] .lab-related::before {
-  background: linear-gradient(90deg, rgba(252, 244, 224, 0.9) 0%, rgba(252, 244, 224, 0.84) 48%, rgba(252, 244, 224, 0.7) 100%);
+.lab-related-inner::before {
+  inset: -48px -80px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 80px, #000 calc(100% - 80px), transparent), linear-gradient(180deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 80px, #000 calc(100% - 80px), transparent), linear-gradient(180deg, transparent, #000 48px, #000 calc(100% - 48px), transparent);
 }
 
-/* Small screens: one crumb layer, no drift, no blur. */
+body[data-game="sandwich-stack"][data-theme="dark"] {
+  --ss-scrim: rgba(26, 14, 5, 0.84);
+}
+
+body[data-game="sandwich-stack"][data-theme="light"] {
+  --ss-scrim: rgba(252, 244, 224, 0.88);
+}
+
+/* The caption under the stage sits straight on the room, so it gets a small plate. */
+.ss-hero-media figcaption {
+  width: fit-content;
+  max-width: 100%;
+  padding: 8px 14px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--ug-card) 90%, transparent);
+}
+
+/* Small screens: no steam, no window light, no falling ingredients (their lanes are a sliver there); the room stays. */
 @media (max-width: 760px) {
-  .ss-page-art {
-    animation: none;
-  }
-
   .ss-page-img {
-    filter: none;
     opacity: 0.42;
   }
 
-  .ss-page-crumbs--near {
+  .ss-page-light,
+  .ss-page-steam,
+  .ss-rains {
     display: none;
   }
 }
@@ -870,14 +1017,23 @@ body[data-game="sandwich-stack"] .social-link:focus-visible {
 }
 
 /* Motion. */
-@keyframes ssPageDrift {
-  from { transform: scale(1) translate(0, 0); }
-  to { transform: scale(1.06) translate(1.2%, -1%); }
+/* Falling ingredients: down by one screen, with a gentle sway that comes back to where it started. */
+@keyframes ssFall {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(1.6vw, 25vh); }
+  50%  { transform: translate(0, 50vh); }
+  75%  { transform: translate(-1.6vw, 75vh); }
+  100% { transform: translate(0, 100vh); }
 }
 
-@keyframes ssFall {
-  from { transform: translateY(-50%); }
-  to { transform: translateY(0); }
+@keyframes ssRise {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100vh); }
+}
+
+@keyframes ssLight {
+  from { transform: translateX(-70vw); }
+  to { transform: translateX(30vw); }
 }
 
 @keyframes ssStepPick {
@@ -1006,10 +1162,27 @@ body[data-game="sandwich-stack"] .social-link:focus-visible {
   100% { opacity: 0; transform: scale(.5, .5); }
 }
 
+/* Backdrop motion. Budget: 16 infinite animations on the page (4 backdrop, 8 in the hero stage, 4 on the cards). */
+@media (prefers-reduced-motion: no-preference) {
+  .ss-rain--far {
+    animation: ssFall 90s linear infinite;
+  }
+
+  .ss-rain--near {
+    animation: ssFall 56s linear infinite;
+  }
+
+  .ss-page-steam {
+    animation: ssRise 70s linear infinite;
+  }
+
+  .ss-page-light {
+    animation: ssLight 26s ease-in-out infinite alternate;
+  }
+}
+
 /* Reduced motion: no decorative animation; the static composition is the finished sandwich. */
 @media (prefers-reduced-motion: reduce) {
-  .ss-page-art,
-  .ss-page-crumbs,
   .ss-stack,
   .ss-layer,
   .ss-press,
