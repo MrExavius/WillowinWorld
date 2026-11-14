@@ -36,23 +36,23 @@
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../rss.xml">
   <link rel="preload" href="../assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../css/nature-scene.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/home-card-base.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/home-card-base.css?v=20261114-4">
   <link rel="stylesheet" href="../css/home-ball-card.css">
   <link rel="stylesheet" href="../css/home-nature-card.css">
   <link rel="stylesheet" href="../css/home-paint-card.css">
   <link rel="stylesheet" href="../css/home-candy-card.css">
   <link rel="stylesheet" href="../css/game-components.css">
-  <link rel="stylesheet" href="../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../css/keyframes.css?v=20260731-1">
   <link rel="stylesheet" href="../css/responsive-desktop.css">
   <link rel="stylesheet" href="../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../css/responsive-preferences.css?v=20260731-1">
   <link rel="stylesheet" href="../motion.css">
-  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20261114-4">
   <link rel="stylesheet" href="../css/home-lab.css?v=20261113-3">
   <script type="application/ld+json" id="structuredData">
 {
@@ -104,7 +104,7 @@
       "name": "WillowinWorlds",
       "url": "https://willowinworlds.com/fi/",
       "inLanguage": "fi",
-      "description": "Virallinen sivusto WillowinWorlds-mobiilipulma- ja pelihallipeleille, mukaan lukien Nature Seed, Candy Shop, Paint Blasters ja Ball is God?!",
+      "description": "WillowinWorlds-studion mobiilipulma- ja arcade-pelien virallinen sivusto, mukana Nature Seed, Candy Shop, Paint Blasters ja Ball is God?!",
       "publisher": {
         "@id": "https://willowinworlds.com/#studio"
       }
@@ -307,7 +307,7 @@
   <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Siirry pääsisältöön</a>
   <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
-  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magic avattu - Tervetuloa WillowinWorldsiin</div>
+  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Taika avattu - Tervetuloa WillowinWorldsiin</div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <div class="page">
@@ -394,9 +394,9 @@
               </span>
               <span class="nature-cycle"><b>Luonnos</b><b>Yhdistä</b><b>Kukoista</b></span>
             </div>
-            <span class="floating-rune ambient-only"></span>
-            <span class="floating-rune ambient-only"></span>
-            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
             <div class="hero-portal-badge ambient-only" aria-hidden="true">
               <img loading="lazy" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
               <span>4 maailmaa + 8 laboratoriossa</span>
@@ -458,7 +458,7 @@
                   <span class="game-genre">Päägenre: Piirrä ja ratkaise -fysiikkapulma</span>
                 </div>
                 <p>Nature Seed on mobiilin piirrä ja ratkaise -fysiikkapulma, jossa rajallisella viivabudjetilla tuodaan Water Drop ja Seed yhteen. Se julkaistiin 18. syyskuuta 2026: mukana 100 tasoa, tehokkuustähdet, tallennettu eteneminen ja vesivärien palautus. Pelaa ilmaiseksi selaimessa.</p>
-                <div class="feature-callout">Pelikoukku: jokaisesta sitoutuneesta vedosta tulee osa fyysistä tasoa, ja yhden rivin ratkaisu ansaitsee kolme tähteä.</div>
+                <div class="feature-callout">Pelin koukku: jokaisesta vahvistetusta vedosta tulee osa fyysistä tasoa, ja yhden viivan ratkaisu tuo kolme tähteä.</div>
                 <div class="game-tags">
                   <span class="tag">Mobiili</span><span class="tag">Draw-to-Solve</span><span class="tag">Linjafysiikka</span><span class="tag">Luonnon ennallistaminen</span><span class="tag">Rentouttava pulma</span><span class="tag">Viihtyisä ekopeli</span>
                 </div>
@@ -470,7 +470,7 @@
               </div>
             </article>
 
-            <article class="game-card candy-card" id="candy-card" aria-label="Candy Shop kodikas karamellipalapeli" data-tags="Merge Physics Casual Candy Cozy Mobile Puzzle Combo Relaxing Suika-like In Development Concept Prototype">
+            <article class="game-card candy-card" id="candy-card" aria-label="Candy Shop, kodikas karkkien yhdistelypulma" data-tags="Merge Physics Casual Candy Cozy Mobile Puzzle Combo Relaxing Suika-like In Development Concept Prototype">
               <div class="game-cover candy-game-cover">
                 <div class="candy-stage" aria-hidden="true">
                   <div class="candy-bg-stack">
@@ -503,7 +503,7 @@
                   <span class="game-genre">Päägenre: Rento yhdistelypulma</span>
                 </div>
                 <p>Candy Shop on kodikas mobiilin fysiikkaan perustuva yhdistelypulma. Yhdistä samanlaiset karkit 13 vaiheen ketjussa ylöspäin: kymmenen astiaa muuttaa pinon käyttäytymistä, ja mukana on kahdeksan erikoistehostetta. Voit pidättää palan, esikatsella, mihin se laskeutuu, ja nähdä kolme seuraavaa karkkia.</p>
-                <div class="feature-callout">Pelin koukku: tutusta pisarasta tulee uusi pulma, kun säiliö muuttaa painovoimaa, geometriaa tai reittiä pinoon.</div>
+                <div class="feature-callout">Pelin koukku: tutusta pudotuksesta tulee uusi pulma, kun astia muuttaa painovoimaa, geometriaa tai reittiä pinoon.</div>
                 <div class="game-tags">
                   <span class="tag">Mobiili</span><span class="tag">Karkkien yhdistely</span><span class="tag">Fysiikkapulma</span><span class="tag">Viihtyisä peli</span><span class="tag">Kombopulma</span><span class="tag">Erikoismakeiset</span>
                 </div>
@@ -514,7 +514,7 @@
               </div>
             </article>
 
-            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters värituhojen fysiikan pulmapeli" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
+            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters, värituhon fysiikkapulma-arcade" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
               <div class="game-cover paint-game-cover">
                 <div class="paint-stage" aria-hidden="true">
                   <img class="paint-bg" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" loading="lazy" decoding="async">
@@ -556,7 +556,7 @@
               <div class="game-body">
                 <div class="game-meta">
                   <span class="status-pill">Tuotannon prototyyppi</span>
-                  <span class="game-genre">Päägenre: Physics Puzzle / Arcade Hybrid</span>
+                  <span class="game-genre">Päägenre: fysiikkapulma / arcade-hybridi</span>
                 </div>
                 <p>Paint Blasters on mobiilin värien sekoitukseen perustuva fysiikkapulma tornien kaatamisesta. Yhdistä kolme väriä yhdeksi 35 ammusreseptistä, tähtää sitten seitsemän tyyppiseen lohkoon ja yritä muuttaa yksi tarkka osuma ketjureaktioksi, joka kaataa tornin.</p>
                 <div class="feature-callout">Pelin koukku: valitset reseptin ennen laukaisua, joten sekoituksella on yhtä suuri merkitys kuin tähtäyksellä.</div>
@@ -887,7 +887,7 @@
             <article class="devlog-card" data-devlog-card data-devlog-game="paint-blasters" data-devlog-source="games/paint-blasters.html">
               <span><b data-devlog-name>Paint Blasters</b><time datetime="2026-07-31" data-devlog-date>31. heinäkuuta 2026</time></span>
               <h3 data-devlog-title>Fysiikan ja tehosteiden vakautus</h3>
-              <p data-devlog-summary>Ammuskäyttäytyminen, Match-3-resoluutio ja osumatehosteet testattiin ja kiristettiin johdonmukaisempien yhdistelmätulosten saavuttamiseksi.</p>
+              <p data-devlog-summary>Ammusten käyttäytyminen, Match-3-käsittely ja osumatehosteet testattiin ja hiottiin tasaisempien kombotulosten saavuttamiseksi.</p>
               <a class="btn btn-ghost" href="games/paint-blasters.html#devlog" aria-label="Avaa Paint Blasters devlog">Avaa Paint Blasters devlog</a>
             </article>
             <article class="devlog-card" data-devlog-card data-devlog-game="ball-is-god" data-devlog-source="games/ball-is-god.html">
@@ -912,7 +912,7 @@
 
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-question" type="button" aria-expanded="false">Millaisia ​​pelejä WillowinWorlds tekee?<span class="faq-icon" aria-hidden="true"></span></button>
+              <button class="faq-question" type="button" aria-expanded="false">Millaisia pelejä WillowinWorlds tekee?<span class="faq-icon" aria-hidden="true"></span></button>
               <div class="faq-answer"><div><p>Olemme indie-studio, joka kehittää neljää mobiililähtöistä lippulaivapeliä: Nature Seed (piirrä ja ratkaise -fysiikkapulma), Candy Shop (karkkien yhdistelypulma), Paint Blasters (värien sekoituksen fysiikka-arcade) ja Ball is God?! (tarinavetoinen pystylaskeutumisen arcade). Laboratoriossa on kahdeksan prototyyppiä lisää.</p></div></div>
             </div>
             <div class="faq-item">
@@ -1047,7 +1047,7 @@
           <label for="message">Viesti</label>
           <textarea id="message" name="message" maxlength="1200" required placeholder="Kerro meille, mistä haluat keskustella."></textarea>
         </div>
-        <p class="contact-handoff-note" id="contactHandoff">Tämä avaa valmistetun luonnoksen sähköpostisovelluksessasi. Mitään ei lähetetä ennen kuin vahvistat sen siellä. Voit myös lähettää sähköpostia <a href="mailto:willowinworlds@gmail.com">willowinworlds@gmail.com</a> suoraan.</p>
+        <p class="contact-handoff-note" id="contactHandoff">Tämä avaa valmiin luonnoksen sähköpostisovelluksessasi. Mitään ei lähetetä ennen kuin vahvistat sen siellä. Voit myös lähettää sähköpostia osoitteeseen <a href="mailto:willowinworlds@gmail.com">willowinworlds@gmail.com</a> suoraan.</p>
         <div class="contact-form-actions">
           <button class="btn btn-primary" type="submit">Valmistele sähköposti</button>
           <button class="btn btn-ghost" id="copyContactMessage" type="button">Kopioi viesti</button>
@@ -1079,7 +1079,7 @@
           <span class="tag">Julkaisijat</span>
           <span class="tag">Yhteistyökumppanit</span>
         </div>
-        <p>Lähetä kohdennettu portfoliolinkki, rooli, saatavuus ja WillowinWorlds-peli tai tyylialue, jota tunnet lähimpänä.</p>
+        <p>Lähetä tiivis portfoliolinkki, roolisi, käytettävyytesi sekä WillowinWorlds-peli tai tyylialue, joka tuntuu sinulle läheisimmältä.</p>
       </div>
       <div class="info-actions">
         <button class="btn btn-primary" data-open-contact data-contact-type="Portfolio" type="button">Avaa yhteydenottolomake</button>
@@ -1103,7 +1103,7 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Studiopitch</h3>
-          <p>Nykyinen salkku kattaa fysiikkaa, jonka avulla voit ratkaista fysiikkaa, karkkia yhdistäviä pulmia, värien tuhoamista ja pystysuoraa arcade-laskua.</p>
+          <p>Nykyinen pelivalikoima kattaa piirrä ja ratkaise -fysiikan, karkkien yhdistelypulmat, värituhopelit ja pystylaskeutumisen arcade-toiminnan.</p>
           <p>Keskitymme kosketusohjaukseen, jokaisen pelin omaan 2D-tyyliin ja mekaniikkoihin, joita voi seurata pelkästään katsomalla.</p>
         </section>
         <aside class="info-card info-facts">
@@ -1129,7 +1129,7 @@
           <div class="eyebrow">Tietosuoja</div>
           <h2 id="privacyTitle">WillowinWorlds tietosuojahuomautus.</h2>
           <p>Julkinen sivusto on tarkoituksella yksinkertainen: ei analytiikkaskriptejä, mainospikseleitä, seurantaevästeitä, kolmannen osapuolen upotuksia tai tilijärjestelmiä.</p>
-          <p>Sosiaalisten alustojen linkit avaavat kolmansien osapuolten sivustoja, joilla on omat tietosuojakäytäntönsä; tämä sivusto ei lataa sosiaalisen median widgetejä.</p>
+          <p>Sosiaalisen median alustojen linkit avaavat kolmansien osapuolten sivustoja, joilla on omat tietosuojakäytäntönsä; tämä sivusto ei lataa sosiaalisen median widgetejä.</p>
         </div>
         <button class="icon-btn" id="closePrivacy" type="button" aria-label="Sulje tietosuojatiedot">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1139,8 +1139,8 @@
         <section class="info-card">
           <h3>Mitä tallennetaan</h3>
           <p>Sivusto saattaa tallentaa selaimeesi pienen paikallisen teema-asetuksen, jotta päivä/yö-vaihto pysyy yhtenäisenä. Se ei luo pelaajatiliä tai käyttäytymisprofiilia.</p>
-          <p>Etusivun yhteydenottolomake säilyttää nimensä, sähköpostiosoitteensa, kyselytyyppinsä ja viestikenttään saman välilehden istunnon tallennustilassa, joten uudelleenlataus ei poista luonnosta. Voit tyhjentää sen lomakkeella, ja selain poistaa sen, kun välilehtiistunto päättyy.</p>
-          <p>Jos lähetät sähköpostia osoitteeseen WillowinWorlds, viestiäsi, sähköpostiosoitettasi ja linkkejäsi käytetään vain kyselyysi vastaamiseen.</p>
+          <p>Etusivun yhteydenottolomake säilyttää nimi-, sähköposti-, kyselytyyppi- ja viestikentät saman välilehden istuntotallennustilassa, jotta sivun uudelleenlataus ei poista luonnostasi. Voit tyhjentää sen lomakkeella, ja selain poistaa sen välilehden istunnon päättyessä.</p>
+          <p>Jos lähetät sähköpostia WillowinWorldsille, viestiäsi, sähköpostiosoitettasi ja linkkejäsi käytetään vain kyselyysi vastaamiseen.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Tietosuojatiedot</h3>
@@ -1164,7 +1164,7 @@
         <div>
           <div class="eyebrow">Lakiasiat</div>
           <h2 id="legalTitle">WillowinWorlds oikeudellinen huomautus.</h2>
-          <p>WillowinWorlds, studion logo, pelien nimet, hahmot, kuvakaappaukset, visuaalinen sisältö ja verkkosivuston kopio kuuluvat WillowinWorldsille, ellei toisin mainita.</p>
+          <p>WillowinWorlds, studion logo, pelien nimet, hahmot, kuvakaappaukset, visuaaliset materiaalit ja verkkosivuston tekstit kuuluvat WillowinWorldsille, ellei toisin mainita.</p>
         </div>
         <button class="icon-btn" id="closeLegal" type="button" aria-label="Sulje lakitiedot">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1173,8 +1173,8 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Sallittu julkinen viittaus</h3>
-          <p>Lehdistö, julkaisijat ja sisällöntuottajat voivat viitata julkisiin pelisivuihin ja käyttää esikatselutason materiaaleja kattavuuteen, julkaisijoiden arvosteluihin ja myymäläviittauksiin WillowinWorlds-hyvityksellä.</p>
-          <p>Resurssin julkinen käyttöoikeus ei anna lupaa jälleenmyydä, jakaa, valmistaa, käyttää sitä tekoälyn tai koneoppimisen tietojoukkojen kouluttamiseen, esiintyä studiona tai rakentaa siihen liittyviä kaupallisia tuotteita.</p>
+          <p>Lehdistö, julkaisijat ja sisällöntuottajat voivat viitata julkisiin pelisivuihin ja käyttää esikatselutason materiaaleja uutisoinnissa, julkaisija-arvioinneissa ja kauppasivujen mallikuvissa WillowinWorlds-maininnalla.</p>
+          <p>Materiaalin julkinen saatavuus ei anna lupaa jälleenmyydä tai jakaa sitä edelleen, lyödä sitä NFT:ksi, käyttää sitä tekoälyn tai koneoppimisen tietojoukkojen kouluttamiseen, esiintyä studiona tai rakentaa siitä muuta kaupallista tuotetta.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Lisenssireitti</h3>
@@ -1198,7 +1198,7 @@
         <div>
           <div class="eyebrow">Materiaalien käyttö</div>
           <h2 id="assetTitle">Esikatselutason julkisen materiaalin käytäntö.</h2>
-          <p>Julkiset tiedostot WillowinWorlds-pelisivuilla ovat optimoituja esikatselumateriaaleja lehdistöartikkeleille, julkaisijoiden arvostelupakkauksille, myymäläviittauksille ja WillowinWorlds-pelien kattavuus.</p>
+          <p>WillowinWorlds-pelisivujen julkiset tiedostot ovat optimoituja esikatselumateriaaleja lehdistöartikkeleihin, julkaisijoiden arviointiesityksiin, kauppasivujen mallikuviin ja WillowinWorlds-pelejä käsittelevään uutisointiin.</p>
         </div>
         <button class="icon-btn" id="closeAsset" type="button" aria-label="Sulje materiaalien käyttötiedot">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1207,8 +1207,8 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Sallittu</h3>
-          <p>Käytä julkisia esikatseluja artikkeleissa, viesteissä, pitch-viittauksissa, kattauksissa, toivelistoissa, myymälämalleissa ja julkaisijoiden arvostelumuistiinpanoissa WillowinWorlds-hyvityksellä.</p>
-          <p>Kysy ennen kuin leikkaat brändäyksen, värjäät uudelleen, käytät materiaaleja maksetuissa mainoksissa, pyydät kerroksittain lähdetiedostoja tai näytät julkaisemattomia koontiversioita.</p>
+          <p>Käytä julkisia esikatselumateriaaleja artikkeleissa, julkaisuissa, pitch-viittauksissa, uutisoinnissa, toivelistoissa, kauppasivujen mallikuvissa ja julkaisijoiden arviointimuistiinpanoissa WillowinWorlds-maininnalla.</p>
+          <p>Kysy ensin, ennen kuin rajaat brändäyksen pois, värjäät materiaaleja uudelleen, käytät niitä maksetuissa mainoksissa, pyydät kerroksellisia lähdetiedostoja tai näytät julkaisemattomia versioita.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Ei sallittu</h3>
@@ -1241,7 +1241,7 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Nykyinen lähtötaso</h3>
-          <p>Sivusto välttää kolmannen osapuolen komentosarjat, upotukset, tilit ja ulkoiset lomakekäsittelijät. Se käyttää tiukkaa sisällön suojauskäytäntöä, ei sisällä tapahtumien käsittelijöitä ja suoria sähköpostireittejä yhteydenpitoon.</p>
+          <p>Sivusto välttää kolmannen osapuolen skriptit, upotukset, tilit ja ulkoiset lomakekäsittelijät. Se käyttää tiukkaa sisällön suojauskäytäntöä (CSP), ei inline-tapahtumankäsittelijöitä, ja ohjaa yhteydenotot suoraan sähköpostiin.</p>
           <p>Turvallisuusraportit ovat tervetulleita, kun ne on kohdistettu julkiselle WillowinWorlds-sivustolle ja jaettu vastuullisesti.</p>
         </section>
         <aside class="info-card info-facts">
@@ -1311,7 +1311,7 @@
     </div>
   </div>
 
-  <script src="../scripts.js?v=20261114-3"></script>
+  <script src="../scripts.js?v=20261114-4"></script>
   <script src="i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

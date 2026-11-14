@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#071530" id="metaThemeColor" data-theme-dark="#071530" data-theme-light="#eaf6ff">
-  <meta property="og:title" content="Ball is God?! - Jeu d'arcade à descente verticale hardcore">
+  <meta property="og:title" content="Ball is God?! - Jeu d'arcade hardcore de descente verticale">
   <meta property="og:description" content="Ball is God?!, arcade hardcore de descente verticale en production. Glissez pour faire tourner la tour autour d'Espa, brisez des plateformes, choisissez votre karma.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="fr_FR">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
-  <meta name="twitter:title" content="Ball is God?! - Jeu d'arcade à descente verticale hardcore">
+  <meta name="twitter:title" content="Ball is God?! - Jeu d'arcade hardcore de descente verticale">
   <meta name="twitter:description" content="Ball is God?!, arcade hardcore de descente verticale en production. Glissez pour faire tourner la tour autour d'Espa, brisez des plateformes, choisissez votre karma.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta name="twitter:image:alt" content="Visuel de Ball is God?! : Espa, une boule ailée à l'auréole, devant un ciel bleu. Faites tourner la tour. Devenez l'impact.">
@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/fr/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "Un jeu d'arcade hardcore à descente verticale dans lequel les joueurs font glisser pour faire pivoter la tour autour de Espa, créer des combos smashs et faire des choix de karma dans dix lieux mythiques.",
+      "description": "Un jeu d'arcade hardcore de descente verticale où les joueurs glissent pour faire tourner la tour autour d'Espa, enchaîner des coups combo et faire des choix de karma à travers dix lieux mythiques.",
       "keywords": "arcade de descente verticale, jeu de tour rotative, jeu d'arcade hardcore, arcade narratif, jeu de combats de boss",
       "genre": [
         "Arcade de descente verticale",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Faites tourner la tour. Devenez l'impact.</span></h1>
-          <p class="hero-copy">Une arcade de descente verticale hardcore où la traînée horizontale fait tourner la tour autour du Espa qui tombe. Évitez les atterrissages en toute sécurité, chargez un combo smash et percez un monde mythique où un seul coup non gardé met fin à la course.</p>
+          <p class="hero-copy">Un jeu d'arcade hardcore de descente verticale où un glissement horizontal fait tourner la tour autour d'Espa en pleine chute. Ignorez les atterrissages sûrs, chargez un coup combo et traversez un monde mythique où un seul coup sans protection met fin à la partie.</p>
           <p class="ball-hero-note">Production active : dix scènes de lieux, boss, dialogues à embranchements et chemins de karma qui changent les règles du jeu.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">Suivre le développement</a>
@@ -248,25 +250,25 @@
             <div class="ball-world-section">
               <h3>Les dix mondes de dialogue</h3>
               <p>Arrière-plans de dialogue des dix mondes, dans l'ordre de la descente, d'Ena à Deka.</p>
-              <div class="world-filmstrip" aria-label="Les dix arrière-plans d'emplacement de dialogue Ball is God">
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena fond de dialogue ciel" loading="lazy" decoding="async"><figcaption>01 · Ena - Ciel</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo arrière-plan du dialogue spatial" loading="lazy" decoding="async"><figcaption>02 · Dyo - Espace</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria fond de dialogue tempête" loading="lazy" decoding="async"><figcaption>03 · Tria - Tempête</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera fond de dialogue sur la neige" loading="lazy" decoding="async"><figcaption>04 · Tessera - Neige</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente fond de dialogue sur le volcan" loading="lazy" decoding="async"><figcaption>05 · Pente - Volcan</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi fond de dialogue océanique" loading="lazy" decoding="async"><figcaption>06 · Eksi - Océan</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta fond de dialogue dans le désert" loading="lazy" decoding="async"><figcaption>07 · Epta - Désert</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God Ohto fond de dialogue forestier" loading="lazy" decoding="async"><figcaption>08 · Ohto - Forêt</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God Ennea fond de dialogue de grotte" loading="lazy" decoding="async"><figcaption>09 · Ennea - Grotte</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God Deka fond de dialogue enfer" loading="lazy" decoding="async"><figcaption>10 · Deka - Enfer</figcaption></figure>
+              <div class="world-filmstrip" aria-label="Les dix arrière-plans de lieux de dialogue de Ball is God">
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue céleste Ena de Ball is God" loading="lazy" decoding="async"><figcaption>01 · Ena - Ciel</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue spatial Dyo de Ball is God" loading="lazy" decoding="async"><figcaption>02 · Dyo - Espace</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue de tempête Tria de Ball is God" loading="lazy" decoding="async"><figcaption>03 · Tria - Tempête</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue de neige Tessera de Ball is God" loading="lazy" decoding="async"><figcaption>04 · Tessera - Neige</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue volcanique Pente de Ball is God" loading="lazy" decoding="async"><figcaption>05 · Pente - Volcan</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue océanique Eksi de Ball is God" loading="lazy" decoding="async"><figcaption>06 · Eksi - Océan</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue désertique Epta de Ball is God" loading="lazy" decoding="async"><figcaption>07 · Epta - Désert</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue forestier Ohto de Ball is God" loading="lazy" decoding="async"><figcaption>08 · Ohto - Forêt</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue de grotte Ennea de Ball is God" loading="lazy" decoding="async"><figcaption>09 · Ennea - Grotte</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Arrière-plan de dialogue de l'enfer Deka de Ball is God" loading="lazy" decoding="async"><figcaption>10 · Deka - Enfer</figcaption></figure>
               </div>
             </div>
           </div>
         </div>
-        <div class="proof-facts" aria-label="Faits de construction Ball is God vérifiés">
+        <div class="proof-facts" aria-label="Informations vérifiées sur la version de Ball is God">
           <article><strong>Dix lieux dans la version actuelle</strong><span>Boss et dangers propres à chaque lieu.</span></article>
           <article><strong>Trois plateformes passées → coup combo</strong><span>Ignorez trois atterrissages sûrs pour le charger.</span></article>
-          <article><strong>Bouclier de balayage</strong><span>Une défense en temps de recharge contre un coup mortel.</span></article>
+          <article><strong>Bouclier de balayage</strong><span>Une défense à temps de recharge contre un coup mortel.</span></article>
           <article><strong>Descente adaptative</strong><span>Niveaux de plateformes déterministes, avec de la place pour se rattraper.</span></article>
         </div>
       </section>
@@ -292,7 +294,7 @@
             <header>
               <span class="ball-ui-label">01 / Sélection du niveau actuel</span>
               <h3>La route céleste sélectionne les niveaux générés à travers dix chapitres de 100 niveaux.</h3>
-              <p>Le menu de production mappe dix emplacements dans des chapitres de 100 niveaux et s'ouvre directement dans l'exécution sélectionnée.</p>
+              <p>Le menu de production cartographie dix lieux en chapitres de 100 niveaux et lance directement la partie sélectionnée.</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Arrière-plan de sélection de niveaux de Ball is God : un temple lumineux au bout d'un chemin doré sinueux à travers des nuages pastel" loading="lazy" decoding="async">
@@ -324,7 +326,7 @@
               <p>Le portrait du personnage, l'illustration du lieu et la plaque de l'interlocuteur partagent un même cadre vertical.</p>
             </header>
             <figure class="ball-ui-device ball-dialogue-preview">
-              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God lieu de dialogue céleste avec une lumière suspendue lumineuse" loading="lazy" decoding="async">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Lieu de dialogue céleste de Ball is God avec une lumière éclatante suspendue" loading="lazy" decoding="async">
               <span class="ball-dialogue-location" aria-hidden="true">ENA · ATTERRISSAGE 03</span>
               <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, une sentinelle triangulaire violette de Ball is God" loading="lazy" decoding="async">
               <div class="ball-dialogue-panel">
@@ -335,7 +337,7 @@
                   <span aria-hidden="true">Appuyez pour continuer <b>›</b></span>
                 </div>
               </div>
-              <figcaption><span>Dialogue en jeu</span><strong>Portrait, orateur et emplacement dans un seul cadre</strong></figcaption>
+              <figcaption><span>Dialogue en jeu</span><strong>Portrait, interlocuteur et lieu dans un seul cadre</strong></figcaption>
             </figure>
           </article>
         </div>
@@ -344,7 +346,7 @@
           <div>
             <span class="ball-ui-label">04 / Choix du jalon</span>
             <h3>La réponse fait partie de la descente.</h3>
-            <p>Aux niveaux locaux 90 et 100, le panel dédié demande une décision de rechange ou de mise à mort avant que le dialogue ne résolve la fuite.</p>
+            <p>Aux niveaux locaux 90 et 100, le panneau dédié demande de choisir entre épargner ou tuer avant que le dialogue ne conclue la partie.</p>
           </div>
           <div class="ball-choice-panel" aria-label="Exemple de choix de dialogue Ball is God">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
@@ -359,9 +361,9 @@
           <div>
             <span class="ball-ui-label">05 / Menus de résultats</span>
             <h3>La victoire continue. La défaite revient au même défi.</h3>
-            <p>La version actuelle a deux états de résultat distincts : PanelWin propose la relecture et le niveau suivant, tandis que PanelOver conserve une action de relecture indubitable.</p>
+            <p>La version actuelle comporte deux écrans de résultat distincts : PanelWin propose de rejouer ou de passer au niveau suivant, tandis que PanelOver ne garde qu'une action Rejouer sans équivoque.</p>
           </div>
-          <div class="ball-result-menus" aria-label="Ball is God menus de résultats actuels">
+          <div class="ball-result-menus" aria-label="Menus de résultats actuels de Ball is God">
             <div class="ball-result-menu is-victory">
               <span>Victoire · PanelWin</span>
               <strong>Descente terminée</strong>
@@ -389,9 +391,9 @@
             <span class="ball-ui-label">Personnages des dialogues</span>
             <h3>Visages rencontrés en descendant.</h3>
           </div>
-          <p>Les 25 caractères avec des paires de portraits ouverts et fermés de production valides sont inclus ci-dessous. Survolez ou concentrez une carte pour changer d'expression.</p>
+          <p>Les 25 personnages disposant de paires de portraits de production valides (ouvert et fermé) figurent ci-dessous. Survolez une carte ou placez le focus dessus pour changer d'expression.</p>
         </div>
-        <div class="ball-character-roster" aria-label="Ball is God personnages de dialogue de production">
+        <div class="ball-character-roster" aria-label="Personnages de dialogue en production de Ball is God">
           <article class="ball-character-card is-espa">
             <div class="ball-character-art">
               <img class="is-open" src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Portrait de dialogue Espa" loading="lazy" decoding="async">
@@ -430,7 +432,7 @@
         <h2>Ball is God?! est un jeu d'arcade hardcore où l'on tombe à travers une tour rotative.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>L'idée</h3><p>Guidez Espa le long d'une tour divine. Une seule erreur peut mettre fin à la partie, et vos grands choix changent la façon dont le monde se joue.</p></article>
-          <article class="detail-card"><h3>Version actuelle</h3><p>Dix scènes de localisation, génération de tour procédurale, combo smash, bouclier de balayage, configurations de boss, dialogues de branchement, menus de production et portraits prêts à l'expression sont implémentés.</p></article>
+          <article class="detail-card"><h3>Version actuelle</h3><p>Dix scènes de lieux, la génération procédurale des tours, le coup combo, le bouclier de balayage, les configurations de boss, les dialogues à embranchements, les menus de production et les portraits à expressions sont implémentés.</p></article>
           <article class="detail-card"><h3>Public</h3><p>Les joueurs qui aiment les jeux d'arcade mobiles exigeants, le rythme risque-récompense et les boss, avec une histoire à suivre.</p></article>
           <article class="detail-card"><h3>Statut</h3><p>Production active. Les travaux récents portent sur les systèmes d'exécution, l'art des mondes, les tests et la façon dont le jeu se joue sur téléphone.</p></article>
         </div>
@@ -439,10 +441,10 @@
         <div class="eyebrow">Caractéristiques</div>
         <h2>Ce que vous faites dans Ball is God?!</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Descente en glissant pour pivoter</h3><p>La traînée horizontale fait tourner la tour autour du Espa qui tombe automatiquement, alignant les espaces, les dangers et les plates-formes sûres.</p></article>
+          <article class="detail-card"><h3>Descente en glissant pour pivoter</h3><p>Un glissement horizontal fait tourner la tour autour d'Espa en chute automatique, pour aligner les ouvertures, les dangers et les plateformes sûres.</p></article>
           <article class="detail-card"><h3>Pression d'arcade hardcore</h3><p>Un seul coup non paré met fin à la partie : il faut lire la tour et chronométrer chaque mouvement.</p></article>
           <article class="detail-card"><h3>Boss et mondes mythiques</h3><p>Dix scènes de lieux, chacune avec ses propres boss, portent l'histoire d'un monde à l'autre.</p></article>
-          <article class="detail-card"><h3>Des choix qui changent les règles</h3><p>Dialogue de changement de miséricorde, de force et de karma, règles de bouclier, agression ennemie, télégraphes et phases de boss.</p></article>
+          <article class="detail-card"><h3>Des choix qui changent les règles</h3><p>La miséricorde, la force et le karma modifient les dialogues, les règles du bouclier, l'agressivité des ennemis, les signaux d'attaque et les phases de boss.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
@@ -450,8 +452,8 @@
         <h2>Comment jouer à Ball is God?!</h2>
         <ul class="update-list">
           <li><span>Étape 01</span><strong>Lisez la descente</strong><p>Repérez les prochaines plateformes, les trous et les dangers, et cherchez des moments sûrs pour agir pendant la chute.</p></li>
-          <li><span>Étape 02</span><strong>Faites pivoter la tour</strong><p>La traînée horizontale fait tourner le monde autour de Espa, en alignant une plate-forme sûre ou un espace délibéré.</p></li>
-          <li><span>Étape 03</span><strong>Risquez et écrasez</strong><p>Sautez trois plates-formes pour charger un combo smash, puis percez les structures pendant que le bouclier couvre une erreur mortelle.</p></li>
+          <li><span>Étape 02</span><strong>Faites pivoter la tour</strong><p>Un glissement horizontal fait tourner le monde autour d'Espa, pour aligner une plateforme sûre ou un passage délibéré.</p></li>
+          <li><span>Étape 03</span><strong>Risquez et écrasez</strong><p>Passez trois plateformes pour charger un coup combo, puis brisez les structures tandis que le bouclier encaisse une erreur mortelle.</p></li>
           <li><span>Étape 04</span><strong>Choisissez la conséquence</strong><p>La miséricorde et la force façonnent le karma, le dialogue et les règles de jeu appliquées aux ennemis et aux boss.</p></li>
         </ul>
       </section>
@@ -460,7 +462,7 @@
         <h2>Une tour mythique où vos choix vous suivent dans la descente.</h2>
         <div class="info-grid">
           <div>
-            <p>Ball is God?! est né d'une fascination d'enfance pour les arcades mobiles à descente verticale : lire les lacunes, réagir rapidement et survivre par instinct.</p>
+            <p>Ball is God?! est né d'une fascination d'enfance pour les jeux d'arcade mobiles de descente verticale : repérer les ouvertures, réagir vite et survivre à l'instinct.</p>
             <p>Le format pouvait porter davantage : des boss, des personnages de caractère, une histoire et une tension morale. Le projet actuel suit Espa à travers dix scènes de lieux et une troupe de personnages étranges, avec des choix qui changent à la fois l'histoire et le jeu.</p>
             <p>L'objectif est donc devenu un jeu d'arcade de descente verticale simple, avec la pression d'un combat de boss et les conséquences d'un RPG axé sur l'histoire.</p>
           </div>
@@ -490,12 +492,12 @@
       </section>
       <section class="soft-card game-page-section" id="download-assets">
         <div class="eyebrow">Télécharger les ressources</div>
-        <h2>Ball is God?! ressources de presse et de créateur</h2>
+        <h2>Ressources presse et créateurs pour Ball is God?!</h2>
         <p class="asset-kit-copy">Aperçus WebP pour la couverture presse, l'évaluation par les éditeurs et les références de pages de store. Les fichiers sources en pleine résolution sont disponibles sur demande.</p>
         <h3 class="asset-group-title">Marque et personnages</h3>
         <p class="asset-group-note">L'icône du jeu ainsi que les 25 personnages actuels qui ont des portraits complets de dialogue de production. Les noms correspondent aux clés de localisation Unity.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God icône de jeu d'arcade de tour de descente verticale" loading="lazy" decoding="async"><strong>Icône de jeu</strong><span>Icône d'arcade de la tour de descente verticale.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Icône du jeu d'arcade de descente verticale Ball is God" loading="lazy" decoding="async"><strong>Icône de jeu</strong><span>Icône d'arcade de la tour de descente verticale.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Portrait de dialogue de production Espa" loading="lazy" decoding="async"><strong>Espa</strong><span>Portrait du personnage du joueur.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/revla-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/revla-open.webp" width="640" height="517" alt="Portrait de dialogue de production Revla" loading="lazy" decoding="async"><strong>Revla</strong><span>Portrait de dialogue de production.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shash-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Portrait de dialogue de production Shash" loading="lazy" decoding="async"><strong>Shash</strong><span>Portrait de dialogue de production.</span></a>
@@ -525,36 +527,36 @@
         <h3 class="asset-group-title">Arrière-plans de menu</h3>
         <p class="asset-group-note">Illustration de production actuelle utilisée par le système de sélection de niveau céleste.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God arrière-plan du menu de sélection du niveau céleste" loading="lazy" decoding="async"><strong>Menu céleste</strong><span>Arrière-plan de production de la sélection de niveau.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan céleste du menu de sélection de niveau de Ball is God" loading="lazy" decoding="async"><strong>Menu céleste</strong><span>Arrière-plan de production de la sélection de niveau.</span></a>
         </div>
         <h3 class="asset-group-title">Mondes de descente verticale</h3>
-        <p class="asset-group-note">Ensemble complet de dix arrière-plans de localisation actuels, commandés de Ena à Deka.</p>
+        <p class="asset-group-note">Série complète des dix arrière-plans de lieux actuels, classés d'Ena à Deka.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de ciel de descente verticale" loading="lazy" decoding="async"><strong>01 · Monde céleste</strong><span>Fond de descente verticale Ena.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond d'espace de descente verticale" loading="lazy" decoding="async"><strong>02 · Monde spatial</strong><span>Fond de descente verticale Dyo.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de tempête de descente verticale" loading="lazy" decoding="async"><strong>03 · Monde des tempêtes</strong><span>Fond de descente verticale Tria.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God descente verticale fond de montagne enneigée" loading="lazy" decoding="async"><strong>04 · Monde de neige</strong><span>Fond de descente verticale Tessera.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de volcan à descente verticale" loading="lazy" decoding="async"><strong>05 · Monde volcanique</strong><span>Arrière-plan Pente ; animé dans le jeu.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond océan de descente verticale" loading="lazy" decoding="async"><strong>06 · Monde océanique</strong><span>Fond de descente verticale Eksi.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God descente verticale fond de buissons du désert" loading="lazy" decoding="async"><strong>07 · Monde désertique</strong><span>Fond de descente verticale Epta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de forêt de descente verticale" loading="lazy" decoding="async"><strong>08 · Monde forestier</strong><span>Fond de descente verticale Ohto.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de grotte de descente verticale" loading="lazy" decoding="async"><strong>09 · Monde des grottes</strong><span>Fond de descente verticale Ennea.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond d'enfer de descente verticale" loading="lazy" decoding="async"><strong>10 · Monde de l'enfer</strong><span>Fond de descente verticale Deka.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan céleste de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>01 · Monde céleste</strong><span>Fond de descente verticale Ena.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan spatial de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>02 · Monde spatial</strong><span>Fond de descente verticale Dyo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de tempête de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>03 · Monde des tempêtes</strong><span>Fond de descente verticale Tria.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de montagne enneigée de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>04 · Monde de neige</strong><span>Fond de descente verticale Tessera.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de volcan de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>05 · Monde volcanique</strong><span>Arrière-plan Pente ; animé dans le jeu.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan océanique de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>06 · Monde océanique</strong><span>Fond de descente verticale Eksi.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de buissons du désert de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>07 · Monde désertique</strong><span>Fond de descente verticale Epta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan forestier de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>08 · Monde forestier</strong><span>Fond de descente verticale Ohto.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de grotte de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>09 · Monde des grottes</strong><span>Fond de descente verticale Ennea.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan d'enfer de descente verticale de Ball is God" loading="lazy" decoding="async"><strong>10 · Monde de l'enfer</strong><span>Fond de descente verticale Deka.</span></a>
         </div>
         <h3 class="asset-group-title">Arrière-plans de l'arcade narrative</h3>
-        <p class="asset-group-note">Ensemble complet de dialogue et de localisation : le Hall de Lumière ainsi que des arrière-plans pour les dix mondes.</p>
+        <p class="asset-group-note">Série complète des lieux de dialogue : le Hall de Lumière ainsi que les arrière-plans des dix mondes.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Fond de dialogue de la Salle de Lumière" loading="lazy" decoding="async"><strong>00 · Salle de Lumière</strong><span>Fond de dialogue d'ouverture.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade ciel fond de dialogue" loading="lazy" decoding="async"><strong>01 · Dialogue du ciel</strong><span>Arrière-plan de l'histoire d'Ena.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire fond de dialogue espace arcade" loading="lazy" decoding="async"><strong>02 · Dialogue de l'espace</strong><span>Arrière-plan de l'histoire de Dyo.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de dialogue nuage d'orage" loading="lazy" decoding="async"><strong>03 · Dialogue de la tempête</strong><span>Arrière-plan de l'histoire de Tria.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God fond de dialogue sur la montagne enneigée" loading="lazy" decoding="async"><strong>04 · Dialogue de la neige</strong><span>Arrière-plan de l'histoire de Tessera.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade fond de dialogue sur le volcan" loading="lazy" decoding="async"><strong>05 · Dialogue du volcan</strong><span>Arrière-plan de l'histoire de Pente.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade fond de dialogue océanique" loading="lazy" decoding="async"><strong>06 · Dialogue de l'océan</strong><span>Arrière-plan de l'histoire d'Eksi.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade fond de dialogue dans le désert" loading="lazy" decoding="async"><strong>07 · Dialogue du désert</strong><span>Arrière-plan de l'histoire d'Epta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade forêt fond de dialogue" loading="lazy" decoding="async"><strong>08 · Dialogue de la forêt</strong><span>Arrière-plan de l'histoire d'Ohto.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire fond de dialogue de grotte d'arcade" loading="lazy" decoding="async"><strong>09 · Dialogue de la grotte</strong><span>Arrière-plan de l'histoire d'Ennea.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God histoire arcade enfer fond de dialogue" loading="lazy" decoding="async"><strong>10 · Dialogue de l'enfer</strong><span>Arrière-plan de l'histoire de Deka.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue du Hall de Lumière de Ball is God" loading="lazy" decoding="async"><strong>00 · Salle de Lumière</strong><span>Fond de dialogue d'ouverture.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue céleste de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>01 · Dialogue du ciel</strong><span>Arrière-plan de l'histoire d'Ena.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue spatial de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>02 · Dialogue de l'espace</strong><span>Arrière-plan de l'histoire de Dyo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue nuage d'orage de Ball is God" loading="lazy" decoding="async"><strong>03 · Dialogue de la tempête</strong><span>Arrière-plan de l'histoire de Tria.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue sur la montagne enneigée de Ball is God" loading="lazy" decoding="async"><strong>04 · Dialogue de la neige</strong><span>Arrière-plan de l'histoire de Tessera.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue volcanique de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>05 · Dialogue du volcan</strong><span>Arrière-plan de l'histoire de Pente.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue océanique de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>06 · Dialogue de l'océan</strong><span>Arrière-plan de l'histoire d'Eksi.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue désertique de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>07 · Dialogue du désert</strong><span>Arrière-plan de l'histoire d'Epta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue forestier de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>08 · Dialogue de la forêt</strong><span>Arrière-plan de l'histoire d'Ohto.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue de grotte de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>09 · Dialogue de la grotte</strong><span>Arrière-plan de l'histoire d'Ennea.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Arrière-plan de dialogue de l'enfer de l'arcade narrative Ball is God" loading="lazy" decoding="async"><strong>10 · Dialogue de l'enfer</strong><span>Arrière-plan de l'histoire de Deka.</span></a>
         </div>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
@@ -577,7 +579,7 @@
           <a class="related-world-link" href="paint-blasters.html">
             <span class="related-world-kicker">Prototype de production</span>
             <strong>Paint Blasters</strong>
-            <p>Construisez des tirs colorés, visez les points faibles et transformez la destruction de la tour en réactions en chaîne.</p>
+            <p>Créez des tirs colorés, visez les points faibles et transformez la destruction de la tour en réactions en chaîne.</p>
             <span class="related-world-meta">Arcade de physique des couleurs</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
@@ -593,7 +595,7 @@
         <h2>Questions fréquentes sur Ball is God?!</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Quel genre de jeu est Ball is God?!</h3><p>Un jeu d'arcade hardcore de descente verticale. Vous faites tourner une tour autour d'Espa en pleine chute, ignorez les atterrissages sûrs pour charger des coups et traversez des mondes mythiques.</p></article>
-          <article class="detail-card"><h3>Comment jouer à Ball is God?!</h3><p>Faites glisser horizontalement pour faire pivoter la tour, sautez trois plates-formes pour charger un smash et glissez verticalement lorsque le bouclier de temps de recharge doit absorber un coup mortel.</p></article>
+          <article class="detail-card"><h3>Comment jouer à Ball is God?!</h3><p>Faites glisser horizontalement pour faire tourner la tour, passez trois plateformes pour charger un coup et balayez verticalement lorsque le bouclier à temps de recharge doit absorber un coup mortel.</p></article>
           <article class="detail-card"><h3>Ball is God?! est-il déjà sorti ?</h3><p>Pas encore. Il est en production active : systèmes d'exécution, art des mondes, contenu narratif et tests. Il n'y a pas de date de sortie publique. Les plateformes visées sont iOS et Android.</p></article>
           <article class="detail-card"><h3>Qu'est-ce qui rend Ball is God?! différent ?</h3><p>Il mêle la pression d'arcade du risque et de la récompense à dix lieux et à un karma qui change les dialogues, les ennemis, les signaux d'attaque, les boucliers et les boss.</p></article>
           <article class="detail-card"><h3>Qui crée Ball is God?!</h3><p>WillowinWorlds, un studio indépendant qui crée des jeux mobiles de puzzle et d'arcade.</p></article>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

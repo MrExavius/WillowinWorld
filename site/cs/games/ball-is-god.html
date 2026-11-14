@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#071530" id="metaThemeColor" data-theme-dark="#071530" data-theme-light="#eaf6ff">
-  <meta property="og:title" content="Ball is God?! - Hardcore arkádová hra Vertical Descent">
+  <meta property="og:title" content="Ball is God?! - Hardcore arkádová hra s vertikálním sestupem">
   <meta property="og:description" content="Ball is God?! je hardcore vertikální sestupová arkáda v aktivní výrobě. Tažením otáčejte věží kolem Espa, rozbíjejte plošiny a dělejte volby, které ovlivní karmu.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="cs_CZ">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
-  <meta name="twitter:title" content="Ball is God?! - Hardcore arkádová hra Vertical Descent">
+  <meta name="twitter:title" content="Ball is God?! - Hardcore arkádová hra s vertikálním sestupem">
   <meta name="twitter:description" content="Ball is God?! je hardcore vertikální sestupová arkáda v aktivní výrobě. Tažením otáčejte věží kolem Espa, rozbíjejte plošiny a dělejte volby, které ovlivní karmu.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta name="twitter:image:alt" content="Karta hry Ball is God?!: Espa, okřídlený míč s aureolou na modré obloze. Otočte věž. Staňte se dopadem.">
@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/cs/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "Tvrdá arkádová hra s vertikálním sestupem, ve které hráči tažením otáčejí věž kolem Espa, sestavují komba a dělají karmu na deseti mýtických místech.",
+      "description": "Hardcore arkádová hra s vertikálním sestupem, ve které hráči tažením otáčejí věží kolem Espa, nabíjejí kombo údery a dělají karmické volby v deseti mýtických lokacích.",
       "keywords": "vertikální sestupová arkáda, hra s otáčející se věží, hardcore arkádová hra, příběhová arkáda, hra se souboji s bossy",
       "genre": [
         "Vertikální sestupová arkáda",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Otočte věž. Staňte se dopadem.</span></h1>
-          <p class="hero-copy">Hardcore vertikální sestupová arkáda, kde horizontální brzda otáčí věž kolem padajícího Espa. Přeskočte bezpečná přistání, nabijte kombo smeč a prolomte mýtický svět, kde jeden nestřežený zásah ukončí běh.</p>
+          <p class="hero-copy">Hardcore vertikální sestupová arkáda, kde vodorovné tažení otáčí věží kolem padajícího Espa. Přeskočte bezpečná přistání, nabijte kombo úder a prorazte mýtickým světem, kde jediný nevykrytý zásah ukončí hru.</p>
           <p class="ball-hero-note">Aktivní výroba: deset scén lokací, bossové, větvené dialogy a cesty karmy, které mění pravidla hry.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">Sledujte vývoj</a>
@@ -240,7 +242,7 @@
         <div class="game-proof-layout">
           <div class="proof-copy">
             <span class="proof-kicker">Uvnitř aktuálního sestavení</span>
-            <h2 id="ballProofTitle">Karma se mění více než dialog.</h2>
+            <h2 id="ballProofTitle">Karma mění víc než jen dialogy.</h2>
             <p>Světlá, neutrální a temná cesta karmy mění chování štítu, varovné signály, agresivitu nepřátel i fáze bossů, takže příběh mění to, jak hrajete.</p>
             <span class="proof-status"><b>Stav sestavení</b> Aktivní výroba</span>
           </div>
@@ -248,17 +250,17 @@
             <div class="ball-world-section">
               <h3>Všech deset dialogových světů</h3>
               <p>Pozadí dialogů pro všech deset světů v pořadí sestupu od Ena po Deka.</p>
-              <div class="world-filmstrip" aria-label="Všech deset pozadí umístění dialogu Ball is God">
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena pozadí dialogu oblohy" loading="lazy" decoding="async"><figcaption>01 · Ena - Nebe</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="pozadí dialogu prostoru Ball is God Dyo" loading="lazy" decoding="async"><figcaption>02 · Dyo - Vesmír</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria pozadí dialogu bouře" loading="lazy" decoding="async"><figcaption>03 · Tria - Bouře</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera pozadí dialogu se sněhem" loading="lazy" decoding="async"><figcaption>04 · Tessera - Sníh</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="pozadí dialogu o sopce Ball is God Pente" loading="lazy" decoding="async"><figcaption>05 · Pente - Sopka</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi pozadí dialogu s oceánem" loading="lazy" decoding="async"><figcaption>06 · Eksi - Oceán</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta pozadí dialogu pouště" loading="lazy" decoding="async"><figcaption>07 · Epta - Poušť</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God Ohto pozadí dialogu lesa" loading="lazy" decoding="async"><figcaption>08 · Ohto - Les</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God Ennea pozadí dialogu v jeskyni" loading="lazy" decoding="async"><figcaption>09 · Ennea - Jeskyně</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God Deka pozadí dialogu pekla" loading="lazy" decoding="async"><figcaption>10 · Deka - Peklo</figcaption></figure>
+              <div class="world-filmstrip" aria-label="Všech deset pozadí dialogových lokací ze hry Ball is God">
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God - Ena, pozadí nebeského dialogu" loading="lazy" decoding="async"><figcaption>01 · Ena - Nebe</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God - Dyo, pozadí vesmírného dialogu" loading="lazy" decoding="async"><figcaption>02 · Dyo - Vesmír</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God - Tria, pozadí bouřkového dialogu" loading="lazy" decoding="async"><figcaption>03 · Tria - Bouře</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God - Tessera, pozadí sněhového dialogu" loading="lazy" decoding="async"><figcaption>04 · Tessera - Sníh</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God - Pente, pozadí sopečného dialogu" loading="lazy" decoding="async"><figcaption>05 · Pente - Sopka</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God - Eksi, pozadí oceánského dialogu" loading="lazy" decoding="async"><figcaption>06 · Eksi - Oceán</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God - Epta, pozadí pouštního dialogu" loading="lazy" decoding="async"><figcaption>07 · Epta - Poušť</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God - Ohto, pozadí lesního dialogu" loading="lazy" decoding="async"><figcaption>08 · Ohto - Les</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God - Ennea, pozadí jeskynního dialogu" loading="lazy" decoding="async"><figcaption>09 · Ennea - Jeskyně</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God - Deka, pozadí pekelného dialogu" loading="lazy" decoding="async"><figcaption>10 · Deka - Peklo</figcaption></figure>
               </div>
             </div>
           </div>
@@ -266,7 +268,7 @@
         <div class="proof-facts" aria-label="Ověřená fakta o sestavení Ball is God">
           <article><strong>Deset lokací v sestavení</strong><span>Bossové a nebezpečí specifická pro každou lokaci.</span></article>
           <article><strong>Tři přeskoky → úder</strong><span>Přeskočte tři bezpečná přistání, abyste ho nabili.</span></article>
-          <article><strong>Přejeďte štítem</strong><span>Cooldown obrana proti smrtelnému zásahu.</span></article>
+          <article><strong>Přejeďte štítem</strong><span>Obrana s dobou obnovy proti smrtelnému zásahu.</span></article>
           <article><strong>Adaptivní sestup</strong><span>Deterministické vrstvy plošin s prostorem na vzpamatování.</span></article>
         </div>
       </section>
@@ -283,7 +285,7 @@
           <li><b>01</b><span><strong>Výběr úrovně</strong><small>Vyberte si z úrovní 1-1000</small></span></li>
           <li><b>02</b><span><strong>Hratelnost</strong><small>Otočte se, uhýbejte a sestupujte</small></span></li>
           <li><b>03</b><span><strong>Dialog / kvíz</strong><small>Každá desátá úroveň při spuštění</small></span></li>
-          <li><b>04</b><span><strong>Ušetřit / zabít</strong><small>Volba milníku na 90 a 100</small></span></li>
+          <li><b>04</b><span><strong>Ušetřit / zabít</strong><small>Klíčová volba na úrovních 90 a 100</small></span></li>
           <li><b>05</b><span><strong>Výsledek</strong><small>Pokračujte, zahrajte znovu nebo opakujte</small></span></li>
         </ol>
 
@@ -292,7 +294,7 @@
             <header>
               <span class="ball-ui-label">01 / Výběr aktuální úrovně</span>
               <h3>Nebeská trasa vybírá generované úrovně v deseti kapitolách o 100 úrovních.</h3>
-              <p>Nabídka produkce mapuje deset míst ve 100 úrovních kapitol a otevírá se přímo do vybraného běhu.</p>
+              <p>Produkční menu mapuje deset lokací v kapitolách po 100 úrovních a spouští přímo vybrané herní kolo.</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Pozadí výběru úrovní v Ball is God: zářící chrám na konci klikaté zlaté cesty mezi pastelovými mraky" loading="lazy" decoding="async">
@@ -324,9 +326,9 @@
               <p>Portrét postavy, výtvarné zpracování lokace a jmenovka mluvčího sdílejí jeden svislý rámec.</p>
             </header>
             <figure class="ball-ui-device ball-dialogue-preview">
-              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="nebeské místo pro dialog Ball is God se zářícím zavěšeným světlem" loading="lazy" decoding="async">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Nebeská dialogová lokace v Ball is God se zářícím zavěšeným světlem" loading="lazy" decoding="async">
               <span class="ball-dialogue-location" aria-hidden="true">ENA · PŘISTÁNÍ 03</span>
-              <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, fialový trojúhelníkový strážce od Ball is God" loading="lazy" decoding="async">
+              <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, fialový trojúhelníkový strážce ze hry Ball is God" loading="lazy" decoding="async">
               <div class="ball-dialogue-panel">
                 <img src="../../assets/game-proof/ball-is-god-ui/dialogue-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
                 <div class="ball-dialogue-copy">
@@ -335,7 +337,7 @@
                   <span aria-hidden="true">Pokračujte klepnutím <b>›</b></span>
                 </div>
               </div>
-              <figcaption><span>Dialog ve hře</span><strong>Portrét, reproduktor a umístění v jednom snímku</strong></figcaption>
+              <figcaption><span>Dialog ve hře</span><strong>Portrét, mluvčí a lokace v jednom záběru</strong></figcaption>
             </figure>
           </article>
         </div>
@@ -344,7 +346,7 @@
           <div>
             <span class="ball-ui-label">04 / Klíčová volba</span>
             <h3>Odpověď se stává součástí sestupu.</h3>
-            <p>Na místních úrovních 90 a 100 požádá vyhrazená porota o rozhodnutí o náhradě nebo o zabití, než dialog vyřeší běh.</p>
+            <p>Na lokálních úrovních 90 a 100 vás vyhrazený panel vyzve k rozhodnutí, zda nepřítele ušetřit, nebo zabít, než dialog uzavře průchod.</p>
           </div>
           <div class="ball-choice-panel" aria-label="Příklad možností dialogu Ball is God">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
@@ -359,9 +361,9 @@
           <div>
             <span class="ball-ui-label">05 / Nabídky výsledků</span>
             <h3>Vítězství vede dál. Porážka vrací ke stejné výzvě.</h3>
-            <p>Aktuální sestavení má dva samostatné stavy výsledků: PanelWin nabízí opakované přehrávání a další úroveň, zatímco PanelOver zachovává jednu nezaměnitelnou akci přehrávání.</p>
+            <p>Aktuální sestavení má dva samostatné stavy výsledků: PanelWin nabízí zopakování a další úroveň, zatímco PanelOver ponechává jedinou nezaměnitelnou akci pro opakování.</p>
           </div>
-          <div class="ball-result-menus" aria-label="Ball is God aktuální nabídky výsledků">
+          <div class="ball-result-menus" aria-label="Ball is God - aktuální nabídky výsledků">
             <div class="ball-result-menu is-victory">
               <span>Vítězství · PanelWin</span>
               <strong>Sestup dokončen</strong>
@@ -387,11 +389,11 @@
         <div class="ball-cast-heading">
           <div>
             <span class="ball-ui-label">Postavy v dialozích</span>
-            <h3>Na cestě dolů se tváře setkaly.</h3>
+            <h3>Tváře, které potkáte cestou dolů.</h3>
           </div>
-          <p>Všech 25 znaků s platnými produkčními dvojicemi otevřených a uzavřených portrétů je zahrnuto níže. Chcete-li přepnout výraz, umístěte kurzor na kartu nebo na ni zaostřete.</p>
+          <p>Níže najdete všech 25 postav s platnými produkčními dvojicemi otevřených a zavřených portrétů. Výraz přepnete najetím kurzoru na kartu nebo jejím zaměřením.</p>
         </div>
-        <div class="ball-character-roster" aria-label="produkční dialogové postavy Ball is God">
+        <div class="ball-character-roster" aria-label="Produkční dialogové postavy ve hře Ball is God">
           <article class="ball-character-card is-espa">
             <div class="ball-character-art">
               <img class="is-open" src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Dialogový portrét Espa" loading="lazy" decoding="async">
@@ -430,7 +432,7 @@
         <h2>Ball is God?! je hardcore arkádová hra o pádu otáčející se věží.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Nápad</h3><p>Veďte Espa dolů božskou věží. Jediná chyba může ukončit hru a vaše zásadní volby mění to, jak se svět hraje.</p></article>
-          <article class="detail-card"><h3>Aktuální sestavení</h3><p>Je implementováno deset lokačních scén, procedurální generování věží, kombo rozbití, swipe shield, konfigurace bossů, větvený dialog, produkční menu a portréty připravené na výraz.</p></article>
+          <article class="detail-card"><h3>Aktuální sestavení</h3><p>Implementováno je deset scén lokací, procedurální generování věží, kombo úder, štít na přejetí, nastavení bossů, větvené dialogy, produkční nabídky i portréty se změnou výrazu.</p></article>
           <article class="detail-card"><h3>Cílová skupina</h3><p>Hráči, kteří mají rádi náročné mobilní arkády, načasování na hraně rizika a odměny a bossy, s příběhem, který stojí za sledování.</p></article>
           <article class="detail-card"><h3>Stav</h3><p>Aktivní výroba. Poslední práce zahrnují herní systémy, výtvarnou stránku světů, testování a to, jak se hra hraje na telefonu.</p></article>
         </div>
@@ -439,10 +441,10 @@
         <div class="eyebrow">Vlastnosti</div>
         <h2>Co děláte v Ball is God?!</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Sestup s otáčením tažením</h3><p>Horizontální brzda otáčí věž kolem automaticky padajícího Espa, seřazuje mezery, nebezpečí a bezpečné plošiny.</p></article>
+          <article class="detail-card"><h3>Sestup s otáčením tažením</h3><p>Vodorovné tažení otáčí věží kolem automaticky padajícího Espa a srovnává mezery, nebezpečí i bezpečné plošiny.</p></article>
           <article class="detail-card"><h3>Hardcore arkádový tlak</h3><p>Jeden nekrytý zásah ukončí hru, takže musíte číst věž a načasovat každý pohyb.</p></article>
           <article class="detail-card"><h3>Bossové a mýtické světy</h3><p>Deset scén lokací, každá s vlastními bossy, nese příběh z jednoho světa do dalšího.</p></article>
-          <article class="detail-card"><h3>Volby, které mění pravidla</h3><p>Dialog s milosrdností, silou a změnou karmy, pravidla štítů, nepřátelská agrese, telegrafy a fáze bossů.</p></article>
+          <article class="detail-card"><h3>Volby, které mění pravidla</h3><p>Milosrdenství, síla a karma mění dialogy, pravidla štítu, agresivitu nepřátel, varovné signály i fáze bossů.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
@@ -450,9 +452,9 @@
         <h2>Jak hrát Ball is God?!</h2>
         <ul class="update-list">
           <li><span>Krok 01</span><strong>Přečtěte sestup</strong><p>Prohlížejte si další plošiny, mezery a nebezpečí a hledejte bezpečná okna pro načasování, když padáte.</p></li>
-          <li><span>Krok 02</span><strong>Otočte věž</strong><p>Horizontální brzda otáčí svět kolem Espa a vyrovná bezpečnou platformu nebo záměrnou mezeru.</p></li>
-          <li><span>Krok 03</span><strong>Riskujte a rozbijte</strong><p>Přeskočte tři platformy a nabijte kombo smeč, pak prolomte struktury, zatímco štít zakryje jednu smrtelnou chybu.</p></li>
-          <li><span>Krok 04</span><strong>Vyberte důsledek</strong><p>Milosrdenství a síla utvářejí karmu, dialog a pravidla hry přenesené do nepřátel a bossů.</p></li>
+          <li><span>Krok 02</span><strong>Otočte věž</strong><p>Vodorovné tažení otáčí světem kolem Espa a nastaví bezpečnou plošinu nebo záměrnou mezeru.</p></li>
+          <li><span>Krok 03</span><strong>Riskujte a rozbijte</strong><p>Přeskočte tři plošiny, nabijte kombo úder a pak prorazte překážkami, zatímco štít vykryje jednu smrtelnou chybu.</p></li>
+          <li><span>Krok 04</span><strong>Vyberte důsledek</strong><p>Milosrdenství a síla utvářejí karmu, dialogy i herní pravidla, která se promítají do nepřátel a bossů.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section ball-story-section">
@@ -460,7 +462,7 @@
         <h2>Mýtická věž, ve které vaše volby sestupují společně s vámi.</h2>
         <div class="info-grid">
           <div>
-            <p>Ball is God?! začal v dětství fascinací mobilními arkádami s vertikálním sestupem: čtecí mezery, rychlé reakce a přežívání díky instinktu.</p>
+            <p>Hra Ball is God?! vznikla z dětské fascinace mobilními arkádami s vertikálním sestupem: odhadováním mezer, rychlými reakcemi a přežíváním podle instinktu.</p>
             <p>Tento formát unesl víc: bossy, postavy s osobností, příběh a morální napětí. Současný projekt provází Espa deseti scénami lokací a skupinou podivných postav a volby mění jak příběh, tak hru.</p>
             <p>Cílem se tedy stala jednoduchá vertikální sestupová arkáda s tlakem souboje s bossem a důsledky příběhového RPG.</p>
           </div>
@@ -490,10 +492,10 @@
       </section>
       <section class="soft-card game-page-section" id="download-assets">
         <div class="eyebrow">Stáhnout materiály</div>
-        <h2>Tisková a tvůrčí díla Ball is God?!</h2>
+        <h2>Materiály pro tisk a tvůrce - Ball is God?!</h2>
         <p class="asset-kit-copy">Náhledy WebP pro zpravodajství, posouzení vydavateli a odkazy na stránkách obchodů. Zdrojové soubory v plném rozlišení jsou k dispozici na vyžádání.</p>
         <h3 class="asset-group-title">Značka a postavy</h3>
-        <p class="asset-group-note">Ikona hry plus všech 25 současných postav, které mají kompletní portréty produkčních dialogů. Názvy odpovídají lokalizačním klíčům Unity.</p>
+        <p class="asset-group-note">Ikona hry a všech 25 současných postav s kompletními produkčními dialogovými portréty. Jména odpovídají lokalizačním klíčům v Unity.</p>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ikona arkádové hry Ball is God s vertikálním sestupem" loading="lazy" decoding="async"><strong>Ikona hry</strong><span>Ikona věžové arkády s vertikálním sestupem.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Portrét produkčního dialogu Espa" loading="lazy" decoding="async"><strong>Espa</strong><span>Portrét hráčské postavy.</span></a>
@@ -523,38 +525,38 @@
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/white-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/white-open.webp" width="640" height="640" alt="Portrét produkčního dialogu White" loading="lazy" decoding="async"><strong>White</strong><span>Portrét produkčního dialogu.</span></a>
         </div>
         <h3 class="asset-group-title">Pozadí menu</h3>
-        <p class="asset-group-note">Aktuální produkční umělecká díla používaná nebeským systémem pro výběr úrovní.</p>
+        <p class="asset-group-note">Aktuální produkční grafika používaná nebeským systémem výběru úrovní.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="pozadí nabídky výběru nebeské úrovně Ball is God" loading="lazy" decoding="async"><strong>Nebeské menu</strong><span>Produkční pozadí pro výběr úrovně.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Nebeské pozadí nabídky výběru úrovní ve hře Ball is God" loading="lazy" decoding="async"><strong>Nebeské menu</strong><span>Produkční pozadí pro výběr úrovně.</span></a>
         </div>
         <h3 class="asset-group-title">Vertikální sestupové světy</h3>
-        <p class="asset-group-note">Kompletní sada deseti pozadí aktuální polohy, seřazená od Ena do Deka.</p>
+        <p class="asset-group-note">Kompletní sada deseti aktuálních pozadí lokací, seřazená od Ena po Deka.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí oblohy vertikálního sestupu" loading="lazy" decoding="async"><strong>01 · Svět nebe</strong><span>Pozadí vertikálního sestupu Ena.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí prostoru vertikálního sestupu" loading="lazy" decoding="async"><strong>02 · Vesmírný svět</strong><span>Pozadí vertikálního sestupu Dyo.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí bouře s vertikálním sestupem" loading="lazy" decoding="async"><strong>03 · Bouřkový svět</strong><span>Pozadí vertikálního sestupu Tria.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God vertikální sestup sněhové horské pozadí" loading="lazy" decoding="async"><strong>04 · Sněhový svět</strong><span>Pozadí vertikálního sestupu Tessera.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí vertikálního sestupu sopky" loading="lazy" decoding="async"><strong>05 · Sopečný svět</strong><span>Pozadí Pente; ve hře animované.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí vertikálního sestupu oceánu" loading="lazy" decoding="async"><strong>06 · Oceánský svět</strong><span>Pozadí vertikálního sestupu Eksi.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí s vertikálním sestupem pouštních keřů" loading="lazy" decoding="async"><strong>07 · Pouštní svět</strong><span>Pozadí vertikálního sestupu Epta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí vertikálního sestupu" loading="lazy" decoding="async"><strong>08 · Lesní svět</strong><span>Pozadí vertikálního sestupu Ohto.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí vertikální sestupové jeskyně" loading="lazy" decoding="async"><strong>09 · Jeskynní svět</strong><span>Pozadí vertikálního sestupu Ennea.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí vertikálního sestupu pekla" loading="lazy" decoding="async"><strong>10 · Pekelný svět</strong><span>Pozadí vertikálního sestupu Deka.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí oblohy pro vertikální sestup" loading="lazy" decoding="async"><strong>01 · Svět nebe</strong><span>Pozadí vertikálního sestupu Ena.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí vesmíru pro vertikální sestup" loading="lazy" decoding="async"><strong>02 · Vesmírný svět</strong><span>Pozadí vertikálního sestupu Dyo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí bouřky pro vertikální sestup" loading="lazy" decoding="async"><strong>03 · Bouřkový svět</strong><span>Pozadí vertikálního sestupu Tria.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí zasněžených hor pro vertikální sestup" loading="lazy" decoding="async"><strong>04 · Sněhový svět</strong><span>Pozadí vertikálního sestupu Tessera.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí sopky pro vertikální sestup" loading="lazy" decoding="async"><strong>05 · Sopečný svět</strong><span>Pozadí Pente; ve hře animované.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí oceánu pro vertikální sestup" loading="lazy" decoding="async"><strong>06 · Oceánský svět</strong><span>Pozadí vertikálního sestupu Eksi.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí pouštních keřů pro vertikální sestup" loading="lazy" decoding="async"><strong>07 · Pouštní svět</strong><span>Pozadí vertikálního sestupu Epta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí lesa pro vertikální sestup" loading="lazy" decoding="async"><strong>08 · Lesní svět</strong><span>Pozadí vertikálního sestupu Ohto.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí jeskyně pro vertikální sestup" loading="lazy" decoding="async"><strong>09 · Jeskynní svět</strong><span>Pozadí vertikálního sestupu Ennea.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí pekla pro vertikální sestup" loading="lazy" decoding="async"><strong>10 · Pekelný svět</strong><span>Pozadí vertikálního sestupu Deka.</span></a>
         </div>
         <h3 class="asset-group-title">Pozadí příběhové arkády</h3>
-        <p class="asset-group-note">Kompletní sada dialogů a umístění: Síň světla plus pozadí pro všech deset světů.</p>
+        <p class="asset-group-note">Kompletní sada dialogových lokací: Síň světla a pozadí pro všech deset světů.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí dialogu Hall of Light" loading="lazy" decoding="async"><strong>00 · Síň světla</strong><span>Pozadí úvodního dialogu.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God příběhová arkáda na pozadí dialogu nebe" loading="lazy" decoding="async"><strong>01 · Nebeský dialog</strong><span>Pozadí příběhu Ena.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God příběhové arkádové pozadí dialogu" loading="lazy" decoding="async"><strong>02 · Vesmírný dialog</strong><span>Pozadí příběhu Dyo.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Pozadí dialogu bouřkový mrak Ball is God" loading="lazy" decoding="async"><strong>03 · Bouřkový dialog</strong><span>Pozadí příběhu Tria.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Pozadí dialogu sněhové hory Ball is God" loading="lazy" decoding="async"><strong>04 · Sněhový dialog</strong><span>Pozadí příběhu Tessera.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí dialogu příběhové pasáže se sopkou" loading="lazy" decoding="async"><strong>05 · Sopečný dialog</strong><span>Pozadí příběhu Pente.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="pozadí dialogu s příběhem Ball is God arkáda s oceánem" loading="lazy" decoding="async"><strong>06 · Oceánský dialog</strong><span>Pozadí příběhu Eksi.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God příběhová pasáž s pouštním dialogem na pozadí" loading="lazy" decoding="async"><strong>07 · Pouštní dialog</strong><span>Pozadí příběhu Epta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God příběhová arkáda na pozadí dialogu o lese" loading="lazy" decoding="async"><strong>08 · Lesní dialog</strong><span>Pozadí příběhu Ohto.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pozadí dialogu příběhové pasáže v jeskyni" loading="lazy" decoding="async"><strong>09 · Jeskynní dialog</strong><span>Pozadí příběhu Ennea.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God příběhová arkáda peklo pozadí dialogu" loading="lazy" decoding="async"><strong>10 · Pekelný dialog</strong><span>Pozadí příběhu Deka.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí dialogu v Síni světla" loading="lazy" decoding="async"><strong>00 · Síň světla</strong><span>Pozadí úvodního dialogu.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - nebeské pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>01 · Nebeský dialog</strong><span>Pozadí příběhu Ena.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - vesmírné pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>02 · Vesmírný dialog</strong><span>Pozadí příběhu Dyo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí dialogu s bouřkovými mraky" loading="lazy" decoding="async"><strong>03 · Bouřkový dialog</strong><span>Pozadí příběhu Tria.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pozadí dialogu se zasněženými horami" loading="lazy" decoding="async"><strong>04 · Sněhový dialog</strong><span>Pozadí příběhu Tessera.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - sopečné pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>05 · Sopečný dialog</strong><span>Pozadí příběhu Pente.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - oceánské pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>06 · Oceánský dialog</strong><span>Pozadí příběhu Eksi.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pouštní pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>07 · Pouštní dialog</strong><span>Pozadí příběhu Epta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - lesní pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>08 · Lesní dialog</strong><span>Pozadí příběhu Ohto.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - jeskynní pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>09 · Jeskynní dialog</strong><span>Pozadí příběhu Ennea.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God - pekelné pozadí dialogu příběhové arkády" loading="lazy" decoding="async"><strong>10 · Pekelný dialog</strong><span>Pozadí příběhu Deka.</span></a>
         </div>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
@@ -593,7 +595,7 @@
         <h2>Časté dotazy k Ball is God?!</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Jaký druh hry je Ball is God?!</h3><p>Hardcore vertikální sestupová arkáda. Otáčíte věží kolem padajícího Espa, přeskakujete bezpečná přistání, abyste nabili údery, a prorážíte si cestu mýtickými světy.</p></article>
-          <article class="detail-card"><h3>Jak se hraje Ball is God?!</h3><p>Tažením vodorovně otočte věž, přeskočte tři platformy a nabijte smeč a přejeďte svisle, když musí cooldown štít absorbovat smrtící zásah.</p></article>
+          <article class="detail-card"><h3>Jak se hraje Ball is God?!</h3><p>Vodorovným tažením otáčejte věží, přeskočte tři plošiny pro nabití úderu a přejeďte svisle, když musí štít s obnovou pohltit smrtelný zásah.</p></article>
           <article class="detail-card"><h3>Vyšla už hra Ball is God?!</h3><p>Zatím ne. Je v aktivní výrobě: herní systémy, výtvarná stránka světů, příběhový obsah a testování. Datum vydání zatím není veřejné. Cílové platformy jsou iOS a Android.</p></article>
           <article class="detail-card"><h3>Čím se liší Ball is God?!</h3><p>Spojuje arkádový tlak rizika a odměny s deseti lokacemi a karmou, která mění dialogy, nepřátele, varovné signály, štíty i bossy.</p></article>
           <article class="detail-card"><h3>Kdo vyrábí Ball is God?!</h3><p>WillowinWorlds, nezávislé studio vyrábějící mobilní puzzle a arkádové hry.</p></article>
@@ -606,7 +608,7 @@
         <ul class="update-list">
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31. července 2026</time><strong>Světové povrchy a validace nebezpečí</strong><p>Prezentace postav, deterministické generování a nebezpečí v podobě trnů prošly společnou vizuální kontrolou a validací.</p></li>
           <li><span>červenec 2026</span><strong>Úprava UI a postav</strong><p>Výběr úrovně, společné ovládací prvky akcí, svislé rámování dialogů a párové výrazy postav jsou nyní hotové.</p></li>
-          <li><span>únor 2026</span><strong>Kontrola rozsahu projektu</strong><p>Tým dokončil hlavní integraci příběhu a zkontroloval celý rozsah projektu: deset světů, morální volby, bossové a mnohonásobné konce.</p></li>
+          <li><span>únor 2026</span><strong>Kontrola rozsahu projektu</strong><p>Tým dokončil zásadní integraci příběhu a zhodnotil celý rozsah projektu: deset světů, morální volby, bossy a více konců.</p></li>
           <li><span>duben až květen 2025</span><strong>Přepsání příběhu a schopnosti</strong><p>Celý příběh byl přepsán, schopnosti postav byly vylepšeny a morální důsledky byly jasnější.</p></li>
           <li><span>srpen 2024</span><strong>Směr příběhu začíná</strong><p>Tým se rozhodl, že Ball is God?! má být víc než jednoduchá sestupová arkáda, a přidal mýtický příběh a vizi morálních voleb.</p></li>
           <li><span>červenec 2024</span><strong>Originální koncept</strong><p>Projekt začal jako první herní nápad studia: rychlá vertikální arkáda o pádu božskou věží.</p></li>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/sv/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "Ett hardcore arkadspel med vertikal nedstigning där spelare drar för att rotera tornet runt Espa, bygger kombo-krossar och gör karmaval på tio mytiska platser.",
+      "description": "Ett hardcore arkadspel med vertikal nedstigning där spelare drar för att rotera tornet runt Espa, bygger kombokrossningar och fattar karmabeslut på tio mytiska världar.",
       "keywords": "arkadspel med vertikal nedstigning, spel med roterande torn, hardcore-arkadspel, berättelsedrivet arkadspel, bossfightspel",
       "genre": [
         "Arkadspel med vertikal nedstigning",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Vrid tornet. Bli nedslaget.</span></h1>
-          <p class="hero-copy">En hardcore vertikal nedstigningsarkad där horisontell dragning roterar tornet runt den fallande Espa. Hoppa över säkra landningar, ladda en combo smash och bryt genom en mytisk värld där en obevakad träff avslutar loppet.</p>
+          <p class="hero-copy">En hardcore vertikal nedstigningsarkad där horisontell dragning roterar tornet runt den fallande Espa. Hoppa över säkra landningar, ladda en kombokrossning och bryt genom en mytisk värld där en obevakad träff avslutar omgången.</p>
           <p class="ball-hero-note">Aktiv produktion: tio platsscener, bossar, förgrenad dialog och karmavägar som ändrar spelets regler.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">Följ utvecklingen</a>
@@ -292,7 +294,7 @@
             <header>
               <span class="ball-ui-label">01 / Val av aktuell nivå</span>
               <h3>Den himmelska rutten väljer genererade nivåer över tio 100-nivåkapitel.</h3>
-              <p>Produktionsmenyn kartlägger tio platser i kapitel på 100 nivåer och öppnas direkt i den valda körningen.</p>
+              <p>Produktionsmenyn kartlägger tio platser i kapitel på 100 nivåer och öppnas direkt i den valda omgången.</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Bakgrund för nivåval i Ball is God: ett glödande tempel i slutet av en slingrande gyllene stig genom pastellmoln" loading="lazy" decoding="async">
@@ -344,7 +346,7 @@
           <div>
             <span class="ball-ui-label">04 / Milstolpeval</span>
             <h3>Svaret blir en del av nedstigningen.</h3>
-            <p>På lokala nivåer 90 och 100 ber den dedikerade panelen om ett spar-eller-döda-beslut innan dialog löser loppet.</p>
+            <p>På lokala nivåer 90 och 100 ber den dedikerade panelen om ett spar-eller-döda-beslut innan dialogen avgör omgången.</p>
           </div>
           <div class="ball-choice-panel" aria-label="Exempel på Ball is God dialogval">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
@@ -430,7 +432,7 @@
         <h2>Ball is God?! är ett hardcore-arkadspel om att falla genom ett roterande torn.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Idén</h3><p>Guida Espa ner genom ett gudomligt torn. Ett enda misstag kan avsluta rundan, och dina stora val förändrar hur världen spelas.</p></article>
-          <article class="detail-card"><h3>Nuvarande bygge</h3><p>Tio platsscener, procedurgenerering av torn, combo smash, svepsköld, bosskonfigurationer, förgrenad dialog, produktionsmenyer och uttrycksklara porträtt implementeras.</p></article>
+          <article class="detail-card"><h3>Nuvarande bygge</h3><p>Tio platsscener, procedurgenerering av torn, kombokrossning, svepsköld, bosskonfigurationer, förgrenad dialog, produktionsmenyer och uttrycksklara porträtt implementeras.</p></article>
           <article class="detail-card"><h3>Publik</h3><p>Spelare som gillar svåra arkadspel för mobilen, risk-och-belöning-timing och bossar, med en berättelse att följa.</p></article>
           <article class="detail-card"><h3>Status</h3><p>Aktiv produktion. Det senaste arbetet gäller runtime-system, världsgrafik, testning och hur spelet fungerar på mobilen.</p></article>
         </div>
@@ -442,7 +444,7 @@
           <article class="detail-card"><h3>Nedstigning med dra-för-att-rotera</h3><p>Horisontell dragning roterar tornet runt den automatiskt fallande Espa, och radar upp luckor, faror och säkra plattformar.</p></article>
           <article class="detail-card"><h3>Hardcore arkadtryck</h3><p>Ett enda oskyddat slag avslutar rundan, så du måste läsa tornet och tajma varje drag.</p></article>
           <article class="detail-card"><h3>Bossar och mytiska världar</h3><p>Tio platsscener, var och en med egna bossar, för berättelsen från en värld till nästa.</p></article>
-          <article class="detail-card"><h3>Val som ändrar reglerna</h3><p>Barmhärtighet, kraft och karma förändrar dialog, sköldregler, fiendens aggression, telegrafer och chefsfaser.</p></article>
+          <article class="detail-card"><h3>Val som ändrar reglerna</h3><p>Barmhärtighet, kraft och karma förändrar dialog, sköldregler, fiendens aggression, attackvarningar och bossfaser.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
@@ -451,7 +453,7 @@
         <ul class="update-list">
           <li><span>Steg 01</span><strong>Läs nedstigningen</strong><p>Skanna nästa plattformar, luckor och faror och leta efter säkra tidsfönster medan du faller.</p></li>
           <li><span>Steg 02</span><strong>Vrid tornet</strong><p>Horisontell dragning vänder världen runt Espa, och riktar in en säker plattform eller en avsiktlig lucka.</p></li>
-          <li><span>Steg 03</span><strong>Riskera och krossa</strong><p>Hoppa över tre plattformar för att ladda en combo smash, bryt sedan igenom strukturer medan skölden täcker ett dödligt misstag.</p></li>
+          <li><span>Steg 03</span><strong>Riskera och krossa</strong><p>Hoppa över tre plattformar för att ladda en kombokrossning, bryt sedan igenom strukturer medan skölden täcker ett dödligt misstag.</p></li>
           <li><span>Steg 04</span><strong>Välj konsekvens</strong><p>Nåd och kraft formar karma, dialog och spelreglerna som bärs in i fiender och bossar.</p></li>
         </ul>
       </section>
@@ -577,7 +579,7 @@
           <a class="related-world-link" href="paint-blasters.html">
             <span class="related-world-kicker">Produktionsprototyp</span>
             <strong>Paint Blasters</strong>
-            <p>Bygg färgdrivna bilder, sikta på svaga punkter och förvandla tornförstörelse till kedjereaktioner.</p>
+            <p>Bygg färgdrivna skott, sikta på svaga punkter och förvandla tornförstörelse till kedjereaktioner.</p>
             <span class="related-world-meta">Arkad för färgfysik</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
@@ -593,7 +595,7 @@
         <h2>Vanliga frågor om Ball is God?!</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Vilken typ av spel är Ball is God?!</h3><p>Ett hardcore vertikalt nedstigningsarkadspel. Du roterar ett torn runt den fallande Espa, hoppar över säkra landningar för att ladda smashar och tar dig igenom mytiska världar.</p></article>
-          <article class="detail-card"><h3>Hur spelar man Ball is God?!</h3><p>Dra horisontellt för att rotera tornet, hoppa över tre plattformar för att ladda en smash och svep vertikalt när nedkylningsskölden måste absorbera en dödlig träff.</p></article>
+          <article class="detail-card"><h3>Hur spelar man Ball is God?!</h3><p>Dra horisontellt för att rotera tornet, hoppa över tre plattformar för att ladda en kombokrossning och svep vertikalt när nedkylningsskölden måste absorbera en dödlig träff.</p></article>
           <article class="detail-card"><h3>Är Ball is God?! ute än?</h3><p>Inte än. Spelet är under aktiv produktion med runtime-system, världsgrafik, berättelseinnehåll och testning. Det finns inget offentligt releasedatum. Målplattformarna är iOS och Android.</p></article>
           <article class="detail-card"><h3>Vad gör Ball is God?! annorlunda?</h3><p>Det blandar arkadtryck av risk och belöning med tio platser och karma som ändrar dialog, fiender, förvarningar, sköldar och bossar.</p></article>
           <article class="detail-card"><h3>Vem gör Ball is God?!</h3><p>WillowinWorlds, en oberoende studio som gör pussel- och arkadspel för mobilen.</p></article>
@@ -606,7 +608,7 @@
         <ul class="update-list">
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 juli 2026</time><strong>Världsytor och riskvalidering</strong><p>Karaktärspresentation, deterministisk generering och taggfaror fick en gemensam visuell genomgång och validering.</p></li>
           <li><span>juli 2026</span><strong>Produktions-UI och karaktärsförbättring</strong><p>Nivåval, gemensamma handlingskontroller, vertikal dialogram och parade karaktärsuttryck finns nu på plats.</p></li>
-          <li><span>februari 2026</span><strong>Granskning av projektets omfattning</strong><p>Teamet genomförde ett stort berättelseintegrationspass och granskade hela projektets omfattning: tio världar, moraliska val, chefer och flera slut.</p></li>
+          <li><span>februari 2026</span><strong>Granskning av projektets omfattning</strong><p>Teamet genomförde en stor berättelseintegrering och granskade hela projektets omfattning: tio världar, moraliska val, bossar och flera slut.</p></li>
           <li><span>april-maj 2025</span><strong>Berättelseomskrivning och förmågor</strong><p>Hela historien skrevs om, karaktärsförmågorna förbättrades och moraliska konsekvenser blev tydligare.</p></li>
           <li><span>augusti 2024</span><strong>Berättelseriktningen börjar</strong><p>Teamet bestämde att Ball is God?! borde vara mer än en enkel arkadnedstigning och lade till en mytisk berättelse och en vision om moraliska val.</p></li>
           <li><span>juli 2024</span><strong>Originalkoncept</strong><p>Projektet började som studions första spelidé: ett snabbt vertikalt arkadspel om att falla genom ett gudomligt torn.</p></li>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#071530" id="metaThemeColor" data-theme-dark="#071530" data-theme-light="#eaf6ff">
-  <meta property="og:title" content="Ball is God?! - Hardcore Vertical Descent -arcade-peli">
+  <meta property="og:title" content="Ball is God?! - Hardcore-pystylaskeutumisen arcade-peli">
   <meta property="og:description" content="Ball is God?! on hardcore-pystylaskeutumisen arcade aktiivisessa tuotannossa. Vedä pyörittääksesi tornia Espa-hahmon ympäri, murskaa tasoja ja tee karmavalintoja.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="fi_FI">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
-  <meta name="twitter:title" content="Ball is God?! - Hardcore Vertical Descent -arcade-peli">
+  <meta name="twitter:title" content="Ball is God?! - Hardcore-pystylaskeutumisen arcade-peli">
   <meta name="twitter:description" content="Ball is God?! on hardcore-pystylaskeutumisen arcade aktiivisessa tuotannossa. Vedä pyörittääksesi tornia Espa-hahmon ympäri, murskaa tasoja ja tee karmavalintoja.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta name="twitter:image:alt" content="Ball is God?! -kortti: Espa, siivekäs sädekehällinen pallo sinistä taivasta vasten. Pyöritä tornia. Ole törmäys.">
@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/fi/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "Vakava pystysuoran laskeutumisen arcadepeli, jossa pelaajat vetämällä kiertävät tornia Espain ympäri, rakentavat yhdistelmäiskuja ja tekevät karmavalintoja kymmenessä myyttisessä paikassa.",
+      "description": "Hardcore-pystylaskeutumisen arcade-peli, jossa pelaajat pyörittävät tornia vetämällä Espa-hahmon ympäri, lataavat kombosmasheja ja tekevät karmavalintoja kymmenessä myyttisessä paikassa.",
       "keywords": "pystylaskeutumisen arcade, pyörivän tornin peli, hardcore arcade -peli, tarinavetoinen arcade, pomotaistelupeli",
       "genre": [
         "Pystylaskeutumisen arcade",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Pyöritä tornia. Ole törmäys.</span></h1>
-          <p class="hero-copy">Vakava pystysuora laskuhalli, jossa vaakasuora veto pyörittää tornia putoavan Espain ympäri. Ohita turvalliset laskeutumiset, lataa yhdistelmämurska ja murtaudu läpi myyttisen maailman, jossa yksi vartioimaton osuma päättää juoksun.</p>
+          <p class="hero-copy">Hardcore-pystylaskeutumisen arcade-peli, jossa vaakasuora veto pyörittää tornia putoavan Espa-hahmon ympäri. Ohita turvalliset laskeutumiset, lataa kombosmash ja murtaudu läpi myyttisen maailman, jossa yksi suojaamaton osuma päättää pelikierroksen.</p>
           <p class="ball-hero-note">Aktiivinen tuotanto: kymmenen paikkakohtausta, pomoja, haarautuva dialogi ja karmapolut, jotka muuttavat pelin sääntöjä.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">Seuraa kehitystä</a>
@@ -219,7 +221,7 @@
                 <img loading="lazy" class="ball-espa ball-espa-alt" src="../../assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" decoding="async">
               </div>
             </div>
-            <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-primary" src="../../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God-pelikuvake kultaisella jumalallisella pelihallimaailmalla" decoding="async">
+            <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-primary" src="../../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God -pelikuvake, jossa on kultainen jumalallinen arcade-maailma" decoding="async">
             <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-alt" src="../../assets/Ball%20is%20God/site/icon2.webp" width="520" height="520" alt="" decoding="async">
             <span class="ball-preview-title">
               <small>Hardcore-pystylaskeutumisen arcade</small>
@@ -240,7 +242,7 @@
         <div class="game-proof-layout">
           <div class="proof-copy">
             <span class="proof-kicker">Nykyisen koontiversion sisällä</span>
-            <h2 id="ballProofTitle">Karma muuttaa enemmän kuin dialogi.</h2>
+            <h2 id="ballProofTitle">Karma muuttaa muutakin kuin dialogia.</h2>
             <p>Valoisat, neutraalit ja tummat karmapolut muuttavat kilven toimintaa, varoitusmerkkejä, vihollisten aggressiivisuutta ja pomojen vaiheita, joten tarina muuttaa sitä, miten pelaat.</p>
             <span class="proof-status"><b>Version tila</b> Aktiivinen tuotanto</span>
           </div>
@@ -248,25 +250,25 @@
             <div class="ball-world-section">
               <h3>Kaikki kymmenen dialogimaailmaa</h3>
               <p>Dialogitaustat kaikille kymmenelle maailmalle laskeutumisjärjestyksessä: Ena ensin, Deka viimeisenä.</p>
-              <div class="world-filmstrip" aria-label="Kaikki kymmenen Ball is God-dialogin sijaintitaustaa">
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena taivasdialogin tausta" loading="lazy" decoding="async"><figcaption>01 · Ena - Sky</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo avaruusdialogin tausta" loading="lazy" decoding="async"><figcaption>02 · Dyo - Avaruus</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria myrskydialogin tausta" loading="lazy" decoding="async"><figcaption>03 · Tria - Myrsky</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera lumidialogin tausta" loading="lazy" decoding="async"><figcaption>04 · Tessera - Lumi</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente tulivuoren dialogin tausta" loading="lazy" decoding="async"><figcaption>05 · Pente - Tulivuori</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi valtameren dialogin tausta" loading="lazy" decoding="async"><figcaption>06 · Eksi - Valtameri</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta aavikon dialogin tausta" loading="lazy" decoding="async"><figcaption>07 · Epta - Aavikko</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God Ohto metsädialogin tausta" loading="lazy" decoding="async"><figcaption>08 · Ohto - Metsä</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God Ennea luoladialogin tausta" loading="lazy" decoding="async"><figcaption>09 · Ennea - Luola</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God Deka helvetin dialogin tausta" loading="lazy" decoding="async"><figcaption>10 · Deka - Helvetti</figcaption></figure>
+              <div class="world-filmstrip" aria-label="Kaikkien kymmenen Ball is God -dialogipaikan taustat">
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God, Ena-taivasmaailman dialogitausta" loading="lazy" decoding="async"><figcaption>01 · Ena - Sky</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God, Dyo-avaruusmaailman dialogitausta" loading="lazy" decoding="async"><figcaption>02 · Dyo - Avaruus</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God, Tria-myrskymaailman dialogitausta" loading="lazy" decoding="async"><figcaption>03 · Tria - Myrsky</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God, Tessera-lumimaailman dialogitausta" loading="lazy" decoding="async"><figcaption>04 · Tessera - Lumi</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God, Pente-tulivuorimaailman dialogitausta" loading="lazy" decoding="async"><figcaption>05 · Pente - Tulivuori</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God, Eksi-valtamerimaailman dialogitausta" loading="lazy" decoding="async"><figcaption>06 · Eksi - Valtameri</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God, Epta-aavikkomaailman dialogitausta" loading="lazy" decoding="async"><figcaption>07 · Epta - Aavikko</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God, Ohto-metsämaailman dialogitausta" loading="lazy" decoding="async"><figcaption>08 · Ohto - Metsä</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God, Ennea-luolamaailman dialogitausta" loading="lazy" decoding="async"><figcaption>09 · Ennea - Luola</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God, Deka-helvettimaailman dialogitausta" loading="lazy" decoding="async"><figcaption>10 · Deka - Helvetti</figcaption></figure>
               </div>
             </div>
           </div>
         </div>
-        <div class="proof-facts" aria-label="Vahvistetut Ball is God-rakennustiedot">
+        <div class="proof-facts" aria-label="Vahvistetut Ball is God -version tiedot">
           <article><strong>Kymmenen sijaintia versiossa</strong><span>Paikkakohtaiset pomot ja vaarat.</span></article>
           <article><strong>Kolme ohitusta → murskaa</strong><span>Ohita kolme turvallista laskeutumista ladataksesi sen.</span></article>
-          <article><strong>Pyyhkäisykilpi</strong><span>Jäähdytyspuolustus tappavaa iskua vastaan.</span></article>
+          <article><strong>Pyyhkäisykilpi</strong><span>Latausajallinen puolustus tappavaa iskua vastaan.</span></article>
           <article><strong>Mukautuva laskeutuminen</strong><span>Deterministiset tasokerrokset, joissa on tilaa toipua.</span></article>
         </div>
       </section>
@@ -279,11 +281,11 @@
           <p>Tämä on nykyinen kulku siinä järjestyksessä, jossa kohtaat sen: tasonvalinta, dialogi, välitavoitevalinta, sitten voitto tai erillinen tappionäyttö. Jokainen alla oleva kuva käyttää taidetta tuotannon Unity-projektista.</p>
         </div>
 
-        <ol class="ball-menu-flow" aria-label="Nykyinen Ball is God-valikon järjestys">
+        <ol class="ball-menu-flow" aria-label="Nykyinen Ball is God -valikkojärjestys">
           <li><b>01</b><span><strong>Tason valinta</strong><small>Valitse tasoista 1-1000</small></span></li>
           <li><b>02</b><span><strong>Pelin kulku</strong><small>Kierrä, väistä ja laskeudu</small></span></li>
           <li><b>03</b><span><strong>Dialogi / tietokilpailu</strong><small>Joka kymmenes taso käynnistyessään</small></span></li>
-          <li><b>04</b><span><strong>Säästä / tapa</strong><small>Virstanpylväsvalinta 90 ja 100</small></span></li>
+          <li><b>04</b><span><strong>Säästä / tapa</strong><small>Virstanpylväsvalinta tasoilla 90 ja 100</small></span></li>
           <li><b>05</b><span><strong>Tulos</strong><small>Jatka, toista tai yritä uudelleen</small></span></li>
         </ol>
 
@@ -291,8 +293,8 @@
           <article class="ball-ui-feature">
             <header>
               <span class="ball-ui-label">01 / Nykyisen tason valinta</span>
-              <h3>Taivaallinen reitti valitsee luodut tasot kymmenestä 100-tason luvusta.</h3>
-              <p>Tuotantovalikko kartoittaa kymmenen sijaintia 100-tason luvuissa ja avautuu suoraan valittuun ajoon.</p>
+              <h3>Taivaallinen reitti valitsee generoidut tasot kymmenestä 100 tason luvusta.</h3>
+              <p>Tuotantovalikko jakaa kymmenen paikkaa 100 tason lukuihin ja avautuu suoraan valittuun pelikierrokseen.</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Ball is God -pelin tasonvalinnan tausta: hehkuva temppeli mutkittelevan kultaisen polun päässä pastellipilvien läpi" loading="lazy" decoding="async">
@@ -324,9 +326,9 @@
               <p>Hahmoportretti, paikan taide ja puhujakyltti jakavat yhden pystysuoran kehyksen.</p>
             </header>
             <figure class="ball-ui-device ball-dialogue-preview">
-              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God taivaallinen dialogipaikka hehkuvalla riippuvalolla" loading="lazy" decoding="async">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God, taivaallinen dialogipaikka hehkuvalla riippuvalolla" loading="lazy" decoding="async">
               <span class="ball-dialogue-location" aria-hidden="true">ENA · LASKU 03</span>
-              <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, violetti kolmion muotoinen vartija, Ball is God" loading="lazy" decoding="async">
+              <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, violetti kolmionmuotoinen vartija pelistä Ball is God" loading="lazy" decoding="async">
               <div class="ball-dialogue-panel">
                 <img src="../../assets/game-proof/ball-is-god-ui/dialogue-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
                 <div class="ball-dialogue-copy">
@@ -335,7 +337,7 @@
                   <span aria-hidden="true">Jatka napauttamalla <b>›</b></span>
                 </div>
               </div>
-              <figcaption><span>Ajonaikainen dialogi</span><strong>Muotokuva, kaiutin ja sijainti yhdessä kehyksessä</strong></figcaption>
+              <figcaption><span>Ajonaikainen dialogi</span><strong>Muotokuva, puhuja ja paikka yhdessä kehyksessä</strong></figcaption>
             </figure>
           </article>
         </div>
@@ -344,9 +346,9 @@
           <div>
             <span class="ball-ui-label">04 / Virstanpylvään valinta</span>
             <h3>Vastauksesta tulee osa laskeutumista.</h3>
-            <p>Paikallisilla tasoilla 90 ja 100 erityinen paneeli pyytää varaa tai tappaa päätöstä ennen kuin keskustelu ratkaisee juoksun.</p>
+            <p>Paikallisilla tasoilla 90 ja 100 erillinen paneeli kysyy säästä tai tapa -päätöstä ennen kuin dialogi päättää pelikierroksen.</p>
           </div>
-          <div class="ball-choice-panel" aria-label="Esimerkki Ball is God-dialogin valinnoista">
+          <div class="ball-choice-panel" aria-label="Esimerkki Ball is God -dialogin valinnoista">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
             <div>
               <span>Säästä</span>
@@ -359,9 +361,9 @@
           <div>
             <span class="ball-ui-label">05 / Tulosvalikot</span>
             <h3>Voitto jatkuu. Tappio palaa samaan haasteeseen.</h3>
-            <p>Nykyisellä koontiversiolla on kaksi erillistä tulostilaa: PanelWin tarjoaa toiston ja seuraavan tason, kun taas PanelOver pitää yhden erehtymättömän toistotoiminnon.</p>
+            <p>Nykyisessä versiossa on kaksi erillistä tulostilaa: PanelWin tarjoaa uudelleenpeluun ja seuraavan tason, kun taas PanelOver sisältää yhden selkeän uudelleenpeluutoiminnon.</p>
           </div>
-          <div class="ball-result-menus" aria-label="Ball is God nykyisten tulosten valikot">
+          <div class="ball-result-menus" aria-label="Ball is God -pelin nykyiset tulosvalikot">
             <div class="ball-result-menu is-victory">
               <span>Voitto · PanelWin</span>
               <strong>Laskeutuminen läpäisty</strong>
@@ -387,11 +389,11 @@
         <div class="ball-cast-heading">
           <div>
             <span class="ball-ui-label">Dialogin hahmot</span>
-            <h3>Kasvot kohtasivat matkalla alas.</h3>
+            <h3>Matkalla alas kohdatut kasvot.</h3>
           </div>
-          <p>Kaikki 25 merkkiä kelvollisilla tuotannon avoimella ja suljetulla muotokuvaparilla on sisällytetty alla. Vaihda ilmaisua siirtämällä korttia tai tarkenna sitä.</p>
+          <p>Alla on mukana kaikki 25 hahmoa, joilla on valmiit tuotannon avoin- ja suljettu-muotokuvaparit. Vaihda ilmettä viemällä kursori kortin päälle tai kohdistamalla siihen.</p>
         </div>
-        <div class="ball-character-roster" aria-label="Ball is God-tuotannon dialogihahmot">
+        <div class="ball-character-roster" aria-label="Ball is God -tuotannon dialogihahmot">
           <article class="ball-character-card is-espa">
             <div class="ball-character-art">
               <img class="is-open" src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa-dialogimuotokuva" loading="lazy" decoding="async">
@@ -430,7 +432,7 @@
         <h2>Ball is God?! on hardcore-arcade-peli putoamisesta pyörivän tornin läpi.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Idea</h3><p>Ohjaa Espa jumalallisen tornin läpi alas. Yksi virhe voi päättää kierroksen, ja suuret valintasi muuttavat sitä, miten maailma toimii.</p></article>
-          <article class="detail-card"><h3>Nykyinen versio</h3><p>Toteutetaan kymmenen sijaintikohtausta, prosessitornin luominen, yhdistelmämurska, pyyhkäisykilpi, pomo-kokoonpanot, haarautuva dialogi, tuotantovalikot ja ilmaisuvalmiit muotokuvat.</p></article>
+          <article class="detail-card"><h3>Nykyinen versio</h3><p>Kymmenen paikkakohtausta, proseduraalinen tornin generointi, kombosmash, pyyhkäisykilpi, pomokokoonpanot, haarautuva dialogi, tuotantovalikot ja ilmettä vaihtavat muotokuvat on toteutettu.</p></article>
           <article class="detail-card"><h3>Yleisö</h3><p>Pelaajille, jotka pitävät vaikeista mobiiliarcade-peleistä, riski ja palkinto -ajoituksesta ja pomoista, ja joilla on tarina seurattavana.</p></article>
           <article class="detail-card"><h3>Tila</h3><p>Aktiivinen tuotanto. Viimeaikainen työ kattaa ajonaikaiset järjestelmät, maailmagrafiikan, testauksen ja sen, miten peli toimii puhelimella.</p></article>
         </div>
@@ -439,10 +441,10 @@
         <div class="eyebrow">Ominaisuudet</div>
         <h2>Mitä teet Ball is God?! -pelissä</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Vedä ja kierrä laskeutumista</h3><p>Vaakasuora veto pyörittää tornia automaattisesti putoavan Espain ympäri, kohdistaen aukkoja, vaaroja ja turvallisia tasoja.</p></article>
+          <article class="detail-card"><h3>Vedä ja kierrä laskeutumista</h3><p>Vaakasuora veto pyörittää tornia automaattisesti putoavan Espa-hahmon ympäri ja asettaa aukot, vaarat ja turvalliset tasot kohdalleen.</p></article>
           <article class="detail-card"><h3>Hardcore-arcade-paine</h3><p>Yksi suojaamaton osuma päättää kierroksen, joten tornia on luettava ja jokainen liike ajoitettava.</p></article>
           <article class="detail-card"><h3>Pomot ja myyttiset maailmat</h3><p>Kymmenen paikkakohtausta, joilla jokaisella on omat pomonsa, kuljettavat tarinaa maailmasta toiseen.</p></article>
-          <article class="detail-card"><h3>Valinnat, jotka muuttavat sääntöjä</h3><p>Armo, voima ja karma muuttavat dialogia, kilpisääntöjä, vihollisen aggressiota, lennättimiä ja pomovaiheita.</p></article>
+          <article class="detail-card"><h3>Valinnat, jotka muuttavat sääntöjä</h3><p>Armo, voima ja karma muuttavat dialogia, kilpisääntöjä, vihollisten aggressiivisuutta, varoituksia ja pomojen vaiheita.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
@@ -450,9 +452,9 @@
         <h2>Näin pelaat Ball is God?! -peliä</h2>
         <ul class="update-list">
           <li><span>Vaihe 01</span><strong>Lue laskeutuminen</strong><p>Skannaa seuraavat tasot, aukot ja vaarat ja etsi turvallisia ajoitusikkunoita pudotessasi.</p></li>
-          <li><span>Vaihe 02</span><strong>Pyöritä tornia</strong><p>Vaakasuora veto kääntää maailman Espain ympäri, kohdistaen turvallisen alustan tai tarkoituksellisen aukon.</p></li>
-          <li><span>Vaihe 03</span><strong>Riskeeraa ja murskaa</strong><p>Ohita kolme alustaa ryöstääksesi yhdistelmäiskun ja murtaudu sitten rakenteiden läpi, kun kilpi peittää yhden tappavan virheen.</p></li>
-          <li><span>Vaihe 04</span><strong>Valitse seuraus</strong><p>Armo ja voima muokkaavat karmaa, dialogia ja vihollisiin ja pomoihin kantavia pelisääntöjä.</p></li>
+          <li><span>Vaihe 02</span><strong>Pyöritä tornia</strong><p>Vaakasuora veto kääntää maailman Espa-hahmon ympäri ja asettaa kohdalleen turvallisen tason tai tarkoituksellisen aukon.</p></li>
+          <li><span>Vaihe 03</span><strong>Riskeeraa ja murskaa</strong><p>Ohita kolme tasoa ladataksesi kombosmashin ja murtaudu sitten rakenteiden läpi samalla, kun kilpi suojaa yhdeltä tappavalta virheeltä.</p></li>
+          <li><span>Vaihe 04</span><strong>Valitse seuraus</strong><p>Armo ja voima muokkaavat karmaa, dialogia ja pelisääntöjä, jotka vaikuttavat vihollisiin ja pomoihin.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section ball-story-section">
@@ -460,7 +462,7 @@
         <h2>Myyttinen torni, jossa valintasi seuraavat sinua alas.</h2>
         <div class="info-grid">
           <div>
-            <p>Ball is God?! sai alkunsa lapsuuden kiehtovuudesta liikuteltaviin pystysuoraan laskeutuviin pelihalliin: lukemaan aukkoja, reagoimaan nopeasti ja selviytymään vaiston varassa.</p>
+            <p>Ball is God?! sai alkunsa lapsuuden ihastuksesta pystylaskeutumisen mobiiliarcade-peleihin: aukkojen lukemiseen, nopeaan reagointiin ja vaistonvaraiseen selviytymiseen.</p>
             <p>Muoto jaksaisi kantaa enemmän: pomoja, persoonallisia hahmoja, tarinan ja moraalista jännitettä. Nykyisessä projektissa seurataan Espa-hahmoa kymmenen paikkakohtauksen ja outojen hahmojen kaartin läpi, ja valinnat muuttavat sekä tarinaa että pelaamista.</p>
             <p>Siksi tavoitteeksi tuli yksinkertainen pystylaskeutumisen arcade, jossa on pomotaistelun paine ja tarinavetoisen roolipelin seuraukset.</p>
           </div>
@@ -490,12 +492,12 @@
       </section>
       <section class="soft-card game-page-section" id="download-assets">
         <div class="eyebrow">Lataa materiaalit</div>
-        <h2>Ball is God?!-lehdistö- ja sisällöntuottajat</h2>
+        <h2>Ball is God?! -pelin lehdistö- ja sisällöntuottajamateriaalit</h2>
         <p class="asset-kit-copy">WebP-esikatseluja lehdistöjuttuja, julkaisijoiden arviointia ja kauppasivuviittauksia varten. Täysresoluutioiset lähdetiedostot saatavilla pyynnöstä.</p>
         <h3 class="asset-group-title">Tuotemerkki ja hahmot</h3>
         <p class="asset-group-note">Pelikuvake sekä kaikki 25 nykyistä hahmoa, joilla on täydelliset tuotantodialogin muotokuvat. Nimet vastaavat Unity-lokalisointiavaimia.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God pystysuora laskutorni pelihallipelikuvake" loading="lazy" decoding="async"><strong>Pelikuvake</strong><span>Pystylaskeutumisen tornipeli-arcade-kuvake.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God, pystylaskeutumistornin arcade-pelikuvake" loading="lazy" decoding="async"><strong>Pelikuvake</strong><span>Pystylaskeutumisen tornipeli-arcade-kuvake.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa-tuotannon dialogimuotokuva" loading="lazy" decoding="async"><strong>Espa</strong><span>Pelaajan hahmon muotokuva.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/revla-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/revla-open.webp" width="640" height="517" alt="Revla-tuotannon dialogimuotokuva" loading="lazy" decoding="async"><strong>Revla</strong><span>Tuotannon dialogimuotokuva.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shash-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash-tuotannon dialogimuotokuva" loading="lazy" decoding="async"><strong>Shash</strong><span>Tuotannon dialogimuotokuva.</span></a>
@@ -523,38 +525,38 @@
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/white-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/white-open.webp" width="640" height="640" alt="White-tuotannon dialogimuotokuva" loading="lazy" decoding="async"><strong>White</strong><span>Tuotannon dialogimuotokuva.</span></a>
         </div>
         <h3 class="asset-group-title">Valikon taustat</h3>
-        <p class="asset-group-note">Taivaan tason valintajärjestelmän käyttämä nykyinen tuotantotaide.</p>
+        <p class="asset-group-note">Taivaallisen tasonvalintajärjestelmän käyttämä nykyinen tuotantografiikka.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God taivaan tasovalikon tausta" loading="lazy" decoding="async"><strong>Taivaallinen valikko</strong><span>Tasonvalinnan tuotantotausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, taivaallisen tasonvalintavalikon tausta" loading="lazy" decoding="async"><strong>Taivaallinen valikko</strong><span>Tasonvalinnan tuotantotausta.</span></a>
         </div>
         <h3 class="asset-group-title">Pystysuorat laskeutumismaailmat</h3>
-        <p class="asset-group-note">Täydellinen sarja kymmenen nykyisen sijainnin taustaa, tilattu Ena - Deka.</p>
+        <p class="asset-group-note">Täydellinen kokoelma kymmenen nykyisen paikan taustoja järjestyksessä Enasta Dekaan.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuora laskeutuminen taivaalla" loading="lazy" decoding="async"><strong>01 · Taivaan maailma</strong><span>Ena: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuoran laskeutumisavaruuden tausta" loading="lazy" decoding="async"><strong>02 · Avaruusmaailma</strong><span>Dyo: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuora laskumyrsky tausta" loading="lazy" decoding="async"><strong>03 · Myrskymaailma</strong><span>Tria: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuora lasku lumivuori tausta" loading="lazy" decoding="async"><strong>04 · Lumimaailma</strong><span>Tessera: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuoraan laskeutuvan tulivuoren tausta" loading="lazy" decoding="async"><strong>05 · Tulivuorimaailma</strong><span>Pente tausta; animoitu pelissä.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuora laskeutuminen valtameren tausta" loading="lazy" decoding="async"><strong>06 · Valtamerimaailma</strong><span>Eksi: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuora laskeutuminen aavikon pensaiden tausta" loading="lazy" decoding="async"><strong>07 · Aavikkomaailma</strong><span>Epta: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuoraan laskeutuva metsätausta" loading="lazy" decoding="async"><strong>08 · Metsämaailma</strong><span>Ohto: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuoran laskun luolan tausta" loading="lazy" decoding="async"><strong>09 · Luolamaailma</strong><span>Ennea: pystylaskeutumisen tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God pystysuoran laskeutumisen helvetin tausta" loading="lazy" decoding="async"><strong>10 · Helvetin maailma</strong><span>Deka: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen taivastausta" loading="lazy" decoding="async"><strong>01 · Taivaan maailma</strong><span>Ena: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen avaruustausta" loading="lazy" decoding="async"><strong>02 · Avaruusmaailma</strong><span>Dyo: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen myrskytausta" loading="lazy" decoding="async"><strong>03 · Myrskymaailma</strong><span>Tria: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen lumivuoritausta" loading="lazy" decoding="async"><strong>04 · Lumimaailma</strong><span>Tessera: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen tulivuoritausta" loading="lazy" decoding="async"><strong>05 · Tulivuorimaailma</strong><span>Pente tausta; animoitu pelissä.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen valtameritausta" loading="lazy" decoding="async"><strong>06 · Valtamerimaailma</strong><span>Eksi: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen aavikon pensaikkotausta" loading="lazy" decoding="async"><strong>07 · Aavikkomaailma</strong><span>Epta: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen metsätausta" loading="lazy" decoding="async"><strong>08 · Metsämaailma</strong><span>Ohto: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen luolatausta" loading="lazy" decoding="async"><strong>09 · Luolamaailma</strong><span>Ennea: pystylaskeutumisen tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, pystylaskeutumisen helvettitausta" loading="lazy" decoding="async"><strong>10 · Helvetin maailma</strong><span>Deka: pystylaskeutumisen tausta.</span></a>
         </div>
         <h3 class="asset-group-title">Tarina-arcaden taustat</h3>
         <p class="asset-group-note">Täydellinen dialogipaikkasetti: Valon sali sekä taustat kaikille kymmenelle maailmalle.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Hall of Light -dialogistausta" loading="lazy" decoding="async"><strong>00 · Valon sali</strong><span>Aloitusdialogin tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God tarinan pelihallin taivasdialogin tausta" loading="lazy" decoding="async"><strong>01 · Taivasvuoropuhelu</strong><span>Ena tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God-tarina pelihallitilan dialogin tausta" loading="lazy" decoding="async"><strong>02 · Avaruusvuoropuhelu</strong><span>Dyo tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God myrskypilvidialogin tausta" loading="lazy" decoding="async"><strong>03 · Myrskyvuoropuhelu</strong><span>Tria tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lumivuoren dialogin tausta" loading="lazy" decoding="async"><strong>04 · Lumivuoropuhelu</strong><span>Tessera tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God tarina arcade tulivuori dialogi tausta" loading="lazy" decoding="async"><strong>05 · Tulivuorivuoropuhelu</strong><span>Pente tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God tarina pelihallin valtameren dialogin tausta" loading="lazy" decoding="async"><strong>06 · Valtamerivuoropuhelu</strong><span>Eksi tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God tarina pelihallin aavikon dialogista" loading="lazy" decoding="async"><strong>07 · Aavikkovuoropuhelu</strong><span>Epta tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God tarinapelihallin metsädialogin tausta" loading="lazy" decoding="async"><strong>08 · Metsävuoropuhelu</strong><span>Ohto tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God tarina pelihallin luoladialogin tausta" loading="lazy" decoding="async"><strong>09 · Luolavuoropuhelu</strong><span>Ennea tarinan tausta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God tarina pelihallin helvetin dialogin tausta" loading="lazy" decoding="async"><strong>10 · Helvettivuoropuhelu</strong><span>Deka tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, Valon salin dialogitausta" loading="lazy" decoding="async"><strong>00 · Valon sali</strong><span>Aloitusdialogin tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin taivasdialogitausta" loading="lazy" decoding="async"><strong>01 · Taivasvuoropuhelu</strong><span>Ena tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin avaruusdialogitausta" loading="lazy" decoding="async"><strong>02 · Avaruusvuoropuhelu</strong><span>Dyo tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, myrskypilvidialogin tausta" loading="lazy" decoding="async"><strong>03 · Myrskyvuoropuhelu</strong><span>Tria tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, lumivuoridialogin tausta" loading="lazy" decoding="async"><strong>04 · Lumivuoropuhelu</strong><span>Tessera tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin tulivuoridialogitausta" loading="lazy" decoding="async"><strong>05 · Tulivuorivuoropuhelu</strong><span>Pente tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin valtameridialogitausta" loading="lazy" decoding="async"><strong>06 · Valtamerivuoropuhelu</strong><span>Eksi tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin aavikkodialogitausta" loading="lazy" decoding="async"><strong>07 · Aavikkovuoropuhelu</strong><span>Epta tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin metsädialogitausta" loading="lazy" decoding="async"><strong>08 · Metsävuoropuhelu</strong><span>Ohto tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin luoladialogitausta" loading="lazy" decoding="async"><strong>09 · Luolavuoropuhelu</strong><span>Ennea tarinan tausta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God, tarinallisen arcade-pelin helvettidialogitausta" loading="lazy" decoding="async"><strong>10 · Helvettivuoropuhelu</strong><span>Deka tarinan tausta.</span></a>
         </div>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
@@ -577,7 +579,7 @@
           <a class="related-world-link" href="paint-blasters.html">
             <span class="related-world-kicker">Tuotannon prototyyppi</span>
             <strong>Paint Blasters</strong>
-            <p>Rakenna väritehoisia otoksia, tähtää heikkoihin kohtiin ja muuta tornin tuhoutuminen ketjureaktioksi.</p>
+            <p>Rakenna värivoimaisia laukauksia, tähtää heikkoihin kohtiin ja muuta tornin tuhoaminen ketjureaktioiksi.</p>
             <span class="related-world-meta">Värifysiikka-arcade</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
@@ -593,7 +595,7 @@
         <h2>Yleisiä kysymyksiä Ball is God?! -pelistä</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Millainen peli on Ball is God?!</h3><p>Hardcore-pystylaskeutumisen arcade-peli. Pyörität tornia putoavan Espa-hahmon ympäri, ohitat turvalliset laskeutumiset ladataksesi smasheja ja murtaudut myyttisten maailmojen läpi.</p></article>
-          <article class="detail-card"><h3>Miten Ball is God?! -peliä pelataan?</h3><p>Pyöritä tornia vetämällä vaakasuunnassa, ohita kolme tasoa latautuaksesi ja pyyhkäise pystysuunnassa, kun jäähdytyskilven on kestettävä tappava osuma.</p></article>
+          <article class="detail-card"><h3>Miten Ball is God?! -peliä pelataan?</h3><p>Pyöritä tornia vetämällä vaakasuunnassa, ohita kolme tasoa ladataksesi smashin ja pyyhkäise pystysuunnassa, kun latausajallisen kilven on torjuttava tappava osuma.</p></article>
           <article class="detail-card"><h3>Onko Ball is God?! jo julkaistu?</h3><p>Ei vielä. Peli on aktiivisessa tuotannossa: ajonaikaiset järjestelmät, maailmagrafiikka, tarinasisältö ja testaus. Julkista julkaisupäivää ei ole. Kohdealustat ovat iOS ja Android.</p></article>
           <article class="detail-card"><h3>Mikä tekee Ball is God?! -pelistä erilaisen?</h3><p>Se yhdistää riskin ja palkinnon arcade-paineen kymmeneen paikkaan ja karmaan, joka muuttaa dialogia, vihollisia, varoituksia, kilpiä ja pomoja.</p></article>
           <article class="detail-card"><h3>Kuka tekee Ball is God?! -peliä?</h3><p>WillowinWorlds, itsenäinen studio, joka tekee mobiilipulma- ja arcade-pelejä.</p></article>
@@ -606,7 +608,7 @@
         <ul class="update-list">
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31. heinäkuuta 2026</time><strong>Maailman pinnat ja vaarojen validointi</strong><p>Hahmojen esitys, deterministinen generointi ja piikkivaarat saivat yhteisen visuaalisen ja validointikierroksen.</p></li>
           <li><span>heinäkuu 2026</span><strong>Tuotantokäyttöliittymän ja hahmojen viimeistely</strong><p>Tasonvalinta, yhteiset toimintaohjaimet, pystysuora dialogikehys ja pariutuvat hahmoilmeet ovat nyt paikoillaan.</p></li>
-          <li><span>helmikuu 2026</span><strong>Hankkeen laajuuden tarkistus</strong><p>Tiimi suoritti suuren tarinaintegraatiopassin ja kävi läpi projektin koko mittakaavan: kymmenen maailmaa, moraalisia valintoja, pomoja ja useita loppuja.</p></li>
+          <li><span>helmikuu 2026</span><strong>Hankkeen laajuuden tarkistus</strong><p>Tiimi sai valmiiksi suuren tarinaintegraatiokierroksen ja kävi läpi projektin koko mittakaavan: kymmenen maailmaa, moraalisia valintoja, pomoja ja useita loppuja.</p></li>
           <li><span>huhti-toukokuu 2025</span><strong>Tarinan uudelleenkirjoitus ja kyvyt</strong><p>Koko tarina kirjoitettiin uudelleen, hahmojen kykyjä parannettiin ja moraaliset seuraukset tulivat selvemmiksi.</p></li>
           <li><span>elokuu 2024</span><strong>Tarinan suunta alkaa</strong><p>Tiimi päätti, että Ball is God?! -pelin pitäisi olla enemmän kuin yksinkertainen arcade-laskeutuminen, ja lisäsi myyttisen tarinan ja moraalisten valintojen vision.</p></li>
           <li><span>heinäkuu 2024</span><strong>Alkuperäinen konsepti</strong><p>Projekti alkoi studion ensimmäisenä peli-ideana: nopea pystysuora arcade-peli putoamisesta jumalallisen tornin läpi.</p></li>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

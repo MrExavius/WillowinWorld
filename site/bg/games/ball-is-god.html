@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/bg/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "Хардкор аркадна игра с вертикално спускане, в която играчите плъзгат, за да завъртят кулата около Espa, да изграждат комбо удари и да правят избор на карма в десет митични локации.",
+      "description": "Хардкор аркадна игра с вертикално спускане, в която играчите плъзгат, за да въртят кулата около Espa, да трупат комбо удари и да правят избори за кармата в десет митични локации.",
       "keywords": "аркада с вертикално спускане, игра с въртяща се кула, хардкор аркадна игра, аркада със сюжет, игра с битки с босове",
       "genre": [
         "Аркада с вертикално спускане",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Завъртете кулата. Станете ударът.</span></h1>
-          <p class="hero-copy">Хардкор аркада с вертикално спускане, където хоризонталното плъзгане върти кулата около падащия Espa. Пропускайте безопасни кацания, направете комбо удар и пробийте през митичен свят, където един непредпазен удар слага край на бягането.</p>
+          <p class="hero-copy">Хардкор аркада с вертикално спускане, в която хоризонталното плъзгане върти кулата около падащия Espa. Прескачайте безопасни кацания, заредете комбо удар и си пробийте път през митичен свят, където един незащитен удар слага край на рунда.</p>
           <p class="ball-hero-note">Активно производство: десет сцени на локации, босове, разклоняващи се диалози и пътища на кармата, които променят правилата на играта.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">Следвайте разработката</a>
@@ -240,7 +242,7 @@
         <div class="game-proof-layout">
           <div class="proof-copy">
             <span class="proof-kicker">В текущата версия</span>
-            <h2 id="ballProofTitle">Кармата се променя повече от диалога.</h2>
+            <h2 id="ballProofTitle">Кармата променя не само диалога.</h2>
             <p>Светлите, неутралните и тъмните пътища на кармата променят поведението на щита, предупрежденията, агресията на враговете и фазите на босовете, така че историята променя начина, по който играете.</p>
             <span class="proof-status"><b>Състояние на версията</b> Активно производство</span>
           </div>
@@ -248,25 +250,25 @@
             <div class="ball-world-section">
               <h3>Всички десет свята с диалози</h3>
               <p>Фонове за диалозите във всичките десет свята, по реда на спускането от Ena до Deka.</p>
-              <div class="world-filmstrip" aria-label="Всички десет Ball is God фонове на местоположението на диалога">
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena небесен диалогов фон" loading="lazy" decoding="async"><figcaption>01 · Ena - Небе</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo фон на диалоговото пространство" loading="lazy" decoding="async"><figcaption>02 · Dyo - Космос</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria бурен диалогов фон" loading="lazy" decoding="async"><figcaption>03 · Tria - Буря</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera снежен диалогов фон" loading="lazy" decoding="async"><figcaption>04 · Tessera - Сняг</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente вулканичен диалогов фон" loading="lazy" decoding="async"><figcaption>05 · Pente - Вулкан</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi океански диалогов фон" loading="lazy" decoding="async"><figcaption>06 · Eksi - Океан</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta пустинен диалогов фон" loading="lazy" decoding="async"><figcaption>07 · Epta - Пустиня</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God Ohto горски диалогов фон" loading="lazy" decoding="async"><figcaption>08 · Ohto - Гора</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God Ennea пещерен диалогов фон" loading="lazy" decoding="async"><figcaption>09 · Ennea - Пещера</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God Deka адски диалогов фон" loading="lazy" decoding="async"><figcaption>10 · Deka - Ад</figcaption></figure>
+              <div class="world-filmstrip" aria-label="Всички десет диалогови фона на локациите в Ball is God">
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Небесен диалогов фон Ena за Ball is God" loading="lazy" decoding="async"><figcaption>01 · Ena - Небе</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Космически диалогов фон Dyo за Ball is God" loading="lazy" decoding="async"><figcaption>02 · Dyo - Космос</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Бурен диалогов фон Tria за Ball is God" loading="lazy" decoding="async"><figcaption>03 · Tria - Буря</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Снежен диалогов фон Tessera за Ball is God" loading="lazy" decoding="async"><figcaption>04 · Tessera - Сняг</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Вулканичен диалогов фон Pente за Ball is God" loading="lazy" decoding="async"><figcaption>05 · Pente - Вулкан</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Океански диалогов фон Eksi за Ball is God" loading="lazy" decoding="async"><figcaption>06 · Eksi - Океан</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Пустинен диалогов фон Epta за Ball is God" loading="lazy" decoding="async"><figcaption>07 · Epta - Пустиня</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Горски диалогов фон Ohto за Ball is God" loading="lazy" decoding="async"><figcaption>08 · Ohto - Гора</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Пещерен диалогов фон Ennea за Ball is God" loading="lazy" decoding="async"><figcaption>09 · Ennea - Пещера</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Адски диалогов фон Deka за Ball is God" loading="lazy" decoding="async"><figcaption>10 · Deka - Ад</figcaption></figure>
               </div>
             </div>
           </div>
         </div>
-        <div class="proof-facts" aria-label="Проверени факти за изграждане на Ball is God">
+        <div class="proof-facts" aria-label="Проверени факти за версията на Ball is God">
           <article><strong>Десет локации във версията</strong><span>Босове и опасности, специфични за всяка локация.</span></article>
           <article><strong>Три прескачания → разбиване</strong><span>Прескочете три безопасни кацания, за да го заредите.</span></article>
-          <article><strong>Плъзнете щит</strong><span>Защита за изчакване срещу смъртоносен удар.</span></article>
+          <article><strong>Плъзнете щит</strong><span>Защита с презареждане срещу смъртоносен удар.</span></article>
           <article><strong>Адаптивно спускане</strong><span>Детерминирани нива на платформите, с място за възстановяване.</span></article>
         </div>
       </section>
@@ -279,11 +281,11 @@
           <p>Това е текущият поток в реда, в който го срещате: избор на ниво, диалог, ключов избор, после екран за победа или отделен екран за загуба. Всяко изображение по-долу използва арт от производствения проект в Unity.</p>
         </div>
 
-        <ol class="ball-menu-flow" aria-label="Текущ ред на менюто Ball is God">
+        <ol class="ball-menu-flow" aria-label="Текуща подредба на менютата в Ball is God">
           <li><b>01</b><span><strong>Избор на ниво</strong><small>Изберете от нива 1-1000</small></span></li>
           <li><b>02</b><span><strong>Геймплей</strong><small>Завъртане, избягване и спускане</small></span></li>
           <li><b>03</b><span><strong>Диалог / викторина</strong><small>Всяко десето ниво при задействане</small></span></li>
-          <li><b>04</b><span><strong>Пощади / убий</strong><small>Избор на крайъгълен камък на 90 и 100</small></span></li>
+          <li><b>04</b><span><strong>Пощади / убий</strong><small>Ключов избор на 90 и 100</small></span></li>
           <li><b>05</b><span><strong>Резултат</strong><small>Продължете, повторете или опитайте отново</small></span></li>
         </ol>
 
@@ -291,8 +293,8 @@
           <article class="ball-ui-feature">
             <header>
               <span class="ball-ui-label">01 / Избор на текущо ниво</span>
-              <h3>Небесният маршрут избира генерирани нива в десет глави от 100 нива.</h3>
-              <p>Производственото меню картографира десет местоположения в глави от 100 нива и се отваря директно в избрания цикъл.</p>
+              <h3>Небесният маршрут избира генерирани нива в десет глави от по 100 нива.</h3>
+              <p>Производственото меню картографира десет локации в глави от по 100 нива и отваря директно избрания рунд.</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Фон за избор на ниво в Ball is God: светещ храм в края на виещата се златна пътека сред пастелни облаци" loading="lazy" decoding="async">
@@ -324,7 +326,7 @@
               <p>Портретът на героя, артът на локацията и табелката с името на говорещия споделят една вертикална рамка.</p>
             </header>
             <figure class="ball-ui-device ball-dialogue-preview">
-              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God местоположение на небесен диалог със светеща висяща светлина" loading="lazy" decoding="async">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Небесна диалогова локация в Ball is God със светеща висяща светлина" loading="lazy" decoding="async">
               <span class="ball-dialogue-location" aria-hidden="true">ENA · КАЦАНЕ 03</span>
               <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, лилав триъгълен страж от Ball is God" loading="lazy" decoding="async">
               <div class="ball-dialogue-panel">
@@ -335,7 +337,7 @@
                   <span aria-hidden="true">Докоснете, за да продължите <b>›</b></span>
                 </div>
               </div>
-              <figcaption><span>Диалог в играта</span><strong>Портрет, говорител и местоположение в една рамка</strong></figcaption>
+              <figcaption><span>Диалог в играта</span><strong>Портрет, говорещ и локация в една рамка</strong></figcaption>
             </figure>
           </article>
         </div>
@@ -344,9 +346,9 @@
           <div>
             <span class="ball-ui-label">04 / Ключов избор</span>
             <h3>Отговорът става част от спускането.</h3>
-            <p>На локални нива 90 и 100, специалният панел иска решение за резервиране или убиване, преди диалогът да разреши бягането.</p>
+            <p>На локални нива 90 и 100 специалният панел изисква решение за пощада или убийство, преди диалогът да реши изхода от рунда.</p>
           </div>
-          <div class="ball-choice-panel" aria-label="Пример за избор на диалог Ball is God">
+          <div class="ball-choice-panel" aria-label="Примери за диалогови избори в Ball is God">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
             <div>
               <span>Пощади</span>
@@ -359,9 +361,9 @@
           <div>
             <span class="ball-ui-label">05 / Менюта с резултати</span>
             <h3>Победата води напред. Поражението връща към същото предизвикателство.</h3>
-            <p>Текущата компилация има две отделни състояния на резултата: PanelWin предлага повторение и следващо ниво, докато PanelOver поддържа едно безпогрешно действие за повторение.</p>
+            <p>Текущата версия има две отделни състояния за резултата: PanelWin предлага повторение и следващо ниво, докато PanelOver оставя едно недвусмислено действие за повторение.</p>
           </div>
-          <div class="ball-result-menus" aria-label="Ball is God текущи менюта с резултати">
+          <div class="ball-result-menus" aria-label="Текущи менюта с резултати в Ball is God">
             <div class="ball-result-menu is-victory">
               <span>Победа · PanelWin</span>
               <strong>Спускането е завършено</strong>
@@ -387,11 +389,11 @@
         <div class="ball-cast-heading">
           <div>
             <span class="ball-ui-label">Герои в диалозите</span>
-            <h3>Лицата се срещнаха по пътя надолу.</h3>
+            <h3>Лица, срещнати по пътя надолу.</h3>
           </div>
-          <p>Всичките 25 знака с валидни производствени двойки отворени и затворени портрети са включени по-долу. Задръжте курсора на мишката или фокусирайте върху карта, за да смените израза.</p>
+          <p>Всички 25 героя с валидни производствени двойки портрети с отворено и затворено изражение са включени по-долу. Задръжте курсора или фокусирайте карта, за да смените изражението.</p>
         </div>
-        <div class="ball-character-roster" aria-label="Ball is God производствени диалогови знаци">
+        <div class="ball-character-roster" aria-label="Производствени диалогови герои в Ball is God">
           <article class="ball-character-card is-espa">
             <div class="ball-character-art">
               <img class="is-open" src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Диалогов портрет Espa" loading="lazy" decoding="async">
@@ -430,7 +432,7 @@
         <h2>Ball is God?! е хардкор аркадна игра за падане през въртяща се кула.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Идеята</h3><p>Водете Espa надолу по божествена кула. Една грешка може да сложи край на играта, а големите ви избори променят начина, по който работи светът.</p></article>
-          <article class="detail-card"><h3>Текуща версия</h3><p>Реализирани са десет сцени на местоположение, процедурно генериране на кула, комбинирано разбиване, щит с плъзгане, конфигурации на шефове, разклоняващ се диалог, производствени менюта и готови за изразяване портрети.</p></article>
+          <article class="detail-card"><h3>Текуща версия</h3><p>Внедрени са десет сцени на локации, процедурно генериране на кули, комбо удар, щит с плъзгане, конфигурации на босове, разклоняващ се диалог, производствени менюта и портрети със сменяемо изражение.</p></article>
           <article class="detail-card"><h3>Аудитория</h3><p>Играчи, които обичат трудни мобилни аркадни игри, тайминг между риск и награда и босове, с история, която да следват.</p></article>
           <article class="detail-card"><h3>Статус</h3><p>Активно производство. Последната работа обхваща системите на играта, арта на световете, тестването и усещането от играта на телефон.</p></article>
         </div>
@@ -439,10 +441,10 @@
         <div class="eyebrow">Характеристики</div>
         <h2>Какво правите в Ball is God?!</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Спускане с въртене чрез плъзгане</h3><p>Хоризонталното плъзгане завърта кулата около автоматично падащия Espa, подреждайки празнини, опасности и безопасни платформи.</p></article>
+          <article class="detail-card"><h3>Спускане с въртене чрез плъзгане</h3><p>Хоризонталното плъзгане върти кулата около автоматично падащия Espa, подравнявайки пролуките, опасностите и безопасните платформи.</p></article>
           <article class="detail-card"><h3>Хардкор аркаден натиск</h3><p>Един незащитен удар слага край на играта, така че трябва да четете кулата и да премервате всеки ход.</p></article>
           <article class="detail-card"><h3>Босове и митични светове</h3><p>Десет сцени на локации, всяка със свои босове, пренасят историята от един свят към следващия.</p></article>
-          <article class="detail-card"><h3>Избори, които променят правилата</h3><p>Милост, сила и диалог за промяна на кармата, правила на щита, вражеска агресия, телеграфи и фази на боса.</p></article>
+          <article class="detail-card"><h3>Избори, които променят правилата</h3><p>Милостта, силата и кармата променят диалога, правилата на щита, агресията на враговете, сигналите за атака и фазите на босовете.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
@@ -450,9 +452,9 @@
         <h2>Как се играе Ball is God?!</h2>
         <ul class="update-list">
           <li><span>Стъпка 01</span><strong>Прочетете спускането</strong><p>Сканирайте следващите платформи, пропуски и опасности и търсете безопасни моменти за действие, докато падате.</p></li>
-          <li><span>Стъпка 02</span><strong>Завъртете кулата</strong><p>Хоризонталното плъзгане обръща света около Espa, подравнявайки безопасна платформа или умишлена празнина.</p></li>
-          <li><span>Стъпка 03</span><strong>Риск и разбиване</strong><p>Пропуснете три платформи, за да заредите комбо удар, след това пробийте структури, докато щитът покрива една смъртоносна грешка.</p></li>
-          <li><span>Стъпка 04</span><strong>Изберете следствието</strong><p>Милостта и силата оформят кармата, диалога и правилата на играта, пренесени във враговете и шефовете.</p></li>
+          <li><span>Стъпка 02</span><strong>Завъртете кулата</strong><p>Хоризонталното плъзгане завърта света около Espa, подравнявайки безопасна платформа или желана пролука.</p></li>
+          <li><span>Стъпка 03</span><strong>Риск и разбиване</strong><p>Прескочете три платформи, за да заредите комбо удар, след което пробийте конструкциите, докато щитът ви предпазва от една фатална грешка.</p></li>
+          <li><span>Стъпка 04</span><strong>Изберете следствието</strong><p>Милостта и силата оформят кармата, диалога и правилата на играта, които се пренасят върху враговете и босовете.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section ball-story-section">
@@ -460,7 +462,7 @@
         <h2>Митична кула, където всеки избор слиза заедно с вас.</h2>
         <div class="info-grid">
           <div>
-            <p>Ball is God?! започва от детско увлечение по мобилните вертикално спускащи се аркади: четене на пропуски, бърза реакция и оцеляване по инстинкт.</p>
+            <p>Ball is God?! започва от детско увлечение по мобилните аркади с вертикално спускане: разчитане на пролуките, бързи реакции и оцеляване по инстинкт.</p>
             <p>Форматът можеше да побере повече: босове, герои с характер, история и морално напрежение. Сегашният проект следва Espa през десет сцени на локации и група странни герои, с избори, които променят и историята, и играта.</p>
             <p>Така целта се превърна в проста аркада с вертикално спускане, с напрежението на битка с бос и последиците на RPG, водено от сюжета.</p>
           </div>
@@ -490,12 +492,12 @@
       </section>
       <section class="soft-card game-page-section" id="download-assets">
         <div class="eyebrow">Изтегляне на материали</div>
-        <h2>Ball is God?! преса и материали на творци</h2>
+        <h2>Материали на Ball is God?! за пресата и създатели</h2>
         <p class="asset-kit-copy">WebP визуализации за отразяване в пресата, преглед от издатели и препратки в страници на магазини. Изходни файлове в пълна резолюция са налични при запитване.</p>
         <h3 class="asset-group-title">Марка и герои</h3>
-        <p class="asset-group-note">Иконата на играта плюс всички 25 настоящи персонажа, които имат пълни производствени диалогови портрети. Имената съвпадат с ключовете за локализация Unity.</p>
+        <p class="asset-group-note">Иконата на играта плюс всички 25 настоящи героя, които имат пълни производствени диалогови портрети. Имената съвпадат с ключовете за локализация в Unity.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God икона на аркадна игра с вертикална кула за спускане" loading="lazy" decoding="async"><strong>Иконка на играта</strong><span>Иконка на аркадна кула с вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Икона на Ball is God, аркадна игра с кула и вертикално спускане" loading="lazy" decoding="async"><strong>Иконка на играта</strong><span>Иконка на аркадна кула с вертикално спускане.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Производствен диалогов портрет Espa" loading="lazy" decoding="async"><strong>Espa</strong><span>Портрет на героя на играча.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/revla-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/revla-open.webp" width="640" height="517" alt="Производствен диалогов портрет Revla" loading="lazy" decoding="async"><strong>Revla</strong><span>Диалогов портрет от производствената версия.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shash-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Производствен диалогов портрет Shash" loading="lazy" decoding="async"><strong>Shash</strong><span>Диалогов портрет от производствената версия.</span></a>
@@ -523,38 +525,38 @@
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/white-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/white-open.webp" width="640" height="640" alt="Производствен диалогов портрет White" loading="lazy" decoding="async"><strong>White</strong><span>Диалогов портрет от производствената версия.</span></a>
         </div>
         <h3 class="asset-group-title">Фонове на менюто</h3>
-        <p class="asset-group-note">Текущо произведение на изкуството, използвано от системата за избор на небесни нива.</p>
+        <p class="asset-group-note">Текущ производствен арт, използван от небесната система за избор на ниво.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Фон на менюто за избор на небесно ниво Ball is God" loading="lazy" decoding="async"><strong>Небесно меню</strong><span>Производствен фон за избор на ниво.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Небесен фон на менюто за избор на ниво в Ball is God" loading="lazy" decoding="async"><strong>Небесно меню</strong><span>Производствен фон за избор на ниво.</span></a>
         </div>
         <h3 class="asset-group-title">Светове с вертикално спускане</h3>
-        <p class="asset-group-note">Пълен набор от десет фона на текущо местоположение, подредени от Ena до Deka.</p>
+        <p class="asset-group-note">Пълен набор от фонове за десетте текущи локации, подредени от Ena до Deka.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God фон на вертикално спускане на небето" loading="lazy" decoding="async"><strong>01 · Небесен свят</strong><span>Фон Ena за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God фон за вертикално спускане" loading="lazy" decoding="async"><strong>02 · Космически свят</strong><span>Фон Dyo за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God вертикално спускане фон на буря" loading="lazy" decoding="async"><strong>03 · Бурен свят</strong><span>Фон Tria за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God вертикално спускане снежна планина фон" loading="lazy" decoding="async"><strong>04 · Снежен свят</strong><span>Фон Tessera за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God фон на вертикален спускащ се вулкан" loading="lazy" decoding="async"><strong>05 · Свят на вулкани</strong><span>Фон Pente; анимиран в играта.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God вертикално спускане океан фон" loading="lazy" decoding="async"><strong>06 · Светът на океана</strong><span>Фон Eksi за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God вертикално спускане пустинни храсти фон" loading="lazy" decoding="async"><strong>07 · Пустинен свят</strong><span>Фон Epta за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God вертикален спускащ се горски фон" loading="lazy" decoding="async"><strong>08 · Горски свят</strong><span>Фон Ohto за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God фон на пещера с вертикално спускане" loading="lazy" decoding="async"><strong>09 · Пещерен свят</strong><span>Фон Ennea за вертикално спускане.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God вертикално спускане адски фон" loading="lazy" decoding="async"><strong>10 · Адски свят</strong><span>Фон Deka за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Небесен фон за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>01 · Небесен свят</strong><span>Фон Ena за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Космически фон за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>02 · Космически свят</strong><span>Фон Dyo за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Фон с буря за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>03 · Бурен свят</strong><span>Фон Tria за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Фон със снежна планина за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>04 · Снежен свят</strong><span>Фон Tessera за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Вулканичен фон за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>05 · Свят на вулкани</strong><span>Фон Pente; анимиран в играта.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Океански фон за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>06 · Светът на океана</strong><span>Фон Eksi за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Фон с пустинни храсти за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>07 · Пустинен свят</strong><span>Фон Epta за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Горски фон за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>08 · Горски свят</strong><span>Фон Ohto за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Пещерен фон за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>09 · Пещерен свят</strong><span>Фон Ennea за вертикално спускане.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Адски фон за вертикално спускане в Ball is God" loading="lazy" decoding="async"><strong>10 · Адски свят</strong><span>Фон Deka за вертикално спускане.</span></a>
         </div>
         <h3 class="asset-group-title">Сюжетни аркадни фонове</h3>
         <p class="asset-group-note">Пълен набор от диалогови локации: Залата на светлината плюс фонове за всичките десет свята.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Фон на диалога Hall of Light" loading="lazy" decoding="async"><strong>00 · Зала на светлината</strong><span>Фон на началния диалог.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркада небе диалог фон" loading="lazy" decoding="async"><strong>01 · Небесен диалог</strong><span>Фон на историята Ena.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркада пространство диалог фон" loading="lazy" decoding="async"><strong>02 · Космически диалог</strong><span>Фон на историята Dyo.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God буреносен облак диалогов фон" loading="lazy" decoding="async"><strong>03 · Диалог на бурята</strong><span>Фон на историята Tria.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Фон за диалог на снежната планина Ball is God" loading="lazy" decoding="async"><strong>04 · Снежен диалог</strong><span>Фон на историята Tessera.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркада вулкан диалог фон" loading="lazy" decoding="async"><strong>05 · Диалог на вулкана</strong><span>Фон на историята Pente.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркада океан диалог фон" loading="lazy" decoding="async"><strong>06 · Диалог на океана</strong><span>Фон на историята Eksi.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркадна пустиня диалог фон" loading="lazy" decoding="async"><strong>07 · Диалог на пустинята</strong><span>Фон на историята Epta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркадна гора диалог фон" loading="lazy" decoding="async"><strong>08 · Горски диалог</strong><span>Фон на историята Ohto.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркадна пещера фон диалог" loading="lazy" decoding="async"><strong>09 · Диалог в пещерата</strong><span>Фон на историята Ennea.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God история аркада ад диалог фон" loading="lazy" decoding="async"><strong>10 · Адски диалог</strong><span>Фон на историята Deka.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Диалогов фон Зала на светлината в Ball is God" loading="lazy" decoding="async"><strong>00 · Зала на светлината</strong><span>Фон на началния диалог.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Небесен диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>01 · Небесен диалог</strong><span>Фон на историята Ena.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Космически диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>02 · Космически диалог</strong><span>Фон на историята Dyo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Диалогов фон с буреносен облак в Ball is God" loading="lazy" decoding="async"><strong>03 · Диалог на бурята</strong><span>Фон на историята Tria.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Диалогов фон със снежна планина в Ball is God" loading="lazy" decoding="async"><strong>04 · Снежен диалог</strong><span>Фон на историята Tessera.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Вулканичен диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>05 · Диалог на вулкана</strong><span>Фон на историята Pente.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Океански диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>06 · Диалог на океана</strong><span>Фон на историята Eksi.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Пустинен диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>07 · Диалог на пустинята</strong><span>Фон на историята Epta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Горски диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>08 · Горски диалог</strong><span>Фон на историята Ohto.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Пещерен диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>09 · Диалог в пещерата</strong><span>Фон на историята Ennea.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Адски диалогов фон за сюжетната аркада Ball is God" loading="lazy" decoding="async"><strong>10 · Адски диалог</strong><span>Фон на историята Deka.</span></a>
         </div>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
@@ -577,7 +579,7 @@
           <a class="related-world-link" href="paint-blasters.html">
             <span class="related-world-kicker">Производствен прототип</span>
             <strong>Paint Blasters</strong>
-            <p>Създавайте цветни снимки, насочвайте се към слабите точки и превръщайте разрушаването на кули във верижни реакции.</p>
+            <p>Създавайте изстрели със сила от цветовете, прицелвайте се в слабите места и превръщайте разрушаването на кули във верижни реакции.</p>
             <span class="related-world-meta">Аркадна игра с цветна физика</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
@@ -592,8 +594,8 @@
         <div class="eyebrow">ЧЗВ за Ball is God?!</div>
         <h2>Често задавани въпроси за Ball is God?!</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Какъв вид игра е Ball is God?!</h3><p>Хардкор аркада с вертикално спускане. Въртите кула около падащия Espa, прескачате безопасните кацания, за да заредите удари, и си пробивате път през митични светове.</p></article>
-          <article class="detail-card"><h3>Как се играе Ball is God?!</h3><p>Плъзнете хоризонтално, за да завъртите кулата, прескочете три платформи, за да нанесете удар, и плъзнете вертикално, когато щитът за охлаждане трябва да поеме смъртоносен удар.</p></article>
+          <article class="detail-card"><h3>Каква игра е Ball is God?!</h3><p>Хардкор аркада с вертикално спускане. Въртите кула около падащия Espa, прескачате безопасните кацания, за да заредите удари, и си пробивате път през митични светове.</p></article>
+          <article class="detail-card"><h3>Как се играе Ball is God?!</h3><p>Плъзнете хоризонтално, за да завъртите кулата, прескочете три платформи, за да заредите удар, и плъзнете вертикално, когато щитът с презареждане трябва да поеме смъртоносен удар.</p></article>
           <article class="detail-card"><h3>Излязла ли е вече Ball is God?!</h3><p>Още не. Играта е в активно производство: системи на играта, арт на световете, сюжетно съдържание и тестване. Няма обявена дата за излизане. Целевите платформи са iOS и Android.</p></article>
           <article class="detail-card"><h3>Какво отличава Ball is God?!</h3><p>Съчетава аркаден натиск между риск и награда с десет локации и карма, която променя диалозите, враговете, предупрежденията, щитовете и босовете.</p></article>
           <article class="detail-card"><h3>Кой прави Ball is God?!</h3><p>WillowinWorlds, независимо студио за мобилни пъзели и аркадни игри.</p></article>
@@ -606,8 +608,8 @@
         <ul class="update-list">
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 юли 2026 г</time><strong>Световни повърхности и валидиране на опасностите</strong><p>Представянето на героите, детерминистичното генериране и опасностите от тръни преминаха през обща визуална проверка и валидиране.</p></li>
           <li><span>юли 2026 г</span><strong>Доработка на UI и героите</strong><p>Изборът на ниво, общите контроли за действия, вертикалното оформление на диалозите и сдвоените изражения на героите вече са налице.</p></li>
-          <li><span>февруари 2026 г</span><strong>Преглед на обхвата на проекта</strong><p>Екипът завърши основен пропуск за интегриране на историята и прегледа пълния мащаб на проекта: десет свята, морален избор, босове и множество окончания.</p></li>
-          <li><span>април-май 2025 г</span><strong>Пренаписване на историята и способности</strong><p>Пълната история е пренаписана, способностите на персонажа са подобрени и моралните последици са станали по-ясни.</p></li>
+          <li><span>февруари 2026 г</span><strong>Преглед на обхвата на проекта</strong><p>Екипът завърши голям етап по интегрирането на историята и прегледа пълния мащаб на проекта: десет свята, морални избори, босове и множество финали.</p></li>
+          <li><span>април-май 2025 г</span><strong>Пренаписване на историята и способности</strong><p>Пълната история беше пренаписана, способностите на героите бяха подобрени и моралните последици станаха по-ясни.</p></li>
           <li><span>август 2024 г</span><strong>Историята започва</strong><p>Екипът реши, че Ball is God?! трябва да бъде повече от проста аркада със спускане, и добави митична история и визия за морален избор.</p></li>
           <li><span>юли 2024 г</span><strong>Оригинална концепция</strong><p>Проектът започна като първата идея за игра на студиото: бърза вертикална аркада за падане през божествена кула.</p></li>
           <li><span>Текуща версия</span><strong>Аркада и история в една версия</strong><p>Спускането по въртяща се кула, комбо ударът, щитът с плъзгане, босовете, диалозите и кармата вече работят заедно в една версия.</p></li>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

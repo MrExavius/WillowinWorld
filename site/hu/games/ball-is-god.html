@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#071530" id="metaThemeColor" data-theme-dark="#071530" data-theme-light="#eaf6ff">
-  <meta property="og:title" content="Ball is God?! - Hardcore Vertical Descent arcade játék">
+  <meta property="og:title" content="Ball is God?! - Hardcore függőleges leereszkedős arcade játék">
   <meta property="og:description" content="A Ball is God?! aktív gyártás alatt álló hardcore, függőleges leereszkedős arcade. Húzással forgasd a tornyot Espa körül, törj át a platformokon, és hozz karmadöntéseket.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="hu_HU">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
-  <meta name="twitter:title" content="Ball is God?! - Hardcore Vertical Descent arcade játék">
+  <meta name="twitter:title" content="Ball is God?! - Hardcore függőleges leereszkedős arcade játék">
   <meta name="twitter:description" content="A Ball is God?! aktív gyártás alatt álló hardcore, függőleges leereszkedős arcade. Húzással forgasd a tornyot Espa körül, törj át a platformokon, és hozz karmadöntéseket.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta name="twitter:image:alt" content="Ball is God?! kártya: Espa, egy szárnyas, glóriás labda kék ég előtt. Forgasd el a tornyot. Légy a becsapódás.">
@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/hu/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "Egy kemény függőleges ereszkedő arcade játék, amelyben a játékosok húzással forgatják a tornyot a Espa körül, kombinált összetöréseket építenek, és karmát választanak tíz mitikus helyszínen.",
+      "description": "Hardcore, függőleges leereszkedős arcade játék, ahol a játékosok húzással forgatják a tornyot Espa körül, kombócsapásokat töltenek fel, és karmadöntéseket hoznak tíz mitikus helyszínen.",
       "keywords": "függőleges leereszkedős arcade, forgótornyos játék, hardcore arcade játék, történetvezérelt arcade, főellenség-harcos játék",
       "genre": [
         "Függőleges leereszkedős arcade",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Forgasd el a tornyot. Légy a becsapódás.</span></h1>
-          <p class="hero-copy">Egy kemény függőleges ereszkedő árkád, ahol vízszintes húzás forgatja a tornyot a leeső Espa körül. Hagyd ki a biztonságos leszállást, hajts végre egy kombót, és törj át egy mitikus világot, ahol egyetlen őrizetlen ütés véget vet a futásnak.</p>
+          <p class="hero-copy">Hardcore, függőleges leereszkedős arcade, ahol vízszintes húzással forgatod a tornyot a zuhanó Espa körül. Hagyd ki a biztonságos landolásokat, tölts fel egy kombócsapást, és törj át egy mitikus világon, ahol egyetlen védtelen találat véget vet a menetnek.</p>
           <p class="ball-hero-note">Aktív gyártás: tíz helyszínjelenet, főellenségek, elágazó párbeszédek és karmaösvények, amelyek megváltoztatják a játékszabályokat.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">Kövesd a fejlesztést</a>
@@ -219,7 +221,7 @@
                 <img loading="lazy" class="ball-espa ball-espa-alt" src="../../assets/Ball%20is%20God/site/espa1.webp" width="520" height="292" alt="" decoding="async">
               </div>
             </div>
-            <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-primary" src="../../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God játékikon isteni arany árkádvilággal" decoding="async">
+            <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-primary" src="../../assets/Ball%20is%20God/site/icon1.webp" width="520" height="520" alt="Ball is God játékikon arany isteni arcade világgal" decoding="async">
             <img loading="lazy" class="ball-showcase-icon ball-showcase-icon-alt" src="../../assets/Ball%20is%20God/site/icon2.webp" width="520" height="520" alt="" decoding="async">
             <span class="ball-preview-title">
               <small>Hardcore függőleges leereszkedős arcade</small>
@@ -240,7 +242,7 @@
         <div class="game-proof-layout">
           <div class="proof-copy">
             <span class="proof-kicker">A jelenlegi builden belül</span>
-            <h2 id="ballProofTitle">A karma többet változtat, mint a párbeszéd.</h2>
+            <h2 id="ballProofTitle">A karma nem csak a párbeszédeket változtatja meg.</h2>
             <p>A fény, a semleges és a sötét karmaösvények megváltoztatják a pajzs viselkedését, a figyelmeztető jelzéseket, az ellenségek agresszióját és a főellenségek fázisait, így a történet megváltoztatja, hogyan játszol.</p>
             <span class="proof-status"><b>Build állapota</b> Aktív gyártás</span>
           </div>
@@ -248,9 +250,9 @@
             <div class="ball-world-section">
               <h3>Mind a tíz párbeszédvilág</h3>
               <p>Párbeszédhátterek mind a tíz világhoz, leereszkedési sorrendben: Ena az első, Deka az utolsó.</p>
-              <div class="world-filmstrip" aria-label="Mind a tíz Ball is God párbeszédpanel háttere">
+              <div class="world-filmstrip" aria-label="Mind a tíz Ball is God párbeszédhelyszín háttere">
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena égbolt párbeszéd háttér" loading="lazy" decoding="async"><figcaption>01 · Ena - Égbolt</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo tér párbeszéd háttér" loading="lazy" decoding="async"><figcaption>02 · Dyo - Űr</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo űr párbeszéd háttér" loading="lazy" decoding="async"><figcaption>02 · Dyo - Űr</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria vihar párbeszéd háttér" loading="lazy" decoding="async"><figcaption>03 · Tria - Vihar</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera hó párbeszéd háttér" loading="lazy" decoding="async"><figcaption>04 · Tessera - Hó</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente vulkán párbeszéd háttér" loading="lazy" decoding="async"><figcaption>05 · Pente - Vulkán</figcaption></figure>
@@ -263,10 +265,10 @@
             </div>
           </div>
         </div>
-        <div class="proof-facts" aria-label="Ellenőrzött Ball is God építési tények">
+        <div class="proof-facts" aria-label="Ellenőrzött Ball is God build-adatok">
           <article><strong>Tíz helyszín a buildben</strong><span>Helyszínspecifikus főellenségek és veszélyek.</span></article>
           <article><strong>Három kihagyás → zúzás</strong><span>Hagyj ki három biztonságos landolást a feltöltéséhez.</span></article>
-          <article><strong>Pajzs ujjhúzással</strong><span>Lehűlés elleni védekezés egy halálos ütés ellen.</span></article>
+          <article><strong>Pajzs ujjhúzással</strong><span>Újratöltési idejű védelem egy halálos találat ellen.</span></article>
           <article><strong>Adaptív leereszkedés</strong><span>Determinisztikus platformszintek, hellyel a felépülésre.</span></article>
         </div>
       </section>
@@ -292,7 +294,7 @@
             <header>
               <span class="ball-ui-label">01 / Aktuális szint kiválasztása</span>
               <h3>Az égi útvonal tíz 100 szintű fejezetből választ ki generált szinteket.</h3>
-              <p>A gyártási menü tíz helyszínt térképez fel 100 szintű fejezetben, és közvetlenül a kiválasztott futtatáshoz nyílik meg.</p>
+              <p>A gyártási menü tíz helyszínt jelenít meg 100 szintes fejezetekben, és közvetlenül a kiválasztott menethez nyílik meg.</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Ball is God pályaválasztó háttér: egy izzó templom egy kanyargó arany ösvény végén, pasztellfelhők között" loading="lazy" decoding="async">
@@ -326,7 +328,7 @@
             <figure class="ball-ui-device ball-dialogue-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God égi párbeszéd helyszín izzó függesztett fénnyel" loading="lazy" decoding="async">
               <span class="ball-dialogue-location" aria-hidden="true">ENA · LESZÁLLÁS 03</span>
-              <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, lila háromszög alakú őrszem a Ball is God-től" loading="lazy" decoding="async">
+              <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, lila háromszög alakú őrszem a Ball is God játékból" loading="lazy" decoding="async">
               <div class="ball-dialogue-panel">
                 <img src="../../assets/game-proof/ball-is-god-ui/dialogue-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
                 <div class="ball-dialogue-copy">
@@ -335,7 +337,7 @@
                   <span aria-hidden="true">Koppints a folytatáshoz <b>›</b></span>
                 </div>
               </div>
-              <figcaption><span>Futásidejű párbeszéd</span><strong>Portré, hangszóró és helyszín egy keretben</strong></figcaption>
+              <figcaption><span>Futásidejű párbeszéd</span><strong>Portré, beszélő és helyszín egy keretben</strong></figcaption>
             </figure>
           </article>
         </div>
@@ -344,9 +346,9 @@
           <div>
             <span class="ball-ui-label">04 / Mérföldkő-választás</span>
             <h3>A válasz a leereszkedés részévé válik.</h3>
-            <p>A 90-es és 100-as helyi szinten a dedikált testület a „start-or-kill” döntést kéri, mielőtt a párbeszéd megoldaná a futást.</p>
+            <p>A 90. és 100. helyi szinten a külön panel egy „kíméld vagy öld meg” döntést kér, mielőtt a párbeszéd lezárná a menetet.</p>
           </div>
-          <div class="ball-choice-panel" aria-label="Példa a Ball is God párbeszédablakra">
+          <div class="ball-choice-panel" aria-label="Példa Ball is God párbeszéd-lehetőségekre">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
             <div>
               <span>Kíméld</span>
@@ -359,7 +361,7 @@
           <div>
             <span class="ball-ui-label">05 / Eredménymenük</span>
             <h3>A győzelem folytatódik. A vereség visszatér ugyanahhoz a kihíváshoz.</h3>
-            <p>A jelenlegi buildnek két külön eredményállapota van: a PanelWin újrajátszást és a következő szintet kínálja, míg a PanelOver egy összetéveszthetetlen visszajátszási akciót tart fenn.</p>
+            <p>A jelenlegi buildnek két külön eredményállapota van: a PanelWin újrajátszást és a következő szintet kínálja, míg a PanelOver egyetlen félreérthetetlen újrajátszási lehetőséget tart meg.</p>
           </div>
           <div class="ball-result-menus" aria-label="Ball is God aktuális eredménymenük">
             <div class="ball-result-menu is-victory">
@@ -387,9 +389,9 @@
         <div class="ball-cast-heading">
           <div>
             <span class="ball-ui-label">Párbeszéd szereplői</span>
-            <h3>Arcok találkoztak lefelé menet.</h3>
+            <h3>Arcok, akikkel lefelé menet találkozol.</h3>
           </div>
-          <p>Az alábbiakban megtalálható mind a 25 karakter érvényes, nyitott és zárt portrépárokkal. A kifejezés váltásához vigye az egérmutatót egy kártyára, vagy fókuszáljon rá.</p>
+          <p>Az alábbiakban mind a 25 olyan karakter szerepel, amelyhez érvényes gyártási nyitott és zárt portrépár tartozik. Az arckifejezés váltásához vidd az egeret egy kártya fölé, vagy fókuszálj rá.</p>
         </div>
         <div class="ball-character-roster" aria-label="Ball is God gyártási párbeszéd karakterek">
           <article class="ball-character-card is-espa">
@@ -430,7 +432,7 @@
         <h2>A Ball is God?! hardcore arcade játék arról, hogy egy forgó toronyban zuhansz lefelé.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Az ötlet</h3><p>Vezesd le Espa karaktert egy isteni tornyon. Egyetlen hiba véget vethet a menetnek, a nagy döntéseid pedig megváltoztatják, hogyan játszik a világ.</p></article>
-          <article class="detail-card"><h3>Jelenlegi build</h3><p>Tíz helyszíni jelenet, procedurális toronygenerálás, kombinált összetörés, ellop pajzs, főnök konfigurációk, elágazó párbeszédek, gyártási menük és kifejezésre kész portrék valósulnak meg.</p></article>
+          <article class="detail-card"><h3>Jelenlegi build</h3><p>Tíz helyszínjelenet, procedurális toronygenerálás, kombócsapás, ujjhúzásos pajzs, bosskonfigurációk, elágazó párbeszédek, gyártási menük és arckifejezés-váltásra kész portrék már megvalósultak.</p></article>
           <article class="detail-card"><h3>Közönség</h3><p>Azoknak a játékosoknak, akik szeretik a kemény mobilos arcade játékokat, a kockázat-jutalom időzítést és a főellenségeket, követhető történettel.</p></article>
           <article class="detail-card"><h3>Állapot</h3><p>Aktív gyártás. A közelmúlt munkája a futtatási rendszereket, a világgrafikát, a tesztelést és a játék telefonos működését érinti.</p></article>
         </div>
@@ -439,10 +441,10 @@
         <div class="eyebrow">Jellemzők</div>
         <h2>Mit csinálsz a Ball is God?! játékban</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Húzással forgatható leereszkedés</h3><p>A vízszintes húzás elforgatja a tornyot az automatikusan lezuhanó Espa körül, felsorakoztatva a hézagokat, veszélyeket és biztonságos platformokat.</p></article>
+          <article class="detail-card"><h3>Húzással forgatható leereszkedés</h3><p>A vízszintes húzás elforgatja a tornyot az automatikusan zuhanó Espa körül, beállítva a réseket, a veszélyeket és a biztonságos platformokat.</p></article>
           <article class="detail-card"><h3>Hardcore arcade nyomás</h3><p>Egyetlen védtelen találat véget vet a menetnek, ezért olvasnod kell a tornyot, és minden lépést időzítened kell.</p></article>
           <article class="detail-card"><h3>Bossok és mitikus világok</h3><p>Tíz helyszínjelenet, mindegyik saját főellenségekkel, viszi tovább a történetet egyik világból a másikba.</p></article>
-          <article class="detail-card"><h3>Döntések, amelyek megváltoztatják a szabályokat</h3><p>Irgalmasság, erő és karma megváltoztatása párbeszéd, pajzsszabályok, ellenséges agresszió, távírók és főnöki fázisok.</p></article>
+          <article class="detail-card"><h3>Döntések, amelyek megváltoztatják a szabályokat</h3><p>Az irgalom, az erő és a karma megváltoztatja a párbeszédeket, a pajzsszabályokat, az ellenségek agresszióját, a jelzéseket és a főellenségek fázisait.</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
@@ -450,9 +452,9 @@
         <h2>Így játssz a Ball is God?! játékkal</h2>
         <ul class="update-list">
           <li><span>01. lépés</span><strong>Olvasd el a leereszkedést</strong><p>Figyeld a következő platformokat, réseket és veszélyeket, és keresd a biztonságos időzítési ablakokat, miközben zuhansz.</p></li>
-          <li><span>02. lépés</span><strong>Forgasd el a tornyot</strong><p>A vízszintes húzás megfordítja a világot a Espa körül, igazítva egy biztonságos platformot vagy egy szándékos rést.</p></li>
-          <li><span>03. lépés</span><strong>Kockáztass és törj össze</strong><p>Hagyj ki három platformot a kombinált összetöréshez, majd törj át szerkezeteken, miközben a pajzs egy halálos hibát fedez.</p></li>
-          <li><span>04. lépés</span><strong>Válaszd ki a következményt</strong><p>Az irgalom és az erő formálja a karmát, a párbeszédet és a játékszabályokat, amelyek az ellenségekbe és a főnökökbe viszik át.</p></li>
+          <li><span>02. lépés</span><strong>Forgasd el a tornyot</strong><p>A vízszintes húzás elforgatja a világot Espa körül, hogy egy biztonságos platformot vagy egy szándékos rést állítson be alá.</p></li>
+          <li><span>03. lépés</span><strong>Kockáztass és törj össze</strong><p>Hagyj ki három platformot egy kombócsapás feltöltéséhez, majd törj át a szerkezeteken, miközben a pajzs egy halálos hibát kivéd.</p></li>
+          <li><span>04. lépés</span><strong>Válaszd ki a következményt</strong><p>Az irgalom és az erő formálja a karmát, a párbeszédeket és azokat a játékszabályokat, amelyek az ellenségekre és a főellenségekre is kihatnak.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section ball-story-section">
@@ -460,7 +462,7 @@
         <h2>Egy mitikus torony, ahol a döntéseid veled együtt ereszkednek le.</h2>
         <div class="info-grid">
           <div>
-            <p>A Ball is God?! a mobil, függőlegesen süllyedő játéktermek gyermekkori rajongásából indult ki: hiányosságok olvasása, gyors reagálás és ösztönös túlélés.</p>
+            <p>A Ball is God?! a mobilos, függőleges leereszkedős arcade játékok iránti gyermekkori rajongásból indult: a rések felismeréséből, a gyors reagálásból és az ösztönös túlélésből.</p>
             <p>A formátum többet is elbírt volna: főellenségeket, egyéniséggel bíró karaktereket, történetet és erkölcsi feszültséget. A jelenlegi projekt Espa karaktert követi tíz helyszínjeleneten és különös szereplők gárdáján át, olyan döntésekkel, amelyek a történetet és a játékot is megváltoztatják.</p>
             <p>Így a cél egy egyszerű, függőleges leereszkedős arcade lett, egy főellenség-harc nyomásával és egy történetvezérelt RPG következményeivel.</p>
           </div>
@@ -493,9 +495,9 @@
         <h2>Ball is God?! sajtó- és alkotói anyagok</h2>
         <p class="asset-kit-copy">WebP előnézetek sajtóbemutatókhoz, kiadói értékeléshez és áruházi oldalak hivatkozásaihoz. A teljes felbontású forrásfájlok kérésre elérhetők.</p>
         <h3 class="asset-group-title">Márka és karakterek</h3>
-        <p class="asset-group-note">A játék ikonja, valamint mind a 25 karakter, amelyek teljes gyártási párbeszédes portrékkal rendelkeznek. A nevek megegyeznek a Unity lokalizációs kulcsokkal.</p>
+        <p class="asset-group-note">A játékikon, valamint mind a 25 jelenlegi karakter, akik teljes gyártási párbeszédportréval rendelkeznek. A nevek megegyeznek a Unity lokalizációs kulcsaival.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God függőleges leereszkedő torony arcade játékikon" loading="lazy" decoding="async"><strong>Játékikon</strong><span>Függőleges leereszkedős torony arcade ikon.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God függőleges leereszkedős torony arcade játékikon" loading="lazy" decoding="async"><strong>Játékikon</strong><span>Függőleges leereszkedős torony arcade ikon.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa gyártási párbeszéd portré" loading="lazy" decoding="async"><strong>Espa</strong><span>Játékos karakterportré.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/revla-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/revla-open.webp" width="640" height="517" alt="Revla gyártási párbeszéd portré" loading="lazy" decoding="async"><strong>Revla</strong><span>Produkciós párbeszéd portré.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shash-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash gyártási párbeszéd portré" loading="lazy" decoding="async"><strong>Shash</strong><span>Produkciós párbeszéd portré.</span></a>
@@ -523,37 +525,37 @@
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/white-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/white-open.webp" width="640" height="640" alt="White gyártási párbeszéd portré" loading="lazy" decoding="async"><strong>White</strong><span>Produkciós párbeszéd portré.</span></a>
         </div>
         <h3 class="asset-group-title">Menü hátterek</h3>
-        <p class="asset-group-note">Az égi szintkiválasztó rendszer által használt jelenlegi alkotás.</p>
+        <p class="asset-group-note">Az égi szintkiválasztó rendszerben használt jelenlegi gyártási grafika.</p>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God égi szint kiválasztó menü háttere" loading="lazy" decoding="async"><strong>Égi menü</strong><span>Szintválasztó gyártási háttér.</span></a>
         </div>
         <h3 class="asset-group-title">Függőleges leereszkedés világai</h3>
-        <p class="asset-group-note">Tíz jelenlegi helyháttér teljes készlete, Ena és Deka között.</p>
+        <p class="asset-group-note">Mind a tíz jelenlegi helyszínháttér teljes készlete, Ena helyszíntől Deka helyszínig sorrendben.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges ereszkedő égbolt háttér" loading="lazy" decoding="async"><strong>01 · Égvilág</strong><span>Ena függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges ereszkedő tér háttér" loading="lazy" decoding="async"><strong>02 · Űrvilág</strong><span>Dyo függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges ereszkedési vihar háttér" loading="lazy" decoding="async"><strong>03 · Viharvilág</strong><span>Tria függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges ereszkedés hó hegy háttér" loading="lazy" decoding="async"><strong>04 · Hóvilág</strong><span>Tessera függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges süllyedő vulkán háttér" loading="lazy" decoding="async"><strong>05 · Vulkánvilág</strong><span>Pente háttér; animált a játékban.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges süllyedő óceáni háttér" loading="lazy" decoding="async"><strong>06 · Óceánvilág</strong><span>Eksi függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges ereszkedésű sivatagi bokrok háttér" loading="lazy" decoding="async"><strong>07 · Sivatagi világ</strong><span>Epta függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges süllyesztő erdő háttér" loading="lazy" decoding="async"><strong>08 · Erdővilág</strong><span>Ohto függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedő barlang háttér" loading="lazy" decoding="async"><strong>09 · Barlangvilág</strong><span>Ennea függőleges leereszkedés háttere.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges süllyedés pokoli háttér" loading="lazy" decoding="async"><strong>10 · Pokolvilág</strong><span>Deka függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés égbolt háttér" loading="lazy" decoding="async"><strong>01 · Égvilág</strong><span>Ena függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés űr háttér" loading="lazy" decoding="async"><strong>02 · Űrvilág</strong><span>Dyo függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés vihar háttér" loading="lazy" decoding="async"><strong>03 · Viharvilág</strong><span>Tria függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés havas hegy háttér" loading="lazy" decoding="async"><strong>04 · Hóvilág</strong><span>Tessera függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés vulkán háttér" loading="lazy" decoding="async"><strong>05 · Vulkánvilág</strong><span>Pente háttér; animált a játékban.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés óceán háttér" loading="lazy" decoding="async"><strong>06 · Óceánvilág</strong><span>Eksi függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés sivatagi bokrok háttér" loading="lazy" decoding="async"><strong>07 · Sivatagi világ</strong><span>Epta függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés erdő háttér" loading="lazy" decoding="async"><strong>08 · Erdővilág</strong><span>Ohto függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés barlang háttér" loading="lazy" decoding="async"><strong>09 · Barlangvilág</strong><span>Ennea függőleges leereszkedés háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God függőleges leereszkedés pokol háttér" loading="lazy" decoding="async"><strong>10 · Pokolvilág</strong><span>Deka függőleges leereszkedés háttere.</span></a>
         </div>
         <h3 class="asset-group-title">Történetes arcade hátterek</h3>
-        <p class="asset-group-note">Teljes párbeszéd-helyszín készlet: a Fény Csarnok és hátterek mind a tíz világhoz.</p>
+        <p class="asset-group-note">Teljes párbeszéd-helyszín készlet: a Fénycsarnok és hátterek mind a tíz világhoz.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Hall of Light párbeszédes háttér" loading="lazy" decoding="async"><strong>00 · Fénycsarnok</strong><span>Nyitó párbeszéd háttere.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Fénycsarnok párbeszédes háttér" loading="lazy" decoding="async"><strong>00 · Fénycsarnok</strong><span>Nyitó párbeszéd háttere.</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade égbolt párbeszéd háttér" loading="lazy" decoding="async"><strong>01 · Égbolt párbeszéd</strong><span>Ena történetháttér.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade tér párbeszéd háttér" loading="lazy" decoding="async"><strong>02 · Űrpárbeszéd</strong><span>Dyo történetháttér.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade űr párbeszéd háttér" loading="lazy" decoding="async"><strong>02 · Űrpárbeszéd</strong><span>Dyo történetháttér.</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God viharfelhő párbeszéd háttér" loading="lazy" decoding="async"><strong>03 · Viharpárbeszéd</strong><span>Tria történetháttér.</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God hóhegyi párbeszéd háttér" loading="lazy" decoding="async"><strong>04 · Hópárbeszéd</strong><span>Tessera történetháttér.</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade vulkán párbeszéd háttér" loading="lazy" decoding="async"><strong>05 · Vulkánpárbeszéd</strong><span>Pente történetháttér.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet árkád óceán párbeszéd háttér" loading="lazy" decoding="async"><strong>06 · Óceánpárbeszéd</strong><span>Eksi történetháttér.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade óceán párbeszéd háttér" loading="lazy" decoding="async"><strong>06 · Óceánpárbeszéd</strong><span>Eksi történetháttér.</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade sivatagi párbeszédes háttér" loading="lazy" decoding="async"><strong>07 · Sivatagi párbeszéd</strong><span>Epta történetháttér.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet árkád erdei párbeszéd háttér" loading="lazy" decoding="async"><strong>08 · Erdei párbeszéd</strong><span>Ohto történetháttér.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet árkád barlang párbeszédes háttér" loading="lazy" decoding="async"><strong>09 · Barlangi párbeszéd</strong><span>Ennea történetháttér.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade erdei párbeszéd háttér" loading="lazy" decoding="async"><strong>08 · Erdei párbeszéd</strong><span>Ohto történetháttér.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade barlang párbeszédes háttér" loading="lazy" decoding="async"><strong>09 · Barlangi párbeszéd</strong><span>Ennea történetháttér.</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God történet arcade pokol párbeszédes háttér" loading="lazy" decoding="async"><strong>10 · Pokoli párbeszéd</strong><span>Deka történetháttér.</span></a>
         </div>
       </section>
@@ -577,7 +579,7 @@
           <a class="related-world-link" href="paint-blasters.html">
             <span class="related-world-kicker">Gyártási prototípus</span>
             <strong>Paint Blasters</strong>
-            <p>Készíts színes erővel ellátott felvételeket, célozd meg a gyenge pontokat, és változtasd a torony pusztítását láncreakcióvá.</p>
+            <p>Építs színerős lövéseket, célozd meg a gyenge pontokat, és változtasd a torony lerombolását láncreakcióvá.</p>
             <span class="related-world-meta">Színfizikai arcade</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
@@ -593,7 +595,7 @@
         <h2>Gyakori kérdések a Ball is God?! játékról</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Milyen játék a Ball is God?!</h3><p>Hardcore, függőleges leereszkedős arcade. Egy tornyot forgatsz a leeső Espa körül, kihagyod a biztonságos landolásokat, hogy csapásokat tölts fel, és áttöröd a mitikus világokat.</p></article>
-          <article class="detail-card"><h3>Hogyan játszható a Ball is God?!</h3><p>Húzza vízszintesen a torony elforgatásához, ugorjon ki három platformot az ütközéshez, és csúsztassa függőlegesen, amikor a hűtőpajzsnak el kell fogadnia egy halálos ütést.</p></article>
+          <article class="detail-card"><h3>Hogyan játszható a Ball is God?!</h3><p>Húzz vízszintesen a torony elforgatásához, hagyj ki három platformot egy csapás feltöltéséhez, és suhints függőlegesen, amikor az újratöltődő pajzsnak fel kell fognia egy halálos találatot.</p></article>
           <article class="detail-card"><h3>Megjelent már a Ball is God?!</h3><p>Még nem. Aktív gyártás alatt áll: futtatási rendszerek, világgrafika, történeti tartalom és tesztelés. Nincs nyilvános megjelenési dátum. A célplatformok az iOS és az Android.</p></article>
           <article class="detail-card"><h3>Miben más a Ball is God?!</h3><p>Kockázat és jutalom alapú arcade nyomást vegyít tíz helyszínnel és karmával, amely megváltoztatja a párbeszédeket, az ellenségeket, a jelzéseket, a pajzsokat és a főellenségeket.</p></article>
           <article class="detail-card"><h3>Ki készíti a Ball is God?! játékot?</h3><p>A WillowinWorlds független stúdió, amely mobilos puzzle és arcade játékokat készít.</p></article>
@@ -606,7 +608,7 @@
         <ul class="update-list">
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">2026. július 31</time><strong>Világfelületek és veszélyellenőrzés</strong><p>A karakterek bemutatása, a determinisztikus generálás és a tüskés veszélyek közös vizuális és ellenőrzési átdolgozást kaptak.</p></li>
           <li><span>2026. július</span><strong>Gyártási UI és karakterek átdolgozása</strong><p>A pályaválasztás, a közös műveleti vezérlők, a függőleges párbeszédkeret és a páros karakterkifejezések már a helyükön vannak.</p></li>
-          <li><span>2026. február</span><strong>A projekt hatókörének áttekintése</strong><p>A csapat befejezett egy nagy történetintegrációs igazolványt, és áttekintette a projekt teljes skáláját: tíz világot, erkölcsi döntéseket, főnököket és többszörös befejezést.</p></li>
+          <li><span>2026. február</span><strong>A projekt hatókörének áttekintése</strong><p>A csapat befejezett egy nagy történetintegrációs átdolgozást, és áttekintette a projekt teljes léptékét: tíz világot, erkölcsi döntéseket, főellenségeket és többféle befejezést.</p></li>
           <li><span>2025. április-május</span><strong>Történet átírása és képességek</strong><p>A teljes történetet átírták, a karakterek képességei javultak, és az erkölcsi következmények egyértelműbbé váltak.</p></li>
           <li><span>2024. augusztus</span><strong>Kezdődik a történet irányának kidolgozása</strong><p>A csapat úgy döntött, hogy a Ball is God?! legyen több egy egyszerű arcade leereszkedésnél, ezért mitikus történetet és erkölcsi döntéseken alapuló víziót adott hozzá.</p></li>
           <li><span>2024. július</span><strong>Eredeti koncepció</strong><p>A projekt a stúdió első játékötleteként indult: egy gyors, függőleges arcade játék egy isteni toronyban való zuhanásról.</p></li>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

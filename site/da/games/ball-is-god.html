@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#071530" id="metaThemeColor" data-theme-dark="#071530" data-theme-light="#eaf6ff">
-  <meta property="og:title" content="Ball is God?! - Hardcore Vertical Descent Arcade-spil">
+  <meta property="og:title" content="Ball is God?! - Hardcore arkadespil med lodret nedstigning">
   <meta property="og:description" content="Ball is God?! er et hardcore arkadespil med lodret nedstigning i aktiv produktion. Træk for at dreje et tårn rundt om Espa, brag gennem platforme og træf karmavalg.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -21,7 +21,7 @@
   <meta property="og:locale" content="da_DK">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
-  <meta name="twitter:title" content="Ball is God?! - Hardcore Vertical Descent Arcade-spil">
+  <meta name="twitter:title" content="Ball is God?! - Hardcore arkadespil med lodret nedstigning">
   <meta name="twitter:description" content="Ball is God?! er et hardcore arkadespil med lodret nedstigning i aktiv produktion. Træk for at dreje et tårn rundt om Espa, brag gennem platforme og træf karmavalg.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-v2.jpg">
   <meta name="twitter:image:alt" content="Ball is God?! kort: Espa, en bevinget bold med en glorie mod en blå himmel. Drej tårnet. Bliv virkningen.">
@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/da/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "Et hardcore arkadespil med lodret afstamning, hvor spillere trækker for at rotere tårnet rundt om Espa, bygge combo-smashes og træffe karmavalg på tværs af ti mytiske steder.",
+      "description": "Et hardcore arkadespil med lodret nedstigning, hvor spillere trækker for at dreje tårnet rundt om Espa, bygge combo smashes op og træffe karmavalg på tværs af ti mytiske steder.",
       "keywords": "arkadespil med lodret nedstigning, spil med roterende tårn, hardcore arkadespil, historiedrevet arkadespil, bosskampspil",
       "genre": [
         "Lodret nedstigningsarkade",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">Drej tårnet. Bliv nedslaget.</span></h1>
-          <p class="hero-copy">En hardcore lodret nedstigningsarkade, hvor vandret træk roterer tårnet rundt om den faldende Espa. Spring over sikre landinger, oplad et combo-smash og bryd gennem en mytisk verden, hvor et ubevogtet hit afslutter løbet.</p>
+          <p class="hero-copy">Et hardcore arkadespil med lodret nedstigning, hvor vandret træk drejer tårnet rundt om den faldende Espa. Spring sikre landinger over, oplad en combo smash og bryd igennem en mytisk verden, hvor ét ubeskyttet hit afslutter runden.</p>
           <p class="ball-hero-note">Aktiv produktion: ti lokationsscener, bosser, forgrenede dialoger og karmastier, der ændrer spillets regler.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">Følg udviklingen</a>
@@ -240,7 +242,7 @@
         <div class="game-proof-layout">
           <div class="proof-copy">
             <span class="proof-kicker">Inde i den nuværende build</span>
-            <h2 id="ballProofTitle">Karma ændrer sig mere end dialogen.</h2>
+            <h2 id="ballProofTitle">Karma ændrer mere end bare dialogen.</h2>
             <p>Lyse, neutrale og mørke karmastier ændrer skjoldets opførsel, varselstegnene, fjendernes aggression og bossernes faser, så historien ændrer, hvordan du spiller.</p>
             <span class="proof-status"><b>Buildstatus</b> Aktiv produktion</span>
           </div>
@@ -248,22 +250,22 @@
             <div class="ball-world-section">
               <h3>Alle ti dialogverdener</h3>
               <p>Dialogbaggrunde til alle ti verdener i nedstigningsrækkefølge fra Ena til Deka.</p>
-              <div class="world-filmstrip" aria-label="Alle ti Ball is God dialog placering baggrunde">
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena himmel dialog baggrund" loading="lazy" decoding="async"><figcaption>01 · Ena - Himmel</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo rum dialog baggrund" loading="lazy" decoding="async"><figcaption>02 · Dyo - Rummet</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria storm dialog baggrund" loading="lazy" decoding="async"><figcaption>03 · Tria - Storm</figcaption></figure>
+              <div class="world-filmstrip" aria-label="Alle ti dialoglokationsbaggrunde fra Ball is God">
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena baggrund for himmeldialog" loading="lazy" decoding="async"><figcaption>01 · Ena - Himmel</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo baggrund for rumdialog" loading="lazy" decoding="async"><figcaption>02 · Dyo - Rummet</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria baggrund for stormdialog" loading="lazy" decoding="async"><figcaption>03 · Tria - Storm</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera baggrund for snedialog" loading="lazy" decoding="async"><figcaption>04 · Tessera - Sne</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente vulkan dialog baggrund" loading="lazy" decoding="async"><figcaption>05 · Pente - Vulkan</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi hav dialog baggrund" loading="lazy" decoding="async"><figcaption>06 · Eksi - Ocean</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta ørkendialog baggrund" loading="lazy" decoding="async"><figcaption>07 · Epta - Ørken</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente baggrund for vulkandialog" loading="lazy" decoding="async"><figcaption>05 · Pente - Vulkan</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi baggrund for havdialog" loading="lazy" decoding="async"><figcaption>06 · Eksi - Ocean</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta baggrund for ørkendialog" loading="lazy" decoding="async"><figcaption>07 · Epta - Ørken</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" width="237" height="360" alt="Ball is God Ohto baggrund for skovdialog" loading="lazy" decoding="async"><figcaption>08 · Ohto - Skov</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God Ennea hule dialog baggrund" loading="lazy" decoding="async"><figcaption>09 · Ennea - Grotte</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God Deka helvede dialog baggrund" loading="lazy" decoding="async"><figcaption>10 · Deka - Helvede</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" width="237" height="360" alt="Ball is God Ennea baggrund for huledialog" loading="lazy" decoding="async"><figcaption>09 · Ennea - Grotte</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" width="237" height="360" alt="Ball is God Deka baggrund for helvedesdialog" loading="lazy" decoding="async"><figcaption>10 · Deka - Helvede</figcaption></figure>
               </div>
             </div>
           </div>
         </div>
-        <div class="proof-facts" aria-label="Verificeret Ball is God byggefakta">
+        <div class="proof-facts" aria-label="Verificerede buildfakta for Ball is God">
           <article><strong>Ti steder i buildet</strong><span>Lokationsspecifikke bosser og farer.</span></article>
           <article><strong>Tre overspring → smash</strong><span>Spring tre sikre landinger over for at oplade det.</span></article>
           <article><strong>Swipe-skjold</strong><span>Et nedkølingsforsvar mod et dødeligt slag.</span></article>
@@ -283,7 +285,7 @@
           <li><b>01</b><span><strong>Valg af niveau</strong><small>Vælg mellem niveau 1-1000</small></span></li>
           <li><b>02</b><span><strong>Gameplay</strong><small>Roter, undvig og nedstig</small></span></li>
           <li><b>03</b><span><strong>Dialog / quiz</strong><small>Hvert tiende niveau, når det udløses</small></span></li>
-          <li><b>04</b><span><strong>Skåne / dræbe</strong><small>Valg af milepæl ved 90 og 100</small></span></li>
+          <li><b>04</b><span><strong>Skåne / dræbe</strong><small>Milepælsvalg ved 90 og 100</small></span></li>
           <li><b>05</b><span><strong>Resultat</strong><small>Fortsæt, gentag eller prøv igen</small></span></li>
         </ol>
 
@@ -292,7 +294,7 @@
             <header>
               <span class="ball-ui-label">01 / Aktuelt niveauvalg</span>
               <h3>Den himmelske rute vælger genererede niveauer på tværs af ti kapitler på 100 niveauer.</h3>
-              <p>Produktionsmenuen kortlægger ti placeringer i kapitler på 100 niveauer og åbner direkte i den valgte kørsel.</p>
+              <p>Produktionsmenuen kortlægger ti lokationer i kapitler på 100 niveauer og åbner direkte ind i den valgte runde.</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Ball is God baggrund til niveauvalg: et glødende tempel for enden af en snoet gylden sti gennem pastelskyer" loading="lazy" decoding="async">
@@ -324,7 +326,7 @@
               <p>Figurportrættet, lokationskunsten og talerskiltet deler én lodret ramme.</p>
             </header>
             <figure class="ball-ui-device ball-dialogue-preview">
-              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God himmelsk dialogplacering med et glødende suspenderet lys" loading="lazy" decoding="async">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God himmelsk dialoglokation med et glødende, svævende lys" loading="lazy" decoding="async">
               <span class="ball-dialogue-location" aria-hidden="true">ENA · LANDING 03</span>
               <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash, en lilla trekantet vagtpost fra Ball is God" loading="lazy" decoding="async">
               <div class="ball-dialogue-panel">
@@ -335,7 +337,7 @@
                   <span aria-hidden="true">Tryk for at fortsætte <b>›</b></span>
                 </div>
               </div>
-              <figcaption><span>Runtime dialog</span><strong>Portræt, højttaler og placering i én ramme</strong></figcaption>
+              <figcaption><span>Runtime dialog</span><strong>Portræt, taler og lokation i én ramme</strong></figcaption>
             </figure>
           </article>
         </div>
@@ -344,7 +346,7 @@
           <div>
             <span class="ball-ui-label">04 / Valg af milepæl</span>
             <h3>Svaret bliver en del af nedstigningen.</h3>
-            <p>På lokalt niveau 90 og 100 beder det dedikerede panel om en spare-eller-dræb-beslutning, før dialog løser opløbet.</p>
+            <p>På de lokale niveauer 90 og 100 beder det dedikerede panel om en skån-eller-dræb-beslutning, før dialogen afslutter runden.</p>
           </div>
           <div class="ball-choice-panel" aria-label="Eksempel på Ball is God dialogvalg">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
@@ -359,7 +361,7 @@
           <div>
             <span class="ball-ui-label">05 / Resultatmenuer</span>
             <h3>Sejren fortsætter. Nederlag vender tilbage til den samme udfordring.</h3>
-            <p>Den nuværende build har to separate resultattilstande: PanelWin tilbyder replay og det næste niveau, mens PanelOver bevarer en umiskendelig gentagelseshandling.</p>
+            <p>Det nuværende build har to separate resultattilstande: PanelWin tilbyder replay og det næste niveau, mens PanelOver har én umiskendelig replay-handling.</p>
           </div>
           <div class="ball-result-menus" aria-label="Ball is God aktuelle resultatmenuer">
             <div class="ball-result-menu is-victory">
@@ -387,9 +389,9 @@
         <div class="ball-cast-heading">
           <div>
             <span class="ball-ui-label">Dialogens rollebesætning</span>
-            <h3>Ansigter mødtes på vej ned.</h3>
+            <h3>Ansigter mødt på vej ned.</h3>
           </div>
-          <p>Alle 25 tegn med gyldige produktions åbne og lukkede portrætpar er inkluderet nedenfor. Hold musen over eller fokuser et kort for at skifte udtryk.</p>
+          <p>Alle 25 figurer med gyldige produktionsportrætpar (åben og lukket) er inkluderet nedenfor. Hold musen over eller fokusér på et kort for at skifte udtryk.</p>
         </div>
         <div class="ball-character-roster" aria-label="Ball is God produktionsdialogfigurer">
           <article class="ball-character-card is-espa">
@@ -430,7 +432,7 @@
         <h2>Ball is God?! er et hardcore arkadespil om at falde gennem et roterende tårn.</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Idéen</h3><p>Led Espa ned gennem et guddommeligt tårn. Én fejl kan ende runden, og dine store valg ændrer, hvordan verden spiller.</p></article>
-          <article class="detail-card"><h3>Nuværende build</h3><p>Ti lokationsscener, proceduremæssig tårngenerering, combo-smash, swipe-skjold, bosskonfigurationer, forgrenende dialog, produktionsmenuer og udtryksklare portrætter er implementeret.</p></article>
+          <article class="detail-card"><h3>Nuværende build</h3><p>Ti lokationsscener, procedurel tårngenerering, combo smash, swipe-skjold, bosskonfigurationer, forgrenet dialog, produktionsmenuer og udtryksklare portrætter er implementeret.</p></article>
           <article class="detail-card"><h3>Publikum</h3><p>Spillere, der kan lide hårde mobile arkadespil, timing med risiko og belønning og bosser, med en historie at følge.</p></article>
           <article class="detail-card"><h3>Status</h3><p>Aktiv produktion. Det seneste arbejde dækker runtime-systemer, verdenskunst, test og hvordan spillet fungerer på en telefon.</p></article>
         </div>
@@ -439,7 +441,7 @@
         <div class="eyebrow">Funktioner</div>
         <h2>Hvad du gør i Ball is God?!</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Nedstigning ved at trække for at rotere</h3><p>Vandret træk roterer tårnet rundt om den automatisk faldende Espa, og opretter mellemrum, farer og sikre platforme.</p></article>
+          <article class="detail-card"><h3>Nedstigning ved at trække for at rotere</h3><p>Vandret træk drejer tårnet rundt om den automatisk faldende Espa og justerer mellemrum, farer og sikre platforme.</p></article>
           <article class="detail-card"><h3>Hardcore arkadetryk</h3><p>Ét uforsvaret hit afslutter runden, så du må læse tårnet og time hvert træk.</p></article>
           <article class="detail-card"><h3>Bosser og mytiske verdener</h3><p>Ti lokationsscener, hver med sine egne bosser, fører historien fra den ene verden til den næste.</p></article>
           <article class="detail-card"><h3>Valg, der ændrer reglerne</h3><p>Barmhjertighed, kraft og karma ændrer dialog, skjoldregler, fjendens aggression, angrebssignaler og bossfaser.</p></article>
@@ -450,9 +452,9 @@
         <h2>Sådan spiller du Ball is God?!</h2>
         <ul class="update-list">
           <li><span>Trin 01</span><strong>Læs nedstigningen</strong><p>Skan de næste platforme, huller og farer, og led efter sikre tidsvinduer, mens du falder.</p></li>
-          <li><span>Trin 02</span><strong>Drej tårnet</strong><p>Vandret træk vender verden rundt Espa, og justerer en sikker platform eller et bevidst hul.</p></li>
-          <li><span>Trin 03</span><strong>Risiko og smadre</strong><p>Spring over tre platforme for at oplade et combo-smash, og bryd derefter gennem strukturer, mens skjoldet dækker over en dødelig fejl.</p></li>
-          <li><span>Trin 04</span><strong>Vælg konsekvensen</strong><p>Barmhjertighed og kraft former karma, dialog og spillereglerne, der føres ind i fjender og bosser.</p></li>
+          <li><span>Trin 02</span><strong>Drej tårnet</strong><p>Vandret træk drejer verden rundt om Espa og justerer en sikker platform eller et bevidst hul.</p></li>
+          <li><span>Trin 03</span><strong>Risiko og smadre</strong><p>Spring tre platforme over for at oplade en combo smash, og bryd derefter gennem strukturer, mens skjoldet tager af for én dødelig fejl.</p></li>
+          <li><span>Trin 04</span><strong>Vælg konsekvensen</strong><p>Barmhjertighed og kraft former karma, dialog og de spilleregler, der føres videre til fjender og bosser.</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section ball-story-section">
@@ -460,7 +462,7 @@
         <h2>Et mytisk tårn, hvor dine valg følger dig nedad.</h2>
         <div class="info-grid">
           <div>
-            <p>Ball is God?! startede fra en barndoms fascination af mobile lodret nedadgående arkader: læse huller, reagere hurtigt og overleve efter instinkt.</p>
+            <p>Ball is God?! udsprang af en barndomsfascination af mobile arkadespil med lodret nedstigning: at aflæse mellemrum, reagere hurtigt og overleve på instinkt.</p>
             <p>Formatet kunne bære mere: bosser, figurer med personlighed, en historie og moralsk spænding. Det nuværende projekt følger Espa gennem ti lokationsscener og en rollebesætning af mærkelige figurer, med valg, der ændrer både historien og spillet.</p>
             <p>Så målet blev et enkelt arkadespil med lodret nedstigning, med presset fra en bosskamp og konsekvenserne fra et historiedrevet RPG.</p>
           </div>
@@ -495,7 +497,7 @@
         <h3 class="asset-group-title">Brand og karakterer</h3>
         <p class="asset-group-note">Spilikonet plus alle 25 nuværende karakterer, der har komplette produktionsdialogportrætter. Navne matcher Unity lokaliseringsnøglerne.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God lodret nedstigningstårn arkadespilikon" loading="lazy" decoding="async"><strong>Spilikon</strong><span>Arkadeikon for lodret nedstigningstårn.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God spilikon, tårn-arkadespil med lodret nedstigning" loading="lazy" decoding="async"><strong>Spilikon</strong><span>Arkadeikon for lodret nedstigningstårn.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa produktionsdialogportræt" loading="lazy" decoding="async"><strong>Espa</strong><span>Spillerkarakterportræt.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/revla-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/revla-open.webp" width="640" height="517" alt="Revla produktionsdialogportræt" loading="lazy" decoding="async"><strong>Revla</strong><span>Produktionsdialogportræt.</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/shash-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash produktionsdialogportræt" loading="lazy" decoding="async"><strong>Shash</strong><span>Produktionsdialogportræt.</span></a>
@@ -525,36 +527,36 @@
         <h3 class="asset-group-title">Menubaggrunde</h3>
         <p class="asset-group-note">Aktuel produktionskunst, der bruges af det himmelske niveauudvælgelsessystem.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God baggrund for valg af himmelniveau" loading="lazy" decoding="async"><strong>Himmelsk menu</strong><span>Produktionsbaggrund for niveauvalg.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God himmelsk menubaggrund til niveauvalg" loading="lazy" decoding="async"><strong>Himmelsk menu</strong><span>Produktionsbaggrund for niveauvalg.</span></a>
         </div>
         <h3 class="asset-group-title">Verdener med lodret nedstigning</h3>
-        <p class="asset-group-note">Komplet sæt af ti aktuelle placeringsbaggrunde, bestilt fra Ena til Deka.</p>
+        <p class="asset-group-note">Komplet sæt af ti aktuelle lokationsbaggrunde, i rækkefølge fra Ena til Deka.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret himmel baggrund" loading="lazy" decoding="async"><strong>01 · Himmelverden</strong><span>Lodret nedstigningsbaggrund for Ena.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret nedstigning rum baggrund" loading="lazy" decoding="async"><strong>02 · Rumverden</strong><span>Lodret nedstigningsbaggrund for Dyo.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret nedstigning storm baggrund" loading="lazy" decoding="async"><strong>03 · Stormverden</strong><span>Lodret nedstigningsbaggrund for Tria.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret snebjerg baggrund" loading="lazy" decoding="async"><strong>04 · Sneverden</strong><span>Lodret nedstigningsbaggrund for Tessera.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret nedstigning vulkan baggrund" loading="lazy" decoding="async"><strong>05 · Vulkanverden</strong><span>Pente baggrund; animeret i spillet.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret havbaggrund" loading="lazy" decoding="async"><strong>06 · Oceanverden</strong><span>Lodret nedstigningsbaggrund for Eksi.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret nedstigning ørkenbuske baggrund" loading="lazy" decoding="async"><strong>07 · Ørkenverden</strong><span>Lodret nedstigningsbaggrund for Epta.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret afstamning skov baggrund" loading="lazy" decoding="async"><strong>08 · Skovverden</strong><span>Lodret nedstigningsbaggrund for Ohto.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret afstamning hule baggrund" loading="lazy" decoding="async"><strong>09 · Huleverden</strong><span>Lodret nedstigningsbaggrund for Ennea.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God lodret helvedes baggrund" loading="lazy" decoding="async"><strong>10 · Helvedesverden</strong><span>Lodret nedstigningsbaggrund for Deka.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God himmelbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>01 · Himmelverden</strong><span>Lodret nedstigningsbaggrund for Ena.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God rumbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>02 · Rumverden</strong><span>Lodret nedstigningsbaggrund for Dyo.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God stormbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>03 · Stormverden</strong><span>Lodret nedstigningsbaggrund for Tria.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God snebjergsbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>04 · Sneverden</strong><span>Lodret nedstigningsbaggrund for Tessera.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God vulkanbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>05 · Vulkanverden</strong><span>Pente baggrund; animeret i spillet.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-ocean-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God havbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>06 · Oceanverden</strong><span>Lodret nedstigningsbaggrund for Eksi.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-desert-bushes-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God ørkenbuskebaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>07 · Ørkenverden</strong><span>Lodret nedstigningsbaggrund for Epta.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-forest-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God skovbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>08 · Skovverden</strong><span>Lodret nedstigningsbaggrund for Ohto.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-cave-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God hulebaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>09 · Huleverden</strong><span>Lodret nedstigningsbaggrund for Ennea.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God helvedesbaggrund til lodret nedstigning" loading="lazy" decoding="async"><strong>10 · Helvedesverden</strong><span>Lodret nedstigningsbaggrund for Deka.</span></a>
         </div>
         <h3 class="asset-group-title">Historiearkade-baggrunde</h3>
-        <p class="asset-group-note">Komplet dialog-placering sæt: Hall of Light plus baggrunde for alle ti verdener.</p>
+        <p class="asset-group-note">Komplet sæt af dialoglokationer: Hall of Light plus baggrunde til alle ti verdener.</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Hall of Light dialog baggrund" loading="lazy" decoding="async"><strong>00 · Hall of Light</strong><span>Baggrund til åbningsdialogen.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade himmel dialog baggrund" loading="lazy" decoding="async"><strong>01 · Himmeldialog</strong><span>Ena historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade rum dialog baggrund" loading="lazy" decoding="async"><strong>02 · Rumdialog</strong><span>Dyo historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God stormsky dialog baggrund" loading="lazy" decoding="async"><strong>03 · Stormdialog</strong><span>Tria historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God dialog baggrund for snebjerg" loading="lazy" decoding="async"><strong>04 · Snedialog</strong><span>Tessera historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade vulkan dialog baggrund" loading="lazy" decoding="async"><strong>05 · Vulkandialog</strong><span>Pente historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade hav dialog baggrund" loading="lazy" decoding="async"><strong>06 · Havdialog</strong><span>Eksi historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade ørken dialog baggrund" loading="lazy" decoding="async"><strong>07 · Ørkendialog</strong><span>Epta historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade skov dialog baggrund" loading="lazy" decoding="async"><strong>08 · Skovdialog</strong><span>Ohto historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade hule dialog baggrund" loading="lazy" decoding="async"><strong>09 · Huledialog</strong><span>Ennea historiebaggrund.</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historie arkade helvede dialog baggrund" loading="lazy" decoding="async"><strong>10 · Helvedesdialog</strong><span>Deka historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God Hall of Light dialogbaggrund" loading="lazy" decoding="async"><strong>00 · Hall of Light</strong><span>Baggrund til åbningsdialogen.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for himmeldialog" loading="lazy" decoding="async"><strong>01 · Himmeldialog</strong><span>Ena historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for rumdialog" loading="lazy" decoding="async"><strong>02 · Rumdialog</strong><span>Dyo historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God stormsky-dialogbaggrund" loading="lazy" decoding="async"><strong>03 · Stormdialog</strong><span>Tria historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God snebjergs-dialogbaggrund" loading="lazy" decoding="async"><strong>04 · Snedialog</strong><span>Tessera historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for vulkandialog" loading="lazy" decoding="async"><strong>05 · Vulkandialog</strong><span>Pente historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for havdialog" loading="lazy" decoding="async"><strong>06 · Havdialog</strong><span>Eksi historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for ørkendialog" loading="lazy" decoding="async"><strong>07 · Ørkendialog</strong><span>Epta historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-forest-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for skovdialog" loading="lazy" decoding="async"><strong>08 · Skovdialog</strong><span>Ohto historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-cave-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for huledialog" loading="lazy" decoding="async"><strong>09 · Huledialog</strong><span>Ennea historiebaggrund.</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hell-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God historiearkade, baggrund for helvedesdialog" loading="lazy" decoding="async"><strong>10 · Helvedesdialog</strong><span>Deka historiebaggrund.</span></a>
         </div>
       </section>
       <section class="soft-card game-page-section related-worlds" id="related">
@@ -593,7 +595,7 @@
         <h2>Almindelige spørgsmål om Ball is God?!</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>Hvilken slags spil er Ball is God?!</h3><p>Et hardcore arkadespil med lodret nedstigning. Du drejer et tårn rundt om den faldende Espa, springer sikre landinger over for at oplade smashes og brager igennem mytiske verdener.</p></article>
-          <article class="detail-card"><h3>Hvordan spiller man Ball is God?!</h3><p>Træk vandret for at rotere tårnet, spring over tre platforme for at oplade et smash, og swip lodret, når nedkølingsskjoldet skal absorbere et dødbringende slag.</p></article>
+          <article class="detail-card"><h3>Hvordan spiller man Ball is God?!</h3><p>Træk vandret for at dreje tårnet, spring tre platforme over for at oplade et smash, og swipe lodret, når nedkølingsskjoldet skal absorbere et dødbringende hit.</p></article>
           <article class="detail-card"><h3>Er Ball is God?! udkommet endnu?</h3><p>Ikke endnu. Det er i aktiv produktion med arbejde på runtime-systemer, verdenskunst, historieindhold og test. Der er ingen offentlig udgivelsesdato. De tiltænkte platforme er iOS og Android.</p></article>
           <article class="detail-card"><h3>Hvad gør Ball is God?! anderledes?</h3><p>Det blander arkadepres med risiko og belønning med ti lokationer og karma, der ændrer dialog, fjender, varselstegn, skjolde og bosser.</p></article>
           <article class="detail-card"><h3>Hvem laver Ball is God?!</h3><p>WillowinWorlds, et uafhængigt studie, der laver mobile puslespil og arkadespil.</p></article>
@@ -607,7 +609,7 @@
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31. juli 2026</time><strong>Verdensoverflader og farevalidering</strong><p>Figurpræsentation, deterministisk generering og tornefarer fik en kombineret visuel gennemgang og validering.</p></li>
           <li><span>juli 2026</span><strong>Produktions-UI og karaktergennemgang</strong><p>Niveauvalg, delte handlingskontroller, lodret dialogindramning og parrede figurudtryk er nu på plads.</p></li>
           <li><span>februar 2026</span><strong>Gennemgang af projektets omfang</strong><p>Holdet gennemførte en stor historieintegration og gennemgik projektets fulde skala: ti verdener, moralske valg, bosser og flere slutninger.</p></li>
-          <li><span>april-maj 2025</span><strong>Historieomskrivning og evner</strong><p>Hele historien blev omskrevet, karakteregenskaber blev forbedret, og moralske konsekvenser blev tydeligere.</p></li>
+          <li><span>april-maj 2025</span><strong>Historieomskrivning og evner</strong><p>Hele historien blev omskrevet, figurernes evner blev forbedret, og moralske konsekvenser blev tydeligere.</p></li>
           <li><span>august 2024</span><strong>Historieretning begynder</strong><p>Holdet besluttede, at Ball is God?! skulle være mere end en simpel arkadenedstigning, og tilføjede en mytisk historie og en vision om moralske valg.</p></li>
           <li><span>juli 2024</span><strong>Originalt koncept</strong><p>Projektet begyndte som studiets første spilidé: et hurtigt lodret arkadespil om at falde gennem et guddommeligt tårn.</p></li>
           <li><span>Nuværende build</span><strong>Arkade og historie i ét build</strong><p>Nedstigning gennem det roterende tårn, combo smash, swipe-skjold, bosser, dialog og karma fungerer nu sammen i ét build.</p></li>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

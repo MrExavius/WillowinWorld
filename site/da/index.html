@@ -36,23 +36,23 @@
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../rss.xml">
   <link rel="preload" href="../assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../css/nature-scene.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/home-card-base.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/home-card-base.css?v=20261114-4">
   <link rel="stylesheet" href="../css/home-ball-card.css">
   <link rel="stylesheet" href="../css/home-nature-card.css">
   <link rel="stylesheet" href="../css/home-paint-card.css">
   <link rel="stylesheet" href="../css/home-candy-card.css">
   <link rel="stylesheet" href="../css/game-components.css">
-  <link rel="stylesheet" href="../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../css/keyframes.css?v=20260731-1">
   <link rel="stylesheet" href="../css/responsive-desktop.css">
   <link rel="stylesheet" href="../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../css/responsive-preferences.css?v=20260731-1">
   <link rel="stylesheet" href="../motion.css">
-  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20261114-4">
   <link rel="stylesheet" href="../css/home-lab.css?v=20261113-3">
   <script type="application/ld+json" id="structuredData">
 {
@@ -242,7 +242,7 @@
       "gamePlatform": "Mobil",
       "description": "Et hyggeligt merge-puslespil med en slikkæde på 13 trin, ti beholdere, der ændrer reglerne, og otte specialeffekter, plus hold-plads, forhåndsvisning af landing og en kø med de næste tre.",
       "keywords": "slik merge-puslespil, merge-spil, fysikpuslespil, hyggeligt mobilspil",
-      "creativeWorkStatus": "Aktiv udvikling - spilbar produktionsbygning",
+      "creativeWorkStatus": "Aktiv udvikling - spilbar produktionsbuild",
       "author": {
         "@id": "https://willowinworlds.com/#studio"
       },
@@ -307,7 +307,7 @@
   <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Spring til hovedindhold</a>
   <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
-  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magi ulåst - Velkommen til WillowinWorlds</div>
+  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magi låst op - Velkommen til WillowinWorlds</div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <div class="page">
@@ -394,9 +394,9 @@
               </span>
               <span class="nature-cycle"><b>Skitse</b><b>Forbind</b><b>Blomstre</b></span>
             </div>
-            <span class="floating-rune ambient-only"></span>
-            <span class="floating-rune ambient-only"></span>
-            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
             <div class="hero-portal-badge ambient-only" aria-hidden="true">
               <img loading="lazy" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
               <span>4 verdener + 8 i laboratoriet</span>
@@ -458,7 +458,7 @@
                   <span class="game-genre">Hovedgenre: Tegn-og-løs-fysikpuslespil</span>
                 </div>
                 <p>Nature Seed er et mobilt tegn-og-løs-fysikpuslespil, hvor du bruger et begrænset linjebudget til at føre Water Drop og Seed sammen. Det udkom den 18. september 2026 med 100 niveauer, effektivitetsstjerner, gemt fremskridt og akvarelgenopretning. Spil det gratis i din browser.</p>
-                <div class="feature-callout">Gameplay-hook: hvert forpligtet slag bliver en del af det fysiske niveau, og en en-linjes løsning giver tre stjerner.</div>
+                <div class="feature-callout">Gameplay-hook: hver tegnet streg bliver en del af det fysiske niveau, og en løsning på én linje giver tre stjerner.</div>
                 <div class="game-tags">
                   <span class="tag">Mobil</span><span class="tag">Tegn og løs</span><span class="tag">Linjefysik</span><span class="tag">Naturgenopretning</span><span class="tag">Afslappende puslespil</span><span class="tag">Hyggeligt økospil</span>
                 </div>
@@ -503,7 +503,7 @@
                   <span class="game-genre">Hovedgenre: Casual merge-puslespil</span>
                 </div>
                 <p>Candy Shop er et hyggeligt mobilt merge-puslespil med fysik. Smelt ens slik sammen op ad en kæde på 13 trin, med ti beholdere, der ændrer stakkens opførsel, og otte specialeffekter. Du kan gemme et stykke, se en forhåndsvisning af, hvor det lander, og se de næste tre stykker slik.</p>
-                <div class="feature-callout">Gameplay-hook: et velkendt fald bliver et nyt puslespil, når beholderen ændrer tyngdekraft, geometri eller ruten ind i stakken.</div>
+                <div class="feature-callout">Gameplay-hook: et velkendt drop bliver et nyt puslespil, når beholderen ændrer tyngdekraft, geometri eller ruten ind i stakken.</div>
                 <div class="game-tags">
                   <span class="tag">Mobil</span><span class="tag">Candy Merge</span><span class="tag">Fysikpuslespil</span><span class="tag">Hyggeligt spil</span><span class="tag">Combo-puslespil</span><span class="tag">Særlige slik</span>
                 </div>
@@ -514,7 +514,7 @@
               </div>
             </article>
 
-            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters farveødelæggelse fysik puslespil arkade" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
+            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters fysikpuslespil-arkadespil med farvedestruktion" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
               <div class="game-cover paint-game-cover">
                 <div class="paint-stage" aria-hidden="true">
                   <img class="paint-bg" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" loading="lazy" decoding="async">
@@ -556,7 +556,7 @@
               <div class="game-body">
                 <div class="game-meta">
                   <span class="status-pill">Produktionsprototype</span>
-                  <span class="game-genre">Hovedgenre: Fysik Puslespil / Arcade Hybrid</span>
+                  <span class="game-genre">Hovedgenre: Fysikpuslespil / arkadehybrid</span>
                 </div>
                 <p>Paint Blasters er et mobilt fysikpuslespil med farveblanding om at vælte tårne. Kombinér tre farver til en af 35 projektilopskrifter, sigt derefter efter syv typer blokke, og prøv at forvandle ét præcist hit til en kædereaktion, der får tårnet til at styrte sammen.</p>
                 <div class="feature-callout">Spilprincip: du vælger opskriften, før du skyder, så blandingen betyder lige så meget som sigtet.</div>
@@ -887,7 +887,7 @@
             <article class="devlog-card" data-devlog-card data-devlog-game="paint-blasters" data-devlog-source="games/paint-blasters.html">
               <span><b data-devlog-name>Paint Blasters</b><time datetime="2026-07-31" data-devlog-date>31. juli 2026</time></span>
               <h3 data-devlog-title>Gennemgang af fysik- og effektstabilitet</h3>
-              <p data-devlog-summary>Projektiladfærd, Match-3-opløsning og hit-effekter blev testet og strammet for mere konsistente combo-resultater.</p>
+              <p data-devlog-summary>Projektiladfærd, Match-3-afvikling og hit-effekter blev testet og strammet op for at give mere konsistente combo-resultater.</p>
               <a class="btn btn-ghost" href="games/paint-blasters.html#devlog" aria-label="Åbn Paint Blasters devlog">Åbn Paint Blasters devlog</a>
             </article>
             <article class="devlog-card" data-devlog-card data-devlog-game="ball-is-god" data-devlog-source="games/ball-is-god.html">
@@ -1022,7 +1022,7 @@
       </div>
       <form class="contact-form" id="contactForm">
         <div class="contact-draft-row">
-          <p id="contactDraftStatus" role="status" aria-live="polite">Kladde forbliver på denne browserfane, mens du arbejder.</p>
+          <p id="contactDraftStatus" role="status" aria-live="polite">Kladden bliver i denne browserfane, mens du arbejder.</p>
           <button id="clearContactDraft" type="button">Ryd udkast</button>
         </div>
         <div class="field">
@@ -1138,8 +1138,8 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Hvad er gemt</h3>
-          <p>Siden gemmer muligvis en lille lokal temapræference i din browser, så dag/nat-skiftet forbliver konsekvent. Det opretter ikke en spillerkonto eller adfærdsprofil.</p>
-          <p>Hjemmesidens kontaktformular opbevarer dens navn, e-mail, forespørgselstype og meddelelsesfelter på samme fane, så en genindlæsning ikke sletter dit kladde. Du kan rydde det i formularen, og browseren fjerner det, når fanesessionen slutter.</p>
+          <p>Siden gemmer muligvis en lille lokal temapræference i din browser, så dag/nat-skiftet forbliver konsekvent. Den opretter ikke en spillerkonto eller adfærdsprofil.</p>
+          <p>Forsidens kontaktformular gemmer felterne for navn, e-mail, forespørgselstype og besked i samme fanes sessionslager, så en genindlæsning ikke sletter din kladde. Du kan rydde den i formularen, og browseren fjerner den, når fanesessionen slutter.</p>
           <p>Hvis du sender en e-mail til WillowinWorlds, bruges din besked, e-mailadresse og links kun til at besvare din forespørgsel.</p>
         </section>
         <aside class="info-card info-facts">
@@ -1164,7 +1164,7 @@
         <div>
           <div class="eyebrow">Juridisk</div>
           <h2 id="legalTitle">WillowinWorlds juridisk meddelelse.</h2>
-          <p>WillowinWorlds, studielogoet, spilnavne, karakterer, skærmbilleder, visuelle materialer og hjemmesidekopi tilhører WillowinWorlds, medmindre andet er angivet.</p>
+          <p>WillowinWorlds, studielogoet, spilnavne, figurer, skærmbilleder, visuelle materialer og hjemmesidetekster tilhører WillowinWorlds, medmindre andet er angivet.</p>
         </div>
         <button class="icon-btn" id="closeLegal" type="button" aria-label="Luk juridiske detaljer">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1173,8 +1173,8 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Tilladt offentlig reference</h3>
-          <p>Presse, udgivere og skabere kan henvise til offentlige spilsider og bruge forhåndsvisningsmateriale til dækning, udgiveranmeldelse og mockups med butiksreferencer med WillowinWorlds-kredit.</p>
-          <p>Offentlig adgang til et materiale giver ikke tilladelse til at videresælge, omdistribuere, præge, bruge det til at træne AI eller maskinlæringsdatasæt, efterligne studiet eller bygge ikke-relaterede kommercielle produkter ud fra det.</p>
+          <p>Presse, udgivere og skabere kan henvise til offentlige spilsider og bruge forhåndsvisningsmateriale til dækning, udgivervurdering og mockups med butiksreferencer med kreditering af WillowinWorlds.</p>
+          <p>Offentlig adgang til et materiale giver ikke tilladelse til at videresælge, videredistribuere, minte, bruge det til at træne AI- eller maskinlæringsdatasæt, udgive sig for at være studiet eller skabe urelaterede kommercielle produkter ud fra det.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Licensrute</h3>
@@ -1198,7 +1198,7 @@
         <div>
           <div class="eyebrow">Anvendelse af materialer</div>
           <h2 id="assetTitle">Politik om offentlige materialer på forhåndsvisningsniveau.</h2>
-          <p>Offentlige filer på WillowinWorlds-spilsider er optimeret forhåndsvisningsmateriale til presseartikler, udgiveranmeldelser, mockups med butiksreferencer og dækning om WillowinWorlds-spil.</p>
+          <p>Offentlige filer på WillowinWorlds-spilsider er optimeret forhåndsvisningsmateriale til presseartikler, præsentationer til udgivervurdering, mockups med butiksreferencer og dækning af WillowinWorlds-spil.</p>
         </div>
         <button class="icon-btn" id="closeAsset" type="button" aria-label="Luk oplysninger om materialebrug">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1207,7 +1207,7 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Tilladt</h3>
-          <p>Brug offentlige forhåndsvisninger i artikler, indlæg, pitch-referencer, dækning, ønskelister, butiksmockups og udgiveranmeldelsesnoter med WillowinWorlds-kredit.</p>
+          <p>Brug offentlige forhåndsvisninger i artikler, indlæg, pitch-referencer, dækning, ønskelister, butiksmockups og noter til udgivervurdering med kreditering af WillowinWorlds.</p>
           <p>Spørg, før du beskærer branding, omfarver, bruger materialer i betalte annoncer, anmoder om lagdelte kildefiler eller viser ikke-udgivne builds.</p>
         </section>
         <aside class="info-card info-facts">
@@ -1242,7 +1242,7 @@
         <section class="info-card">
           <h3>Nuværende basislinje</h3>
           <p>Siden undgår tredjepartsscripts, indlejringer, konti og eksterne formularbehandlere. Den bruger en streng indholdssikkerhedspolitik, ingen inline hændelseshandlere og direkte e-mail-ruter til kontakt.</p>
-          <p>Sikkerhedsrapporter er velkomne, når de er omfattet af det offentlige WillowinWorlds-websted og delt ansvarligt.</p>
+          <p>Sikkerhedsrapporter er velkomne, når de er afgrænset til det offentlige WillowinWorlds-websted og deles ansvarligt.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Ansvarlig offentliggørelse</h3>
@@ -1311,7 +1311,7 @@
     </div>
   </div>
 
-  <script src="../scripts.js?v=20261114-3"></script>
+  <script src="../scripts.js?v=20261114-4"></script>
   <script src="i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

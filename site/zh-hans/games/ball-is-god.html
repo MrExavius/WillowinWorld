@@ -64,7 +64,7 @@
       "name": "Ball is God?!",
       "url": "https://willowinworlds.com/zh-hans/games/ball-is-god.html",
       "image": "https://willowinworlds.com/assets/Ball%20is%20God/site/icon1.webp",
-      "description": "一款硬核垂直下降街机游戏，玩家可以拖动以围绕 Espa 旋转塔，构建组合粉碎并在十个神话地点做出业力选择。",
+      "description": "一款硬核垂直下降街机游戏：玩家通过拖动围绕 Espa 旋转高塔、积攒连击重击，并在十个神话地点做出业力选择。",
       "keywords": "垂直下降街机游戏, 旋转高塔游戏, 硬核街机游戏, 剧情向街机游戏, Boss 战游戏",
       "genre": [
         "垂直下降街机",
@@ -91,16 +91,16 @@
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds 开发日志 RSS" href="../../rss.xml">
   <link rel="preload" href="../../assets/responsive/ball-is-god-hero-760.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/ball-is-god-hero-480.avif 480w, ../../assets/responsive/ball-is-god-hero-760.avif 760w" imagesizes="(max-width: 760px) 82vw, 360px">
   <link rel="preload" href="../../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-ball-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
-  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../../css/ball-page.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/responsive-preferences.css">
   <link rel="stylesheet" href="../../motion.css">
 </head>
@@ -134,8 +134,10 @@
     <div class="ball-page-backdrop ambient-only" aria-hidden="true">
       <div class="ball-deep">
         <span class="ball-karma"></span>
-        <span class="ball-clouds ball-clouds-far"></span>
-        <span class="ball-clouds ball-clouds-near"></span>
+        <img class="ball-cloud-art ball-cloud-art-1" src="../../assets/Ball%20is%20God/site/cloud-4.webp" width="460" height="140" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-2" src="../../assets/Ball%20is%20God/site/cloud-9.webp" width="460" height="126" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-3" src="../../assets/Ball%20is%20God/site/cloud-1.webp" width="460" height="172" alt="" loading="lazy" decoding="async">
+        <img class="ball-cloud-art ball-cloud-art-4" src="../../assets/Ball%20is%20God/site/cloud-3.webp" width="460" height="176" alt="" loading="lazy" decoding="async">
         <span class="ball-temple"></span>
       </div>
       <div class="ball-menu-world">
@@ -160,7 +162,7 @@
       <div class="container ball-hero-layout">
         <div class="ball-hero-copy">
           <h1 id="ballHeroTitle"><span class="eyebrow game-hero-name">Ball is God?!</span> <span class="game-hero-tagline">转动高塔，化身冲击。</span></h1>
-          <p class="hero-copy">硬核垂直下降街机，水平拖动使塔围绕下落的 Espa 旋转。跳过安全着陆，发动连击粉碎并突破神话世界，在这个世界中，无人防守的一击将结束奔跑。</p>
+          <p class="hero-copy">一款硬核垂直下降街机游戏：横向拖动可围绕下坠的 Espa 旋转高塔。跳过安全落点为连击重击充能，冲破神话世界 - 只要承受一次毫无防护的撞击，本局便会结束。</p>
           <p class="ball-hero-note">积极制作中：十个地点的场景、Boss、分支对话，以及会改变游戏规则的业力之路。</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#follow">关注开发进展</a>
@@ -240,7 +242,7 @@
         <div class="game-proof-layout">
           <div class="proof-copy">
             <span class="proof-kicker">在当前版本中</span>
-            <h2 id="ballProofTitle">因果报应的变化比对话更大。</h2>
+            <h2 id="ballProofTitle">业力改变的不只是对话。</h2>
             <p>光明、中立与黑暗的业力之路，会改变护盾的表现、预警信号、敌人的攻击性和 Boss 的阶段，所以故事会改变你的玩法。</p>
             <span class="proof-status"><b>版本状态</b> 全力制作中</span>
           </div>
@@ -250,9 +252,9 @@
               <p>十个世界的全部对话背景，按照从 Ena 到 Deka 的下降顺序排列。</p>
               <div class="world-filmstrip" aria-label="所有十个 Ball is God 对话地点背景">
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" width="237" height="360" alt="Ball is God Ena 天空对话背景" loading="lazy" decoding="async"><figcaption>01 · Ena - 天空</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo 空间对话背景" loading="lazy" decoding="async"><figcaption>02 · Dyo - 太空</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" width="237" height="360" alt="Ball is God Dyo 太空对话背景" loading="lazy" decoding="async"><figcaption>02 · Dyo - 太空</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" width="237" height="360" alt="Ball is God Tria 风暴对话背景" loading="lazy" decoding="async"><figcaption>03 · Tria - 风暴</figcaption></figure>
-                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera 雪花对话背景" loading="lazy" decoding="async"><figcaption>04 · Tessera - 雪</figcaption></figure>
+                <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" width="237" height="360" alt="Ball is God Tessera 雪境对话背景" loading="lazy" decoding="async"><figcaption>04 · Tessera - 雪</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" width="237" height="360" alt="Ball is God Pente 火山对话背景" loading="lazy" decoding="async"><figcaption>05 · Pente - 火山</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-ocean-dialogue-background.webp" width="237" height="360" alt="Ball is God Eksi 海洋对话背景" loading="lazy" decoding="async"><figcaption>06 · Eksi - 海洋</figcaption></figure>
                 <figure><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-desert-dialogue-background.webp" width="237" height="360" alt="Ball is God Epta 沙漠对话背景" loading="lazy" decoding="async"><figcaption>07 · Epta - 沙漠</figcaption></figure>
@@ -263,7 +265,7 @@
             </div>
           </div>
         </div>
-        <div class="proof-facts" aria-label="已验证 Ball is God 构建事实">
+        <div class="proof-facts" aria-label="已核实的 Ball is God 版本信息">
           <article><strong>版本中已有十个场景</strong><span>各个地点专属的 Boss 与危险。</span></article>
           <article><strong>三次跳过 → 粉碎</strong><span>跳过三次安全落点即可充能。</span></article>
           <article><strong>滑动护盾</strong><span>针对致命打击的冷却防御。</span></article>
@@ -283,7 +285,7 @@
           <li><b>01</b><span><strong>关卡选择</strong><small>从第 1-1000 关中选择</small></span></li>
           <li><b>02</b><span><strong>游戏玩法</strong><small>旋转、闪避、下降</small></span></li>
           <li><b>03</b><span><strong>对话/测验</strong><small>触发时每 10 关出现一次</small></span></li>
-          <li><b>04</b><span><strong>放过/击杀</strong><small>90岁和100岁的里程碑选择</small></span></li>
+          <li><b>04</b><span><strong>放过/击杀</strong><small>第 90 关和第 100 关的里程碑抉择</small></span></li>
           <li><b>05</b><span><strong>结果</strong><small>继续、重玩或重试</small></span></li>
         </ol>
 
@@ -291,8 +293,8 @@
           <article class="ball-ui-feature">
             <header>
               <span class="ball-ui-label">01 / 当前关卡选择</span>
-              <h3>天界路线在十个百级章节中选择生成的级别。</h3>
-              <p>制作菜单映射了 100 个级别章节中的 10 个位置，并直接打开到选定的运行中。</p>
+              <h3>天界路线可在十个百关章节中挑选自动生成的关卡。</h3>
+              <p>正式版菜单以每章 100 关的形式呈现十个地点，点击即可直接进入所选关卡开局。</p>
             </header>
             <figure class="ball-ui-device ball-level-select-preview">
               <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/menu-background-760.webp" width="760" height="1156" alt="Ball is God 关卡选择背景：蜿蜒穿过粉彩云层的金色小路尽头，矗立着一座发光的神殿" loading="lazy" decoding="async">
@@ -324,7 +326,7 @@
               <p>角色立绘、地点美术和说话者名牌共用同一个竖向画框。</p>
             </header>
             <figure class="ball-ui-device ball-dialogue-preview">
-              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="Ball is God 天体对话位置，带有发光的悬浮灯" loading="lazy" decoding="async">
+              <img class="ball-ui-background" src="../../assets/game-proof/ball-is-god-ui/dialogue-background-760.webp" width="760" height="1156" alt="带有发光悬空光源的 Ball is God 天界对话场景" loading="lazy" decoding="async">
               <span class="ball-dialogue-location" aria-hidden="true">ENA · 着陆 03</span>
               <img class="ball-dialogue-character" src="../../assets/game-proof/ball-is-god-ui/shash-open.webp" width="572" height="640" alt="Shash，来自 Ball is God 的紫色三角形哨兵" loading="lazy" decoding="async">
               <div class="ball-dialogue-panel">
@@ -335,7 +337,7 @@
                   <span aria-hidden="true">点击继续 <b>›</b></span>
                 </div>
               </div>
-              <figcaption><span>运行时对话</span><strong>人像、说话者和位置在一帧中</strong></figcaption>
+              <figcaption><span>运行时对话</span><strong>肖像、发言者与所处地点同框呈现</strong></figcaption>
             </figure>
           </article>
         </div>
@@ -343,8 +345,8 @@
         <div class="ball-choice-showcase">
           <div>
             <span class="ball-ui-label">04 / 里程碑的选择</span>
-            <h3>答案成为血统的一部分。</h3>
-            <p>在地方级别 90 和 100 中，专门小组要求在对话解决运行问题之前做出“饶恕或杀戮”的决定。</p>
+            <h3>你的回答将成为下降之旅的一部分。</h3>
+            <p>在章节内的第 90 关和第 100 关，专属抉择面板会在对话为本局收尾前，要求你做出“饶恕或击杀”的决定。</p>
           </div>
           <div class="ball-choice-panel" aria-label="Ball is God 对话选择示例">
             <img src="../../assets/game-proof/ball-is-god-ui/dialogue-choice-panel-760.webp" width="760" height="459" alt="" loading="lazy" decoding="async">
@@ -359,7 +361,7 @@
           <div>
             <span class="ball-ui-label">05 / 结果菜单</span>
             <h3>胜利则继续前进，失败则回到同一关。</h3>
-            <p>当前版本有两个独立的结果状态：PanelWin 提供重播和下一级别，而 PanelOver 保留一个明确无误的重播操作。</p>
+            <p>当前版本有两种独立的结算状态：PanelWin 提供重玩和下一关选项，而 PanelOver 则只保留一个毫不含糊的重玩按钮。</p>
           </div>
           <div class="ball-result-menus" aria-label="Ball is God 当前结果菜单">
             <div class="ball-result-menu is-victory">
@@ -387,11 +389,11 @@
         <div class="ball-cast-heading">
           <div>
             <span class="ball-ui-label">对话角色</span>
-            <h3>下山途中相遇。</h3>
+            <h3>下坠途中相遇的面孔。</h3>
           </div>
-          <p>所有 25 个具有有效制作开闭肖像对的角色都包含在下面。将鼠标悬停或聚焦卡片即可切换表情。</p>
+          <p>下方收录了全部 25 位拥有完整正式版张合表情肖像的角色。悬停或聚焦卡片即可切换表情。</p>
         </div>
-        <div class="ball-character-roster" aria-label="Ball is God 制作对话角色">
+        <div class="ball-character-roster" aria-label="Ball is God 正式版对话角色">
           <article class="ball-character-card is-espa">
             <div class="ball-character-art">
               <img class="is-open" src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa 对话肖像" loading="lazy" decoding="async">
@@ -430,7 +432,7 @@
         <h2>Ball is God?! 是一款在旋转高塔中不断下坠的硬核街机游戏。</h2>
         <div class="detail-grid">
           <article class="detail-card"><h3>核心构想</h3><p>带着 Espa 走下一座神圣之塔。一次失误就可能让这一局结束，而你做出的重大选择会改变这个世界的玩法。</p></article>
-          <article class="detail-card"><h3>当前版本</h3><p>实现了十个地点场景、程序塔生成、连击粉碎、滑动盾牌、Boss 配置、分支对话、制作菜单和表情肖像。</p></article>
+          <article class="detail-card"><h3>当前版本</h3><p>现已实现十个地点场景、程序化高塔生成、连击重击、滑动护盾、Boss 配置、分支对话、正式版菜单以及可切换表情的角色肖像。</p></article>
           <article class="detail-card"><h3>目标受众</h3><p>喜欢高难度手机街机游戏、高风险高回报的时机把握和 Boss 战，并且希望有故事可追的玩家。</p></article>
           <article class="detail-card"><h3>状态</h3><p>积极制作中。近期的工作涵盖运行时系统、世界美术、测试，以及游戏在手机上的实际玩法。</p></article>
         </div>
@@ -439,10 +441,10 @@
         <div class="eyebrow">特点</div>
         <h2>在 Ball is God?! 中你要做什么</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>拖动旋转下降</h3><p>水平阻力使塔围绕自动下落的 Espa 旋转，排列间隙、危险和安全平台。</p></article>
+          <article class="detail-card"><h3>拖动旋转下降</h3><p>横向拖动可围绕自动下坠的 Espa 旋转高塔，从而对准缺口、陷阱与安全平台。</p></article>
           <article class="detail-card"><h3>硬核街机压力</h3><p>只要有一次不设防地中招，这一局就结束了，所以你必须看清高塔，把握好每一步的时机。</p></article>
           <article class="detail-card"><h3>Boss 和神话世界</h3><p>十个地点场景各有各的 Boss，把故事从一个世界带向下一个世界。</p></article>
-          <article class="detail-card"><h3>能改变规则的选择</h3><p>仁慈、力量和业力改变对话、护盾规则、敌人侵略、电报和 Boss 阶段。</p></article>
+          <article class="detail-card"><h3>能改变规则的选择</h3><p>慈悲、武力与业力会改变对话内容、护盾规则、敌人攻击性、攻击预警以及 Boss 阶段。</p></article>
         </div>
       </section>
       <section class="soft-card game-page-section" id="gameplay-loop">
@@ -450,9 +452,9 @@
         <h2>Ball is God?! 玩法</h2>
         <ul class="update-list">
           <li><span>步骤01</span><strong>看清下降</strong><p>下坠时留意接下来的平台、缝隙和危险物，寻找安全的时机。</p></li>
-          <li><span>步骤02</span><strong>旋转高塔</strong><p>水平拖动使世界围绕 Espa 转动，对齐安全平台或故意的间隙。</p></li>
-          <li><span>步骤03</span><strong>风险与粉碎</strong><p>跳过三个平台进行组合粉碎，然后突破建筑物，同时护盾覆盖一个致命错误。</p></li>
-          <li><span>步骤04</span><strong>选择结果</strong><p>仁慈和力量塑造业力、对话和游戏规则，并融入到敌人和 Boss 身上。</p></li>
+          <li><span>步骤02</span><strong>旋转高塔</strong><p>横向拖动可让世界围绕 Espa 转动，从而对准安全平台或刻意穿越的缺口。</p></li>
+          <li><span>步骤03</span><strong>风险与粉碎</strong><p>连续跳过三个平台即可为连击重击充能，随后一路击穿结构，护盾还能为你抵挡一次致命失误。</p></li>
+          <li><span>步骤04</span><strong>选择结果</strong><p>慈悲与武力不仅塑造着业力和对话，还会改变敌人与 Boss 所遵循的游戏规则。</p></li>
         </ul>
       </section>
       <section class="soft-card game-page-section ball-story-section">
@@ -460,7 +462,7 @@
         <h2>一座神话之塔，你的选择会一路跟你下坠。</h2>
         <div class="info-grid">
           <div>
-            <p>Ball is God?! 始于童年对移动垂直下降街机的迷恋：阅读间隙、快速反应和本能生存。</p>
+            <p>Ball is God?! 源于童年对手机垂直下降街机游戏的迷恋：看准缺口、快速反应，全凭本能求生。</p>
             <p>这种形式还能承载更多：Boss、个性鲜明的角色、一段故事和道德上的张力。当前的项目让 Espa 穿过十个地点场景和一群奇特的角色，而选择会同时改变故事和玩法。</p>
             <p>于是目标变成了一款简单的垂直下降街机游戏，既有 Boss 战的压迫感，又有剧情向 RPG 那样的选择后果。</p>
           </div>
@@ -493,7 +495,7 @@
         <h2>Ball is God?! 媒体和创作者资源</h2>
         <p class="asset-kit-copy">供新闻报道、发行商评审和商店页面参考使用的 WebP 预览。全分辨率的源文件可按需提供。</p>
         <h3 class="asset-group-title">品牌与角色</h3>
-        <p class="asset-group-note">游戏图标加上所有25个当前角色，具有完整的制作对话肖像。名称与 Unity 本地化键匹配。</p>
+        <p class="asset-group-note">游戏图标以及当前全部 25 位拥有完整正式版对话肖像的角色。角色名称均与 Unity 本地化键名保持一致。</p>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-one-touch-vertical-descent-arcade-game-icon.webp 1024w" sizes="(max-width: 760px) 34vw, 76px" width="1024" height="1024" alt="Ball is God 垂直下降塔街机游戏图标" loading="lazy" decoding="async"><strong>游戏图标</strong><span>垂直下降塔街机图标。</span></a>
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/espa-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/espa-open.webp" width="640" height="353" alt="Espa 制作对话肖像" loading="lazy" decoding="async"><strong>Espa</strong><span>玩家角色肖像。</span></a>
@@ -523,15 +525,15 @@
           <a class="asset-link" href="../../assets/game-proof/ball-is-god-ui/white-open.webp" download><img src="../../assets/game-proof/ball-is-god-ui/white-open.webp" width="640" height="640" alt="White 制作对话肖像" loading="lazy" decoding="async"><strong>White</strong><span>制作对话肖像。</span></a>
         </div>
         <h3 class="asset-group-title">菜单背景</h3>
-        <p class="asset-group-note">天体等级选择系统使用的当前制作艺术品。</p>
+        <p class="asset-group-note">当前天界关卡选择系统所用的正式版美术素材。</p>
         <div class="asset-list">
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 天体等级选择菜单背景" loading="lazy" decoding="async"><strong>天体菜单</strong><span>关卡选择制作背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-celestial-menu-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-celestial-menu-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 天界关卡选择菜单背景" loading="lazy" decoding="async"><strong>天体菜单</strong><span>关卡选择制作背景。</span></a>
         </div>
         <h3 class="asset-group-title">垂直下降世界</h3>
-        <p class="asset-group-note">完整的十个当前位置背景集，从 Ena 到 Deka 排序。</p>
+        <p class="asset-group-note">当前全部十个地点的完整背景图，按从 Ena 到 Deka 的顺序排列。</p>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-sky-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 垂直下降天空背景" loading="lazy" decoding="async"><strong>01·天空世界</strong><span>Ena 垂直下降背景。</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 垂直下降空间背景" loading="lazy" decoding="async"><strong>02·太空世界</strong><span>Dyo 垂直下降背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-space-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-space-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 垂直下降太空背景" loading="lazy" decoding="async"><strong>02·太空世界</strong><span>Dyo 垂直下降背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-storm-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 垂直下降风暴背景" loading="lazy" decoding="async"><strong>03·风暴世界</strong><span>Tria 垂直下降背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-snow-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 垂直下降雪山背景" loading="lazy" decoding="async"><strong>04·雪世界</strong><span>Tessera 垂直下降背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-volcano-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 垂直下降火山背景" loading="lazy" decoding="async"><strong>05 · 火山世界</strong><span>Pente 背景，游戏中带动画效果。</span></a>
@@ -542,11 +544,11 @@
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-vertical-descent-hell-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 垂直下降地狱背景" loading="lazy" decoding="async"><strong>10 · 地狱世界</strong><span>Deka 垂直下降背景。</span></a>
         </div>
         <h3 class="asset-group-title">故事街机背景</h3>
-        <p class="asset-group-note">完整的对话地点集：光之厅以及所有十个世界的背景。</p>
+        <p class="asset-group-note">完整的对话场景套图：光之殿以及全部十个世界的背景。</p>
         <div class="asset-list">
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-hall-of-light-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 光之殿对话背景" loading="lazy" decoding="async"><strong>00 · 光之殿</strong><span>开场对话背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-sky-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 故事街机天空对话背景" loading="lazy" decoding="async"><strong>01 · 天空对话</strong><span>Ena 故事背景。</span></a>
-          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 故事街机空间对话背景" loading="lazy" decoding="async"><strong>02 · 空间对话</strong><span>Dyo 故事背景。</span></a>
+          <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-space-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 故事街机太空对话背景" loading="lazy" decoding="async"><strong>02 · 空间对话</strong><span>Dyo 故事背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-storm-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 暴风云对话背景" loading="lazy" decoding="async"><strong>03 · 风暴对话</strong><span>Tria 故事背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 237w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-snow-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 雪山对话背景" loading="lazy" decoding="async"><strong>04 · 雪的对话</strong><span>Tessera 故事背景。</span></a>
           <a class="asset-link" href="../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" download><img src="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp" srcset="../../assets/previews/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 360w, ../../assets/downloads/ball-is-god/ball-is-god-story-arcade-volcano-dialogue-background.webp 920w" sizes="(max-width: 760px) 34vw, 76px" width="920" height="1400" alt="Ball is God 故事街机火山对话背景" loading="lazy" decoding="async"><strong>05 · 火山对话</strong><span>Pente 故事背景。</span></a>
@@ -577,7 +579,7 @@
           <a class="related-world-link" href="paint-blasters.html">
             <span class="related-world-kicker">制作中的原型</span>
             <strong>Paint Blasters</strong>
-            <p>构建色彩驱动的镜头，瞄准弱点，将塔楼破坏转化为连锁反应。</p>
+            <p>调配色彩驱动的弹丸，瞄准弱点，让高塔破坏化作连锁反应。</p>
             <span class="related-world-meta">彩色物理街机</span>
           </a>
           <a class="related-world-link" href="../press-kit.html#press-games">
@@ -592,8 +594,8 @@
         <div class="eyebrow">Ball is God?! 常见问题解答</div>
         <h2>关于 Ball is God?! 的常见问题</h2>
         <div class="detail-grid">
-          <article class="detail-card"><h3>Ball is God?! 是一款什么样的游戏</h3><p>一款硬核垂直下降街机游戏。你要围绕不断下坠的 Espa 旋转高塔，跳过安全落点为重击充能，一路冲破神话世界。</p></article>
-          <article class="detail-card"><h3>Ball is God?! 要怎么玩？</h3><p>水平拖动以旋转塔，跳过三个平台进行粉碎，当冷却护盾必须吸收致命一击时垂直滑动。</p></article>
+          <article class="detail-card"><h3>Ball is God?! 是一款什么样的游戏？</h3><p>一款硬核垂直下降街机游戏。你要围绕不断下坠的 Espa 旋转高塔，跳过安全落点为重击充能，一路冲破神话世界。</p></article>
+          <article class="detail-card"><h3>Ball is God?! 要怎么玩？</h3><p>横向拖动以旋转高塔，跳过三个平台为重击充能，并在需要冷却护盾抵挡致命一击时纵向滑动。</p></article>
           <article class="detail-card"><h3>Ball is God?! 已经发布了吗？</h3><p>还没有。它正在积极制作中，涉及运行时系统、世界美术、故事内容和测试。目前没有公开的发布日期。目标平台是 iOS 和 Android。</p></article>
           <article class="detail-card"><h3>Ball is God?! 有什么不同？</h3><p>它把高风险高回报的街机压迫感，与十个地点，以及会改变对话、敌人、攻击预告、护盾和 Boss 的业力结合在了一起。</p></article>
           <article class="detail-card"><h3>Ball is God?! 是谁制作的？</h3><p>WillowinWorlds 是一家制作手机益智与街机游戏的独立工作室。</p></article>
@@ -606,7 +608,7 @@
         <ul class="update-list">
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">2026 年 7 月 31 日</time><strong>世界地面与危险要素验证</strong><p>角色表现、确定性生成和尖刺陷阱，经历了一轮视觉与验证的综合打磨。</p></li>
           <li><span>2026 年 7 月</span><strong>制作版 UI 与角色优化</strong><p>关卡选择、通用的操作控件、竖向对话画框和成对的角色表情现已就位。</p></li>
-          <li><span>2026 年 2 月</span><strong>项目范围审查</strong><p>团队完成了主要故事整合过程，并审查了项目的整体规模：十个世界、道德选择、Boss 和多重结局。</p></li>
+          <li><span>2026 年 2 月</span><strong>项目范围审查</strong><p>团队完成了一次大规模的剧情整合梳理，并重新评估了项目的完整体量：十个世界、道德抉择、Boss 战以及多重结局。</p></li>
           <li><span>2025年4月-5月</span><strong>故事重写和能力</strong><p>整个故事被重写，人物能力得到提升，道德后果变得更加清晰。</p></li>
           <li><span>2024 年 8 月</span><strong>故事走向开始</strong><p>团队认为 Ball is God?! 不该只是一款简单的下降街机游戏，于是加入了神话故事和道德抉择的构想。</p></li>
           <li><span>2024 年 7 月</span><strong>原创概念</strong><p>这个项目最初是工作室的第一个游戏创意：一款在神圣高塔中飞速下坠的垂直街机游戏。</p></li>
@@ -638,7 +640,7 @@
       </div>
     </div>
   </footer>
-  <script src="../../game-theme.js?v=20261113-3"></script>
+  <script src="../../game-theme.js?v=20261114-4"></script>
   <script src="../i18n-runtime.js?v=20261114"></script>
 </body>
 </html>

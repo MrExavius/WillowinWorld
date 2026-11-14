@@ -12,7 +12,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WillowinWorlds">
-  <meta property="og:title" content="WillowinWorlds - Studio de jocuri de puzzle și arcade pentru mobil independent">
+  <meta property="og:title" content="WillowinWorlds - Studio indie de puzzle și arcade mobile">
   <meta property="og:description" content="Studio indie de puzzle și arcade pentru mobil, cu patru jocuri principale și alte opt în laborator. Jucați Nature Seed gratuit în browser și urmăriți celelalte trei.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/studio-og-v2.jpg">
   <meta property="og:image:type" content="image/jpeg">
@@ -23,7 +23,7 @@
   <meta property="og:locale" content="ro_RO">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@willowinworlds">
-  <meta name="twitter:title" content="WillowinWorlds - Studio de jocuri de puzzle și arcade pentru mobil independent">
+  <meta name="twitter:title" content="WillowinWorlds - Studio indie de puzzle și arcade mobile">
   <meta name="twitter:description" content="Studio indie de puzzle și arcade pentru mobil, cu patru jocuri principale și alte opt în laborator. Jucați Nature Seed gratuit în browser și urmăriți celelalte trei.">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/studio-og-v2.jpg">
   <meta name="twitter:image:alt" content="Logo-ul WillowinWorlds și sloganul „Jocuri mici. Lumi vii.” deasupra pictogramelor celor patru jocuri principale">
@@ -36,23 +36,23 @@
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../rss.xml">
   <link rel="preload" href="../assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="../css/base.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../css/nature-scene.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/home-card-base.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/home-card-base.css?v=20261114-4">
   <link rel="stylesheet" href="../css/home-ball-card.css">
   <link rel="stylesheet" href="../css/home-nature-card.css">
   <link rel="stylesheet" href="../css/home-paint-card.css">
   <link rel="stylesheet" href="../css/home-candy-card.css">
   <link rel="stylesheet" href="../css/game-components.css">
-  <link rel="stylesheet" href="../css/game-content.css?v=20261114-3">
-  <link rel="stylesheet" href="../css/site-sections.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20261114-4">
   <link rel="stylesheet" href="../css/keyframes.css?v=20260731-1">
   <link rel="stylesheet" href="../css/responsive-desktop.css">
   <link rel="stylesheet" href="../css/responsive-tablet.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../css/responsive-preferences.css?v=20260731-1">
   <link rel="stylesheet" href="../motion.css">
-  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20261114-3">
+  <link rel="stylesheet" href="../css/home-polish-2026.css?v=20261114-4">
   <link rel="stylesheet" href="../css/home-lab.css?v=20261113-3">
   <script type="application/ld+json" id="structuredData">
 {
@@ -242,7 +242,7 @@
       "gamePlatform": "Mobil",
       "description": "Un puzzle confortabil de îmbinare a bomboanelor, cu un lanț de 13 etape, zece containere care schimbă regulile și opt efecte speciale, plus rezervă, previzualizarea aterizării și coada cu următoarele trei.",
       "keywords": "puzzle de îmbinare a bomboanelor, joc de îmbinare, puzzle de fizică, joc mobil confortabil",
-      "creativeWorkStatus": "Dezvoltare activă - construcție de producție care poate fi jucată",
+      "creativeWorkStatus": "Dezvoltare activă - versiune de producție jucabilă",
       "author": {
         "@id": "https://willowinworlds.com/#studio"
       },
@@ -307,7 +307,7 @@
   <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#main-content">Treceți la conținutul principal</a>
   <canvas class="magic-canvas" id="magicCanvas" aria-hidden="true"></canvas>
-  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magic deblocat - Bun venit la WillowinWorlds</div>
+  <div class="success-badge" id="successBadge" role="status" aria-live="polite">Magie deblocată - Bun venit la WillowinWorlds</div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <div class="page">
@@ -394,9 +394,9 @@
               </span>
               <span class="nature-cycle"><b>Schiță</b><b>Conectare</b><b>Înflorire</b></span>
             </div>
-            <span class="floating-rune ambient-only"></span>
-            <span class="floating-rune ambient-only"></span>
-            <span class="floating-rune ambient-only"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
+            <span class="floating-rune ambient-only" aria-hidden="true"></span>
             <div class="hero-portal-badge ambient-only" aria-hidden="true">
               <img loading="lazy" src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
               <span>4 lumi + 8 în laborator</span>
@@ -503,7 +503,7 @@
                   <span class="game-genre">Gen principal: Puzzle casual de îmbinare</span>
                 </div>
                 <p>Candy Shop este un puzzle mobil confortabil de îmbinare, cu fizică. Îmbinați bomboanele identice de-a lungul unui lanț de 13 etape, cu zece containere care schimbă comportamentul grămezii și opt efecte speciale. Puteți păstra o piesă în rezervă, previzualiza unde aterizează și vedea următoarele trei bomboane.</p>
-                <div class="feature-callout">Atuul jocului: aruncarea familiară devine un puzzle nou atunci când containerul schimbă gravitația, geometria sau drumul spre stivă.</div>
+                <div class="feature-callout">Atuul jocului: un element familiar care cade devine un puzzle nou atunci când containerul schimbă gravitația, geometria sau drumul spre stivă.</div>
                 <div class="game-tags">
                   <span class="tag">Mobil</span><span class="tag">Îmbinarea bomboanelor</span><span class="tag">Puzzle de fizică</span><span class="tag">Joc confortabil</span><span class="tag">Puzzle combo</span><span class="tag">Dulciuri speciale</span>
                 </div>
@@ -514,7 +514,7 @@
               </div>
             </article>
 
-            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters distrugerea culorilor fizica puzzle arcade" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
+            <article id="paint-card" class="game-card paint-card" aria-label="Paint Blasters - puzzle arcade cu fizică a distrugerii culorilor" data-tags="Arcade Physics Destruction Puzzle Color Mobile Chain Reaction Tactical Aim Shoot In Development Prototype">
               <div class="game-cover paint-game-cover">
                 <div class="paint-stage" aria-hidden="true">
                   <img class="paint-bg" src="../assets/Paint%20Blasters/site/back.webp" width="760" height="1361" alt="" loading="lazy" decoding="async">
@@ -887,7 +887,7 @@
             <article class="devlog-card" data-devlog-card data-devlog-game="paint-blasters" data-devlog-source="games/paint-blasters.html">
               <span><b data-devlog-name>Paint Blasters</b><time datetime="2026-07-31" data-devlog-date>31 iulie 2026</time></span>
               <h3 data-devlog-title>Stabilizarea fizicii și a efectelor</h3>
-              <p data-devlog-summary>Comportamentul proiectilului, rezoluția Match-3 și efectele lovirii au fost testate și întărite pentru rezultate combinate mai consistente.</p>
+              <p data-devlog-summary>Comportamentul proiectilului, procesarea Match-3 și efectele lovirii au fost testate și ajustate pentru rezultate combinate mai consistente.</p>
               <a class="btn btn-ghost" href="games/paint-blasters.html#devlog" aria-label="Deschideți devlog-ul Paint Blasters">Deschideți devlog-ul Paint Blasters</a>
             </article>
             <article class="devlog-card" data-devlog-card data-devlog-game="ball-is-god" data-devlog-source="games/ball-is-god.html">
@@ -1047,7 +1047,7 @@
           <label for="message">Mesaj</label>
           <textarea id="message" name="message" maxlength="1200" required placeholder="Spune-ne ce vrei să discutăm."></textarea>
         </div>
-        <p class="contact-handoff-note" id="contactHandoff">Aceasta deschide o schiță pregătită în aplicația dvs. de e-mail. Nimic nu este trimis până nu îl confirmați acolo. Puteți și e-mail <a href="mailto:willowinworlds@gmail.com">willowinworlds@gmail.com</a> direct.</p>
+        <p class="contact-handoff-note" id="contactHandoff">Aceasta deschide o schiță pregătită în aplicația dvs. de e-mail. Nimic nu este trimis până nu îl confirmați acolo. Puteți trimite și un e-mail <a href="mailto:willowinworlds@gmail.com">willowinworlds@gmail.com</a> direct.</p>
         <div class="contact-form-actions">
           <button class="btn btn-primary" type="submit">Pregătiți e-mailul</button>
           <button class="btn btn-ghost" id="copyContactMessage" type="button">Copiați mesajul</button>
@@ -1079,7 +1079,7 @@
           <span class="tag">Editori</span>
           <span class="tag">Parteneri</span>
         </div>
-        <p>Trimiteți un link de portofoliu concentrat, rol, disponibilitate și jocul sau zona de stil WillowinWorlds de care vă simțiți cel mai aproape.</p>
+        <p>Trimiteți un link relevant de portofoliu, rol, disponibilitate și jocul sau zona de stil WillowinWorlds de care vă simțiți cel mai aproape.</p>
       </div>
       <div class="info-actions">
         <button class="btn btn-primary" data-open-contact data-contact-type="Portfolio" type="button">Deschideți formularul de contact</button>
@@ -1103,7 +1103,7 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Prezentarea studioului</h3>
-          <p>Portofoliul actual acoperă fizica draw-to-rezolvare, puzzle-uri de îmbinare a bomboanelor, distrugerea culorilor și coborârea arcadelor verticale.</p>
+          <p>Portofoliul actual acoperă fizica rezolvării prin desen, puzzle-uri de îmbinare a bomboanelor, distrugerea culorilor și coborârea verticală în stil arcade.</p>
           <p>Ne concentrăm pe controale gândite pentru atingere, un stil artistic 2D separat pentru fiecare joc și mecanici pe care le puteți urmări doar privindu-le.</p>
         </section>
         <aside class="info-card info-facts">
@@ -1140,7 +1140,7 @@
           <h3>Ce este stocat</h3>
           <p>Site-ul poate salva o mică preferință de temă locală în browser, astfel încât comutarea zi/noapte să rămână consecventă. Nu creează un cont de jucător sau un profil comportamental.</p>
           <p>Formularul de contact de pe pagina de pornire își păstrează numele, e-mailul, tipul de întrebare și câmpurile de mesaj în spațiul de stocare al sesiunii din aceeași filă, astfel încât o reîncărcare nu vă șterge schița. Îl puteți șterge din formular, iar browserul îl elimină când se termină acea sesiune de filă.</p>
-          <p>Dacă trimiteți un e-mail pe WillowinWorlds, mesajul, adresa de e-mail și linkurile dvs. sunt folosite numai pentru a răspunde la întrebarea dvs.</p>
+          <p>Dacă trimiteți un e-mail către WillowinWorlds, mesajul, adresa de e-mail și linkurile dvs. sunt folosite numai pentru a răspunde la întrebarea dvs.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Informații privind confidențialitatea</h3>
@@ -1173,8 +1173,8 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Referire publică permisă</h3>
-          <p>Presa, editorii și creatorii pot face referire la paginile de jocuri publice și pot folosi materiale de nivel de previzualizare pentru acoperire, revizuire a editorilor și machete de referință în magazin cu credit WillowinWorlds.</p>
-          <p>Accesul public la un material nu acordă permisiunea de a revinde, redistribui, bate, de a-l folosi pentru a antrena seturi de date AI sau de învățare automată, a uzurpa identitatea studioului sau a construi produse comerciale fără legătură din acesta.</p>
+          <p>Presa, editorii și creatorii pot face referire la paginile de jocuri publice și pot folosi materiale de previzualizare pentru acoperire, revizuirea editorilor și machete de referință pentru magazine, cu creditarea WillowinWorlds.</p>
+          <p>Accesul public la un material nu acordă permisiunea de a revinde, redistribui, bate, de a-l folosi pentru a antrena seturi de date AI sau de învățare automată, a uzurpa identitatea studioului sau a construi produse comerciale fără legătură cu acesta.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Ruta de licență</h3>
@@ -1198,7 +1198,7 @@
         <div>
           <div class="eyebrow">Utilizarea materialelor</div>
           <h2 id="assetTitle">Politica privind materialele publice la nivel de previzualizare.</h2>
-          <p>Fișierele publice de pe paginile de joc WillowinWorlds sunt materiale de previzualizare optimizate pentru articole de presă, pachete de recenzii ale editorilor, machete de referință pentru magazine și acoperire despre jocurile WillowinWorlds.</p>
+          <p>Fișierele publice de pe paginile de joc WillowinWorlds sunt materiale de previzualizare optimizate pentru articole de presă, prezentări pentru revizuirea editorilor, machete de referință pentru magazine și acoperire despre jocurile WillowinWorlds.</p>
         </div>
         <button class="icon-btn" id="closeAsset" type="button" aria-label="Închideți detaliile de utilizare a materialelor">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1207,7 +1207,7 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Permis</h3>
-          <p>Folosiți previzualizări publice în articole, postări, referințe de prezentare, acoperire, liste de dorințe, machete de magazin și note de recenzie ale editorilor cu credit WillowinWorlds.</p>
+          <p>Folosiți previzualizări publice în articole, postări, referințe de prezentare, acoperire, liste de dorințe, machete de magazin și note de recenzie ale editorilor cu creditarea WillowinWorlds.</p>
           <p>Întrebați înainte de a decupa brandingul, de a recolora, de a utiliza materiale în reclame plătite, de a solicita fișiere sursă stratificate sau de a afișa versiuni nelansate.</p>
         </section>
         <aside class="info-card info-facts">
@@ -1241,8 +1241,8 @@
       <div class="info-grid">
         <section class="info-card">
           <h3>Linia de bază actuală</h3>
-          <p>Site-ul evită scripturile, încorporarile, conturile și procesatorii externi de formulare de la terți. Folosește o politică strictă de securitate a conținutului, fără gestionare de evenimente inline și rute directe de e-mail pentru contact.</p>
-          <p>Rapoartele de securitate sunt binevenite atunci când sunt incluse pe site-ul public WillowinWorlds și partajate în mod responsabil.</p>
+          <p>Site-ul evită scripturile, încorporările, conturile și procesatorii externi de formulare de la terți. Folosește o politică strictă de securitate a conținutului, fără gestionare de evenimente inline și rute directe de e-mail pentru contact.</p>
+          <p>Rapoartele de securitate sunt binevenite atunci când privesc site-ul public WillowinWorlds și sunt transmise responsabil.</p>
         </section>
         <aside class="info-card info-facts">
           <h3>Dezvăluire responsabilă</h3>
@@ -1311,7 +1311,7 @@
     </div>
   </div>
 
-  <script src="../scripts.js?v=20261114-3"></script>
+  <script src="../scripts.js?v=20261114-4"></script>
   <script src="i18n-runtime.js?v=20261114"></script>
 </body>
 </html>
