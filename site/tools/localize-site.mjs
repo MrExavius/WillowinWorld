@@ -36,6 +36,8 @@ const switcherStart = "<!-- locale-switcher:start -->";
 const switcherEnd = "<!-- locale-switcher:end -->";
 const socialStart = "<!-- social-links:start -->";
 const socialEnd = "<!-- social-links:end -->";
+const shareStart = "<!-- share-links:start -->";
+const shareEnd = "<!-- share-links:end -->";
 const sitemapStart = "<!-- localized-pages:start -->";
 const sitemapEnd = "<!-- localized-pages:end -->";
 
@@ -158,7 +160,6 @@ const manualTranslationOverrides = Object.freeze({
     "Open Ball is God?! devlog": "Open het devlog van Ball is God?!"
   }),
   fil: Object.freeze({
-    "Ball is God Development Build": "Bersiyon para sa pagbuo ng Ball is God",
     "Night Magic / Daylight": "Mahikang Gabi / Liwanag ng Araw",
     "Spotlight · Nature Seed release": "Tampok · Paglabas ng Nature Seed",
     "Prototype": "Prototipo",
@@ -488,6 +489,9 @@ const explicitRuntimeStrings = Object.freeze([
   "Draft cleared. New text will save in this tab.",
   "Switch to light theme",
   "Switch to dark theme",
+  "Copy link",
+  "Link copied",
+  "Could not copy link",
   "WillowinWorlds is an independent mobile game studio creating four physics-led puzzle and arcade games with tactile controls, readable systems and expressive 2D worlds.",
   "Site language",
   "Canonical English source",
@@ -577,11 +581,17 @@ function shouldTranslate(value) {
   return true;
 }
 
-function stripGeneratedBlocks(html) {
+// Social and share rows are the only generated blocks that English-only pages carry.
+function emptyRenderedBlocks(html) {
   return html
-    .replace(new RegExp(`\\s*${alternateStart}[\\s\\S]*?${alternateEnd}`, "g"), "")
-    .replace(new RegExp(`\\s*${switcherStart}[\\s\\S]*?${switcherEnd}`, "g"), "")
     .replace(new RegExp(`${socialStart}[\\s\\S]*?${socialEnd}`, "g"), `${socialStart}${socialEnd}`)
+    .replace(new RegExp(`${shareStart}[\\s\\S]*?${shareEnd}`, "g"), `${shareStart}${shareEnd}`);
+}
+
+function stripGeneratedBlocks(html) {
+  return emptyRenderedBlocks(html
+    .replace(new RegExp(`\\s*${alternateStart}[\\s\\S]*?${alternateEnd}`, "g"), "")
+    .replace(new RegExp(`\\s*${switcherStart}[\\s\\S]*?${switcherEnd}`, "g"), ""))
     .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "");
 }
 
@@ -1017,6 +1027,35 @@ function renderSocialLinks(html, locale) {
   return rendered;
 }
 
+// Plain share links (no widgets, no tracking) for the page's own URL in this locale; the copy button is wired in game-theme.js.
+const shareTargets = Object.freeze([
+  { name: "X", href: (url, title) => `https://x.com/intent/post?url=${url}&text=${title}` },
+  { name: "Reddit", href: (url, title) => `https://www.reddit.com/submit?url=${url}&title=${title}` },
+  { name: "Telegram", href: (url, title) => `https://t.me/share/url?url=${url}&text=${title}` },
+  { name: "VK", href: url => `https://vk.com/share.php?url=${url}` },
+  { name: "Facebook", href: url => `https://www.facebook.com/sharer/sharer.php?u=${url}` }
+]);
+
+function renderShareLinks(html, locale, page, translations = {}) {
+  // Same rule as the social set: locales without a Facebook profile (Facebook is blocked in Russia) get no Facebook share link.
+  const hasFacebook = socialProfilesFor(locale.code).some(profile => profile.name === "Facebook");
+  const rendered = html.replace(new RegExp(`(<[^>]*\\bdata-share-links\\b[^>]*>\\s*)${shareStart}${shareEnd}`, "g"), (match, openTag) => {
+    const title = normalizedText(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || "");
+    if (!title) throw new Error(`${page.file}: <title> is required to render share links for ${locale.code}`);
+    const url = encodeURIComponent(pageUrl(locale, page));
+    const items = shareTargets
+      .filter(target => hasFacebook || target.name !== "Facebook")
+      .map(target => `<li><a class="social-link share-link" href="${encodeHtml(target.href(url, encodeURIComponent(title)), true)}">${target.name}</a></li>`)
+      .join("");
+    const copy = `<li><button class="social-link share-link share-copy" type="button" data-share-copy>${translateValue("Copy link", translations)}</button></li>`;
+    return `${openTag}${shareStart}<ul class="social-list share-list" role="list">${items}${copy}</ul><span class="visually-hidden" role="status" data-share-status></span>${shareEnd}`;
+  });
+  if (rendered.includes(`${shareStart}${shareEnd}`)) {
+    throw new Error(`Empty ${shareStart}${shareEnd} block left after rendering share links for ${locale.code} (${page.file}); check that it follows an opening tag with data-share-links.`);
+  }
+  return rendered;
+}
+
 function addLocaleMetadata(html, locale, page, translations = {}) {
   let output = html
     .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "")
@@ -1040,7 +1079,7 @@ const englishOnlyPaths = new Set(englishOnlyPages.map(page => page.path));
 function rewriteSharedResourceUrls(html, page) {
   const depthPrefix = page.kind === "game" ? "../" : "../";
   const gameSourcePrefix = page.kind === "game" ? "../" : "";
-  const sharedRoots = ["assets/", "css/", "motion.css", "scripts.js", "game-theme.js", "favicon.ico", "manifest.webmanifest", "rss.xml", "404.css", "404.js", ".well-known/"];
+  const sharedRoots = ["assets/", "css/", "motion.css", "scripts.js", "game-theme.js", "favicon.ico", "manifest.webmanifest", "rss.xml", "theme-init.js", "404.css", "404.js", ".well-known/"];
 
   function rewriteOne(value) {
     if (!value || /^(?:https?:|mailto:|tel:|data:|blob:|#|\/)/i.test(value)) return value;
@@ -1071,6 +1110,7 @@ function rewriteSharedResourceUrls(html, page) {
 function renderLocalizedPage(source, locale, page, translations) {
   let output = translateHtml(source, locale, translations);
   output = renderSocialLinks(output, locale);
+  output = renderShareLinks(output, locale, page, translations);
   output = addLocaleMetadata(output, locale, page, translations);
   output = rewriteSharedResourceUrls(output, page);
   const runtimePath = `${page.kind === "game" ? "../i18n-runtime.js" : "i18n-runtime.js"}?v=${localizationLastModified.replaceAll("-", "")}`;
@@ -1087,7 +1127,14 @@ function addStructuredLanguage(html, locale) {
 }
 
 function renderEnglishPage(source, page) {
-  return `${addLocaleMetadata(renderSocialLinks(addStructuredLanguage(source, sourceLocale), sourceLocale), sourceLocale, page).trim()}\n`;
+  return `${addLocaleMetadata(renderShareLinks(renderSocialLinks(addStructuredLanguage(source, sourceLocale), sourceLocale), sourceLocale, page), sourceLocale, page).trim()}\n`;
+}
+
+// English-only pages are hand-kept: only the generated social and share rows are rendered, nothing else is rewritten.
+function renderEnglishOnlyPage(html, page) {
+  const canonical = pageUrl(sourceLocale, page);
+  if (!html.includes(`<link rel="canonical" href="${canonical}">`)) throw new Error(`${page.file}: canonical link must be ${canonical}`);
+  return renderShareLinks(renderSocialLinks(emptyRenderedBlocks(html), sourceLocale), sourceLocale, page);
 }
 
 function renderSitemapAlternates(page) {
@@ -1335,6 +1382,11 @@ for (const page of localizedPages) {
     const path = join(siteRoot, outputFile(locale, page));
     await writeIfChanged(path, renderLocalizedPage(source, locale, page, memories.get(locale.code)));
   }
+}
+
+for (const page of englishOnlyPages) {
+  const path = join(siteRoot, page.file);
+  await writeIfChanged(path, renderEnglishOnlyPage(await readFile(path, "utf8"), page));
 }
 
 for (const locale of translatedLocales) {

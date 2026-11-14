@@ -6,30 +6,17 @@
    Only transform and opacity are animated; transitions handle hover and press, so they still work while animations are paused. */
 
 /* ---------- Hero ---------- */
+/* No box behind the headline: the page-wide sky (.st-sky) is the backdrop, and the copy keeps its contrast through the veil and a text halo. */
 body[data-game="stack-tower"] .ug-hero-frame {
-  background:
-    radial-gradient(ellipse at 80% 46%, color-mix(in srgb, #A1C7E6 26%, transparent), transparent 58%),
-    var(--ug-card);
-}
-
-/* The illustration stays a quiet backdrop: pushed right so its own tower hides behind the stage, and tinted by the overlay. */
-body[data-game="stack-tower"] .ug-hero-bg {
-  inset: 0 auto 0 25%;
-  width: 100%;
-  height: 100%;
-  object-position: center;
-  opacity: 0.42;
-  -webkit-mask-image: radial-gradient(ellipse 40% 46% at 70% 42%, #000 0, transparent 100%);
-  mask-image: radial-gradient(ellipse 40% 46% at 70% 42%, #000 0, transparent 100%);
+  overflow: visible;
+  padding-inline: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
 }
 
 body[data-game="stack-tower"] .ug-hero-frame::before {
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--ug-bg) 97%, transparent) 0%,
-    color-mix(in srgb, var(--ug-bg) 93%, transparent) 55%,
-    color-mix(in srgb, var(--ug-bg) 72%, transparent) 100%
-  );
+  display: none;
 }
 
 .st-figure {
@@ -40,7 +27,8 @@ body[data-game="stack-tower"] .ug-hero-frame::before {
 
 .st-figure figcaption {
   margin-top: 14px;
-  color: var(--ug-muted);
+  color: var(--ug-ink);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--ug-bg) 88%, transparent);
   font-size: 0.9rem;
   font-weight: 760;
   line-height: 1.4;
@@ -101,7 +89,6 @@ body[data-game="stack-tower"] .ug-hero-frame::before {
     radial-gradient(ellipse 9em 2.6em at 75em 22.2em, #fff 0 92%, transparent 100%);
   background-size: 100em 30em;
   background-repeat: repeat-x;
-  animation: st-drift 70s linear infinite;
 }
 
 .st-far {
@@ -109,7 +96,6 @@ body[data-game="stack-tower"] .ug-hero-frame::before {
   bottom: -30em;
   left: 0;
   right: 0;
-  animation: st-far-lift 8s linear infinite;
 }
 
 .st-far::before,
@@ -475,27 +461,6 @@ body[data-game="stack-tower"] .ug-hero-frame::before {
   100% { transform: translateY(calc(var(--st-h) * 2)); }
 }
 
-@keyframes st-far-lift {
-  0%,
-  31.9% {
-    transform: translateY(0);
-    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
-  }
-
-  43.1%,
-  85.1% {
-    transform: translateY(calc(var(--st-h) / 2));
-    animation-timing-function: cubic-bezier(0.3, 0, 0.2, 1);
-  }
-
-  96.3%,
-  100% { transform: translateY(var(--st-h)); }
-}
-
-@keyframes st-drift {
-  to { transform: translateX(-100em); }
-}
-
 @keyframes st-hang-a {
   0%,
   24.9% { opacity: 1; transform: scale(1); }
@@ -684,7 +649,6 @@ body[data-game="stack-tower"] .ug-steps li:nth-child(2)::before {
 body[data-game="stack-tower"] .ug-steps li:nth-child(2)::after {
   background: linear-gradient(180deg, #BA8751 0 30%, #9A6A3A 30%) 50% 100% / 1.7rem 0.72rem no-repeat;
   transform-origin: 50% 100%;
-  animation: st-step-drop 4.8s ease-in infinite;
 }
 
 /* Step 3: the grade ring around a golden floor. */
@@ -695,7 +659,23 @@ body[data-game="stack-tower"] .ug-steps li:nth-child(3)::before {
 body[data-game="stack-tower"] .ug-steps li:nth-child(3)::after {
   border: 2px solid var(--ug-accent);
   border-radius: 50%;
-  animation: st-step-ring 4.2s ease-out infinite;
+  opacity: 0.55;
+  transform: scale(0.82);
+}
+
+/* Steps 2 and 3 only animate while hovered (the page-wide world already uses the loop budget). The paused state shows the still pictogram. */
+@media (prefers-reduced-motion: no-preference) {
+  body[data-game="stack-tower"] .ug-steps li:nth-child(2):hover::after {
+    animation: st-step-drop 4.8s ease-in infinite;
+  }
+
+  body[data-game="stack-tower"] .ug-steps li:nth-child(3):hover::after {
+    animation: st-step-ring 4.2s ease-out infinite;
+  }
+
+  body[data-game="stack-tower"].animations-paused .ug-steps li:nth-child(n+2):hover::after {
+    animation: none;
+  }
 }
 
 @keyframes st-step-swing {
@@ -777,6 +757,339 @@ body[data-game="stack-tower"] .ug-vote::after {
   }
 }
 
+/* ---------- Page-wide sky ----------
+   Fixed behind every section. Layers, back to front: sky gradient, sun or moon glow, the hero illustration (faint, decorative),
+   far clouds, two tiers of distant towers (lit floor lines in the dark theme), crane silhouettes at the page edges, near clouds, and a veil
+   that keeps text readable. Loops: far clouds, near clouds, one crane hook (calm, slow, transform only). */
+body[data-game="stack-tower"][data-theme] {
+  background: transparent;
+}
+
+body.upcoming-game-page[data-game="stack-tower"][data-theme]::before {
+  display: none;
+}
+
+body[data-game="stack-tower"][data-theme="light"] {
+  --st-sky: linear-gradient(180deg, #74AFE2 0%, #A3CFF0 34%, #CDE6F6 68%, #E9F4FB 100%);
+  --st-far: #A8CAE6;
+  --st-near: #8CB4D6;
+  --st-win: rgba(255, 255, 255, 0.32);
+  --st-cloud: rgba(255, 255, 255, 0.92);
+  --st-cloud-far: rgba(255, 255, 255, 0.62);
+  --st-crane: rgba(46, 78, 104, 0.34);
+  --st-glow: radial-gradient(circle at 84% 13%, rgba(255, 247, 214, 0.95) 0 2.6%, rgba(255, 231, 160, 0.5) 6%, rgba(255, 231, 160, 0) 26%);
+  --st-ghost: 0.2;
+  --st-veil: linear-gradient(90deg, rgba(234, 243, 250, 0.8), rgba(234, 243, 250, 0.56) 46%, rgba(234, 243, 250, 0.2) 80%, rgba(234, 243, 250, 0.1));
+  --st-veil-m: linear-gradient(180deg, rgba(234, 243, 250, 0.66), rgba(234, 243, 250, 0.52));
+}
+
+body[data-game="stack-tower"][data-theme="dark"] {
+  --st-sky: linear-gradient(180deg, #0A141D 0%, #12242F 38%, #1B3646 72%, #25495A 100%);
+  --st-far: #1B3243;
+  --st-near: #10202B;
+  --st-win: rgba(255, 214, 140, 0.2);
+  --st-cloud: rgba(150, 184, 210, 0.17);
+  --st-cloud-far: rgba(150, 184, 210, 0.1);
+  --st-crane: rgba(5, 11, 17, 0.62);
+  --st-glow: radial-gradient(circle at 84% 13%, rgba(238, 246, 255, 0.7) 0 1.8%, rgba(190, 216, 240, 0.2) 5%, rgba(190, 216, 240, 0) 24%);
+  --st-ghost: 0.12;
+  --st-veil: linear-gradient(90deg, rgba(10, 20, 29, 0.7), rgba(10, 20, 29, 0.5) 46%, rgba(10, 20, 29, 0.2) 80%, rgba(10, 20, 29, 0.1));
+  --st-veil-m: linear-gradient(180deg, rgba(10, 20, 29, 0.62), rgba(10, 20, 29, 0.5));
+}
+
+.st-sky {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--st-sky);
+  pointer-events: none;
+}
+
+.st-sky > * {
+  position: absolute;
+}
+
+.st-sky-glow,
+.st-sky-veil {
+  inset: 0;
+}
+
+.st-sky-glow {
+  background: var(--st-glow);
+}
+
+.st-sky-veil {
+  background: var(--st-veil);
+}
+
+/* The hero illustration, large and faint, standing behind the skyline like a distant tower. */
+.st-sky-ghost {
+  right: 3vw;
+  bottom: 0;
+  width: min(52vw, 760px);
+  aspect-ratio: 16 / 9;
+  opacity: var(--st-ghost);
+  background: url("../assets/upcoming/stack-tower/hero-1280.webp") center / cover;
+  -webkit-mask-image: radial-gradient(ellipse 50% 62% at 50% 56%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 50% 62% at 50% 56%, #000 30%, transparent 100%);
+}
+
+/* Clouds: one tile repeats sideways and the layer slides by exactly one tile, so the loop has no seam. */
+.st-sky-clouds {
+  left: 0;
+  width: calc(100% + 1500px);
+  will-change: transform;
+}
+
+.st-sky-clouds--far {
+  top: 7vh;
+  height: 240px;
+  background:
+    radial-gradient(circle 34px at 150px 118px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(circle 46px at 206px 104px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(circle 32px at 262px 122px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(ellipse 120px 30px at 206px 134px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(circle 28px at 720px 74px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(circle 38px at 768px 62px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(ellipse 100px 24px at 746px 90px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(circle 30px at 1180px 150px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(circle 40px at 1228px 138px, var(--st-cloud-far) 0 92%, transparent 100%),
+    radial-gradient(ellipse 104px 26px at 1204px 166px, var(--st-cloud-far) 0 92%, transparent 100%);
+  background-size: 1500px 240px;
+  background-repeat: repeat-x;
+  animation: st-sky-drift-far 150s linear infinite;
+}
+
+.st-sky-clouds--near {
+  top: 30vh;
+  height: 300px;
+  background:
+    radial-gradient(circle 44px at 330px 150px, var(--st-cloud) 0 92%, transparent 100%),
+    radial-gradient(circle 60px at 398px 130px, var(--st-cloud) 0 92%, transparent 100%),
+    radial-gradient(circle 42px at 462px 154px, var(--st-cloud) 0 92%, transparent 100%),
+    radial-gradient(ellipse 158px 38px at 398px 172px, var(--st-cloud) 0 92%, transparent 100%),
+    radial-gradient(circle 38px at 1090px 210px, var(--st-cloud) 0 92%, transparent 100%),
+    radial-gradient(circle 52px at 1146px 192px, var(--st-cloud) 0 92%, transparent 100%),
+    radial-gradient(ellipse 140px 34px at 1120px 232px, var(--st-cloud) 0 92%, transparent 100%);
+  background-size: 1500px 300px;
+  background-repeat: repeat-x;
+  animation: st-sky-drift-near 100s linear infinite;
+}
+
+/* Distant towers: two tiers, painted as gradient rectangles; the pseudo-element draws their lit floors. */
+.st-sky-skyline {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 54vh;
+  background:
+    linear-gradient(var(--st-near), var(--st-near)) 0vw bottom / 8vw 24vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 11vw bottom / 6vw 30vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 19vw bottom / 9vw 20vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 30vw bottom / 6vw 27vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 44vw bottom / 8vw 22vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 55vw bottom / 6vw 31vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 64vw bottom / 9vw 21vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 76vw bottom / 6vw 29vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 86vw bottom / 8vw 23vh no-repeat,
+    linear-gradient(var(--st-near), var(--st-near)) 94vw bottom / 7vw 26vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 2vw bottom / 6vw 34vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 9vw bottom / 5vw 44vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 15vw bottom / 7vw 30vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 24vw bottom / 5vw 48vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 31vw bottom / 6vw 36vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 40vw bottom / 8vw 40vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 50vw bottom / 5vw 52vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 57vw bottom / 7vw 33vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 66vw bottom / 6vw 46vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 74vw bottom / 8vw 38vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 83vw bottom / 5vw 50vh no-repeat,
+    linear-gradient(var(--st-far), var(--st-far)) 90vw bottom / 7vw 35vh no-repeat;
+}
+
+.st-sky-skyline::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 0vw bottom / 8vw 24vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 11vw bottom / 6vw 30vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 19vw bottom / 9vw 20vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 30vw bottom / 6vw 27vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 44vw bottom / 8vw 22vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 55vw bottom / 6vw 31vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 64vw bottom / 9vw 21vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 76vw bottom / 6vw 29vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 86vw bottom / 8vw 23vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 16px) 94vw bottom / 7vw 26vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 2vw bottom / 6vw 34vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 9vw bottom / 5vw 44vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 15vw bottom / 7vw 30vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 24vw bottom / 5vw 48vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 31vw bottom / 6vw 36vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 40vw bottom / 8vw 40vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 50vw bottom / 5vw 52vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 57vw bottom / 7vw 33vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 66vw bottom / 6vw 46vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 74vw bottom / 8vw 38vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 83vw bottom / 5vw 50vh no-repeat,
+    repeating-linear-gradient(180deg, var(--st-win) 0 2px, transparent 2px 12px) 90vw bottom / 7vw 35vh no-repeat;
+}
+
+/* Crane silhouettes at the page edges; the right one lowers a small floor on a slow sway. */
+.st-sky-crane {
+  top: 0;
+  width: 190px;
+  height: 78vh;
+}
+
+.st-sky-crane--l {
+  left: 0.6vw;
+}
+
+.st-sky-crane--r {
+  right: 0.6vw;
+}
+
+.st-sky-crane::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 22px;
+  background:
+    linear-gradient(90deg, var(--st-crane) 0 3px, transparent 3px calc(100% - 3px), var(--st-crane) calc(100% - 3px)),
+    repeating-linear-gradient(45deg, transparent 0 15px, var(--st-crane) 15px 18px),
+    repeating-linear-gradient(-45deg, transparent 0 15px, var(--st-crane) 15px 18px);
+}
+
+.st-sky-crane::after {
+  content: "";
+  position: absolute;
+  top: 44px;
+  width: 168px;
+  height: 18px;
+  background:
+    linear-gradient(180deg, var(--st-crane) 0 3px, transparent 3px calc(100% - 3px), var(--st-crane) calc(100% - 3px)),
+    repeating-linear-gradient(60deg, transparent 0 13px, var(--st-crane) 13px 16px),
+    repeating-linear-gradient(-60deg, transparent 0 13px, var(--st-crane) 13px 16px);
+}
+
+.st-sky-crane--l::before {
+  left: 14px;
+}
+
+.st-sky-crane--l::after {
+  left: 14px;
+}
+
+.st-sky-crane--r::before {
+  right: 14px;
+}
+
+.st-sky-crane--r::after {
+  right: 14px;
+}
+
+.st-sky-crane i {
+  position: absolute;
+  top: 62px;
+  width: 3px;
+  height: 120px;
+  background: var(--st-crane);
+  transform-origin: 50% 0;
+}
+
+.st-sky-crane i::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: -17px;
+  width: 37px;
+  height: 14px;
+  border-radius: 4px;
+  background: var(--st-crane);
+}
+
+.st-sky-crane--l i {
+  left: 150px;
+}
+
+.st-sky-crane--r i {
+  right: 150px;
+  animation: st-sky-sway 9s ease-in-out infinite;
+}
+
+@keyframes st-sky-drift-far {
+  to { transform: translateX(-1500px); }
+}
+
+@keyframes st-sky-drift-near {
+  to { transform: translateX(-1500px); }
+}
+
+@keyframes st-sky-sway {
+  0%,
+  100% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+
+/* ---------- Sections on the sky ----------
+   Section wrappers draw no box, so headings sit directly on the sky (halo for contrast). Inner cards are translucent glass. */
+body[data-game="stack-tower"] .game-page-section.soft-card {
+  padding-inline: 0;
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+}
+
+body[data-game="stack-tower"] .game-page-section h2,
+body[data-game="stack-tower"] .lab-related-title,
+body[data-game="stack-tower"] .ug-hero-copy h1 {
+  text-shadow:
+    0 0 22px color-mix(in srgb, var(--ug-bg) 88%, transparent),
+    0 0 6px color-mix(in srgb, var(--ug-bg) 72%, transparent);
+}
+
+body[data-game="stack-tower"] :is(.ug-lede, .ug-hero-copy .hero-copy, .ug-genre, .ug-vote .ug-lede) {
+  color: color-mix(in srgb, var(--ug-ink) 90%, var(--ug-muted));
+  text-shadow: 0 0 12px color-mix(in srgb, var(--ug-bg) 85%, transparent);
+}
+
+/* On the light sky the tagline sits directly on the backdrop, so the accent is deepened a little to keep a comfortable contrast margin. */
+body[data-game="stack-tower"][data-theme="light"] .ug-tagline {
+  color: color-mix(in srgb, var(--ug-accent) 78%, var(--ug-ink));
+}
+
+body[data-game="stack-tower"] .eyebrow {
+  background: color-mix(in srgb, var(--ug-card) 66%, transparent);
+}
+
+body[data-game="stack-tower"] :is(.detail-card, .update-list li, .ug-facts .game-page-facts > div, .ug-next li, .lab-related-link) {
+  border-color: color-mix(in srgb, var(--ug-line) 82%, transparent);
+  background: color-mix(in srgb, var(--ug-card-2) 82%, transparent);
+}
+
+body[data-game="stack-tower"] .ug-status-note {
+  background: color-mix(in srgb, var(--ug-card-2) 82%, transparent);
+}
+
+body[data-game="stack-tower"] .ug-vote {
+  border-color: transparent;
+  background:
+    radial-gradient(ellipse 60% 120% at 14% 0%, color-mix(in srgb, var(--ug-fill) 20%, transparent), transparent 70%);
+}
+
+body[data-game="stack-tower"] .social-link,
+body[data-game="stack-tower"] .lab-related-all {
+  background: color-mix(in srgb, var(--ug-card-2) 78%, transparent);
+}
+
+body[data-game="stack-tower"] .game-footer {
+  background: color-mix(in srgb, var(--ug-card) 84%, transparent);
+}
+
 /* ---------- Narrow screens ---------- */
 @media (max-width: 920px) {
   .st-figure {
@@ -785,10 +1098,36 @@ body[data-game="stack-tower"] .ug-vote::after {
   }
 }
 
+/* Small screens: fewer layers (no cranes, no far clouds, no lit floors), a shorter skyline, a fainter illustration. */
+@media (max-width: 760px) {
+  .st-sky-crane,
+  .st-sky-clouds--far,
+  .st-sky-skyline::after {
+    display: none;
+  }
+
+  .st-sky-skyline {
+    height: 34vh;
+  }
+
+  .st-sky-ghost {
+    width: 90vw;
+    opacity: calc(var(--st-ghost) * 0.7);
+  }
+
+  .st-sky-clouds--near {
+    top: 18vh;
+  }
+
+  .st-sky-veil {
+    background: var(--st-veil-m);
+  }
+}
+
 /* ---------- Reduced motion: a still, finished frame (floor hanging over the tower, no flash). ---------- */
 @media (prefers-reduced-motion: reduce) {
-  .st-clouds,
-  .st-far,
+  .st-sky-clouds,
+  .st-sky-crane i,
   .st-world,
   .st-swing,
   .st-hang--a,

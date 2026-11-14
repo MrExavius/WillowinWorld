@@ -1,19 +1,5 @@
 /* WillowinWorlds home: "In development" lab section. Cards link to the English-only prototype pages. */
 
-/* The dark theme paints a pale scene behind this area: keep the heading on its own panel,
-   like the paragraph below it, so title and eyebrow keep 4.5:1 text contrast on any backdrop. */
-.lab-section .section-head > div {
-  display: inline-block;
-  max-width: 100%;
-  padding: 14px 20px 18px;
-  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
-  border-radius: var(--radius-lg);
-  background: var(--surface-strong);
-  box-shadow: var(--shadow-soft);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-}
-
 .lab-section .eyebrow {
   margin-bottom: 10px;
 }

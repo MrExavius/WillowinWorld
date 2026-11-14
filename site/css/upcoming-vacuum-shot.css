@@ -511,6 +511,11 @@ body[data-game="vacuum-shot"] .game-page-facts dd {
   border-radius: 50%;
   background: var(--ug-accent);
   box-shadow: 15px 0 0 var(--ug-accent-2), -15px 0 0 var(--ug-accent-2), 0 15px 0 var(--ug-accent-2), 0 -15px 0 var(--ug-accent-2), 11px 11px 0 var(--ug-accent), -11px 11px 0 var(--ug-accent), 11px -11px 0 var(--ug-accent), -11px -11px 0 var(--ug-accent);
+  transition: transform 0.6s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+.ug-steps li:nth-child(2):hover::after {
+  transform: scale(1.3) rotate(24deg);
 }
 
 /* 3 Land softly: a leaf settling on the grass. */
@@ -521,7 +526,12 @@ body[data-game="vacuum-shot"] .game-page-facts dd {
   height: 20px;
   border-radius: var(--vs-leaf);
   background: var(--ug-accent);
-  transform: rotate(-20deg);
+  transform: rotate(-24deg);
+  transition: transform 0.7s cubic-bezier(0.3, 1.3, 0.5, 1);
+}
+
+.ug-steps li:nth-child(3):hover::after {
+  transform: translateY(12px) rotate(24deg) scale(1.05, 0.92);
 }
 
 /* Features: each card carries one of the game's props. */
@@ -637,6 +647,282 @@ body[data-game="vacuum-shot"] .social-link:hover {
   transform: translateY(-3px) rotate(-1deg);
 }
 
+/* ---------- Page-wide world ---------- */
+/* A fixed pastel garden behind everything: sky, drifting clouds, the garden band and lawn from the capture, props bobbing in the margins and petals falling.
+   Sections keep their cards (slightly see-through), so the garden shows in the margins, the gaps and faintly behind the cards. */
+body[data-game="vacuum-shot"] .game-detail-shell {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+body[data-game="vacuum-shot"] .game-detail-shell > :is(.ug-hero, .game-page-grid) {
+  position: relative;
+  z-index: 2;
+}
+
+body[data-game="vacuum-shot"] :is(.lab-related, .game-footer) {
+  position: relative;
+  z-index: 3;
+}
+
+body[data-game="vacuum-shot"] .lab-related {
+  overflow-x: clip;
+}
+
+/* Page-long soft blobs that scroll with the content. */
+body[data-game="vacuum-shot"] .game-detail-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--ug-accent-2) 22%, transparent), transparent) 108% 20% / 460px 460px no-repeat,
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--ug-accent) 18%, transparent), transparent) -8% 48% / 420px 420px no-repeat,
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--ug-accent-2) 20%, transparent), transparent) 106% 76% / 500px 500px no-repeat,
+    radial-gradient(circle closest-side, color-mix(in srgb, var(--ug-accent) 16%, transparent), transparent) -6% 94% / 420px 420px no-repeat;
+}
+
+.vs-page-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.vs-page-backdrop > * {
+  position: absolute;
+}
+
+body[data-game="vacuum-shot"][data-theme="dark"] .vs-page-backdrop {
+  background: linear-gradient(180deg, #2a221f, #33282a 55%, #2b2620);
+}
+
+body[data-game="vacuum-shot"][data-theme="light"] .vs-page-backdrop {
+  background: linear-gradient(180deg, #fdf3dd, #f1eed3 52%, #e3edc9);
+}
+
+.vs-bg-clouds {
+  top: 5vh;
+  left: 0;
+  z-index: 1;
+  width: 140vw;
+  height: 36vh;
+  background:
+    radial-gradient(ellipse 15vw 4.4vw at 14vw 9vh, rgba(255, 255, 255, 0.6), transparent 72%),
+    radial-gradient(ellipse 11vw 3.4vw at 38vw 22vh, rgba(255, 255, 255, 0.5), transparent 72%),
+    radial-gradient(ellipse 17vw 5vw at 70vw 8vh, rgba(255, 255, 255, 0.55), transparent 72%),
+    radial-gradient(ellipse 12vw 3.6vw at 104vw 20vh, rgba(255, 255, 255, 0.5), transparent 72%);
+  opacity: 0.8;
+  transform: translateX(-10vw);
+}
+
+body[data-game="vacuum-shot"][data-theme="dark"] .vs-bg-clouds {
+  opacity: 0.18;
+}
+
+.vs-bg-garden {
+  bottom: 18vw;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 43vw;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 34%);
+  mask-image: linear-gradient(180deg, transparent, #000 34%);
+}
+
+.vs-bg-garden img {
+  position: absolute;
+  top: 0;
+  left: -5vw;
+  display: block;
+  width: 110vw;
+  height: auto;
+  max-width: none;
+}
+
+/* The lawn strip: the capture's grass texture along the bottom edge. */
+.vs-bg-lawn {
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 22.2vw;
+  background:
+    linear-gradient(180deg, rgba(140, 193, 110, 0.7), transparent 40%),
+    url("../assets/upcoming/vacuum-shot/hero-1280.webp") -77.8vw -77.8vw / 177.8vw auto no-repeat,
+    #c6da78;
+}
+
+/* Veil: dense on the left where the hero text sits, lighter over the garden on the right. */
+.vs-page-backdrop::before,
+.vs-page-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vs-page-backdrop::before {
+  z-index: 4;
+}
+
+.vs-page-backdrop::after {
+  z-index: 8;
+}
+
+body[data-game="vacuum-shot"][data-theme="dark"] .vs-page-backdrop::before {
+  background:
+    linear-gradient(90deg, rgba(34, 30, 26, 0.74) 0, rgba(34, 30, 26, 0.58) 50%, rgba(34, 30, 26, 0.42) 100%),
+    radial-gradient(ellipse 70% 50% at 20% 0, rgba(214, 157, 131, 0.14), transparent 70%);
+}
+
+body[data-game="vacuum-shot"][data-theme="dark"] .vs-page-backdrop::after {
+  background: linear-gradient(180deg, transparent 60%, rgba(22, 20, 17, 0.7));
+}
+
+body[data-game="vacuum-shot"][data-theme="light"] .vs-page-backdrop::before {
+  background:
+    linear-gradient(90deg, rgba(250, 240, 218, 0.76) 0, rgba(250, 240, 218, 0.56) 50%, rgba(250, 240, 218, 0.34) 100%),
+    radial-gradient(ellipse 70% 50% at 20% 0, rgba(255, 255, 255, 0.5), transparent 70%);
+}
+
+body[data-game="vacuum-shot"][data-theme="light"] .vs-page-backdrop::after {
+  background: linear-gradient(180deg, transparent 70%, rgba(250, 240, 218, 0.5));
+}
+
+/* Props from the sprite sheet bobbing in the margins. */
+.vs-bg-float {
+  inset: 0;
+  z-index: 3;
+  opacity: 0.7;
+}
+
+.vs-bg-float > * {
+  position: absolute;
+}
+
+.vs-bg-prop {
+  width: 8vmin;
+  aspect-ratio: 1;
+  background: url("../assets/upcoming/vacuum-shot/props-sheet.webp") 0 0 / 400% 200% no-repeat;
+}
+
+.vs-bg-prop--acorn { top: 20vh; left: -1.8vw; background-position: 0 0; transform: rotate(-14deg); }
+.vs-bg-prop--apple { top: 14vh; right: -1.8vw; background-position: 33.333% 0; transform: rotate(12deg); }
+.vs-bg-prop--cupcake { top: 60vh; left: -1.8vw; background-position: 66.667% 0; transform: rotate(8deg); }
+.vs-bg-prop--yarn { top: 52vh; right: -1.8vw; background-position: 100% 0; transform: rotate(-10deg); }
+.vs-bg-prop--duck { top: 80vh; right: -1.2vw; background-position: 0 100%; transform: rotate(10deg); }
+.vs-bg-prop--pumpkin { top: 84vh; left: -1.2vw; background-position: 66.667% 100%; transform: rotate(-8deg); }
+
+/* Petals: one tiny leaf whose shadow copies are the whole shower; a second set one screen above makes the fall loop without a jump. */
+.vs-bg-petals {
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 9px;
+  height: 9px;
+  border-radius: 0 72% 0 72%;
+  background: #ffc6d2;
+  opacity: 0.85;
+  box-shadow:
+    2vw 3vh 0 0 #ffc6d2,
+    43vw 32vh 0 0 #ffffff,
+    84vw 61vh 0 0 #ffd9a8,
+    31vw 90vh 0 0 #c9f0e6,
+    72vw 25vh 0 0 #ffb5a0,
+    19vw 54vh 0 0 #ffffff,
+    60vw 83vh 0 0 #ffc6d2,
+    7vw 18vh 0 0 #e8d4ff,
+    48vw 47vh 0 0 #ffd9a8,
+    89vw 76vh 0 0 #ffffff,
+    36vw 11vh 0 0 #c9f0e6,
+    77vw 40vh 0 0 #ffb5a0,
+    24vw 69vh 0 0 #ffc6d2,
+    65vw 4vh 0 0 #ffffff,
+    -4vw -97vh 0 0 #ffc6d2,
+    37vw -68vh 0 0 #ffffff,
+    78vw -39vh 0 0 #ffd9a8,
+    25vw -10vh 0 0 #c9f0e6,
+    66vw -75vh 0 0 #ffb5a0,
+    13vw -46vh 0 0 #ffffff,
+    54vw -17vh 0 0 #ffc6d2,
+    1vw -82vh 0 0 #e8d4ff,
+    42vw -53vh 0 0 #ffd9a8,
+    83vw -24vh 0 0 #ffffff,
+    30vw -89vh 0 0 #c9f0e6,
+    71vw -60vh 0 0 #ffb5a0,
+    18vw -31vh 0 0 #ffc6d2,
+    59vw -96vh 0 0 #ffffff;
+}
+
+body[data-game="vacuum-shot"][data-theme="dark"] .vs-bg-petals {
+  opacity: 0.55;
+}
+
+/* Soft scrims behind the two blocks of text that sit straight on the garden (hero copy, related worlds); they fade out, no box. */
+body[data-game="vacuum-shot"] .ug-hero-copy,
+body[data-game="vacuum-shot"] .lab-related-inner {
+  position: relative;
+  isolation: isolate;
+}
+
+body[data-game="vacuum-shot"] .ug-hero-copy::before,
+body[data-game="vacuum-shot"] .lab-related-inner::before {
+  content: "";
+  position: absolute;
+  inset: -28px -48px -28px -64px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 62% 62% at 42% 50%, var(--vs-scrim) 28%, transparent 100%);
+}
+
+body[data-game="vacuum-shot"] .lab-related-inner::before {
+  inset: -24px -40px -24px -40px;
+  background: radial-gradient(ellipse 70% 80% at 38% 50%, var(--vs-scrim) 26%, transparent 100%);
+}
+
+body[data-game="vacuum-shot"][data-theme="dark"] {
+  --vs-scrim: rgba(34, 30, 26, 0.9);
+}
+
+body[data-game="vacuum-shot"][data-theme="light"] {
+  --vs-scrim: rgba(250, 240, 218, 0.92);
+}
+
+/* Cards stay readable but let the garden show through a little. */
+body[data-game="vacuum-shot"] .soft-card {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 92%, transparent), color-mix(in srgb, var(--ug-card) 86%, transparent));
+}
+
+@media (max-width: 920px) {
+  /* Text spans the full width: an even, denser veil. */
+  body[data-game="vacuum-shot"][data-theme="dark"] .vs-page-backdrop::before {
+    background: linear-gradient(180deg, rgba(34, 30, 26, 0.82), rgba(34, 30, 26, 0.76));
+  }
+
+  body[data-game="vacuum-shot"][data-theme="light"] .vs-page-backdrop::before {
+    background: linear-gradient(180deg, rgba(250, 240, 218, 0.84), rgba(250, 240, 218, 0.76));
+  }
+}
+
+@media (max-width: 760px) {
+  /* Phones: sky, garden band, lawn and veil only. */
+  .vs-bg-float,
+  .vs-bg-petals,
+  .vs-bg-clouds {
+    display: none;
+  }
+
+  body[data-game="vacuum-shot"] .game-detail-shell::before {
+    display: none;
+  }
+}
+
 /* More worlds in the lab (shared .lab-related markup). */
 body[data-game="vacuum-shot"] .lab-related-title {
   font-family: var(--vs-serif);
@@ -683,6 +969,18 @@ body[data-game="vacuum-shot"] .lab-related-link:hover {
     animation: vs-pan 32s ease-in-out infinite alternate;
   }
 
+  .vs-bg-clouds {
+    animation: vs-bg-clouds 70s ease-in-out infinite alternate;
+  }
+
+  .vs-bg-float {
+    animation: vs-bg-float 12s ease-in-out infinite alternate;
+  }
+
+  .vs-bg-petals {
+    animation: vs-bg-petals 34s linear infinite;
+  }
+
   .vs-craft {
     animation: vs-craft var(--vs-slot) linear infinite;
   }
@@ -725,17 +1023,24 @@ body[data-game="vacuum-shot"] .lab-related-link:hover {
     animation: vs-spin 7s linear infinite;
   }
 
-  .ug-steps li:nth-child(2)::after {
-    animation: vs-bloom 3.4s cubic-bezier(0.3, 0, 0.3, 1) infinite;
-  }
-
-  .ug-steps li:nth-child(3)::after {
-    animation: vs-settle 3.6s ease-in-out infinite;
-  }
-
   .ug-vote::after {
     animation: vs-dew-rise 5s ease-in-out infinite;
   }
+}
+
+@keyframes vs-bg-clouds {
+  from { transform: translateX(-10vw); }
+  to { transform: translateX(-36vw); }
+}
+
+@keyframes vs-bg-float {
+  from { transform: translateY(-1.6vh); }
+  to { transform: translateY(1.8vh); }
+}
+
+@keyframes vs-bg-petals {
+  from { transform: translate(0, 0); }
+  to { transform: translate(6vw, 100vh); }
 }
 
 @keyframes vs-pan {
@@ -799,20 +1104,6 @@ body[data-game="vacuum-shot"] .lab-related-link:hover {
 
 @keyframes vs-spin {
   to { transform: rotate(360deg); }
-}
-
-@keyframes vs-bloom {
-  0%   { transform: scale(0.45) rotate(0deg); }
-  60%  { transform: scale(1.2) rotate(40deg); }
-  100% { transform: scale(0.45) rotate(0deg); }
-}
-
-@keyframes vs-settle {
-  0%   { transform: translate(8px, -12px) rotate(-60deg); }
-  40%  { transform: translate(-6px, -2px) rotate(25deg); }
-  70%  { transform: translate(2px, 14px) rotate(-15deg); }
-  85%  { transform: translate(0, 16px) rotate(-20deg) scale(1.08, 0.9); }
-  100% { transform: translate(8px, -12px) rotate(-60deg); }
 }
 
 @keyframes vs-dew-rise {

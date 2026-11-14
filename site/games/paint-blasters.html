@@ -7,7 +7,7 @@
   <meta name="description" content="Paint Blasters is a mobile color-destruction physics puzzle in active development. Mix 35 projectile recipes, target weak points and trigger chain reactions.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#071225" id="metaThemeColor">
+  <meta name="theme-color" content="#071225" id="metaThemeColor" data-theme-dark="#071225" data-theme-light="#eef7ff">
   <meta property="og:title" content="Paint Blasters - Color Destruction Physics Puzzle">
   <meta property="og:description" content="Mix color shots, smash blocks and trigger chain reactions in WillowinWorlds's mobile physics arcade puzzle.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/paint-blasters-og-1200x630.webp">
@@ -91,8 +91,8 @@
   <link rel="preload" href="../assets/responsive/paint-blasters-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/home-paint-card.css">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
-  <link rel="stylesheet" href="../css/paint-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../css/paint-page.css?v=20261113-3">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../css/keyframes.css">
@@ -106,9 +106,10 @@
   <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#game-main">Skip to Paint Blasters</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Paint Blasters — back to WillowinWorlds">
-      <img src="../assets/responsive/paint-blasters-icon-192.webp" width="192" height="192" alt="Paint Blasters color destruction puzzle game icon" fetchpriority="high" decoding="async">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../assets/responsive/paint-blasters-icon-192.webp" width="192" height="192" alt="" fetchpriority="high" decoding="async">
       <span><strong>Paint Blasters</strong><small>WillowinWorlds game page</small></span>
+      <span class="visually-hidden">Back to WillowinWorlds</span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="../index.html">Studio home</a>
@@ -153,7 +154,7 @@
           <p class="hero-copy">A mobile physics arcade puzzle where three color inputs resolve into one of 35 authored projectile recipes. Read the tower, build the effect and turn one exact impact into a bright chain reaction.</p>
           <p class="paint-hero-note">Active development · production prototype. All 35 projectile recipes are implemented; the current pass focuses on projectile readability, tower clarity and punchier destruction feedback.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:willowinworlds@gmail.com?subject=Paint%20Blasters%20updates">Request Paint Blasters updates</a>
+            <a class="btn btn-primary" href="#follow">Follow development</a>
             <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
           </div>
           <div class="paint-hero-stats" role="group" aria-label="Paint Blasters highlights">
@@ -373,11 +374,11 @@
         <ul class="update-list">
           <li data-devlog-entry data-published="2026-07-31"><time datetime="2026-07-31">31 July 2026</time><strong>Physics and effect stability pass</strong><p>Projectile behavior, Match-3 resolution and hit effects were tested and tightened for more consistent combo outcomes.</p></li>
           <li><span>July 2026</span><strong>All 35 projectile recipes implemented</strong><p>The current recipe registry contains five pure, twenty mixed and ten rainbow projectile behaviors with authored roles, targets and payoffs.</p></li>
-          <li><span>April 2026</span><strong>Core mechanics draft</strong><p>The main mechanics from the current GDD were implemented in rough form, creating a playable color-powered destruction loop.</p></li>
-          <li><span>Late March 2026</span><strong>GDD direction</strong><p>The latest GDD shaped Paint Blasters around projectile-building: players combine three color inputs into a defined behavior before each shot.</p></li>
+          <li><span>April 2026</span><strong>Core mechanics draft</strong><p>The main mechanics from the current design document were implemented in rough form, creating a playable color-powered destruction loop.</p></li>
+          <li><span>Late March 2026</span><strong>Design document direction</strong><p>The latest design document shaped Paint Blasters around projectile-building: players combine three color inputs into a defined behavior before each shot.</p></li>
           <li><span>March 2026</span><strong>Internal test and visual pass</strong><p>The team improved color contrast, tower readability and stronger arcade impact after internal testing.</p></li>
           <li><span>February 2026</span><strong>Development begins</strong><p>The game entered development as a mobile physics puzzle built around color destruction and satisfying chain reactions.</p></li>
-          <li><span>Scope note</span><strong>Final scope is still being refined</strong><p>The current prototype covers the latest GDD in draft form, but the final production scope may grow as the design track continues.</p></li>
+          <li><span>Scope note</span><strong>Final scope is still being refined</strong><p>The current prototype covers the latest design document in draft form, but the final production scope may grow as the design track continues.</p></li>
         </ul>
       </section>
     </div>
@@ -395,12 +396,16 @@
         <a href="../legal.html">Legal</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Paint%20Blasters">Contact</a>
       </nav>
-      <div class="social-block social-block--game">
+      <div class="social-block social-block--game" id="follow">
         <p class="social-title" id="gameSocialTitle">Follow WillowinWorlds</p>
         <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
       </div>
+      <div class="share-block">
+        <p class="social-title">Share</p>
+        <nav class="share-links" aria-label="Share" data-share-links><!-- share-links:start --><!-- share-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../game-theme.js?v=20261113-2"></script>
+  <script src="../game-theme.js?v=20261113-3"></script>
 </body>
 </html>

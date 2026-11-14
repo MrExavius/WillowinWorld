@@ -549,7 +549,7 @@ body.candy-shop-page[data-theme="dark"] {
     padding-bottom: 16px;
   }
 
-  .candy-shop-page .candy-story-section .game-page-facts div:nth-last-child(-n+2) {
+  .candy-shop-page .candy-story-section .game-page-facts div:last-child {
     padding-bottom: 0;
     border-bottom: 0;
   }

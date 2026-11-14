@@ -97,7 +97,7 @@ body.home-polish-2026 .hero .hero-copy {
    Buttons may wrap so a long translation never overflows the grid cell. */
 body.home-polish-2026 .hero-actions {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
   gap: 10px;
   max-width: 590px;
 }
@@ -120,6 +120,13 @@ body.home-polish-2026 .hero-actions .btn.hero-play {
 
 body.home-polish-2026 .hero-actions .btn.hero-follow {
   border-color: color-mix(in srgb, var(--cyan) 46%, var(--line));
+}
+
+/* Daylight: the pale primary gradient fades into the sky, so Play gets a deep teal fill to stay the dominant action. */
+body.home-polish-2026[data-theme="light"] .hero-actions .btn.hero-play {
+  color: #fff;
+  background: linear-gradient(135deg, #087796, #055e79);
+  box-shadow: 0 14px 34px rgba(6, 111, 138, 0.32);
 }
 
 /* The spotlight panel is a link to the Nature Seed page; keep a visible keyboard ring on it. */
@@ -197,12 +204,6 @@ body.home-polish-2026 #faq .section-head .section-title {
 body.home-polish-2026 .section-head .section-copy {
   max-width: 640px;
   margin: 22px 0 0;
-  padding: 14px 18px;
-  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
-  border-radius: var(--radius-lg);
-  background: var(--surface-strong);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
   font-size: clamp(1rem, 1.2vw, 1.14rem);
   line-height: 1.6;
 }
@@ -298,28 +299,38 @@ body.home-polish-2026 #faq .eyebrow {
   display: none;
 }
 
-/* The page art behind the sections is fixed and has pale areas in both themes, so the Studio and Devlog titles
-   (and the Devlog eyebrow) sit on a panel like the Lab heading and the paragraph beside them: 4.5:1 wherever they scroll. */
-body.home-polish-2026 :is(#studio, #devlog) .section-head > div {
-  width: fit-content;
-  max-width: none;
-  padding: 14px 20px 18px;
-  border: 1px solid color-mix(in srgb, var(--paper) 18%, var(--line));
-  border-radius: var(--radius-lg);
-  background: var(--surface-strong);
-  box-shadow: var(--shadow-soft);
-  -webkit-backdrop-filter: blur(14px);
-  backdrop-filter: blur(14px);
-}
-
 body.home-polish-2026 :is(#studio, #devlog) .section-title {
   overflow-wrap: break-word;
 }
 
-@media (max-width: 640px) {
-  body.home-polish-2026 :is(#studio, #devlog) .section-head > div {
-    padding: 12px 16px 14px;
-  }
+/* Section headings carry no box. The page art behind them is fixed and has pale areas in both themes, so each
+   heading group and its paragraph get an edgeless, blurred wash of the page colour plus a soft halo: the text keeps
+   its contrast wherever it scrolls, and no edge is ever visible. */
+body.home-polish-2026 :is(#games, #in-development, #studio, #devlog) :is(.section-head > div, .section-copy) {
+  position: relative;
+  color: var(--text);
+  text-shadow:
+    0 0 8px color-mix(in srgb, var(--bg) 70%, transparent),
+    0 0 22px color-mix(in srgb, var(--bg) 60%, transparent);
+}
+
+body.home-polish-2026 :is(#games, #in-development, #studio, #devlog) :is(.section-head > div, .section-copy)::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -20px -30px;
+  border-radius: 44px;
+  background: color-mix(in srgb, var(--bg) 52%, transparent);
+  filter: blur(20px);
+  pointer-events: none;
+}
+
+body.home-polish-2026 :is(#games, #in-development, #studio, #devlog) .section-head {
+  isolation: isolate;
+}
+
+body.home-polish-2026 :is(#games, #in-development, #devlog) .section-head .eyebrow {
+  color: var(--text);
 }
 
 body.home-polish-2026 #game-cluster,
@@ -1070,7 +1081,6 @@ body.home-polish-2026 .site-footer {
 @media (prefers-reduced-transparency: reduce) {
   body.home-polish-2026 .site-header,
   body.home-polish-2026 .filter-btn,
-  body.home-polish-2026 .section-head .section-copy,
   body.home-polish-2026 .final-cta .container {
     -webkit-backdrop-filter: none;
     backdrop-filter: none;

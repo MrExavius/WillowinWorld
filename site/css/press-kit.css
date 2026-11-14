@@ -1074,13 +1074,13 @@
   object-fit: cover;
 }
 
-/* No icon file yet (Alien Flying): a flat monogram tile, same in both themes. */
+/* No icon file yet (Alien Flying): a flat monogram tile, same in both themes. Its size is in px, like the tile, so larger text settings cannot push the letters out of it. */
 .press-lab-icon--monogram {
   display: grid;
   place-items: center;
   color: #bdf7ff;
   background: linear-gradient(145deg, #0b2447, #0e5a73);
-  font-size: 1.15rem;
+  font-size: 18px;
   font-weight: 850;
   letter-spacing: 0.04em;
   line-height: 1;

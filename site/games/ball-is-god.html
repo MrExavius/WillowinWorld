@@ -7,7 +7,7 @@
   <meta name="description" content="Ball is God?! is a hardcore vertical-descent arcade in active production. Rotate the tower around Espa, charge combo smashes and cross ten mythic locations.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#071530" id="metaThemeColor">
+  <meta name="theme-color" content="#071530" id="metaThemeColor" data-theme-dark="#071530" data-theme-light="#eaf6ff">
   <meta property="og:title" content="Ball is God?! - Hardcore Vertical Descent Arcade Game">
   <meta property="og:description" content="Rotate the tower around Espa, build a three-platform combo smash and survive mythic locations where karma changes the rules.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/ball-is-god-og-1200x630.webp">
@@ -91,8 +91,8 @@
   <link rel="preload" href="../assets/responsive/ball-is-god-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/home-ball-card.css">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
-  <link rel="stylesheet" href="../css/ball-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../css/ball-page.css?v=20261113-3">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../css/keyframes.css">
@@ -106,9 +106,10 @@
   <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#game-main">Skip to Ball is God?!</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Ball is God?! — back to WillowinWorlds">
-      <img src="../assets/responsive/ball-is-god-icon-192.webp" width="192" height="192" alt="Ball is God vertical descent arcade game icon" fetchpriority="high" decoding="async">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../assets/responsive/ball-is-god-icon-192.webp" width="192" height="192" alt="" fetchpriority="high" decoding="async">
       <span><strong>Ball is God?!</strong><small>WillowinWorlds game page</small></span>
+      <span class="visually-hidden">Back to WillowinWorlds</span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="../index.html">Studio home</a>
@@ -150,7 +151,7 @@
           <p class="hero-copy">A hardcore vertical descent arcade where horizontal drag rotates the tower around the falling Espa. Skip safe landings, charge a combo smash and break through a mythic world where one unguarded hit ends the run.</p>
           <p class="ball-hero-note">Active production across ten location scenes, deterministic tower generation, boss configurations, branching dialogue and karma paths that change the rules of play.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:willowinworlds@gmail.com?subject=Ball%20is%20God%20Development%20Build">Request Development Build</a>
+            <a class="btn btn-primary" href="#follow">Follow development</a>
             <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
           </div>
           <div class="ball-hero-stats" role="group" aria-label="Ball is God highlights">
@@ -613,12 +614,16 @@
         <a href="../legal.html">Legal</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Ball%20is%20God">Contact</a>
       </nav>
-      <div class="social-block social-block--game">
+      <div class="social-block social-block--game" id="follow">
         <p class="social-title" id="gameSocialTitle">Follow WillowinWorlds</p>
         <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
       </div>
+      <div class="share-block">
+        <p class="social-title">Share</p>
+        <nav class="share-links" aria-label="Share" data-share-links><!-- share-links:start --><!-- share-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../game-theme.js?v=20261113-2"></script>
+  <script src="../game-theme.js?v=20261113-3"></script>
 </body>
 </html>

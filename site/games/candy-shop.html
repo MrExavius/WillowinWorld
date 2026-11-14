@@ -7,7 +7,7 @@
   <meta name="description" content="Candy Shop is a cozy mobile merge puzzle in active development. Drop through a 13-stage candy chain, master ten containers and trigger special sweets.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#211027" id="metaThemeColor">
+  <meta name="theme-color" content="#211027" id="metaThemeColor" data-theme-dark="#211027" data-theme-light="#fff3fa">
   <meta property="og:title" content="Candy Shop - Cozy Candy Merge Puzzle Game">
   <meta property="og:description" content="Drop, combine and evolve candies in a cozy mobile merge puzzle by WillowinWorlds.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/candy-shop-og-1200x630.webp">
@@ -91,8 +91,8 @@
   <link rel="preload" href="../assets/responsive/candy-shop-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/home-candy-card.css">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
-  <link rel="stylesheet" href="../css/candy-page.css?v=20261113-1">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../css/candy-page.css?v=20261113-3">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
   <link rel="stylesheet" href="../css/keyframes.css">
@@ -106,9 +106,10 @@
   <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#game-main">Skip to Candy Shop</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Candy Shop — back to WillowinWorlds">
-      <img src="../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="Candy Shop cozy candy merge puzzle game icon" fetchpriority="high" decoding="async">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="" fetchpriority="high" decoding="async">
       <span><strong>Candy Shop</strong><small>WillowinWorlds game page</small></span>
+      <span class="visually-hidden">Back to WillowinWorlds</span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="../index.html">Studio home</a>
@@ -147,7 +148,7 @@
           <p class="hero-copy">A cozy mobile merge puzzle about placing candy, triggering soft physics combos and chasing one more satisfying evolution.</p>
           <p class="candy-hero-note">Active development with 13 candy stages, 10 container rulesets, eight special-candy effects and a planning layer built around hold, landing preview and the next-three queue.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="mailto:willowinworlds@gmail.com?subject=Candy%20Shop%20updates">Request Candy Shop updates</a>
+            <a class="btn btn-primary" href="#follow">Follow development</a>
             <a class="btn btn-ghost" href="#devlog">Open Devlog</a>
           </div>
           <div class="candy-hero-stats" role="group" aria-label="Candy Shop highlights">
@@ -265,7 +266,7 @@
           <div>
             <p>Candy Shop began in 2025 as WillowinWorlds's second game idea: a bright, cozy candy merge puzzle built around simple joy and satisfying physics.</p>
             <p>The world is intentionally warm and readable: shelves, sweets, soft mascots and shop-like containers support the fantasy that every tiny candy has a path toward becoming a bigger treat.</p>
-            <p>After the first prototype, the team expanded the GDD, rebuilt the direction, completed the 13-candy merge chain and implemented ten container rulesets, special recipes, planning tools and the first meta-progression systems.</p>
+            <p>After the first prototype, the team expanded the design document, rebuilt the direction, completed the 13-candy merge chain and implemented ten container rulesets, special recipes, planning tools and the first meta-progression systems.</p>
           </div>
           <dl class="game-page-facts">
             <div><dt>Merge chain</dt><dd>13 candy stages</dd></div>
@@ -340,7 +341,7 @@
           <li><span>Late June 2025</span><strong>Second game idea</strong><p>WillowinWorlds started exploring a bright candy project built around something simple, joyful and widely appealing.</p></li>
           <li><span>August 2025</span><strong>First candy characters</strong><p>The first candy characters were created, and the merge chain later expanded from 11 candies to 13 for stronger progression.</p></li>
           <li><span>September 2025</span><strong>First prototype</strong><p>The first prototype was built and tested. The result showed that the idea needed more identity, progression and a clearer hook.</p></li>
-          <li><span>October 2025</span><strong>GDD expansion</strong><p>The design document was expanded with new mechanics, special sweets, progression ideas and container direction.</p></li>
+          <li><span>October 2025</span><strong>Design document expansion</strong><p>The design document was expanded with new mechanics, special sweets, progression ideas and container direction.</p></li>
           <li><span>December 2025-February 2026</span><strong>Core candy systems</strong><p>The main candy mechanics were implemented, the candy set was completed and early container systems began.</p></li>
           <li><span>April-July 2026</span><strong>Systems and polish pass</strong><p>The build expanded with ten container rulesets, special-candy interactions, planning tools, daily challenges and collection systems alongside optimization and UI polish.</p></li>
         </ul>
@@ -395,8 +396,8 @@
           <li><span>July 2026</span><strong>Deeper production build</strong><p>The current project combines the full merge chain with ten container rulesets, special recipes, planning tools, daily challenges, Candy Book discoveries and local score tables.</p></li>
           <li><span>April 2026</span><strong>UI elements pass</strong><p>The first major UI elements were created, giving Candy Shop a clearer mobile identity and stronger casual presentation.</p></li>
           <li><span>February 2026</span><strong>Candy chain and containers</strong><p>The full candy set was completed, and container systems began changing geometry, gravity and puzzle pressure.</p></li>
-          <li><span>December 2025</span><strong>Core candy mechanics</strong><p>The main candy mechanics were implemented in rough form, turning the expanded GDD into a playable system.</p></li>
-          <li><span>October 2025</span><strong>GDD expansion</strong><p>After the first prototype did not feel strong enough, the design was expanded with special sweets and progression ideas.</p></li>
+          <li><span>December 2025</span><strong>Core candy mechanics</strong><p>The main candy mechanics were implemented in rough form, turning the expanded design document into a playable system.</p></li>
+          <li><span>October 2025</span><strong>Design document expansion</strong><p>After the first prototype did not feel strong enough, the design was expanded with special sweets and progression ideas.</p></li>
           <li><span>August 2025</span><strong>First candy characters</strong><p>The first candy characters were created, establishing the soft, friendly direction of the merge chain.</p></li>
         </ul>
       </section>
@@ -415,12 +416,16 @@
         <a href="../legal.html">Legal</a>
         <a href="mailto:willowinworlds@gmail.com?subject=Candy%20Shop">Contact</a>
       </nav>
-      <div class="social-block social-block--game">
+      <div class="social-block social-block--game" id="follow">
         <p class="social-title" id="gameSocialTitle">Follow WillowinWorlds</p>
         <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
       </div>
+      <div class="share-block">
+        <p class="social-title">Share</p>
+        <nav class="share-links" aria-label="Share" data-share-links><!-- share-links:start --><!-- share-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../game-theme.js?v=20261113-2"></script>
+  <script src="../game-theme.js?v=20261113-3"></script>
 </body>
 </html>

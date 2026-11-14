@@ -32,7 +32,8 @@ body[data-game="alien-flying"] .ug-hero > .container {
 
 .aw-figure figcaption {
   margin-top: 14px;
-  color: var(--ug-muted);
+  color: var(--ug-ink);
+  text-shadow: 0 0 12px color-mix(in srgb, var(--ug-bg) 88%, transparent);
   font-size: 0.9rem;
   font-weight: 760;
   line-height: 1.4;
@@ -502,6 +503,275 @@ body[data-game="alien-flying"] .ug-vote::after {
   }
 }
 
+/* ---------- Page-wide deep space ----------
+   Fixed behind every section. Back to front: tunnel wall (the tunnel texture), nebula (drifting, veined with the crystal texture),
+   two star layers that twinkle, faint spokes, slow warp rings (geometric series zooming by 2, so the loop has no seam), and a veil for text.
+   Loops: nebula, two star layers, warp (calm, 5 to 40 s; transform and opacity only). */
+body[data-game="alien-flying"][data-theme] {
+  background: transparent;
+}
+
+body.upcoming-game-page[data-game="alien-flying"][data-theme]::before {
+  display: none;
+}
+
+body[data-game="alien-flying"][data-theme="dark"] {
+  --aw-bg: linear-gradient(180deg, #040C1A 0%, #07162B 46%, #0A203C 100%);
+  --aw-wall: 0.5;
+  --aw-wall-shade: radial-gradient(circle at 74% 42%, rgba(2, 8, 18, 0.35), rgba(2, 8, 18, 0.9) 82%);
+  --aw-neb-a: rgba(56, 235, 255, 0.24);
+  --aw-neb-b: rgba(148, 255, 133, 0.14);
+  --aw-neb-c: rgba(80, 110, 255, 0.22);
+  --aw-band: 0.55;
+  --aw-crystal: 0.16;
+  --aw-star: rgba(232, 245, 255, 0.85);
+  --aw-star-b: rgba(120, 240, 255, 0.9);
+  --aw-ring: rgba(56, 235, 255, 0.46);
+  --aw-ring-glow: rgba(56, 235, 255, 0.26);
+  --aw-core: rgba(200, 252, 255, 0.55);
+  --aw-veil: linear-gradient(90deg, rgba(4, 12, 26, 0.72), rgba(4, 12, 26, 0.5) 46%, rgba(4, 12, 26, 0.2) 80%, rgba(4, 12, 26, 0.12));
+  --aw-veil-m: linear-gradient(180deg, rgba(4, 12, 26, 0.62), rgba(4, 12, 26, 0.5));
+}
+
+body[data-game="alien-flying"][data-theme="light"] {
+  --aw-bg: linear-gradient(180deg, #E9FDFF 0%, #D6F7F5 55%, #C6EFE7 100%);
+  --aw-wall: 0.1;
+  --aw-wall-shade: none;
+  --aw-neb-a: rgba(56, 235, 255, 0.3);
+  --aw-neb-b: rgba(148, 255, 133, 0.26);
+  --aw-neb-c: rgba(120, 150, 255, 0.2);
+  --aw-band: 0.2;
+  --aw-crystal: 0.09;
+  --aw-star: rgba(27, 115, 125, 0.5);
+  --aw-star-b: rgba(27, 115, 125, 0.6);
+  --aw-ring: rgba(27, 115, 125, 0.3);
+  --aw-ring-glow: rgba(56, 235, 255, 0.22);
+  --aw-core: rgba(255, 255, 255, 0.85);
+  --aw-veil: linear-gradient(90deg, rgba(231, 253, 255, 0.88), rgba(231, 253, 255, 0.66) 46%, rgba(231, 253, 255, 0.22) 80%, rgba(231, 253, 255, 0.1));
+  --aw-veil-m: linear-gradient(180deg, rgba(231, 253, 255, 0.66), rgba(231, 253, 255, 0.52));
+}
+
+.aw-space {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--aw-bg);
+  pointer-events: none;
+}
+
+.aw-space > * {
+  position: absolute;
+  inset: 0;
+}
+
+/* The tunnel wall: the game's tunnel texture, shaded toward the vanishing point; the ship hull texture runs along the bottom edge. */
+.aw-space-wall {
+  opacity: var(--aw-wall);
+  background: var(--aw-wall-shade), url("../assets/upcoming/alien-flying/hero-1280.webp") center / cover;
+}
+
+.aw-space-wall::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 26vh;
+  background: url("../assets/upcoming/alien-flying/gallery-scout-hull.webp") center / 460px auto;
+  opacity: 0.3;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000);
+  mask-image: linear-gradient(180deg, transparent, #000);
+}
+
+/* Nebula: soft colour clouds that drift slowly; the crystal texture veins the middle one. */
+.aw-space-nebula {
+  inset: -8% -6%;
+  background:
+    radial-gradient(ellipse 42% 34% at 18% 28%, var(--aw-neb-a), transparent 72%),
+    radial-gradient(ellipse 38% 30% at 80% 64%, var(--aw-neb-b), transparent 72%),
+    radial-gradient(ellipse 52% 40% at 46% 92%, var(--aw-neb-c), transparent 72%),
+    radial-gradient(ellipse 30% 26% at 90% 12%, var(--aw-neb-c), transparent 72%);
+  will-change: transform;
+  animation: aw-space-drift 46s ease-in-out infinite alternate;
+}
+
+.aw-space-nebula::after {
+  content: "";
+  position: absolute;
+  inset: 22% 20% 18% 30%;
+  background: url("../assets/upcoming/alien-flying/gallery-xeno-crystal.webp") center / 520px auto;
+  opacity: var(--aw-crystal);
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000, transparent 72%);
+  mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000, transparent 72%);
+}
+
+.aw-space-stars--a {
+  background:
+    radial-gradient(circle at 99px 17px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 74px 194px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 334px 12px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 242px 41px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 271px 75px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 56px 32px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 208px 34px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 290px 64px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 315px 164px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 23px 161px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 263px 15px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 342px 355px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 388px 359px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 163px 266px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 366px 230px, var(--aw-star) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 141px 32px, var(--aw-star) 0 1px, transparent 1.7px);
+  background-size: 420px 420px;
+  animation: aw-space-twinkle 6s ease-in-out infinite alternate;
+}
+
+.aw-space-stars--b {
+  background:
+    radial-gradient(circle at 507px 411px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 348px 297px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 145px 177px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 81px 373px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 501px 411px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 284px 412px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 329px 545px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 59px 538px, var(--aw-star-b) 0 1.6px, transparent 2.3px),
+    radial-gradient(circle at 458px 435px, var(--aw-star-b) 0 1.6px, transparent 2.3px);
+  background-size: 560px 560px;
+  animation: aw-space-twinkle 8.5s ease-in-out -3.5s infinite alternate;
+}
+
+.aw-space-spokes {
+  background: repeating-conic-gradient(from 0deg at 74% 42%, var(--aw-ring) 0 0.25deg, transparent 0.25deg 12deg);
+  opacity: 0.5;
+  -webkit-mask-image: radial-gradient(circle at 74% 42%, transparent 6vmax, #000 40vmax, transparent 120vmax);
+  mask-image: radial-gradient(circle at 74% 42%, transparent 6vmax, #000 40vmax, transparent 120vmax);
+}
+
+/* Slow warp: five rings, diameters 7 x 2^k vmax, all zooming by 2 over 40 s. A sixth ring (224 vmax) would always be outside the screen. */
+.aw-space-warp {
+  inset: auto;
+  top: 42%;
+  left: 74%;
+  width: 0;
+  height: 0;
+  will-change: transform;
+  animation: aw-space-warp 40s linear infinite;
+}
+
+.aw-space-warp i {
+  --d: 7vmax;
+  position: absolute;
+  top: calc(var(--d) / -2);
+  left: calc(var(--d) / -2);
+  width: var(--d);
+  height: var(--d);
+  border: 1.5px solid var(--aw-ring);
+  border-radius: 50%;
+  box-shadow:
+    0 0 26px var(--aw-ring-glow),
+    inset 0 0 26px var(--aw-ring-glow);
+}
+
+/* The ring band: the tunnel texture, lifted with a blue screen, cut to a thin annulus. */
+.aw-space-warp i::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  opacity: var(--aw-band);
+  background:
+    linear-gradient(rgba(96, 176, 255, 0.3), rgba(96, 176, 255, 0.3)),
+    url("../assets/upcoming/alien-flying/hero-720.webp") 40% 50% / cover;
+  background-blend-mode: screen, normal;
+  -webkit-mask-image: radial-gradient(farthest-side, transparent 90%, #000 90.5%);
+  mask-image: radial-gradient(farthest-side, transparent 90%, #000 90.5%);
+}
+
+.aw-space-warp i:nth-child(2) { --d: 14vmax; }
+.aw-space-warp i:nth-child(3) { --d: 28vmax; }
+.aw-space-warp i:nth-child(4) { --d: 56vmax; }
+.aw-space-warp i:nth-child(5) { --d: 112vmax; }
+
+/* The light at the end of the tunnel (static; it also hides the rings that emerge at the centre). */
+.aw-space-veil {
+  background:
+    radial-gradient(circle at 74% 42%, var(--aw-core) 0 0.5vmax, rgba(56, 235, 255, 0.22) 3.5vmax, transparent 14vmax),
+    var(--aw-veil);
+}
+
+@keyframes aw-space-drift {
+  from { transform: translate3d(-1.5vw, -1vh, 0); }
+  to { transform: translate3d(1.5vw, 1.2vh, 0); }
+}
+
+@keyframes aw-space-twinkle {
+  from { opacity: 0.35; }
+  to { opacity: 1; }
+}
+
+@keyframes aw-space-warp {
+  from { transform: scale(1); }
+  to { transform: scale(2); }
+}
+
+/* ---------- Sections in space ----------
+   Section wrappers draw no box, so headings sit directly on the space backdrop (halo for contrast). Inner cards are translucent glass. */
+body[data-game="alien-flying"] .game-page-section.soft-card {
+  padding-inline: 0;
+  border-color: transparent;
+  background: none;
+  box-shadow: none;
+}
+
+body[data-game="alien-flying"] .game-page-section h2,
+body[data-game="alien-flying"] .lab-related-title,
+body[data-game="alien-flying"] .ug-hero-copy h1 {
+  text-shadow:
+    0 0 22px color-mix(in srgb, var(--ug-bg) 88%, transparent),
+    0 0 6px color-mix(in srgb, var(--ug-bg) 72%, transparent);
+}
+
+body[data-game="alien-flying"] :is(.ug-lede, .ug-hero-copy .hero-copy, .ug-genre, .ug-vote .ug-lede) {
+  color: color-mix(in srgb, var(--ug-ink) 90%, var(--ug-muted));
+  text-shadow: 0 0 12px color-mix(in srgb, var(--ug-bg) 85%, transparent);
+}
+
+/* On the light sky the tagline sits directly on the backdrop, so the accent is deepened a little to keep a comfortable contrast margin. */
+body[data-game="alien-flying"][data-theme="light"] .ug-tagline {
+  color: color-mix(in srgb, var(--ug-accent) 78%, var(--ug-ink));
+}
+
+body[data-game="alien-flying"] .eyebrow {
+  background: color-mix(in srgb, var(--ug-card) 66%, transparent);
+}
+
+body[data-game="alien-flying"] :is(.detail-card, .update-list li, .ug-facts .game-page-facts > div, .ug-next li, .ug-shot, .lab-related-link) {
+  border-color: color-mix(in srgb, var(--ug-line) 82%, transparent);
+  background: color-mix(in srgb, var(--ug-card-2) 82%, transparent);
+}
+
+body[data-game="alien-flying"] .ug-status-note {
+  background: color-mix(in srgb, var(--ug-card-2) 82%, transparent);
+}
+
+body[data-game="alien-flying"] .ug-vote {
+  border-color: transparent;
+  background:
+    radial-gradient(ellipse 60% 120% at 14% 0%, color-mix(in srgb, var(--ug-fill) 18%, transparent), transparent 70%);
+}
+
+body[data-game="alien-flying"] .social-link,
+body[data-game="alien-flying"] .lab-related-all {
+  background: color-mix(in srgb, var(--ug-card-2) 78%, transparent);
+}
+
+body[data-game="alien-flying"] .game-footer {
+  background: color-mix(in srgb, var(--ug-card) 84%, transparent);
+}
+
 /* ---------- Narrow screens ---------- */
 @media (max-width: 920px) {
   .aw-figure {
@@ -510,8 +780,28 @@ body[data-game="alien-flying"] .ug-vote::after {
   }
 }
 
+/* Small screens: no warp rings, one star layer, no hull strip. */
+@media (max-width: 760px) {
+  .aw-space-warp,
+  .aw-space-stars--b,
+  .aw-space-wall::after {
+    display: none;
+  }
+
+  .aw-space-spokes {
+    opacity: 0.3;
+  }
+
+  .aw-space-veil {
+    background: var(--aw-veil-m);
+  }
+}
+
 /* ---------- Reduced motion: a still, finished frame (tunnel at rest, craft centred at the bottom with its shield up). ---------- */
 @media (prefers-reduced-motion: reduce) {
+  .aw-space-nebula,
+  .aw-space-stars,
+  .aw-space-warp,
   .aw-twist,
   .aw-tunnel,
   .aw-orbit,

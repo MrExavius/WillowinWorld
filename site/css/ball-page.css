@@ -778,7 +778,7 @@ body.ball-is-god-page[data-theme="dark"] {
     padding-bottom: 16px;
   }
 
-  .ball-is-god-page .ball-story-section .game-page-facts div:nth-last-child(-n+2) {
+  .ball-is-god-page .ball-story-section .game-page-facts div:last-child {
     padding-bottom: 0;
     border-bottom: 0;
   }

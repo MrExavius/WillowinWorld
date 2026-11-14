@@ -489,10 +489,15 @@ body[data-game="blastblast"] .game-page-facts dt {
   background: radial-gradient(circle, color-mix(in srgb, var(--bb-ember) 22%, transparent) 0 58%, transparent 62%);
 }
 
-/* 1 Pump: a gauge needle. */
+/* 1 Pump: a gauge needle that swings up when the card is hovered. */
 .ug-steps li:nth-child(1)::after {
   background: linear-gradient(var(--ug-accent), var(--ug-accent)) 50% 7px / 3px 19px no-repeat;
-  transform: rotate(-52deg);
+  transform: rotate(-38deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.2, 1.2);
+}
+
+.ug-steps li:nth-child(1):hover::after {
+  transform: rotate(58deg);
 }
 
 /* 2 Blast: a ring that has just gone off. */
@@ -502,7 +507,7 @@ body[data-game="blastblast"] .game-page-facts dt {
   transform: scale(0.8);
 }
 
-/* 3 Thread the gates: a dot on its way through a ring. */
+/* 3 Thread the gates: a dot that passes through the ring when the card is hovered. */
 .ug-steps li:nth-child(3)::before {
   border-style: dashed;
 }
@@ -513,7 +518,12 @@ body[data-game="blastblast"] .game-page-facts dt {
   width: 10px;
   height: 10px;
   background: var(--ug-accent);
-  transform: translateX(-30px);
+  transform: translateX(-34px);
+  transition: transform 0.7s cubic-bezier(0.3, 0.9, 0.3, 1);
+}
+
+.ug-steps li:nth-child(3):hover::after {
+  transform: translateX(-8px);
 }
 
 /* Features: instrument panels with a numbered header and a ruler that stretches on hover. */
@@ -654,6 +664,282 @@ body[data-game="blastblast"] .social-link:hover {
   transform: translateY(-3px);
 }
 
+/* ---------- Page-wide world ---------- */
+/* The painted citadel from the captures sits fixed behind everything; hazards drift across it and speed lines run through it.
+   Sections keep their cards (slightly see-through), so the world shows in the margins, the gaps and faintly behind the cards. */
+body[data-game="blastblast"] {
+  --bb-streak: 255, 214, 150;
+}
+
+body[data-game="blastblast"][data-theme="light"] {
+  --bb-streak: 255, 130, 56;
+}
+
+body[data-game="blastblast"] .game-detail-shell {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+}
+
+body[data-game="blastblast"] .game-detail-shell > :is(.ug-hero, .game-page-grid) {
+  position: relative;
+  z-index: 2;
+}
+
+body[data-game="blastblast"] :is(.lab-related, .game-footer) {
+  position: relative;
+  z-index: 3;
+}
+
+body[data-game="blastblast"] .lab-related {
+  overflow-x: clip;
+}
+
+/* Page-long rings that scroll with the content, one cluster every screen or two. */
+body[data-game="blastblast"] .game-detail-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle closest-side, transparent 0 54%, color-mix(in srgb, var(--bb-ember) 26%, transparent) 55% 56.5%, transparent 57% 70%, color-mix(in srgb, var(--bb-ember) 16%, transparent) 71% 72%, transparent 73% 86%, color-mix(in srgb, var(--bb-ember) 10%, transparent) 87% 88%, transparent 89%) 104% 22% / 520px 520px no-repeat,
+    radial-gradient(circle closest-side, transparent 0 54%, color-mix(in srgb, var(--bb-ember) 22%, transparent) 55% 56.5%, transparent 57% 70%, color-mix(in srgb, var(--bb-ember) 14%, transparent) 71% 72%, transparent 73% 86%, color-mix(in srgb, var(--bb-ember) 9%, transparent) 87% 88%, transparent 89%) -6% 52% / 440px 440px no-repeat,
+    radial-gradient(circle closest-side, transparent 0 54%, color-mix(in srgb, var(--bb-ember) 24%, transparent) 55% 56.5%, transparent 57% 70%, color-mix(in srgb, var(--bb-ember) 15%, transparent) 71% 72%, transparent 73% 86%, color-mix(in srgb, var(--bb-ember) 9%, transparent) 87% 88%, transparent 89%) 106% 84% / 480px 480px no-repeat;
+}
+
+.bb-page-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.bb-page-backdrop > * {
+  position: absolute;
+}
+
+.bb-page-backdrop::before,
+.bb-page-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Veil: dense on the left where the hero text sits, lighter over the art on the right. */
+.bb-page-backdrop::before {
+  z-index: 4;
+}
+
+.bb-page-backdrop::after {
+  z-index: 5;
+}
+
+body[data-game="blastblast"][data-theme="dark"] .bb-page-backdrop::before {
+  background:
+    linear-gradient(90deg, rgba(9, 19, 38, 0.72) 0, rgba(9, 19, 38, 0.56) 50%, rgba(9, 19, 38, 0.4) 100%),
+    radial-gradient(ellipse 60% 50% at 84% 12%, rgba(255, 141, 59, 0.24), transparent 70%);
+}
+
+body[data-game="blastblast"][data-theme="dark"] .bb-page-backdrop::after {
+  background: linear-gradient(180deg, transparent 52%, rgba(6, 13, 25, 0.72));
+}
+
+body[data-game="blastblast"][data-theme="light"] .bb-page-backdrop::before {
+  background:
+    linear-gradient(90deg, rgba(255, 241, 231, 0.76) 0, rgba(255, 241, 231, 0.58) 50%, rgba(255, 241, 231, 0.4) 100%),
+    radial-gradient(ellipse 60% 50% at 84% 12%, rgba(255, 141, 59, 0.2), transparent 70%);
+}
+
+body[data-game="blastblast"][data-theme="light"] .bb-page-backdrop::after {
+  background: linear-gradient(180deg, transparent 56%, rgba(255, 214, 180, 0.6));
+}
+
+.bb-bg-far {
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bb-bg-far img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 30% 70%;
+}
+
+/* Hazards drifting past: two identical halves side by side, so sliding by one half loops without a seam. */
+.bb-bg-mid {
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: flex;
+  width: 200vw;
+  height: 100%;
+  opacity: 0.5;
+  transform: translateX(-6vw);
+}
+
+.bb-bg-half {
+  position: relative;
+  flex: 0 0 100vw;
+  height: 100%;
+}
+
+.bb-bg-half > * {
+  position: absolute;
+}
+
+.bb-bg-gate {
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background:
+    radial-gradient(circle closest-side, transparent 0 74%, #35e8d3 75% 78%, transparent 79%),
+    radial-gradient(circle closest-side, rgba(0, 160, 144, 0.24) 0 74%, transparent 75%),
+    radial-gradient(circle closest-side, transparent 0 80%, #7e2616 81%, #c9472b 87%, #e8683a 93%, #7e2616 100%);
+  box-shadow: 0 0 4vmin rgba(79, 243, 223, 0.35);
+}
+
+.bb-bg-gate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from -5deg, #ffd36a 0 10deg, transparent 10deg 45deg);
+  -webkit-mask-image: radial-gradient(circle closest-side, transparent 0 82%, #000 83% 92%, transparent 93%);
+  mask-image: radial-gradient(circle closest-side, transparent 0 82%, #000 83% 92%, transparent 93%);
+}
+
+.bb-bg-gate--a {
+  top: 16vh;
+  left: 9vw;
+  width: 24vmin;
+}
+
+.bb-bg-gate--b {
+  top: 46vh;
+  left: 58vw;
+  width: 15vmin;
+}
+
+/* A red-gold bar hazard, cropped from the capture. */
+.bb-bg-bar {
+  top: 68vh;
+  left: 31vw;
+  width: 26vmin;
+  height: 5.3vmin;
+  border-radius: 99px;
+  background: url("../assets/upcoming/blastblast/gallery-hazards.webp") -159.7vmin -58vmin / 187.7vmin auto no-repeat;
+  transform: rotate(-14deg);
+}
+
+.bb-bg-pole {
+  bottom: -2vh;
+  left: 83vw;
+  width: 1.1vmin;
+  height: 46vh;
+  border-radius: 99px 99px 0 0;
+  background: linear-gradient(90deg, #232a3a, #0d111b);
+}
+
+.bb-bg-pole::before {
+  content: "";
+  position: absolute;
+  top: -1.4vmin;
+  left: 50%;
+  width: 2.4vmin;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #8ff6e8, #00a090 70%);
+  transform: translateX(-50%);
+}
+
+/* Speed lines: a tilted strip, two copies of the same pattern, sliding by one copy. */
+.bb-bg-streaks {
+  top: -10%;
+  left: 0;
+  z-index: 2;
+  width: 160vw;
+  height: 120%;
+  opacity: 0.55;
+  transform: rotate(-14deg) translateX(-10vw);
+  background:
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 6vw 14% / 16vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 30vw 31% / 22vw 1.5px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.55), transparent) 52vw 47% / 14vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 66vw 63% / 20vw 1.5px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 14vw 76% / 18vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.35), transparent) 44vw 88% / 24vw 1.5px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 86vw 14% / 16vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 110vw 31% / 22vw 1.5px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.55), transparent) 132vw 47% / 14vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.4), transparent) 146vw 63% / 20vw 1.5px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.5), transparent) 94vw 76% / 18vw 2px no-repeat,
+    linear-gradient(90deg, transparent, rgba(var(--bb-streak), 0.35), transparent) 124vw 88% / 24vw 1.5px no-repeat;
+}
+
+/* Soft scrims behind the two blocks of text that sit straight on the world (hero copy, related worlds); they fade out, no box. */
+body[data-game="blastblast"] .ug-hero-copy,
+body[data-game="blastblast"] .lab-related-inner {
+  position: relative;
+  isolation: isolate;
+}
+
+body[data-game="blastblast"] .ug-hero-copy::before,
+body[data-game="blastblast"] .lab-related-inner::before {
+  content: "";
+  position: absolute;
+  inset: -28px -48px -28px -64px;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse 62% 62% at 42% 50%, var(--bb-scrim) 28%, transparent 100%);
+}
+
+body[data-game="blastblast"] .lab-related-inner::before {
+  inset: -24px -40px -24px -40px;
+  background: radial-gradient(ellipse 70% 80% at 38% 50%, var(--bb-scrim) 26%, transparent 100%);
+}
+
+body[data-game="blastblast"][data-theme="dark"] {
+  --bb-scrim: rgba(9, 19, 38, 0.9);
+}
+
+body[data-game="blastblast"][data-theme="light"] {
+  --bb-scrim: rgba(255, 241, 231, 0.92);
+}
+
+/* Cards stay readable but let the world show through a little. */
+body[data-game="blastblast"] .soft-card {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 92%, transparent), color-mix(in srgb, var(--ug-card) 86%, transparent));
+}
+
+@media (max-width: 920px) {
+  /* Text spans the full width: an even, denser veil. */
+  body[data-game="blastblast"][data-theme="dark"] .bb-page-backdrop::before {
+    background: linear-gradient(180deg, rgba(9, 19, 38, 0.82), rgba(9, 19, 38, 0.74));
+  }
+
+  body[data-game="blastblast"][data-theme="light"] .bb-page-backdrop::before {
+    background: linear-gradient(180deg, rgba(255, 241, 231, 0.84), rgba(255, 241, 231, 0.76));
+  }
+}
+
+@media (max-width: 760px) {
+  /* Phones: just the painted backdrop and the veil. */
+  .bb-bg-mid,
+  .bb-bg-streaks {
+    display: none;
+  }
+
+  body[data-game="blastblast"] .game-detail-shell::before {
+    display: none;
+  }
+}
+
 /* More worlds in the lab (shared .lab-related markup). */
 body[data-game="blastblast"] .lab-related-title {
   font-style: italic;
@@ -696,6 +982,14 @@ body[data-game="blastblast"] .lab-related-link:hover {
 @media (prefers-reduced-motion: no-preference) {
   .bb-world-track {
     animation: bb-drift 60s linear infinite;
+  }
+
+  .bb-bg-mid {
+    animation: bb-bg-drift 90s linear infinite;
+  }
+
+  .bb-bg-streaks {
+    animation: bb-bg-streaks 16s linear infinite;
   }
 
   .bb-flight {
@@ -748,21 +1042,23 @@ body[data-game="blastblast"] .lab-related-link:hover {
     animation: bb-gauge var(--bb-hop) linear infinite;
   }
 
-  .ug-steps li:nth-child(1)::after {
-    animation: bb-needle 2.4s ease-in-out infinite alternate;
-  }
-
   .ug-steps li:nth-child(2)::after {
     animation: bb-step-ring 2.8s cubic-bezier(0.1, 0.7, 0.3, 1) infinite;
-  }
-
-  .ug-steps li:nth-child(3)::after {
-    animation: bb-step-dot 3s ease-in-out infinite;
   }
 
   .ug-vote::after {
     animation: bb-vote-ring 3.6s cubic-bezier(0.1, 0.7, 0.3, 1) infinite;
   }
+}
+
+@keyframes bb-bg-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100vw); }
+}
+
+@keyframes bb-bg-streaks {
+  from { transform: rotate(-14deg) translateX(0); }
+  to { transform: rotate(-14deg) translateX(-80vw); }
 }
 
 @keyframes bb-drift {
@@ -825,22 +1121,10 @@ body[data-game="blastblast"] .lab-related-link:hover {
   100% { transform: translateX(6%); }
 }
 
-@keyframes bb-needle {
-  from { transform: rotate(-62deg); }
-  to { transform: rotate(48deg); }
-}
-
 @keyframes bb-step-ring {
   0%   { opacity: 0.7; transform: scale(0.35); }
   70%  { opacity: 0; transform: scale(1.5); }
   100% { opacity: 0; transform: scale(1.5); }
-}
-
-@keyframes bb-step-dot {
-  0%   { opacity: 0; transform: translateX(-34px); }
-  15%  { opacity: 1; }
-  75%  { opacity: 1; }
-  100% { opacity: 0; transform: translateX(34px); }
 }
 
 @keyframes bb-vote-ring {

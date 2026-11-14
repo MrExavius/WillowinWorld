@@ -7,7 +7,7 @@
   <meta name="description" content="Nature Seed is a released draw-to-solve physics puzzle from WillowinWorlds. Released on 10 September 2026, it reunites Water Drop and Seed across 10 levels.">
   <meta name="robots" content="index, follow">
   <meta name="googlebot" content="max-image-preview:large">
-  <meta name="theme-color" content="#07162d" id="metaThemeColor">
+  <meta name="theme-color" content="#07162d" id="metaThemeColor" data-theme-dark="#07162d" data-theme-light="#f7fae8">
   <meta property="og:title" content="Nature Seed - Draw-to-Solve Physics Puzzle Game">
   <meta property="og:description" content="Released on 10 September 2026 as Nature Seed: draw an ink-limited path, reunite Water Drop and Seed, and restore nature.">
   <meta property="og:image" content="https://willowinworlds.com/assets/og/nature-seed-og-1200x630.webp">
@@ -104,7 +104,7 @@
   <link rel="preload" href="../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/base.css?v=20261113-1">
   <link rel="stylesheet" href="../css/nature-scene.css?v=20261113-1">
-  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/game-shell.css?v=20261113-3">
   <link rel="stylesheet" href="../css/nature-page.css?v=20261113-2">
   <link rel="stylesheet" href="../css/game-content.css?v=20261113-1">
   <link rel="stylesheet" href="../css/site-sections.css?v=20261113-1">
@@ -119,9 +119,10 @@
   <script src="../theme-init.js?v=20261113-2"></script>
   <a class="skip-link" href="#game-main">Skip to Nature Seed</a>
   <header class="game-detail-topbar">
-    <a class="game-detail-brand" href="../index.html" aria-label="Nature Seed — back to WillowinWorlds">
-      <img src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="Nature Seed mobile draw-to-solve puzzle game icon" fetchpriority="high" decoding="async">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" fetchpriority="high" decoding="async">
       <span><strong>Nature Seed</strong><small>WillowinWorlds game page</small></span>
+      <span class="visually-hidden">Back to WillowinWorlds</span>
     </a>
     <nav class="game-detail-nav" aria-label="Game page navigation">
       <a href="../index.html">Studio home</a>
@@ -378,7 +379,7 @@
         <h2>From a small restoration idea to the Nature Seed release.</h2>
         <ul class="update-list">
           <li><span>Summer 2025</span><strong>Original concept</strong><p>Nature Seed began as an idea for a calm mobile puzzle about connection, nature and restoration.</p></li>
-          <li><span>October 2025</span><strong>Seed and Water Drop identity</strong><p>The GDD was completed, and the Seed and Water Drop became the emotional center of the game's visual identity.</p></li>
+          <li><span>October 2025</span><strong>Seed and Water Drop identity</strong><p>The design document was completed, and the Seed and Water Drop became the emotional center of the game's visual identity.</p></li>
           <li><span>December 2025</span><strong>Development begins</strong><p>After the first paper levels were planned, active development started and the core systems moved into playable form.</p></li>
           <li><span>February 2026</span><strong>Large draft level pass</strong><p>The game reached a large rough content pass, creating the foundation for later polish, balance and production refinement.</p></li>
           <li><span>March-April 2026</span><strong>Mechanics and level review</strong><p>Extra mechanics and draft levels were reviewed, simplified and reworked to keep the game calmer, clearer and more focused.</p></li>
@@ -438,7 +439,7 @@
           <li><span>April 2026</span><strong>Level rework pass</strong><p>Several draft levels were reworked after internal review to remove unnecessary complexity and improve mobile readability.</p></li>
           <li><span>March 2026</span><strong>Mechanics review</strong><p>The team tested additional mechanics, then removed the ones that made the experience feel overloaded.</p></li>
           <li><span>February 2026</span><strong>Large draft level pass</strong><p>A large rough content pass became the foundation for later polish, balance and production refinement.</p></li>
-          <li><span>December 2025</span><strong>Development begins</strong><p>Core systems began moving from concept and GDD into playable form.</p></li>
+          <li><span>December 2025</span><strong>Development begins</strong><p>Core systems began moving from concept and design document into playable form.</p></li>
           <li><span>Summer 2025</span><strong>Original concept</strong><p>The first version of Nature Seed started as a calm puzzle idea about connection, nature and restoration.</p></li>
         </ul>
       </section>
@@ -461,8 +462,12 @@
         <p class="social-title" id="gameSocialTitle">Follow WillowinWorlds</p>
         <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
       </div>
+      <div class="share-block">
+        <p class="social-title">Share</p>
+        <nav class="share-links" aria-label="Share" data-share-links><!-- share-links:start --><!-- share-links:end --></nav>
+      </div>
     </div>
   </footer>
-  <script src="../game-theme.js?v=20261113-2"></script>
+  <script src="../game-theme.js?v=20261113-3"></script>
 </body>
 </html>

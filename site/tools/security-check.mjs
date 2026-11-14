@@ -32,7 +32,7 @@ const cssFileNames = [
   "css/home-lab.css",
   "css/upcoming-game.css"
 ];
-// Studio store and social profiles that pages may link to with <a href="https:...">. Never for src/action.
+// Studio store and social profiles, and the share-intent hosts of the generated share row (vk.com), that pages may link to with <a href="https:...">. Never for src/action.
 const allowedExternalHrefHosts = new Set([
   "willowinworlds.itch.io",
   "gamejolt.com",
@@ -45,6 +45,7 @@ const allowedExternalHrefHosts = new Set([
   "x.com",
   "www.reddit.com",
   "vk.ru",
+  "vk.com",
   "t.me"
 ]);
 

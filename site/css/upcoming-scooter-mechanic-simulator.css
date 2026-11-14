@@ -89,22 +89,6 @@ body[data-game="scooter-mechanic-simulator"] {
   opacity: 0;
 }
 
-.sm-dust::before {
-  content: "";
-  position: absolute;
-  left: 8%;
-  top: 56%;
-  width: 0.9cqw;
-  height: 0.9cqw;
-  border-radius: 50%;
-  background: #ffe9b0;
-  box-shadow:
-    9cqw -9cqw 0 0 rgb(255 233 176 / 0.8), 17cqw 4cqw 0 -0.1cqw #ffe9b0, 27cqw -14cqw 0 0 rgb(255 233 176 / 0.85),
-    36cqw 6cqw 0 0 #ffe9b0, 47cqw -6cqw 0 -0.1cqw rgb(255 233 176 / 0.8), 58cqw 10cqw 0 0 #ffe9b0, 12cqw -24cqw 0 0 rgb(255 233 176 / 0.7),
-    31cqw -27cqw 0 0 #ffe9b0, 70cqw -12cqw 0 0 rgb(255 233 176 / 0.8);
-  opacity: 0.6;
-}
-
 /* The dock: gauge, wrench and nut, repair card. Fixed dark palette in both themes, so its text always has contrast. */
 .sm-dock {
   position: relative;
@@ -268,10 +252,8 @@ body[data-game="scooter-mechanic-simulator"] {
 
 @media (prefers-reduced-motion: no-preference) {
   .ug-hero-media .sm-capture { animation: smKen 22s ease-in-out infinite alternate; }
-  .sm-lamp { animation: smLamp 9s ease-in-out infinite alternate; }
   .sm-ring { animation: smRing 4.8s ease-out infinite; }
   .sm-scan { animation: smScan 8s ease-in-out infinite; }
-  .sm-dust::before { animation: smDust 16s linear infinite; }
   .sm-needle { animation: smNeedle 12s ease-in-out infinite; }
   .sm-wrench { animation: smWrench 4.8s ease-in-out infinite; }
   .sm-nut { animation: smNut 4.8s ease-in-out infinite; }
@@ -285,11 +267,6 @@ body[data-game="scooter-mechanic-simulator"] {
   to { scale: 1.07; translate: -0.8cqw -0.6cqw; }
 }
 
-@keyframes smLamp {
-  from { rotate: -4deg; opacity: 0.85; }
-  to { rotate: 4deg; opacity: 1; }
-}
-
 @keyframes smRing {
   0% { opacity: 0.85; scale: 0.94; }
   70%, 100% { opacity: 0; scale: 1.28; }
@@ -300,12 +277,6 @@ body[data-game="scooter-mechanic-simulator"] {
   12% { opacity: 1; }
   50% { opacity: 1; translate: 0 580%; }
   55%, 100% { opacity: 0; translate: 0 580%; }
-}
-
-@keyframes smDust {
-  0% { opacity: 0; translate: 0 2cqw; }
-  15%, 80% { opacity: 0.7; }
-  100% { opacity: 0; translate: 2cqw -8cqw; }
 }
 
 @keyframes smNeedle {
@@ -522,4 +493,268 @@ body[data-game="scooter-mechanic-simulator"] .btn:active {
 /* A paused page keeps everything at its resting pose */
 body.animations-paused .ug-steps li {
   animation: none;
+}
+
+/* ---- Page-wide garage world: pegboard wall, a blurred view of the street from the capture, tool silhouettes, lamp glow pools,
+   a swaying work lamp, slow dust and an occasional spark. Fixed behind every section (z-index -1); the cards on top are translucent glass. ---- */
+
+/* main becomes the stacking context, so the world (z-index -1) paints above the page background and below the sections */
+body[data-game="scooter-mechanic-simulator"] .game-detail-shell {
+  position: relative;
+  z-index: 0;
+}
+
+/* the related-worlds row sits outside main; lift it above main's stacking context so the world never covers it */
+body[data-game="scooter-mechanic-simulator"] .lab-related {
+  position: relative;
+  z-index: 1;
+}
+
+.sm-world {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  contain: layout paint;
+  pointer-events: none;
+}
+
+.sm-world > :is(span, svg) {
+  position: absolute;
+}
+
+.sm-w-wall {
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, var(--sm-peg) 0 1.7px, transparent 2.6px) 0 0 / 30px 30px,
+    linear-gradient(180deg, var(--sm-wall-1), var(--sm-wall-2));
+}
+
+.sm-w-city {
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 64%;
+  background: url("../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp") center 34% / cover no-repeat;
+  filter: blur(7px) saturate(0.9);
+  -webkit-mask-image: linear-gradient(180deg, #000 0, transparent 92%);
+  mask-image: linear-gradient(180deg, #000 0, transparent 92%);
+  opacity: var(--sm-city);
+}
+
+.sm-w-tools {
+  top: 0;
+  height: 100%;
+  width: clamp(96px, 14vw, 220px);
+  color: var(--sm-tool);
+  fill: currentColor;
+}
+
+.sm-w-tools--l { left: 0; }
+.sm-w-tools--r { right: 0; }
+
+.sm-w-pools {
+  inset: 0;
+  background:
+    radial-gradient(ellipse 36% 42% at 14% 4%, rgb(255 176 70 / var(--sm-pool-a)), transparent 70%),
+    radial-gradient(ellipse 30% 38% at 88% 40%, rgb(255 160 50 / var(--sm-pool-b)), transparent 72%),
+    radial-gradient(ellipse 42% 36% at 30% 104%, rgb(255 150 40 / var(--sm-pool-b)), transparent 70%);
+}
+
+.sm-w-lamp {
+  left: 3%;
+  top: -6%;
+  width: 40vw;
+  height: 96vh;
+  clip-path: polygon(44% 0, 56% 0, 100% 100%, 0 100%);
+  background: linear-gradient(180deg, rgb(255 208 126 / var(--sm-cone)), transparent 80%);
+  transform-origin: 50% 0;
+  rotate: -3deg;
+}
+
+.sm-w-veil {
+  inset: 0;
+}
+
+.sm-w-dust::before,
+.sm-w-spark::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.sm-w-dust::before {
+  left: 8vw;
+  top: 0;
+  width: 3px;
+  height: 3px;
+  background: var(--sm-dustc);
+  box-shadow:
+    12vw 18vh 3px 0 var(--sm-dustc), 22vw 62vh 3px 0 var(--sm-dustc), 31vw 8vh 3px 0 var(--sm-dustc), 41vw 84vh 3px 0 var(--sm-dustc),
+    49vw 36vh 3px 0 var(--sm-dustc), 58vw 120vh 3px 0 var(--sm-dustc), 66vw 52vh 3px 0 var(--sm-dustc), 74vw 98vh 3px 0 var(--sm-dustc),
+    83vw 22vh 3px 0 var(--sm-dustc), 91vw 70vh 3px 0 var(--sm-dustc), 17vw 112vh 3px 0 var(--sm-dustc), 36vw 140vh 3px 0 var(--sm-dustc),
+    62vw 6vh 3px 0 var(--sm-dustc), 95vw 132vh 3px 0 var(--sm-dustc);
+}
+
+/* An occasional spark near the workbench: invisible for most of a 16 s loop */
+.sm-w-spark {
+  left: 9vw;
+  top: 66vh;
+}
+
+.sm-w-spark::before {
+  left: -2px;
+  top: -2px;
+  width: 4px;
+  height: 4px;
+  background: #fff1a8;
+  box-shadow:
+    0 -26px 0 0 #fff1a8, 18px -18px 0 0 #ffd031, 26px 0 0 0 #fff1a8, 18px 18px 0 0 #ff9b3d,
+    0 26px 0 0 #fff1a8, -18px 18px 0 0 #ffd031, -26px 0 0 0 #fff1a8, -18px -18px 0 0 #ff9b3d,
+    0 0 22px 8px rgb(255 160 60 / 0.5);
+}
+
+.sm-w-floor {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 18vh;
+  background: linear-gradient(180deg, transparent, var(--sm-floor));
+}
+
+.sm-w-floor::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: repeating-linear-gradient(135deg, var(--sm-yellow) 0 10px, #1a1d22 10px 20px);
+  opacity: 0.55;
+}
+
+body[data-game="scooter-mechanic-simulator"][data-theme="dark"] {
+  --sm-wall-1: #2a221b;
+  --sm-wall-2: #14161a;
+  --sm-peg: rgb(255 235 200 / 0.09);
+  --sm-tool: rgb(255 208 49 / 0.26);
+  --sm-dustc: rgb(255 226 160 / 0.9);
+  --sm-pool-a: 0.5;
+  --sm-pool-b: 0.3;
+  --sm-cone: 0.26;
+  --sm-city: 0.62;
+  --sm-floor: rgb(0 0 0 / 0.4);
+}
+
+body[data-game="scooter-mechanic-simulator"][data-theme="light"] {
+  --sm-wall-1: #f3ede1;
+  --sm-wall-2: #dde1e6;
+  --sm-peg: rgb(60 45 25 / 0.12);
+  --sm-tool: rgb(60 45 25 / 0.17);
+  --sm-dustc: rgb(176 118 18 / 0.75);
+  --sm-pool-a: 0.42;
+  --sm-pool-b: 0.3;
+  --sm-cone: 0.3;
+  --sm-city: 0.4;
+  --sm-floor: rgb(70 58 40 / 0.16);
+}
+
+/* A scrim keeps the hero copy, which sits directly on the world, above 4.5:1 */
+body[data-game="scooter-mechanic-simulator"][data-theme="dark"] .sm-w-veil {
+  background:
+    radial-gradient(ellipse 58% 74% at 27% 56%, rgb(10 11 14 / 0.84), rgb(10 11 14 / 0.6) 62%, transparent 100%),
+    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(14 15 18 / 0.35) 0, rgb(14 15 18 / 0.22) 60%, transparent 100%);
+}
+
+body[data-game="scooter-mechanic-simulator"][data-theme="light"] .sm-w-veil {
+  background:
+    radial-gradient(ellipse 60% 82% at 27% 58%, rgb(244 247 251 / 0.96), rgb(242 246 250 / 0.84) 66%, transparent 100%),
+    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 244 249 / 0.4) 0, rgb(238 242 248 / 0.25) 60%, transparent 100%);
+}
+
+/* Cards: translucent glass over the world, plus a soft halo on the hero text that sits directly on it */
+body[data-game="scooter-mechanic-simulator"] .soft-card {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 64%, transparent), color-mix(in srgb, var(--ug-card) 50%, transparent));
+}
+
+@media (min-width: 761px) {
+  body[data-game="scooter-mechanic-simulator"] .soft-card {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+}
+
+body[data-game="scooter-mechanic-simulator"] :is(.detail-card, .update-list li, .ug-next li, .ug-facts .game-page-facts > div) {
+  background: color-mix(in srgb, var(--ug-card-2) 80%, transparent);
+}
+
+body[data-game="scooter-mechanic-simulator"] :is(.ug-status-note, .ug-collab) {
+  background: color-mix(in srgb, var(--ug-card) 84%, transparent);
+}
+
+body[data-game="scooter-mechanic-simulator"] .lab-related-link {
+  background: color-mix(in srgb, var(--ug-card-2) 95%, transparent);
+}
+
+body[data-game="scooter-mechanic-simulator"] .lab-related-all {
+  background: color-mix(in srgb, var(--ug-card) 94%, transparent);
+}
+
+body[data-game="scooter-mechanic-simulator"] :is(.ug-hero-copy h1, .ug-tagline, .ug-hero-copy .hero-copy, .ug-genre) {
+  text-shadow: 0 0 16px color-mix(in srgb, var(--ug-bg) 88%, transparent), 0 1px 3px color-mix(in srgb, var(--ug-bg) 60%, transparent);
+}
+
+@media (max-width: 920px) {
+  body[data-game="scooter-mechanic-simulator"][data-theme="dark"] .sm-w-veil {
+    background:
+      linear-gradient(180deg, rgb(10 11 14 / 0.84), rgb(10 11 14 / 0.62) 70%, rgb(10 11 14 / 0.45));
+  }
+
+  body[data-game="scooter-mechanic-simulator"][data-theme="light"] .sm-w-veil {
+    background:
+      linear-gradient(180deg, rgb(244 247 251 / 0.92), rgb(242 246 250 / 0.7) 70%, rgb(238 242 248 / 0.45));
+  }
+}
+
+@media (max-width: 760px) {
+  .sm-w-city {
+    background-image: url("../assets/upcoming/scooter-mechanic-simulator/hero-720.webp");
+    filter: none;
+  }
+
+  .sm-w-tools--r,
+  .sm-w-spark,
+  .sm-w-lamp {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sm-w-pools { animation: smPools 11s ease-in-out infinite alternate; }
+  .sm-w-lamp { animation: smWorldLamp 12s ease-in-out infinite alternate; }
+  .sm-w-dust::before { animation: smWorldDust 38s linear infinite; }
+  .sm-w-spark::before { animation: smWorldSpark 16s ease-out infinite; }
+}
+
+@keyframes smPools {
+  from { opacity: 0.78; }
+  to { opacity: 1; }
+}
+
+@keyframes smWorldLamp {
+  from { rotate: -4.5deg; opacity: 0.8; }
+  to { rotate: 3.5deg; opacity: 1; }
+}
+
+@keyframes smWorldDust {
+  0% { opacity: 0; translate: 0 3vh; }
+  12%, 84% { opacity: 0.9; }
+  100% { opacity: 0; translate: 2vw -55vh; }
+}
+
+@keyframes smWorldSpark {
+  0%, 88% { opacity: 0; scale: 0.3; }
+  90% { opacity: 1; scale: 0.5; }
+  98%, 100% { opacity: 0; scale: 1.5; }
 }

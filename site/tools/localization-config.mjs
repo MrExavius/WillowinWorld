@@ -528,9 +528,10 @@ export function alternateLinks(page) {
 // Hosts used here must stay in the external-link allowlist of security-check.mjs.
 const sharedSocialProfiles = Object.freeze([
   Object.freeze({ name: "X", handle: "@willowinworlds", url: "https://x.com/willowinworlds" }),
-  Object.freeze({ name: "Reddit", handle: "u/WillowinWorlds", url: "https://www.reddit.com/user/WillowinWorlds/" }),
-  Object.freeze({ name: "VK", handle: "vk.ru/willowinworlds", url: "https://vk.ru/willowinworlds" })
+  Object.freeze({ name: "Reddit", handle: "u/WillowinWorlds", url: "https://www.reddit.com/user/WillowinWorlds/" })
 ]);
+const telegramProfile = Object.freeze({ name: "Telegram", handle: "@WillowinWorlds", url: "https://t.me/WillowinWorlds" });
+const vkProfile = Object.freeze({ name: "VK", handle: "vk.ru/willowinworlds", url: "https://vk.ru/willowinworlds" });
 const facebookGroup = Object.freeze({ name: "Facebook", handle: "groups/willowinworlds", url: "https://www.facebook.com/groups/willowinworlds" });
 
 export const socialProfileSets = Object.freeze({
@@ -540,7 +541,9 @@ export const socialProfileSets = Object.freeze({
     Object.freeze({ name: "Instagram", handle: "@willowinworlds", url: "https://www.instagram.com/willowinworlds/" }),
     Object.freeze({ name: "Threads", handle: "@willowinworlds", url: "https://www.threads.com/@willowinworlds" }),
     facebookGroup,
-    ...sharedSocialProfiles
+    ...sharedSocialProfiles,
+    telegramProfile,
+    vkProfile
   ]),
   // Facebook is blocked in Russia, so the RU set has no Facebook fallback.
   ru: Object.freeze([
@@ -549,7 +552,8 @@ export const socialProfileSets = Object.freeze({
     Object.freeze({ name: "TikTok", handle: "@willowinworlds_ru", url: "https://www.tiktok.com/@willowinworlds_ru" }),
     Object.freeze({ name: "Instagram", handle: "@willowinworlds_ru", url: "https://www.instagram.com/willowinworlds_ru/" }),
     Object.freeze({ name: "Threads", handle: "@willowinworlds_ru", url: "https://www.threads.com/@willowinworlds_ru" }),
-    ...sharedSocialProfiles
+    ...sharedSocialProfiles,
+    vkProfile
   ]),
   es: Object.freeze([
     Object.freeze({ name: "YouTube", handle: "@WillowinWorlds_ES", url: "https://www.youtube.com/@WillowinWorlds_ES" }),
@@ -557,7 +561,9 @@ export const socialProfileSets = Object.freeze({
     Object.freeze({ name: "Instagram", handle: "@willowinworlds_es_pr", url: "https://www.instagram.com/willowinworlds_es_pr/" }),
     Object.freeze({ name: "Threads", handle: "@willowinworlds_es", url: "https://www.threads.com/@willowinworlds_es" }),
     facebookGroup,
-    ...sharedSocialProfiles
+    ...sharedSocialProfiles,
+    telegramProfile,
+    vkProfile
   ])
 });
 

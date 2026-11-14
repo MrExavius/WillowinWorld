@@ -67,15 +67,6 @@ body[data-game="lyamur"][data-theme="dark"] .lm-hero-media {
   position: absolute;
 }
 
-/* Sun shafts through the canopy */
-.lm-light {
-  inset: -6% -10%;
-  z-index: 0;
-  background:
-    linear-gradient(104deg, transparent 18%, rgb(255 246 190 / 0.2) 27%, transparent 38%, transparent 52%, rgb(255 246 190 / 0.15) 60%, transparent 71%);
-  opacity: 0.8;
-}
-
 /* The track: a worn trench along an arc of the clearing, with a pit at the end */
 .lm-groove {
   left: calc(50% - 35cqw);
@@ -274,30 +265,7 @@ body[data-game="lyamur"][data-theme="dark"] .lm-hero-media {
   mask-image: radial-gradient(circle 34cqw at 100% 0, #000 55%, transparent 100%), radial-gradient(circle 34cqw at 0 100%, #000 55%, transparent 100%);
 }
 
-/* Pollen drifting up through the light */
-.lm-motes {
-  inset: 0;
-  z-index: 6;
-}
-
-.lm-motes::before {
-  content: "";
-  position: absolute;
-  left: 18%;
-  top: 74%;
-  width: 0.9cqw;
-  height: 0.9cqw;
-  border-radius: 50%;
-  background: #fff5b8;
-  box-shadow:
-    9cqw -6cqw 0 0 rgb(255 245 184 / 0.9), 21cqw 3cqw 0 -0.1cqw #fff5b8, 33cqw -9cqw 0 0 rgb(255 245 184 / 0.8),
-    44cqw 1cqw 0 0 #fff5b8, 56cqw -5cqw 0 -0.1cqw rgb(255 245 184 / 0.9), 63cqw 5cqw 0 0 #fff5b8, 14cqw -17cqw 0 0 rgb(255 245 184 / 0.8),
-    38cqw -19cqw 0 0 #fff5b8, 52cqw -14cqw 0 -0.1cqw rgb(255 245 184 / 0.85);
-  opacity: 0;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  .lm-light { animation: lmLight 9s ease-in-out infinite alternate; }
   .lm-chain { animation: lmChain 15s linear infinite; }
   .lm-shot { animation: lmShot 15s linear infinite; }
   .lm-lemur { animation: lmAim 15s ease-in-out infinite; }
@@ -306,12 +274,6 @@ body[data-game="lyamur"][data-theme="dark"] .lm-hero-media {
   .lm-burst::after { animation: lmSparks 15s ease-out infinite; }
   .lm-leaves--a { animation: lmSwayA 8s ease-in-out infinite; }
   .lm-leaves--b { animation: lmSwayB 10s ease-in-out infinite; }
-  .lm-motes::before { animation: lmMotes 12s linear infinite; }
-}
-
-@keyframes lmLight {
-  from { opacity: 0.55; translate: -3cqw 0; }
-  to { opacity: 0.95; translate: 3cqw 0; }
 }
 
 @keyframes lmChain {
@@ -374,12 +336,6 @@ body[data-game="lyamur"][data-theme="dark"] .lm-hero-media {
 @keyframes lmSwayB {
   0%, 100% { rotate: 1.1deg; translate: 0 0.3cqw; }
   50% { rotate: -1.2deg; translate: -0.4cqw 0; }
-}
-
-@keyframes lmMotes {
-  0% { opacity: 0; translate: 0 2cqw; }
-  15%, 75% { opacity: 0.85; }
-  100% { opacity: 0; translate: 3cqw -10cqw; }
 }
 
 @media (max-width: 920px) {
@@ -601,4 +557,229 @@ body[data-game="lyamur"] .btn:active {
 /* A paused page keeps everything at its resting pose */
 body.animations-paused .ug-steps li {
   animation: none;
+}
+
+/* ---- Page-wide jungle world: floor, two swaying canopy layers cut from the board art, light shafts, pollen and a falling leaf.
+   Fixed behind every section (z-index -1); the cards on top are translucent glass so the world shows through. ---- */
+/* main becomes the stacking context, so the world (z-index -1) paints above the page background and below the sections */
+body[data-game="lyamur"] .game-detail-shell {
+  position: relative;
+  z-index: 0;
+}
+
+.lm-world {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  contain: layout paint;
+  pointer-events: none;
+}
+
+.lm-world > span {
+  position: absolute;
+}
+
+.lm-w-floor {
+  inset: 0;
+  background: url("../assets/upcoming/lyamur/hero-1280.webp") center / cover no-repeat;
+}
+
+.lm-w-canopy {
+  inset: -6%;
+  background: url("../assets/upcoming/lyamur/hero-1280.webp") center / cover no-repeat;
+  -webkit-mask-image: radial-gradient(ellipse 46% 42% at 50% 50%, transparent 40%, #000 92%);
+  mask-image: radial-gradient(ellipse 46% 42% at 50% 50%, transparent 40%, #000 92%);
+}
+
+.lm-w-canopy--a {
+  transform-origin: 50% 0;
+  scale: 1.06;
+  opacity: 0.9;
+}
+
+.lm-w-canopy--b {
+  transform-origin: 50% 100%;
+  scale: -1.32 1.32;
+  opacity: 0.6;
+}
+
+.lm-w-veil {
+  inset: 0;
+}
+
+.lm-w-shafts {
+  inset: -20% -12%;
+  background: linear-gradient(112deg, transparent 20%, rgb(255 246 190 / 0.17) 28%, transparent 38%, transparent 50%, rgb(255 246 190 / 0.13) 58%, transparent 68%, transparent 80%, rgb(255 246 190 / 0.11) 86%, transparent 94%);
+}
+
+.lm-w-pollen::before,
+.lm-w-pollen::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--lm-pollen);
+  opacity: 0;
+}
+
+.lm-w-pollen::before {
+  left: 5vw;
+  top: 0;
+  box-shadow:
+    14vw 12vh 3px 0 var(--lm-pollen), 27vw 41vh 3px 0 var(--lm-pollen), 38vw 78vh 3px 0 var(--lm-pollen), 52vw 24vh 3px 0 var(--lm-pollen),
+    63vw 96vh 3px 0 var(--lm-pollen), 75vw 55vh 3px 0 var(--lm-pollen), 88vw 130vh 3px 0 var(--lm-pollen), 7vw 118vh 3px 0 var(--lm-pollen),
+    44vw 150vh 3px 0 var(--lm-pollen), 93vw 33vh 3px 0 var(--lm-pollen), 20vw 88vh 3px 0 var(--lm-pollen), 70vw 8vh 3px 0 var(--lm-pollen);
+}
+
+.lm-w-pollen::after {
+  left: 11vw;
+  top: 0;
+  box-shadow:
+    9vw 64vh 3px 0 var(--lm-pollen), 24vw 110vh 3px 0 var(--lm-pollen), 41vw 36vh 3px 0 var(--lm-pollen), 57vw 142vh 3px 0 var(--lm-pollen),
+    69vw 70vh 3px 0 var(--lm-pollen), 81vw 18vh 3px 0 var(--lm-pollen), 3vw 28vh 3px 0 var(--lm-pollen), 33vw 124vh 3px 0 var(--lm-pollen),
+    48vw 4vh 3px 0 var(--lm-pollen), 76vw 104vh 3px 0 var(--lm-pollen);
+}
+
+.lm-w-leaf {
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 13px;
+  border-radius: 0 100% 0 100%;
+  background: linear-gradient(135deg, #a4e06b, #2f7a1f);
+  box-shadow: inset 0 0 0 1px rgb(20 70 10 / 0.35);
+  opacity: 0;
+}
+
+body[data-game="lyamur"][data-theme="dark"] {
+  --lm-pollen: rgb(255 240 170 / 0.8);
+}
+
+body[data-game="lyamur"][data-theme="light"] {
+  --lm-pollen: rgb(214 158 18 / 0.65);
+}
+
+body[data-game="lyamur"][data-theme="dark"] .lm-w-veil {
+  background:
+    radial-gradient(ellipse 52% 60% at 27% 52%, rgb(4 14 3 / 0.84), rgb(4 14 3 / 0.62) 58%, transparent 100%),
+    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(7 22 6 / 0.52) 0, rgb(7 22 6 / 0.4) 55%, rgb(5 16 5 / 0.12) 100%),
+    linear-gradient(180deg, rgb(8 26 7 / 0.25), transparent 30%, rgb(3 10 3 / 0.35));
+}
+
+body[data-game="lyamur"][data-theme="light"] .lm-w-veil {
+  background:
+    radial-gradient(ellipse 52% 60% at 27% 52%, rgb(246 253 241 / 0.9), rgb(244 252 238 / 0.66) 58%, transparent 100%),
+    radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 251 234 / 0.5) 0, rgb(236 248 228 / 0.4) 55%, rgb(226 244 214 / 0.1) 100%),
+    linear-gradient(180deg, rgb(250 255 246 / 0.25), transparent 30%, rgb(214 238 200 / 0.25));
+}
+
+body[data-game="lyamur"][data-theme="light"] .lm-w-shafts {
+  opacity: 0.55;
+}
+
+/* Cards: translucent glass over the world, plus a soft halo on the hero text that sits directly on it */
+body[data-game="lyamur"] .soft-card {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 70%, transparent), color-mix(in srgb, var(--ug-card) 56%, transparent));
+}
+
+@media (min-width: 761px) {
+  body[data-game="lyamur"] .soft-card {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+  }
+}
+
+body[data-game="lyamur"] :is(.detail-card, .update-list li, .ug-next li, .ug-facts .game-page-facts > div) {
+  background: color-mix(in srgb, var(--ug-card-2) 80%, transparent);
+}
+
+/* the related-worlds row sits outside main; lift it above main's stacking context so the world never covers it */
+body[data-game="lyamur"] .lab-related {
+  position: relative;
+  z-index: 1;
+}
+
+body[data-game="lyamur"] .lab-related-link {
+  background: color-mix(in srgb, var(--ug-card-2) 95%, transparent);
+}
+
+body[data-game="lyamur"] .lab-related-all {
+  background: color-mix(in srgb, var(--ug-card) 94%, transparent);
+}
+
+body[data-game="lyamur"] .ug-status-note {
+  background: color-mix(in srgb, var(--ug-card) 82%, transparent);
+}
+
+body[data-game="lyamur"] :is(.ug-hero-copy h1, .ug-tagline, .ug-hero-copy .hero-copy, .ug-genre) {
+  text-shadow: 0 0 16px color-mix(in srgb, var(--ug-bg) 88%, transparent), 0 1px 3px color-mix(in srgb, var(--ug-bg) 60%, transparent);
+}
+
+@media (max-width: 920px) {
+  body[data-game="lyamur"][data-theme="dark"] .lm-w-veil {
+    background:
+      linear-gradient(180deg, rgb(4 14 3 / 0.84), rgb(4 14 3 / 0.66) 70%, rgb(4 14 3 / 0.5)),
+      radial-gradient(ellipse 80% 72% at 50% 45%, rgb(7 22 6 / 0.52) 0, rgb(7 22 6 / 0.4) 55%, rgb(5 16 5 / 0.12) 100%);
+  }
+
+  body[data-game="lyamur"][data-theme="light"] .lm-w-veil {
+    background:
+      linear-gradient(180deg, rgb(246 253 241 / 0.9), rgb(244 252 238 / 0.7) 70%, rgb(240 250 234 / 0.5)),
+      radial-gradient(ellipse 80% 72% at 50% 45%, rgb(240 251 234 / 0.5) 0, rgb(236 248 228 / 0.4) 55%, rgb(226 244 214 / 0.1) 100%);
+  }
+}
+
+@media (max-width: 760px) {
+  .lm-w-floor,
+  .lm-w-canopy {
+    background-image: url("../assets/upcoming/lyamur/hero-720.webp");
+  }
+
+  .lm-w-canopy--b,
+  .lm-w-leaf,
+  .lm-w-pollen::after {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lm-w-canopy--a { animation: lmCanopyA 11s ease-in-out infinite; }
+  .lm-w-canopy--b { animation: lmCanopyB 14s ease-in-out infinite; }
+  .lm-w-shafts { animation: lmShafts 16s ease-in-out infinite alternate; }
+  .lm-w-pollen::before { animation: lmPollen 30s linear infinite; }
+  .lm-w-pollen::after { animation: lmPollen 41s linear infinite -17s; }
+  .lm-w-leaf { animation: lmLeaf 44s linear infinite -9s; }
+}
+
+@keyframes lmCanopyA {
+  0%, 100% { rotate: -0.6deg; translate: 0 0; }
+  50% { rotate: 0.7deg; translate: 0.6vw 0.4vh; }
+}
+
+@keyframes lmCanopyB {
+  0%, 100% { rotate: 0.7deg; translate: 0 0.3vh; }
+  50% { rotate: -0.8deg; translate: -0.7vw 0; }
+}
+
+@keyframes lmShafts {
+  from { opacity: 0.55; translate: -4vw 0; }
+  to { opacity: 1; translate: 4vw 0; }
+}
+
+@keyframes lmPollen {
+  0% { opacity: 0; translate: 0 0; }
+  12%, 82% { opacity: 0.9; }
+  100% { opacity: 0; translate: 3vw -70vh; }
+}
+
+@keyframes lmLeaf {
+  0% { opacity: 0; translate: 8vw -6vh; rotate: 20deg; }
+  6% { opacity: 0.85; }
+  25% { translate: 22vw 24vh; rotate: 130deg; }
+  50% { translate: 40vw 52vh; rotate: 250deg; }
+  75% { translate: 56vw 80vh; rotate: 380deg; }
+  94% { opacity: 0.85; }
+  100% { opacity: 0; translate: 66vw 106vh; rotate: 480deg; }
 }

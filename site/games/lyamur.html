@@ -98,7 +98,7 @@
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
   <link rel="stylesheet" href="../css/upcoming-game.css?v=20261113-2">
-  <link rel="stylesheet" href="../css/upcoming-lyamur.css?v=20261113-2">
+  <link rel="stylesheet" href="../css/upcoming-lyamur.css?v=20261113-3">
 </head>
 <body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="lyamur">
   <script src="../theme-init.js?v=20261113-2"></script>
@@ -122,6 +122,15 @@
     </button>
   </header>
   <main class="game-page game-detail-shell" id="main-content">
+    <div class="lm-world ambient-only" aria-hidden="true">
+      <span class="lm-w-floor"></span>
+      <span class="lm-w-canopy lm-w-canopy--a"></span>
+      <span class="lm-w-canopy lm-w-canopy--b"></span>
+      <span class="lm-w-veil"></span>
+      <span class="lm-w-shafts"></span>
+      <span class="lm-w-pollen"></span>
+      <span class="lm-w-leaf"></span>
+    </div>
     <section class="ug-hero" aria-labelledby="heroTitle">
       <div class="container ug-hero-layout">
         <div class="ug-hero-copy">
@@ -139,7 +148,6 @@
           <div class="lm-stage">
             <img class="lm-board" src="../assets/upcoming/lyamur/hero-1280.webp" srcset="../assets/upcoming/lyamur/hero-720.webp 720w, ../assets/upcoming/lyamur/hero-1280.webp 1280w" sizes="(max-width: 920px) calc((100vw - 40px) * 1.78), 960px" width="1280" height="720" alt="An illustrated jungle clearing ringed by dense foliage, the board art for the first level." fetchpriority="high" decoding="async">
             <div class="lm-scene" aria-hidden="true">
-              <span class="lm-light"></span>
               <span class="lm-groove"></span>
               <span class="lm-pit"></span>
               <span class="lm-chain"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class="lm-shot"></b></span>
@@ -148,7 +156,6 @@
               <span class="lm-bush"></span>
               <span class="lm-leaves lm-leaves--a"></span>
               <span class="lm-leaves lm-leaves--b"></span>
-              <span class="lm-motes"></span>
             </div>
           </div>
           <figcaption>Board art for the first level. The marbles and the lemur's aim are an animation made for this page, not gameplay footage.</figcaption>
@@ -226,7 +233,7 @@
         <p class="ug-lede">Voting will open on the studio's channels, so following WillowinWorlds is the way to take part.</p>
         <div class="social-block social-block--game">
           <p class="social-title" id="voteSocialTitle">Follow WillowinWorlds</p>
-          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
         </div>
       </section>
     </div>
@@ -256,7 +263,7 @@
       </nav>
       <div class="social-block social-block--game">
           <p class="social-title" id="gameSocialTitle">Follow WillowinWorlds</p>
-          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
         </div>
     </div>
   </footer>

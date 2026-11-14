@@ -79,7 +79,7 @@ body[data-game="sandwich-stack"] .ug-hero-layout {
 
 .ss-hero-media figcaption {
   margin-top: 16px;
-  color: var(--ug-muted);
+  color: var(--ug-ink);
   font-size: 0.9rem;
   font-weight: 760;
   line-height: 1.45;
@@ -110,7 +110,6 @@ body[data-game="sandwich-stack"] .ug-hero-layout {
   height: auto;
   filter: blur(7px) saturate(1.1);
   transform-origin: 20% 50%;
-  animation: ssDrift 20s ease-in-out infinite alternate;
 }
 
 .ss-stage::before {
@@ -130,7 +129,6 @@ body[data-game="sandwich-stack"] .ug-hero-layout {
   background: linear-gradient(112deg, rgba(255, 238, 190, 0.6), transparent 52%);
   opacity: 0.6;
   pointer-events: none;
-  animation: ssLight 8s ease-in-out infinite alternate;
 }
 
 .ss-chip {
@@ -405,11 +403,201 @@ body[data-game="sandwich-stack"] .ug-hero-layout {
   text-transform: uppercase;
 }
 
+/* Page-wide world. A fixed, layered backdrop behind every section: the menu photo blurred into warm counter bokeh,
+   a scrim that keeps all text above 4.5:1, window light, two gingham napkins and two depths of drifting crumbs.
+   The sections keep their cards. Motion is transform only: a slow drift and slowly falling crumbs. */
+body.upcoming-game-page[data-game="sandwich-stack"] {
+  isolation: isolate;
+}
+
+body.upcoming-game-page[data-game="sandwich-stack"]::before {
+  display: none;
+}
+
+.ss-page-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #1C0F06;
+}
+
+body[data-theme="light"] .ss-page-bg {
+  background: #F4E7C8;
+}
+
+.ss-page-art {
+  position: absolute;
+  inset: -5%;
+  transform-origin: 70% 40%;
+  animation: ssPageDrift 48s ease-in-out infinite alternate;
+}
+
+.ss-page-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 80% 45%;
+  filter: blur(9px) saturate(1.2);
+}
+
+/* Scrim: darkens (or lightens) the photo for the text on it and adds window light and a tomato glow. */
+.ss-page-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 60% 50% at 6% 0%, rgba(255, 214, 140, 0.2), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 94% 72%, rgba(187, 72, 34, 0.16), transparent 70%),
+    linear-gradient(180deg, rgba(30, 16, 6, 0.55) 0%, rgba(37, 21, 9, 0.6) 50%, rgba(24, 14, 6, 0.78) 100%);
+}
+
+body[data-theme="light"] .ss-page-bg::before {
+  background:
+    radial-gradient(ellipse 60% 50% at 6% 0%, rgba(255, 244, 205, 0.7), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 94% 72%, rgba(187, 72, 34, 0.08), transparent 70%),
+    linear-gradient(180deg, rgba(251, 241, 218, 0.74) 0%, rgba(250, 238, 212, 0.78) 55%, rgba(244, 231, 200, 0.86) 100%);
+}
+
+/* Gingham napkins at two corners, faded into the scene. */
+.ss-page-napkin {
+  position: absolute;
+  z-index: 2;
+  background: repeating-conic-gradient(rgba(255, 255, 255, 0.9) 0 25%, #86B07C 0 50%) 0 0 / 56px 56px;
+  opacity: 0.1;
+  -webkit-mask-image: radial-gradient(ellipse at 50% 50%, #000 18%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 50% 50%, #000 18%, transparent 72%);
+}
+
+.ss-page-napkin--a {
+  left: -10vw;
+  bottom: -8vh;
+  width: 58vw;
+  height: 36vh;
+  transform: rotate(-7deg);
+}
+
+.ss-page-napkin--b {
+  right: -12vw;
+  top: 8vh;
+  width: 42vw;
+  height: 28vh;
+  transform: rotate(9deg);
+}
+
+body[data-theme="light"] .ss-page-napkin {
+  opacity: 0.24;
+}
+
+/* Vignette. */
+.ss-page-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(20, 10, 3, 0.5) 100%);
+}
+
+body[data-theme="light"] .ss-page-bg::after {
+  background: radial-gradient(ellipse at 50% 50%, transparent 60%, rgba(181, 119, 58, 0.2) 100%);
+}
+
+/* Crumbs: far and near. The element is two screens tall and loops by half its height. */
+.ss-page-crumbs {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200%;
+  background-repeat: repeat-y;
+  background-size: 100% 50%;
+}
+
+.ss-page-crumbs--far {
+  z-index: 3;
+  opacity: 0.6;
+  background-image:
+    radial-gradient(circle 3px at 7% 12%, #F6DDA0 0 60%, transparent 100%),
+    radial-gradient(circle 2.5px at 19% 46%, #C98A3E 0 60%, transparent 100%),
+    radial-gradient(circle 3.5px at 33% 78%, #E8B467 0 60%, transparent 100%),
+    radial-gradient(circle 2.5px at 47% 24%, #F6DDA0 0 60%, transparent 100%),
+    radial-gradient(circle 3px at 58% 62%, #C98A3E 0 60%, transparent 100%),
+    radial-gradient(circle 3.5px at 72% 9%, #E8B467 0 60%, transparent 100%),
+    radial-gradient(circle 2.5px at 83% 53%, #F6DDA0 0 60%, transparent 100%),
+    radial-gradient(circle 3px at 94% 86%, #C98A3E 0 60%, transparent 100%);
+  animation: ssFall 120s linear infinite;
+}
+
+.ss-page-crumbs--near {
+  z-index: 4;
+  opacity: 0.5;
+  background-image:
+    radial-gradient(circle 6px at 12% 34%, #F6DDA0 0 60%, transparent 100%),
+    radial-gradient(circle 5px at 38% 88%, #C98A3E 0 60%, transparent 100%),
+    radial-gradient(circle 6px at 64% 18%, #E8B467 0 60%, transparent 100%),
+    radial-gradient(circle 4.5px at 81% 66%, #F6DDA0 0 60%, transparent 100%),
+    radial-gradient(circle 5px at 92% 40%, #C98A3E 0 60%, transparent 100%);
+  animation: ssFall 70s linear infinite;
+}
+
+body[data-theme="light"] .ss-page-crumbs--far {
+  opacity: 0.55;
+}
+
+body[data-theme="light"] .ss-page-crumbs--near {
+  opacity: 0.42;
+}
+
+/* Local scrims: soft gradients that fade to nothing keep the text on the bare backdrop readable, so the backdrop can stay bright elsewhere. */
+.ug-hero,
+.lab-related {
+  position: relative;
+  isolation: isolate;
+}
+
+.ug-hero::before,
+.lab-related::before {
+  content: "";
+  position: absolute;
+  inset: -40px 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(26, 14, 5, 0.86) 0%, rgba(26, 14, 5, 0.8) 48%, rgba(26, 14, 5, 0.64) 100%);
+  -webkit-mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent);
+  mask-image: linear-gradient(transparent, #000 40px, #000 calc(100% - 40px), transparent);
+}
+
+body[data-theme="light"] .ug-hero::before,
+body[data-theme="light"] .lab-related::before {
+  background: linear-gradient(90deg, rgba(252, 244, 224, 0.9) 0%, rgba(252, 244, 224, 0.84) 48%, rgba(252, 244, 224, 0.7) 100%);
+}
+
+/* Small screens: one crumb layer, no drift, no blur. */
+@media (max-width: 760px) {
+  .ss-page-art {
+    animation: none;
+  }
+
+  .ss-page-img {
+    filter: none;
+    opacity: 0.42;
+  }
+
+  .ss-page-crumbs--near {
+    display: none;
+  }
+}
+
 /* Sections. */
 body.upcoming-game-page[data-game="sandwich-stack"] .soft-card {
   position: relative;
   overflow: hidden;
   padding-top: calc(clamp(24px, 4vw, 38px) + 8px);
+  background: linear-gradient(160deg, color-mix(in srgb, var(--ug-card) 82%, transparent), color-mix(in srgb, var(--ug-card) 75%, transparent));
 }
 
 body[data-game="sandwich-stack"] .soft-card::before {
@@ -655,13 +843,13 @@ body[data-game="sandwich-stack"] .ug-gallery--3 .ug-shot:nth-child(4) { --r: -0.
   animation: ssMiniPress 4.8s ease-in-out infinite;
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1200px) {
   .ug-vote::after {
     content: "";
     position: absolute;
+    top: 28px;
     right: 40px;
-    bottom: 30px;
-    width: min(28%, 300px);
+    width: min(16%, 190px);
     aspect-ratio: 960 / 768;
     border: 6px solid #FFF8E6;
     border-radius: 6px;
@@ -682,14 +870,14 @@ body[data-game="sandwich-stack"] .social-link:focus-visible {
 }
 
 /* Motion. */
-@keyframes ssDrift {
-  from { transform: translateX(-1.2cqw) scale(1); }
-  to { transform: translateX(1.2cqw) scale(1.04); }
+@keyframes ssPageDrift {
+  from { transform: scale(1) translate(0, 0); }
+  to { transform: scale(1.06) translate(1.2%, -1%); }
 }
 
-@keyframes ssLight {
-  from { opacity: 0.4; transform: translateX(-2cqw); }
-  to { opacity: 0.85; transform: translateX(2cqw); }
+@keyframes ssFall {
+  from { transform: translateY(-50%); }
+  to { transform: translateY(0); }
 }
 
 @keyframes ssStepPick {
@@ -820,8 +1008,8 @@ body[data-game="sandwich-stack"] .social-link:focus-visible {
 
 /* Reduced motion: no decorative animation; the static composition is the finished sandwich. */
 @media (prefers-reduced-motion: reduce) {
-  .ss-bg,
-  .ss-light,
+  .ss-page-art,
+  .ss-page-crumbs,
   .ss-stack,
   .ss-layer,
   .ss-press,
