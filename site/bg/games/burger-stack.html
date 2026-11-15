@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="bg" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="bg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Докоснете, за да подреждате бургер съставки в девет режима, включително бързи поръчки с таймер и 3D варианти. Прототип, планиран за Android и iOS, още без публична версия.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#0C4E4B" id="metaThemeColor" data-theme-dark="#0C4E4B" data-theme-light="#E7FAFA">
+  <meta property="og:title" content="Burger Stack: аркадна игра за подреждане в разработка">
+  <meta property="og:description" content="Докоснете, за да подреждате бургер съставки в девет режима, включително бързи поръчки с таймер и 3D варианти. Прототип, планиран за Android и iOS, още без публична версия.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/burger-stack-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Карта на Burger Stack с етикет В разработка: подводна кухня с месингови лампи и иконка на изпечено кюфте.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/bg/games/burger-stack.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="bg_BG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Burger Stack: аркадна игра за подреждане в разработка">
+  <meta name="twitter:description" content="Докоснете, за да подреждате бургер съставки в девет режима, включително бързи поръчки с таймер и 3D варианти. Прототип, планиран за Android и iOS, още без публична версия.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/burger-stack-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Карта на Burger Stack с етикет В разработка: подводна кухня с месингови лампи и иконка на изпечено кюфте.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Burger Stack: игра за подреждане в разработка | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/bg/games/burger-stack.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/bg/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "В разработка",
+          "item": "https://willowinworlds.com/bg/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Burger Stack",
+          "item": "https://willowinworlds.com/bg/games/burger-stack.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/bg/games/burger-stack.html#game",
+      "name": "Burger Stack",
+      "url": "https://willowinworlds.com/bg/games/burger-stack.html",
+      "image": "https://willowinworlds.com/assets/upcoming/burger-stack/hero-1280.webp",
+      "description": "Игра за подреждане в бургер тема с девет режима, включително бързи поръчки с таймер и 3D варианти.",
+      "keywords": "игра за подреждане, докосване за подреждане, игра с бургер, аркада, мобилна игра в разработка",
+      "genre": [
+        "Аркадна игра за подреждане"
+      ],
+      "gamePlatform": "Мобилен",
+      "creativeWorkStatus": "Прототип",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/bg/games/burger-stack.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "bg"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-burger-stack.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="burger-stack">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">Преминете към основното съдържание</a>
+  <div class="bs-page-bg ambient-only" aria-hidden="true">
+    <div class="bs-page-art">
+      <img class="bs-page-img bs-page-img--sea" src="../../assets/upcoming/burger-stack/gallery-underwater-kitchen.webp" width="540" height="987" alt="" decoding="async">
+      <img class="bs-page-img bs-page-img--sky" src="../../assets/upcoming/burger-stack/gallery-sky-kitchen.webp" width="540" height="987" alt="" decoding="async">
+    </div>
+    <span class="bs-page-rays"></span>
+    <span class="bs-page-lamps"></span>
+    <span class="bs-page-fx bs-page-fx--far"></span>
+    <span class="bs-page-fx bs-page-fx--near"></span>
+    <div class="bs-rains">
+      <div class="bs-rain bs-rain--far"><div class="bs-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bs-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="bs-rain bs-rain--near"><div class="bs-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="bs-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+  </div>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/burger-stack/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>Burger Stack</strong><small>Страница на играта WillowinWorlds</small></span>
+      <span class="visually-hidden">Назад към WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Навигация на страницата на играта">
+      <a href="../index.html">Начало на студиото</a>
+      <a href="#features">Характеристики</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Прес комплект</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Пауза на анимациите"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Пауза на анимациите</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Превключете темата">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Език"><details><summary aria-label="Изберете език"><span aria-hidden="true">BG</span></summary><div class="language-options"><a href="../../games/burger-stack.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/burger-stack.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/burger-stack.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/burger-stack.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="burger-stack.html" lang="bg" hreflang="bg" aria-current="page"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/burger-stack.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/burger-stack.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/burger-stack.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/burger-stack.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/burger-stack.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/burger-stack.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/burger-stack.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/burger-stack.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/burger-stack.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/burger-stack.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/burger-stack.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/burger-stack.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/burger-stack.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/burger-stack.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/burger-stack.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/burger-stack.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/burger-stack.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/burger-stack.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/burger-stack.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/burger-stack.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/burger-stack.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/burger-stack.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/burger-stack.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/burger-stack.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/burger-stack.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/burger-stack.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/burger-stack.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/burger-stack.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/burger-stack.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/burger-stack.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/burger-stack.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/burger-stack.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/burger-stack.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/burger-stack.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/burger-stack.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/burger-stack.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/burger-stack.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Прототип</span><span class="ug-genre">Аркадна игра за подреждане</span></p>
+          <h1 id="heroTitle">Burger Stack</h1>
+          <p class="ug-tagline">Докоснете, за да подреждате. Сервирайте поръчката.</p>
+          <p class="hero-copy">Пускайте слоеве съставки върху растящ бургер, дръжте ги подредени и изпълнявайте рецепти, докато строите. Девет режима променят как се движи купчината и какво търсите.</p>
+          <p class="ug-status-note">Девет режима, 20 съставки и каталог от 166 рецепти са изградени в Unity проекта. Още няма публична версия.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Следвайте разработката</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Всички игри в разработка</a>
+          </div>
+          <ul class="bs-hero-stats" aria-label="Burger Stack с един поглед">
+            <li><strong>9</strong><span>режима</span></li>
+            <li><strong>20</strong><span>съставки</span></li>
+            <li><strong>166</strong><span>рецепти</span></li>
+          </ul>
+        </div>
+        <figure class="bs-hero-media">
+          <div class="bs-stage" role="img" aria-label="Анимирана илюстрация: плочки със съставки падат върху люлееща се бургер купчина в подводна кухня.">
+            <div class="bs-world">
+              <img class="bs-bg bs-bg--sea" src="../../assets/upcoming/burger-stack/gallery-underwater-kitchen.webp" width="540" height="987" alt="" decoding="async">
+              <img class="bs-bg bs-bg--sky" src="../../assets/upcoming/burger-stack/gallery-sky-kitchen.webp" width="540" height="987" alt="" decoding="async">
+            </div>
+            <span class="bs-fx bs-fx--far"></span>
+            <div class="bs-ticket">
+              <b>Поръчка</b>
+              <span class="bs-ticket-row"><i class="bs-tile bs-i-bun"></i><i class="bs-tile bs-i-patty"></i><i class="bs-tile bs-i-bacon"></i><i class="bs-tile bs-i-tomato"></i><i class="bs-tile bs-i-lettuce"></i><i class="bs-tile bs-i-bun"></i></span>
+              <span class="bs-ticket-bar"><i></i></span>
+            </div>
+            <div class="bs-tower">
+              <span class="bs-plate"></span>
+              <span class="bs-tile bs-i-bun bs-t1"></span>
+              <span class="bs-tile bs-i-patty bs-t2"></span>
+              <span class="bs-tile bs-i-bacon bs-t3"></span>
+              <span class="bs-tile bs-i-tomato bs-t4"></span>
+              <span class="bs-tile bs-i-lettuce bs-t5"></span>
+              <span class="bs-tile bs-i-bun bs-t6"></span>
+            </div>
+            <span class="bs-fx bs-fx--near"></span>
+            <span class="bs-perfect">Перфектно!</span>
+          </div>
+          <figcaption>Фон с кухня и арт за съставки от играта, анимирани като илюстрация. Не е снимка от геймплея.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Факти</div>
+        <h2 id="factsTitle">Факти за прототипа на Burger Stack</h2>
+        <dl class="game-page-facts">
+          <div><dt>Жанр</dt><dd>Аркадна игра за подреждане</dd></div>
+          <div><dt>Целева платформа</dt><dd>Android / iOS (планирано)</dd></div>
+          <div><dt>Двигател</dt><dd>Unity 6</dd></div>
+          <div><dt>Статус</dt><dd>Прототип</dd></div>
+          <div><dt>Формат на сесията</dt><dd>Аркадни сесии по рънове в девет режима</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Цикъл на играта</div>
+        <h2 id="loopTitle">Как се играе Burger Stack</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Стъпка 01</span><strong>Изберете и пуснете</strong><p>Слой се плъзга над купчината и вие докосвате, за да го пуснете. В режимите за подреждане можете да изберете следващата съставка от таблата.</p></li>
+          <li><span>Стъпка 02</span><strong>Приземете чисто</strong><p>Надвисналата част се отрязва, така че небрежното пускане оставя по-тясна купчина. Пускане почти в центъра се брои като Перфектно и натрупва комбо.</p></li>
+          <li><span>Стъпка 03</span><strong>Изградете рецептата</strong><p>Слоевете, които съвпадат с рецепта, я завършват. В Order Rush всяка завършена поръчка добавя време, а грешна съставка струва време.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Характеристики</div>
+        <h2 id="featuresTitle">Режими на кухнята и механики за подреждане</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Девет режима</h3><p>Stack Rush, Press Rush, Order Rush, Current Sort, Orbit Stack 3D, Stack 3D, Round 3D, Balance Tower 3D и Slice &amp; Fit 3D, избират се от меню за избор на режим.</p></article>
+          <article class="detail-card"><h3>Модификатор Expert X/Z</h3><p>Stack Rush има незадължителен модификатор Expert, който движи слоевете по две оси.</p></article>
+          <article class="detail-card"><h3>20 съставки, 166 рецепти</h3><p>Кюфте, кифла, домат, бекон, сосове, пържени картофи и още, с каталог от рецепти с комбинации от две до седем съставки.</p></article>
+          <article class="detail-card"><h3>Таймер на Order Rush</h3><p>Таймерът на смяната расте с всяка завършена поръчка и намалява при грешна съставка.</p></article>
+          <article class="detail-card"><h3>Илюстрирани кухни</h3><p>Фоновете с подводна и небесна кухня се движат, докато купчината расте, с подходящ панел със съставки и UI арт.</p></article>
+          <article class="detail-card"><h3>Локален прогрес</h3><p>Профил, запазен на устройството, следи ежедневните и седмичните предизвикателства и отключените съставки.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Посока</div>
+        <h2 id="nextTitle">Състояние на версията на Burger Stack и следващи стъпки</h2>
+        <p class="ug-lede">Още няма дата на излизане. Това са цели на проекта, а не обещания.</p>
+        <ul class="ug-next">
+          <li>Профилиране на производителността и QA на слаби Android телефони преди всяко издаване.</li>
+          <li>Още теми за кухни и козметични отключвания отвъд подводния и небесния комплект (идея за дизайн, още не е изградено).</li>
+          <li>Колекция от рецепти и цели за майсторство (идея за дизайн, още не е изградено).</li>
+          <li>Облачно запазване по-късно; засега прогресът е само локален.</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Изображения</div>
+        <h2 id="galleryTitle">Галерия с арт</h2>
+        <p class="ug-lede">Арт и интерфейсни елементи от Unity проекта, а не записи от геймплея.</p>
+        <div class="ug-gallery ug-gallery--2">
+          <figure class="ug-shot ug-shot--strip"><img src="../../assets/upcoming/burger-stack/gallery-ingredient-tray.webp" width="960" height="395" alt="Табло със съставки в Burger Stack: 20 иконки на съставки върху тюркоазена дървена дъска с кабелни светлини и месингов фенер." loading="lazy" decoding="async"><figcaption>Табло със съставки</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/burger-stack/gallery-underwater-kitchen.webp" width="540" height="987" alt="Фон на подводна кухня за Burger Stack във портретен формат: дървена палуба, сергия на пазар и табела." loading="lazy" decoding="async"><figcaption>Подводна кухня</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/burger-stack/gallery-sky-kitchen.webp" width="540" height="987" alt="Фон на небесна кухня за Burger Stack във портретен формат: месингови фенери и тръби сред облаци над кръгла платформа." loading="lazy" decoding="async"><figcaption>Небесна кухня</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Въпроси и отговори</div>
+        <h2 id="faqTitle">ЧЗВ за Burger Stack</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Какъв тип игра е Burger Stack?</h3><p>Аркадна игра за подреждане с докосване в бургер тема. Пускате слоеве съставки върху купчината, държите ги подравнени и изпълнявате рецепти. Има девет режима, включително бързи поръчки с таймер и 3D варианти. Същата идея с едно докосване минава през <a href="sandwich-stack.html">Sandwich Stack</a> и <a href="stack-tower.html">Stack Tower</a>.</p></article>
+          <article class="detail-card"><h3>Излезе ли вече Burger Stack и за кои платформи е?</h3><p>Още не. Burger Stack е прототип без публична версия и без дата на излизане. Целевите платформи са Android и iOS.</p></article>
+          <article class="detail-card"><h3>Кой прави Burger Stack и как да я следя?</h3><p>Burger Stack е направена от WillowinWorlds, независимо мобилно студио за игри (вижте неговия <a href="../index.html#games">основни игри</a>). Следвайте WillowinWorlds в социалните канали, свързани на тази страница, или пишете на имейл <a href="mailto:willowinworlds@gmail.com?subject=Burger%20Stack">willowinworlds@gmail.com</a> за да попитате за новости за Burger Stack.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Гласуване</div>
+        <h2 id="voteTitle">Следете напредъка на Burger Stack и гласувайте</h2>
+        <p class="ug-lede">Гласуването ще се отвори в каналите на студиото. Следвайте WillowinWorlds, за да се включите.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Следвайте WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Други прототипи с храна и подреждане в лабораторията</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="sandwich-stack.html"><strong>Sandwich Stack</strong><span>Същото подреждане с едно докосване, със слоеве сандвич и четири режима.</span></a></li>
+        <li><a class="lab-related-link" href="stack-tower.html"><strong>Stack Tower</strong><span>Същата идея за подреждане с едно докосване, с етажи, пуснати от люлеещ се кран.</span></a></li>
+        <li><a class="lab-related-link" href="lyamur.html"><strong>Lyamur</strong><span>Още една казуална аркада прототип: прицелвате и стреляте с цветни топчета, преди веригата да стигне до дупката.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Всички игри в разработка</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Burger Stack е игра в разработка на WillowinWorlds.</strong>
+        <span>Игра за подреждане в бургер тема с девет режима, включително бързи поръчки с таймер и 3D варианти.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Навигация в долния колонтитул на Burger Stack">
+        <a href="../index.html#in-development">Игри в разработка</a>
+        <a href="../press-kit.html">Прес комплект</a>
+        <a href="../privacy.html">Поверителност</a>
+        <a href="../legal.html">Правна информация</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Burger%20Stack">Контакт</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Следвайте WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Споделяне</p>
+        <nav class="share-links" aria-label="Споделяне" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fbg%2Fgames%2Fburger-stack.html&amp;text=Burger%20Stack%3A%20%D0%B8%D0%B3%D1%80%D0%B0%20%D0%B7%D0%B0%20%D0%BF%D0%BE%D0%B4%D1%80%D0%B5%D0%B6%D0%B4%D0%B0%D0%BD%D0%B5%20%D0%B2%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fbg%2Fgames%2Fburger-stack.html&amp;title=Burger%20Stack%3A%20%D0%B8%D0%B3%D1%80%D0%B0%20%D0%B7%D0%B0%20%D0%BF%D0%BE%D0%B4%D1%80%D0%B5%D0%B6%D0%B4%D0%B0%D0%BD%D0%B5%20%D0%B2%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fbg%2Fgames%2Fburger-stack.html&amp;text=Burger%20Stack%3A%20%D0%B8%D0%B3%D1%80%D0%B0%20%D0%B7%D0%B0%20%D0%BF%D0%BE%D0%B4%D1%80%D0%B5%D0%B6%D0%B4%D0%B0%D0%BD%D0%B5%20%D0%B2%20%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fbg%2Fgames%2Fburger-stack.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fbg%2Fgames%2Fburger-stack.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Копиране на връзката</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

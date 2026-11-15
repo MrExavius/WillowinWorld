@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="ro">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Stivuiți straturi de sandviș cu o singură atingere, în patru moduri: Press Rush, Round 3D, Balance Tower 3D și Slice &amp; Fit 3D. Un prototip, încă fără versiune publică.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#251509" id="metaThemeColor" data-theme-dark="#251509" data-theme-light="#FBF1DA">
+  <meta property="og:title" content="Sandwich Stack: arcade de stivuire, în dezvoltare">
+  <meta property="og:description" content="Stivuiți straturi de sandviș cu o singură atingere, în patru moduri: Press Rush, Round 3D, Balance Tower 3D și Slice &amp; Fit 3D. Un prototip, încă fără versiune publică.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/sandwich-stack-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cardul Sandwich Stack cu eticheta În dezvoltare: roșii, salată și brânză pe un blat de bucătărie, lângă o pictogramă de sandviș.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/ro/games/sandwich-stack.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="ro_RO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Sandwich Stack: arcade de stivuire, în dezvoltare">
+  <meta name="twitter:description" content="Stivuiți straturi de sandviș cu o singură atingere, în patru moduri: Press Rush, Round 3D, Balance Tower 3D și Slice &amp; Fit 3D. Un prototip, încă fără versiune publică.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/sandwich-stack-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Cardul Sandwich Stack cu eticheta În dezvoltare: roșii, salată și brânză pe un blat de bucătărie, lângă o pictogramă de sandviș.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Sandwich Stack: joc de stivuire, în dezvoltare | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/ro/games/sandwich-stack.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/ro/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "În dezvoltare",
+          "item": "https://willowinworlds.com/ro/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sandwich Stack",
+          "item": "https://willowinworlds.com/ro/games/sandwich-stack.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/ro/games/sandwich-stack.html#game",
+      "name": "Sandwich Stack",
+      "url": "https://willowinworlds.com/ro/games/sandwich-stack.html",
+      "image": "https://willowinworlds.com/assets/upcoming/sandwich-stack/hero-1280.webp",
+      "description": "Stivuiți straturi de sandviș cu o singură atingere, în patru moduri, inclusiv un turn de echilibru care poate cădea și un mod în care tăiați fiecare strat ca să se potrivească.",
+      "keywords": "joc de stivuire, atingeți ca să stivuiți, joc cu sandviș, arcade, joc mobil în dezvoltare",
+      "genre": [
+        "Joc arcade de stivuire"
+      ],
+      "gamePlatform": "Mobil",
+      "creativeWorkStatus": "Prototip",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/ro/games/sandwich-stack.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "ro"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/upcoming/sandwich-stack/hero-1280.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-sandwich-stack.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="sandwich-stack">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">Treceți la conținutul principal</a>
+  <div class="ss-page-bg ambient-only" aria-hidden="true">
+    <div class="ss-page-art">
+      <img class="ss-page-img" src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" decoding="async">
+    </div>
+    <span class="ss-page-napkin ss-page-napkin--a"></span>
+    <span class="ss-page-napkin ss-page-napkin--b"></span>
+    <span class="ss-page-light"></span>
+    <span class="ss-page-steam"></span>
+    <div class="ss-rains">
+      <div class="ss-rain ss-rain--far"><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="ss-rain ss-rain--near"><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+  </div>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/sandwich-stack/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>Sandwich Stack</strong><small>Pagina de joc WillowinWorlds</small></span>
+      <span class="visually-hidden">Înapoi la WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigare pe pagina jocului">
+      <a href="../index.html">Pagina principală a studioului</a>
+      <a href="#features">Caracteristici</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Kit de presă</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Întrerupeți animațiile"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Întrerupeți animațiile</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Schimbați tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Limbă"><details><summary aria-label="Alegeți limba"><span aria-hidden="true">RO</span></summary><div class="language-options"><a href="../../games/sandwich-stack.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/sandwich-stack.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/sandwich-stack.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/sandwich-stack.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/sandwich-stack.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/sandwich-stack.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/sandwich-stack.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/sandwich-stack.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/sandwich-stack.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/sandwich-stack.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/sandwich-stack.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/sandwich-stack.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/sandwich-stack.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/sandwich-stack.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/sandwich-stack.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/sandwich-stack.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/sandwich-stack.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/sandwich-stack.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/sandwich-stack.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/sandwich-stack.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/sandwich-stack.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/sandwich-stack.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/sandwich-stack.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/sandwich-stack.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/sandwich-stack.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/sandwich-stack.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/sandwich-stack.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/sandwich-stack.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/sandwich-stack.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="sandwich-stack.html" lang="ro" hreflang="ro" aria-current="page"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/sandwich-stack.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/sandwich-stack.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/sandwich-stack.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/sandwich-stack.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/sandwich-stack.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/sandwich-stack.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/sandwich-stack.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/sandwich-stack.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/sandwich-stack.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/sandwich-stack.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/sandwich-stack.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/sandwich-stack.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Prototip</span><span class="ug-genre">Joc arcade de stivuire</span></p>
+          <h1 id="heroTitle">Sandwich Stack</h1>
+          <p class="ug-tagline">Atingeți ca să stivuiți. Construiți sandvișul.</p>
+          <p class="hero-copy">Construiți un sandviș strat cu strat. Alegeți un ingredient, atingeți ca să-l plasați și mențineți grămada în picioare în patru moduri: Press Rush, Round 3D, Balance Tower 3D și Slice &amp; Fit 3D.</p>
+          <p class="ug-status-note">Patru moduri de stivuire, douăzeci de ingrediente, comenzi de rețete, efecte sonore și scoruri salvate sunt în proiectul Unity. Încă nu există versiune publică.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Urmăriți dezvoltarea</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Toate jocurile în dezvoltare</a>
+          </div>
+          <ul class="ss-hero-stats" aria-label="Sandwich Stack pe scurt">
+            <li><strong>4</strong><span>moduri</span></li>
+            <li><strong>20</strong><span>ingrediente</span></li>
+            <li><strong>166</strong><span>rețete</span></li>
+          </ul>
+        </div>
+        <figure class="ss-hero-media">
+          <div class="ss-stage" role="img" aria-label="Ilustrație animată: straturile de sandviș glisează din laturi, o presă turtește grămada și firimiturile se împrăștie.">
+            <img class="ss-bg" src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
+            <span class="ss-light"></span>
+            <span class="ss-chip">Press Rush</span>
+            <span class="ss-napkin"></span>
+            <span class="ss-board"></span>
+            <div class="ss-stack">
+              <span class="ss-layer ss-bread ss-l0"></span>
+              <span class="ss-layer ss-lettuce ss-l1"></span>
+              <span class="ss-layer ss-tomato ss-l2"></span>
+              <span class="ss-layer ss-cheese ss-l3"></span>
+              <span class="ss-layer ss-ham ss-l4"></span>
+              <span class="ss-layer ss-bread ss-top ss-l5"></span>
+            </div>
+            <span class="ss-crumbs"></span>
+            <span class="ss-press"></span>
+            <div class="ss-order">
+              <img src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" decoding="async">
+              <b>Comandă</b>
+            </div>
+          </div>
+          <figcaption>Grafica de fundal a meniului, cu straturi de sandviș desenate în CSS, animate ca ilustrație. Nu este o captură din joc.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Informații</div>
+        <h2 id="factsTitle">Informații despre prototipul Sandwich Stack</h2>
+        <dl class="game-page-facts">
+          <div><dt>Gen</dt><dd>Joc arcade de stivuire</dd></div>
+          <div><dt>Platformă țintă</dt><dd>Android / iOS (planificat)</dd></div>
+          <div><dt>Motor</dt><dd>Unity 6</dd></div>
+          <div><dt>Stare</dt><dd>Prototip</dd></div>
+          <div><dt>Formatul sesiunii</dt><dd>Runde în care urmăriți scorul</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Buclă de joc</div>
+        <h2 id="loopTitle">Cum se joacă Sandwich Stack</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Pasul 01</span><strong>Alegeți următorul ingredient</strong><p>Alegeți un ingredient din panoul de ingrediente. Banda de rețete arată ce sandviș cere comanda curentă.</p></li>
+          <li><span>Pasul 02</span><strong>Atingeți ca să plasați</strong><p>Stratul se mișcă deasupra grămezii, iar o atingere îl blochează. O potrivire apropiată păstrează dimensiunea completă, iar o ratare taie din strat.</p></li>
+          <li><span>Pasul 03</span><strong>Mențineți grămada în picioare</strong><p>Fiecare mod are propria regulă: mărime, orbită, echilibru sau un număr limitat de tăieturi. O ratare, un turn răsturnat sau lipsa tăieturilor încheie runda.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Caracteristici</div>
+        <h2 id="featuresTitle">Moduri de stivuire și mecanici de echilibru</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Patru moduri de stivuire</h3><p>Press Rush, Round 3D, Balance Tower 3D și Slice &amp; Fit 3D schimbă fiecare ce înseamnă o plasare bună. Un ecran de selectare a modului se deschide la fiecare rundă.</p></article>
+          <article class="detail-card"><h3>Balance Tower 3D</h3><p>Suprapunerea, greutatea și vântul alimentează un indicator de stabilitate care afișează STABLE, WOBBLE sau DANGER. Un turn răsturnat încheie runda.</p></article>
+          <article class="detail-card"><h3>Slice &amp; Fit 3D</h3><p>Glisați ca să tăiați un strat cu un număr limitat de tăieturi, apoi să-l potriviți pe inelul-țintă.</p></article>
+          <article class="detail-card"><h3>Douăzeci de ingrediente, comenzi de rețete</h3><p>Douăzeci de ingrediente stau într-un panou de selecție, iar o bandă de rețete arată ordinea de urmat din catalogul de 166 de rețete.</p></article>
+          <article class="detail-card"><h3>Fundalurile se schimbă pe măsură ce urcați</h3><p>Două secvențe ilustrate de zece cadre, un oraș în aer și un orășel subacvatic, se îmbină una în alta pe măsură ce grămada crește.</p></article>
+          <article class="detail-card"><h3>Scoruri salvate și efecte sonore</h3><p>Cele mai bune punctaje și numărul de straturi se salvează pe dispozitiv, pe fiecare mod, iar versiunea conține șapte efecte sonore.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Direcție</div>
+        <h2 id="nextTitle">Starea versiunii Sandwich Stack și pașii următori</h2>
+        <p class="ug-lede">Încă nu există dată de lansare. Acestea sunt obiective ale proiectului, nu promisiuni.</p>
+        <ul class="ug-next">
+          <li>Primele versiuni pe dispozitive reale Android și iOS (încă nu există niciuna).</li>
+          <li>O trecere de text specifică sandvișurilor: catalogul de rețete mai are numele rețetelor doar în limba rusă.</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Imagini</div>
+        <h2 id="galleryTitle">Galerie de artă</h2>
+        <p class="ug-lede">Materiale de artă și interfață din proiectul Unity, nu capturi de joc.</p>
+        <div class="ug-gallery ug-gallery--3">
+          <figure class="ug-shot ug-shot--strip"><img src="../../assets/upcoming/sandwich-stack/gallery-03.webp" width="960" height="414" alt="Selectorul de ingrediente Sandwich Stack: un panou cu douăzeci de sloturi pentru ingrediente, pe o placă turcoaz uzată." loading="lazy" decoding="async"><figcaption>Selectorul de ingrediente</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-01.webp" width="540" height="987" alt="Fundal cu oraș în aer pentru Sandwich Stack: o platformă de alamă printre nori, folosită în spatele grămezii." loading="lazy" decoding="async"><figcaption>Fundal cu oraș în aer</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-02.webp" width="540" height="987" alt="Fundal cu orășelul subacvatic pentru Sandwich Stack: o punte de lemn și o tarabă de piață, folosite în spatele grămezii." loading="lazy" decoding="async"><figcaption>Fundal cu orășelul subacvatic</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-04.webp" width="960" height="768" alt="Grafica ingredientelor Sandwich Stack: douăzeci de plăci, inclusiv pateuri, legume, sosuri, bacon, ou și cartofi prăjiți." loading="lazy" decoding="async"><figcaption>Douăzeci de ingrediente</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Întrebări și răspunsuri</div>
+        <h2 id="faqTitle">Întrebări frecvente Sandwich Stack</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Ce fel de joc este Sandwich Stack?</h3><p>Un arcade de stivuire cu plasare prin atingere. Construiți sandvișuri strat cu strat, în patru moduri: Press Rush, Round 3D, Balance Tower 3D și Slice &amp; Fit 3D. Ideea de stivuire este comună cu jocul studioului <a href="burger-stack.html">Burger Stack</a>; aici straturile sunt ingrediente de sandviș, iar trei dintre moduri sunt 3D.</p></article>
+          <article class="detail-card"><h3>Este deja lansat Sandwich Stack și pentru ce platforme este?</h3><p>Este un prototip. Proiectul este pregătit pentru Android și iOS, dar încă nu există versiune publică, pagină în magazin sau dată de lansare.</p></article>
+          <article class="detail-card"><h3>Cine realizează Sandwich Stack și cum pot să-l urmăresc?</h3><p>Sandwich Stack este realizat de WillowinWorlds, un studio independent de jocuri mobile (vezi <a href="../index.html#games">jocurile principale</a>). Urmăriți WillowinWorlds pe canalele sociale de pe această pagină sau scrieți pe email <a href="mailto:willowinworlds@gmail.com?subject=Sandwich%20Stack">willowinworlds@gmail.com</a> pentru a cere noutăți despre Sandwich Stack.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Votare</div>
+        <h2 id="voteTitle">Urmăriți progresul Sandwich Stack și votați</h2>
+        <p class="ug-lede">Votarea se va deschide pe canalele studioului. Urmăriți WillowinWorlds ca să participați.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Urmăriți WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Alte prototipuri de stivuire din laborator</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>Aceeași stivuire cu o singură atingere, cu straturi de burger, bucătării subacvatice și din cer și nouă moduri.</span></a></li>
+        <li><a class="lab-related-link" href="stack-tower.html"><strong>Stack Tower</strong><span>Aceeași idee de stivuire cu o singură atingere, cu etaje lăsate dintr-o macara care se balansează.</span></a></li>
+        <li><a class="lab-related-link" href="lyamur.html"><strong>Lyamur</strong><span>Un alt prototip arcade casual: țintiți și trageți bile colorate înainte ca lanțul să ajungă la gaură.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Toate jocurile în dezvoltare</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Sandwich Stack este un joc WillowinWorlds în dezvoltare.</strong>
+        <span>Stivuiți straturi de sandviș cu o singură atingere, în patru moduri, inclusiv un turn de echilibru care poate cădea și un mod în care tăiați fiecare strat ca să se potrivească.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navigare subsol Sandwich Stack">
+        <a href="../index.html#in-development">Jocuri în dezvoltare</a>
+        <a href="../press-kit.html">Kit de presă</a>
+        <a href="../privacy.html">Confidențialitate</a>
+        <a href="../legal.html">Legal</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Sandwich%20Stack">Contact</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Urmăriți WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Distribuire</p>
+        <nav class="share-links" aria-label="Distribuire" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fro%2Fgames%2Fsandwich-stack.html&amp;text=Sandwich%20Stack%3A%20joc%20de%20stivuire%2C%20%C3%AEn%20dezvoltare%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fro%2Fgames%2Fsandwich-stack.html&amp;title=Sandwich%20Stack%3A%20joc%20de%20stivuire%2C%20%C3%AEn%20dezvoltare%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fro%2Fgames%2Fsandwich-stack.html&amp;text=Sandwich%20Stack%3A%20joc%20de%20stivuire%2C%20%C3%AEn%20dezvoltare%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fro%2Fgames%2Fsandwich-stack.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fro%2Fgames%2Fsandwich-stack.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Copiați linkul</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

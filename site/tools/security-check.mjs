@@ -3,7 +3,7 @@ import { createHash } from "node:crypto";
 import { exit } from "node:process";
 import { join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
-import { contactEmail, englishOnlyPages, siteOrigin } from "./localization-config.mjs";
+import { contactEmail, labPages, siteOrigin } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const cssFileNames = [
@@ -96,8 +96,8 @@ const htmlPages = {
   "games/candy-shop.html": await readFile(new URL("../games/candy-shop.html", import.meta.url), "utf8"),
   "games/paint-blasters.html": await readFile(new URL("../games/paint-blasters.html", import.meta.url), "utf8"),
   "games/ball-is-god.html": await readFile(new URL("../games/ball-is-god.html", import.meta.url), "utf8"),
-  // English-only prototype pages get the same CSP, inline-script and external-URL rules.
-  ...Object.fromEntries(await Promise.all(englishOnlyPages.map(async page => [page.file, await readFile(new URL(`../${page.file}`, import.meta.url), "utf8")]))),
+  // English lab prototype pages get the same CSP, inline-script and external-URL rules.
+  ...Object.fromEntries(await Promise.all(labPages.map(async page => [page.file, await readFile(new URL(`../${page.file}`, import.meta.url), "utf8")]))),
   "privacy.html": await readFile(new URL("../privacy.html", import.meta.url), "utf8"),
   "legal.html": await readFile(new URL("../legal.html", import.meta.url), "utf8"),
   "asset-usage.html": await readFile(new URL("../asset-usage.html", import.meta.url), "utf8"),

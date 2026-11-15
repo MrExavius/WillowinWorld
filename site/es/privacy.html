@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Cómo el sitio web WillowinWorlds maneja las preferencias de temas, borradores de contactos en la misma pestaña y consultas por correo electrónico sin scripts de análisis ni cookies de seguimiento.">
   <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
   <meta name="theme-color" content="#031735">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="WillowinWorlds">
@@ -39,6 +40,44 @@
   <link rel="stylesheet" href="../css/responsive-mobile.css?v=20261114-4">
   <link rel="stylesheet" href="../css/responsive-preferences.css">
   <link rel="stylesheet" href="../motion.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://willowinworlds.com/es/privacy.html#webpage",
+      "url": "https://willowinworlds.com/es/privacy.html",
+      "name": "Aviso de privacidad de WillowinWorlds",
+      "description": "Cómo el sitio web WillowinWorlds maneja las preferencias de temas, borradores de contactos en la misma pestaña y consultas por correo electrónico sin scripts de análisis ni cookies de seguimiento.",
+      "inLanguage": "es-ES",
+      "isPartOf": {
+        "@id": "https://willowinworlds.com/es/#website"
+      },
+      "about": {
+        "@id": "https://willowinworlds.com/#studio"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio del estudio",
+          "item": "https://willowinworlds.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Privacidad",
+          "item": "https://willowinworlds.com/es/privacy.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body data-theme="dark">
   <!-- locale-switcher:start -->
@@ -58,11 +97,13 @@
         </div>
         <div class="game-actions">
           <a class="btn btn-primary" href="index.html">Volver a WillowinWorlds</a>
+          <a class="btn btn-ghost" href="legal.html">Aviso legal</a>
+          <a class="btn btn-ghost" href="press-kit.html">Kit de prensa</a>
           <a class="btn btn-ghost" href="mailto:willowinworlds@gmail.com?subject=Pregunta%20de%20privacidad">Contacto de privacidad</a>
         </div>
       </section>
     </div>
   </main>
-  <script src="i18n-runtime.js?v=20261114"></script>
+  <script src="i18n-runtime.js?v=20261115"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { englishOnlyPages } from "./localization-config.mjs";
+import { labPages } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 const reportPath = join(siteRoot, "reports", "css-coverage.json");
@@ -53,7 +53,7 @@ const files = [
   "games/candy-shop.html",
   "games/paint-blasters.html",
   "games/ball-is-god.html",
-  ...englishOnlyPages.map(page => page.file)
+  ...labPages.map(page => page.file)
 ];
 
 let searchable = "";

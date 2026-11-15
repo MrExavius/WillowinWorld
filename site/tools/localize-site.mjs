@@ -1,11 +1,12 @@
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, relative } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import {
   alternateLinks,
   contactEmail,
-  englishOnlyPages,
+  labIntro,
+  labPages,
   localizationLastModified,
   localizedPages,
   locales,
@@ -52,6 +53,8 @@ const metaTranslationKeys = new Set([
 ]);
 
 const translatableAttributes = new Set(["aria-label", "aria-description", "title", "placeholder", "alt"]);
+// Text-only elements marked translate="no" (a game title split over several spans) are never translated.
+const noTranslateLeaf = /<([a-z][\w-]*)\b[^>]*\btranslate=["']no["'][^>]*>[^<]*<\/\1>/gi;
 const structuredDataSkippedKeys = new Set([
   "@context",
   "@type",
@@ -61,11 +64,17 @@ const structuredDataSkippedKeys = new Set([
   "image",
   "logo",
   "email",
+  "datePublished",
   "dateModified",
   "mainEntityOfPage",
   "itemListOrder",
   "numberOfItems",
-  "position"
+  "position",
+  "applicationCategory",
+  "operatingSystem",
+  "price",
+  "priceCurrency",
+  "availability"
 ]);
 
 const protectedExactText = new Set([
@@ -75,7 +84,8 @@ const protectedExactText = new Set([
   "Paint Blasters",
   "Ball is God?!",
   "Ball is God",
-  ...englishOnlyPages.map(page => page.name),
+  ...labPages.map(page => page.name),
+  "Render Software Studio",
   "Espa",
   "Water Drop",
   "Seed",
@@ -386,6 +396,9 @@ const explicitRuntimeStrings = Object.freeze([
   "Current status",
   "Latest development notes",
   "Published",
+  "In development",
+  "Genre",
+  labIntro,
   "Studio and press",
   "Studio home",
   "Press kit",
@@ -466,7 +479,7 @@ function shouldTranslate(value) {
   return true;
 }
 
-// Social and share rows are the only generated blocks that English-only pages carry.
+// Resets the generated social and share rows to their empty markers so they are rendered afresh.
 function emptyRenderedBlocks(html) {
   return html
     .replace(new RegExp(`${socialStart}[\\s\\S]*?${socialEnd}`, "g"), `${socialStart}${socialEnd}`)
@@ -517,6 +530,7 @@ function collectStrings(html) {
   visible = visible
     .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "")
     .replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi, "")
+    .replace(noTranslateLeaf, "")
     .replace(/<!--([\s\S]*?)-->/g, "");
 
   for (const match of visible.matchAll(/>\s*([^<>]*?\p{L}[^<>]*?)\s*</gu)) {
@@ -750,8 +764,12 @@ async function repairTranslations(locale, memory, requiredStrings) {
   return suspect.length;
 }
 
+function missingTranslations(memory, requiredStrings) {
+  return [...requiredStrings].filter(key => !memory.translations[key]);
+}
+
 async function fillMissingTranslations(locale, memory, requiredStrings) {
-  const missing = [...requiredStrings].filter(key => !memory.translations[key]);
+  const missing = missingTranslations(memory, requiredStrings);
   if (missing.length && !translateMissing) {
     throw new Error(`${locale.code}: ${missing.length} translations are missing; run node site/tools/localize-site.mjs --translate`);
   }
@@ -829,7 +847,7 @@ function setStructuredLanguage(value, locale) {
   const objects = Array.isArray(value?.["@graph"]) ? value["@graph"] : [value];
   objects.forEach(object => {
     const types = Array.isArray(object?.["@type"]) ? object["@type"] : [object?.["@type"]];
-    if (types.some(type => ["WebSite", "WebPage", "VideoGame"].includes(type))) {
+    if (types.some(type => ["WebSite", "WebPage", "CollectionPage", "VideoGame"].includes(type))) {
       object.inLanguage = locale.htmlLang;
     }
   });
@@ -847,11 +865,14 @@ function translateHtml(html, locale, translations) {
   });
 
   const protectedBlocks = [];
-  output = output.replace(/<(?:script|style|svg)\b[^>]*>[\s\S]*?<\/(?:script|style|svg)>/gi, block => {
+  const protectBlock = block => {
     const token = `___WILLOW_PROTECTED_${protectedBlocks.length}___`;
     protectedBlocks.push(block);
     return token;
-  });
+  };
+  output = output
+    .replace(/<(?:script|style|svg)\b[^>]*>[\s\S]*?<\/(?:script|style|svg)>/gi, protectBlock)
+    .replace(noTranslateLeaf, protectBlock);
 
   output = output.replace(/>\s*([^<>]*?\p{L}[^<>]*?)\s*</gu, match => {
     const open = match.indexOf(">") + 1;
@@ -930,7 +951,7 @@ function renderShareLinks(html, locale, page, translations = {}) {
     const url = encodeURIComponent(pageUrl(locale, page));
     const items = shareTargets
       .filter(target => hasFacebook || target.name !== "Facebook")
-      .map(target => `<li><a class="social-link share-link" href="${encodeHtml(target.href(url, encodeURIComponent(title)), true)}">${target.name}</a></li>`)
+      .map(target => `<li><a class="social-link share-link" href="${encodeHtml(target.href(url, encodeURIComponent(title)), true)}" rel="nofollow">${target.name}</a></li>`)
       .join("");
     const copy = `<li><button class="social-link share-link share-copy" type="button" data-share-copy>${translateValue("Copy link", translations)}</button></li>`;
     return `${openTag}${shareStart}<ul class="social-list share-list" role="list">${items}${copy}</ul><span class="visually-hidden" role="status" data-share-status></span>${shareEnd}`;
@@ -959,11 +980,12 @@ function addLocaleMetadata(html, locale, page, translations = {}) {
   return output;
 }
 
-const englishOnlyPaths = new Set(englishOnlyPages.map(page => page.path));
+// Flagship and lab game pages live in games/, one level below the site root.
+const isGamePage = page => page.kind === "game" || page.kind === "game-upcoming";
 
 function rewriteSharedResourceUrls(html, page) {
-  const depthPrefix = page.kind === "game" ? "../" : "../";
-  const gameSourcePrefix = page.kind === "game" ? "../" : "";
+  const depthPrefix = isGamePage(page) ? "../" : "../";
+  const gameSourcePrefix = isGamePage(page) ? "../" : "";
   const sharedRoots = ["assets/", "css/", "motion.css", "scripts.js", "game-theme.js", "favicon.ico", "manifest.webmanifest", "rss.xml", "theme-init.js", "404.css", "404.js", ".well-known/"];
 
   function rewriteOne(value) {
@@ -971,11 +993,11 @@ function rewriteSharedResourceUrls(html, page) {
     const queryIndex = value.search(/[?#]/);
     const path = queryIndex >= 0 ? value.slice(0, queryIndex) : value;
     const suffix = queryIndex >= 0 ? value.slice(queryIndex) : "";
-    if (page.kind === "game") {
+    if (isGamePage(page)) {
       if (sharedRoots.some(root => path.startsWith(`${gameSourcePrefix}${root}`))) return `${depthPrefix}${path}${suffix}`;
       return value;
     }
-    if (sharedRoots.some(root => path.startsWith(root)) || englishOnlyPaths.has(path)) return `${depthPrefix}${path}${suffix}`;
+    if (sharedRoots.some(root => path.startsWith(root))) return `${depthPrefix}${path}${suffix}`;
     if (path === "404.html") return `/404.html${suffix}`;
     return value;
   }
@@ -998,7 +1020,7 @@ function renderLocalizedPage(source, locale, page, translations) {
   output = renderShareLinks(output, locale, page, translations);
   output = addLocaleMetadata(output, locale, page, translations);
   output = rewriteSharedResourceUrls(output, page);
-  const runtimePath = `${page.kind === "game" ? "../i18n-runtime.js" : "i18n-runtime.js"}?v=${localizationLastModified.replaceAll("-", "")}`;
+  const runtimePath = `${isGamePage(page) ? "../i18n-runtime.js" : "i18n-runtime.js"}?v=${localizationLastModified.replaceAll("-", "")}`;
   output = output.replace(/(<\/body>)/i, `  <script src="${runtimePath}"></script>\n$1`);
   return `${output.trim()}\n`;
 }
@@ -1013,13 +1035,6 @@ function addStructuredLanguage(html, locale) {
 
 function renderEnglishPage(source, page) {
   return `${addLocaleMetadata(renderShareLinks(renderSocialLinks(addStructuredLanguage(source, sourceLocale), sourceLocale), sourceLocale, page), sourceLocale, page).trim()}\n`;
-}
-
-// English-only pages are hand-kept: only the generated social and share rows are rendered, nothing else is rewritten.
-function renderEnglishOnlyPage(html, page) {
-  const canonical = pageUrl(sourceLocale, page);
-  if (!html.includes(`<link rel="canonical" href="${canonical}">`)) throw new Error(`${page.file}: canonical link must be ${canonical}`);
-  return renderShareLinks(renderSocialLinks(emptyRenderedBlocks(html), sourceLocale), sourceLocale, page);
 }
 
 function renderSitemapAlternates(page) {
@@ -1037,11 +1052,14 @@ function renderLocalizedSitemap(existing) {
     clean = clean.replace(/(<urlset\b[^>]*)(>)/, `$1\n        xmlns:xhtml="http://www.w3.org/1999/xhtml"$2`);
   }
 
+  const pageLastmods = new Map();
   for (const page of localizedPages) {
     const canonical = pageUrl(sourceLocale, page);
     const block = (clean.match(/<url>[\s\S]*?<\/url>/g) || [])
       .find(candidate => candidate.includes(`<loc>${canonical}</loc>`));
     if (!block) throw new Error(`sitemap.xml: missing English canonical block for ${canonical}`);
+    const lastmodMatch = block.match(/<lastmod>([^<]+)<\/lastmod>/);
+    if (lastmodMatch) pageLastmods.set(page.file, lastmodMatch[1].trim());
     const enriched = block.replace(/(<loc>[^<]+<\/loc>)/, `$1\n${renderSitemapAlternates(page)}`);
     clean = clean.replace(block, enriched);
   }
@@ -1050,7 +1068,7 @@ function renderLocalizedSitemap(existing) {
     "  <url>",
     `    <loc>${pageUrl(locale, page)}</loc>`,
     renderSitemapAlternates(page),
-    `    <lastmod>${localizationLastModified}</lastmod>`,
+    `    <lastmod>${pageLastmods.get(page.file) || localizationLastModified}</lastmod>`,
     `    <changefreq>${page.changefreq}</changefreq>`,
     `    <priority>${page.priority}</priority>`,
     "  </url>"
@@ -1078,6 +1096,9 @@ function renderLocalizedLlms(locale, translations, updates) {
     const genres = game.genres.map(genre => escapeMarkdown(t(genre))).join(", ");
     return `- [${escapeMarkdown(game.name)}](${localizedPage(locale, game.file)}): ${escapeMarkdown(t(game.machineSummary))} ${escapeMarkdown(t("Genres"))}: ${genres}. ${escapeMarkdown(t("Current status"))}: ${escapeMarkdown(sentence(t(game.status)))}`;
   }).join("\n");
+  const prototypes = labPages
+    .map(page => `- [${escapeMarkdown(page.name)}](${localizedPage(locale, page.file)}): ${escapeMarkdown(t("Genre"))}: ${escapeMarkdown(t(page.genre))}. ${escapeMarkdown(t("Current status"))}: ${escapeMarkdown(sentence(t(page.status)))}`)
+    .join("\n");
   const devlogs = [...updates]
     .sort((left, right) => right.timestamp - left.timestamp)
     .map(update => `- [${escapeMarkdown(update.name)} - ${escapeMarkdown(t(update.title))}](${localizedPage(locale, update.file)}#devlog): ${escapeMarkdown(t("Published"))} ${update.published}. ${escapeMarkdown(t(update.summary))}`)
@@ -1092,6 +1113,12 @@ ${escapeMarkdown(t("Site language"))}: ${locale.label}. ${escapeMarkdown(t("Cano
 ## ${escapeMarkdown(t("Games"))}
 
 ${games}
+
+## ${escapeMarkdown(t("In development"))}
+
+${escapeMarkdown(t(labIntro))}
+
+${prototypes}
 
 ## ${escapeMarkdown(t("Latest development notes"))}
 
@@ -1226,68 +1253,76 @@ async function writeIfChanged(path, content) {
   return true;
 }
 
-const pageSources = new Map();
-const requiredStrings = new Set();
-for (const page of localizedPages) {
-  const source = stripGeneratedBlocks(await readFile(join(siteRoot, page.file), "utf8"));
-  pageSources.set(page.file, source);
-  const pageStrings = collectStrings(source);
-  pageStrings.forEach(value => requiredStrings.add(value));
-}
-const runtimeStrings = await collectRuntimeStrings();
-runtimeStrings.forEach(value => requiredStrings.add(value));
-
-const sourceHash = pageSourceHash(pageSources);
-await mkdir(translationRoot, { recursive: true });
-const memories = new Map();
-for (const locale of translatedLocales) {
-  const memory = await readTranslationMemory(locale, sourceHash);
-  if (refreshLocales.has(locale.code)) memory.translations = {};
-  for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
-    if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
-    memory.translations[source] = translation;
+// Every source string the generator needs a translation for, and the English page sources it renders from.
+async function collectRequiredStrings() {
+  const pageSources = new Map();
+  const requiredStrings = new Set();
+  for (const page of localizedPages) {
+    const source = stripGeneratedBlocks(await readFile(join(siteRoot, page.file), "utf8"));
+    pageSources.set(page.file, source);
+    const pageStrings = collectStrings(source);
+    pageStrings.forEach(value => requiredStrings.add(value));
   }
-  await fillMissingTranslations(locale, memory, requiredStrings);
-  for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
-    if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
-    memory.translations[source] = translation;
-  }
-  memory.translations = Object.fromEntries([...requiredStrings].sort((a, b) => a.localeCompare(b, "en")).map(key => [key, memory.translations[key]]));
-  const serialized = `${JSON.stringify({ locale: locale.code, sourceHash, translations: memory.translations }, null, 2)}\n`;
-  await writeIfChanged(memory.path, serialized);
-  memories.set(locale.code, memory.translations);
+  const runtimeStrings = await collectRuntimeStrings();
+  runtimeStrings.forEach(value => requiredStrings.add(value));
+  return { pageSources, requiredStrings, runtimeStrings };
 }
 
-const latestDevlogs = await loadLatestDevlogs();
+async function main() {
+  const { pageSources, requiredStrings, runtimeStrings } = await collectRequiredStrings();
 
-for (const page of localizedPages) {
-  const source = pageSources.get(page.file);
-  await writeIfChanged(join(siteRoot, page.file), renderEnglishPage(source, page));
+  const sourceHash = pageSourceHash(pageSources);
+  await mkdir(translationRoot, { recursive: true });
+  const memories = new Map();
   for (const locale of translatedLocales) {
-    const path = join(siteRoot, outputFile(locale, page));
-    await writeIfChanged(path, renderLocalizedPage(source, locale, page, memories.get(locale.code)));
+    const memory = await readTranslationMemory(locale, sourceHash);
+    if (refreshLocales.has(locale.code)) memory.translations = {};
+    for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
+      if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
+      memory.translations[source] = translation;
+    }
+    await fillMissingTranslations(locale, memory, requiredStrings);
+    for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
+      if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
+      memory.translations[source] = translation;
+    }
+    memory.translations = Object.fromEntries([...requiredStrings].sort((a, b) => a.localeCompare(b, "en")).map(key => [key, memory.translations[key]]));
+    const serialized = `${JSON.stringify({ locale: locale.code, sourceHash, translations: memory.translations }, null, 2)}\n`;
+    await writeIfChanged(memory.path, serialized);
+    memories.set(locale.code, memory.translations);
   }
+
+  const latestDevlogs = await loadLatestDevlogs();
+
+  for (const page of localizedPages) {
+    const source = pageSources.get(page.file);
+    await writeIfChanged(join(siteRoot, page.file), renderEnglishPage(source, page));
+    for (const locale of translatedLocales) {
+      const path = join(siteRoot, outputFile(locale, page));
+      await writeIfChanged(path, renderLocalizedPage(source, locale, page, memories.get(locale.code)));
+    }
+  }
+
+  for (const locale of translatedLocales) {
+    await writeIfChanged(
+      join(siteRoot, locale.code, "i18n-runtime.js"),
+      renderRuntimeScript(locale, memories.get(locale.code), runtimeStrings)
+    );
+    await writeIfChanged(
+      join(siteRoot, locale.code, "llms.txt"),
+      renderLocalizedLlms(locale, memories.get(locale.code), latestDevlogs)
+    );
+  }
+
+  await writeIfChanged(join(siteRoot, "languages.json"), renderLanguageIndex());
+
+  const sitemapPath = join(siteRoot, "sitemap.xml");
+  await writeIfChanged(sitemapPath, renderLocalizedSitemap(await readFile(sitemapPath, "utf8")));
+
+  console.log(`Localization ${checkOnly ? "check passed" : "generated"}: ${translatedLocales.length} locales × ${localizedPages.length} pages; ${requiredStrings.size} source strings.`);
 }
 
-for (const page of englishOnlyPages) {
-  const path = join(siteRoot, page.file);
-  await writeIfChanged(path, renderEnglishOnlyPage(await readFile(path, "utf8"), page));
-}
+// Imported (for example by a missing-strings report) the generator only exposes these helpers.
+if (import.meta.main !== false) await main();
 
-for (const locale of translatedLocales) {
-  await writeIfChanged(
-    join(siteRoot, locale.code, "i18n-runtime.js"),
-    renderRuntimeScript(locale, memories.get(locale.code), runtimeStrings)
-  );
-  await writeIfChanged(
-    join(siteRoot, locale.code, "llms.txt"),
-    renderLocalizedLlms(locale, memories.get(locale.code), latestDevlogs)
-  );
-}
-
-await writeIfChanged(join(siteRoot, "languages.json"), renderLanguageIndex());
-
-const sitemapPath = join(siteRoot, "sitemap.xml");
-await writeIfChanged(sitemapPath, renderLocalizedSitemap(await readFile(sitemapPath, "utf8")));
-
-console.log(`Localization ${checkOnly ? "check passed" : "generated"}: ${translatedLocales.length} locales × ${localizedPages.length} pages; ${requiredStrings.size} source strings.`);
+export { collectRequiredStrings, manualTranslationOverrides, missingTranslations, protectedTermsIn, readTranslationMemory, translationNeedsRepair };

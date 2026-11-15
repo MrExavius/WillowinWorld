@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="it">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Impilatore di torri a un tocco: una gru oscilla su ogni piano, tu scegli il momento della caduta e il voto dell'atterraggio determina punteggio, stabilità e serie. Prototipo iniziale.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#18262F" id="metaThemeColor" data-theme-dark="#18262F" data-theme-light="#EAF3FA">
+  <meta property="og:title" content="Stack Tower: impilatore di torri a un tocco in sviluppo">
+  <meta property="og:description" content="Impilatore di torri a un tocco: una gru oscilla su ogni piano, tu scegli il momento della caduta e il voto dell'atterraggio determina punteggio, stabilità e serie. Prototipo iniziale.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/stack-tower-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Scheda di Stack Tower con l'etichetta In sviluppo e un'icona di tre piani impilati su un cielo azzurro chiaro.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/it/games/stack-tower.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Stack Tower: impilatore di torri a un tocco in sviluppo">
+  <meta name="twitter:description" content="Impilatore di torri a un tocco: una gru oscilla su ogni piano, tu scegli il momento della caduta e il voto dell'atterraggio determina punteggio, stabilità e serie. Prototipo iniziale.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/stack-tower-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Scheda di Stack Tower con l'etichetta In sviluppo e un'icona di tre piani impilati su un cielo azzurro chiaro.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Stack Tower: impilatore di torri a un tocco in sviluppo | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/it/games/stack-tower.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/it/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "In sviluppo",
+          "item": "https://willowinworlds.com/it/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stack Tower",
+          "item": "https://willowinworlds.com/it/games/stack-tower.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/it/games/stack-tower.html#game",
+      "name": "Stack Tower",
+      "url": "https://willowinworlds.com/it/games/stack-tower.html",
+      "image": "https://willowinworlds.com/assets/upcoming/stack-tower/hero-1280.webp",
+      "description": "Fai cadere piani da una gru oscillante e costruisci una torre che resti in piedi.",
+      "keywords": "impilatore di torri, gioco a un tocco, gioco di impilamento, gru, gioco mobile in sviluppo",
+      "genre": [
+        "Impilatore di torri a un tocco"
+      ],
+      "gamePlatform": "Mobile",
+      "creativeWorkStatus": "Prototipo iniziale",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/it/games/stack-tower.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "it"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-stack-tower.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="stack-tower">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <div class="st-sky" aria-hidden="true">
+    <span class="st-sky-glow"></span>
+    <span class="st-sky-ghost"></span>
+    <span class="st-sky-clouds st-sky-clouds--far"></span>
+    <span class="st-sky-skyline"></span>
+    <span class="st-sky-crane st-sky-crane--l"><i></i></span>
+    <span class="st-sky-crane st-sky-crane--r"><i></i></span>
+    <span class="st-sky-clouds st-sky-clouds--near"></span>
+    <span class="st-sky-veil"></span>
+  </div>
+  <a class="skip-link" href="#main-content">Passa al contenuto principale</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/responsive/willowinworld-logo-64.webp" width="64" height="64" alt="" decoding="async">
+      <span><strong>Stack Tower</strong><small>Pagina del gioco WillowinWorlds</small></span>
+      <span class="visually-hidden">Torna a WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigazione nella pagina del gioco">
+      <a href="../index.html">Home dello studio</a>
+      <a href="#features">Caratteristiche</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Cartella stampa</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Metti in pausa le animazioni"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Metti in pausa le animazioni</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Cambia tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Lingua"><details><summary aria-label="Scegli la lingua"><span aria-hidden="true">IT</span></summary><div class="language-options"><a href="../../games/stack-tower.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/stack-tower.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/stack-tower.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/stack-tower.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/stack-tower.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/stack-tower.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/stack-tower.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/stack-tower.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/stack-tower.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/stack-tower.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/stack-tower.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/stack-tower.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/stack-tower.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/stack-tower.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/stack-tower.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/stack-tower.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/stack-tower.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/stack-tower.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/stack-tower.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="stack-tower.html" lang="it" hreflang="it" aria-current="page"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/stack-tower.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/stack-tower.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/stack-tower.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/stack-tower.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/stack-tower.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/stack-tower.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/stack-tower.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/stack-tower.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/stack-tower.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/stack-tower.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/stack-tower.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/stack-tower.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/stack-tower.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/stack-tower.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/stack-tower.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/stack-tower.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/stack-tower.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/stack-tower.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/stack-tower.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/stack-tower.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/stack-tower.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/stack-tower.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-frame">
+        <div class="ug-hero-layout">
+          <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Prototipo iniziale</span><span class="ug-genre">Impilatore di torri a un tocco</span></p>
+          <h1 id="heroTitle">Stack Tower</h1>
+          <p class="ug-tagline">Calcola il tempismo. Costruisci la torre.</p>
+          <p class="hero-copy">La gru fa oscillare ogni piano sopra la torre e tu scegli il momento in cui lasciarlo. La valutazione dell'atterraggio determina punteggio, stabilità e serie.</p>
+          <p class="ug-status-note">Il progetto Unity ha una scena: la gru, la caduta dei piani, le valutazioni degli atterraggi, la stabilità e un HUD, con un solo edificio da 20 piani da impilare. Menu, audio e progressione non sono ancora costruiti.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Segui lo sviluppo</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Tutti i giochi in sviluppo</a>
+          </div>
+        </div>
+          <figure class="st-figure">
+            <div class="st-stage" aria-hidden="true">
+              <div class="st-scene">
+                <span class="st-far"></span>
+                <span class="st-clouds"></span>
+                <span class="st-crane"><span class="st-mast"></span><span class="st-jib"></span><span class="st-cab"></span><span class="st-trolley"></span></span>
+                <div class="st-world">
+                  <div class="st-tower">
+                    <span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span>
+                  </div>
+                  <span class="st-floor st-floor--a st-drop st-drop--a"></span>
+                  <span class="st-floor st-floor--b st-drop st-drop--b"></span>
+                </div>
+                <div class="st-swing">
+                  <span class="st-cable"></span>
+                  <span class="st-hook"></span>
+                  <span class="st-hang st-hang--a"><span class="st-sling"></span><span class="st-floor st-floor--a"></span></span>
+                  <span class="st-hang st-hang--b"><span class="st-sling"></span><span class="st-floor st-floor--b"></span></span>
+                </div>
+                <span class="st-flash st-flash--a"></span>
+                <span class="st-flash st-flash--b"></span>
+                <span class="st-grade st-grade--a">Perfetto</span>
+                <span class="st-grade st-grade--b">Buono</span>
+              </div>
+            </div>
+            <figcaption>Ciclo illustrato: oscilla, lascia cadere, atterra. Disegnato in CSS, non filmato di gameplay.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Dati</div>
+        <h2 id="factsTitle">Dati del prototipo di Stack Tower</h2>
+        <dl class="game-page-facts">
+          <div><dt>Genere</dt><dd>Impilatore di torri a un tocco</dd></div>
+          <div><dt>Piattaforma di destinazione</dt><dd>Mobile, verticale (previsto)</dd></div>
+          <div><dt>Motore</dt><dd>Unity 6</dd></div>
+          <div><dt>Stato</dt><dd>Prototipo iniziale</dd></div>
+          <div><dt>Forma della sessione</dt><dd>Corse brevi da 1 a 3 minuti (obiettivo di design)</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Ciclo di gioco</div>
+        <h2 id="loopTitle">Come si gioca a Stack Tower</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Passaggio 01</span><strong>Guarda la gru</strong><p>Una gru fa oscillare il piano successivo come un pendolo. Diventa più veloce man mano che la torre cresce.</p></li>
+          <li><span>Passaggio 02</span><strong>Lascia cadere al momento giusto</strong><p>Un tocco, un clic o la pressione della barra spaziatrice rilascia il piano, che cade sulla torre.</p></li>
+          <li><span>Passaggio 03</span><strong>Leggi l'atterraggio</strong><p>Ogni atterraggio è valutato Perfetto, Buono, Rischioso, Cattivo o Mancato, e il voto muove stabilità, punteggio e serie.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Caratteristiche</div>
+        <h2 id="featuresTitle">Meccaniche di tempismo della gru ed equilibrio della torre</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Gru oscillante</h3><p>Una gru a pendolo porta ogni piano. Velocità, oscillazione e altezza di rilascio aumentano a ogni piano fino a un limite.</p></article>
+          <article class="detail-card"><h3>Cinque valutazioni di atterraggio</h3><p>Perfetto, Buono, Rischioso, Cattivo e Mancato dipendono da quanto un piano atterra fuori centro e da quanto si sovrappone a quello sotto, e ogni voto dà punti diversi.</p></article>
+          <article class="detail-card"><h3>Stabilità e inclinazione</h3><p>Gli atterraggi sbagliati erodono la stabilità e fanno inclinare la torre, mentre quelli buoni o perfetti la recuperano. Il primo edificio parte con 92 di stabilità e due vite.</p></article>
+          <article class="detail-card"><h3>Sei tipi di piano</h3><p>I piani Normale, Sicuro, Preciso, Pesante, Tecnico e Dorato differiscono per peso, velocità di oscillazione, valore del punteggio ed effetti sulla stabilità.</p></article>
+          <article class="detail-card"><h3>Piani di salvataggio e bonus</h3><p>Un piano Tecnico è offerto ogni sesto piano, o prima se la stabilità scende. Cinque atterraggi Perfetti di fila mettono in coda un piano Dorato.</p></article>
+          <article class="detail-card"><h3>Un primo edificio di 20 piani</h3><p>La Torre Residenziale mira a 20 piani. Una partita finisce con un edificio completato, un crollo o quando le vite finiscono.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Direzione</div>
+        <h2 id="nextTitle">Stato della build di Stack Tower e prossimi passi</h2>
+        <p class="ug-lede">Non c'è ancora una data di uscita. Questi sono obiettivi del progetto, non promesse.</p>
+        <ul class="ug-next">
+          <li>Altri edifici dopo la Torre Residenziale: una torre per uffici, un grattacielo, una casa di lusso e una torre record (documento di concept).</li>
+          <li>Livelli di campagna e una modalità record infinita; l'opzione infinita esiste già nei dati dell'edificio (documento di concept).</li>
+          <li>Progressione tra quartieri, con stelle per gli edifici completati (documento di concept).</li>
+          <li>Una schermata dei risultati più feedback sonoro e visivo per gli atterraggi (documento di concept).</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Domande e risposte</div>
+        <h2 id="faqTitle">FAQ di Stack Tower</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Che tipo di gioco è Stack Tower?</h3><p>Un gioco arcade in 2D a un tocco. Una gru fa oscillare ogni piano sopra la torre, lo lasci cadere e l'atterraggio viene valutato. Condivide l'idea di impilamento a tocco con quello dello studio <a href="burger-stack.html">Burger Stack</a> e <a href="sandwich-stack.html">Sandwich Stack</a>; questo è un lato con una gru, tipi di pavimento e un misuratore di stabilità.</p></article>
+          <article class="detail-card"><h3>Stack Tower è già uscito, e per quali piattaforme?</h3><p>Non ancora. È un prototipo iniziale realizzato per il mobile in verticale. Finora ha una scena e un edificio, e non ci sono build pubblica, pagina sullo store o data di uscita.</p></article>
+          <article class="detail-card"><h3>Chi realizza Stack Tower, e come posso seguirlo?</h3><p>Stack Tower è realizzato da WillowinWorlds, uno studio indipendente di giochi mobile (vedi il suo <a href="../index.html#games">giochi principali</a>). Segui WillowinWorlds sui social collegati da questa pagina, oppure scrivi a <a href="mailto:willowinworlds@gmail.com?subject=Stack%20Tower">willowinworlds@gmail.com</a> per chiedere aggiornamenti su Stack Tower.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Voto</div>
+        <h2 id="voteTitle">Segui gli aggiornamenti di Stack Tower e vota</h2>
+        <p class="ug-lede">Il voto si aprirà sui canali dello studio. Segui WillowinWorlds per prendere parte.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Segui WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Altri prototipi di impilamento in sviluppo</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>Stessa idea di impilamento a un tocco, con strati di hamburger e nove modalità.</span></a></li>
+        <li><a class="lab-related-link" href="sandwich-stack.html"><strong>Sandwich Stack</strong><span>Stessa idea di impilamento a un tocco, con strati di panino e quattro modalità.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Tutti i giochi in sviluppo</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Stack Tower è un gioco di WillowinWorlds in sviluppo.</strong>
+        <span>Fai cadere piani da una gru oscillante e costruisci una torre che resti in piedi.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navigazione nel footer di Stack Tower">
+        <a href="../index.html#in-development">Giochi in sviluppo</a>
+        <a href="../press-kit.html">Cartella stampa</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../legal.html">Note legali</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Stack%20Tower">Contatto</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Segui WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Condividi</p>
+        <nav class="share-links" aria-label="Condividi" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fit%2Fgames%2Fstack-tower.html&amp;text=Stack%20Tower%3A%20impilatore%20di%20torri%20a%20un%20tocco%20in%20sviluppo%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fit%2Fgames%2Fstack-tower.html&amp;title=Stack%20Tower%3A%20impilatore%20di%20torri%20a%20un%20tocco%20in%20sviluppo%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fit%2Fgames%2Fstack-tower.html&amp;text=Stack%20Tower%3A%20impilatore%20di%20torri%20a%20un%20tocco%20in%20sviluppo%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fit%2Fgames%2Fstack-tower.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fit%2Fgames%2Fstack-tower.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Copia link</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

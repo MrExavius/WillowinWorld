@@ -89,14 +89,13 @@
 </script>
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
-  <link rel="preload" href="../../assets/responsive/candy-shop-hero-640.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" imagesizes="(max-width: 760px) 82vw, 340px">
-  <link rel="preload" href="../../assets/responsive/candy-shop-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../../assets/responsive/candy-shop-icon-192.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/home-candy-card.css">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
   <link rel="stylesheet" href="../../css/candy-page.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
@@ -109,7 +108,7 @@
   <a class="skip-link" href="#game-main">Chuyển tới Candy Shop</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html">
-      <img src="../../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/candy-shop-icon-192.webp" width="192" height="192" alt="" decoding="async">
       <span><strong>Candy Shop</strong><small>Trang trò chơi WillowinWorlds</small></span>
       <span class="visually-hidden">Quay lại WillowinWorlds</span>
     </a>
@@ -171,7 +170,7 @@
           <div class="candy-device-frame">
             <div class="candy-stage candy-stage-showcase" aria-hidden="true">
               <div class="candy-bg-stack">
-                <img loading="lazy" class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
+                <img class="candy-bg candy-bg-1" src="../../assets/Candy%20Shop/site/back_glavnie_1.webp" width="640" height="1137" alt="" decoding="async">
                 <img loading="lazy" class="candy-bg candy-bg-2" src="../../assets/Candy%20Shop/site/back_glavnie_2.webp" width="640" height="1137" alt="" decoding="async">
                 <img loading="lazy" class="candy-bg candy-bg-3" src="../../assets/Candy%20Shop/site/back_glavnie_3.webp" width="640" height="1137" alt="" decoding="async">
                 <img loading="lazy" class="candy-bg candy-bg-4" src="../../assets/Candy%20Shop/site/back_glavnie_4.webp" width="640" height="1137" alt="" decoding="async">
@@ -182,7 +181,7 @@
                 <img loading="lazy" class="candy-bg candy-bg-9" src="../../assets/Candy%20Shop/site/back_glavnie_9.webp" width="640" height="1137" alt="" decoding="async">
                 <picture>
                   <source type="image/avif" srcset="../../assets/responsive/candy-shop-hero-480.avif 480w, ../../assets/responsive/candy-shop-hero-640.avif 640w" sizes="(max-width: 760px) 82vw, 340px">
-                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" fetchpriority="high" decoding="async">
+                  <img class="candy-bg candy-bg-10" src="../../assets/responsive/candy-shop-hero-640.webp" srcset="../../assets/responsive/candy-shop-hero-480.webp 480w, ../../assets/responsive/candy-shop-hero-640.webp 640w" sizes="(max-width: 760px) 82vw, 340px" width="640" height="1137" alt="" loading="lazy" decoding="async">
                 </picture>
               </div>
               <img loading="lazy" class="candy-piece candy-piece-left" src="../../assets/Candy%20Shop/site/candy_glavnie_1.webp" width="420" height="420" alt="" decoding="async">
@@ -190,7 +189,7 @@
               <img loading="lazy" class="candy-piece candy-piece-result" src="../../assets/Candy%20Shop/site/candy_glavnie_2.webp" width="420" height="420" alt="" decoding="async">
               <span class="candy-impact"></span>
             </div>
-            <img loading="lazy" class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Biểu tượng trò chơi Candy Shop với những viên kẹo tươi sáng" decoding="async">
+            <img class="candy-showcase-icon" src="../../assets/Candy%20Shop/site/icon_playmarket.webp" width="640" height="640" alt="Biểu tượng trò chơi Candy Shop với những viên kẹo tươi sáng" decoding="async">
             <span class="candy-preview-title">
               <small>Giải đố ghép vật lý thư giãn</small>
               <strong>Candy Shop</strong>
@@ -422,6 +421,7 @@
       </div>
       <nav class="game-footer-nav" aria-label="Điều hướng chân trang Candy Shop">
         <a href="../index.html#games">Tất cả trò chơi</a>
+        <a href="../index.html#in-development">Đang phát triển</a>
         <a href="../press-kit.html">Tài liệu báo chí</a>
         <a href="../privacy.html">Quyền riêng tư</a>
         <a href="../legal.html">Pháp lý</a>
@@ -433,11 +433,11 @@
       </div>
       <div class="share-block">
         <p class="social-title">Chia sẻ</p>
-        <nav class="share-links" aria-label="Chia sẻ" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html&amp;text=Candy%20Shop%20%7C%20Game%20gi%E1%BA%A3i%20%C4%91%E1%BB%91%20gh%C3%A9p%20k%E1%BA%B9o%20th%C6%B0%20gi%C3%A3n%20%C4%91ang%20ph%C3%A1t%20tri%E1%BB%83n">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html&amp;title=Candy%20Shop%20%7C%20Game%20gi%E1%BA%A3i%20%C4%91%E1%BB%91%20gh%C3%A9p%20k%E1%BA%B9o%20th%C6%B0%20gi%C3%A3n%20%C4%91ang%20ph%C3%A1t%20tri%E1%BB%83n">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html&amp;text=Candy%20Shop%20%7C%20Game%20gi%E1%BA%A3i%20%C4%91%E1%BB%91%20gh%C3%A9p%20k%E1%BA%B9o%20th%C6%B0%20gi%C3%A3n%20%C4%91ang%20ph%C3%A1t%20tri%E1%BB%83n">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Sao chép liên kết</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+        <nav class="share-links" aria-label="Chia sẻ" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html&amp;text=Candy%20Shop%20%7C%20Game%20gi%E1%BA%A3i%20%C4%91%E1%BB%91%20gh%C3%A9p%20k%E1%BA%B9o%20th%C6%B0%20gi%C3%A3n%20%C4%91ang%20ph%C3%A1t%20tri%E1%BB%83n" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html&amp;title=Candy%20Shop%20%7C%20Game%20gi%E1%BA%A3i%20%C4%91%E1%BB%91%20gh%C3%A9p%20k%E1%BA%B9o%20th%C6%B0%20gi%C3%A3n%20%C4%91ang%20ph%C3%A1t%20tri%E1%BB%83n" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html&amp;text=Candy%20Shop%20%7C%20Game%20gi%E1%BA%A3i%20%C4%91%E1%BB%91%20gh%C3%A9p%20k%E1%BA%B9o%20th%C6%B0%20gi%C3%A3n%20%C4%91ang%20ph%C3%A1t%20tri%E1%BB%83n" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fvi%2Fgames%2Fcandy-shop.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Sao chép liên kết</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
       </div>
     </div>
   </footer>
   <script src="../../game-theme.js?v=20261114-4"></script>
-  <script src="../i18n-runtime.js?v=20261114"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 export const siteOrigin = "https://willowinworlds.com";
 export const contactEmail = "willowinworlds@gmail.com";
-export const localizationLastModified = "2026-11-14";
+export const localizationLastModified = "2026-11-15";
 
 export const locales = Object.freeze([
   Object.freeze({
@@ -470,23 +470,10 @@ export const locales = Object.freeze([
 export const sourceLocale = locales[0];
 export const translatedLocales = Object.freeze(locales.slice(1));
 
-export const localizedPages = Object.freeze([
-  Object.freeze({ file: "index.html", path: "", kind: "home", priority: "1.0", changefreq: "weekly" }),
-  Object.freeze({ file: "games/nature-seed.html", path: "games/nature-seed.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
-  Object.freeze({ file: "games/candy-shop.html", path: "games/candy-shop.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
-  Object.freeze({ file: "games/paint-blasters.html", path: "games/paint-blasters.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
-  Object.freeze({ file: "games/ball-is-god.html", path: "games/ball-is-god.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
-  Object.freeze({ file: "press-kit.html", path: "press-kit.html", kind: "press", priority: "0.65", changefreq: "monthly" }),
-  Object.freeze({ file: "privacy.html", path: "privacy.html", kind: "policy", priority: "0.25", changefreq: "yearly" }),
-  Object.freeze({ file: "legal.html", path: "legal.html", kind: "policy", priority: "0.25", changefreq: "yearly" }),
-  Object.freeze({ file: "asset-usage.html", path: "asset-usage.html", kind: "policy", priority: "0.25", changefreq: "yearly" })
-]);
-
-// English-only pages: published once at the site root, never localized and no hreflang cluster.
-// Hand-kept <url> entries in sitemap.xml; name, genre and status feed llms.txt and must match the
-// "In development" cards on index.html (seo-check.mjs verifies both). Listed in card order:
-// status maturity, then name.
-export const englishOnlyPages = Object.freeze([
+// Lab prototypes: localized game pages like the flagship games, listed in card order (status maturity,
+// then name). name, genre and status feed llms.txt and must match the "In development" cards on
+// index.html (seo-check.mjs verifies both); game names stay untranslated.
+export const labPages = Object.freeze([
   ["blastblast", "BlastBlast!", "One-button physics runner", "Vertical slice"],
   ["vacuum-shot", "Vacuum Shot", "Endless recoil-flight arcade", "Vertical slice"],
   ["burger-stack", "Burger Stack", "Arcade stacking game", "Prototype"],
@@ -506,6 +493,22 @@ export const englishOnlyPages = Object.freeze([
   genre,
   status
 })));
+
+// Intro line of the "In development" section of llms.txt, in English and (translated) in every localized guide.
+export const labIntro = "Lab prototypes with their own page in every site language. None is released yet; scope and status may change.";
+
+export const localizedPages = Object.freeze([
+  Object.freeze({ file: "index.html", path: "", kind: "home", priority: "1.0", changefreq: "weekly" }),
+  Object.freeze({ file: "games/nature-seed.html", path: "games/nature-seed.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
+  Object.freeze({ file: "games/candy-shop.html", path: "games/candy-shop.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
+  Object.freeze({ file: "games/paint-blasters.html", path: "games/paint-blasters.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
+  Object.freeze({ file: "games/ball-is-god.html", path: "games/ball-is-god.html", kind: "game", priority: "0.85", changefreq: "weekly" }),
+  ...labPages,
+  Object.freeze({ file: "press-kit.html", path: "press-kit.html", kind: "press", priority: "0.65", changefreq: "monthly" }),
+  Object.freeze({ file: "privacy.html", path: "privacy.html", kind: "policy", priority: "0.25", changefreq: "yearly" }),
+  Object.freeze({ file: "legal.html", path: "legal.html", kind: "policy", priority: "0.25", changefreq: "yearly" }),
+  Object.freeze({ file: "asset-usage.html", path: "asset-usage.html", kind: "policy", priority: "0.25", changefreq: "yearly" })
+]);
 
 export function pageUrl(locale, page) {
   const localePrefix = locale.code === sourceLocale.code ? "" : `${locale.code}/`;

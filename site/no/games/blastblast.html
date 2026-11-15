@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="no" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Et fysikkløp med én knapp: pump slokkeapparatet på pilotens rygg, slipp strålen i riktig øyeblikk og ri på rekylen. Vertical slice, ingen offentlig build ennå.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#091326" id="metaThemeColor" data-theme-dark="#091326" data-theme-light="#FFF1E7">
+  <meta property="og:title" content="BlastBlast!: fysikkløp med én knapp under utvikling">
+  <meta property="og:description" content="Et fysikkløp med én knapp: pump slokkeapparatet på pilotens rygg, slipp strålen i riktig øyeblikk og ri på rekylen. Vertical slice, ingen offentlig build ennå.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/blastblast-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Kort for BlastBlast! med etiketten Under utvikling: en pilot med et rødt slokkeapparat på ryggen, og en gylden citadell.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/no/games/blastblast.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="no_NO">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="BlastBlast!: fysikkløp med én knapp under utvikling">
+  <meta name="twitter:description" content="Et fysikkløp med én knapp: pump slokkeapparatet på pilotens rygg, slipp strålen i riktig øyeblikk og ri på rekylen. Vertical slice, ingen offentlig build ennå.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/blastblast-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Kort for BlastBlast! med etiketten Under utvikling: en pilot med et rødt slokkeapparat på ryggen, og en gylden citadell.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>BlastBlast!: løp med én knapp under utvikling | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/no/games/blastblast.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/no/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Under utvikling",
+          "item": "https://willowinworlds.com/no/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "BlastBlast!",
+          "item": "https://willowinworlds.com/no/games/blastblast.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/no/games/blastblast.html#game",
+      "name": "BlastBlast!",
+      "url": "https://willowinworlds.com/no/games/blastblast.html",
+      "image": "https://willowinworlds.com/assets/upcoming/blastblast/hero-1280.webp",
+      "description": "Et endeløst løp med én knapp: pump et slokkeapparat, slipp strålen i riktig øyeblikk og ri på rekylen.",
+      "keywords": "løp med én knapp, fysikkløp, rekyl, endeløst løp, mobilspill under utvikling",
+      "genre": [
+        "Fysikk-runner med én knapp"
+      ],
+      "gamePlatform": "Mobil",
+      "creativeWorkStatus": "Vertical slice",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/no/games/blastblast.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "no"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/upcoming/blastblast/gallery-hazards.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-blastblast.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="blastblast">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">Hopp til hovedinnhold</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/blastblast/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>BlastBlast!</strong><small>WillowinWorlds spillside</small></span>
+      <span class="visually-hidden">Tilbake til WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Spillsidenavigering">
+      <a href="../index.html">Studioets forside</a>
+      <a href="#features">Funksjoner</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Pressesett</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Sett animasjoner på pause"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Sett animasjoner på pause</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Bytt tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Språk"><details><summary aria-label="Velg språk"><span aria-hidden="true">NO</span></summary><div class="language-options"><a href="../../games/blastblast.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/blastblast.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/blastblast.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/blastblast.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/blastblast.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/blastblast.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/blastblast.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/blastblast.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/blastblast.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/blastblast.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/blastblast.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/blastblast.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/blastblast.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/blastblast.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/blastblast.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/blastblast.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/blastblast.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/blastblast.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/blastblast.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/blastblast.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/blastblast.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/blastblast.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/blastblast.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="blastblast.html" lang="no" hreflang="no" aria-current="page"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/blastblast.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/blastblast.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/blastblast.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/blastblast.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/blastblast.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/blastblast.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/blastblast.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/blastblast.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/blastblast.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/blastblast.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/blastblast.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/blastblast.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/blastblast.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/blastblast.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/blastblast.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/blastblast.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/blastblast.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/blastblast.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <div class="bb-page-backdrop ambient-only" aria-hidden="true">
+      <div class="bb-bg-far"><img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async"></div>
+      <div class="bb-bg-glow"></div>
+      <div class="bb-bg-streaks"></div>
+      <div class="bb-bg-mid">
+        <div class="bb-bg-half"><span class="bb-bg-gate bb-bg-gate--a"></span><span class="bb-bg-gate bb-bg-gate--b"></span><span class="bb-bg-bar"></span><span class="bb-bg-pole"></span></div>
+        <div class="bb-bg-half"><span class="bb-bg-gate bb-bg-gate--a"></span><span class="bb-bg-gate bb-bg-gate--b"></span><span class="bb-bg-bar"></span><span class="bb-bg-pole"></span></div>
+      </div>
+      <div class="bb-bg-lane bb-bg-lane--shards">
+        <div class="bb-bg-debris">
+          <div class="bb-bg-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="bb-bg-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="bb-bg-lane bb-bg-lane--embers"><div class="bb-bg-embers"></div></div>
+    </div>
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="bb-hero-waves" aria-hidden="true"><span><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Vertical slice</span><span class="ug-genre">Fysikk-runner med én knapp</span></p>
+          <h1 id="heroTitle"><span class="bb-t1" translate="no">Blast</span><span class="bb-t2" translate="no">Blast!</span></h1>
+          <p class="ug-tagline">Pump. Slipp strålen. Ri på rekylen.</p>
+          <p class="hero-copy">Et endeløst løp med én knapp. Pump slokkeapparatet på pilotens rygg, slipp strålen i riktig øyeblikk og la rekylen bære deg så langt gassen rekker.</p>
+          <p class="ug-status-note">Unity-prosjektet har én scene for endeløst løp, en hovedmeny, en butikk og innstillinger. Android- og iOS-builds og testing på enhet gjenstår.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Følg utviklingen</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Alle spill under utvikling</a>
+          </div>
+        </div>
+        <figure class="ug-hero-media bb-stage">
+          <div class="bb-scene" role="img" aria-label="Illustrert scene: piloten hopper langs stiplede strålebuer, med en støtring ved hver stråle og runde porter å fly gjennom.">
+            <div class="bb-world" aria-hidden="true">
+              <div class="bb-world-track">
+                <img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" fetchpriority="high" decoding="async">
+                <img class="is-mirror" src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+                <img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+                <img class="is-mirror" src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+              </div>
+            </div>
+            <svg class="bb-arcs" viewBox="0 0 100 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M-11.5 50Q7.5 2 26.5 50"/>
+              <path d="M26.5 50Q45.5 2 64.5 50"/>
+              <path d="M64.5 50Q83.5 2 102.5 50"/>
+            </svg>
+            <span class="bb-gate bb-gate--one" aria-hidden="true"></span>
+            <span class="bb-gate bb-gate--two" aria-hidden="true"></span>
+            <div class="bb-streaks" aria-hidden="true"></div>
+            <div class="bb-hills" aria-hidden="true"></div>
+            <span class="bb-ring bb-ring--one" aria-hidden="true"></span>
+            <div class="bb-flight" aria-hidden="true">
+              <span class="bb-ring bb-ring--blast" aria-hidden="true"></span>
+              <div class="bb-lift"><img class="bb-pilot" src="../../assets/upcoming/blastblast/pilot-cutout.webp" width="360" height="343" alt="" decoding="async"></div>
+            </div>
+            <div class="bb-hud" aria-hidden="true">
+              <span class="bb-gauge"><i></i></span>
+              <span class="bb-rail"><b></b><b></b><b></b><b></b><b></b><b></b></span>
+            </div>
+          </div>
+          <figcaption>Scene bygget av opptak fra Unity-editoren. Bevegelsen er illustrativ, ikke spillopptak.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Fakta</div>
+        <h2 id="factsTitle">Fakta om BlastBlast!-prototypen</h2>
+        <dl class="game-page-facts">
+          <div><dt>Sjanger</dt><dd>Fysikk-runner med én knapp</dd></div>
+          <div><dt>Plattformmål</dt><dd>Android / iOS (planlagt)</dd></div>
+          <div><dt>Motor</dt><dd>Unity 6</dd></div>
+          <div><dt>Status</dt><dd>Vertical slice</dd></div>
+          <div><dt>Sesjonsform</dt><dd>Endeløse løp målt i avstand</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Spillsløyfe</div>
+        <h2 id="loopTitle">Slik spiller man BlastBlast!</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Trinn 01</span><strong>Pump</strong><p>Trykk raskt for å bygge trykk i slokkeapparatet. Over 100 % lekker tanken gass, og ved 130 % sprekker den.</p></li>
+          <li><span>Trinn 02</span><strong>Spreng</strong><p>Hold hvor som helst og slipp. Dysen sikter seg selv etter pilotens vertikale fart, og rekylen dytter piloten motsatt vei.</p></li>
+          <li><span>Trinn 03</span><strong>Tre gjennom portene</strong><p>Pass hver seksportssone for å vinne tilbake gass og bygge poengmultiplikatoren. Løpet slutter når gassen går tom eller tanken sprekker.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Funksjoner</div>
+        <h2 id="featuresTitle">Gjeldende mekanikk og farer i BlastBlast!</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Rekylflyging</h3><p>Tidspunkt og kraft for strålen er de eneste valgene i et løp. Det finnes ingen manuell sikting: gassen forlater langs den synlige dysen, og rekylen dytter motsatt vei.</p></article>
+          <article class="detail-card"><h3>Flytporter</h3><p>Valgfrie porter i seksportssoner gjenoppretter trygg gass og bygger en Flow-multiplikator. Et hardt støt eller en hoppet over port bryter den.</p></article>
+          <article class="detail-card"><h3>Endeløs canyon</h3><p>Terrenget kommer i 16 meter lange biter som settes sammen ende mot ende, med støtfangere, boostventiler, vindkorridorer og rotorer. Vanskelighetsgraden øker over de første 640 meterne.</p></article>
+          <article class="detail-card"><h3>Ti slokkeapparater</h3><p>Nye finisher låses opp ved beste avstander fra 250 til 100 000 meter. Hvert slokkeapparat har fire oppgraderingsspor (kapasitet, effektivitet, skyvekraft, stabilitet) opp til nivå 10.</p></article>
+          <article class="detail-card"><h3>HUD uten tekst</h3><p>Spillet bruker målere og symboler i stedet for tekst: trykkstreker, en ruteskinne med seks noder, en avstandsvisning og et gasskar.</p></article>
+          <article class="detail-card"><h3>Lokal fremdrift og innstillinger</h3><p>Fremdrift lagres på enheten med sikkerhetskopigjenoppretting. Innstillingene dekker volum, kamerarystelser, redusert bevegelse, kvalitet og et mål på 60 eller 120 FPS.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Retning</div>
+        <h2 id="nextTitle">Utviklingsfase og veikart for BlastBlast!</h2>
+        <p class="ug-lede">Det finnes ingen utgivelsesdato ennå. Dette er mål for prosjektet, ikke løfter.</p>
+        <ul class="ug-next">
+          <li>Android- og iOS-builds, med test av ytelse, berøringsinput og app-livssyklus på ekte enheter.</li>
+          <li>Komponert og lisensiert lyd som erstatter lyden som i dag lages i kode.</li>
+          <li>Testing med ekte spillere av første løp, pumpetretthet og vanskelighetskurven.</li>
+          <li>Tilgjengelighetskontroller for fargeskille, kamerarystelser og blinking.</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Bilder</div>
+        <h2 id="galleryTitle">Skjermbilder</h2>
+        <p class="ug-lede">Opptak fra Unity-editoren.</p>
+        <div class="ug-gallery ug-gallery--3">
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="Spillopptak for BlastBlast! foran en citadell: turkise runde porter, en rød-gull stangfare og svarte merkestolper." loading="lazy" decoding="async"><figcaption>Porter og farer</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-blast-arc.webp" width="960" height="540" alt="Spillopptak for BlastBlast! med et tynt strålespor og en liten rund port foran piloten." loading="lazy" decoding="async"><figcaption>Strålespor</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-main-menu.webp" width="960" height="540" alt="Hovedmenyen: BlastBlast!-tittelen, en forhåndsvisning av rødt slokkeapparat, og knapper for spill, tank og innstillinger." loading="lazy" decoding="async"><figcaption>Hovedmeny</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-pilot.webp" width="720" height="720" alt="BlastBlast!-piloten på nært hold: gul flydrakt, mørkt visir og en rød slokkeapparatpakke med slange." loading="lazy" decoding="async"><figcaption>Piloten</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Spørsmål og svar</div>
+        <h2 id="faqTitle">BlastBlast!-FAQ</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Hva slags spill er BlastBlast!?</h3><p>Et fysikkbasert endeløst løpespill med én knapp. Pump trykk inn i et slokkeapparat, slipp en stråle og bruk rekylen til å komme så langt du kan. <a href="vacuum-shot.html">Vacuum Shot</a> bruker samme grunnlag med en støvsuger og gjenstander i stedet for et slokkeapparat.</p></article>
+          <article class="detail-card"><h3>Er BlastBlast! ute ennå, og for hvilke plattformer er det?</h3><p>Ikke ennå. BlastBlast! er en vertical slice uten offentlig build og uten utgivelsesdato. Unity-prosjektet er satt opp for Android og iOS, men builds og testing på enheter gjenstår.</p></article>
+          <article class="detail-card"><h3>Hvem lager BlastBlast!, og hvordan kan jeg følge det?</h3><p>BlastBlast! lages av WillowinWorlds, et uavhengig studio for mobilspill (se <a href="../index.html#games">hovedspill</a>). Følg WillowinWorlds på sosiale kanaler som er lenket på denne siden, eller send e-post til <a href="mailto:willowinworlds@gmail.com?subject=BlastBlast%21">willowinworlds@gmail.com</a> for å få oppdateringer om BlastBlast!.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Stemming</div>
+        <h2 id="voteTitle">Følg fremdriften i BlastBlast! og stem</h2>
+        <p class="ug-lede">Stemming åpnes på studioets kanaler. Følg WillowinWorlds og si din mening.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Følg WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Andre arkade- og flyprototyper i laben</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="vacuum-shot.html"><strong>Vacuum Shot</strong><span>Samme grunnlag, en annen flyging: støvsug en gjenstand og skyt den i stedet for å pumpe et slokkeapparat.</span></a></li>
+        <li><a class="lab-related-link" href="alien-flying.html"><strong>Alien Flying</strong><span>Enda et flyspill under utvikling: en endeløs tunnelflyger med fremmede.</span></a></li>
+        <li><a class="lab-related-link" href="scooter-mechanic-simulator.html"><strong>Scooter Mechanic Simulator</strong><span>Enda en prototype på vertical slice-stadiet: inspiser og reparer elsparkesykler i et verksted.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Alle spill under utvikling</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>BlastBlast! er et WillowinWorlds-spill under utvikling.</strong>
+        <span>Et endeløst løp med én knapp: pump et slokkeapparat, slipp strålen i riktig øyeblikk og ri på rekylen.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Bunnnavigasjon for BlastBlast!">
+        <a href="../index.html#in-development">Spill under utvikling</a>
+        <a href="../press-kit.html">Pressesett</a>
+        <a href="../privacy.html">Personvern</a>
+        <a href="../legal.html">Juridisk</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=BlastBlast%21">Kontakt</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Følg WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Del</p>
+        <nav class="share-links" aria-label="Del" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fno%2Fgames%2Fblastblast.html&amp;text=BlastBlast!%3A%20l%C3%B8p%20med%20%C3%A9n%20knapp%20under%20utvikling%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fno%2Fgames%2Fblastblast.html&amp;title=BlastBlast!%3A%20l%C3%B8p%20med%20%C3%A9n%20knapp%20under%20utvikling%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fno%2Fgames%2Fblastblast.html&amp;text=BlastBlast!%3A%20l%C3%B8p%20med%20%C3%A9n%20knapp%20under%20utvikling%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fno%2Fgames%2Fblastblast.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fno%2Fgames%2Fblastblast.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Kopier lenke</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

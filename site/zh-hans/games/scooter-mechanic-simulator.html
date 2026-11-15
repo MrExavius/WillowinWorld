@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="zh-Hans">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一款面向 PC 的第一人称电动滑板车维修店游戏：把顾客的滑板车搬进车间，操作六个工位并获得报酬。原型阶段，尚无公开版本。">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#1C1F24" id="metaThemeColor" data-theme-dark="#1C1F24" data-theme-light="#EDF1F6">
+  <meta property="og:title" content="Scooter Mechanic Simulator：开发中的 PC 维修店游戏">
+  <meta property="og:description" content="一款面向 PC 的第一人称电动滑板车维修店游戏：把顾客的滑板车搬进车间，操作六个工位并获得报酬。原型阶段，尚无公开版本。">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/scooter-mechanic-simulator-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Scooter Mechanic Simulator 卡片，带有“开发中”标签：黄色台座上的白色电动滑板车。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/zh-hans/games/scooter-mechanic-simulator.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Scooter Mechanic Simulator：开发中的 PC 维修店游戏">
+  <meta name="twitter:description" content="一款面向 PC 的第一人称电动滑板车维修店游戏：把顾客的滑板车搬进车间，操作六个工位并获得报酬。原型阶段，尚无公开版本。">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/scooter-mechanic-simulator-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Scooter Mechanic Simulator 卡片，带有“开发中”标签：黄色台座上的白色电动滑板车。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Scooter Mechanic Simulator：维修店游戏 | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/zh-hans/games/scooter-mechanic-simulator.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/zh-hans/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "开发中",
+          "item": "https://willowinworlds.com/zh-hans/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Scooter Mechanic Simulator",
+          "item": "https://willowinworlds.com/zh-hans/games/scooter-mechanic-simulator.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/zh-hans/games/scooter-mechanic-simulator.html#game",
+      "name": "Scooter Mechanic Simulator",
+      "url": "https://willowinworlds.com/zh-hans/games/scooter-mechanic-simulator.html",
+      "image": "https://willowinworlds.com/assets/upcoming/scooter-mechanic-simulator/hero-1280.webp",
+      "description": "经营一家电动滑板车维修店：把顾客的车搬进来，操作各个工位，然后拿到报酬。",
+      "keywords": "维修店模拟器、滑板车维修游戏、第一人称模拟器、开发中的 PC 游戏",
+      "genre": [
+        "维修店模拟器"
+      ],
+      "gamePlatform": "PC",
+      "creativeWorkStatus": "原型",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/zh-hans/games/scooter-mechanic-simulator.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "contributor": {
+        "@type": "Organization",
+        "name": "Render Software Studio"
+      },
+      "inLanguage": "zh-Hans"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds 开发日志 RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp" as="image" type="image/webp" imagesrcset="../../assets/upcoming/scooter-mechanic-simulator/hero-720.webp 720w, ../../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp 1280w" imagesizes="(max-width: 920px) calc(100vw - 40px), 540px" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-scooter-mechanic-simulator.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="scooter-mechanic-simulator">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">跳至主要内容</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/scooter-mechanic-simulator/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>Scooter Mechanic Simulator</strong><small>WillowinWorlds 游戏页面</small></span>
+      <span class="visually-hidden">返回 WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="游戏页面导航">
+      <a href="../index.html">工作室首页</a>
+      <a href="#features">特点</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">新闻资料</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="暂停动画"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">暂停动画</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="语言"><details><summary aria-label="选择语言"><span aria-hidden="true">简</span></summary><div class="language-options"><a href="../../games/scooter-mechanic-simulator.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/scooter-mechanic-simulator.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/scooter-mechanic-simulator.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/scooter-mechanic-simulator.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/scooter-mechanic-simulator.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="scooter-mechanic-simulator.html" lang="zh-Hans" hreflang="zh-Hans" aria-current="page"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/scooter-mechanic-simulator.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/scooter-mechanic-simulator.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/scooter-mechanic-simulator.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/scooter-mechanic-simulator.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/scooter-mechanic-simulator.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/scooter-mechanic-simulator.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/scooter-mechanic-simulator.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/scooter-mechanic-simulator.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/scooter-mechanic-simulator.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/scooter-mechanic-simulator.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/scooter-mechanic-simulator.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/scooter-mechanic-simulator.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/scooter-mechanic-simulator.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/scooter-mechanic-simulator.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/scooter-mechanic-simulator.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/scooter-mechanic-simulator.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/scooter-mechanic-simulator.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/scooter-mechanic-simulator.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/scooter-mechanic-simulator.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/scooter-mechanic-simulator.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/scooter-mechanic-simulator.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/scooter-mechanic-simulator.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/scooter-mechanic-simulator.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/scooter-mechanic-simulator.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/scooter-mechanic-simulator.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/scooter-mechanic-simulator.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/scooter-mechanic-simulator.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/scooter-mechanic-simulator.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/scooter-mechanic-simulator.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/scooter-mechanic-simulator.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/scooter-mechanic-simulator.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/scooter-mechanic-simulator.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/scooter-mechanic-simulator.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/scooter-mechanic-simulator.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/scooter-mechanic-simulator.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/scooter-mechanic-simulator.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <div class="sm-world ambient-only" aria-hidden="true">
+      <svg class="sm-w-defs" width="0" height="0" focusable="false"><defs><linearGradient id="smBeam" x1="0" x2="1"><stop offset="0" stop-color="#ffd682" stop-opacity=".75"/><stop offset="1" stop-color="#ffd682" stop-opacity="0"/></linearGradient></defs></svg>
+      <span class="sm-w-sky"></span>
+      <span class="sm-w-city"></span>
+      <span class="sm-w-pools"></span>
+      <span class="sm-w-lamp"></span>
+      <div class="sm-w-clock">
+        <span class="sm-w-road">
+          <span class="sm-w-lane"></span>
+          <svg class="sm-w-sc sm-w-sc--far" viewBox="0 0 132 100" focusable="false">
+          <path class="sm-sc-beam" d="M114 68L204 40V96Z"/>
+          <g class="sm-sc-wheel sm-sc-wheel--r"><circle cx="24" cy="82" r="13"/><path d="M24 70v24M12 82h24M15.5 73.5l17 17M32.5 73.5l-17 17"/></g>
+          <g class="sm-sc-wheel sm-sc-wheel--f"><circle cx="108" cy="82" r="13"/><path d="M108 70v24M96 82h24M99.5 73.5l17 17M116.5 73.5l-17 17"/></g>
+          <path class="sm-sc-fender" d="M7 82A18 18 0 0 1 36 69"/>
+          <path class="sm-sc-deck" d="M16 71h94a4 4 0 0 1 0 8H16a4 4 0 0 1 0-8z"/>
+          <path class="sm-sc-stem" d="M104 78L94 16M84 15h21"/>
+          <path class="sm-sc-leg" d="M51 71L57 56L61 42M71 71L66 56L61 42"/>
+          <path class="sm-sc-torso" d="M61 42L68 23"/>
+          <path class="sm-sc-arm" d="M68 25L94 16"/>
+          <circle class="sm-sc-head" cx="70" cy="11" r="8"/>
+          <path class="sm-sc-helmet" d="M61.5 10a8.5 8.5 0 0 1 17 0z"/>
+          <circle class="sm-sc-tail" cx="9" cy="75" r="2.8"/>
+          </svg>
+          <svg class="sm-w-sc sm-w-sc--near" viewBox="0 0 132 100" focusable="false">
+          <path class="sm-sc-beam" d="M114 68L204 40V96Z"/>
+          <g class="sm-sc-wheel sm-sc-wheel--r"><circle cx="24" cy="82" r="13"/><path d="M24 70v24M12 82h24M15.5 73.5l17 17M32.5 73.5l-17 17"/></g>
+          <g class="sm-sc-wheel sm-sc-wheel--f"><circle cx="108" cy="82" r="13"/><path d="M108 70v24M96 82h24M99.5 73.5l17 17M116.5 73.5l-17 17"/></g>
+          <path class="sm-sc-fender" d="M7 82A18 18 0 0 1 36 69"/>
+          <path class="sm-sc-deck" d="M16 71h94a4 4 0 0 1 0 8H16a4 4 0 0 1 0-8z"/>
+          <path class="sm-sc-stem" d="M104 78L94 16M84 15h21"/>
+          <path class="sm-sc-leg" d="M51 71L57 56L61 42M71 71L66 56L61 42"/>
+          <path class="sm-sc-torso" d="M61 42L68 23"/>
+          <path class="sm-sc-arm" d="M68 25L94 16"/>
+          <circle class="sm-sc-head" cx="70" cy="11" r="8"/>
+          <path class="sm-sc-helmet" d="M61.5 10a8.5 8.5 0 0 1 17 0z"/>
+          <circle class="sm-sc-tail" cx="9" cy="75" r="2.8"/>
+          </svg>
+        </span>
+        <span class="sm-w-side sm-w-side--l">
+          <span class="sm-w-tool sm-w-tool--1"><svg viewBox="0 0 120 190" focusable="false"><path fill-rule="evenodd" d="M60 12a28 28 0 1 0 .01 0zM60 28l10.4 6v12L60 52l-10.4-6V34z"/><rect x="50" y="62" width="20" height="120" rx="10"/></svg></span>
+          <span class="sm-w-tool sm-w-tool--2"><svg viewBox="0 230 120 200" focusable="false"><rect x="48" y="236" width="24" height="72" rx="10"/><rect x="56" y="304" width="8" height="104"/><path d="M56 408h8l-1 16h-6z"/></svg></span>
+          <span class="sm-w-tool sm-w-tool--3"><svg viewBox="0 456 120 190" focusable="false"><rect x="28" y="466" width="64" height="26" rx="4"/><path d="M92 470l18-8v24l-18-6z"/><rect x="54" y="490" width="12" height="150" rx="5"/></svg></span>
+          <span class="sm-w-tool sm-w-tool--4"><svg viewBox="0 646 120 150" focusable="false"><path d="M44 676l12-24 4 8-6 18 4 96a7 7 0 0 1-14 0zM76 676l-12-24-4 8 6 18-4 96a7 7 0 0 0 14 0z"/></svg></span>
+          <svg class="sm-gear sm-gear--a" viewBox="-52 -52 104 104" focusable="false"><defs><path id="smG24" fill-rule="evenodd" d="M42.8 -4.3 L42.9 -3.4 L51.9 -2.3 L51.9 2.3 L42.9 3.4 L42.8 4.3 L42.4 6.9 L42.3 7.8 L50.8 11.2 L49.6 15.7 L40.5 14.4 L40.2 15.2 L39.2 17.7 L38.8 18.5 L46.1 24.0 L43.8 28.0 L35.4 24.4 L34.9 25.1 L33.3 27.2 L32.7 27.9 L38.4 35.1 L35.1 38.4 L27.9 32.7 L27.2 33.3 L25.1 34.9 L24.4 35.4 L28.0 43.8 L24.0 46.1 L18.5 38.8 L17.7 39.2 L15.2 40.2 L14.4 40.5 L15.7 49.6 L11.2 50.8 L7.8 42.3 L6.9 42.4 L4.3 42.8 L3.4 42.9 L2.3 51.9 L-2.3 51.9 L-3.4 42.9 L-4.3 42.8 L-6.9 42.4 L-7.8 42.3 L-11.2 50.8 L-15.7 49.6 L-14.4 40.5 L-15.2 40.2 L-17.7 39.2 L-18.5 38.8 L-24.0 46.1 L-28.0 43.8 L-24.4 35.4 L-25.1 34.9 L-27.2 33.3 L-27.9 32.7 L-35.1 38.4 L-38.4 35.1 L-32.7 27.9 L-33.3 27.2 L-34.9 25.1 L-35.4 24.4 L-43.8 28.0 L-46.1 24.0 L-38.8 18.5 L-39.2 17.7 L-40.2 15.2 L-40.5 14.4 L-49.6 15.7 L-50.8 11.2 L-42.3 7.8 L-42.4 6.9 L-42.8 4.3 L-42.9 3.4 L-51.9 2.3 L-51.9 -2.3 L-42.9 -3.4 L-42.8 -4.3 L-42.4 -6.9 L-42.3 -7.8 L-50.8 -11.2 L-49.6 -15.7 L-40.5 -14.4 L-40.2 -15.2 L-39.2 -17.7 L-38.8 -18.5 L-46.1 -24.0 L-43.8 -28.0 L-35.4 -24.4 L-34.9 -25.1 L-33.3 -27.2 L-32.7 -27.9 L-38.4 -35.1 L-35.1 -38.4 L-27.9 -32.7 L-27.2 -33.3 L-25.1 -34.9 L-24.4 -35.4 L-28.0 -43.8 L-24.0 -46.1 L-18.5 -38.8 L-17.7 -39.2 L-15.2 -40.2 L-14.4 -40.5 L-15.7 -49.6 L-11.2 -50.8 L-7.8 -42.3 L-6.9 -42.4 L-4.3 -42.8 L-3.4 -42.9 L-2.3 -51.9 L2.3 -51.9 L3.4 -42.9 L4.3 -42.8 L6.9 -42.4 L7.8 -42.3 L11.2 -50.8 L15.7 -49.6 L14.4 -40.5 L15.2 -40.2 L17.7 -39.2 L18.5 -38.8 L24.0 -46.1 L28.0 -43.8 L24.4 -35.4 L25.1 -34.9 L27.2 -33.3 L27.9 -32.7 L35.1 -38.4 L38.4 -35.1 L32.7 -27.9 L33.3 -27.2 L34.9 -25.1 L35.4 -24.4 L43.8 -28.0 L46.1 -24.0 L38.8 -18.5 L39.2 -17.7 L40.2 -15.2 L40.5 -14.4 L49.6 -15.7 L50.8 -11.2 L42.3 -7.8 L42.4 -6.9ZM7.0 0a7.0 7.0 0 1 0 -14.0 0a7.0 7.0 0 1 0 14.0 0zM30.2 12.5a8.6 8.6 0 1 0 -17.2 0a8.6 8.6 0 1 0 17.2 0zM8.6 24.9a8.6 8.6 0 1 0 -17.2 0a8.6 8.6 0 1 0 17.2 0zM-13.0 12.5a8.6 8.6 0 1 0 -17.2 0a8.6 8.6 0 1 0 17.2 0zM-13.0 -12.5a8.6 8.6 0 1 0 -17.2 0a8.6 8.6 0 1 0 17.2 0zM8.6 -24.9a8.6 8.6 0 1 0 -17.2 0a8.6 8.6 0 1 0 17.2 0zM30.2 -12.5a8.6 8.6 0 1 0 -17.2 0a8.6 8.6 0 1 0 17.2 0z"/><path id="smG12" fill-rule="evenodd" d="M18.6 -3.8 L18.8 -3.0 L27.9 -2.5 L27.9 2.5 L18.8 3.0 L18.6 3.8 L18.0 6.1 L17.7 6.8 L25.4 11.8 L22.9 16.1 L14.8 12.0 L14.3 12.6 L12.6 14.3 L12.0 14.8 L16.1 22.9 L11.8 25.4 L6.8 17.7 L6.1 18.0 L3.8 18.6 L3.0 18.8 L2.5 27.9 L-2.5 27.9 L-3.0 18.8 L-3.8 18.6 L-6.1 18.0 L-6.8 17.7 L-11.8 25.4 L-16.1 22.9 L-12.0 14.8 L-12.6 14.3 L-14.3 12.6 L-14.8 12.0 L-22.9 16.1 L-25.4 11.8 L-17.7 6.8 L-18.0 6.1 L-18.6 3.8 L-18.8 3.0 L-27.9 2.5 L-27.9 -2.5 L-18.8 -3.0 L-18.6 -3.8 L-18.0 -6.1 L-17.7 -6.8 L-25.4 -11.8 L-22.9 -16.1 L-14.8 -12.0 L-14.3 -12.6 L-12.6 -14.3 L-12.0 -14.8 L-16.1 -22.9 L-11.8 -25.4 L-6.8 -17.7 L-6.1 -18.0 L-3.8 -18.6 L-3.0 -18.8 L-2.5 -27.9 L2.5 -27.9 L3.0 -18.8 L3.8 -18.6 L6.1 -18.0 L6.8 -17.7 L11.8 -25.4 L16.1 -22.9 L12.0 -14.8 L12.6 -14.3 L14.3 -12.6 L14.8 -12.0 L22.9 -16.1 L25.4 -11.8 L17.7 -6.8 L18.0 -6.1ZM5.0 0a5.0 5.0 0 1 0 -10.0 0a5.0 5.0 0 1 0 10.0 0z"/><path id="smG6" fill-rule="evenodd" d="M6.5 -2.7 L6.7 -2.2 L15.7 -2.8 L15.7 2.8 L6.7 2.2 L6.5 2.7 L5.6 4.2 L5.2 4.7 L10.3 12.2 L5.4 15.1 L1.5 6.8 L0.9 6.9 L-0.9 6.9 L-1.5 6.8 L-5.4 15.1 L-10.3 12.2 L-5.2 4.7 L-5.6 4.2 L-6.5 2.7 L-6.7 2.2 L-15.7 2.8 L-15.7 -2.8 L-6.7 -2.2 L-6.5 -2.7 L-5.6 -4.2 L-5.2 -4.7 L-10.3 -12.2 L-5.4 -15.1 L-1.5 -6.8 L-0.9 -6.9 L0.9 -6.9 L1.5 -6.8 L5.4 -15.1 L10.3 -12.2 L5.2 -4.7 L5.6 -4.2ZM3.0 0a3.0 3.0 0 1 0 -6.0 0a3.0 3.0 0 1 0 6.0 0z"/></defs><use href="#smG24"/></svg>
+          <svg class="sm-gear sm-gear--b" viewBox="-28 -28 56 56" focusable="false"><use href="#smG12"/></svg>
+          <svg class="sm-gear sm-gear--c" viewBox="-16 -16 32 32" focusable="false"><use href="#smG6"/></svg>
+        </span>
+        <span class="sm-w-side sm-w-side--r">
+          <span class="sm-w-tool sm-w-tool--1"><svg viewBox="0 20 120 90" focusable="false"><circle cx="60" cy="64" r="30" fill="none" stroke="currentColor" stroke-width="12" stroke-dasharray="9 9.4"/><circle cx="60" cy="64" r="22"/></svg></span>
+          <span class="sm-w-tool sm-w-tool--2"><svg viewBox="0 130 120 200" focusable="false"><path fill-rule="evenodd" d="M60 160a24 24 0 1 0 .01 0zM60 172l9 5.2v10.4L60 193l-9-5.2v-10.4z"/><rect x="52" y="182" width="16" height="140" rx="8"/></svg></span>
+          <span class="sm-w-tool sm-w-tool--3"><svg viewBox="0 466 120 160" focusable="false"><rect x="46" y="470" width="28" height="120" rx="6"/><rect x="50" y="590" width="20" height="30"/></svg></span>
+          <span class="sm-w-tool sm-w-tool--4"><svg viewBox="0 340 120 105" focusable="false"><path fill-rule="evenodd" d="M60 372a26 26 0 1 0 .01 0zM60 384l10.4 6v12L60 408l-10.4-6v-12z"/><rect x="54" y="400" width="12" height="40"/></svg></span>
+          <svg class="sm-gear sm-gear--d" viewBox="-52 -52 104 104" focusable="false"><use href="#smG24"/></svg>
+          <svg class="sm-gear sm-gear--e" viewBox="-28 -28 56 56" focusable="false"><use href="#smG12"/></svg>
+        </span>
+      </div>
+      <span class="sm-w-veil"></span>
+      <span class="sm-w-dust"></span>
+      <span class="sm-w-spark"></span>
+    </div>
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">原型</span><span class="ug-genre">维修店模拟器</span></p>
+          <h1 id="heroTitle">Scooter Mechanic Simulator</h1>
+          <p class="ug-tagline">一个工位一个工位地修好滑板车。</p>
+          <p class="hero-copy">一款第一人称维修店原型。顾客的电动滑板车从城市驶来。每辆车需要一到两项工作，在正确的工位完成后即可获得报酬。</p>
+          <p class="ug-status-note">Unity 项目包含一个有六个工位、可拾取与骑行滑板车、昼夜循环、存档和十种语言菜单的车间场景。目前尚无公开版本。</p>
+          <p class="ug-collab">与 Render Software Studio 合作</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">关注开发进展</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">所有开发中的游戏</a>
+          </div>
+        </div>
+        <figure class="ug-hero-media sm-hero-media">
+          <div class="sm-bay">
+            <img class="sm-capture" src="../../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp" srcset="../../assets/upcoming/scooter-mechanic-simulator/hero-720.webp 720w, ../../assets/upcoming/scooter-mechanic-simulator/hero-1280.webp 1280w" sizes="(max-width: 920px) calc(100vw - 40px), 540px" width="1280" height="720" alt="Scooter Mechanic Simulator：黄色台座上的白色电动滑板车，前方是两栋黄色城市建筑。" fetchpriority="high" decoding="async">
+            <div class="sm-fx" aria-hidden="true">
+              <span class="sm-glow"></span>
+              <span class="sm-lamp"></span>
+              <span class="sm-ring"></span>
+              <span class="sm-scan"></span>
+            </div>
+          </div>
+          <div class="sm-dock" aria-hidden="true">
+            <div class="sm-gauge">
+              <svg viewBox="0 0 120 120" width="118" height="118" focusable="false">
+                <circle class="sm-gauge-face" cx="60" cy="62" r="57"/>
+                <path class="sm-gauge-ticks" pathLength="100" d="M21.1 100.9A55 55 0 1 1 98.9 100.9"/>
+                <path class="sm-gauge-track" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <path class="sm-zone sm-zone--low" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <path class="sm-zone sm-zone--ok" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <path class="sm-zone sm-zone--hot" pathLength="100" d="M28.9 93.1A44 44 0 1 1 91.1 93.1"/>
+                <g class="sm-needle"><path d="M60 68L57.4 62L60 22L62.6 62Z"/></g>
+                <circle class="sm-hub" cx="60" cy="62" r="5.5"/>
+              </svg>
+            </div>
+            <div class="sm-tool">
+              <svg viewBox="0 0 150 128" width="128" height="109" focusable="false">
+                <defs>
+                  <linearGradient id="smSteel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eef1f4"/><stop offset="0.5" stop-color="#a9b0b8"/><stop offset="1" stop-color="#6d747c"/></linearGradient>
+                  <linearGradient id="smBrass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe680"/><stop offset="1" stop-color="#d9a400"/></linearGradient>
+                </defs>
+                <g class="sm-wrench">
+                  <path class="sm-steel" d="M50 56H134a8 8 0 0 1 0 16H50Z"/>
+                  <path class="sm-shine" d="M70 61H130"/>
+                  <circle class="sm-hole" cx="132" cy="64" r="3"/>
+                  <circle class="sm-steel" cx="50" cy="64" r="32"/>
+                </g>
+                <g class="sm-nut">
+                  <polygon class="sm-hex" points="50,40 70.8,52 70.8,76 50,88 29.2,76 29.2,52"/>
+                  <circle class="sm-hole" cx="50" cy="64" r="8.5"/>
+                </g>
+              </svg>
+            </div>
+            <div class="sm-card">
+              <p class="sm-card-head"><span>维修卡</span><b>2 项任务</b></p>
+              <ol>
+                <li class="sm-job sm-job--done"><i></i>平衡</li>
+                <li class="sm-job"><i></i>油漆</li>
+              </ol>
+            </div>
+          </div>
+          <figcaption>来自 Unity 项目的截图。下方的仪表、扳手和维修卡是动画插图，并非游戏内界面。</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">资料</div>
+        <h2 id="factsTitle">Scooter Mechanic Simulator 原型信息</h2>
+        <dl class="game-page-facts">
+          <div><dt>类型</dt><dd>维修店模拟器</dd></div>
+          <div><dt>平台目标</dt><dd>PC（键盘与鼠标操作）</dd></div>
+          <div><dt>引擎</dt><dd>Unity 6</dd></div>
+          <div><dt>制作工具：</dt><dd>Render Software Studio（合作工作室）</dd></div>
+          <div><dt>状态</dt><dd>原型</dd></div>
+          <div><dt>单次游玩形式</dt><dd>十分钟的工坊日</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">玩法循环</div>
+        <h2 id="loopTitle">Scooter Mechanic Simulator 的玩法</h2>
+        <ol class="update-list ug-steps">
+          <li><span>步骤01</span><strong>滑板车抵达</strong><p>顾客的滑板车从城市的四个入口驶来，停在接待线旁。拿起一辆，搬进车库。</p></li>
+          <li><span>步骤02</span><strong>完成任务</strong><p>每辆滑板车都有一张含一到两项工作的维修卡。走到对应工位，完成其中的简短实操任务。</p></li>
+          <li><span>步骤03</span><strong>拿到报酬，把车搬出去</strong><p>最后一项完成的任务会结算报酬，滑板车即可搬出车库交还。HUD 会显示日期、你的金钱和声誉。</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">特点</div>
+        <h2 id="featuresTitle">工坊维修与检查机制</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>六个工位</h3><p>清洗、平衡、安装、拆解、喷漆和试驾等工位，都会用鼠标和键盘把一次维修变成简短任务。</p></article>
+          <article class="detail-card"><h3>滑板车从城市驶来</h3><p>顾客的滑板车从四个入口驶入接待线，队伍满了之后，多余的车会堆积在一旁。</p></article>
+          <article class="detail-card"><h3>搬运与骑行</h3><p>使用 E 键可拾取并搬运滑板车，或骑行：Q 上车，A 和 D 转向，空格键蹬地，S 刹车。</p></article>
+          <article class="detail-card"><h3>维修卡</h3><p>每辆滑板车都有一张一到两步的维修卡，工位只接受卡片要求的步骤。</p></article>
+          <article class="detail-card"><h3>昼夜循环与存档</h3><p>一个工坊日持续十个真实分钟。进度保存到存档位，每两天自动存档一次。</p></article>
+          <article class="detail-card"><h3>十种语言菜单</h3><p>主菜单与选项提供十种语言、难度设置，以及独立的音乐与音效音量。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">方向</div>
+        <h2 id="nextTitle">Scooter Mechanic Simulator 版本状态与后续步骤</h2>
+        <p class="ug-lede">目前没有发售日期。这些是项目目标，并非承诺。</p>
+        <ul class="ug-next">
+          <li>真正的破产界面：目前游戏只显示一条通知。</li>
+          <li>技能与物品栏：两个系统都以基础代码的形式存在，目前还不属于游戏循环。</li>
+          <li>零件、区域和滑板车数据资源：数据类型已存在，资源尚未制作。</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">图片</div>
+        <h2 id="galleryTitle">截图</h2>
+        <p class="ug-lede">来自 Unity 项目的截图。</p>
+        <div class="ug-gallery ug-gallery--3">
+          <figure class="ug-shot"><img src="../../assets/upcoming/scooter-mechanic-simulator/gallery-01.webp" width="960" height="540" alt="Scooter Mechanic Simulator：从街上看到的 Scooter Service 车库，顾客的滑板车整齐停放在门口。" loading="lazy" decoding="async"><figcaption>从街上看到的车库</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/scooter-mechanic-simulator/gallery-02.webp" width="960" height="540" alt="有围墙车间院子的总览，院内有工位，院外停放着许多彩色滑板车。" loading="lazy" decoding="async"><figcaption>工坊院子总览</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/scooter-mechanic-simulator/gallery-03.webp" width="900" height="506" alt="从上方俯视车间院子外街头广场上的一堆电动滑板车。" loading="lazy" decoding="async"><figcaption>院外的滑板车堆</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">问答</div>
+        <h2 id="faqTitle">Scooter Mechanic Simulator 常见问题</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Scooter Mechanic Simulator 是哪种游戏？</h3><p>一款第一人称维修店游戏。你把顾客的电动滑板车推进车库，在六个工位完成简短的实操任务，完成的维修任务会获得报酬。WillowinWorlds 与 Render Software Studio 合作开发本作。</p></article>
+          <article class="detail-card"><h3>Scooter Mechanic Simulator 现在发售了吗？支持哪些平台？</h3><p>这是一个 PC 原型，使用键盘和鼠标操作。目前尚无公开版本、商店页面或发售日期。</p></article>
+          <article class="detail-card"><h3>谁制作了 Scooter Mechanic Simulator，我如何关注它？</h3><p>Scooter Mechanic Simulator 由 WillowinWorlds 与 Render Software Studio 合作制作。WillowinWorlds 是一家独立游戏工作室，参见其 <a href="../index.html#games">主要游戏</a>。请在本页链接的社交渠道关注 WillowinWorlds，或发邮件至 <a href="mailto:willowinworlds@gmail.com?subject=Scooter%20Mechanic%20Simulator">willowinworlds@gmail.com</a> 以获取 Scooter Mechanic Simulator 的更新信息。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">投票</div>
+        <h2 id="voteTitle">关注 Scooter Mechanic Simulator 的更新并投票</h2>
+        <p class="ug-lede">投票将在工作室的渠道开放。关注 WillowinWorlds，即可参与其中。</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">关注 WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">其他工坊与垂直切片原型</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="vacuum-shot.html"><strong>Vacuum Shot</strong><span>另一款原型：已进入垂直切片阶段的无尽后坐力飞行街机。</span></a></li>
+        <li><a class="lab-related-link" href="blastblast.html"><strong>BlastBlast!</strong><span>另一款原型：已进入垂直切片阶段的单键物理跑酷。</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">所有开发中的游戏</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Scooter Mechanic Simulator 由 WillowinWorlds 与 Render Software Studio 合作开发中。</strong>
+        <span>经营一家电动滑板车维修店：把顾客的车搬进来，操作各个工位，然后拿到报酬。</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Scooter Mechanic Simulator 页脚导航">
+        <a href="../index.html#in-development">开发中的游戏</a>
+        <a href="../press-kit.html">新闻资料</a>
+        <a href="../privacy.html">隐私</a>
+        <a href="../legal.html">法律</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Scooter%20Mechanic%20Simulator">联系方式</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">关注 WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">分享</p>
+        <nav class="share-links" aria-label="分享" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fscooter-mechanic-simulator.html&amp;text=Scooter%20Mechanic%20Simulator%EF%BC%9A%E7%BB%B4%E4%BF%AE%E5%BA%97%E6%B8%B8%E6%88%8F%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fscooter-mechanic-simulator.html&amp;title=Scooter%20Mechanic%20Simulator%EF%BC%9A%E7%BB%B4%E4%BF%AE%E5%BA%97%E6%B8%B8%E6%88%8F%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fscooter-mechanic-simulator.html&amp;text=Scooter%20Mechanic%20Simulator%EF%BC%9A%E7%BB%B4%E4%BF%AE%E5%BA%97%E6%B8%B8%E6%88%8F%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fscooter-mechanic-simulator.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fscooter-mechanic-simulator.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>复制链接</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

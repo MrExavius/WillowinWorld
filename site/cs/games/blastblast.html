@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="cs">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fyzikální runner na jedno tlačítko: napumpujte hasicí přístroj na pilotových zádech, vypalte ve správný okamžik a jeďte na zpětném rázu. Vertical slice, zatím žádná veřejná verze.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#091326" id="metaThemeColor" data-theme-dark="#091326" data-theme-light="#FFF1E7">
+  <meta property="og:title" content="BlastBlast!: fyzikální runner na jedno tlačítko ve vývoji">
+  <meta property="og:description" content="Fyzikální runner na jedno tlačítko: napumpujte hasicí přístroj na pilotových zádech, vypalte ve správný okamžik a jeďte na zpětném rázu. Vertical slice, zatím žádná veřejná verze.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/blastblast-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Karta BlastBlast! se štítkem Ve vývoji: pilot s červeným hasicím přístrojem na zádech a zlatá citadela.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/cs/games/blastblast.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="cs_CZ">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="BlastBlast!: fyzikální runner na jedno tlačítko ve vývoji">
+  <meta name="twitter:description" content="Fyzikální runner na jedno tlačítko: napumpujte hasicí přístroj na pilotových zádech, vypalte ve správný okamžik a jeďte na zpětném rázu. Vertical slice, zatím žádná veřejná verze.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/blastblast-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Karta BlastBlast! se štítkem Ve vývoji: pilot s červeným hasicím přístrojem na zádech a zlatá citadela.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>BlastBlast!: runner na jedno tlačítko ve vývoji | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/cs/games/blastblast.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/cs/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ve vývoji",
+          "item": "https://willowinworlds.com/cs/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "BlastBlast!",
+          "item": "https://willowinworlds.com/cs/games/blastblast.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/cs/games/blastblast.html#game",
+      "name": "BlastBlast!",
+      "url": "https://willowinworlds.com/cs/games/blastblast.html",
+      "image": "https://willowinworlds.com/assets/upcoming/blastblast/hero-1280.webp",
+      "description": "Nekonečný běh na jedno tlačítko: napumpujte hasicí přístroj, vypalte ve správný okamžik a jeďte na zpětném rázu.",
+      "keywords": "runner na jedno tlačítko, fyzikální runner, zpětný ráz, nekonečný runner, mobilní hra ve vývoji",
+      "genre": [
+        "Fyzikální runner na jedno tlačítko"
+      ],
+      "gamePlatform": "Mobil",
+      "creativeWorkStatus": "Vertical slice",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/cs/games/blastblast.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "cs"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/upcoming/blastblast/gallery-hazards.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-blastblast.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="blastblast">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">Přejít na hlavní obsah</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/blastblast/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>BlastBlast!</strong><small>Herní stránka WillowinWorlds</small></span>
+      <span class="visually-hidden">Zpět na WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigace na stránce hry">
+      <a href="../index.html">Domovská stránka studia</a>
+      <a href="#features">Vlastnosti</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pozastavit animace"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pozastavit animace</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Přepnout téma">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Jazyk"><details><summary aria-label="Vyberte jazyk"><span aria-hidden="true">CS</span></summary><div class="language-options"><a href="../../games/blastblast.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/blastblast.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/blastblast.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/blastblast.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/blastblast.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/blastblast.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/blastblast.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="blastblast.html" lang="cs" hreflang="cs" aria-current="page"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/blastblast.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/blastblast.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/blastblast.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/blastblast.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/blastblast.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/blastblast.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/blastblast.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/blastblast.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/blastblast.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/blastblast.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/blastblast.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/blastblast.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/blastblast.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/blastblast.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/blastblast.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/blastblast.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/blastblast.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/blastblast.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/blastblast.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/blastblast.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/blastblast.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/blastblast.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/blastblast.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/blastblast.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/blastblast.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/blastblast.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/blastblast.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/blastblast.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/blastblast.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/blastblast.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/blastblast.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/blastblast.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/blastblast.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/blastblast.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <div class="bb-page-backdrop ambient-only" aria-hidden="true">
+      <div class="bb-bg-far"><img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async"></div>
+      <div class="bb-bg-glow"></div>
+      <div class="bb-bg-streaks"></div>
+      <div class="bb-bg-mid">
+        <div class="bb-bg-half"><span class="bb-bg-gate bb-bg-gate--a"></span><span class="bb-bg-gate bb-bg-gate--b"></span><span class="bb-bg-bar"></span><span class="bb-bg-pole"></span></div>
+        <div class="bb-bg-half"><span class="bb-bg-gate bb-bg-gate--a"></span><span class="bb-bg-gate bb-bg-gate--b"></span><span class="bb-bg-bar"></span><span class="bb-bg-pole"></span></div>
+      </div>
+      <div class="bb-bg-lane bb-bg-lane--shards">
+        <div class="bb-bg-debris">
+          <div class="bb-bg-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="bb-bg-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+      <div class="bb-bg-lane bb-bg-lane--embers"><div class="bb-bg-embers"></div></div>
+    </div>
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="bb-hero-waves" aria-hidden="true"><span><i></i><i></i><i></i><i></i><i></i></span></div>
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Vertical slice</span><span class="ug-genre">Fyzikální runner na jedno tlačítko</span></p>
+          <h1 id="heroTitle"><span class="bb-t1" translate="no">Blast</span><span class="bb-t2" translate="no">Blast!</span></h1>
+          <p class="ug-tagline">Pumpujte. Vystřelte. Jeďte na zpětném rázu.</p>
+          <p class="hero-copy">Nekonečný běh na jedno tlačítko. Napumpujte hasicí přístroj na pilotových zádech, vypalte ve správný okamžik a nechte zpětný ráz nést vás tak daleko, jak dlouho vydrží plyn.</p>
+          <p class="ug-status-note">Projekt Unity má jednu scénu nekonečného běhu, hlavní menu, obchod a nastavení. Sestavení pro Android a iOS a testování na zařízeních jsou ještě před námi.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Sledujte vývoj</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Všechny hry ve vývoji</a>
+          </div>
+        </div>
+        <figure class="ug-hero-media bb-stage">
+          <div class="bb-scene" role="img" aria-label="Ilustrovaná scéna: pilot přeskakuje po přerušovaných výstřelových obloucích, s rázovým kruhem u každého výstřelu a kulatými branami, kterými se prolétá.">
+            <div class="bb-world" aria-hidden="true">
+              <div class="bb-world-track">
+                <img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" fetchpriority="high" decoding="async">
+                <img class="is-mirror" src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+                <img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+                <img class="is-mirror" src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="" decoding="async">
+              </div>
+            </div>
+            <svg class="bb-arcs" viewBox="0 0 100 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+              <path d="M-11.5 50Q7.5 2 26.5 50"/>
+              <path d="M26.5 50Q45.5 2 64.5 50"/>
+              <path d="M64.5 50Q83.5 2 102.5 50"/>
+            </svg>
+            <span class="bb-gate bb-gate--one" aria-hidden="true"></span>
+            <span class="bb-gate bb-gate--two" aria-hidden="true"></span>
+            <div class="bb-streaks" aria-hidden="true"></div>
+            <div class="bb-hills" aria-hidden="true"></div>
+            <span class="bb-ring bb-ring--one" aria-hidden="true"></span>
+            <div class="bb-flight" aria-hidden="true">
+              <span class="bb-ring bb-ring--blast" aria-hidden="true"></span>
+              <div class="bb-lift"><img class="bb-pilot" src="../../assets/upcoming/blastblast/pilot-cutout.webp" width="360" height="343" alt="" decoding="async"></div>
+            </div>
+            <div class="bb-hud" aria-hidden="true">
+              <span class="bb-gauge"><i></i></span>
+              <span class="bb-rail"><b></b><b></b><b></b><b></b><b></b><b></b></span>
+            </div>
+          </div>
+          <figcaption>Scéna vytvořena ze záznamů z editoru Unity. Pohyb je ilustrativní, není to záznam hry.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Fakta</div>
+        <h2 id="factsTitle">Fakta o prototypu BlastBlast!</h2>
+        <dl class="game-page-facts">
+          <div><dt>Žánr</dt><dd>Fyzikální runner na jedno tlačítko</dd></div>
+          <div><dt>Cílová platforma</dt><dd>Android / iOS (plánováno)</dd></div>
+          <div><dt>Engine</dt><dd>Unity 6</dd></div>
+          <div><dt>Stav</dt><dd>Vertical slice</dd></div>
+          <div><dt>Formát relace</dt><dd>Nekonečné běhy měřené vzdáleností</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Herní smyčka</div>
+        <h2 id="loopTitle">Jak se hraje BlastBlast!</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Krok 01</span><strong>Pumpujte</strong><p>Rychle klepejte, aby tlak v hasicím přístroji rostl. Nad 100 % nádrž uniká plyn a při 130 % praskne.</p></li>
+          <li><span>Krok 02</span><strong>Odpalte</strong><p>Držte kdekoli a pusťte. Tryska míří podle vertikální rychlosti pilota a zpětný ráz tlačí pilota opačným směrem.</p></li>
+          <li><span>Krok 03</span><strong>Prolétněte bránami</strong><p>Projděte každý sektor se šesti branami, abyste získali zpět plyn a zvýšili násobitel skóre. Běh končí, když dojde plyn nebo praskne nádrž.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Vlastnosti</div>
+        <h2 id="featuresTitle">Aktuální mechanika a překážky BlastBlast!</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Let na zpětný ráz</h3><p>V jednom běhu jsou jedinou volbou načasování a síla výstřelu. Nemiříte ručně: plyn vylétá z viditelné trysky a zpětný ráz tlačí opačným směrem.</p></article>
+          <article class="detail-card"><h3>Letové brány</h3><p>Volitelné brány v sektorech po šesti branách obnoví bezpečný plyn a vytvoří násobitel Flow. Tvrdý náraz nebo vynechaná brána ho přeruší.</p></article>
+          <article class="detail-card"><h3>Nekonečný kaňon</h3><p>Terén přichází v blocích po 16 metrech, které na sebe navazují, s nárazníky, výfuky zrychlení, větrnými koridory a rotory. Obtížnost roste v prvních 640 metrech.</p></article>
+          <article class="detail-card"><h3>Deset hasicích přístrojů</h3><p>Nové povrchy se odemykají při nejlepších vzdálenostech od 250 do 100 000 metrů. Každý hasicí přístroj má čtyři větve vylepšení (kapacita, účinnost, tah, stabilita) až do úrovně 10.</p></article>
+          <article class="detail-card"><h3>HUD bez textu</h3><p>Hra používá měřáky a symboly místo textu: ticky tlaku, trasu o šesti uzlech, údaj vzdálenosti a nádobu s plynem.</p></article>
+          <article class="detail-card"><h3>Místní postup a nastavení</h3><p>Postup se ukládá v zařízení se zálohou pro obnovu. Nastavení zahrnují hlasitost, otřesy kamery, omezený pohyb, kvalitu a cíl 60 nebo 120 FPS.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Směr</div>
+        <h2 id="nextTitle">Fáze vývoje a plán BlastBlast!</h2>
+        <p class="ug-lede">Datum vydání zatím neexistuje. Jde o cíle projektu, ne o sliby.</p>
+        <ul class="ug-next">
+          <li>Sestavení pro Android a iOS, s testováním výkonu, dotykového ovládání a životního cyklu aplikace na reálných zařízeních.</li>
+          <li>Autorizovaná licencovaná zvuková složka, která nahradí zvuk vytvářený zatím v kódu.</li>
+          <li>Lidské playtesty prvního běhu, únava z pumpování a křivka obtížnosti.</li>
+          <li>Kontroly přístupnosti pro odlišení barev, otřesy kamery a blikání.</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Obrázky</div>
+        <h2 id="galleryTitle">Snímky obrazovky</h2>
+        <p class="ug-lede">Záběry z editoru Unity.</p>
+        <div class="ug-gallery ug-gallery--3">
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-hazards.webp" width="960" height="540" alt="Záznam hry BlastBlast! před citadelou: tyrkysové kulaté brány, červenozlatá překážka a černé značkovací tyče." loading="lazy" decoding="async"><figcaption>Brány a překážky</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-blast-arc.webp" width="960" height="540" alt="Záznam hry BlastBlast! s tenkou stopou výstřelu a malou kulatou bránou před pilotem." loading="lazy" decoding="async"><figcaption>Stopa výstřelu</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-main-menu.webp" width="960" height="540" alt="Hlavní menu: nadpis BlastBlast!, náhled červeného hasicího přístroje a tlačítka hrát, nádrž a nastavení." loading="lazy" decoding="async"><figcaption>Hlavní menu</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/blastblast/gallery-pilot.webp" width="720" height="720" alt="Detail pilota BlastBlast!: žlutý letecký oblek, tmavé hledí a červený batoh hasicího přístroje s hadicí." loading="lazy" decoding="async"><figcaption>Pilot</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Otázky a odpovědi</div>
+        <h2 id="faqTitle">BlastBlast! FAQ</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Jaký druh hry je BlastBlast!?</h3><p>Nekonečný fyzikální runner na jedno tlačítko. Napumpujte tlak do hasicího přístroje, vypalte a využijte zpětný ráz k co nejdelšímu letu. <a href="vacuum-shot.html">Vacuum Shot</a> používá stejný základ s vysavačem a rekvizitami místo hasicího přístroje.</p></article>
+          <article class="detail-card"><h3>Je BlastBlast! už venku a pro které platformy je?</h3><p>Zatím ne. BlastBlast! je vertical slice bez veřejné verze a bez data vydání. Projekt Unity je nastaven pro Android a iOS, ale sestavení a testování na zařízeních jsou ještě před námi.</p></article>
+          <article class="detail-card"><h3>Kdo vytváří BlastBlast! a jak ho mohu sledovat?</h3><p>BlastBlast! vytváří WillowinWorlds, nezávislé mobilní herní studio (viz jeho <a href="../index.html#games">hlavní hry</a>). Sledujte WillowinWorlds na sociálních sítích odkazovaných na této stránce, nebo napište na <a href="mailto:willowinworlds@gmail.com?subject=BlastBlast%21">willowinworlds@gmail.com</a> abyste dostávali novinky o BlastBlast!.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Hlasování</div>
+        <h2 id="voteTitle">Sledujte vývoj BlastBlast! a hlasujte</h2>
+        <p class="ug-lede">Hlasování se otevře na kanálech studia. Sledujte WillowinWorlds a řekněte svůj názor.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Sledujte WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Další arkádové a letové prototypy v laboratoři</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="vacuum-shot.html"><strong>Vacuum Shot</strong><span>Stejný základ, jiný let: vysáváte rekvizitu a vystřelujete ji místo pumpování hasicího přístroje.</span></a></li>
+        <li><a class="lab-related-link" href="alien-flying.html"><strong>Alien Flying</strong><span>Další letová hra ve vývoji: nekonečný letec mimozemským tunelem.</span></a></li>
+        <li><a class="lab-related-link" href="scooter-mechanic-simulator.html"><strong>Scooter Mechanic Simulator</strong><span>Další prototyp ve fázi vertical slice: kontrolujte a opravujte elektrické koloběžky v dílně.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Všechny hry ve vývoji</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>BlastBlast! je hra WillowinWorlds ve vývoji.</strong>
+        <span>Nekonečný běh na jedno tlačítko: napumpujte hasicí přístroj, vypalte ve správný okamžik a jeďte na zpětném rázu.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navigace v zápatí BlastBlast!">
+        <a href="../index.html#in-development">Hry ve vývoji</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Ochrana osobních údajů</a>
+        <a href="../legal.html">Právní informace</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=BlastBlast%21">Kontakt</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Sledujte WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Sdílet</p>
+        <nav class="share-links" aria-label="Sdílet" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fcs%2Fgames%2Fblastblast.html&amp;text=BlastBlast!%3A%20runner%20na%20jedno%20tla%C4%8D%C3%ADtko%20ve%20v%C3%BDvoji%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fcs%2Fgames%2Fblastblast.html&amp;title=BlastBlast!%3A%20runner%20na%20jedno%20tla%C4%8D%C3%ADtko%20ve%20v%C3%BDvoji%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fcs%2Fgames%2Fblastblast.html&amp;text=BlastBlast!%3A%20runner%20na%20jedno%20tla%C4%8D%C3%ADtko%20ve%20v%C3%BDvoji%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fcs%2Fgames%2Fblastblast.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fcs%2Fgames%2Fblastblast.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Kopírovat odkaz</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

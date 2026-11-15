@@ -44,6 +44,9 @@ User-agent: Google-Extended
 User-agent: Applebot-Extended
 User-agent: Meta-ExternalAgent
 User-agent: Bytespider
+Disallow: /private/
+Disallow: /admin/
+Disallow: /api/
 Disallow: /assets/
 
 User-agent: *

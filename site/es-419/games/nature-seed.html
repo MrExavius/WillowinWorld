@@ -59,11 +59,16 @@
       ]
     },
     {
-      "@type": "VideoGame",
+      "@type": [
+        "VideoGame",
+        "WebApplication"
+      ],
       "@id": "https://willowinworlds.com/es-419/games/nature-seed.html#game",
       "name": "Nature Seed",
       "url": "https://willowinworlds.com/es-419/games/nature-seed.html",
       "image": "https://willowinworlds.com/assets/Nature%20Seeds/Icon-site.webp",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web Browser",
       "description": "Un rompecabezas de física gratuito de dibujar para resolver. Dibuja una línea con tinta limitada para reunir a Water Drop y Seed y restaurar un bosque en acuarela a lo largo de 100 niveles.",
       "keywords": "rompecabezas de dibujar para resolver, juego de rompecabezas de física, juego gratis de navegador, rompecabezas de dibujar líneas, rompecabezas relajante",
       "genre": [
@@ -102,14 +107,14 @@
 </script>
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="RSS del registro de desarrollo de WillowinWorlds" href="../../rss.xml">
-  <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
   <link rel="stylesheet" href="../../css/nature-page.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
@@ -122,7 +127,7 @@
   <a class="skip-link" href="#game-main">Saltar a Nature Seed</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html">
-      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
       <span><strong>Nature Seed</strong><small>Página del juego WillowinWorlds</small></span>
       <span class="visually-hidden">Volver a WillowinWorlds</span>
     </a>
@@ -169,10 +174,10 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" loading="lazy" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
-            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" loading="lazy" decoding="async">
           </picture>
           <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
@@ -464,6 +469,7 @@
       </div>
       <nav class="game-footer-nav" aria-label="Navegación de pie de página Nature Seed">
         <a href="../index.html#games">Todos los juegos</a>
+        <a href="../index.html#in-development">En desarrollo</a>
         <a href="../press-kit.html">Kit de prensa</a>
         <a href="../privacy.html">Privacidad</a>
         <a href="../legal.html">Aviso legal</a>
@@ -475,11 +481,11 @@
       </div>
       <div class="share-block">
         <p class="social-title">Compartir</p>
-        <nav class="share-links" aria-label="Compartir" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20Rompecabezas%20de%20dibujar%20gratis%20en%20el%20navegador">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html&amp;title=Nature%20Seed%20%7C%20Rompecabezas%20de%20dibujar%20gratis%20en%20el%20navegador">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20Rompecabezas%20de%20dibujar%20gratis%20en%20el%20navegador">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Copiar enlace</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+        <nav class="share-links" aria-label="Compartir" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20Rompecabezas%20de%20dibujar%20gratis%20en%20el%20navegador" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html&amp;title=Nature%20Seed%20%7C%20Rompecabezas%20de%20dibujar%20gratis%20en%20el%20navegador" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20Rompecabezas%20de%20dibujar%20gratis%20en%20el%20navegador" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fes-419%2Fgames%2Fnature-seed.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Copiar enlace</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
       </div>
     </div>
   </footer>
   <script src="../../game-theme.js?v=20261114-4"></script>
-  <script src="../i18n-runtime.js?v=20261114"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
 </body>
 </html>

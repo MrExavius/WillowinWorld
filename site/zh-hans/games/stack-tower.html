@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="zh-Hans">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="单击塔堆叠：起重机摆动每一层，你掌握放下的时机，落点等级决定分数、稳定度和连击。早期原型。">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#18262F" id="metaThemeColor" data-theme-dark="#18262F" data-theme-light="#EAF3FA">
+  <meta property="og:title" content="Stack Tower：开发中的单击塔堆叠游戏">
+  <meta property="og:description" content="单击塔堆叠：起重机摆动每一层，你掌握放下的时机，落点等级决定分数、稳定度和连击。早期原型。">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/stack-tower-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Stack Tower 卡片，带有“开发中”标签：淡蓝色天空下三层堆叠楼层的图标。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/zh-hans/games/stack-tower.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="zh_CN">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Stack Tower：开发中的单击塔堆叠游戏">
+  <meta name="twitter:description" content="单击塔堆叠：起重机摆动每一层，你掌握放下的时机，落点等级决定分数、稳定度和连击。早期原型。">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/stack-tower-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Stack Tower 卡片，带有“开发中”标签：淡蓝色天空下三层堆叠楼层的图标。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Stack Tower：开发中的单击塔堆叠游戏 | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/zh-hans/games/stack-tower.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/zh-hans/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "开发中",
+          "item": "https://willowinworlds.com/zh-hans/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Stack Tower",
+          "item": "https://willowinworlds.com/zh-hans/games/stack-tower.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/zh-hans/games/stack-tower.html#game",
+      "name": "Stack Tower",
+      "url": "https://willowinworlds.com/zh-hans/games/stack-tower.html",
+      "image": "https://willowinworlds.com/assets/upcoming/stack-tower/hero-1280.webp",
+      "description": "从摆动的起重机上投放楼层，建造一座能屹立不倒的高塔。",
+      "keywords": "塔堆叠、单击游戏、堆叠游戏、起重机、开发中的手机游戏",
+      "genre": [
+        "单击堆塔"
+      ],
+      "gamePlatform": "手机",
+      "creativeWorkStatus": "早期原型",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/zh-hans/games/stack-tower.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "zh-Hans"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds 开发日志 RSS" href="../../rss.xml">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-stack-tower.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="stack-tower">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <div class="st-sky" aria-hidden="true">
+    <span class="st-sky-glow"></span>
+    <span class="st-sky-ghost"></span>
+    <span class="st-sky-clouds st-sky-clouds--far"></span>
+    <span class="st-sky-skyline"></span>
+    <span class="st-sky-crane st-sky-crane--l"><i></i></span>
+    <span class="st-sky-crane st-sky-crane--r"><i></i></span>
+    <span class="st-sky-clouds st-sky-clouds--near"></span>
+    <span class="st-sky-veil"></span>
+  </div>
+  <a class="skip-link" href="#main-content">跳至主要内容</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/responsive/willowinworld-logo-64.webp" width="64" height="64" alt="" decoding="async">
+      <span><strong>Stack Tower</strong><small>WillowinWorlds 游戏页面</small></span>
+      <span class="visually-hidden">返回 WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="游戏页面导航">
+      <a href="../index.html">工作室首页</a>
+      <a href="#features">特点</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">新闻资料</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="暂停动画"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">暂停动画</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="切换主题">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="语言"><details><summary aria-label="选择语言"><span aria-hidden="true">简</span></summary><div class="language-options"><a href="../../games/stack-tower.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/stack-tower.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/stack-tower.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/stack-tower.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/stack-tower.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="stack-tower.html" lang="zh-Hans" hreflang="zh-Hans" aria-current="page"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/stack-tower.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/stack-tower.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/stack-tower.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/stack-tower.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/stack-tower.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/stack-tower.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/stack-tower.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/stack-tower.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/stack-tower.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/stack-tower.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/stack-tower.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/stack-tower.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/stack-tower.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/stack-tower.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/stack-tower.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/stack-tower.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/stack-tower.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/stack-tower.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/stack-tower.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/stack-tower.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/stack-tower.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/stack-tower.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/stack-tower.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/stack-tower.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/stack-tower.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/stack-tower.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/stack-tower.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/stack-tower.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/stack-tower.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/stack-tower.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/stack-tower.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/stack-tower.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/stack-tower.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/stack-tower.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/stack-tower.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/stack-tower.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-frame">
+        <div class="ug-hero-layout">
+          <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">早期原型</span><span class="ug-genre">单击堆塔</span></p>
+          <h1 id="heroTitle">Stack Tower</h1>
+          <p class="ug-tagline">把握投放时机。搭建高塔。</p>
+          <p class="hero-copy">起重机让每一层在塔顶上方摆动，你选择投放的时机。落点评级决定你的分数、稳定度和连击。</p>
+          <p class="ug-status-note">Unity 项目包含一个场景：起重机、楼层投放、落地评级、稳定度和 HUD，以及一座待堆叠的 20 层大楼。菜单、音频和进度尚未制作。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">关注开发进展</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">所有开发中的游戏</a>
+          </div>
+        </div>
+          <figure class="st-figure">
+            <div class="st-stage" aria-hidden="true">
+              <div class="st-scene">
+                <span class="st-far"></span>
+                <span class="st-clouds"></span>
+                <span class="st-crane"><span class="st-mast"></span><span class="st-jib"></span><span class="st-cab"></span><span class="st-trolley"></span></span>
+                <div class="st-world">
+                  <div class="st-tower">
+                    <span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span><span class="st-floor st-floor--b"></span><span class="st-floor st-floor--a"></span>
+                  </div>
+                  <span class="st-floor st-floor--a st-drop st-drop--a"></span>
+                  <span class="st-floor st-floor--b st-drop st-drop--b"></span>
+                </div>
+                <div class="st-swing">
+                  <span class="st-cable"></span>
+                  <span class="st-hook"></span>
+                  <span class="st-hang st-hang--a"><span class="st-sling"></span><span class="st-floor st-floor--a"></span></span>
+                  <span class="st-hang st-hang--b"><span class="st-sling"></span><span class="st-floor st-floor--b"></span></span>
+                </div>
+                <span class="st-flash st-flash--a"></span>
+                <span class="st-flash st-flash--b"></span>
+                <span class="st-grade st-grade--a">完美</span>
+                <span class="st-grade st-grade--b">良好</span>
+              </div>
+            </div>
+            <figcaption>插画循环：摆动、投放、落地。用 CSS 绘制，并非游戏实录。</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">资料</div>
+        <h2 id="factsTitle">Stack Tower 原型信息</h2>
+        <dl class="game-page-facts">
+          <div><dt>类型</dt><dd>单击堆塔</dd></div>
+          <div><dt>平台目标</dt><dd>手机，竖屏（计划中）</dd></div>
+          <div><dt>引擎</dt><dd>Unity 6</dd></div>
+          <div><dt>状态</dt><dd>早期原型</dd></div>
+          <div><dt>单次游玩形式</dt><dd>1 至 3 分钟的短局（设计目标）</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">玩法循环</div>
+        <h2 id="loopTitle">Stack Tower 的玩法</h2>
+        <ol class="update-list ug-steps">
+          <li><span>步骤01</span><strong>观察起重机</strong><p>起重机以钟摆方式摆动下一层，塔越高，摆动越快。</p></li>
+          <li><span>步骤02</span><strong>在正确的时机投放</strong><p>一次点击、鼠标单击或按下空格键即可释放楼层，它会落到塔上。</p></li>
+          <li><span>步骤03</span><strong>读懂落地</strong><p>每次落地都会评为完美、良好、冒险、失误或未命中，评级会影响你的稳定度、分数和连击。</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">特点</div>
+        <h2 id="featuresTitle">起重机时机与塔身平衡机制</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>摆动的起重机</h3><p>每一层都由摆动的钟摆式起重机吊起。层数越高，速度、摆幅和投放高度都会增加，直到上限。</p></article>
+          <article class="detail-card"><h3>五级落地评级</h3><p>完美、良好、冒险、失误和未命中取决于楼层偏离中心的距离以及与下层的重叠程度，每个评级的分数各不相同。</p></article>
+          <article class="detail-card"><h3>稳定度与倾斜</h3><p>失误的落地会降低稳定度并让塔倾斜，而良好或完美的落地则会将其挽回。首座大楼开局稳定度为 92，有两条命。</p></article>
+          <article class="detail-card"><h3>六种楼层类型</h3><p>普通、安全、精准、重型、技术和黄金楼层在重量、摆动速度、分数价值和稳定度影响上各不相同。</p></article>
+          <article class="detail-card"><h3>救援与奖励楼层</h3><p>每隔六层会出现一个技术层，当稳定度偏低时会更早出现。连续五次完美落地会排入一个黄金层。</p></article>
+          <article class="detail-card"><h3>首座 20 层的大楼</h3><p>住宅塔的目标是 20 层。当完成建筑、倒塌或生命耗尽时，本局结束。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">方向</div>
+        <h2 id="nextTitle">Stack Tower 版本状态与后续步骤</h2>
+        <p class="ug-lede">目前没有发售日期。这些是项目目标，并非承诺。</p>
+        <ul class="ug-next">
+          <li>住宅塔之后的更多建筑：写字楼、摩天楼、豪宅和纪录塔（概念文档）。</li>
+          <li>战役关卡和无尽记录模式；无尽选项已存在于建筑数据中（概念文档）。</li>
+          <li>跨区域推进，已完成的建筑可获得星级（概念文档）。</li>
+          <li>一个结算界面，以及落地时的声音和视觉反馈（概念文档）。</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">问答</div>
+        <h2 id="faqTitle">Stack Tower 常见问题</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Stack Tower 是哪种游戏？</h3><p>一款二维单击街机游戏。起重机让每一层在塔顶上方摆动，你松手投放，并根据落点评分。它与工作室的 <a href="burger-stack.html">Burger Stack</a> 和 <a href="sandwich-stack.html">Sandwich Stack</a>；这一款是侧视视角，带有起重机、地面类型和稳定度计。</p></article>
+          <article class="detail-card"><h3>Stack Tower 现在发售了吗？支持哪些平台？</h3><p>还没有。这是为竖屏手机制作的早期原型。目前只有一个场景和一座大楼，尚无公开版本、商店页面或发售日期。</p></article>
+          <article class="detail-card"><h3>谁制作了 Stack Tower，我如何关注它？</h3><p>Stack Tower 由独立手机游戏工作室 WillowinWorlds 制作（参见其 <a href="../index.html#games">主要游戏</a>）。请在本页链接的社交渠道关注 WillowinWorlds，或发邮件至 <a href="mailto:willowinworlds@gmail.com?subject=Stack%20Tower">willowinworlds@gmail.com</a> 以获取 Stack Tower 的更新信息。</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">投票</div>
+        <h2 id="voteTitle">关注 Stack Tower 的更新并投票</h2>
+        <p class="ug-lede">投票将在工作室的渠道开放。关注 WillowinWorlds，即可参与其中。</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">关注 WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">开发中的其他堆叠原型</h2>
+      <ul class="lab-related-list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>同样的单击堆叠理念，但有汉堡层和九种模式。</span></a></li>
+        <li><a class="lab-related-link" href="sandwich-stack.html"><strong>Sandwich Stack</strong><span>同样的单击堆叠理念，有三明治层和四种模式。</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">所有开发中的游戏</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Stack Tower 是 WillowinWorlds 开发中的游戏。</strong>
+        <span>从摆动的起重机上投放楼层，建造一座能屹立不倒的高塔。</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Stack Tower 页脚导航">
+        <a href="../index.html#in-development">开发中的游戏</a>
+        <a href="../press-kit.html">新闻资料</a>
+        <a href="../privacy.html">隐私</a>
+        <a href="../legal.html">法律</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Stack%20Tower">联系方式</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">关注 WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">分享</p>
+        <nav class="share-links" aria-label="分享" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fstack-tower.html&amp;text=Stack%20Tower%EF%BC%9A%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%8D%95%E5%87%BB%E5%A1%94%E5%A0%86%E5%8F%A0%E6%B8%B8%E6%88%8F%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fstack-tower.html&amp;title=Stack%20Tower%EF%BC%9A%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%8D%95%E5%87%BB%E5%A1%94%E5%A0%86%E5%8F%A0%E6%B8%B8%E6%88%8F%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fstack-tower.html&amp;text=Stack%20Tower%EF%BC%9A%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%84%E5%8D%95%E5%87%BB%E5%A1%94%E5%A0%86%E5%8F%A0%E6%B8%B8%E6%88%8F%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fstack-tower.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fzh-hans%2Fgames%2Fstack-tower.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>复制链接</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

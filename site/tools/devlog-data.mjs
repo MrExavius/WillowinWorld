@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
-import { contactEmail, englishOnlyPages, pageUrl, siteOrigin, socialProfilesFor, sourceLocale } from "./localization-config.mjs";
+import { contactEmail, labIntro, labPages, pageUrl, siteOrigin, socialProfilesFor, sourceLocale } from "./localization-config.mjs";
 
 const siteRoot = fileURLToPath(new URL("../", import.meta.url));
 
@@ -250,7 +250,7 @@ export function renderLlmsTxt(updates) {
     `- [${escapeMarkdown(game.name)}](${game.pageCanonical}): ${escapeMarkdown(game.machineSummary)} Genres: ${game.genres.map(escapeMarkdown).join(", ")}. Current status: ${escapeMarkdown(game.status)}.`
   ).join("\n");
 
-  const prototypes = englishOnlyPages.map(page =>
+  const prototypes = labPages.map(page =>
     `- [${escapeMarkdown(page.name)}](${pageUrl(sourceLocale, page)}): Genre: ${escapeMarkdown(page.genre)}. Current status: ${escapeMarkdown(page.status)}.`
   ).join("\n");
 
@@ -270,7 +270,7 @@ ${games}
 
 ## In development
 
-Prototypes with English-only pages. None is released yet; scope and status may change.
+${labIntro}
 
 ${prototypes}
 

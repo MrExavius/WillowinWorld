@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fil" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="fil">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I-stack ang mga layer ng sandwich sa isang tap sa apat na mode: Press Rush, Round 3D, Balance Tower 3D at Slice &amp; Fit 3D. Prototype na walang public build pa.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#251509" id="metaThemeColor" data-theme-dark="#251509" data-theme-light="#FBF1DA">
+  <meta property="og:title" content="Sandwich Stack: arcade stacking game na sa pag-unlad pa lang">
+  <meta property="og:description" content="I-stack ang mga layer ng sandwich sa isang tap sa apat na mode: Press Rush, Round 3D, Balance Tower 3D at Slice &amp; Fit 3D. Prototype na walang public build pa.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/sandwich-stack-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Card ng Sandwich Stack na may label na Sa pag-unlad: kamatis, lettuce at keso sa kitchen counter sa tabi ng icon ng sandwich.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/fil/games/sandwich-stack.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="tl_PH">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Sandwich Stack: arcade stacking game na sa pag-unlad pa lang">
+  <meta name="twitter:description" content="I-stack ang mga layer ng sandwich sa isang tap sa apat na mode: Press Rush, Round 3D, Balance Tower 3D at Slice &amp; Fit 3D. Prototype na walang public build pa.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/sandwich-stack-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Card ng Sandwich Stack na may label na Sa pag-unlad: kamatis, lettuce at keso sa kitchen counter sa tabi ng icon ng sandwich.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Sandwich Stack: stacking game na sa pag-unlad pa lang | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/fil/games/sandwich-stack.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/fil/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sa pag-unlad",
+          "item": "https://willowinworlds.com/fil/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sandwich Stack",
+          "item": "https://willowinworlds.com/fil/games/sandwich-stack.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/fil/games/sandwich-stack.html#game",
+      "name": "Sandwich Stack",
+      "url": "https://willowinworlds.com/fil/games/sandwich-stack.html",
+      "image": "https://willowinworlds.com/assets/upcoming/sandwich-stack/hero-1280.webp",
+      "description": "I-stack ang mga layer ng sandwich sa isang tap sa apat na mode, kabilang ang balance tower na maaaring matumba at mode kung saan pinuputol mo ang bawat layer para magkasya.",
+      "keywords": "stacking game, tap to stack, sandwich game, arcade, mobile game na sa pag-unlad pa lang",
+      "genre": [
+        "Arcade na stacking game"
+      ],
+      "gamePlatform": "Mobile",
+      "creativeWorkStatus": "Prototype",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/fil/games/sandwich-stack.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "fil"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/upcoming/sandwich-stack/hero-1280.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-sandwich-stack.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="sandwich-stack">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">Lumaktaw sa pangunahing nilalaman</a>
+  <div class="ss-page-bg ambient-only" aria-hidden="true">
+    <div class="ss-page-art">
+      <img class="ss-page-img" src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" decoding="async">
+    </div>
+    <span class="ss-page-napkin ss-page-napkin--a"></span>
+    <span class="ss-page-napkin ss-page-napkin--b"></span>
+    <span class="ss-page-light"></span>
+    <span class="ss-page-steam"></span>
+    <div class="ss-rains">
+      <div class="ss-rain ss-rain--far"><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="ss-rain ss-rain--near"><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+  </div>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/sandwich-stack/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>Sandwich Stack</strong><small>Pahina ng laro ng WillowinWorlds</small></span>
+      <span class="visually-hidden">Bumalik sa WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Pag-navigate sa pahina ng laro">
+      <a href="../index.html">Home ng studio</a>
+      <a href="#features">Mga Tampok</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Press kit</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="I-pause ang mga animation"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">I-pause ang mga animation</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Lumipat ng tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Wika"><details><summary aria-label="Pumili ng wika"><span aria-hidden="true">FIL</span></summary><div class="language-options"><a href="../../games/sandwich-stack.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/sandwich-stack.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/sandwich-stack.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/sandwich-stack.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/sandwich-stack.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/sandwich-stack.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/sandwich-stack.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/sandwich-stack.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/sandwich-stack.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/sandwich-stack.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="sandwich-stack.html" lang="fil" hreflang="tl" aria-current="page"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/sandwich-stack.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/sandwich-stack.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/sandwich-stack.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/sandwich-stack.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/sandwich-stack.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/sandwich-stack.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/sandwich-stack.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/sandwich-stack.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/sandwich-stack.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/sandwich-stack.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/sandwich-stack.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/sandwich-stack.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/sandwich-stack.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/sandwich-stack.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/sandwich-stack.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/sandwich-stack.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/sandwich-stack.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/sandwich-stack.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/sandwich-stack.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/sandwich-stack.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/sandwich-stack.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/sandwich-stack.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/sandwich-stack.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/sandwich-stack.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/sandwich-stack.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/sandwich-stack.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/sandwich-stack.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/sandwich-stack.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/sandwich-stack.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/sandwich-stack.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/sandwich-stack.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Prototype</span><span class="ug-genre">Arcade na stacking game</span></p>
+          <h1 id="heroTitle">Sandwich Stack</h1>
+          <p class="ug-tagline">I-tap para mag-stack. Buuin ang sandwich.</p>
+          <p class="hero-copy">Gumawa ng sandwich na isang layer sa bawat pagkakataon. Pumili ng palaman, i-tap para ilagay ito at panatilihing nakatayo ang stack sa apat na mode: Press Rush, Round 3D, Balance Tower 3D at Slice &amp; Fit 3D.</p>
+          <p class="ug-status-note">Nasa Unity project ang apat na stacking mode, dalawampung sangkap, recipe order, sound effect at naka-save na score. Wala pang public build.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Sundan ang pagbuo</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Lahat ng laro na sa pag-unlad pa lang</a>
+          </div>
+          <ul class="ss-hero-stats" aria-label="Sandwich Stack sa isang sulyap">
+            <li><strong>4</strong><span>mga mode</span></li>
+            <li><strong>20</strong><span>mga sangkap</span></li>
+            <li><strong>166</strong><span>recipe</span></li>
+          </ul>
+        </div>
+        <figure class="ss-hero-media">
+          <div class="ss-stage" role="img" aria-label="Animated na ilustrasyon: dumudulas ang mga layer ng sandwich mula sa gilid, pinipisil ng press ang stack at kumakalat ang mga mumo.">
+            <img class="ss-bg" src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
+            <span class="ss-light"></span>
+            <span class="ss-chip">Press Rush</span>
+            <span class="ss-napkin"></span>
+            <span class="ss-board"></span>
+            <div class="ss-stack">
+              <span class="ss-layer ss-bread ss-l0"></span>
+              <span class="ss-layer ss-lettuce ss-l1"></span>
+              <span class="ss-layer ss-tomato ss-l2"></span>
+              <span class="ss-layer ss-cheese ss-l3"></span>
+              <span class="ss-layer ss-ham ss-l4"></span>
+              <span class="ss-layer ss-bread ss-top ss-l5"></span>
+            </div>
+            <span class="ss-crumbs"></span>
+            <span class="ss-press"></span>
+            <div class="ss-order">
+              <img src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" decoding="async">
+              <b>Order</b>
+            </div>
+          </div>
+          <figcaption>Background art ng menu na may mga layer ng sandwich na iginuhit sa CSS, animated bilang ilustrasyon. Hindi ito screenshot ng gameplay.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Mga katotohanan</div>
+        <h2 id="factsTitle">Mga katotohanan tungkol sa prototype ng Sandwich Stack</h2>
+        <dl class="game-page-facts">
+          <div><dt>Genre</dt><dd>Arcade na stacking game</dd></div>
+          <div><dt>Target ng platform</dt><dd>Android / iOS (pinaplano)</dd></div>
+          <div><dt>Engine</dt><dd>Unity 6</dd></div>
+          <div><dt>Katayuan</dt><dd>Prototype</dd></div>
+          <div><dt>Hugis ng session</dt><dd>Mga run na hinahabol ang score</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Gameplay loop</div>
+        <h2 id="loopTitle">Paano nilalaro ang Sandwich Stack</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Hakbang 01</span><strong>Piliin ang susunod na sangkap</strong><p>Pumili ng palaman mula sa ingredient panel. Ipinapakita ng recipe rail kung aling sandwich ang hinihingi ng kasalukuyang order.</p></li>
+          <li><span>Hakbang 02</span><strong>I-tap para ilagay</strong><p>Gumagalaw ang layer sa ibabaw ng stack at isang tap ang nagla-lock nito. Ang malapit na tugma ay nananatili sa buong laki, at ang pagkakamali ay nagpuputol sa layer.</p></li>
+          <li><span>Hakbang 03</span><strong>Panatilihing nakatayo ang stack</strong><p>Bawat mode ay may sariling patakaran: laki, orbit, balance o limitadong bilang ng putol. Ang miss, natumbang tore o walang natitirang putol ay nagtatapos sa run.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Mga Tampok</div>
+        <h2 id="featuresTitle">Mga stacking mode at mekanika ng balance</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Apat na stacking mode</h3><p>Ang Press Rush, Round 3D, Balance Tower 3D at Slice &amp; Fit 3D ay bawat isa ay nagbabago sa kahulugan ng magandang pagkakalagay. Bumubukas ang mode-select screen sa bawat run.</p></article>
+          <article class="detail-card"><h3>Balance Tower 3D</h3><p>Ang overlap, bigat at hangin ay nagpapakain sa stability gauge na nagpapakita ng STABLE, WOBBLE o DANGER. Ang natumbang tore ang nagtatapos sa run.</p></article>
+          <article class="detail-card"><h3>Slice &amp; Fit 3D</h3><p>I-swipe para putulin ang isang layer gamit ang limitadong bilang ng putol, saka ito ilagay sa target ring.</p></article>
+          <article class="detail-card"><h3>Dalawampung sangkap, recipe order</h3><p>Nakalagay sa picker panel ang dalawampung sangkap, at ipinapakita ng recipe rail ang order na susundin mula sa 166-recipe catalog.</p></article>
+          <article class="detail-card"><h3>Mga background na nagbabago habang umaakyat ka</h3><p>Dalawang sampung-frame na illustrated sequence, isang airborne city at isang underwater town, na nagsasama habang lumalaki ang stack.</p></article>
+          <article class="detail-card"><h3>Naka-save na score at sound effect</h3><p>Ang pinakamataas na score at bilang ng layer ay naka-save bawat mode sa device, at may pitong sound effect sa build.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Direksyon</div>
+        <h2 id="nextTitle">Build status at mga susunod na hakbang ng Sandwich Stack</h2>
+        <p class="ug-lede">Wala pang release date. Ito ay mga layunin ng proyekto, hindi mga pangako.</p>
+        <ul class="ug-next">
+          <li>Mga unang build sa totoong Android at iOS device (wala pa).</li>
+          <li>Pagsusuri ng teksto para sa sandwich: ang recipe catalog ay may mga pangalan ng recipe na Russian lang pa rin.</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Mga larawan</div>
+        <h2 id="galleryTitle">Art gallery</h2>
+        <p class="ug-lede">Art at interface asset mula sa Unity project, hindi gameplay capture.</p>
+        <div class="ug-gallery ug-gallery--3">
+          <figure class="ug-shot ug-shot--strip"><img src="../../assets/upcoming/sandwich-stack/gallery-03.webp" width="960" height="414" alt="Ingredient picker ng Sandwich Stack: isang panel na may dalawampung ingredient slot sa lumang teal na board." loading="lazy" decoding="async"><figcaption>Ingredient picker</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-01.webp" width="540" height="987" alt="Airborne city background ng Sandwich Stack: isang brass na plataporma sa gitna ng ulap, ginagamit sa likod ng stack." loading="lazy" decoding="async"><figcaption>Background ng lungsod sa himpapawid</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-02.webp" width="540" height="987" alt="Underwater town background ng Sandwich Stack: isang kahoy na deck at market stall, ginagamit sa likod ng stack." loading="lazy" decoding="async"><figcaption>Underwater town background</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-04.webp" width="960" height="768" alt="Ingredient art ng Sandwich Stack: dalawampung tile kabilang ang patty, gulay, sarsa, bacon, itlog at fries." loading="lazy" decoding="async"><figcaption>Dalawampung sangkap</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Mga tanong at sagot</div>
+        <h2 id="faqTitle">FAQ ng Sandwich Stack</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Anong klaseng laro ang Sandwich Stack?</h3><p>Isang tap-to-place na stacking arcade game. Gumagawa ka ng sandwich layer by layer sa apat na mode: Press Rush, Round 3D, Balance Tower 3D at Slice &amp; Fit 3D. Ibinabahagi ang ideya ng stacking sa <a href="burger-stack.html">Burger Stack</a>; dito ang mga layer ay sangkap ng sandwich at tatlo sa mga mode ay 3D.</p></article>
+          <article class="detail-card"><h3>Lumabas na ba ang Sandwich Stack, at para sa aling platform?</h3><p>Ito ay prototype. Nakahanda ang proyekto para sa Android at iOS, pero wala pang public build, store page o release date.</p></article>
+          <article class="detail-card"><h3>Sino ang gumawa ng Sandwich Stack, at paano ko ito masusundan?</h3><p>Ginawa ang Sandwich Stack ng WillowinWorlds, isang independent na mobile game studio (tingnan ang <a href="../index.html#games">pangunahing laro</a>). Sundan ang WillowinWorlds sa mga social channel na naka-link sa pahinang ito, o mag-email sa <a href="mailto:willowinworlds@gmail.com?subject=Sandwich%20Stack">willowinworlds@gmail.com</a> para magtanong tungkol sa mga update ng Sandwich Stack.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Pagboto</div>
+        <h2 id="voteTitle">Sundan ang progress ng Sandwich Stack at bumoto</h2>
+        <p class="ug-lede">Magbubukas ang pagboto sa mga channel ng studio. Sundan ang WillowinWorlds para sumali.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Sundan ang WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Iba pang stacking prototype sa lab</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>Parehong one-tap na stacking, may mga layer ng burger, underwater at sky kitchen at siyam na mode.</span></a></li>
+        <li><a class="lab-related-link" href="stack-tower.html"><strong>Stack Tower</strong><span>Parehong one-tap na ideya ng stacking, may mga palapag na ibinababa mula sa umiindayog na crane.</span></a></li>
+        <li><a class="lab-related-link" href="lyamur.html"><strong>Lyamur</strong><span>Isa pang casual arcade prototype: mag-aim at pumutok ng mga kulay na marbles bago makarating ang kadena sa butas.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Lahat ng laro na sa pag-unlad pa lang</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Ang Sandwich Stack ay larong WillowinWorlds na sa pag-unlad pa lang.</strong>
+        <span>I-stack ang mga layer ng sandwich sa isang tap sa apat na mode, kabilang ang balance tower na maaaring matumba at mode kung saan pinuputol mo ang bawat layer para magkasya.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Footer navigation ng Sandwich Stack">
+        <a href="../index.html#in-development">Mga larong sa pag-unlad pa lang</a>
+        <a href="../press-kit.html">Press kit</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="../legal.html">Legal</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Sandwich%20Stack">Makipag-ugnayan</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Sundan ang WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Ibahagi</p>
+        <nav class="share-links" aria-label="Ibahagi" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Ffil%2Fgames%2Fsandwich-stack.html&amp;text=Sandwich%20Stack%3A%20stacking%20game%20na%20sa%20pag-unlad%20pa%20lang%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Ffil%2Fgames%2Fsandwich-stack.html&amp;title=Sandwich%20Stack%3A%20stacking%20game%20na%20sa%20pag-unlad%20pa%20lang%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Ffil%2Fgames%2Fsandwich-stack.html&amp;text=Sandwich%20Stack%3A%20stacking%20game%20na%20sa%20pag-unlad%20pa%20lang%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Ffil%2Fgames%2Fsandwich-stack.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Ffil%2Fgames%2Fsandwich-stack.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Kopyahin ang link</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

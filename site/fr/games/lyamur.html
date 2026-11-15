@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="fr">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Un tir de billes dans la jungle façon Zuma : un roi lémurien couronné tire des billes colorées sur une chaîne en mouvement, et vous devez en aligner trois ou plus. Prototype initial.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#132E10" id="metaThemeColor" data-theme-dark="#132E10" data-theme-light="#EAF8E6">
+  <meta property="og:title" content="Lyamur : jeu de tir à billes dans la jungle en développement">
+  <meta property="og:description" content="Un tir de billes dans la jungle façon Zuma : un roi lémurien couronné tire des billes colorées sur une chaîne en mouvement, et vous devez en aligner trois ou plus. Prototype initial.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/lyamur-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Carte de Lyamur avec une étiquette En développement : feuillage de jungle luxuriant et un roi lémurien couronné tenant une bille bleue.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/fr/games/lyamur.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Lyamur : jeu de tir à billes dans la jungle en développement">
+  <meta name="twitter:description" content="Un tir de billes dans la jungle façon Zuma : un roi lémurien couronné tire des billes colorées sur une chaîne en mouvement, et vous devez en aligner trois ou plus. Prototype initial.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/lyamur-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Carte de Lyamur avec une étiquette En développement : feuillage de jungle luxuriant et un roi lémurien couronné tenant une bille bleue.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Lyamur : jeu de tir à billes dans la jungle en développement | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/fr/games/lyamur.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "En développement",
+          "item": "https://willowinworlds.com/fr/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lyamur",
+          "item": "https://willowinworlds.com/fr/games/lyamur.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/fr/games/lyamur.html#game",
+      "name": "Lyamur",
+      "url": "https://willowinworlds.com/fr/games/lyamur.html",
+      "image": "https://willowinworlds.com/assets/upcoming/lyamur/hero-1280.webp",
+      "description": "Un jeu de tir à billes dans la jungle où un roi lémurien couronné lance des billes colorées vers une chaîne mobile.",
+      "keywords": "jeu de tir à billes, jeu façon Zuma, jungle, lémurien",
+      "genre": [
+        "Jeu de tir à billes"
+      ],
+      "gamePlatform": [
+        "Mobile",
+        "PC"
+      ],
+      "creativeWorkStatus": "Prototype initial",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/fr/games/lyamur.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "fr"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/upcoming/lyamur/hero-1280.webp" as="image" type="image/webp" imagesrcset="../../assets/upcoming/lyamur/hero-720.webp 720w, ../../assets/upcoming/lyamur/hero-1280.webp 1280w" imagesizes="(max-width: 920px) calc((100vw - 40px) * 1.78), 960px" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-lyamur.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="lyamur">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">Passer au contenu principal</a>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/lyamur/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>Lyamur</strong><small>Page de jeu WillowinWorlds</small></span>
+      <span class="visually-hidden">Retour à WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navigation dans la page du jeu">
+      <a href="../index.html">Accueil du studio</a>
+      <a href="#features">Caractéristiques</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Dossier de presse</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Mettre les animations en pause"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Mettre les animations en pause</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Changer de thème">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Langue"><details><summary aria-label="Choisissez la langue"><span aria-hidden="true">FR</span></summary><div class="language-options"><a href="../../games/lyamur.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/lyamur.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/lyamur.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/lyamur.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/lyamur.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/lyamur.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/lyamur.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/lyamur.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/lyamur.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/lyamur.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/lyamur.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/lyamur.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="lyamur.html" lang="fr" hreflang="fr" aria-current="page"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/lyamur.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/lyamur.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/lyamur.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/lyamur.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/lyamur.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/lyamur.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/lyamur.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/lyamur.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/lyamur.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/lyamur.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/lyamur.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/lyamur.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/lyamur.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/lyamur.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="../../pt-pt/games/lyamur.html" lang="pt-PT" hreflang="pt-PT"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/lyamur.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/lyamur.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/lyamur.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/lyamur.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/lyamur.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/lyamur.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/lyamur.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/lyamur.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/lyamur.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/lyamur.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/lyamur.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/lyamur.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/lyamur.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/lyamur.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <div class="lm-world ambient-only" aria-hidden="true">
+      <span class="lm-w-floor"></span>
+      <span class="lm-w-shade"></span>
+      <span class="lm-w-canopy lm-w-canopy--a"></span>
+      <span class="lm-w-canopy lm-w-canopy--b"></span>
+      <div class="lm-w-clock">
+        <span class="lm-w-tail"></span>
+        <span class="lm-w-track lm-w-track--l"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="lm-w-track lm-w-track--r"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="lm-w-orbs"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="lm-w-leaves"><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        <span class="lm-w-fly lm-w-fly--a"></span>
+        <span class="lm-w-fly lm-w-fly--b"></span>
+      </div>
+      <span class="lm-w-veil"></span>
+      <span class="lm-w-shafts"></span>
+    </div>
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Prototype initial</span><span class="ug-genre">Jeu de tir à billes</span></p>
+          <h1 id="heroTitle">Lyamur</h1>
+          <p class="ug-tagline">Le roi lémurien garde la jungle.</p>
+          <p class="hero-copy">Un jeu de tir à billes dans une jungle lumineuse. Visez, associez trois billes ou plus, déclenchez des réactions en chaîne et utilisez des capacités spéciales pour arrêter la chaîne avant qu'elle n'atteigne la fin.</p>
+          <p class="ug-status-note">Un seul niveau de test contient la boucle complète de tir et d'association. La campagne, la carte des niveaux et les boss du document de conception ne sont pas encore construits.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Suivre le développement</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Tous les jeux en développement</a>
+          </div>
+        </div>
+        <figure class="ug-hero-media lm-hero-media">
+          <div class="lm-stage">
+            <img class="lm-board" src="../../assets/upcoming/lyamur/hero-1280.webp" srcset="../../assets/upcoming/lyamur/hero-720.webp 720w, ../../assets/upcoming/lyamur/hero-1280.webp 1280w" sizes="(max-width: 920px) calc((100vw - 40px) * 1.78), 960px" width="1280" height="720" alt="Art du plateau de Lyamur : une clairière de jungle illustrée entourée d'une végétation dense, utilisée pour le premier niveau." fetchpriority="high" decoding="async">
+            <div class="lm-scene" aria-hidden="true">
+              <span class="lm-groove"></span>
+              <span class="lm-pit"></span>
+              <span class="lm-chain"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b class="lm-shot"></b></span>
+              <span class="lm-lemur"></span>
+              <span class="lm-burst"></span>
+              <span class="lm-bush"></span>
+              <span class="lm-leaves lm-leaves--a"></span>
+              <span class="lm-leaves lm-leaves--b"></span>
+            </div>
+          </div>
+          <figcaption>Illustration de plateau pour le premier niveau. Les billes et la visée du lémurien sont une animation créée pour cette page, pas des images de jeu.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Faits</div>
+        <h2 id="factsTitle">Faits sur le prototype de Lyamur</h2>
+        <dl class="game-page-facts">
+          <div><dt>Genre</dt><dd>Jeu de tir à billes</dd></div>
+          <div><dt>Plateforme visée</dt><dd>Mobile et PC (prévu), paysage</dd></div>
+          <div><dt>Moteur</dt><dd>Unity 6</dd></div>
+          <div><dt>Statut</dt><dd>Prototype initial</dd></div>
+          <div><dt>Format des sessions</dt><dd>Par niveaux ; un seul niveau de test pour l'instant</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Boucle de gameplay</div>
+        <h2 id="loopTitle">Comment se joue Lyamur</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Étape 01</span><strong>Viser et tirer</strong><p>Pointez pour viser, puis cliquez ou tapez pour tirer la bille actuelle. Clic droit, ou tap sur la réserve, pour l'échanger avec la suivante.</p></li>
+          <li><span>Étape 02</span><strong>Associer trois</strong><p>Trois billes ou plus d'une même couleur disparaissent. Si l'écart se referme et que les deux extrémités forment une nouvelle combinaison, une réaction en chaîne suit.</p></li>
+          <li><span>Étape 03</span><strong>Arrêter la chaîne</strong><p>Les capacités spéciales et les objets du plateau vous aident à atteindre l'objectif du niveau avant que la chaîne n'atteigne la fin du chemin.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Caractéristiques</div>
+        <h2 id="featuresTitle">Mécaniques de tir en chaîne de billes</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Chaîne suivant un chemin</h3><p>Une chaîne de billes colorées suit un chemin courbe et referme les trous après les combinaisons. Une combinaison demande au moins trois billes.</p></article>
+          <article class="detail-card"><h3>Onze capacités spéciales</h3><p>Joker, bombe, rembobinage, feu, foudre, racines, gel, eau, visée, perçage de pierre et double tir sont implémentés dans les règles du jeu, chacun avec son propre emblème.</p></article>
+          <article class="detail-card"><h3>Objets du plateau</h3><p>Les bombes de terrain et les cristaux de couleur se trouvent sur le plateau et réagissent quand ils sont touchés.</p></article>
+          <article class="detail-card"><h3>Quatre types d'objectifs</h3><p>Un niveau peut vous demander de vider la chaîne, d'activer des objets du plateau, d'atteindre un score ou d'atteindre une cascade cible.</p></article>
+          <article class="detail-card"><h3>Réactions du lémurien</h3><p>Le lémurien couronné a des poses de réaction pendant le jeu.</p></article>
+          <article class="detail-card"><h3>Pause et paramètres</h3><p>Un écran de pause propose le volume des effets, le volume de la musique et un réglage du guide de visée.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Direction</div>
+        <h2 id="nextTitle">Statut de la version de Lyamur et prochaines étapes</h2>
+        <p class="ug-lede">Il n'y a pas encore de date de sortie. Ce sont des objectifs pour le projet, pas des promesses.</p>
+        <ul class="ug-next">
+          <li>D'autres niveaux, à commencer par le reste de la forêt, puis de nouveaux lieux de jungle : tunnels de fourmis, branches d'araignée, marais et termitière (document de conception).</li>
+          <li>Des combats de boss à la fin de chaque lieu (document de conception).</li>
+          <li>Une carte des niveaux avec des notes en étoiles (document de conception).</li>
+          <li>Un éditeur de niveaux pour créer les niveaux plus vite (document de conception).</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Images</div>
+        <h2 id="galleryTitle">Galerie d'art</h2>
+        <p class="ug-lede">Ressources graphiques issues du projet Unity, pas des captures de gameplay.</p>
+        <div class="ug-gallery ug-gallery--3">
+          <figure class="ug-shot"><img src="../../assets/upcoming/lyamur/gallery-lemur-king.webp" width="640" height="805" alt="Art de Lyamur : le roi lémurien couronné debout avec une bille bleue brillante dans une main." loading="lazy" decoding="async"><figcaption>Le roi lémurien</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/lyamur/gallery-top-down-shooter.webp" width="960" height="691" alt="Art de Lyamur : vue de dessus du tireur lémurien couronné avec une queue rayée." loading="lazy" decoding="async"><figcaption>Vue de tireur de dessus</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/lyamur/gallery-color-crystal.webp" width="560" height="709" alt="Cristal de couleur de Lyamur : un amas de cristal blanc sur de la pierre sombre, objet qui change de couleur et se trouve sur le plateau." loading="lazy" decoding="async"><figcaption>Cristal de couleur</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/lyamur/gallery-field-bomb.webp" width="520" height="596" alt="Bombe de terrain de Lyamur : une bombe-graine volcanique sombre avec une courte mèche, objet posé sur le plateau." loading="lazy" decoding="async"><figcaption>Bombe de terrain</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Questions et réponses</div>
+        <h2 id="faqTitle">FAQ de Lyamur</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Quel type de jeu est Lyamur ?</h3><p>Un jeu de tir à billes façon Zuma dans une jungle lumineuse. Un roi lémurien couronné tire des billes colorées vers une chaîne mobile. Vous associez trois billes ou plus et utilisez des capacités spéciales pour l'arrêter.</p></article>
+          <article class="detail-card"><h3>Lyamur est-il déjà sorti, et sur quelles plateformes ?</h3><p>Pas encore. Lyamur est un prototype initial avec un niveau de test, sans version publique ni date de sortie. Le document de conception vise mobile et PC.</p></article>
+          <article class="detail-card"><h3>Qui développe Lyamur, et comment le suivre ?</h3><p>Lyamur est développé par WillowinWorlds, un studio indépendant de jeux (voir son <a href="../index.html#games">jeux principaux</a>). Suivez WillowinWorlds sur les réseaux sociaux liés sur cette page, ou par e-mail <a href="mailto:willowinworlds@gmail.com?subject=Lyamur">willowinworlds@gmail.com</a> pour demander des nouvelles de Lyamur.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Vote</div>
+        <h2 id="voteTitle">Suivre les nouveautés de Lyamur et voter</h2>
+        <p class="ug-lede">Le vote ouvrira sur les canaux du studio. Suivez WillowinWorlds pour participer.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Suivre WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Autres prototypes d'arcade casual du laboratoire</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>Un autre prototype d'arcade casual : tapez pour empiler des couches de burger et servir la commande.</span></a></li>
+        <li><a class="lab-related-link" href="sandwich-stack.html"><strong>Sandwich Stack</strong><span>Un autre prototype d'arcade casual : tapez pour poser des couches de sandwich et garder la pile debout.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Tous les jeux en développement</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Lyamur est un jeu de WillowinWorlds en développement.</strong>
+        <span>Un jeu de tir à billes dans la jungle où un roi lémurien couronné lance des billes colorées vers une chaîne mobile.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navigation de pied de page de Lyamur">
+        <a href="../index.html#in-development">Jeux en développement</a>
+        <a href="../press-kit.html">Dossier de presse</a>
+        <a href="../privacy.html">Confidentialité</a>
+        <a href="../legal.html">Mentions légales</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Lyamur">Contact</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Suivre WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Partager</p>
+        <nav class="share-links" aria-label="Partager" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Ffr%2Fgames%2Flyamur.html&amp;text=Lyamur%20%3A%20jeu%20de%20tir%20%C3%A0%20billes%20dans%20la%20jungle%20en%20d%C3%A9veloppement%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Ffr%2Fgames%2Flyamur.html&amp;title=Lyamur%20%3A%20jeu%20de%20tir%20%C3%A0%20billes%20dans%20la%20jungle%20en%20d%C3%A9veloppement%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Ffr%2Fgames%2Flyamur.html&amp;text=Lyamur%20%3A%20jeu%20de%20tir%20%C3%A0%20billes%20dans%20la%20jungle%20en%20d%C3%A9veloppement%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Ffr%2Fgames%2Flyamur.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Ffr%2Fgames%2Flyamur.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Copier le lien</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

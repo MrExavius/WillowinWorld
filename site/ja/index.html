@@ -27,7 +27,7 @@
   <meta name="twitter:description" content="4 本の看板タイトルと、ラボにある 8 本のゲームを手がけるインディーモバイルパズル&amp;アーケードスタジオ。Nature Seed はブラウザで無料プレイ、ほかの 3 作はフォローしてお待ちください。">
   <meta name="twitter:image" content="https://willowinworlds.com/assets/og/studio-og-v2.jpg">
   <meta name="twitter:image:alt" content="WillowinWorlds のロゴとタグライン「小さなゲーム。生きている世界。」、その下に 4 本の看板タイトルのアイコン">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-QyI+lVsG8iy5RfmWVj81zLRgi8HkMt5tnJYHRjdoTFk='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-IlJyVpRy7HyhzkUekLCu/kQBC/Eay/KKf4iq0NLoPn4='; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
   <title>WillowinWorlds | インディーモバイルパズル&amp;アーケードゲームスタジオ</title>
   <link rel="canonical" href="https://willowinworlds.com/ja/">
   <link rel="icon" href="../favicon.ico" sizes="any">
@@ -35,6 +35,9 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
   <link rel="manifest" href="../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds 開発ブログ RSS" href="../rss.xml">
+  <link rel="me" href="https://willowinworlds.itch.io/">
+  <link rel="me" href="https://gamejolt.com/@WillowinWorlds">
+  <link rel="me" href="https://www.indiexpo.net/en/users/WillowinWorlds">
   <link rel="preload" href="../assets/responsive/nature-seed-sketch-720.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../css/nature-scene.css?v=20261113-1">
@@ -45,7 +48,7 @@
   <link rel="stylesheet" href="../css/home-candy-card.css">
   <link rel="stylesheet" href="../css/game-components.css">
   <link rel="stylesheet" href="../css/game-content.css?v=20261114-4">
-  <link rel="stylesheet" href="../css/site-sections.css?v=20261114-4">
+  <link rel="stylesheet" href="../css/site-sections.css?v=20261115-1">
   <link rel="stylesheet" href="../css/keyframes.css?v=20260731-1">
   <link rel="stylesheet" href="../css/responsive-desktop.css">
   <link rel="stylesheet" href="../css/responsive-tablet.css?v=20261113-1">
@@ -191,11 +194,16 @@
       ]
     },
     {
-      "@type": "VideoGame",
+      "@type": [
+        "VideoGame",
+        "WebApplication"
+      ],
       "@id": "https://willowinworlds.com/ja/games/nature-seed.html#game",
       "name": "Nature Seed",
       "url": "https://willowinworlds.com/ja/games/nature-seed.html",
       "image": "https://willowinworlds.com/assets/Nature%20Seeds/Icon-site.webp",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web Browser",
       "genre": [
         "描いて解くパズル",
         "物理パズル",
@@ -315,7 +323,7 @@
       <div class="container header-inner">
         <a class="brand" href="#home" aria-label="WillowinWorlds ホーム">
           <span class="brand-mark" aria-hidden="true">
-            <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" fetchpriority="high" decoding="async">
+            <img src="../assets/willowinworld-logo.webp" srcset="../assets/responsive/willowinworld-logo-256.webp 256w, ../assets/responsive/willowinworld-logo-512.webp 512w, ../assets/willowinworld-logo.webp 1024w" sizes="(max-width: 760px) 44px, 52px" data-logo-theme width="1024" height="1024" alt="" decoding="async">
           </span>
           <span class="brand-name"><span class="brand-w brand-w-lead">W</span>illo<span class="brand-w brand-w-middle">w</span>in<span class="brand-w brand-w-world">W</span>orlds</span>
         </a>
@@ -373,7 +381,7 @@
                 <img class="nature-level nature-level-sketch" src="../assets/responsive/nature-seed-sketch-720.webp" width="720" height="405" alt="" fetchpriority="high" decoding="async">
                 <picture>
                   <source type="image/avif" srcset="../assets/responsive/nature-seed-hero-720.avif 720w, ../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 50vw">
-                  <img class="nature-level nature-level-painted" src="../assets/responsive/nature-seed-hero-1376.webp" srcset="../assets/responsive/nature-seed-hero-720.webp 720w, ../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 50vw" width="1376" height="768" alt="" decoding="async">
+                  <img class="nature-level nature-level-painted" src="../assets/responsive/nature-seed-hero-1376.webp" srcset="../assets/responsive/nature-seed-hero-720.webp 720w, ../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 50vw" width="1376" height="768" alt="" loading="lazy" decoding="async">
                 </picture>
                 <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
                   <path d="M46 194C142 196 147 260 237 262C320 263 318 195 404 195C484 195 482 313 566 316" />
@@ -387,7 +395,7 @@
                 <img loading="lazy" class="nature-companion nature-companion-water" src="../assets/Nature%20Seeds/Galvnie1.webp" width="500" height="500" alt="" decoding="async">
                 <img loading="lazy" class="nature-companion nature-companion-seed" src="../assets/Nature%20Seeds/Galvnie2.webp" width="500" height="500" alt="" decoding="async">
               </div>
-              <img loading="lazy" class="nature-preview-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
+              <img class="nature-preview-icon" src="../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
               <span class="nature-preview-title">
                 <small>現在のスポットライト · 線を描いて解く</small>
                 <strong>Nature Seed</strong>
@@ -652,7 +660,7 @@
 
           <ul class="lab-grid" role="list">
             <li>
-              <a class="lab-card" href="../games/blastblast.html" hreflang="en">
+              <a class="lab-card" href="games/blastblast.html">
                 <span class="lab-icon"><img src="../assets/upcoming/blastblast/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
                 <span class="lab-body">
                   <strong class="lab-name">BlastBlast!</strong>
@@ -662,7 +670,7 @@
               </a>
             </li>
             <li>
-              <a class="lab-card" href="../games/vacuum-shot.html" hreflang="en">
+              <a class="lab-card" href="games/vacuum-shot.html">
                 <span class="lab-icon"><img src="../assets/upcoming/vacuum-shot/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
                 <span class="lab-body">
                   <strong class="lab-name">Vacuum Shot</strong>
@@ -672,7 +680,7 @@
               </a>
             </li>
             <li>
-              <a class="lab-card" href="../games/burger-stack.html" hreflang="en">
+              <a class="lab-card" href="games/burger-stack.html">
                 <span class="lab-icon"><img src="../assets/upcoming/burger-stack/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
                 <span class="lab-body">
                   <strong class="lab-name">Burger Stack</strong>
@@ -682,7 +690,7 @@
               </a>
             </li>
             <li>
-              <a class="lab-card" href="../games/sandwich-stack.html" hreflang="en">
+              <a class="lab-card" href="games/sandwich-stack.html">
                 <span class="lab-icon"><img src="../assets/upcoming/sandwich-stack/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
                 <span class="lab-body">
                   <strong class="lab-name">Sandwich Stack</strong>
@@ -692,7 +700,7 @@
               </a>
             </li>
             <li>
-              <a class="lab-card" href="../games/scooter-mechanic-simulator.html" hreflang="en">
+              <a class="lab-card" href="games/scooter-mechanic-simulator.html">
                 <span class="lab-icon"><img src="../assets/upcoming/scooter-mechanic-simulator/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
                 <span class="lab-body">
                   <strong class="lab-name">Scooter Mechanic Simulator</strong>
@@ -702,7 +710,7 @@
               </a>
             </li>
             <li>
-              <a class="lab-card" href="../games/alien-flying.html" hreflang="en">
+              <a class="lab-card" href="games/alien-flying.html">
                 <span class="lab-icon lab-icon--monogram lab-icon--alien-flying" aria-hidden="true">AF</span>
                 <span class="lab-body">
                   <strong class="lab-name">Alien Flying</strong>
@@ -712,7 +720,7 @@
               </a>
             </li>
             <li>
-              <a class="lab-card" href="../games/lyamur.html" hreflang="en">
+              <a class="lab-card" href="games/lyamur.html">
                 <span class="lab-icon"><img src="../assets/upcoming/lyamur/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
                 <span class="lab-body">
                   <strong class="lab-name">Lyamur</strong>
@@ -722,7 +730,7 @@
               </a>
             </li>
             <li>
-              <a class="lab-card" href="../games/stack-tower.html" hreflang="en">
+              <a class="lab-card" href="games/stack-tower.html">
                 <span class="lab-icon"><img src="../assets/upcoming/stack-tower/icon-192.webp" width="192" height="192" alt="" loading="lazy" decoding="async"></span>
                 <span class="lab-body">
                   <strong class="lab-name">Stack Tower</strong>
@@ -1013,7 +1021,7 @@
     <div class="modal-dialog">
       <div class="modal-head">
         <div>
-          <h2 id="contactTitle">WillowinWorlds に連絡する</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="contactTitle">WillowinWorlds に連絡する</div>
           <p>報道、パブリッシャー、コラボレーションのご依頼用に、willowinworlds@gmail.com 宛てのメールを作成します。</p>
         </div>
         <button class="icon-btn" id="closeContact" type="button" aria-label="お問い合わせフォームを閉じる">
@@ -1061,7 +1069,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">キャリア / コラボレーション</div>
-          <h2 id="careersTitle">いっしょにゲームを作りませんか?</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="careersTitle">いっしょにゲームを作りませんか?</div>
           <p>アート、Unity、デザイン、アニメーション、オーディオ、パブリッシングの分野で、いっしょに取り組んでくださる方を歓迎しています。</p>
         </div>
         <button class="icon-btn" id="closeCareers" type="button" aria-label="キャリアとコラボレーションの詳細を閉じる">
@@ -1069,7 +1077,7 @@
         </button>
       </div>
       <div class="info-card">
-        <h3>どんな方からの連絡を待っているか</h3>
+        <div class="modal-subheading" role="heading" aria-level="3">どんな方からの連絡を待っているか</div>
         <div class="roles">
           <span class="tag">2D アーティスト</span>
           <span class="tag">Unity 開発者</span>
@@ -1093,7 +1101,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">プレス/パブリッシャー</div>
-          <h2 id="pressTitle">報道関係者とパートナー向けのスタジオ情報。</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="pressTitle">報道関係者とパートナー向けのスタジオ情報。</div>
           <p>WillowinWorlds は、モバイル向けのパズルゲームとアーケードゲームをつくるインディースタジオで、ゲームごとに独自の 2D アートスタイルを持っています。</p>
         </div>
         <button class="icon-btn" id="closePress" type="button" aria-label="プレスおよびパブリッシャーの詳細を閉じる">
@@ -1102,12 +1110,12 @@
       </div>
       <div class="info-grid">
         <section class="info-card">
-          <h3>スタジオピッチ</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">スタジオピッチ</div>
           <p>現在のポートフォリオには、線を描いて解く物理パズル、キャンディマージパズル、カラー破壊パズル、垂直降下アーケードが含まれます。</p>
           <p>私たちがこだわっているのは、タッチ中心の操作、ゲームごとに異なる 2D アートスタイル、見ているだけで理解できるメカニクスです。</p>
         </section>
         <aside class="info-card info-facts">
-          <h3>ファクトシート</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">ファクトシート</div>
           <dl>
             <div><dt>スタジオ</dt><dd>WillowinWorlds</dd></div>
             <div><dt>注力分野</dt><dd>モバイルファーストのパズルゲームとアーケードゲーム</dd></div>
@@ -1127,7 +1135,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">プライバシー</div>
-          <h2 id="privacyTitle">WillowinWorlds プライバシーに関するメモ。</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="privacyTitle">WillowinWorlds プライバシーに関するメモ。</div>
           <p>公開サイトはあえてシンプルにしており、アクセス解析スクリプト、広告ピクセル、トラッキング Cookie、外部埋め込み、アカウント機能は一切ありません。</p>
           <p>ソーシャルプラットフォームへのリンクは、それぞれ独自のプライバシーポリシーを持つ外部サイトを開きます。当サイトでは SNS ウィジェットを読み込みません。</p>
         </div>
@@ -1137,13 +1145,13 @@
       </div>
       <div class="info-grid">
         <section class="info-card">
-          <h3>保存されるもの</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">保存されるもの</div>
           <p>当サイトでは、昼・夜モードの切り替え状態を保つため、ブラウザ内に小さなローカルのテーマ設定を保存する場合があります。プレイヤーアカウントや行動プロファイルが作成されることはありません。</p>
           <p>トップページのお問い合わせフォームでは、再読み込みで下書きが消えないよう、名前・メールアドレス・お問い合わせ種別・メッセージ欄の内容を同じタブのセッションストレージに保持します。フォーム上から消去でき、そのタブのセッションが終了するとブラウザによって削除されます。</p>
           <p>WillowinWorlds へメールをお送りいただいた場合、メッセージ本文、メールアドレス、記載されたリンクは、お問い合わせへの返信のみに使用します。</p>
         </section>
         <aside class="info-card info-facts">
-          <h3>プライバシーのポイント</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">プライバシーのポイント</div>
           <dl>
             <div><dt>分析</dt><dd>なし</dd></div>
             <div><dt>Cookie</dt><dd>トラッキング Cookie なし</dd></div>
@@ -1163,7 +1171,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">法的情報</div>
-          <h2 id="legalTitle">WillowinWorlds 法的通知。</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="legalTitle">WillowinWorlds 法的通知。</div>
           <p>特に明記されていない限り、WillowinWorlds、スタジオのロゴ、ゲーム名、キャラクター、スクリーンショット、ビジュアルアセット、およびウェブサイトの文章はすべて WillowinWorlds に帰属します。</p>
         </div>
         <button class="icon-btn" id="closeLegal" type="button" aria-label="法的詳細を閉じる">
@@ -1172,12 +1180,12 @@
       </div>
       <div class="info-grid">
         <section class="info-card">
-          <h3>許可される公開での言及</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">許可される公開での言及</div>
           <p>報道関係者、パブリッシャー、クリエイターの方は、WillowinWorlds のクレジットを明記したうえで、公開中のゲームページの紹介や、記事・パブリッシャー向けレビュー・ストア参考用モックアップへのプレビュー素材の利用が可能です。</p>
           <p>アセットが公開されていても、再販、再配布、NFT としてのミント、AI や機械学習データセットの学習への利用、スタジオへのなりすまし、またはこれらを用いた無関係な商用製品の制作は許可されていません。</p>
         </section>
         <aside class="info-card info-facts">
-          <h3>ライセンスルート</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">ライセンスルート</div>
           <dl>
             <div><dt>所有者</dt><dd>WillowinWorlds</dd></div>
             <div><dt>特殊用途</dt><dd>事前にご相談ください</dd></div>
@@ -1197,7 +1205,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">アセットの利用ルール</div>
-          <h2 id="assetTitle">プレビュー向け公開アセットのポリシー。</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="assetTitle">プレビュー向け公開アセットのポリシー。</div>
           <p>WillowinWorlds のゲームページで公開しているファイルは、報道記事、パブリッシャー向けのレビュー資料、ストア参考用モックアップなど、WillowinWorlds のゲームを紹介する目的向けに最適化されたプレビュー素材です。</p>
         </div>
         <button class="icon-btn" id="closeAsset" type="button" aria-label="アセット使用の詳細を閉じる">
@@ -1206,12 +1214,12 @@
       </div>
       <div class="info-grid">
         <section class="info-card">
-          <h3>許可</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">許可</div>
           <p>公開プレビュー素材は、WillowinWorlds のクレジットを明記のうえ、記事、投稿、企画資料、紹介コンテンツ、ウィッシュリスト、ストアのモックアップ、パブリッシャーのレビュー資料にご利用いただけます。</p>
           <p>ロゴやクレジットの切り抜き、色の変更、有料広告でのアセット利用、レイヤー分けされた元データの請求、未公開ビルドの掲載を行う場合は、事前にご相談ください。</p>
         </section>
         <aside class="info-card info-facts">
-          <h3>許可されません</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">許可されません</div>
           <dl>
             <div><dt>転売</dt><dd>アセットパックはありません</dd></div>
             <div><dt>AI データセット</dt><dd>学習利用不可</dd></div>
@@ -1231,7 +1239,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">セキュリティ</div>
-          <h2 id="securityTitle">セキュリティ第一の静的サイトの姿勢。</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="securityTitle">セキュリティ第一の静的サイトの姿勢。</div>
           <p>WillowinWorlds は、攻撃対象を減らすため、公開サイトを小さく、静的で、依存関係の少ない構成に保っています。</p>
         </div>
         <button class="icon-btn" id="closeSecurity" type="button" aria-label="セキュリティの詳細を閉じる">
@@ -1240,12 +1248,12 @@
       </div>
       <div class="info-grid">
         <section class="info-card">
-          <h3>現在のベースライン</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">現在のベースライン</div>
           <p>当サイトでは外部スクリプト、埋め込みコンテンツ、アカウント機能、外部フォーム処理サービスを使用していません。厳格なコンテンツセキュリティポリシー（CSP）を採用し、インラインイベントハンドラーを排除したうえで、お問い合わせにはメールアプリを直接開く方式を用いています。</p>
           <p>公開中の WillowinWorlds サイトを対象とし、責任ある形で共有いただくセキュリティ報告は歓迎いたします。</p>
         </section>
         <aside class="info-card info-facts">
-          <h3>責任ある開示</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">責任ある開示</div>
           <dl>
             <div><dt>お問い合わせ</dt><dd><a href="mailto:willowinworlds@gmail.com?subject=%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3%E5%A0%B1%E5%91%8A">セキュリティメール</a></dd></div>
             <div><dt>言語</dt><dd>英語が望ましい</dd></div>
@@ -1269,7 +1277,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow" id="gameModalGenre">ゲームの世界</div>
-          <h2 id="gameModalTitle">WillowinWorlds ゲーム</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="gameModalTitle">WillowinWorlds ゲーム</div>
         </div>
         <button class="icon-btn" id="closeGame" type="button" aria-label="ゲーム詳細を閉じる">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1281,7 +1289,7 @@
           <ul class="game-detail-tags" id="gameModalTags"></ul>
         </div>
         <div class="game-pillar-panel">
-          <h3>ゲームプレイの柱</h3>
+          <div class="modal-subheading" role="heading" aria-level="3">ゲームプレイの柱</div>
           <ul id="gameModalPillars"></ul>
         </div>
       </div>
@@ -1297,7 +1305,7 @@
       <div class="modal-head">
         <div>
           <div class="eyebrow">隠されたポータルが開きました</div>
-          <h2 id="secretTitle">秘密が見つかりました</h2>
+          <div class="modal-heading" role="heading" aria-level="2" id="secretTitle">秘密が見つかりました</div>
         </div>
         <button class="icon-btn" id="closeSecret" type="button" aria-label="秘密の報酬を閉じる">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -1312,6 +1320,6 @@
   </div>
 
   <script src="../scripts.js?v=20261114-4"></script>
-  <script src="i18n-runtime.js?v=20261114"></script>
+  <script src="i18n-runtime.js?v=20261115"></script>
 </body>
 </html>

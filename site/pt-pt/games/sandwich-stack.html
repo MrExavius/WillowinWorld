@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-PT" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="content-language" content="pt-PT">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Empilhe camadas de sanduíche com um toque em quatro modos: Press Rush, Round 3D, Balance Tower 3D e Slice &amp; Fit 3D. Um protótipo sem versão pública para já.">
+  <meta name="robots" content="index, follow">
+  <meta name="googlebot" content="max-image-preview:large">
+  <meta name="theme-color" content="#251509" id="metaThemeColor" data-theme-dark="#251509" data-theme-light="#FBF1DA">
+  <meta property="og:title" content="Sandwich Stack: jogo arcade de empilhar em desenvolvimento">
+  <meta property="og:description" content="Empilhe camadas de sanduíche com um toque em quatro modos: Press Rush, Round 3D, Balance Tower 3D e Slice &amp; Fit 3D. Um protótipo sem versão pública para já.">
+  <meta property="og:image" content="https://willowinworlds.com/assets/og/sandwich-stack-og-v2.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cartão de Sandwich Stack com um rótulo Em desenvolvimento: tomates, alface e queijo num balcão de cozinha, ao lado de um ícone de sanduíche.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://willowinworlds.com/pt-pt/games/sandwich-stack.html">
+  <meta property="og:site_name" content="WillowinWorlds">
+  <meta property="og:locale" content="pt_PT">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@willowinworlds">
+  <meta name="twitter:title" content="Sandwich Stack: jogo arcade de empilhar em desenvolvimento">
+  <meta name="twitter:description" content="Empilhe camadas de sanduíche com um toque em quatro modos: Press Rush, Round 3D, Balance Tower 3D e Slice &amp; Fit 3D. Um protótipo sem versão pública para já.">
+  <meta name="twitter:image" content="https://willowinworlds.com/assets/og/sandwich-stack-og-v2.jpg">
+  <meta name="twitter:image:alt" content="Cartão de Sandwich Stack com um rótulo Em desenvolvimento: tomates, alface e queijo num balcão de cozinha, ao lado de um ícone de sanduíche.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; child-src 'none'; connect-src 'none'; form-action 'none'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'none'; media-src 'none'; worker-src 'none'; manifest-src 'self'; trusted-types 'none'; require-trusted-types-for 'script'; upgrade-insecure-requests">
+  <title>Sandwich Stack: jogo de empilhar em desenvolvimento | WillowinWorlds</title>
+  <link rel="canonical" href="https://willowinworlds.com/pt-pt/games/sandwich-stack.html">
+  <link rel="icon" href="../../favicon.ico" sizes="any">
+  <link rel="icon" href="../../assets/responsive/willowinworld-logo-64.webp" type="image/webp" sizes="64x64">
+  <link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "WillowinWorlds",
+          "item": "https://willowinworlds.com/pt-pt/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Em desenvolvimento",
+          "item": "https://willowinworlds.com/pt-pt/#in-development"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sandwich Stack",
+          "item": "https://willowinworlds.com/pt-pt/games/sandwich-stack.html"
+        }
+      ]
+    },
+    {
+      "@type": "VideoGame",
+      "@id": "https://willowinworlds.com/pt-pt/games/sandwich-stack.html#game",
+      "name": "Sandwich Stack",
+      "url": "https://willowinworlds.com/pt-pt/games/sandwich-stack.html",
+      "image": "https://willowinworlds.com/assets/upcoming/sandwich-stack/hero-1280.webp",
+      "description": "Empilhe camadas de sanduíche com um toque em quatro modos, incluindo uma torre de equilíbrio que pode tombar e um modo em que corta cada camada para a ajustar.",
+      "keywords": "jogo de empilhar, toque para empilhar, jogo de sanduíches, arcade, jogo para telemóvel em desenvolvimento",
+      "genre": [
+        "Jogo arcade de empilhar"
+      ],
+      "gamePlatform": "Telemóvel",
+      "creativeWorkStatus": "Protótipo",
+      "dateModified": "2026-11-13",
+      "mainEntityOfPage": "https://willowinworlds.com/pt-pt/games/sandwich-stack.html",
+      "author": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "publisher": {
+        "@id": "https://willowinworlds.com/#studio"
+      },
+      "inLanguage": "pt-PT"
+    }
+  ]
+}
+</script>
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Devlog RSS" href="../../rss.xml">
+  <link rel="preload" href="../../assets/upcoming/sandwich-stack/hero-1280.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/game-components.css">
+  <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
+  <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
+  <link rel="stylesheet" href="../../css/keyframes.css">
+  <link rel="stylesheet" href="../../css/responsive-desktop.css">
+  <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
+  <link rel="stylesheet" href="../../css/responsive-mobile.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/responsive-preferences.css">
+  <link rel="stylesheet" href="../../motion.css">
+  <link rel="stylesheet" href="../../css/upcoming-game.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/upcoming-sandwich-stack.css?v=20261114-4">
+</head>
+<body class="game-detail-page upcoming-game-page" data-theme="dark" data-game="sandwich-stack">
+  <script src="../../theme-init.js?v=20261113-2"></script>
+  <a class="skip-link" href="#main-content">Saltar para o conteúdo principal</a>
+  <div class="ss-page-bg ambient-only" aria-hidden="true">
+    <div class="ss-page-art">
+      <img class="ss-page-img" src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" decoding="async">
+    </div>
+    <span class="ss-page-napkin ss-page-napkin--a"></span>
+    <span class="ss-page-napkin ss-page-napkin--b"></span>
+    <span class="ss-page-light"></span>
+    <span class="ss-page-steam"></span>
+    <div class="ss-rains">
+      <div class="ss-rain ss-rain--far"><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="ss-rain ss-rain--near"><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="ss-half"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+  </div>
+  <header class="game-detail-topbar">
+    <a class="game-detail-brand" href="../index.html">
+      <img src="../../assets/upcoming/sandwich-stack/icon-192.webp" width="192" height="192" alt="" decoding="async">
+      <span><strong>Sandwich Stack</strong><small>Página do jogo WillowinWorlds</small></span>
+      <span class="visually-hidden">Voltar para WillowinWorlds</span>
+    </a>
+    <nav class="game-detail-nav" aria-label="Navegação na página do jogo">
+      <a href="../index.html">Início do estúdio</a>
+      <a href="#features">Recursos</a>
+      <a href="#faq">FAQ</a>
+      <a href="../press-kit.html">Kit de imprensa</a>
+    </nav>
+    <button class="game-motion-toggle" type="button" data-motion-toggle aria-pressed="false" title="Pausar animações"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path class="motion-icon-pause" d="M9 5v14M15 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="motion-icon-play" d="M8 5v14l11-7z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span class="visually-hidden">Pausar animações</span></button>
+    <button class="icon-btn game-theme-toggle" id="themeToggle" type="button" aria-label="Alterar tema">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M21 12.8A8.3 8.3 0 1111.2 3a6.6 6.6 0 009.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+          <!-- locale-switcher:start -->
+  <nav class="language-switcher" aria-label="Idioma"><details><summary aria-label="Escolha o idioma"><span aria-hidden="true">PT</span></summary><div class="language-options"><a href="../../games/sandwich-stack.html" lang="en" hreflang="en"><span class="language-option-label" dir="auto">English</span><span class="language-option-code" aria-hidden="true">en</span></a><a href="../../ar/games/sandwich-stack.html" lang="ar" hreflang="ar"><span class="language-option-label" dir="auto">العربية</span><span class="language-option-code" aria-hidden="true">ar</span></a><a href="../../hy/games/sandwich-stack.html" lang="hy" hreflang="hy"><span class="language-option-label" dir="auto">Հայերեն</span><span class="language-option-code" aria-hidden="true">hy</span></a><a href="../../bn/games/sandwich-stack.html" lang="bn" hreflang="bn"><span class="language-option-label" dir="auto">বাংলা</span><span class="language-option-code" aria-hidden="true">bn</span></a><a href="../../bg/games/sandwich-stack.html" lang="bg" hreflang="bg"><span class="language-option-label" dir="auto">Български</span><span class="language-option-code" aria-hidden="true">bg</span></a><a href="../../zh-hans/games/sandwich-stack.html" lang="zh-Hans" hreflang="zh-Hans"><span class="language-option-label" dir="auto">简体中文</span><span class="language-option-code" aria-hidden="true">zh-Hans</span></a><a href="../../zh-hant/games/sandwich-stack.html" lang="zh-Hant" hreflang="zh-Hant"><span class="language-option-label" dir="auto">繁體中文</span><span class="language-option-code" aria-hidden="true">zh-Hant</span></a><a href="../../cs/games/sandwich-stack.html" lang="cs" hreflang="cs"><span class="language-option-label" dir="auto">Čeština</span><span class="language-option-code" aria-hidden="true">cs</span></a><a href="../../da/games/sandwich-stack.html" lang="da" hreflang="da"><span class="language-option-label" dir="auto">Dansk</span><span class="language-option-code" aria-hidden="true">da</span></a><a href="../../nl/games/sandwich-stack.html" lang="nl" hreflang="nl"><span class="language-option-label" dir="auto">Nederlands</span><span class="language-option-code" aria-hidden="true">nl</span></a><a href="../../fil/games/sandwich-stack.html" lang="fil" hreflang="tl"><span class="language-option-label" dir="auto">Filipino</span><span class="language-option-code" aria-hidden="true">tl</span></a><a href="../../fi/games/sandwich-stack.html" lang="fi" hreflang="fi"><span class="language-option-label" dir="auto">Suomi</span><span class="language-option-code" aria-hidden="true">fi</span></a><a href="../../fr/games/sandwich-stack.html" lang="fr" hreflang="fr"><span class="language-option-label" dir="auto">Français</span><span class="language-option-code" aria-hidden="true">fr</span></a><a href="../../de/games/sandwich-stack.html" lang="de" hreflang="de"><span class="language-option-label" dir="auto">Deutsch</span><span class="language-option-code" aria-hidden="true">de</span></a><a href="../../el/games/sandwich-stack.html" lang="el" hreflang="el"><span class="language-option-label" dir="auto">Ελληνικά</span><span class="language-option-code" aria-hidden="true">el</span></a><a href="../../he/games/sandwich-stack.html" lang="he" hreflang="he"><span class="language-option-label" dir="auto">עברית</span><span class="language-option-code" aria-hidden="true">he</span></a><a href="../../hi/games/sandwich-stack.html" lang="hi" hreflang="hi"><span class="language-option-label" dir="auto">हिन्दी</span><span class="language-option-code" aria-hidden="true">hi</span></a><a href="../../hu/games/sandwich-stack.html" lang="hu" hreflang="hu"><span class="language-option-label" dir="auto">Magyar</span><span class="language-option-code" aria-hidden="true">hu</span></a><a href="../../id/games/sandwich-stack.html" lang="id" hreflang="id"><span class="language-option-label" dir="auto">Bahasa Indonesia</span><span class="language-option-code" aria-hidden="true">id</span></a><a href="../../it/games/sandwich-stack.html" lang="it" hreflang="it"><span class="language-option-label" dir="auto">Italiano</span><span class="language-option-code" aria-hidden="true">it</span></a><a href="../../ja/games/sandwich-stack.html" lang="ja" hreflang="ja"><span class="language-option-label" dir="auto">日本語</span><span class="language-option-code" aria-hidden="true">ja</span></a><a href="../../ko/games/sandwich-stack.html" lang="ko" hreflang="ko"><span class="language-option-label" dir="auto">한국어</span><span class="language-option-code" aria-hidden="true">ko</span></a><a href="../../ms/games/sandwich-stack.html" lang="ms" hreflang="ms"><span class="language-option-label" dir="auto">Bahasa Melayu</span><span class="language-option-code" aria-hidden="true">ms</span></a><a href="../../no/games/sandwich-stack.html" lang="no" hreflang="no"><span class="language-option-label" dir="auto">Norsk</span><span class="language-option-code" aria-hidden="true">no</span></a><a href="../../fa/games/sandwich-stack.html" lang="fa" hreflang="fa"><span class="language-option-label" dir="auto">فارسی</span><span class="language-option-code" aria-hidden="true">fa</span></a><a href="../../pl/games/sandwich-stack.html" lang="pl" hreflang="pl"><span class="language-option-label" dir="auto">Polski</span><span class="language-option-code" aria-hidden="true">pl</span></a><a href="../../pt/games/sandwich-stack.html" lang="pt-BR" hreflang="pt-BR"><span class="language-option-label" dir="auto">Português (Brasil)</span><span class="language-option-code" aria-hidden="true">pt-BR</span></a><a href="sandwich-stack.html" lang="pt-PT" hreflang="pt-PT" aria-current="page"><span class="language-option-label" dir="auto">Português (Portugal)</span><span class="language-option-code" aria-hidden="true">pt-PT</span></a><a href="../../kk/games/sandwich-stack.html" lang="kk" hreflang="kk"><span class="language-option-label" dir="auto">Қазақша</span><span class="language-option-code" aria-hidden="true">kk</span></a><a href="../../ro/games/sandwich-stack.html" lang="ro" hreflang="ro"><span class="language-option-label" dir="auto">Română</span><span class="language-option-code" aria-hidden="true">ro</span></a><a href="../../ru/games/sandwich-stack.html" lang="ru" hreflang="ru"><span class="language-option-label" dir="auto">Русский</span><span class="language-option-code" aria-hidden="true">ru</span></a><a href="../../es/games/sandwich-stack.html" lang="es-ES" hreflang="es-ES"><span class="language-option-label" dir="auto">Español (España)</span><span class="language-option-code" aria-hidden="true">es-ES</span></a><a href="../../es-419/games/sandwich-stack.html" lang="es-419" hreflang="es"><span class="language-option-label" dir="auto">Español (Latinoamérica)</span><span class="language-option-code" aria-hidden="true">es</span></a><a href="../../sw/games/sandwich-stack.html" lang="sw" hreflang="sw"><span class="language-option-label" dir="auto">Kiswahili</span><span class="language-option-code" aria-hidden="true">sw</span></a><a href="../../sv/games/sandwich-stack.html" lang="sv" hreflang="sv"><span class="language-option-label" dir="auto">Svenska</span><span class="language-option-code" aria-hidden="true">sv</span></a><a href="../../tt/games/sandwich-stack.html" lang="tt" hreflang="tt"><span class="language-option-label" dir="auto">Татарча</span><span class="language-option-code" aria-hidden="true">tt</span></a><a href="../../th/games/sandwich-stack.html" lang="th" hreflang="th"><span class="language-option-label" dir="auto">ไทย</span><span class="language-option-code" aria-hidden="true">th</span></a><a href="../../tr/games/sandwich-stack.html" lang="tr" hreflang="tr"><span class="language-option-label" dir="auto">Türkçe</span><span class="language-option-code" aria-hidden="true">tr</span></a><a href="../../uk/games/sandwich-stack.html" lang="uk" hreflang="uk"><span class="language-option-label" dir="auto">Українська</span><span class="language-option-code" aria-hidden="true">uk</span></a><a href="../../ur/games/sandwich-stack.html" lang="ur" hreflang="ur"><span class="language-option-label" dir="auto">اردو</span><span class="language-option-code" aria-hidden="true">ur</span></a><a href="../../uz/games/sandwich-stack.html" lang="uz" hreflang="uz"><span class="language-option-label" dir="auto">O‘zbekcha</span><span class="language-option-code" aria-hidden="true">uz</span></a><a href="../../vi/games/sandwich-stack.html" lang="vi" hreflang="vi"><span class="language-option-label" dir="auto">Tiếng Việt</span><span class="language-option-code" aria-hidden="true">vi</span></a></div></details></nav>
+  <!-- locale-switcher:end -->
+  </header>
+  <main class="game-page game-detail-shell" id="main-content">
+    <section class="ug-hero" aria-labelledby="heroTitle">
+      <div class="container ug-hero-layout">
+        <div class="ug-hero-copy">
+          <p class="ug-meta"><span class="status-pill ug-pill">Protótipo</span><span class="ug-genre">Jogo arcade de empilhar</span></p>
+          <h1 id="heroTitle">Sandwich Stack</h1>
+          <p class="ug-tagline">Toque para empilhar. Construa o sanduíche.</p>
+          <p class="hero-copy">Construa um sanduíche uma camada de cada vez. Escolha um recheio, toque para o colocar e mantenha a pilha de pé em quatro modos: Press Rush, Round 3D, Balance Tower 3D e Slice &amp; Fit 3D.</p>
+          <p class="ug-status-note">Quatro modos de empilhar, vinte ingredientes, receitas de pedidos, efeitos sonoros e pontuações guardadas estão no projeto Unity. Ainda não há versão pública.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#vote">Acompanhe o desenvolvimento</a>
+            <a class="btn btn-ghost" href="../index.html#in-development">Todos os jogos em desenvolvimento</a>
+          </div>
+          <ul class="ss-hero-stats" aria-label="Sandwich Stack num relance">
+            <li><strong>4</strong><span>modos</span></li>
+            <li><strong>20</strong><span>ingredientes</span></li>
+            <li><strong>166</strong><span>receitas</span></li>
+          </ul>
+        </div>
+        <figure class="ss-hero-media">
+          <div class="ss-stage" role="img" aria-label="Ilustração animada: camadas de sanduíche deslizam dos lados, uma prensa esmaga a pilha e migalhas saltam.">
+            <img class="ss-bg" src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" fetchpriority="high" decoding="async">
+            <span class="ss-light"></span>
+            <span class="ss-chip">Press Rush</span>
+            <span class="ss-napkin"></span>
+            <span class="ss-board"></span>
+            <div class="ss-stack">
+              <span class="ss-layer ss-bread ss-l0"></span>
+              <span class="ss-layer ss-lettuce ss-l1"></span>
+              <span class="ss-layer ss-tomato ss-l2"></span>
+              <span class="ss-layer ss-cheese ss-l3"></span>
+              <span class="ss-layer ss-ham ss-l4"></span>
+              <span class="ss-layer ss-bread ss-top ss-l5"></span>
+            </div>
+            <span class="ss-crumbs"></span>
+            <span class="ss-press"></span>
+            <div class="ss-order">
+              <img src="../../assets/upcoming/sandwich-stack/hero-1280.webp" width="1280" height="720" alt="" decoding="async">
+              <b>Pedido</b>
+            </div>
+          </div>
+          <figcaption>Arte de fundo do menu com camadas de sanduíche desenhadas em CSS, animadas como ilustração. Não é uma captura de jogabilidade.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container game-page-grid">
+      <section class="soft-card game-page-section ug-facts" aria-labelledby="factsTitle">
+        <div class="eyebrow">Dados</div>
+        <h2 id="factsTitle">Dados do protótipo de Sandwich Stack</h2>
+        <dl class="game-page-facts">
+          <div><dt>Género</dt><dd>Jogo arcade de empilhar</dd></div>
+          <div><dt>Plataforma de destino</dt><dd>Android / iOS (previsto)</dd></div>
+          <div><dt>Motor</dt><dd>Unity 6</dd></div>
+          <div><dt>Estado</dt><dd>Protótipo</dd></div>
+          <div><dt>Formato da sessão</dt><dd>Corridas em busca de pontuação</dd></div>
+        </dl>
+      </section>
+      <section class="soft-card game-page-section" id="how-it-plays" aria-labelledby="loopTitle">
+        <div class="eyebrow">Ciclo de jogo</div>
+        <h2 id="loopTitle">Como joga Sandwich Stack</h2>
+        <ol class="update-list ug-steps">
+          <li><span>Passo 01</span><strong>Escolha o próximo ingrediente</strong><p>Escolha um recheio no painel de ingredientes. A calha de receitas mostra qual o sanduíche que o pedido atual pede.</p></li>
+          <li><span>Passo 02</span><strong>Toque para colocar</strong><p>A camada move-se por cima da pilha e um toque fixa-a. Uma combinação certa mantém o tamanho inteiro e uma falha corta a camada.</p></li>
+          <li><span>Passo 03</span><strong>Mantenha a pilha de pé</strong><p>Cada modo define a sua regra: tamanho, órbita, equilíbrio ou um número limitado de cortes. Um erro, uma torre derrubada ou nenhum corte restante termina a partida.</p></li>
+        </ol>
+      </section>
+      <section class="soft-card game-page-section" id="features" aria-labelledby="featuresTitle">
+        <div class="eyebrow">Recursos</div>
+        <h2 id="featuresTitle">Modos de empilhar e mecânicas de equilíbrio</h2>
+        <div class="ug-features">
+          <article class="detail-card"><h3>Quatro modos de empilhar</h3><p>Press Rush, Round 3D, Balance Tower 3D e Slice &amp; Fit 3D mudam cada um o que é uma boa colocação. Um ecrã de seleção de modo abre em cada partida.</p></article>
+          <article class="detail-card"><h3>Balance Tower 3D</h3><p>Sobreposição, peso e vento alimentam um medidor de estabilidade que mostra STABLE, WOBBLE ou DANGER. Uma torre derrubada termina a partida.</p></article>
+          <article class="detail-card"><h3>Slice &amp; Fit 3D</h3><p>Deslize para cortar uma camada com um número limitado de cortes e depois encaixe-a no anel-alvo.</p></article>
+          <article class="detail-card"><h3>Vinte ingredientes, pedidos de receitas</h3><p>Vinte ingredientes estão num painel de seleção, e uma calha de receitas mostra a ordem a seguir a partir de um catálogo de 166 receitas.</p></article>
+          <article class="detail-card"><h3>Fundos que mudam à medida que sobe</h3><p>Duas sequências ilustradas de dez fotogramas, uma cidade no ar e uma vila submarina, misturam-se à medida que a pilha cresce.</p></article>
+          <article class="detail-card"><h3>Pontuações guardadas e efeitos sonoros</h3><p>As melhores pontuações e contagens de camadas são guardadas por modo no dispositivo, e sete efeitos sonoros estão incluídos na versão.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="next" aria-labelledby="nextTitle">
+        <div class="eyebrow">Direção</div>
+        <h2 id="nextTitle">Estado da versão de Sandwich Stack e próximos passos</h2>
+        <p class="ug-lede">Ainda não há data de lançamento. São objetivos do projeto, não promessas.</p>
+        <ul class="ug-next">
+          <li>Primeiras versões em dispositivos Android e iOS reais (ainda não existem).</li>
+          <li>Uma revisão de texto específica para sanduíches: o catálogo de receitas ainda tem nomes de receitas apenas em russo.</li>
+        </ul>
+      </section>
+      <section class="soft-card game-page-section" id="gallery" aria-labelledby="galleryTitle">
+        <div class="eyebrow">Imagens</div>
+        <h2 id="galleryTitle">Galeria de arte</h2>
+        <p class="ug-lede">Recursos de arte e de interface do projeto Unity, não capturas de jogabilidade.</p>
+        <div class="ug-gallery ug-gallery--3">
+          <figure class="ug-shot ug-shot--strip"><img src="../../assets/upcoming/sandwich-stack/gallery-03.webp" width="960" height="414" alt="Seletor de ingredientes de Sandwich Stack: um painel com vinte espaços de ingredientes sobre uma tábua turquesa gasta." loading="lazy" decoding="async"><figcaption>Seletor de ingredientes</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-01.webp" width="540" height="987" alt="Fundo de cidade no ar de Sandwich Stack: uma plataforma de latão entre nuvens, usada por trás da pilha." loading="lazy" decoding="async"><figcaption>Fundo de cidade no ar</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-02.webp" width="540" height="987" alt="Fundo de vila submarina de Sandwich Stack: um convés de madeira e uma banca de mercado, usado por trás da pilha." loading="lazy" decoding="async"><figcaption>Fundo de vila submarina</figcaption></figure>
+          <figure class="ug-shot"><img src="../../assets/upcoming/sandwich-stack/gallery-04.webp" width="960" height="768" alt="Arte dos ingredientes de Sandwich Stack: vinte peças com hambúrgueres, legumes, molhos, bacon, ovo e batatas fritas." loading="lazy" decoding="async"><figcaption>Vinte ingredientes</figcaption></figure>
+        </div>
+      </section>
+      <section class="soft-card game-page-section" id="faq" aria-labelledby="faqTitle">
+        <div class="eyebrow">Perguntas e respostas</div>
+        <h2 id="faqTitle">Perguntas frequentes sobre Sandwich Stack</h2>
+        <div class="ug-faq">
+          <article class="detail-card"><h3>Que tipo de jogo é Sandwich Stack?</h3><p>Um jogo arcade de empilhar de toque para colocar. Constrói sanduíches camada a camada em quatro modos: Press Rush, Round 3D, Balance Tower 3D e Slice &amp; Fit 3D. A ideia de empilhar é partilhada com o <a href="burger-stack.html">Burger Stack</a>; aqui as camadas são ingredientes de sanduíche e três dos modos são em 3D.</p></article>
+          <article class="detail-card"><h3>Já está disponível Sandwich Stack e para que plataformas?</h3><p>É um protótipo. O projeto está preparado para Android e iOS, mas ainda não há versão pública, página de loja nem data de lançamento.</p></article>
+          <article class="detail-card"><h3>Quem faz Sandwich Stack e como o posso seguir?</h3><p>Sandwich Stack é feito pela WillowinWorlds, um estúdio independente de jogos para telemóvel (ver a sua <a href="../index.html#games">jogos principais</a>). Siga a WillowinWorlds nos canais sociais ligados nesta página ou envie um email <a href="mailto:willowinworlds@gmail.com?subject=Sandwich%20Stack">willowinworlds@gmail.com</a> para pedir novidades sobre Sandwich Stack.</p></article>
+        </div>
+      </section>
+      <section class="soft-card game-page-section ug-vote" id="vote" aria-labelledby="voteTitle">
+        <div class="eyebrow">Votação</div>
+        <h2 id="voteTitle">Siga o progresso de Sandwich Stack e vote</h2>
+        <p class="ug-lede">A votação vai abrir nos canais do estúdio. Siga a WillowinWorlds para participar.</p>
+        <div class="social-block social-block--game">
+          <p class="social-title" id="voteSocialTitle">Siga a WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="voteSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds_ES" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds_es" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds_es_pr/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds_es" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      </section>
+    </div>
+  </main>
+  <nav class="lab-related" aria-labelledby="labRelatedTitle">
+    <div class="container lab-related-inner">
+      <h2 class="lab-related-title" id="labRelatedTitle">Outros protótipos de empilhar no laboratório</h2>
+      <ul class="lab-related-list" role="list">
+        <li><a class="lab-related-link" href="burger-stack.html"><strong>Burger Stack</strong><span>O mesmo empilhar com um toque, com camadas de hambúrguer, cozinhas submarina e do céu e nove modos.</span></a></li>
+        <li><a class="lab-related-link" href="stack-tower.html"><strong>Stack Tower</strong><span>A mesma ideia de empilhar com um toque, com andares largados de uma grua em balanço.</span></a></li>
+        <li><a class="lab-related-link" href="lyamur.html"><strong>Lyamur</strong><span>Outro protótipo de arcade casual: aponte e dispare bolas coloridas antes de a cadeia chegar ao buraco.</span></a></li>
+      </ul>
+      <a class="lab-related-all" href="../index.html#in-development">Todos os jogos em desenvolvimento</a>
+    </div>
+  </nav>
+  <footer class="game-footer">
+    <div class="container game-footer-inner">
+      <div class="game-footer-copy">
+        <strong>Sandwich Stack é um jogo da WillowinWorlds em desenvolvimento.</strong>
+        <span>Empilhe camadas de sanduíche com um toque em quatro modos, incluindo uma torre de equilíbrio que pode tombar e um modo em que corta cada camada para a ajustar.</span>
+      </div>
+      <nav class="game-footer-nav" aria-label="Navegação de rodapé de Sandwich Stack">
+        <a href="../index.html#in-development">Jogos em desenvolvimento</a>
+        <a href="../press-kit.html">Kit de imprensa</a>
+        <a href="../privacy.html">Privacidade</a>
+        <a href="../legal.html">Jurídico</a>
+        <a href="mailto:willowinworlds@gmail.com?subject=Sandwich%20Stack">Contacto</a>
+      </nav>
+      <div class="social-block social-block--game">
+          <p class="social-title" id="gameSocialTitle">Siga a WillowinWorlds</p>
+          <nav class="social-links" aria-labelledby="gameSocialTitle" data-social-links="compact"><!-- social-links:start --><ul class="social-list" role="list"><li><a class="social-link" href="https://www.youtube.com/@WillowinWorlds_ES" rel="me">YouTube</a></li><li><a class="social-link" href="https://www.tiktok.com/@willowinworlds_es" rel="me">TikTok</a></li><li><a class="social-link" href="https://www.instagram.com/willowinworlds_es_pr/" rel="me">Instagram</a></li><li><a class="social-link" href="https://www.threads.com/@willowinworlds_es" rel="me">Threads</a></li><li><a class="social-link" href="https://www.facebook.com/groups/willowinworlds" rel="me">Facebook</a></li><li><a class="social-link" href="https://x.com/willowinworlds" rel="me">X</a></li><li><a class="social-link" href="https://www.reddit.com/user/WillowinWorlds/" rel="me">Reddit</a></li><li><a class="social-link" href="https://t.me/WillowinWorlds" rel="me">Telegram</a></li><li><a class="social-link" href="https://vk.ru/willowinworlds" rel="me">VK</a></li></ul><!-- social-links:end --></nav>
+        </div>
+      <div class="share-block">
+        <p class="social-title">Partilhar</p>
+        <nav class="share-links" aria-label="Partilhar" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fpt-pt%2Fgames%2Fsandwich-stack.html&amp;text=Sandwich%20Stack%3A%20jogo%20de%20empilhar%20em%20desenvolvimento%20%7C%20WillowinWorlds" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fpt-pt%2Fgames%2Fsandwich-stack.html&amp;title=Sandwich%20Stack%3A%20jogo%20de%20empilhar%20em%20desenvolvimento%20%7C%20WillowinWorlds" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fpt-pt%2Fgames%2Fsandwich-stack.html&amp;text=Sandwich%20Stack%3A%20jogo%20de%20empilhar%20em%20desenvolvimento%20%7C%20WillowinWorlds" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fpt-pt%2Fgames%2Fsandwich-stack.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fpt-pt%2Fgames%2Fsandwich-stack.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Copiar ligação</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+      </div>
+    </div>
+  </footer>
+  <script src="../../game-theme.js?v=20261114-4"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
+</body>
+</html>

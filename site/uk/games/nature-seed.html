@@ -59,11 +59,16 @@
       ]
     },
     {
-      "@type": "VideoGame",
+      "@type": [
+        "VideoGame",
+        "WebApplication"
+      ],
       "@id": "https://willowinworlds.com/uk/games/nature-seed.html#game",
       "name": "Nature Seed",
       "url": "https://willowinworlds.com/uk/games/nature-seed.html",
       "image": "https://willowinworlds.com/assets/Nature%20Seeds/Icon-site.webp",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web Browser",
       "description": "Безкоштовна фізична головоломка з малюванням. Намалюйте лінію з обмеженого запасу чорнила, щоб звести Water Drop і Seed разом і повернути до життя акварельний ліс за 100 рівнів.",
       "keywords": "головоломка з малюванням, фізична головоломка, безкоштовна браузерна гра, головоломка з лініями, розслаблююча головоломка",
       "genre": [
@@ -102,14 +107,14 @@
 </script>
   <link rel="manifest" href="../../manifest.webmanifest">
   <link rel="alternate" type="application/rss+xml" title="WillowinWorlds Девлог RSS" href="../../rss.xml">
-  <link rel="preload" href="../../assets/responsive/nature-seed-hero-1376.avif" as="image" type="image/avif" fetchpriority="high" imagesrcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" imagesizes="(max-width: 760px) 94vw, 58vw">
-  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="../../assets/responsive/nature-seed-icon-192.webp" as="image" type="image/webp">
   <link rel="stylesheet" href="../../css/base.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/nature-scene.css?v=20261113-1">
   <link rel="stylesheet" href="../../css/game-shell.css?v=20261113-3">
   <link rel="stylesheet" href="../../css/nature-page.css?v=20261114-4">
   <link rel="stylesheet" href="../../css/game-content.css?v=20261114-4">
-  <link rel="stylesheet" href="../../css/site-sections.css?v=20261114-4">
+  <link rel="stylesheet" href="../../css/site-sections.css?v=20261115-1">
   <link rel="stylesheet" href="../../css/keyframes.css">
   <link rel="stylesheet" href="../../css/responsive-desktop.css">
   <link rel="stylesheet" href="../../css/responsive-tablet.css?v=20261113-1">
@@ -122,7 +127,7 @@
   <a class="skip-link" href="#game-main">Перейдіть до Nature Seed</a>
   <header class="game-detail-topbar">
     <a class="game-detail-brand" href="../index.html">
-      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" fetchpriority="high" decoding="async">
+      <img src="../../assets/responsive/nature-seed-icon-192.webp" width="192" height="192" alt="" decoding="async">
       <span><strong>Nature Seed</strong><small>Сторінка гри WillowinWorlds</small></span>
       <span class="visually-hidden">Назад до WillowinWorlds</span>
     </a>
@@ -169,10 +174,10 @@
     <section class="nature-game-hero" aria-labelledby="natureHeroTitle">
       <div class="nature-hero-bg ambient-only" aria-hidden="true">
         <div class="nature-stage nature-stage-backdrop">
-          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" decoding="async">
+          <img class="nature-level nature-level-sketch" src="../../assets/Nature%20Seeds/Galvnie_3_0-site.webp" width="1440" height="810" alt="" loading="lazy" decoding="async">
           <picture>
             <source type="image/avif" srcset="../../assets/responsive/nature-seed-hero-720.avif 720w, ../../assets/responsive/nature-seed-hero-1376.avif 1376w" sizes="(max-width: 760px) 94vw, 58vw">
-            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+            <img class="nature-level nature-level-painted" src="../../assets/responsive/nature-seed-hero-1376.webp" srcset="../../assets/responsive/nature-seed-hero-720.webp 720w, ../../assets/responsive/nature-seed-hero-1376.webp 1376w" sizes="(max-width: 760px) 94vw, 58vw" width="1376" height="768" alt="" loading="lazy" decoding="async">
           </picture>
           <svg class="nature-route" viewBox="0 0 640 560" fill="none" aria-hidden="true">
             <path d="M36 176C132 182 146 252 236 253C324 254 325 185 410 188C496 190 493 318 596 320" />
@@ -464,6 +469,7 @@
       </div>
       <nav class="game-footer-nav" aria-label="Навігація нижнього колонтитула Nature Seed">
         <a href="../index.html#games">Усі ігри</a>
+        <a href="../index.html#in-development">У розробці</a>
         <a href="../press-kit.html">Прес-пакет</a>
         <a href="../privacy.html">Конфіденційність</a>
         <a href="../legal.html">Юридична інформація</a>
@@ -475,11 +481,11 @@
       </div>
       <div class="share-block">
         <p class="social-title">Поділитися</p>
-        <nav class="share-links" aria-label="Поділитися" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%D0%BA%D0%B0%20%D0%B7%20%D0%BC%D0%B0%D0%BB%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC%20%D1%83%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%96">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html&amp;title=Nature%20Seed%20%7C%20%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%D0%BA%D0%B0%20%D0%B7%20%D0%BC%D0%B0%D0%BB%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC%20%D1%83%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%96">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%D0%BA%D0%B0%20%D0%B7%20%D0%BC%D0%B0%D0%BB%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC%20%D1%83%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%96">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Копіювати посилання</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
+        <nav class="share-links" aria-label="Поділитися" data-share-links><!-- share-links:start --><ul class="social-list share-list" role="list"><li><a class="social-link share-link" href="https://x.com/intent/post?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%D0%BA%D0%B0%20%D0%B7%20%D0%BC%D0%B0%D0%BB%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC%20%D1%83%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%96" rel="nofollow">X</a></li><li><a class="social-link share-link" href="https://www.reddit.com/submit?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html&amp;title=Nature%20Seed%20%7C%20%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%D0%BA%D0%B0%20%D0%B7%20%D0%BC%D0%B0%D0%BB%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC%20%D1%83%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%96" rel="nofollow">Reddit</a></li><li><a class="social-link share-link" href="https://t.me/share/url?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html&amp;text=Nature%20Seed%20%7C%20%D0%91%D0%B5%D0%B7%D0%BA%D0%BE%D1%88%D1%82%D0%BE%D0%B2%D0%BD%D0%B0%20%D0%B3%D0%BE%D0%BB%D0%BE%D0%B2%D0%BE%D0%BB%D0%BE%D0%BC%D0%BA%D0%B0%20%D0%B7%20%D0%BC%D0%B0%D0%BB%D1%8E%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%D0%BC%20%D1%83%20%D0%B1%D1%80%D0%B0%D1%83%D0%B7%D0%B5%D1%80%D1%96" rel="nofollow">Telegram</a></li><li><a class="social-link share-link" href="https://vk.com/share.php?url=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html" rel="nofollow">VK</a></li><li><a class="social-link share-link" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwillowinworlds.com%2Fuk%2Fgames%2Fnature-seed.html" rel="nofollow">Facebook</a></li><li><button class="social-link share-link share-copy" type="button" data-share-copy>Копіювати посилання</button></li></ul><span class="visually-hidden" role="status" data-share-status></span><!-- share-links:end --></nav>
       </div>
     </div>
   </footer>
   <script src="../../game-theme.js?v=20261114-4"></script>
-  <script src="../i18n-runtime.js?v=20261114"></script>
+  <script src="../i18n-runtime.js?v=20261115"></script>
 </body>
 </html>

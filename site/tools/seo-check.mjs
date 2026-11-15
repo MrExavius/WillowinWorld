@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { readdir, readFile } from "node:fs/promises";
 import { extname, join, relative } from "node:path";
 import {
@@ -9,7 +10,7 @@ import {
 import {
   alternateLinks,
   contactEmail,
-  englishOnlyPages,
+  labPages,
   localizedPages,
   locales,
   outputFile,
@@ -25,20 +26,10 @@ const pages = Object.freeze([
     canonical: pageUrl(locale, source),
     locale,
     source,
-    game: source.kind === "game",
+    game: source.kind === "game" || source.kind === "game-upcoming",
+    upcoming: source.kind === "game-upcoming",
     policy: source.kind === "policy"
   }))),
-  // English-only prototype pages: the English contract applies, but no localized copies or hreflang cluster.
-  ...englishOnlyPages.map(source => ({
-    file: source.file,
-    sourceFile: source.file,
-    canonical: pageUrl(sourceLocale, source),
-    locale: sourceLocale,
-    source,
-    game: true,
-    englishOnly: true,
-    policy: false
-  })),
   { file: "404.html", locale: sourceLocale, indexable: false }
 ]);
 
@@ -95,6 +86,11 @@ function structuredObjects(html, file) {
     }
   }
   return objects;
+}
+
+function sameOriginUrls(value) {
+  if (typeof value === "string") return value.startsWith(`${siteOrigin}/`) ? [value] : [];
+  return value && typeof value === "object" ? Object.values(value).flatMap(sameOriginUrls) : [];
 }
 
 function hasType(object, type) {
@@ -195,6 +191,10 @@ for (const page of pages) {
   }
 
   const objects = structuredObjects(html, page.file);
+  for (const url of new Set(sameOriginUrls(objects))) {
+    const target = decodeURIComponent(new URL(url).pathname.replace(/\/$/, "/index.html")).slice(1);
+    if (!existsSync(join(siteRoot, target))) fail(page.file, `structured data URL does not exist: ${url}`);
+  }
   const organization = objects.find(object => hasType(object, "Organization") && object?.["@id"] === studioId);
   if (page.source.kind === "home" && organization?.url !== `${siteOrigin}/`) {
     fail(page.file, "Organization must preserve one canonical studio URL across locales");
@@ -202,17 +202,21 @@ for (const page of pages) {
   if (page.game) {
     const game = objects.find(object => hasType(object, "VideoGame"));
     const source = gameDevlogSources.find(candidate => candidate.file === page.sourceFile);
+    const isReleased = source?.status === "Released";
     if (!game) fail(page.file, "missing VideoGame JSON-LD");
-    if (objects.some(object => hasType(object, "SoftwareApplication"))) fail(page.file, "unreleased game must not claim SoftwareApplication rich-result data");
+    if (!isReleased && objects.some(object => hasType(object, "SoftwareApplication") || hasType(object, "WebApplication") || hasType(object, "MobileApplication"))) fail(page.file, "unreleased game must not claim SoftwareApplication rich-result data");
     if (objects.some(object => hasType(object, "FAQPage"))) fail(page.file, "game FAQ schema must not diverge from visible FAQ content");
     if (game?.["@id"] !== `${page.canonical}#game`) fail(page.file, "VideoGame @id must be canonical#game");
     if (game?.author?.["@id"] !== studioId) fail(page.file, "VideoGame author must reference #studio");
     if (game?.publisher?.["@id"] !== studioId) fail(page.file, "VideoGame publisher must reference #studio");
     if (game?.inLanguage !== page.locale.htmlLang) fail(page.file, `VideoGame inLanguage must be ${page.locale.htmlLang}`);
-    if (page.englishOnly) {
+    if (page.upcoming) {
       // No devlog and no AI profile yet: the page itself is the source of truth for name and status.
+      // The game name is never translated; the status is, so it is exact on the English page only.
       if (game?.name !== page.source.name) fail(page.file, `VideoGame name must be ${page.source.name}`);
-      if (game?.creativeWorkStatus !== page.source.status) fail(page.file, `VideoGame creativeWorkStatus must be ${page.source.status}`);
+      if (page.locale.code === sourceLocale.code && game?.creativeWorkStatus !== page.source.status) {
+        fail(page.file, `VideoGame creativeWorkStatus must be ${page.source.status}`);
+      }
     } else {
       if (page.locale.code === sourceLocale.code) {
         if (source?.pageCanonical !== page.canonical) fail(page.file, "AI profile canonical must match the page canonical");
@@ -240,7 +244,7 @@ for (const page of pages.filter(page => page.indexable !== false)) {
   const block = (sitemap.match(/<url>[\s\S]*?<\/url>/g) || [])
     .find(candidate => candidate.includes(`<loc>${page.canonical}</loc>`));
   const alternateTags = block?.match(/<xhtml:link\b[^>]*\/>/g) || [];
-  const expectedAlternates = page.englishOnly ? [] : alternateLinks(page.source);
+  const expectedAlternates = alternateLinks(page.source);
   for (const expected of expectedAlternates) {
     const match = alternateTags.find(tag => attr(tag, "hreflang") === expected.hreflang);
     if (!match || attr(match, "href") !== expected.href || attr(match, "rel") !== "alternate") {
@@ -252,24 +256,38 @@ for (const page of pages.filter(page => page.indexable !== false)) {
   }
 }
 if (sitemapLocs.some(loc => loc.endsWith("/404.html"))) fail("sitemap.xml", "must not include 404.html");
-for (const page of pages.filter(page => page.englishOnly)) {
+for (const page of pages.filter(page => page.upcoming)) {
   const block = (sitemap.match(/<url>[\s\S]*?<\/url>/g) || []).find(candidate => candidate.includes(`<loc>${page.canonical}</loc>`));
   if (!/<lastmod>\d{4}-\d{2}-\d{2}<\/lastmod>/.test(block || "")) fail("sitemap.xml", `${page.canonical} needs a YYYY-MM-DD lastmod`);
 }
 
-// The home "In development" cards must match the English-only page list (name, genre, status, link).
-const homeHtml = await readFile(join(siteRoot, "index.html"), "utf8");
-for (const page of englishOnlyPages) {
-  const card = homeHtml.match(new RegExp(`<a\\b[^>]*\\bhref="${page.path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>[\\s\\S]*?<\\/a>`))?.[0] || "";
-  if (!card) {
-    fail("index.html", `missing In development card linking to ${page.path}`);
-    continue;
+// The "In development" cards of every home must match the lab page list: name, link to the same-language
+// lab page (no hreflang override) and, on the English home, genre and status.
+for (const locale of locales) {
+  const homeFile = outputFile(locale, localizedPages[0]);
+  const homeHtml = await readFile(join(siteRoot, homeFile), "utf8");
+  for (const page of labPages) {
+    const card = homeHtml.match(new RegExp(`<a\\b[^>]*\\bhref="${page.path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>[\\s\\S]*?<\\/a>`))?.[0] || "";
+    if (!card) {
+      fail(homeFile, `missing In development card linking to ${page.path}`);
+      continue;
+    }
+    if (/\bhreflang=/i.test(card.match(/^<a\b[^>]*>/)[0])) fail(homeFile, `${page.path} card must not override the page language with hreflang`);
+    if (!text(card).includes(page.name)) fail(homeFile, `${page.path} card must show its name: ${page.name}`);
+    if (locale.code !== sourceLocale.code) continue;
+    if (!text(card).includes(page.genre)) fail(homeFile, `${page.path} card must show its genre: ${page.genre}`);
+    if (text(card.match(/<span class="status-pill[^"]*">([^<]*)<\/span>/)?.[1]) !== page.status) {
+      fail(homeFile, `${page.path} card status pill must read: ${page.status}`);
+    }
   }
-  for (const [label, value] of [["name", page.name], ["genre", page.genre]]) {
-    if (!text(card).includes(value)) fail("index.html", `${page.path} card must show its ${label}: ${value}`);
-  }
-  if (text(card.match(/<span class="status-pill[^"]*">([^<]*)<\/span>/)?.[1]) !== page.status) {
-    fail("index.html", `${page.path} card status pill must read: ${page.status}`);
+}
+
+// The press kit links the same lab pages; its links must not override the page language either.
+const labPaths = new Set(labPages.map(page => page.path));
+for (const locale of locales) {
+  const pressFile = outputFile(locale, localizedPages.find(page => page.kind === "press"));
+  for (const tag of (await readFile(join(siteRoot, pressFile), "utf8")).match(/<a\b[^>]*>/g) || []) {
+    if (labPaths.has(attr(tag, "href")) && /\bhreflang=/i.test(tag)) fail(pressFile, `${attr(tag, "href")} link must not override the page language with hreflang`);
   }
 }
 
@@ -293,7 +311,7 @@ for (const game of gameDevlogSources) {
   if (!llms.includes(`Genres: ${game.genres.join(", ")}.`)) fail("llms.txt", `missing factual ${game.name} genres`);
   if (!llms.includes(`Current status: ${game.status}.`)) fail("llms.txt", `missing factual ${game.name} status`);
 }
-for (const page of englishOnlyPages) {
+for (const page of labPages) {
   if (!llms.includes(`[${page.name}](${pageUrl(sourceLocale, page)}): Genre: ${page.genre}. Current status: ${page.status}.`)) {
     fail("llms.txt", `missing In development entry for ${page.name}`);
   }
@@ -406,6 +424,9 @@ for (const locale of locales.filter(candidate => candidate.code !== sourceLocale
     const gamePage = localizedPages.find(page => page.file === game.file);
     if (!localizedLlms.includes(`](${pageUrl(locale, gamePage)})`)) fail(file, `missing localized ${game.name} link`);
   }
+  for (const page of labPages) {
+    if (!localizedLlms.includes(`[${page.name}](${pageUrl(locale, page)}):`)) fail(file, `missing localized In development entry for ${page.name}`);
+  }
 }
 
 if (errors.length) {
@@ -414,4 +435,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages (${englishOnlyPages.length} English-only) across ${locales.length} languages, multilingual sitemap.xml, robots.txt, languages.json and localized AI guides.`);
+console.log(`SEO and AI-discovery contract passed for ${pages.length} public HTML pages (${labPages.length} lab game pages per language) across ${locales.length} languages, multilingual sitemap.xml, robots.txt, languages.json and localized AI guides.`);

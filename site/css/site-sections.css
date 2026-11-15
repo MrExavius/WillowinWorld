@@ -651,9 +651,12 @@
   margin-bottom: 24px;
 }
 
-.modal-head h2 {
-  margin-bottom: 8px;
+.modal-head h2,
+.modal-head .modal-heading {
+  margin: 0 0 8px;
+  color: var(--text);
   font-size: 2rem;
+  font-weight: 700;
 }
 
 .modal-head p {
@@ -681,9 +684,12 @@
     var(--surface);
 }
 
-.info-card h3 {
-  margin-bottom: 12px;
+.info-card h3,
+.info-card .modal-subheading {
+  margin: 0 0 12px;
+  color: var(--text);
   font-size: 1.18rem;
+  font-weight: 700;
 }
 
 .info-card p {
@@ -850,9 +856,12 @@
   margin-bottom: 12px;
 }
 
-.game-dialog .modal-head h2 {
-  margin-bottom: 0;
+.game-dialog .modal-head h2,
+.game-dialog .modal-head .modal-heading {
+  margin: 0;
+  color: var(--text);
   font-size: clamp(2.15rem, 5vw, 4.4rem);
+  font-weight: 700;
   line-height: 0.96;
 }
 
@@ -890,9 +899,12 @@
     color-mix(in srgb, var(--surface-soft) 84%, transparent);
 }
 
-.game-pillar-panel h3 {
-  margin-bottom: 14px;
+.game-pillar-panel h3,
+.game-pillar-panel .modal-subheading {
+  margin: 0 0 14px;
+  color: var(--text);
   font-size: 1rem;
+  font-weight: 700;
 }
 
 .game-pillar-panel ul {
@@ -1148,9 +1160,12 @@ body.promo-hunt-active.magic-off .secret-glint {
     var(--surface-strong);
 }
 
-.secret-dialog h2 {
-  margin-bottom: 12px;
+.secret-dialog h2,
+.secret-dialog .modal-heading {
+  margin: 0 0 12px;
+  color: var(--text);
   font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 700;
   line-height: 1;
 }
 
