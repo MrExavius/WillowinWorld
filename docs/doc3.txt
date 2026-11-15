@@ -1051,7 +1051,7 @@ _Дата аудита: 2026-11-04_
 ### Анализ инструментов QA
 
 #### [ПОДТВЕРЖДЕНО] QA-SEC001: security-check.mjs — комплексная проверка
-**Место:** site/tools/security-check.mjs
+**Место:** tools/security-check.mjs
 
 **Наблюдение:** Проверяет:
 - CSP наличие и корректность
@@ -1074,7 +1074,7 @@ _Дата аудита: 2026-11-04_
 ---
 
 #### [ПОДТВЕРЖДЕНО] QA-QUAL001: quality-check.mjs — оркестрация всех проверок
-**Место:** site/tools/quality-check.mjs
+**Место:** tools/quality-check.mjs
 
 **Наблюдение:** Запускает:
 - node --check на всех JS файлах

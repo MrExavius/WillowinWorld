@@ -1,5 +1,14 @@
 # AI Change Log
 
+## 2026-11-15 - Keep only published files in site/
+
+- Scope: Owner-approved repository layout cleanup on branch `35`. Public URLs and published files are unchanged.
+- Changed: `site/tools/` -> `tools/` (translation memory now `tools/locales/`), `site/deploy/` -> `deploy/`, `site/QUALITY_CHECKS.md`, `FIXES-1-TECH.md`, `FIXES-2-CONTENT-SEO-SOCIAL.md`, `PRODUCT.md` -> `docs/`. Tools resolve the site as `../site/`; reports go to `reports/`, the minified build to `dist/` (both ignored). Old test artifacts `output/playwright/` and `.playwright-cli/` are untracked (kept on disk) and ignored. Workflows run `node tools/...`; `pages.yml` still publishes a copy of `site/`.
+- Compatibility/config: Commands change from `node site/tools/<x>.mjs` to `node tools/<x>.mjs`. Earlier entries in this file keep their original paths.
+- Validation: `node tools/quality-check.mjs` - PASS; `node tools/localize-site.mjs`, `sync-devlogs.mjs`, `update-sitemap-lastmod.mjs --check` then `git diff -- site` - no content change (byte-identical output); `build-minified.mjs`, `css-coverage-audit.mjs`, `visual-check.mjs` - PASS; local simulation of the `pages.yml` publish step - artifact has index.html, `.well-known/security.txt`, 41 locales, no tooling.
+- Risks/follow-up: Ignored leftovers `site/dist/` and `site/reports/` still exist locally (not in a clean checkout); `link-check.mjs`/`seo-check.mjs` still skip them. The forbidden-string scan in `seo-check.mjs` now covers `site/` only.
+- Rollback: `git revert` of this commit.
+
 ## 2026-11-15 - Localize the 8 lab game pages and apply SEO audit fixes
 
 - Scope: Branch `35`, uncommitted on top of deployed commit `b3f7a19`. Owner asked to localize the 8 lab pages (blastblast, vacuum-shot, burger-stack, sandwich-stack, scooter-mechanic-simulator, alien-flying, lyamur, stack-tower) into all 41 locales and to fix what the Antigravity SEO audits found. No commit, push or external account changes.

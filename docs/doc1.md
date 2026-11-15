@@ -194,7 +194,7 @@ GitHub, ветка 35
 - `.github/workflows/pages.yml:3` запускает публикацию непосредственно на push в ветку `35`;
 - checkout в `.github/workflows/pages.yml:22-25` использует изменяемую ссылку на ветку;
 - `site-quality.yml` существует отдельно, поэтому его ошибка сама по себе не создаёт зависимости, блокирующей Pages job;
-- workflow качества проверяет синтаксис `quality-check.mjs`, но не запускает полный `node site/tools/quality-check.mjs`;
+- workflow качества проверяет синтаксис `quality-check.mjs`, но не запускает полный `node tools/quality-check.mjs`;
 - не найден единый проверенный артефакт, который после gate без пересборки передаётся в deployment;
 - post-deploy smoke test и проверка заголовков отсутствуют;
 - concurrency-защита публикации не подтверждена.
@@ -205,7 +205,7 @@ GitHub, ветка 35
 
 1. объединить quality и deploy в один workflow либо сделать deploy явным зависимым job через `needs`;
 2. checkout и artifact provenance привязать к `${{ github.sha }}`;
-3. выполнить полный `node site/tools/quality-check.mjs`, CSS audit, sitemap check и необходимые browser smoke tests до upload;
+3. выполнить полный `node tools/quality-check.mjs`, CSS audit, sitemap check и необходимые browser smoke tests до upload;
 4. публиковать ровно тот артефакт, который был проверен;
 5. добавить `concurrency` для production;
 6. после deploy проверить 200/301/404, canonical, security headers и ключевой пользовательский сценарий;
@@ -242,7 +242,7 @@ _dmarc  TXT  "v=DMARC1; p=reject; adkim=s; aspf=s"
 - `site/ru/games/nature-seed.html:232` — «совершенный удар» и «количество строк» в неподходящем контексте;
 - `site/ru/games/nature-seed.html:408` — «государственные активы» вместо смысла public materials/assets.
 
-`site/tools/localize-site.mjs:714-743` использует `translate.googleapis.com` на этапе генерации. Автоматические проверки подтверждают структуру, placeholders и наличие строк, но не семантическую точность.
+`tools/localize-site.mjs:714-743` использует `translate.googleapis.com` на этапе генерации. Автоматические проверки подтверждают структуру, placeholders и наличие строк, но не семантическую точность.
 
 Не делается вывод, что ошибочны все 42 языковые версии: нативный аудит всех языков не выполнялся. Но подтверждённой выборки достаточно, чтобы не считать локализацию полностью готовой.
 
@@ -327,7 +327,7 @@ GitHub Actions в workflow используют теги major-версий, а 
 
 **Приоритет:** P3
 
-`node site/tools/build-minified.mjs` проходит, но Pages workflow загружает исходный каталог `site`, а не проверенный `site/dist`. Каталоги `site/dist` и `site/reports` игнорируются Git и отсутствуют в чистом checkout, поэтому они не раздувают production. На production запросы к `/dist/index.html` и `/reports/visual/index-desktop.png` вернули 404.
+`node tools/build-minified.mjs` проходит, но Pages workflow загружает исходный каталог `site`, а не проверенный `dist`. Каталоги `dist` и `reports` игнорируются Git и отсутствуют в чистом checkout, поэтому они не раздувают production. На production запросы к `/dist/index.html` и `/reports/visual/index-desktop.png` вернули 404.
 
 Это не текущий performance-блокер: CDN сжимает ответы, а измеренный lab-срез приемлем. Но сборка и публикация должны иметь одну понятную модель — либо deploy проверенного dist, либо удалить ложное ожидание, что dist используется.
 
@@ -344,10 +344,10 @@ GitHub Actions в workflow используют теги major-версий, а 
 
 Основной сайт уже использует `willowinworlds@gmail.com`, но переводы содержат старые доменные адреса:
 
-- `site/tools/locales/pl.json:464` — `kontakt@willowinworlds.com`;
-- `site/tools/locales/tr.json:464` — `Contact@willowinworlds.com`;
-- `site/tools/locales/tt.json:464` — `Contact@willowinworlds.com`;
-- `site/tools/locales/tt.json:1599` и `site/tt/index.html:746` — `контакт@willowinworlds.com` в FAQ.
+- `tools/locales/pl.json:464` — `kontakt@willowinworlds.com`;
+- `tools/locales/tr.json:464` — `Contact@willowinworlds.com`;
+- `tools/locales/tt.json:464` — `Contact@willowinworlds.com`;
+- `tools/locales/tt.json:1599` и `site/tt/index.html:746` — `контакт@willowinworlds.com` в FAQ.
 
 Те же значения подтверждены на production в `pl/tr/tt/i18n-runtime.js` и на татарской главной. Они появляются как fallback при ошибке копирования; татарский FAQ показывает старый адрес постоянно. MX для домена отсутствует, поэтому сообщение на эти адреса не дойдёт.
 
@@ -387,7 +387,7 @@ Repository Rulesets API вернул пустой список `[]`. Это от
 
 **Приоритет:** P3
 
-Pages workflow загружает весь `./site` (`.github/workflows/pages.yml:30-33`). Внутри `site/tools` находятся 53 файла общим размером около 8.6 MiB. Production отдаёт их напрямую:
+Pages workflow загружает весь `./site` (`.github/workflows/pages.yml:30-33`). Внутри `tools` находятся 53 файла общим размером около 8.6 MiB. Production отдаёт их напрямую:
 
 - `/tools/quality-check.mjs` — 200;
 - `/tools/localize-site.mjs` — 200, около 70 KiB;
@@ -445,7 +445,7 @@ Pages workflow загружает весь `./site` (`.github/workflows/pages.ym
 
 **Приоритет:** P3
 
-`site/.well-known/security.txt:1-4` и production-файл содержат `Contact`, `Preferred-Languages`, `Canonical` и `Policy`, но не `Expires`. RFC 9116 §2.5.5 требует ровно одно поле `Expires`; рекомендуемое значение — менее года в будущем. Локальный `site/tools/security-check.mjs:124` проверяет только контакт.
+`site/.well-known/security.txt:1-4` и production-файл содержат `Contact`, `Preferred-Languages`, `Canonical` и `Policy`, но не `Expires`. RFC 9116 §2.5.5 требует ровно одно поле `Expires`; рекомендуемое значение — менее года в будущем. Локальный `tools/security-check.mjs:124` проверяет только контакт.
 
 Исправление: добавить RFC3339 `Expires`, автоматическую проверку единственности и будущей даты, а также регулярное обновление до истечения срока.
 
@@ -498,9 +498,9 @@ Commit `5ac8791` изменил 378 public HTML-файлов, включая con
 
 Root cause:
 
-- `site/tools/localize-site.mjs:1084-1089` записывает всем локалям одну константу;
-- `site/tools/localization-config.mjs:3` фиксирует её как `2026-09-10`;
-- English home/game dates в `site/tools/devlog-data.mjs:192-198` зависят только от devlog.
+- `tools/localize-site.mjs:1084-1089` записывает всем локалям одну константу;
+- `tools/localization-config.mjs:3` фиксирует её как `2026-09-10`;
+- English home/game dates в `tools/devlog-data.mjs:192-198` зависят только от devlog.
 
 Google учитывает `lastmod`, только если он стабильно и проверяемо точен; изменение main content, structured data или links считается значимым. Текущий сигнал может быть проигнорирован. Ranking/crawl effect не измерен.
 
@@ -527,9 +527,9 @@ Google учитывает `lastmod`, только если он стабильн
 
 **Приоритет:** P3
 
-В public game pages имеется 5 датированных `data-devlog-entry`, но `rss.xml` содержит 4 items. `site/tools/devlog-data.mjs:129-133` берёт только первую, самую новую запись каждой игры, поэтому более старая запись Nature Seed исчезает из feed.
+В public game pages имеется 5 датированных `data-devlog-entry`, но `rss.xml` содержит 4 items. `tools/devlog-data.mjs:129-133` берёт только первую, самую новую запись каждой игры, поэтому более старая запись Nature Seed исчезает из feed.
 
-Кроме того, `site/tools/devlog-data.mjs:216-217` создаёт GUID вида `#devlog-2026-09-10`, а HTML содержит только общий `id="devlog"`. В RSS 2.0 отсутствующий `isPermaLink` по умолчанию равен `true`, поэтому reader вправе считать несуществующий fragment открываемым permalink.
+Кроме того, `tools/devlog-data.mjs:216-217` создаёт GUID вида `#devlog-2026-09-10`, а HTML содержит только общий `id="devlog"`. В RSS 2.0 отсутствующий `isPermaLink` по умолчанию равен `true`, поэтому reader вправе считать несуществующий fragment открываемым permalink.
 
 Исправление:
 
@@ -586,11 +586,11 @@ Google учитывает `lastmod`, только если он стабильн
 
 | Команда | Результат |
 |---|---|
-| `node site/tools/quality-check.mjs` | PASS |
-| `node site/tools/css-coverage-audit.mjs` | PASS |
-| `node site/tools/update-sitemap-lastmod.mjs --check` | PASS |
-| `node site/tools/build-minified.mjs` | PASS |
-| `node site/tools/visual-check.mjs` | PASS |
+| `node tools/quality-check.mjs` | PASS |
+| `node tools/css-coverage-audit.mjs` | PASS |
+| `node tools/update-sitemap-lastmod.mjs --check` | PASS |
+| `node tools/build-minified.mjs` | PASS |
+| `node tools/visual-check.mjs` | PASS |
 
 Эти PASS означают только прохождение реализованных локальных контрактов. Они сами по себе не проверяют устаревшие translated email values, семантику sitemap `lastmod`, RSS permalink, visual overlap social cards или live branch protection. Отдельная проверка GitHub API зафиксирована в AUD-15.
 
@@ -757,7 +757,7 @@ Security gate остаётся CONDITIONAL до закрытия AUD-03, AUD-04,
 7. Согласовать robots training policy с опубликованным запретом на AI-training.
 8. Решить судьбу promo hunt: проверяемая акция с правилами либо Easter egg без обещания кода.
 9. Закрепить actions по полным SHA и минимизировать workflow permissions.
-10. Публиковать whitelist/dist без `site/tools`, `_headers` и `_redirects` как обычных файлов.
+10. Публиковать whitelist/dist без `tools`, `_headers` и `_redirects` как обычных файлов.
 11. Добавить `Expires` в `security.txt` и канонический `.github/SECURITY.md`.
 12. Исправить pointer gating Easter egg и убрать/восстановить недостижимые UI-controls.
 
@@ -802,11 +802,11 @@ Security gate остаётся CONDITIONAL до закрытия AUD-03, AUD-04,
 git -C /home/mrexavius/Documents/GitHub/WillowinWorld status --short --branch
 git -C /home/mrexavius/Documents/GitHub/WillowinWorld rev-parse HEAD
 
-node site/tools/quality-check.mjs
-node site/tools/css-coverage-audit.mjs
-node site/tools/update-sitemap-lastmod.mjs --check
-node site/tools/build-minified.mjs
-node site/tools/visual-check.mjs
+node tools/quality-check.mjs
+node tools/css-coverage-audit.mjs
+node tools/update-sitemap-lastmod.mjs --check
+node tools/build-minified.mjs
+node tools/visual-check.mjs
 
 curl -sSI https://willowinworlds.com/
 curl -sSI http://willowinworlds.com/
@@ -864,9 +864,9 @@ Browser-проверки должны выполняться отдельным�
 - `site/index.html`
 - `site/games/nature-seed.html`
 - `site/ru/games/nature-seed.html`
-- `site/tools/locales/pl.json`
-- `site/tools/locales/tr.json`
-- `site/tools/locales/tt.json`
+- `tools/locales/pl.json`
+- `tools/locales/tr.json`
+- `tools/locales/tt.json`
 - `site/css/base.css`
 - `site/css/responsive-tablet.css`
 - `site/css/responsive-mobile.css`
@@ -883,10 +883,10 @@ Browser-проверки должны выполняться отдельным�
 - `site/legal.html`
 - `site/asset-usage.html`
 - `site/assets/og/*-1200x630.webp`
-- `site/tools/quality-check.mjs`
-- `site/tools/localize-site.mjs`
-- `site/tools/localization-config.mjs`
-- `site/tools/devlog-data.mjs`
+- `tools/quality-check.mjs`
+- `tools/localize-site.mjs`
+- `tools/localization-config.mjs`
+- `tools/devlog-data.mjs`
 
 ## Нормативные ссылки
 

@@ -1,0 +1,1328 @@
+import { createHash } from "node:crypto";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { dirname, join, relative } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
+import {
+  alternateLinks,
+  contactEmail,
+  labIntro,
+  labPages,
+  localizationLastModified,
+  localizedPages,
+  locales,
+  outputFile,
+  pageUrl,
+  siteOrigin,
+  sourceLocale,
+  translatedLocales,
+  socialProfilesFor
+} from "./localization-config.mjs";
+import { gameDevlogSources, loadLatestDevlogs } from "./devlog-data.mjs";
+
+const siteRoot = fileURLToPath(new URL("../site/", import.meta.url));
+const translationRoot = fileURLToPath(new URL("./locales/", import.meta.url));
+const translateMissing = process.argv.includes("--translate");
+const checkOnly = process.argv.includes("--check");
+const refreshLocales = new Set((process.argv.find(argument => argument.startsWith("--refresh="))?.split("=")[1] || "").split(",").filter(Boolean));
+const batchSize = 20;
+const translationConcurrency = 4;
+const translationRetries = 4;
+const nonLatinLocaleCodes = new Set([
+  "ar", "hy", "bn", "bg", "zh-hans", "zh-hant", "el", "he", "hi", "ja", "ko", "fa", "kk", "ru", "th", "tt", "uk", "ur"
+]);
+
+const alternateStart = "<!-- locale-alternates:start -->";
+const alternateEnd = "<!-- locale-alternates:end -->";
+const switcherStart = "<!-- locale-switcher:start -->";
+const switcherEnd = "<!-- locale-switcher:end -->";
+const socialStart = "<!-- social-links:start -->";
+const socialEnd = "<!-- social-links:end -->";
+const shareStart = "<!-- share-links:start -->";
+const shareEnd = "<!-- share-links:end -->";
+const sitemapStart = "<!-- localized-pages:start -->";
+const sitemapEnd = "<!-- localized-pages:end -->";
+
+const metaTranslationKeys = new Set([
+  "description",
+  "og:title",
+  "og:description",
+  "og:image:alt",
+  "twitter:title",
+  "twitter:description",
+  "twitter:image:alt"
+]);
+
+const translatableAttributes = new Set(["aria-label", "aria-description", "title", "placeholder", "alt"]);
+// Text-only elements marked translate="no" (a game title split over several spans) are never translated.
+const noTranslateLeaf = /<([a-z][\w-]*)\b[^>]*\btranslate=["']no["'][^>]*>[^<]*<\/\1>/gi;
+const structuredDataSkippedKeys = new Set([
+  "@context",
+  "@type",
+  "@id",
+  "url",
+  "item",
+  "image",
+  "logo",
+  "email",
+  "datePublished",
+  "dateModified",
+  "mainEntityOfPage",
+  "itemListOrder",
+  "numberOfItems",
+  "position",
+  "applicationCategory",
+  "operatingSystem",
+  "price",
+  "priceCurrency",
+  "availability"
+]);
+
+const protectedExactText = new Set([
+  "WillowinWorlds",
+  "Nature Seed",
+  "Candy Shop",
+  "Paint Blasters",
+  "Ball is God?!",
+  "Ball is God",
+  ...labPages.map(page => page.name),
+  "Render Software Studio",
+  "Espa",
+  "Water Drop",
+  "Seed",
+  "Miras",
+  "Revla",
+  "Shash",
+  "Shish",
+  "Shush",
+  "Lurya",
+  "Vladus",
+  "Luren",
+  "Don Yagon",
+  "Hah",
+  "Hih",
+  "Varon",
+  "Goga",
+  "Khleya",
+  "White",
+  "Susya",
+  "Heh",
+  "Frisha",
+  "Gigo",
+  "Giga",
+  "Askold",
+  "Musya",
+  "Kuren",
+  "Dusya",
+  "Ena",
+  "Dyo",
+  "Tria",
+  "Tessera",
+  "Pente",
+  "Eksi",
+  "Epta",
+  "Ohto",
+  "Ennea",
+  "Deka",
+  "Zetun",
+  "Candy Book",
+  "Match-3",
+  "Unity",
+  "WebP",
+  "UI/UX",
+  "HUD",
+  "VFX",
+  "PanelOver",
+  "illo",
+  "w",
+  "in",
+  "orld",
+  "OAI-SearchBot",
+  "PerplexityBot",
+  "Claude-SearchBot",
+  "ChatGPT-User",
+  "Perplexity-User",
+  "Claude-User",
+  "itch.io",
+  "Game Jolt",
+  "indiexpo",
+  "orlds",
+  "willowinworlds@gmail.com"
+]);
+
+const manualTranslationOverrides = Object.freeze({
+  hy: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Ինդի շարժական գլուխկոտրուկների և արկադային խաղերի ստուդիա",
+    "Physics Puzzle / Arcade Hybrid": "Ֆիզիկական գլուխկոտրուկ / արկադային հիբրիդ"
+  }),
+  cs: Object.freeze({
+    "Hardcore Vertical Descent Arcade": "Hardcore arkáda s vertikálním sestupem"
+  }),
+  da: Object.freeze({
+    "Hardcore Vertical Descent Arcade": "Hardcore arkadespil med lodret nedstigning",
+    "Spotlight · Nature Seed release": "Fokus · Nature Seed-udgivelse",
+    "WillowinWorlds - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds - Uafhængigt studie for mobile puzzle- og arkadespil",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Uafhængigt studie for mobile puzzle- og arkadespil"
+  }),
+  nl: Object.freeze({
+    "Open Nature Seed devlog": "Open het devlog van Nature Seed",
+    "Open Candy Shop devlog": "Open het devlog van Candy Shop",
+    "Open Paint Blasters devlog": "Open het devlog van Paint Blasters",
+    "Open Ball is God?! devlog": "Open het devlog van Ball is God?!"
+  }),
+  fil: Object.freeze({
+    "Night Magic / Daylight": "Mahikang Gabi / Liwanag ng Araw",
+    "Spotlight · Nature Seed release": "Tampok · Paglabas ng Nature Seed",
+    "First prototype": "Unang prototipo",
+    "Released": "Inilabas",
+    "Polish": "Pagpapakinis",
+    "Level 2 restoration and stability pass": "Pagpapanumbalik ng Level 2 at pagpapahusay ng katatagan",
+    "Production menu and HUD pass": "Pagpapahusay sa production menu at HUD",
+    "Physics and effect stability pass": "Pagpapahusay sa katatagan ng pisika at mga epekto",
+    "Clear draft": "Burahin ang draft",
+    "Descent cleared": "Nakumpleto ang pagbaba",
+    "Production state": "Kalagayan ng produksyon"
+  }),
+  fi: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Riippumaton mobiilipulma- ja arcadepelistudio",
+    "Color Destruction Physics Puzzle": "Värintuhoon perustuva fysiikkapulma",
+    "Night Magic / Daylight": "Yön taika / Päivänvalo"
+  }),
+  hu: Object.freeze({
+    "Night Magic / Daylight": "Éjszakai varázs / Nappali fény"
+  }),
+  hi: Object.freeze({
+    "Showing {count}: {filter}": "{filter} श्रेणी में {count} गेम दिखाए जा रहे हैं"
+  }),
+  ja: Object.freeze({
+    "Polish": "仕上げ",
+    "Level 2 restoration and stability pass": "レベル2の復元と安定性改善",
+    "Production menu and HUD pass": "本番用メニューとHUDの改善",
+    "Physics and effect stability pass": "物理挙動とエフェクトの安定性改善",
+    "Clear draft": "下書きを消去",
+    "Descent cleared": "降下クリア",
+    "Player character": "プレイヤーキャラクター",
+    "Production state": "制作状況"
+  }),
+  no: Object.freeze({
+    "Ball is God?! - Hardcore Vertical Descent Arcade Game": "Ball is God?! - Hardcore arkadespill med vertikal nedstigning",
+    "Candy Shop - Cozy Candy Merge Puzzle Game": "Candy Shop - Koselig puslespill med sammenslåing av godteri",
+    "Hardcore Vertical Descent Arcade": "Hardcore arkadespill med vertikal nedstigning",
+    "Paint Blasters - Color Destruction Physics Puzzle Game": "Paint Blasters - Fysikkpuslespill med fargeødeleggelse",
+    "Spotlight · Nature Seed release": "I fokus · Nature Seed-lansering",
+    "WillowinWorlds - Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds - Uavhengig studio for mobile pusle- og arkadespill",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Uavhengig studio for mobile pusle- og arkadespill"
+  }),
+  ro: Object.freeze({
+    "Ball is God?! - Hardcore Vertical Descent Arcade Game": "Ball is God?! - Joc arcade hardcore cu coborâre verticală",
+    "Hardcore Vertical Descent Arcade": "Arcade hardcore cu coborâre verticală",
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Studio indie de jocuri mobile puzzle și arcade"
+  }),
+  ru: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Инди-студия мобильных головоломок и аркад",
+    "Indie mobile game studio": "Инди-студия мобильных игр",
+    "Small games. Living worlds.": "Небольшие игры. Живые миры.",
+    "Contact studio": "Связаться со студией",
+    "Request updates": "Следить за обновлениями",
+    "Press kit": "Пресс-кит",
+    "Current spotlight · Draw-to-Solve": "В центре внимания · Рисуй и решай",
+    "Connect": "Соединить",
+    "Bloom": "Расцвет",
+    "2D Art Direction": "Выразительный 2D-стиль",
+    "Living Worlds": "Живые миры",
+    "Polish": "Полировка",
+    "Level 2 restoration and stability pass": "Восстановление уровня 2 и повышение стабильности",
+    "Production menu and HUD pass": "Обновление меню и HUD",
+    "Physics and effect stability pass": "Стабилизация физики и эффектов",
+    "Talk to WillowinWorlds.": "Поговорите с WillowinWorlds.",
+    "Draw a path. Bring them together.": "Нарисуйте путь. Соедините их.",
+    "Drop sweets. Build bigger treats.": "Бросайте сладости. Собирайте всё более крупные угощения.",
+    "Mix three colors. Break the tower.": "Смешайте три цвета. Разрушьте башню.",
+    "The recipe decides the shot.": "Рецепт определяет выстрел.",
+    "Rotate the tower. Become the impact.": "Вращайте башню. Сами станьте ударом.",
+    "Studio home": "Главная студии",
+    "UI + Cast": "Интерфейс + Персонажи",
+    "Dodge": "Уклониться",
+    "Decide": "Выбор",
+    "Active Production · Ten Locations": "В активной разработке · Десять локаций",
+    "Build status": "Статус версии",
+    "Active production": "В активной разработке",
+    "Magic hunt": "Охота за магией",
+    "End magic hunt": "Завершить охоту за магией",
+    "Enable Magic": "Включить магию",
+    "Hidden promo letter": "Скрытая промо-буква",
+    "Hidden promo letter {letter}": "Скрытая промо-буква {letter}",
+    "Karma changes more than the dialogue.": "Карма меняет не только диалоги.",
+    "Nature Seed press and creator assets": "Материалы Nature Seed для прессы и авторов",
+    "Candy Shop press and creator assets": "Материалы Candy Shop для прессы и авторов",
+    "Paint Blasters press and creator assets": "Материалы Paint Blasters для прессы и авторов",
+    "Ball is God?! press and creator assets": "Материалы Ball is God?! для прессы и авторов"
+  }),
+  es: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Estudio indie de juegos móviles de puzles y arcade",
+    "Indie mobile game studio": "Estudio indie de juegos móviles",
+    "Small games. Living worlds.": "Juegos pequeños. Mundos vivos.",
+    "Contact studio": "Contactar con el estudio",
+    "Request updates": "Seguir las novedades",
+    "Press kit": "Kit de prensa",
+    "Spotlight · Nature Seed release": "En portada · Lanzamiento de Nature Seed",
+    "Living Worlds": "Mundos vivos",
+    "Polish": "Pulido",
+    "Level 2 restoration and stability pass": "Restauración del nivel 2 y mejoras de estabilidad",
+    "Production menu and HUD pass": "Actualización del menú y el HUD",
+    "Physics and effect stability pass": "Mejoras de estabilidad en físicas y efectos",
+    "Talk to WillowinWorlds.": "Habla con WillowinWorlds.",
+    "Draw a path. Bring them together.": "Traza un camino. Reúne a los dos.",
+    "Drop sweets. Build bigger treats.": "Suelta dulces. Crea delicias más grandes.",
+    "Mix three colors. Break the tower.": "Mezcla tres colores. Derriba la torre.",
+    "The recipe decides the shot.": "La receta define el disparo.",
+    "Rotate the tower. Become the impact.": "Gira la torre. Conviértete en el impacto.",
+    "Studio home": "Inicio del estudio",
+    "Dodge": "Esquivar",
+    "Decide": "Decidir",
+    "Active Production · Ten Locations": "En desarrollo activo · Diez localizaciones",
+    "Build status": "Estado de la versión",
+    "Active production": "En desarrollo activo",
+    "Karma changes more than the dialogue.": "El karma cambia mucho más que los diálogos.",
+    "Nature Seed press and creator assets": "Recursos de Nature Seed para prensa y creadores",
+    "Candy Shop press and creator assets": "Recursos de Candy Shop para prensa y creadores",
+    "Paint Blasters press and creator assets": "Recursos de Paint Blasters para prensa y creadores",
+    "Ball is God?! press and creator assets": "Recursos de Ball is God?! para prensa y creadores"
+  }),
+  pt: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Estúdio indie de jogos mobile de quebra-cabeça e arcade",
+    "Indie mobile game studio": "Estúdio indie de jogos mobile",
+    "Contact studio": "Falar com o estúdio",
+    "Request updates": "Acompanhar novidades",
+    "Press kit": "Kit de imprensa",
+    "Spotlight · Nature Seed release": "Em destaque · Lançamento de Nature Seed",
+    "2D Art Direction": "Direção de arte 2D",
+    "Living Worlds": "Mundos vivos",
+    "Polish": "Polimento",
+    "Level 2 restoration and stability pass": "Restauração do nível 2 e melhorias de estabilidade",
+    "Production menu and HUD pass": "Atualização do menu e do HUD",
+    "Physics and effect stability pass": "Melhorias de estabilidade na física e nos efeitos",
+    "Talk to WillowinWorlds.": "Fale com a WillowinWorlds.",
+    "Draw a path. Bring them together.": "Desenhe um caminho. Una os dois.",
+    "Drop sweets. Build bigger treats.": "Solte doces. Crie delícias maiores.",
+    "Mix three colors. Break the tower.": "Misture três cores. Derrube a torre.",
+    "The recipe decides the shot.": "A receita define o disparo.",
+    "Rotate the tower. Become the impact.": "Gire a torre. Torne-se o impacto.",
+    "Studio home": "Início do estúdio",
+    "Dodge": "Desviar",
+    "Decide": "Decidir",
+    "Active Production · Ten Locations": "Em desenvolvimento ativo · Dez locais",
+    "Active production": "Em desenvolvimento ativo",
+    "Karma changes more than the dialogue.": "O karma muda muito mais que os diálogos.",
+    "Nature Seed press and creator assets": "Materiais de Nature Seed para imprensa e criadores",
+    "Candy Shop press and creator assets": "Materiais de Candy Shop para imprensa e criadores",
+    "Paint Blasters press and creator assets": "Materiais de Paint Blasters para imprensa e criadores",
+    "Ball is God?! press and creator assets": "Materiais de Ball is God?! para imprensa e criadores"
+  }),
+  de: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Indie-Studio für mobile Puzzle- und Arcade-Spiele",
+    "Hardcore Vertical Descent Arcade": "Hardcore-Arcade mit vertikalem Abstieg"
+  }),
+  ar: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | استوديو مستقل لألعاب الألغاز والأركيد على الهاتف",
+    "Canonical English source": "المصدر الإنجليزي الأساسي"
+  }),
+  fa: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | استودیوی مستقل بازی‌های پازل و آرکید موبایل"
+  }),
+  kk: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Мобильді басқатырғыштар мен аркада ойындарының тәуелсіз студиясы"
+  }),
+  ms: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Studio Bebas Permainan Teka-teki dan Arked Mudah Alih"
+  }),
+  sw: Object.freeze({
+    "WillowinWorlds | Indie Mobile Puzzle & Arcade Game Studio": "WillowinWorlds | Studio Huru ya Michezo ya Simu ya Mafumbo na Arcade"
+  }),
+  sv: Object.freeze({
+    "Spotlight · Nature Seed release": "Fokus · Nature Seed-lansering"
+  })
+});
+
+const explicitRuntimeStrings = Object.freeze([
+  "Language",
+  "Choose language",
+  "Showing {count}: {filter}",
+  "Hidden letters: {found}/{total}",
+  "Static",
+  "Play",
+  "Paused",
+  "Low",
+  "Ambient",
+  "Auto",
+  "Night Magic",
+  "Daylight",
+  "Resume Magic",
+  "Pause Magic",
+  "Full Magic",
+  "Low Motion",
+  "Enable Magic",
+  "Disable Magic",
+  "A star path awakened.",
+  "Magic unlocked",
+  "Request Promo Code",
+  "A hidden portal answered.",
+  "End magic hunt",
+  "Magic hunt",
+  "Hidden promo letter",
+  "Hidden promo letter {letter}",
+  "Close menu",
+  "Open menu",
+  "Hidden letters are awake.",
+  "Magic hunt paused.",
+  "Email draft requested. If it did not open, use Copy message.",
+  "Email app requested. If nothing opened, press Copy message or write to willowinworlds@gmail.com.",
+  "Contact message copied.",
+  "Copy was blocked. Use willowinworlds@gmail.com.",
+  "Draft saved in this browser tab.",
+  "Draft stays in this browser tab while you work.",
+  "Draft is available until this page closes.",
+  "Draft restored from this browser tab.",
+  "Draft cleared. New text will save in this tab.",
+  "Switch to light theme",
+  "Switch to dark theme",
+  "Copy link",
+  "Link copied",
+  "Could not copy link",
+  "WillowinWorlds is an independent mobile game studio making puzzle and arcade games. It has four flagship games (Nature Seed, Candy Shop, Paint Blasters and Ball is God?!) and eight lab prototypes.",
+  "Site language",
+  "Canonical English source",
+  "Games",
+  "Genres",
+  "Current status",
+  "Latest development notes",
+  "Published",
+  "In development",
+  "Genre",
+  labIntro,
+  "Studio and press",
+  "Studio home",
+  "Press kit",
+  "Media asset usage",
+  "Feeds and policies",
+  "Devlog RSS feed",
+  "XML sitemap",
+  "Language index",
+  "Privacy policy",
+  "Legal notice",
+  "Contact",
+  "Email WillowinWorlds",
+  ...gameDevlogSources.flatMap(game => [game.status, game.machineSummary, ...game.genres])
+]);
+
+function decodeHtml(value) {
+  return value
+    .replaceAll("&amp;", "&")
+    .replaceAll("&quot;", "\"")
+    .replaceAll("&#39;", "'")
+    .replaceAll("&apos;", "'")
+    .replaceAll("&lt;", "<")
+    .replaceAll("&gt;", ">")
+    .replaceAll("&nbsp;", " ")
+    .replaceAll("&ndash;", "–");
+}
+
+function encodeHtml(value, attribute = false) {
+  let encoded = String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+  if (attribute) encoded = encoded.replaceAll("\"", "&quot;");
+  return encoded;
+}
+
+function normalizedText(value) {
+  return decodeHtml(value).replace(/\s+/g, " ").trim();
+}
+
+function mailtoTextFields(value) {
+  if (!/^mailto:/i.test(value || "")) return [];
+  try {
+    const url = new URL(decodeHtml(value));
+    return ["subject", "body"]
+      .map(key => url.searchParams.get(key))
+      .filter(Boolean);
+  } catch {
+    return [];
+  }
+}
+
+function localizeMailto(value, translations) {
+  if (!/^mailto:/i.test(value || "")) return value;
+  try {
+    const url = new URL(decodeHtml(value));
+    for (const key of ["subject", "body"]) {
+      const current = url.searchParams.get(key);
+      if (!current) continue;
+      const translated = translations[normalizedText(current)];
+      if (translated) url.searchParams.set(key, translated);
+    }
+    url.search = url.searchParams.toString().replaceAll("+", "%20");
+    return encodeHtml(url.href, true);
+  } catch {
+    return value;
+  }
+}
+
+function shouldTranslate(value) {
+  const text = normalizedText(value);
+  if (!text || protectedExactText.has(text)) return false;
+  if (!/\p{L}/u.test(text)) return false;
+  if (/^(?:https?:\/\/|mailto:|tel:|data:)/i.test(text)) return false;
+  if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) return false;
+  if (/^[\w.-]+\.(?:html|webp|avif|png|jpg|jpeg|svg|xml|txt|css|js)$/i.test(text)) return false;
+  if (/^(?:#[\w-]+|[A-Z0-9]{1,4})$/.test(text)) return false;
+  return true;
+}
+
+// Resets the generated social and share rows to their empty markers so they are rendered afresh.
+function emptyRenderedBlocks(html) {
+  return html
+    .replace(new RegExp(`${socialStart}[\\s\\S]*?${socialEnd}`, "g"), `${socialStart}${socialEnd}`)
+    .replace(new RegExp(`${shareStart}[\\s\\S]*?${shareEnd}`, "g"), `${shareStart}${shareEnd}`);
+}
+
+function stripGeneratedBlocks(html) {
+  return emptyRenderedBlocks(html
+    .replace(new RegExp(`\\s*${alternateStart}[\\s\\S]*?${alternateEnd}`, "g"), "")
+    .replace(new RegExp(`\\s*${switcherStart}[\\s\\S]*?${switcherEnd}`, "g"), ""))
+    .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "");
+}
+
+function pageSourceHash(pageSources) {
+  const hash = createHash("sha256");
+  for (const page of localizedPages) hash.update(page.file).update("\0").update(pageSources.get(page.file)).update("\0");
+  return hash.digest("hex");
+}
+
+function collectStructuredStrings(value, parentKey, result) {
+  if (Array.isArray(value)) {
+    value.forEach(item => collectStructuredStrings(item, parentKey, result));
+    return;
+  }
+  if (!value || typeof value !== "object") return;
+  for (const [key, child] of Object.entries(value)) {
+    if (structuredDataSkippedKeys.has(key)) continue;
+    if (typeof child === "string") {
+      if (shouldTranslate(child)) result.add(normalizedText(child));
+    } else {
+      collectStructuredStrings(child, key || parentKey, result);
+    }
+  }
+}
+
+function collectStrings(html) {
+  const result = new Set();
+  let visible = html.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gi, (script, content) => {
+    if (/type=["']application\/ld\+json["']/i.test(script)) {
+      try {
+        collectStructuredStrings(JSON.parse(content), "", result);
+      } catch (error) {
+        throw new Error(`Invalid JSON-LD while collecting translations: ${error.message}`);
+      }
+    }
+    return "";
+  });
+  visible = visible
+    .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, "")
+    .replace(/<svg\b[^>]*>[\s\S]*?<\/svg>/gi, "")
+    .replace(noTranslateLeaf, "")
+    .replace(/<!--([\s\S]*?)-->/g, "");
+
+  for (const match of visible.matchAll(/>\s*([^<>]*?\p{L}[^<>]*?)\s*</gu)) {
+    if (shouldTranslate(match[1])) result.add(normalizedText(match[1]));
+  }
+
+  for (const tag of visible.match(/<[^>]+>/g) || []) {
+    if (/^<meta\b/i.test(tag)) {
+      const key = tag.match(/\b(?:name|property)=(["'])([\s\S]*?)\1/i)?.[2]?.toLowerCase();
+      const content = tag.match(/\bcontent=(["'])([\s\S]*?)\1/i)?.[2];
+      if (key && metaTranslationKeys.has(key) && content && shouldTranslate(content)) {
+        result.add(normalizedText(content));
+      }
+    }
+    for (const [, name, , value] of tag.matchAll(/\b([\w-]+)=(["'])([\s\S]*?)\2/g)) {
+      if (name.toLowerCase() === "href") {
+        mailtoTextFields(value).forEach(field => {
+          if (shouldTranslate(field)) result.add(normalizedText(field));
+        });
+      }
+      if (translatableAttributes.has(name.toLowerCase()) && shouldTranslate(value)) {
+        result.add(normalizedText(value));
+      }
+    }
+  }
+  return result;
+}
+
+async function collectRuntimeStrings() {
+  const result = new Set(explicitRuntimeStrings);
+  const source = await readFile(join(siteRoot, "scripts.js"), "utf8");
+  const start = source.indexOf("const gameProfiles =");
+  const end = source.indexOf("const sectionSecretSpots =", start);
+  if (start < 0 || end < 0) throw new Error("scripts.js: unable to locate game profile localization block");
+  const block = source.slice(start, end);
+  for (const match of block.matchAll(/"((?:\\.|[^"\\])*)"/g)) {
+    const value = JSON.parse(`"${match[1]}"`);
+    if (value && /\p{L}/u.test(value) && !protectedExactText.has(value)) result.add(value);
+  }
+  return result;
+}
+
+async function readTranslationMemory(locale, sourceHash) {
+  const path = join(translationRoot, `${locale.code}.json`);
+  try {
+    const parsed = JSON.parse(await readFile(path, "utf8"));
+    return {
+      path,
+      locale: locale.code,
+      sourceHash,
+      translations: parsed && typeof parsed.translations === "object" ? parsed.translations : {}
+    };
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+    return { path, locale: locale.code, sourceHash, translations: {} };
+  }
+}
+
+function protectedTermPattern(term, flags = "u") {
+  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`(^|[^\\p{L}\\p{N}])${escaped}(?=$|[^\\p{L}\\p{N}])`, flags);
+}
+
+function protectTerms(value) {
+  const replacements = [];
+  let protectedValue = value;
+  for (const placeholder of new Set(value.match(/\{[^{}]+\}/g) || [])) {
+    const token = `__W${replacements.length}__`;
+    protectedValue = protectedValue.replaceAll(placeholder, token);
+    replacements.push({ token, term: placeholder });
+  }
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld", "orlds"]);
+  [...protectedExactText]
+    .sort((left, right) => right.length - left.length)
+    .forEach(term => {
+      if (exactOnlyFragments.has(term) && value !== term) return;
+      const pattern = protectedTermPattern(term, "gu");
+      if (!pattern.test(protectedValue)) return;
+      pattern.lastIndex = 0;
+      const token = `__W${replacements.length}__`;
+      protectedValue = protectedValue.replace(pattern, (match, prefix) => `${prefix}${token}`);
+      replacements.push({ token, term });
+    });
+  return { protectedValue, replacements };
+}
+
+function restoreTerms(value, replacements) {
+  let restored = value;
+  replacements.forEach(({ token, term }) => {
+    const tokenIndex = token.match(/\d+/)?.[0];
+    const tolerantToken = tokenIndex ? new RegExp(`__\\s*W\\s*${tokenIndex}\\s*__`, "gi") : null;
+    restored = tolerantToken
+      ? restored.replace(tolerantToken, term)
+      : restored.replaceAll(token, term).replaceAll(token.toLowerCase(), term);
+  });
+  return restored;
+}
+
+function wait(delay) {
+  return new Promise(resolve => setTimeout(resolve, delay));
+}
+
+async function fetchTranslation(url, attempt = 0) {
+  try {
+    const response = await fetch(url, { signal: AbortSignal.timeout(45_000) });
+    if (response.ok) return response;
+    if (attempt >= translationRetries || ![429, 500, 502, 503, 504].includes(response.status)) {
+      throw new Error(`Translation endpoint returned ${response.status} ${response.statusText}`);
+    }
+  } catch (error) {
+    if (attempt >= translationRetries) throw error;
+  }
+  await wait(500 * (2 ** attempt));
+  return fetchTranslation(url, attempt + 1);
+}
+
+async function requestTranslations(locale, entries) {
+  const protectedEntries = entries.map(entry => ({ ...entry, ...protectTerms(entry.text) }));
+  const markerFor = index => `⟦${String(index).padStart(3, "0")}⟧`;
+  const singleEntry = protectedEntries.length === 1;
+  const query = singleEntry
+    ? protectedEntries[0].protectedValue
+    : protectedEntries.map((entry, index) => `${markerFor(index)} ${entry.protectedValue}`).join("\n");
+  const url = new URL("https://translate.googleapis.com/translate_a/single");
+  url.searchParams.set("client", "gtx");
+  url.searchParams.set("sl", "en");
+  url.searchParams.set("tl", locale.translateCode || locale.htmlLang || locale.code);
+  url.searchParams.set("dt", "t");
+  url.searchParams.set("q", query);
+
+  const response = await fetchTranslation(url);
+  const body = await response.json();
+  const combined = Array.isArray(body?.[0]) ? body[0].map(segment => segment?.[0] || "").join("") : "";
+  const byId = new Map();
+  if (singleEntry && combined.trim()) {
+    const entry = protectedEntries[0];
+    byId.set(entry.id, restoreTerms(combined.trim(), entry.replacements));
+    return byId;
+  }
+  for (const [entryIndex, entry] of protectedEntries.entries()) {
+    const marker = markerFor(entryIndex);
+    const start = combined.indexOf(marker);
+    if (start < 0) continue;
+    const valueStart = start + marker.length;
+    const laterMarkers = protectedEntries
+      .map((candidate, candidateIndex) => combined.indexOf(markerFor(candidateIndex), valueStart))
+      .filter(index => index >= 0);
+    const end = laterMarkers.length ? Math.min(...laterMarkers) : combined.length;
+    const translated = restoreTerms(combined.slice(valueStart, end).trim(), entry.replacements);
+    if (translated) byId.set(entry.id, translated);
+  }
+
+  const missing = entries.filter(entry => !byId.get(entry.id));
+  if (missing.length && entries.length > 1) {
+    for (const entry of missing) {
+      const retry = await requestTranslations(locale, [entry]);
+      if (retry.get(entry.id)) byId.set(entry.id, retry.get(entry.id));
+    }
+  }
+  const stillMissing = entries.filter(entry => !byId.get(entry.id));
+  if (stillMissing.length) throw new Error(`Translation response omitted ${stillMissing.map(entry => entry.id).join(", ")}`);
+  return byId;
+}
+
+function protectedTermsIn(value) {
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld", "orlds"]);
+  return [...protectedExactText].filter(term => {
+    if (exactOnlyFragments.has(term)) return value === term;
+    return protectedTermPattern(term).test(value);
+  });
+}
+
+function containsUnexpectedEnglishRun(locale, translation) {
+  if (!nonLatinLocaleCodes.has(locale.code)) return false;
+  let candidate = translation;
+  const exactOnlyFragments = new Set(["illo", "w", "in", "orld", "orlds"]);
+  for (const term of protectedExactText) {
+    if (!exactOnlyFragments.has(term)) candidate = candidate.replace(protectedTermPattern(term, "gu"), "$1 ");
+  }
+  return /\b[A-Za-z][A-Za-z'-]*(?:\s+[A-Za-z][A-Za-z'-]*){3,}\b/.test(candidate);
+}
+
+function translationNeedsRepair(locale, source, translation) {
+  if (!translation || typeof translation !== "string") return true;
+  if (/WILLOW(?:PROTECTED|PLACEHOLDER)|__W\d+__|⟦|⟧/iu.test(translation)) return true;
+  const placeholders = source.match(/\{[^{}]+\}/g) || [];
+  if (placeholders.some(placeholder => !translation.includes(placeholder))) return true;
+  if (!source.includes("\n") && translation.includes("\n")) return true;
+  if (translation === source && source.length >= 24 && source.trim().split(/\s+/).length >= 4) return true;
+  if (translation.length > Math.max(160, source.length * 4.5)) return true;
+  if (source.length > 24 && translation.length < Math.max(4, source.length * 0.08)) return true;
+  if (containsUnexpectedEnglishRun(locale, translation)) return true;
+  return protectedTermsIn(source).some(term => !translation.includes(term));
+}
+
+async function repairTranslations(locale, memory, requiredStrings) {
+  const suspect = [...requiredStrings].filter(source => translationNeedsRepair(locale, source, memory.translations[source]));
+  if (!suspect.length) return 0;
+  if (!translateMissing) {
+    const examples = suspect.slice(0, 3)
+      .map(source => `${JSON.stringify(source)} => ${JSON.stringify(memory.translations[source])}`)
+      .join("; ");
+    throw new Error(`${locale.code}: ${suspect.length} translations need repair (${examples}); run node tools/localize-site.mjs --translate`);
+  }
+
+  console.log(`${locale.code}: repairing ${suspect.length} translations individually`);
+  let completed = 0;
+  for (let start = 0; start < suspect.length; start += translationConcurrency) {
+    const wave = suspect.slice(start, start + translationConcurrency);
+    const translated = await Promise.all(wave.map((source, index) => {
+      const entry = { id: `repair_${start + index}`, text: source };
+      return requestTranslations(locale, [entry]).then(result => [source, result.get(entry.id)]);
+    }));
+    translated.forEach(([source, value]) => {
+      memory.translations[source] = value;
+    });
+    completed += translated.length;
+    await writeFile(memory.path, `${JSON.stringify({
+      locale: locale.code,
+      sourceHash: memory.sourceHash,
+      translations: memory.translations
+    }, null, 2)}\n`);
+    if (completed % 40 === 0 || completed === suspect.length) console.log(`${locale.code}: repaired ${completed}/${suspect.length}`);
+  }
+
+  const remaining = suspect.filter(source => translationNeedsRepair(locale, source, memory.translations[source]));
+  if (remaining.length) {
+    const examples = remaining.slice(0, 3).map(source => `${JSON.stringify(source)} => ${JSON.stringify(memory.translations[source])}`).join("; ");
+    throw new Error(`${locale.code}: ${remaining.length} translations remain invalid after repair (${examples})`);
+  }
+  return suspect.length;
+}
+
+function missingTranslations(memory, requiredStrings) {
+  return [...requiredStrings].filter(key => !memory.translations[key]);
+}
+
+async function fillMissingTranslations(locale, memory, requiredStrings) {
+  const missing = missingTranslations(memory, requiredStrings);
+  if (missing.length && !translateMissing) {
+    throw new Error(`${locale.code}: ${missing.length} translations are missing; run node tools/localize-site.mjs --translate`);
+  }
+
+  if (missing.length) {
+    console.log(`${locale.code}: translating ${missing.length} new strings`);
+    const batches = [];
+    for (let start = 0; start < missing.length; start += batchSize) batches.push(missing.slice(start, start + batchSize));
+    let completed = 0;
+    for (let start = 0; start < batches.length; start += translationConcurrency) {
+      const wave = batches.slice(start, start + translationConcurrency);
+      const translatedWaves = await Promise.all(wave.map((batch, waveIndex) => {
+        const entries = batch.map((text, index) => ({ id: `s${waveIndex}_${index}`, text }));
+        return requestTranslations(locale, entries).then(translated => ({ entries, translated }));
+      }));
+      translatedWaves.forEach(({ entries, translated }) => {
+        entries.forEach(entry => {
+          memory.translations[entry.text] = translated.get(entry.id);
+        });
+        completed += entries.length;
+      });
+      console.log(`${locale.code}: ${completed}/${missing.length}`);
+      await writeFile(memory.path, `${JSON.stringify({
+        locale: locale.code,
+        sourceHash: memory.sourceHash,
+        translations: memory.translations
+      }, null, 2)}\n`);
+    }
+  }
+  const repaired = await repairTranslations(locale, memory, requiredStrings);
+  return missing.length > 0 || repaired > 0;
+}
+
+function translateValue(value, translations, attribute = false) {
+  const key = normalizedText(value);
+  const translated = translations[key];
+  if (!translated) return value;
+  const leading = value.match(/^\s*/)?.[0] || "";
+  const trailing = value.match(/\s*$/)?.[0] || "";
+  return `${leading}${encodeHtml(translated, attribute)}${trailing}`;
+}
+
+function translateStructuredValue(value, key, translations) {
+  if (Array.isArray(value)) return value.map(item => translateStructuredValue(item, key, translations));
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([childKey, child]) => [
+      childKey,
+      structuredDataSkippedKeys.has(childKey) ? child : translateStructuredValue(child, childKey, translations)
+    ]));
+  }
+  if (typeof value === "string" && !structuredDataSkippedKeys.has(key) && translations[normalizedText(value)]) {
+    return translations[normalizedText(value)];
+  }
+  return value;
+}
+
+function localizeStructuredUrls(value, locale, key = "") {
+  if (Array.isArray(value)) return value.map(item => localizeStructuredUrls(item, locale, key));
+  if (value && typeof value === "object") {
+    const types = Array.isArray(value["@type"]) ? value["@type"] : [value["@type"]];
+    const isOrganization = types.includes("Organization");
+    return Object.fromEntries(Object.entries(value).map(([childKey, child]) => [
+      childKey,
+      isOrganization && childKey === "url" ? child : localizeStructuredUrls(child, locale, childKey)
+    ]));
+  }
+  if (typeof value !== "string" || !value.startsWith(`${siteOrigin}/`)) return value;
+  if (value.startsWith(`${siteOrigin}/assets/`) || value === `${siteOrigin}/#studio`) return value;
+  const url = new URL(value);
+  url.pathname = url.pathname === "/" ? `/${locale.code}/` : `/${locale.code}${url.pathname}`;
+  return url.href;
+}
+
+function setStructuredLanguage(value, locale) {
+  const objects = Array.isArray(value?.["@graph"]) ? value["@graph"] : [value];
+  objects.forEach(object => {
+    const types = Array.isArray(object?.["@type"]) ? object["@type"] : [object?.["@type"]];
+    if (types.some(type => ["WebSite", "WebPage", "CollectionPage", "VideoGame"].includes(type))) {
+      object.inLanguage = locale.htmlLang;
+    }
+  });
+  return value;
+}
+
+function translateHtml(html, locale, translations) {
+  let output = html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi, (script, content) => {
+    const parsed = JSON.parse(content);
+    let localized = translateStructuredValue(parsed, "", translations);
+    localized = localizeStructuredUrls(localized, locale);
+    localized = setStructuredLanguage(localized, locale);
+    const openTag = script.match(/^<script\b[^>]*>/i)?.[0] || '<script type="application/ld+json">';
+    return `${openTag}\n${JSON.stringify(localized, null, 2)}\n</script>`;
+  });
+
+  const protectedBlocks = [];
+  const protectBlock = block => {
+    const token = `___WILLOW_PROTECTED_${protectedBlocks.length}___`;
+    protectedBlocks.push(block);
+    return token;
+  };
+  output = output
+    .replace(/<(?:script|style|svg)\b[^>]*>[\s\S]*?<\/(?:script|style|svg)>/gi, protectBlock)
+    .replace(noTranslateLeaf, protectBlock);
+
+  output = output.replace(/>\s*([^<>]*?\p{L}[^<>]*?)\s*</gu, match => {
+    const open = match.indexOf(">") + 1;
+    const close = match.lastIndexOf("<");
+    return `${match.slice(0, open)}${translateValue(match.slice(open, close), translations)}${match.slice(close)}`;
+  });
+
+  output = output.replace(/<[^>]+>/g, tag => {
+    if (/^<meta\b/i.test(tag)) {
+      const key = tag.match(/\b(?:name|property)=(["'])([\s\S]*?)\1/i)?.[2]?.toLowerCase();
+      if (key && metaTranslationKeys.has(key)) {
+        tag = tag.replace(/\bcontent=(["'])([\s\S]*?)\1/i, (match, quote, value) => `content=${quote}${translateValue(value, translations, true)}${quote}`);
+      }
+    }
+    return tag.replace(/\b([\w-]+)=(["'])([\s\S]*?)\2/g, (match, name, quote, value) => {
+      if (name.toLowerCase() === "href" && /^mailto:/i.test(value)) {
+        return `${name}=${quote}${localizeMailto(value, translations)}${quote}`;
+      }
+      if (!translatableAttributes.has(name.toLowerCase())) return match;
+      return `${name}=${quote}${translateValue(value, translations, true)}${quote}`;
+    });
+  });
+
+  protectedBlocks.forEach((block, index) => {
+    output = output.replace(`___WILLOW_PROTECTED_${index}___`, block);
+  });
+  return output;
+}
+
+function renderLanguageSwitcher(locale, page, translations = {}, standalone = false) {
+  const links = locales.map(target => {
+    const current = target.code === locale.code ? ' aria-current="page"' : "";
+    const currentFile = outputFile(locale, page);
+    const targetFile = outputFile(target, page);
+    const href = relative(dirname(currentFile), targetFile).replaceAll("\\", "/");
+    return `<a href="${href}" lang="${target.htmlLang}" hreflang="${target.hreflang}"${current}><span class="language-option-label" dir="auto">${target.label}</span><span class="language-option-code" aria-hidden="true">${target.hreflang}</span></a>`;
+  }).join("");
+  const navigationLabel = translations.Language || "Language";
+  const chooseLabel = translations["Choose language"] || "Choose language";
+  const className = standalone ? "language-switcher language-switcher--standalone" : "language-switcher";
+  return `${switcherStart}\n  <nav class="${className}" aria-label="${encodeHtml(navigationLabel, true)}"><details><summary aria-label="${encodeHtml(chooseLabel, true)}"><span aria-hidden="true">${locale.shortLabel}</span></summary><div class="language-options">${links}</div></details></nav>\n  ${switcherEnd}`;
+}
+
+function renderSocialLinks(html, locale) {
+  const profiles = socialProfilesFor(locale.code);
+  const rendered = html.replace(new RegExp(`(<[^>]*\\bdata-social-links=(["'])(compact|detailed)\\2[^>]*>\\s*)${socialStart}${socialEnd}`, "g"), (match, openTag, quote, mode) => {
+    const items = profiles.map(profile => {
+      const label = mode === "detailed"
+        ? `<span class="social-link-name">${profile.name}</span> <span class="social-link-handle">${encodeHtml(profile.handle)}</span>`
+        : profile.name;
+      return `<li><a class="social-link" href="${encodeHtml(profile.url, true)}" rel="me">${label}</a></li>`;
+    }).join("");
+    return `${openTag}${socialStart}<ul class="social-list" role="list">${items}</ul>${socialEnd}`;
+  });
+  if (rendered.includes(`${socialStart}${socialEnd}`)) {
+    throw new Error(`Empty ${socialStart}${socialEnd} block left after rendering social links for ${locale.code}; check that it follows an opening tag with data-social-links="compact|detailed".`);
+  }
+  return rendered;
+}
+
+// Plain share links (no widgets, no tracking) for the page's own URL in this locale; the copy button is wired in game-theme.js.
+const shareTargets = Object.freeze([
+  { name: "X", href: (url, title) => `https://x.com/intent/post?url=${url}&text=${title}` },
+  { name: "Reddit", href: (url, title) => `https://www.reddit.com/submit?url=${url}&title=${title}` },
+  { name: "Telegram", href: (url, title) => `https://t.me/share/url?url=${url}&text=${title}` },
+  { name: "VK", href: url => `https://vk.com/share.php?url=${url}` },
+  { name: "Facebook", href: url => `https://www.facebook.com/sharer/sharer.php?u=${url}` }
+]);
+
+function renderShareLinks(html, locale, page, translations = {}) {
+  // Same rule as the social set: locales without a Facebook profile (Facebook is blocked in Russia) get no Facebook share link.
+  const hasFacebook = socialProfilesFor(locale.code).some(profile => profile.name === "Facebook");
+  const rendered = html.replace(new RegExp(`(<[^>]*\\bdata-share-links\\b[^>]*>\\s*)${shareStart}${shareEnd}`, "g"), (match, openTag) => {
+    const title = normalizedText(html.match(/<title>([\s\S]*?)<\/title>/i)?.[1] || "");
+    if (!title) throw new Error(`${page.file}: <title> is required to render share links for ${locale.code}`);
+    const url = encodeURIComponent(pageUrl(locale, page));
+    const items = shareTargets
+      .filter(target => hasFacebook || target.name !== "Facebook")
+      .map(target => `<li><a class="social-link share-link" href="${encodeHtml(target.href(url, encodeURIComponent(title)), true)}" rel="nofollow">${target.name}</a></li>`)
+      .join("");
+    const copy = `<li><button class="social-link share-link share-copy" type="button" data-share-copy>${translateValue("Copy link", translations)}</button></li>`;
+    return `${openTag}${shareStart}<ul class="social-list share-list" role="list">${items}${copy}</ul><span class="visually-hidden" role="status" data-share-status></span>${shareEnd}`;
+  });
+  if (rendered.includes(`${shareStart}${shareEnd}`)) {
+    throw new Error(`Empty ${shareStart}${shareEnd} block left after rendering share links for ${locale.code} (${page.file}); check that it follows an opening tag with data-share-links.`);
+  }
+  return rendered;
+}
+
+function addLocaleMetadata(html, locale, page, translations = {}) {
+  let output = html
+    .replace(/\s*<meta\b[^>]*http-equiv=["']content-language["'][^>]*>/gi, "")
+    .replace(/<html\b[^>]*>/i, `<html lang="${locale.htmlLang}" dir="${locale.direction}">`)
+    .replace(/<link\b[^>]*rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${pageUrl(locale, page)}">`)
+    .replace(/<meta\b[^>]*property=["']og:url["'][^>]*>/i, `<meta property="og:url" content="${pageUrl(locale, page)}">`)
+    .replace(/<meta\b[^>]*property=["']og:locale["'][^>]*>/i, `<meta property="og:locale" content="${locale.ogLocale}">`);
+
+  output = output.replace(/(<meta\b[^>]*charset=["'][^"']+["'][^>]*>)/i, `$1\n  <meta http-equiv="content-language" content="${locale.htmlLang}">`);
+  const themeTogglePattern = /(<button\b[^>]*\bid=["']themeToggle["'][^>]*>[\s\S]*?<\/button>)/i;
+  if (themeTogglePattern.test(output)) {
+    output = output.replace(themeTogglePattern, `$1\n          ${renderLanguageSwitcher(locale, page, translations)}`);
+  } else {
+    output = output.replace(/(<body\b[^>]*>)/i, `$1\n  ${renderLanguageSwitcher(locale, page, translations, true)}`);
+  }
+  return output;
+}
+
+// Flagship and lab game pages live in games/, one level below the site root.
+const isGamePage = page => page.kind === "game" || page.kind === "game-upcoming";
+
+function rewriteSharedResourceUrls(html, page) {
+  const depthPrefix = isGamePage(page) ? "../" : "../";
+  const gameSourcePrefix = isGamePage(page) ? "../" : "";
+  const sharedRoots = ["assets/", "css/", "motion.css", "scripts.js", "game-theme.js", "favicon.ico", "manifest.webmanifest", "rss.xml", "theme-init.js", "404.css", "404.js", ".well-known/"];
+
+  function rewriteOne(value) {
+    if (!value || /^(?:https?:|mailto:|tel:|data:|blob:|#|\/)/i.test(value)) return value;
+    const queryIndex = value.search(/[?#]/);
+    const path = queryIndex >= 0 ? value.slice(0, queryIndex) : value;
+    const suffix = queryIndex >= 0 ? value.slice(queryIndex) : "";
+    if (isGamePage(page)) {
+      if (sharedRoots.some(root => path.startsWith(`${gameSourcePrefix}${root}`))) return `${depthPrefix}${path}${suffix}`;
+      return value;
+    }
+    if (sharedRoots.some(root => path.startsWith(root))) return `${depthPrefix}${path}${suffix}`;
+    if (path === "404.html") return `/404.html${suffix}`;
+    return value;
+  }
+
+  return html.replace(/\b(href|src|poster|action|data-logo-light|data-logo-dark|srcset|imagesrcset|data-logo-light-srcset|data-logo-dark-srcset)=(["'])([\s\S]*?)\2/gi, (match, name, quote, value) => {
+    const localized = /srcset/i.test(name)
+      ? value.split(",").map(candidate => {
+        const parts = candidate.trim().split(/\s+/);
+        parts[0] = rewriteOne(parts[0]);
+        return parts.join(" ");
+      }).join(", ")
+      : rewriteOne(value);
+    return `${name}=${quote}${localized}${quote}`;
+  });
+}
+
+function renderLocalizedPage(source, locale, page, translations) {
+  let output = translateHtml(source, locale, translations);
+  output = renderSocialLinks(output, locale);
+  output = renderShareLinks(output, locale, page, translations);
+  output = addLocaleMetadata(output, locale, page, translations);
+  output = rewriteSharedResourceUrls(output, page);
+  const runtimePath = `${isGamePage(page) ? "../i18n-runtime.js" : "i18n-runtime.js"}?v=${localizationLastModified.replaceAll("-", "")}`;
+  output = output.replace(/(<\/body>)/i, `  <script src="${runtimePath}"></script>\n$1`);
+  return `${output.trim()}\n`;
+}
+
+function addStructuredLanguage(html, locale) {
+  return html.replace(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi, (script, content) => {
+    const parsed = setStructuredLanguage(JSON.parse(content), locale);
+    const openTag = script.match(/^<script\b[^>]*>/i)?.[0] || '<script type="application/ld+json">';
+    return `${openTag}\n${JSON.stringify(parsed, null, 2)}\n</script>`;
+  });
+}
+
+function renderEnglishPage(source, page) {
+  return `${addLocaleMetadata(renderShareLinks(renderSocialLinks(addStructuredLanguage(source, sourceLocale), sourceLocale), sourceLocale, page), sourceLocale, page).trim()}\n`;
+}
+
+function renderSitemapAlternates(page) {
+  return alternateLinks(page)
+    .map(link => `    <xhtml:link rel="alternate" hreflang="${link.hreflang}" href="${link.href}" />`)
+    .join("\n");
+}
+
+function renderLocalizedSitemap(existing) {
+  let clean = existing
+    .replace(new RegExp(`\\s*${sitemapStart}[\\s\\S]*?${sitemapEnd}`, "g"), "")
+    .replace(/\s*<xhtml:link\b[^>]*\/>/g, "");
+
+  if (!/xmlns:xhtml=/.test(clean)) {
+    clean = clean.replace(/(<urlset\b[^>]*)(>)/, `$1\n        xmlns:xhtml="http://www.w3.org/1999/xhtml"$2`);
+  }
+
+  const pageLastmods = new Map();
+  for (const page of localizedPages) {
+    const canonical = pageUrl(sourceLocale, page);
+    const block = (clean.match(/<url>[\s\S]*?<\/url>/g) || [])
+      .find(candidate => candidate.includes(`<loc>${canonical}</loc>`));
+    if (!block) throw new Error(`sitemap.xml: missing English canonical block for ${canonical}`);
+    const lastmodMatch = block.match(/<lastmod>([^<]+)<\/lastmod>/);
+    if (lastmodMatch) pageLastmods.set(page.file, lastmodMatch[1].trim());
+    const enriched = block.replace(/(<loc>[^<]+<\/loc>)/, `$1\n${renderSitemapAlternates(page)}`);
+    clean = clean.replace(block, enriched);
+  }
+
+  const entries = translatedLocales.flatMap(locale => localizedPages.map(page => [
+    "  <url>",
+    `    <loc>${pageUrl(locale, page)}</loc>`,
+    renderSitemapAlternates(page),
+    `    <lastmod>${pageLastmods.get(page.file) || localizationLastModified}</lastmod>`,
+    `    <changefreq>${page.changefreq}</changefreq>`,
+    `    <priority>${page.priority}</priority>`,
+    "  </url>"
+  ].join("\n"))).join("\n");
+  return clean.replace(/\s*<\/urlset>\s*$/, `\n  ${sitemapStart}\n${entries}\n  ${sitemapEnd}\n</urlset>\n`);
+}
+
+function escapeMarkdown(value) {
+  return String(value)
+    .replaceAll("\\", "\\\\")
+    .replaceAll("[", "\\[")
+    .replaceAll("]", "\\]");
+}
+
+function localizedPage(locale, file) {
+  const page = localizedPages.find(candidate => candidate.file === file);
+  if (!page) throw new Error(`Unable to resolve localized page ${file}`);
+  return pageUrl(locale, page);
+}
+
+function renderLocalizedLlms(locale, translations, updates) {
+  const t = source => translations[source] || source;
+  const sentence = value => /[.!?。！？]$/.test(value.trim()) ? value.trim() : `${value.trim()}.`;
+  const games = gameDevlogSources.map(game => {
+    const genres = game.genres.map(genre => escapeMarkdown(t(genre))).join(", ");
+    return `- [${escapeMarkdown(game.name)}](${localizedPage(locale, game.file)}): ${escapeMarkdown(t(game.machineSummary))} ${escapeMarkdown(t("Genres"))}: ${genres}. ${escapeMarkdown(t("Current status"))}: ${escapeMarkdown(sentence(t(game.status)))}`;
+  }).join("\n");
+  const prototypes = labPages
+    .map(page => `- [${escapeMarkdown(page.name)}](${localizedPage(locale, page.file)}): ${escapeMarkdown(t("Genre"))}: ${escapeMarkdown(t(page.genre))}. ${escapeMarkdown(t("Current status"))}: ${escapeMarkdown(sentence(t(page.status)))}`)
+    .join("\n");
+  const devlogs = [...updates]
+    .sort((left, right) => right.timestamp - left.timestamp)
+    .map(update => `- [${escapeMarkdown(update.name)} - ${escapeMarkdown(t(update.title))}](${localizedPage(locale, update.file)}#devlog): ${escapeMarkdown(t("Published"))} ${update.published}. ${escapeMarkdown(t(update.summary))}`)
+    .join("\n");
+
+  return `# WillowinWorlds - ${locale.label}
+
+> ${escapeMarkdown(t("WillowinWorlds is an independent mobile game studio making puzzle and arcade games. It has four flagship games (Nature Seed, Candy Shop, Paint Blasters and Ball is God?!) and eight lab prototypes."))}
+
+${escapeMarkdown(t("Site language"))}: ${locale.label}. ${escapeMarkdown(t("Canonical English source"))}: ${siteOrigin}/llms.txt
+
+## ${escapeMarkdown(t("Games"))}
+
+${games}
+
+## ${escapeMarkdown(t("In development"))}
+
+${escapeMarkdown(t(labIntro))}
+
+${prototypes}
+
+## ${escapeMarkdown(t("Latest development notes"))}
+
+${devlogs}
+
+## ${escapeMarkdown(t("Studio and press"))}
+
+- [${escapeMarkdown(t("Studio home"))}](${localizedPage(locale, "index.html")})
+- [${escapeMarkdown(t("Press kit"))}](${localizedPage(locale, "press-kit.html")})
+- [${escapeMarkdown(t("Media asset usage"))}](${localizedPage(locale, "asset-usage.html")})
+
+## ${escapeMarkdown(t("Feeds and policies"))}
+
+- [${escapeMarkdown(t("Devlog RSS feed"))}](${siteOrigin}/rss.xml)
+- [${escapeMarkdown(t("XML sitemap"))}](${siteOrigin}/sitemap.xml)
+- [${escapeMarkdown(t("Language index"))}](${siteOrigin}/languages.json)
+- [${escapeMarkdown(t("Privacy policy"))}](${localizedPage(locale, "privacy.html")})
+- [${escapeMarkdown(t("Legal notice"))}](${localizedPage(locale, "legal.html")})
+
+## ${escapeMarkdown(t("Contact"))}
+
+- [${escapeMarkdown(t("Email WillowinWorlds"))}](mailto:${contactEmail})
+`;
+}
+
+function renderLanguageIndex() {
+  return `${JSON.stringify({
+    schemaVersion: 1,
+    defaultLanguage: sourceLocale.htmlLang,
+    lastModified: localizationLastModified,
+    languages: locales.map(locale => ({
+      code: locale.htmlLang,
+      hreflang: locale.hreflang,
+      name: locale.label,
+      direction: locale.direction,
+      home: pageUrl(locale, localizedPages[0]),
+      llms: locale.code === sourceLocale.code
+        ? `${siteOrigin}/llms.txt`
+        : `${siteOrigin}/${locale.code}/llms.txt`
+    }))
+  }, null, 2)}\n`;
+}
+
+function renderRuntimeScript(locale, translations, runtimeStrings) {
+  const dictionary = Object.fromEntries([...runtimeStrings]
+    .filter(source => translations[source] && translations[source] !== source)
+    .sort((left, right) => left.localeCompare(right, "en"))
+    .map(source => [source, translations[source]]));
+  const filterTranslations = Object.fromEntries(["Arcade", "Puzzle", "Physics", "Cozy"]
+    .map(source => [source, translations[source] || source]));
+  const labels = {
+    showing: translations["Showing {count}: {filter}"] || "Showing {count}: {filter}",
+    hidden: translations["Hidden letters: {found}/{total}"] || "Hidden letters: {found}/{total}",
+    promoLetter: translations["Hidden promo letter {letter}"] || "Hidden promo letter {letter}"
+  };
+  return `(() => {
+  const dictionary = Object.freeze(${JSON.stringify(dictionary)});
+  const filterTranslations = Object.freeze(${JSON.stringify(filterTranslations)});
+  const attributes = ["aria-label", "aria-description", "title", "placeholder"];
+  const normalize = value => String(value || "").replace(/\\s+/g, " ").trim();
+  function translate(value) {
+    const normalized = normalize(value);
+    if (dictionary[normalized]) return dictionary[normalized];
+    let match = normalized.match(/^Hidden letters:\\s*(\\d+)\\/(\\d+)$/i);
+    if (match) return ${JSON.stringify(labels.hidden)}.replace("{found}", match[1]).replace("{total}", match[2]);
+    match = normalized.match(/^Hidden promo letter\\s+(.+)$/i);
+    if (match) return ${JSON.stringify(labels.promoLetter)}.replace("{letter}", match[1]);
+    match = normalized.match(/^Showing\\s+(\\d+)\\s+(.+?)\\s+games?\\.?$/i);
+    if (match) {
+      const filterKey = match[2].charAt(0).toUpperCase() + match[2].slice(1);
+      const localizedFilter = filterTranslations[filterKey] || match[2];
+      return ${JSON.stringify(labels.showing)}.replace("{count}", match[1]).replace("{filter}", localizedFilter);
+    }
+    return value;
+  }
+  function translateTextNode(node) {
+    const translated = translate(node.nodeValue);
+    if (translated === node.nodeValue) return;
+    const leading = node.nodeValue.match(/^\\s*/)?.[0] || "";
+    const trailing = node.nodeValue.match(/\\s*$/)?.[0] || "";
+    node.nodeValue = leading + translated + trailing;
+  }
+  function translateElement(element) {
+    attributes.forEach(attribute => {
+      if (!element.hasAttribute(attribute)) return;
+      const current = element.getAttribute(attribute);
+      const translated = translate(current);
+      if (translated !== current) element.setAttribute(attribute, translated);
+    });
+  }
+  function translateTree(root) {
+    if (!root) return;
+    if (root.nodeType === Node.TEXT_NODE) {
+      translateTextNode(root);
+      return;
+    }
+    if (root.nodeType !== Node.ELEMENT_NODE && root.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) return;
+    if (root.nodeType === Node.ELEMENT_NODE) translateElement(root);
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_ELEMENT | NodeFilter.SHOW_TEXT);
+    let node = walker.nextNode();
+    while (node) {
+      if (node.nodeType === Node.TEXT_NODE) translateTextNode(node);
+      else translateElement(node);
+      node = walker.nextNode();
+    }
+  }
+  window.WillowI18n = Object.freeze({ locale: ${JSON.stringify(locale.htmlLang)}, t: translate });
+  translateTree(document.body);
+  const observer = new MutationObserver(records => {
+    records.forEach(record => {
+      if (record.type === "characterData") translateTextNode(record.target);
+      if (record.type === "attributes") translateElement(record.target);
+      record.addedNodes.forEach(translateTree);
+    });
+  });
+  observer.observe(document.body, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: attributes });
+})();
+`;
+}
+
+async function writeIfChanged(path, content) {
+  let current = "";
+  try {
+    current = await readFile(path, "utf8");
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  if (current === content) return false;
+  if (checkOnly) throw new Error(`${path.slice(siteRoot.length)} is stale; run node tools/localize-site.mjs`);
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(path, content);
+  return true;
+}
+
+// Every source string the generator needs a translation for, and the English page sources it renders from.
+async function collectRequiredStrings() {
+  const pageSources = new Map();
+  const requiredStrings = new Set();
+  for (const page of localizedPages) {
+    const source = stripGeneratedBlocks(await readFile(join(siteRoot, page.file), "utf8"));
+    pageSources.set(page.file, source);
+    const pageStrings = collectStrings(source);
+    pageStrings.forEach(value => requiredStrings.add(value));
+  }
+  const runtimeStrings = await collectRuntimeStrings();
+  runtimeStrings.forEach(value => requiredStrings.add(value));
+  return { pageSources, requiredStrings, runtimeStrings };
+}
+
+async function main() {
+  const { pageSources, requiredStrings, runtimeStrings } = await collectRequiredStrings();
+
+  const sourceHash = pageSourceHash(pageSources);
+  await mkdir(translationRoot, { recursive: true });
+  const memories = new Map();
+  for (const locale of translatedLocales) {
+    const memory = await readTranslationMemory(locale, sourceHash);
+    if (refreshLocales.has(locale.code)) memory.translations = {};
+    for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
+      if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
+      memory.translations[source] = translation;
+    }
+    await fillMissingTranslations(locale, memory, requiredStrings);
+    for (const [source, translation] of Object.entries(manualTranslationOverrides[locale.code] || {})) {
+      if (!requiredStrings.has(source)) throw new Error(`${locale.code}: manual translation override has no source string: ${source}`);
+      memory.translations[source] = translation;
+    }
+    memory.translations = Object.fromEntries([...requiredStrings].sort((a, b) => a.localeCompare(b, "en")).map(key => [key, memory.translations[key]]));
+    const serialized = `${JSON.stringify({ locale: locale.code, sourceHash, translations: memory.translations }, null, 2)}\n`;
+    await writeIfChanged(memory.path, serialized);
+    memories.set(locale.code, memory.translations);
+  }
+
+  const latestDevlogs = await loadLatestDevlogs();
+
+  for (const page of localizedPages) {
+    const source = pageSources.get(page.file);
+    await writeIfChanged(join(siteRoot, page.file), renderEnglishPage(source, page));
+    for (const locale of translatedLocales) {
+      const path = join(siteRoot, outputFile(locale, page));
+      await writeIfChanged(path, renderLocalizedPage(source, locale, page, memories.get(locale.code)));
+    }
+  }
+
+  for (const locale of translatedLocales) {
+    await writeIfChanged(
+      join(siteRoot, locale.code, "i18n-runtime.js"),
+      renderRuntimeScript(locale, memories.get(locale.code), runtimeStrings)
+    );
+    await writeIfChanged(
+      join(siteRoot, locale.code, "llms.txt"),
+      renderLocalizedLlms(locale, memories.get(locale.code), latestDevlogs)
+    );
+  }
+
+  await writeIfChanged(join(siteRoot, "languages.json"), renderLanguageIndex());
+
+  const sitemapPath = join(siteRoot, "sitemap.xml");
+  await writeIfChanged(sitemapPath, renderLocalizedSitemap(await readFile(sitemapPath, "utf8")));
+
+  console.log(`Localization ${checkOnly ? "check passed" : "generated"}: ${translatedLocales.length} locales × ${localizedPages.length} pages; ${requiredStrings.size} source strings.`);
+}
+
+// Imported (for example by a missing-strings report) the generator only exposes these helpers.
+if (import.meta.main !== false) await main();
+
+export { collectRequiredStrings, manualTranslationOverrides, missingTranslations, protectedTermsIn, readTranslationMemory, translationNeedsRepair };

@@ -24,4 +24,8 @@ build/
 __pycache__/
 
 # Generated local quality reports
-site/reports/
+reports/
+
+# Local test and browser-automation artifacts
+output/
+.playwright-cli/

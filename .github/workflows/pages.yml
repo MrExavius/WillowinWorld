@@ -26,7 +26,7 @@ jobs:
           node-version: "22"
 
       - name: Run quality checks
-        run: node site/tools/quality-check.mjs
+        run: node tools/quality-check.mjs
 
   deploy:
     needs: quality
@@ -48,7 +48,8 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      # Publish the source site/ folder (not site/dist) without internal files.
+      # Publish the source site/ folder (not the dist/ build output). Tooling, deploy
+      # configs, docs and reports live outside site/.
       # .well-known/ must stay in the artifact (checked below); re-verify hidden-file
       # handling before upgrading upload-pages-artifact. The custom domain comes from
       # the repository Pages settings, so the root CNAME file is not part of the
@@ -58,8 +59,8 @@ jobs:
         run: |
           rm -rf _site
           cp -a site _site
-          rm -rf _site/tools _site/deploy _site/dist _site/reports
-          rm -f _site/_headers _site/_redirects _site/QUALITY_CHECKS.md
+          rm -rf _site/dist
+          rm -f _site/_headers _site/_redirects
           test -f _site/index.html
           test -f _site/.well-known/security.txt
           echo "index_sha=$(sha256sum _site/index.html | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"

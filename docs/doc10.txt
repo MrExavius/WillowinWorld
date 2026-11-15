@@ -22,7 +22,7 @@ AllScripts(5).txt
 
 P1 · высокая уверенность
 
-`site/tools/build-minified.mjs`, список `cssFiles`; `site/index.html`, блок подключения стилей.
+`tools/build-minified.mjs`, список `cssFiles`; `site/index.html`, блок подключения стилей.
 
 
 
@@ -44,7 +44,7 @@ AllScripts(5).txt
 
 P1 · высокая уверенность
 
-`site/tools/build-minified.mjs`, `minifyHtml()`.
+`tools/build-minified.mjs`, `minifyHtml()`.
 
 
 
@@ -74,7 +74,7 @@ MDN
 
 P2 · высокая уверенность
 
-`site/tools/build-minified.mjs`, строки с удалением `outRoot`.
+`tools/build-minified.mjs`, строки с удалением `outRoot`.
 
 
 
@@ -92,7 +92,7 @@ AllScripts(5).txt
 
 P2 · высокая уверенность
 
-`site/tools/quality-check.mjs`.
+`tools/quality-check.mjs`.
 
 
 
@@ -547,7 +547,7 @@ Production security
 
 P1 · подтверждено
 
-`site/tools/build-minified.mjs`, `minifyCss()`.
+`tools/build-minified.mjs`, `minifyCss()`.
 
 Минификатор удаляет пробелы вокруг операторов `+`, `-`, `>`, `~` и других символов глобальным регулярным выражением.
 
@@ -608,7 +608,7 @@ P3 · подтверждено
 
 P2 · подтверждено
 
-`site/tools/css-coverage-audit.mjs`.
+`tools/css-coverage-audit.mjs`.
 
 Анализатор использует собственный список CSS. В нём также отсутствует `home-polish-2026.css`.
 
@@ -704,7 +704,7 @@ AllScripts(5).txt
 
 P2 · высокая вероятность при замене файлов
 
-`site/deploy/nginx-security.conf`.
+`deploy/nginx-security.conf`.
 
 Для всех файлов в `/assets/` установлено кэширование на один год:
 
@@ -809,7 +809,7 @@ AllScripts(5).txt
 
 P2 · высокая вероятность
 
-`site/tools/localize-site.mjs`, `requestTranslations()`.
+`tools/localize-site.mjs`, `requestTranslations()`.
 
 Генератор использует:
 
@@ -930,7 +930,7 @@ CACHE001, PERF002, PERF003, WEB006.
 
 P1 при использовании этой конфигурации
 
-`site/deploy/nginx-security.conf`, блок `types`.
+`deploy/nginx-security.conf`, блок `types`.
 
 В конфигурации вручную перечислены MIME-типы, но отсутствуют как минимум `avif`, `json` и `ico`. Между тем проект использует AVIF в `<picture>`, публикует `languages.json` и ссылается на `favicon.ico`.&#x20;
 

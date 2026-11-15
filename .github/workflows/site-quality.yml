@@ -24,16 +24,16 @@ jobs:
 
       - name: Check JavaScript syntax
         run: |
-          for file in site/*.js site/tools/*.mjs; do
+          for file in site/*.js tools/*.mjs; do
             node --check "$file"
           done
 
       - name: Run full quality check
-        run: node site/tools/quality-check.mjs
+        run: node tools/quality-check.mjs
 
       - name: Run CSS coverage audit (informational)
         continue-on-error: true
-        run: node site/tools/css-coverage-audit.mjs
+        run: node tools/css-coverage-audit.mjs
 
       - name: Build minified static output
-        run: node site/tools/build-minified.mjs
+        run: node tools/build-minified.mjs
