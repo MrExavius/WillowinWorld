@@ -29,7 +29,9 @@ jobs:
           done
 
       - name: Render localized pages
-        run: node tools/localize-site.mjs
+        run: |
+          node tools/localize-site.mjs
+          git diff --exit-code -- site tools/locales
 
       - name: Run full quality check
         run: node tools/quality-check.mjs
