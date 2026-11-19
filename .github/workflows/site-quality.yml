@@ -28,6 +28,9 @@ jobs:
             node --check "$file"
           done
 
+      - name: Render localized pages
+        run: node tools/localize-site.mjs
+
       - name: Run full quality check
         run: node tools/quality-check.mjs
 

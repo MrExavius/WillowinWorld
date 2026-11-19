@@ -2,7 +2,8 @@
 
 Local checks:
 
-- `node tools/quality-check.mjs`
+- `node tools/localize-site.mjs` (render the 41 localized `site/<locale>/` directories locally from `tools/locales/*.json` without calling translation APIs; required after a clean checkout for local preview and before running checks)
+- `node tools/quality-check.mjs` (includes `node tools/localize-site.mjs --check`, which fails if `tools/locales/*.json` or rendered pages are out of sync with the English sources)
 - `node tools/link-check.mjs`
 - `node tools/visual-check.mjs`
 - `node tools/css-coverage-audit.mjs`
@@ -12,7 +13,7 @@ Local checks:
 
 Deployment model:
 
-- Production (GitHub Pages, branch `35`) publishes the source `site/` folder minus `dist/`, `_headers` and `_redirects`. `site/` holds only published files; tooling lives in `tools/`, hosting snippets in `deploy/`, documentation in `docs/`, and generated output in `reports/` and `dist/`, all at the repo root. `dist` is a build check only and is never deployed. `.github/workflows/pages.yml` runs `node tools/quality-check.mjs` before every deploy.
+- Production (GitHub Pages, branch `35`) renders the 41 localized `site/<locale>/` directories during the workflow (`node tools/localize-site.mjs` using the committed `tools/locales/*.json`, no network/translation calls) and publishes the assembled `site/` folder minus `dist/`, `_headers` and `_redirects`. Rendered `site/<locale>/` directories are ignored in `.gitignore` and not tracked in Git. `site/` tracks only English sources, shared assets, `languages.json`, `sitemap.xml`, `rss.xml`, `llms.txt`, and root metadata; tooling lives in `tools/`, hosting snippets in `deploy/`, documentation in `docs/`, and generated output in `reports/` and `dist/`, all at the repo root. `dist` is a build check only and is never deployed. `.github/workflows/pages.yml` renders locales and runs `node tools/quality-check.mjs` before every deploy (Node 22).
 - `_headers`, `_redirects` and `deploy/*` are not applied by GitHub Pages; only the meta CSP in each page is. See `SECURITY.md`.
 - `node tools/security-check.mjs` requires exactly one future `Expires:` in `.well-known/security.txt`, so it fails once that date passes. Renew it (RFC 9116: less than a year ahead) before then.
 - `node tools/seo-check.mjs` fails if any public text file under `site/` (except `dist/` and `reports/`) contains the legacy singular domain, the misspelled studio name or a mailbox at the studio domain. Use the contact email from `tools/localization-config.mjs`.

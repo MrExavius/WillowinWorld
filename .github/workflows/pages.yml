@@ -25,6 +25,9 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Render localized pages
+        run: node tools/localize-site.mjs
+
       - name: Run quality checks
         run: node tools/quality-check.mjs
 
@@ -47,6 +50,14 @@ jobs:
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Render localized pages
+        run: node tools/localize-site.mjs
 
       # Publish the source site/ folder (not the dist/ build output). Tooling, deploy
       # configs, docs and reports live outside site/.
